@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GuessNextNumber.unity
     guid: 8ee8f35f981e06748a83bde9335cf58e
+  - enabled: 1
+    path: Assets/Scenes/CompareNumbers.unity
+    guid: c5a3c83cf1faf6c49b5e86b20821bd7f
+  - enabled: 1
+    path: Assets/Scenes/LearnColors.unity
+    guid: 4f73ec82f68591b43a68f4adebc27c36
   m_configObjects: {}

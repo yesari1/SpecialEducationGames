@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class Number : Choosable
+public class Number : Choosable,IAnimationControllable
 {
     public override event Action OnCorrectAnimationFinished;
 
@@ -16,6 +16,7 @@ public class Number : Choosable
     private bool isChoosableNumber = false;
     private LevelManager levelManager;
     private int num;
+    private bool _isCorrect = false;
 
     void Awake()
     {
@@ -33,11 +34,26 @@ public class Number : Choosable
         get { return num; }
     }
 
+    public string Text
+    {
+        get
+        {
+            return text.text;
+        }
+    }
+
+    public bool IsCorrect
+    {
+        get
+        {
+            return _isCorrect;
+        }
+    }
+
     private void Update()
     {
         if (scaleUp)
         {
-            print("gasf");
             rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, maxScale, Time.deltaTime * scaleUpSpeed);
 
             if (Vector3.Distance(rectTransform.localScale, maxScale) <= 0.1f)
@@ -54,6 +70,11 @@ public class Number : Choosable
         text.text = num.ToString();
     }
 
+    public void SetNumber(string str)
+    {
+        text.text = str.ToString();
+    }
+
     public void SetHidedNumber(int number)
     {
         num = number;
@@ -65,13 +86,17 @@ public class Number : Choosable
         this.levelManager = levelManager;
     }
 
+    public void SetCorrect()
+    {
+        _isCorrect = true;
+    }
 
     public override void OnPointerDown(PointerEventData eventData)
     {
         levelManager.OnAnswerChoose(this);
     }
 
-    public override void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
+    public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
     {
         this.maxScale = maxScale;
         this.scaleUpSpeed = scaleUpSpeed;

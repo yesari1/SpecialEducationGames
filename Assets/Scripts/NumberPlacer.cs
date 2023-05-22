@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditorInternal.VersionControl.ListControl;
 
 public class NumberPlacer : MonoBehaviour
 {
-    private RectTransform rectTransform;
     private List<Number> listNumbers;
-    private Canvas canvas;
-    private int hided = 0;
     private Number hidedNumber;
 
     [SerializeField] private Number prfbNumber;
@@ -24,8 +20,6 @@ public class NumberPlacer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
-        canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         imageWidth = prfbNumber.GetComponent<Image>().preferredWidth * prfbNumber.GetComponent<RectTransform>().localScale.x;
         listNumbers = new List<Number>();
     }

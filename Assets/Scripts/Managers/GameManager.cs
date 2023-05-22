@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        FindObjectOfType<LevelManager>().OnStageCompleted += StageCompleted;
+        FindObjectOfType<LevelManager>().OnStageCompletedEvent += OnStageCompleted;
     }
 
     private void Awake()
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour
         return (stageCount >= maxStage);
     }
 
-    private void StageCompleted()
+    private void OnStageCompleted()
     {
         stageController.FillStar();
         stageCount++;

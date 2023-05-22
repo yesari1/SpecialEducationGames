@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4524907233427250791, guid: d36f808c698b1564cbbb0eedb73efe93, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5847498915702588127, guid: d36f808c698b1564cbbb0eedb73efe93, type: 3}
       propertyPath: textFinish
       value: 
@@ -1056,8 +1060,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startText: {fileID: 2018141931}
   goCenterSpeed: 4
-  scaleUpSpeed: 1.2
-  maxScale: {x: 1.1, y: 1.1, z: 1.1}
+  scaleUpSpeed: 8
+  maxScale: {x: 0.85, y: 0.85, z: 0.85}
   listFruits:
   - {fileID: 5959080837246546041, guid: 4980c34510fdf4b4db0cc21bc289aa98, type: 3}
   - {fileID: -3798278470043031113, guid: 8e59677ca53bd9a4eb49006e506608b1, type: 3}
@@ -1089,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2018141930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1132,8 +1136,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Portakal
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fd1a6541bbe7ccf419d36c2de30842c7, type: 2}
+  m_sharedMaterial: {fileID: 102620653655087756, guid: fd1a6541bbe7ccf419d36c2de30842c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

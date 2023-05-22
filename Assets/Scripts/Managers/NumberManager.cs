@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class NumberManager : LevelManager
 {
-    public override event Action OnStageCompleted;
+    public override event Action OnStageCompletedEvent;
 
     private NumberPlacer numberPlacer;
     private Canvas canvas;
@@ -77,7 +77,7 @@ public class NumberManager : LevelManager
 
         if(choosedNumber == number.Num)
         {
-            number.OnCorrectAnimationFinished += StageCompleted;
+            number.OnCorrectAnimationFinished += OnStageCompleted;
 
             for (int i = 0; i < listChoosableNumbers.Count; i++)
             {
@@ -94,9 +94,9 @@ public class NumberManager : LevelManager
     }
 
 
-    private void StageCompleted()
+    public override void OnStageCompleted()
     {
-        OnStageCompleted?.Invoke();
+        OnStageCompletedEvent?.Invoke();
 
         numberPlacer.ShowCorrectNumber();
 

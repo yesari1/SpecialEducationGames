@@ -10,9 +10,8 @@ using Random = UnityEngine.Random;
 
 public class MatchingManager : LevelManager
 {
-    public override event Action OnStageCompleted;
+    public override event Action OnStageCompletedEvent;
 
-    private Canvas canvas;
 
     private Fruit choosedFruit;
     private List<Fruit> listCreatedFruit;
@@ -87,9 +86,9 @@ public class MatchingManager : LevelManager
 
         if(choosedFruit.name == fruit.name)
         {
-            fruit.OnCorrectAnimationFinished += StageCompleted;
+            fruit.OnCorrectAnimationFinished += OnStageCompleted;
 
-            fruit.PlayCorrectAnimation(goCenterSpeed,scaleUpSpeed, maxScale);
+            fruit.PlayCorrectAnimation(scaleUpSpeed, maxScale);
 
             for (int i = 0; i < listCreatedFruit.Count; i++)
             {
@@ -109,10 +108,10 @@ public class MatchingManager : LevelManager
     }
 
 
-    private void StageCompleted()
+    public override void OnStageCompleted()
     {
-        OnStageCompleted?.Invoke();
-        ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psCircles, canvas.gameObject, Vector2.zero, false);
+        OnStageCompletedEvent?.Invoke();
+        ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psCircles, canvas.gameObject, choosedFruit.GetComponent<RectTransform>().anchoredPosition, false);
         choosedFruit.PlayHideAnimation();
         startText.gameObject.SetActive(false);
 

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public abstract class LevelManager : MonoBehaviour
 {
-    public abstract event Action OnStageCompleted;
+    public virtual event Action OnStageCompletedEvent;
+
+    protected Canvas canvas;
 
     [SerializeField] protected TextMeshProUGUI startText;
 
@@ -13,8 +15,14 @@ public abstract class LevelManager : MonoBehaviour
     [SerializeField] protected float scaleUpSpeed = 5;
     [SerializeField] protected Vector3 maxScale;
 
+    public abstract void OnStageCompleted();
+
     public abstract void OnAnswerChoose(Choosable choosable);
 
+    protected void SetStartTextColor(Color color)
+    {
+        startText.color = color;
+    }
 
     protected void ShowStartTextAnimation(string text = "")
     {

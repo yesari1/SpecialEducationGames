@@ -26,16 +26,6 @@ public class Choosable : MonoBehaviour, IPointerDownHandler
     }
 
 
-    public virtual void PlayCorrectAnimation(float goCenterSpeed, float scaleUpSpeed, Vector3 maxScale)
-    {
-
-    }
-
-    public virtual void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
-    {
-
-    }
-
     public void PlayOnboardingAnimation(string animName)
     {
         animation.Play(animName);
