@@ -32,13 +32,6 @@ public class NumberManager : LevelManager
         Invoke("CreateNumbers", 3);
     }
 
-    void Update()
-    {
-        
-    }
-
-    
-
     public void PlaceNumbers()
     {
 

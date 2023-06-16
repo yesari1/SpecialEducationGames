@@ -28,10 +28,6 @@ public class NumberPlacer : MonoBehaviour
     {
     }
 
-    void Update()
-    {
-    }
-
     public Number CreateNumbers()
     {
         int rndStart = Random.Range(minNumber, maxNumber);

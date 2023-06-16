@@ -19,8 +19,6 @@ public class MatchingManager : LevelManager
     [SerializeField] private List<Fruit> listFruits;
     [SerializeField] private List<RectTransform> listPoints;
 
-
-
     private void Awake()
     {
         listCreatedFruit = new List<Fruit>();
@@ -106,7 +104,6 @@ public class MatchingManager : LevelManager
             choosedFruit.PlayOnboardingAnimation("CorrectFruit");
         }
     }
-
 
     public override void OnStageCompleted()
     {

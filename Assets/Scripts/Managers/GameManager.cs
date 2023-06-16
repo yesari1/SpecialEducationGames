@@ -39,11 +39,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-
-    }
-
     public static void SetAnchors(RectTransform This, Vector2 AnchorMin, Vector2 AnchorMax)
     {
         var OriginalPosition = This.localPosition;
@@ -75,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void GameFinished()
     {
-        print("Game Finished. Show Success UI");
+        //print("Game Finished. Show Success UI");
 
         StartCoroutine(ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psConfettis, canvas.gameObject, Vector2.zero, true, 3));
         
