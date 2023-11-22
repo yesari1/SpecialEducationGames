@@ -5,6 +5,13 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
 
-    public bool isUsing = false;
+    private void Awake()
+    {
+        this.RectTransform = GetComponent<RectTransform>();
+    }
+
+    public RectTransform RectTransform { get; private set; }
+
+    public bool IsUsing { get; set; }
 
 }

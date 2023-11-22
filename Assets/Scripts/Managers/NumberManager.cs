@@ -1,3 +1,4 @@
+using SpecialEducationGames;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +8,6 @@ using Random = UnityEngine.Random;
 
 public class NumberManager : LevelManager
 {
-    public override event Action OnStageCompletedEvent;
-
     private NumberPlacer numberPlacer;
     private Canvas canvas;
     private int choosedNumber;
@@ -27,7 +26,7 @@ public class NumberManager : LevelManager
 
     private void Start()
     {
-        ShowStartTextAnimation();
+        //ShowStartTextAnimation();
 
         Invoke("CreateNumbers", 3);
     }
@@ -87,10 +86,8 @@ public class NumberManager : LevelManager
     }
 
 
-    public override void OnStageCompleted()
+    public void OnStageCompleted()
     {
-        OnStageCompletedEvent?.Invoke();
-
         numberPlacer.ShowCorrectNumber();
 
         GameManager.SetAnchors(hidedChoosableNumber.GetComponent<RectTransform>(), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f));
@@ -100,13 +97,13 @@ public class NumberManager : LevelManager
         numberPlacer.Invoke("ClearAllNumbers", 2.8f);
         Invoke("ClearChoosableNumbers", 2.8f);
 
-        if (!GameManager.instance.IsGameFinished())
+        if (!GameManager.Instance.IsGameFinished())
         {
             Invoke("CreateNumbers", 3);
         }
         else
         {
-            startText.gameObject.SetActive(false);
+            //startText.gameObject.SetActive(false);
         }
 
     }

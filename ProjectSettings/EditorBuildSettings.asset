@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Fruit-Vegetables.unity
+    path: Assets/Scenes/LearnFruits.unity
     guid: 38ed134089ac3ab4b88a338a724bc771
   - enabled: 1
     path: Assets/Scenes/GuessNextNumber.unity

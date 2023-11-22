@@ -5,72 +5,75 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[Serializable]
-public class ColorShape : Choosable,IAnimationControllable
+namespace SpecialEducationGames
 {
-    public override event Action OnCorrectAnimationFinished;
-
-    private ColorProperties colorProperty;
-    [SerializeField] private GameObject shape;
-    [SerializeField] private GameObject shapeInside;
-
-    private LevelManager levelManager;
-    private bool _isCorrect = false;
-
-    private void OnEnable()
+    [Serializable]
+    public class ColorShape : Choosable, IAnimationControllable
     {
-        base.OnEnable();
-        rectTransform = GetComponent<RectTransform>();
-    }
+        public override event Action OnCorrectAnimationFinished;
 
-    public bool IsCorrect
-    {
-        get { return _isCorrect; }
-    }
+        private ColorProperties colorProperty;
+        [SerializeField] private GameObject shape;
+        [SerializeField] private GameObject shapeInside;
 
-    public ColorProperties ColorProperty
-    {
-        get
+        private LevelManager levelManager;
+        private bool _isCorrect = false;
+
+        private void OnEnable()
         {
-            return colorProperty;
+            base.OnEnable();
+            rectTransform = GetComponent<RectTransform>();
         }
-    }
 
-    private void Update()
-    {
-        if (scaleUp)
+        public bool IsCorrect
         {
-            rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, maxScale, Time.deltaTime * scaleUpSpeed);
+            get { return _isCorrect; }
+        }
 
-            if (Vector3.Distance(rectTransform.localScale, maxScale) <= 0.1f)
+        public ColorProperties ColorProperty
+        {
+            get
             {
-                scaleUp = false;
-                OnCorrectAnimationFinished?.Invoke();
+                return colorProperty;
             }
         }
-    }
 
-    public void SetColor(LevelManager levelManager,ColorProperties colorProperties)
-    {
-        shapeInside.GetComponent<Image>().color = colorProperties.color;
-        colorProperty = colorProperties;
-        this.levelManager = levelManager;
-    }
+        private void Update()
+        {
+            if (scaleUp)
+            {
+                rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, maxScale, Time.deltaTime * scaleUpSpeed);
 
-    public void SetAsCorrect()
-    {
-        _isCorrect = true;
-    }
+                if (Vector3.Distance(rectTransform.localScale, maxScale) <= 0.1f)
+                {
+                    scaleUp = false;
+                    OnCorrectAnimationFinished?.Invoke();
+                }
+            }
+        }
 
-    public override void OnPointerDown(PointerEventData eventData)
-    {
-        levelManager.OnAnswerChoose(this);
-    }
+        public void SetColor(LevelManager levelManager, ColorProperties colorProperties)
+        {
+            shapeInside.GetComponent<Image>().color = colorProperties.color;
+            colorProperty = colorProperties;
+            this.levelManager = levelManager;
+        }
 
-    public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
-    {
-        this.maxScale = maxScale;
-        this.scaleUpSpeed = scaleUpSpeed;
-        scaleUp = true;
+        public void SetAsCorrect()
+        {
+            _isCorrect = true;
+        }
+
+        public override void OnPointerDown(PointerEventData eventData)
+        {
+            levelManager.OnAnswerChoose(this);
+        }
+
+        public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
+        {
+            this.maxScale = maxScale;
+            this.scaleUpSpeed = scaleUpSpeed;
+            scaleUp = true;
+        }
     }
 }
