@@ -9,9 +9,7 @@ namespace SpecialEducationGames
     {
         public override void InstallBindings()
         {
-            LearnFruitsInstaller.Install(Container);
-            //Container.Bind<StageController>().FromComponentInHierarchy().AsSingle();
-            //Container.Bind<ItemPointsController>().FromComponentInHierarchy().AsSingle();
+
         }
 
     }

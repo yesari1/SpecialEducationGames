@@ -4,23 +4,26 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security;
 using UnityEditor;
 using UnityEngine;
+using Zenject;
 
 public class ParticleManager : MonoBehaviour
 {
-    public static ParticleManager instance;
+    private static ParticleManager _instance;
 
-    public ParticleSystem psCircles;
-    public ParticleSystem psConfettis;
+    private Canvas _canvas;
 
+    public static ParticleManager Instance => _instance;
 
-    int layerMask;
+    [Inject]
+    public void Construct(Canvas canvas)
+    {
+        _canvas = canvas;
+    }
+
     private void Awake()
     {
-        if(instance == null)
-            instance = this;
-
-        layerMask = LayerMask.GetMask("Cube");
-
+        if(_instance == null)
+            _instance = this;
     }
 
     //Zaten sahnede olanı oynatıyoruz
@@ -35,7 +38,6 @@ public class ParticleManager : MonoBehaviour
             main.stopAction = ParticleSystemStopAction.Destroy;
             particle.Play();
         }
-
     }
 
 
@@ -51,7 +53,6 @@ public class ParticleManager : MonoBehaviour
             main.stopAction = ParticleSystemStopAction.Destroy;
             particle.Play();
         }
-
     }
 
 
@@ -68,15 +69,14 @@ public class ParticleManager : MonoBehaviour
     }
 
     //Yeni obje oluşturup pozisyon verip başlatıyoruz
-    public GameObject CreateAndPlay(ParticleSystem particle,GameObject parent,Vector2 position,bool loop)
+    public ParticleSystem CreateAndPlay(ParticleSystem particle,Vector2 position,bool loop,bool canvasParent = true)
     {
-        GameObject returnPart = null;
+        ParticleSystem newParticle = null;
         //Eğer particle atanmışsa
-        if(particle != null)
+        if (particle != null)
         {
-            ParticleSystem newParticle;
-            if(parent == null) newParticle = Instantiate(particle);
-            else newParticle = Instantiate(particle, parent.transform);
+            if(!canvasParent) newParticle = Instantiate(particle);
+            else newParticle = Instantiate(particle, _canvas.transform);
 
             newParticle.gameObject.SetActive(true);
 
@@ -87,10 +87,8 @@ public class ParticleManager : MonoBehaviour
             newParticle.GetComponent<RectTransform>().anchoredPosition = position;
 
             newParticle.Play();
-            returnPart = newParticle.gameObject;
         }
-        return returnPart;
-
+        return newParticle;
     }
 
     public GameObject CreateAndPlayRandom(List<ParticleSystem> particles, GameObject parent, Vector3 position, bool loop)
@@ -119,7 +117,6 @@ public class ParticleManager : MonoBehaviour
             Debug.LogWarning("Particle list element is null. Element: " + rand);
         
         return returnPart;
-
     }
 
     //Belirli bir süree sonra oynatıyoruz
@@ -141,8 +138,6 @@ public class ParticleManager : MonoBehaviour
             newParticle.Play();
         }
     }
-
-
 
 }
 

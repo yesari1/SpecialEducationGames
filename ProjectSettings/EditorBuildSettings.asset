@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LearnFruits.unity
     guid: 38ed134089ac3ab4b88a338a724bc771
   - enabled: 1
-    path: Assets/Scenes/GuessNextNumber.unity
+    path: Assets/Scenes/GuessNumber.unity
     guid: 8ee8f35f981e06748a83bde9335cf58e
   - enabled: 1
     path: Assets/Scenes/CompareNumbers.unity

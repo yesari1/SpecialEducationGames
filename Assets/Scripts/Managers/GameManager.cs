@@ -13,11 +13,12 @@ namespace SpecialEducationGames
     {
         private static GameManager _instance;
 
+        [Header("Stage Settings")]
+        [SerializeField] private int _maxStage = 5;
+
         private StageController _stageController;
 
-        [Header("Stage Settings")]
-        [SerializeField] private int maxStage = 5;
-        private int stageCount;
+        private int _stageCount;
 
         public static GameManager Instance => _instance;
 
@@ -33,7 +34,12 @@ namespace SpecialEducationGames
 
         private void OnEnable()
         {
-            //FindObjectOfType<LevelManager>().OnStageCompletedEvent += OnStageCompleted;
+            GameEventReceiver.OnStageCompletedEvent += OnStageCompleted;
+        }
+
+        private void OnDisable()
+        {
+            GameEventReceiver.OnStageCompletedEvent -= OnStageCompleted;
         }
 
         private void Awake()
@@ -41,12 +47,12 @@ namespace SpecialEducationGames
             if (_instance == null) _instance = this;
 
             InitializeEventSystem();
-            stageCount = 0;
+            _stageCount = 0;
         }
 
         void Start()
         {
-            _stageController.SetStars(maxStage);
+            _stageController.SetStars(_maxStage);
 
         }
 
@@ -88,6 +94,7 @@ namespace SpecialEducationGames
 
         public void GameFinished()
         {
+            GameEventCaller.OnGameFinished();
             //print("Game Finished. Show Success UI");
 
             //StartCoroutine(ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psConfettis, canvas.gameObject, Vector2.zero, true, 3));
@@ -101,15 +108,15 @@ namespace SpecialEducationGames
 
         public bool IsGameFinished()
         {
-            return stageCount >= maxStage;
+            return _stageCount >= _maxStage;
         }
 
         private void OnStageCompleted()
         {
             _stageController.FillStar();
-            stageCount++;
+            _stageCount++;
 
-            if (stageCount >= maxStage)
+            if (_stageCount >= _maxStage)
             {
                 GameFinished();
             }

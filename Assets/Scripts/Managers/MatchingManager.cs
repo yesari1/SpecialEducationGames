@@ -1,45 +1,49 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+using static SpecialEducationGames.Choosable;
+using static SpecialEducationGames.Fruit;
 using Random = UnityEngine.Random;
 
 namespace SpecialEducationGames
 {
+    [RequireComponent(typeof(MatchingTextManager))]
     public class MatchingManager : MonoBehaviour
     {
-        private Canvas _canvas;
-        private PointController _pointController;
-        private Fruit _choosedFruit;
-        private List<Fruit> _createdFruits;
+        private Choosable _choosed;
+        private ChoosableType _choosedChoosableType;
+        private Choosable.Factory _choosableFactory;
+        private Choosable.ChoosableTypes _choosableTypes;
 
-        [SerializeField] private List<Fruit> _fruits;
+        private PointController _pointController;
+        private List<Choosable> _createdChoosables;
+
+        public ChoosableType Choosed => _choosedChoosableType;
 
         [Inject]
-        private void Construct(Canvas canvas,PointController pointController)
+        private void Construct(ChoosableTypes choosableTypes, PointController pointController,Choosable.Factory factory)
         {
-            _canvas = canvas;
+            _choosableTypes = choosableTypes;
             _pointController = pointController;
+            _choosableFactory = factory;
         }
 
         private void OnEnable()
         {
             GameEventReceiver.OnCenterTextAnimationEndedEvent += OnCenterTextAnimationEnded;
+            GameEventReceiver.OnChoosablePointerDownEvent += OnChoosablePointerDown;
         }
 
         private void OnDisable()
         {
             GameEventReceiver.OnCenterTextAnimationEndedEvent -= OnCenterTextAnimationEnded;
-        }
-
-        private void OnCenterTextAnimationEnded()
-        {
-            SetFruitsPlace();
+            GameEventReceiver.OnChoosablePointerDownEvent -= OnChoosablePointerDown;
         }
 
         private void Awake()
         {
-            _createdFruits = new List<Fruit>();
-            _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+            _createdChoosables = new List<Choosable>();
         }
 
         private void Start()
@@ -49,86 +53,106 @@ namespace SpecialEducationGames
 
         private void SetMatchObject()
         {
-            int rnd = Random.Range(0, _fruits.Count);
-            _choosedFruit = _fruits[rnd];
-
+            int rnd = Random.Range(0, _choosableTypes.Choosables.Count);
+            _choosedChoosableType = _choosableTypes.Choosables[rnd];
+            GameEventCaller.Instance.OnMatchingStarted(_choosedChoosableType);
             //ShowStartTextAnimation(choosedFruit.name);
         }
 
-        private void SetFruitsPlace()
+        private void OnCenterTextAnimationEnded()
         {
-            List<Fruit> fruits = new List<Fruit>(_fruits);
+            SetChoosablePlaces();
+        }
+
+        private void SetChoosablePlaces()
+        {
+
+            List<ChoosableType> choosableTypes = new List<ChoosableType>(_choosableTypes.Choosables);
 
             Point point = _pointController.GetRandomPoint();
+            
+            Choosable choosable = CreateChoosable(point.RectTransform);
+            
+            _choosed = choosable;
 
-            Fruit fruit = CreateFruit(_choosedFruit, point.RectTransform);
+            _choosed.SetChoosableType(_choosedChoosableType);
 
-            fruits.Remove(_choosedFruit);
-
-            _choosedFruit = fruit;
+            choosableTypes.Remove(_choosedChoosableType);
 
             for (int i = 0; i < 2; i++)
             {
                 point = _pointController.GetRandomPoint();
 
-                int rndFruit = Random.Range(0, fruits.Count);
+                int rndFruit = Random.Range(0, choosableTypes.Count);
 
-                fruit = CreateFruit(fruits[rndFruit], point.RectTransform);
-                fruits.Remove(fruits[rndFruit]);
+                choosable = CreateChoosable(point.RectTransform);
+                ChoosableType otherChoosableType = choosableTypes[rndFruit];
+                choosable.SetChoosableType(otherChoosableType);
+
+                choosableTypes.Remove(otherChoosableType);
             }
         }
 
-        private Fruit CreateFruit(Fruit fruitPrfb, RectTransform point)
+        private Choosable CreateChoosable(RectTransform point)
         {
-            Fruit fruit = Instantiate(fruitPrfb, _canvas.transform);
+            Choosable choosable = _choosableFactory.Create();
 
-            fruit.SetMatchingManager(this);
-            fruit.GetComponent<RectTransform>().anchorMax = point.anchorMax;
-            fruit.GetComponent<RectTransform>().anchorMin = point.anchorMin;
-            fruit.GetComponent<RectTransform>().anchoredPosition = point.anchoredPosition;
+            choosable.GetComponent<RectTransform>().anchorMax = point.anchorMax;
+            choosable.GetComponent<RectTransform>().anchorMin = point.anchorMin;
+            choosable.GetComponent<RectTransform>().anchoredPosition = point.anchoredPosition;
 
-            _createdFruits.Add(fruit);
+            _createdChoosables.Add(choosable);
 
-            return fruit;
+            return choosable;
         }
 
-        public void OnAnswerChoose(Choosable choosable)
+        private void OnChoosablePointerDown(Choosable choosable)
         {
-            Fruit fruit = (Fruit)choosable;
-
-            if (_choosedFruit.name == fruit.name)
+            if (_choosedChoosableType.Name == choosable.Type.Name)
             {
-                fruit.OnCorrectAnimationFinished += OnStageCompleted;
+                //choosable.OnCorrectAnimationFinished += OnStageCompleted;
 
                 //fruit.PlayCorrectAnimation(scaleUpSpeed, maxScale);
 
-                for (int i = 0; i < _createdFruits.Count; i++)
+                for (int i = 0; i < _createdChoosables.Count; i++)
                 {
-                    if (_createdFruits[i].name != fruit.name)
+                    if (_createdChoosables[i].name != choosable.name)
                     {
-                        Destroy(_createdFruits[i].gameObject);
+                        _createdChoosables[i].OnOtherOneChoosed();
                     }
                 }
-                _createdFruits.Clear();
-                //ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psStars, canvas.gameObject, Vector3.zero, false);
-                //choosedFruit.PlayOnboardingAnimation();
+                _createdChoosables.Clear();
+                
+                _choosed.OnTrulyChoosed(OnChoosedAnimationCompleted);
+
             }
             else
             {
-                _choosedFruit.PlayOnboardingAnimation("CorrectFruit");
+                _choosed.PlayOnboardingAnimation();
             }
+        }
+
+        private void OnChoosedAnimationCompleted()
+        {
+            GameEventCaller.Instance.OnChoosedRight();
+
+            Invoke(nameof(PlayStageCompletedAnimations),3);
+        }
+
+
+        public void PlayStageCompletedAnimations()
+        {
+            GameEventCaller.Instance.OnBeforeStageCompleted();
+            _choosed.Hide();
+            OnStageCompleted();
         }
 
         public void OnStageCompleted()
         {
             GameEventCaller.Instance.OnStageCompleted();
-            ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psCircles, _canvas.gameObject, _choosedFruit.GetComponent<RectTransform>().anchoredPosition, false);
-            _choosedFruit.PlayHideAnimation();
-            //startText.gameObject.SetActive(false);
 
             if (!GameManager.Instance.IsGameFinished())
-                Invoke("SetMatchObject", 3);
-
+                Invoke(nameof(SetMatchObject), 1.5f);
         }
 
     }

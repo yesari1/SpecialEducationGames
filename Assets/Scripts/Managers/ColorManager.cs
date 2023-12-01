@@ -22,7 +22,6 @@ namespace SpecialEducationGames
 
         private void Awake()
         {
-            canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         }
 
         private void Start()
@@ -69,30 +68,30 @@ namespace SpecialEducationGames
             placerAnswers.PlaceObjects(listChoosables, 3);
         }
 
-        public override void OnAnswerChoose(Choosable choosable)
-        {
-            ColorShape colorShape = (ColorShape)choosable;
+        //public override void OnAnswerChoose(Choosable choosable)
+        //{
+        //    ColorShape colorShape = (ColorShape)choosable;
 
-            if (colorShape.ColorProperty.color == selectedColor.ColorProperty.color)
-            {
-                colorShape.PlayCorrectAnimation(scaleUpSpeed, maxScale);
-                colorShape.OnCorrectAnimationFinished += OnStageCompleted;
+        //    if (colorShape.ColorProperty.color == selectedColor.ColorProperty.color)
+        //    {
+        //        colorShape.PlayCorrectAnimation(scaleUpSpeed, maxScale);
+        //        //colorShape.OnCorrectAnimationFinished += OnStageCompleted;
 
-                for (int i = 0; i < listChoosables.Count; i++)
-                    if (listChoosables[i] != selectedColor)
-                        Destroy(listChoosables[i].gameObject);
-            }
-            else
-            {
-                selectedColor.PlayOnboardingAnimation("CorrectShape");
-            }
-        }
+        //        for (int i = 0; i < listChoosables.Count; i++)
+        //            if (listChoosables[i] != selectedColor)
+        //                Destroy(listChoosables[i].gameObject);
+        //    }
+        //    else
+        //    {
+        //        selectedColor.PlayOnboardingAnimation();
+        //    }
+        //}
 
         public void OnStageCompleted()
         {
             GameEventCaller.Instance.OnStageCompleted();
 
-            ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psCircles, canvas.gameObject, selectedColor.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 50, false);
+            //ParticleManager.Instance.CreateAndPlay(ParticleManager.Instance.psCircles, selectedColor.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 50, false);
             ClearScene();
 
             if (!GameManager.Instance.IsGameFinished())

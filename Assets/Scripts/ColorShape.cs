@@ -10,20 +10,12 @@ namespace SpecialEducationGames
     [Serializable]
     public class ColorShape : Choosable, IAnimationControllable
     {
-        public override event Action OnCorrectAnimationFinished;
-
         private ColorProperties colorProperty;
         [SerializeField] private GameObject shape;
         [SerializeField] private GameObject shapeInside;
 
         private LevelManager levelManager;
         private bool _isCorrect = false;
-
-        private void OnEnable()
-        {
-            base.OnEnable();
-            rectTransform = GetComponent<RectTransform>();
-        }
 
         public bool IsCorrect
         {
@@ -40,14 +32,14 @@ namespace SpecialEducationGames
 
         private void Update()
         {
-            if (scaleUp)
+            if (_scaleUp)
             {
-                rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, maxScale, Time.deltaTime * scaleUpSpeed);
+                _rectTransform.localScale = Vector3.Lerp(_rectTransform.localScale, _maxScale, Time.deltaTime * _scaleUpSpeed);
 
-                if (Vector3.Distance(rectTransform.localScale, maxScale) <= 0.1f)
+                if (Vector3.Distance(_rectTransform.localScale, _maxScale) <= 0.1f)
                 {
-                    scaleUp = false;
-                    OnCorrectAnimationFinished?.Invoke();
+                    _scaleUp = false;
+                    GameEventCaller.Instance.OnCorrectAnimationEnded();
                 }
             }
         }
@@ -64,16 +56,16 @@ namespace SpecialEducationGames
             _isCorrect = true;
         }
 
-        public override void OnPointerDown(PointerEventData eventData)
-        {
-            levelManager.OnAnswerChoose(this);
-        }
+        //public override void OnPointerDown(PointerEventData eventData)
+        //{
+        //    levelManager.OnAnswerChoose(this);
+        //}
 
         public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
         {
-            this.maxScale = maxScale;
-            this.scaleUpSpeed = scaleUpSpeed;
-            scaleUp = true;
+            this._maxScale = maxScale;
+            this._scaleUpSpeed = scaleUpSpeed;
+            _scaleUp = true;
         }
     }
 }

@@ -13,21 +13,69 @@ MonoBehaviour:
   m_Name: LearnFruitsAnimationInstaller
   m_EditorClassIdentifier: 
   TextControllerAnimationSettings:
-    CenterInfoTextScaleUp:
+    CenterInfoTextStart:
+      Sequence:
+      - Ease: 10
+        Delay: 0
+        Duration: 0.5
+        Value: 1.5
+        Vector: {x: 0, y: 0, z: 0}
+      - Ease: 10
+        Delay: 1
+        Duration: 0.75
+        Value: 0
+        Vector: {x: 0, y: 925, z: 0}
+      - Ease: 10
+        Delay: 0
+        Duration: 0.75
+        Value: 1
+        Vector: {x: 0, y: 0, z: 0}
+    CenterInfoTextStageFinished:
       Ease: 10
       Delay: 0
-      Duration: 0.75
-      Value: 2
-      Vector: {x: 0, y: 0, z: 0}
-    CenterInfoTextMove:
-      Ease: 10
-      Delay: 1
-      Duration: 0.75
+      Duration: 1
       Value: 0
-      Vector: {x: 0, y: -150, z: 0}
-    CenterInfoTextScaleDown:
+      Vector: {x: 0, y: 100, z: 0}
+    FinishedText:
       Ease: 10
       Delay: 0
-      Duration: 0.75
+      Duration: 1
       Value: 1
       Vector: {x: 0, y: 0, z: 0}
+  ChoosableAnimationSettings:
+    Spawn:
+      Ease: 27
+      Delay: 0
+      Duration: 0.5
+      Value: 1
+      Vector: {x: 0, y: 0, z: 0}
+    OnBoarding:
+      Ease: 1
+      Delay: 0
+      Duration: 0.5
+      Value: 0
+      Vector: {x: 0.1, y: 0.1, z: 0.1}
+    Disapper:
+      Ease: 16
+      Delay: 0
+      Duration: 0.5
+      Value: 0
+      Vector: {x: 0, y: 0, z: 0}
+    Choosed:
+      Sequence:
+      - Ease: 4
+        Delay: 0
+        Duration: 1
+        Value: 0
+        Vector: {x: 0, y: 0, z: 0}
+      - Ease: 10
+        Delay: 0
+        Duration: 1
+        Value: 1.25
+        Vector: {x: 0, y: 0, z: 0}
+    Hide:
+      Ease: 10
+      Delay: 0
+      Duration: 1
+      Value: 0
+      Vector: {x: 0, y: -250, z: 0}

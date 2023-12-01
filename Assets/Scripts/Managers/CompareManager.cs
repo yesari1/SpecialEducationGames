@@ -27,7 +27,6 @@ namespace SpecialEducationGames
         {
             listNumbers = new List<Number>();
             listChoosables = new List<Choosable>();
-            canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         }
 
         void Start()
@@ -35,20 +34,20 @@ namespace SpecialEducationGames
             //ShowStartTextAnimation("Sayýlarý Karþýlaþtýr");
             Invoke("PlaceNumbersAndQuestionMark", 3);
         }
-        public override void OnAnswerChoose(Choosable choosable)
-        {
-            Number num = (Number)choosable;
+        //public override void OnAnswerChoose(Choosable choosable)
+        //{
+        //    Number num = (Number)choosable;
 
-            if (num.IsCorrect)
-            {
-                num.PlayCorrectAnimation(scaleUpSpeed, maxScale);
-                num.OnCorrectAnimationFinished += StageCompleted;
-            }
-            else
-            {
-                correctObj.PlayOnboardingAnimation("CorrectNumber");
-            }
-        }
+        //    if (num.IsCorrect)
+        //    {
+        //        num.PlayCorrectAnimation(scaleUpSpeed, maxScale);
+        //        //num.OnCorrectAnimationFinished += StageCompleted;
+        //    }
+        //    else
+        //    {
+        //        correctObj.PlayOnboardingAnimation();
+        //    }
+        //}
 
         private void ClearScene()
         {
@@ -127,7 +126,7 @@ namespace SpecialEducationGames
         private void StageCompleted()
         {
             GameEventCaller.Instance.OnStageCompleted();
-            ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psCircles, canvas.gameObject, correctObj.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -175), false);
+            //ParticleManager.Instance.CreateAndPlay(ParticleManager.Instance.psCircles, correctObj.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -175), false);
 
             questionNumber.gameObject.SetActive(false);
             questionNumber.SetNumber(correctObj.Text);

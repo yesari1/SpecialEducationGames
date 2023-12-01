@@ -6,10 +6,12 @@ using Zenject;
 public class LearnFruitsAnimationInstaller : ScriptableObjectInstaller<LearnFruitsAnimationInstaller>
 {
 
-    public TextController.AnimationSettings TextControllerAnimationSettings;
+    public MatchingTextManager.AnimationSettings TextControllerAnimationSettings;
+    public Choosable.AnimationSettings ChoosableAnimationSettings;
 
     public override void InstallBindings()
     {
         Container.BindInstance(TextControllerAnimationSettings);
+        Container.BindInstance(ChoosableAnimationSettings);
     }
 }

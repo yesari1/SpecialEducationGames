@@ -1,3 +1,4 @@
+using SpecialEducationGames;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class Number : Choosable,IAnimationControllable
 {
-    public override event Action OnCorrectAnimationFinished;
-
     private TextMeshProUGUI text;
 
     private bool isChoosableNumber = false;
@@ -21,12 +21,6 @@ public class Number : Choosable,IAnimationControllable
     void Awake()
     {
         text = GetComponentInChildren<TextMeshProUGUI>();
-    }
-
-    private void OnEnable()
-    {
-        base.OnEnable();
-        rectTransform = GetComponent<RectTransform>();
     }
 
     public int Num
@@ -52,16 +46,16 @@ public class Number : Choosable,IAnimationControllable
 
     private void Update()
     {
-        if (scaleUp)
-        {
-            rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, maxScale, Time.deltaTime * scaleUpSpeed);
+        //if (_scaleUp)
+        //{
+        //    _rectTransform.localScale = Vector3.Lerp(_rectTransform.localScale, _maxScale, Time.deltaTime * _scaleUpSpeed);
 
-            if (Vector3.Distance(rectTransform.localScale, maxScale) <= 0.1f)
-            {
-                scaleUp = false;
-                OnCorrectAnimationFinished?.Invoke();
-            }
-        }
+        //    if (Vector3.Distance(_rectTransform.localScale, _maxScale) <= 0.1f)
+        //    {
+        //        _scaleUp = false;
+        //        GameEventCaller.Instance.OnCorrectAnimationEnded();
+        //    }
+        //}
     }
 
     public void SetNumber(int number)
@@ -91,16 +85,20 @@ public class Number : Choosable,IAnimationControllable
         _isCorrect = true;
     }
 
-    public override void OnPointerDown(PointerEventData eventData)
-    {
-        levelManager.OnAnswerChoose(this);
-    }
+    //public override void OnPointerDown(PointerEventData eventData)
+    //{
+    //    levelManager.OnAnswerChoose(this);
+    //}
 
     public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
     {
-        this.maxScale = maxScale;
-        this.scaleUpSpeed = scaleUpSpeed;
-        scaleUp = true;
+        this._maxScale = maxScale;
+        this._scaleUpSpeed = scaleUpSpeed;
+        _scaleUp = true;
+    }
+
+    public class Factory : PlaceholderFactory<Choosable>
+    {
     }
 
 }
