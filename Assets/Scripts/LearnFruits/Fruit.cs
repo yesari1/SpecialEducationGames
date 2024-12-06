@@ -2,11 +2,11 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using Zenject;
 
 namespace SpecialEducationGames
 {
@@ -30,19 +30,9 @@ namespace SpecialEducationGames
             }
         }
 
-        public override void OnSpawned()
-        {
-            base.OnSpawned();
-        }
-
-        public override void OnPointerDown(PointerEventData eventData)
-        {
-            GameEventCaller.Instance.OnChoosablePointerDown(this);
-        }
-
         public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
         {
-            GameManager.SetAnchors(_rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f));
+            _rectTransform.SetAnchors(AnchorPresets.MiddleCenter);
 
             //rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             //rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
@@ -55,12 +45,6 @@ namespace SpecialEducationGames
         public void PlayHideAnimation()
         {
             Destroy(gameObject, 2.5f);
-        }
-
-
-        public class Factory : PlaceholderFactory<Fruit>
-        {
-
         }
 
     }

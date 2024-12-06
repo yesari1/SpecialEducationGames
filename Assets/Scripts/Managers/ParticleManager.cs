@@ -4,7 +4,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security;
 using UnityEditor;
 using UnityEngine;
-using Zenject;
 
 public class ParticleManager : MonoBehaviour
 {
@@ -14,11 +13,6 @@ public class ParticleManager : MonoBehaviour
 
     public static ParticleManager Instance => _instance;
 
-    [Inject]
-    public void Construct(Canvas canvas)
-    {
-        _canvas = canvas;
-    }
 
     private void Awake()
     {

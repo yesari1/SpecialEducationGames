@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/LearnFruits.unity
     guid: 38ed134089ac3ab4b88a338a724bc771
   - enabled: 1
-    path: Assets/Scenes/GuessNumber.unity
-    guid: 8ee8f35f981e06748a83bde9335cf58e
+    path: Assets/Scenes/LearnAnimals.unity
+    guid: cf95854c98f8f3242a5bd1af7abdb437
   - enabled: 1
-    path: Assets/Scenes/CompareNumbers.unity
-    guid: c5a3c83cf1faf6c49b5e86b20821bd7f
+    path: Assets/Scenes/GuessNextNumber.unity
+    guid: a429a5905259e8843a93655b4ca36460
   - enabled: 1
     path: Assets/Scenes/LearnColors.unity
-    guid: 4f73ec82f68591b43a68f4adebc27c36
+    guid: bdb2235c6bddaa24f87bc68a1d3af9f4
+  - enabled: 1
+    path: Assets/Scenes/CompareNumbers.unity
+    guid: 6aa12bcfedce7d04e99a47d89587fe94
   m_configObjects: {}

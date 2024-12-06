@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9492161a11daf49a6df060814f08ed, type: 3}
+  m_Name: SoundData
+  m_EditorClassIdentifier: 
+  GameSoundTuples:
+  - AudioClip: {fileID: 8300000, guid: cded61f01af301443acdf01550959b94, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 1
+  - AudioClip: {fileID: 8300000, guid: cf113cc0469c3ba4288f9c050bfa1449, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 2
+  - AudioClip: {fileID: 8300000, guid: 8d39aefbb99088548983695c0ded8e00, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 3
+  - AudioClip: {fileID: 8300000, guid: a6839caf61b43754b9aa24b2619ec508, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 4
+  - AudioClip: {fileID: 8300000, guid: 67648d8bcec645f4280efe8b492ffa52, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 5
+  - AudioClip: {fileID: 8300000, guid: d04fdafca759a30418417e455753b5ab, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 6
+  - AudioClip: {fileID: 8300000, guid: b7f3899d92bd0c440845bea282adbaa1, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 7
+  - AudioClip: {fileID: 8300000, guid: 2b19a2eea3a1fca418a2e9991f87d74f, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 8
+  - AudioClip: {fileID: 8300000, guid: daff6d2dc4e04ff4f9fe66ce172697fd, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 9
+  - AudioClip: {fileID: 8300000, guid: e44ee85afde3fdb419bf11f74ccd4529, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 10
+  - AudioClip: {fileID: 8300000, guid: 5d01b717e19a78040876be591e80d519, type: 3}
+    IsLoop: 0
+    Volume: 0.7
+    GameSound: 11
+  - AudioClip: {fileID: 8300000, guid: 48ac73471c39fec4fb666db01ac5da84, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 12
+  - AudioClip: {fileID: 8300000, guid: 29507fe7f5acb404da9257578ab14fc1, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 13
+  - AudioClip: {fileID: 8300000, guid: 8b8e7a89e73881b47a8988ddbd1c22d6, type: 3}
+    IsLoop: 0
+    Volume: 0.5
+    GameSound: 14
+  - AudioClip: {fileID: 8300000, guid: ea3acd807439aff458e1e23c1649e976, type: 3}
+    IsLoop: 0
+    Volume: 0.5
+    GameSound: 15
+  - AudioClip: {fileID: 8300000, guid: 826931ec3abe93740905e02e3a04fcc5, type: 3}
+    IsLoop: 0
+    Volume: 0.5
+    GameSound: 16
+  - AudioClip: {fileID: 8300000, guid: 0cbfb4e7be1b2f843acf8f3c26f71fc5, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 17
+  - AudioClip: {fileID: 8300000, guid: acbeb57dea44a1e4290f9b94e4240526, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 18
+  - AudioClip: {fileID: 8300000, guid: ecc1c4592fcf3d34ca681e64b522e8ff, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 19
+  - AudioClip: {fileID: 8300000, guid: bda73598844c37b4083a5d82a23ef69f, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 20
+  - AudioClip: {fileID: 8300000, guid: 9a311b8efe37fff4688f264d548fadfd, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 21
+  - AudioClip: {fileID: 8300000, guid: 14e80b9acc69e75478706c93c5f5b72e, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 22
+  - AudioClip: {fileID: 8300000, guid: 812d8cca80996e447a4ef1051e2efb46, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 23
+  - AudioClip: {fileID: 8300000, guid: 7f051c0d253548b45874e1842666a0a1, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 24
+  - AudioClip: {fileID: 8300000, guid: f91fac89696b5054aa24fd2dbab80044, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 25
+  - AudioClip: {fileID: 8300000, guid: f3a5b6e7d27eb044f87d8d92424d119c, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 26
+  - AudioClip: {fileID: 8300000, guid: 617e58ae74cd59a4a850407fdc07fa32, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 27
+  - AudioClip: {fileID: 8300000, guid: 834f7c43944a71c479d23504b129b91c, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 28
+  - AudioClip: {fileID: 8300000, guid: 45403b15b99f99c4f8fa185d01bf2f4d, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 29
+  - AudioClip: {fileID: 8300000, guid: 0fdb234b7b595b34a8ad42fd5b837b01, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 30
+  - AudioClip: {fileID: 8300000, guid: 289d4ab0f77122049890c718e538e5fc, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 31
+  - AudioClip: {fileID: 8300000, guid: 0da5ab7bcd718d549a9a95fd0c449a23, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 32
+  - AudioClip: {fileID: 8300000, guid: d6a600dbcccc9a743bf1cf0f0bbe9ec7, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 33
+  - AudioClip: {fileID: 8300000, guid: c892bede58bf5cf4ea976fb390e7556e, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 34
+  - AudioClip: {fileID: 8300000, guid: dedaf33310bde594590bc1359a1b29fd, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 35
+  - AudioClip: {fileID: 8300000, guid: db1d1e9ab148522418ac9c6b8811baf7, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 36
+  - AudioClip: {fileID: 8300000, guid: 5ae99f49e250d124bb6d935e0cb28cc0, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 37
+  - AudioClip: {fileID: 8300000, guid: 7841b59298411404a8aa72bfc9a9e2b0, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 39
+  - AudioClip: {fileID: 8300000, guid: 0c43c419f57c0e94a8d2105029ed898f, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 40
+  - AudioClip: {fileID: 8300000, guid: 9049d1563f9406c4d9ffebd4c69d70a8, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 41
+  - AudioClip: {fileID: 8300000, guid: df1975ed2825c1c4995b7f3870ee6e4d, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 38
+  - AudioClip: {fileID: 8300000, guid: 8939347159e712045994ed56644bd0b4, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 42
+  - AudioClip: {fileID: 8300000, guid: 20e6f91439f4ea94fba83641ea6dfa82, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 43
+  - AudioClip: {fileID: 8300000, guid: f721397b411aa4449ae986c4c9633145, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 44
+  - AudioClip: {fileID: 8300000, guid: bc01dc2e267baab4c948b71bda42c54e, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 45
+  - AudioClip: {fileID: 8300000, guid: 2de885444644c1e4ba85c2adc2594cea, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 46
+  - AudioClip: {fileID: 8300000, guid: 8138167579f1fad488c8a864734bbcd4, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 47
+  - AudioClip: {fileID: 8300000, guid: 20c11d24116a22b49835bfae7429da68, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 48
+  - AudioClip: {fileID: 8300000, guid: 473b6b09e00cd6048b97f6adee0c13e1, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 49
+  MenuSoundTuples:
+  - AudioClip: {fileID: 8300000, guid: 9f1b84de5766e994f8b1e715d6e2f393, type: 3}
+    IsLoop: 1
+    Volume: 0.25
+    MenuSound: 0

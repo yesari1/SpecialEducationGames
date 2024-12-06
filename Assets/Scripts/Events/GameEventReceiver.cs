@@ -11,7 +11,7 @@ namespace SpecialEducationGames
 
         public static event Action OnBeforeStageCompletedEvent;
 
-        public static event Action OnChoosedRightEvent;
+        public static event Action<Choosable> OnChoosedRightEvent;
 
         public static event Action OnStageCompletedEvent;
 
@@ -38,7 +38,8 @@ namespace SpecialEducationGames
 
         public void OnGameFinished() => OnGameFinishedEvent?.Invoke();
 
-        public void OnChoosedRight() => OnChoosedRightEvent?.Invoke();
+        public void OnChoosedRight(Choosable choosable) => OnChoosedRightEvent?.Invoke(choosable);
+
     }
 
 }

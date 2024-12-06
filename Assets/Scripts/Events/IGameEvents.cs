@@ -9,7 +9,7 @@ namespace SpecialEducationGames
         //Matching Game
         public void OnCenterTextAnimationEnded();
 
-        public void OnChoosedRight();
+        public void OnChoosedRight(Choosable choosable);
 
         public void OnBeforeStageCompleted();
 

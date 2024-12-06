@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7babc5d172aa0459fd260dd1e19b19, type: 3}
+  m_Name: ColorsChoosableData
+  m_EditorClassIdentifier: 
+  ChoosableTuples:
+  - Name: Siyah
+    Sprite: {fileID: 21300000, guid: 10ba01b4da536d24d900e75511f2a155, type: 3}
+    Audio: 28
+  - Name: Mavi
+    Sprite: {fileID: 21300000, guid: 1fc18251405cc5745aae26ea853287f1, type: 3}
+    Audio: 29
+  - Name: Kahverengi
+    Sprite: {fileID: 21300000, guid: fe3ee6bcb25bcb54ea9a4780cf7d75f9, type: 3}
+    Audio: 30
+  - Name: Gri
+    Sprite: {fileID: 21300000, guid: 1345c24fb76d1024ea76441ab5f77e7b, type: 3}
+    Audio: 31
+  - Name: "Ye\u015Fil"
+    Sprite: {fileID: 21300000, guid: 3bd16ac1045e40a4992b76666323970b, type: 3}
+    Audio: 32
+  - Name: Pembe
+    Sprite: {fileID: 21300000, guid: 4d06e9125d23e2244a614e97727f6e78, type: 3}
+    Audio: 33
+  - Name: Mor
+    Sprite: {fileID: 21300000, guid: 3df9e0eee532f264fabd5dcfef0ec00f, type: 3}
+    Audio: 34
+  - Name: "K\u0131rm\u0131z\u0131"
+    Sprite: {fileID: 21300000, guid: 903608662873e1142b266737d22c62e5, type: 3}
+    Audio: 35
+  - Name: Beyaz
+    Sprite: {fileID: 21300000, guid: a52e24c55ad19624190b148ea130b696, type: 3}
+    Audio: 36
+  - Name: "Sar\u0131"
+    Sprite: {fileID: 21300000, guid: eeedf1fe813e0204a9bd9132872c697e, type: 3}
+    Audio: 37

@@ -5,7 +5,6 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 namespace SpecialEducationGames
 {
@@ -16,9 +15,9 @@ namespace SpecialEducationGames
         [Header("Stage Settings")]
         [SerializeField] private int _maxStage = 5;
 
-        private StageController _stageController;
+        private EventManager _eventManager;
 
-        private int _stageCount;
+        private int _currentStage;
 
         public static GameManager Instance => _instance;
 
@@ -26,34 +25,47 @@ namespace SpecialEducationGames
 
         public static GameEventCaller GameEventCaller { get; set; }
 
-        [Inject]
-        private void Construct(StageController stageController)
-        {
-            _stageController = stageController;
-        }
+        public static int CurrentStage => _instance._currentStage;
+
+        public static int MaxStage => _instance._maxStage; 
+        
+        public static bool IsGameFinished => _instance._currentStage >= _instance._maxStage;
 
         private void OnEnable()
         {
-            GameEventReceiver.OnStageCompletedEvent += OnStageCompleted;
+            EventManager.Subscribe<OnCorrectOneChoosedEvent>(OnCorrectOneChoosed);
+            EventManager.Subscribe<OnWrongOneChoosedEvent>(OnWrongOneChoosed);
+            EventManager.Subscribe<OnStageCompletedEvent>(OnStageCompleted);
         }
 
         private void OnDisable()
         {
-            GameEventReceiver.OnStageCompletedEvent -= OnStageCompleted;
+            EventManager.Unsubscribe<OnCorrectOneChoosedEvent>(OnCorrectOneChoosed);
+            EventManager.Unsubscribe<OnWrongOneChoosedEvent>(OnWrongOneChoosed);
+            EventManager.Unsubscribe<OnStageCompletedEvent>(OnStageCompleted);
         }
+
 
         private void Awake()
         {
             if (_instance == null) _instance = this;
 
             InitializeEventSystem();
-            _stageCount = 0;
+            _currentStage = 0;
+
+            _eventManager = new EventManager();
         }
+
+        private void OnDestroy()
+        {
+            _eventManager.Dispose();
+            _eventManager = null;
+        }
+
 
         void Start()
         {
-            _stageController.SetStars(_maxStage);
-
+            GAManager.OnLevelStarted();
         }
 
         private void InitializeEventSystem()
@@ -61,23 +73,6 @@ namespace SpecialEducationGames
             GameEventReceiver = new GameEventReceiver();
             GameEventCaller = new GameEventCaller(GameEventReceiver);
         }
-
-
-        public static void SetAnchors(RectTransform This, Vector2 AnchorMin, Vector2 AnchorMax)
-        {
-            var OriginalPosition = This.localPosition;
-            var OriginalSize = This.sizeDelta;
-
-            This.anchorMin = AnchorMin;
-            This.anchorMax = AnchorMax;
-
-            This.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, OriginalSize.x);
-            This.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, OriginalSize.y);
-            This.localPosition = OriginalPosition;
-
-            This.pivot = AnchorMax;
-        }
-
 
         public static void Shuffle<T>(IList<T> ts)
         {
@@ -94,45 +89,38 @@ namespace SpecialEducationGames
 
         public void GameFinished()
         {
-            GameEventCaller.OnGameFinished();
-            //print("Game Finished. Show Success UI");
+            EventManager.Fire<OnGameFinishedEvent>();
 
-            //StartCoroutine(ParticleManager.instance.CreateAndPlay(ParticleManager.instance.psConfettis, canvas.gameObject, Vector2.zero, true, 3));
+            AudioManager.PlayLevelEndCongratsSoundRandomly();
 
-            //UIManager.instance.Invoke("ShowFinishText",3);
+            Invoke(nameof(LoadScene), 4);
 
-            //StartCoroutine(CallAfterDelay(7, LoadScene));
-
-            //SceneManager.LoadScene(0);
+            GAManager.OnLevelEnded();
         }
 
-        public bool IsGameFinished()
+        private void OnStageCompleted(OnStageCompletedEvent onStageCompletedEvent)
         {
-            return _stageCount >= _maxStage;
-        }
+            _currentStage++;
 
-        private void OnStageCompleted()
-        {
-            _stageController.FillStar();
-            _stageCount++;
-
-            if (_stageCount >= _maxStage)
+            if (_currentStage >= _maxStage)
             {
                 GameFinished();
             }
         }
 
-        public static IEnumerator CallAfterDelay(float waitSeconds, Func<int> function)
-        {
-            yield return new WaitForSeconds(waitSeconds);
-            function();
-        }
-
-        public int LoadScene()
+        public void LoadScene()
         {
             SceneManager.LoadScene(0);
-            return 1;
         }
 
+        private void OnCorrectOneChoosed(OnCorrectOneChoosedEvent @event)
+        {
+            GAManager.OnCorrectChoosableSelected();
+        }
+
+        private void OnWrongOneChoosed(OnWrongOneChoosedEvent @event)
+        {
+            GAManager.OnWrongChoosableSelected();
+        }
     }
 }

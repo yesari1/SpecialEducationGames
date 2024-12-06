@@ -7,20 +7,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
-using Zenject;
 
-public class Number : Choosable,IAnimationControllable
+public class Number : MonoBehaviour,IFactoryObject<Number>
 {
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI _text;
 
     private bool isChoosableNumber = false;
-    private LevelManager levelManager;
     private int num;
     private bool _isCorrect = false;
+    private FactoryBase<Number> _factory;
 
-    void Awake()
+    protected void Awake()
     {
-        text = GetComponentInChildren<TextMeshProUGUI>();
+        _text = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public int Num
@@ -32,7 +31,7 @@ public class Number : Choosable,IAnimationControllable
     {
         get
         {
-            return text.text;
+            return _text.text;
         }
     }
 
@@ -44,29 +43,15 @@ public class Number : Choosable,IAnimationControllable
         }
     }
 
-    private void Update()
-    {
-        //if (_scaleUp)
-        //{
-        //    _rectTransform.localScale = Vector3.Lerp(_rectTransform.localScale, _maxScale, Time.deltaTime * _scaleUpSpeed);
-
-        //    if (Vector3.Distance(_rectTransform.localScale, _maxScale) <= 0.1f)
-        //    {
-        //        _scaleUp = false;
-        //        GameEventCaller.Instance.OnCorrectAnimationEnded();
-        //    }
-        //}
-    }
-
     public void SetNumber(int number)
     {
         num = number;
-        text.text = num.ToString();
+        _text.text = num.ToString();
     }
 
     public void SetNumber(string str)
     {
-        text.text = str.ToString();
+        _text.text = str.ToString();
     }
 
     public void SetHidedNumber(int number)
@@ -74,10 +59,9 @@ public class Number : Choosable,IAnimationControllable
         num = number;
     }
 
-    public void SetAsChoosable(LevelManager levelManager)
+    public void SetAsChoosable()
     {
         isChoosableNumber = true;
-        this.levelManager = levelManager;
     }
 
     public void SetCorrect()
@@ -85,20 +69,21 @@ public class Number : Choosable,IAnimationControllable
         _isCorrect = true;
     }
 
-    //public override void OnPointerDown(PointerEventData eventData)
-    //{
-    //    levelManager.OnAnswerChoose(this);
-    //}
-
-    public void PlayCorrectAnimation(float scaleUpSpeed, Vector3 maxScale)
+    public void OnSpawn(FactoryBase<Number> factory)
     {
-        this._maxScale = maxScale;
-        this._scaleUpSpeed = scaleUpSpeed;
-        _scaleUp = true;
+        _factory = factory;
     }
 
-    public class Factory : PlaceholderFactory<Choosable>
+    public void Dispose()
     {
+        _factory.Push(this);
+    }
+
+    [Serializable]
+    public struct NumberSettings
+    {
+        public Color BackgroundColor;
+        public Color TextColor;
     }
 
 }

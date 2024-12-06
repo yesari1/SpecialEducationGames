@@ -36,7 +36,8 @@ namespace SpecialEducationGames
 
         public void OnGameFinished() => _gameEventReceiver.OnGameFinished();
 
-        public void OnChoosedRight() => _gameEventReceiver.OnChoosedRight();
+        public void OnChoosedRight(Choosable choosable) => _gameEventReceiver.OnChoosedRight(choosable);
+
     }
 
 }

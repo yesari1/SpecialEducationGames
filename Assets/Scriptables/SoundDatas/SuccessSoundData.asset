@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9492161a11daf49a6df060814f08ed, type: 3}
+  m_Name: SuccessSoundData
+  m_EditorClassIdentifier: 
+  GameSoundTuples:
+  - AudioClip: {fileID: 8300000, guid: ef597b501bbc65c4fa3dd0c01861c42d, type: 3}
+    IsLoop: 0
+    Volume: 0.3
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: f264003db3051d44a878affcf1338b29, type: 3}
+    IsLoop: 0
+    Volume: 0.7
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: af2c6eca67d02014b8b19fc8b43179b6, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: c72e1e61f05968a4eaa3efbaba365fd6, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: d14364cff942ad244916457f63e6cb7b, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: 0030f11abc6a79f46a60b76be872dee8, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  MenuSoundTuples: []

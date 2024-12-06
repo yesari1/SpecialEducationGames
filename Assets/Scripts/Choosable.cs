@@ -2,89 +2,132 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Zenject;
-using Zenject.SpaceFighter;
-using static SpecialEducationGames.Choosable;
 
 namespace SpecialEducationGames
 {
-    public class Choosable : MonoBehaviour, IPointerDownHandler
+    public class Choosable : MonoBehaviour, IPointerDownHandler,IFactoryObject<Choosable>
     {
+        [SerializeField] private TextMeshProUGUI _text;
+
         [SerializeField] private Image _image;
 
-        private ChoosableType _choosableType;
+        protected ChoosableType _choosableType;
 
         protected AnimationSettings _animationSettings;
+
         protected bool _scaleUp = false;
+
         protected float _scaleUpSpeed;
+
         protected Vector3 _maxScale;
 
         protected RectTransform _rectTransform;
 
-        public ChoosableType Type => _choosableType;
+        private FactoryBase<Choosable> _factory;
 
-        private void OnEnable()
+        private bool _isCorrectAnswer;
+
+        private ItemTuple _itemTuple;
+
+        public bool IsCorrectAnswer => _isCorrectAnswer;    
+
+        public ItemTuple ItemTuple => _itemTuple;
+
+        protected virtual void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
         }
 
-        [Inject]
-        public virtual void Construct(AnimationSettings animationSettings)
+        public void OnSpawn(FactoryBase<Choosable> factory)
         {
-            _animationSettings = animationSettings;
+            _factory = factory;
+
         }
 
-        public virtual void OnSpawned()
+        public void Dispose()
         {
-            Tweener spawn = transform.DOScale(_animationSettings.Spawn, true,true);
-            spawn.Play();
+            transform.SetParent(null);
+            _factory.Push(this);
+        }
+
+        public void Initialize(Sprite sprite,string text)
+        {
+            _isCorrectAnswer = false;
+
+            if (sprite == null)
+                _image.enabled = false;
+            else
+                _image.enabled = true;
+
+            _image.sprite = sprite;
+            _text.text = text;
+
+            transform.localScale = Vector3.zero;
+
+            //_spawnTween = transform.DOScale(_animationSettings.Spawn, true, true);
+            //_spawnTween.Play();
+        }
+
+        public void SetAnimationSettings(AnimationSettings choosableAnimationSettings)
+        {
+            _animationSettings = choosableAnimationSettings;
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            EventManager.Fire(new OnChoosableSelectedEvent() { Choosable = this });
+        }
 
+        public IEnumerator Spawn()
+        {
+            yield return transform.DOScale(_animationSettings.Spawn.Value, _animationSettings.Spawn.Duration).SetDelayAndEase(_animationSettings.Spawn).WaitForCompletion();
         }
 
         public virtual void OnOtherOneChoosed()
         {
-            Tweener disapper = transform.DOScale(_animationSettings.Disapper);
-            disapper.Play();
+            transform.DOScale(_animationSettings.Disapper);
         }
 
-        public virtual void OnTrulyChoosed(Action OnChoosedAnimationCompleted)
+        public void OnCorrectOneChoosed(Action onChoosableGoneToCenter,Action OnChoosedAnimationCompleted)
         {
             _rectTransform.SetAnchors(AnchorPresets.MiddleCenter);
 
-            Tweener goToCenter = _rectTransform.DOAnchorPos(_animationSettings.Choosed.Sequence[0]);
+            Tweener goToCenter = _rectTransform.DOAnchorPos(_animationSettings.Choosed.Sequence[0]).OnComplete(()=> onChoosableGoneToCenter?.Invoke());
             Tweener scaleUp = _rectTransform.DOScale(_animationSettings.Choosed.Sequence[1]);
             Sequence sequence = DOTween.Sequence();
             sequence.Append(goToCenter);
             sequence.Append(scaleUp);
+            sequence.AppendInterval(1f);
 
             sequence.OnComplete(() => OnChoosedAnimationCompleted?.Invoke());
+
+            EventManager.Fire(new OnCorrectOneChoosedEvent() { Choosable = this });
         }
 
-        public void SetChoosableType(ChoosableType choosableType)
+        public void ShowSelf()
         {
-            _choosableType = choosableType;
-            _image.sprite = choosableType.Image;
-            name = choosableType.Name;
-        }
+            EventManager.Fire<OnWrongOneChoosedEvent>();
 
+            //Yanlýþ olan seçilmiþ
+            AudioManager.PlayTryAgainSoundRandomly();
 
-        public void PlayOnboardingAnimation()
-        {
             transform.DOComplete();
-            transform.DOPunchScale(_animationSettings.OnBoarding);
+            transform.DOPunchScale(_animationSettings.ShowSelf);
         }
 
         public void Hide()
         {
-            _rectTransform.SetAnchors(AnchorPresets.LowerCenter);
-            _rectTransform.DOAnchorPos(_animationSettings.Hide);
+            _rectTransform.DOScale(_animationSettings.Hide).OnComplete(Dispose);
+        }
+
+        public void SetCorrectAnswer(ItemTuple itemTuple)
+        {
+            _itemTuple = itemTuple;
+            _isCorrectAnswer = true;
         }
 
 
@@ -92,7 +135,7 @@ namespace SpecialEducationGames
         public struct AnimationSettings
         {
             public TweenSettings Spawn;
-            public TweenSettings OnBoarding;//This one choosed but other on clicked
+            public TweenSettings ShowSelf;//This one choosed but other on clicked
             public TweenSettings Disapper;//OtherOneChoosed
             public SequenceSettings Choosed;//On Truly Choosed
             public TweenSettings Hide;//On Truly Choosed Hide
@@ -111,14 +154,5 @@ namespace SpecialEducationGames
             public Sprite Image;
         }
 
-        public class Factory : PlaceholderFactory<Choosable>
-        {
-            public override Choosable Create()
-            {
-                Choosable choosable = base.Create();
-                choosable.OnSpawned();
-                return choosable;
-            }
-        }
     }
 }

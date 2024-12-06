@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9492161a11daf49a6df060814f08ed, type: 3}
+  m_Name: CongratsSoundData
+  m_EditorClassIdentifier: 
+  GameSoundTuples:
+  - AudioClip: {fileID: 8300000, guid: 1ed9cfefc1970334eb0c95e52e3fe69a, type: 3}
+    IsLoop: 0
+    Volume: 0.2
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: 40d42c41ca0a7c64fb484f3e7a21aa8b, type: 3}
+    IsLoop: 0
+    Volume: 0.2
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: 826ab1450d786084f8a0f2040ad92466, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: 3f1f7ae85a9f6c949b9d488c9cd1ff0b, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  - AudioClip: {fileID: 8300000, guid: f31c19b2b5ba9c94ab055ceaeb3bd283, type: 3}
+    IsLoop: 0
+    Volume: 1
+    GameSound: 0
+  MenuSoundTuples: []
