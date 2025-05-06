@@ -9,18 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LearnFruits.unity
+    path: Assets/Scenes/LearnFruits1.unity
     guid: 38ed134089ac3ab4b88a338a724bc771
+  - enabled: 1
+    path: Assets/Scenes/LearnFruits2.unity
+    guid: bfdb6d381f4cb494bb9814c4d74af67c
+  - enabled: 1
+    path: Assets/Scenes/LearnFruits3.unity
+    guid: fa4bff890f87e2f468768c2f7f128dab
   - enabled: 1
     path: Assets/Scenes/LearnAnimals.unity
     guid: cf95854c98f8f3242a5bd1af7abdb437
-  - enabled: 1
-    path: Assets/Scenes/GuessNextNumber.unity
-    guid: a429a5905259e8843a93655b4ca36460
   - enabled: 1
     path: Assets/Scenes/LearnColors.unity
     guid: bdb2235c6bddaa24f87bc68a1d3af9f4
   - enabled: 1
     path: Assets/Scenes/CompareNumbers.unity
     guid: 6aa12bcfedce7d04e99a47d89587fe94
+  - enabled: 1
+    path: Assets/Scenes/GuessNextNumber.unity
+    guid: a429a5905259e8843a93655b4ca36460
   m_configObjects: {}

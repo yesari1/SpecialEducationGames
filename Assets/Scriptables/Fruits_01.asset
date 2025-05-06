@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7babc5d172aa0459fd260dd1e19b19, type: 3}
+  m_Name: Fruits_01
+  m_EditorClassIdentifier: 
+  ChoosableTuples:
+  - Name: Portakal
+    Sprite: {fileID: 21300000, guid: 26fca12c30754034baa9e9590faae20e, type: 3}
+    Audio: 38
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: df1975ed2825c1c4995b7f3870ee6e4d, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Armut
+    Sprite: {fileID: 21300000, guid: 3df9ca67d483b0147bf4a43d15517207, type: 3}
+    Audio: 39
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 7841b59298411404a8aa72bfc9a9e2b0, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Muz
+    Sprite: {fileID: 21300000, guid: c52d81efcd4414d4daaf29245fe24c1f, type: 3}
+    Audio: 40
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 0c43c419f57c0e94a8d2105029ed898f, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "\xC7ilek"
+    Sprite: {fileID: 21300000, guid: 13234fe98b86c544297e2c88e856e5e5, type: 3}
+    Audio: 41
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 9049d1563f9406c4d9ffebd4c69d70a8, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Lahana
+    Sprite: {fileID: 21300000, guid: b4d145d17ed7b1744806b6e2a80db87a, type: 3}
+    Audio: 42
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 8939347159e712045994ed56644bd0b4, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "Patl\u0131can"
+    Sprite: {fileID: 21300000, guid: 6588078e285430e4093da5c4f25ee288, type: 3}
+    Audio: 43
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 20e6f91439f4ea94fba83641ea6dfa82, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Domates
+    Sprite: {fileID: 21300000, guid: a091bab062c74ee4fa04b5089e28e545, type: 3}
+    Audio: 44
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: f721397b411aa4449ae986c4c9633145, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Patates
+    Sprite: {fileID: 21300000, guid: 34fc8de9383e2e94b92eec914022df28, type: 3}
+    Audio: 45
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: bc01dc2e267baab4c948b71bda42c54e, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Kiraz
+    Sprite: {fileID: 21300000, guid: 74d7ea831ca9c29499d06d03371e26f2, type: 3}
+    Audio: 46
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 2de885444644c1e4ba85c2adc2594cea, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "\xDCz\xFCm"
+    Sprite: {fileID: 21300000, guid: 4ba5bd57f21ec9c49924dbab1cca46fc, type: 3}
+    Audio: 47
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 8138167579f1fad488c8a864734bbcd4, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7babc5d172aa0459fd260dd1e19b19, type: 3}
+  m_Name: Fruits_02
+  m_EditorClassIdentifier: 
+  ChoosableTuples:
+  - Name: Mandalina
+    Sprite: {fileID: 21300000, guid: ce439a89bf879a643ae9d278067c715f, type: 3}
+    Audio: 14
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: f741aa8b701eedf438cd03915c15963c, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Karpuz
+    Sprite: {fileID: 21300000, guid: 6de533005a78078498a0a65a94c7367e, type: 3}
+    Audio: 28
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 140028b38f672314683265a9eb2ca542, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Erik
+    Sprite: {fileID: 21300000, guid: 4712d54c81d84f242b427ca48afeb286, type: 3}
+    Audio: 28
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 1088a4b4111c40b4f9f666574708bea0, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Kabak
+    Sprite: {fileID: 21300000, guid: 0f2ef54938a2d724dac2f88aaac8d589, type: 3}
+    Audio: 37
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: e44b5548ba1039d42a77ead0ecafa8c7, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "Salatal\u0131k"
+    Sprite: {fileID: 21300000, guid: 0aac4d8d750a94648b977f14e05e4b17, type: 3}
+    Audio: 27
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 1ff37dcd43cf27047b24261ccf44fc94, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "\u015Eeftali"
+    Sprite: {fileID: 21300000, guid: 776b6c2162a7c714c96261afa25cb83f, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: ffec98f21a3fa1d4c8d371ea0d418bf3, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "Havu\xE7"
+    Sprite: {fileID: 21300000, guid: 9ad77fe20ae7bab4092cab2bb8344eb7, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: df767b4690d0ed24dbf835d75974a790, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Nane
+    Sprite: {fileID: 21300000, guid: 479e173277198194395bdaf3499fff5b, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 67c236dfe0c278b43aac28698e1c56ac, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Elma
+    Sprite: {fileID: 21300000, guid: 9caae51fca67b9148b8f7e7c82eb86a3, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 333cb6fa912b0f04db8746ee1a3c32b8, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Biber
+    Sprite: {fileID: 21300000, guid: 93ae04cfa336f61429ce328a8ee73fa7, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 91f9dcb944e6c4542a0de8bd26621871, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0

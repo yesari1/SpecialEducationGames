@@ -149,6 +149,17 @@ namespace SpecialEducationGames
 
         }
 
+        public static void PlaySound(SoundTuple tuple,float delay = 0)
+        {
+            if(delay <= 0)
+            {
+                PlaySound(tuple);
+                return;
+            }
+
+            _instance.StartCoroutine(PlaySoundTimer(delay, tuple));
+        }
+
         private static IEnumerator PlaySoundTimer(float delay, SoundTuple soundTuple)
         {
             yield return new WaitForSeconds(delay);

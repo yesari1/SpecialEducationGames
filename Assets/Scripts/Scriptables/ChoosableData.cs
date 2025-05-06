@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +16,7 @@ namespace SpecialEducationGames
         public string Name;
         public Sprite Sprite;
         public GameSound Audio;
+        public GameSoundTuple GameSoundTuple;
     }
 
 }

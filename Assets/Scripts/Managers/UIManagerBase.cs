@@ -23,15 +23,32 @@ namespace SpecialEducationGames
 
             for (var i = 0; i < _views.Length; i++)
             {
-                _views[i].Initialize();
-
                 if (!_views[i].isFixed)
                     _views[i].HideImmediately();
+
+                _views[i].Initialize();
             }
 
             if (_startingView != null)
                 Show(_startingView);
         }
+
+        public static UIView Show(UIView view,bool isFixed = false)
+        {
+            if (_instance._currentView != null)
+            {
+                if (!isFixed)
+                    _instance._currentView.Hide();
+            }
+
+            view.Show();
+
+            if (!isFixed)
+                _instance._currentView = view;
+
+            return view;
+        }
+
 
         public static T Show<T>(bool isFixed = false) where T : UIView
         {

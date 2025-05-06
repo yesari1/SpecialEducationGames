@@ -16,27 +16,72 @@ MonoBehaviour:
   - Name: 1
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 1
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: cded61f01af301443acdf01550959b94, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 2
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 2
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: cf113cc0469c3ba4288f9c050bfa1449, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 3
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 3
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 8d39aefbb99088548983695c0ded8e00, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 4
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 4
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: a6839caf61b43754b9aa24b2619ec508, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 5
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 5
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 67648d8bcec645f4280efe8b492ffa52, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 6
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 6
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: d04fdafca759a30418417e455753b5ab, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 7
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 7
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: b7f3899d92bd0c440845bea282adbaa1, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 8
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 8
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 2b19a2eea3a1fca418a2e9991f87d74f, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: 9
     Sprite: {fileID: 21300000, guid: b227a05053966bb4ea346f4ce6506482, type: 3}
     Audio: 9
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: daff6d2dc4e04ff4f9fe66ce172697fd, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0

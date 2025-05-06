@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7babc5d172aa0459fd260dd1e19b19, type: 3}
+  m_Name: Fruits_03
+  m_EditorClassIdentifier: 
+  ChoosableTuples:
+  - Name: Ispanak
+    Sprite: {fileID: 21300000, guid: cd2faca5799ccf847a4a5d5f164f79de, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 4d02a7fd0cd5a264da238bfd2c61be6e, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Ayva
+    Sprite: {fileID: 21300000, guid: 1048cf8e14a90f14e80dcabe8a58ffea, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 0ccf4125b79b5154c9f2c512f699fcbc, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Marul
+    Sprite: {fileID: 21300000, guid: beb44e43e60d5b246b1b4ac87b6dc2ac, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 7875d9e016520d747846182f3313b24d, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Karnabahar
+    Sprite: {fileID: 21300000, guid: f85f31c41fb58d74eb65a1f746f58444, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 6692bb5dc1bdf9b478eb02309d6d7fa3, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Nar
+    Sprite: {fileID: 21300000, guid: 6461f6ed3c7775f40976e88ca73ab48e, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: e826495697d72be4db068e6aba6e7429, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "So\u011Fan"
+    Sprite: {fileID: 21300000, guid: c16c7634f64794547963b2ec69c86192, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 7b624de53cf2a6d4893c92a081793edd, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Turp
+    Sprite: {fileID: 21300000, guid: 8ab121073ae22e64d9d5a26da8f31f3d, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 602353091fd783a4685f59c297fd9105, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: "B\xF6\u011F\xFCrtlen"
+    Sprite: {fileID: 21300000, guid: e0231f09c6437d34780ba4c91cb3715a, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 3a468db6b3d77a4428e9d991a3d6427a, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Bezelye
+    Sprite: {fileID: 21300000, guid: b737f86bfa854784bb0779544b07eb47, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 38466313692f3744e9e1b505d9477e6c, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
+  - Name: Kestane
+    Sprite: {fileID: 21300000, guid: 2c2f62805bfe0cf4993d4652e1a6d8aa, type: 3}
+    Audio: 0
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: e4442d4f4ee79fd44a27e6a03eb0a22d, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0

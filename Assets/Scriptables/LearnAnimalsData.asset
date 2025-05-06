@@ -16,33 +16,88 @@ MonoBehaviour:
   - Name: "Ay\u0131"
     Sprite: {fileID: 21300000, guid: 1d56ae3a9f8c5d647a0750a283770336, type: 3}
     Audio: 17
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 0cbfb4e7be1b2f843acf8f3c26f71fc5, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: Kedi
     Sprite: {fileID: 21300000, guid: 280a1e465d7610241ab5eaa4fc83153d, type: 3}
     Audio: 18
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: acbeb57dea44a1e4290f9b94e4240526, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: Tavuk
     Sprite: {fileID: 21300000, guid: b954c7b0517d4884ead9e449928a646f, type: 3}
     Audio: 19
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: ecc1c4592fcf3d34ca681e64b522e8ff, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: Horoz
     Sprite: {fileID: 21300000, guid: 7e8e72d2eb2af5e46a6828ef4d003755, type: 3}
     Audio: 20
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: bda73598844c37b4083a5d82a23ef69f, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: "\u0130nek"
     Sprite: {fileID: 21300000, guid: 53225dd363690474fa39ec3c4a1a8e2a, type: 3}
     Audio: 21
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 9a311b8efe37fff4688f264d548fadfd, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: "K\xF6pek"
     Sprite: {fileID: 21300000, guid: 3d82acf50888e544db35418559263552, type: 3}
     Audio: 22
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 14e80b9acc69e75478706c93c5f5b72e, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: "Kurba\u011Fa"
     Sprite: {fileID: 21300000, guid: 18e6384cec7382545a1218d12573db38, type: 3}
     Audio: 23
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 812d8cca80996e447a4ef1051e2efb46, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: "Z\xFCrafa"
     Sprite: {fileID: 21300000, guid: 5dc73f06ca87e364dacda053b18060bb, type: 3}
     Audio: 24
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 7f051c0d253548b45874e1842666a0a1, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: At
     Sprite: {fileID: 21300000, guid: 3e8ac63a2118e034ebb5fe7c14e02d44, type: 3}
     Audio: 25
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: f91fac89696b5054aa24fd2dbab80044, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: "Tav\u015Fan"
     Sprite: {fileID: 21300000, guid: f511f60e1b7ec94489238607b9c32e3f, type: 3}
     Audio: 26
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: f3a5b6e7d27eb044f87d8d92424d119c, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0
   - Name: Koyun
     Sprite: {fileID: 21300000, guid: e295d385f949c264f90d5499302775ae, type: 3}
     Audio: 27
+    GameSoundTuple:
+      AudioClip: {fileID: 8300000, guid: 617e58ae74cd59a4a850407fdc07fa32, type: 3}
+      IsLoop: 0
+      Volume: 1
+      GameSound: 0

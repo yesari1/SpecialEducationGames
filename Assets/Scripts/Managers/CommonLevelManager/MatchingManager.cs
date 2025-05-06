@@ -32,7 +32,7 @@ namespace SpecialEducationGames
 
         private void OnShowInfoText(OnShowInfoTextEvent onShowInfoTextEvent)
         {
-            AudioManager.PlaySound(onShowInfoTextEvent.ItemTuple.Audio,0.25f);
+            AudioManager.PlaySound(onShowInfoTextEvent.ItemTuple.GameSoundTuple,0.25f);
         }
 
         private void OnDisable()
@@ -45,7 +45,7 @@ namespace SpecialEducationGames
         {
             AudioManager.PlaySuccessSoundRandomly();
 
-            AudioManager.PlaySounds(onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio);
+            AudioManager.PlaySound(onCorrectOneChoosedEvent.Choosable.ItemTuple.GameSoundTuple);
         }
 
     }
