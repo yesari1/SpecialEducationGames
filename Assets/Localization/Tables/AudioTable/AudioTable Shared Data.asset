@@ -1,0 +1,691 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: AudioTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: AudioTable
+  m_TableCollectionNameGuidString: 791a0c0977fbab14791919250d8cd0c5
+  m_Entries:
+  - m_Id: 978495270912
+    m_Key: Cabbage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1305982332928
+    m_Key: Cherry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1331919908864
+    m_Key: Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1407186694144
+    m_Key: Eggplant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1449876320256
+    m_Key: Grape
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496290488320
+    m_Key: Pear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1543015034880
+    m_Key: Potato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1578930860032
+    m_Key: Strawberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1617652674560
+    m_Key: Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429035913216
+    m_Key: And
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429077856256
+    m_Key: Bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429082050560
+    m_Key: Cat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429082050561
+    m_Key: Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429086244864
+    m_Key: Cock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429086244865
+    m_Key: Cow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429111410688
+    m_Key: Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429132382208
+    m_Key: Frog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429149159424
+    m_Key: Giraffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429165936640
+    m_Key: Horse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429182713856
+    m_Key: Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429199491072
+    m_Key: Sheep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429199491073
+    m_Key: Black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429203685376
+    m_Key: Blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429203685377
+    m_Key: Brown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429207879680
+    m_Key: Gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429228851200
+    m_Key: Green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429245628416
+    m_Key: Pink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429262405632
+    m_Key: Purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429279182848
+    m_Key: Red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429295960064
+    m_Key: White
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429316931584
+    m_Key: Yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429316931585
+    m_Key: CompareNumbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429321125888
+    m_Key: Congrats_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429321125889
+    m_Key: Congrats_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429325320192
+    m_Key: Congrats_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429337903104
+    m_Key: LevelEnd_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429358874624
+    m_Key: LevelEnd_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429375651840
+    m_Key: Eight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429396623360
+    m_Key: Equal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429413400576
+    m_Key: Five
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429425983488
+    m_Key: Four
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429434372096
+    m_Key: Orange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429438566400
+    m_Key: Apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429442760704
+    m_Key: Carrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429442760705
+    m_Key: Courgette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429446955008
+    m_Key: Cucumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429463732224
+    m_Key: Mandarin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429480509440
+    m_Key: Mint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429480509441
+    m_Key: Peach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429501480960
+    m_Key: Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429518258176
+    m_Key: Plum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429539229696
+    m_Key: Watermelon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429539229697
+    m_Key: Blackberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429543424000
+    m_Key: Cauliflower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429543424001
+    m_Key: Chestnut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429547618304
+    m_Key: Lettuce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429564395520
+    m_Key: Onion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429581172736
+    m_Key: Pea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429581172737
+    m_Key: Pomegranate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429602144256
+    m_Key: Quince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429623115776
+    m_Key: Radish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429639892992
+    m_Key: Spinach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429656670208
+    m_Key: Greater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429677641728
+    m_Key: Less
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429677641729
+    m_Key: Background
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429690224640
+    m_Key: Nine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429711196160
+    m_Key: One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429727973376
+    m_Key: Seven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429744750592
+    m_Key: Six
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429744750593
+    m_Key: StartCompareNumbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429753139200
+    m_Key: StartGuessNextNumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429765722112
+    m_Key: Success_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429782499328
+    m_Key: Success_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429803470848
+    m_Key: Success_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429820248064
+    m_Key: Success_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429841219584
+    m_Key: Success_05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429857996800
+    m_Key: SuccessBase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429874774016
+    m_Key: "S\u0131radakiSay\u0131SenceHangisi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429891551232
+    m_Key: Ten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429904134144
+    m_Key: Three
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429920911360
+    m_Key: TryOneMore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23429941882880
+    m_Key: Two
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 5333596363889311769
+  m_KeyGenerator:
+    rid: 5333596363889311744
+  references:
+    version: 2
+    RefIds:
+    - rid: 5333596363889311744
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774897468600
+    - rid: 5333596363889311769
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 978495270912
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1331919908864
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1305982332928
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1407186694144
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1449876320256
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1496290488320
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1543015034880
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1578930860032
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 1617652674560
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429035913216
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429077856256
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429082050560
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429082050561
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429086244864
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429086244865
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429111410688
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429132382208
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429149159424
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429165936640
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429182713856
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429199491072
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429199491073
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429203685376
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429203685377
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429207879680
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429228851200
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429245628416
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429262405632
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429279182848
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429295960064
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429316931584
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429316931585
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429321125888
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429321125889
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429325320192
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429337903104
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429358874624
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429375651840
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429396623360
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429413400576
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429425983488
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429434372096
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429438566400
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429442760704
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429442760705
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429446955008
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429463732224
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429480509440
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429480509441
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429501480960
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429518258176
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429539229696
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429539229697
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429543424000
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429543424001
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429547618304
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429564395520
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429581172736
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429581172737
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429602144256
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429623115776
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429639892992
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429656670208
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429677641728
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429677641729
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429690224640
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429711196160
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429727973376
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429744750592
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429744750593
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429753139200
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429765722112
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429782499328
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429803470848
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429820248064
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429841219584
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429857996800
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429874774016
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429891551232
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429904134144
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429920911360
+          m_TableCodes:
+          - en
+          - tr
+        - m_KeyId: 23429941882880
+          m_TableCodes:
+          - en
+          - tr
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

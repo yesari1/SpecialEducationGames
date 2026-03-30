@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ItemTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 924b9d041053ac24390772874628b202, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 156671733760
+    m_Localized: Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10664892231680
+    m_Localized: One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665282301952
+    m_Localized: Two
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665512988672
+    m_Localized: Three
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665726898176
+    m_Localized: Four
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665949196288
+    m_Localized: Five
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666158911488
+    m_Localized: Six
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666368626688
+    m_Localized: Seven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666578341888
+    m_Localized: Eight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666792251392
+    m_Localized: Nine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666997772288
+    m_Localized: Guess Next Number
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667207487488
+    m_Localized: Try One More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667417202688
+    m_Localized: Compare Numbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667626917888
+    m_Localized: And
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667836633088
+    m_Localized: Greater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668067319808
+    m_Localized: Equal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668298006528
+    m_Localized: Less
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668725825536
+    m_Localized: Bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668927152128
+    m_Localized: Cat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669132673024
+    m_Localized: Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669338193920
+    m_Localized: Cock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669535326208
+    m_Localized: Cow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669740847104
+    m_Localized: Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669942173696
+    m_Localized: Frog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670143500288
+    m_Localized: Giraffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670361604096
+    m_Localized: Horse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670567124992
+    m_Localized: Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670772645888
+    m_Localized: Sheep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671196270592
+    m_Localized: Black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671410180096
+    m_Localized: Blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671611506688
+    m_Localized: Brown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671817027584
+    m_Localized: Gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672014159872
+    m_Localized: Green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672219680768
+    m_Localized: Pink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672421007360
+    m_Localized: Purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672626528256
+    m_Localized: Red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672832049152
+    m_Localized: White
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673029181440
+    m_Localized: Yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673230508032
+    m_Localized: Orange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673641549824
+    m_Localized: Pear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674270695424
+    m_Localized: Strawberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674740457472
+    m_Localized: Cabbage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674945978368
+    m_Localized: Eggplant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675147304960
+    m_Localized: Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675352825856
+    m_Localized: Potato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675554152448
+    m_Localized: Cherry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675755479040
+    m_Localized: Grape
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675960999936
+    m_Localized: Start Compare Numbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10676174909440
+    m_Localized: Start Guess Next Number
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

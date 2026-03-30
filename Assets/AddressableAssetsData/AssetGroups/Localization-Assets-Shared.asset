@@ -1,0 +1,609 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4f8e8c09edbc4f843a7e74f9c3b456e0
+  m_SerializeEntries:
+  - m_GUID: 0030f11abc6a79f46a60b76be872dee8
+    m_Address: Success_05
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c43c419f57c0e94a8d2105029ed898f
+    m_Address: Banana
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cbfb4e7be1b2f843acf8f3c26f71fc5
+    m_Address: Bear
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ccf4125b79b5154c9f2c512f699fcbc
+    m_Address: Quince
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0da5ab7bcd718d549a9a95fd0c449a23
+    m_Address: Green
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fdb234b7b595b34a8ad42fd5b837b01
+    m_Address: Brown
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1088a4b4111c40b4f9f666574708bea0
+    m_Address: Plum
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 140028b38f672314683265a9eb2ca542
+    m_Address: Watermelon
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14e80b9acc69e75478706c93c5f5b72e
+    m_Address: Dog
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ed9cfefc1970334eb0c95e52e3fe69a
+    m_Address: LevelEnd_02
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ff37dcd43cf27047b24261ccf44fc94
+    m_Address: Cucumber
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 208f4dc9a3f7b6b408fe5a1ea4516d3f
+    m_Address: Ten
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20c11d24116a22b49835bfae7429da68
+    m_Address: StartCompareNumbers
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20e6f91439f4ea94fba83641ea6dfa82
+    m_Address: Eggplant
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 289d4ab0f77122049890c718e538e5fc
+    m_Address: Gray
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29507fe7f5acb404da9257578ab14fc1
+    m_Address: And
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b19a2eea3a1fca418a2e9991f87d74f
+    m_Address: Eight
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2de885444644c1e4ba85c2adc2594cea
+    m_Address: Cherry
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 333cb6fa912b0f04db8746ee1a3c32b8
+    m_Address: Apple
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38466313692f3744e9e1b505d9477e6c
+    m_Address: Pea
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a468db6b3d77a4428e9d991a3d6427a
+    m_Address: Blackberry
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f1f7ae85a9f6c949b9d488c9cd1ff0b
+    m_Address: Congrats_02
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40d42c41ca0a7c64fb484f3e7a21aa8b
+    m_Address: LevelEnd_01
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45403b15b99f99c4f8fa185d01bf2f4d
+    m_Address: Blue
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 473b6b09e00cd6048b97f6adee0c13e1
+    m_Address: StartGuessNextNumber
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48ac73471c39fec4fb666db01ac5da84
+    m_Address: CompareNumbers
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d02a7fd0cd5a264da238bfd2c61be6e
+    m_Address: Spinach
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ae99f49e250d124bb6d935e0cb28cc0
+    m_Address: Yellow
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d01b717e19a78040876be591e80d519
+    m_Address: TryOneMore
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 602353091fd783a4685f59c297fd9105
+    m_Address: Radish
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 617e58ae74cd59a4a850407fdc07fa32
+    m_Address: Sheep
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6692bb5dc1bdf9b478eb02309d6d7fa3
+    m_Address: Cauliflower
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67648d8bcec645f4280efe8b492ffa52
+    m_Address: Five
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67c236dfe0c278b43aac28698e1c56ac
+    m_Address: Mint
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7841b59298411404a8aa72bfc9a9e2b0
+    m_Address: Pear
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7875d9e016520d747846182f3313b24d
+    m_Address: Lettuce
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 791a0c0977fbab14791919250d8cd0c5
+    m_Address: Assets/Localization/Tables/AudioTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b624de53cf2a6d4893c92a081793edd
+    m_Address: Onion
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f051c0d253548b45874e1842666a0a1
+    m_Address: Giraffe
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 812d8cca80996e447a4ef1051e2efb46
+    m_Address: Frog
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8138167579f1fad488c8a864734bbcd4
+    m_Address: Grape
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 826931ec3abe93740905e02e3a04fcc5
+    m_Address: Less
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 826ab1450d786084f8a0f2040ad92466
+    m_Address: Congrats_01
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 834f7c43944a71c479d23504b129b91c
+    m_Address: Black
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8939347159e712045994ed56644bd0b4
+    m_Address: Cabbage
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b8e7a89e73881b47a8988ddbd1c22d6
+    m_Address: Greater
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d39aefbb99088548983695c0ded8e00
+    m_Address: Three
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9049d1563f9406c4d9ffebd4c69d70a8
+    m_Address: Strawberry
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91f9dcb944e6c4542a0de8bd26621871
+    m_Address: Pepper
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 924b9d041053ac24390772874628b202
+    m_Address: Assets/Localization/Tables/ItemTable/ItemTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a311b8efe37fff4688f264d548fadfd
+    m_Address: Cow
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f1b84de5766e994f8b1e715d6e2f393
+    m_Address: Background
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6839caf61b43754b9aa24b2619ec508
+    m_Address: Four
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acbeb57dea44a1e4290f9b94e4240526
+    m_Address: Cat
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af2c6eca67d02014b8b19fc8b43179b6
+    m_Address: Success_02
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7f3899d92bd0c440845bea282adbaa1
+    m_Address: Seven
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc01dc2e267baab4c948b71bda42c54e
+    m_Address: Potato
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bda73598844c37b4083a5d82a23ef69f
+    m_Address: Cock
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c72e1e61f05968a4eaa3efbaba365fd6
+    m_Address: Success_03
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c892bede58bf5cf4ea976fb390e7556e
+    m_Address: Purple
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cded61f01af301443acdf01550959b94
+    m_Address: One
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf113cc0469c3ba4288f9c050bfa1449
+    m_Address: Two
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d04fdafca759a30418417e455753b5ab
+    m_Address: Six
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d14364cff942ad244916457f63e6cb7b
+    m_Address: Success_04
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6a600dbcccc9a743bf1cf0f0bbe9ec7
+    m_Address: Pink
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: daff6d2dc4e04ff4f9fe66ce172697fd
+    m_Address: Nine
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db1d1e9ab148522418ac9c6b8811baf7
+    m_Address: White
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dedaf33310bde594590bc1359a1b29fd
+    m_Address: Red
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df1975ed2825c1c4995b7f3870ee6e4d
+    m_Address: Orange
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df767b4690d0ed24dbf835d75974a790
+    m_Address: Carrot
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4442d4f4ee79fd44a27e6a03eb0a22d
+    m_Address: Chestnut
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e44b5548ba1039d42a77ead0ecafa8c7
+    m_Address: Courgette
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e44ee85afde3fdb419bf11f74ccd4529
+    m_Address: "S\u0131radakiSay\u0131SenceHangisi"
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e826495697d72be4db068e6aba6e7429
+    m_Address: Pomegranate
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea3acd807439aff458e1e23c1649e976
+    m_Address: Equal
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecc1c4592fcf3d34ca681e64b522e8ff
+    m_Address: Chicken
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef597b501bbc65c4fa3dd0c01861c42d
+    m_Address: SuccessBase
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f264003db3051d44a878affcf1338b29
+    m_Address: Success_01
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f31c19b2b5ba9c94ab055ceaeb3bd283
+    m_Address: Congrats_03
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3a5b6e7d27eb044f87d8d92424d119c
+    m_Address: Rabbit
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f721397b411aa4449ae986c4c9633145
+    m_Address: Tomato
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f741aa8b701eedf438cd03915c15963c
+    m_Address: Mandarin
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f91fac89696b5054aa24fd2dbab80044
+    m_Address: Horse
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffec98f21a3fa1d4c8d371ea0d418bf3
+    m_Address: Peach
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4a0a89aecc743714b9b8b06e32c0df42, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d20e2fa78994c4f48b340ca777e6d1b8, type: 2}
+    - {fileID: 11400000, guid: c53b0ba66001aec4db6c0f8ec45baba2, type: 2}

@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: ItemTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: ItemTable
+  m_TableCollectionNameGuidString: 924b9d041053ac24390772874628b202
+  m_Entries:
+  - m_Id: 156671733760
+    m_Key: Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10664892231680
+    m_Key: One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665282301952
+    m_Key: Two
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665512988672
+    m_Key: Three
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665726898176
+    m_Key: Four
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10665949196288
+    m_Key: Five
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666158911488
+    m_Key: Six
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666368626688
+    m_Key: Seven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666578341888
+    m_Key: Eight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666792251392
+    m_Key: Nine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10666997772288
+    m_Key: GuessNextNumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667207487488
+    m_Key: TryOneMore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667417202688
+    m_Key: CompareNumbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667626917888
+    m_Key: And
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10667836633088
+    m_Key: Greater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668067319808
+    m_Key: Equal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668298006528
+    m_Key: Less
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668725825536
+    m_Key: Bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10668927152128
+    m_Key: Cat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669132673024
+    m_Key: Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669338193920
+    m_Key: Cock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669535326208
+    m_Key: Cow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669740847104
+    m_Key: Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10669942173696
+    m_Key: Frog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670143500288
+    m_Key: Giraffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670361604096
+    m_Key: Horse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670567124992
+    m_Key: Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10670772645888
+    m_Key: Sheep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671196270592
+    m_Key: Black
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671410180096
+    m_Key: Blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671611506688
+    m_Key: Brown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10671817027584
+    m_Key: Gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672014159872
+    m_Key: Green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672219680768
+    m_Key: Pink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672421007360
+    m_Key: Purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672626528256
+    m_Key: Red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10672832049152
+    m_Key: White
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673029181440
+    m_Key: Yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673230508032
+    m_Key: Orange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10673641549824
+    m_Key: Pear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674270695424
+    m_Key: Strawberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674740457472
+    m_Key: Cabbage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10674945978368
+    m_Key: Eggplant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675147304960
+    m_Key: Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675352825856
+    m_Key: Potato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675554152448
+    m_Key: Cherry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675755479040
+    m_Key: Grape
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10675960999936
+    m_Key: StartCompareNumbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10676174909440
+    m_Key: StartGuessNextNumber
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5333596363889311774
+  references:
+    version: 2
+    RefIds:
+    - rid: 5333596363889311774
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774898428074
