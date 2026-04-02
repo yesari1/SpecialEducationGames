@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a74402cd24dfd04eb80fbafd8c062ac, type: 3}
   m_Name: Cat_SoundData
   m_EditorClassIdentifier: 
-  GameSound: 18
   LocalizedAudioClip:
     m_TableReference:
       m_TableCollectionName: AudioTable

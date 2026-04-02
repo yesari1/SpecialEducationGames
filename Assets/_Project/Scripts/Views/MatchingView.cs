@@ -1,7 +1,6 @@
 using DG.Tweening;
 using MEC;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,30 +23,44 @@ namespace SpecialEducationGames
         [SerializeField] private Choosable.AnimationSettings _choosableAnimationSettings;
 
         private List<Choosable> _choosables;
+        private List<ItemData> _itemTuples;
 
-        private List<ItemTupleData> _itemTuples;
-
-        private int _selectedChoosableId;
-
-        private ItemTupleData _selectedChoosableTuple;
-
+        private int _selectedChoosableId = -1;
+        private ItemData _selectedChoosableTuple;
         private Choosable _selectedChoosable;
+
+        private CoroutineHandle _createChoosablesCoroutine;
+        private CoroutineHandle _infoTextShowedCoroutine;
+
+        private bool _isInitialized;
+        private int _routineVersion;
+
+        private void OnEnable()
+        {
+            Presenter?.Activate();
+            TryStartCreateChoosables();
+        }
+
+        private void OnDisable()
+        {
+            Presenter?.Deactivate();
+            InvalidateRunningOperations();
+        }
+
+        protected override void OnDestroy()
+        {
+            InvalidateRunningOperations();
+            base.OnDestroy();
+        }
 
         public override void InitializeView()
         {
             _choosables = new List<Choosable>();
-            _itemTuples = new List<ItemTupleData>();
 
-            if (MatchingManager.ItemTuples != null)
+            if (!Presenter.TryGetItemTuples(out _itemTuples))
             {
-                for (int i = 0; i < MatchingManager.ItemTuples.Count; i++)
-                {
-                    ItemTupleData itemTuple = MatchingManager.ItemTuples[i];
-                    if (itemTuple != null)
-                    {
-                        _itemTuples.Add(itemTuple);
-                    }
-                }
+                Debug.LogError("MatchingView baþlatýlamadý. MatchingManager bulunamadý.");
+                return;
             }
 
             if (_itemTuples.Count < ChoosableCount)
@@ -56,18 +69,65 @@ namespace SpecialEducationGames
                 return;
             }
 
-            StartCoroutine(CreateChoosables());
+            _isInitialized = true;
+            TryStartCreateChoosables();
         }
 
-        private IEnumerator CreateChoosables()
+        public void PlayInfoTextShowedSequence()
         {
+            if (!CanRun(_routineVersion))
+            {
+                return;
+            }
+
+            StopInfoTextShowedCoroutine();
+
+            int routineVersion = _routineVersion;
+            _infoTextShowedCoroutine = Timing.RunCoroutine(OnInfoTextShowed(routineVersion));
+        }
+
+        private void TryStartCreateChoosables()
+        {
+            if (!_isInitialized || !isActiveAndEnabled)
+            {
+                return;
+            }
+
+            if (_itemTuples == null || _itemTuples.Count < ChoosableCount)
+            {
+                return;
+            }
+
+            if (_choosables != null && _choosables.Count > 0)
+            {
+                return;
+            }
+
+            StopCreateChoosablesCoroutine();
+
+            int routineVersion = _routineVersion;
+            _createChoosablesCoroutine = Timing.RunCoroutine(CreateChoosables(routineVersion));
+        }
+
+        private IEnumerator<float> CreateChoosables(int routineVersion)
+        {
+            if (!CanRun(routineVersion))
+            {
+                yield break;
+            }
+
             if (_itemTuples.Count < ChoosableCount)
             {
                 Debug.LogWarning($"Yeni tur oluþturulamadý. Kalan ItemTupleData sayýsý {ChoosableCount}'ten az.");
                 yield break;
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return Timing.WaitForSeconds(0.5f);
+
+            if (!CanRun(routineVersion))
+            {
+                yield break;
+            }
 
             Helper.Shuffle(_itemTuples);
 
@@ -76,19 +136,34 @@ namespace SpecialEducationGames
 
             for (int i = 0; i < ChoosableCount; i++)
             {
-                Choosable choosable = MatchingManager.ChoosableFactory.Create(Vector2.zero, Quaternion.identity, _layoutGroup.transform);
+                if (!CanRun(routineVersion))
+                {
+                    yield break;
+                }
+
+                Choosable choosable = Presenter.CreateChoosable(_layoutGroup.transform);
+                if (choosable == null)
+                {
+                    Debug.LogError("Choosable oluþturulamadý.");
+                    yield break;
+                }
+
                 choosable.Initialize(_itemTuples[i].Sprite, string.Empty);
                 choosable.SetAnimationSettings(_choosableAnimationSettings);
 
                 Vector3 pos = choosable.transform.localPosition;
-                pos.z = 0;
+                pos.z = 0f;
                 choosable.transform.localPosition = pos;
+                choosable.transform.localScale = Vector3.zero;
 
                 _choosables.Add(choosable);
 
-                yield return null;
+                yield return Timing.WaitForOneFrame;
+            }
 
-                choosable.transform.localScale = Vector3.zero;
+            if (!CanRun(routineVersion) || _choosables.Count <= _selectedChoosableId)
+            {
+                yield break;
             }
 
             _selectedChoosable = _choosables[_selectedChoosableId];
@@ -97,17 +172,29 @@ namespace SpecialEducationGames
             Presenter.ShowInfoText(_selectedChoosableTuple);
         }
 
-        public IEnumerator<float> OnInfoTextShowed()
+        public IEnumerator<float> OnInfoTextShowed(int routineVersion)
         {
+            Debug.Log("OnInfoTextShowed");
             for (int i = 0; i < _choosables.Count; i++)
             {
-                StartCoroutine(_choosables[i].Spawn());
+                if (!CanRun(routineVersion) || _choosables[i] == null)
+                {
+                    yield break;
+                }
+
+                _choosables[i].PlaySpawn();
+
                 yield return Timing.WaitForSeconds(_choosableAnimationSettings.Spawn.Duration / 2f);
             }
         }
 
         public void OnChoosableSelected(OnChoosableSelectedEvent onChoosableSelectedEvent)
         {
+            if (!_isInitialized || !isActiveAndEnabled || _selectedChoosable == null)
+            {
+                return;
+            }
+
             if (onChoosableSelectedEvent.Choosable.IsCorrectAnswer)
             {
                 OnRightOneSelected();
@@ -137,11 +224,21 @@ namespace SpecialEducationGames
 
         private void OnChoosableGoneToCenter()
         {
+            if (!_isInitialized || !isActiveAndEnabled)
+            {
+                return;
+            }
+
             _circleParticles.Play();
         }
 
         private void OnChoosedAnimationCompleted()
         {
+            if (!_isInitialized || !isActiveAndEnabled || _selectedChoosable == null)
+            {
+                return;
+            }
+
             Presenter.OnStageCompleted();
             _selectedChoosable.Hide();
 
@@ -150,19 +247,50 @@ namespace SpecialEducationGames
             _choosables.Clear();
             _layoutGroup.enabled = true;
 
-            if (!GameManager.IsGameFinished)
+            if (GameManager.IsGameFinished)
             {
-                _itemTuples.Remove(_selectedChoosableTuple);
-
-                if (_itemTuples.Count >= ChoosableCount)
-                {
-                    StartCoroutine(CreateChoosables());
-                }
-                else
-                {
-                    Debug.LogError($"Yeni tur baþlatýlmadý. Kalan ItemTupleData sayýsý {ChoosableCount}'ten az.");
-                }
+                return;
             }
+
+            _itemTuples.Remove(_selectedChoosableTuple);
+
+            if (_itemTuples.Count >= ChoosableCount)
+            {
+                TryStartCreateChoosables();
+            }
+            else
+            {
+                Debug.LogError($"Yeni tur baþlatýlmadý. Kalan ItemTupleData sayýsý {ChoosableCount}'ten az.");
+            }
+        }
+
+        private void InvalidateRunningOperations()
+        {
+            _routineVersion++;
+            StopRunningCoroutines();
+        }
+
+        private void StopRunningCoroutines()
+        {
+            StopCreateChoosablesCoroutine();
+            StopInfoTextShowedCoroutine();
+        }
+
+        private void StopCreateChoosablesCoroutine()
+        {
+            Timing.KillCoroutines(_createChoosablesCoroutine);
+            _createChoosablesCoroutine = default;
+        }
+
+        private void StopInfoTextShowedCoroutine()
+        {
+            Timing.KillCoroutines(_infoTextShowedCoroutine);
+            _infoTextShowedCoroutine = default;
+        }
+
+        private bool CanRun(int routineVersion)
+        {
+            return _isInitialized && isActiveAndEnabled && routineVersion == _routineVersion;
         }
 
         [Serializable]

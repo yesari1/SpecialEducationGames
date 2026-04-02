@@ -8,18 +8,21 @@ namespace SpecialEducationGames
         private static CompareNumbersManager _instance;
 
         [SerializeField] private ChoosableFactory _choosableFactory;
-
         [SerializeField] private VisualItemFactory _visualItemFactory;
+        [SerializeField] private List<ItemData> _itemTuples;
+        [SerializeField] private ItemData _greaterItemTuple;
+        [SerializeField] private ItemData _equalItemTuple;
+        [SerializeField] private ItemData _lessItemTuple;
 
-        [SerializeField] private List<ItemTupleData> _itemTuples;
-
-        private EffectType[] _gameSounds;
+        private SoundData _firstItemSound;
+        private SoundData _secondItemSound;
 
         public static ChoosableFactory ChoosableFactory => _instance._choosableFactory;
-
         public static VisualItemFactory VisualItemFactory => _instance._visualItemFactory;
-
-        public static IReadOnlyList<ItemTupleData> ItemTuples => _instance._itemTuples;
+        public static IReadOnlyList<ItemData> ItemTuples => _instance._itemTuples;
+        public static ItemData GreaterItemTuple => _instance._greaterItemTuple;
+        public static ItemData EqualItemTuple => _instance._equalItemTuple;
+        public static ItemData LessItemTuple => _instance._lessItemTuple;
 
         private void Awake()
         {
@@ -56,7 +59,8 @@ namespace SpecialEducationGames
         {
             List<VisualItem> items = onVisualItemsCreatedEvent.VisualItems;
 
-            _gameSounds = new EffectType[4];
+            _firstItemSound = null;
+            _secondItemSound = null;
 
             for (int i = 0; i < items.Count; i++)
             {
@@ -65,26 +69,36 @@ namespace SpecialEducationGames
                     continue;
                 }
 
-                _gameSounds[i] = items[i].ItemTuple.Audio;
+                SoundData soundData = items[i].ItemTuple != null ? items[i].ItemTuple.Audio : null;
+
+                if (_firstItemSound == null)
+                {
+                    _firstItemSound = soundData;
+                }
+                else
+                {
+                    _secondItemSound = soundData;
+                    break;
+                }
             }
 
-            EffectType gameSoundTemp = _gameSounds[2];
-
-            _gameSounds[1] = EffectType.And;
-            _gameSounds[2] = gameSoundTemp;
-            _gameSounds[3] = EffectType.CompareNumbers;
-
-            AudioManager.PlaySounds(_gameSounds);
+            AudioManager.PlaySounds(
+                _firstItemSound,
+                AudioManager.GetSoundData(EffectType.And),
+                _secondItemSound,
+                AudioManager.GetSoundData(EffectType.CompareNumbers));
         }
 
         private void OnCorrectOneChoosed(OnCorrectOneChoosedEvent onCorrectOneChoosedEvent)
         {
             AudioManager.PlaySuccessSoundRandomly();
 
-            _gameSounds[1] = onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio;
-            _gameSounds[3] = EffectType.None;
+            SoundData resultSound = onCorrectOneChoosedEvent.Choosable != null &&
+                                    onCorrectOneChoosedEvent.Choosable.ItemTuple != null
+                ? onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio
+                : null;
 
-            AudioManager.PlaySounds(_gameSounds);
+            AudioManager.PlaySounds(_firstItemSound, resultSound, _secondItemSound);
         }
     }
 }

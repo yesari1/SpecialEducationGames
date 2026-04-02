@@ -9,22 +9,14 @@ namespace SpecialEducationGames
     {
         private const float InspectorBottomSpacing = 4f;
 
-        private SerializedProperty _effectType;
-
-        private void OnEnable()
-        {
-            _effectType = serializedObject.FindProperty("GameSound");
-        }
-
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
 
             DrawScriptField();
-            EditorGUILayout.PropertyField(_effectType);
 
             EditorGUILayout.Space(InspectorBottomSpacing);
-            DrawPropertiesExcluding(serializedObject, "m_Script", "GameSound");
+            DrawPropertiesExcluding(serializedObject, "m_Script");
 
             serializedObject.ApplyModifiedProperties();
         }

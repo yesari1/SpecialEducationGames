@@ -7,7 +7,7 @@ namespace SpecialEducationGames
     [CreateAssetMenu(fileName = "ChoosableData", menuName = "SEG/ChoosableData")]
     public class ChoosableData : ScriptableObject
     {
-        public List<ItemTupleData> ChoosableTuples;
+        public List<ItemData> ChoosableTuples;
     }
 
 

@@ -8,6 +8,6 @@ namespace SpecialEducationGames
     [CreateAssetMenu(fileName = "NumberData", menuName = "SEG/NumberData")]
     public class NumberData : ScriptableObject
     {
-        public List<ItemTupleData> NumberTuples;
+        public List<ItemData> NumberTuples;
     }
 }

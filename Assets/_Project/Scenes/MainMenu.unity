@@ -2557,6 +2557,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7b0cc7d566a3f8e41affff4aa160f79f, type: 2}
   - {fileID: 11400000, guid: afea6e4992a58b74380010c89361d1dd, type: 2}
   - {fileID: 11400000, guid: b4762bfb00b498e4bbf55632204232ec, type: 2}
+  - {fileID: 11400000, guid: 67d1e6c475be00746b9a7ae73c61fec5, type: 2}
+  - {fileID: 11400000, guid: e80e6526ea8b33a48902fc2275344895, type: 2}
+  - {fileID: 11400000, guid: e8130b6a16762a149bb19a91e989d3ff, type: 2}
   - {fileID: 11400000, guid: e93e13420315ea54cac8cfa2a9f27190, type: 2}
   - {fileID: 11400000, guid: 8cd0c1d7ab244fc4882db84886a3fe82, type: 2}
   - {fileID: 11400000, guid: e7969acf2d99c1b4fa336bd3d2a9745e, type: 2}
@@ -2587,12 +2590,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f9847c08c2dc7f469cbbc836a558e04, type: 2}
   - {fileID: 11400000, guid: d4b32fc6c98ab2540a2b09d8d806b6e8, type: 2}
   - {fileID: 11400000, guid: 02e8224e4cdbbf24cae5d7b7623df5af, type: 2}
+  - {fileID: 11400000, guid: 4fd8d6f30ba64dd4294d0018508fe9a2, type: 2}
+  - {fileID: 11400000, guid: 9f4cdc0fc7f83234fb5da4b5fa572adc, type: 2}
+  - {fileID: 11400000, guid: 04029e97ee5baa048a1e5a1f3baaf6ca, type: 2}
+  - {fileID: 11400000, guid: 883df380a5a1aaa4f8c35ffa7089d90d, type: 2}
+  - {fileID: 11400000, guid: 57ab91ceaa8b5a84d972686fadc89f29, type: 2}
   - {fileID: 11400000, guid: 955dc7cb6918c45468417428617c3a79, type: 2}
   - {fileID: 11400000, guid: 9db903eab6d3c9e4696e8538d9687668, type: 2}
   - {fileID: 11400000, guid: a31ffd8fb3a416f44a9d96ab24df3b13, type: 2}
   - {fileID: 11400000, guid: 6bfb3bd772309dd42a08fc047fa410ba, type: 2}
   - {fileID: 11400000, guid: ba87bf1a984659e44b1d34706585c7ef, type: 2}
   - {fileID: 11400000, guid: 46bc4a8ca4e251b4b90ad6fde1548d5f, type: 2}
+  _effectSoundEntries:
+  - EffectType: 10
+    SoundData: {fileID: 11400000, guid: d4b32fc6c98ab2540a2b09d8d806b6e8, type: 2}
+  - EffectType: 11
+    SoundData: {fileID: 11400000, guid: a31ffd8fb3a416f44a9d96ab24df3b13, type: 2}
+  - EffectType: 12
+    SoundData: {fileID: 11400000, guid: b4762bfb00b498e4bbf55632204232ec, type: 2}
+  - EffectType: 13
+    SoundData: {fileID: 11400000, guid: ac2d55156f142af40bb52eabdc588191, type: 2}
+  - EffectType: 14
+    SoundData: {fileID: 11400000, guid: b7d15655feb9a994c882b9ac40af0cdf, type: 2}
+  - EffectType: 15
+    SoundData: {fileID: 11400000, guid: 0b9fbf6e5c7c04e4182211f20f19482f, type: 2}
+  - EffectType: 16
+    SoundData: {fileID: 11400000, guid: c6003caf22c000d4ab970b245fae3634, type: 2}
+  - EffectType: 48
+    SoundData: {fileID: 11400000, guid: 4f9847c08c2dc7f469cbbc836a558e04, type: 2}
+  - EffectType: 49
+    SoundData: {fileID: 11400000, guid: d4b32fc6c98ab2540a2b09d8d806b6e8, type: 2}
   _successSoundDataList:
   - {fileID: 11400000, guid: 4fd8d6f30ba64dd4294d0018508fe9a2, type: 2}
   - {fileID: 11400000, guid: 9f4cdc0fc7f83234fb5da4b5fa572adc, type: 2}
@@ -2603,6 +2630,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67d1e6c475be00746b9a7ae73c61fec5, type: 2}
   - {fileID: 11400000, guid: e80e6526ea8b33a48902fc2275344895, type: 2}
   - {fileID: 11400000, guid: e8130b6a16762a149bb19a91e989d3ff, type: 2}
+  _tryAgainSoundDataList:
+  - {fileID: 11400000, guid: a31ffd8fb3a416f44a9d96ab24df3b13, type: 2}
   _delay: 1.75
   _betweenSoundsDelay: 0.7
 --- !u!4 &1177720162

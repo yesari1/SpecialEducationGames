@@ -8,16 +8,12 @@ namespace SpecialEducationGames
         private static GuessNextNumberManager _instance;
 
         [SerializeField] private ChoosableFactory _choosableFactory;
-
         [SerializeField] private VisualItemFactory _visualItemFactory;
-
-        [SerializeField] private List<ItemTupleData> _itemTuples;
+        [SerializeField] private List<ItemData> _itemTuples;
 
         public static ChoosableFactory ChoosableFactory => _instance._choosableFactory;
-
         public static VisualItemFactory VisualItemFactory => _instance._visualItemFactory;
-
-        public static IReadOnlyList<ItemTupleData> ItemTuples => _instance._itemTuples;
+        public static IReadOnlyList<ItemData> ItemTuples => _instance._itemTuples;
 
         private void Awake()
         {
@@ -53,27 +49,32 @@ namespace SpecialEducationGames
         private void OnVisualItemsCreated(OnVisualItemsCreatedEvent onVisualItemsCreatedEvent)
         {
             List<VisualItem> items = onVisualItemsCreatedEvent.VisualItems;
-
-            EffectType[] gameSounds = new EffectType[items.Count];
+            List<SoundData> gameSounds = new List<SoundData>(items.Count);
 
             for (int i = 0; i < items.Count; i++)
             {
                 if (items[i].IsHidden)
                 {
-                    gameSounds[i] = EffectType.GuessNextNumber;
+                    gameSounds.Add(AudioManager.GetSoundData(EffectType.GuessNextNumber));
                     continue;
                 }
 
-                gameSounds[i] = items[i].ItemTuple.Audio;
+                gameSounds.Add(items[i].ItemTuple != null ? items[i].ItemTuple.Audio : null);
             }
 
-            AudioManager.PlaySounds(gameSounds);
+            AudioManager.PlaySounds(gameSounds.ToArray());
         }
 
         private void OnCorrectOneChoosed(OnCorrectOneChoosedEvent onCorrectOneChoosedEvent)
         {
             AudioManager.PlaySuccessSoundRandomly();
-            AudioManager.PlaySounds(onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio);
+
+            SoundData soundData = onCorrectOneChoosedEvent.Choosable != null &&
+                                  onCorrectOneChoosedEvent.Choosable.ItemTuple != null
+                ? onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio
+                : null;
+
+            AudioManager.PlaySounds(soundData);
         }
     }
 }

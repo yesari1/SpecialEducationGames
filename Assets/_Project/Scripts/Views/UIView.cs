@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SpecialEducationGames
 {
-    public abstract class UIView<TPresenter> : UIView where TPresenter : IPresenterView, new()
+    public abstract class UIView<TPresenter> : UIView where TPresenter : class, IPresenterView, new()
     {
         protected TPresenter Presenter { get; set; }
 
@@ -19,9 +15,13 @@ namespace SpecialEducationGames
 
         public abstract void InitializeView();
 
-        public void OnDestroy()
+        protected virtual void OnDestroy()
         {
-            Presenter = default(TPresenter);
+            if (Presenter != null)
+            {
+                Presenter.Dispose();
+                Presenter = default;
+            }
         }
     }
 

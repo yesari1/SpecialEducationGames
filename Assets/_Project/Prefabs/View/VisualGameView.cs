@@ -90,7 +90,7 @@ namespace SpecialEducationGames
 
             for (int i = 0; i < _choosables.Count; i++)
             {
-                StartCoroutine(_choosables[i].Spawn());
+                _choosables[i].PlaySpawn();
                 yield return Timing.WaitForSeconds(_choosableAnimationSettings.Spawn.Duration / 2f);
             }
         }

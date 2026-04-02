@@ -23,9 +23,20 @@ namespace SpecialEducationGames
 
             Rect buttonRect = EditorGUI.PrefixLabel(position, label);
 
-            string currentLabel = property.hasMultipleDifferentValues
-                ? "—"
-                : property.enumDisplayNames[property.enumValueIndex];
+            string currentLabel;
+            if (property.hasMultipleDifferentValues)
+            {
+                currentLabel = "—";
+            }
+            else
+            {
+                int index = property.enumValueIndex;
+                string[] displayNames = property.enumDisplayNames;
+
+                currentLabel = index >= 0 && index < displayNames.Length
+                    ? displayNames[index]
+                    : $"Invalid ({property.intValue})";
+            }
 
             if (GUI.Button(buttonRect, currentLabel, EditorStyles.popup))
             {

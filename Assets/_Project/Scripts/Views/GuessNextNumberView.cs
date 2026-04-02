@@ -9,7 +9,7 @@ namespace SpecialEducationGames
         private const int VisualItemCount = 4;
         private const int ChoosableCount = 3;
 
-        private List<ItemTupleData> _itemTuples;
+        private List<ItemData> _itemTuples;
 
         private List<VisualItem> _visualItems;
 
@@ -23,13 +23,13 @@ namespace SpecialEducationGames
         {
             _visualItems = new List<VisualItem>();
             _choosables = new List<Choosable>();
-            _itemTuples = new List<ItemTupleData>();
+            _itemTuples = new List<ItemData>();
 
             if (GuessNextNumberManager.ItemTuples != null)
             {
                 for (int i = 0; i < GuessNextNumberManager.ItemTuples.Count; i++)
                 {
-                    ItemTupleData itemTuple = GuessNextNumberManager.ItemTuples[i];
+                    ItemData itemTuple = GuessNextNumberManager.ItemTuples[i];
                     if (itemTuple != null)
                     {
                         _itemTuples.Add(itemTuple);
@@ -83,7 +83,7 @@ namespace SpecialEducationGames
         {
             _choosables.Clear();
 
-            List<ItemTupleData> tempItemTuples = new List<ItemTupleData>(_itemTuples);
+            List<ItemData> tempItemTuples = new List<ItemData>(_itemTuples);
 
             _correctChoosable = GuessNextNumberManager.ChoosableFactory.Create();
             _correctChoosable.Initialize(null, tempItemTuples[_correctChoosableIndex].Name);

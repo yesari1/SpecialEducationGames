@@ -214,6 +214,86 @@ MonoBehaviour:
     m_Localized: "Sonraki Say\u0131y\u0131 Tahmin Etmeyi Ba\u015Flat"
     m_Metadata:
       m_Items: []
+  - m_Id: 691890758152192
+    m_Localized: Apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691891395686400
+    m_Localized: Carrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691891638956032
+    m_Localized: Courgette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691891882225664
+    m_Localized: Cucumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691892129689600
+    m_Localized: Mandarin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691892360376320
+    m_Localized: Mint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691892603645952
+    m_Localized: Peach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691892838526976
+    m_Localized: Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691893077602304
+    m_Localized: Plum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691893362814976
+    m_Localized: Watermelon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691893610278912
+    m_Localized: Blackberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691894067458048
+    m_Localized: Cauliflower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691894314921984
+    m_Localized: Chestnut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691894558191616
+    m_Localized: Lettuce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691894801461248
+    m_Localized: Onion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691895048925184
+    m_Localized: Pea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691895300583424
+    m_Localized: Pomegranate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691895543853056
+    m_Localized: Quince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691895799705600
+    m_Localized: Radish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691896051363840
+    m_Localized: Spinach
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

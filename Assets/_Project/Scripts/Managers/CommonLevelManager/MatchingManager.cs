@@ -5,29 +5,13 @@ namespace SpecialEducationGames
 {
     public class MatchingManager : MonoBehaviour
     {
-        private static MatchingManager _instance;
-
-        [SerializeField] private List<ItemTupleData> _itemTuples;
+        [SerializeField] private List<ItemData> _itemTuples;
 
         [SerializeField] private ChoosableFactory _factory;
 
-        public static ChoosableFactory ChoosableFactory => _instance._factory;
+        public IReadOnlyList<ItemData> ItemTuples => _itemTuples;
 
-        public static IReadOnlyList<ItemTupleData> ItemTuples => _instance._itemTuples;
-
-        private void Awake()
-        {
-            if (_instance == null)
-            {
-                _instance = this;
-                return;
-            }
-
-            if (_instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
+        public ChoosableFactory ChoosableFactory => _factory;
 
         private void OnEnable()
         {
@@ -43,11 +27,21 @@ namespace SpecialEducationGames
 
         private void OnShowInfoText(OnShowInfoTextEvent onShowInfoTextEvent)
         {
+            if (onShowInfoTextEvent.ItemTuple == null)
+            {
+                return;
+            }
+
             AudioManager.PlaySound(onShowInfoTextEvent.ItemTuple.Audio, 0.25f);
         }
 
         private void OnCorrectOneChoosed(OnCorrectOneChoosedEvent onCorrectOneChoosedEvent)
         {
+            if (onCorrectOneChoosedEvent.Choosable == null || onCorrectOneChoosedEvent.Choosable.ItemTuple == null)
+            {
+                return;
+            }
+
             AudioManager.PlaySuccessSoundRandomly();
             AudioManager.PlaySound(onCorrectOneChoosedEvent.Choosable.ItemTuple.Audio);
         }

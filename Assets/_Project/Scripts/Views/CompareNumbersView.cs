@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,21 +6,16 @@ namespace SpecialEducationGames
 {
     public class CompareNumbersView : UIView<CompareNumbersPresenter>
     {
-        private List<ItemTupleData> _numberTuples;
-
+        private List<ItemData> _numberTuples;
         private List<VisualItem> _visualItems;
-
         private List<Choosable> _choosables;
 
-        private ItemTupleData _firstNumberTuple;
+        private ItemData _firstNumberTuple;
+        private ItemData _secondNumberTuple;
 
-        private ItemTupleData _secondNumberTuple;
-
-        private ItemTupleData _greaterTuple;
-
-        private ItemTupleData _equalTuple;
-
-        private ItemTupleData _lessTuple;
+        private ItemData _greaterTuple;
+        private ItemData _equalTuple;
+        private ItemData _lessTuple;
 
         private Choosable _correctChoosable;
 
@@ -31,7 +25,7 @@ namespace SpecialEducationGames
         {
             _visualItems = new List<VisualItem>();
             _choosables = new List<Choosable>();
-            _numberTuples = new List<ItemTupleData>();
+            _numberTuples = new List<ItemData>();
 
             CacheItemTuples();
 
@@ -58,6 +52,12 @@ namespace SpecialEducationGames
 
         private void CacheItemTuples()
         {
+            _numberTuples.Clear();
+
+            _greaterTuple = CompareNumbersManager.GreaterItemTuple;
+            _equalTuple = CompareNumbersManager.EqualItemTuple;
+            _lessTuple = CompareNumbersManager.LessItemTuple;
+
             if (CompareNumbersManager.ItemTuples == null)
             {
                 return;
@@ -65,36 +65,19 @@ namespace SpecialEducationGames
 
             for (int i = 0; i < CompareNumbersManager.ItemTuples.Count; i++)
             {
-                ItemTupleData itemTuple = CompareNumbersManager.ItemTuples[i];
+                ItemData itemTuple = CompareNumbersManager.ItemTuples[i];
                 if (itemTuple == null)
                 {
                     continue;
                 }
 
-                switch (itemTuple.Audio)
+                if (TryGetNumberValue(itemTuple, out _))
                 {
-                    case EffectType.Greater:
-                        _greaterTuple = itemTuple;
-                        break;
-
-                    case EffectType.Equal:
-                        _equalTuple = itemTuple;
-                        break;
-
-                    case EffectType.Less:
-                        _lessTuple = itemTuple;
-                        break;
-
-                    default:
-                        if (TryGetNumberValue(itemTuple, out _))
-                        {
-                            _numberTuples.Add(itemTuple);
-                        }
-                        else
-                        {
-                            Debug.LogError($"Sayý parse edilemedi. ItemTupleData: {itemTuple.name}, Name: {itemTuple.Name}");
-                        }
-                        break;
+                    _numberTuples.Add(itemTuple);
+                }
+                else
+                {
+                    Debug.LogError($"Sayý parse edilemedi. ItemTupleData: {itemTuple.name}, Name: {itemTuple.Name}");
                 }
             }
         }
@@ -116,7 +99,7 @@ namespace SpecialEducationGames
             _compareState = CreateCompareState(_firstNumberTuple, _secondNumberTuple);
 
             visualItem = CompareNumbersManager.VisualItemFactory.Create();
-            ItemTupleData itemTuple = GetCompareState(_compareState);
+            ItemData itemTuple = GetCompareState(_compareState);
 
             visualItem.Initialize(itemTuple, _firstNumberTuple.Sprite, itemTuple.Name);
             visualItem.SetHidden();
@@ -129,7 +112,7 @@ namespace SpecialEducationGames
             Presenter.OnCreateVisuals(_visualItems);
         }
 
-        private CompareState CreateCompareState(ItemTupleData firstItemTuple, ItemTupleData secondItemTuple)
+        private CompareState CreateCompareState(ItemData firstItemTuple, ItemData secondItemTuple)
         {
             if (!TryGetNumberValue(firstItemTuple, out int firstValue))
             {
@@ -156,7 +139,7 @@ namespace SpecialEducationGames
             return CompareState.Equals;
         }
 
-        private bool TryGetNumberValue(ItemTupleData itemTuple, out int value)
+        private bool TryGetNumberValue(ItemData itemTuple, out int value)
         {
             value = 0;
 
@@ -178,12 +161,12 @@ namespace SpecialEducationGames
             _choosables.Clear();
 
             _correctChoosable = CompareNumbersManager.ChoosableFactory.Create();
-            ItemTupleData itemTuple = GetCompareState(_compareState);
+            ItemData itemTuple = GetCompareState(_compareState);
             _correctChoosable.Initialize(null, itemTuple.Name);
             _correctChoosable.SetCorrectAnswer(itemTuple);
             _choosables.Add(_correctChoosable);
 
-            List<ItemTupleData> otherStates = GetOtherStatesRandomly(_compareState);
+            List<ItemData> otherStates = GetOtherStatesRandomly(_compareState);
 
             for (int i = 0; i < otherStates.Count; i++)
             {
@@ -199,7 +182,7 @@ namespace SpecialEducationGames
             Presenter.OnCreateChoosables(_choosables);
         }
 
-        private ItemTupleData GetCompareState(CompareState compareState)
+        private ItemData GetCompareState(CompareState compareState)
         {
             switch (compareState)
             {
@@ -217,16 +200,16 @@ namespace SpecialEducationGames
             }
         }
 
-        private List<ItemTupleData> GetOtherStatesRandomly(CompareState compareState)
+        private List<ItemData> GetOtherStatesRandomly(CompareState compareState)
         {
-            List<ItemTupleData> states = new List<ItemTupleData>
+            List<ItemData> states = new List<ItemData>
             {
                 _greaterTuple,
                 _equalTuple,
                 _lessTuple
             };
 
-            ItemTupleData correctState = GetCompareState(compareState);
+            ItemData correctState = GetCompareState(compareState);
             states.RemoveAll(x => x == correctState);
 
             Helper.Shuffle(states);

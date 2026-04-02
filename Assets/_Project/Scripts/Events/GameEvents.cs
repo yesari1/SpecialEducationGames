@@ -28,7 +28,7 @@ namespace SpecialEducationGames
 
     public struct OnShowInfoTextEvent
     {
-        public ItemTupleData ItemTuple;
+        public ItemData ItemTuple;
         public string TextOnly;
     }
 

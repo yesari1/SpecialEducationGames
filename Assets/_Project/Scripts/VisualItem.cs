@@ -24,18 +24,18 @@ namespace SpecialEducationGames
 
         private string _correctText;
 
-        private ItemTupleData _itemTuple;
+        private ItemData _itemTuple;
 
         public bool IsHidden => _isHidden;
 
-        public ItemTupleData ItemTuple => _itemTuple;
+        public ItemData ItemTuple => _itemTuple;
 
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
         }
 
-        public void Initialize(ItemTupleData itemTuple,Sprite sprite = null,string text = "")
+        public void Initialize(ItemData itemTuple,Sprite sprite = null,string text = "")
         {
             _itemTuple = itemTuple;
 

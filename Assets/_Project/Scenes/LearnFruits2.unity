@@ -882,7 +882,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e152a387f570f14a8889966fb0aa5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _choosableData: {fileID: 11400000, guid: d8d230998b4658341827a527777db9ba, type: 2}
+  _itemTuples:
+  - {fileID: 11400000, guid: 4dc00f5e6de92114faef94251ac48978, type: 2}
+  - {fileID: 11400000, guid: 22fa0f27df815f44a8e940b6e75345af, type: 2}
+  - {fileID: 11400000, guid: 34b9ab12dde9d784ca0f274fdf2fc8c5, type: 2}
+  - {fileID: 11400000, guid: 7c00349f89fbc814b923df1ca3ef3f0e, type: 2}
+  - {fileID: 11400000, guid: 1b7ac1c6db64ff143b16e00923d45657, type: 2}
+  - {fileID: 11400000, guid: dea67f0a0e948cc42b629722bb806d26, type: 2}
+  - {fileID: 11400000, guid: 033fe94484424db40a2f93d7d2c2886b, type: 2}
+  - {fileID: 11400000, guid: ff24c6a545e5aec4a951ef474d2f07fd, type: 2}
+  - {fileID: 11400000, guid: 21a59ff9f04d23a45ba0e91e512b9bfa, type: 2}
+  - {fileID: 11400000, guid: 6fd1afb0c535c814c85c6066ea7a99ff, type: 2}
   _factory: {fileID: 1941964671}
 --- !u!1001 &6798278104334354595
 PrefabInstance:

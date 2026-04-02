@@ -17,27 +17,30 @@ namespace SpecialEducationGames
 
         private static AudioManager _instance;
 
-        [Header("Ana Sesler")]
+        [Header("All Sounds")]
         [SerializeField] private List<SoundData> _soundDataList;
 
-        [Header("Baþarý Sesleri")]
+        [Header("EffectType Sounds")]
+        [SerializeField] private List<EffectSoundEntry> _effectSoundEntries;
+
+        [Header("Success Sounds")]
         [SerializeField] private List<SoundData> _successSoundDataList;
 
-        [Header("Tebrik Sesleri")]
+        [Header("Congratulations Sounds")]
         [SerializeField] private List<SoundData> _congratsSoundDataList;
+
+        [Header("Try Again Sounds")]
+        [SerializeField] private List<SoundData> _tryAgainSoundDataList;
 
         [SerializeField] private float _delay;
         [SerializeField] private float _betweenSoundsDelay;
 
         private Stack<AudioSource> _audioSources;
-
         private List<AudioSource> _usingAudioSources;
 
         void OnEnable()
         {
-            // Dil deðiþtiðinde otomatik olarak bu metot tetiklenir
             LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
-            // Ýlk açýlýþta yükleme yap
             PreloadAll();
         }
 
@@ -77,24 +80,44 @@ namespace SpecialEducationGames
 
         void PreloadAll()
         {
-            foreach (var data in _soundDataList)
+            HashSet<SoundData> allSounds = new HashSet<SoundData>();
+
+            AddSounds(_soundDataList, allSounds);
+            AddSounds(_successSoundDataList, allSounds);
+            AddSounds(_congratsSoundDataList, allSounds);
+
+            if (_effectSoundEntries != null)
             {
-                data.Unload();   // Eski dildeki asseti RAM'den temizle
-                data.Preload();  // Yeni aktif dile göre klibi RAM'e çek
-            }
-            foreach (var data in _successSoundDataList)
-            {
-                data.Unload();
-                data.Preload();
+                for (int i = 0; i < _effectSoundEntries.Count; i++)
+                {
+                    SoundData soundData = _effectSoundEntries[i]?.SoundData;
+                    if (soundData != null)
+                    {
+                        allSounds.Add(soundData);
+                    }
+                }
             }
 
-            foreach (var data in _congratsSoundDataList)
+            foreach (SoundData soundData in allSounds)
             {
-                data.Unload();
-                data.Preload();
+                soundData.Unload();
+                soundData.Preload();
             }
         }
 
+        private static void AddSounds(List<SoundData> sounds, HashSet<SoundData> allSounds)
+        {
+            if (sounds == null)
+                return;
+
+            for (int i = 0; i < sounds.Count; i++)
+            {
+                if (sounds[i] != null)
+                {
+                    allSounds.Add(sounds[i]);
+                }
+            }
+        }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
@@ -108,6 +131,7 @@ namespace SpecialEducationGames
                 src.Stop();
                 PushAudioSource(src);
             }
+
             _usingAudioSources.Clear();
         }
 
@@ -131,12 +155,10 @@ namespace SpecialEducationGames
                 src.gameObject.SetActive(true);
                 return src;
             }
-            else
-            {
-                var go = new GameObject("Audio Source", typeof(AudioSource));
-                go.transform.SetParent(transform);
-                return go.GetComponent<AudioSource>();
-            }
+
+            var go = new GameObject("Audio Source", typeof(AudioSource));
+            go.transform.SetParent(transform);
+            return go.GetComponent<AudioSource>();
         }
 
         private void PushAudioSource(AudioSource src)
@@ -146,12 +168,24 @@ namespace SpecialEducationGames
             _audioSources.Push(src);
         }
 
-        private SoundData FindSoundData(EffectType effect, List<SoundData> list)
+        private SoundData FindSoundData(EffectType effect)
         {
-            return list.Find(s => s.GameSound == effect);
+            if (_effectSoundEntries == null)
+                return null;
+
+            for (int i = 0; i < _effectSoundEntries.Count; i++)
+            {
+                EffectSoundEntry entry = _effectSoundEntries[i];
+                if (entry != null && entry.EffectType == effect)
+                {
+                    return entry.SoundData;
+                }
+            }
+
+            return null;
         }
 
-        private AudioSource PlaySound(SoundData soundData, bool loop = false, float volume = 1f)
+        private AudioSource PlaySoundInternal(SoundData soundData, bool loop = false, float volume = 1f)
         {
             if (soundData == null || soundData.LocalizedAudioClip == null)
                 return null;
@@ -165,116 +199,138 @@ namespace SpecialEducationGames
             return audioSource;
         }
 
-        public static void PlaySound(EffectType effect, float delay = 0)
+        public static SoundData GetSoundData(EffectType effect)
         {
-            if (_instance == null) return;
-            SoundData soundData = _instance.FindSoundData(effect, _instance._soundDataList);
-            if (soundData == null) return;
+            if (_instance == null || effect == EffectType.None)
+                return null;
+
+            return _instance.FindSoundData(effect);
+        }
+
+        public static void PlaySound(SoundData soundData, float delay = 0)
+        {
+            if (_instance == null || soundData == null)
+                return;
+
             if (delay > 0)
                 _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay));
             else
-                _instance.PlaySound(soundData);
+                _instance.PlaySoundInternal(soundData);
+        }
+
+        public static void PlaySound(EffectType effect, float delay = 0)
+        {
+            if (_instance == null)
+                return;
+
+            SoundData soundData = GetSoundData(effect);
+            if (soundData == null)
+                return;
+
+            if (delay > 0)
+                _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay));
+            else
+                _instance.PlaySoundInternal(soundData);
         }
 
         private IEnumerator PlaySoundWithDelay(SoundData soundData, float delay)
         {
             yield return new WaitForSeconds(delay);
-            PlaySound(soundData);
+            PlaySoundInternal(soundData);
         }
 
         public static void PlaySuccessSoundRandomly()
         {
-            if (_instance == null || _instance._successSoundDataList.Count == 0) return;
+            if (_instance == null || _instance._successSoundDataList.Count == 0)
+                return;
+
             int rnd = Random.Range(0, _instance._successSoundDataList.Count);
             _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._successSoundDataList[rnd], 0.6f));
         }
 
         public static void PlayCongratsSoundRandomly()
         {
-            if (_instance == null || _instance._congratsSoundDataList.Count == 0) return;
+            if (_instance == null || _instance._congratsSoundDataList.Count == 0)
+                return;
+
             int rnd = Random.Range(0, _instance._congratsSoundDataList.Count);
             _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._congratsSoundDataList[rnd], 0.6f));
         }
 
         public static void PlaySounds(params EffectType[] effects)
         {
-            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, effects));
+            if (_instance == null || effects == null || effects.Length == 0)
+                return;
+
+            SoundData[] soundDataList = new SoundData[effects.Length];
+
+            for (int i = 0; i < effects.Length; i++)
+            {
+                soundDataList[i] = GetSoundData(effects[i]);
+            }
+
+            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, soundDataList));
         }
 
-        private IEnumerator IEPlaySounds(float delay, params EffectType[] effects)
+        public static void PlaySounds(params SoundData[] sounds)
+        {
+            if (_instance == null || sounds == null || sounds.Length == 0)
+                return;
+
+            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, sounds));
+        }
+
+        private IEnumerator IEPlaySounds(float delay, params SoundData[] sounds)
         {
             yield return new WaitForSeconds(delay);
 
-            foreach (var effect in effects)
+            for (int i = 0; i < sounds.Length; i++)
             {
-                PlaySound(effect);
-                yield return new WaitForSeconds(_betweenSoundsDelay);
+                if (sounds[i] != null)
+                {
+                    PlaySoundInternal(sounds[i]);
+                }
+
+                if (i < sounds.Length - 1)
+                {
+                    yield return new WaitForSeconds(_betweenSoundsDelay);
+                }
             }
-    }
+        }
 
         internal static void PlayTryAgainSoundRandomly()
         {
-            Debug.Log("HENÜZ EKLENMEDÝ");
+            if (_instance == null || _instance._tryAgainSoundDataList.Count == 0)
+                return;
+            int rnd = Random.Range(0, _instance._tryAgainSoundDataList.Count);
+            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._tryAgainSoundDataList[rnd], 0f));
         }
     }
 
     public enum EffectType
     {
-        None,
-        One,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        GuessNextNumber,
-        TryOneMore,
-        CompareNumbers,
-        And,
-        Greater,
-        Equal,
-        Less,
-        Bear,
-        Cat,
-        Chicken,
-        Cock,
-        Cow,
-        Dog,
-        Frog,
-        Giraffe,
-        Horse,
-        Rabbit,
-        Sheep,
-        Black,
-        Blue,
-        Brown,
-        Gray,
-        Green,
-        Pink,
-        Purple,
-        Red,
-        White,
-        Yellow,
-        Orange,
-        Pear,
-        Banana,
-        Strawberry,
-        Cabbage,
-        Eggplant,
-        Tomato,
-        Potato,
-        Cherry,
-        Grape,
-        StartCompareNumbers,
-        StartGuessNextNumber
+        None = 0,
+        GuessNextNumber = 10,
+        TryOneMore = 11,
+        CompareNumbers = 12,
+        And = 13,
+        Greater = 14,
+        Equal = 15,
+        Less = 16,
+        StartCompareNumbers = 48,
+        StartGuessNextNumber = 49
     }
 
     public enum MusicType
     {
         Background,
+    }
+
+    [Serializable]
+    public class EffectSoundEntry
+    {
+        public EffectType EffectType;
+        public SoundData SoundData;
     }
 
     [Serializable]
@@ -303,6 +359,4 @@ namespace SpecialEducationGames
         public bool IsLoop;
         public float Volume;
     }
-
 }
-
