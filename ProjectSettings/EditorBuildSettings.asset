@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/LearnFruits3.unity
     guid: fa4bff890f87e2f468768c2f7f128dab
   - enabled: 1
-    path: Assets/_Project/Scenes/LearnAnimals.unity
+    path: Assets/_Project/Scenes/LearnAnimals1.unity
     guid: cf95854c98f8f3242a5bd1af7abdb437
+  - enabled: 1
+    path: Assets/_Project/Scenes/LearnAnimals2.unity
+    guid: a915268817cdbdb479f078c1f195499a
+  - enabled: 1
+    path: Assets/_Project/Scenes/LearnAnimals3.unity
+    guid: badbad5b72da24343936d20087439e4b
   - enabled: 1
     path: Assets/_Project/Scenes/LearnColors.unity
     guid: bdb2235c6bddaa24f87bc68a1d3af9f4

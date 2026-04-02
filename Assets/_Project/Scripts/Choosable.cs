@@ -27,6 +27,7 @@ namespace SpecialEducationGames
         private bool _isSelectable;
 
         private Tween _spawnTween;
+        private Tweener _showSelfTween;
 
         public bool IsCorrectAnswer => _isCorrectAnswer;
         public ItemData ItemTuple => _itemTuple;
@@ -141,8 +142,8 @@ namespace SpecialEducationGames
             EventManager.Fire<OnWrongOneChoosedEvent>();
             AudioManager.PlayTryAgainSoundRandomly();
 
-            transform.DOKill();
-            transform.DOPunchScale(_animationSettings.ShowSelf);
+            _showSelfTween.IfNotNullAndPlayingKill(true);
+            _showSelfTween = transform.DOPunchScale(_animationSettings.ShowSelf);
         }
 
         public void Hide()

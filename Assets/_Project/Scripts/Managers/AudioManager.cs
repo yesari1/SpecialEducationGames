@@ -37,14 +37,17 @@ namespace SpecialEducationGames
 
         private Stack<AudioSource> _audioSources;
         private List<AudioSource> _usingAudioSources;
+        private int _playbackVersion;
 
-        void OnEnable()
+        private static AudioSource _tryAgainAudioSource;
+
+        private void OnEnable()
         {
             LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
             PreloadAll();
         }
 
-        void OnDisable()
+        private void OnDisable()
         {
             LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
         }
@@ -55,7 +58,7 @@ namespace SpecialEducationGames
             {
                 _instance = this;
                 DontDestroyOnLoad(gameObject);
-                SceneManager.sceneLoaded += OnSceneLoaded;
+                SceneManager.sceneUnloaded += OnSceneUnloaded;
             }
             else
             {
@@ -69,22 +72,27 @@ namespace SpecialEducationGames
 
         private void OnDestroy()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            if (_instance == this)
+            {
+                SceneManager.sceneUnloaded -= OnSceneUnloaded;
+                _instance = null;
+            }
         }
 
-        void OnLocaleChanged(Locale locale)
+        private void OnLocaleChanged(Locale locale)
         {
             Debug.Log($"Dil {locale.name} olarak deðiþti. Sesler güncelleniyor...");
             PreloadAll();
         }
 
-        void PreloadAll()
+        private void PreloadAll()
         {
             HashSet<SoundData> allSounds = new HashSet<SoundData>();
 
             AddSounds(_soundDataList, allSounds);
             AddSounds(_successSoundDataList, allSounds);
             AddSounds(_congratsSoundDataList, allSounds);
+            AddSounds(_tryAgainSoundDataList, allSounds);
 
             if (_effectSoundEntries != null)
             {
@@ -119,17 +127,30 @@ namespace SpecialEducationGames
             }
         }
 
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        private void OnSceneUnloaded(Scene scene)
         {
+            CancelAllPlayback();
+        }
+
+        private void CancelAllPlayback()
+        {
+            _playbackVersion++;
+            StopAllCoroutines();
             StopAllSounds();
+            _tryAgainAudioSource = null;
         }
 
         private void StopAllSounds()
         {
-            foreach (var src in _usingAudioSources)
+            for (int i = _usingAudioSources.Count - 1; i >= 0; i--)
             {
-                src.Stop();
-                PushAudioSource(src);
+                AudioSource src = _usingAudioSources[i];
+
+                if (src != null)
+                {
+                    src.Stop();
+                    PushAudioSource(src);
+                }
             }
 
             _usingAudioSources.Clear();
@@ -139,9 +160,17 @@ namespace SpecialEducationGames
         {
             for (int i = _usingAudioSources.Count - 1; i >= 0; i--)
             {
-                if (!_usingAudioSources[i].isPlaying)
+                AudioSource source = _usingAudioSources[i];
+
+                if (source == null)
                 {
-                    PushAudioSource(_usingAudioSources[i]);
+                    _usingAudioSources.RemoveAt(i);
+                    continue;
+                }
+
+                if (!source.isPlaying)
+                {
+                    PushAudioSource(source);
                     _usingAudioSources.RemoveAt(i);
                 }
             }
@@ -151,19 +180,25 @@ namespace SpecialEducationGames
         {
             if (_audioSources.Count > 0)
             {
-                var src = _audioSources.Pop();
+                AudioSource src = _audioSources.Pop();
                 src.gameObject.SetActive(true);
                 return src;
             }
 
-            var go = new GameObject("Audio Source", typeof(AudioSource));
+            GameObject go = new GameObject("Audio Source", typeof(AudioSource));
             go.transform.SetParent(transform);
             return go.GetComponent<AudioSource>();
         }
 
         private void PushAudioSource(AudioSource src)
         {
+            if (src == null)
+                return;
+
             src.Stop();
+            src.clip = null;
+            src.loop = false;
+            src.volume = 1f;
             src.gameObject.SetActive(false);
             _audioSources.Push(src);
         }
@@ -190,10 +225,14 @@ namespace SpecialEducationGames
             if (soundData == null || soundData.LocalizedAudioClip == null)
                 return null;
 
+            AudioClip clip = soundData.Clip;
+            if (clip == null)
+                return null;
+
             AudioSource audioSource = PopAudioSource();
-            audioSource.clip = soundData.Clip;
+            audioSource.clip = clip;
             audioSource.loop = loop;
-            audioSource.volume = volume;
+            audioSource.volume = Mathf.Clamp01(volume * soundData.NormalizedVolume);
             audioSource.Play();
             _usingAudioSources.Add(audioSource);
             return audioSource;
@@ -207,15 +246,27 @@ namespace SpecialEducationGames
             return _instance.FindSoundData(effect);
         }
 
+        public static AudioSource PlaySound(SoundData soundData)
+        {
+            if (_instance == null || soundData == null)
+                return null;
+
+            return _instance.PlaySoundInternal(soundData);
+        }
+
         public static void PlaySound(SoundData soundData, float delay = 0)
         {
             if (_instance == null || soundData == null)
                 return;
 
-            if (delay > 0)
-                _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay));
+            if (delay > 0f)
+            {
+                _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay, _instance._playbackVersion));
+            }
             else
+            {
                 _instance.PlaySoundInternal(soundData);
+            }
         }
 
         public static void PlaySound(EffectType effect, float delay = 0)
@@ -227,34 +278,48 @@ namespace SpecialEducationGames
             if (soundData == null)
                 return;
 
-            if (delay > 0)
-                _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay));
+            if (delay > 0f)
+            {
+                _instance.StartCoroutine(_instance.PlaySoundWithDelay(soundData, delay, _instance._playbackVersion));
+            }
             else
+            {
                 _instance.PlaySoundInternal(soundData);
+            }
         }
 
-        private IEnumerator PlaySoundWithDelay(SoundData soundData, float delay)
+        private IEnumerator PlaySoundWithDelay(SoundData soundData, float delay, int playbackVersion)
         {
             yield return new WaitForSeconds(delay);
+
+            if (playbackVersion != _playbackVersion)
+                yield break;
+
             PlaySoundInternal(soundData);
         }
 
         public static void PlaySuccessSoundRandomly()
         {
-            if (_instance == null || _instance._successSoundDataList.Count == 0)
+            if (_instance == null || _instance._successSoundDataList == null || _instance._successSoundDataList.Count == 0)
                 return;
 
+            if (_tryAgainAudioSource != null && _tryAgainAudioSource.isPlaying)
+                _tryAgainAudioSource.Stop();
+
             int rnd = Random.Range(0, _instance._successSoundDataList.Count);
-            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._successSoundDataList[rnd], 0.6f));
+            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._successSoundDataList[rnd], 0.6f, _instance._playbackVersion));
         }
 
         public static void PlayCongratsSoundRandomly()
         {
-            if (_instance == null || _instance._congratsSoundDataList.Count == 0)
+            if (_instance == null || _instance._congratsSoundDataList == null || _instance._congratsSoundDataList.Count == 0)
                 return;
 
+            if (_tryAgainAudioSource != null && _tryAgainAudioSource.isPlaying)
+                _tryAgainAudioSource.Stop();
+
             int rnd = Random.Range(0, _instance._congratsSoundDataList.Count);
-            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._congratsSoundDataList[rnd], 0.6f));
+            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._congratsSoundDataList[rnd], 0.6f, _instance._playbackVersion));
         }
 
         public static void PlaySounds(params EffectType[] effects)
@@ -269,7 +334,7 @@ namespace SpecialEducationGames
                 soundDataList[i] = GetSoundData(effects[i]);
             }
 
-            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, soundDataList));
+            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, _instance._playbackVersion, soundDataList));
         }
 
         public static void PlaySounds(params SoundData[] sounds)
@@ -277,15 +342,21 @@ namespace SpecialEducationGames
             if (_instance == null || sounds == null || sounds.Length == 0)
                 return;
 
-            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, sounds));
+            _instance.StartCoroutine(_instance.IEPlaySounds(_instance._delay, _instance._playbackVersion, sounds));
         }
 
-        private IEnumerator IEPlaySounds(float delay, params SoundData[] sounds)
+        private IEnumerator IEPlaySounds(float delay, int playbackVersion, params SoundData[] sounds)
         {
             yield return new WaitForSeconds(delay);
 
+            if (playbackVersion != _playbackVersion)
+                yield break;
+
             for (int i = 0; i < sounds.Length; i++)
             {
+                if (playbackVersion != _playbackVersion)
+                    yield break;
+
                 if (sounds[i] != null)
                 {
                     PlaySoundInternal(sounds[i]);
@@ -300,17 +371,21 @@ namespace SpecialEducationGames
 
         internal static void PlayTryAgainSoundRandomly()
         {
-            if (_instance == null || _instance._tryAgainSoundDataList.Count == 0)
+            if (_instance == null || _instance._tryAgainSoundDataList == null || _instance._tryAgainSoundDataList.Count == 0)
                 return;
+
+            if (_tryAgainAudioSource != null && _tryAgainAudioSource.isPlaying)
+                return;
+
             int rnd = Random.Range(0, _instance._tryAgainSoundDataList.Count);
-            _instance.StartCoroutine(_instance.PlaySoundWithDelay(_instance._tryAgainSoundDataList[rnd], 0f));
+            _tryAgainAudioSource = PlaySound(_instance._tryAgainSoundDataList[rnd]);
         }
     }
 
     public enum EffectType
     {
         None = 0,
-        GuessNextNumber = 10,
+        WhichOneIsTheNextNumber = 10,
         TryOneMore = 11,
         CompareNumbers = 12,
         And = 13,

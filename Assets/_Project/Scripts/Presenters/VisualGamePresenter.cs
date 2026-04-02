@@ -10,6 +10,9 @@ namespace SpecialEducationGames
 {
     public class VisualGamePresenter : PresenterBase<VisualGameView>
     {
+        private CoroutineHandle _showCoroutine;
+        private CoroutineHandle _eventCoroutine;
+
         public override void InitializePresenter()
         {
             EventManager.Subscribe<OnVisualItemsCreatedEvent>(OnVisualItemsCreated);
@@ -23,6 +26,10 @@ namespace SpecialEducationGames
             EventManager.Unsubscribe<OnChoosablesCreatedEvent>(OnChoosablesCreated);
             EventManager.Unsubscribe<OnChoosableSelectedEvent>(OnChoosableSelected);
             EventManager.Unsubscribe<OnShowInfoTextAnimationCompletedEvent>(OnShowInfoTextAnimationCompleted);
+
+            View.KillAnimations();
+            Timing.KillCoroutines(_showCoroutine);
+            Timing.KillCoroutines(_eventCoroutine);
         }
         private void OnVisualItemsCreated(OnVisualItemsCreatedEvent onVisualItemsCreatedEvent)
         {
@@ -46,14 +53,7 @@ namespace SpecialEducationGames
 
         private void OnShowInfoTextAnimationCompleted(OnShowInfoTextAnimationCompletedEvent @event)
         {
-            Timing.RunCoroutine(View.OnInfoTextShowed());
-        }
-
-        public IEnumerator<float> OnStageCompleted(float seconds)
-        {
-            yield return Timing.WaitForSeconds(seconds);
-            EventManager.Fire<OnStageCompletedEvent>();
-
+            _showCoroutine = Timing.RunCoroutine(View.OnInfoTextShowed());
         }
 
         internal void OnGameFinished()
@@ -61,6 +61,14 @@ namespace SpecialEducationGames
             EventManager.Fire<OnGameFinishedEvent>();
         }
 
+        public void OnStageCompleted(float seconds)
+        {
+            _eventCoroutine = Timing.CallDelayed(seconds, FireStageCompletedEvent);
+        }
 
+        private void FireStageCompletedEvent()
+        {
+            EventManager.Fire<OnStageCompletedEvent>();
+        }
     }
 }

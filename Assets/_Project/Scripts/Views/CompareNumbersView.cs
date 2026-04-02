@@ -77,7 +77,7 @@ namespace SpecialEducationGames
                 }
                 else
                 {
-                    Debug.LogError($"Sayý parse edilemedi. ItemTupleData: {itemTuple.name}, Name: {itemTuple.Name}");
+                    Debug.LogError($"Sayý parse edilemedi. ItemTupleData: {itemTuple.name}, Name: {itemTuple.LocalizedName}");
                 }
             }
         }
@@ -148,7 +148,7 @@ namespace SpecialEducationGames
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(itemTuple.Name))
+            if (string.IsNullOrWhiteSpace(itemTuple.LocalName))
             {
                 return false;
             }

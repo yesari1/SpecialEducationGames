@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
-using SpecialEducationGames;
 using TMPro;
 using UnityEngine;
 
@@ -76,6 +75,11 @@ namespace SpecialEducationGames
             return tweener.SetDelay(tweenSettings.Delay).SetEase(tweenSettings.Ease);
         }
 
+        public static Sequence SetDelayAndEase(this Sequence tweener, TweenSettings tweenSettings)
+        {
+            return tweener.SetDelay(tweenSettings.Delay).SetEase(tweenSettings.Ease);
+        }
+
         public static Tweener DOLocalRotate(this Transform tweenTransform, TweenSettings tweenSettings)
         {
             return tweenTransform.DOLocalRotate(tweenSettings.Vector, tweenSettings.Duration, RotateMode.FastBeyond360)
@@ -93,5 +97,28 @@ namespace SpecialEducationGames
             return tweenTransform.DOMove(tweenSettings.Vector, tweenSettings.Duration)
                 .SetDelayAndEase(tweenSettings);
         }
+
+        public static bool IfNotNullAndPlaying(this Tween tween)
+        {
+            if (tween != null && tween.IsPlaying())
+                return true;
+
+            return false;
+        }
+
+        public static bool IfNotNullAndPlayingKill(this Tween tween,bool complete = false)
+        {
+            if (tween != null && tween.active && tween.IsPlaying())
+            {
+                tween.Kill(complete);
+                tween = null;
+                return true;
+            }
+
+            return false;
+        }
+
+
+
     }
 }

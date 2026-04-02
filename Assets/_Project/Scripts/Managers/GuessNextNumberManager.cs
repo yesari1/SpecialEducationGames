@@ -55,7 +55,7 @@ namespace SpecialEducationGames
             {
                 if (items[i].IsHidden)
                 {
-                    gameSounds.Add(AudioManager.GetSoundData(EffectType.GuessNextNumber));
+                    gameSounds.Add(AudioManager.GetSoundData(EffectType.WhichOneIsTheNextNumber));
                     continue;
                 }
 

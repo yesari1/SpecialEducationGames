@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a74402cd24dfd04eb80fbafd8c062ac, type: 3}
   m_Name: Congrats_03_SoundData
   m_EditorClassIdentifier: 
-  GameSound: 0
   LocalizedAudioClip:
     m_TableReference:
       m_TableCollectionName: GUID:791a0c0977fbab14791919250d8cd0c5
@@ -21,3 +20,4 @@ MonoBehaviour:
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
+  _volume: 2

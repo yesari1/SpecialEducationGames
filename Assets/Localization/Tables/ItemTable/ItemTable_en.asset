@@ -294,6 +294,86 @@ MonoBehaviour:
     m_Localized: Spinach
     m_Metadata:
       m_Items: []
+  - m_Id: 1059437751889920
+    m_Localized: Bird
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437781250048
+    m_Localized: Butterfly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437781250049
+    m_Localized: Chick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444352
+    m_Localized: Duck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444353
+    m_Localized: Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444354
+    m_Localized: Turtle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444355
+    m_Localized: Bee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444356
+    m_Localized: Bull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444357
+    m_Localized: Donkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444358
+    m_Localized: Goat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444359
+    m_Localized: Turkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444360
+    m_Localized: Deer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444361
+    m_Localized: Elephant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444362
+    m_Localized: Lion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444363
+    m_Localized: Monkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444364
+    m_Localized: Owl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444365
+    m_Localized: Tiger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444366
+    m_Localized: Wolf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437789638656
+    m_Localized: Zebra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059539904163840
+    m_Localized: Mouse
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -144,7 +144,12 @@ namespace SpecialEducationGames
             _choosables.Clear();
             _visuals.Clear();
 
-            Timing.RunCoroutine(Presenter.OnStageCompleted(2));
+            Presenter.OnStageCompleted(2);
+        }
+
+        internal void KillAnimations()
+        {
+
         }
 
 

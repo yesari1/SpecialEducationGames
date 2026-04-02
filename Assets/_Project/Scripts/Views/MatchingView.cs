@@ -174,7 +174,7 @@ namespace SpecialEducationGames
 
         public IEnumerator<float> OnInfoTextShowed(int routineVersion)
         {
-            Debug.Log("OnInfoTextShowed");
+            //Debug.Log("OnInfoTextShowed");
             for (int i = 0; i < _choosables.Count; i++)
             {
                 if (!CanRun(routineVersion) || _choosables[i] == null)

@@ -18,6 +18,9 @@ namespace SpecialEducationGames
         private const string OutputFolderEditorPref = "SEG_FlatIcon_OutputFolder";
         private const string ShowFiltersEditorPref = "SEG_FlatIcon_ShowFilters";
 
+        private const int PreviewMaxAttempts = 3;
+        private const int PreviewRetryDelayMs = 500;
+
         private const float OuterPadding = 12f;
         private const float SectionSpacing = 10f;
         private const float FilterColumnSpacing = 8f;
@@ -87,11 +90,13 @@ namespace SpecialEducationGames
 
         private enum WindowTab
         {
-            Browser,
+            IconBrowser,
+            ImageBrowser,
+            ZipExporter,
             Outline
         }
 
-        private WindowTab _activeTab = WindowTab.Browser;
+        private WindowTab _activeTab = WindowTab.IconBrowser;
 
         private string _apiKey;
         private string _searchTerm = string.Empty;
@@ -145,6 +150,9 @@ namespace SpecialEducationGames
             _apiKey = EditorPrefs.GetString(ApiKeyEditorPref, string.Empty);
             _outputFolder = EditorPrefs.GetString(OutputFolderEditorPref, _outputFolder);
             _showFilters = EditorPrefs.GetBool(ShowFiltersEditorPref, true);
+
+            OnEnableImageBrowserTab();
+            OnEnableZipExportTab();
             OnEnableOutlineTab();
         }
 
@@ -153,7 +161,10 @@ namespace SpecialEducationGames
             EditorPrefs.SetString(ApiKeyEditorPref, _apiKey ?? string.Empty);
             EditorPrefs.SetString(OutputFolderEditorPref, _outputFolder ?? string.Empty);
             EditorPrefs.SetBool(ShowFiltersEditorPref, _showFilters);
+
             ClearResults();
+            OnDisableImageBrowserTab();
+            OnDisableZipExportTab();
             OnDisableOutlineTab();
         }
 
@@ -177,13 +188,27 @@ namespace SpecialEducationGames
                         DrawTabToolbar();
                         GUILayout.Space(SectionSpacing);
 
-                        if (_activeTab == WindowTab.Browser)
+                        switch (_activeTab)
                         {
-                            DrawBrowserTab();
-                        }
-                        else
-                        {
-                            DrawOutlineTab();
+                            case WindowTab.IconBrowser:
+                                DrawBrowserTab();
+                                break;
+
+                            case WindowTab.ImageBrowser:
+                                DrawImageBrowserTab();
+                                break;
+
+                            case WindowTab.ZipExporter:
+                                DrawZipExportTab();
+                                break;
+
+                            case WindowTab.Outline:
+                                DrawOutlineTab();
+                                break;
+
+                            default:
+                                DrawBrowserTab();
+                                break;
                         }
 
                         GUILayout.Space(OuterPadding);
@@ -198,9 +223,10 @@ namespace SpecialEducationGames
                 EditorGUILayout.HelpBox($"Editor hata verdi: {ex.Message}", MessageType.Error);
             }
         }
+
         private void DrawTabToolbar()
         {
-            string[] tabs = { "Icon Browser", "Outline Creator" };
+            string[] tabs = { "Icon Browser", "Image Browser", "Background Remove", "Outline Creator" };
             _activeTab = (WindowTab)GUILayout.Toolbar((int)_activeTab, tabs, GUILayout.Height(30f));
         }
 
@@ -222,8 +248,8 @@ namespace SpecialEducationGames
         }
         private void DrawHeader()
         {
-            EditorGUILayout.LabelField("Search & Outline Icons", _titleStyle);
-            EditorGUILayout.LabelField("Flaticon sonuçlarýný ara, filtrele, seç, kaydet ve outline üret.", _subtitleStyle);
+            EditorGUILayout.LabelField("Icon, Image & Outline Browser", _titleStyle);
+            EditorGUILayout.LabelField("Flaticon ikonlarýný ve Freepik görsellerini ara, filtrele, seç, kaydet ve outline üret.", _subtitleStyle);
         }
 
         private void EnsureStyles()
@@ -902,26 +928,49 @@ namespace SpecialEducationGames
 
         private async Task LoadPreviewAsync(IconViewModel icon)
         {
-            using UnityWebRequest request = UnityWebRequestTexture.GetTexture(icon.ThumbnailUrl);
-            await SendRequestAsync(request);
-
-#if UNITY_2020_1_OR_NEWER
-            bool hasError = request.result != UnityWebRequest.Result.Success;
-#else
-            bool hasError = request.isNetworkError || request.isHttpError;
-#endif
-
-            if (hasError)
+            if (icon == null || string.IsNullOrWhiteSpace(icon.ThumbnailUrl))
             {
-                icon.IsLoadingPreview = false;
-                icon.Error = "Preview load failed";
-                Repaint();
                 return;
             }
 
-            Texture2D texture = DownloadHandlerTexture.GetContent(request);
-            icon.PreviewTexture = texture;
+            icon.IsLoadingPreview = true;
+            icon.Error = null;
+
+            string lastError = "Preview load failed";
+
+            for (int attempt = 1; attempt <= PreviewMaxAttempts; attempt++)
+            {
+                using UnityWebRequest request = UnityWebRequestTexture.GetTexture(icon.ThumbnailUrl);
+                request.timeout = 15;
+
+                await SendRequestAsync(request);
+
+#if UNITY_2020_1_OR_NEWER
+                bool hasError = request.result != UnityWebRequest.Result.Success;
+#else
+                bool hasError = request.isNetworkError || request.isHttpError;
+#endif
+
+                if (!hasError)
+                {
+                    Texture2D texture = DownloadHandlerTexture.GetContent(request);
+                    icon.PreviewTexture = texture;
+                    icon.IsLoadingPreview = false;
+                    icon.Error = null;
+                    Repaint();
+                    return;
+                }
+
+                lastError = $"Preview load failed: {request.responseCode} - {request.error}";
+
+                if (attempt < PreviewMaxAttempts)
+                {
+                    await Task.Delay(PreviewRetryDelayMs * attempt);
+                }
+            }
+
             icon.IsLoadingPreview = false;
+            icon.Error = lastError;
             Repaint();
         }
 
@@ -1090,12 +1139,41 @@ namespace SpecialEducationGames
             }
         }
 
+        private static string EnsureHttpsUrl(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return string.Empty;
+            }
+
+            if (url.StartsWith("//", StringComparison.Ordinal))
+            {
+                return "https:" + url;
+            }
+
+            if (url.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
+            {
+                return "https://" + url.Substring("http://".Length);
+            }
+
+            return url;
+        }
+
         private static async Task SendRequestAsync(UnityWebRequest request)
         {
-            UnityWebRequestAsyncOperation operation = request.SendWebRequest();
-            TaskCompletionSource<bool> taskCompletionSource = new TaskCompletionSource<bool>();
-            operation.completed += _ => taskCompletionSource.TrySetResult(true);
-            await taskCompletionSource.Task;
+            try
+            {
+                UnityWebRequestAsyncOperation operation = request.SendWebRequest();
+                TaskCompletionSource<bool> taskCompletionSource = new TaskCompletionSource<bool>();
+                operation.completed += _ => taskCompletionSource.TrySetResult(true);
+                await taskCompletionSource.Task;
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new InvalidOperationException(
+                    $"Request baþlatýlamadý. URL: {request.url} | Hata: {ex.Message}",
+                    ex);
+            }
         }
 
         private static string GetBestThumbnailUrl(FlaticonIconData data)

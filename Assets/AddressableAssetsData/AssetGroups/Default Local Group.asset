@@ -16,7 +16,846 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 49f97f75093e15544aba4ef935d623ff
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 0030f11abc6a79f46a60b76be872dee8
+    m_Address: Success_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01541ccf4459f0c4a9ed140d965ce8cc
+    m_Address: Assets/_Project/Audio/Animals/Bull.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 016a680e0135df945ac6d7800896f3db
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Turkey_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02bc5834e9edf4441b13a7ea686d9788
+    m_Address: Assets/_Project/Audio/Animals/Donkey.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04bbac89b263b2c44a391905cb140489
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Donkey_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0730a9de04dcb1a4e89ab2f5ce9145a8
+    m_Address: Assets/_Project/Audio/Animals/Bird.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09efcd43cf9e91d408661d714f510532
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Wolf_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a31dce0271560645a780a5f2550968f
+    m_Address: Assets/_Project/Audio/Animals/Bee.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c43c419f57c0e94a8d2105029ed898f
+    m_Address: Banana
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cbfb4e7be1b2f843acf8f3c26f71fc5
+    m_Address: Bear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ccf4125b79b5154c9f2c512f699fcbc
+    m_Address: Quince
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0da5ab7bcd718d549a9a95fd0c449a23
+    m_Address: Green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fdb234b7b595b34a8ad42fd5b837b01
+    m_Address: Brown
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fddb7d240d04954cbf1072b7b75da8f
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Goat_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1088a4b4111c40b4f9f666574708bea0
+    m_Address: Plum
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 140028b38f672314683265a9eb2ca542
+    m_Address: Watermelon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14e80b9acc69e75478706c93c5f5b72e
+    m_Address: Dog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c2248301d0334743b6acf153659b118
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Owl_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1cc9cee74c4ee7c4087b73e18fe228b2
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Bull_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ed9cfefc1970334eb0c95e52e3fe69a
+    m_Address: LevelEnd_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ff37dcd43cf27047b24261ccf44fc94
+    m_Address: Cucumber
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 208f4dc9a3f7b6b408fe5a1ea4516d3f
+    m_Address: Ten
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20c11d24116a22b49835bfae7429da68
+    m_Address: StartCompareNumbers
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20e6f91439f4ea94fba83641ea6dfa82
+    m_Address: Eggplant
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 273f94072c69a014e85811451bd9f348
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Butterfly_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 289d4ab0f77122049890c718e538e5fc
+    m_Address: Gray
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29507fe7f5acb404da9257578ab14fc1
+    m_Address: And
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b19a2eea3a1fca418a2e9991f87d74f
+    m_Address: Eight
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2de885444644c1e4ba85c2adc2594cea
+    m_Address: Cherry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 333cb6fa912b0f04db8746ee1a3c32b8
+    m_Address: Apple
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3584d5927da21ab4b8e22627c20ad497
+    m_Address: Assets/_Project/Scriptables/SoundDatas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3650818abb4cb2847b5d1e836c4df2b7
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Giraffe_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 368301b875c365e47b07379caded342b
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Lion_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38466313692f3744e9e1b505d9477e6c
+    m_Address: Pea
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 389b562fc34e75d4abe6ced0147b06fc
+    m_Address: Assets/_Project/Audio/Animals/Zebra.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a468db6b3d77a4428e9d991a3d6427a
+    m_Address: Blackberry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c63b00739c4ca14c8b8463d51875895
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f1f7ae85a9f6c949b9d488c9cd1ff0b
+    m_Address: Congrats_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40d42c41ca0a7c64fb484f3e7a21aa8b
+    m_Address: LevelEnd_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45403b15b99f99c4f8fa185d01bf2f4d
+    m_Address: Blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4731a811274978e469250ce7b4181b2f
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Zebra_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 473b6b09e00cd6048b97f6adee0c13e1
+    m_Address: StartGuessNextNumber
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48ac73471c39fec4fb666db01ac5da84
+    m_Address: CompareNumbers
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c0a797e66827004a9e155552ba9d4d1
+    m_Address: Assets/_Project/Audio/Animals/Goat.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d02a7fd0cd5a264da238bfd2c61be6e
+    m_Address: Spinach
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58c5e6bdb84da794587b3a070896f7ff
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Rabbit_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ae99f49e250d124bb6d935e0cb28cc0
+    m_Address: Yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d01b717e19a78040876be591e80d519
+    m_Address: TryOneMore
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e9893b741ba0174f957254feed700ac
+    m_Address: Assets/_Project/Audio/Animals/Turkey.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f332c5e0d2004f45835407067c6f219
+    m_Address: Assets/_Project/Audio/Animals/Chick.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 602353091fd783a4685f59c297fd9105
+    m_Address: Radish
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 617e58ae74cd59a4a850407fdc07fa32
+    m_Address: Sheep
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 633d28569bca2e8418e7cf2ece08eda1
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Elephant_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6470cf275e1dd7e468c61f4a1888fa65
+    m_Address: Assets/_Project/Audio/Animals/Duck.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6692bb5dc1bdf9b478eb02309d6d7fa3
+    m_Address: Cauliflower
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67648d8bcec645f4280efe8b492ffa52
+    m_Address: Five
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67c236dfe0c278b43aac28698e1c56ac
+    m_Address: Mint
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 743d271125481624d887a3e38b51fc5d
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Chick_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77c61a33312d601459a0e76c84a4f899
+    m_Address: Assets/_Project/Audio/Animals/Turtle.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7841b59298411404a8aa72bfc9a9e2b0
+    m_Address: Pear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7875d9e016520d747846182f3313b24d
+    m_Address: Lettuce
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b0cc7d566a3f8e41affff4aa160f79f
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Chicken_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b624de53cf2a6d4893c92a081793edd
+    m_Address: Onion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f051c0d253548b45874e1842666a0a1
+    m_Address: Giraffe
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 812d8cca80996e447a4ef1051e2efb46
+    m_Address: Frog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8138167579f1fad488c8a864734bbcd4
+    m_Address: Grape
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 826931ec3abe93740905e02e3a04fcc5
+    m_Address: Less
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 826ab1450d786084f8a0f2040ad92466
+    m_Address: Congrats_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 834f7c43944a71c479d23504b129b91c
+    m_Address: Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 865b6638e0c534a4f969f35d6fd815b3
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Bee_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87cac364646141a44a502fa6412a7579
+    m_Address: Assets/_Project/Audio/Animals/Owl.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8939347159e712045994ed56644bd0b4
+    m_Address: Cabbage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89811a2be54c6814888ddc2a65dc1658
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Sheep_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b8e7a89e73881b47a8988ddbd1c22d6
+    m_Address: Greater
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c620ec67df11264ba683442615275f9
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Horse_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cd0c1d7ab244fc4882db84886a3fe82
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Dog_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d39aefbb99088548983695c0ded8e00
+    m_Address: Three
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9049d1563f9406c4d9ffebd4c69d70a8
+    m_Address: Strawberry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91f9dcb944e6c4542a0de8bd26621871
+    m_Address: Pepper
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97609b233e0fe7c4fa4f688cc7845866
+    m_Address: Assets/_Project/Audio/Animals/Deer.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99c0a0871c2f93349b851ce7932d6605
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Monkey_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a311b8efe37fff4688f264d548fadfd
+    m_Address: Cow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a889d00f3e53fd448ba6e6d337c01a8
+    m_Address: Assets/_Project/Audio/Animals/Mouse.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f1b84de5766e994f8b1e715d6e2f393
+    m_Address: Background
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6839caf61b43754b9aa24b2619ec508
+    m_Address: Four
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a882689b58f5ed3408980b47b0a80ca0
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Frog_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acbeb57dea44a1e4290f9b94e4240526
+    m_Address: Cat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acf3599b49c12c141a9b289c0dfb1021
+    m_Address: Assets/_Project/Audio/Animals/Fish.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af2c6eca67d02014b8b19fc8b43179b6
+    m_Address: Success_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afea6e4992a58b74380010c89361d1dd
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Cock_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b25a9fbadfa9256488a213bd6fac9817
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Cat_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7f3899d92bd0c440845bea282adbaa1
+    m_Address: Seven
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb972abb221d8ae438888d3ca73ad97c
+    m_Address: Assets/_Project/Audio/Animals/Wolf.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc01dc2e267baab4c948b71bda42c54e
+    m_Address: Potato
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bda73598844c37b4083a5d82a23ef69f
+    m_Address: Cock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be2f7bdcebfa43d41b8452b274e18e20
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Mouse_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2cb4f2aa99b27542b8f455fe4e0e372
+    m_Address: Assets/_Project/Audio/Animals/Monkey.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c72e1e61f05968a4eaa3efbaba365fd6
+    m_Address: Success_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c892bede58bf5cf4ea976fb390e7556e
+    m_Address: Purple
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cada3ea13aaf99a4ea158a603b82a411
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Bear_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cded61f01af301443acdf01550959b94
+    m_Address: One
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ceab00bf72653e442a927d526be72dca
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Deer_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf113cc0469c3ba4288f9c050bfa1449
+    m_Address: Two
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d04fdafca759a30418417e455753b5ab
+    m_Address: Six
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d14364cff942ad244916457f63e6cb7b
+    m_Address: Success_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d212512d3644fa843a764f65f4081dfa
+    m_Address: Assets/_Project/Audio/Animals/Lion.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6a600dbcccc9a743bf1cf0f0bbe9ec7
+    m_Address: Pink
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d712ecf60cc56e141add88c700237da0
+    m_Address: Assets/_Project/Audio/Animals/Tiger.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8d27e0aadf39684aad6730116622b2d
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Turtle_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: daff6d2dc4e04ff4f9fe66ce172697fd
+    m_Address: Nine
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db1d1e9ab148522418ac9c6b8811baf7
+    m_Address: White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dedaf33310bde594590bc1359a1b29fd
+    m_Address: Red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df1975ed2825c1c4995b7f3870ee6e4d
+    m_Address: Orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df767b4690d0ed24dbf835d75974a790
+    m_Address: Carrot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0c4943dacb154a4c924086151a092ae
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Fish_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4442d4f4ee79fd44a27e6a03eb0a22d
+    m_Address: Chestnut
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e44b5548ba1039d42a77ead0ecafa8c7
+    m_Address: Courgette
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e44ee85afde3fdb419bf11f74ccd4529
+    m_Address: "S\u0131radakiSay\u0131SenceHangisi"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e826495697d72be4db068e6aba6e7429
+    m_Address: Pomegranate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e93e13420315ea54cac8cfa2a9f27190
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Cow_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea3acd807439aff458e1e23c1649e976
+    m_Address: Equal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecc1c4592fcf3d34ca681e64b522e8ff
+    m_Address: Chicken
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed60e1352a38d2047864f50d12e30074
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Tiger_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef597b501bbc65c4fa3dd0c01861c42d
+    m_Address: SuccessBase
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efc75f16fbeac064a92da74556e1e646
+    m_Address: Assets/_Project/Audio/Animals/Butterfly.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f264003db3051d44a878affcf1338b29
+    m_Address: Success_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3052d0b619f0af45824c51473720d1b
+    m_Address: Assets/_Project/Audio/Animals/Elephant.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f31c19b2b5ba9c94ab055ceaeb3bd283
+    m_Address: Congrats_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3a5b6e7d27eb044f87d8d92424d119c
+    m_Address: Rabbit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5e9e020d5999d6478c0e1fb8bb5c0c1
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Duck_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f721397b411aa4449ae986c4c9633145
+    m_Address: Tomato
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f741aa8b701eedf438cd03915c15963c
+    m_Address: Mandarin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f91fac89696b5054aa24fd2dbab80044
+    m_Address: Horse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcb6ea380fa7f5d4a9aabbece0ab8680
+    m_Address: Assets/_Project/Scriptables/SoundDatas/Animals/Bird_SoundData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffec98f21a3fa1d4c8d371ea0d418bf3
+    m_Address: Peach
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-tr
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4a0a89aecc743714b9b8b06e32c0df42, type: 2}
   m_SchemaSet:

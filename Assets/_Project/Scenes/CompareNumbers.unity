@@ -475,6 +475,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d73684cad3d41bd439f328fdf111aa5f, type: 2}
   - {fileID: 11400000, guid: 13e0019e7daddbd4fb8a84fa0ee3a5a8, type: 2}
   - {fileID: 11400000, guid: 2e3b98fd2c510c6458f282a493a34117, type: 2}
+  _greaterItemTuple: {fileID: 11400000, guid: 13e0019e7daddbd4fb8a84fa0ee3a5a8, type: 2}
+  _equalItemTuple: {fileID: 11400000, guid: d73684cad3d41bd439f328fdf111aa5f, type: 2}
+  _lessItemTuple: {fileID: 11400000, guid: 2e3b98fd2c510c6458f282a493a34117, type: 2}
 --- !u!198 &1641850021 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2005956815669413082, guid: 23bc3615bd6936e4bbf136d104dd4775, type: 3}

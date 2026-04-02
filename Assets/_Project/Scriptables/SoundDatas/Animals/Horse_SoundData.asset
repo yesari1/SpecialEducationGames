@@ -16,7 +16,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: AudioTable
     m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: Horse
+      m_KeyId: 23429165936640
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
+  _volume: 1

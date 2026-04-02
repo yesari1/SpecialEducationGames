@@ -15,5 +15,7 @@ namespace SpecialEducationGames
         public Sprite Sprite;
         public LocalizedString LocalizedName;
         public SoundData Audio;
+
+        public string LocalName => LocalizedName.IsEmpty ? Name : LocalizedName.GetLocalizedString();
     }
 }

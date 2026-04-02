@@ -215,83 +215,163 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 691890758152192
-    m_Localized: Apple
+    m_Localized: Elma
     m_Metadata:
       m_Items: []
   - m_Id: 691891395686400
-    m_Localized: Carrot
+    m_Localized: "Havu\xE7"
     m_Metadata:
       m_Items: []
   - m_Id: 691891638956032
-    m_Localized: Courgette
+    m_Localized: Kabak
     m_Metadata:
       m_Items: []
   - m_Id: 691891882225664
-    m_Localized: Cucumber
+    m_Localized: "Salatal\u0131k"
     m_Metadata:
       m_Items: []
   - m_Id: 691892129689600
-    m_Localized: Mandarin
+    m_Localized: Mandalina
     m_Metadata:
       m_Items: []
   - m_Id: 691892360376320
-    m_Localized: Mint
+    m_Localized: Nane
     m_Metadata:
       m_Items: []
   - m_Id: 691892603645952
-    m_Localized: Peach
+    m_Localized: "\u015Eeftali"
     m_Metadata:
       m_Items: []
   - m_Id: 691892838526976
-    m_Localized: Pepper
+    m_Localized: Biber
     m_Metadata:
       m_Items: []
   - m_Id: 691893077602304
-    m_Localized: Plum
+    m_Localized: Erik
     m_Metadata:
       m_Items: []
   - m_Id: 691893362814976
-    m_Localized: Watermelon
+    m_Localized: Karpuz
     m_Metadata:
       m_Items: []
   - m_Id: 691893610278912
-    m_Localized: Blackberry
+    m_Localized: "B\xF6\u011F\xFCrtlen"
     m_Metadata:
       m_Items: []
   - m_Id: 691894067458048
-    m_Localized: Cauliflower
+    m_Localized: Karnabahar
     m_Metadata:
       m_Items: []
   - m_Id: 691894314921984
-    m_Localized: Chestnut
+    m_Localized: Kestane
     m_Metadata:
       m_Items: []
   - m_Id: 691894558191616
-    m_Localized: Lettuce
+    m_Localized: Marul
     m_Metadata:
       m_Items: []
   - m_Id: 691894801461248
-    m_Localized: Onion
+    m_Localized: "So\u011Fan"
     m_Metadata:
       m_Items: []
   - m_Id: 691895048925184
-    m_Localized: Pea
+    m_Localized: Bezelye
     m_Metadata:
       m_Items: []
   - m_Id: 691895300583424
-    m_Localized: Pomegranate
+    m_Localized: Nar
     m_Metadata:
       m_Items: []
   - m_Id: 691895543853056
-    m_Localized: Quince
+    m_Localized: Ayva
     m_Metadata:
       m_Items: []
   - m_Id: 691895799705600
-    m_Localized: Radish
+    m_Localized: Turp
     m_Metadata:
       m_Items: []
   - m_Id: 691896051363840
-    m_Localized: Spinach
+    m_Localized: Ispanak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437751889920
+    m_Localized: "Ku\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437781250048
+    m_Localized: Kelebek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437781250049
+    m_Localized: Civciv
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444352
+    m_Localized: "\xD6rdek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444353
+    m_Localized: "Bal\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444354
+    m_Localized: "Kaplumba\u011Fa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444355
+    m_Localized: "Ar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444356
+    m_Localized: "Bo\u011Fa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444357
+    m_Localized: "E\u015Fek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444358
+    m_Localized: "Ke\xE7i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444359
+    m_Localized: Hindi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444360
+    m_Localized: Geyik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444361
+    m_Localized: Fil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444362
+    m_Localized: Aslan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444363
+    m_Localized: Maymun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444364
+    m_Localized: "Bayku\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444365
+    m_Localized: Kaplan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437785444366
+    m_Localized: Kurt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059437789638656
+    m_Localized: Zebra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1059539904163840
+    m_Localized: Fare
     m_Metadata:
       m_Items: []
   references:

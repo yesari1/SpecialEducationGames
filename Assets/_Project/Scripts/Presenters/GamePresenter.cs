@@ -20,6 +20,9 @@ namespace SpecialEducationGames
         {
             EventManager.Unsubscribe<OnShowInfoTextEvent>(ShowMatchText);
             EventManager.Unsubscribe<OnGameFinishedEvent>(OnGameFinished);
+
+            //Debug.Log("DİSPOSE GAMEPRESENTER");
+            View.KillAnimations();
         }
 
         private void ShowMatchText(OnShowInfoTextEvent onShowInfoTextEvent)
@@ -28,7 +31,7 @@ namespace SpecialEducationGames
             if (!string.IsNullOrEmpty(onShowInfoTextEvent.TextOnly))
                 text = onShowInfoTextEvent.TextOnly;
             else
-                text = onShowInfoTextEvent.ItemTuple.Name;
+                text = onShowInfoTextEvent.ItemTuple.LocalName;
 
             View.ShowMatchText(text);
         }

@@ -13,6 +13,7 @@ namespace SpecialEducationGames
         [SerializeField] private TextMeshProUGUI _infoText;
 
         [SerializeField] private AnimationSettings _animationSettings;
+        private Sequence _sequence;
 
         public override void InitializeView()
         {
@@ -22,19 +23,24 @@ namespace SpecialEducationGames
         [Button]
         public void ShowMatchText(string text)
         {
-            Sequence sequence = DOTween.Sequence();
+            _sequence = DOTween.Sequence();
 
             _infoText.GetComponent<RectTransform>().SetAnchors(AnchorPresets.MiddleCenter);
             _infoText.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             _infoText.text = text;
 
-            sequence.Append(_infoText.transform.DOScale(_animationSettings.MatchTextShow, true));
+            _sequence.Append(_infoText.transform.DOScale(_animationSettings.MatchTextShow, true));
 
-            sequence.AppendInterval(_animationSettings.MatchTextGoUp.Delay);
-            sequence.Append(_infoText.GetComponent<RectTransform>().DOBlendableMoveBy(_animationSettings.MatchTextGoUp.Vector, _animationSettings.MatchTextGoUp.Duration).SetEase(_animationSettings.MatchTextGoUp.Ease));
-            sequence.Join(_infoText.transform.DOScale(1, _animationSettings.MatchTextGoUp.Duration).SetEase(_animationSettings.MatchTextGoUp.Ease));
+            _sequence.AppendInterval(_animationSettings.MatchTextGoUp.Delay);
+            _sequence.Append(_infoText.GetComponent<RectTransform>().DOBlendableMoveBy(_animationSettings.MatchTextGoUp.Vector, _animationSettings.MatchTextGoUp.Duration).SetEase(_animationSettings.MatchTextGoUp.Ease));
+            _sequence.Join(_infoText.transform.DOScale(1, _animationSettings.MatchTextGoUp.Duration).SetEase(_animationSettings.MatchTextGoUp.Ease));
 
-            sequence.OnComplete(Presenter.OnShowInfoTextAnimationCompleted);
+            _sequence.OnComplete(Presenter.OnShowInfoTextAnimationCompleted);
+        }
+
+        public void KillAnimations()
+        {
+            _sequence.Kill();
         }
 
         [Serializable]

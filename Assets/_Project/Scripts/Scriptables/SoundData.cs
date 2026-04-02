@@ -10,6 +10,11 @@ namespace SpecialEducationGames
     {
         public LocalizedAudioClip LocalizedAudioClip;
 
+        [SerializeField, Range(0f, 10f)] private float _volume = 1f;
+
+        public float Volume => _volume;
+        public float NormalizedVolume => _volume / 10f;
+
         private AudioClip _cachedClip;
         private AsyncOperationHandle<AudioClip> _handle;
 
@@ -27,6 +32,7 @@ namespace SpecialEducationGames
                 }
             };
         }
+
 
         public AudioClip Clip
         {
