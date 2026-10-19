@@ -8,7 +8,7 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:screenOrientation="unspecified"
+            android:screenOrientation="sensorLandscape"
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
