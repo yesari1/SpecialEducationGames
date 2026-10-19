@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'app_state.dart';
+import 'orientation.dart';
 import 'theme/tokens.dart';
 import '../core/content/content_repository.dart';
 import '../features/onboarding/onboarding_screen.dart';
@@ -126,6 +127,15 @@ class _EducationAppState extends State<EducationApp>
       ],
       errorBuilder: (_, _) => HomeScreen(state: state),
     );
+    router.routerDelegate.addListener(_syncOrientation);
+    _syncOrientation();
+  }
+
+  void _syncOrientation() {
+    final path = router.routerDelegate.currentConfiguration.isEmpty
+        ? (state.active == null ? '/welcome' : '/')
+        : router.routerDelegate.currentConfiguration.uri.path;
+    AppOrientation.apply(path);
   }
 
   @override
@@ -139,6 +149,7 @@ class _EducationAppState extends State<EducationApp>
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    router.routerDelegate.removeListener(_syncOrientation);
     router.dispose();
     familyAuth.removeListener(_accountChanged);
     familyAuth.dispose();

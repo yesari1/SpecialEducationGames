@@ -1782,6 +1782,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Which number is missing?'**
   String get gamePromptSequenceMissing;
+
+  /// No description provided for @obStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s begin'**
+  String get obStart;
+
+  /// No description provided for @obBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get obBack;
+
+  /// No description provided for @obSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get obSkip;
+
+  /// No description provided for @obChildTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about your child'**
+  String get obChildTitle;
+
+  /// No description provided for @obChildBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We use this to choose a gentle starting point. You can change it later in the family area.'**
+  String get obChildBody;
+
+  /// No description provided for @obNicknameOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Nickname (optional)'**
+  String get obNicknameOptional;
+
+  /// No description provided for @obAgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get obAgeTitle;
+
+  /// No description provided for @obAgeTenPlus.
+  ///
+  /// In en, this message translates to:
+  /// **'10+'**
+  String get obAgeTenPlus;
+
+  /// No description provided for @obAgeYears.
+  ///
+  /// In en, this message translates to:
+  /// **'{age} years old'**
+  String obAgeYears(int age);
+
+  /// No description provided for @obDefaultNickname.
+  ///
+  /// In en, this message translates to:
+  /// **'Little explorer'**
+  String get obDefaultNickname;
+
+  /// No description provided for @obMultipleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can choose more than one.'**
+  String get obMultipleHint;
+
+  /// No description provided for @obStepSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total}'**
+  String obStepSemantics(int current, int total);
+
+  /// No description provided for @obGoalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily play goal'**
+  String get obGoalTitle;
+
+  /// No description provided for @obGoalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Short, regular sessions work best. Your child sees calm progress, never a countdown.'**
+  String get obGoalBody;
+
+  /// No description provided for @obGoalMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String obGoalMinutes(int minutes);
+
+  /// No description provided for @obRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get obRecommended;
+
+  /// No description provided for @obLockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings stay with you'**
+  String get obLockTitle;
+
+  /// No description provided for @obLockBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To return to the family area, press and hold “Family” on the home screen for two seconds, then answer a simple question.'**
+  String get obLockBody;
+
+  /// No description provided for @obPinSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Also set a 4-digit PIN'**
+  String get obPinSwitch;
+
+  /// No description provided for @obPinField.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN'**
+  String get obPinField;
+
+  /// No description provided for @obPinInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter four digits.'**
+  String get obPinInvalid;
+
+  /// No description provided for @obTrialTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore every game'**
+  String get obTrialTitle;
+
+  /// No description provided for @obTrialBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The free games stay free. Premium opens every theme and game, all difficulty levels and up to five child profiles.'**
+  String get obTrialBody;
+
+  /// No description provided for @obTrialPoint1.
+  ///
+  /// In en, this message translates to:
+  /// **'All themes and games'**
+  String get obTrialPoint1;
+
+  /// No description provided for @obTrialPoint2.
+  ///
+  /// In en, this message translates to:
+  /// **'Every difficulty level'**
+  String get obTrialPoint2;
+
+  /// No description provided for @obTrialPoint3.
+  ///
+  /// In en, this message translates to:
+  /// **'Up to five child profiles'**
+  String get obTrialPoint3;
+
+  /// No description provided for @obTrialStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Try 7 days free'**
+  String get obTrialStart;
+
+  /// No description provided for @obTrialNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Billed by Google Play after the trial. You can cancel any time in Google Play.'**
+  String get obTrialNote;
+
+  /// No description provided for @obContinueFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue for free'**
+  String get obContinueFree;
+
+  /// No description provided for @obHandoffBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn the phone sideways and hand it to your child.'**
+  String get obHandoffBody;
+
+  /// No description provided for @obHandoffNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The games open in landscape. The family area opens upright.'**
+  String get obHandoffNote;
 }
 
 class _AppLocalizationsDelegate

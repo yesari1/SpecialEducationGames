@@ -409,6 +409,38 @@ class AppState extends ChangeNotifier {
     await load();
   }
 
+  /// First-run setup made by the parent in onboarding: the child profile plus
+  /// the daily goal and optional PIN chosen there. Same guard as
+  /// [createProfile], so it cannot be replayed to bypass the parent gate.
+  Future<void> completeOnboarding({
+    required String name,
+    required Map<String, dynamic> survey,
+    int? dailyGoalMinutes,
+    String? pin,
+  }) async {
+    if (profiles.isNotEmpty && !familyUnlocked) {
+      throw StateError('parent_gate_required');
+    }
+    if (dailyGoalMinutes != null && ![10, 15, 20].contains(dailyGoalMinutes)) {
+      throw ArgumentError('dailyGoalMinutes');
+    }
+    if (pin != null && !ParentPin.valid(pin)) throw ArgumentError('pin');
+    await createProfile(name, 'cat', survey);
+    final id = active!.id;
+    if (dailyGoalMinutes != null) {
+      await db.setPreference(
+        'profile.$id.dailyGoalMinutes',
+        '$dailyGoalMinutes',
+      );
+    }
+    if (pin != null) {
+      final salt = ParentPin.newSalt();
+      await db.setPreference('parentPinSalt', salt);
+      await db.setPreference('parentPinHash', ParentPin.hash(pin, salt));
+    }
+    await load();
+  }
+
   Future<void> setting(String key, String value) async {
     if (key == 'speechVolume' || key == 'effectVolume') {
       if (!familyUnlocked) throw StateError('parent_gate_required');

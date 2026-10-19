@@ -159,11 +159,9 @@ void main() {
                 size,
               );
               expectOnScreen(tester, field, size);
-              for (final id in ['cat', 'dog', 'rabbit', 'bear']) {
-                final avatar = find.byKey(ValueKey('profile-avatar-$id'));
-                expect(avatar, findsOneWidget);
-                expectOnScreen(tester, avatar, size);
-              }
+              final initial = find.byKey(const ValueKey('profile-initial'));
+              expect(initial, findsOneWidget);
+              expectOnScreen(tester, initial, size);
               expectOnScreen(
                 tester,
                 find.byKey(const ValueKey('profile-editor-continue')),

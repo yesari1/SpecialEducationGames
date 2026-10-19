@@ -970,4 +970,108 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gamePromptSequenceMissing => 'Eksik sayı hangisi?';
+
+  @override
+  String get obStart => 'Başlayalım';
+
+  @override
+  String get obBack => 'Geri';
+
+  @override
+  String get obSkip => 'Atla';
+
+  @override
+  String get obChildTitle => 'Çocuğunuzu tanıyalım';
+
+  @override
+  String get obChildBody =>
+      'Bu bilgilerle yumuşak bir başlangıç seçiyoruz. Daha sonra Aile bölümünden değiştirebilirsiniz.';
+
+  @override
+  String get obNicknameOptional => 'Takma ad (isteğe bağlı)';
+
+  @override
+  String get obAgeTitle => 'Yaş';
+
+  @override
+  String get obAgeTenPlus => '10+';
+
+  @override
+  String obAgeYears(int age) {
+    return '$age yaşında';
+  }
+
+  @override
+  String get obDefaultNickname => 'Minik kaşif';
+
+  @override
+  String get obMultipleHint => 'Birden fazla seçebilirsiniz.';
+
+  @override
+  String obStepSemantics(int current, int total) {
+    return 'Adım $current / $total';
+  }
+
+  @override
+  String get obGoalTitle => 'Günlük oyun hedefi';
+
+  @override
+  String get obGoalBody =>
+      'Kısa ve düzenli oturumlar en iyisidir. Çocuğunuz sakin bir ilerleme görür, geri sayım görmez.';
+
+  @override
+  String obGoalMinutes(int minutes) {
+    return '$minutes dk';
+  }
+
+  @override
+  String get obRecommended => 'Önerilen';
+
+  @override
+  String get obLockTitle => 'Ayarlar sizde kalır';
+
+  @override
+  String get obLockBody =>
+      'Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine iki saniye basılı tutun ve basit bir soruyu yanıtlayın.';
+
+  @override
+  String get obPinSwitch => 'Ayrıca 4 haneli PIN belirle';
+
+  @override
+  String get obPinField => 'PIN';
+
+  @override
+  String get obPinInvalid => 'Dört rakam girin.';
+
+  @override
+  String get obTrialTitle => 'Tüm oyunları keşfedin';
+
+  @override
+  String get obTrialBody =>
+      'Ücretsiz oyunlar hep ücretsiz kalır. Premium tüm temaları ve oyunları, tüm zorluk seviyelerini ve beş çocuk profilini açar.';
+
+  @override
+  String get obTrialPoint1 => 'Tüm temalar ve oyunlar';
+
+  @override
+  String get obTrialPoint2 => 'Tüm zorluk seviyeleri';
+
+  @override
+  String get obTrialPoint3 => 'Beş çocuk profiline kadar';
+
+  @override
+  String get obTrialStart => '7 gün ücretsiz dene';
+
+  @override
+  String get obTrialNote =>
+      'Deneme sonrası ödeme Google Play üzerinden alınır. Google Play\'den istediğiniz zaman iptal edebilirsiniz.';
+
+  @override
+  String get obContinueFree => 'Ücretsiz devam et';
+
+  @override
+  String get obHandoffBody => 'Telefonu yan çevirip çocuğunuza verin.';
+
+  @override
+  String get obHandoffNote => 'Oyunlar yatay açılır. Aile bölümü dik açılır.';
 }

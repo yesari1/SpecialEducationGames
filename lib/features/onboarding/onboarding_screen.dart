@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
-import '../../core/learning/policies.dart';
+import '../../app/ui/game_object.dart';
+import '../../app/ui/initial_avatar.dart';
+import '../../app/ui/scene_backdrop.dart';
 import '../../core/content/content_repository.dart';
-import 'survey_questions.dart';
-import 'survey_options.dart';
-import 'welcome_pane.dart';
+import '../../core/entitlement/billing_repository.dart';
+import '../../core/learning/parent_pin.dart';
+import '../../core/learning/policies.dart';
+import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
+import 'onboarding_parts.dart';
+import 'survey_questions.dart';
 
+/// Parent-facing first run, shown upright. One decision per screen; every
+/// question can be skipped. Nothing is saved until the hand-off screen.
 class OnboardingScreen extends StatefulWidget {
   final AppState state;
   const OnboardingScreen({super.key, required this.state});
@@ -17,33 +25,156 @@ class OnboardingScreen extends StatefulWidget {
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
+enum OnboardingStep { welcome, child, question, goal, lock, trial, handoff }
+
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  int page = 0;
-  String avatar = 'cat';
+  /// The short get-to-know set; the full survey stays in the profile editor.
+  static const questionKeys = ['favorite', 'known', 'sound', 'focus'];
+  static final questions = [
+    for (final key in questionKeys)
+      surveyQuestions.firstWhere((q) => q.key == key),
+  ];
+
+  OnboardingStep step = OnboardingStep.welcome;
+  int question = 0;
   final name = TextEditingController();
+  final pin = TextEditingController();
   final answers = <String, dynamic>{};
-  bool saving = false;
+  int? ageYears;
+  int dailyGoal = 15;
+  bool usePin = false, saving = false;
   AppState get s => widget.state;
-  final questions = surveyQuestions;
+  AppLocalizations get l10n => scopedLocalizations(context, s.locale);
+
+  @override
+  void initState() {
+    super.initState();
+    s.billing.addListener(_billingChanged);
+  }
+
+  void _billingChanged() {
+    if (mounted) setState(() {});
+  }
+
   @override
   void dispose() {
+    s.billing.removeListener(_billingChanged);
     name.dispose();
+    pin.dispose();
     super.dispose();
   }
+
+  BillingPlan? get _trialPlan =>
+      s.billing.plans.where((p) => p.sevenDayTrial).firstOrNull;
+
+  /// Steps that show progress dots (welcome and hand-off are framing screens).
+  int get _progressIndex => switch (step) {
+    OnboardingStep.child => 0,
+    OnboardingStep.question => 1 + question,
+    OnboardingStep.goal => 1 + questions.length,
+    OnboardingStep.lock => 2 + questions.length,
+    OnboardingStep.trial => 3 + questions.length,
+    _ => -1,
+  };
+  int get _progressCount => 3 + questions.length + (_trialPlan == null ? 0 : 1);
+
+  void _next() {
+    FocusScope.of(context).unfocus();
+    setState(() {
+      switch (step) {
+        case OnboardingStep.welcome:
+          step = OnboardingStep.child;
+        case OnboardingStep.child:
+          step = OnboardingStep.question;
+          question = 0;
+        case OnboardingStep.question:
+          if (question < questions.length - 1) {
+            question++;
+          } else {
+            step = OnboardingStep.goal;
+          }
+        case OnboardingStep.goal:
+          step = OnboardingStep.lock;
+        case OnboardingStep.lock:
+          step = _trialPlan == null
+              ? OnboardingStep.handoff
+              : OnboardingStep.trial;
+        case OnboardingStep.trial:
+          step = OnboardingStep.handoff;
+        case OnboardingStep.handoff:
+          break;
+      }
+    });
+  }
+
+  void _back() {
+    FocusScope.of(context).unfocus();
+    setState(() {
+      switch (step) {
+        case OnboardingStep.welcome:
+          break;
+        case OnboardingStep.child:
+          step = OnboardingStep.welcome;
+        case OnboardingStep.question:
+          if (question > 0) {
+            question--;
+          } else {
+            step = OnboardingStep.child;
+          }
+        case OnboardingStep.goal:
+          step = OnboardingStep.question;
+          question = questions.length - 1;
+        case OnboardingStep.lock:
+          step = OnboardingStep.goal;
+        case OnboardingStep.trial:
+          step = OnboardingStep.lock;
+        case OnboardingStep.handoff:
+          step = _trialPlan == null
+              ? OnboardingStep.lock
+              : OnboardingStep.trial;
+      }
+    });
+  }
+
+  String get _nickname {
+    final typed = name.text.trim();
+    if (typed.isNotEmpty) return typed;
+    return l10n.obDefaultNickname;
+  }
+
+  Map<String, dynamic> get _survey => {
+    ...answers,
+    if (ageYears case final age?) ...{
+      'ageYears': age,
+      // Legacy bucket kept for older readers of the survey payload.
+      'age': age <= 3
+          ? 0
+          : age <= 5
+          ? 1
+          : age <= 7
+          ? 2
+          : 3,
+    },
+  };
 
   Future<void> finish() async {
     if (saving) return;
     setState(() => saving = true);
     try {
-      final result = SurveyMapper.map(answers);
-      await s.createProfile(name.text.trim(), avatar, answers);
+      final survey = _survey;
+      final result = SurveyMapper.map(survey);
+      await s.completeOnboarding(
+        name: _nickname,
+        survey: survey,
+        dailyGoalMinutes: dailyGoal,
+        pin: usePin ? pin.text : null,
+      );
       await s.setting('celebration', result.celebration);
-      if (answers['sound'] == 0) await s.setting('sound', 'false');
+      if (survey['sound'] == 0) await s.setting('sound', 'false');
       if (mounted) context.go('/');
     } catch (_) {
       if (mounted) {
         setState(() => saving = false);
-        final l10n = scopedLocalizations(context, s.locale);
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(l10n.onboardingSaveError)));
@@ -51,665 +182,516 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
-  Widget _recommendationCard(String themeId, {required bool compact}) {
-    final theme = s.content.theme(themeId);
-    final level = SurveyMapper.initialForTheme(answers, themeId);
-    return Container(
-      key: ValueKey('final-recommendation-$themeId'),
-      constraints: const BoxConstraints(minHeight: 48),
-      padding: EdgeInsets.symmetric(
-        horizontal: compact ? SegSpace.s3 : SegSpace.s4,
-        vertical: compact ? SegSpace.s1 : SegSpace.s2,
+  // ---------------------------------------------------------------- frame --
+
+  Widget _frame({
+    required List<Widget> children,
+    required Widget primary,
+    Widget? secondary,
+    bool skippable = false,
+  }) {
+    final dots = _progressIndex >= 0
+        ? OnboardingDots(
+            index: _progressIndex,
+            count: _progressCount,
+            label: l10n.obStepSemantics(_progressIndex + 1, _progressCount),
+          )
+        : const SizedBox.shrink();
+    return Scaffold(
+      backgroundColor: SegColors.familyCanvas,
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 56,
+              child: Row(
+                children: [
+                  const SizedBox(width: SegSpace.s2),
+                  if (step != OnboardingStep.welcome)
+                    IconButton(
+                      key: const ValueKey('onboarding-back'),
+                      tooltip: l10n.obBack,
+                      onPressed: saving ? null : _back,
+                      icon: const Icon(Icons.arrow_back_rounded),
+                    )
+                  else
+                    const SizedBox(width: 48),
+                  Expanded(child: Center(child: dots)),
+                  if (skippable)
+                    TextButton(
+                      key: const ValueKey('onboarding-skip'),
+                      onPressed: _next,
+                      child: Text(l10n.obSkip, style: SegText.label),
+                    )
+                  else
+                    const SizedBox(width: 64),
+                  const SizedBox(width: SegSpace.s2),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 560),
+                  child: ListView(
+                    key: ValueKey('onboarding-${step.name}-$question'),
+                    padding: const EdgeInsets.fromLTRB(
+                      SegSpace.s5,
+                      SegSpace.s2,
+                      SegSpace.s5,
+                      SegSpace.s5,
+                    ),
+                    children: children,
+                  ),
+                ),
+              ),
+            ),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 560),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    SegSpace.s5,
+                    0,
+                    SegSpace.s5,
+                    SegSpace.s4,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      primary,
+                      if (secondary != null) ...[
+                        const SizedBox(height: SegSpace.s2),
+                        secondary,
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
-      decoration: BoxDecoration(
-        color: SegColors.surface,
-        borderRadius: BorderRadius.circular(SegRadius.lg),
-        border: Border.all(color: SegColors.line, width: 2),
-      ),
-      child: Row(
-        children: [
-          Icon(
-            Icons.play_circle_outline_rounded,
-            color: SegColors.primary,
-            size: compact ? 24 : 32,
-          ),
-          SizedBox(width: compact ? SegSpace.s2 : SegSpace.s3),
-          Expanded(
-            child: Text(
-              theme.name(s.locale),
-              style: compact ? SegText.label : SegText.item,
+    );
+  }
+
+  Widget _title(String text, {Key? key}) => Padding(
+    padding: const EdgeInsets.only(bottom: SegSpace.s2),
+    child: Text(
+      text,
+      key: key,
+      style: SegText.title.copyWith(color: SegColors.ink),
+    ),
+  );
+
+  Widget _body(String text) =>
+      Text(text, style: SegText.body.copyWith(color: SegColors.inkSoft));
+
+  Widget _continue({VoidCallback? onPressed, String? label, Key? key}) =>
+      SegButton(
+        key: key ?? const ValueKey('onboarding-continue'),
+        label: label ?? l10n.onboardingContinue,
+        onPressed: onPressed,
+      );
+
+  // ---------------------------------------------------------------- steps --
+
+  Widget _welcome() => _frame(
+    children: [
+      SizedBox(
+        height: 240,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(SegRadius.xl),
+          child: SceneBackdrop(
+            tint: SegColors.turquoise,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 40, 16, 22),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // Rough real-world proportions: a cat, an apple, a car.
+                  for (final (id, scale) in const [
+                    ('animals', 1.0),
+                    ('produce', .5),
+                    ('vehicles', .9),
+                  ])
+                    if (_hero(id) case final item?)
+                      Expanded(
+                        child: StagedObject(
+                          child: FractionallySizedBox(
+                            alignment: Alignment.bottomCenter,
+                            widthFactor: scale,
+                            heightFactor: scale,
+                            child: ItemVisual(
+                              item,
+                              alignment: Alignment.bottomCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                ],
+              ),
             ),
           ),
-          const SizedBox(width: SegSpace.s2),
-          Text(
-            level.label(s.locale),
-            style: compact ? SegText.label : SegText.caption,
-            textAlign: TextAlign.end,
+        ),
+      ),
+      const SizedBox(height: SegSpace.s5),
+      Text(
+        l10n.welcomeTitle,
+        key: const ValueKey('welcome-title'),
+        style: SegText.display.copyWith(fontSize: 32, color: SegColors.ink),
+      ),
+      const SizedBox(height: SegSpace.s2),
+      Text(
+        l10n.welcomeSubtitle,
+        key: const ValueKey('welcome-subtitle'),
+        style: SegText.body.copyWith(color: SegColors.inkSoft),
+      ),
+      const SizedBox(height: SegSpace.s5),
+      FeatureLine(icon: Icons.spa_rounded, text: l10n.noAdsOffline),
+      FeatureLine(
+        icon: Icons.lock_outline_rounded,
+        text: l10n.parentGateSettings,
+      ),
+      FeatureLine(
+        icon: Icons.person_outline_rounded,
+        text: l10n.noAccountNeeded,
+      ),
+    ],
+    primary: _continue(
+      key: const ValueKey('welcome-start'),
+      label: l10n.obStart,
+      onPressed: _next,
+    ),
+  );
+
+  ContentItem? _hero(String themeId) {
+    final theme = s.content.themes.where((t) => t.id == themeId).firstOrNull;
+    if (theme == null) return null;
+    return s.content.items.where((x) => x.id == theme.hero).firstOrNull;
+  }
+
+  Widget _child() => _frame(
+    children: [
+      _title(l10n.obChildTitle, key: const ValueKey('child-title')),
+      _body(l10n.obChildBody),
+      const SizedBox(height: SegSpace.s5),
+      Row(
+        children: [
+          ValueListenableBuilder(
+            valueListenable: name,
+            builder: (context, value, _) =>
+                InitialAvatar(name: value.text, size: 56),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _recommendationPager() {
-    const themeIds = ['animals', 'vehicles', 'colors'];
-    return _RecommendationPager(
-      locale: s.locale,
-      themeIds: themeIds,
-      recommendationCard: (id) => _recommendationCard(id, compact: true),
-    );
-  }
-
-  Widget _buildFinalPage() {
-    const themeIds = ['animals', 'vehicles', 'colors'];
-    final l10n = scopedLocalizations(context, s.locale);
-    return Scaffold(
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final compact = constraints.maxHeight < 500;
-            final textScale = MediaQuery.textScalerOf(context).scale(1);
-            final usePager = compact && textScale >= 1.4;
-            final pad = compact ? SegSpace.s1 : SegSpace.s5;
-            final gap = compact ? SegSpace.s1 : SegSpace.s4;
-            final title = Text(
-              l10n.onboardingReadyTitle(name.text),
-              key: const ValueKey('final-ready-title'),
-              style: compact ? SegText.heading : SegText.display,
-            );
-            final suggested = Text(
-              l10n.onboardingSuggestedStart,
-              key: const ValueKey('final-suggested-title'),
-              style: compact ? SegText.body : SegText.heading,
-            );
-            final familyHint = Text(
-              l10n.onboardingFamilyHint,
-              key: const ValueKey('final-family-hint'),
-              style: compact ? SegText.label : SegText.body,
-            );
-            final play = SegButton(
-              key: const ValueKey('final-play'),
-              label: saving ? l10n.onboardingSaving : l10n.onboardingPlay,
-              onPressed: saving ? null : finish,
-            );
-
-            if (!compact && constraints.maxWidth >= 900) {
-              return Padding(
-                padding: EdgeInsets.all(pad),
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1120),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              title,
-                              SizedBox(height: gap),
-                              familyHint,
-                              SizedBox(height: gap),
-                              play,
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: gap),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              suggested,
-                              const SizedBox(height: SegSpace.s3),
-                              for (var i = 0; i < themeIds.length; i++) ...[
-                                if (i > 0) const SizedBox(height: SegSpace.s2),
-                                _recommendationCard(
-                                  themeIds[i],
-                                  compact: false,
-                                ),
-                              ],
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            }
-
-            return Padding(
-              padding: EdgeInsets.all(pad),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1120),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      title,
-                      SizedBox(height: gap),
-                      suggested,
-                      SizedBox(height: gap),
-                      if (usePager)
-                        Expanded(child: _recommendationPager())
-                      else
-                        for (var i = 0; i < themeIds.length; i++) ...[
-                          if (i > 0) const SizedBox(height: SegSpace.s1),
-                          _recommendationCard(themeIds[i], compact: true),
-                        ],
-                      SizedBox(height: gap),
-                      familyHint,
-                      SizedBox(height: gap),
-                      play,
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSurveyPage(SurveyQuestion question) {
-    final l10n = scopedLocalizations(context, s.locale);
-    return Scaffold(
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final compact = constraints.maxHeight < 500;
-            final pad = compact ? SegSpace.s1 : SegSpace.s5;
-            final gap = compact ? SegSpace.s1 : SegSpace.s3;
-            final largeText = MediaQuery.textScalerOf(context).scale(1) >= 1.6;
-            if (constraints.maxHeight < 480 && largeText) {
-              return Padding(
-                padding: EdgeInsets.all(pad),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: LinearProgressIndicator(
-                                  value: (page - 1) / questions.length,
-                                  color: SegColors.primary,
-                                  backgroundColor: SegColors.line,
-                                ),
-                              ),
-                              const SizedBox(width: SegSpace.s2),
-                              Text(
-                                l10n.onboardingStepCount(
-                                  page - 1,
-                                  questions.length,
-                                ),
-                                style: SegText.caption,
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: gap),
-                          Expanded(
-                            child: Center(
-                              child: Text(
-                                s.locale == 'tr' ? question.tr : question.en,
-                                style: SegText.title,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: gap),
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: SurveyOptions(
-                              key: ValueKey(
-                                'survey-${question.key}-${s.locale}',
-                              ),
-                              question: question,
-                              locale: s.locale,
-                              value: answers[question.key],
-                              reducedMotion: s.reducedMotion,
-                              onChanged: (value) {
-                                setState(() => answers[question.key] = value);
-                                if (!question.multiple && mounted) {
-                                  setState(() => page++);
-                                }
-                              },
-                            ),
-                          ),
-                          SizedBox(height: gap),
-                          if (question.multiple)
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: SegButton(
-                                    label: l10n.onboardingContinue,
-                                    onPressed: () => setState(() {
-                                      answers.putIfAbsent(
-                                        question.key,
-                                        () => [],
-                                      );
-                                      page++;
-                                    }),
-                                  ),
-                                ),
-                                SizedBox(width: gap),
-                                Expanded(
-                                  child: TextButton(
-                                    style: TextButton.styleFrom(
-                                      minimumSize: const Size(48, 48),
-                                      visualDensity: VisualDensity.standard,
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.padded,
-                                    ),
-                                    onPressed: () => setState(() => page++),
-                                    child: Text(l10n.onboardingSkipQuestion),
-                                  ),
-                                ),
-                              ],
-                            )
-                          else
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                  minimumSize: const Size(48, 48),
-                                  visualDensity: VisualDensity.standard,
-                                  tapTargetSize: MaterialTapTargetSize.padded,
-                                ),
-                                onPressed: () => setState(() => page++),
-                                child: Text(l10n.onboardingSkipQuestion),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }
-            return Padding(
-              padding: EdgeInsets.all(pad),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1120),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: LinearProgressIndicator(
-                              value: (page - 1) / questions.length,
-                              color: SegColors.primary,
-                              backgroundColor: SegColors.line,
-                            ),
-                          ),
-                          const SizedBox(width: SegSpace.s2),
-                          Text(
-                            l10n.onboardingStepCount(
-                              page - 1,
-                              questions.length,
-                            ),
-                            style: SegText.caption,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: gap),
-                      Text(
-                        s.locale == 'tr' ? question.tr : question.en,
-                        style: SegText.title,
-                      ),
-                      SizedBox(height: gap),
-                      Expanded(
-                        child: SurveyOptions(
-                          key: ValueKey('survey-${question.key}-${s.locale}'),
-                          question: question,
-                          locale: s.locale,
-                          value: answers[question.key],
-                          reducedMotion: s.reducedMotion,
-                          onChanged: (value) {
-                            setState(() => answers[question.key] = value);
-                            if (!question.multiple && mounted) {
-                              setState(() => page++);
-                            }
-                          },
-                        ),
-                      ),
-                      SizedBox(height: gap),
-                      if (question.multiple)
-                        Row(
-                          children: [
-                            Expanded(
-                              child: SegButton(
-                                label: l10n.onboardingContinue,
-                                onPressed: () => setState(() {
-                                  answers.putIfAbsent(question.key, () => []);
-                                  page++;
-                                }),
-                              ),
-                            ),
-                            SizedBox(width: gap),
-                            Expanded(
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                  minimumSize: const Size(48, 48),
-                                  visualDensity: VisualDensity.standard,
-                                  tapTargetSize: MaterialTapTargetSize.padded,
-                                ),
-                                onPressed: () => setState(() => page++),
-                                child: Text(l10n.onboardingSkipQuestion),
-                              ),
-                            ),
-                          ],
-                        )
-                      else
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              minimumSize: const Size(48, 48),
-                              visualDensity: VisualDensity.standard,
-                              tapTargetSize: MaterialTapTargetSize.padded,
-                            ),
-                            onPressed: () => setState(() => page++),
-                            child: Text(l10n.onboardingSkipQuestion),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildNamePage() {
-    final l10n = scopedLocalizations(context, s.locale);
-    final avatars = ['cat', 'dog', 'rabbit', 'bear'];
-    final keyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
-    return Scaffold(
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final viewH = constraints.maxHeight;
-            final viewW = constraints.maxWidth;
-            final compact = viewH < 480;
-            final tight = viewH < 560;
-            final textScale = MediaQuery.textScalerOf(context).scale(1);
-            final wide = viewW >= 1000 || (viewW >= 700 && textScale >= 2);
-            final pad = compact ? SegSpace.s1 : SegSpace.s6;
-            final gap = compact || (keyboardOpen && tight)
-                ? SegSpace.s1
-                : SegSpace.s2;
-            final tile = viewH >= 640
-                ? 88.0
-                : viewH >= 520
-                ? 72.0
-                : viewH >= 440
-                ? 64.0
-                : 48.0;
-            final showDecor = !keyboardOpen;
-            final textField = TextField(
+          const SizedBox(width: SegSpace.s3),
+          Expanded(
+            child: TextField(
+              key: const ValueKey('nickname-field'),
               controller: name,
               maxLength: 24,
-              maxLines: 1,
+              textInputAction: TextInputAction.done,
               textCapitalization: TextCapitalization.words,
-              decoration: InputDecoration(labelText: l10n.onboardingNickname),
-              onChanged: (_) => setState(() {}),
-            );
-            final heading = Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (showDecor) ...[
-                  Text(l10n.onboardingProfileQuestion, style: SegText.title),
-                  const SizedBox(height: SegSpace.s3),
-                  Text(l10n.onboardingNicknameHint),
-                ],
-                if (showDecor) const SizedBox(height: SegSpace.s3),
-                textField,
-              ],
-            );
-            final avatarRow = Wrap(
-              spacing: SegSpace.s2,
-              runSpacing: SegSpace.s2,
-              alignment: WrapAlignment.start,
-              children: [for (final a in avatars) _avatarTile(a, tile)],
-            );
-            final continueBtn = SegButton(
-              label: l10n.onboardingContinue,
-              onPressed: name.text.trim().isEmpty
-                  ? null
-                  : () => setState(() => page = 2),
-            );
-
-            if (textScale >= 2 && viewW < 1000) {
-              return Padding(
-                padding: EdgeInsets.all(pad),
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 960),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if (showDecor) ...[
-                          Text(
-                            l10n.onboardingProfileQuestion,
-                            style: SegText.title,
-                          ),
-                          const SizedBox(height: SegSpace.s1),
-                          Text(l10n.onboardingNicknameHint),
-                          SizedBox(height: gap),
-                        ],
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(child: textField),
-                            SizedBox(width: gap),
-                            Flexible(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  avatarRow,
-                                  SizedBox(height: gap),
-                                  continueBtn,
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            }
-
-            if (wide) {
-              return Padding(
-                padding: EdgeInsets.all(pad),
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 960),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              heading,
-                              SizedBox(height: gap),
-                              continueBtn,
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: gap),
-                        Flexible(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [avatarRow],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            }
-
-            return Padding(
-              padding: EdgeInsets.all(pad),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 960),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      heading,
-                      SizedBox(height: gap),
-                      avatarRow,
-                      SizedBox(height: gap),
-                      continueBtn,
-                    ],
-                  ),
-                ),
+              decoration: InputDecoration(
+                labelText: l10n.obNicknameOptional,
+                hintText: l10n.onboardingNicknameHint,
+                counterText: '',
               ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _avatarTile(String a, [double size = 88]) {
-    return Semantics(
-      label: a,
-      selected: avatar == a,
-      button: true,
-      child: InkWell(
-        onTap: () => setState(() => avatar = a),
-        child: Container(
-          width: size,
-          height: size,
-          padding: EdgeInsets.all(size >= 72 ? SegSpace.s3 : SegSpace.s2),
-          decoration: BoxDecoration(
-            color: avatar == a ? SegColors.primarySoft : SegColors.surface,
-            borderRadius: BorderRadius.circular(SegRadius.lg),
-            border: Border.all(
-              color: avatar == a ? SegColors.primary : SegColors.line,
-              width: 2,
             ),
-          ),
-          child: ItemVisual(
-            s.content.items.firstWhere((x) => x.id == 'animals.$a'),
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (page == 0) {
-      return WelcomePane(state: s, onContinue: () => setState(() => page = 1));
-    } else if (page == 1) {
-      return _buildNamePage();
-    } else if (page < questions.length + 2) {
-      final q = questions[page - 2];
-      return _buildSurveyPage(q);
-    } else {
-      return _buildFinalPage();
-    }
-  }
-}
-
-class _RecommendationPager extends StatefulWidget {
-  final String locale;
-  final List<String> themeIds;
-  final Widget Function(String id) recommendationCard;
-
-  const _RecommendationPager({
-    required this.locale,
-    required this.themeIds,
-    required this.recommendationCard,
-  });
-
-  @override
-  State<_RecommendationPager> createState() => _RecommendationPagerState();
-}
-
-class _RecommendationPagerState extends State<_RecommendationPager> {
-  final PageController _controller = PageController();
-  int _index = 0;
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = scopedLocalizations(context, widget.locale);
-    return PageView.builder(
-      key: const ValueKey('final-recommendations-pager'),
-      controller: _controller,
-      itemCount: widget.themeIds.length,
-      onPageChanged: (index) => setState(() => _index = index),
-      itemBuilder: (context, index) => Row(
-        children: [
-          IconButton(
-            tooltip: l10n.onboardingPreviousRecommendation,
-            onPressed: _index == 0
-                ? null
-                : () => _controller.previousPage(
-                    duration: SegMotion.pageSlide,
-                    curve: Curves.easeOutCubic,
-                  ),
-            icon: const Icon(Icons.chevron_left_rounded),
-          ),
-          Expanded(
-            child: Center(
-              child: widget.recommendationCard(widget.themeIds[index]),
-            ),
-          ),
-          IconButton(
-            tooltip: l10n.onboardingNextRecommendation,
-            onPressed: _index == widget.themeIds.length - 1
-                ? null
-                : () => _controller.nextPage(
-                    duration: SegMotion.pageSlide,
-                    curve: Curves.easeOutCubic,
-                  ),
-            icon: const Icon(Icons.chevron_right_rounded),
           ),
         ],
       ),
+      const SizedBox(height: SegSpace.s5),
+      Text(l10n.obAgeTitle, style: SegText.heading),
+      const SizedBox(height: SegSpace.s3),
+      LayoutBuilder(
+        builder: (context, box) {
+          const gap = SegSpace.s3;
+          final width = (box.maxWidth - gap * 2) / 3;
+          return Wrap(
+            spacing: gap,
+            runSpacing: gap,
+            children: [
+              for (var age = 2; age <= 10; age++)
+                SizedBox(
+                  width: width,
+                  child: AgeChoice(
+                    key: ValueKey('age-$age'),
+                    label: age == 10 ? l10n.obAgeTenPlus : '$age',
+                    semanticsLabel: age == 10
+                        ? l10n.obAgeTenPlus
+                        : l10n.obAgeYears(age),
+                    selected: ageYears == age,
+                    onTap: () =>
+                        setState(() => ageYears = ageYears == age ? null : age),
+                  ),
+                ),
+            ],
+          );
+        },
+      ),
+    ],
+    primary: _continue(onPressed: _next),
+  );
+
+  Widget _question() {
+    final q = questions[question];
+    final options = s.locale == 'tr' ? q.trOptions : q.enOptions;
+    final value = answers[q.key];
+    final selected = <int>{
+      if (value is List) ...value.whereType<int>(),
+      if (value is int) value,
+    };
+    return _frame(
+      skippable: true,
+      children: [
+        _title(
+          s.locale == 'tr' ? q.tr : q.en,
+          key: ValueKey('question-${q.key}'),
+        ),
+        if (q.multiple) _body(l10n.obMultipleHint),
+        const SizedBox(height: SegSpace.s4),
+        LayoutBuilder(
+          builder: (context, box) {
+            const gap = SegSpace.s3;
+            final columns = options.length <= 3 ? 1 : 2;
+            final width = (box.maxWidth - gap * (columns - 1)) / columns;
+            return Wrap(
+              key: ValueKey('survey-options-${q.key}'),
+              spacing: gap,
+              runSpacing: gap,
+              children: [
+                for (var i = 0; i < options.length; i++)
+                  SizedBox(
+                    width: width,
+                    child: PictureOption(
+                      key: ValueKey('survey-option-$i'),
+                      label: options[i],
+                      picture: _optionPicture(q.key, i),
+                      wide: columns == 1,
+                      selected: selected.contains(i),
+                      multiple: q.multiple,
+                      onTap: () => setState(() {
+                        if (q.multiple) {
+                          final next = {...selected};
+                          if (!next.add(i)) next.remove(i);
+                          answers[q.key] = next.toList()..sort();
+                        } else {
+                          answers[q.key] = i;
+                        }
+                      }),
+                    ),
+                  ),
+              ],
+            );
+          },
+        ),
+      ],
+      primary: _continue(onPressed: _next),
+    );
+  }
+
+  Widget _optionPicture(String key, int index) {
+    Widget icon(IconData data, Color color) =>
+        OptionIcon(icon: data, color: color);
+    Widget themed(String themeId, IconData fallback, Color color) {
+      final item = _hero(themeId);
+      return item == null ? icon(fallback, color) : ItemVisual(item);
+    }
+
+    switch (key) {
+      case 'favorite':
+        return switch (index) {
+          0 => themed('animals', Icons.pets_rounded, SegColors.turquoise),
+          1 => themed('vehicles', Icons.directions_car_rounded, SegColors.sky),
+          2 => themed('colors', Icons.palette_rounded, SegColors.primary),
+          3 => themed('numbers', Icons.pin_rounded, const Color(0xFF7C73DF)),
+          4 => icon(Icons.music_note_rounded, const Color(0xFFE76F8E)),
+          _ => themed('produce', Icons.restaurant_rounded, SegColors.accent),
+        };
+      case 'known':
+        return switch (index) {
+          0 => themed('animals', Icons.pets_rounded, SegColors.turquoise),
+          1 => themed('produce', Icons.eco_rounded, SegColors.accent),
+          2 => themed('colors', Icons.palette_rounded, SegColors.primary),
+          3 => themed('numbers', Icons.pin_rounded, const Color(0xFF7C73DF)),
+          4 => themed('vehicles', Icons.directions_car_rounded, SegColors.sky),
+          5 => icon(Icons.category_rounded, SegColors.primary),
+          6 => icon(Icons.checkroom_rounded, const Color(0xFFE76F8E)),
+          7 => icon(Icons.chair_rounded, SegColors.accentDeep),
+          8 => icon(Icons.accessibility_new_rounded, SegColors.turquoiseDeep),
+          _ => icon(Icons.sentiment_satisfied_rounded, SegColors.starDeep),
+        };
+      case 'sound':
+        return switch (index) {
+          0 => icon(Icons.volume_off_rounded, SegColors.accentDeep),
+          1 => icon(Icons.volume_down_rounded, SegColors.primary),
+          _ => icon(Icons.volume_up_rounded, SegColors.turquoiseDeep),
+        };
+      default:
+        return switch (index) {
+          0 => icon(Icons.hourglass_bottom_rounded, SegColors.accent),
+          1 => icon(Icons.timer_outlined, SegColors.primary),
+          _ => icon(Icons.all_inclusive_rounded, SegColors.turquoiseDeep),
+        };
+    }
+  }
+
+  Widget _goal() => _frame(
+    children: [
+      _title(l10n.obGoalTitle, key: const ValueKey('goal-title')),
+      _body(l10n.obGoalBody),
+      const SizedBox(height: SegSpace.s5),
+      for (final minutes in const [10, 15, 20]) ...[
+        GoalOption(
+          key: ValueKey('goal-$minutes'),
+          label: l10n.obGoalMinutes(minutes),
+          badge: minutes == 15 ? l10n.obRecommended : null,
+          minutes: minutes,
+          selected: dailyGoal == minutes,
+          onTap: () => setState(() => dailyGoal = minutes),
+        ),
+        const SizedBox(height: SegSpace.s3),
+      ],
+      _body(l10n.onboardingFamilyHint),
+    ],
+    primary: _continue(onPressed: _next),
+  );
+
+  Widget _lock() {
+    final pinValid = ParentPin.valid(pin.text);
+    return _frame(
+      children: [
+        _title(l10n.obLockTitle, key: const ValueKey('lock-title')),
+        const SizedBox(height: SegSpace.s3),
+        HoldToOpenIllustration(label: l10n.homeFamily),
+        const SizedBox(height: SegSpace.s4),
+        _body(l10n.obLockBody),
+        const SizedBox(height: SegSpace.s4),
+        Material(
+          color: SegColors.surface,
+          borderRadius: BorderRadius.circular(SegRadius.md),
+          child: SwitchListTile(
+            key: const ValueKey('pin-switch'),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(SegRadius.md),
+            ),
+            title: Text(l10n.obPinSwitch, style: SegText.label),
+            value: usePin,
+            onChanged: (value) => setState(() => usePin = value),
+          ),
+        ),
+        if (usePin) ...[
+          const SizedBox(height: SegSpace.s3),
+          TextField(
+            key: const ValueKey('pin-field'),
+            controller: pin,
+            autofocus: true,
+            obscureText: true,
+            keyboardType: TextInputType.number,
+            maxLength: 4,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            onChanged: (_) => setState(() {}),
+            decoration: InputDecoration(
+              labelText: l10n.obPinField,
+              counterText: '',
+              errorText: pin.text.isEmpty || pinValid
+                  ? null
+                  : l10n.obPinInvalid,
+            ),
+          ),
+        ],
+      ],
+      primary: _continue(onPressed: usePin && !pinValid ? null : _next),
+    );
+  }
+
+  Widget _trial() {
+    final plan = _trialPlan;
+    return _frame(
+      children: [
+        _title(l10n.obTrialTitle, key: const ValueKey('trial-title')),
+        _body(l10n.obTrialBody),
+        const SizedBox(height: SegSpace.s4),
+        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint1),
+        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint2),
+        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint3),
+        const SizedBox(height: SegSpace.s4),
+        if (plan != null)
+          Text(
+            l10n.subscriptionTrial(plan.recurringPrice),
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
+        const SizedBox(height: SegSpace.s1),
+        Text(
+          l10n.obTrialNote,
+          style: SegText.caption.copyWith(color: SegColors.inkSoft),
+        ),
+      ],
+      primary: _continue(
+        key: const ValueKey('trial-continue-free'),
+        label: l10n.obContinueFree,
+        onPressed: _next,
+      ),
+      secondary: plan == null
+          ? null
+          : SegButton(
+              key: const ValueKey('trial-start'),
+              secondary: true,
+              label: s.billing.pending
+                  ? l10n.subscriptionWaiting
+                  : l10n.obTrialStart,
+              onPressed: s.billing.pending ? null : () => s.billing.buy(plan),
+            ),
+    );
+  }
+
+  Widget _handoff() => _frame(
+    children: [
+      const SizedBox(height: SegSpace.s3),
+      const SizedBox(height: 200, child: RotatePhoneIllustration()),
+      const SizedBox(height: SegSpace.s5),
+      Text(
+        l10n.onboardingReadyTitle(_nickname),
+        key: const ValueKey('final-ready-title'),
+        textAlign: TextAlign.center,
+        style: SegText.display.copyWith(fontSize: 32, color: SegColors.ink),
+      ),
+      const SizedBox(height: SegSpace.s3),
+      Text(
+        l10n.obHandoffBody,
+        textAlign: TextAlign.center,
+        style: SegText.heading.copyWith(color: SegColors.ink),
+      ),
+      const SizedBox(height: SegSpace.s2),
+      Text(
+        l10n.obHandoffNote,
+        textAlign: TextAlign.center,
+        style: SegText.body.copyWith(color: SegColors.inkSoft),
+      ),
+    ],
+    primary: _continue(
+      key: const ValueKey('final-play'),
+      label: saving ? l10n.onboardingSaving : l10n.onboardingPlay,
+      onPressed: saving ? null : finish,
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    final page = switch (step) {
+      OnboardingStep.welcome => _welcome(),
+      OnboardingStep.child => _child(),
+      OnboardingStep.question => _question(),
+      OnboardingStep.goal => _goal(),
+      OnboardingStep.lock => _lock(),
+      OnboardingStep.trial => _trial(),
+      OnboardingStep.handoff => _handoff(),
+    };
+    final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
+    return AnimatedSwitcher(
+      duration: reduced ? Duration.zero : SegMotion.appear,
+      child: KeyedSubtree(key: ValueKey('${step.name}-$question'), child: page),
     );
   }
 }

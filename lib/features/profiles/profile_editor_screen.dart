@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
+import '../../app/ui/initial_avatar.dart';
 import '../../app/ui/page_navigation.dart';
 import '../../core/learning/policies.dart';
 import '../../core/content/content_repository.dart';
@@ -181,40 +182,16 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
           if (error.isNotEmpty) _errorText(),
         ],
       );
-      final avatars = Wrap(
-        alignment: WrapAlignment.center,
-        runAlignment: WrapAlignment.center,
-        spacing: SegSpace.s2,
-        runSpacing: SegSpace.s2,
-        children: ['cat', 'dog', 'rabbit', 'bear'].map((id) {
-          final selected = avatar == id;
-          return Semantics(
-            button: true,
-            label: id,
-            selected: selected,
-            child: InkWell(
-              key: ValueKey('profile-avatar-$id'),
-              borderRadius: BorderRadius.circular(SegRadius.lg),
-              onTap: () => setState(() => avatar = id),
-              child: Container(
-                width: avatarSize,
-                height: avatarSize,
-                padding: const EdgeInsets.all(SegSpace.s2),
-                decoration: BoxDecoration(
-                  color: selected ? SegColors.primarySoft : SegColors.surface,
-                  borderRadius: BorderRadius.circular(SegRadius.lg),
-                  border: Border.all(
-                    color: selected ? SegColors.primary : SegColors.line,
-                    width: 2,
-                  ),
-                ),
-                child: ItemVisual(
-                  s.content.items.firstWhere((i) => i.id == 'animals.$id'),
-                ),
-              ),
-            ),
-          );
-        }).toList(),
+      // Profiles are marked by the nickname's initial, not a picked animal.
+      final avatars = Center(
+        child: ValueListenableBuilder(
+          valueListenable: name,
+          builder: (context, value, _) => InitialAvatar(
+            key: const ValueKey('profile-initial'),
+            name: value.text,
+            size: avatarSize,
+          ),
+        ),
       );
 
       if (textScale >= 2 && constraints.maxHeight < 400) {

@@ -968,4 +968,110 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gamePromptSequenceMissing => 'Which number is missing?';
+
+  @override
+  String get obStart => 'Let’s begin';
+
+  @override
+  String get obBack => 'Back';
+
+  @override
+  String get obSkip => 'Skip';
+
+  @override
+  String get obChildTitle => 'Tell us about your child';
+
+  @override
+  String get obChildBody =>
+      'We use this to choose a gentle starting point. You can change it later in the family area.';
+
+  @override
+  String get obNicknameOptional => 'Nickname (optional)';
+
+  @override
+  String get obAgeTitle => 'Age';
+
+  @override
+  String get obAgeTenPlus => '10+';
+
+  @override
+  String obAgeYears(int age) {
+    return '$age years old';
+  }
+
+  @override
+  String get obDefaultNickname => 'Little explorer';
+
+  @override
+  String get obMultipleHint => 'You can choose more than one.';
+
+  @override
+  String obStepSemantics(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get obGoalTitle => 'Daily play goal';
+
+  @override
+  String get obGoalBody =>
+      'Short, regular sessions work best. Your child sees calm progress, never a countdown.';
+
+  @override
+  String obGoalMinutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get obRecommended => 'Recommended';
+
+  @override
+  String get obLockTitle => 'Settings stay with you';
+
+  @override
+  String get obLockBody =>
+      'To return to the family area, press and hold “Family” on the home screen for two seconds, then answer a simple question.';
+
+  @override
+  String get obPinSwitch => 'Also set a 4-digit PIN';
+
+  @override
+  String get obPinField => 'PIN';
+
+  @override
+  String get obPinInvalid => 'Enter four digits.';
+
+  @override
+  String get obTrialTitle => 'Explore every game';
+
+  @override
+  String get obTrialBody =>
+      'The free games stay free. Premium opens every theme and game, all difficulty levels and up to five child profiles.';
+
+  @override
+  String get obTrialPoint1 => 'All themes and games';
+
+  @override
+  String get obTrialPoint2 => 'Every difficulty level';
+
+  @override
+  String get obTrialPoint3 => 'Up to five child profiles';
+
+  @override
+  String get obTrialStart => 'Try 7 days free';
+
+  @override
+  String get obTrialNote =>
+      'Billed by Google Play after the trial. You can cancel any time in Google Play.';
+
+  @override
+  String get obContinueFree => 'Continue for free';
+
+  @override
+  String get obHandoffBody =>
+      'Turn the phone sideways and hand it to your child.';
+
+  @override
+  String get obHandoffNote =>
+      'The games open in landscape. The family area opens upright.';
 }

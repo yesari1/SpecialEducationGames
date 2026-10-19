@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app/app.dart';
 import 'app/app_state.dart';
@@ -13,12 +12,6 @@ import 'core/licensing/app_licenses.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   AppLicenses.registerNunito();
-  unawaited(
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]),
-  );
   final state = AppState(
     await ContentRepository.load(),
     AppDatabase(),

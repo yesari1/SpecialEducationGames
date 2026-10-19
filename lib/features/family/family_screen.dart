@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
+import '../../app/ui/initial_avatar.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/parent_pin.dart';
@@ -827,9 +828,13 @@ class _FamilyScreenState extends State<FamilyScreen> {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
+            // Upright (the normal family orientation): one scrolling column.
+            // Landscape keeps the paged sections built for short screens.
+            final portrait = constraints.maxHeight > constraints.maxWidth;
             final compact =
-                constraints.maxHeight < 500 ||
-                MediaQuery.textScalerOf(context).scale(1) >= 1.6;
+                !portrait &&
+                (constraints.maxHeight < 500 ||
+                    MediaQuery.textScalerOf(context).scale(1) >= 1.6);
             final pages = _sectionPages(compact: compact);
             return Padding(
               padding: EdgeInsets.all(compact ? SegSpace.s1 : SegSpace.s5),
@@ -857,47 +862,60 @@ class _FamilyScreenState extends State<FamilyScreen> {
                         )
                       else
                         Expanded(
-                          child: Text(
-                            s.active?.nickname ?? '',
-                            style: SegText.label,
+                          child: Row(
+                            children: [
+                              InitialAvatar(
+                                name: s.active?.nickname ?? '',
+                                size: 36,
+                              ),
+                              const SizedBox(width: SegSpace.s2),
+                              Flexible(
+                                child: Text(
+                                  s.active?.nickname ?? '',
+                                  style: SegText.label,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      Semantics(
-                        liveRegion: true,
-                        label: l10n.familySection,
-                        child: Text(
-                          '${sectionPage + 1} / ${pages.length}',
-                          style: SegText.caption,
+                      if (!portrait) ...[
+                        Semantics(
+                          liveRegion: true,
+                          label: l10n.familySection,
+                          child: Text(
+                            '${sectionPage + 1} / ${pages.length}',
+                            style: SegText.caption,
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        tooltip: l10n.familyPreviousSection,
-                        constraints: const BoxConstraints(
-                          minWidth: 48,
-                          minHeight: 48,
+                        IconButton(
+                          tooltip: l10n.familyPreviousSection,
+                          constraints: const BoxConstraints(
+                            minWidth: 48,
+                            minHeight: 48,
+                          ),
+                          onPressed: sectionPage <= 0
+                              ? null
+                              : () => _sectionController.previousPage(
+                                  duration: const Duration(milliseconds: 250),
+                                  curve: Curves.easeOutCubic,
+                                ),
+                          icon: const Icon(Icons.chevron_left_rounded),
                         ),
-                        onPressed: sectionPage <= 0
-                            ? null
-                            : () => _sectionController.previousPage(
-                                duration: const Duration(milliseconds: 250),
-                                curve: Curves.easeOutCubic,
-                              ),
-                        icon: const Icon(Icons.chevron_left_rounded),
-                      ),
-                      IconButton(
-                        tooltip: l10n.familyNextSection,
-                        constraints: const BoxConstraints(
-                          minWidth: 48,
-                          minHeight: 48,
+                        IconButton(
+                          tooltip: l10n.familyNextSection,
+                          constraints: const BoxConstraints(
+                            minWidth: 48,
+                            minHeight: 48,
+                          ),
+                          onPressed: sectionPage >= pages.length - 1
+                              ? null
+                              : () => _sectionController.nextPage(
+                                  duration: const Duration(milliseconds: 250),
+                                  curve: Curves.easeOutCubic,
+                                ),
+                          icon: const Icon(Icons.chevron_right_rounded),
                         ),
-                        onPressed: sectionPage >= pages.length - 1
-                            ? null
-                            : () => _sectionController.nextPage(
-                                duration: const Duration(milliseconds: 250),
-                                curve: Curves.easeOutCubic,
-                              ),
-                        icon: const Icon(Icons.chevron_right_rounded),
-                      ),
+                      ],
                       TextButton.icon(
                         style: TextButton.styleFrom(
                           minimumSize: const Size(48, 48),
@@ -913,27 +931,47 @@ class _FamilyScreenState extends State<FamilyScreen> {
                       ),
                     ],
                   ),
-                  Expanded(
-                    child: PageView.builder(
-                      key: ValueKey('family-tab-$tab'),
-                      controller: _sectionController,
-                      itemCount: pages.length,
-                      onPageChanged: (index) =>
-                          setState(() => sectionPage = index),
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: SegSpace.s1,
-                          vertical: SegSpace.s1,
+                  if (portrait)
+                    Expanded(
+                      child: ListView.separated(
+                        key: ValueKey('family-list-$tab'),
+                        padding: const EdgeInsets.only(
+                          top: SegSpace.s3,
+                          bottom: SegSpace.s6,
                         ),
-                        child: Center(
+                        itemCount: pages.length,
+                        separatorBuilder: (_, _) =>
+                            const SizedBox(height: SegSpace.s4),
+                        itemBuilder: (context, index) => Center(
                           child: ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 1120),
+                            constraints: const BoxConstraints(maxWidth: 720),
                             child: pages[index],
                           ),
                         ),
                       ),
+                    )
+                  else
+                    Expanded(
+                      child: PageView.builder(
+                        key: ValueKey('family-tab-$tab'),
+                        controller: _sectionController,
+                        itemCount: pages.length,
+                        onPageChanged: (index) =>
+                            setState(() => sectionPage = index),
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: SegSpace.s1,
+                            vertical: SegSpace.s1,
+                          ),
+                          child: Center(
+                            child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 1120),
+                              child: pages[index],
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
                 ],
               ),
             );

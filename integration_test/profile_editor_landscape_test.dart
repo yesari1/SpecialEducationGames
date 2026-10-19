@@ -127,7 +127,6 @@ void main() {
       find.byKey(const ValueKey('profile-editor-nickname')),
       'Nova Edit',
     );
-    await tester.tap(find.byKey(const ValueKey('profile-avatar-dog')));
     await tester.tap(find.byKey(const ValueKey('profile-editor-continue')));
     await tester.pumpAndSettle();
 
