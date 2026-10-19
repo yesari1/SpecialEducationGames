@@ -15,10 +15,11 @@ enum GamePromptKey {
   sortIntoBasket,
   numberQuantity,
   fillCount,
+  whichSound,
 }
 
 /// How answer choices are drawn on the stage.
-enum ChoiceLook { object, silhouette, basket }
+enum ChoiceLook { object, silhouette, basket, sound }
 
 class RoundSpec {
   final ContentItem target;

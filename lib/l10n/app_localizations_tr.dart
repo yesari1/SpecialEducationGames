@@ -1099,4 +1099,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get appTitle => 'Özel Eğitim Oyunları';
+
+  @override
+  String get gamePromptWhichSound => 'Hangi ses onun?';
+
+  @override
+  String get gameListenToSound => 'Dinle';
 }

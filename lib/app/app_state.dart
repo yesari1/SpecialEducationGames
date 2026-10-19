@@ -98,7 +98,9 @@ class AppState extends ChangeNotifier {
   bool onlyFree = false, showLabels = true, sound = true, reducedMotion = false;
   int speechVolume = 100, effectVolume = 60;
   bool hasRequiredGameAudio(String theme, String game) =>
-      game != 'G10' ||
+      // G11 compares natural sounds, so effects must be audible.
+      (game == 'G11' && sound && effectVolume > 0) ||
+      (game != 'G10' && game != 'G11') ||
       (sound &&
           (theme == 'animals' || theme == 'vehicles'
               ? effectVolume > 0

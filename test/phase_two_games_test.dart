@@ -46,6 +46,7 @@ void main() {
     String gameId, {
     String locale = 'tr',
     Size size = const Size(800, 360),
+    bool sound = false,
   }) async {
     tester.view.devicePixelRatio = 1;
     tester.view.physicalSize = size;
@@ -59,7 +60,8 @@ void main() {
     await state.load();
     await state.createProfile('Test', 'cat', {});
     state.locale = locale;
-    state.sound = false;
+    state.sound = sound;
+    // Playback itself stays off on the host.
     state.audio.enabled = false;
     state.introduction = false;
     state.hintSeconds = 0;
@@ -120,6 +122,8 @@ void main() {
       ('numbers', 'G37'),
       ('numbers', 'G38'),
       ('produce', 'G38'),
+      ('animals', 'G11'),
+      ('vehicles', 'G11'),
     ]) {
       expect(content.theme(theme).games, contains(game), reason: theme);
       expect(() => TemplateRegistry.resolve(game), returnsNormally);
@@ -128,7 +132,7 @@ void main() {
     expect(content.freeGames, hasLength(6));
     expect(
       content.freeGames.where(
-        (key) => ['G15', 'G17', 'G23', 'G37', 'G38'].any(key.endsWith),
+        (key) => ['G15', 'G17', 'G23', 'G37', 'G38', 'G11'].any(key.endsWith),
       ),
       isEmpty,
     );
@@ -259,6 +263,38 @@ void main() {
       await tester.pump();
     }
     expect(fill(tester).hint.celebrating, isTrue);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('G11 listen buttons only play; tapping a sound card answers', (
+    tester,
+  ) async {
+    await loadFonts(tester);
+    final state = await mountGame(tester, 'animals', 'G11', sound: true);
+    expect(state.hasRequiredGameAudio('animals', 'G11'), isTrue);
+    state.sound = false;
+    expect(
+      state.hasRequiredGameAudio('animals', 'G11'),
+      isFalse,
+      reason: 'with sound off the game explains it needs sound',
+    );
+    state.sound = true;
+    final spec = round(tester).spec;
+    expect(spec.look, ChoiceLook.sound);
+    expect(spec.choices.every((x) => x.sfx != null), isTrue);
+    expect(find.byType(SoundChoiceVisual), findsNWidgets(spec.choices.length));
+    // Names are hidden: the child compares sounds, not words.
+    for (final item in spec.choices) {
+      expect(find.text(item.name('tr')), findsNothing);
+    }
+    await tester.tap(find.byKey(const ValueKey('listen-0')));
+    await tester.pump();
+    expect(round(tester).hint.celebrating, isFalse);
+    expect(round(tester).hint.wrongCount, 0);
+
+    await tester.tap(card(tester, spec.target.id));
+    await tester.pump();
+    expect(round(tester).hint.celebrating, isTrue);
     expect(tester.takeException(), isNull);
   });
 

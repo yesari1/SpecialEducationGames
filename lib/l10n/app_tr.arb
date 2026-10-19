@@ -1003,5 +1003,7 @@
   "gamePromptNumberQuantity": "Bu kadar olanı bul",
   "gamePromptFillCount": "Sepete {count} tane koy",
   "gameFillBasketCount": "Sepette {count} / {goal}",
-  "appTitle": "Özel Eğitim Oyunları"
+  "appTitle": "Özel Eğitim Oyunları",
+  "gamePromptWhichSound": "Hangi ses onun?",
+  "gameListenToSound": "Dinle"
 }

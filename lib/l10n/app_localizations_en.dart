@@ -1099,4 +1099,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTitle => 'Special Education Games';
+
+  @override
+  String get gamePromptWhichSound => 'Which sound does it make?';
+
+  @override
+  String get gameListenToSound => 'Listen';
 }

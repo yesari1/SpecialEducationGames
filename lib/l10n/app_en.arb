@@ -1008,5 +1008,7 @@
   "@gamePromptFillCount": {"placeholders": {"count": {"type": "int"}}},
   "gameFillBasketCount": "Basket: {count} of {goal}",
   "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
-  "appTitle": "Special Education Games"
+  "appTitle": "Special Education Games",
+  "gamePromptWhichSound": "Which sound does it make?",
+  "gameListenToSound": "Listen"
 }

@@ -72,6 +72,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     GamePromptKey.sortIntoBasket => l10n.gamePromptSortIntoBasket,
     GamePromptKey.numberQuantity => l10n.gamePromptNumberQuantity,
     GamePromptKey.fillCount => l10n.gamePromptFillCount(spec.fillCount ?? 0),
+    GamePromptKey.whichSound => l10n.gamePromptWhichSound,
     null => s.locale == 'tr' ? spec.promptTr : spec.promptEn,
   };
   bool get exploratory => widget.gameId == 'G02' || widget.gameId == 'G55';
@@ -606,7 +607,15 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                       child: c.template.buildView(
                         context,
                         spec,
-                        RoundCallbacks(onSelect: (item) => c.choose(item)),
+                        RoundCallbacks(
+                          onSelect: (item) => c.choose(item),
+                          onListen: (item) {
+                            c.noteInteraction(itemId: item.id);
+                            if (item.sfx case final String sfx) {
+                              s.audio.playSequence([sfx]);
+                            }
+                          },
+                        ),
                         HintViewState(
                           level: c.hint,
                           visibleChoices: c.visibleChoices,

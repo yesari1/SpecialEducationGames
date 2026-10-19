@@ -3,11 +3,15 @@ import '../../../app/theme/tokens.dart';
 import '../../../app/ui/choice_card.dart';
 import '../../../app/ui/components.dart';
 import '../../../core/content/content_repository.dart';
+import '../../../l10n/scoped_localizations.dart';
 import '../round_spec.dart';
 
 class RoundCallbacks {
   final void Function(ContentItem item) onSelect;
-  const RoundCallbacks({required this.onSelect});
+
+  /// Plays a choice's sound without answering (sound-choice games).
+  final void Function(ContentItem item)? onListen;
+  const RoundCallbacks({required this.onSelect, this.onListen});
 }
 
 class HintViewState {
@@ -135,12 +139,24 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
       showLabel:
           widget.hint.showLabels &&
           widget.spec.quantities.isEmpty &&
-          look != ChoiceLook.silhouette,
+          look != ChoiceLook.silhouette &&
+          look != ChoiceLook.sound,
       visual: look == ChoiceLook.silhouette
           ? ItemVisual(
               item,
               alignment: Alignment.bottomCenter,
               silhouette: true,
+            )
+          : look == ChoiceLook.sound
+          ? SoundChoiceVisual(
+              index: index,
+              onListen: widget.callbacks.onListen == null
+                  ? null
+                  : () => widget.callbacks.onListen!(item),
+              listenLabel: scopedLocalizations(
+                context,
+                widget.hint.locale,
+              ).gameListenToSound,
             )
           : look == ChoiceLook.basket
           ? BasketFrame(
@@ -318,4 +334,78 @@ class QuantityVisual extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// A sound answer: a coloured wave badge with its own listen button. Tapping
+/// the listen button only plays; tapping the rest of the card answers.
+class SoundChoiceVisual extends StatelessWidget {
+  final int index;
+  final VoidCallback? onListen;
+  final String listenLabel;
+  const SoundChoiceVisual({
+    super.key,
+    required this.index,
+    required this.onListen,
+    required this.listenLabel,
+  });
+  static const _tints = [
+    SegColors.turquoise,
+    SegColors.accent,
+    SegColors.primary,
+    Color(0xFF7C73DF),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    final tint = _tints[index % _tints.length];
+    return LayoutBuilder(
+      builder: (context, box) {
+        final side = (box.biggest.shortestSide * .9).clamp(48.0, 180.0);
+        return Center(
+          child: SizedBox.square(
+            dimension: side,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color.lerp(Colors.white, tint, .18),
+                      border: Border.all(color: Colors.white, width: 4),
+                    ),
+                    child: Icon(
+                      Icons.graphic_eq_rounded,
+                      color: tint,
+                      size: side * .5,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: -6,
+                  bottom: -6,
+                  child: Material(
+                    color: tint,
+                    shape: const CircleBorder(
+                      side: BorderSide(color: Colors.white, width: 3),
+                    ),
+                    child: IconButton(
+                      key: ValueKey('listen-$index'),
+                      tooltip: listenLabel,
+                      constraints: const BoxConstraints(
+                        minWidth: 48,
+                        minHeight: 48,
+                      ),
+                      color: Colors.white,
+                      onPressed: onListen,
+                      icon: const Icon(Icons.volume_up_rounded),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }

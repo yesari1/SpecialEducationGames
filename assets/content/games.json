@@ -133,5 +133,14 @@
     },
     "template": "fill_count",
     "phase": 2
+  },
+  {
+    "id": "G11",
+    "name": {
+      "tr": "Doğru Sesi Seç",
+      "en": "Pick the Sound"
+    },
+    "template": "audio_choice",
+    "phase": 2
   }
 ]

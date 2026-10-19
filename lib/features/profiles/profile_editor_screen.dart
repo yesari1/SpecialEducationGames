@@ -9,6 +9,7 @@ import '../../app/ui/page_navigation.dart';
 import '../../core/learning/policies.dart';
 import '../../core/content/content_repository.dart';
 import '../onboarding/survey_questions.dart';
+import '../onboarding/onboarding_parts.dart';
 import '../onboarding/survey_options.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -264,18 +265,22 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
       style: SegText.title,
       textAlign: TextAlign.center,
     );
-    final options = SurveyOptions(
-      question: question,
-      locale: s.locale,
-      value: answers[question.key],
-      onChanged: (value) {
-        FocusScope.of(context).unfocus();
-        setState(() {
-          answers[question.key] = value;
-          if (!question.multiple) page++;
-        });
-      },
-    );
+    // Upright: exact age 2–10+ as one grid, like onboarding. The legacy
+    // range answer is kept in sync for older readers of the survey.
+    final options = _portrait && question.key == 'age'
+        ? _ageGrid()
+        : SurveyOptions(
+            question: question,
+            locale: s.locale,
+            value: answers[question.key],
+            onChanged: (value) {
+              FocusScope.of(context).unfocus();
+              setState(() {
+                answers[question.key] = value;
+                if (!question.multiple) page++;
+              });
+            },
+          );
     return LayoutBuilder(
       builder: (context, constraints) {
         final compact =
@@ -455,6 +460,46 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
 
   bool get _portrait =>
       MediaQuery.orientationOf(context) == Orientation.portrait;
+
+  Widget _ageGrid() => LayoutBuilder(
+    builder: (context, box) {
+      const gap = SegSpace.s3;
+      final width = (box.maxWidth - gap * 2) / 3;
+      final selected = answers['ageYears'];
+      return SingleChildScrollView(
+        child: Wrap(
+          key: const ValueKey('profile-age-grid'),
+          spacing: gap,
+          runSpacing: gap,
+          children: [
+            for (var age = 2; age <= 10; age++)
+              SizedBox(
+                width: width,
+                child: AgeChoice(
+                  key: ValueKey('profile-age-$age'),
+                  label: age == 10 ? l10n.obAgeTenPlus : '$age',
+                  semanticsLabel: age == 10
+                      ? l10n.obAgeTenPlus
+                      : l10n.obAgeYears(age),
+                  selected: selected == age,
+                  onTap: () => setState(() {
+                    answers['ageYears'] = age;
+                    answers['age'] = age <= 3
+                        ? 0
+                        : age <= 5
+                        ? 1
+                        : age <= 7
+                        ? 2
+                        : 3;
+                    page++;
+                  }),
+                ),
+              ),
+          ],
+        ),
+      );
+    },
+  );
 
   /// Upright screens stack the footer actions as full-width buttons.
   Widget _footer() {

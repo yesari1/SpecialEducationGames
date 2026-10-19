@@ -2010,6 +2010,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Special Education Games'**
   String get appTitle;
+
+  /// No description provided for @gamePromptWhichSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Which sound does it make?'**
+  String get gamePromptWhichSound;
+
+  /// No description provided for @gameListenToSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get gameListenToSound;
 }
 
 class _AppLocalizationsDelegate

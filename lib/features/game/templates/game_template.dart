@@ -612,6 +612,48 @@ class FillCountTemplate extends GameTemplate {
   ) => FillBasketView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
+/// G11 "Doğru Sesi Seç": the picture is shown; each answer is a sound the
+/// child can listen to with its button, then choose by tapping the card.
+class SoundChoiceTemplate extends GameTemplate {
+  const SoundChoiceTemplate();
+  @override
+  String get id => 'audio_choice';
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final pool = ctx.content
+        .pool(ctx.themeId, ctx.difficulty)
+        .where((x) => x.sfx != null && x.images.isNotEmpty)
+        .toList();
+    if (pool.length < 2) throw StateError('Not enough sounds');
+    final target = ctx.scheduler.next(pool, ctx.struggle);
+    final distractors = pool.where((x) => x.id != target.id).toList()
+      ..shuffle(ctx.scheduler.random);
+    final size = ctx.difficulty == Difficulty.easy ? 2 : 3;
+    return RoundSpec(
+      target: target,
+      choices: [target, ...distractors.take(size - 1)]
+        ..shuffle(ctx.scheduler.random),
+      promptTr: 'Hangi ses onun?',
+      promptEn: 'Which sound does it make?',
+      promptKey: GamePromptKey.whichSound,
+      stimulus: target,
+      look: ChoiceLook.sound,
+    );
+  }
+
+  // Saying the name is fine: the child compares the sounds.
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
+    ?spec.target.audioFor(locale),
+  ];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) => [
+    'assets/audio/$locale/prompts/praise.mp3',
+    ?spec.target.sfx,
+  ];
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -626,6 +668,7 @@ abstract final class TemplateRegistry {
     'G23' => const BasketSortTemplate(),
     'G37' => const NumberQuantityTemplate(),
     'G38' => const FillCountTemplate(),
+    'G11' => const SoundChoiceTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }
