@@ -16,15 +16,15 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] Modern yüzen kapsül alt menü (kayan seçili zemin, dolu/boş ikon).
 - [x] Android Geri: aile alt sayfalarında uygulamayı kapatıyordu → artık üst sayfaya döner; tema → ana sayfa; oyunda Geri yok sayılır (çıkış basılı tutmayla).
 - [x] Çocuk UI: tema/oyun kartları mini sahnede, her oyun kartında farklı nesne + mod rozeti, beyaz kapsül geçişler (Oyunlar/Yol, zorluk), günlük yol taşları + sıradaki adım halkası, gün bazlı sticker'lar, tur sonu yıldızları, mola ekranı, ebeveyn kapısı.
-- [x] Faz 2 oyunları (premium; 6 ücretsiz oyun değişmedi): G15 Gölgesini Bul (sürükle veya dokun), G17 Farklı Olanı Bul, G23 Sepete Koy (sürükle veya dokun), G37 Sayı ve Miktar, G38 Sepeti Doldur. Her sürükleme oyununda dokunma alternatifi vardır. Kart sayısı 35 → 47.
+- [x] Faz 2 oyunları (premium; 6 ücretsiz oyun değişmedi): G11 Doğru Sesi Seç (her ses kartının dinle düğmesi yalnız çalar, karta dokunmak seçer), G15 Gölgesini Bul (sürükle veya dokun), G17 Farklı Olanı Bul, G23 Sepete Koy (sürükle veya dokun), G37 Sayı ve Miktar, G38 Sepeti Doldur. Her sürükleme oyununda dokunma alternatifi vardır. Kart sayısı 35 → 49.
+- [x] Profil düzenleyicide yaş sorusu dikeyde onboarding'deki 2–10+ ızgarası; eski yaş aralığı da senkron tutulur.
+- [x] Fotoğraf çerçeve sınırları `tools/build_photo_bounds.py` ile önceden hesaplanır (`assets/content/photo_bounds.json`); yeni fotoğraf eklenince yeniden çalıştırılmalı, test eksik olanı yakalar.
 - [x] Kalan `state.tr` metinleri (uygulama başlığı) ARB'ye taşındı; yeni metinler TR/EN ARB'de.
 - [x] Debug QA için `--dart-define=QA_PREMIUM=true` (yalnız debug derlemede; release/profile yok sayar).
-- [x] Testler: 230/230 seri host test geçer, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 7).
+- [x] Testler: 234/234 seri host test geçer, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 8), dikey aile/abonelik/profil düzenleyici 1x/2x TR/EN, fotoğraf sınırı kapsamı.
 
 ### Yerelde yapılabilecek açıklar
-- [ ] G11 Doğru Sesi Seç (audio_choice): hoparlör seçenekleri için dinle/seç etkileşimi tasarlanmalı; mevcut 10 doğal hayvan sesiyle sınırlı.
 - [ ] Yeni oyunların yönerge sesleri yok (yalnız yazı + öğe adı). Ses üretimi aşağıdaki ses onayına bağlı.
-- [ ] Profil düzenleyicideki yaş sorusu hâlâ eski aralıklar (2–3, 4–5…); onboarding hem tam yaşı (`ageYears`) hem aralığı kaydeder. Düzenleyiciye 2–10+ seçici taşınabilir.
 - [ ] Şekiller teması: şekiller vektörle çizilebilir (fotoğraf gerekmez) ama TR/EN seslendirme yok; ses onayı olmadan açılmadı.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).
 
