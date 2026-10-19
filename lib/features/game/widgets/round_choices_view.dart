@@ -43,6 +43,8 @@ class RoundChoicesView extends StatefulWidget {
 class _RoundChoicesViewState extends State<RoundChoicesView> {
   final PageController _pager = PageController();
   int _page = 0;
+  String? _lastPicked, _shakeFor;
+  int _shakeSerial = 0;
 
   bool _needsPager(BuildContext context) {
     final compact = MediaQuery.sizeOf(context).height < 500;
@@ -61,15 +63,24 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
   void didUpdateWidget(RoundChoicesView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.hint.generation != widget.hint.generation) {
+      _lastPicked = null;
+      _shakeFor = null;
       _page = 0;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && _pager.hasClients) _pager.jumpToPage(0);
       });
-    } else if (oldWidget.hint.level < 3 && widget.hint.level >= 3) {
-      final targetIndex = widget.spec.choices.indexWhere(
-        (item) => item.id == widget.spec.target.id,
-      );
-      if (targetIndex >= 0) _schedulePage(targetIndex ~/ 2);
+    } else {
+      if (widget.hint.wrongCount > oldWidget.hint.wrongCount &&
+          _lastPicked != null) {
+        _shakeFor = _lastPicked;
+        _shakeSerial++;
+      }
+      if (oldWidget.hint.level < 3 && widget.hint.level >= 3) {
+        final targetIndex = widget.spec.choices.indexWhere(
+          (item) => item.id == widget.spec.target.id,
+        );
+        if (targetIndex >= 0) _schedulePage(targetIndex ~/ 2);
+      }
     }
   }
 
@@ -115,6 +126,8 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         state: state,
         hintLevel: correct ? widget.hint.level : 0,
         nudgeSerial: correct ? widget.hint.wrongCount : 0,
+        shakeSerial: _shakeFor == item.id ? _shakeSerial : 0,
+        appearDelay: SegMotion.stagger * (index % 4),
         showLabel: widget.hint.showLabels && widget.spec.quantities.isEmpty,
         visual: widget.spec.quantities.containsKey(item.id)
             ? QuantityVisual(
@@ -130,7 +143,10 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         animate: widget.hint.animate,
         onTap: widget.hint.celebrating
             ? null
-            : () => widget.callbacks.onSelect(item),
+            : () {
+                _lastPicked = item.id;
+                widget.callbacks.onSelect(item);
+              },
       ),
     );
   }
@@ -261,7 +277,9 @@ class QuantityVisual extends StatelessWidget {
               width: 42,
               height: 42,
               child: item == null
-                  ? const Icon(Icons.circle, color: SegColors.accent, size: 32)
+                  ? const CustomPaint(
+                      painter: ColorBlobPainter(SegColors.accent),
+                    )
                   : ItemVisual(item!),
             ),
           ),

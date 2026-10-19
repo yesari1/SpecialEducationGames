@@ -199,24 +199,18 @@ class ItemVisual extends StatelessWidget {
     }
     if (item.theme == 'colors') {
       return FractionallySizedBox(
-        widthFactor: .7,
-        heightFactor: .7,
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(colors[item.slug] ?? 0xFF9AA4AE),
-            border: Border.all(color: SegColors.line, width: 2),
+        widthFactor: .78,
+        heightFactor: .78,
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: CustomPaint(
+            painter: ColorBlobPainter(Color(colors[item.slug] ?? 0xFF9AA4AE)),
           ),
         ),
       );
     }
     if (item.theme == 'numbers') {
-      return FittedBox(
-        child: Text(
-          item.slug,
-          style: SegText.display.copyWith(color: SegColors.ink),
-        ),
-      );
+      return FittedBox(child: StickerNumber(item.slug));
     }
     final icons = {
       'car': Icons.directions_car_rounded,
@@ -231,17 +225,122 @@ class ItemVisual extends StatelessWidget {
       'ambulance': Icons.emergency_rounded,
       'helicopter': Icons.flight_rounded,
     };
+    final icon =
+        icons[item.slug] ??
+        (item.theme == 'vehicles'
+            ? Icons.directions_car_rounded
+            : Icons.image_outlined);
+    // Sticker-style icon: a white rim drawn from the glyph itself so the
+    // placeholder reads as a cut-out object like the photos around it.
     return FittedBox(
       child: Icon(
-        icons[item.slug] ??
-            (item.theme == 'vehicles'
-                ? Icons.directions_car_rounded
-                : Icons.image_outlined),
+        icon,
         size: 96,
-        color: SegColors.inkSoft,
+        color: item.theme == 'vehicles' ? SegColors.primary : SegColors.inkSoft,
+        shadows: [
+          for (var i = 0; i < 12; i++)
+            Shadow(
+              color: Colors.white,
+              offset: Offset(
+                math.cos(i * math.pi / 6) * 3,
+                math.sin(i * math.pi / 6) * 3,
+              ),
+            ),
+        ],
       ),
     );
   }
+}
+
+/// Palette for counting numbers: calm, distinct, never neon.
+const _numberTints = [
+  SegColors.accent,
+  SegColors.primary,
+  SegColors.turquoise,
+  Color(0xFF7C73DF),
+  Color(0xFFE76F8E),
+];
+
+/// A chunky numeral with a white sticker rim and a soft inner tint.
+class StickerNumber extends StatelessWidget {
+  final String text;
+  const StickerNumber(this.text, {super.key});
+  @override
+  Widget build(BuildContext context) {
+    final tint =
+        _numberTints[(int.tryParse(text) ?? text.length) % _numberTints.length];
+    final base = SegText.display.copyWith(fontSize: 72, height: 1.1);
+    return Stack(
+      children: [
+        Text(
+          text,
+          style: base.copyWith(
+            foreground: Paint()
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = 14
+              ..strokeJoin = StrokeJoin.round
+              ..color = Colors.white,
+            shadows: [
+              Shadow(
+                color: SegColors.ink.withValues(alpha: .12),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+        ),
+        Text(text, style: base.copyWith(color: tint)),
+      ],
+    );
+  }
+}
+
+/// A soft, slightly glossy paint ball for colour items, with a white rim.
+class ColorBlobPainter extends CustomPainter {
+  final Color color;
+  const ColorBlobPainter(this.color);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final radius = size.shortestSide / 2;
+    final center = size.center(Offset.zero);
+    canvas.drawCircle(center, radius, Paint()..color = Colors.white);
+    final inner = radius * .88;
+    final rect = Rect.fromCircle(center: center, radius: inner);
+    final light = Color.lerp(color, Colors.white, .35)!;
+    final dark = Color.lerp(color, Colors.black, .12)!;
+    canvas.drawCircle(
+      center,
+      inner,
+      Paint()
+        ..shader = RadialGradient(
+          center: const Alignment(-.35, -.4),
+          radius: 1.05,
+          colors: [light, color, dark],
+          stops: const [0, .55, 1],
+        ).createShader(rect),
+    );
+    if (color.computeLuminance() > .85) {
+      canvas.drawCircle(
+        center,
+        inner,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.5
+          ..color = SegColors.line,
+      );
+    }
+    canvas.drawOval(
+      Rect.fromCenter(
+        center: center + Offset(-inner * .32, -inner * .42),
+        width: inner * .5,
+        height: inner * .28,
+      ),
+      Paint()..color = Colors.white.withValues(alpha: .45),
+    );
+  }
+
+  @override
+  bool shouldRepaint(ColorBlobPainter old) => old.color != color;
 }
 
 /// A photographic cutout with a contour following its alpha, never its frame.

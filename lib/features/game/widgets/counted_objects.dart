@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../app/ui/components.dart';
+import '../../../app/ui/game_object.dart';
 import '../../../core/content/content_repository.dart';
 import '../../../l10n/scoped_localizations.dart';
 
@@ -42,9 +43,8 @@ class _CountedObjectsState extends State<CountedObjects> {
         index + 1,
       ),
       value: counted[index] == null ? '' : '${counted[index]}',
-      child: InkWell(
+      child: PressableObject(
         key: ValueKey('count-object-$index'),
-        borderRadius: BorderRadius.circular(SegRadius.md),
         onTap: !widget.enabled
             ? null
             : () {
@@ -53,42 +53,58 @@ class _CountedObjectsState extends State<CountedObjects> {
                 setState(() => counted[index] = number);
                 widget.onCount(number);
               },
-        child: Container(
+        child: SizedBox(
           width: 64,
           height: 64,
-          padding: const EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(SegRadius.md),
-            border: Border.all(
-              color: counted.containsKey(index)
-                  ? SegColors.primary
-                  : Colors.transparent,
-              width: 2,
-            ),
-          ),
           child: Stack(
+            clipBehavior: Clip.none,
             children: [
               Positioned.fill(
-                child: widget.item == null
-                    ? const Icon(
-                        Icons.circle,
-                        color: SegColors.accent,
-                        size: 36,
-                      )
-                    : ItemVisual(widget.item!),
+                child: AnimatedOpacity(
+                  duration: SegMotion.focus,
+                  opacity: counted.containsKey(index) ? 1 : 0,
+                  child: const ObjectHalo(color: SegColors.primarySoft),
+                ),
+              ),
+              const Positioned(
+                left: 14,
+                right: 14,
+                bottom: 0,
+                height: 8,
+                child: GroundShadow(),
+              ),
+              Positioned.fill(
+                child: AnimatedSlide(
+                  duration: SegMotion.focus,
+                  curve: Curves.easeOutBack,
+                  offset: counted.containsKey(index)
+                      ? const Offset(0, -.08)
+                      : Offset.zero,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(5, 3, 5, 7),
+                    child: widget.item == null
+                        ? const CustomPaint(
+                            painter: ColorBlobPainter(SegColors.accent),
+                          )
+                        : ItemVisual(widget.item!),
+                  ),
+                ),
               ),
               if (counted[index] case final int number)
                 Positioned(
-                  top: 0,
-                  right: 0,
+                  top: -4,
+                  right: -4,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    decoration: const BoxDecoration(
+                    constraints: const BoxConstraints(minWidth: 26),
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    decoration: BoxDecoration(
                       color: SegColors.primary,
-                      shape: BoxShape.circle,
+                      borderRadius: BorderRadius.circular(SegRadius.pill),
+                      border: Border.all(color: Colors.white, width: 2),
                     ),
                     child: Text(
                       '$number',
+                      textAlign: TextAlign.center,
                       style: SegText.label.copyWith(color: Colors.white),
                     ),
                   ),

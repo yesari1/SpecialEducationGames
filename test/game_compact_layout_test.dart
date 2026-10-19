@@ -750,7 +750,9 @@ void main() {
     setCardState(() {});
     await tester.pump();
 
-    expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
+    // Success is a soft halo behind the object, not a check badge.
+    expect(find.byKey(const ValueKey('choice-success-halo')), findsOneWidget);
+    expect(find.byIcon(Icons.check_circle_rounded), findsNothing);
     final label = find.text(item.name('tr'));
     expect(label, findsOneWidget);
     expect(

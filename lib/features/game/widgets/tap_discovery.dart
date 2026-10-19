@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../../../app/theme/tokens.dart';
+import '../../../app/ui/game_object.dart';
 
 class TapDiscovery extends StatefulWidget {
   final Widget child;
@@ -34,35 +34,30 @@ class _TapDiscoveryState extends State<TapDiscovery>
   Widget build(BuildContext context) => Semantics(
     button: true,
     label: widget.label,
-    child: Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(SegRadius.lg),
-        highlightColor: SegColors.hintGlow,
-        onTap: () {
-          if (!widget.reducedMotion &&
-              !MediaQuery.disableAnimationsOf(context)) {
-            motion.forward(from: 0);
-          }
-          widget.onTap();
+    child: PressableObject(
+      reducedMotion: widget.reducedMotion,
+      onTap: () {
+        if (!widget.reducedMotion && !MediaQuery.disableAnimationsOf(context)) {
+          motion.forward(from: 0);
+        }
+        widget.onTap();
+      },
+      child: AnimatedBuilder(
+        animation: motion,
+        child: widget.child,
+        builder: (_, child) {
+          final progress =
+              widget.reducedMotion || MediaQuery.disableAnimationsOf(context)
+              ? 0.0
+              : motion.value;
+          return Transform.rotate(
+            angle: sin(progress * pi * 2) * .025,
+            child: Transform.scale(
+              scale: 1 + sin(progress * pi) * .06,
+              child: child,
+            ),
+          );
         },
-        child: AnimatedBuilder(
-          animation: motion,
-          child: widget.child,
-          builder: (_, child) {
-            final progress =
-                widget.reducedMotion || MediaQuery.disableAnimationsOf(context)
-                ? 0.0
-                : motion.value;
-            return Transform.rotate(
-              angle: sin(progress * pi * 2) * .025,
-              child: Transform.scale(
-                scale: 1 + sin(progress * pi) * .06,
-                child: child,
-              ),
-            );
-          },
-        ),
       ),
     ),
   );
