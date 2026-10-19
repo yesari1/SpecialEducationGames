@@ -4,6 +4,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../theme/tokens.dart';
 import '../../core/content/content_repository.dart';
+import 'game_object.dart';
+import 'scene_backdrop.dart';
 
 class SegButton extends StatelessWidget {
   final String label;
@@ -517,6 +519,7 @@ class ThemeGameCard extends StatelessWidget {
   final String title, subtitle;
   final String? badgeText;
   final Widget visual;
+  final IconData? modeIcon;
   final bool locked;
   final VoidCallback onTap;
   const ThemeGameCard({
@@ -526,6 +529,7 @@ class ThemeGameCard extends StatelessWidget {
     required this.subtitle,
     required this.visual,
     required this.onTap,
+    this.modeIcon,
     this.locked = false,
     this.badgeText,
   });
@@ -538,46 +542,82 @@ class ThemeGameCard extends StatelessWidget {
     _ => SegColors.primary,
   };
 
+  /// Round, compact subjects read as oversized when they fill the scene.
+  double get _heroScale => switch (theme.id) {
+    'produce' || 'colors' => .7,
+    'numbers' => .85,
+    _ => 1,
+  };
+
   @override
   Widget build(BuildContext context) {
     final textScale = MediaQuery.textScalerOf(context).scale(1);
     final horizontalContent = textScale >= 1.6;
+    final deep = Color.lerp(accent, SegColors.ink, .35)!;
 
-    Widget cardVisual() => Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            accent.withValues(alpha: .18),
-            accent.withValues(alpha: .04),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(SegRadius.md),
-        border: Border.all(color: Colors.white, width: 3),
-      ),
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Opacity(opacity: locked ? .55 : 1, child: visual),
-          if (locked)
-            Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.lock_outline_rounded,
-                  color: SegColors.inkSoft,
-                  size: 22,
+    // A small scene: the hero object stands on soft hills in the theme colour.
+    Widget cardVisual() => ClipRRect(
+      borderRadius: BorderRadius.circular(SegRadius.md),
+      child: SceneBackdrop(
+        tint: accent,
+        base: Color.lerp(SegColors.canvas, accent, .06)!,
+        clouds: !horizontalContent,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 18, 12, 6),
+              child: Opacity(
+                opacity: locked ? .5 : 1,
+                child: StagedObject(
+                  child: FractionallySizedBox(
+                    alignment: Alignment.bottomCenter,
+                    widthFactor: _heroScale,
+                    heightFactor: _heroScale,
+                    child: visual,
+                  ),
                 ),
               ),
             ),
-        ],
+            if (modeIcon case final icon?)
+              Positioned(
+                right: 8,
+                bottom: 8,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: deep.withValues(alpha: .18),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Icon(icon, size: 26, color: deep),
+                ),
+              ),
+            if (locked)
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  margin: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(6),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.lock_outline_rounded,
+                    color: SegColors.inkSoft,
+                    size: 22,
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
 
@@ -591,14 +631,13 @@ class ThemeGameCard extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: accent.withValues(alpha: .14),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: accent),
               ),
               child: Text(
                 text,
                 textAlign: TextAlign.center,
-                style: SegText.label.copyWith(color: SegColors.ink),
+                style: SegText.label.copyWith(color: deep),
               ),
             ),
           ),
@@ -623,53 +662,136 @@ class ThemeGameCard extends StatelessWidget {
     return Semantics(
       button: true,
       label: '$title. $subtitle${badgeText == null ? '' : '. $badgeText'}',
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(SegRadius.lg),
-          boxShadow: [
-            BoxShadow(
-              color: accent.withValues(alpha: .14),
-              blurRadius: 18,
-              offset: const Offset(0, 6),
-            ),
-          ],
-        ),
-        child: Material(
-          color: SegColors.surface,
-          borderRadius: BorderRadius.circular(SegRadius.lg),
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: onTap,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(SegRadius.lg),
-                border: Border.all(
-                  color: accent.withValues(alpha: .3),
-                  width: 2,
-                ),
+      excludeSemantics: true,
+      child: PressableObject(
+        onTap: onTap,
+        pivot: Alignment.center,
+        depth: .35,
+        child: Container(
+          decoration: BoxDecoration(
+            color: SegColors.surface,
+            borderRadius: BorderRadius.circular(SegRadius.lg),
+            border: Border.all(color: Colors.white, width: 3),
+            boxShadow: [
+              BoxShadow(
+                color: accent.withValues(alpha: .22),
+                blurRadius: 0,
+                offset: const Offset(0, 5),
               ),
-              padding: EdgeInsets.all(horizontalContent ? 4 : 10),
-              child: horizontalContent
-                  ? Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(child: cardVisual()),
-                        const SizedBox(height: SegSpace.s1),
-                        labelContent(),
-                      ],
-                    )
-                  : Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(child: cardVisual()),
-                        const SizedBox(height: SegSpace.s2),
-                        labelContent(),
-                        const SizedBox(height: SegSpace.s1),
-                      ],
-                    ),
-            ),
+              BoxShadow(
+                color: SegColors.ink.withValues(alpha: .07),
+                blurRadius: 18,
+                offset: const Offset(0, 8),
+              ),
+            ],
+          ),
+          padding: EdgeInsets.all(horizontalContent ? 4 : 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(child: cardVisual()),
+              SizedBox(height: horizontalContent ? SegSpace.s1 : SegSpace.s2),
+              labelContent(),
+              if (!horizontalContent) const SizedBox(height: SegSpace.s1),
+            ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// Two or three calm choices in one white pill; a tinted capsule slides
+/// behind the selected one. Used for Games/Path and difficulty.
+class PillToggle<T> extends StatelessWidget {
+  final List<T> values;
+  final T selected;
+  final String Function(T) label;
+  final IconData Function(T)? icon;
+  final ValueChanged<T>? onChanged;
+  const PillToggle({
+    super.key,
+    required this.values,
+    required this.selected,
+    required this.label,
+    this.icon,
+    this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final reduced = MediaQuery.disableAnimationsOf(context);
+    return Container(
+      padding: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        color: SegColors.surface,
+        borderRadius: BorderRadius.circular(SegRadius.pill),
+        border: Border.all(color: SegColors.line),
+        boxShadow: [
+          BoxShadow(
+            color: SegColors.ink.withValues(alpha: .06),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (final value in values)
+            Semantics(
+              button: true,
+              selected: value == selected,
+              enabled: onChanged != null,
+              label: label(value),
+              excludeSemantics: true,
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: onChanged == null ? null : () => onChanged!(value),
+                child: AnimatedContainer(
+                  duration: reduced ? Duration.zero : SegMotion.appear,
+                  curve: Curves.easeOutCubic,
+                  constraints: const BoxConstraints(minHeight: 48),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: SegSpace.s4,
+                    vertical: SegSpace.s2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: value == selected
+                        ? SegColors.primarySoft
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(SegRadius.pill),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (icon != null) ...[
+                        Icon(
+                          icon!(value),
+                          size: 20,
+                          color: value == selected
+                              ? SegColors.primaryDeep
+                              : SegColors.inkSoft,
+                        ),
+                        const SizedBox(width: SegSpace.s2),
+                      ],
+                      Text(
+                        label(value),
+                        style: SegText.label.copyWith(
+                          color: value == selected
+                              ? SegColors.primaryDeep
+                              : SegColors.inkSoft,
+                          fontWeight: value == selected
+                              ? FontWeight.w800
+                              : FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

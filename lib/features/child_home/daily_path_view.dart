@@ -3,6 +3,9 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
+import '../../app/ui/day_sticker.dart';
+import '../../app/ui/game_object.dart';
+import '../../app/ui/scene_backdrop.dart';
 import '../../core/content/content_repository.dart';
 import '../../l10n/scoped_localizations.dart';
 
@@ -60,13 +63,18 @@ class DailyPathView extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(24, 4, 24, 12),
                 itemCount: progress.steps.length,
                 separatorBuilder: (_, _) => Center(
-                  child: Container(
-                    width: 24,
-                    height: 6,
-                    decoration: BoxDecoration(
-                      color: SegColors.primarySoft,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      for (var dot = 0; dot < 3; dot++)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 3),
+                          child: const CircleAvatar(
+                            radius: 4,
+                            backgroundColor: Color(0x5510B7B0),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
                 itemBuilder: (context, index) {
@@ -75,6 +83,13 @@ class DailyPathView extends StatelessWidget {
                   final theme = state.content.theme(parts[0]);
                   final game = state.content.game(parts[1]);
                   final done = progress.completed.contains(key);
+                  // The first unfinished step is the one to play next.
+                  final next =
+                      !done &&
+                      progress.steps.indexWhere(
+                            (x) => !progress.completed.contains(x),
+                          ) ==
+                          index;
                   final hero = state.content.items.firstWhere(
                     (x) => x.id == theme.hero,
                   );
@@ -84,68 +99,78 @@ class DailyPathView extends StatelessWidget {
                       button: true,
                       label:
                           '${game.name(state.locale)}, ${theme.name(state.locale)}, ${done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          key: ValueKey('daily-step-$key'),
-                          borderRadius: BorderRadius.circular(28),
-                          onTap: () =>
-                              context.go('/game/${parts[0]}/${parts[1]}/easy'),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: compact
-                                ? Row(
-                                    children: [
-                                      _pathNode(hero, done, nodeSize),
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              l10n.dailyPathStepTitle(
-                                                index + 1,
-                                                game.name(state.locale),
-                                              ),
-                                              style: SegText.label,
+                      child: PressableObject(
+                        key: ValueKey('daily-step-$key'),
+                        pivot: Alignment.center,
+                        depth: .5,
+                        onTap: () =>
+                            context.go('/game/${parts[0]}/${parts[1]}/easy'),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: compact
+                              ? Row(
+                                  children: [
+                                    _pathNode(
+                                      theme,
+                                      hero,
+                                      done,
+                                      next,
+                                      nodeSize,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.dailyPathStepTitle(
+                                              index + 1,
+                                              game.name(state.locale),
                                             ),
-                                            Text(
-                                              theme.name(state.locale),
-                                              style: SegText.caption.copyWith(
-                                                color: SegColors.inkSoft,
-                                              ),
+                                            style: SegText.label,
+                                          ),
+                                          Text(
+                                            theme.name(state.locale),
+                                            style: SegText.caption.copyWith(
+                                              color: SegColors.inkSoft,
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  )
-                                : Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      _pathNode(hero, done, nodeSize),
-                                      const SizedBox(height: 8),
-                                      Text(
-                                        l10n.dailyPathStepTitle(
-                                          index + 1,
-                                          game.name(state.locale),
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: SegText.label,
+                                    ),
+                                  ],
+                                )
+                              : Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    _pathNode(
+                                      theme,
+                                      hero,
+                                      done,
+                                      next,
+                                      nodeSize,
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      l10n.dailyPathStepTitle(
+                                        index + 1,
+                                        game.name(state.locale),
                                       ),
-                                      Text(
-                                        theme.name(state.locale),
-                                        textAlign: TextAlign.center,
-                                        style: SegText.caption.copyWith(
-                                          color: SegColors.inkSoft,
-                                        ),
+                                      textAlign: TextAlign.center,
+                                      style: SegText.label,
+                                    ),
+                                    Text(
+                                      theme.name(state.locale),
+                                      textAlign: TextAlign.center,
+                                      style: SegText.caption.copyWith(
+                                        color: SegColors.inkSoft,
                                       ),
-                                    ],
-                                  ),
-                          ),
+                                    ),
+                                  ],
+                                ),
                         ),
                       ),
                     ),
@@ -167,29 +192,51 @@ class DailyPathView extends StatelessWidget {
     );
   }
 
-  Widget _pathNode(ContentItem hero, bool done, double nodeSize) => Container(
+  /// A path stone: a tiny scene with the theme's object, a gold star once
+  /// done, and a soft orange ring around the step to play next.
+  Widget _pathNode(
+    ContentTheme theme,
+    ContentItem hero,
+    bool done,
+    bool next,
+    double nodeSize,
+  ) => Container(
     width: nodeSize,
     height: nodeSize,
-    padding: const EdgeInsets.all(10),
     decoration: BoxDecoration(
-      color: done ? SegColors.star : SegColors.primarySoft,
+      color: done ? SegColors.star : Colors.white,
       shape: BoxShape.circle,
-      border: Border.all(color: Colors.white, width: 4),
-      boxShadow: const [
+      border: Border.all(
+        color: next ? SegColors.accent : Colors.white,
+        width: next ? 5 : 4,
+      ),
+      boxShadow: [
         BoxShadow(
-          color: Color(0x1618334B),
-          blurRadius: 12,
-          offset: Offset(0, 4),
+          color: (next ? SegColors.accent : SegColors.ink).withValues(
+            alpha: next ? .25 : .09,
+          ),
+          blurRadius: next ? 16 : 12,
+          offset: const Offset(0, 4),
         ),
       ],
     ),
-    child: done
-        ? Icon(
-            Icons.star_rounded,
-            size: nodeSize * .55,
-            color: SegColors.starDeep,
-          )
-        : ItemVisual(hero),
+    child: ClipOval(
+      child: done
+          ? Icon(
+              Icons.star_rounded,
+              size: nodeSize * .55,
+              color: SegColors.starDeep,
+            )
+          : SceneBackdrop(
+              tint: theme.accent,
+              base: theme.bg,
+              clouds: false,
+              child: Padding(
+                padding: EdgeInsets.all(nodeSize * .14),
+                child: ItemVisual(hero, alignment: Alignment.bottomCenter),
+              ),
+            ),
+    ),
   );
 }
 
@@ -278,11 +325,7 @@ class _StickerAlbumDialogState extends State<StickerAlbumDialog> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Icon(
-                                          Icons.workspace_premium_rounded,
-                                          size: iconSize,
-                                          color: SegColors.accent,
-                                        ),
+                                        DaySticker(day: day, size: iconSize),
                                         const SizedBox(width: 8),
                                         Flexible(
                                           child: Text(

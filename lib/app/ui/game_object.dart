@@ -97,12 +97,16 @@ class PressableObject extends StatefulWidget {
   final VoidCallback? onTap;
   final bool reducedMotion;
   final Alignment pivot;
+
+  /// 1 = full squash for small objects; lower for large cards.
+  final double depth;
   const PressableObject({
     super.key,
     required this.child,
     this.onTap,
     this.reducedMotion = false,
     this.pivot = Alignment.bottomCenter,
+    this.depth = 1,
   });
   @override
   State<PressableObject> createState() => _PressableObjectState();
@@ -151,7 +155,11 @@ class _PressableObjectState extends State<PressableObject>
             : Curves.easeOut.transform(press.value);
         return Transform(
           alignment: widget.pivot,
-          transform: Matrix4.diagonal3Values(1 + .06 * t, 1 - .1 * t, 1),
+          transform: Matrix4.diagonal3Values(
+            1 + .06 * t * widget.depth,
+            1 - .1 * t * widget.depth,
+            1,
+          ),
           child: child,
         );
       },

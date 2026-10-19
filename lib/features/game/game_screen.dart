@@ -9,6 +9,7 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/game_object.dart';
 import '../../app/ui/scene_backdrop.dart';
+import '../../app/ui/day_sticker.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
@@ -419,10 +420,23 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                             ),
                           ),
                         ),
-                        IconButton.filledTonal(
-                          onPressed: () => playPrompt(spec),
-                          icon: const Icon(Icons.volume_up_rounded),
-                          tooltip: l10n.gameListenAgain,
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            border: Border.all(color: SegColors.line),
+                          ),
+                          child: IconButton(
+                            iconSize: 28,
+                            constraints: const BoxConstraints(
+                              minWidth: 64,
+                              minHeight: 64,
+                            ),
+                            color: SegColors.primaryDeep,
+                            onPressed: () => playPrompt(spec),
+                            icon: const Icon(Icons.volume_up_rounded),
+                            tooltip: l10n.gameListenAgain,
+                          ),
                         ),
                       ],
                     ),
@@ -606,58 +620,63 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   }
 
   Widget _completed(int stars) => Scaffold(
-    body: SafeArea(
-      child: LayoutBuilder(
-        builder: (context, constraints) => Padding(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            children: [
-              Expanded(
-                child: PageView(
-                  key: const ValueKey('completion-pages'),
-                  controller: _completionPager,
-                  onPageChanged: (page) =>
-                      setState(() => _completionPage = page),
+    backgroundColor: s.content.theme(widget.themeId).bg,
+    body: SceneBackdrop(
+      tint: s.content.theme(widget.themeId).accent,
+      base: s.content.theme(widget.themeId).bg,
+      child: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              children: [
+                Expanded(
+                  child: PageView(
+                    key: const ValueKey('completion-pages'),
+                    controller: _completionPager,
+                    onPageChanged: (page) =>
+                        setState(() => _completionPage = page),
+                    children: [
+                      _completionSummary(stars),
+                      _completionActions(constraints.maxWidth - 16),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _completionSummary(stars),
-                    _completionActions(constraints.maxWidth - 16),
+                    IconButton(
+                      key: const ValueKey('completion-previous'),
+                      tooltip: l10n.gamePreviousPage,
+                      onPressed: _completionPage == 0
+                          ? null
+                          : () => _completionPager.previousPage(
+                              duration: SegMotion.pageSlide,
+                              curve: Curves.easeOutCubic,
+                            ),
+                      icon: const Icon(Icons.chevron_left_rounded),
+                    ),
+                    Text(
+                      l10n.gameSummaryPage(_completionPage + 1, 2),
+                      key: const ValueKey('completion-page-indicator'),
+                      textAlign: TextAlign.center,
+                      style: SegText.caption,
+                    ),
+                    IconButton(
+                      key: const ValueKey('completion-next'),
+                      tooltip: l10n.gameNextPage,
+                      onPressed: _completionPage == 1
+                          ? null
+                          : () => _completionPager.nextPage(
+                              duration: SegMotion.pageSlide,
+                              curve: Curves.easeOutCubic,
+                            ),
+                      icon: const Icon(Icons.chevron_right_rounded),
+                    ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    key: const ValueKey('completion-previous'),
-                    tooltip: l10n.gamePreviousPage,
-                    onPressed: _completionPage == 0
-                        ? null
-                        : () => _completionPager.previousPage(
-                            duration: SegMotion.pageSlide,
-                            curve: Curves.easeOutCubic,
-                          ),
-                    icon: const Icon(Icons.chevron_left_rounded),
-                  ),
-                  Text(
-                    l10n.gameSummaryPage(_completionPage + 1, 2),
-                    key: const ValueKey('completion-page-indicator'),
-                    textAlign: TextAlign.center,
-                    style: SegText.caption,
-                  ),
-                  IconButton(
-                    key: const ValueKey('completion-next'),
-                    tooltip: l10n.gameNextPage,
-                    onPressed: _completionPage == 1
-                        ? null
-                        : () => _completionPager.nextPage(
-                            duration: SegMotion.pageSlide,
-                            curve: Curves.easeOutCubic,
-                          ),
-                    icon: const Icon(Icons.chevron_right_rounded),
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -673,12 +692,13 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           child: Center(
             child: Wrap(
               alignment: WrapAlignment.center,
+              spacing: 4,
+              runSpacing: 4,
               children: List.generate(
                 stars,
-                (_) => const Icon(
-                  Icons.star_rounded,
-                  size: 40,
-                  color: SegColors.star,
+                (i) => _PoppingStar(
+                  delay: Duration(milliseconds: 120 * i),
+                  animate: !s.reducedMotion,
                 ),
               ),
             ),
@@ -692,17 +712,16 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             children: [
               Text(
                 l10n.gameWellDone,
-                style: SegText.heading,
+                style: SegText.title.copyWith(color: SegColors.ink),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 8),
               if (s.hasTodaySticker) ...[
                 Row(
                   children: [
-                    const Icon(
-                      Icons.workspace_premium_rounded,
-                      color: SegColors.accent,
-                      size: 48,
+                    DaySticker(
+                      day: DateTime.now().toIso8601String().substring(0, 10),
+                      size: 52,
                     ),
                     const SizedBox(width: 8),
                     Expanded(
@@ -990,6 +1009,42 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// A star that pops in once (no loop), as a sticker with a white rim.
+class _PoppingStar extends StatelessWidget {
+  final Duration delay;
+  final bool animate;
+  const _PoppingStar({required this.delay, required this.animate});
+  @override
+  Widget build(BuildContext context) {
+    const star = Icon(
+      Icons.star_rounded,
+      size: 52,
+      color: SegColors.star,
+      shadows: [
+        Shadow(color: Colors.white, blurRadius: 0, offset: Offset(0, -2)),
+        Shadow(color: Colors.white, blurRadius: 0, offset: Offset(2, 0)),
+        Shadow(color: Colors.white, blurRadius: 0, offset: Offset(-2, 0)),
+        Shadow(color: Colors.white, blurRadius: 0, offset: Offset(0, 2)),
+        Shadow(color: Color(0x33AC6B00), blurRadius: 6, offset: Offset(0, 3)),
+      ],
+    );
+    if (!animate || MediaQuery.disableAnimationsOf(context)) return star;
+    final total = SegMotion.appear + delay;
+    final start = delay.inMilliseconds / total.inMilliseconds;
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0, end: 1),
+      duration: total,
+      builder: (context, t, child) => Transform.scale(
+        scale: Curves.easeOutBack.transform(
+          ((t - start) / (1 - start)).clamp(0.0, 1.0),
+        ),
+        child: child,
+      ),
+      child: star,
     );
   }
 }
