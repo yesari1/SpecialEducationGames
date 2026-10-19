@@ -1,0 +1,693 @@
+[
+  {
+    "id": "clothes.tshirt",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "yaz",
+      "govde"
+    ],
+    "name": {
+      "tr": "Tişört",
+      "en": "Tshirt"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.trousers",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "bacak"
+    ],
+    "name": {
+      "tr": "Pantolon",
+      "en": "Trousers"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.shoes",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "ayak"
+    ],
+    "name": {
+      "tr": "Ayakkabı",
+      "en": "Shoes"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.socks",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "ayak"
+    ],
+    "name": {
+      "tr": "Çorap",
+      "en": "Socks"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.hat",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "yaz",
+      "bas"
+    ],
+    "name": {
+      "tr": "Şapka",
+      "en": "Hat"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.coat",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kis",
+      "govde"
+    ],
+    "name": {
+      "tr": "Mont",
+      "en": "Coat"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.dress",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "yaz",
+      "govde"
+    ],
+    "name": {
+      "tr": "Elbise",
+      "en": "Dress"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.skirt",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "bacak"
+    ],
+    "name": {
+      "tr": "Etek",
+      "en": "Skirt"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.shorts",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "yaz",
+      "bacak"
+    ],
+    "name": {
+      "tr": "Şort",
+      "en": "Shorts"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.pajamas",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Pijama",
+      "en": "Pajamas"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.sweater",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kis",
+      "govde"
+    ],
+    "name": {
+      "tr": "Kazak",
+      "en": "Sweater"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.slippers",
+    "theme": "clothes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "ayak"
+    ],
+    "name": {
+      "tr": "Terlik",
+      "en": "Slippers"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.shirt",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Gömlek",
+      "en": "Shirt"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.gloves",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kis",
+      "el"
+    ],
+    "name": {
+      "tr": "Eldiven",
+      "en": "Gloves"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.scarf",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kis",
+      "boyun"
+    ],
+    "name": {
+      "tr": "Atkı",
+      "en": "Scarf"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.beanie",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kis",
+      "bas"
+    ],
+    "name": {
+      "tr": "Bere",
+      "en": "Beanie"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.boots",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kis",
+      "yagmur",
+      "ayak"
+    ],
+    "name": {
+      "tr": "Çizme",
+      "en": "Boots"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.sandals",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yaz",
+      "ayak"
+    ],
+    "name": {
+      "tr": "Sandalet",
+      "en": "Sandals"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.swimsuit",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yaz"
+    ],
+    "name": {
+      "tr": "Mayo",
+      "en": "Swimsuit"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.raincoat",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yagmur",
+      "govde"
+    ],
+    "name": {
+      "tr": "Yağmurluk",
+      "en": "Raincoat"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.cardigan",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Hırka",
+      "en": "Cardigan"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.tracksuit",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Eşofman",
+      "en": "Tracksuit"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.sneakers",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "ayak"
+    ],
+    "name": {
+      "tr": "Spor ayakkabı",
+      "en": "Sneakers"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.glasses",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Gözlük",
+      "en": "Glasses"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.sunglasses",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "yaz",
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Güneş gözlüğü",
+      "en": "Sunglasses"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.umbrella",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "yagmur",
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Şemsiye",
+      "en": "Umbrella"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.bag",
+    "theme": "clothes",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Çanta",
+      "en": "Bag"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.vest",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Yelek",
+      "en": "Vest"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.jacket",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Ceket",
+      "en": "Jacket"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.tie",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "boyun"
+    ],
+    "name": {
+      "tr": "Kravat",
+      "en": "Tie"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.bow_tie",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "boyun"
+    ],
+    "name": {
+      "tr": "Papyon",
+      "en": "Bow tie"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.apron",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Önlük",
+      "en": "Apron"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.belt",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Kemer",
+      "en": "Belt"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.ankle_boots",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "kis",
+      "ayak"
+    ],
+    "name": {
+      "tr": "Bot",
+      "en": "Ankle boots"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.cap",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "bas"
+    ],
+    "name": {
+      "tr": "Kasket",
+      "en": "Cap"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.earmuffs",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "kis",
+      "bas"
+    ],
+    "name": {
+      "tr": "Kulaklık",
+      "en": "Earmuffs"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.wristwatch",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "aksesuar",
+      "el"
+    ],
+    "name": {
+      "tr": "Saat",
+      "en": "Wristwatch"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.bracelet",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Bilezik",
+      "en": "Bracelet"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.necklace",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "aksesuar",
+      "boyun"
+    ],
+    "name": {
+      "tr": "Kolye",
+      "en": "Necklace"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.backpack",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "aksesuar"
+    ],
+    "name": {
+      "tr": "Sırt çantası",
+      "en": "Backpack"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.cape",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Pelerin",
+      "en": "Cape"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "clothes.overalls",
+    "theme": "clothes",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "govde"
+    ],
+    "name": {
+      "tr": "Tulum",
+      "en": "Overalls"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

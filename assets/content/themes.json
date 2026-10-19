@@ -1,0 +1,282 @@
+[
+  {
+    "id": "animals",
+    "name": {
+      "tr": "Hayvanlar",
+      "en": "Animals"
+    },
+    "palette": {
+      "bg": "#FFFEFC",
+      "accent": "#10B7B0",
+      "deep": "#087B80"
+    },
+    "hero": "animals.cat",
+    "active": true,
+    "games": [
+      "G01",
+      "G10",
+      "G02",
+      "G14",
+      "G04",
+      "G33",
+      "G36",
+      "G55"
+    ]
+  },
+  {
+    "id": "produce",
+    "name": {
+      "tr": "Meyve ve Sebzeler",
+      "en": "Fruit and Vegetables"
+    },
+    "palette": {
+      "bg": "#FFFEFC",
+      "accent": "#FF8A32",
+      "deep": "#BA4C08"
+    },
+    "hero": "produce.apple",
+    "active": true,
+    "games": [
+      "G01",
+      "G02",
+      "G14",
+      "G04",
+      "G33",
+      "G36",
+      "G55"
+    ]
+  },
+  {
+    "id": "food",
+    "name": {
+      "tr": "Yiyecek ve İçecekler",
+      "en": "Food and Drinks"
+    },
+    "palette": {
+      "bg": "#FFF3E0",
+      "accent": "#E8A24D",
+      "deep": "#C88333"
+    },
+    "hero": "food.bread",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "vehicles",
+    "name": {
+      "tr": "Taşıtlar",
+      "en": "Vehicles"
+    },
+    "palette": {
+      "bg": "#FFFEFC",
+      "accent": "#1687D9",
+      "deep": "#0868AF"
+    },
+    "hero": "vehicles.car",
+    "active": true,
+    "games": [
+      "G02",
+      "G01",
+      "G10",
+      "G14",
+      "G04",
+      "G33",
+      "G36",
+      "G55"
+    ]
+  },
+  {
+    "id": "clothes",
+    "name": {
+      "tr": "Kıyafet ve Aksesuarlar",
+      "en": "Clothes"
+    },
+    "palette": {
+      "bg": "#FBEFF3",
+      "accent": "#D07A98",
+      "deep": "#B25C7B"
+    },
+    "hero": "clothes.shirt",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "home",
+    "name": {
+      "tr": "Evimiz",
+      "en": "Our Home"
+    },
+    "palette": {
+      "bg": "#F4EFE8",
+      "accent": "#A9805B",
+      "deep": "#8B6441"
+    },
+    "hero": "home.bed",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "school",
+    "name": {
+      "tr": "Okul ve Oyuncaklar",
+      "en": "School and Toys"
+    },
+    "palette": {
+      "bg": "#EAF6F6",
+      "accent": "#46A3A3",
+      "deep": "#2F8585"
+    },
+    "hero": "school.ball",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "jobs",
+    "name": {
+      "tr": "Meslekler",
+      "en": "Jobs"
+    },
+    "palette": {
+      "bg": "#EEF0F8",
+      "accent": "#6A78C2",
+      "deep": "#4F5DA6"
+    },
+    "hero": "jobs.doctor",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "nature",
+    "name": {
+      "tr": "Doğa ve Mevsimler",
+      "en": "Nature and Seasons"
+    },
+    "palette": {
+      "bg": "#EDF6F0",
+      "accent": "#5FA27A",
+      "deep": "#45845F"
+    },
+    "hero": "nature.sun",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "music",
+    "name": {
+      "tr": "Müzik Aletleri",
+      "en": "Musical Instruments"
+    },
+    "palette": {
+      "bg": "#F6EDF6",
+      "accent": "#B572B0",
+      "deep": "#965593"
+    },
+    "hero": "music.guitar",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "body",
+    "name": {
+      "tr": "Vücudumuz",
+      "en": "Our Body"
+    },
+    "palette": {
+      "bg": "#FDF1EA",
+      "accent": "#DB8D6A",
+      "deep": "#BC6F4D"
+    },
+    "hero": "body.hand",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "colors",
+    "name": {
+      "tr": "Renkler",
+      "en": "Colors"
+    },
+    "palette": {
+      "bg": "#FFFEFC",
+      "accent": "#1687D9",
+      "deep": "#0868AF"
+    },
+    "hero": "colors.red",
+    "active": true,
+    "games": [
+      "G01",
+      "G02",
+      "G14",
+      "G55"
+    ]
+  },
+  {
+    "id": "shapes",
+    "name": {
+      "tr": "Şekiller",
+      "en": "Shapes"
+    },
+    "palette": {
+      "bg": "#EAF1FA",
+      "accent": "#5B8FD1",
+      "deep": "#4071B3"
+    },
+    "hero": "shapes.circle",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "numbers",
+    "name": {
+      "tr": "Sayılar",
+      "en": "Numbers"
+    },
+    "palette": {
+      "bg": "#FFFEFC",
+      "accent": "#FFB92E",
+      "deep": "#AC6B00"
+    },
+    "hero": "numbers.3",
+    "active": true,
+    "games": [
+      "G35",
+      "G02",
+      "G10",
+      "G14",
+      "G33",
+      "G34",
+      "G36",
+      "G55"
+    ]
+  },
+  {
+    "id": "emotions",
+    "name": {
+      "tr": "Duygular",
+      "en": "Feelings"
+    },
+    "palette": {
+      "bg": "#FFF6E0",
+      "accent": "#E3B23C",
+      "deep": "#C29322"
+    },
+    "hero": "emotions.happy",
+    "active": false,
+    "games": []
+  },
+  {
+    "id": "letters",
+    "name": {
+      "tr": "Harfler",
+      "en": "Letters"
+    },
+    "palette": {
+      "bg": "#F1F4F8",
+      "accent": "#5F7896",
+      "deep": "#465E7A"
+    },
+    "hero": "letters.a",
+    "active": false,
+    "games": []
+  }
+]

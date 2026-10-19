@@ -1,0 +1,9 @@
+{
+  "name": "special-education-account-deletion-draft",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "engines": { "node": "24" },
+  "scripts": { "test": "node --test delete-account.test.mjs" },
+  "dependencies": { "firebase-admin": "14.5.0", "firebase-functions": "7.4.0" }
+}

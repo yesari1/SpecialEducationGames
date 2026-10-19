@@ -1,0 +1,562 @@
+[
+  {
+    "id": "jobs.doctor",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Doktor",
+      "en": "Doctor"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.nurse",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Hemşire",
+      "en": "Nurse"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.teacher",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Öğretmen",
+      "en": "Teacher"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.police_officer",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Polis",
+      "en": "Police officer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.firefighter",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "İtfaiyeci",
+      "en": "Firefighter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.cook",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Aşçı",
+      "en": "Cook"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.driver",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Şoför",
+      "en": "Driver"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.farmer",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çiftçi",
+      "en": "Farmer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.baker",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Fırıncı",
+      "en": "Baker"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.dentist",
+    "theme": "jobs",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Diş hekimi",
+      "en": "Dentist"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.postman",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Postacı",
+      "en": "Postman"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.hairdresser",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Berber/Kuaför",
+      "en": "Hairdresser"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.pilot",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Pilot",
+      "en": "Pilot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.vet",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Veteriner",
+      "en": "Vet"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.waiter",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Garson",
+      "en": "Waiter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.cleaner",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Temizlik görevlisi",
+      "en": "Cleaner"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.builder",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "İnşaat işçisi",
+      "en": "Builder"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.cashier",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Kasiyer",
+      "en": "Cashier"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.painter",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Ressam",
+      "en": "Painter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.musician",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Müzisyen",
+      "en": "Musician"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.gardener",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Bahçıvan",
+      "en": "Gardener"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.fisher",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Balıkçı",
+      "en": "Fisher"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.captain",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Kaptan",
+      "en": "Captain"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.pharmacist",
+    "theme": "jobs",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Eczacı",
+      "en": "Pharmacist"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.carpenter",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Marangoz",
+      "en": "Carpenter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.mechanic",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Tamirci",
+      "en": "Mechanic"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.tailor",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Terzi",
+      "en": "Tailor"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.photographer",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Fotoğrafçı",
+      "en": "Photographer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.librarian",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Kütüphaneci",
+      "en": "Librarian"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.astronaut",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Astronot",
+      "en": "Astronaut"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.electrician",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Elektrikçi",
+      "en": "Electrician"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.house_painter",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Boyacı",
+      "en": "House painter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.shepherd",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Çoban",
+      "en": "Shepherd"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.beekeeper",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Arıcı",
+      "en": "Beekeeper"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.engineer",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Mühendis",
+      "en": "Engineer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.referee",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Hakem",
+      "en": "Referee"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.athlete",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Sporcu",
+      "en": "Athlete"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.scientist",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Bilim insanı",
+      "en": "Scientist"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.train_driver",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Makinist",
+      "en": "Train driver"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "jobs.courier",
+    "theme": "jobs",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Kurye",
+      "en": "Courier"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

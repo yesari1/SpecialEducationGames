@@ -1,0 +1,669 @@
+[
+  {
+    "id": "nature.sun",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "gokyuzu",
+      "yaz"
+    ],
+    "name": {
+      "tr": "Güneş",
+      "en": "Sun"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.moon",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "gokyuzu"
+    ],
+    "name": {
+      "tr": "Ay",
+      "en": "Moon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.star",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "gokyuzu"
+    ],
+    "name": {
+      "tr": "Yıldız",
+      "en": "Star"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.cloud",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "gokyuzu"
+    ],
+    "name": {
+      "tr": "Bulut",
+      "en": "Cloud"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.rain",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "hava_durumu"
+    ],
+    "name": {
+      "tr": "Yağmur",
+      "en": "Rain"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.snow",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "hava_durumu",
+      "kis"
+    ],
+    "name": {
+      "tr": "Kar",
+      "en": "Snow"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.tree",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "bitki"
+    ],
+    "name": {
+      "tr": "Ağaç",
+      "en": "Tree"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.flower",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "bitki",
+      "ilkbahar"
+    ],
+    "name": {
+      "tr": "Çiçek",
+      "en": "Flower"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.sea",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Deniz",
+      "en": "Sea"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.mountain",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Dağ",
+      "en": "Mountain"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.rainbow",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "gokyuzu"
+    ],
+    "name": {
+      "tr": "Gökkuşağı",
+      "en": "Rainbow"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.snowman",
+    "theme": "nature",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kis"
+    ],
+    "name": {
+      "tr": "Kardan adam",
+      "en": "Snowman"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.wind",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "hava_durumu"
+    ],
+    "name": {
+      "tr": "Rüzgar",
+      "en": "Wind"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.lightning",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "hava_durumu"
+    ],
+    "name": {
+      "tr": "Şimşek",
+      "en": "Lightning"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.leaf",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "bitki",
+      "sonbahar"
+    ],
+    "name": {
+      "tr": "Yaprak",
+      "en": "Leaf"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.grass",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "bitki"
+    ],
+    "name": {
+      "tr": "Çimen",
+      "en": "Grass"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.river",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Nehir",
+      "en": "River"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.lake",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Göl",
+      "en": "Lake"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.forest",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Orman",
+      "en": "Forest"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.sand",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "yer",
+      "yaz"
+    ],
+    "name": {
+      "tr": "Kum",
+      "en": "Sand"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.stone",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Taş",
+      "en": "Stone"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.spring",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "İlkbahar",
+      "en": "Spring"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.summer",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Yaz",
+      "en": "Summer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.autumn",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Sonbahar",
+      "en": "Autumn"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.winter",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Kış",
+      "en": "Winter"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.night",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Gece",
+      "en": "Night"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.day",
+    "theme": "nature",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [],
+    "name": {
+      "tr": "Gündüz",
+      "en": "Day"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.waterfall",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Şelale",
+      "en": "Waterfall"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.island",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Ada",
+      "en": "Island"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.desert",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Çöl",
+      "en": "Desert"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.cave",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Mağara",
+      "en": "Cave"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.volcano",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Volkan",
+      "en": "Volcano"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.fog",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "hava_durumu"
+    ],
+    "name": {
+      "tr": "Sis",
+      "en": "Fog"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.hail",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "hava_durumu"
+    ],
+    "name": {
+      "tr": "Dolu",
+      "en": "Hail"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.ice",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "kis"
+    ],
+    "name": {
+      "tr": "Buz",
+      "en": "Ice"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.seed",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "bitki"
+    ],
+    "name": {
+      "tr": "Tohum",
+      "en": "Seed"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.sprout",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "bitki",
+      "ilkbahar"
+    ],
+    "name": {
+      "tr": "Filiz",
+      "en": "Sprout"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.pine_cone",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "bitki",
+      "sonbahar"
+    ],
+    "name": {
+      "tr": "Kozalak",
+      "en": "Pine cone"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.mushroom",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "bitki"
+    ],
+    "name": {
+      "tr": "Mantar",
+      "en": "Mushroom"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.cactus",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "bitki"
+    ],
+    "name": {
+      "tr": "Kaktüs",
+      "en": "Cactus"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.sunrise",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "gokyuzu"
+    ],
+    "name": {
+      "tr": "Gün doğumu",
+      "en": "Sunrise"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "nature.wave",
+    "theme": "nature",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "yer"
+    ],
+    "name": {
+      "tr": "Dalga",
+      "en": "Wave"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

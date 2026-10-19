@@ -1,0 +1,969 @@
+{
+  "@@locale": "tr",
+  "welcomeTitle": "Her küçük adım,\nbüyük bir keşif.",
+  "welcomeSubtitle": "Çocuğunuzun hızında, sakin ve eğlenceli öğrenme.",
+  "noAdsOffline": "Reklam yok. İnternet şart değil.",
+  "parentGateSettings": "Ayarlar ebeveyn kilidinin arkasında.",
+  "noAccountNeeded": "Hesap açmanız gerekmez.",
+  "letsGetStarted": "Birlikte başlayalım",
+  "homeFamily": "Aile",
+  "homeGames": "Oyunlar",
+  "homeDailyPath": "Bugünün Yolu",
+  "homeFamilyHint": "Aile bölümü için iki saniye basılı tutun",
+  "greeting": "Merhaba, {name}",
+  "@greeting": {
+    "description": "Yerel profil takma adı ile çocuk ana ekranı selamlaması.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Deniz"
+      }
+    }
+  },
+  "homePathSubtitle": "Küçük adımlarla keşfedelim.",
+  "homeGamesSubtitle": "Bugün ne keşfedelim?",
+  "homeNewBadge": "Yeni",
+  "homeThemeGameCount": "{count, plural, =0{0 oyun} one{{count} oyun} other{{count} oyun}}",
+  "@homeThemeGameCount": {
+    "description": "Tema kartında gösterilen erişilebilir oyun sayısı.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "themeBack": "Geri",
+  "difficultyEasy": "Kolay",
+  "difficultyMedium": "Orta",
+  "difficultyHard": "Zor",
+  "themeNoUnlockedGames": "Bu zorlukta açık oyun yok. Kolay’ı seçebilirsin.",
+  "themeUnlockWithFamily": "Bunu ailenle açabilirsin.",
+  "parentGateTitle": "Aile bölümü",
+  "parentGateEnterPin": "PIN girin",
+  "parentGateContinuePrompt": "Devam etmek için",
+  "parentGateWrongPin": "PIN’i tekrar deneyin.",
+  "parentGateWrongMath": "Yeni soruyu deneyin.",
+  "parentGateForgotPin": "PIN’i unuttum",
+  "parentGateCancel": "Vazgeç",
+  "onboardingSaveError": "Kaydedilemedi. Tekrar deneyin.",
+  "onboardingReadyTitle": "Hazırız, {name}!",
+  "@onboardingReadyTitle": {
+    "description": "Çocuğun seçtiği takma adı içeren onboarding son başlığı.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingSuggestedStart": "Önerilen başlangıç",
+  "onboardingFamilyHint": "Aile bölümünden değiştirebilirsiniz.",
+  "onboardingSaving": "Kaydediliyor…",
+  "onboardingPlay": "Oyunlara geç",
+  "onboardingContinue": "Devam et",
+  "onboardingSkipQuestion": "Bu soruyu atla",
+  "onboardingNickname": "Takma ad",
+  "onboardingProfileQuestion": "Minik kaşifimiz kim?",
+  "onboardingNicknameHint": "Bir takma ad yeterli.",
+  "onboardingStepCount": "{current} / {total}",
+  "@onboardingStepCount": {
+    "description": "Geçerli onboarding anket sorusu ve toplam soru sayısı.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "surveyPreviousOption": "Önceki seçenek",
+  "surveyNextOption": "Sonraki seçenek",
+  "surveyOptionCount": "{current} / {total}",
+  "@surveyOptionCount": {
+    "description": "Yatay anket seçenek sayfalayıcısındaki geçerli konum ve toplam.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "surveyOptionProgress": "Seçenek {current} / {total}",
+  "@surveyOptionProgress": {
+    "description": "Yatay anket seçenek sayfalayıcısındaki erişilebilir konum.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "onboardingPreviousRecommendation": "Önceki öneri",
+  "onboardingNextRecommendation": "Sonraki öneri",
+  "accountTitle": "Hesap",
+  "familyAccountTitle": "Aile hesabı",
+  "familyAccountOptional": "Google ile giriş isteğe bağlıdır. Giriş yapmadan tüm yerel özellikleri kullanabilirsiniz.",
+  "familyAccountSignedIn": "Google hesabına giriş yapıldı.",
+  "familyAccountLocalProgress": "Ayrıntılı ilerleme bu cihazda saklanır. Günlük özet paylaşımı aşağıda ayrı izin gerektirir.",
+  "familyAccountSignIn": "Google ile giriş",
+  "familyAccountSignOut": "Çıkış yap",
+  "familyAccountNotNow": "Şimdi değil: Bu ekranı kapatıp oynamaya devam edebilirsiniz.",
+  "familyAccountCancelled": "Giriş iptal edildi.",
+  "familyAccountOffline": "Bağlantı kurulamadı. Çevrimdışı devam edebilirsiniz.",
+  "familyAccountConfiguration": "Google girişi henüz yapılandırılmadı. Yerel verileriniz güvende.",
+  "familyAccountTimeout": "Giriş zaman aşımına uğradı. Çevrimdışı devam edebilirsiniz.",
+  "familyAccountUnavailable": "Giriş şu anda kullanılamıyor. Yerel modda devam edebilirsiniz.",
+  "creditsTitle": "Kaynaklar ve lisanslar",
+  "creditsLoadFailure": "Kaynak bilgileri yüklenemedi.",
+  "creditsAnimalRecordings": "Doğal sesler",
+  "creditsRealPhotographs": "Gerçek fotoğraflar",
+  "creditsSoundChanges": "Değişiklikler: mono MP3, azaltılmış ses düzeyi, kısa giriş/çıkış ve en fazla 3 saniye.",
+  "creditsAdaptationLicense": "Uyarlama lisansı",
+  "creditsAuthor": "Sanatçı",
+  "creditsLicense": "Lisans",
+  "creditsPreviousImageCredit": "Önceki görsel kredisi",
+  "creditsSource": "Kaynak",
+  "creditsLicenseLink": "Lisans bağlantısı",
+  "creditsChanges": "Düzenleme",
+  "creditsImagePreparedForAppUse": "Görsel uygulama için hazırlandı.",
+  "creditsAudioEditedForInAppPlayback": "Ses uygulama içi çalma için düzenlendi.",
+  "creditsPreviousRecord": "Önceki kayıt",
+  "creditsNextRecord": "Sonraki kayıt",
+  "creditsRecordDetailProgress": "Kayıt {record} / {recordTotal}, ayrıntı {detail} / {detailTotal}",
+  "@creditsRecordDetailProgress": {
+    "description": "Erişilebilir kaynak kaydı ve ayrıntı sayfası konumu.",
+    "placeholders": {
+      "record": {
+        "type": "int"
+      },
+      "recordTotal": {
+        "type": "int"
+      },
+      "detail": {
+        "type": "int"
+      },
+      "detailTotal": {
+        "type": "int"
+      }
+    }
+  },
+  "creditsLicensesLoadFailure": "Lisans bilgileri yüklenemedi.",
+  "creditsLicensesEmpty": "Kayıtlı lisans yok.",
+  "familyNewsHeading": "Yenilikler",
+  "applicationName": "Özel Eğitim Oyunları",
+  "creditsOpenSourceLicenses": "Açık kaynak yazılım lisansları",
+  "summarySyncTitle": "Günlük özetleri eşitle",
+  "summarySyncDescription": "Yalnız günlük süre, tur ve bağımsız yanıt sayıları paylaşılır. Ham seçimler, çocuk adı ve anket yanıtları gönderilmez. Bu, tam profil yedeği değildir.",
+  "summarySyncRequirements": "Eşitlemek için ebeveyn erişimi, bir profil ve Google girişi gerekir.",
+  "summarySyncConsent": "Bu hesap ve profil için günlük özet paylaşımına izin veriyorum.",
+  "summarySyncManualNotice": "Eşitleme yalnız aşağıdaki düğmeyle başlar. İzni kaldırmak cihazdaki indirilen özeti temizler; sunucudaki veriyi silmez.",
+  "summarySyncNow": "Şimdi eşitle",
+  "summarySyncSnapshot": "Cihazdaki eşitlenmiş özet: {count} kayıt. Kaydedildi: {savedAt}",
+  "@summarySyncSnapshot": {
+    "description": "Ayrı indirilen günlük özet önbelleği; savedAt mevcut yerel DateTime metnini korur.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "savedAt": {
+        "type": "String"
+      }
+    }
+  },
+  "summarySyncCapacity": "Özet sayısı desteklenen sınırı aşıyor. Yerel kayıtlar korunuyor.",
+  "summarySyncUnavailable": "Eşitleme tamamlanamadı. Bağlantı veya sunucu kullanılamıyor olabilir. Yerel kayıtlar korunuyor.",
+  "subscriptionTitle": "Premium",
+  "subscriptionShowPlans": "Planları göster",
+  "subscriptionHeading": "Birlikte daha çok keşif",
+  "subscriptionAllGames": "Tüm oyunlar ve zorluklar",
+  "subscriptionProfiles": "Beş çocuk profiline kadar",
+  "subscriptionAdFree": "Reklamsız, çevrimdışı öğrenme",
+  "subscriptionActive": "Premium erişiminiz açık.",
+  "subscriptionUnavailable": "Google Play ürünleri şu anda alınamıyor. Ücretsiz oyunlarla devam edebilirsiniz.",
+  "subscriptionMonthly": "Aylık",
+  "subscriptionYearly": "Yıllık",
+  "subscriptionMonth": "ay",
+  "subscriptionYear": "yıl",
+  "subscriptionPrice": "{recurringPrice} / {period}",
+  "@subscriptionPrice": {
+    "description": "Mağazanın biçimlendirdiği fiyat değiştirilmeden yerel dönemle gösterilir.",
+    "placeholders": {
+      "recurringPrice": {
+        "type": "String"
+      },
+      "period": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionTrial": "7 gün ücretsiz, sonra {recurringPrice}. Deneme bitmeden Google Play’den iptal edebilirsiniz.",
+  "@subscriptionTrial": {
+    "description": "Yalnız mağaza planında desteklenen yedi günlük deneme varsa gösterilir.",
+    "placeholders": {
+      "recurringPrice": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionRenewal": "Otomatik yenilenir. Google Play’den istediğiniz zaman iptal edebilirsiniz.",
+  "subscriptionWaiting": "Google Play bekleniyor…",
+  "subscriptionStartTrial": "7 günlük denemeyi başlat",
+  "subscriptionContinue": "Google Play ile devam et",
+  "subscriptionStoreError": "Mağazaya bağlanılamadı. Lütfen daha sonra tekrar deneyin.",
+  "subscriptionRestore": "Satın alımları geri yükle",
+  "subscriptionManage": "Aboneliği yönet / iptal et",
+  "playTimeBreakTitle": "Bugünlük bu kadar, harikaydın!",
+  "playTimeBreakSubtitle": "Şimdi küçük bir mola verelim.",
+  "playTimeHome": "Ana sayfa",
+  "playTimeExtendHint": "10 dakika eklemek için ebeveyn kilidini açın",
+  "playTimeExtend": "Ebeveyn: 10 dakika ekle",
+  "playTimeBreakPageCount": "Mola · {current} / {total}",
+  "@playTimeBreakPageCount": {
+    "description": "Kompakt ekran süresi mola akışındaki geçerli ve toplam sayfa.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyCancel": "Vazgeç",
+  "@familyCancel": {
+    "description": "Family area interface copy."
+  },
+  "familyUseMultiplication": "Çarpma sorusu kullan",
+  "@familyUseMultiplication": {
+    "description": "Family area interface copy."
+  },
+  "familyEnterTheSameFourDigitsTwice": "Aynı 4 rakamı iki kez yazın.",
+  "@familyEnterTheSameFourDigitsTwice": {
+    "description": "Family area interface copy."
+  },
+  "familySave": "Kaydet",
+  "@familySave": {
+    "description": "Family area interface copy."
+  },
+  "familyParentPin": "Ebeveyn PIN’i",
+  "@familyParentPin": {
+    "description": "Family area interface copy."
+  },
+  "family4DigitPin": "4 haneli PIN",
+  "@family4DigitPin": {
+    "description": "Family area interface copy."
+  },
+  "familyRepeatPin": "PIN’i tekrar yazın",
+  "@familyRepeatPin": {
+    "description": "Family area interface copy."
+  },
+  "familyEveryStepMatters": "Her adım değerli",
+  "@familyEveryStepMatters": {
+    "description": "Family area interface copy."
+  },
+  "familyYourChildIsExploringAtTheir": "Çocuğunuz kendi hızında keşfediyor.",
+  "@familyYourChildIsExploringAtTheir": {
+    "description": "Family area interface copy."
+  },
+  "familyStarsToday": "Bugünkü yıldızlar",
+  "@familyStarsToday": {
+    "description": "Family area interface copy."
+  },
+  "familyRoundsCompletedToday": "Bugün tamamlanan tur",
+  "@familyRoundsCompletedToday": {
+    "description": "Family area interface copy."
+  },
+  "familyMinutesToday": "Bugünkü dakika",
+  "@familyMinutesToday": {
+    "description": "Family area interface copy."
+  },
+  "familyStagesThisWeek": "Bu hafta tamamlanan aşama",
+  "@familyStagesThisWeek": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentAnswers": "İpucusuz doğru",
+  "@familyIndependentAnswers": {
+    "description": "Family area interface copy."
+  },
+  "familyLast7Days": "Son 7 gün",
+  "@familyLast7Days": {
+    "description": "Family area interface copy."
+  },
+  "familyPlayTimeMinutes": "Oynama süresi · dakika",
+  "@familyPlayTimeMinutes": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentFirstAnswers": "İpucusuz, ilk denemede doğru · %",
+  "@familyIndependentFirstAnswers": {
+    "description": "Family area interface copy."
+  },
+  "familyProgressWillAppearHereAfterThe": "İlk oyundan sonra gelişimi burada görebilirsiniz.",
+  "@familyProgressWillAppearHereAfterThe": {
+    "description": "Family area interface copy."
+  },
+  "familyAttentionDailyAverageSeconds": "Dikkat · günlük ortalama saniye",
+  "@familyAttentionDailyAverageSeconds": {
+    "description": "Family area interface copy."
+  },
+  "familyFirstResponse": "İlk tepki",
+  "@familyFirstResponse": {
+    "description": "Family area interface copy."
+  },
+  "familyS": "sn",
+  "@familyS": {
+    "description": "Family area interface copy."
+  },
+  "familyIdleTime": "Tepkisiz süre",
+  "@familyIdleTime": {
+    "description": "Family area interface copy."
+  },
+  "familyTimeInTheBackgroundIsExcluded": "Arka planda geçen süre dahil değildir.",
+  "@familyTimeInTheBackgroundIsExcluded": {
+    "description": "Family area interface copy."
+  },
+  "familySecondsRange": "0–{maximum} saniye.",
+  "@familySecondsRange": {
+    "description": "Upper bound shown for average response and idle time.",
+    "placeholders": {
+      "maximum": {
+        "type": "double"
+      }
+    }
+  },
+  "familyNumericView": "Sayısal görünüm",
+  "@familyNumericView": {
+    "description": "Family area interface copy."
+  },
+  "familySkillAreas": "Beceri alanları",
+  "@familySkillAreas": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentFirstAnswersInTheLast": "Son 7 günde ipucusuz, ilk denemede doğru",
+  "@familyIndependentFirstAnswersInTheLast": {
+    "description": "Family area interface copy."
+  },
+  "familyNoRecordsYet": "Henüz kayıt yok",
+  "@familyNoRecordsYet": {
+    "description": "Family area interface copy."
+  },
+  "familyCountStages": "{count} aşama",
+  "@familyCountStages": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "familyPointsComparedWithThePreviousWeek": "puan · önceki haftaya göre",
+  "@familyPointsComparedWithThePreviousWeek": {
+    "description": "Family area interface copy."
+  },
+  "familyItems": "Öğeler",
+  "@familyItems": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentLastThreeAnswersWithoutHints": "Bağımsız liste: son üç yanıt ipucusuz. Destek listesi: son üç aşamanın en az ikisinde belirgin destek.",
+  "@familyIndependentLastThreeAnswersWithoutHints": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentlyAnswered": "Bağımsız yanıtladıkları",
+  "@familyIndependentlyAnswered": {
+    "description": "Family area interface copy."
+  },
+  "familyItemsNeedingMoreSupport": "Daha fazla destek verdiklerimiz",
+  "@familyItemsNeedingMoreSupport": {
+    "description": "Family area interface copy."
+  },
+  "familyItemsAppearHereAfterAtLeast": "En az üç aşamanın ardından burada öğeler görünür.",
+  "@familyItemsAppearHereAfterAtLeast": {
+    "description": "Family area interface copy."
+  },
+  "familyCountStagesLatestStreakAnswersIndependent": "{count} aşama · son {streak} yanıt bağımsız",
+  "@familyCountStagesLatestStreakAnswersIndependent": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "streak": {
+        "type": "int"
+      }
+    }
+  },
+  "familyProgressByTheme": "Tema gelişimi",
+  "@familyProgressByTheme": {
+    "description": "Family area interface copy."
+  },
+  "familyShowUnlockedGamesOnly": "Yalnızca açık oyunları göster",
+  "@familyShowUnlockedGamesOnly": {
+    "description": "Family area interface copy."
+  },
+  "familyHidesLockedCardsInChildMode": "Çocuk ekranındaki kilitli kartları gizler.",
+  "@familyHidesLockedCardsInChildMode": {
+    "description": "Family area interface copy."
+  },
+  "familyEasyAndMediumUnlocked": "Kolay ve Orta açık",
+  "@familyEasyAndMediumUnlocked": {
+    "description": "Family area interface copy."
+  },
+  "familyPremium": "Premium",
+  "@familyPremium": {
+    "description": "Family area interface copy."
+  },
+  "familyDailyScreenTimeLimit": "Günlük ekran süresi sınırı",
+  "@familyDailyScreenTimeLimit": {
+    "description": "Family area interface copy."
+  },
+  "familyCountsActivePlayTimeABreak": "Aktif oyun süresini sayar. Süre dolunca mola ekranı açılır.",
+  "@familyCountsActivePlayTimeABreak": {
+    "description": "Family area interface copy."
+  },
+  "familyOff": "Kapalı",
+  "@familyOff": {
+    "description": "Family area interface copy."
+  },
+  "familyMinutes": "dakika",
+  "@familyMinutes": {
+    "description": "Family area interface copy."
+  },
+  "familyRemainingTodayMinutesMinutes": "Bugün kalan: {minutes} dakika",
+  "@familyRemainingTodayMinutesMinutes": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "familyAdd10MinutesForToday": "Bugün için 10 dakika ekle",
+  "@familyAdd10MinutesForToday": {
+    "description": "Family area interface copy."
+  },
+  "familyDefaultDifficulty": "Genel zorluk",
+  "@familyDefaultDifficulty": {
+    "description": "Family area interface copy."
+  },
+  "familyAutomaticThemeSelection": "Otomatik / tema seçimi",
+  "@familyAutomaticThemeSelection": {
+    "description": "Family area interface copy."
+  },
+  "familyEasy": "Kolay",
+  "@familyEasy": {
+    "description": "Family area interface copy."
+  },
+  "familyMedium": "Orta",
+  "@familyMedium": {
+    "description": "Family area interface copy."
+  },
+  "familyHard": "Zor",
+  "@familyHard": {
+    "description": "Family area interface copy."
+  },
+  "familyAppliesToNewRoundsHardLevel": "Yeni turlarda uygulanır. Zor seviye Premium kapsamındadır.",
+  "@familyAppliesToNewRoundsHardLevel": {
+    "description": "Family area interface copy."
+  },
+  "familyRoundLength": "Tur uzunluğu",
+  "@familyRoundLength": {
+    "description": "Family area interface copy."
+  },
+  "familySurveyDifficultySetting": "Anket / zorluk ayarı",
+  "@familySurveyDifficultySetting": {
+    "description": "Family area interface copy."
+  },
+  "familyStages": "aşama",
+  "@familyStages": {
+    "description": "Family area interface copy."
+  },
+  "familyHintDelay": "İpucu başlangıcı",
+  "@familyHintDelay": {
+    "description": "Family area interface copy."
+  },
+  "familyAutomaticPerItem": "Otomatik / öğeye göre",
+  "@familyAutomaticPerItem": {
+    "description": "Family area interface copy."
+  },
+  "familyTimedHintsOff": "Zamanlı ipucu kapalı",
+  "@familyTimedHintsOff": {
+    "description": "Family area interface copy."
+  },
+  "familySeconds": "saniye",
+  "@familySeconds": {
+    "description": "Family area interface copy."
+  },
+  "familyNextRoundBehavior": "Yeni tur davranışı",
+  "@familyNextRoundBehavior": {
+    "description": "Family area interface copy."
+  },
+  "familyFadeIncorrectChoicesAfter2Mistakes": "2 yanlış sonrası seçenekleri soluklaştır",
+  "@familyFadeIncorrectChoicesAfter2Mistakes": {
+    "description": "Family area interface copy."
+  },
+  "familyAppliesToTheNextRoundIncorrect": "Yeni turda uygulanır. Zamanlı ipucu kapalıyken de yanlış yanıta destek verilir.",
+  "@familyAppliesToTheNextRoundIncorrect": {
+    "description": "Family area interface copy."
+  },
+  "familyDailyMinuteGoal": "Günlük dakika hedefi",
+  "@familyDailyMinuteGoal": {
+    "description": "Family area interface copy."
+  },
+  "familyTodayGoalProgress": "Bugünkü hedef: {minutes} / {goal} dakika",
+  "@familyTodayGoalProgress": {
+    "description": "Accessible summary of today's minutes and goal.",
+    "placeholders": {
+      "minutes": {
+        "type": "double"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "familyAnOptionalReminderItDoesNot": "İsteğe bağlı hatırlatma; oyun süresini sınırlamaz.",
+  "@familyAnOptionalReminderItDoesNot": {
+    "description": "Family area interface copy."
+  },
+  "familyMin": "dk",
+  "@familyMin": {
+    "description": "Family area interface copy."
+  },
+  "familyUpdate": "Güncelleme",
+  "@familyUpdate": {
+    "description": "Family area interface copy."
+  },
+  "familyANewVersionIsAvailableYou": "Uygulamanın yeni sürümü var. Google Play üzerinden güncelleyebilirsiniz.",
+  "@familyANewVersionIsAvailableYou": {
+    "description": "Family area interface copy."
+  },
+  "familyParentGate": "Ebeveyn kilidi",
+  "@familyParentGate": {
+    "description": "Family area interface copy."
+  },
+  "familyMultiplicationQuestion": "Çarpma sorusu",
+  "@familyMultiplicationQuestion": {
+    "description": "Family area interface copy."
+  },
+  "familyIntroduceNewItemsFirst": "Yeni öğeleri önce tanıt",
+  "@familyIntroduceNewItemsFirst": {
+    "description": "Family area interface copy."
+  },
+  "familyShowOneCardFirstThenOffer": "Önce tek kartla göster, sonra seçeneklerle sor.",
+  "@familyShowOneCardFirstThenOffer": {
+    "description": "Family area interface copy."
+  },
+  "familyAdaptiveDifficulty": "Otomatik zorluk önerisi",
+  "@familyAdaptiveDifficulty": {
+    "description": "Family area interface copy."
+  },
+  "familyChangesApplyOnlyWhenANew": "Değişiklikler yalnızca yeni turda uygulanır.",
+  "@familyChangesApplyOnlyWhenANew": {
+    "description": "Family area interface copy."
+  },
+  "familyAudio": "Sesler",
+  "@familyAudio": {
+    "description": "Family area interface copy."
+  },
+  "familySpeechVolume": "Konuşma ses düzeyi",
+  "@familySpeechVolume": {
+    "description": "Family area interface copy."
+  },
+  "familySoundEffectVolume": "Efekt ses düzeyi",
+  "@familySoundEffectVolume": {
+    "description": "Family area interface copy."
+  },
+  "familyShowItemLabels": "Öğe adlarını göster",
+  "@familyShowItemLabels": {
+    "description": "Family area interface copy."
+  },
+  "familyReduceMotion": "Hareketleri azalt",
+  "@familyReduceMotion": {
+    "description": "Family area interface copy."
+  },
+  "familyLanguage": "Dil",
+  "@familyLanguage": {
+    "description": "Family area interface copy."
+  },
+  "familyCelebration": "Kutlama",
+  "@familyCelebration": {
+    "description": "Family area interface copy."
+  },
+  "familySimple": "Sade",
+  "@familySimple": {
+    "description": "Family area interface copy."
+  },
+  "familyFull": "Tam",
+  "@familyFull": {
+    "description": "Doğru yanıt için kısa ve belirgin kutlama ebeveyn ayarı."
+  },
+  "familySubscriptionPricesAndTrialEligibilityCome": "Abonelik fiyatları ve deneme uygunluğu Google Play’den alınır.",
+  "@familySubscriptionPricesAndTrialEligibilityCome": {
+    "description": "Family area interface copy."
+  },
+  "familyPlansAndRestore": "Planlar ve geri yükleme",
+  "@familyPlansAndRestore": {
+    "description": "Family area interface copy."
+  },
+  "familyPrivacy": "Gizlilik",
+  "@familyPrivacy": {
+    "description": "Family area interface copy."
+  },
+  "familyGoogleFamilyAccount": "Google aile hesabı",
+  "@familyGoogleFamilyAccount": {
+    "description": "Family area interface copy."
+  },
+  "familyCreditsAndLicenses": "Kaynaklar ve lisanslar",
+  "@familyCreditsAndLicenses": {
+    "description": "Family area interface copy."
+  },
+  "familyProfilesAndRawGameRecordsStay": "Profil ve ham oyun kayıtları bu cihazda tutulur. Hesap ekranında izin verip eşitlemeyi başlatırsanız yalnızca günlük özetler gönderilir. Reklam veya reklam kimliği kullanılmaz.",
+  "@familyProfilesAndRawGameRecordsStay": {
+    "description": "Family area interface copy."
+  },
+  "familyDoesNotReplaceProfessionalSupport": "Uzman desteğinin yerini tutmaz.",
+  "@familyDoesNotReplaceProfessionalSupport": {
+    "description": "Family area interface copy."
+  },
+  "familySection": "Bölüm",
+  "@familySection": {
+    "description": "Family area interface copy."
+  },
+  "familyPreviousSection": "Önceki bölüm",
+  "@familyPreviousSection": {
+    "description": "Family area interface copy."
+  },
+  "familyNextSection": "Sonraki bölüm",
+  "@familyNextSection": {
+    "description": "Family area interface copy."
+  },
+  "familyChildMode": "Çocuk Modu",
+  "@familyChildMode": {
+    "description": "Family area interface copy."
+  },
+  "familyProgress": "Gelişim",
+  "@familyProgress": {
+    "description": "Family area interface copy."
+  },
+  "familyGames": "Oyunlar",
+  "@familyGames": {
+    "description": "Family area interface copy."
+  },
+  "familyProfiles": "Profiller",
+  "@familyProfiles": {
+    "description": "Family area interface copy."
+  },
+  "familySettings": "Ayarlar",
+  "@familySettings": {
+    "description": "Family area interface copy."
+  },
+  "familyStoredOnThisDevice": "Bu cihazda saklanır",
+  "@familyStoredOnThisDevice": {
+    "description": "Family area interface copy."
+  },
+  "familyDeleteProfile": "Profili sil",
+  "@familyDeleteProfile": {
+    "description": "Family area interface copy."
+  },
+  "familyGameAndProgressRecordsForName": "{name} profilinin bu cihazdaki oyun ve gelişim kayıtları silinecek.",
+  "@familyGameAndProgressRecordsForName": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "familyDelete": "Sil",
+  "@familyDelete": {
+    "description": "Family area interface copy."
+  },
+  "familyEditAndQuestionnaire": "Düzenle ve anket",
+  "@familyEditAndQuestionnaire": {
+    "description": "Family area interface copy."
+  },
+  "familyProfileAction": "{count, plural, =0{Yeni profil oluştur} one{Yeni profil oluştur} other{Daha fazla profil}}",
+  "@familyProfileAction": {
+    "description": "Profile action selected by the available profile allowance.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "familyTheFreeVersionIncludesOneChild": "Ücretsiz sürümde bir çocuk profili bulunur.",
+  "@familyTheFreeVersionIncludesOneChild": {
+    "description": "Family area interface copy."
+  },
+  "gameBackToTheme": "Temaya dön",
+  "@gameBackToTheme": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameThisGameNeedsSoundAParentCan": "Bu oyun için ses gerekli. Ebeveyn ayarlarından sesi açabilirsiniz.",
+  "@gameThisGameNeedsSoundAParentCan": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameThereIsNotEnoughContentForThis": "Bu oyun için yeterli içerik henüz hazır değil.",
+  "@gameThereIsNotEnoughContentForThis": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameHoldToLeave": "Çıkmak için basılı tut",
+  "@gameHoldToLeave": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameListenAgain": "Tekrar dinle",
+  "@gameListenAgain": {
+    "description": "Game results and actions interface copy."
+  },
+  "gamePreviousPage": "Önceki sayfa",
+  "@gamePreviousPage": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameNextPage": "Sonraki sayfa",
+  "@gameNextPage": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameWellDone": "Aferin!",
+  "@gameWellDone": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameYouEarnedTodaysSticker": "Bugünün çıkartmasını kazandın!",
+  "@gameYouEarnedTodaysSticker": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameWeExploredTogether": "Birlikte keşfettik.",
+  "@gameWeExploredTogether": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameAgain": "Tekrar",
+  "@gameAgain": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameTodaysPath": "Bugünün Yolu",
+  "@gameTodaysPath": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameImagesForThisThemeAreNotReady": "Bu temanın görselleri henüz hazır değil.",
+  "@gameImagesForThisThemeAreNotReady": {
+    "description": "Game results and actions interface copy."
+  },
+  "gamePrevious": "Önceki",
+  "@gamePrevious": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameFinish": "Tamamla",
+  "@gameFinish": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameNext": "Sonraki",
+  "gameObject": "Nesne",
+  "gameCountedObjectSemantics": "{object}, say {number}",
+  "@gameCountedObjectSemantics": {
+    "description": "Oyunda sayılabilen bir nesne için erişilebilir etiket.",
+    "placeholders": {
+      "object": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "@gameNext": {
+    "description": "Game results and actions interface copy."
+  },
+  "dailyPathNoGamesAreAvailableToday": "Bugün açık oyun bulunmuyor.",
+  "@dailyPathNoGamesAreAvailableToday": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathYouEarnedTodaysSticker": "Bugünün çıkartmasını kazandın!",
+  "@dailyPathYouEarnedTodaysSticker": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathEachCompletedGameIsOneStep": "Her tamamlanan oyun bir adım.",
+  "@dailyPathEachCompletedGameIsOneStep": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathMyStickers": "Çıkartmalarım",
+  "@dailyPathMyStickers": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathCompleted": "Tamamlandı",
+  "@dailyPathCompleted": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPlay": "Oyna",
+  "@dailyPathPlay": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathCompleteTodaysPathToEarnYourFirst": "Bugünün yolunu tamamlayıp ilk çıkartmanı kazanabilirsin.",
+  "@dailyPathCompleteTodaysPathToEarnYourFirst": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathEarnedSticker": "Kazanılan çıkartma",
+  "@dailyPathEarnedSticker": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPreviousPage": "Önceki sayfa",
+  "@dailyPathPreviousPage": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPageCurrentOfTotal": "Sayfa {current} / {total}",
+  "@dailyPathPageCurrentOfTotal": {
+    "description": "Daily path and sticker album interface copy.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyPathNextPage": "Sonraki sayfa",
+  "@dailyPathNextPage": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathClose": "Kapat",
+  "@dailyPathClose": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "gameSummaryPage": "Özet · sayfa {current} / {total}",
+  "@gameSummaryPage": {
+    "description": "Game completion summary pager position.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyPathStepTitle": "{index}. {game}",
+  "@dailyPathStepTitle": {
+    "description": "Numbered daily path game title.",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "game": {
+        "type": "String"
+      }
+    }
+  },
+  "profileEditorNameRequired": "Bir takma ad yazın.",
+  "@profileEditorNameRequired": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaveFailed": "Kaydedilemedi. Profil sınırını ve bağlantıyı kontrol edin.",
+  "@profileEditorSaveFailed": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorEditTitle": "Profili düzenle",
+  "@profileEditorEditTitle": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorNewTitle": "Yeni profil",
+  "@profileEditorNewTitle": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorIdentityHeading": "Küçük kaşifin profili",
+  "@profileEditorIdentityHeading": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorNicknameLabel": "Takma ad",
+  "@profileEditorNicknameLabel": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorStartSurvey": "Başlangıç anketi",
+  "@profileEditorStartSurvey": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaving": "Kaydediliyor…",
+  "@profileEditorSaving": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSave": "Kaydet",
+  "@profileEditorSave": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSkipQuestionnaireAndCreate": "Anketi atla ve oluştur",
+  "@profileEditorSkipQuestionnaireAndCreate": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorContinue": "Devam et",
+  "@profileEditorContinue": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSkipQuestion": "Bu soruyu atla",
+  "@profileEditorSkipQuestion": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSuggestedStart": "Önerilen başlangıç",
+  "@profileEditorSuggestedStart": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaveRecommendations": "Önerileri kaydet",
+  "@profileEditorSaveRecommendations": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSurveyProgress": "Soru {current} / {total}",
+  "@profileEditorSurveyProgress": {
+    "description": "Profile editor horizontal pager progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "profileEditorRecommendationProgress": "Öneri sayfası {current} / {total}",
+  "@profileEditorRecommendationProgress": {
+    "description": "Profile editor horizontal pager progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gamePromptCount": "Kaç tane var?",
+  "@gamePromptCount": {
+    "description": "Fixed instruction displayed in the G33 counting game."
+  },
+  "gamePromptCompareMagnitude": "Hangisi daha çok?",
+  "@gamePromptCompareMagnitude": {
+    "description": "Fixed instruction displayed in the non-hard G36 comparison game."
+  },
+  "gamePromptCompareNumbers": "Bu sayıları karşılaştır",
+  "@gamePromptCompareNumbers": {
+    "description": "Fixed instruction displayed in the hard G36 comparison game."
+  },
+  "gamePromptGroupMembership": "Bu hangi grupta?",
+  "@gamePromptGroupMembership": {
+    "description": "Fixed instruction displayed in the G04 grouping game."
+  },
+  "gamePromptFindMatch": "Aynısını bul",
+  "@gamePromptFindMatch": { "description": "Fixed instruction displayed in G14."
+  },
+  "gamePromptListenForNumber": "Dinle. Hangi sayı?",
+  "@gamePromptListenForNumber": { "description": "Fixed instruction displayed in G10 for numbers."
+  },
+  "gamePromptListenForSoundSource": "Dinle. Ses kimden geliyor?",
+  "@gamePromptListenForSoundSource": { "description": "Fixed instruction displayed in G10 for non-number themes."
+  },
+  "gamePromptSequenceNext": "Sıradaki sayı hangisi?",
+  "@gamePromptSequenceNext": { "description": "Fixed non-hard instruction displayed in G35."
+  },
+  "gamePromptSequenceMissing": "Eksik sayı hangisi?",
+  "@gamePromptSequenceMissing": { "description": "Fixed hard instruction displayed in G35."
+  }
+}

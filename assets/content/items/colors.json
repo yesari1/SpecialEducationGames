@@ -1,0 +1,357 @@
+[
+  {
+    "id": "colors.red",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kırmızı",
+      "en": "Red"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/red_selected.mp3",
+      "en": "assets/audio/en/colors/red_selected.mp3"
+    },
+    "sfx": null,
+    "audioProvenance": {
+      "tr": {
+        "id": "colors.red",
+        "language": "tr",
+        "path": "assets/audio/tr/colors/red_selected.mp3",
+        "text": "Kırmızı.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "081a5d2aa6ecb09efef31a265c3fbbd578e15884c340d0a79ba20502b32a342c",
+        "source": "artifacts/voice_samples_selected/tr_red.mp3",
+        "validation": {
+          "duration_seconds": 1.068118,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "colors.red",
+        "language": "en",
+        "path": "assets/audio/en/colors/red_selected.mp3",
+        "text": "Red.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "bcdbc1df05c9c06ea294bffe617e3d43977397f1b6196b6b0f6a875c3319237d",
+        "source": "artifacts/voice_samples_selected/en_red.mp3",
+        "validation": {
+          "duration_seconds": 0.743039,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "colors.blue",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Mavi",
+      "en": "Blue"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/blue.mp3",
+      "en": "assets/audio/en/colors/blue.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.yellow",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Sarı",
+      "en": "Yellow"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/yellow.mp3",
+      "en": "assets/audio/en/colors/yellow.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.green",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Yeşil",
+      "en": "Green"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/green.mp3",
+      "en": "assets/audio/en/colors/green.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.orange",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Turuncu",
+      "en": "Orange"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/orange.mp3",
+      "en": "assets/audio/en/colors/orange.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.purple",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Mor",
+      "en": "Purple"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/purple.mp3",
+      "en": "assets/audio/en/colors/purple.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.pink",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Pembe",
+      "en": "Pink"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/pink.mp3",
+      "en": "assets/audio/en/colors/pink.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.brown",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kahverengi",
+      "en": "Brown"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/brown.mp3",
+      "en": "assets/audio/en/colors/brown.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.black",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Siyah",
+      "en": "Black"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/black.mp3",
+      "en": "assets/audio/en/colors/black.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.white",
+    "theme": "colors",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Beyaz",
+      "en": "White"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/white.mp3",
+      "en": "assets/audio/en/colors/white.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.gray",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Gri",
+      "en": "Gray"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/colors/gray.mp3",
+      "en": "assets/audio/en/colors/gray.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "colors.navy",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Lacivert",
+      "en": "Navy"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "colors.light_blue",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Açık mavi",
+      "en": "Light blue"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "colors.turquoise",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Turkuaz",
+      "en": "Turquoise"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "colors.gold",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Altın",
+      "en": "Gold"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "colors.silver",
+    "theme": "colors",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Gümüş",
+      "en": "Silver"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

@@ -1,0 +1,421 @@
+[
+  {
+    "id": "numbers.0",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "Sıfır",
+      "en": "Zero"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.1",
+    "theme": "numbers",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Bir",
+      "en": "One"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/1.mp3",
+      "en": "assets/audio/en/numbers/1.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.2",
+    "theme": "numbers",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "İki",
+      "en": "Two"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/2.mp3",
+      "en": "assets/audio/en/numbers/2.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.3",
+    "theme": "numbers",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Üç",
+      "en": "Three"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/3_selected.mp3",
+      "en": "assets/audio/en/numbers/3_selected.mp3"
+    },
+    "sfx": null,
+    "audioProvenance": {
+      "tr": {
+        "id": "numbers.3",
+        "language": "tr",
+        "path": "assets/audio/tr/numbers/3_selected.mp3",
+        "text": "Üç.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "c224fe2b2cd082c5ff268aecd7b70e2d8d79380b55f5a7b40a81ef39b93fc78c",
+        "source": "artifacts/voice_samples_selected/tr_three.mp3",
+        "validation": {
+          "duration_seconds": 0.789478,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "numbers.3",
+        "language": "en",
+        "path": "assets/audio/en/numbers/3_selected.mp3",
+        "text": "Three.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "050f4ff8e36e8ffb12f68624f5b9669e10f56410d230b3cc08b1c3f7c27c42fb",
+        "source": "artifacts/voice_samples_selected/en_three.mp3",
+        "validation": {
+          "duration_seconds": 0.743039,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "numbers.4",
+    "theme": "numbers",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Dört",
+      "en": "Four"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/4.mp3",
+      "en": "assets/audio/en/numbers/4.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.5",
+    "theme": "numbers",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Beş",
+      "en": "Five"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/5.mp3",
+      "en": "assets/audio/en/numbers/5.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.6",
+    "theme": "numbers",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Altı",
+      "en": "Six"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/6.mp3",
+      "en": "assets/audio/en/numbers/6.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.7",
+    "theme": "numbers",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Yedi",
+      "en": "Seven"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/7.mp3",
+      "en": "assets/audio/en/numbers/7.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.8",
+    "theme": "numbers",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Sekiz",
+      "en": "Eight"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/8.mp3",
+      "en": "assets/audio/en/numbers/8.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.9",
+    "theme": "numbers",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Dokuz",
+      "en": "Nine"
+    },
+    "images": [],
+    "audio": {
+      "tr": "assets/audio/tr/numbers/9.mp3",
+      "en": "assets/audio/en/numbers/9.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "numbers.10",
+    "theme": "numbers",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "On",
+      "en": "Ten"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.11",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On bir",
+      "en": "Eleven"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.12",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On iki",
+      "en": "Twelve"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.13",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On üç",
+      "en": "Thirteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.14",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On dört",
+      "en": "Fourteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.15",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On beş",
+      "en": "Fifteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.16",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On altı",
+      "en": "Sixteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.17",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [],
+    "name": {
+      "tr": "On yedi",
+      "en": "Seventeen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.18",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "On sekiz",
+      "en": "Eighteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.19",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "On dokuz",
+      "en": "Nineteen"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "numbers.20",
+    "theme": "numbers",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Yirmi",
+      "en": "Twenty"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

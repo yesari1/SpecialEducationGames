@@ -1,0 +1,132 @@
+{
+  "voice_id": "DODLEQrClDo8wCz460ld",
+  "model": "eleven_multilingual_v2",
+  "settings": {
+    "stability": 0.65,
+    "similarity_boost": 0.75,
+    "style": 0.1,
+    "speed": 0.9
+  },
+  "samples": [
+    {
+      "language": "tr",
+      "key": "cat",
+      "text": "Kedi.",
+      "file": "tr_cat.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "dog",
+      "text": "Köpek.",
+      "file": "tr_dog.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "rabbit",
+      "text": "Tavşan.",
+      "file": "tr_rabbit.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "apple",
+      "text": "Elma.",
+      "file": "tr_apple.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "banana",
+      "text": "Muz.",
+      "file": "tr_banana.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "red",
+      "text": "Kırmızı.",
+      "file": "tr_red.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "three",
+      "text": "Üç.",
+      "file": "tr_three.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "find_cat",
+      "text": "Kedi hangisi?",
+      "file": "tr_find_cat.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "praise",
+      "text": "Aferin! Çok güzel buldun.",
+      "file": "tr_praise.mp3"
+    },
+    {
+      "language": "tr",
+      "key": "retry",
+      "text": "Hadi bir daha bakalım.",
+      "file": "tr_retry.mp3"
+    },
+    {
+      "language": "en",
+      "key": "cat",
+      "text": "Cat.",
+      "file": "en_cat.mp3"
+    },
+    {
+      "language": "en",
+      "key": "dog",
+      "text": "Dog.",
+      "file": "en_dog.mp3"
+    },
+    {
+      "language": "en",
+      "key": "rabbit",
+      "text": "Rabbit.",
+      "file": "en_rabbit.mp3"
+    },
+    {
+      "language": "en",
+      "key": "apple",
+      "text": "Apple.",
+      "file": "en_apple.mp3"
+    },
+    {
+      "language": "en",
+      "key": "banana",
+      "text": "Banana.",
+      "file": "en_banana.mp3"
+    },
+    {
+      "language": "en",
+      "key": "red",
+      "text": "Red.",
+      "file": "en_red.mp3"
+    },
+    {
+      "language": "en",
+      "key": "three",
+      "text": "Three.",
+      "file": "en_three.mp3"
+    },
+    {
+      "language": "en",
+      "key": "find_cat",
+      "text": "Find the cat.",
+      "file": "en_find_cat.mp3"
+    },
+    {
+      "language": "en",
+      "key": "praise",
+      "text": "Well done! You found it.",
+      "file": "en_praise.mp3"
+    },
+    {
+      "language": "en",
+      "key": "retry",
+      "text": "Let’s try again.",
+      "file": "en_retry.mp3"
+    }
+  ]
+}

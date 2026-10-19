@@ -1,0 +1,102 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) { return request.auth != null && request.auth.uid == uid; }
+    // A persistent server-only marker prevents another device (or an old token)
+    // from recreating data while/after the account deletion worker runs.
+    function canWriteFamily(uid) {
+      return owner(uid) && !exists(/databases/$(database)/documents/deletionLocks/$(uid));
+    }
+    function admin() {
+      return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function safeId(value) { return value is string && value.matches('^[A-Za-z0-9-]{1,128}$'); }
+    function count(value) { return value is int && value >= 0; }
+    function stamp(value) { return value is timestamp && value > timestamp.value(0) && value <= request.time; }
+    function tier(value) { return value in ['easy', 'medium', 'hard']; }
+    function exact(data, fields) { return data.keys().hasAll(fields) && data.keys().hasOnly(fields); }
+    function calendarDay(value) {
+      let parts = value.split('-');
+      let day = timestamp.date(int(parts[0]), int(parts[1]), int(parts[2]));
+      // Local calendar dates may be one day ahead of UTC, but never further.
+      return day.year() == int(parts[0]) && day.month() == int(parts[1]) && day.day() == int(parts[2])
+        && day <= request.time + duration.value(1, 'd');
+    }
+    function session(data, id) {
+      return exact(data, ['date', 'themeId', 'modeId', 'difficulty', 'activeMs', 'rounds', 'stages', 'independent', 'updatedAt'])
+        && data.date is string && data.date.matches('^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$')
+        && calendarDay(data.date)
+        && safeId(data.themeId) && safeId(data.modeId) && tier(data.difficulty)
+        && count(data.activeMs) && count(data.rounds) && count(data.stages) && count(data.independent)
+        && data.independent <= data.stages && stamp(data.updatedAt)
+        && id == data.date + '_' + data.themeId + '_' + data.modeId + '_' + data.difficulty;
+    }
+    match /config/app {
+      allow get: if true;
+      allow list: if false;
+      allow write: if admin();
+    }
+    function localizedText(text, maxLength) {
+      return text is map && text.keys().hasOnly(['tr', 'en']) && text.keys().size() > 0
+        && (!('tr' in text) || (text.tr is string && text.tr.size() > 0 && text.tr.size() <= maxLength))
+        && (!('en' in text) || (text.en is string && text.en.size() > 0 && text.en.size() <= maxLength));
+    }
+    match /announcements/{id} {
+      allow get: if safeId(id);
+      allow list: if false;
+      allow create, update: if admin() && safeId(id)
+        && exact(request.resource.data, ['schemaVersion', 'title', 'body'])
+        && request.resource.data.schemaVersion is int && request.resource.data.schemaVersion == 1
+        && localizedText(request.resource.data.title, 120)
+        && localizedText(request.resource.data.body, 1200)
+        && (('tr' in request.resource.data.title && 'tr' in request.resource.data.body)
+          || ('en' in request.resource.data.title && 'en' in request.resource.data.body));
+      allow delete: if admin();
+    }
+    match /admins/{uid} {
+      allow get: if owner(uid);
+      allow list, write: if false;
+    }
+    match /families/{uid} {
+      allow read, delete: if owner(uid);
+      allow create, update: if canWriteFamily(uid)
+        && exact(request.resource.data, ['createdAt', 'locale', 'updatedAt'])
+        && request.resource.data.locale in ['tr', 'en']
+        && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
+      match /profiles/{profileId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if canWriteFamily(uid) && safeId(profileId)
+          && exact(request.resource.data, ['nickname', 'avatarId', 'ageRange', 'survey', 'settings', 'createdAt', 'updatedAt'])
+          && request.resource.data.nickname is string && request.resource.data.nickname.size() > 0 && request.resource.data.nickname.size() <= 24
+          && safeId(request.resource.data.avatarId)
+          && request.resource.data.ageRange is string && request.resource.data.ageRange.size() <= 24
+          && request.resource.data.survey is map && request.resource.data.settings is map
+          && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
+        match /progress/{summaryId} {
+          allow read, delete: if owner(uid);
+          allow create, update: if canWriteFamily(uid) && safeId(profileId)
+            && exact(request.resource.data, ['themeId', 'modeId', 'difficulty', 'stages', 'independent', 'maxHint', 'updatedAt'])
+            && safeId(request.resource.data.themeId) && safeId(request.resource.data.modeId) && tier(request.resource.data.difficulty)
+            && count(request.resource.data.stages) && count(request.resource.data.independent)
+            && request.resource.data.independent <= request.resource.data.stages
+            && count(request.resource.data.maxHint) && request.resource.data.maxHint <= 4 && stamp(request.resource.data.updatedAt);
+        }
+        match /itemStats/{itemId} {
+          allow read, delete: if owner(uid);
+          allow create, update: if canWriteFamily(uid) && safeId(profileId) && safeId(itemId)
+            && exact(request.resource.data, ['correct', 'wrong', 'hintCounts', 'updatedAt'])
+            && count(request.resource.data.correct) && count(request.resource.data.wrong)
+            && request.resource.data.hintCounts is list && request.resource.data.hintCounts.size() == 5
+            && count(request.resource.data.hintCounts[0]) && count(request.resource.data.hintCounts[1])
+            && count(request.resource.data.hintCounts[2]) && count(request.resource.data.hintCounts[3])
+            && count(request.resource.data.hintCounts[4]) && stamp(request.resource.data.updatedAt);
+        }
+        match /sessions/{summaryId} {
+          allow read, delete: if owner(uid);
+          allow create, update: if canWriteFamily(uid) && safeId(profileId) && session(request.resource.data, summaryId);
+        }
+      }
+    }
+    // Unspecified collections, including raw trial logs, are denied.
+  }
+}

@@ -1,0 +1,285 @@
+[
+  {
+    "slug": "car",
+    "path": "assets/images/vehicles/car_1.png",
+    "tool": "built-in image_gen",
+    "prompt": "Single muted blue compact passenger car; realistic studio cutout; three-quarter front view; transparent background; no people, brands, text, scene or border."
+  },
+  {
+    "slug": "bus",
+    "prompt": "One educational picture-card asset: a full-size single-deck city passenger bus, muted teal and cream, clearly showing a row of large passenger windows and two axles. Photorealistic studio cutout, three-quarter view, entire vehicle visible and centered, generous transparent padding. No people, writing, brands, logos, border, floor, scene or extra objects. Calm natural colors, soft even lighting, instantly recognizable silhouette for a young child. Transparent alpha background. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/bus_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "truck",
+    "prompt": "One educational picture-card asset: an ordinary medium delivery box truck, muted orange cab and light gray enclosed cargo box, clearly showing separate cab and cargo body. Photorealistic studio cutout, three-quarter view, entire vehicle visible and centered, generous transparent padding. No people, writing, brands, logos, border, floor, scene or extra objects. Calm natural colors, soft even lighting, instantly recognizable silhouette for a young child. Transparent alpha background. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/truck_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "train",
+    "prompt": "One educational picture-card asset: a classic red passenger locomotive pulling one short passenger carriage on a very short section of railway track, recognizable as a train. Photorealistic studio cutout, three-quarter view, entire vehicle visible and centered, generous transparent padding. No people, writing, brands, logos, border, floor, scene or extra objects. Calm natural colors, soft even lighting, instantly recognizable silhouette for a young child. Transparent alpha background. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/train_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "airplane",
+    "prompt": "One educational picture-card asset: a white twin-engine commercial passenger airplane, wings, tail and landing gear clearly visible, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/airplane_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ship",
+    "prompt": "One educational picture-card asset: a white ocean passenger ship with three visible decks, windows and one funnel, full hull visible, three-quarter side view, no water. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/ship_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "bicycle",
+    "prompt": "One educational picture-card asset: an ordinary teal city bicycle with two complete wheels, pedals, handlebar and saddle clearly visible, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/bicycle_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "motorcycle",
+    "prompt": "One educational picture-card asset: an ordinary red road motorcycle with two wheels, seat, fuel tank and handlebar clearly visible, no rider, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/motorcycle_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ambulance",
+    "prompt": "One educational picture-card asset: a white ambulance van with a broad red horizontal stripe and small blue roof beacons, no text or medical insignia, three-quarter front view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/ambulance_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "fire_truck",
+    "prompt": "One educational picture-card asset: a red fire engine with a silver ladder fixed along its roof, large hose reels and blue roof beacons, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/fire_truck_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "police_car",
+    "prompt": "One educational picture-card asset: a white and navy blue police patrol car with a blue roof light bar, no text or insignia, three-quarter front view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/police_car_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "taxi",
+    "prompt": "One educational picture-card asset: a yellow city taxi passenger car with a simple blank yellow taxi roof sign, no lettering, three-quarter front view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/taxi_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "helicopter",
+    "prompt": "One educational picture-card asset: a small yellow civilian helicopter with a clear bubble cockpit, complete main rotor, tail rotor and landing skids, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/helicopter_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "boat",
+    "prompt": "One educational picture-card asset: a small blue and white open leisure motorboat, simple windscreen and outboard motor, full hull visible, no water, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/boat_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "tractor",
+    "prompt": "One educational picture-card asset: a green farm tractor with very large rear tires, small front tires, enclosed cab and no attachments, three-quarter side view. Realistic photographic studio cutout. Entire single vehicle visible and centered with generous transparent padding. Soft even lighting, calm natural colors. No people, brands, logos, writing, card border, floor, scenery or unrelated objects. Transparent alpha background. The vehicle must be instantly recognizable to a young child. Match realistic photographic animal cutouts in a Turkish/English special education Flutter app.",
+    "path": "assets/images/vehicles/tractor_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "tractor",
+    "prompt": "Revise this educational tractor asset. Preserve the same realistic green farm tractor and all its details, with no person, branding or writing. Show the COMPLETE tractor including the entire cab roof and exhaust pipe fully inside the canvas. Make the whole tractor appreciably SMALLER in frame, occupying at most 70 percent of the image width and 70 percent of the image height, with at least 15 percent TRANSPARENT margin on EVERY side. Transparent alpha background, no ground, shadows or scenery. Do not crop any part of the tractor.",
+    "path": "assets/images/vehicles/tractor_2.png",
+    "tool": "built-in image_gen",
+    "supersedes": "assets/images/vehicles/tractor_1.png"
+  },
+  {
+    "slug": "minibus",
+    "prompt": "One educational picture-card asset: an ordinary white passenger MINIBUS, a tall compact passenger van with a row of large side passenger windows, a short nose and two axles. Photorealistic studio cutout in three-quarter front view. Show the COMPLETE vehicle, occupying at most 70 percent of the canvas width and height, with generous transparent padding on every side. No people, writing, logos, brands, card border, floor or scenery. Soft even lighting and calm natural colors. Transparent alpha background. Instantly recognizable for a child, matching realistic photographic cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/minibus_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "pickup_truck",
+    "prompt": "One educational picture-card asset: an ordinary blue pickup truck with a short enclosed passenger cab and a clearly visible open cargo bed, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/pickup_truck_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "garbage_truck",
+    "prompt": "One educational picture-card asset: a green refuse collection truck with a large enclosed rear compactor body and clearly visible rear loading mechanism, three-quarter rear-side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/garbage_truck_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "school_bus",
+    "prompt": "One educational picture-card asset: a yellow single-deck school bus, long row of windows, simple black stripes, no writing, three-quarter front view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/school_bus_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "subway",
+    "prompt": "One educational picture-card asset: a modern silver underground metro train with blue doors, three linked short cars and no visible overhead wires, three-quarter front-side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/subway_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "tram",
+    "prompt": "One educational picture-card asset: a modern red street tram with three linked sections and a clearly visible overhead pantograph, three-quarter front-side view, no overhead wires or street. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/tram_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "scooter",
+    "prompt": "One educational picture-card asset: a child's simple turquoise two-wheel kick scooter with a standing deck and tall T-shaped handlebar, no rider, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/scooter_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "excavator",
+    "prompt": "One educational picture-card asset: a yellow construction excavator with tracked undercarriage, rotating enclosed cab and complete articulated digging boom ending in a bucket, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/excavator_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "crane",
+    "prompt": "One educational picture-card asset: a yellow mobile construction crane truck with stabilizer legs, telescopic boom extending diagonally upward and a visible hanging hook, entire crane and full boom visible. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/crane_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "hot_air_balloon",
+    "prompt": "One educational picture-card asset: a single colorful hot-air balloon with a rounded striped envelope in muted red, yellow and teal, complete hanging wicker basket below, no people. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/hot_air_balloon_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "sailboat",
+    "prompt": "One educational picture-card asset: a white sailboat with a full triangular cream mainsail, a small jib, complete mast and clear single hull, no water, no people, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/sailboat_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "speedboat",
+    "prompt": "One educational picture-card asset: a sleek red and white low racing speedboat with a pointed hull, low dark windscreen and streamlined profile, no water, no people, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/speedboat_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "caravan",
+    "prompt": "One educational picture-card asset: a compact white touring caravan travel trailer, one axle, two small windows, side door and tow hitch, no towing car, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/caravan_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "horse_cart",
+    "prompt": "One educational picture-card asset: a calm brown horse in a simple harness pulling a small traditional wooden two-wheel cart, full horse and complete cart visible, no people or other animals, side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/horse_cart_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "tow_truck",
+    "prompt": "One educational picture-card asset: a yellow breakdown recovery tow truck with a clear towing boom and wheel-lift attachment at the rear, no car attached, three-quarter side view. Realistic photographic studio cutout. Show the COMPLETE subject, occupying at most 70 percent of the canvas width and height, with at least 15 percent transparent padding on EVERY side. Soft even lighting, calm natural colors. Transparent alpha background. No people, brands, logos, text, card border, floor, shadows, scenery or unrelated objects. Recognizable to a young child. Match realistic photographic cutouts in a Turkish/English special education game.",
+    "path": "assets/images/vehicles/tow_truck_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "forklift",
+    "prompt": "One educational picture-card asset: a compact warehouse forklift, muted yellow, tall upright lifting mast and two clearly visible empty horizontal forks, four wheels. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/forklift_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "cement_mixer",
+    "prompt": "One educational picture-card asset: a concrete mixer truck, muted blue cab, large pale rotating cylindrical mixing drum mounted behind it. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/cement_mixer_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "bulldozer",
+    "prompt": "One educational picture-card asset: a yellow tracked bulldozer, broad steel pushing blade in front, continuous crawler tracks. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/bulldozer_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "road_roller",
+    "prompt": "One educational picture-card asset: a road roller compactor, muted yellow, one broad smooth steel rolling drum clearly visible at the front. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/road_roller_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "cargo_ship",
+    "prompt": "One educational picture-card asset: a large ocean container cargo ship with stacked muted-color shipping containers and rear bridge, entire hull visible, without water. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/cargo_ship_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "submarine",
+    "prompt": "One educational picture-card asset: a gray submarine with rounded long hull, conning tower and small propeller, outside view, without water. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/submarine_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ferry",
+    "prompt": "One educational picture-card asset: a passenger and vehicle ferry, white hull and muted blue trim, wide deck opening and passenger windows, without water or other vehicles. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/ferry_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "canoe",
+    "prompt": "One educational picture-card asset: one open Canadian canoe, muted red hull, two interior bench seats and one wooden paddle resting inside, no water. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/canoe_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "rocket",
+    "prompt": "One educational picture-card asset: one upright space rocket, pale white and muted red, pointed nose and visible stabilizer fins, engine off. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/rocket_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "jet",
+    "prompt": "One educational picture-card asset: one civilian twin-engine jet airplane, white fuselage, muted blue tail, swept wings and two clearly visible engines, no airline marks. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/jet_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "airship",
+    "prompt": "One educational picture-card asset: one silver-gray zeppelin airship with long oval envelope, tail fins and a small gondola suspended underneath. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/airship_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "glider",
+    "prompt": "One educational picture-card asset: one unpowered sailplane glider, very long slender wings, white body and slim cockpit, no engine or propeller. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/glider_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "cable_car",
+    "prompt": "One educational picture-card asset: one enclosed red aerial cable car gondola with large windows and suspension arm, a short plain cable segment above, no towers or landscape. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/cable_car_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "snowmobile",
+    "prompt": "One educational picture-card asset: one muted blue snowmobile with front skis and rear rubber track, visible handlebar and seat, no snow. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/snowmobile_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "high_speed_train",
+    "prompt": "One educational picture-card asset: one streamlined high-speed passenger train with a long pointed nose, white body and muted blue stripe, short connected carriage visible behind. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/high_speed_train_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "skateboard",
+    "prompt": "One educational picture-card asset: one ordinary skateboard, plain natural wood deck with muted teal underside, four wheels and metal trucks clearly visible, three-quarter side view. Photorealistic studio cutout, three-quarter view (rocket upright), entire object fully visible and centered occupying at most 70 percent of the frame, at least 15 percent empty padding on each side. True transparent alpha background. No people, writing, logos, brands, border, floor, cast shadow, scene or extra objects. Calm natural colors, soft even lighting, unmistakable silhouette for a young child. Match realistic photographic animal and vehicle cutouts in a Turkish/English special education app.",
+    "path": "assets/images/vehicles/skateboard_1.png",
+    "tool": "built-in image_gen"
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "emotions.happy",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Mutlu",
+      "en": "Happy"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.sad",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Üzgün",
+      "en": "Sad"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.angry",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kızgın",
+      "en": "Angry"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.scared",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Korkmuş",
+      "en": "Scared"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.surprised",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Şaşkın",
+      "en": "Surprised"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.sleepy",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Uykulu",
+      "en": "Sleepy"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.laughing",
+    "theme": "emotions",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Gülen/Kahkaha",
+      "en": "Laughing"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.calm",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Sakin",
+      "en": "Calm"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.shy",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Utangaç",
+      "en": "Shy"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.proud",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Gururlu",
+      "en": "Proud"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.bored",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Sıkılmış",
+      "en": "Bored"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.worried",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Endişeli",
+      "en": "Worried"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.excited",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Heyecanlı",
+      "en": "Excited"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "emotions.disgusted",
+    "theme": "emotions",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Tiksinmiş",
+      "en": "Disgusted"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

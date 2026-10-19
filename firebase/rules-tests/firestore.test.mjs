@@ -1,0 +1,157 @@
+import {readFileSync} from 'node:fs';
+import {after, before, beforeEach, test} from 'node:test';
+import {initializeTestEnvironment, assertFails, assertSucceeds} from '@firebase/rules-unit-testing';
+import {doc, collection, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp} from 'firebase/firestore';
+
+test('persistent deletion marker blocks all family writes and is private',async () => {
+  const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
+  const profile={nickname:'Deniz',avatarId:'cat',ageRange:'4-6',survey:{},settings:{},createdAt:stamp(),updatedAt:stamp()};
+  const progress={themeId:'animals',modeId:'G01',difficulty:'easy',stages:5,independent:3,maxHint:4,updatedAt:stamp()};
+  const stats={correct:3,wrong:1,hintCounts:[0,1,2,0,0],updatedAt:stamp()};
+  const writes=[['families/alice',family],['families/alice/profiles/profile-1',profile],['families/alice/profiles/profile-1/progress/animals-G01-easy',progress],['families/alice/profiles/profile-1/itemStats/cat',stats],[path,summary()]];
+  for(const [target,payload] of writes) await assertSucceeds(setDoc(doc(db('alice'),target),payload));
+  await env.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(),'deletionLocks/alice'),{status:'pending',createdAt:stamp(),updatedAt:stamp()});
+    await setDoc(doc(context.firestore(),'admins/admin'),{enabled:true});
+  });
+  for(const [target,payload] of writes) {
+    await assertFails(setDoc(doc(db('alice'),target),payload));
+    await assertSucceeds(getDoc(doc(db('alice'),target)));
+    await assertSucceeds(deleteDoc(doc(db('alice'),target)));
+    await assertFails(setDoc(doc(db('alice'),target),payload));
+  }
+  for(const uid of ['alice','bob','admin',null]) {
+    const lock=doc(db(uid),'deletionLocks/alice');
+    await assertFails(getDoc(lock));
+    await assertFails(setDoc(lock,{status:'complete',createdAt:stamp(),updatedAt:stamp()}));
+    await assertFails(deleteDoc(lock));
+  }
+  // Completion preserves the marker: an old valid token still cannot recreate.
+  await env.withSecurityRulesDisabled(async context => updateDoc(doc(context.firestore(),'deletionLocks/alice'),{status:'complete'}));
+  await assertFails(setDoc(doc(db('alice'),path),summary()));
+  await assertSucceeds(setDoc(doc(db('bob'),path.replace('alice','bob')),summary()));
+});
+
+const projectId = 'demo-special-education-rules';
+let env;
+const stamp = () => Timestamp.fromMillis(Date.now() - 60000);
+const id = '2026-10-15_animals_G01_easy';
+const path = `families/alice/profiles/profile-1/sessions/${id}`;
+const summary = () => ({date:'2026-10-15',themeId:'animals',modeId:'G01',difficulty:'easy',activeMs:60000,rounds:1,stages:5,independent:3,updatedAt:stamp()});
+const db = uid => uid ? env.authenticatedContext(uid).firestore() : env.unauthenticatedContext().firestore();
+before(async () => {
+  env = await initializeTestEnvironment({projectId, firestore:{host:'127.0.0.1',port:8085,rules:readFileSync(new URL('../firestore.rules',import.meta.url),'utf8')}});
+});
+beforeEach(async () => env.clearFirestore());
+after(async () => env?.cleanup());
+
+test('owner can create/update/read/list/delete exact nine-field daily summaries',async () => {
+  const ref = doc(db('alice'),path);
+  await assertSucceeds(setDoc(ref,summary()));
+  await assertSucceeds(updateDoc(ref,{activeMs:70000}));
+  await assertSucceeds(getDoc(ref));
+  await assertSucceeds(getDocs(collection(db('alice'),'families/alice/profiles/profile-1/sessions')));
+  await assertSucceeds(deleteDoc(ref));
+});
+test('other accounts and anonymous clients cannot access family tree',async () => {
+  await assertSucceeds(setDoc(doc(db('alice'),path),summary()));
+  for(const uid of ['bob',null]) {
+    await assertFails(getDoc(doc(db(uid),path)));
+    await assertFails(getDocs(collection(db(uid),'families/alice/profiles/profile-1/sessions')));
+    await assertFails(setDoc(doc(db(uid),path),summary()));
+    await assertFails(updateDoc(doc(db(uid),path),{rounds:2}));
+    await assertFails(deleteDoc(doc(db(uid),path)));
+    await assertFails(getDoc(doc(db(uid),'families/alice')));
+    await assertFails(getDoc(doc(db(uid),'families/alice/profiles/profile-1')));
+  }
+});
+test('public config allows direct get only; only pre-provisioned admin writes',async () => {
+  await env.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(),'config/app'),{freeGames:[]});
+    await setDoc(doc(context.firestore(),'admins/admin'),{enabled:true});
+  });
+  for(const uid of ['alice',null]) {
+    await assertSucceeds(getDoc(doc(db(uid),'config/app')));
+    await assertFails(getDocs(collection(db(uid),'config')));
+    await assertFails(setDoc(doc(db(uid),'config/app'),{freeGames:[]}));
+  }
+  await assertSucceeds(setDoc(doc(db('admin'),'config/app'),{freeGames:[]}));
+  await assertSucceeds(getDoc(doc(db('admin'),'admins/admin')));
+  await assertFails(setDoc(doc(db('alice'),'admins/alice'),{enabled:true}));
+  await assertFails(getDocs(collection(db('admin'),'admins')));
+});
+test('raw trials and premium storage are denied even to owner/admin',async () => {
+  for(const uid of ['alice','admin',null]) {
+    for(const denied of ['trials/t1','premium/status','families/alice/trials/t1','families/alice/premium/status','families/alice/profiles/profile-1/trials/t1']) {
+      await assertFails(setDoc(doc(db(uid),denied),{premium:true}));
+      await assertFails(getDoc(doc(db(uid),denied)));
+    }
+  }
+  await assertFails(setDoc(doc(db('alice'),path),{...summary(),premium:true}));
+  await assertFails(setDoc(doc(db('alice'),path),{...summary(),selectedIds:['cat']}));
+});
+test('all nine fields required and all counter types/nonnegative constraints enforced',async () => {
+  for(const key of Object.keys(summary())) {
+    const payload=summary(); delete payload[key];
+    await assertFails(setDoc(doc(db('alice'),path),payload));
+  }
+  for(const key of ['activeMs','rounds','stages','independent']) {
+    for(const value of [-1,1.5,true,'1',null]) await assertFails(setDoc(doc(db('alice'),path),{...summary(),[key]:value}));
+  }
+  await assertFails(setDoc(doc(db('alice'),path),{...summary(),independent:6}));
+  for(const value of ['2026-10-15',null,Timestamp.fromMillis(0),Timestamp.fromMillis(Date.now()+3600000)]) {
+    await assertFails(setDoc(doc(db('alice'),path),{...summary(),updatedAt:value}));
+  }
+});
+test('invalid identifiers, difficulty, date and inconsistent document IDs are denied',async () => {
+  for(const [key,values] of Object.entries({themeId:['','animal/slash','animal space'],modeId:['','G_01'],difficulty:['expert','EASY'],date:['yesterday','2026-13-01','2026-10-00','2026-02-30','2099-01-01']})) {
+    for(const value of values) await assertFails(setDoc(doc(db('alice'),path),{...summary(),[key]:value}));
+  }
+  await assertFails(setDoc(doc(db('alice'),'families/alice/profiles/profile-1/sessions/wrong-id'),summary()));
+  await assertFails(setDoc(doc(db('alice'),`families/alice/profiles/bad id/sessions/${id}`),summary()));
+  // Match the document ID so calendar denial cannot pass via ID mismatch.
+  for(const date of ['2026-02-30','2025-02-29','2099-01-01']) {
+    await assertFails(setDoc(doc(db('alice'),`families/alice/profiles/profile-1/sessions/${date}_animals_G01_easy`),{...summary(),date}));
+  }
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice/profiles/profile-1/sessions/2024-02-29_animals_G01_easy'),{...summary(),date:'2024-02-29'}));
+});
+test('family/profile allowlists prevent top-level private logs or premium injection',async () => {
+  const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),family));
+  for(const extra of ['premium','trials','email']) await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,[extra]:true}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{locale:'tr'}));
+  const profile={nickname:'Deniz',avatarId:'cat',ageRange:'4-6',survey:{},settings:{},createdAt:stamp(),updatedAt:stamp()};
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice/profiles/profile-1'),profile));
+  await assertFails(setDoc(doc(db('bob'),'families/alice/profiles/profile-1'),profile));
+  await assertFails(setDoc(doc(db('alice'),'families/alice/profiles/profile-1'),{...profile,premium:true}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice/profiles/profile-1'),{...profile,nickname:'x'.repeat(25)}));
+});
+test('progress/item counters require bounded hints, counts, typed timestamps',async () => {
+  const progress={themeId:'animals',modeId:'G01',difficulty:'easy',stages:5,independent:3,maxHint:4,updatedAt:stamp()};
+  const ref=doc(db('alice'),'families/alice/profiles/profile-1/progress/animals-G01-easy');
+  await assertSucceeds(setDoc(ref,progress));
+  for(const change of [{maxHint:5},{stages:-1},{independent:6},{updatedAt:'date'},{trials:[]}]) await assertFails(setDoc(ref,{...progress,...change}));
+  const item=doc(db('alice'),'families/alice/profiles/profile-1/itemStats/cat');
+  const stats={correct:3,wrong:1,hintCounts:[0,1,2,0,0],updatedAt:stamp()};
+  await assertSucceeds(setDoc(item,stats));
+  for(const change of [{correct:-1},{wrong:true},{hintCounts:[0,-1,0,0,0]},{hintCounts:[0,0]},{hintCounts:{'0':3}}]) await assertFails(setDoc(item,{...stats,...change}));
+});
+
+test('announcements allow public exact reads, bounded admin text writes and no list',async () => {
+  const payload={schemaVersion:1,title:{tr:'Yeni oyun',en:'New game'},body:{tr:'Birlikte keşfedin.',en:'Discover together.'}};
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  const target='announcements/autumn-2026';
+  await assertSucceeds(setDoc(doc(db('admin'),target),payload));
+  for(const uid of [null,'alice','admin']) {
+    await assertSucceeds(getDoc(doc(db(uid),target)));
+    await assertFails(getDocs(collection(db(uid),'announcements')));
+  }
+  for(const uid of [null,'alice']) {
+    await assertFails(setDoc(doc(db(uid),target),payload));
+    await assertFails(deleteDoc(doc(db(uid),target)));
+  }
+  for(const change of [{schemaVersion:2},{schemaVersion:1.5},{url:'https://example.com'},{title:{}},{title:{fr:'Bonjour'}},{title:{en:'x'.repeat(121)},body:{en:'Body'}},{body:{tr:'x'.repeat(1201),en:'Body'}},{title:{tr:'Başlık'},body:{en:'Body'}}]) {
+    await assertFails(setDoc(doc(db('admin'),target),{...payload,...change}));
+  }
+  await assertSucceeds(deleteDoc(doc(db('admin'),target)));
+});

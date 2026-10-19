@@ -1,0 +1,1473 @@
+[
+  {
+    "id": "animals.cat",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "evcil"
+    ],
+    "name": {
+      "tr": "Kedi",
+      "en": "Cat"
+    },
+    "images": [
+      "assets/images/animals/cat_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/cat_selected.mp3",
+      "en": "assets/audio/en/animals/cat_selected.mp3"
+    },
+    "sfx": "assets/sfx/animals/cat.mp3",
+    "imageProvenance": {
+      "assets/images/animals/cat_real.png": {
+        "author": "Matsu1024",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_Van_cat_transparent.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Original transparent cutout retained; alpha-bound crop, aspect-preserving resize and padding. Enlarged to maximum 912 px photo extent, with a 4 px white silhouette outline (combined extent <=920 px, padding >=52 px).",
+        "existingBackgroundRemoval": "YukiKoKo",
+        "id": "animals.cat",
+        "path": "assets/images/animals/cat_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/prepare_photo_samples.ps1",
+        "whiteOutlinePixels": 4,
+        "sha256": "9def9c4fa5cf7872aea291a9fb28b74943c3ecbb3d662542a8488fbfee2eb82d"
+      }
+    },
+    "audioProvenance": {
+      "tr": {
+        "id": "animals.cat",
+        "language": "tr",
+        "path": "assets/audio/tr/animals/cat_selected.mp3",
+        "text": "Kedi.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "adb34df39845556e62af3506ad8a04385f16ec77adcc63cb8f9b25319a594689",
+        "source": "artifacts/voice_samples_selected/tr_cat.mp3",
+        "validation": {
+          "duration_seconds": 0.835918,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "animals.cat",
+        "language": "en",
+        "path": "assets/audio/en/animals/cat_selected.mp3",
+        "text": "Cat.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "dad6fa0b9f9f0ee65f8aa1d9bf1027e04f4bf5bbc74bbcd0f4cf3f339916bee4",
+        "source": "artifacts/voice_samples_selected/en_cat.mp3",
+        "validation": {
+          "duration_seconds": 0.603719,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "animals.dog",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "evcil"
+    ],
+    "name": {
+      "tr": "Köpek",
+      "en": "Dog"
+    },
+    "images": [
+      "assets/images/animals/dog_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/dog_selected.mp3",
+      "en": "assets/audio/en/animals/dog_selected.mp3"
+    },
+    "sfx": "assets/sfx/animals/dog.mp3",
+    "audioProvenance": {
+      "tr": {
+        "id": "animals.dog",
+        "language": "tr",
+        "path": "assets/audio/tr/animals/dog_selected.mp3",
+        "text": "Köpek.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "bd64697eb6061f4f6ae69f943b0e70a6acbbcaca42be24608b5b1d06b9144d6f",
+        "source": "artifacts/voice_samples_selected/tr_dog.mp3",
+        "validation": {
+          "duration_seconds": 0.835918,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "animals.dog",
+        "language": "en",
+        "path": "assets/audio/en/animals/dog_selected.mp3",
+        "text": "Dog.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "484d68bca9386f0b31d504fa3e20b1425c0541bde38a0ddd519dc259d9004c96",
+        "source": "artifacts/voice_samples_selected/en_dog.mp3",
+        "validation": {
+          "duration_seconds": 0.696599,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    },
+    "imageProvenance": {
+      "assets/images/animals/dog_real.png": {
+        "id": "animals.dog",
+        "path": "assets/images/animals/dog_real.png",
+        "author": "Anton Porsche",
+        "source": "https://commons.wikimedia.org/wiki/File:Labradoodle-Brown-Transparent.png",
+        "original": "artifacts/animal-alpha-r17/attempt-01/Labradoodle-Brown-Transparent.png",
+        "originalSha256": "ebe72804f1813bf35cbc095d86ec64829f8603cb52349bf165143bd0d8b89844",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/animal-alpha-r17/attempt-01/prepare_labradoodle.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Retained Anton Porsche’s existing transparent real photograph and alpha; alpha-bound crop, aspect-preserving Lanczos resize to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outline from existing alpha. No new mask, background reconstruction, or generative editing.",
+        "sha256": "e3b5b3f4fbdd6e374ab2eaf17dc02a1fe99ac8f1150fbce954080d98d8d971bc",
+        "humanContentReviewPending": "Pending final human approval of this Labradoodle photograph for the generic catalog labels “Köpek” / “Dog”."
+      }
+    }
+  },
+  {
+    "id": "animals.bird",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "evcil",
+      "kus"
+    ],
+    "name": {
+      "tr": "Kuş",
+      "en": "Bird"
+    },
+    "images": [
+      "assets/images/animals/bird_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/bird.mp3",
+      "en": "assets/audio/en/animals/bird.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/animals/bird_real.png": {
+        "id": "animals.bird",
+        "path": "assets/images/animals/bird_real.png",
+        "author": "David Raju (photograph); Paolo Villa (transparent crop, alpha and color correction)",
+        "source": "https://commons.wikimedia.org/wiki/File:Eurasian_crag_martin_David_Raju_(transparent_background).png",
+        "original": "artifacts/photo-candidate-r24-next/attempt-01/source/Eurasian_crag_martin_David_Raju-transparent.png",
+        "originalSha256": "11e48379fc9a01bfeefe060fa56ea329a52fc256c7429e55e1db853bd5bcf0fb5",
+        "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Eurasian_crag_martin_David_Raju.jpg",
+        "originalPhoto": "artifacts/photo-candidate-r24-next/attempt-01/source/Eurasian_crag_martin_David_Raju.jpg",
+        "originalPhotoSha256": "e877a46fe48f2079b5630718b02d3d51a14ff5b913ca13ed8d22dbac442ea0ac",
+        "originalAuthor": "David Raju",
+        "derivativeAuthor": "Paolo Villa",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-19",
+        "processing": "artifacts/photo-candidate-r24-next/attempt-01/process_candidate.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Used Paolo Villa’s existing transparent derivative, which includes a color correction that makes the belly appear lighter than in David Raju’s original JPEG. The derivative alpha was retained; alpha-bound crop, aspect-preserving Lanczos resampling to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer outline were applied. No further RGB edits, background reconstruction, or generative processing; RGB resampling occurred during resize. Adaptation shared under CC BY-SA 4.0.",
+        "sha256": "951f45f39ef962649c49828c16a18e89ff3c7e2209ef87076f9f5e343ea1b288",
+        "humanContentReviewPending": "Technical photo review accepted; final human approval of this bird photo for the generic “Kuş” / “Bird” labels remains pending."
+      }
+    }
+  },
+  {
+    "id": "animals.fish",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "evcil",
+      "deniz"
+    ],
+    "name": {
+      "tr": "Balık",
+      "en": "Fish"
+    },
+    "images": [
+      "assets/images/animals/fish_real.png",
+      "assets/images/animals/fish_trout_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/fish.mp3",
+      "en": "assets/audio/en/animals/fish.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/animals/fish_real.png": {
+        "id": "animals.fish",
+        "path": "assets/images/animals/fish_real.png",
+        "author": "Ellicrum (transparent derivative); original photograph by Ffish.asia",
+        "source": "https://commons.wikimedia.org/wiki/File:Carassius_auratus_2.png",
+        "original": "artifacts/legacy-alpha-source-r12/Carassius_auratus_2.png",
+        "originalSource": "https://commons.wikimedia.org/wiki/File:%E3%82%AE%E3%83%B3%E3%83%96%E3%83%8A_DSC4346.jpg",
+        "originalAuthor": "Ffish.asia",
+        "originalSha256": "cc695c641b89bd859d1f1a1f4521dae08a9296acf9565f769bbba0e23ba30357",
+        "originalLicense": "CC BY 4.0",
+        "originalLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/legacy-alpha-source-r12/attempt-01/prepare_sprite.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Generic fish image (not labeled as a goldfish). The existing transparent derivative by Ellicrum incorporates the original photograph by Ffish.asia. Its existing alpha was preserved; alpha-bound crop, aspect-preserving resize to a 912 px maximum extent, centered 1024x1024 RGBA export, and a 4 px white outer outline were applied. No background-removal or generative edits. The adapted PNG is shared under CC BY-SA 4.0 with attribution to both creators and links to the source and licenses.",
+        "sha256": "89dc0d8586a0ed232b8617901e916075d64f22be404e08bd4e2ab5b5bb18c0e5",
+        "additionalVariants": [
+          {
+            "path": "assets/images/animals/fish_trout_real.png",
+            "author": "Allan Harris (photograph); Lodewicus de Honsvels (Commons source-file contributor); Ellicrum (transparent derivative)",
+            "source": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush.png",
+            "original": "artifacts/legacy-alpha-source-r13/Salvelinus_namaycush.png",
+            "originalSha256": "41da55b4c37e55fe5f214f1b108db3ef0b981575b2be54088d5820057d7792d4",
+            "originalSource": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush_-_Amerikanischer_Seesaibling_14650939.jpg",
+            "originalAuthor": "Allan Harris",
+            "originalLicense": "CC0 1.0",
+            "originalLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "commonsContributor": "Lodewicus de Honsvels",
+            "derivativeAuthor": "Ellicrum",
+            "derivativeLicense": "CC BY-SA 4.0",
+            "derivativeLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "adaptationLicense": "CC BY-SA 4.0",
+            "licenseVerified": true,
+            "licenseVerifiedOn": "2026-10-18",
+            "processing": "artifacts/legacy-alpha-source-r13/prepare_fish.py",
+            "whiteOutlinePixels": 4,
+            "changes": "Second, distinct generic fish photograph: Lake Trout (Salvelinus namaycush), not a Carassius frame/crop. Source photo by Allan Harris (CC0 1.0); Commons source-file contributor Lodewicus de Honsvels; transparent derivative/crop by Ellicrum (CC BY-SA 4.0). Existing derivative alpha and photo RGB were retained; alpha-bound crop, aspect-preserving Lanczos resize to 900 px maximum fish extent, centered 1024x1024 RGBA export and 4 px white outer outline. No new background mask, generative edits, or reconstructed pixels. The adapted file is shared under CC BY-SA 4.0 with all source/derivative attribution retained.",
+            "sha256": "501e15f0f6fdac5620e512f6e3771d5265ad52d86d61c39976726dff0ba98bc8"
+          }
+        ]
+      },
+      "assets/images/animals/fish_trout_real.png": {
+        "path": "assets/images/animals/fish_trout_real.png",
+        "author": "Allan Harris (photograph); Lodewicus de Honsvels (Commons source-file contributor); Ellicrum (transparent derivative)",
+        "source": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush.png",
+        "original": "artifacts/legacy-alpha-source-r13/Salvelinus_namaycush.png",
+        "originalSha256": "41da55b4c37e55fe5f214f1b108db3ef0b981575b2be54088d5820057d7792d4",
+        "originalSource": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush_-_Amerikanischer_Seesaibling_14650939.jpg",
+        "originalAuthor": "Allan Harris",
+        "originalLicense": "CC0 1.0",
+        "originalLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "commonsContributor": "Lodewicus de Honsvels",
+        "derivativeAuthor": "Ellicrum",
+        "derivativeLicense": "CC BY-SA 4.0",
+        "derivativeLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/legacy-alpha-source-r13/prepare_fish.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Second, distinct generic fish photograph: Lake Trout (Salvelinus namaycush), not a Carassius frame/crop. Source photo by Allan Harris (CC0 1.0); Commons source-file contributor Lodewicus de Honsvels; transparent derivative/crop by Ellicrum (CC BY-SA 4.0). Existing derivative alpha and photo RGB were retained; alpha-bound crop, aspect-preserving Lanczos resize to 900 px maximum fish extent, centered 1024x1024 RGBA export and 4 px white outer outline. No new background mask, generative edits, or reconstructed pixels. The adapted file is shared under CC BY-SA 4.0 with all source/derivative attribution retained.",
+        "sha256": "501e15f0f6fdac5620e512f6e3771d5265ad52d86d61c39976726dff0ba98bc8"
+      }
+    }
+  },
+  {
+    "id": "animals.rabbit",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "evcil"
+    ],
+    "name": {
+      "tr": "Tavşan",
+      "en": "Rabbit"
+    },
+    "images": [
+      "assets/images/animals/rabbit_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/rabbit_selected.mp3",
+      "en": "assets/audio/en/animals/rabbit_selected.mp3"
+    },
+    "sfx": null,
+    "audioProvenance": {
+      "tr": {
+        "id": "animals.rabbit",
+        "language": "tr",
+        "path": "assets/audio/tr/animals/rabbit_selected.mp3",
+        "text": "Tavşan.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "197707b152d4910c46a8fe892c279c7935db615d530a33452b494574ec4b17aa",
+        "source": "artifacts/voice_samples_selected/tr_rabbit.mp3",
+        "validation": {
+          "duration_seconds": 0.975238,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "animals.rabbit",
+        "language": "en",
+        "path": "assets/audio/en/animals/rabbit_selected.mp3",
+        "text": "Rabbit.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "cc946605e6a45b1d9bc4ac5f6612e07cb2cfaa85f86a598b38feaff8b3092019",
+        "source": "artifacts/voice_samples_selected/en_rabbit.mp3",
+        "validation": {
+          "duration_seconds": 0.696599,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "animals.cow",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "İnek",
+      "en": "Cow"
+    },
+    "images": [
+      "assets/images/animals/cow_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/cow.mp3",
+      "en": "assets/audio/en/animals/cow.mp3"
+    },
+    "sfx": "assets/sfx/animals/cow.mp3"
+  },
+  {
+    "id": "animals.horse",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "At",
+      "en": "Horse"
+    },
+    "images": [
+      "assets/images/animals/horse_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/horse.mp3",
+      "en": "assets/audio/en/animals/horse.mp3"
+    },
+    "sfx": "assets/sfx/animals/horse.mp3"
+  },
+  {
+    "id": "animals.sheep",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "Koyun",
+      "en": "Sheep"
+    },
+    "images": [
+      "assets/images/animals/sheep_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/sheep.mp3",
+      "en": "assets/audio/en/animals/sheep.mp3"
+    },
+    "sfx": "assets/sfx/animals/sheep.mp3"
+  },
+  {
+    "id": "animals.chicken",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "ciftlik",
+      "kus"
+    ],
+    "name": {
+      "tr": "Tavuk",
+      "en": "Chicken"
+    },
+    "images": [
+      "assets/images/animals/chicken_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/chicken.mp3",
+      "en": "assets/audio/en/animals/chicken.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.duck",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "ciftlik",
+      "kus"
+    ],
+    "name": {
+      "tr": "Ördek",
+      "en": "Duck"
+    },
+    "images": [
+      "assets/images/animals/duck_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/duck.mp3",
+      "en": "assets/audio/en/animals/duck.mp3"
+    },
+    "sfx": "assets/sfx/animals/duck.mp3"
+  },
+  {
+    "id": "animals.chick",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "ciftlik",
+      "kus"
+    ],
+    "name": {
+      "tr": "Civciv",
+      "en": "Chick"
+    },
+    "images": [
+      "assets/images/animals/chick_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/chick.mp3",
+      "en": "assets/audio/en/animals/chick.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.lion",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Aslan",
+      "en": "Lion"
+    },
+    "images": [
+      "assets/images/animals/lion_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/lion.mp3",
+      "en": "assets/audio/en/animals/lion.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.elephant",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Fil",
+      "en": "Elephant"
+    },
+    "images": [
+      "assets/images/animals/elephant_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/elephant.mp3",
+      "en": "assets/audio/en/animals/elephant.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.monkey",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Maymun",
+      "en": "Monkey"
+    },
+    "images": [
+      "assets/images/animals/monkey_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/monkey.mp3",
+      "en": "assets/audio/en/animals/monkey.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.bear",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Ayı",
+      "en": "Bear"
+    },
+    "images": [
+      "assets/images/animals/bear_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/bear.mp3",
+      "en": "assets/audio/en/animals/bear.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.butterfly",
+    "theme": "animals",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "bocek"
+    ],
+    "name": {
+      "tr": "Kelebek",
+      "en": "Butterfly"
+    },
+    "images": [
+      "assets/images/animals/butterfly_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/butterfly.mp3",
+      "en": "assets/audio/en/animals/butterfly.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.goat",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "Keçi",
+      "en": "Goat"
+    },
+    "images": [
+      "assets/images/animals/goat_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/goat.mp3",
+      "en": "assets/audio/en/animals/goat.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.donkey",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "Eşek",
+      "en": "Donkey"
+    },
+    "images": [
+      "assets/images/animals/donkey_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/donkey.mp3",
+      "en": "assets/audio/en/animals/donkey.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.rooster",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "ciftlik",
+      "kus"
+    ],
+    "name": {
+      "tr": "Horoz",
+      "en": "Rooster"
+    },
+    "images": [
+      "assets/images/animals/rooster_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/rooster.mp3",
+      "en": "assets/audio/en/animals/rooster.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.turkey",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "ciftlik",
+      "kus"
+    ],
+    "name": {
+      "tr": "Hindi",
+      "en": "Turkey"
+    },
+    "images": [
+      "assets/images/animals/turkey_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/turkey.mp3",
+      "en": "assets/audio/en/animals/turkey.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.bee",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "bocek"
+    ],
+    "name": {
+      "tr": "Arı",
+      "en": "Bee"
+    },
+    "images": [
+      "assets/images/animals/bee_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/bee.mp3",
+      "en": "assets/audio/en/animals/bee.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.turtle",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "evcil"
+    ],
+    "name": {
+      "tr": "Kaplumbağa",
+      "en": "Turtle"
+    },
+    "images": [
+      "assets/images/animals/turtle_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/turtle.mp3",
+      "en": "assets/audio/en/animals/turtle.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/animals/turtle_real.png": {
+        "id": "animals.turtle",
+        "path": "assets/images/animals/turtle_real.png",
+        "author": "Katrin Bolovtsova",
+        "source": "https://www.pexels.com/photo/photo-of-a-turtle-5263883/",
+        "original": "artifacts/real-animal-turtle-elephant-candidate/alternative-plain-turtle/originals/pexels-5263883.jpg",
+        "originalSha256": "85ac585743ff0b4ec54b3e21d402cad73b3081d2da9bc85ef8c05ee14cb10761",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "adaptationLicense": "Pexels License",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-animal-turtle-elephant-candidate/alternative-plain-turtle/mask2/prepare_turtle_mask2.py; artifacts/photo-tools/grabcut_mask.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed Red-Eared Slider turtle on a plain background. Classical OpenCV GrabCut used a reviewed source contour, central-shell and visible-head/forelimb foreground seeds, and background seeds (5 iterations at 1800x1200). Original RGB detail retained without repainting; aspect-preserving resize and centering on a 1024x1024 RGBA canvas, with a 4 px white outer outline. Rear limbs and tail are naturally tucked beneath the shell in the original photograph. No generative edits.",
+        "sha256": "5e5ae81a9968aa151b9be8973bf7c44d4dfff95215944a2d250ebf3ac082b676"
+      }
+    }
+  },
+  {
+    "id": "animals.mouse",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "evcil"
+    ],
+    "name": {
+      "tr": "Fare",
+      "en": "Mouse"
+    },
+    "images": [
+      "assets/images/animals/mouse_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/mouse.mp3",
+      "en": "assets/audio/en/animals/mouse.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.frog",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "su",
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Kurbağa",
+      "en": "Frog"
+    },
+    "images": [
+      "assets/images/animals/frog_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/frog.mp3",
+      "en": "assets/audio/en/animals/frog.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.giraffe",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Zürafa",
+      "en": "Giraffe"
+    },
+    "images": [
+      "assets/images/animals/giraffe_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/giraffe.mp3",
+      "en": "assets/audio/en/animals/giraffe.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.zebra",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Zebra",
+      "en": "Zebra"
+    },
+    "images": [
+      "assets/images/animals/zebra_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/zebra.mp3",
+      "en": "assets/audio/en/animals/zebra.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.tiger",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Kaplan",
+      "en": "Tiger"
+    },
+    "images": [
+      "assets/images/animals/tiger_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/tiger.mp3",
+      "en": "assets/audio/en/animals/tiger.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.wolf",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Kurt",
+      "en": "Wolf"
+    },
+    "images": [
+      "assets/images/animals/wolf_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/wolf.mp3",
+      "en": "assets/audio/en/animals/wolf.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.fox",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Tilki",
+      "en": "Fox"
+    },
+    "images": [
+      "assets/images/animals/fox_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.squirrel",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Sincap",
+      "en": "Squirrel"
+    },
+    "images": [
+      "assets/images/animals/squirrel_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.owl",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "kus"
+    ],
+    "name": {
+      "tr": "Baykuş",
+      "en": "Owl"
+    },
+    "images": [
+      "assets/images/animals/owl_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/owl.mp3",
+      "en": "assets/audio/en/animals/owl.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.penguin",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "kus",
+      "deniz"
+    ],
+    "name": {
+      "tr": "Penguen",
+      "en": "Penguin"
+    },
+    "images": [
+      "assets/images/animals/penguin_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.dolphin",
+    "theme": "animals",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Yunus",
+      "en": "Dolphin"
+    },
+    "images": [
+      "assets/images/animals/dolphin_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.deer",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Geyik",
+      "en": "Deer"
+    },
+    "images": [
+      "assets/images/animals/deer_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/deer.mp3",
+      "en": "assets/audio/en/animals/deer.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.bull",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "ciftlik"
+    ],
+    "name": {
+      "tr": "Boğa",
+      "en": "Bull"
+    },
+    "images": [
+      "assets/images/animals/bull_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/animals/bull.mp3",
+      "en": "assets/audio/en/animals/bull.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "animals.hedgehog",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Kirpi",
+      "en": "Hedgehog"
+    },
+    "images": [
+      "assets/images/animals/hedgehog_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.ant",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "bocek"
+    ],
+    "name": {
+      "tr": "Karınca",
+      "en": "Ant"
+    },
+    "images": [
+      "assets/images/animals/ant_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.ladybug",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "bocek"
+    ],
+    "name": {
+      "tr": "Uğur böceği",
+      "en": "Ladybug"
+    },
+    "images": [
+      "assets/images/animals/ladybug_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.octopus",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Ahtapot",
+      "en": "Octopus"
+    },
+    "images": [
+      "assets/images/animals/octopus_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.shark",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Köpekbalığı",
+      "en": "Shark"
+    },
+    "images": [
+      "assets/images/animals/shark_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.whale",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Balina",
+      "en": "Whale"
+    },
+    "images": [
+      "assets/images/animals/whale_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.hippopotamus",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Su aygırı",
+      "en": "Hippopotamus"
+    },
+    "images": [
+      "assets/images/animals/hippopotamus_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.rhinoceros",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Gergedan",
+      "en": "Rhinoceros"
+    },
+    "images": [
+      "assets/images/animals/rhinoceros_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.crocodile",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi",
+      "su"
+    ],
+    "name": {
+      "tr": "Timsah",
+      "en": "Crocodile"
+    },
+    "images": [
+      "assets/images/animals/crocodile_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.camel",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Deve",
+      "en": "Camel"
+    },
+    "images": [
+      "assets/images/animals/camel_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.kangaroo",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Kanguru",
+      "en": "Kangaroo"
+    },
+    "images": [
+      "assets/images/animals/kangaroo_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.gorilla",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Goril",
+      "en": "Gorilla"
+    },
+    "images": [
+      "assets/images/animals/gorilla_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.flamingo",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "kus"
+    ],
+    "name": {
+      "tr": "Flamingo",
+      "en": "Flamingo"
+    },
+    "images": [
+      "assets/images/animals/flamingo_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.ostrich",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "kus"
+    ],
+    "name": {
+      "tr": "Devekuşu",
+      "en": "Ostrich"
+    },
+    "images": [
+      "assets/images/animals/ostrich_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.bat",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Yarasa",
+      "en": "Bat"
+    },
+    "images": [
+      "assets/images/animals/bat_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "animals.chameleon",
+    "theme": "animals",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "vahsi"
+    ],
+    "name": {
+      "tr": "Bukalemun",
+      "en": "Chameleon"
+    },
+    "images": [
+      "assets/images/animals/chameleon_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  }
+]

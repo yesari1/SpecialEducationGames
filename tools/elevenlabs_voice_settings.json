@@ -1,0 +1,22 @@
+{
+  "model_id": "eleven_multilingual_v2",
+  "voices": {
+    "tr": {"voice_id": "uvU9jrgGLWNPeNA4NgNT", "name": "İrem - Authoritarian Female Voice"},
+    "en": {"voice_id": "GZ4PpFJV8ikEGUtBrjK7", "name": "Laura - a top narration voice"}
+  },
+  "voice_settings": {
+    "stability": 0.35,
+    "similarity_boost": 0.75,
+    "style": 0.43,
+    "speed": 1.0,
+    "use_speaker_boost": true
+  },
+  "settings_provenance": {
+    "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+    "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+    "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+    "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+    "word_punctuation": "Single vocabulary labels always end with a period.",
+    "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+  }
+}

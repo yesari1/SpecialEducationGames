@@ -1,0 +1,92 @@
+[
+  {
+    "id": "G01",
+    "name": {
+      "tr": "Bul",
+      "en": "Find"
+    },
+    "template": "identify",
+    "phase": 1
+  },
+  {
+    "id": "G02",
+    "name": {
+      "tr": "Öğren",
+      "en": "Learn"
+    },
+    "template": "flashcards",
+    "phase": 1
+  },
+  {
+    "id": "G04",
+    "name": {
+      "tr": "Hangi Grupta?",
+      "en": "Which Group?"
+    },
+    "template": "identify",
+    "phase": 1
+  },
+  {
+    "id": "G10",
+    "name": {
+      "tr": "Sesini Bul",
+      "en": "Find the Sound"
+    },
+    "template": "audio_choice",
+    "phase": 1
+  },
+  {
+    "id": "G14",
+    "name": {
+      "tr": "Aynısını Bul",
+      "en": "Find the Match"
+    },
+    "template": "identify",
+    "phase": 1
+  },
+  {
+    "id": "G33",
+    "name": {
+      "tr": "Say ve Seç",
+      "en": "Count and Choose"
+    },
+    "template": "count",
+    "phase": 1
+  },
+  {
+    "id": "G34",
+    "name": {
+      "tr": "Rakamı Bul",
+      "en": "Find the Number"
+    },
+    "template": "identify",
+    "phase": 1
+  },
+  {
+    "id": "G35",
+    "name": {
+      "tr": "Sonraki Sayı",
+      "en": "Next Number"
+    },
+    "template": "sequence_missing",
+    "phase": 1
+  },
+  {
+    "id": "G36",
+    "name": {
+      "tr": "Karşılaştır",
+      "en": "Compare"
+    },
+    "template": "compare",
+    "phase": 1
+  },
+  {
+    "id": "G55",
+    "name": {
+      "tr": "Dokun-Keşfet",
+      "en": "Touch and Explore"
+    },
+    "template": "cause_effect",
+    "phase": 1
+  }
+]

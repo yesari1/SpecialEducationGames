@@ -1,0 +1,946 @@
+[
+  {
+    "id": "vehicles.car",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Araba",
+      "en": "Car"
+    },
+    "images": [
+      "assets/images/vehicles/car_real.png"
+    ],
+    "audio": {},
+    "sfx": "assets/sfx/vehicles/car.mp3",
+    "imageProvenance": {
+      "assets/images/vehicles/car_real.png": {
+        "id": "vehicles.car",
+        "path": "assets/images/vehicles/car_real.png",
+        "author": "Jackson2161",
+        "source": "https://commons.wikimedia.org/wiki/File:BMWcar.jpg",
+        "original": "artifacts/real-vehicle-car-candidate/originals/bmwcar_jackson2161.jpg",
+        "originalSha256": "89b6c16f5072f657e2e413200bdcc02a0d9539126bfb646c0109b0692fa46094",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "adaptationLicense": "CC0 1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-vehicle-car-candidate/process_car.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed BMW E90 sedan, retaining the visible full body and both tires. Manually traced the car silhouette; source background outside the silhouette was made transparent while preserving photographed RGB details, including the natural scene visible through the windows. Alpha-bound crop, 16 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.",
+        "sha256": "22d721b6ea75a06bd3bca15dfb334bba1cf0b260f834ccb3118d6e6bb969687e"
+      }
+    },
+    "sfxProvenance": {
+      "title": "Car Horn.wav",
+      "author": "15HPanska_Ruttner_Jan",
+      "source": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "Converted to mono 44.1 kHz 96 kbps MP3; two-pass normalization target -24 LUFS / -6 dBTP; 40 ms fade-in and 80 ms fade-out; first 2.9 seconds selected from the 3.514-second source, retaining both recorded horn activations.",
+      "originalSha256": "f44a161267e00c374ea6670292e70491e18f7c49a9448fc3a96960525adcfeb6",
+      "sha256": "2d319c437bdf2a1df62e5b3c5b2da7122dd33b79bdad40a67a127df13554f349",
+      "humanListeningApprovalPending": true
+    }
+  },
+  {
+    "id": "vehicles.bus",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Otobüs",
+      "en": "Bus"
+    },
+    "images": [
+      "assets/images/vehicles/bus_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.truck",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Kamyon",
+      "en": "Truck"
+    },
+    "images": [
+      "assets/images/vehicles/truck_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.train",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "rayli"
+    ],
+    "name": {
+      "tr": "Tren",
+      "en": "Train"
+    },
+    "images": [
+      "assets/images/vehicles/train_1.png"
+    ],
+    "audio": {},
+    "sfx": "assets/sfx/vehicles/train.mp3",
+    "sfxProvenance": {
+      "title": "4000 class train horn.ogg",
+      "author": "Cityedit14",
+      "source": "https://commons.wikimedia.org/wiki/File:4000_class_train_horn.ogg",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "adaptationLicense": "CC BY-SA 4.0",
+      "changes": "Converted the complete 1.975-second source to mono 44.1 kHz 96 kbps MP3; two-pass normalization target -24 LUFS / -6 dBTP ceiling; 40 ms fade-in and 80 ms fade-out. Adaptation shared under CC BY-SA 4.0.",
+      "originalSha256": "4970b51d11528ea04544ab3110c14a5759bbf80e91917610d3c7405c51229186",
+      "sha256": "80fef6f64d7649b0897750c9a508d3bc895c50690905765137fed60551e69fe7",
+      "humanListeningApprovalPending": true
+    }
+  },
+  {
+    "id": "vehicles.airplane",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Uçak",
+      "en": "Airplane"
+    },
+    "images": [
+      "assets/images/vehicles/airplane_real.png"
+    ],
+    "audio": {},
+    "sfx": "assets/sfx/vehicles/airplane.mp3",
+    "imageProvenance": {
+      "assets/images/vehicles/airplane_real.png": {
+        "id": "vehicles.airplane",
+        "path": "assets/images/vehicles/airplane_real.png",
+        "author": "U.S. Air Force photo by TSgt Ben Bloker; transparent derivative by Kjetil r",
+        "source": "https://commons.wikimedia.org/wiki/File:Jagerfly.png",
+        "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Two_F-22A_Raptor_in_column_flight.jpg",
+        "original": "artifacts/vehicle-alpha-r15/attempt-01/prepared/Jagerfly-original.png",
+        "originalSha256": "5fc05d4ec3fb04e15b273f732ca49fe006f39cb033d9426e5a980dc1c6ce229c",
+        "license": "Public domain (PD-USGov; official-duty U.S. federal government photograph)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+        "adaptationLicense": "Public domain (PD-USGov)",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/vehicle-alpha-r15/attempt-01/prepared/prepare.py",
+        "whiteOutlinePixels": 4,
+        "sha256": "3bad0f57f8b46d504558c1c84d2b42b58f0001dd1ac476f57826b36f73503530",
+        "changes": "Retained existing transparent photographic cutout and alpha by Kjetil r; alpha-bound crop (existing alpha bounds span the full source dimensions), aspect-preserving Lanczos resize to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer contour. No new mask, background reconstruction, or generative editing.",
+        "humanContentReviewPending": "Pending final human approval that this specific F-22 fighter aircraft is suitable for the generic catalog labels “Uçak” / “Airplane”."
+      }
+    },
+    "sfxProvenance": {
+      "title": "Jet airliner overhead.ogg",
+      "author": "Jud McCranie (Bubba73)",
+      "source": "https://commons.wikimedia.org/wiki/File:Jet_airliner_overhead.ogg",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "adaptationLicense": "CC BY-SA 4.0",
+      "changes": "2.9-second excerpt from the 99.828-second source at offset 45.1 seconds; 40 ms fade-in and 200 ms fade-out; mono downmix, 44.1 kHz, two-pass -24 LUFS / -6 dBTP ceiling, 96 kbps MP3.",
+      "originalSha256": "8B10511B0F950440FD85F4F7486AC68642F69D4C2376E9BAE57731F7D3A6BDA1",
+      "sha256": "0b1cb1de9c1295e59ed3673b39c002daf501b717f2e2235bab1a4ebe99fa1275",
+      "humanListeningApprovalPending": true,
+      "contentNote": "Generic jet-airplane flyby, not an F-22-specific recording; human perceptual cleanliness approval pending."
+    }
+  },
+  {
+    "id": "vehicles.ship",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Gemi",
+      "en": "Ship"
+    },
+    "images": [
+      "assets/images/vehicles/ship_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.bicycle",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Bisiklet",
+      "en": "Bicycle"
+    },
+    "images": [
+      "assets/images/vehicles/bicycle_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.motorcycle",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Motosiklet",
+      "en": "Motorcycle"
+    },
+    "images": [
+      "assets/images/vehicles/motorcycle_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.ambulance",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kara",
+      "gorev"
+    ],
+    "name": {
+      "tr": "Ambulans",
+      "en": "Ambulance"
+    },
+    "images": [
+      "assets/images/vehicles/ambulance_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.fire_truck",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kara",
+      "gorev"
+    ],
+    "name": {
+      "tr": "İtfaiye aracı",
+      "en": "Fire truck"
+    },
+    "images": [
+      "assets/images/vehicles/fire_truck_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.police_car",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kara",
+      "gorev"
+    ],
+    "name": {
+      "tr": "Polis arabası",
+      "en": "Police car"
+    },
+    "images": [
+      "assets/images/vehicles/police_car_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.taxi",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Taksi",
+      "en": "Taxi"
+    },
+    "images": [
+      "assets/images/vehicles/taxi_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.helicopter",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Helikopter",
+      "en": "Helicopter"
+    },
+    "images": [
+      "assets/images/vehicles/helicopter_real.png"
+    ],
+    "audio": {},
+    "sfx": "assets/sfx/vehicles/helicopter.mp3",
+    "imageProvenance": {
+      "assets/images/vehicles/helicopter_real.png": {
+        "id": "vehicles.helicopter",
+        "path": "assets/images/vehicles/helicopter_real.png",
+        "author": "Iain Thomson (Crown Copyright, RAF / Defence Imagery); transparent cutout retouched by Offnfopt",
+        "source": "https://commons.wikimedia.org/wiki/File:Griffin-HT1-Helicopter.png",
+        "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:A_Griffin_Helicopter,_with_an_underslung_load,_shown_in_silhouette_against_a_full_moon.jpg",
+        "original": "artifacts/vehicles-helicopter-candidate-r23/attempt-01/inputs/Griffin-HT1-Helicopter.png",
+        "originalSha256": "b012ea3f1ac6f3006417151dd6c3530968898ac37efebd17a4ccd59bfda98e4d",
+        "originalPhotoSha256": "4adbbba749ad241b04a1f804d3e138769bf9a36449825200d4616d42c087f99c",
+        "license": "Open Government Licence v1.0",
+        "licenseUrl": "https://nationalarchives.gov.uk/doc/open-government-licence/version/1/",
+        "adaptationLicense": "Open Government Licence v1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-19",
+        "processing": "artifacts/vehicles-helicopter-candidate-r23/attempt-01/process_variant.py",
+        "whiteOutlinePixels": 4,
+        "sha256": "f2e2d5342dbb6fb6eedd0b8273a005f5003e56da3e4d503d53fce744e68e9ba5",
+        "changes": "Retained the existing transparent photographed Griffin HT1 cutout and alpha by Offnfopt; alpha-bound crop, aspect-preserving Lanczos resize to a 900 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer contour. The cutout removes the moon/background and suspended load from the source photograph. No AI, generative edits, or rerendering.",
+        "humanContentReviewPending": "Pending human review of this dark backlit Griffin HT1 photograph for the generic “Helikopter” / “Helicopter” label."
+      }
+    },
+    "sfxProvenance": {
+      "title": "Chinook helicopter flying over Greenwich in London.ogg",
+      "author": "JoBrodie",
+      "source": "https://commons.wikimedia.org/wiki/File:Chinook_helicopter_flying_over_Greenwich_in_London.ogg",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "2.9-second excerpt from the 88.887-second source at offset 41.6 seconds; 40 ms fade-in and 80 ms fade-out; mono 44.1 kHz, two-pass -24 LUFS / -6 dBTP ceiling, 96 kbps MP3.",
+      "originalSha256": "88b7d21bd2583db7e293c2312b8169cd6ab1731f731be9f1474d1180bb9ccaf7",
+      "sha256": "e9eb8762b722eb2a746fb7d88a21d82d04e8aeffedc6d16dfad6df78f805d70d",
+      "humanListeningApprovalPending": true,
+      "contentNote": "Generic helicopter sound. Source is a twin-rotor Chinook; human perceptual approval and Griffin-specificity match remain pending."
+    }
+  },
+  {
+    "id": "vehicles.boat",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Tekne",
+      "en": "Boat"
+    },
+    "images": [
+      "assets/images/vehicles/boat_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.tractor",
+    "theme": "vehicles",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "kara",
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Traktör",
+      "en": "Tractor"
+    },
+    "images": [
+      "assets/images/vehicles/tractor_2.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.minibus",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Minibüs",
+      "en": "Minibus"
+    },
+    "images": [
+      "assets/images/vehicles/minibus_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.pickup_truck",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Kamyonet",
+      "en": "Pickup truck"
+    },
+    "images": [
+      "assets/images/vehicles/pickup_truck_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.garbage_truck",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kara",
+      "gorev"
+    ],
+    "name": {
+      "tr": "Çöp kamyonu",
+      "en": "Garbage truck"
+    },
+    "images": [
+      "assets/images/vehicles/garbage_truck_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.school_bus",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Okul servisi",
+      "en": "School bus"
+    },
+    "images": [
+      "assets/images/vehicles/school_bus_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.subway",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "rayli"
+    ],
+    "name": {
+      "tr": "Metro",
+      "en": "Subway"
+    },
+    "images": [
+      "assets/images/vehicles/subway_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.tram",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "rayli"
+    ],
+    "name": {
+      "tr": "Tramvay",
+      "en": "Tram"
+    },
+    "images": [
+      "assets/images/vehicles/tram_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.scooter",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Scooter",
+      "en": "Scooter"
+    },
+    "images": [
+      "assets/images/vehicles/scooter_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.excavator",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Kepçe",
+      "en": "Excavator"
+    },
+    "images": [
+      "assets/images/vehicles/excavator_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.crane",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Vinç",
+      "en": "Crane"
+    },
+    "images": [
+      "assets/images/vehicles/crane_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.hot_air_balloon",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Sıcak hava balonu",
+      "en": "Hot air balloon"
+    },
+    "images": [
+      "assets/images/vehicles/hot_air_balloon_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.sailboat",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Yelkenli",
+      "en": "Sailboat"
+    },
+    "images": [
+      "assets/images/vehicles/sailboat_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.speedboat",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Sürat teknesi",
+      "en": "Speedboat"
+    },
+    "images": [
+      "assets/images/vehicles/speedboat_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.caravan",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Karavan",
+      "en": "Caravan"
+    },
+    "images": [
+      "assets/images/vehicles/caravan_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.horse_cart",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "At arabası",
+      "en": "Horse cart"
+    },
+    "images": [
+      "assets/images/vehicles/horse_cart_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.tow_truck",
+    "theme": "vehicles",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "kara",
+      "gorev"
+    ],
+    "name": {
+      "tr": "Çekici",
+      "en": "Tow truck"
+    },
+    "images": [
+      "assets/images/vehicles/tow_truck_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.forklift",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Forklift",
+      "en": "Forklift"
+    },
+    "images": [
+      "assets/images/vehicles/forklift_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.cement_mixer",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Beton mikseri",
+      "en": "Cement mixer"
+    },
+    "images": [
+      "assets/images/vehicles/cement_mixer_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.bulldozer",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Buldozer",
+      "en": "Bulldozer"
+    },
+    "images": [
+      "assets/images/vehicles/bulldozer_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.road_roller",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "is_makinesi"
+    ],
+    "name": {
+      "tr": "Yol silindiri",
+      "en": "Road roller"
+    },
+    "images": [
+      "assets/images/vehicles/road_roller_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.cargo_ship",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Yük gemisi",
+      "en": "Cargo ship"
+    },
+    "images": [
+      "assets/images/vehicles/cargo_ship_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.submarine",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Denizaltı",
+      "en": "Submarine"
+    },
+    "images": [
+      "assets/images/vehicles/submarine_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.ferry",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Feribot",
+      "en": "Ferry"
+    },
+    "images": [
+      "assets/images/vehicles/ferry_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.canoe",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "deniz"
+    ],
+    "name": {
+      "tr": "Kano",
+      "en": "Canoe"
+    },
+    "images": [
+      "assets/images/vehicles/canoe_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.rocket",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Roket",
+      "en": "Rocket"
+    },
+    "images": [
+      "assets/images/vehicles/rocket_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.jet",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Jet",
+      "en": "Jet"
+    },
+    "images": [
+      "assets/images/vehicles/jet_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.airship",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Zeplin",
+      "en": "Airship"
+    },
+    "images": [
+      "assets/images/vehicles/airship_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.glider",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Planör",
+      "en": "Glider"
+    },
+    "images": [
+      "assets/images/vehicles/glider_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.cable_car",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "hava"
+    ],
+    "name": {
+      "tr": "Teleferik",
+      "en": "Cable car"
+    },
+    "images": [
+      "assets/images/vehicles/cable_car_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.snowmobile",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Kar motosikleti",
+      "en": "Snowmobile"
+    },
+    "images": [
+      "assets/images/vehicles/snowmobile_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.high_speed_train",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "rayli"
+    ],
+    "name": {
+      "tr": "Hızlı tren",
+      "en": "High speed train"
+    },
+    "images": [
+      "assets/images/vehicles/high_speed_train_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "vehicles.skateboard",
+    "theme": "vehicles",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "kara"
+    ],
+    "name": {
+      "tr": "Kaykay",
+      "en": "Skateboard"
+    },
+    "images": [
+      "assets/images/vehicles/skateboard_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  }
+]

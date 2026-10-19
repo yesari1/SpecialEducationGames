@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "fox",
+    "prompt": "Educational vocabulary picture-card asset: a red fox with rust-orange fur, white chest and a bushy white-tipped tail, standing. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/fox_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "squirrel",
+    "prompt": "Educational vocabulary picture-card asset: a red squirrel with tufted ears and a large curled bushy tail, sitting upright. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/squirrel_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "penguin",
+    "prompt": "Educational vocabulary picture-card asset: an emperor penguin with black back, white belly and a soft yellow neck patch, standing upright. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/penguin_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "dolphin",
+    "prompt": "Educational vocabulary picture-card asset: a bottlenose dolphin with gray smooth skin, full body including tail and dorsal fin, gentle curved swimming posture, without water. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/dolphin_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "hedgehog",
+    "prompt": "Educational vocabulary picture-card asset: a small European hedgehog, short brown spines and visible little face and feet, walking. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/hedgehog_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ant",
+    "prompt": "Educational vocabulary picture-card asset: one anatomically accurate black ant, six legs, two bent antennae, three distinct body segments, macro photograph. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/ant_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ladybug",
+    "prompt": "Educational vocabulary picture-card asset: one red seven-spotted ladybird beetle, six legs and two antennae, macro photograph, wings closed. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/ladybug_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "octopus",
+    "prompt": "Educational vocabulary picture-card asset: one reddish-brown common octopus, rounded mantle and eight distinct gently spread arms with suction cups, without water. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/octopus_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "shark",
+    "prompt": "Educational vocabulary picture-card asset: one gray reef shark, complete streamlined body with dorsal fin, pectoral fins and tail, mouth closed, calm side view, without water. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/shark_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "whale",
+    "prompt": "Educational vocabulary picture-card asset: one blue whale, complete large blue-gray streamlined body, broad tail flukes and small pectoral fins, calm side view, without water. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/whale_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "hippopotamus",
+    "prompt": "Educational vocabulary picture-card asset: one hippopotamus, bulky gray-purple body, broad rounded snout, tiny ears and four short legs, mouth closed, standing. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/hippopotamus_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "rhinoceros",
+    "prompt": "Educational vocabulary picture-card asset: one white rhinoceros, large gray body with two horns on the snout, standing. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/rhinoceros_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "crocodile",
+    "prompt": "Educational vocabulary picture-card asset: one crocodile with green-brown scales, four short legs and long full tail, mouth closed, calm standing pose. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/crocodile_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "camel",
+    "prompt": "Educational vocabulary picture-card asset: one dromedary camel with one clearly visible hump, sandy tan coat, long neck and four legs, standing. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/camel_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "kangaroo",
+    "prompt": "Educational vocabulary picture-card asset: one red kangaroo, upright stance on large hind feet, short forelegs and full long thick tail visible. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/kangaroo_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "gorilla",
+    "prompt": "Educational vocabulary picture-card asset: one calm adult gorilla, black-gray fur, natural knuckle-walking stance, mouth closed. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/gorilla_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "flamingo",
+    "prompt": "Educational vocabulary picture-card asset: one pink flamingo with long slender legs, curved neck, distinctive downturned beak, standing on both legs. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/flamingo_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "ostrich",
+    "prompt": "Educational vocabulary picture-card asset: one ostrich with black and white plumage, long bare neck and long powerful legs, standing. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/ostrich_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "bat",
+    "prompt": "Educational vocabulary picture-card asset: one small brown bat with both membranous wings gently spread, visible ears and tiny feet, calm and realistic, no frightening expression. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/bat_1.png",
+    "tool": "built-in image_gen"
+  },
+  {
+    "slug": "chameleon",
+    "prompt": "Educational vocabulary picture-card asset: one green veiled chameleon with turret eyes, raised head crest, four gripping feet and a curled tail, side view without branch. One animal only, anatomically accurate photorealistic studio cutout matching a realistic animal photo catalogue. Whole animal including every limb and tail fully inside the frame, centered with generous empty padding on all sides, three-quarter view unless specified. True transparent alpha background. Soft even lighting, natural colors, no people, writing, labels, brands, scene, habitat, floor, water, border or extra objects. Calm neutral pose appropriate for a young child's special education app.",
+    "path": "assets/images/animals/chameleon_1.png",
+    "tool": "built-in image_gen"
+  }
+]

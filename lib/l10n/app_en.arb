@@ -1,0 +1,969 @@
+{
+  "@@locale": "en",
+  "welcomeTitle": "Every little step,\na new discovery.",
+  "welcomeSubtitle": "Calm, playful learning at your child’s own pace.",
+  "noAdsOffline": "No ads. No internet required.",
+  "parentGateSettings": "Settings stay behind a parent gate.",
+  "noAccountNeeded": "No account needed.",
+  "letsGetStarted": "Let’s get started",
+  "homeFamily": "Family",
+  "homeGames": "Games",
+  "homeDailyPath": "Today’s Path",
+  "homeFamilyHint": "Hold for two seconds to open the family area",
+  "greeting": "Hello, {name}",
+  "@greeting": {
+    "description": "Child home greeting with the local profile nickname.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Deniz"
+      }
+    }
+  },
+  "homePathSubtitle": "Let’s explore, one step at a time.",
+  "homeGamesSubtitle": "What shall we discover today?",
+  "homeNewBadge": "New",
+  "homeThemeGameCount": "{count, plural, =0{0 games} one{{count} game} other{{count} games}}",
+  "@homeThemeGameCount": {
+    "description": "Count of available games shown on a theme card.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "themeBack": "Back",
+  "difficultyEasy": "Easy",
+  "difficultyMedium": "Medium",
+  "difficultyHard": "Hard",
+  "themeNoUnlockedGames": "No unlocked games at this level. Try Easy.",
+  "themeUnlockWithFamily": "You can unlock this with your family.",
+  "parentGateTitle": "Family area",
+  "parentGateEnterPin": "Enter PIN",
+  "parentGateContinuePrompt": "To continue",
+  "parentGateWrongPin": "Try your PIN again.",
+  "parentGateWrongMath": "Try the new question.",
+  "parentGateForgotPin": "Forgot PIN",
+  "parentGateCancel": "Cancel",
+  "onboardingSaveError": "Could not save. Please try again.",
+  "onboardingReadyTitle": "Ready, {name}!",
+  "@onboardingReadyTitle": {
+    "description": "Final onboarding heading with the child's chosen nickname.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingSuggestedStart": "Suggested starting point",
+  "onboardingFamilyHint": "You can adjust these in the Family area.",
+  "onboardingSaving": "Saving…",
+  "onboardingPlay": "Let’s play",
+  "onboardingContinue": "Continue",
+  "onboardingSkipQuestion": "Skip this question",
+  "onboardingNickname": "Nickname",
+  "onboardingProfileQuestion": "Who is our little explorer?",
+  "onboardingNicknameHint": "A nickname is all we need.",
+  "onboardingStepCount": "{current} / {total}",
+  "@onboardingStepCount": {
+    "description": "Current onboarding survey question and total question count.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "surveyPreviousOption": "Previous option",
+  "surveyNextOption": "Next option",
+  "surveyOptionCount": "{current} / {total}",
+  "@surveyOptionCount": {
+    "description": "Visible position and total in the horizontal survey option pager.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "surveyOptionProgress": "Option {current} of {total}",
+  "@surveyOptionProgress": {
+    "description": "Accessible position in the horizontal survey option pager.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "onboardingPreviousRecommendation": "Previous recommendation",
+  "onboardingNextRecommendation": "Next recommendation",
+  "accountTitle": "Account",
+  "familyAccountTitle": "Family account",
+  "familyAccountOptional": "Google sign-in is optional. All local features work without an account.",
+  "familyAccountSignedIn": "Signed in with Google.",
+  "familyAccountLocalProgress": "Detailed progress stays on this device. Daily summary sharing requires separate permission below.",
+  "familyAccountSignIn": "Sign in with Google",
+  "familyAccountSignOut": "Sign out",
+  "familyAccountNotNow": "Not now: Close this screen and keep playing.",
+  "familyAccountCancelled": "Sign-in cancelled.",
+  "familyAccountOffline": "Could not connect. You can continue offline.",
+  "familyAccountConfiguration": "Google sign-in needs setup. Your local data is safe.",
+  "familyAccountTimeout": "Sign-in timed out. You can continue offline.",
+  "familyAccountUnavailable": "Sign-in is unavailable. You can continue locally.",
+  "creditsTitle": "Credits and licenses",
+  "creditsLoadFailure": "Could not load credits.",
+  "creditsAnimalRecordings": "Natural sounds",
+  "creditsRealPhotographs": "Real photographs",
+  "creditsSoundChanges": "Changes: mono MP3, reduced volume, short fades, at most 3 seconds.",
+  "creditsAdaptationLicense": "Adaptation license",
+  "creditsAuthor": "Author",
+  "creditsLicense": "License",
+  "creditsPreviousImageCredit": "Previous image credit",
+  "creditsSource": "Source",
+  "creditsLicenseLink": "License link",
+  "creditsChanges": "Changes",
+  "creditsImagePreparedForAppUse": "Image prepared for app use.",
+  "creditsAudioEditedForInAppPlayback": "Audio edited for in-app playback.",
+  "creditsPreviousRecord": "Previous record",
+  "creditsNextRecord": "Next record",
+  "creditsRecordDetailProgress": "Record {record} of {recordTotal}, detail {detail} of {detailTotal}",
+  "@creditsRecordDetailProgress": {
+    "description": "Accessible position across credit records and the current record's detail pages.",
+    "placeholders": {
+      "record": {
+        "type": "int"
+      },
+      "recordTotal": {
+        "type": "int"
+      },
+      "detail": {
+        "type": "int"
+      },
+      "detailTotal": {
+        "type": "int"
+      }
+    }
+  },
+  "creditsLicensesLoadFailure": "License information could not be loaded.",
+  "creditsLicensesEmpty": "No registered licenses.",
+  "familyNewsHeading": "News",
+  "applicationName": "Special Education Games",
+  "creditsOpenSourceLicenses": "Open source software licenses",
+  "summarySyncTitle": "Sync daily summaries",
+  "summarySyncDescription": "Only daily time, round and independent response totals are shared. Raw choices, child name and survey answers are not sent. This is not a full profile backup.",
+  "summarySyncRequirements": "Parent access, a profile and Google sign-in are required to sync.",
+  "summarySyncConsent": "I allow daily summary sharing for this account and profile.",
+  "summarySyncManualNotice": "Sync starts only with the button below. Revoking permission clears the downloaded snapshot on this device; it does not delete server data.",
+  "summarySyncNow": "Sync now",
+  "summarySyncSnapshot": "Synced snapshot on device: {count} records. Saved: {savedAt}",
+  "@summarySyncSnapshot": {
+    "description": "Separate imported daily aggregate snapshot; savedAt retains the existing local DateTime string.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "savedAt": {
+        "type": "String"
+      }
+    }
+  },
+  "summarySyncCapacity": "The summary count exceeds the supported limit. Local records are preserved.",
+  "summarySyncUnavailable": "Sync could not finish. The connection or server may be unavailable. Local records are preserved.",
+  "subscriptionTitle": "Premium",
+  "subscriptionShowPlans": "Show plans",
+  "subscriptionHeading": "More discoveries together",
+  "subscriptionAllGames": "All games and difficulty levels",
+  "subscriptionProfiles": "Up to five child profiles",
+  "subscriptionAdFree": "Ad-free, offline learning",
+  "subscriptionActive": "Your Premium access is active.",
+  "subscriptionUnavailable": "Google Play products are unavailable right now. You can continue with the free games.",
+  "subscriptionMonthly": "Monthly",
+  "subscriptionYearly": "Yearly",
+  "subscriptionMonth": "month",
+  "subscriptionYear": "year",
+  "subscriptionPrice": "{recurringPrice} / {period}",
+  "@subscriptionPrice": {
+    "description": "Unmodified store formatted recurring price with localized period.",
+    "placeholders": {
+      "recurringPrice": {
+        "type": "String"
+      },
+      "period": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionTrial": "7 days free, then {recurringPrice}. Cancel through Google Play before the trial ends.",
+  "@subscriptionTrial": {
+    "description": "Shown only when the store plan includes the supported seven-day trial.",
+    "placeholders": {
+      "recurringPrice": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionRenewal": "Renews automatically. You can cancel at any time through Google Play.",
+  "subscriptionWaiting": "Waiting for Google Play…",
+  "subscriptionStartTrial": "Start 7-day trial",
+  "subscriptionContinue": "Continue with Google Play",
+  "subscriptionStoreError": "Could not connect to the store. Please try again later.",
+  "subscriptionRestore": "Restore purchases",
+  "subscriptionManage": "Manage / cancel subscription",
+  "playTimeBreakTitle": "That’s enough for today. You did great!",
+  "playTimeBreakSubtitle": "Let’s take a little break now.",
+  "playTimeHome": "Home",
+  "playTimeExtendHint": "Unlock the parent gate to add 10 minutes",
+  "playTimeExtend": "Parent: add 10 minutes",
+  "playTimeBreakPageCount": "Break · {current} of {total}",
+  "@playTimeBreakPageCount": {
+    "description": "Current page and total pages in the compact play-time break flow.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyCancel": "Cancel",
+  "@familyCancel": {
+    "description": "Family area interface copy."
+  },
+  "familyUseMultiplication": "Use multiplication",
+  "@familyUseMultiplication": {
+    "description": "Family area interface copy."
+  },
+  "familyEnterTheSameFourDigitsTwice": "Enter the same four digits twice.",
+  "@familyEnterTheSameFourDigitsTwice": {
+    "description": "Family area interface copy."
+  },
+  "familySave": "Save",
+  "@familySave": {
+    "description": "Family area interface copy."
+  },
+  "familyParentPin": "Parent PIN",
+  "@familyParentPin": {
+    "description": "Family area interface copy."
+  },
+  "family4DigitPin": "4-digit PIN",
+  "@family4DigitPin": {
+    "description": "Family area interface copy."
+  },
+  "familyRepeatPin": "Repeat PIN",
+  "@familyRepeatPin": {
+    "description": "Family area interface copy."
+  },
+  "familyEveryStepMatters": "Every step matters",
+  "@familyEveryStepMatters": {
+    "description": "Family area interface copy."
+  },
+  "familyYourChildIsExploringAtTheir": "Your child is exploring at their own pace.",
+  "@familyYourChildIsExploringAtTheir": {
+    "description": "Family area interface copy."
+  },
+  "familyStarsToday": "Stars today",
+  "@familyStarsToday": {
+    "description": "Family area interface copy."
+  },
+  "familyRoundsCompletedToday": "Rounds completed today",
+  "@familyRoundsCompletedToday": {
+    "description": "Family area interface copy."
+  },
+  "familyMinutesToday": "Minutes today",
+  "@familyMinutesToday": {
+    "description": "Family area interface copy."
+  },
+  "familyStagesThisWeek": "Stages this week",
+  "@familyStagesThisWeek": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentAnswers": "Independent answers",
+  "@familyIndependentAnswers": {
+    "description": "Family area interface copy."
+  },
+  "familyLast7Days": "Last 7 days",
+  "@familyLast7Days": {
+    "description": "Family area interface copy."
+  },
+  "familyPlayTimeMinutes": "Play time · minutes",
+  "@familyPlayTimeMinutes": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentFirstAnswers": "Independent first answers · %",
+  "@familyIndependentFirstAnswers": {
+    "description": "Family area interface copy."
+  },
+  "familyProgressWillAppearHereAfterThe": "Progress will appear here after the first game.",
+  "@familyProgressWillAppearHereAfterThe": {
+    "description": "Family area interface copy."
+  },
+  "familyAttentionDailyAverageSeconds": "Attention · daily average seconds",
+  "@familyAttentionDailyAverageSeconds": {
+    "description": "Family area interface copy."
+  },
+  "familyFirstResponse": "First response",
+  "@familyFirstResponse": {
+    "description": "Family area interface copy."
+  },
+  "familyS": "s",
+  "@familyS": {
+    "description": "Family area interface copy."
+  },
+  "familyIdleTime": "Idle time",
+  "@familyIdleTime": {
+    "description": "Family area interface copy."
+  },
+  "familyTimeInTheBackgroundIsExcluded": "Time in the background is excluded.",
+  "@familyTimeInTheBackgroundIsExcluded": {
+    "description": "Family area interface copy."
+  },
+  "familySecondsRange": "0–{maximum} seconds.",
+  "@familySecondsRange": {
+    "description": "Upper bound shown for average response and idle time.",
+    "placeholders": {
+      "maximum": {
+        "type": "double"
+      }
+    }
+  },
+  "familyNumericView": "Numeric view",
+  "@familyNumericView": {
+    "description": "Family area interface copy."
+  },
+  "familySkillAreas": "Skill areas",
+  "@familySkillAreas": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentFirstAnswersInTheLast": "Independent first answers in the last 7 days",
+  "@familyIndependentFirstAnswersInTheLast": {
+    "description": "Family area interface copy."
+  },
+  "familyNoRecordsYet": "No records yet",
+  "@familyNoRecordsYet": {
+    "description": "Family area interface copy."
+  },
+  "familyCountStages": "{count} stages",
+  "@familyCountStages": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "familyPointsComparedWithThePreviousWeek": "points · compared with the previous week",
+  "@familyPointsComparedWithThePreviousWeek": {
+    "description": "Family area interface copy."
+  },
+  "familyItems": "Items",
+  "@familyItems": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentLastThreeAnswersWithoutHints": "Independent: last three answers without hints. Support: substantial help in at least two of the last three stages.",
+  "@familyIndependentLastThreeAnswersWithoutHints": {
+    "description": "Family area interface copy."
+  },
+  "familyIndependentlyAnswered": "Independently answered",
+  "@familyIndependentlyAnswered": {
+    "description": "Family area interface copy."
+  },
+  "familyItemsNeedingMoreSupport": "Items needing more support",
+  "@familyItemsNeedingMoreSupport": {
+    "description": "Family area interface copy."
+  },
+  "familyItemsAppearHereAfterAtLeast": "Items appear here after at least three observations.",
+  "@familyItemsAppearHereAfterAtLeast": {
+    "description": "Family area interface copy."
+  },
+  "familyCountStagesLatestStreakAnswersIndependent": "{count} stages · latest {streak} answers independent",
+  "@familyCountStagesLatestStreakAnswersIndependent": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "streak": {
+        "type": "int"
+      }
+    }
+  },
+  "familyProgressByTheme": "Progress by theme",
+  "@familyProgressByTheme": {
+    "description": "Family area interface copy."
+  },
+  "familyShowUnlockedGamesOnly": "Show unlocked games only",
+  "@familyShowUnlockedGamesOnly": {
+    "description": "Family area interface copy."
+  },
+  "familyHidesLockedCardsInChildMode": "Hides locked cards in Child Mode.",
+  "@familyHidesLockedCardsInChildMode": {
+    "description": "Family area interface copy."
+  },
+  "familyEasyAndMediumUnlocked": "Easy and Medium unlocked",
+  "@familyEasyAndMediumUnlocked": {
+    "description": "Family area interface copy."
+  },
+  "familyPremium": "Premium",
+  "@familyPremium": {
+    "description": "Family area interface copy."
+  },
+  "familyDailyScreenTimeLimit": "Daily screen time limit",
+  "@familyDailyScreenTimeLimit": {
+    "description": "Family area interface copy."
+  },
+  "familyCountsActivePlayTimeABreak": "Counts active play time. A break screen opens when time runs out.",
+  "@familyCountsActivePlayTimeABreak": {
+    "description": "Family area interface copy."
+  },
+  "familyOff": "Off",
+  "@familyOff": {
+    "description": "Family area interface copy."
+  },
+  "familyMinutes": "minutes",
+  "@familyMinutes": {
+    "description": "Family area interface copy."
+  },
+  "familyRemainingTodayMinutesMinutes": "Remaining today: {minutes} minutes",
+  "@familyRemainingTodayMinutesMinutes": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "familyAdd10MinutesForToday": "Add 10 minutes for today",
+  "@familyAdd10MinutesForToday": {
+    "description": "Family area interface copy."
+  },
+  "familyDefaultDifficulty": "Default difficulty",
+  "@familyDefaultDifficulty": {
+    "description": "Family area interface copy."
+  },
+  "familyAutomaticThemeSelection": "Automatic / theme selection",
+  "@familyAutomaticThemeSelection": {
+    "description": "Family area interface copy."
+  },
+  "familyEasy": "Easy",
+  "@familyEasy": {
+    "description": "Family area interface copy."
+  },
+  "familyMedium": "Medium",
+  "@familyMedium": {
+    "description": "Family area interface copy."
+  },
+  "familyHard": "Hard",
+  "@familyHard": {
+    "description": "Family area interface copy."
+  },
+  "familyAppliesToNewRoundsHardLevel": "Applies to new rounds. Hard level is included in Premium.",
+  "@familyAppliesToNewRoundsHardLevel": {
+    "description": "Family area interface copy."
+  },
+  "familyRoundLength": "Round length",
+  "@familyRoundLength": {
+    "description": "Family area interface copy."
+  },
+  "familySurveyDifficultySetting": "Survey / difficulty setting",
+  "@familySurveyDifficultySetting": {
+    "description": "Family area interface copy."
+  },
+  "familyStages": "stages",
+  "@familyStages": {
+    "description": "Family area interface copy."
+  },
+  "familyHintDelay": "Hint delay",
+  "@familyHintDelay": {
+    "description": "Family area interface copy."
+  },
+  "familyAutomaticPerItem": "Automatic / per item",
+  "@familyAutomaticPerItem": {
+    "description": "Family area interface copy."
+  },
+  "familyTimedHintsOff": "Timed hints off",
+  "@familyTimedHintsOff": {
+    "description": "Family area interface copy."
+  },
+  "familySeconds": "seconds",
+  "@familySeconds": {
+    "description": "Family area interface copy."
+  },
+  "familyNextRoundBehavior": "Next round behavior",
+  "@familyNextRoundBehavior": {
+    "description": "Family area interface copy."
+  },
+  "familyFadeIncorrectChoicesAfter2Mistakes": "Fade incorrect choices after 2 mistakes",
+  "@familyFadeIncorrectChoicesAfter2Mistakes": {
+    "description": "Family area interface copy."
+  },
+  "familyAppliesToTheNextRoundIncorrect": "Applies to the next round. Incorrect answers still receive support when timed hints are off.",
+  "@familyAppliesToTheNextRoundIncorrect": {
+    "description": "Family area interface copy."
+  },
+  "familyDailyMinuteGoal": "Daily minute goal",
+  "@familyDailyMinuteGoal": {
+    "description": "Family area interface copy."
+  },
+  "familyTodayGoalProgress": "Today’s goal: {minutes} / {goal} minutes",
+  "@familyTodayGoalProgress": {
+    "description": "Accessible summary of today's minutes and goal.",
+    "placeholders": {
+      "minutes": {
+        "type": "double"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "familyAnOptionalReminderItDoesNot": "An optional reminder; it does not limit play time.",
+  "@familyAnOptionalReminderItDoesNot": {
+    "description": "Family area interface copy."
+  },
+  "familyMin": "min",
+  "@familyMin": {
+    "description": "Family area interface copy."
+  },
+  "familyUpdate": "Update",
+  "@familyUpdate": {
+    "description": "Family area interface copy."
+  },
+  "familyANewVersionIsAvailableYou": "A new version is available. You can update through Google Play.",
+  "@familyANewVersionIsAvailableYou": {
+    "description": "Family area interface copy."
+  },
+  "familyParentGate": "Parent gate",
+  "@familyParentGate": {
+    "description": "Family area interface copy."
+  },
+  "familyMultiplicationQuestion": "Multiplication question",
+  "@familyMultiplicationQuestion": {
+    "description": "Family area interface copy."
+  },
+  "familyIntroduceNewItemsFirst": "Introduce new items first",
+  "@familyIntroduceNewItemsFirst": {
+    "description": "Family area interface copy."
+  },
+  "familyShowOneCardFirstThenOffer": "Show one card first, then offer choices.",
+  "@familyShowOneCardFirstThenOffer": {
+    "description": "Family area interface copy."
+  },
+  "familyAdaptiveDifficulty": "Adaptive difficulty",
+  "@familyAdaptiveDifficulty": {
+    "description": "Family area interface copy."
+  },
+  "familyChangesApplyOnlyWhenANew": "Changes apply only when a new round starts.",
+  "@familyChangesApplyOnlyWhenANew": {
+    "description": "Family area interface copy."
+  },
+  "familyAudio": "Audio",
+  "@familyAudio": {
+    "description": "Family area interface copy."
+  },
+  "familySpeechVolume": "Speech volume",
+  "@familySpeechVolume": {
+    "description": "Family area interface copy."
+  },
+  "familySoundEffectVolume": "Sound effect volume",
+  "@familySoundEffectVolume": {
+    "description": "Family area interface copy."
+  },
+  "familyShowItemLabels": "Show item labels",
+  "@familyShowItemLabels": {
+    "description": "Family area interface copy."
+  },
+  "familyReduceMotion": "Reduce motion",
+  "@familyReduceMotion": {
+    "description": "Family area interface copy."
+  },
+  "familyLanguage": "Language",
+  "@familyLanguage": {
+    "description": "Family area interface copy."
+  },
+  "familyCelebration": "Celebration",
+  "@familyCelebration": {
+    "description": "Family area interface copy."
+  },
+  "familySimple": "Simple",
+  "@familySimple": {
+    "description": "Family area interface copy."
+  },
+  "familyFull": "Full",
+  "@familyFull": {
+    "description": "Parent setting for a brief enhanced correct-answer celebration."
+  },
+  "familySubscriptionPricesAndTrialEligibilityCome": "Subscription prices and trial eligibility come from Google Play.",
+  "@familySubscriptionPricesAndTrialEligibilityCome": {
+    "description": "Family area interface copy."
+  },
+  "familyPlansAndRestore": "Plans and restore",
+  "@familyPlansAndRestore": {
+    "description": "Family area interface copy."
+  },
+  "familyPrivacy": "Privacy",
+  "@familyPrivacy": {
+    "description": "Family area interface copy."
+  },
+  "familyGoogleFamilyAccount": "Google family account",
+  "@familyGoogleFamilyAccount": {
+    "description": "Family area interface copy."
+  },
+  "familyCreditsAndLicenses": "Credits and licenses",
+  "@familyCreditsAndLicenses": {
+    "description": "Family area interface copy."
+  },
+  "familyProfilesAndRawGameRecordsStay": "Profiles and raw game records stay on this device. Only daily summaries are sent when you give permission and start sync in the account screen. No ads or advertising identifiers are used.",
+  "@familyProfilesAndRawGameRecordsStay": {
+    "description": "Family area interface copy."
+  },
+  "familyDoesNotReplaceProfessionalSupport": "Does not replace professional support.",
+  "@familyDoesNotReplaceProfessionalSupport": {
+    "description": "Family area interface copy."
+  },
+  "familySection": "Section",
+  "@familySection": {
+    "description": "Family area interface copy."
+  },
+  "familyPreviousSection": "Previous section",
+  "@familyPreviousSection": {
+    "description": "Family area interface copy."
+  },
+  "familyNextSection": "Next section",
+  "@familyNextSection": {
+    "description": "Family area interface copy."
+  },
+  "familyChildMode": "Child Mode",
+  "@familyChildMode": {
+    "description": "Family area interface copy."
+  },
+  "familyProgress": "Progress",
+  "@familyProgress": {
+    "description": "Family area interface copy."
+  },
+  "familyGames": "Games",
+  "@familyGames": {
+    "description": "Family area interface copy."
+  },
+  "familyProfiles": "Profiles",
+  "@familyProfiles": {
+    "description": "Family area interface copy."
+  },
+  "familySettings": "Settings",
+  "@familySettings": {
+    "description": "Family area interface copy."
+  },
+  "familyStoredOnThisDevice": "Stored on this device",
+  "@familyStoredOnThisDevice": {
+    "description": "Family area interface copy."
+  },
+  "familyDeleteProfile": "Delete profile",
+  "@familyDeleteProfile": {
+    "description": "Family area interface copy."
+  },
+  "familyGameAndProgressRecordsForName": "Game and progress records for {name} will be deleted from this device.",
+  "@familyGameAndProgressRecordsForName": {
+    "description": "Family area interface copy.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "familyDelete": "Delete",
+  "@familyDelete": {
+    "description": "Family area interface copy."
+  },
+  "familyEditAndQuestionnaire": "Edit and questionnaire",
+  "@familyEditAndQuestionnaire": {
+    "description": "Family area interface copy."
+  },
+  "familyProfileAction": "{count, plural, =0{Create a profile} one{Create a profile} other{More profiles}}",
+  "@familyProfileAction": {
+    "description": "Profile action selected by the available profile allowance.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "familyTheFreeVersionIncludesOneChild": "The free version includes one child profile.",
+  "@familyTheFreeVersionIncludesOneChild": {
+    "description": "Family area interface copy."
+  },
+  "gameBackToTheme": "Back to theme",
+  "@gameBackToTheme": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameThisGameNeedsSoundAParentCan": "This game needs sound. A parent can enable it in settings.",
+  "@gameThisGameNeedsSoundAParentCan": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameThereIsNotEnoughContentForThis": "There is not enough content for this game yet.",
+  "@gameThereIsNotEnoughContentForThis": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameHoldToLeave": "Hold to leave",
+  "@gameHoldToLeave": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameListenAgain": "Listen again",
+  "@gameListenAgain": {
+    "description": "Game results and actions interface copy."
+  },
+  "gamePreviousPage": "Previous page",
+  "@gamePreviousPage": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameNextPage": "Next page",
+  "@gameNextPage": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameWellDone": "Well done!",
+  "@gameWellDone": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameYouEarnedTodaysSticker": "You earned today’s sticker!",
+  "@gameYouEarnedTodaysSticker": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameWeExploredTogether": "We explored together.",
+  "@gameWeExploredTogether": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameAgain": "Again",
+  "@gameAgain": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameTodaysPath": "Today’s Path",
+  "@gameTodaysPath": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameImagesForThisThemeAreNotReady": "Images for this theme are not ready yet.",
+  "@gameImagesForThisThemeAreNotReady": {
+    "description": "Game results and actions interface copy."
+  },
+  "gamePrevious": "Previous",
+  "@gamePrevious": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameFinish": "Finish",
+  "@gameFinish": {
+    "description": "Game results and actions interface copy."
+  },
+  "gameNext": "Next",
+  "gameObject": "Object",
+  "gameCountedObjectSemantics": "{object}, count {number}",
+  "@gameCountedObjectSemantics": {
+    "description": "Accessible label for an object that can be counted during a game.",
+    "placeholders": {
+      "object": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "@gameNext": {
+    "description": "Game results and actions interface copy."
+  },
+  "dailyPathNoGamesAreAvailableToday": "No games are available today.",
+  "@dailyPathNoGamesAreAvailableToday": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathYouEarnedTodaysSticker": "You earned today’s sticker!",
+  "@dailyPathYouEarnedTodaysSticker": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathEachCompletedGameIsOneStep": "Each completed game is one step.",
+  "@dailyPathEachCompletedGameIsOneStep": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathMyStickers": "My stickers",
+  "@dailyPathMyStickers": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathCompleted": "Completed",
+  "@dailyPathCompleted": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPlay": "Play",
+  "@dailyPathPlay": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathCompleteTodaysPathToEarnYourFirst": "Complete today’s path to earn your first sticker.",
+  "@dailyPathCompleteTodaysPathToEarnYourFirst": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathEarnedSticker": "Earned sticker",
+  "@dailyPathEarnedSticker": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPreviousPage": "Previous page",
+  "@dailyPathPreviousPage": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathPageCurrentOfTotal": "Page {current} of {total}",
+  "@dailyPathPageCurrentOfTotal": {
+    "description": "Daily path and sticker album interface copy.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyPathNextPage": "Next page",
+  "@dailyPathNextPage": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "dailyPathClose": "Close",
+  "@dailyPathClose": {
+    "description": "Daily path and sticker album interface copy."
+  },
+  "gameSummaryPage": "Summary · page {current} of {total}",
+  "@gameSummaryPage": {
+    "description": "Game completion summary pager position.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyPathStepTitle": "{index}. {game}",
+  "@dailyPathStepTitle": {
+    "description": "Numbered daily path game title.",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "game": {
+        "type": "String"
+      }
+    }
+  },
+  "profileEditorNameRequired": "Enter a nickname.",
+  "@profileEditorNameRequired": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaveFailed": "Could not save. Check the profile limit and try again.",
+  "@profileEditorSaveFailed": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorEditTitle": "Edit profile",
+  "@profileEditorEditTitle": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorNewTitle": "New profile",
+  "@profileEditorNewTitle": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorIdentityHeading": "Little explorer’s profile",
+  "@profileEditorIdentityHeading": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorNicknameLabel": "Nickname",
+  "@profileEditorNicknameLabel": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorStartSurvey": "Starting questionnaire",
+  "@profileEditorStartSurvey": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaving": "Saving…",
+  "@profileEditorSaving": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSave": "Save",
+  "@profileEditorSave": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSkipQuestionnaireAndCreate": "Skip questionnaire and create",
+  "@profileEditorSkipQuestionnaireAndCreate": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorContinue": "Continue",
+  "@profileEditorContinue": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSkipQuestion": "Skip this question",
+  "@profileEditorSkipQuestion": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSuggestedStart": "Suggested starting point",
+  "@profileEditorSuggestedStart": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSaveRecommendations": "Save recommendations",
+  "@profileEditorSaveRecommendations": {
+    "description": "Profile editor interface copy."
+  },
+  "profileEditorSurveyProgress": "Question {current} of {total}",
+  "@profileEditorSurveyProgress": {
+    "description": "Profile editor horizontal pager progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "profileEditorRecommendationProgress": "Recommendation page {current} of {total}",
+  "@profileEditorRecommendationProgress": {
+    "description": "Profile editor horizontal pager progress.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gamePromptCount": "How many are there?",
+  "@gamePromptCount": {
+    "description": "Fixed instruction displayed in the G33 counting game."
+  },
+  "gamePromptCompareMagnitude": "Which has more?",
+  "@gamePromptCompareMagnitude": {
+    "description": "Fixed instruction displayed in the non-hard G36 comparison game."
+  },
+  "gamePromptCompareNumbers": "Compare these numbers",
+  "@gamePromptCompareNumbers": {
+    "description": "Fixed instruction displayed in the hard G36 comparison game."
+  },
+  "gamePromptGroupMembership": "Which group does this belong to?",
+  "@gamePromptGroupMembership": {
+    "description": "Fixed instruction displayed in the G04 grouping game."
+  },
+  "gamePromptFindMatch": "Find the match",
+  "@gamePromptFindMatch": { "description": "Fixed instruction displayed in G14."
+  },
+  "gamePromptListenForNumber": "Listen. Which number?",
+  "@gamePromptListenForNumber": { "description": "Fixed instruction displayed in G10 for numbers."
+  },
+  "gamePromptListenForSoundSource": "Listen. What makes this sound?",
+  "@gamePromptListenForSoundSource": { "description": "Fixed instruction displayed in G10 for non-number themes."
+  },
+  "gamePromptSequenceNext": "Which number comes next?",
+  "@gamePromptSequenceNext": { "description": "Fixed non-hard instruction displayed in G35."
+  },
+  "gamePromptSequenceMissing": "Which number is missing?",
+  "@gamePromptSequenceMissing": { "description": "Fixed hard instruction displayed in G35."
+  }
+}

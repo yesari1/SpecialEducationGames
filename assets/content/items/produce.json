@@ -1,0 +1,1645 @@
+[
+  {
+    "id": "produce.apple",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Elma",
+      "en": "Apple"
+    },
+    "images": [
+      "assets/images/produce/apple_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/apple_selected.mp3",
+      "en": "assets/audio/en/produce/apple_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/apple_real.png": {
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Honeycrisp-Apple.jpg",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "id": "produce.apple",
+        "path": "assets/images/produce/apple_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "adaptationLicense": "CC0 1.0",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "sha256": "2e7b59d3708aaf048b5224c2a5888c6d641b35cbb4f5dfef51e2e8fef39d9a0e"
+      }
+    },
+    "audioProvenance": {
+      "tr": {
+        "id": "produce.apple",
+        "language": "tr",
+        "path": "assets/audio/tr/produce/apple_selected.mp3",
+        "text": "Elma.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "0d8d8e7b120ddde3f9e8efe16f08464c6f7d0789f0bd52a388bb60723448cd2e",
+        "source": "artifacts/voice_samples_selected/tr_apple.mp3",
+        "validation": {
+          "duration_seconds": 0.696599,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "produce.apple",
+        "language": "en",
+        "path": "assets/audio/en/produce/apple_selected.mp3",
+        "text": "Apple.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "af5fb7078244743791a4c8519a1875d26871173c0ac3e19ff10f1d1d29659701",
+        "source": "artifacts/voice_samples_selected/en_apple.mp3",
+        "validation": {
+          "duration_seconds": 0.603719,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "produce.banana",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "sari"
+    ],
+    "name": {
+      "tr": "Muz",
+      "en": "Banana"
+    },
+    "images": [
+      "assets/images/produce/banana_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/banana_selected.mp3",
+      "en": "assets/audio/en/produce/banana_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/banana_real.png": {
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Banana-Single.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "id": "produce.banana",
+        "path": "assets/images/produce/banana_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "sha256": "2f83ec655fc8a3d2975276118d4bb22f0bd95f16aa764aba4059d319d78d8a72"
+      }
+    },
+    "audioProvenance": {
+      "tr": {
+        "id": "produce.banana",
+        "language": "tr",
+        "path": "assets/audio/tr/produce/banana_selected.mp3",
+        "text": "Muz.",
+        "voiceId": "uvU9jrgGLWNPeNA4NgNT",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "1af9dc82fc8373f80f6f98c8061ca6dca616c30f69f399be0f80e7bccc540350",
+        "source": "artifacts/voice_samples_selected/tr_banana.mp3",
+        "validation": {
+          "duration_seconds": 0.789478,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      },
+      "en": {
+        "id": "produce.banana",
+        "language": "en",
+        "path": "assets/audio/en/produce/banana_selected.mp3",
+        "text": "Banana.",
+        "voiceId": "GZ4PpFJV8ikEGUtBrjK7",
+        "modelId": "eleven_multilingual_v2",
+        "voiceSettings": {
+          "stability": 0.35,
+          "similarity_boost": 0.75,
+          "style": 0.43,
+          "speed": 1.0,
+          "use_speaker_boost": true
+        },
+        "settingsProvenance": {
+          "stability_similarity_style": "Estimated from the user's screenshot; numeric values were not displayed.",
+          "speed": "Approximately normal speed from screenshot; 1.0 selected, not an exact measured value.",
+          "use_speaker_boost": "Explicit tooling default; not shown in the screenshot.",
+          "language_code": "Omitted: ElevenLabs documents it as unsupported for Multilingual v2.",
+          "word_punctuation": "Single vocabulary labels always end with a period.",
+          "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+        },
+        "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
+        "sha256": "ae2d63723a6e09fcf6c7c687505531b508d76f1ad2508a96fa34414cce7a9598",
+        "source": "artifacts/voice_samples_selected/en_banana.mp3",
+        "validation": {
+          "duration_seconds": 0.789478,
+          "streams": [
+            {
+              "codec_name": "mp3",
+              "sample_rate": "44100",
+              "channels": 1
+            }
+          ]
+        },
+        "generationProvenance": {
+          "sourceManifest": "artifacts/voice_samples_selected/manifest.json",
+          "sourceManifestSha256": "691bf640dc1209f1de9ccb7cddb3b7c79f02279e38061fb5db4dd5caa7b8cf37",
+          "generatedBetweenUtc": [
+            "2026-10-16T03:57:46.028777+00:00",
+            "2026-10-16T03:58:12.462510+00:00"
+          ],
+          "provider": "ElevenLabs",
+          "existingSampleReuse": true,
+          "newGeneration": false,
+          "scope": "Selected voice demonstration; pronunciation not user-approved"
+        }
+      }
+    }
+  },
+  {
+    "id": "produce.orange",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "turuncu"
+    ],
+    "name": {
+      "tr": "Portakal",
+      "en": "Orange"
+    },
+    "images": [
+      "assets/images/produce/orange_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/orange.mp3",
+      "en": "assets/audio/en/produce/orange.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/orange_real.png": {
+        "id": "produce.orange",
+        "path": "assets/images/produce/orange_real.png",
+        "author": "Renee Comet (Photographer), National Cancer Institute",
+        "source": "https://commons.wikimedia.org/wiki/File:Orange_(1).jpg",
+        "original": "artifacts/photo_samples/batch2_source/orange.jpg",
+        "originalSha256": "08932e9acd8302a6577c9cc1989effdb95ed97064be67b4bec9852e251ef5b8b",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "adaptationLicense": "Public domain",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "sha256": "9d8d711eb18c61af0b11198c5210f7985630b4180c2b6f225c7497ecf52e6354"
+      }
+    }
+  },
+  {
+    "id": "produce.strawberry",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Çilek",
+      "en": "Strawberry"
+    },
+    "images": [
+      "assets/images/produce/strawberry_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/strawberry.mp3",
+      "en": "assets/audio/en/produce/strawberry.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/strawberry_real.png": {
+        "id": "produce.strawberry",
+        "path": "assets/images/produce/strawberry_real.png",
+        "author": "Paolo Neo",
+        "source": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
+        "original": "artifacts/real-produce-batch2/originals/strawberry_paolo_neo.jpg",
+        "originalSha256": "9baa5005b6f8885cf4729122476f40dfb57875718fdaf12ed447af6be97f7fa0",
+        "license": "Public domain (author dedication)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
+        "adaptationLicense": "Public domain (author dedication)",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-batch2/process_photos.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed strawberry with calyx. Border-connected near-white background and the two locally bounded background gaps between leaves were made transparent; photographed RGB detail retained. Alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.",
+        "sha256": "a8013b3c44d9f61648fa52a0f6a2856a03f5825e513b3acd27731333f6f1aea3"
+      }
+    }
+  },
+  {
+    "id": "produce.grape",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "mor"
+    ],
+    "name": {
+      "tr": "Üzüm",
+      "en": "Grape"
+    },
+    "images": [
+      "assets/images/produce/grape_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/grape.mp3",
+      "en": "assets/audio/en/produce/grape.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.watermelon",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Karpuz",
+      "en": "Watermelon"
+    },
+    "images": [
+      "assets/images/produce/watermelon_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/watermelon.mp3",
+      "en": "assets/audio/en/produce/watermelon.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.pear",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Armut",
+      "en": "Pear"
+    },
+    "images": [
+      "assets/images/produce/pear_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/pear.mp3",
+      "en": "assets/audio/en/produce/pear.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/pear_real.png": {
+        "id": "produce.pear",
+        "path": "assets/images/produce/pear_real.png",
+        "author": "Fructibus",
+        "source": "https://commons.wikimedia.org/wiki/File:Conference_pear_2017_D1.jpg",
+        "original": "artifacts/real-produce-next/source/pear.jpg",
+        "originalSha256": "934f71fc0c22a32e90d6c90b797e56cec28545c98643fdbc7231ced2d81c1888",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "adaptationLicense": "CC0 1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-next/prepare_assets.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Complete pear; source background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
+        "sha256": "76ab1a1f8e7a6f3e63f019c11becefeffebc86624e38ccc48d2466798c550665"
+      }
+    }
+  },
+  {
+    "id": "produce.cherry",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Kiraz",
+      "en": "Cherry"
+    },
+    "images": [
+      "assets/images/produce/cherry_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/cherry.mp3",
+      "en": "assets/audio/en/produce/cherry.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.mandarin",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "meyve",
+      "turuncu"
+    ],
+    "name": {
+      "tr": "Mandalina",
+      "en": "Mandarin"
+    },
+    "images": [
+      "assets/images/produce/mandarin_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/mandarin.mp3",
+      "en": "assets/audio/en/produce/mandarin.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.tomato",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "sebze",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Domates",
+      "en": "Tomato"
+    },
+    "images": [
+      "assets/images/produce/tomato_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/tomato.mp3",
+      "en": "assets/audio/en/produce/tomato.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/tomato_real.png": {
+        "id": "produce.tomato",
+        "path": "assets/images/produce/tomato_real.png",
+        "author": "Renee Comet (Photographer), National Cancer Institute",
+        "source": "https://commons.wikimedia.org/wiki/File:Tomato_(1).jpg",
+        "original": "artifacts/photo_samples/batch2_source/tomato.jpg",
+        "originalSha256": "c56a23d005d005ea73c2cfc3eee166a856044718b7b4cefeb983112544ba6d20",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "adaptationLicense": "Public domain",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "sha256": "5b583c91b401fbc2115ec98d18c14a66c2b8ddad397be69c2d799155202c507d"
+      }
+    }
+  },
+  {
+    "id": "produce.carrot",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "sebze",
+      "turuncu"
+    ],
+    "name": {
+      "tr": "Havuç",
+      "en": "Carrot"
+    },
+    "images": [
+      "assets/images/produce/carrot_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/carrot.mp3",
+      "en": "assets/audio/en/produce/carrot.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.potato",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "sebze"
+    ],
+    "name": {
+      "tr": "Patates",
+      "en": "Potato"
+    },
+    "images": [
+      "assets/images/produce/potato_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/potato.mp3",
+      "en": "assets/audio/en/produce/potato.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.cucumber",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Salatalık",
+      "en": "Cucumber"
+    },
+    "images": [
+      "assets/images/produce/cucumber_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/cucumber.mp3",
+      "en": "assets/audio/en/produce/cucumber.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.corn",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "sebze",
+      "sari"
+    ],
+    "name": {
+      "tr": "Mısır",
+      "en": "Corn"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.lemon",
+    "theme": "produce",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "meyve",
+      "sari"
+    ],
+    "name": {
+      "tr": "Limon",
+      "en": "Lemon"
+    },
+    "images": [
+      "assets/images/produce/lemon_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/lemon_real.png": {
+        "id": "produce.lemon",
+        "path": "assets/images/produce/lemon_real.png",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Whole-Lemon.jpg",
+        "original": "artifacts/photo_samples/source/Whole-Lemon.jpg",
+        "originalSha256": "7ae2485205fb6b79de96777c43d28d571013d375e65e9b51d10e56f58648c9bf",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "adaptationLicense": "CC0 1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "sha256": "4260648a6b537663133040e3a1f3f5393ff089e06cc45bc620613271286316fd"
+      }
+    }
+  },
+  {
+    "id": "produce.peach",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve"
+    ],
+    "name": {
+      "tr": "Şeftali",
+      "en": "Peach"
+    },
+    "images": [
+      "assets/images/produce/peach_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/peach.mp3",
+      "en": "assets/audio/en/produce/peach.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/peach_real.png": {
+        "id": "produce.peach",
+        "path": "assets/images/produce/peach_real.png",
+        "author": "Renee Comet (Photographer), National Cancer Institute",
+        "source": "https://commons.wikimedia.org/wiki/File:Peach_(1).jpg",
+        "original": "artifacts/real-produce-peach-candidate/originals/peach_renee_comet.jpg",
+        "originalSha256": "dd0dfb9642cded131539a373d0b4686913fb9e92a2a001b88edcc9b8258cb669",
+        "license": "Public domain (author dedication)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Peach_(1).jpg",
+        "adaptationLicense": "Public domain (author dedication)",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-produce-peach-candidate/process_peach.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed peach with attached leaf. Border-connected neutral-white studio background was masked; original photographed RGB detail retained. Alpha-bound crop with 8 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
+        "sha256": "4dcca154cdcba0bd36729216bf38556482078f3c3e1405f473e8337fb424458e"
+      }
+    }
+  },
+  {
+    "id": "produce.plum",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve",
+      "mor"
+    ],
+    "name": {
+      "tr": "Erik",
+      "en": "Plum"
+    },
+    "images": [
+      "assets/images/produce/plum_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/plum.mp3",
+      "en": "assets/audio/en/produce/plum.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/plum_real.png": {
+        "id": "produce.plum",
+        "path": "assets/images/produce/plum_real.png",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Red-Plums.jpg",
+        "original": "artifacts/real-produce-next/source/plum.jpg",
+        "originalSha256": "9bd1763236d1617f8ac7642a813badd320158942378ca54a4cd94d9f99ad312b",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "adaptationLicense": "CC0 1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-next/prepare_assets.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Selected the complete whole plum from the left of the source photo; cut half excluded with crop (35, 210, 1785, 1830) in original-image pixels; border-connected background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
+        "sha256": "bd6126f09422d7e986a78611bb1ae14ed469c5ee2ee32658c9e5c9280bc3904d"
+      }
+    }
+  },
+  {
+    "id": "produce.melon",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve",
+      "sari"
+    ],
+    "name": {
+      "tr": "Kavun",
+      "en": "Melon"
+    },
+    "images": [
+      "assets/images/produce/melon_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/melon_real.png": {
+        "id": "produce.melon",
+        "path": "assets/images/produce/melon_real.png",
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Galia_melon.jpg",
+        "original": "artifacts/photo_samples/batch3_source/melon.jpg",
+        "originalSha256": "03b1413fa04de1bdaf7758f1c50ff0824105d405649f038ff9fc8298a3f9c594",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/prepare_produce_photos_batch3.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
+        "sha256": "c86790ca9bdb148c8b9a59b86485eecc4c0e45557dc4686dde99d4d192655318"
+      }
+    }
+  },
+  {
+    "id": "produce.pomegranate",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Nar",
+      "en": "Pomegranate"
+    },
+    "images": [
+      "assets/images/produce/pomegranate_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/pomegranate.mp3",
+      "en": "assets/audio/en/produce/pomegranate.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/pomegranate_real.png": {
+        "id": "produce.pomegranate",
+        "path": "assets/images/produce/pomegranate_real.png",
+        "author": "Rhododendrites",
+        "source": "https://commons.wikimedia.org/wiki/File:Pomegranate_on_white.jpg",
+        "original": "artifacts/real-produce-batch2/originals/pomegranate_rhododendrites.jpg",
+        "originalSha256": "19bf770bb8af0b5251dbab9871f4fc949b7f97017f4c67798e8ae4dfda73dcd1",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-batch2/process_photos.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed pomegranate and crown. A traced closed Catmull-Rom perimeter, refined by red-rind chroma masking on the body, excludes the neutral studio background and cast shadow while retaining crown detail. Original photographed RGB detail retained; alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
+        "sha256": "c5fc4cfa293972f43ea1b5ae4ca64876ac82efe9cab70a8190534a25b3c0f357"
+      }
+    }
+  },
+  {
+    "id": "produce.pineapple",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve",
+      "sari"
+    ],
+    "name": {
+      "tr": "Ananas",
+      "en": "Pineapple"
+    },
+    "images": [
+      "assets/images/produce/pineapple_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/pineapple_real.png": {
+        "id": "produce.pineapple",
+        "path": "assets/images/produce/pineapple_real.png",
+        "author": "Tony Wu",
+        "source": "https://www.pexels.com/photo/photo-of-an-pineapple-against-white-background-16814688/",
+        "original": "artifacts/real-produce-pineapple-candidate/pineapple-original.jpg",
+        "originalSha256": "2866c6c52fb654de2e5fecf37039c74a20d6b0b28dc0d4401d1a1a67e1773e5b",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "adaptationLicense": "Pexels License",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-produce-pineapple-candidate/process_pineapple.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single whole pineapple on a white studio backdrop. Edge-seeded near-white, low-chroma backdrop pixels were flood-filled to transparency; a source-coordinate contour removed the floor/contact shadow while preserving the complete fruit base and crown leaf openings. Original photographed RGB detail retained without repainting or reconstruction. Aspect-preserving 910 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
+        "sha256": "9178f4c95b0a93aeaf60fd165c3229bb94888356e27ef740be0b08bfeaaed6a4"
+      }
+    }
+  },
+  {
+    "id": "produce.kiwi",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "meyve",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Kivi",
+      "en": "Kiwi"
+    },
+    "images": [
+      "assets/images/produce/kiwi_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/kiwi_real.png": {
+        "id": "produce.kiwi",
+        "path": "assets/images/produce/kiwi_real.png",
+        "author": "Boris Stumpf",
+        "source": "https://commons.wikimedia.org/wiki/File:Whole_kiwifruit_on_white_background.jpg",
+        "original": "artifacts/photo_samples/batch3_source/kiwi-boris.jpg",
+        "originalSha256": "99eb204b87625672ac0a9edadd888d508b867a99fb6382f30f580b6530f16b6f",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "adaptationLicense": "CC0 1.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/prepare_produce_photos_batch3.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
+        "sha256": "b7f832a361d885aa81c2e0628c9ee5922b5e6b01ffa4ae65a347071215d8c71e"
+      }
+    }
+  },
+  {
+    "id": "produce.pepper",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Biber",
+      "en": "Pepper"
+    },
+    "images": [
+      "assets/images/produce/pepper_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/pepper.mp3",
+      "en": "assets/audio/en/produce/pepper.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/pepper_real.png": {
+        "id": "produce.pepper",
+        "path": "assets/images/produce/pepper_real.png",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Green-Bell-Pepper.jpg",
+        "original": "artifacts/photo_samples/source/Green-Bell-Pepper.jpg",
+        "originalSha256": "723964ebaf542f75cbfa2cedd5f4bdc7c19bd3fd2c64c1528fb2738ad2173906",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Copyright_tags#Public_domain",
+        "adaptationLicense": "Public domain",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "sha256": "97052200920193273f60354c4760d09a96ab92b6fae7a67dd157e5fcca7fc2a9"
+      }
+    }
+  },
+  {
+    "id": "produce.eggplant",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "sebze",
+      "mor"
+    ],
+    "name": {
+      "tr": "Patlıcan",
+      "en": "Eggplant"
+    },
+    "images": [
+      "assets/images/produce/eggplant_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/eggplant.mp3",
+      "en": "assets/audio/en/produce/eggplant.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.onion",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze"
+    ],
+    "name": {
+      "tr": "Soğan",
+      "en": "Onion"
+    },
+    "images": [
+      "assets/images/produce/onion_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/onion.mp3",
+      "en": "assets/audio/en/produce/onion.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.cabbage",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Lahana",
+      "en": "Cabbage"
+    },
+    "images": [
+      "assets/images/produce/cabbage_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/cabbage.mp3",
+      "en": "assets/audio/en/produce/cabbage.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.lettuce",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Marul",
+      "en": "Lettuce"
+    },
+    "images": [
+      "assets/images/produce/lettuce_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/lettuce.mp3",
+      "en": "assets/audio/en/produce/lettuce.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.zucchini",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Kabak",
+      "en": "Zucchini"
+    },
+    "images": [
+      "assets/images/produce/zucchini_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/zucchini.mp3",
+      "en": "assets/audio/en/produce/zucchini.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/zucchini_real.png": {
+        "id": "produce.zucchini",
+        "path": "assets/images/produce/zucchini_real.png",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Zucchini-Whole.jpg",
+        "original": "artifacts/photo_samples/source/Zucchini-Whole.jpg",
+        "originalSha256": "ffa0b951dfa4e6cb9c4a57dcbc8c6106fe770529adce73174b45eb2dbae88b62",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Copyright_tags#Public_domain",
+        "adaptationLicense": "Public domain",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
+        "sha256": "d71679c2be5bd0f75c27aa3eea53397b24988056df34b015ff3914ea08f3b24f"
+      }
+    }
+  },
+  {
+    "id": "produce.pea",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Bezelye",
+      "en": "Pea"
+    },
+    "images": [
+      "assets/images/produce/pea_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/pea.mp3",
+      "en": "assets/audio/en/produce/pea.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.green_bean",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Fasulye",
+      "en": "Green bean"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.apricot",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "meyve",
+      "turuncu"
+    ],
+    "name": {
+      "tr": "Kayısı",
+      "en": "Apricot"
+    },
+    "images": [
+      "assets/images/produce/apricot_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/apricot_real.png": {
+        "id": "produce.apricot",
+        "path": "assets/images/produce/apricot_real.png",
+        "author": "Benjamint444",
+        "source": "https://commons.wikimedia.org/wiki/File:Apricot_whole444.jpg",
+        "original": "artifacts/real-produce-apricot-fig-candidate/apricot_original.jpg",
+        "originalSha256": "e89bfff5f73e60f94a2028d11efbc9c83385433d62017185a2c58449d7cea66a",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-produce-apricot-fig-candidate/process_apricot.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single whole photographed apricot on a white studio background. A smooth manually traced source-coordinate mask removes the background and lower studio/floor fringe while retaining the pale fruit rim and original photographic RGB detail. Aspect-preserving LANCZOS resize to an 870 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white outer silhouette. No generative edits. This adapted PNG is shared under CC BY-SA 3.0; attribution is Benjamint444, Wikimedia Commons, with source link, license link, and change notice.",
+        "sha256": "cf1ae7a349a422598302457543160db485203a70f2a89f3777cf86dcc33913ad"
+      }
+    }
+  },
+  {
+    "id": "produce.sour_cherry",
+    "theme": "produce",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Vişne",
+      "en": "Sour cherry"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.quince",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve",
+      "sari"
+    ],
+    "name": {
+      "tr": "Ayva",
+      "en": "Quince"
+    },
+    "images": [
+      "assets/images/produce/quince_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/quince.mp3",
+      "en": "assets/audio/en/produce/quince.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/quince_real.png": {
+        "id": "produce.quince",
+        "path": "assets/images/produce/quince_real.png",
+        "author": "Rhododendrites",
+        "source": "https://commons.wikimedia.org/wiki/File:Quince_(10889s).jpg",
+        "original": "artifacts/real-produce-batch3/originals/quince_rhododendrites.jpg",
+        "originalSha256": "ee089c9aacfb46cd6279e7f0640a24ac8ad8f52e2b792bfd1016d44dcfd8dc2e",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-batch3/process_photos.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed quince. Border-connected neutral studio backdrop and cast shadow were masked; original photographed RGB detail retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
+        "sha256": "8c122b336cec59ac853f65955a9c7e507467d4c4b578a1621888b0dc29bbf0fe"
+      }
+    }
+  },
+  {
+    "id": "produce.fig",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve",
+      "mor"
+    ],
+    "name": {
+      "tr": "İncir",
+      "en": "Fig"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.blackberry",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve",
+      "mor"
+    ],
+    "name": {
+      "tr": "Böğürtlen",
+      "en": "Blackberry"
+    },
+    "images": [
+      "assets/images/produce/blackberry_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/blackberry.mp3",
+      "en": "assets/audio/en/produce/blackberry.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.raspberry",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Ahududu",
+      "en": "Raspberry"
+    },
+    "images": [
+      "assets/images/produce/raspberry_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/raspberry_real.png": {
+        "id": "produce.raspberry",
+        "path": "assets/images/produce/raspberry_real.png",
+        "author": "Ivar Leidus",
+        "source": "https://commons.wikimedia.org/wiki/File:Raspberry_-_whole_(Rubus_idaeus).jpg",
+        "original": "artifacts/real-produce-fig-raspberry-candidate/originals/raspberry-whole.jpg",
+        "originalSha256": "71ac8acd0332ca50c4104d2c2cf96e953f3add685e4b79393a53e49e7f4f7fad",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-produce-fig-raspberry-candidate/SEED_STRATEGY.md",
+        "whiteOutlinePixels": 4,
+        "changes": "Single whole photographed raspberry. Classical OpenCV GrabCut used a loose traced probable-foreground polygon, definite foreground seeds restricted to the red berry interior, and reviewed definite-background seeds in the backdrop wedges (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; transparent exterior, alpha-bound crop, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction. Attribution: Ivar Leidus, Wikimedia Commons, source link and CC BY-SA 4.0 license link; changes are the mask, crop, resize, and outline. This adapted PNG is shared under CC BY-SA 4.0.",
+        "sha256": "80552a2cc6e7ac868c02f222dd9df59a4c9f6382078e69c115a510a639b15564"
+      }
+    }
+  },
+  {
+    "id": "produce.mulberry",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve"
+    ],
+    "name": {
+      "tr": "Dut",
+      "en": "Mulberry"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.avocado",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Avokado",
+      "en": "Avocado"
+    },
+    "images": [
+      "assets/images/produce/avocado_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/avocado_real.png": {
+        "id": "produce.avocado",
+        "path": "assets/images/produce/avocado_real.png",
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Avocado.png",
+        "original": "artifacts/photo_samples/batch3_source/avocado.png",
+        "originalSha256": "e1b398d993f1586cc6804c24328fe5d423d9dd2acd3d0a15563b8a15bcb8e07e",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/prepare_produce_photos_batch3.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
+        "sha256": "0bfa7f42ae5efdb6651c1b90cfcf0c1e2c59fd465a3c689b056f1aa5f9aee1b1"
+      }
+    }
+  },
+  {
+    "id": "produce.coconut",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve"
+    ],
+    "name": {
+      "tr": "Hindistan cevizi",
+      "en": "Coconut"
+    },
+    "images": [
+      "assets/images/produce/coconut_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/coconut_real.png": {
+        "id": "produce.coconut",
+        "path": "assets/images/produce/coconut_real.png",
+        "author": "Leiliane Dutra",
+        "source": "https://www.pexels.com/photo/close-up-of-a-rough-coconut-on-a-surface-35788125/",
+        "original": "artifacts/real-produce-missing-batch6/pexels-coconut-original.jpeg",
+        "originalSha256": "130177218b2effbfda2d426f362d155de021d36c77174f1f839ac7b88222e2df",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "adaptationLicense": "Pexels License",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/real-produce-missing-batch6/process_candidate.py",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed coconut. A dense hand-traced shell silhouette masked the rail and outdoor background while preserving the original photographed RGB detail and natural surface texture. Alpha-bound crop with 16 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer contour. No generative edits. Pexels License permits free use and modifications, including use in an app; it prohibits redistribution as a stock photo and sale of unaltered copies.",
+        "sha256": "5e1bac5b73b58fad003d30a249788af4eceab047b4ce952f6c1fa5e0c63cc1eb"
+      }
+    }
+  },
+  {
+    "id": "produce.grapefruit",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "meyve"
+    ],
+    "name": {
+      "tr": "Greyfurt",
+      "en": "Grapefruit"
+    },
+    "images": [
+      "assets/images/produce/grapefruit_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/grapefruit_real.png": {
+        "id": "produce.grapefruit",
+        "path": "assets/images/produce/grapefruit_real.png",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Grapefruit-Whole-%26-Split.jpg",
+        "original": "artifacts/real-produce-batch3/originals/grapefruit_evan_amos.jpg",
+        "originalSha256": "c06202e0a4cc4c0bfbdab4b726f3c78a74bb1900de0a6894da140f20e539298e",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "adaptationLicense": "Public domain",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-17",
+        "processing": "artifacts/real-produce-batch3/process_photos.py",
+        "whiteOutlinePixels": 4,
+        "changes": "The complete whole grapefruit was cropped from a source photo also showing a separate cut half. Border-connected near-neutral white and pale cream studio background/shadow were masked; the rind’s chromatic photographed RGB detail was retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; public-domain source dedication retained.",
+        "sha256": "b8ed19cd92802e4495669f16b9520c297ba5532233ef0e7a316b8afb8ed2241f"
+      }
+    }
+  },
+  {
+    "id": "produce.chestnut",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "meyve"
+    ],
+    "name": {
+      "tr": "Kestane",
+      "en": "Chestnut"
+    },
+    "images": [
+      "assets/images/produce/chestnut_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/chestnut.mp3",
+      "en": "assets/audio/en/produce/chestnut.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.cauliflower",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze"
+    ],
+    "name": {
+      "tr": "Karnabahar",
+      "en": "Cauliflower"
+    },
+    "images": [
+      "assets/images/produce/cauliflower_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/cauliflower.mp3",
+      "en": "assets/audio/en/produce/cauliflower.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.broccoli",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Brokoli",
+      "en": "Broccoli"
+    },
+    "images": [
+      "assets/images/produce/broccoli_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.spinach",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Ispanak",
+      "en": "Spinach"
+    },
+    "images": [
+      "assets/images/produce/spinach_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/spinach.mp3",
+      "en": "assets/audio/en/produce/spinach.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.radish",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "kirmizi"
+    ],
+    "name": {
+      "tr": "Turp",
+      "en": "Radish"
+    },
+    "images": [
+      "assets/images/produce/radish_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/radish.mp3",
+      "en": "assets/audio/en/produce/radish.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.beetroot",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "mor"
+    ],
+    "name": {
+      "tr": "Pancar",
+      "en": "Beetroot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.garlic",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze"
+    ],
+    "name": {
+      "tr": "Sarımsak",
+      "en": "Garlic"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.celery",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze"
+    ],
+    "name": {
+      "tr": "Kereviz",
+      "en": "Celery"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "produce.leek",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Pırasa",
+      "en": "Leek"
+    },
+    "images": [
+      "assets/images/produce/leek_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/leek_real.png": {
+        "id": "produce.leek",
+        "path": "assets/images/produce/leek_real.png",
+        "author": "Amada44",
+        "source": "https://commons.wikimedia.org/wiki/File:Leek_on_white_background_-_0947.jpg",
+        "original": "artifacts/photo_samples/batch4_source/leek.jpg",
+        "originalSha256": "d92acc1e52984014ab8a44511972edffa4ae706d86b3227cdb613732caeb693a",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-16",
+        "processing": "tools/prepare_produce_photos_batch4.ps1",
+        "whiteOutlinePixels": 4,
+        "changes": "Decoded RGBA identity checked after lossless96dpi metadata normalization. Near-white neutral background alpha-keyed (minimum RGB249, channel difference<=8), including enclosed leaf gaps; photographed white stem retained. Largest silhouette retained, proportional912px resize, centered1024x1024 RGBA and4px white silhouette outline. Foreground photographic RGB retained without repainting or generative edits.",
+        "sha256": "7ee35e08b10bf26a7cec234b8476c5748b08dc885a463852f0a0bc131f664d5f"
+      }
+    }
+  },
+  {
+    "id": "produce.mint",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Nane",
+      "en": "Mint"
+    },
+    "images": [
+      "assets/images/produce/mint_1.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/produce/mint.mp3",
+      "en": "assets/audio/en/produce/mint.mp3"
+    },
+    "sfx": null
+  },
+  {
+    "id": "produce.artichoke",
+    "theme": "produce",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "sebze",
+      "yesil"
+    ],
+    "name": {
+      "tr": "Enginar",
+      "en": "Artichoke"
+    },
+    "images": [
+      "assets/images/produce/artichoke_real.png"
+    ],
+    "audio": {},
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/artichoke_real.png": {
+        "id": "produce.artichoke",
+        "path": "assets/images/produce/artichoke_real.png",
+        "author": "Antonio Filigno",
+        "source": "https://www.pexels.com/photo/an-artichoke-on-a-green-surface-8538302/",
+        "original": "artifacts/real-produce-artichoke-greenbean-candidate/originals/pexels-antonio-filigno-8538302.jpg",
+        "originalSha256": "df959d287867887d1b3a8a23186df03e860e789ce844474b6251468033bd99fc",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "adaptationLicense": "Pexels License",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-18",
+        "processing": "artifacts/photo-tools/artichoke-pilot/README.md",
+        "whiteOutlinePixels": 4,
+        "changes": "Single complete photographed artichoke with crown, side leaves, and cut stem retained. Classical OpenCV GrabCut refined a loose polygon from the existing hand-traced silhouette using protected interior foreground seeds and known green-background seeds (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; largest connected object alpha-cropped, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction.",
+        "sha256": "5e033925045f0f4662202dfffea424913f9dd9050a23eed17e49b59cd771141c"
+      }
+    }
+  }
+]

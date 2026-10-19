@@ -1,0 +1,815 @@
+[
+  {
+    "id": "home.bed",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "yatak_odasi",
+      "uyumak"
+    ],
+    "name": {
+      "tr": "Yatak",
+      "en": "Bed"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.pillow",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "yatak_odasi",
+      "uyumak"
+    ],
+    "name": {
+      "tr": "Yastık",
+      "en": "Pillow"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.table",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "salon",
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Masa",
+      "en": "Table"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.chair",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "mutfak",
+      "oturmak"
+    ],
+    "name": {
+      "tr": "Sandalye",
+      "en": "Chair"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.sofa",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "salon",
+      "oturmak"
+    ],
+    "name": {
+      "tr": "Koltuk",
+      "en": "Sofa"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.television",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Televizyon",
+      "en": "Television"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.door",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kapı",
+      "en": "Door"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.window",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Pencere",
+      "en": "Window"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.lamp",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "isik"
+    ],
+    "name": {
+      "tr": "Lamba",
+      "en": "Lamp"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.fridge",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Buzdolabı",
+      "en": "Fridge"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.plate",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "mutfak",
+      "yemek"
+    ],
+    "name": {
+      "tr": "Tabak",
+      "en": "Plate"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.glass",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "mutfak",
+      "yemek"
+    ],
+    "name": {
+      "tr": "Bardak",
+      "en": "Glass"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.spoon",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "mutfak",
+      "yemek"
+    ],
+    "name": {
+      "tr": "Kaşık",
+      "en": "Spoon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.toothbrush",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Diş fırçası",
+      "en": "Toothbrush"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.soap",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Sabun",
+      "en": "Soap"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.towel",
+    "theme": "home",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Havlu",
+      "en": "Towel"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.oven",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Fırın",
+      "en": "Oven"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.stove",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Ocak",
+      "en": "Stove"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.pot",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Tencere",
+      "en": "Pot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.pan",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Tava",
+      "en": "Pan"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.fork",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak",
+      "yemek"
+    ],
+    "name": {
+      "tr": "Çatal",
+      "en": "Fork"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.teapot",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Çaydanlık",
+      "en": "Teapot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.washing_machine",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Çamaşır makinesi",
+      "en": "Washing machine"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.sink",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "banyo"
+    ],
+    "name": {
+      "tr": "Lavabo",
+      "en": "Sink"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.bathtub",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Küvet",
+      "en": "Bathtub"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.toilet",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "banyo"
+    ],
+    "name": {
+      "tr": "Tuvalet",
+      "en": "Toilet"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.mirror",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "banyo"
+    ],
+    "name": {
+      "tr": "Ayna",
+      "en": "Mirror"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.comb",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "banyo"
+    ],
+    "name": {
+      "tr": "Tarak",
+      "en": "Comb"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.wardrobe",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "yatak_odasi",
+      "giymek"
+    ],
+    "name": {
+      "tr": "Gardırop",
+      "en": "Wardrobe"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.carpet",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Halı",
+      "en": "Carpet"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.curtain",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Perde",
+      "en": "Curtain"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.blanket",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "yatak_odasi",
+      "uyumak"
+    ],
+    "name": {
+      "tr": "Battaniye",
+      "en": "Blanket"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.clock",
+    "theme": "home",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Saat",
+      "en": "Clock"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.dishwasher",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "mutfak",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Bulaşık makinesi",
+      "en": "Dishwasher"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.vacuum_cleaner",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Süpürge",
+      "en": "Vacuum cleaner"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.iron",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "giymek"
+    ],
+    "name": {
+      "tr": "Ütü",
+      "en": "Iron"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.microwave",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Mikrodalga",
+      "en": "Microwave"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.kettle",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Su ısıtıcısı",
+      "en": "Kettle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.mixer",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "mutfak"
+    ],
+    "name": {
+      "tr": "Mikser",
+      "en": "Mixer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.flower_pot",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Saksı",
+      "en": "Flower pot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.bookshelf",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Kitaplık",
+      "en": "Bookshelf"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.nightstand",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "yatak_odasi"
+    ],
+    "name": {
+      "tr": "Komodin",
+      "en": "Nightstand"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.shampoo",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Şampuan",
+      "en": "Shampoo"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.toothpaste",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "banyo",
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Diş macunu",
+      "en": "Toothpaste"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.hair_dryer",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "banyo"
+    ],
+    "name": {
+      "tr": "Saç kurutma makinesi",
+      "en": "Hair dryer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.trash_can",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "temizlik"
+    ],
+    "name": {
+      "tr": "Çöp kutusu",
+      "en": "Trash can"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.key",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [],
+    "name": {
+      "tr": "Anahtar",
+      "en": "Key"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.telephone",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Telefon",
+      "en": "Telephone"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.remote_control",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "salon"
+    ],
+    "name": {
+      "tr": "Kumanda",
+      "en": "Remote control"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "home.hanger",
+    "theme": "home",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "giymek"
+    ],
+    "name": {
+      "tr": "Askı",
+      "en": "Hanger"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

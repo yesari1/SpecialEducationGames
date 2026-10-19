@@ -1,0 +1,675 @@
+[
+  {
+    "id": "school.ball",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Top",
+      "en": "Ball"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.doll",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Oyuncak bebek",
+      "en": "Doll"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.teddy_bear",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Oyuncak ayı",
+      "en": "Teddy bear"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.toy_car",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Oyuncak araba",
+      "en": "Toy car"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.blocks",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Küpler",
+      "en": "Blocks"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.balloon",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Balon",
+      "en": "Balloon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.pencil",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Kalem",
+      "en": "Pencil"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.crayon",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [
+      "sanat"
+    ],
+    "name": {
+      "tr": "Boya kalemi",
+      "en": "Crayon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.book",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Kitap",
+      "en": "Book"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.school_bag",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Okul çantası",
+      "en": "School bag"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.slide",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "park"
+    ],
+    "name": {
+      "tr": "Kaydırak",
+      "en": "Slide"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.swing",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "park"
+    ],
+    "name": {
+      "tr": "Salıncak",
+      "en": "Swing"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.puzzle",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Yapboz",
+      "en": "Puzzle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.kite",
+    "theme": "school",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Uçurtma",
+      "en": "Kite"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.eraser",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Silgi",
+      "en": "Eraser"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.sharpener",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Kalemtıraş",
+      "en": "Sharpener"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.notebook",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Defter",
+      "en": "Notebook"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.scissors",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul",
+      "sanat"
+    ],
+    "name": {
+      "tr": "Makas",
+      "en": "Scissors"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.glue",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "sanat"
+    ],
+    "name": {
+      "tr": "Yapıştırıcı",
+      "en": "Glue"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.ruler",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Cetvel",
+      "en": "Ruler"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.board",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Tahta",
+      "en": "Board"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.jump_rope",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Atlama ipi",
+      "en": "Jump rope"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.seesaw",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "park"
+    ],
+    "name": {
+      "tr": "Tahterevalli",
+      "en": "Seesaw"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.sandbox",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "park"
+    ],
+    "name": {
+      "tr": "Kum havuzu",
+      "en": "Sandbox"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.bucket_spade",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Kova ve kürek",
+      "en": "Bucket spade"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.play_dough",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sanat"
+    ],
+    "name": {
+      "tr": "Oyun hamuru",
+      "en": "Play dough"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.paintbrush",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "sanat"
+    ],
+    "name": {
+      "tr": "Fırça",
+      "en": "Paintbrush"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.whistle",
+    "theme": "school",
+    "tier": "medium",
+    "chapter": 4,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Düdük",
+      "en": "Whistle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.watercolor",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "sanat"
+    ],
+    "name": {
+      "tr": "Suluboya",
+      "en": "Watercolor"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.chalk",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Tebeşir",
+      "en": "Chalk"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.pencil_case",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Kalemlik",
+      "en": "Pencil case"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.globe",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Dünya küresi",
+      "en": "Globe"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.school_desk",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Okul sırası",
+      "en": "School desk"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.school_bell",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Zil",
+      "en": "School bell"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.computer",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "okul"
+    ],
+    "name": {
+      "tr": "Bilgisayar",
+      "en": "Computer"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.climbing_frame",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 5,
+    "tags": [
+      "park"
+    ],
+    "name": {
+      "tr": "Tırmanma duvarı",
+      "en": "Climbing frame"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.spinning_top",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Topaç",
+      "en": "Spinning top"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.yoyo",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Yoyo",
+      "en": "Yoyo"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.marbles",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Misket",
+      "en": "Marbles"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.toy_robot",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Robot",
+      "en": "Toy robot"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.dominoes",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Domino",
+      "en": "Dominoes"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "school.hula_hoop",
+    "theme": "school",
+    "tier": "hard",
+    "chapter": 6,
+    "tags": [
+      "oyuncak"
+    ],
+    "name": {
+      "tr": "Hula hop",
+      "en": "Hula hoop"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

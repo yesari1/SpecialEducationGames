@@ -1,0 +1,577 @@
+﻿theme,tier,slug,name_tr,name_en,tags,needs_sfx,image_status,audio_status
+animals,easy,cat,Kedi,Cat,evcil,True,verified_real_photo,selected
+animals,easy,dog,Köpek,Dog,evcil,True,migrated,selected
+animals,easy,bird,Kuş,Bird,"evcil,kus",True,migrated,migrated
+animals,easy,fish,Balık,Fish,"evcil,deniz",False,migrated,migrated
+animals,easy,rabbit,Tavşan,Rabbit,evcil,False,migrated,selected
+animals,easy,cow,İnek,Cow,ciftlik,True,migrated,migrated
+animals,easy,horse,At,Horse,ciftlik,True,migrated,migrated
+animals,easy,sheep,Koyun,Sheep,ciftlik,True,migrated,migrated
+animals,easy,chicken,Tavuk,Chicken,"ciftlik,kus",True,migrated,migrated
+animals,easy,duck,Ördek,Duck,"ciftlik,kus",True,migrated,migrated
+animals,easy,chick,Civciv,Chick,"ciftlik,kus",True,migrated,migrated
+animals,easy,lion,Aslan,Lion,vahsi,True,migrated,migrated
+animals,easy,elephant,Fil,Elephant,vahsi,True,migrated,migrated
+animals,easy,monkey,Maymun,Monkey,vahsi,True,migrated,migrated
+animals,easy,bear,Ayı,Bear,vahsi,True,migrated,migrated
+animals,easy,butterfly,Kelebek,Butterfly,bocek,False,migrated,migrated
+animals,medium,goat,Keçi,Goat,ciftlik,True,migrated,migrated
+animals,medium,donkey,Eşek,Donkey,ciftlik,True,migrated,migrated
+animals,medium,rooster,Horoz,Rooster,"ciftlik,kus",True,migrated,migrated
+animals,medium,turkey,Hindi,Turkey,"ciftlik,kus",True,migrated,migrated
+animals,medium,bee,Arı,Bee,bocek,True,migrated,migrated
+animals,medium,turtle,Kaplumbağa,Turtle,evcil,False,migrated,migrated
+animals,medium,mouse,Fare,Mouse,evcil,True,migrated,migrated
+animals,medium,frog,Kurbağa,Frog,su,True,migrated,migrated
+animals,medium,giraffe,Zürafa,Giraffe,vahsi,False,migrated,migrated
+animals,medium,zebra,Zebra,Zebra,vahsi,False,migrated,migrated
+animals,medium,tiger,Kaplan,Tiger,vahsi,True,migrated,migrated
+animals,medium,wolf,Kurt,Wolf,vahsi,True,migrated,migrated
+animals,medium,fox,Tilki,Fox,vahsi,False,local,missing
+animals,medium,squirrel,Sincap,Squirrel,vahsi,False,local,missing
+animals,medium,owl,Baykuş,Owl,kus,True,migrated,migrated
+animals,medium,penguin,Penguen,Penguin,"kus,deniz",False,local,missing
+animals,medium,dolphin,Yunus,Dolphin,deniz,True,local,missing
+animals,hard,deer,Geyik,Deer,vahsi,False,migrated,migrated
+animals,hard,bull,Boğa,Bull,ciftlik,True,migrated,migrated
+animals,hard,hedgehog,Kirpi,Hedgehog,vahsi,False,local,missing
+animals,hard,ant,Karınca,Ant,bocek,False,local,missing
+animals,hard,ladybug,Uğur böceği,Ladybug,bocek,False,local,missing
+animals,hard,octopus,Ahtapot,Octopus,deniz,False,local,missing
+animals,hard,shark,Köpekbalığı,Shark,deniz,False,local,missing
+animals,hard,whale,Balina,Whale,deniz,True,local,missing
+animals,hard,hippopotamus,Su aygırı,Hippopotamus,vahsi,False,local,missing
+animals,hard,rhinoceros,Gergedan,Rhinoceros,vahsi,False,local,missing
+animals,hard,crocodile,Timsah,Crocodile,"vahsi,su",False,local,missing
+animals,hard,camel,Deve,Camel,vahsi,True,local,missing
+animals,hard,kangaroo,Kanguru,Kangaroo,vahsi,False,local,missing
+animals,hard,gorilla,Goril,Gorilla,vahsi,False,local,missing
+animals,hard,flamingo,Flamingo,Flamingo,kus,False,local,missing
+animals,hard,ostrich,Devekuşu,Ostrich,kus,False,local,missing
+animals,hard,bat,Yarasa,Bat,hava,False,local,missing
+animals,hard,chameleon,Bukalemun,Chameleon,vahsi,False,local,missing
+produce,easy,apple,Elma,Apple,"meyve,kirmizi",False,verified_real_photo,selected
+produce,easy,banana,Muz,Banana,"meyve,sari",False,verified_real_photo,selected
+produce,easy,orange,Portakal,Orange,"meyve,turuncu",False,verified_real_photo,migrated
+produce,easy,strawberry,Çilek,Strawberry,"meyve,kirmizi",False,migrated,migrated
+produce,easy,grape,Üzüm,Grape,"meyve,mor",False,migrated,migrated
+produce,easy,watermelon,Karpuz,Watermelon,"meyve,yesil",False,migrated,migrated
+produce,easy,pear,Armut,Pear,"meyve,yesil",False,migrated,migrated
+produce,easy,cherry,Kiraz,Cherry,"meyve,kirmizi",False,migrated,migrated
+produce,easy,mandarin,Mandalina,Mandarin,"meyve,turuncu",False,migrated,migrated
+produce,easy,tomato,Domates,Tomato,"sebze,kirmizi",False,verified_real_photo,migrated
+produce,easy,carrot,Havuç,Carrot,"sebze,turuncu",False,migrated,migrated
+produce,easy,potato,Patates,Potato,sebze,False,migrated,migrated
+produce,easy,cucumber,Salatalık,Cucumber,"sebze,yesil",False,migrated,migrated
+produce,easy,corn,Mısır,Corn,"sebze,sari",False,missing,missing
+produce,easy,lemon,Limon,Lemon,"meyve,sari",False,verified_real_photo,missing
+produce,medium,peach,Şeftali,Peach,meyve,False,migrated,migrated
+produce,medium,plum,Erik,Plum,"meyve,mor",False,migrated,migrated
+produce,medium,melon,Kavun,Melon,"meyve,sari",False,verified_real_photo,missing
+produce,medium,pomegranate,Nar,Pomegranate,"meyve,kirmizi",False,migrated,migrated
+produce,medium,pineapple,Ananas,Pineapple,"meyve,sari",False,missing,missing
+produce,medium,kiwi,Kivi,Kiwi,"meyve,yesil",False,verified_real_photo,missing
+produce,medium,pepper,Biber,Pepper,"sebze,yesil",False,verified_real_photo,migrated
+produce,medium,eggplant,Patlıcan,Eggplant,"sebze,mor",False,migrated,migrated
+produce,medium,onion,Soğan,Onion,sebze,False,migrated,migrated
+produce,medium,cabbage,Lahana,Cabbage,"sebze,yesil",False,migrated,migrated
+produce,medium,lettuce,Marul,Lettuce,"sebze,yesil",False,migrated,migrated
+produce,medium,zucchini,Kabak,Zucchini,"sebze,yesil",False,verified_real_photo,migrated
+produce,medium,pea,Bezelye,Pea,"sebze,yesil",False,migrated,migrated
+produce,medium,green_bean,Fasulye,Green bean,"sebze,yesil",False,missing,missing
+produce,medium,apricot,Kayısı,Apricot,"meyve,turuncu",False,missing,missing
+produce,medium,sour_cherry,Vişne,Sour cherry,"meyve,kirmizi",False,missing,missing
+produce,hard,quince,Ayva,Quince,"meyve,sari",False,migrated,migrated
+produce,hard,fig,İncir,Fig,"meyve,mor",False,missing,missing
+produce,hard,blackberry,Böğürtlen,Blackberry,"meyve,mor",False,migrated,migrated
+produce,hard,raspberry,Ahududu,Raspberry,"meyve,kirmizi",False,missing,missing
+produce,hard,mulberry,Dut,Mulberry,meyve,False,missing,missing
+produce,hard,avocado,Avokado,Avocado,"meyve,yesil",False,verified_real_photo,missing
+produce,hard,coconut,Hindistan cevizi,Coconut,meyve,False,missing,missing
+produce,hard,grapefruit,Greyfurt,Grapefruit,meyve,False,missing,missing
+produce,hard,chestnut,Kestane,Chestnut,meyve,False,migrated,migrated
+produce,hard,cauliflower,Karnabahar,Cauliflower,sebze,False,migrated,migrated
+produce,hard,broccoli,Brokoli,Broccoli,"sebze,yesil",False,migrated,missing
+produce,hard,spinach,Ispanak,Spinach,"sebze,yesil",False,migrated,migrated
+produce,hard,radish,Turp,Radish,"sebze,kirmizi",False,migrated,migrated
+produce,hard,beetroot,Pancar,Beetroot,"sebze,mor",False,missing,missing
+produce,hard,garlic,Sarımsak,Garlic,sebze,False,missing,missing
+produce,hard,celery,Kereviz,Celery,sebze,False,missing,missing
+produce,hard,leek,Pırasa,Leek,"sebze,yesil",False,verified_real_photo,missing
+produce,hard,mint,Nane,Mint,"sebze,yesil",False,migrated,migrated
+produce,hard,artichoke,Enginar,Artichoke,"sebze,yesil",False,missing,missing
+food,easy,bread,Ekmek,Bread,kahvalti,False,missing,missing
+food,easy,milk,Süt,Milk,icecek,False,missing,missing
+food,easy,water,Su,Water,icecek,False,missing,missing
+food,easy,egg,Yumurta,Egg,kahvalti,False,missing,missing
+food,easy,cheese,Peynir,Cheese,kahvalti,False,missing,missing
+food,easy,yogurt,Yoğurt,Yogurt,,False,missing,missing
+food,easy,juice,Meyve suyu,Juice,icecek,False,missing,missing
+food,easy,cake,Kek,Cake,tatli,False,missing,missing
+food,easy,ice_cream,Dondurma,Ice cream,"tatli,soguk",False,missing,missing
+food,easy,pasta,Makarna,Pasta,ogle_aksam,False,missing,missing
+food,easy,soup,Çorba,Soup,"ogle_aksam,sicak",False,missing,missing
+food,easy,rice,Pilav,Rice,ogle_aksam,False,missing,missing
+food,easy,cookie,Kurabiye,Cookie,tatli,False,missing,missing
+food,easy,simit,Simit,Simit,kahvalti,False,missing,missing
+food,medium,honey,Bal,Honey,kahvalti,False,missing,missing
+food,medium,olive,Zeytin,Olive,kahvalti,False,missing,missing
+food,medium,jam,Reçel,Jam,kahvalti,False,missing,missing
+food,medium,butter,Tereyağı,Butter,kahvalti,False,missing,missing
+food,medium,sandwich,Sandviç,Sandwich,,False,missing,missing
+food,medium,pizza,Pizza,Pizza,,False,missing,missing
+food,medium,meatball,Köfte,Meatball,ogle_aksam,False,missing,missing
+food,medium,salad,Salata,Salad,ogle_aksam,False,missing,missing
+food,medium,french_fries,Patates kızartması,French fries,,False,missing,missing
+food,medium,chocolate,Çikolata,Chocolate,tatli,False,missing,missing
+food,medium,birthday_cake,Pasta,Birthday cake,tatli,False,missing,missing
+food,medium,ayran,Ayran,Ayran,icecek,False,missing,missing
+food,medium,pancake,Krep,Pancake,kahvalti,False,missing,missing
+food,medium,cereal,Mısır gevreği,Cereal,kahvalti,False,missing,missing
+food,hard,borek,Börek,Borek,,False,missing,missing
+food,hard,manti,Mantı,Manti,,False,missing,missing
+food,hard,dolma,Dolma,Dolma,,False,missing,missing
+food,hard,lahmacun,Lahmacun,Lahmacun,,False,missing,missing
+food,hard,menemen,Menemen,Menemen,kahvalti,False,missing,missing
+food,hard,raisin,Kuru üzüm,Raisin,atistirmalik,False,missing,missing
+food,hard,hazelnut,Fındık,Hazelnut,atistirmalik,False,missing,missing
+food,hard,walnut,Ceviz,Walnut,atistirmalik,False,missing,missing
+food,hard,peanut,Fıstık,Peanut,atistirmalik,False,missing,missing
+food,hard,popcorn,Patlamış mısır,Popcorn,atistirmalik,False,missing,missing
+food,hard,sucuk,Sucuk,Sucuk,kahvalti,False,missing,missing
+food,hard,lentil,Mercimek,Lentil,,False,missing,missing
+food,hard,pudding,Puding,Pudding,tatli,False,missing,missing
+food,hard,lemonade,Limonata,Lemonade,"icecek,soguk",False,missing,missing
+vehicles,easy,car,Araba,Car,kara,True,local,missing
+vehicles,easy,bus,Otobüs,Bus,kara,True,local,missing
+vehicles,easy,truck,Kamyon,Truck,kara,True,local,missing
+vehicles,easy,train,Tren,Train,rayli,True,local,missing
+vehicles,easy,airplane,Uçak,Airplane,hava,True,local,missing
+vehicles,easy,ship,Gemi,Ship,deniz,True,local,missing
+vehicles,easy,bicycle,Bisiklet,Bicycle,kara,True,local,missing
+vehicles,easy,motorcycle,Motosiklet,Motorcycle,kara,True,local,missing
+vehicles,easy,ambulance,Ambulans,Ambulance,"kara,gorev",True,local,missing
+vehicles,easy,fire_truck,İtfaiye aracı,Fire truck,"kara,gorev",True,local,missing
+vehicles,easy,police_car,Polis arabası,Police car,"kara,gorev",True,local,missing
+vehicles,easy,taxi,Taksi,Taxi,kara,True,local,missing
+vehicles,easy,helicopter,Helikopter,Helicopter,hava,True,local,missing
+vehicles,easy,boat,Tekne,Boat,deniz,True,local,missing
+vehicles,easy,tractor,Traktör,Tractor,"kara,is_makinesi",True,local,missing
+vehicles,medium,minibus,Minibüs,Minibus,kara,False,local,missing
+vehicles,medium,pickup_truck,Kamyonet,Pickup truck,kara,False,local,missing
+vehicles,medium,garbage_truck,Çöp kamyonu,Garbage truck,"kara,gorev",True,local,missing
+vehicles,medium,school_bus,Okul servisi,School bus,kara,True,local,missing
+vehicles,medium,subway,Metro,Subway,rayli,True,local,missing
+vehicles,medium,tram,Tramvay,Tram,rayli,True,local,missing
+vehicles,medium,scooter,Scooter,Scooter,kara,False,local,missing
+vehicles,medium,excavator,Kepçe,Excavator,is_makinesi,True,local,missing
+vehicles,medium,crane,Vinç,Crane,is_makinesi,False,local,missing
+vehicles,medium,hot_air_balloon,Sıcak hava balonu,Hot air balloon,hava,False,local,missing
+vehicles,medium,sailboat,Yelkenli,Sailboat,deniz,False,local,missing
+vehicles,medium,speedboat,Sürat teknesi,Speedboat,deniz,True,local,missing
+vehicles,medium,caravan,Karavan,Caravan,kara,False,local,missing
+vehicles,medium,horse_cart,At arabası,Horse cart,kara,True,local,missing
+vehicles,medium,tow_truck,Çekici,Tow truck,"kara,gorev",False,local,missing
+vehicles,hard,forklift,Forklift,Forklift,is_makinesi,False,local,missing
+vehicles,hard,cement_mixer,Beton mikseri,Cement mixer,is_makinesi,False,local,missing
+vehicles,hard,bulldozer,Buldozer,Bulldozer,is_makinesi,False,local,missing
+vehicles,hard,road_roller,Yol silindiri,Road roller,is_makinesi,False,local,missing
+vehicles,hard,cargo_ship,Yük gemisi,Cargo ship,deniz,True,local,missing
+vehicles,hard,submarine,Denizaltı,Submarine,deniz,False,local,missing
+vehicles,hard,ferry,Feribot,Ferry,deniz,True,local,missing
+vehicles,hard,canoe,Kano,Canoe,deniz,False,local,missing
+vehicles,hard,rocket,Roket,Rocket,hava,True,local,missing
+vehicles,hard,jet,Jet,Jet,hava,True,local,missing
+vehicles,hard,airship,Zeplin,Airship,hava,False,local,missing
+vehicles,hard,glider,Planör,Glider,hava,False,local,missing
+vehicles,hard,cable_car,Teleferik,Cable car,hava,False,local,missing
+vehicles,hard,snowmobile,Kar motosikleti,Snowmobile,kara,False,local,missing
+vehicles,hard,high_speed_train,Hızlı tren,High speed train,rayli,True,local,missing
+vehicles,hard,skateboard,Kaykay,Skateboard,kara,False,local,missing
+clothes,easy,tshirt,Tişört,Tshirt,"yaz,govde",False,missing,missing
+clothes,easy,trousers,Pantolon,Trousers,bacak,False,missing,missing
+clothes,easy,shoes,Ayakkabı,Shoes,ayak,False,missing,missing
+clothes,easy,socks,Çorap,Socks,ayak,False,missing,missing
+clothes,easy,hat,Şapka,Hat,"yaz,bas",False,missing,missing
+clothes,easy,coat,Mont,Coat,"kis,govde",False,missing,missing
+clothes,easy,dress,Elbise,Dress,"yaz,govde",False,missing,missing
+clothes,easy,skirt,Etek,Skirt,bacak,False,missing,missing
+clothes,easy,shorts,Şort,Shorts,"yaz,bacak",False,missing,missing
+clothes,easy,pajamas,Pijama,Pajamas,govde,False,missing,missing
+clothes,easy,sweater,Kazak,Sweater,"kis,govde",False,missing,missing
+clothes,easy,slippers,Terlik,Slippers,ayak,False,missing,missing
+clothes,medium,shirt,Gömlek,Shirt,govde,False,missing,missing
+clothes,medium,gloves,Eldiven,Gloves,"kis,el",False,missing,missing
+clothes,medium,scarf,Atkı,Scarf,"kis,boyun",False,missing,missing
+clothes,medium,beanie,Bere,Beanie,"kis,bas",False,missing,missing
+clothes,medium,boots,Çizme,Boots,"kis,yagmur,ayak",False,missing,missing
+clothes,medium,sandals,Sandalet,Sandals,"yaz,ayak",False,missing,missing
+clothes,medium,swimsuit,Mayo,Swimsuit,yaz,False,missing,missing
+clothes,medium,raincoat,Yağmurluk,Raincoat,"yagmur,govde",False,missing,missing
+clothes,medium,cardigan,Hırka,Cardigan,govde,False,missing,missing
+clothes,medium,tracksuit,Eşofman,Tracksuit,govde,False,missing,missing
+clothes,medium,sneakers,Spor ayakkabı,Sneakers,ayak,False,missing,missing
+clothes,medium,glasses,Gözlük,Glasses,aksesuar,False,missing,missing
+clothes,medium,sunglasses,Güneş gözlüğü,Sunglasses,"yaz,aksesuar",False,missing,missing
+clothes,medium,umbrella,Şemsiye,Umbrella,"yagmur,aksesuar",False,missing,missing
+clothes,medium,bag,Çanta,Bag,aksesuar,False,missing,missing
+clothes,hard,vest,Yelek,Vest,govde,False,missing,missing
+clothes,hard,jacket,Ceket,Jacket,govde,False,missing,missing
+clothes,hard,tie,Kravat,Tie,boyun,False,missing,missing
+clothes,hard,bow_tie,Papyon,Bow tie,boyun,False,missing,missing
+clothes,hard,apron,Önlük,Apron,govde,False,missing,missing
+clothes,hard,belt,Kemer,Belt,aksesuar,False,missing,missing
+clothes,hard,ankle_boots,Bot,Ankle boots,"kis,ayak",False,missing,missing
+clothes,hard,cap,Kasket,Cap,bas,False,missing,missing
+clothes,hard,earmuffs,Kulaklık,Earmuffs,"kis,bas",False,missing,missing
+clothes,hard,wristwatch,Saat,Wristwatch,"aksesuar,el",False,missing,missing
+clothes,hard,bracelet,Bilezik,Bracelet,aksesuar,False,missing,missing
+clothes,hard,necklace,Kolye,Necklace,"aksesuar,boyun",False,missing,missing
+clothes,hard,backpack,Sırt çantası,Backpack,aksesuar,False,missing,missing
+clothes,hard,cape,Pelerin,Cape,govde,False,missing,missing
+clothes,hard,overalls,Tulum,Overalls,govde,False,missing,missing
+home,easy,bed,Yatak,Bed,"yatak_odasi,uyumak",False,missing,missing
+home,easy,pillow,Yastık,Pillow,"yatak_odasi,uyumak",False,missing,missing
+home,easy,table,Masa,Table,"salon,mutfak",False,missing,missing
+home,easy,chair,Sandalye,Chair,"mutfak,oturmak",False,missing,missing
+home,easy,sofa,Koltuk,Sofa,"salon,oturmak",False,missing,missing
+home,easy,television,Televizyon,Television,salon,False,missing,missing
+home,easy,door,Kapı,Door,,False,missing,missing
+home,easy,window,Pencere,Window,,False,missing,missing
+home,easy,lamp,Lamba,Lamp,isik,False,missing,missing
+home,easy,fridge,Buzdolabı,Fridge,mutfak,False,missing,missing
+home,easy,plate,Tabak,Plate,"mutfak,yemek",False,missing,missing
+home,easy,glass,Bardak,Glass,"mutfak,yemek",False,missing,missing
+home,easy,spoon,Kaşık,Spoon,"mutfak,yemek",False,missing,missing
+home,easy,toothbrush,Diş fırçası,Toothbrush,"banyo,temizlik",False,missing,missing
+home,easy,soap,Sabun,Soap,"banyo,temizlik",False,missing,missing
+home,easy,towel,Havlu,Towel,"banyo,temizlik",False,missing,missing
+home,medium,oven,Fırın,Oven,mutfak,False,missing,missing
+home,medium,stove,Ocak,Stove,mutfak,False,missing,missing
+home,medium,pot,Tencere,Pot,mutfak,False,missing,missing
+home,medium,pan,Tava,Pan,mutfak,False,missing,missing
+home,medium,fork,Çatal,Fork,"mutfak,yemek",False,missing,missing
+home,medium,teapot,Çaydanlık,Teapot,mutfak,False,missing,missing
+home,medium,washing_machine,Çamaşır makinesi,Washing machine,"banyo,temizlik",False,missing,missing
+home,medium,sink,Lavabo,Sink,banyo,False,missing,missing
+home,medium,bathtub,Küvet,Bathtub,"banyo,temizlik",False,missing,missing
+home,medium,toilet,Tuvalet,Toilet,banyo,False,missing,missing
+home,medium,mirror,Ayna,Mirror,banyo,False,missing,missing
+home,medium,comb,Tarak,Comb,banyo,False,missing,missing
+home,medium,wardrobe,Gardırop,Wardrobe,"yatak_odasi,giymek",False,missing,missing
+home,medium,carpet,Halı,Carpet,salon,False,missing,missing
+home,medium,curtain,Perde,Curtain,salon,False,missing,missing
+home,medium,blanket,Battaniye,Blanket,"yatak_odasi,uyumak",False,missing,missing
+home,medium,clock,Saat,Clock,salon,False,missing,missing
+home,hard,dishwasher,Bulaşık makinesi,Dishwasher,"mutfak,temizlik",False,missing,missing
+home,hard,vacuum_cleaner,Süpürge,Vacuum cleaner,temizlik,False,missing,missing
+home,hard,iron,Ütü,Iron,giymek,False,missing,missing
+home,hard,microwave,Mikrodalga,Microwave,mutfak,False,missing,missing
+home,hard,kettle,Su ısıtıcısı,Kettle,mutfak,False,missing,missing
+home,hard,mixer,Mikser,Mixer,mutfak,False,missing,missing
+home,hard,flower_pot,Saksı,Flower pot,salon,False,missing,missing
+home,hard,bookshelf,Kitaplık,Bookshelf,salon,False,missing,missing
+home,hard,nightstand,Komodin,Nightstand,yatak_odasi,False,missing,missing
+home,hard,shampoo,Şampuan,Shampoo,"banyo,temizlik",False,missing,missing
+home,hard,toothpaste,Diş macunu,Toothpaste,"banyo,temizlik",False,missing,missing
+home,hard,hair_dryer,Saç kurutma makinesi,Hair dryer,banyo,False,missing,missing
+home,hard,trash_can,Çöp kutusu,Trash can,temizlik,False,missing,missing
+home,hard,key,Anahtar,Key,,False,missing,missing
+home,hard,telephone,Telefon,Telephone,salon,False,missing,missing
+home,hard,remote_control,Kumanda,Remote control,salon,False,missing,missing
+home,hard,hanger,Askı,Hanger,giymek,False,missing,missing
+school,easy,ball,Top,Ball,oyuncak,False,missing,missing
+school,easy,doll,Oyuncak bebek,Doll,oyuncak,False,missing,missing
+school,easy,teddy_bear,Oyuncak ayı,Teddy bear,oyuncak,False,missing,missing
+school,easy,toy_car,Oyuncak araba,Toy car,oyuncak,False,missing,missing
+school,easy,blocks,Küpler,Blocks,oyuncak,False,missing,missing
+school,easy,balloon,Balon,Balloon,oyuncak,False,missing,missing
+school,easy,pencil,Kalem,Pencil,okul,False,missing,missing
+school,easy,crayon,Boya kalemi,Crayon,sanat,False,missing,missing
+school,easy,book,Kitap,Book,okul,False,missing,missing
+school,easy,school_bag,Okul çantası,School bag,okul,False,missing,missing
+school,easy,slide,Kaydırak,Slide,park,False,missing,missing
+school,easy,swing,Salıncak,Swing,park,False,missing,missing
+school,easy,puzzle,Yapboz,Puzzle,oyuncak,False,missing,missing
+school,easy,kite,Uçurtma,Kite,oyuncak,False,missing,missing
+school,medium,eraser,Silgi,Eraser,okul,False,missing,missing
+school,medium,sharpener,Kalemtıraş,Sharpener,okul,False,missing,missing
+school,medium,notebook,Defter,Notebook,okul,False,missing,missing
+school,medium,scissors,Makas,Scissors,"okul,sanat",False,missing,missing
+school,medium,glue,Yapıştırıcı,Glue,sanat,False,missing,missing
+school,medium,ruler,Cetvel,Ruler,okul,False,missing,missing
+school,medium,board,Tahta,Board,okul,False,missing,missing
+school,medium,jump_rope,Atlama ipi,Jump rope,oyuncak,False,missing,missing
+school,medium,seesaw,Tahterevalli,Seesaw,park,False,missing,missing
+school,medium,sandbox,Kum havuzu,Sandbox,park,False,missing,missing
+school,medium,bucket_spade,Kova ve kürek,Bucket spade,oyuncak,False,missing,missing
+school,medium,play_dough,Oyun hamuru,Play dough,sanat,False,missing,missing
+school,medium,paintbrush,Fırça,Paintbrush,sanat,False,missing,missing
+school,medium,whistle,Düdük,Whistle,oyuncak,False,missing,missing
+school,hard,watercolor,Suluboya,Watercolor,sanat,False,missing,missing
+school,hard,chalk,Tebeşir,Chalk,okul,False,missing,missing
+school,hard,pencil_case,Kalemlik,Pencil case,okul,False,missing,missing
+school,hard,globe,Dünya küresi,Globe,okul,False,missing,missing
+school,hard,school_desk,Okul sırası,School desk,okul,False,missing,missing
+school,hard,school_bell,Zil,School bell,okul,False,missing,missing
+school,hard,computer,Bilgisayar,Computer,okul,False,missing,missing
+school,hard,climbing_frame,Tırmanma duvarı,Climbing frame,park,False,missing,missing
+school,hard,spinning_top,Topaç,Spinning top,oyuncak,False,missing,missing
+school,hard,yoyo,Yoyo,Yoyo,oyuncak,False,missing,missing
+school,hard,marbles,Misket,Marbles,oyuncak,False,missing,missing
+school,hard,toy_robot,Robot,Toy robot,oyuncak,False,missing,missing
+school,hard,dominoes,Domino,Dominoes,oyuncak,False,missing,missing
+school,hard,hula_hoop,Hula hop,Hula hoop,oyuncak,False,missing,missing
+jobs,easy,doctor,Doktor,Doctor,,False,missing,missing
+jobs,easy,nurse,Hemşire,Nurse,,False,missing,missing
+jobs,easy,teacher,Öğretmen,Teacher,,False,missing,missing
+jobs,easy,police_officer,Polis,Police officer,,False,missing,missing
+jobs,easy,firefighter,İtfaiyeci,Firefighter,,False,missing,missing
+jobs,easy,cook,Aşçı,Cook,,False,missing,missing
+jobs,easy,driver,Şoför,Driver,,False,missing,missing
+jobs,easy,farmer,Çiftçi,Farmer,,False,missing,missing
+jobs,easy,baker,Fırıncı,Baker,,False,missing,missing
+jobs,easy,dentist,Diş hekimi,Dentist,,False,missing,missing
+jobs,medium,postman,Postacı,Postman,,False,missing,missing
+jobs,medium,hairdresser,Berber/Kuaför,Hairdresser,,False,missing,missing
+jobs,medium,pilot,Pilot,Pilot,,False,missing,missing
+jobs,medium,vet,Veteriner,Vet,,False,missing,missing
+jobs,medium,waiter,Garson,Waiter,,False,missing,missing
+jobs,medium,cleaner,Temizlik görevlisi,Cleaner,,False,missing,missing
+jobs,medium,builder,İnşaat işçisi,Builder,,False,missing,missing
+jobs,medium,cashier,Kasiyer,Cashier,,False,missing,missing
+jobs,medium,painter,Ressam,Painter,,False,missing,missing
+jobs,medium,musician,Müzisyen,Musician,,False,missing,missing
+jobs,medium,gardener,Bahçıvan,Gardener,,False,missing,missing
+jobs,medium,fisher,Balıkçı,Fisher,,False,missing,missing
+jobs,medium,captain,Kaptan,Captain,,False,missing,missing
+jobs,medium,pharmacist,Eczacı,Pharmacist,,False,missing,missing
+jobs,hard,carpenter,Marangoz,Carpenter,,False,missing,missing
+jobs,hard,mechanic,Tamirci,Mechanic,,False,missing,missing
+jobs,hard,tailor,Terzi,Tailor,,False,missing,missing
+jobs,hard,photographer,Fotoğrafçı,Photographer,,False,missing,missing
+jobs,hard,librarian,Kütüphaneci,Librarian,,False,missing,missing
+jobs,hard,astronaut,Astronot,Astronaut,,False,missing,missing
+jobs,hard,electrician,Elektrikçi,Electrician,,False,missing,missing
+jobs,hard,house_painter,Boyacı,House painter,,False,missing,missing
+jobs,hard,shepherd,Çoban,Shepherd,,False,missing,missing
+jobs,hard,beekeeper,Arıcı,Beekeeper,,False,missing,missing
+jobs,hard,engineer,Mühendis,Engineer,,False,missing,missing
+jobs,hard,referee,Hakem,Referee,,False,missing,missing
+jobs,hard,athlete,Sporcu,Athlete,,False,missing,missing
+jobs,hard,scientist,Bilim insanı,Scientist,,False,missing,missing
+jobs,hard,train_driver,Makinist,Train driver,,False,missing,missing
+jobs,hard,courier,Kurye,Courier,,False,missing,missing
+nature,easy,sun,Güneş,Sun,"gokyuzu,yaz",False,missing,missing
+nature,easy,moon,Ay,Moon,gokyuzu,False,missing,missing
+nature,easy,star,Yıldız,Star,gokyuzu,False,missing,missing
+nature,easy,cloud,Bulut,Cloud,gokyuzu,False,missing,missing
+nature,easy,rain,Yağmur,Rain,hava_durumu,True,missing,missing
+nature,easy,snow,Kar,Snow,"hava_durumu,kis",False,missing,missing
+nature,easy,tree,Ağaç,Tree,bitki,False,missing,missing
+nature,easy,flower,Çiçek,Flower,"bitki,ilkbahar",False,missing,missing
+nature,easy,sea,Deniz,Sea,yer,True,missing,missing
+nature,easy,mountain,Dağ,Mountain,yer,False,missing,missing
+nature,easy,rainbow,Gökkuşağı,Rainbow,gokyuzu,False,missing,missing
+nature,easy,snowman,Kardan adam,Snowman,kis,False,missing,missing
+nature,medium,wind,Rüzgar,Wind,hava_durumu,True,missing,missing
+nature,medium,lightning,Şimşek,Lightning,hava_durumu,False,missing,missing
+nature,medium,leaf,Yaprak,Leaf,"bitki,sonbahar",False,missing,missing
+nature,medium,grass,Çimen,Grass,bitki,False,missing,missing
+nature,medium,river,Nehir,River,yer,True,missing,missing
+nature,medium,lake,Göl,Lake,yer,False,missing,missing
+nature,medium,forest,Orman,Forest,yer,False,missing,missing
+nature,medium,sand,Kum,Sand,"yer,yaz",False,missing,missing
+nature,medium,stone,Taş,Stone,yer,False,missing,missing
+nature,medium,spring,İlkbahar,Spring,,False,missing,missing
+nature,medium,summer,Yaz,Summer,,False,missing,missing
+nature,medium,autumn,Sonbahar,Autumn,,False,missing,missing
+nature,medium,winter,Kış,Winter,,False,missing,missing
+nature,medium,night,Gece,Night,,False,missing,missing
+nature,medium,day,Gündüz,Day,,False,missing,missing
+nature,hard,waterfall,Şelale,Waterfall,yer,True,missing,missing
+nature,hard,island,Ada,Island,yer,False,missing,missing
+nature,hard,desert,Çöl,Desert,yer,False,missing,missing
+nature,hard,cave,Mağara,Cave,yer,False,missing,missing
+nature,hard,volcano,Volkan,Volcano,yer,False,missing,missing
+nature,hard,fog,Sis,Fog,hava_durumu,False,missing,missing
+nature,hard,hail,Dolu,Hail,hava_durumu,False,missing,missing
+nature,hard,ice,Buz,Ice,kis,False,missing,missing
+nature,hard,seed,Tohum,Seed,bitki,False,missing,missing
+nature,hard,sprout,Filiz,Sprout,"bitki,ilkbahar",False,missing,missing
+nature,hard,pine_cone,Kozalak,Pine cone,"bitki,sonbahar",False,missing,missing
+nature,hard,mushroom,Mantar,Mushroom,bitki,False,missing,missing
+nature,hard,cactus,Kaktüs,Cactus,bitki,False,missing,missing
+nature,hard,sunrise,Gün doğumu,Sunrise,gokyuzu,False,missing,missing
+nature,hard,wave,Dalga,Wave,yer,True,missing,missing
+music,easy,drum,Davul,Drum,vurmali,False,missing,missing
+music,easy,piano,Piyano,Piano,tuslu,False,missing,missing
+music,easy,guitar,Gitar,Guitar,telli,False,missing,missing
+music,easy,recorder,Flüt,Recorder,uflemeli,False,missing,missing
+music,easy,bell,Zil,Bell,vurmali,False,missing,missing
+music,easy,xylophone,Ksilofon,Xylophone,vurmali,False,missing,missing
+music,easy,maracas,Marakas,Maracas,vurmali,False,missing,missing
+music,easy,tambourine,Tef,Tambourine,vurmali,False,missing,missing
+music,medium,violin,Keman,Violin,telli,False,missing,missing
+music,medium,trumpet,Trompet,Trumpet,uflemeli,False,missing,missing
+music,medium,accordion,Akordeon,Accordion,tuslu,False,missing,missing
+music,medium,harmonica,Mızıka,Harmonica,uflemeli,False,missing,missing
+music,medium,baglama,Bağlama,Baglama,"telli,geleneksel",False,missing,missing
+music,medium,darbuka,Darbuka,Darbuka,"vurmali,geleneksel",False,missing,missing
+music,medium,ukulele,Ukulele,Ukulele,telli,False,missing,missing
+music,medium,triangle,Üçgen,Triangle,vurmali,False,missing,missing
+music,medium,keyboard,Org,Keyboard,tuslu,False,missing,missing
+music,medium,castanets,Kastanyet,Castanets,vurmali,False,missing,missing
+music,hard,cello,Çello,Cello,telli,False,missing,missing
+music,hard,harp,Arp,Harp,telli,False,missing,missing
+music,hard,saxophone,Saksafon,Saxophone,uflemeli,False,missing,missing
+music,hard,clarinet,Klarnet,Clarinet,uflemeli,False,missing,missing
+music,hard,trombone,Trombon,Trombone,uflemeli,False,missing,missing
+music,hard,flute,Yan flüt,Flute,uflemeli,False,missing,missing
+music,hard,ney,Ney,Ney,"uflemeli,geleneksel",False,missing,missing
+music,hard,kanun,Kanun,Kanun,"telli,geleneksel",False,missing,missing
+music,hard,zurna,Zurna,Zurna,"uflemeli,geleneksel",False,missing,missing
+music,hard,oud,Ud,Oud,"telli,geleneksel",False,missing,missing
+music,hard,double_bass,Kontrbas,Double bass,telli,False,missing,missing
+music,hard,davul_zurna,Davul-zurna,Davul zurna,geleneksel,False,missing,missing
+body,easy,eye,Göz,Eye,"yuz,gorme",False,missing,missing
+body,easy,ear,Kulak,Ear,"yuz,isitme",False,missing,missing
+body,easy,nose,Burun,Nose,"yuz,koklama",False,missing,missing
+body,easy,mouth,Ağız,Mouth,"yuz,tatma",False,missing,missing
+body,easy,hand,El,Hand,"kol_el,dokunma",False,missing,missing
+body,easy,foot,Ayak,Foot,bacak_ayak,False,missing,missing
+body,easy,hair,Saç,Hair,yuz,False,missing,missing
+body,easy,tummy,Karın,Tummy,govde,False,missing,missing
+body,easy,head,Baş,Head,,False,missing,missing
+body,easy,teeth,Diş,Teeth,yuz,False,missing,missing
+body,medium,arm,Kol,Arm,kol_el,False,missing,missing
+body,medium,leg,Bacak,Leg,bacak_ayak,False,missing,missing
+body,medium,finger,Parmak,Finger,kol_el,False,missing,missing
+body,medium,tongue,Dil,Tongue,"yuz,tatma",False,missing,missing
+body,medium,eyebrow,Kaş,Eyebrow,yuz,False,missing,missing
+body,medium,knee,Diz,Knee,bacak_ayak,False,missing,missing
+body,medium,shoulder,Omuz,Shoulder,govde,False,missing,missing
+body,medium,neck,Boyun,Neck,govde,False,missing,missing
+body,medium,back,Sırt,Back,govde,False,missing,missing
+body,medium,cheek,Yanak,Cheek,yuz,False,missing,missing
+body,medium,lips,Dudak,Lips,yuz,False,missing,missing
+body,medium,chin,Çene,Chin,yuz,False,missing,missing
+body,hard,elbow,Dirsek,Elbow,kol_el,False,missing,missing
+body,hard,wrist,Bilek,Wrist,kol_el,False,missing,missing
+body,hard,heel,Topuk,Heel,bacak_ayak,False,missing,missing
+body,hard,nail,Tırnak,Nail,kol_el,False,missing,missing
+body,hard,eyelash,Kirpik,Eyelash,yuz,False,missing,missing
+body,hard,forehead,Alın,Forehead,yuz,False,missing,missing
+body,hard,waist,Bel,Waist,govde,False,missing,missing
+body,hard,ankle,Ayak bileği,Ankle,bacak_ayak,False,missing,missing
+body,hard,palm,Avuç içi,Palm,kol_el,False,missing,missing
+body,hard,toe,Ayak parmağı,Toe,bacak_ayak,False,missing,missing
+body,hard,belly_button,Göbek,Belly button,govde,False,missing,missing
+body,hard,hip,Kalça,Hip,govde,False,missing,missing
+colors,easy,red,Kırmızı,Red,,False,missing,selected
+colors,easy,blue,Mavi,Blue,,False,missing,migrated
+colors,easy,yellow,Sarı,Yellow,,False,missing,migrated
+colors,easy,green,Yeşil,Green,,False,missing,migrated
+colors,easy,orange,Turuncu,Orange,,False,missing,migrated
+colors,easy,purple,Mor,Purple,,False,missing,migrated
+colors,easy,pink,Pembe,Pink,,False,missing,migrated
+colors,easy,brown,Kahverengi,Brown,,False,missing,migrated
+colors,easy,black,Siyah,Black,,False,missing,migrated
+colors,easy,white,Beyaz,White,,False,missing,migrated
+colors,medium,orange,Turuncu,Orange,,False,missing,missing
+colors,medium,purple,Mor,Purple,,False,missing,missing
+colors,medium,pink,Pembe,Pink,,False,missing,missing
+colors,medium,brown,Kahverengi,Brown,,False,missing,missing
+colors,medium,black,Siyah,Black,,False,missing,missing
+colors,medium,white,Beyaz,White,,False,missing,missing
+colors,medium,gray,Gri,Gray,,False,missing,migrated
+colors,medium,navy,Lacivert,Navy,,False,missing,missing
+colors,medium,light_blue,Açık mavi,Light blue,,False,missing,missing
+colors,medium,turquoise,Turkuaz,Turquoise,,False,missing,missing
+colors,medium,gold,Altın,Gold,,False,missing,missing
+colors,medium,silver,Gümüş,Silver,,False,missing,missing
+colors,hard,gray,Gri,Gray,,False,missing,missing
+colors,hard,navy,Lacivert,Navy,,False,missing,missing
+colors,hard,light_blue,Açık mavi,Light blue,,False,missing,missing
+colors,hard,turquoise,Turkuaz,Turquoise,,False,missing,missing
+colors,hard,gold,Altın,Gold,,False,missing,missing
+colors,hard,silver,Gümüş,Silver,,False,missing,missing
+shapes,easy,circle,Daire,Circle,,False,missing,missing
+shapes,easy,square,Kare,Square,,False,migrated,missing
+shapes,easy,triangle,Üçgen,Triangle,,False,missing,missing
+shapes,easy,star,Yıldız,Star,,False,missing,missing
+shapes,easy,rectangle,Dikdörtgen,Rectangle,,False,missing,missing
+shapes,easy,heart,Kalp,Heart,,False,missing,missing
+shapes,easy,oval,Oval,Oval,,False,missing,missing
+shapes,easy,crescent,Hilal,Crescent,,False,missing,missing
+shapes,easy,cross,Artı,Cross,,False,missing,missing
+shapes,easy,arrow,Ok,Arrow,,False,missing,missing
+shapes,medium,rectangle,Dikdörtgen,Rectangle,,False,missing,missing
+shapes,medium,heart,Kalp,Heart,,False,missing,missing
+shapes,medium,oval,Oval,Oval,,False,missing,missing
+shapes,medium,crescent,Hilal,Crescent,,False,missing,missing
+shapes,medium,cross,Artı,Cross,,False,missing,missing
+shapes,medium,arrow,Ok,Arrow,,False,missing,missing
+shapes,medium,hexagon,Altıgen,Hexagon,,False,missing,missing
+shapes,medium,pentagon,Beşgen,Pentagon,,False,missing,missing
+shapes,medium,rhombus,Eşkenar dörtgen,Rhombus,,False,missing,missing
+shapes,medium,trapezoid,Yamuk,Trapezoid,,False,missing,missing
+shapes,medium,cube,Küp,Cube,,False,missing,missing
+shapes,medium,sphere,Küre,Sphere,,False,missing,missing
+shapes,medium,cylinder,Silindir,Cylinder,,False,missing,missing
+shapes,medium,cone,Koni,Cone,,False,missing,missing
+shapes,hard,hexagon,Altıgen,Hexagon,,False,missing,missing
+shapes,hard,pentagon,Beşgen,Pentagon,,False,missing,missing
+shapes,hard,rhombus,Eşkenar dörtgen,Rhombus,,False,missing,missing
+shapes,hard,trapezoid,Yamuk,Trapezoid,,False,missing,missing
+shapes,hard,cube,Küp,Cube,,False,missing,missing
+shapes,hard,sphere,Küre,Sphere,,False,missing,missing
+shapes,hard,cylinder,Silindir,Cylinder,,False,missing,missing
+shapes,hard,cone,Koni,Cone,,False,missing,missing
+emotions,easy,happy,Mutlu,Happy,,False,missing,missing
+emotions,easy,sad,Üzgün,Sad,,False,missing,missing
+emotions,easy,angry,Kızgın,Angry,,False,missing,missing
+emotions,easy,scared,Korkmuş,Scared,,False,missing,missing
+emotions,easy,surprised,Şaşkın,Surprised,,False,missing,missing
+emotions,easy,sleepy,Uykulu,Sleepy,,False,missing,missing
+emotions,easy,laughing,Gülen/Kahkaha,Laughing,,False,missing,missing
+emotions,medium,angry,Kızgın,Angry,,False,missing,missing
+emotions,medium,scared,Korkmuş,Scared,,False,missing,missing
+emotions,medium,surprised,Şaşkın,Surprised,,False,missing,missing
+emotions,medium,sleepy,Uykulu,Sleepy,,False,missing,missing
+emotions,medium,laughing,Gülen/Kahkaha,Laughing,,False,missing,missing
+emotions,medium,calm,Sakin,Calm,,False,missing,missing
+emotions,medium,shy,Utangaç,Shy,,False,missing,missing
+emotions,medium,proud,Gururlu,Proud,,False,missing,missing
+emotions,medium,bored,Sıkılmış,Bored,,False,missing,missing
+emotions,medium,worried,Endişeli,Worried,,False,missing,missing
+emotions,medium,excited,Heyecanlı,Excited,,False,missing,missing
+emotions,medium,disgusted,Tiksinmiş,Disgusted,,False,missing,missing
+emotions,hard,calm,Sakin,Calm,,False,missing,missing
+emotions,hard,shy,Utangaç,Shy,,False,missing,missing
+emotions,hard,proud,Gururlu,Proud,,False,missing,missing
+emotions,hard,bored,Sıkılmış,Bored,,False,missing,missing
+emotions,hard,worried,Endişeli,Worried,,False,missing,missing
+emotions,hard,excited,Heyecanlı,Excited,,False,missing,missing
+emotions,hard,disgusted,Tiksinmiş,Disgusted,,False,missing,missing
+numbers,hard,0,Sıfır,Zero,,False,native,missing
+numbers,easy,1,Bir,One,,False,native,migrated
+numbers,easy,2,İki,Two,,False,native,migrated
+numbers,easy,3,Üç,Three,,False,native,selected
+numbers,easy,4,Dört,Four,,False,native,migrated
+numbers,easy,5,Beş,Five,,False,native,migrated
+numbers,medium,6,Altı,Six,,False,native,migrated
+numbers,medium,7,Yedi,Seven,,False,native,migrated
+numbers,medium,8,Sekiz,Eight,,False,native,migrated
+numbers,medium,9,Dokuz,Nine,,False,native,migrated
+numbers,medium,10,On,Ten,,False,native,missing
+numbers,hard,11,On bir,Eleven,,False,native,missing
+numbers,hard,12,On iki,Twelve,,False,native,missing
+numbers,hard,13,On üç,Thirteen,,False,native,missing
+numbers,hard,14,On dört,Fourteen,,False,native,missing
+numbers,hard,15,On beş,Fifteen,,False,native,missing
+numbers,hard,16,On altı,Sixteen,,False,native,missing
+numbers,hard,17,On yedi,Seventeen,,False,native,missing
+numbers,hard,18,On sekiz,Eighteen,,False,native,missing
+numbers,hard,19,On dokuz,Nineteen,,False,native,missing
+numbers,hard,20,Yirmi,Twenty,,False,native,missing

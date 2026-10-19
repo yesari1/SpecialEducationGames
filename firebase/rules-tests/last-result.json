@@ -1,0 +1,22 @@
+{
+  "testedAtUtc": "2026-10-16T13:08:48.7912843Z",
+  "project": "demo-special-education-rules",
+  "emulator": "cloud-firestore-emulator-v1.22.0",
+  "firebaseCli": "15.32.0",
+  "node": "24.19.0",
+  "java": "21.0.10",
+  "tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "rulesSha256": "31452D9BB83D8D58EBDC26116AE854C6D45D48C24E46BECE655103FE7D5B7CC0",
+  "testSha256": "241349FB3663285BC02E04CDA50DA24DA611E17158AB89EF3467E157E6966954",
+  "productionAccess": false,
+  "emulatorStopped": true,
+  "command": "firebase emulators:exec --only firestore --project demo-special-education-rules --config firebase.test.json \"npm --prefix rules-tests test\"",
+  "limitations": [
+    "Profile survey/settings nested schema remains draft",
+    "No production deployment or live OAuth/API validation",
+    "Content packs/announcements/Storage/App Check outside scope"
+  ]
+}

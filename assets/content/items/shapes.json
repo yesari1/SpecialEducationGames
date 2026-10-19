@@ -1,0 +1,256 @@
+[
+  {
+    "id": "shapes.circle",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Daire",
+      "en": "Circle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.square",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kare",
+      "en": "Square"
+    },
+    "images": [
+      "assets/images/shapes/square_1.png"
+    ],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.triangle",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Üçgen",
+      "en": "Triangle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.star",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Yıldız",
+      "en": "Star"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.rectangle",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Dikdörtgen",
+      "en": "Rectangle"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.heart",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kalp",
+      "en": "Heart"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.oval",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Oval",
+      "en": "Oval"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.crescent",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Hilal",
+      "en": "Crescent"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.cross",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Artı",
+      "en": "Cross"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.arrow",
+    "theme": "shapes",
+    "tier": "easy",
+    "chapter": 2,
+    "tags": [],
+    "name": {
+      "tr": "Ok",
+      "en": "Arrow"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.hexagon",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Altıgen",
+      "en": "Hexagon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.pentagon",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Beşgen",
+      "en": "Pentagon"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.rhombus",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Eşkenar dörtgen",
+      "en": "Rhombus"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.trapezoid",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Yamuk",
+      "en": "Trapezoid"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.cube",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Küp",
+      "en": "Cube"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.sphere",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Küre",
+      "en": "Sphere"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.cylinder",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Silindir",
+      "en": "Cylinder"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  },
+  {
+    "id": "shapes.cone",
+    "theme": "shapes",
+    "tier": "medium",
+    "chapter": 3,
+    "tags": [],
+    "name": {
+      "tr": "Koni",
+      "en": "Cone"
+    },
+    "images": [],
+    "audio": {},
+    "sfx": null
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "freeGames": [
+    "animals_G01",
+    "produce_G01",
+    "colors_G01",
+    "animals_G10",
+    "numbers_G35",
+    "vehicles_G02"
+  ],
+  "disabledGames": [],
+  "hiddenThemes": [],
+  "difficultyDefaults": {
+    "fadeAfterErrors": 2
+  }
+}
