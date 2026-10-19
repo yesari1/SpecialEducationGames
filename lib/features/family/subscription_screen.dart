@@ -150,64 +150,246 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             icon: const Icon(Icons.close_rounded),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(SegSpace.s3),
-          child: Column(
-            children: [
-              Expanded(
-                child: PageView.builder(
-                  controller: _pages,
-                  itemCount: content.length,
-                  onPageChanged: (index) => setState(() => _page = index),
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.all(SegSpace.s3),
-                    child: content[index],
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    tooltip: l10n.gamePreviousPage,
-                    onPressed: _page == 0
-                        ? null
-                        : () => navigatePage(
-                            context: context,
-                            controller: _pages,
-                            page: _page - 1,
-                            reducedMotion: s.reducedMotion,
-                            duration: const Duration(milliseconds: 180),
-                            curve: Curves.easeOut,
-                          ),
-                    icon: const Icon(Icons.arrow_back_rounded),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        l10n.onboardingStepCount(_page + 1, content.length),
+        body: MediaQuery.orientationOf(context) == Orientation.portrait
+            ? _portraitBody(context)
+            : Padding(
+                padding: const EdgeInsets.all(SegSpace.s3),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: PageView.builder(
+                        controller: _pages,
+                        itemCount: content.length,
+                        onPageChanged: (index) => setState(() => _page = index),
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.all(SegSpace.s3),
+                          child: content[index],
+                        ),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    tooltip: l10n.gameNextPage,
-                    onPressed: _page == content.length - 1
-                        ? null
-                        : () => navigatePage(
-                            context: context,
-                            controller: _pages,
-                            page: _page + 1,
-                            reducedMotion: s.reducedMotion,
-                            duration: const Duration(milliseconds: 180),
-                            curve: Curves.easeOut,
+                    Row(
+                      children: [
+                        IconButton(
+                          tooltip: l10n.gamePreviousPage,
+                          onPressed: _page == 0
+                              ? null
+                              : () => navigatePage(
+                                  context: context,
+                                  controller: _pages,
+                                  page: _page - 1,
+                                  reducedMotion: s.reducedMotion,
+                                  duration: const Duration(milliseconds: 180),
+                                  curve: Curves.easeOut,
+                                ),
+                          icon: const Icon(Icons.arrow_back_rounded),
+                        ),
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              l10n.onboardingStepCount(
+                                _page + 1,
+                                content.length,
+                              ),
+                            ),
                           ),
-                    icon: const Icon(Icons.arrow_forward_rounded),
-                  ),
-                ],
+                        ),
+                        IconButton(
+                          tooltip: l10n.gameNextPage,
+                          onPressed: _page == content.length - 1
+                              ? null
+                              : () => navigatePage(
+                                  context: context,
+                                  controller: _pages,
+                                  page: _page + 1,
+                                  reducedMotion: s.reducedMotion,
+                                  duration: const Duration(milliseconds: 180),
+                                  curve: Curves.easeOut,
+                                ),
+                          icon: const Icon(Icons.arrow_forward_rounded),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+      ),
+    );
+  }
+
+  /// Upright layout: one calm scrolling page, benefits first, prices only
+  /// as Google Play returns them, and no pressure or countdown.
+  Widget _portraitBody(BuildContext context) {
+    final l10n = scopedLocalizations(context, s.locale);
+    Widget benefit(IconData icon, String text) => Padding(
+      padding: const EdgeInsets.symmetric(vertical: SegSpace.s2),
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: const BoxDecoration(
+              color: Color(0xFFDDF6F3),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, color: SegColors.turquoiseDeep, size: 22),
+          ),
+          const SizedBox(width: SegSpace.s3),
+          Expanded(child: Text(text, style: SegText.body)),
+        ],
+      ),
+    );
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(
+        SegSpace.s5,
+        SegSpace.s2,
+        SegSpace.s5,
+        SegSpace.s6,
+      ),
+      children: [
+        Container(
+          padding: const EdgeInsets.all(SegSpace.s5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(SegRadius.xl),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xFFE5F4FF), Color(0xFFDDF6F3)],
+            ),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: SegColors.star.withValues(alpha: .3),
+                      blurRadius: 14,
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.star_rounded,
+                  color: SegColors.star,
+                  size: 40,
+                ),
+              ),
+              const SizedBox(width: SegSpace.s4),
+              Expanded(
+                child: Text(
+                  s.configuration.paywallText[s.locale] ??
+                      l10n.subscriptionHeading,
+                  style: SegText.heading.copyWith(color: SegColors.ink),
+                ),
               ),
             ],
           ),
         ),
-      ),
+        const SizedBox(height: SegSpace.s4),
+        benefit(Icons.grid_view_rounded, l10n.subscriptionAllGames),
+        benefit(Icons.people_rounded, l10n.subscriptionProfiles),
+        benefit(Icons.block_rounded, l10n.subscriptionAdFree),
+        if (s.entitlement.isPremium) ...[
+          const SizedBox(height: SegSpace.s3),
+          SegCard(
+            child: Row(
+              children: [
+                const Icon(Icons.verified_rounded, color: SegColors.turquoise),
+                const SizedBox(width: SegSpace.s3),
+                Expanded(
+                  child: Text(l10n.subscriptionActive, style: SegText.heading),
+                ),
+              ],
+            ),
+          ),
+        ],
+        const SizedBox(height: SegSpace.s4),
+        for (final plan in s.billing.plans) ...[
+          SegCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  plan.id == 'monthly'
+                      ? l10n.subscriptionMonthly
+                      : l10n.subscriptionYearly,
+                  style: SegText.heading,
+                ),
+                const SizedBox(height: SegSpace.s2),
+                Text(
+                  l10n.subscriptionPrice(
+                    plan.recurringPrice,
+                    plan.id == 'monthly'
+                        ? l10n.subscriptionMonth
+                        : l10n.subscriptionYear,
+                  ),
+                  style: SegText.title,
+                ),
+                const SizedBox(height: SegSpace.s2),
+                Text(
+                  plan.sevenDayTrial
+                      ? l10n.subscriptionTrial(plan.recurringPrice)
+                      : l10n.subscriptionRenewal,
+                  style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                ),
+                const SizedBox(height: SegSpace.s3),
+                SegButton(
+                  label: s.billing.pending
+                      ? l10n.subscriptionWaiting
+                      : plan.sevenDayTrial
+                      ? l10n.subscriptionStartTrial
+                      : l10n.subscriptionContinue,
+                  onPressed: s.billing.pending || !s.familyUnlocked
+                      ? null
+                      : () => s.billing.buy(plan),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: SegSpace.s3),
+        ],
+        if (s.billing.plans.isEmpty) ...[
+          SegButton(
+            label: l10n.subscriptionShowPlans,
+            onPressed: s.familyUnlocked && !s.billing.loading
+                ? s.billing.initialize
+                : null,
+          ),
+          const SizedBox(height: SegSpace.s2),
+          if (s.billing.loading)
+            const Center(child: CircularProgressIndicator())
+          else
+            Text(
+              l10n.subscriptionUnavailable,
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
+        ],
+        if (s.billing.error != null) ...[
+          const SizedBox(height: SegSpace.s2),
+          Text(l10n.subscriptionStoreError),
+        ],
+        const SizedBox(height: SegSpace.s4),
+        SegButton(
+          secondary: true,
+          label: l10n.subscriptionRestore,
+          onPressed: s.familyUnlocked ? s.billing.restore : null,
+        ),
+        const SizedBox(height: SegSpace.s2),
+        TextButton(
+          onPressed: s.familyUnlocked
+              ? () => launchUrl(
+                  Uri.parse(
+                    'https://play.google.com/store/account/subscriptions?sku=premium&package=com.YeS.OzelEgitimOyunlari',
+                  ),
+                  mode: LaunchMode.externalApplication,
+                )
+              : null,
+          child: Text(l10n.subscriptionManage),
+        ),
+      ],
     );
   }
 

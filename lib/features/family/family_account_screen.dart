@@ -43,41 +43,64 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
       appBar: AppBar(
         title: Text(l10n.accountTitle),
         actions: [
-          IconButton(
-            tooltip: l10n.familyAccountTitle,
-            onPressed: () => _animateTab(context, 0),
-            icon: const Icon(Icons.account_circle_outlined),
-          ),
-          IconButton(
-            tooltip: l10n.summarySyncTitle,
-            onPressed: () => _animateTab(context, 1),
-            icon: const Icon(Icons.sync_rounded),
-          ),
+          if (MediaQuery.orientationOf(context) != Orientation.portrait) ...[
+            IconButton(
+              tooltip: l10n.familyAccountTitle,
+              onPressed: () => _animateTab(context, 0),
+              icon: const Icon(Icons.account_circle_outlined),
+            ),
+            IconButton(
+              tooltip: l10n.summarySyncTitle,
+              onPressed: () => _animateTab(context, 1),
+              icon: const Icon(Icons.sync_rounded),
+            ),
+          ],
         ],
       ),
-      body: TabBarView(
-        controller: _tabs,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
-            child: ListenableBuilder(
-              listenable: widget.state,
-              builder: (context, _) => FamilyAccountCard(
-                auth: widget.auth,
-                turkish: widget.state.locale == 'tr',
-                reducedMotion: widget.state.reducedMotion,
-              ),
+      body: MediaQuery.orientationOf(context) == Orientation.portrait
+          ? ListView(
+              padding: const EdgeInsets.all(SegSpace.s4),
+              children: [
+                ListenableBuilder(
+                  listenable: widget.state,
+                  builder: (context, _) => FamilyAccountCard(
+                    auth: widget.auth,
+                    turkish: widget.state.locale == 'tr',
+                    reducedMotion: widget.state.reducedMotion,
+                    flat: true,
+                  ),
+                ),
+                const SizedBox(height: SegSpace.s4),
+                FamilySummarySyncCard(
+                  state: widget.state,
+                  auth: widget.auth,
+                  flat: true,
+                ),
+              ],
+            )
+          : TabBarView(
+              controller: _tabs,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
+                  child: ListenableBuilder(
+                    listenable: widget.state,
+                    builder: (context, _) => FamilyAccountCard(
+                      auth: widget.auth,
+                      turkish: widget.state.locale == 'tr',
+                      reducedMotion: widget.state.reducedMotion,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
+                  child: FamilySummarySyncCard(
+                    state: widget.state,
+                    auth: widget.auth,
+                  ),
+                ),
+              ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
-            child: FamilySummarySyncCard(
-              state: widget.state,
-              auth: widget.auth,
-            ),
-          ),
-        ],
-      ),
     );
   }
 

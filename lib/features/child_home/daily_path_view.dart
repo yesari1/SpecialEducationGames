@@ -56,7 +56,7 @@ class DailyPathView extends StatelessWidget {
               final nodeSize = compact
                   ? textScale >= 1.6
                         ? 44.0
-                        : (constraints.maxHeight * .35).clamp(44.0, 72.0)
+                        : (constraints.maxHeight * .48).clamp(48.0, 104.0)
                   : 108.0;
               return ListView.separated(
                 scrollDirection: Axis.horizontal,

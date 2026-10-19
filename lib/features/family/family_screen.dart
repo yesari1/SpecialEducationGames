@@ -1025,6 +1025,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
     final report = LearningReport(s.trials, s.sessions, now);
     final week = report.trials;
     final independent = week.where(ReportDay.independent).length;
+    _statIndex = 0;
     return [
       if (s.dailyGoalMinutes > 0) ...[
         GoalRing(state: s, minutes: report.days.last.minutes),
@@ -1039,8 +1040,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
             Text(l10n.familyYourChildIsExploringAtTheir),
             const SizedBox(height: SegSpace.s5),
             Wrap(
-              spacing: SegSpace.s5,
-              runSpacing: SegSpace.s5,
+              spacing: SegSpace.s3,
+              runSpacing: SegSpace.s3,
               children: [
                 _stat('${s.todayStars}', l10n.familyStarsToday),
                 _stat(
@@ -1112,19 +1113,37 @@ class _FamilyScreenState extends State<FamilyScreen> {
     ];
   }
 
-  Widget _stat(String value, String label) => SizedBox(
-    width: 200,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          value,
-          style: SegText.title.copyWith(color: SegColors.primaryDeep),
-        ),
-        Text(label, style: SegText.caption),
-      ],
-    ),
-  );
+  static const _statTints = [
+    (Color(0xFFFFF4D6), SegColors.starDeep, Icons.star_rounded),
+    (Color(0xFFDDF6F3), SegColors.turquoiseDeep, Icons.check_circle_rounded),
+    (Color(0xFFE5F4FF), SegColors.primaryDeep, Icons.schedule_rounded),
+    (Color(0xFFEDEBFF), Color(0xFF5A50B8), Icons.stairs_rounded),
+    (Color(0xFFFFEBDD), SegColors.accentDeep, Icons.emoji_events_rounded),
+  ];
+  int _statIndex = 0;
+
+  /// A tinted tile: icon, big number, short label. Two per row on phones.
+  Widget _stat(String value, String label) {
+    final (fill, ink, icon) = _statTints[_statIndex++ % _statTints.length];
+    return Container(
+      width: 150,
+      padding: const EdgeInsets.all(SegSpace.s3),
+      decoration: BoxDecoration(
+        color: fill,
+        borderRadius: BorderRadius.circular(SegRadius.md),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: ink, size: 22),
+          const SizedBox(height: SegSpace.s1),
+          Text(value, style: SegText.title.copyWith(color: ink)),
+          Text(label, style: SegText.caption.copyWith(color: SegColors.ink)),
+        ],
+      ),
+    );
+  }
+
   List<Widget> _games() => [
     SegCard(
       child: SwitchListTile(

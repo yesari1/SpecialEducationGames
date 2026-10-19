@@ -18,11 +18,15 @@ class FamilySummarySyncCard extends StatefulWidget {
   final AppState state;
   final FamilyAuth auth;
   final SummaryStore? store;
+
+  /// Show every part at once (upright, scrolling page) instead of paging.
+  final bool flat;
   const FamilySummarySyncCard({
     super.key,
     required this.state,
     required this.auth,
     this.store,
+    this.flat = false,
   });
 
   @override
@@ -194,6 +198,72 @@ class _FamilySummarySyncCardState extends State<FamilySummarySyncCard> {
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, widget.state.locale);
+    final pages = <Widget>[
+      _content(context, [
+        Text(
+          l10n.summarySyncTitle,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: 8),
+        Text(l10n.summarySyncDescription),
+      ]),
+      _content(context, [Text(l10n.summarySyncRequirements)]),
+      _content(context, [
+        CheckboxListTile(
+          key: const ValueKey('summary-consent'),
+          contentPadding: EdgeInsets.zero,
+          controlAffinity: ListTileControlAffinity.leading,
+          value: _consent,
+          onChanged: _parent && _uid != null && _profile != null
+              ? (v) => _setConsent(v ?? false)
+              : null,
+          title: Text(l10n.summarySyncConsent),
+        ),
+      ]),
+      _content(context, [
+        Text(l10n.summarySyncManualNotice),
+        const SizedBox(height: 12),
+        SegButton(
+          key: const ValueKey('summary-sync'),
+          label: l10n.summarySyncNow,
+          icon: Icons.sync,
+          onPressed: _consent && _parent && !_busy ? _synchronize : null,
+        ),
+        if (_busy)
+          const Padding(
+            padding: EdgeInsets.only(top: 12),
+            child: LinearProgressIndicator(),
+          ),
+      ]),
+      _content(context, [
+        if (_snapshot case final saved?)
+          Text(
+            l10n.summarySyncSnapshot(
+              saved.summaries.length,
+              saved.savedAt.toLocal().toString(),
+            ),
+            key: const ValueKey('summary-snapshot'),
+          ),
+        if (_snapshot == null && _issue == null) Text(l10n.summarySyncTitle),
+        if (_issue != null)
+          Text(
+            _issue == SummarySyncIssue.capacity
+                ? l10n.summarySyncCapacity
+                : l10n.summarySyncUnavailable,
+          ),
+      ]),
+    ];
+    // Upright family pages scroll, so every part is shown in one card.
+    if (widget.flat) {
+      return SegCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (final page in pages) ...[page, const SizedBox(height: 12)],
+          ],
+        ),
+      );
+    }
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -203,64 +273,7 @@ class _FamilySummarySyncCardState extends State<FamilySummarySyncCard> {
               child: PageView(
                 controller: _pages,
                 onPageChanged: (index) => setState(() => _page = index),
-                children: [
-                  _content(context, [
-                    Text(
-                      l10n.summarySyncTitle,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(l10n.summarySyncDescription),
-                  ]),
-                  _content(context, [Text(l10n.summarySyncRequirements)]),
-                  _content(context, [
-                    CheckboxListTile(
-                      key: const ValueKey('summary-consent'),
-                      contentPadding: EdgeInsets.zero,
-                      controlAffinity: ListTileControlAffinity.leading,
-                      value: _consent,
-                      onChanged: _parent && _uid != null && _profile != null
-                          ? (v) => _setConsent(v ?? false)
-                          : null,
-                      title: Text(l10n.summarySyncConsent),
-                    ),
-                  ]),
-                  _content(context, [
-                    Text(l10n.summarySyncManualNotice),
-                    const SizedBox(height: 12),
-                    SegButton(
-                      key: const ValueKey('summary-sync'),
-                      label: l10n.summarySyncNow,
-                      icon: Icons.sync,
-                      onPressed: _consent && _parent && !_busy
-                          ? _synchronize
-                          : null,
-                    ),
-                    if (_busy)
-                      const Padding(
-                        padding: EdgeInsets.only(top: 12),
-                        child: LinearProgressIndicator(),
-                      ),
-                  ]),
-                  _content(context, [
-                    if (_snapshot case final saved?)
-                      Text(
-                        l10n.summarySyncSnapshot(
-                          saved.summaries.length,
-                          saved.savedAt.toLocal().toString(),
-                        ),
-                        key: const ValueKey('summary-snapshot'),
-                      ),
-                    if (_snapshot == null && _issue == null)
-                      Text(l10n.summarySyncTitle),
-                    if (_issue != null)
-                      Text(
-                        _issue == SummarySyncIssue.capacity
-                            ? l10n.summarySyncCapacity
-                            : l10n.summarySyncUnavailable,
-                      ),
-                  ]),
-                ],
+                children: pages,
               ),
             ),
             Row(

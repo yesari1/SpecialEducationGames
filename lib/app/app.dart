@@ -70,59 +70,72 @@ class _EducationAppState extends State<EducationApp>
         GoRoute(
           path: '/',
           builder: (_, _) => reactive(() => HomeScreen(state: state)),
+          routes: [
+            // Nested so system Back on a theme returns to home.
+            GoRoute(
+              path: 'theme/:id',
+              builder: (_, s) => reactive(
+                () =>
+                    ThemeScreen(state: state, themeId: s.pathParameters['id']!),
+              ),
+            ),
+          ],
         ),
         GoRoute(
           path: '/welcome',
           builder: (_, _) => reactive(() => OnboardingScreen(state: state)),
         ),
         GoRoute(
-          path: '/theme/:id',
-          builder: (_, s) => reactive(
-            () => ThemeScreen(state: state, themeId: s.pathParameters['id']!),
-          ),
-        ),
-        GoRoute(
           path: '/game/:theme/:game/:tier',
           builder: (_, s) => reactive(
-            () => GameScreen(
-              key: ValueKey(
-                '${s.pathParameters['theme']}_${s.pathParameters['game']}_${s.pathParameters['tier']}',
+            // Leaving a game is the deliberate hold-to-leave button, not an
+            // accidental Back gesture by the child.
+            () => PopScope(
+              canPop: false,
+              child: GameScreen(
+                key: ValueKey(
+                  '${s.pathParameters['theme']}_${s.pathParameters['game']}_${s.pathParameters['tier']}',
+                ),
+                state: state,
+                themeId: s.pathParameters['theme']!,
+                gameId: s.pathParameters['game']!,
+                difficulty: Difficulty.values.byName(s.pathParameters['tier']!),
               ),
-              state: state,
-              themeId: s.pathParameters['theme']!,
-              gameId: s.pathParameters['game']!,
-              difficulty: Difficulty.values.byName(s.pathParameters['tier']!),
             ),
           ),
         ),
         GoRoute(
           path: '/family',
           builder: (_, _) => reactive(() => FamilyScreen(state: state)),
-        ),
-        GoRoute(
-          path: '/family/subscription',
-          builder: (_, _) => reactive(() => SubscriptionScreen(state: state)),
-        ),
-        GoRoute(
-          path: '/family/credits',
-          builder: (_, _) => reactive(() => CreditsScreen(state: state)),
-        ),
-        GoRoute(
-          path: '/family/account',
-          builder: (_, _) => reactive(
-            () => FamilyAccountScreen(state: state, auth: familyAuth),
-          ),
-        ),
-        GoRoute(
-          path: '/family/profile/:id',
-          builder: (_, s) => reactive(
-            () => ProfileEditorScreen(
-              state: state,
-              profileId: s.pathParameters['id'] == 'new'
-                  ? null
-                  : s.pathParameters['id'],
+          // Nested so system Back on a family page returns to the family area.
+          routes: [
+            GoRoute(
+              path: 'subscription',
+              builder: (_, _) =>
+                  reactive(() => SubscriptionScreen(state: state)),
             ),
-          ),
+            GoRoute(
+              path: 'credits',
+              builder: (_, _) => reactive(() => CreditsScreen(state: state)),
+            ),
+            GoRoute(
+              path: 'account',
+              builder: (_, _) => reactive(
+                () => FamilyAccountScreen(state: state, auth: familyAuth),
+              ),
+            ),
+            GoRoute(
+              path: 'profile/:id',
+              builder: (_, s) => reactive(
+                () => ProfileEditorScreen(
+                  state: state,
+                  profileId: s.pathParameters['id'] == 'new'
+                      ? null
+                      : s.pathParameters['id'],
+                ),
+              ),
+            ),
+          ],
         ),
       ],
       errorBuilder: (_, _) => HomeScreen(state: state),

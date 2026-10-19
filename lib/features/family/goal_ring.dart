@@ -31,9 +31,10 @@ class GoalRing extends StatelessWidget {
                   Positioned.fill(
                     child: CircularProgressIndicator(
                       value: (minutes / state.dailyGoalMinutes).clamp(0, 1),
-                      strokeWidth: 8,
-                      color: SegColors.primary,
-                      backgroundColor: SegColors.line,
+                      strokeWidth: 10,
+                      strokeCap: StrokeCap.round,
+                      color: SegColors.turquoise,
+                      backgroundColor: const Color(0xFFE3F1F4),
                     ),
                   ),
                   Text(

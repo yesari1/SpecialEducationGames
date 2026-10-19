@@ -11,11 +11,15 @@ class FamilyAccountCard extends StatefulWidget {
   final FamilyAuth auth;
   final bool turkish;
   final bool reducedMotion;
+
+  /// Show every part at once (upright, scrolling page) instead of paging.
+  final bool flat;
   const FamilyAccountCard({
     super.key,
     required this.auth,
     required this.turkish,
     this.reducedMotion = false,
+    this.flat = false,
   });
 
   @override
@@ -96,6 +100,16 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
             if (widget.auth.account == null) Text(l10n.familyAccountNotNow),
           ]),
         ];
+        if (widget.flat) {
+          return SegCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final page in pages) ...[page, const SizedBox(height: 12)],
+              ],
+            ),
+          );
+        }
         _keepCurrentPageInRange(pages.length);
         return Card(
           child: Padding(

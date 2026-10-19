@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
+import '../../app/ui/components.dart';
 import '../../app/ui/page_navigation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -83,7 +84,9 @@ class _CreditsScreenState extends State<CreditsScreen> {
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, widget.state.locale);
     return Scaffold(
+      backgroundColor: SegColors.familyCanvas,
       appBar: AppBar(
+        backgroundColor: SegColors.familyCanvas,
         title: Text(l10n.creditsTitle),
         actions: [
           IconButton(
@@ -124,6 +127,71 @@ class _CreditsScreenState extends State<CreditsScreen> {
                     MediaQuery.sizeOf(context).height <= 400,
               );
               _detailPage = _detailPage.clamp(0, pages.length - 1);
+              final groupRow = Padding(
+                padding: const EdgeInsets.symmetric(horizontal: SegSpace.s2),
+                child: PillToggle<int>(
+                  values: const [0, 1],
+                  selected: _group,
+                  label: (g) => g == 0
+                      ? l10n.creditsAnimalRecordings
+                      : l10n.creditsRealPhotographs,
+                  icon: (g) =>
+                      g == 0 ? Icons.graphic_eq_rounded : Icons.photo_rounded,
+                  onChanged: _setGroup,
+                ),
+              );
+              // Upright: every attribution in one scrolling list.
+              if (MediaQuery.orientationOf(context) == Orientation.portrait) {
+                return Column(
+                  children: [
+                    const SizedBox(height: SegSpace.s2),
+                    groupRow,
+                    Expanded(
+                      child: ListView.separated(
+                        key: ValueKey('credits-list-$_group'),
+                        padding: const EdgeInsets.all(SegSpace.s4),
+                        itemCount: records.length,
+                        separatorBuilder: (_, _) =>
+                            const SizedBox(height: SegSpace.s3),
+                        itemBuilder: (context, index) {
+                          final record = records[index];
+                          final fields = _detailGroups(
+                            record,
+                            l10n: l10n,
+                            splitDetails: false,
+                          ).expand((group) => group);
+                          return SegCard(
+                            padding: const EdgeInsets.all(SegSpace.s4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  record.title,
+                                  key: ValueKey(
+                                    'credits-record-title-$_group-$index',
+                                  ),
+                                  style: SegText.item,
+                                ),
+                                const SizedBox(height: SegSpace.s2),
+                                for (final field in fields)
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      bottom: SegSpace.s1,
+                                    ),
+                                    child: _creditField(
+                                      field,
+                                      recordIndex: index,
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                );
+              }
               return Column(
                 children: [
                   Padding(

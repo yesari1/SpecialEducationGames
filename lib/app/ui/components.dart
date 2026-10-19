@@ -160,11 +160,11 @@ class SegCard extends StatelessWidget {
     decoration: BoxDecoration(
       color: SegColors.surface,
       borderRadius: BorderRadius.circular(SegRadius.lg),
-      border: Border.all(color: SegColors.line),
+      border: Border.all(color: const Color(0xFFE7F0F5)),
       boxShadow: [
         BoxShadow(
-          color: SegColors.ink.withValues(alpha: .08),
-          blurRadius: 20,
+          color: SegColors.ink.withValues(alpha: .05),
+          blurRadius: 18,
           offset: const Offset(0, 6),
         ),
       ],
