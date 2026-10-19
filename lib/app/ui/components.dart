@@ -178,7 +178,15 @@ class ItemVisual extends StatelessWidget {
 
   /// Where a photo sits in its box; game objects stand on the bottom edge.
   final Alignment alignment;
-  const ItemVisual(this.item, {super.key, this.alignment = Alignment.center});
+
+  /// Draw the photo as a flat shadow (alpha shape only), for shadow games.
+  final bool silhouette;
+  const ItemVisual(
+    this.item, {
+    super.key,
+    this.alignment = Alignment.center,
+    this.silhouette = false,
+  });
   static const colors = {
     'red': 0xFFE98A6B,
     'blue': 0xFF5B8FD1,
@@ -200,7 +208,11 @@ class ItemVisual extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (item.images.isNotEmpty) {
-      return PhotoVisual(item.images.first, alignment: alignment);
+      return PhotoVisual(
+        item.images.first,
+        alignment: alignment,
+        silhouette: silhouette,
+      );
     }
     if (item.theme == 'colors') {
       final paint = ColorBlobPainter(Color(colors[item.slug] ?? 0xFF9AA4AE));
@@ -357,7 +369,13 @@ class ColorBlobPainter extends CustomPainter {
 class PhotoVisual extends StatefulWidget {
   final String asset;
   final Alignment alignment;
-  const PhotoVisual(this.asset, {super.key, this.alignment = Alignment.center});
+  final bool silhouette;
+  const PhotoVisual(
+    this.asset, {
+    super.key,
+    this.alignment = Alignment.center,
+    this.silhouette = false,
+  });
   @override
   State<PhotoVisual> createState() => _PhotoVisualState();
 }
@@ -459,6 +477,7 @@ class _PhotoVisualState extends State<PhotoVisual> {
         _image?.image,
         widget.alignment,
         _opaqueBounds[widget.asset],
+        silhouette: widget.silhouette,
       ),
       size: Size.infinite,
     ),
@@ -469,7 +488,13 @@ class _PhotoContourPainter extends CustomPainter {
   final ui.Image? image;
   final Alignment alignment;
   final Rect? crop;
-  _PhotoContourPainter(this.image, this.alignment, this.crop);
+  final bool silhouette;
+  _PhotoContourPainter(
+    this.image,
+    this.alignment,
+    this.crop, {
+    this.silhouette = false,
+  });
   @override
   void paint(Canvas canvas, Size size) {
     final photo = image;
@@ -503,7 +528,12 @@ class _PhotoContourPainter extends CustomPainter {
       photo,
       source,
       destination,
-      Paint()..filterQuality = FilterQuality.medium,
+      Paint()
+        ..filterQuality = FilterQuality.medium
+        // Shadows keep only the alpha shape, in the design system's grey.
+        ..colorFilter = silhouette
+            ? const ColorFilter.mode(Color(0xD95B6670), BlendMode.srcIn)
+            : null,
     );
   }
 
@@ -511,7 +541,8 @@ class _PhotoContourPainter extends CustomPainter {
   bool shouldRepaint(covariant _PhotoContourPainter oldDelegate) =>
       oldDelegate.image != image ||
       oldDelegate.alignment != alignment ||
-      oldDelegate.crop != crop;
+      oldDelegate.crop != crop ||
+      oldDelegate.silhouette != silhouette;
 }
 
 class ThemeGameCard extends StatelessWidget {
@@ -828,4 +859,82 @@ class HorizontalCards extends StatelessWidget {
       );
     },
   );
+}
+
+/// A woven-looking basket that holds a group's example object. Used by the
+/// sorting game so the choices read as containers, not buttons.
+class BasketFrame extends StatelessWidget {
+  final Widget child;
+  final Color tint;
+  const BasketFrame({super.key, required this.child, required this.tint});
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) {
+      // Proportions follow the height so wide slots do not flatten it.
+      final width = math.min(box.maxWidth, box.maxHeight * 1.3);
+      final basketHeight = box.maxHeight * .4;
+      return Center(
+        child: SizedBox(
+          width: width,
+          height: box.maxHeight,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              // The example sits low so the basket's front covers its base.
+              Positioned(
+                left: width * .12,
+                right: width * .12,
+                top: -box.maxHeight * .08,
+                bottom: basketHeight * .62,
+                child: child,
+              ),
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                height: basketHeight,
+                child: CustomPaint(painter: _BasketPainter(tint)),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+class _BasketPainter extends CustomPainter {
+  final Color tint;
+  const _BasketPainter(this.tint);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width, h = size.height;
+    final body = Path()
+      ..moveTo(0, h * .18)
+      ..lineTo(w, h * .18)
+      ..lineTo(w * .88, h)
+      ..lineTo(w * .12, h)
+      ..close();
+    final fill = Color.lerp(const Color(0xFFE8B77A), tint, .25)!;
+    final dark = Color.lerp(fill, Colors.black, .18)!;
+    canvas.drawPath(body, Paint()..color = fill);
+    final weave = Paint()
+      ..color = dark.withValues(alpha: .45)
+      ..strokeWidth = 2;
+    for (var i = 1; i < 4; i++) {
+      final y = h * .18 + (h * .82) * i / 4;
+      final inset = w * .12 * (y - h * .18) / (h * .82);
+      canvas.drawLine(Offset(inset, y), Offset(w - inset, y), weave);
+    }
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromLTWH(-w * .03, 0, w * 1.06, h * .24),
+        Radius.circular(h * .12),
+      ),
+      Paint()..color = dark,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_BasketPainter old) => old.tint != tint;
 }

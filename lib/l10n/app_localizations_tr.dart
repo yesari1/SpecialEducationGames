@@ -1074,4 +1074,16 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obHandoffNote => 'Oyunlar yatay açılır. Aile bölümü dik açılır.';
+
+  @override
+  String get gamePromptOddOneOut => 'Farklı olanı bul';
+
+  @override
+  String get gamePromptShadowMatch => 'Gölgesini bul';
+
+  @override
+  String get gamePromptSortIntoBasket => 'Doğru sepete koy';
+
+  @override
+  String get gamePromptNumberQuantity => 'Bu kadar olanı bul';
 }

@@ -141,8 +141,12 @@ class RoundController extends ChangeNotifier {
     try {
       final built = repeat ?? template.buildRound(modeContext);
       final state = performance[built.target.id] ?? const ItemPerformance();
+      // Odd-one-out is meaningless with fewer than three objects.
+      final minimum = template is OddOneOutTemplate ? 3 : 1;
       final count = repeat == null
-          ? state.fieldSize(built.choices.length)
+          ? state
+                .fieldSize(built.choices.length)
+                .clamp(minimum, built.choices.length)
           : built.choices.length;
       final others = built.choices
           .where((x) => x.id != built.target.id)

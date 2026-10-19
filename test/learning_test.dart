@@ -122,7 +122,8 @@ void main() {
       final repo = await ContentRepository.load();
       expect(
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
-        35,
+        // 35 phase-one cards plus G15/G17/G23 on three themes and G37.
+        45,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {

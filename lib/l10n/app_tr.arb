@@ -996,5 +996,9 @@
   "obTrialNote": "Deneme sonrası ödeme Google Play üzerinden alınır. Google Play'den istediğiniz zaman iptal edebilirsiniz.",
   "obContinueFree": "Ücretsiz devam et",
   "obHandoffBody": "Telefonu yan çevirip çocuğunuza verin.",
-  "obHandoffNote": "Oyunlar yatay açılır. Aile bölümü dik açılır."
+  "obHandoffNote": "Oyunlar yatay açılır. Aile bölümü dik açılır.",
+  "gamePromptOddOneOut": "Farklı olanı bul",
+  "gamePromptShadowMatch": "Gölgesini bul",
+  "gamePromptSortIntoBasket": "Doğru sepete koy",
+  "gamePromptNumberQuantity": "Bu kadar olanı bul"
 }

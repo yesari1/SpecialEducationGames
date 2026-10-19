@@ -10,7 +10,14 @@ enum GamePromptKey {
   listenForSoundSource,
   sequenceNext,
   sequenceMissing,
+  oddOneOut,
+  shadowMatch,
+  sortIntoBasket,
+  numberQuantity,
 }
+
+/// How answer choices are drawn on the stage.
+enum ChoiceLook { object, silhouette, basket }
 
 class RoundSpec {
   final ContentItem target;
@@ -24,6 +31,12 @@ class RoundSpec {
   final String? promptImagePath, correctChoiceImagePath;
   final Map<String, int> quantities;
   final bool introduction;
+
+  /// Choices may be drawn as shadows or baskets instead of plain objects.
+  final ChoiceLook look;
+
+  /// The prompt object can be dragged onto a choice (tapping still works).
+  final bool dragStimulus;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -38,6 +51,8 @@ class RoundSpec {
     this.correctChoiceImagePath,
     this.quantities = const {},
     this.introduction = false,
+    this.look = ChoiceLook.object,
+    this.dragStimulus = false,
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -53,6 +68,8 @@ class RoundSpec {
     correctChoiceImagePath: correctChoiceImagePath,
     quantities: quantities,
     introduction: introduction,
+    look: look,
+    dragStimulus: dragStimulus,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

@@ -999,5 +999,9 @@
   "obTrialNote": "Billed by Google Play after the trial. You can cancel any time in Google Play.",
   "obContinueFree": "Continue for free",
   "obHandoffBody": "Turn the phone sideways and hand it to your child.",
-  "obHandoffNote": "The games open in landscape. The family area opens upright."
+  "obHandoffNote": "The games open in landscape. The family area opens upright.",
+  "gamePromptOddOneOut": "Find the one that is different",
+  "gamePromptShadowMatch": "Find its shadow",
+  "gamePromptSortIntoBasket": "Put it in the right basket",
+  "gamePromptNumberQuantity": "Find this many"
 }

@@ -1968,6 +1968,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The games open in landscape. The family area opens upright.'**
   String get obHandoffNote;
+
+  /// No description provided for @gamePromptOddOneOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the one that is different'**
+  String get gamePromptOddOneOut;
+
+  /// No description provided for @gamePromptShadowMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Find its shadow'**
+  String get gamePromptShadowMatch;
+
+  /// No description provided for @gamePromptSortIntoBasket.
+  ///
+  /// In en, this message translates to:
+  /// **'Put it in the right basket'**
+  String get gamePromptSortIntoBasket;
+
+  /// No description provided for @gamePromptNumberQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Find this many'**
+  String get gamePromptNumberQuantity;
 }
 
 class _AppLocalizationsDelegate

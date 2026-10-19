@@ -1074,4 +1074,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get obHandoffNote =>
       'The games open in landscape. The family area opens upright.';
+
+  @override
+  String get gamePromptOddOneOut => 'Find the one that is different';
+
+  @override
+  String get gamePromptShadowMatch => 'Find its shadow';
+
+  @override
+  String get gamePromptSortIntoBasket => 'Put it in the right basket';
+
+  @override
+  String get gamePromptNumberQuantity => 'Find this many';
 }

@@ -116,41 +116,69 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         : widget.hint.level >= 2 && correct
         ? ChoiceCardState.hint
         : ChoiceCardState.idle;
+    void pick() {
+      _lastPicked = item.id;
+      widget.callbacks.onSelect(item);
+    }
+
+    final look = widget.spec.look;
+    final card = ChoiceCard(
+      key: ValueKey('${widget.hint.generation}:${item.id}'),
+      item: item,
+      locale: widget.hint.locale,
+      state: state,
+      hintLevel: correct ? widget.hint.level : 0,
+      nudgeSerial: correct ? widget.hint.wrongCount : 0,
+      shakeSerial: _shakeFor == item.id ? _shakeSerial : 0,
+      appearDelay: SegMotion.stagger * (index % 4),
+      // Names under shadows would turn the game into a reading task.
+      showLabel:
+          widget.hint.showLabels &&
+          widget.spec.quantities.isEmpty &&
+          look != ChoiceLook.silhouette,
+      visual: look == ChoiceLook.silhouette
+          ? ItemVisual(
+              item,
+              alignment: Alignment.bottomCenter,
+              silhouette: true,
+            )
+          : look == ChoiceLook.basket
+          ? BasketFrame(
+              tint: SegColors.accent,
+              child: ItemVisual(item, alignment: Alignment.bottomCenter),
+            )
+          : widget.spec.quantities.containsKey(item.id)
+          ? QuantityVisual(
+              count: widget.spec.quantities[item.id]!,
+              item: widget.spec.quantityItem,
+            )
+          : item.id == widget.spec.target.id &&
+                widget.spec.correctChoiceImagePath != null
+          ? PhotoVisual(
+              widget.spec.correctChoiceImagePath!,
+              alignment: Alignment.bottomCenter,
+            )
+          : null,
+      compact: compact,
+      visible: index < widget.hint.visibleChoices,
+      animate: widget.hint.animate,
+      onTap: widget.hint.celebrating ? null : pick,
+    );
     return SizedBox(
       width: width,
       height: height,
-      child: ChoiceCard(
-        key: ValueKey('${widget.hint.generation}:${item.id}'),
-        item: item,
-        locale: widget.hint.locale,
-        state: state,
-        hintLevel: correct ? widget.hint.level : 0,
-        nudgeSerial: correct ? widget.hint.wrongCount : 0,
-        shakeSerial: _shakeFor == item.id ? _shakeSerial : 0,
-        appearDelay: SegMotion.stagger * (index % 4),
-        showLabel: widget.hint.showLabels && widget.spec.quantities.isEmpty,
-        visual: widget.spec.quantities.containsKey(item.id)
-            ? QuantityVisual(
-                count: widget.spec.quantities[item.id]!,
-                item: widget.spec.quantityItem,
-              )
-            : item.id == widget.spec.target.id &&
-                  widget.spec.correctChoiceImagePath != null
-            ? PhotoVisual(
-                widget.spec.correctChoiceImagePath!,
-                alignment: Alignment.bottomCenter,
-              )
-            : null,
-        compact: compact,
-        visible: index < widget.hint.visibleChoices,
-        animate: widget.hint.animate,
-        onTap: widget.hint.celebrating
-            ? null
-            : () {
-                _lastPicked = item.id;
-                widget.callbacks.onSelect(item);
-              },
-      ),
+      child: !widget.spec.dragStimulus
+          ? card
+          // The prompt object can be dropped here; tapping still answers.
+          : DragTarget<ContentItem>(
+              onWillAcceptWithDetails: (_) => !widget.hint.celebrating,
+              onAcceptWithDetails: (_) => pick(),
+              builder: (context, candidates, _) => AnimatedScale(
+                duration: SegMotion.tap,
+                scale: candidates.isEmpty ? 1 : 1.06,
+                child: card,
+              ),
+            ),
     );
   }
 

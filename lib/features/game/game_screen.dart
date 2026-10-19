@@ -67,6 +67,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     GamePromptKey.listenForSoundSource => l10n.gamePromptListenForSoundSource,
     GamePromptKey.sequenceNext => l10n.gamePromptSequenceNext,
     GamePromptKey.sequenceMissing => l10n.gamePromptSequenceMissing,
+    GamePromptKey.oddOneOut => l10n.gamePromptOddOneOut,
+    GamePromptKey.shadowMatch => l10n.gamePromptShadowMatch,
+    GamePromptKey.sortIntoBasket => l10n.gamePromptSortIntoBasket,
+    GamePromptKey.numberQuantity => l10n.gamePromptNumberQuantity,
     null => s.locale == 'tr' ? spec.promptTr : spec.promptEn,
   };
   bool get exploratory => widget.gameId == 'G02' || widget.gameId == 'G55';
@@ -368,8 +372,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     if (c.phase == RoundPhase.complete) return _completed(c.total);
     final spec = c.spec!;
     final compact = MediaQuery.sizeOf(context).height < 500;
-    final groupPrompt =
-        widget.gameId == 'G04' && spec.stimulus != null && spec.count == null;
+    // Games that show one object next to the instruction (group, shadow,
+    // basket and number-quantity games).
+    final groupPrompt = spec.stimulus != null && spec.count == null;
     final g14Prompt = widget.gameId == 'G14';
     final sideBySidePrompt = groupPrompt || g14Prompt;
     // An instruction alone needs little room; give the stage to the objects.
@@ -454,45 +459,62 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                         padding: const EdgeInsets.symmetric(
                           horizontal: SegSpace.s5,
                         ),
+                        // The prompt object stands on the scene next to a
+                        // short instruction pill; no full-width banner.
                         child: sideBySidePrompt
-                            ? SizedBox(
-                                width: double.infinity,
-                                child: SegCard(
-                                  padding: EdgeInsets.all(
-                                    compact ? SegSpace.s2 : SegSpace.s5,
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    key: ValueKey(
+                                      '${groupPrompt ? 'group-stimulus' : 'g14-prompt'}-${c.generation}',
+                                    ),
+                                    width: compact ? 104 : 150,
+                                    height: compact ? 104 : 150,
+                                    child: groupPrompt
+                                        ? _stimulus(spec, c)
+                                        : StagedObject(
+                                            child: spec.promptImagePath == null
+                                                ? ItemVisual(
+                                                    spec.target,
+                                                    alignment:
+                                                        Alignment.bottomCenter,
+                                                  )
+                                                : PhotoVisual(
+                                                    spec.promptImagePath!,
+                                                    alignment:
+                                                        Alignment.bottomCenter,
+                                                  ),
+                                          ),
                                   ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        key: ValueKey(
-                                          '${groupPrompt ? 'group-stimulus' : 'g14-prompt'}-${c.generation}',
+                                  if (s.showLabels || g14Prompt) ...[
+                                    const SizedBox(width: SegSpace.s4),
+                                    Flexible(
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: SegSpace.s5,
+                                          vertical: SegSpace.s3,
                                         ),
-                                        width: compact ? 96 : 144,
-                                        height: compact ? 96 : 144,
-                                        child: groupPrompt
-                                            ? ItemVisual(spec.stimulus!)
-                                            : spec.promptImagePath == null
-                                            ? ItemVisual(spec.target)
-                                            : PhotoVisual(
-                                                spec.promptImagePath!,
-                                              ),
-                                      ),
-                                      if (s.showLabels || g14Prompt) ...[
-                                        const SizedBox(width: SegSpace.s4),
-                                        Expanded(
-                                          child: Text(
-                                            _promptText(spec),
-                                            style: compact
-                                                ? SegText.heading
-                                                : SegText.title,
-                                            textAlign: TextAlign.center,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(
+                                            SegRadius.xl,
+                                          ),
+                                          border: Border.all(
+                                            color: SegColors.line,
                                           ),
                                         ),
-                                      ],
-                                    ],
-                                  ),
-                                ),
+                                        child: Text(
+                                          _promptText(spec),
+                                          style: compact
+                                              ? SegText.heading
+                                              : SegText.title,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ],
                               )
                             : _fitPrompt(
                                 context,
@@ -805,6 +827,28 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       ),
     ),
   );
+
+  /// The prompt object. In drag games it can be carried onto a choice; the
+  /// choices still accept taps, so dragging is never required.
+  Widget _stimulus(RoundSpec spec, RoundController c) {
+    final visual = StagedObject(
+      child: ItemVisual(spec.stimulus!, alignment: Alignment.bottomCenter),
+    );
+    if (!spec.dragStimulus || c.phase != RoundPhase.answering) return visual;
+    return Draggable<ContentItem>(
+      data: spec.stimulus,
+      onDragStarted: () => c.noteInteraction(itemId: spec.stimulus!.id),
+      feedback: SizedBox.square(
+        dimension: 132,
+        child: Material(
+          type: MaterialType.transparency,
+          child: ItemVisual(spec.stimulus!),
+        ),
+      ),
+      childWhenDragging: Opacity(opacity: .25, child: visual),
+      child: visual,
+    );
+  }
 
   Widget _fitPrompt(BuildContext context, Widget child) => FittedBox(
     fit: BoxFit.scaleDown,

@@ -88,5 +88,41 @@
     },
     "template": "cause_effect",
     "phase": 1
+  },
+  {
+    "id": "G15",
+    "name": {
+      "tr": "Gölgesini Bul",
+      "en": "Find the Shadow"
+    },
+    "template": "drag_to_target",
+    "phase": 2
+  },
+  {
+    "id": "G17",
+    "name": {
+      "tr": "Farklı Olanı Bul",
+      "en": "Odd One Out"
+    },
+    "template": "odd_one_out",
+    "phase": 2
+  },
+  {
+    "id": "G23",
+    "name": {
+      "tr": "Sepete Koy",
+      "en": "Into the Basket"
+    },
+    "template": "sort",
+    "phase": 2
+  },
+  {
+    "id": "G37",
+    "name": {
+      "tr": "Sayı ve Miktar",
+      "en": "Number and Amount"
+    },
+    "template": "match_pair",
+    "phase": 2
   }
 ]

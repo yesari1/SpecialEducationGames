@@ -351,5 +351,9 @@ IconData gameIcon(String id) => switch (id) {
   'G35' => Icons.arrow_forward_rounded,
   'G36' => Icons.balance_rounded,
   'G55' => Icons.touch_app_rounded,
+  'G15' => Icons.dark_mode_rounded,
+  'G17' => Icons.highlight_alt_rounded,
+  'G23' => Icons.shopping_basket_rounded,
+  'G37' => Icons.looks_3_rounded,
   _ => Icons.search_rounded,
 };

@@ -391,6 +391,181 @@ class CauseEffectTemplate extends FlashcardsTemplate {
   String get id => 'cause_effect';
 }
 
+/// G17 "Farklı Olanı Bul": all but one choice share a group; tap the odd one.
+/// Easy/medium take the odd one from another theme; hard keeps it in the same
+/// theme but from a different tag group (e.g. a vegetable among fruits).
+class OddOneOutTemplate extends GameTemplate {
+  const OddOneOutTemplate();
+  @override
+  String get id => 'odd_one_out';
+  static const _groupTags = {
+    'evcil', 'ciftlik', 'vahsi', 'deniz', 'bocek', 'kus', //
+    'meyve', 'sebze', 'kara', 'hava', 'rayli', 'is_makinesi',
+  };
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final pool = ctx.content
+        .pool(ctx.themeId, ctx.difficulty)
+        .where((x) => x.images.isNotEmpty)
+        .toList();
+    final random = ctx.scheduler.random;
+    final size = ctx.choiceCount.clamp(3, 4);
+    List<ContentItem> group;
+    ContentItem odd;
+    if (ctx.difficulty == Difficulty.hard) {
+      final tags =
+          pool
+              .expand((x) => x.tags)
+              .where(_groupTags.contains)
+              .toSet()
+              .where(
+                (tag) => pool.where((x) => x.tags.contains(tag)).length >= size,
+              )
+              .toList()
+            ..shuffle(random);
+      if (tags.isEmpty) throw StateError('No group large enough');
+      final tag = tags.first;
+      group = pool.where((x) => x.tags.contains(tag)).toList()..shuffle(random);
+      final outsiders = pool
+          .where(
+            (x) => !x.tags.contains(tag) && x.tags.any(_groupTags.contains),
+          )
+          .toList();
+      if (outsiders.isEmpty) throw StateError('No outsider for group');
+      odd = ctx.scheduler.next(outsiders, ctx.struggle);
+    } else {
+      group = List.of(pool)..shuffle(random);
+      final others = ctx.content.items
+          .where(
+            (x) =>
+                x.theme != ctx.themeId &&
+                x.images.isNotEmpty &&
+                const {'animals', 'produce', 'vehicles'}.contains(x.theme),
+          )
+          .toList();
+      if (others.isEmpty) throw StateError('No other theme for odd item');
+      odd = ctx.scheduler.next(others, ctx.struggle);
+    }
+    if (group.length < size - 1) throw StateError('Not enough group items');
+    final choices = [odd, ...group.take(size - 1)]..shuffle(random);
+    return RoundSpec(
+      target: odd,
+      choices: choices,
+      promptTr: 'Farklı olanı bul',
+      promptEn: 'Find the one that is different',
+      promptKey: GamePromptKey.oddOneOut,
+    );
+  }
+
+  // Saying the odd item's name would give the answer away.
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [];
+}
+
+/// G15 "Gölgesini Bul": the photo is shown; choices are silhouettes. Drag the
+/// photo onto its shadow or tap the shadow.
+class ShadowMatchTemplate extends GameTemplate {
+  const ShadowMatchTemplate();
+  @override
+  String get id => 'drag_to_target';
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final pool = ctx.content
+        .pool(ctx.themeId, ctx.difficulty)
+        .where((x) => x.images.isNotEmpty)
+        .toList();
+    if (pool.length < 2) throw StateError('Not enough silhouettes');
+    final target = ctx.scheduler.next(pool, ctx.struggle);
+    final distractors = pool.where((x) => x.id != target.id).toList()
+      ..shuffle(ctx.scheduler.random);
+    return RoundSpec(
+      target: target,
+      choices: [target, ...distractors.take(ctx.choiceCount - 1)]
+        ..shuffle(ctx.scheduler.random),
+      promptTr: 'Gölgesini bul',
+      promptEn: 'Find its shadow',
+      promptKey: GamePromptKey.shadowMatch,
+      stimulus: target,
+      look: ChoiceLook.silhouette,
+      dragStimulus: true,
+    );
+  }
+}
+
+/// G23 "Sepete Koy": the G04 grouping drawn as baskets; the object can be
+/// dragged into a basket or the basket tapped.
+class BasketSortTemplate extends GroupTemplate {
+  const BasketSortTemplate();
+  @override
+  String get id => 'sort';
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final grouped = super.buildRound(ctx);
+    return RoundSpec(
+      target: grouped.target,
+      choices: grouped.choices,
+      promptTr: 'Doğru sepete koy',
+      promptEn: 'Put it in the right basket',
+      promptKey: GamePromptKey.sortIntoBasket,
+      stimulus: grouped.stimulus,
+      look: ChoiceLook.basket,
+      dragStimulus: true,
+    );
+  }
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
+    ?spec.stimulus?.audioFor(locale),
+  ];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) => [
+    'assets/audio/$locale/prompts/praise.mp3',
+    ?spec.stimulus?.audioFor(locale),
+  ];
+}
+
+/// G37 "Sayı ve Miktar": a numeral is shown; pick the card with that many.
+class NumberQuantityTemplate extends GameTemplate {
+  const NumberQuantityTemplate();
+  @override
+  String get id => 'match_pair';
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final maximum = [3, 5, 10][ctx.difficulty.index];
+    final numbers = ctx.content.items
+        .where(
+          (x) =>
+              x.theme == 'numbers' &&
+              (int.tryParse(x.slug) ?? 0) >= 1 &&
+              int.parse(x.slug) <= maximum,
+        )
+        .toList();
+    if (numbers.length < 2) throw StateError('Not enough numbers');
+    final target = ctx.scheduler.next(numbers, ctx.struggle);
+    final others = numbers.where((x) => x.id != target.id).toList()
+      ..shuffle(ctx.scheduler.random);
+    final choices = [target, ...others.take(ctx.choiceCount - 1)]
+      ..shuffle(ctx.scheduler.random);
+    final counted = ctx.content
+        .pool('produce', Difficulty.easy)
+        .where((x) => x.images.isNotEmpty)
+        .toList();
+    return RoundSpec(
+      target: target,
+      choices: choices,
+      promptTr: 'Bu kadar olanı bul',
+      promptEn: 'Find this many',
+      promptKey: GamePromptKey.numberQuantity,
+      stimulus: target,
+      quantities: {for (final item in choices) item.id: int.parse(item.slug)},
+      quantityItem: counted.isEmpty
+          ? null
+          : counted[ctx.scheduler.random.nextInt(counted.length)],
+    );
+  }
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -400,6 +575,10 @@ abstract final class TemplateRegistry {
     'G02' => const FlashcardsTemplate(),
     'G55' => const CauseEffectTemplate(),
     'G01' || 'G10' || 'G14' || 'G34' => const IdentifyTemplate(),
+    'G15' => const ShadowMatchTemplate(),
+    'G17' => const OddOneOutTemplate(),
+    'G23' => const BasketSortTemplate(),
+    'G37' => const NumberQuantityTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }

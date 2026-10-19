@@ -38,7 +38,10 @@ void main() {
       expect(round.choices.map((item) => item.id).toSet(), hasLength(4));
       expect(round.choices.map((item) => item.id).toSet(), available);
       expect(round.choices.every((item) => item.sfx != null), isTrue);
-      expect(round.choices.every((item) => item.name(locale).isNotEmpty), isTrue);
+      expect(
+        round.choices.every((item) => item.name(locale).isNotEmpty),
+        isTrue,
+      );
     }
   });
 
@@ -130,8 +133,10 @@ void main() {
                 final ids = spec.choices.map((item) => item.id).toList();
                 final uniqueIds = ids.toSet();
                 final singleChoice = gameId == 'G02' || gameId == 'G55';
+                // Odd-one-out needs a group of at least two plus the odd one.
                 final specialThree =
-                    gameId == 'G36' && difficulty == Difficulty.hard;
+                    (gameId == 'G36' && difficulty == Difficulty.hard) ||
+                    (gameId == 'G17' && difficulty == Difficulty.easy);
                 final maxChoices = singleChoice
                     ? 1
                     : specialThree
