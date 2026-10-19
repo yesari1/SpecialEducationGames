@@ -136,7 +136,10 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
               )
             : item.id == widget.spec.target.id &&
                   widget.spec.correctChoiceImagePath != null
-            ? PhotoVisual(widget.spec.correctChoiceImagePath!)
+            ? PhotoVisual(
+                widget.spec.correctChoiceImagePath!,
+                alignment: Alignment.bottomCenter,
+              )
             : null,
         compact: compact,
         visible: index < widget.hint.visibleChoices,

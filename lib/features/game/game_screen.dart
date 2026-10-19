@@ -371,6 +371,12 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         widget.gameId == 'G04' && spec.stimulus != null && spec.count == null;
     final g14Prompt = widget.gameId == 'G14';
     final sideBySidePrompt = groupPrompt || g14Prompt;
+    // An instruction alone needs little room; give the stage to the objects.
+    final textOnlyPrompt =
+        !sideBySidePrompt &&
+        spec.stimulus == null &&
+        spec.count == null &&
+        spec.sequence.isEmpty;
     return Scaffold(
       backgroundColor: theme.bg,
       body: SceneBackdrop(
@@ -424,6 +430,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   Expanded(
                     flex: sideBySidePrompt && compact
                         ? 4
+                        : textOnlyPrompt
+                        ? 1
                         : spec.count == null
                         ? 2
                         : 3,

@@ -173,7 +173,10 @@ class SegCard extends StatelessWidget {
 
 class ItemVisual extends StatelessWidget {
   final ContentItem item;
-  const ItemVisual(this.item, {super.key});
+
+  /// Where a photo sits in its box; game objects stand on the bottom edge.
+  final Alignment alignment;
+  const ItemVisual(this.item, {super.key, this.alignment = Alignment.center});
   static const colors = {
     'red': 0xFFE98A6B,
     'blue': 0xFF5B8FD1,
@@ -195,7 +198,7 @@ class ItemVisual extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (item.images.isNotEmpty) {
-      return PhotoVisual(item.images.first);
+      return PhotoVisual(item.images.first, alignment: alignment);
     }
     if (item.theme == 'colors') {
       return FractionallySizedBox(
@@ -347,12 +350,16 @@ class ColorBlobPainter extends CustomPainter {
 /// AssetImage uses Flutter's shared decoded cache; each tile is a repaint boundary.
 class PhotoVisual extends StatefulWidget {
   final String asset;
-  const PhotoVisual(this.asset, {super.key});
+  final Alignment alignment;
+  const PhotoVisual(this.asset, {super.key, this.alignment = Alignment.center});
   @override
   State<PhotoVisual> createState() => _PhotoVisualState();
 }
 
 class _PhotoVisualState extends State<PhotoVisual> {
+  /// Opaque bounds per asset, so subjects are framed by their pixels rather
+  /// than by the transparent margin of the square source file.
+  static final Map<String, Rect> _opaqueBounds = {};
   ImageStream? _stream;
   ImageInfo? _image;
   late final ImageStreamListener _listener = ImageStreamListener((image, _) {
@@ -364,7 +371,50 @@ class _PhotoVisualState extends State<PhotoVisual> {
       _image?.dispose();
       _image = image;
     });
+    _measure(widget.asset, image.image);
   });
+
+  void _measure(String asset, ui.Image image) {
+    if (_opaqueBounds.containsKey(asset)) return;
+    final handle = image.clone();
+    handle
+        .toByteData()
+        .then((data) {
+          final width = handle.width, height = handle.height;
+          handle.dispose();
+          if (data == null) return;
+          var left = width, top = height, right = -1, bottom = -1;
+          for (var y = 0; y < height; y += 2) {
+            final row = y * width * 4;
+            for (var x = 0; x < width; x += 2) {
+              if (data.getUint8(row + x * 4 + 3) > 24) {
+                if (x < left) left = x;
+                if (x > right) right = x;
+                if (y < top) top = y;
+                if (y > bottom) bottom = y;
+              }
+            }
+          }
+          final whole = Rect.fromLTWH(
+            0,
+            0,
+            width.toDouble(),
+            height.toDouble(),
+          );
+          _opaqueBounds[asset] = right < 0
+              ? whole
+              : Rect.fromLTRB(
+                  left.toDouble(),
+                  top.toDouble(),
+                  right + 2.0,
+                  bottom + 2.0,
+                ).inflate(4).intersect(whole);
+          if (mounted && widget.asset == asset) setState(() {});
+        })
+        .catchError((Object _) {
+          handle.dispose();
+        });
+  }
 
   void _resolve() {
     final next = AssetImage(
@@ -399,7 +449,11 @@ class _PhotoVisualState extends State<PhotoVisual> {
   @override
   Widget build(BuildContext context) => RepaintBoundary(
     child: CustomPaint(
-      painter: _PhotoContourPainter(_image?.image),
+      painter: _PhotoContourPainter(
+        _image?.image,
+        widget.alignment,
+        _opaqueBounds[widget.asset],
+      ),
       size: Size.infinite,
     ),
   );
@@ -407,27 +461,22 @@ class _PhotoVisualState extends State<PhotoVisual> {
 
 class _PhotoContourPainter extends CustomPainter {
   final ui.Image? image;
-  _PhotoContourPainter(this.image);
+  final Alignment alignment;
+  final Rect? crop;
+  _PhotoContourPainter(this.image, this.alignment, this.crop);
   @override
   void paint(Canvas canvas, Size size) {
     final photo = image;
     if (photo == null || size.shortestSide <= 8) return;
     const stroke = 4.0;
     final available = Size(size.width - stroke * 2, size.height - stroke * 2);
-    final fitted = applyBoxFit(
-      BoxFit.contain,
-      Size(photo.width.toDouble(), photo.height.toDouble()),
-      available,
-    );
-    final destination = Alignment.center.inscribe(
+    final source =
+        crop ??
+        Rect.fromLTWH(0, 0, photo.width.toDouble(), photo.height.toDouble());
+    final fitted = applyBoxFit(BoxFit.contain, source.size, available);
+    final destination = alignment.inscribe(
       fitted.destination,
-      Offset.zero & size,
-    );
-    final source = Rect.fromLTWH(
-      0,
-      0,
-      photo.width.toDouble(),
-      photo.height.toDouble(),
+      (Offset.zero & size).deflate(stroke),
     );
     final outline = Paint()
       ..filterQuality = FilterQuality.medium
@@ -454,7 +503,9 @@ class _PhotoContourPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _PhotoContourPainter oldDelegate) =>
-      oldDelegate.image != image;
+      oldDelegate.image != image ||
+      oldDelegate.alignment != alignment ||
+      oldDelegate.crop != crop;
 }
 
 class ThemeGameCard extends StatelessWidget {

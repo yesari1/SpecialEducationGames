@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'components.dart';
 import 'game_object.dart';
@@ -150,14 +151,17 @@ class _ChoiceCardState extends State<ChoiceCard> with TickerProviderStateMixin {
           final lift = ObjectMotion.hop(hop.value);
           final sway = ObjectMotion.shake(shake.value);
           final grow = appearCurve.value;
+          final shadowWidth = math.min(box.maxWidth * .64, box.maxHeight * .8);
           final visual = Padding(
             padding: EdgeInsets.fromLTRB(
-              box.maxWidth * .06,
-              box.maxHeight * .04,
-              box.maxWidth * .06,
-              box.maxHeight * .1,
+              box.maxWidth * .04,
+              box.maxHeight * .02,
+              box.maxWidth * .04,
+              box.maxHeight * .09,
             ),
-            child: widget.visual ?? ItemVisual(widget.item),
+            child:
+                widget.visual ??
+                ItemVisual(widget.item, alignment: Alignment.bottomCenter),
           );
           return Stack(
             clipBehavior: Clip.none,
@@ -176,10 +180,10 @@ class _ChoiceCardState extends State<ChoiceCard> with TickerProviderStateMixin {
                 ),
               ),
               Positioned(
-                left: box.maxWidth * .2,
-                right: box.maxWidth * .2,
-                bottom: box.maxHeight * .02,
-                height: box.maxHeight * .12,
+                left: (box.maxWidth - shadowWidth) / 2,
+                width: shadowWidth,
+                bottom: box.maxHeight * .03,
+                height: box.maxHeight * .14,
                 child: GroundShadow(lift: lift),
               ),
               Transform.translate(

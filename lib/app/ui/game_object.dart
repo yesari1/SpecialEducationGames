@@ -19,21 +19,25 @@ class _GroundShadowPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     if (size.isEmpty) return;
     final scale = 1 - lift * .35;
-    final rect = Rect.fromCenter(
-      center: size.center(Offset.zero),
-      width: size.width * scale,
-      height: size.height * scale,
-    );
-    canvas.drawOval(
-      rect,
+    // Paint a unit circle stretched into an ellipse so the gradient follows it.
+    canvas.save();
+    canvas.translate(size.width / 2, size.height / 2);
+    canvas.scale(size.width / 2 * scale, size.height / 2 * scale);
+    final fade = 1 - lift * .6;
+    canvas.drawCircle(
+      Offset.zero,
+      1,
       Paint()
         ..shader = RadialGradient(
           colors: [
-            SegColors.ink.withValues(alpha: .16 * (1 - lift * .6)),
+            SegColors.ink.withValues(alpha: .18 * fade),
+            SegColors.ink.withValues(alpha: .08 * fade),
             SegColors.ink.withValues(alpha: 0),
           ],
-        ).createShader(rect),
+          stops: const [0, .55, 1],
+        ).createShader(Rect.fromCircle(center: Offset.zero, radius: 1)),
     );
+    canvas.restore();
   }
 
   @override
@@ -191,8 +195,11 @@ class StagedObject extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: box.maxWidth * .22,
-          right: box.maxWidth * .22,
+          left:
+              (box.maxWidth -
+                  math.min(box.maxWidth * .56, box.maxHeight * .7)) /
+              2,
+          width: math.min(box.maxWidth * .56, box.maxHeight * .7),
           bottom: 0,
           height: box.maxHeight * .1,
           child: const GroundShadow(),
