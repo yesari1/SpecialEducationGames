@@ -4,6 +4,7 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/initial_avatar.dart';
+import '../../app/ui/family_nav_bar.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/parent_pin.dart';
@@ -215,7 +216,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
     );
   }
 
-  List<Widget> _sectionPages({required bool compact}) {
+  List<Widget> _sectionPages({required bool compact, bool portrait = false}) {
     final pages = switch (tab) {
       0 => compact ? _compactDashboardPages() : _dashboard(),
       1 => compact ? _compactGamePages() : _games(),
@@ -223,7 +224,14 @@ class _FamilyScreenState extends State<FamilyScreen> {
       _ => compact ? _compactSettingsPages() : _settings(),
     }.where((widget) => widget is! SizedBox).toList();
     if (s.configuration.announcementId != null) {
-      pages.insert(0, ParentAnnouncementCard(state: s));
+      // The card paginates its text, so it needs a bounded height even when
+      // the upright family area scrolls.
+      pages.insert(
+        0,
+        portrait
+            ? SizedBox(height: 420, child: ParentAnnouncementCard(state: s))
+            : ParentAnnouncementCard(state: s),
+      );
     }
     return pages;
   }
@@ -835,7 +843,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 !portrait &&
                 (constraints.maxHeight < 500 ||
                     MediaQuery.textScalerOf(context).scale(1) >= 1.6);
-            final pages = _sectionPages(compact: compact);
+            final pages = _sectionPages(compact: compact, portrait: portrait);
             return Padding(
               padding: EdgeInsets.all(compact ? SegSpace.s1 : SegSpace.s5),
               child: Column(
@@ -978,7 +986,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ),
-      bottomNavigationBar: NavigationBar(
+      bottomNavigationBar: FamilyNavBar(
         selectedIndex: tab,
         onDestinationSelected: (i) {
           setState(() {
@@ -987,21 +995,25 @@ class _FamilyScreenState extends State<FamilyScreen> {
           });
           if (_sectionController.hasClients) _sectionController.jumpToPage(0);
         },
-        destinations: [
-          NavigationDestination(
-            icon: const Icon(Icons.bar_chart_rounded),
+        items: [
+          FamilyNavItem(
+            icon: Icons.insights_outlined,
+            selectedIcon: Icons.insights_rounded,
             label: l10n.familyProgress,
           ),
-          NavigationDestination(
-            icon: const Icon(Icons.sports_esports_outlined),
+          FamilyNavItem(
+            icon: Icons.sports_esports_outlined,
+            selectedIcon: Icons.sports_esports_rounded,
             label: l10n.familyGames,
           ),
-          NavigationDestination(
-            icon: const Icon(Icons.people_outline_rounded),
+          FamilyNavItem(
+            icon: Icons.people_outline_rounded,
+            selectedIcon: Icons.people_rounded,
             label: l10n.familyProfiles,
           ),
-          NavigationDestination(
-            icon: const Icon(Icons.settings_outlined),
+          FamilyNavItem(
+            icon: Icons.settings_outlined,
+            selectedIcon: Icons.settings_rounded,
             label: l10n.familySettings,
           ),
         ],
@@ -1164,7 +1176,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
         child: ListTile(
           title: Text(profile.nickname, style: SegText.heading),
           subtitle: Text(l10n.familyStoredOnThisDevice),
-          leading: const Icon(Icons.face_rounded),
+          leading: InitialAvatar(name: profile.nickname, size: 44),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [

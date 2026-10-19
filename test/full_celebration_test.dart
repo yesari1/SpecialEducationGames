@@ -2,6 +2,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:special_education_games/app/ui/family_nav_bar.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -60,7 +61,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       tester
-          .widget<NavigationBar>(find.byType(NavigationBar))
+          .widget<FamilyNavBar>(find.byType(FamilyNavBar))
           .onDestinationSelected!(3);
       await tester.pumpAndSettle();
 

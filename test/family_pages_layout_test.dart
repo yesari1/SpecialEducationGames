@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:special_education_games/app/ui/family_nav_bar.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -743,8 +744,8 @@ void main() {
           }
 
           Future<void> traverseTab(int tab, String stage) async {
-            final navigation = tester.widget<NavigationBar>(
-              find.byType(NavigationBar),
+            final navigation = tester.widget<FamilyNavBar>(
+              find.byType(FamilyNavBar),
             );
             navigation.onDestinationSelected!(tab);
             await tester.pumpAndSettle();
@@ -870,7 +871,7 @@ void main() {
         );
         expectNoVerticalScroll(tester);
 
-        final nav = tester.widget<NavigationBar>(find.byType(NavigationBar));
+        final nav = tester.widget<FamilyNavBar>(find.byType(FamilyNavBar));
         nav.onDestinationSelected!(3);
         await tester.pumpAndSettle();
         final credits = find.text(

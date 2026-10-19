@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:special_education_games/app/ui/family_nav_bar.dart';
 import 'package:special_education_games/app/app.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -187,7 +188,7 @@ void main() {
               );
             }
           }
-          final bar = find.byType(NavigationBar);
+          final bar = find.byType(FamilyNavBar);
           if (bar.evaluate().isNotEmpty) {
             expect(
               tester.getRect(bar).height,

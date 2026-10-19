@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:special_education_games/app/ui/family_nav_bar.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -82,7 +83,7 @@ void main() {
 
   Future<void> selectTab(WidgetTester tester, int index) async {
     tester
-        .widget<NavigationBar>(find.byType(NavigationBar))
+        .widget<FamilyNavBar>(find.byType(FamilyNavBar))
         .onDestinationSelected!(index);
     await tester.pumpAndSettle();
   }
@@ -150,7 +151,7 @@ void main() {
               expect(tester.getRect(finder).height, greaterThanOrEqualTo(48));
             }
             expect(
-              tester.getRect(find.byType(NavigationBar)).height,
+              tester.getRect(find.byType(FamilyNavBar)).height,
               greaterThanOrEqualTo(48),
             );
             await findByHorizontalPaging(

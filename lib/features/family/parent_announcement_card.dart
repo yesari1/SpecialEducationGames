@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../app/app_state.dart';
@@ -228,7 +229,7 @@ class _ParentAnnouncementCardState extends State<ParentAnnouncementCard> {
               }
               final textHeight =
                   (constraints.maxHeight - headingHeight - 8 - 56)
-                      .clamp(1.0, constraints.maxHeight)
+                      .clamp(1.0, math.max(1.0, constraints.maxHeight))
                       .toDouble();
               final textPages = _textPages(
                 title: title,
