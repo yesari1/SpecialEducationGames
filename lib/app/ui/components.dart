@@ -201,19 +201,22 @@ class ItemVisual extends StatelessWidget {
       return PhotoVisual(item.images.first, alignment: alignment);
     }
     if (item.theme == 'colors') {
-      return FractionallySizedBox(
-        widthFactor: .78,
-        heightFactor: .78,
-        child: AspectRatio(
-          aspectRatio: 1,
-          child: CustomPaint(
-            painter: ColorBlobPainter(Color(colors[item.slug] ?? 0xFF9AA4AE)),
-          ),
-        ),
+      final paint = ColorBlobPainter(Color(colors[item.slug] ?? 0xFF9AA4AE));
+      return LayoutBuilder(
+        builder: (context, box) {
+          final side = math.min(box.maxWidth, box.maxHeight) * .82;
+          return Align(
+            alignment: alignment,
+            child: SizedBox.square(
+              dimension: side,
+              child: CustomPaint(painter: paint),
+            ),
+          );
+        },
       );
     }
     if (item.theme == 'numbers') {
-      return FittedBox(child: StickerNumber(item.slug));
+      return FittedBox(alignment: alignment, child: StickerNumber(item.slug));
     }
     final icons = {
       'car': Icons.directions_car_rounded,
@@ -236,6 +239,7 @@ class ItemVisual extends StatelessWidget {
     // Sticker-style icon: a white rim drawn from the glyph itself so the
     // placeholder reads as a cut-out object like the photos around it.
     return FittedBox(
+      alignment: alignment,
       child: Icon(
         icon,
         size: 96,
