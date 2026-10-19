@@ -378,12 +378,19 @@ class PhotoVisual extends StatefulWidget {
   });
   @override
   State<PhotoVisual> createState() => _PhotoVisualState();
+
+  /// Opaque bounds per asset as fractions (0..1) of the image, so subjects
+  /// are framed by their pixels rather than the square file's margin.
+  static final Map<String, Rect> _opaqueBounds = {};
+
+  /// Bounds precomputed by `tools/build_photo_bounds.py`; assets missing here
+  /// are measured once at runtime.
+  static void registerBounds(Map<String, Rect> bounds) =>
+      _opaqueBounds.addAll(bounds);
 }
 
 class _PhotoVisualState extends State<PhotoVisual> {
-  /// Opaque bounds per asset, so subjects are framed by their pixels rather
-  /// than by the transparent margin of the square source file.
-  static final Map<String, Rect> _opaqueBounds = {};
+  static Map<String, Rect> get _opaqueBounds => PhotoVisual._opaqueBounds;
   ImageStream? _stream;
   ImageInfo? _image;
   late final ImageStreamListener _listener = ImageStreamListener((image, _) {
@@ -419,20 +426,15 @@ class _PhotoVisualState extends State<PhotoVisual> {
               }
             }
           }
-          final whole = Rect.fromLTWH(
-            0,
-            0,
-            width.toDouble(),
-            height.toDouble(),
-          );
+          const whole = Rect.fromLTWH(0, 0, 1, 1);
           _opaqueBounds[asset] = right < 0
               ? whole
               : Rect.fromLTRB(
-                  left.toDouble(),
-                  top.toDouble(),
-                  right + 2.0,
-                  bottom + 2.0,
-                ).inflate(4).intersect(whole);
+                  (left - 4) / width,
+                  (top - 4) / height,
+                  (right + 6) / width,
+                  (bottom + 6) / height,
+                ).intersect(whole);
           if (mounted && widget.asset == asset) setState(() {});
         })
         .catchError((Object _) {
@@ -501,9 +503,16 @@ class _PhotoContourPainter extends CustomPainter {
     if (photo == null || size.shortestSide <= 8) return;
     const stroke = 4.0;
     final available = Size(size.width - stroke * 2, size.height - stroke * 2);
-    final source =
-        crop ??
-        Rect.fromLTWH(0, 0, photo.width.toDouble(), photo.height.toDouble());
+    final w = photo.width.toDouble(), h = photo.height.toDouble();
+    final fraction = crop;
+    final source = fraction == null
+        ? Rect.fromLTWH(0, 0, w, h)
+        : Rect.fromLTRB(
+            fraction.left * w,
+            fraction.top * h,
+            fraction.right * w,
+            fraction.bottom * h,
+          );
     final fitted = applyBoxFit(BoxFit.contain, source.size, available);
     final destination = alignment.inscribe(
       fitted.destination,
