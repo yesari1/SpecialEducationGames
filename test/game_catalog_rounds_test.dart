@@ -132,7 +132,9 @@ void main() {
                 }
                 final ids = spec.choices.map((item) => item.id).toList();
                 final uniqueIds = ids.toSet();
-                final singleChoice = gameId == 'G02' || gameId == 'G55';
+                // Fill-the-basket has one answer: the requested number.
+                final singleChoice =
+                    gameId == 'G02' || gameId == 'G55' || gameId == 'G38';
                 // Odd-one-out needs a group of at least two plus the odd one.
                 final specialThree =
                     (gameId == 'G36' && difficulty == Difficulty.hard) ||

@@ -71,6 +71,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     GamePromptKey.shadowMatch => l10n.gamePromptShadowMatch,
     GamePromptKey.sortIntoBasket => l10n.gamePromptSortIntoBasket,
     GamePromptKey.numberQuantity => l10n.gamePromptNumberQuantity,
+    GamePromptKey.fillCount => l10n.gamePromptFillCount(spec.fillCount ?? 0),
     null => s.locale == 'tr' ? spec.promptTr : spec.promptEn,
   };
   bool get exploratory => widget.gameId == 'G02' || widget.gameId == 'G55';

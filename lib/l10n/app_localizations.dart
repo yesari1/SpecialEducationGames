@@ -1992,6 +1992,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Find this many'**
   String get gamePromptNumberQuantity;
+
+  /// No description provided for @gamePromptFillCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Put {count} in the basket'**
+  String gamePromptFillCount(int count);
+
+  /// No description provided for @gameFillBasketCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Basket: {count} of {goal}'**
+  String gameFillBasketCount(int count, int goal);
 }
 
 class _AppLocalizationsDelegate

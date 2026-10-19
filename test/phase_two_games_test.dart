@@ -15,6 +15,8 @@ import 'package:special_education_games/core/learning/policies.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
 import 'package:special_education_games/features/game/round_spec.dart';
 import 'package:special_education_games/features/game/templates/game_template.dart';
+import 'package:special_education_games/app/ui/game_object.dart';
+import 'package:special_education_games/features/game/widgets/fill_basket_view.dart';
 import 'package:special_education_games/features/game/widgets/round_choices_view.dart';
 
 void main() {
@@ -85,6 +87,9 @@ void main() {
   RoundChoicesView round(WidgetTester tester) =>
       tester.widget<RoundChoicesView>(find.byType(RoundChoicesView));
 
+  FillBasketView fill(WidgetTester tester) =>
+      tester.widget<FillBasketView>(find.byType(FillBasketView));
+
   Finder card(WidgetTester tester, String itemId) =>
       find.byKey(ValueKey('${round(tester).hint.generation}:$itemId'));
 
@@ -113,6 +118,8 @@ void main() {
       ('vehicles', 'G17'),
       ('vehicles', 'G23'),
       ('numbers', 'G37'),
+      ('numbers', 'G38'),
+      ('produce', 'G38'),
     ]) {
       expect(content.theme(theme).games, contains(game), reason: theme);
       expect(() => TemplateRegistry.resolve(game), returnsNormally);
@@ -121,7 +128,7 @@ void main() {
     expect(content.freeGames, hasLength(6));
     expect(
       content.freeGames.where(
-        (key) => ['G15', 'G17', 'G23', 'G37'].any(key.endsWith),
+        (key) => ['G15', 'G17', 'G23', 'G37', 'G38'].any(key.endsWith),
       ),
       isEmpty,
     );
@@ -200,6 +207,58 @@ void main() {
     await tester.tap(card(tester, spec.target.id));
     await tester.pump();
     expect(round(tester).hint.celebrating, isTrue);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('G38 fills the basket by taps, drag and take-back', (
+    tester,
+  ) async {
+    await loadFonts(tester);
+    await mountGame(tester, 'numbers', 'G38', locale: 'en');
+    final view = tester.widget<FillBasketView>(find.byType(FillBasketView));
+    final goal = view.spec.fillCount!;
+    expect(goal, inInclusiveRange(1, 3));
+    expect(find.text('Put $goal in the basket'), findsOneWidget);
+    // Two more objects than needed wait on the ground.
+    expect(find.byType(PressableObject), findsNWidgets(goal + 2));
+
+    // One in by drag, then take it back out by tapping the basket.
+    final gesture = await tester.startGesture(
+      tester.getCenter(find.byKey(const ValueKey('fill-object-0'))),
+    );
+    await gesture.moveBy(const Offset(0, 20));
+    await tester.pump();
+    await gesture.moveTo(
+      tester.getCenter(find.byKey(const ValueKey('fill-basket'))),
+    );
+    await tester.pump();
+    await gesture.up();
+    await tester.pump();
+    expect(
+      tester
+          .widget<Text>(
+            find.descendant(
+              of: find.byKey(const ValueKey('fill-basket-count')),
+              matching: find.byType(Text),
+            ),
+          )
+          .data,
+      '1',
+    );
+    if (goal > 1) {
+      await tester.tap(find.byKey(const ValueKey('fill-basket')));
+      await tester.pump();
+      expect(fill(tester).hint.celebrating, isFalse);
+    }
+
+    for (var i = 1; i <= goal + 1; i++) {
+      if (fill(tester).hint.celebrating) break;
+      final next = find.byKey(ValueKey('fill-object-$i'));
+      if (next.evaluate().isEmpty) continue;
+      await tester.tap(next);
+      await tester.pump();
+    }
+    expect(fill(tester).hint.celebrating, isTrue);
     expect(tester.takeException(), isNull);
   });
 

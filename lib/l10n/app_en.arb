@@ -1003,5 +1003,9 @@
   "gamePromptOddOneOut": "Find the one that is different",
   "gamePromptShadowMatch": "Find its shadow",
   "gamePromptSortIntoBasket": "Put it in the right basket",
-  "gamePromptNumberQuantity": "Find this many"
+  "gamePromptNumberQuantity": "Find this many",
+  "gamePromptFillCount": "Put {count} in the basket",
+  "@gamePromptFillCount": {"placeholders": {"count": {"type": "int"}}},
+  "gameFillBasketCount": "Basket: {count} of {goal}",
+  "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}}
 }

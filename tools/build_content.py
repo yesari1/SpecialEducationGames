@@ -181,14 +181,14 @@ def main():
  active=['animals','produce','colors','numbers','vehicles']
  theme_games={
  'animals':['G01','G10','G02','G14','G04','G33','G36','G55','G15','G17','G23'],
- 'produce':['G01','G02','G14','G04','G33','G36','G55','G15','G17','G23'],
+ 'produce':['G01','G02','G14','G04','G33','G36','G55','G15','G17','G23','G38'],
  'colors':['G01','G02','G14','G55'],
- 'numbers':['G35','G02','G10','G14','G33','G34','G36','G55','G37'],
+ 'numbers':['G35','G02','G10','G14','G33','G34','G36','G55','G37','G38'],
  'vehicles':['G02','G01','G10','G14','G04','G33','G36','G55','G15','G17','G23'],
  }
  write_json(ROOT/'assets/content/themes.json',[dict(id=t[0],name={'tr':t[1],'en':t[2]},palette=dict(zip(['bg','accent','deep'],['#'+x for x in t[3:6]])),hero=t[0]+'.'+t[6],active=t[0] in active,games=theme_games.get(t[0],[])) for t in THEMES])
- game_defs=[('G01','Bul','Find','identify'),('G02','Öğren','Learn','flashcards'),('G04','Hangi Grupta?','Which Group?','identify'),('G10','Sesini Bul','Find the Sound','audio_choice'),('G14','Aynısını Bul','Find the Match','identify'),('G33','Say ve Seç','Count and Choose','count'),('G34','Rakamı Bul','Find the Number','identify'),('G35','Sonraki Sayı','Next Number','sequence_missing'),('G36','Karşılaştır','Compare','compare'),('G55','Dokun-Keşfet','Touch and Explore','cause_effect'),('G15','Gölgesini Bul','Find the Shadow','drag_to_target'),('G17','Farklı Olanı Bul','Odd One Out','odd_one_out'),('G23','Sepete Koy','Into the Basket','sort'),('G37','Sayı ve Miktar','Number and Amount','match_pair')]
- phase_two={'G15','G17','G23','G37'}
+ game_defs=[('G01','Bul','Find','identify'),('G02','Öğren','Learn','flashcards'),('G04','Hangi Grupta?','Which Group?','identify'),('G10','Sesini Bul','Find the Sound','audio_choice'),('G14','Aynısını Bul','Find the Match','identify'),('G33','Say ve Seç','Count and Choose','count'),('G34','Rakamı Bul','Find the Number','identify'),('G35','Sonraki Sayı','Next Number','sequence_missing'),('G36','Karşılaştır','Compare','compare'),('G55','Dokun-Keşfet','Touch and Explore','cause_effect'),('G15','Gölgesini Bul','Find the Shadow','drag_to_target'),('G17','Farklı Olanı Bul','Odd One Out','odd_one_out'),('G23','Sepete Koy','Into the Basket','sort'),('G37','Sayı ve Miktar','Number and Amount','match_pair'),('G38','Sepeti Doldur','Fill the Basket','fill_count')]
+ phase_two={'G15','G17','G23','G37','G38'}
  write_json(ROOT/'assets/content/games.json',[dict(id=i,name={'tr':tr,'en':en},template=temp,phase=2 if i in phase_two else 1) for i,tr,en,temp in game_defs])
  write_json(ROOT/'assets/config_defaults.json',dict(freeGames=['animals_G01','produce_G01','colors_G01','animals_G10','numbers_G35','vehicles_G02'],disabledGames=[],hiddenThemes=[],difficultyDefaults={'fadeAfterErrors':2}))
  write_json(ROOT/'assets/content/migration_report.json',dict(items=len(items),images=sum(bool(x['images']) for x in items),verifiedRealPhotos=len(real_photos),selectedVoiceRecordings=len(selected_audio),audio=sum(bool(x['audio']) for x in items),missing=[x['id'] for x in items if not x['images'] and x['theme'] not in ('colors','numbers')]))

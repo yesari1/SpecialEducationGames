@@ -1086,4 +1086,14 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gamePromptNumberQuantity => 'Bu kadar olanı bul';
+
+  @override
+  String gamePromptFillCount(int count) {
+    return 'Sepete $count tane koy';
+  }
+
+  @override
+  String gameFillBasketCount(int count, int goal) {
+    return 'Sepette $count / $goal';
+  }
 }

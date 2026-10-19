@@ -211,7 +211,11 @@ class _ThemeScreenState extends State<ThemeScreen> {
     final faces = [
       hero,
       ...s.content.items.where(
-        (x) => x.theme == t.id && x.id != hero.id && x.images.isNotEmpty,
+        (x) =>
+            x.theme == t.id &&
+            x.id != hero.id &&
+            (x.images.isNotEmpty || t.id == 'numbers' || t.id == 'colors') &&
+            x.slug != '0',
       ),
     ];
     final games =
@@ -355,5 +359,6 @@ IconData gameIcon(String id) => switch (id) {
   'G17' => Icons.highlight_alt_rounded,
   'G23' => Icons.shopping_basket_rounded,
   'G37' => Icons.looks_3_rounded,
+  'G38' => Icons.add_shopping_cart_rounded,
   _ => Icons.search_rounded,
 };

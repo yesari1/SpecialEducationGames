@@ -1086,4 +1086,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gamePromptNumberQuantity => 'Find this many';
+
+  @override
+  String gamePromptFillCount(int count) {
+    return 'Put $count in the basket';
+  }
+
+  @override
+  String gameFillBasketCount(int count, int goal) {
+    return 'Basket: $count of $goal';
+  }
 }

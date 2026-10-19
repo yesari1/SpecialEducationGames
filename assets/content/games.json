@@ -124,5 +124,14 @@
     },
     "template": "match_pair",
     "phase": 2
+  },
+  {
+    "id": "G38",
+    "name": {
+      "tr": "Sepeti Doldur",
+      "en": "Fill the Basket"
+    },
+    "template": "fill_count",
+    "phase": 2
   }
 ]

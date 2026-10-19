@@ -14,6 +14,7 @@ enum GamePromptKey {
   shadowMatch,
   sortIntoBasket,
   numberQuantity,
+  fillCount,
 }
 
 /// How answer choices are drawn on the stage.
@@ -37,6 +38,9 @@ class RoundSpec {
 
   /// The prompt object can be dragged onto a choice (tapping still works).
   final bool dragStimulus;
+
+  /// Fill-the-basket games: how many of [stimulus] go into the basket.
+  final int? fillCount;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -53,6 +57,7 @@ class RoundSpec {
     this.introduction = false,
     this.look = ChoiceLook.object,
     this.dragStimulus = false,
+    this.fillCount,
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -70,6 +75,7 @@ class RoundSpec {
     introduction: introduction,
     look: look,
     dragStimulus: dragStimulus,
+    fillCount: fillCount,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

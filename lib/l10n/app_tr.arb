@@ -1000,5 +1000,7 @@
   "gamePromptOddOneOut": "Farklı olanı bul",
   "gamePromptShadowMatch": "Gölgesini bul",
   "gamePromptSortIntoBasket": "Doğru sepete koy",
-  "gamePromptNumberQuantity": "Bu kadar olanı bul"
+  "gamePromptNumberQuantity": "Bu kadar olanı bul",
+  "gamePromptFillCount": "Sepete {count} tane koy",
+  "gameFillBasketCount": "Sepette {count} / {goal}"
 }

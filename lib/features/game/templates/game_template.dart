@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/content/content_repository.dart';
 import '../../../core/learning/policies.dart';
 import '../round_spec.dart';
+import '../widgets/fill_basket_view.dart';
 import '../widgets/round_choices_view.dart';
 
 class ModeContext {
@@ -566,6 +567,51 @@ class NumberQuantityTemplate extends GameTemplate {
   }
 }
 
+/// G38 "Sepeti Doldur": put the asked number of objects into the basket.
+class FillCountTemplate extends GameTemplate {
+  const FillCountTemplate();
+  @override
+  String get id => 'fill_count';
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final maximum = [3, 5, 7][ctx.difficulty.index];
+    final numbers = ctx.content.items
+        .where(
+          (x) =>
+              x.theme == 'numbers' &&
+              (int.tryParse(x.slug) ?? 0) >= 1 &&
+              int.parse(x.slug) <= maximum,
+        )
+        .toList();
+    final target = ctx.scheduler.next(numbers, ctx.struggle);
+    final objects = ctx.content
+        .pool(
+          ctx.themeId == 'numbers' ? 'produce' : ctx.themeId,
+          Difficulty.easy,
+        )
+        .where((x) => x.images.isNotEmpty)
+        .toList();
+    if (objects.isEmpty) throw StateError('No objects to count');
+    return RoundSpec(
+      target: target,
+      choices: [target],
+      promptTr: 'Sepete ${target.slug} tane koy',
+      promptEn: 'Put ${target.slug} in the basket',
+      promptKey: GamePromptKey.fillCount,
+      stimulus: objects[ctx.scheduler.random.nextInt(objects.length)],
+      fillCount: int.parse(target.slug),
+    );
+  }
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => FillBasketView(spec: spec, callbacks: callbacks, hint: hint);
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -579,6 +625,7 @@ abstract final class TemplateRegistry {
     'G17' => const OddOneOutTemplate(),
     'G23' => const BasketSortTemplate(),
     'G37' => const NumberQuantityTemplate(),
+    'G38' => const FillCountTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }
