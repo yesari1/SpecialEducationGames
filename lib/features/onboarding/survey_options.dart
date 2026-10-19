@@ -178,6 +178,15 @@ class _SurveyOptionsState extends State<SurveyOptions> {
   Widget build(BuildContext context) {
     final options = _options;
     final l10n = scopedLocalizations(context, widget.locale);
+    // Upright screens have room for every option at once: no arrows.
+    if (MediaQuery.orientationOf(context) == Orientation.portrait) {
+      return ListView.separated(
+        key: ValueKey('survey-options-${widget.question.key}'),
+        itemCount: options.length,
+        separatorBuilder: (_, _) => const SizedBox(height: SegSpace.s2),
+        itemBuilder: (context, index) => _option(index, options[index]),
+      );
+    }
     return Column(
       children: [
         Expanded(

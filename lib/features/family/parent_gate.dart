@@ -121,11 +121,45 @@ class _GateState extends State<_Gate> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(l10n.parentGateTitle, style: SegText.heading),
+                          Row(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: const BoxDecoration(
+                                  color: SegColors.primarySoft,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(
+                                  Icons.lock_outline_rounded,
+                                  color: SegColors.primaryDeep,
+                                  size: 22,
+                                ),
+                              ),
+                              SizedBox(width: gapSm),
+                              Flexible(
+                                child: Text(
+                                  l10n.parentGateTitle,
+                                  style: SegText.heading,
+                                ),
+                              ),
+                            ],
+                          ),
                           SizedBox(height: gap),
                           Text(promptText, style: instruction),
                           SizedBox(height: gapSm),
-                          Text(displayText, style: math),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: gap,
+                              vertical: gapSm,
+                            ),
+                            decoration: BoxDecoration(
+                              color: SegColors.familyCanvas,
+                              borderRadius: BorderRadius.circular(SegRadius.md),
+                              border: Border.all(color: SegColors.line),
+                            ),
+                            child: Text(displayText, style: math),
+                          ),
                           if (message.isNotEmpty) ...<Widget>[
                             SizedBox(height: gapSm),
                             Text(message, style: err),
@@ -178,12 +212,34 @@ class _GateState extends State<_Gate> {
                                           minimumSize: const Size(48, 48),
                                           padding: const EdgeInsets.all(8),
                                           visualDensity: VisualDensity.standard,
+                                          backgroundColor:
+                                              keys[r * 4 + col] == '✓'
+                                              ? SegColors.primary
+                                              : SegColors.familyCanvas,
+                                          foregroundColor:
+                                              keys[r * 4 + col] == '✓'
+                                              ? Colors.white
+                                              : SegColors.ink,
+                                          side: BorderSide(
+                                            color: keys[r * 4 + col] == '✓'
+                                                ? SegColors.primary
+                                                : SegColors.line,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              SegRadius.md,
+                                            ),
+                                          ),
                                         ),
                                         onPressed: () =>
                                             input(keys[r * 4 + col]),
                                         child: Text(
                                           keys[r * 4 + col],
-                                          style: SegText.heading,
+                                          style: SegText.heading.copyWith(
+                                            color: keys[r * 4 + col] == '✓'
+                                                ? Colors.white
+                                                : SegColors.ink,
+                                          ),
                                         ),
                                       ),
                                     ),

@@ -139,7 +139,9 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
   Widget _profilePage() => LayoutBuilder(
     builder: (context, constraints) {
       final textScale = MediaQuery.textScalerOf(context).scale(1);
-      final avatarSize = constraints.maxHeight < 240 || textScale >= 1.6
+      final avatarSize = _portrait
+          ? 96.0
+          : constraints.maxHeight < 240 || textScale >= 1.6
           ? 64.0
           : 84.0;
       final heading = Padding(
@@ -193,6 +195,19 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
           ),
         ),
       );
+
+      if (_portrait) {
+        return ListView(
+          padding: const EdgeInsets.all(SegSpace.s3),
+          children: [
+            heading,
+            const SizedBox(height: SegSpace.s5),
+            SizedBox(height: avatarSize + 24, child: avatars),
+            const SizedBox(height: SegSpace.s5),
+            field,
+          ],
+        );
+      }
 
       if (textScale >= 2 && constraints.maxHeight < 400) {
         return Column(
@@ -266,6 +281,30 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
         final compact =
             constraints.maxHeight < 400 &&
             MediaQuery.textScalerOf(context).scale(1) >= 1.6;
+        if (_portrait) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              LinearProgressIndicator(
+                value: page / surveyQuestions.length,
+                color: SegColors.primary,
+                backgroundColor: SegColors.line,
+                borderRadius: BorderRadius.circular(SegRadius.pill),
+              ),
+              const SizedBox(height: SegSpace.s2),
+              Text(
+                progress,
+                style: SegText.caption,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: SegSpace.s3),
+              prompt,
+              if (error.isNotEmpty) _errorText(),
+              const SizedBox(height: SegSpace.s3),
+              Expanded(child: options),
+            ],
+          );
+        }
         if (compact) {
           return Column(
             children: [
@@ -338,39 +377,48 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
       (s.content.themes.length + _recommendationsPerPage - 1) ~/
       _recommendationsPerPage;
 
-  Widget _recommendationPage() => Column(
-    children: [
-      if (error.isNotEmpty)
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: SegSpace.s2,
-            vertical: SegSpace.s1,
-          ),
-          child: _errorText(compact: true),
-        ),
-      Expanded(
-        child: PageView.builder(
-          key: const ValueKey('profile-recommendation-pages'),
-          controller: _recommendations,
-          itemCount: _recommendationPageCount,
-          onPageChanged: (value) => setState(() => recommendationPage = value),
-          itemBuilder: (context, index) {
-            final first = index * _recommendationsPerPage;
-            final themes = s.content.themes
-                .skip(first)
-                .take(_recommendationsPerPage)
-                .toList();
-            return Row(
-              children: [
-                for (final theme in themes)
-                  Expanded(child: _recommendationCard(theme)),
-              ],
-            );
-          },
-        ),
-      ),
-    ],
-  );
+  Widget _recommendationPage() => _portrait
+      ? ListView(
+          key: const ValueKey('profile-recommendation-list'),
+          children: [
+            if (error.isNotEmpty) _errorText(compact: true),
+            for (final theme in s.content.themes) _recommendationCard(theme),
+          ],
+        )
+      : Column(
+          children: [
+            if (error.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: SegSpace.s2,
+                  vertical: SegSpace.s1,
+                ),
+                child: _errorText(compact: true),
+              ),
+            Expanded(
+              child: PageView.builder(
+                key: const ValueKey('profile-recommendation-pages'),
+                controller: _recommendations,
+                itemCount: _recommendationPageCount,
+                onPageChanged: (value) =>
+                    setState(() => recommendationPage = value),
+                itemBuilder: (context, index) {
+                  final first = index * _recommendationsPerPage;
+                  final themes = s.content.themes
+                      .skip(first)
+                      .take(_recommendationsPerPage)
+                      .toList();
+                  return Row(
+                    children: [
+                      for (final theme in themes)
+                        Expanded(child: _recommendationCard(theme)),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
+        );
 
   Widget _recommendationCard(ContentTheme theme) {
     final level = SurveyMapper.initialForTheme(answers, theme.id);
@@ -405,7 +453,28 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
     );
   }
 
+  bool get _portrait =>
+      MediaQuery.orientationOf(context) == Orientation.portrait;
+
+  /// Upright screens stack the footer actions as full-width buttons.
   Widget _footer() {
+    final footer = _footerRow();
+    if (!_portrait || footer is! Row) return footer;
+    final children = footer.children.whereType<Expanded>().toList();
+    if (children.length < 2) return footer;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        for (var i = 0; i < children.length; i++) ...[
+          if (i > 0) const SizedBox(height: SegSpace.s2),
+          children[i].child,
+        ],
+      ],
+    );
+  }
+
+  Widget _footerRow() {
     if (page == 0) {
       final media = MediaQuery.sizeOf(context);
       final compact =
