@@ -11,6 +11,8 @@ Ayrıntılı liste TODO.md başında. Özet:
 - Faz 2: G15, G17, G23, G37, G38 (premium; sürükleme + dokunma alternatifi).
 - Doğrulama: `flutter analyze` temiz; `flutter test --concurrency=1` 230/230. Pixel_9a emülatörde (debug, `QA_PREMIUM` ile) onboarding, aile sekmeleri, abonelik/kaynaklar/hesap/profil, ana sayfa/tema/yol, oyun durumları ve yeni oyunlar (gerçek sürükle-bırak dahil) ekran görüntüsüyle kontrol edildi: `artifacts/claude/`.
 - Araştırma notu: Otsimo benzeri uygulamalar ilk açılışta ebeveynin birkaç dakikada doldurduğu tarama ve PIN korumalı aile bölümü kullanıyor; Google'ın çocuk uygulaması rehberi ebeveyn ve çocuğu ayrı hedef kitle olarak ele almayı öneriyor. Yeni akış bu düzene uyar.
+- Test APK (R26, profile, debug imzası, mevcut applicationId/versionCode 14): `artifacts/test-builds/2026-10-19/ozel-egitim-test-claude-r26-profile.apk`, SHA-256 `7d4b26327b41ebabce2398a475a199fd5d7a4d2e2aa74db024bd84a4e77a1e85`. Emülatöre temiz kurulumla yüklendi; ilk açılış dikey onboarding → yatay ana sayfa/tema/oyun akışı doğrulandı (`artifacts/claude/final/`). Premium oyunlar bu derlemede kilitli (beklenen). Yeni oyunları emülatörde görmek için: `flutter run --debug --dart-define=QA_PREMIUM=true`.
+- Son durum: analyze temiz, seri host testleri 234/234.
 - Bilinen sınırlar: yeni oyunların yönerge sesi yok; deneme ekranı canlı Play olmadan görülemedi; fiziksel cihaz/TalkBack/performans kabulü yapılmadı.
 
 15 Ekim 2026: Kullanıcı üç rapora göre Flutter uygulamasını geliştirmeyi ve 16 Ekim 08:00 İstanbul saatine kadar limit yenilendikçe devam etmeyi yetkilendirdi. Güç yönetimi yapılmayacak; Gemini kullanılmayacak.
