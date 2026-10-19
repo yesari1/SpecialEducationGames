@@ -173,7 +173,7 @@ class _EducationAppState extends State<EducationApp>
   Widget build(BuildContext context) => ListenableBuilder(
     listenable: state,
     builder: (_, _) => MaterialApp.router(
-      title: state.tr('Özel Eğitim Oyunları', 'Special Education Games'),
+      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
       theme: segTheme(),
       routerConfig: router,

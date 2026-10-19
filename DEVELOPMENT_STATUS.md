@@ -2,6 +2,17 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 19 Ekim 2026 — Claude oturumu (güncel)
+
+Ayrıntılı liste TODO.md başında. Özet:
+- Git deposu kuruldu; her adım commit'li (`git log`).
+- Oyun nesneleri kartsız "sahne nesnesi" oldu (esneme, hale, zıplama, sallanma, zemin gölgesi; opak sınıra göre büyük fotoğraf). Tüm çocuk ekranlarında durağan pastel sahne.
+- Aile/onboarding dikey, çocuk modu yatay. Yeni 7 adımlı ebeveyn onboarding'i; avatar yerine baş harf. Aile sayfaları dikeyde kaydırmalı; modern kapsül alt menü; Android Geri düzeltmesi.
+- Faz 2: G15, G17, G23, G37, G38 (premium; sürükleme + dokunma alternatifi).
+- Doğrulama: `flutter analyze` temiz; `flutter test --concurrency=1` 230/230. Pixel_9a emülatörde (debug, `QA_PREMIUM` ile) onboarding, aile sekmeleri, abonelik/kaynaklar/hesap/profil, ana sayfa/tema/yol, oyun durumları ve yeni oyunlar (gerçek sürükle-bırak dahil) ekran görüntüsüyle kontrol edildi: `artifacts/claude/`.
+- Araştırma notu: Otsimo benzeri uygulamalar ilk açılışta ebeveynin birkaç dakikada doldurduğu tarama ve PIN korumalı aile bölümü kullanıyor; Google'ın çocuk uygulaması rehberi ebeveyn ve çocuğu ayrı hedef kitle olarak ele almayı öneriyor. Yeni akış bu düzene uyar.
+- Bilinen sınırlar: yeni oyunların yönerge sesi yok; deneme ekranı canlı Play olmadan görülemedi; fiziksel cihaz/TalkBack/performans kabulü yapılmadı.
+
 15 Ekim 2026: Kullanıcı üç rapora göre Flutter uygulamasını geliştirmeyi ve 16 Ekim 08:00 İstanbul saatine kadar limit yenilendikçe devam etmeyi yetkilendirdi. Güç yönetimi yapılmayacak; Gemini kullanılmayacak.
 
 ## Hedef

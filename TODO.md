@@ -1,6 +1,42 @@
 # Uygulama geliştirme kontrol listesi
 
-## Güncel durum — 19 Ekim, test APK R25
+## Güncel liste — Claude, 19 Ekim 2026 (bu bölüm günceldir)
+
+Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun hissi, tüm sayfalarda UI cilası, ardından yerelde yapılabilen TODO maddeleri. Kod artık git deposunda (`git log` her adımı gösterir). Aşağıdaki eski bölümler tarihçedir.
+
+**İşaretleme:** `[x]` yapıldı ve belirtilen düzeyde doğrulandı (analyze + seri host testler + Pixel_9a emülatörde görsel kontrol). `[ ]` açık. "Dış" = dış servis, insan onayı veya yetki gerektirir; yerelde yapılmaz.
+
+### Bu oturumda yapılanlar
+- [x] Git deposu + baseline commit; `.gitignore` build/artifacts/.gradle/anahtar/APK dosyalarını dışarıda tutar. (`.claude-transfer` klasörü otomatik izin sistemi silmeye izin vermediği için duruyor; git'e girmez, elle silinebilir.)
+- [x] Oyun nesneleri buton değil: ChoiceCard kartı/ripple/dolgu/onay rozeti kaldırıldı. Fotoğraf sahnede gölgesiyle durur, dokununca esner, ipucunda sarı hale, doğruda zıplama + nane hale, yanlışta sallanma. Fotoğraflar opak sınırlarına göre kırpılıp büyük çizilir. Renk topu, sticker rakam, konturlu taşıt ikonları. Sayma, G02/G55 de aynı stilde.
+- [x] Her temada durağan pastel sahne (tepeler, bulutlar, soluk lekeler); hareketli arka plan yok.
+- [x] Yön: aile/onboarding dikey, çocuk modu yatay; route'a göre otomatik. Manifest artık sabit yatay değil. (AGENTS.md'deki "landscape-only" kuralının yerini aldı.)
+- [x] Yeni ebeveyn onboarding'i (dikey, 7 adım): karşılama → takma ad (isteğe bağlı) + yaş 2–10+ tek ekranda → 4 resimli soru (sevdiği temalar, bildiği temalar, ses hassasiyeti, odak süresi; hepsi atlanabilir) → günlük hedef 10/15/20 (15 önerilen) → "Aile"ye basılı tutma anlatımı + isteğe bağlı PIN → deneme teklifi yalnızca Play gerçek deneme döndürürse → "telefonu yan çevir" → yatay oyunlar. Kalan anket soruları profil düzenleyicide. Hayvan avatarı kaldırıldı; profil baş harf dairesiyle gösterilir.
+- [x] Aile alanı dikeyde tek kaydırmalı sayfalar (ilerleme, oyunlar, profiller, ayarlar, abonelik, kaynaklar, hesap, profil düzenleyici). Anket seçenekleri dikeyde okla değil liste halinde.
+- [x] Modern yüzen kapsül alt menü (kayan seçili zemin, dolu/boş ikon).
+- [x] Android Geri: aile alt sayfalarında uygulamayı kapatıyordu → artık üst sayfaya döner; tema → ana sayfa; oyunda Geri yok sayılır (çıkış basılı tutmayla).
+- [x] Çocuk UI: tema/oyun kartları mini sahnede, her oyun kartında farklı nesne + mod rozeti, beyaz kapsül geçişler (Oyunlar/Yol, zorluk), günlük yol taşları + sıradaki adım halkası, gün bazlı sticker'lar, tur sonu yıldızları, mola ekranı, ebeveyn kapısı.
+- [x] Faz 2 oyunları (premium; 6 ücretsiz oyun değişmedi): G15 Gölgesini Bul (sürükle veya dokun), G17 Farklı Olanı Bul, G23 Sepete Koy (sürükle veya dokun), G37 Sayı ve Miktar, G38 Sepeti Doldur. Her sürükleme oyununda dokunma alternatifi vardır. Kart sayısı 35 → 47.
+- [x] Kalan `state.tr` metinleri (uygulama başlığı) ARB'ye taşındı; yeni metinler TR/EN ARB'de.
+- [x] Debug QA için `--dart-define=QA_PREMIUM=true` (yalnız debug derlemede; release/profile yok sayar).
+- [x] Testler: 230/230 seri host test geçer, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 7).
+
+### Yerelde yapılabilecek açıklar
+- [ ] G11 Doğru Sesi Seç (audio_choice): hoparlör seçenekleri için dinle/seç etkileşimi tasarlanmalı; mevcut 10 doğal hayvan sesiyle sınırlı.
+- [ ] Yeni oyunların yönerge sesleri yok (yalnız yazı + öğe adı). Ses üretimi aşağıdaki ses onayına bağlı.
+- [ ] Profil düzenleyicideki yaş sorusu hâlâ eski aralıklar (2–3, 4–5…); onboarding hem tam yaşı (`ageYears`) hem aralığı kaydeder. Düzenleyiciye 2–10+ seçici taşınabilir.
+- [ ] Şekiller teması: şekiller vektörle çizilebilir (fotoğraf gerekmez) ama TR/EN seslendirme yok; ses onayı olmadan açılmadı.
+- [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).
+
+### Dış bağımlılıklar (yerelde yapılmadı)
+- [ ] Dış: gerçek fotoğraf tamamlama/onay (8 eksik, 108 incelemeli geçici görsel), seçilmiş ses örneklerinin insan onayı ve toplu ses üretimi (ElevenLabs toplu üretim onaysız yapılmaz).
+- [ ] Dış: Play Console ürünleri/fiyatlar, gerçek lisans hesabıyla satın alma/deneme testleri; deneme ekranı yalnız Play gerçek deneme döndürürse görünür.
+- [ ] Dış: canlı Firebase/Firestore/Google giriş/App Check/hesap silme, Analytics/Crashlytics.
+- [ ] Dış: imza anahtarı/Play App Signing doğrulaması, release AAB denetimi, Unity varlık hakları, hukuk/mağaza/Families beyanları, kapalı kullanıcı testi, yayın.
+
+---
+
+## Tarihçe: Codex durumu — 19 Ekim, test APK R25
 
 - [ ] Haftalık kalan%1 (<%2): yeni kod/model işi bekler;5saat%59 engel değil. Haftalık reset24Ekim23:40:37Europe/Istanbul; mevcut yarım saat kontrolleri aktif.
 

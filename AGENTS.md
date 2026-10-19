@@ -1,5 +1,7 @@
 # Workspace instructions
 
+- 19 October 2026: the owner handed implementation to Claude, working directly in this repository (git). The Codex/GPT-6 Luna orchestration, usage-threshold and half-hour automation rules further down applied to ChatGPT/Codex and do not bind Claude sessions; product, content, licensing and safety rules still apply.
+
 - Never put the computer to sleep or change power lifecycle settings. The user controls sleep manually.
 - Gemini routing is disabled. Do not call Gemini or change its installed configuration. Project execution follows the GPT-6 Luna worker / Codex orchestrator policy below.
 - Implement the three Turkish specification files in phase order. The later explicit six-game free tier in section 13.1b overrides the earlier summary.
@@ -11,7 +13,8 @@
 - Record meaningful tests and remaining work in DEVELOPMENT_STATUS.md after each work session.
 - User correction (16 October 2026): Do not generate new images with AI. Existing generated images are temporary and not approved for final content. Source natural real photographs from free internet libraries, verify each asset license and record its source/author/license. Research paid alternatives when useful, but do not purchase subscriptions without explicit authorization.
 - Photo requirements: one complete animal/object, high-quality real photo, true alpha-transparent background, no cropped ears/paws/tail/fruit tips and no extra objects. Photo masking and crop/resize are authorized; preserve original photo detail rather than re-rendering. Samples are 1024×1024 RGBA PNG with aspect ratio preserved. Latest user requests larger cat framing and a white subject outline about 3–4 px (slightly more allowed). Continue authorized work without waiting for the absent user; do not treat historical samples as blanket final approval.
-- Latest UI requirements override the old design palette: landscape-only, white or very faint cream canvas, vibrant orange/blue/turquoise, smooth rounded buttons with white borders, polished aligned category cards. Initial language follows the device (Turkish otherwise English), editable later in parent settings; do not ask language at onboarding.
+- Orientation (user decision, 19 October 2026, overrides "landscape-only" below): family/parent screens and onboarding are portrait; child mode (home, themes, games, round end, daily path, album, break) is landscape. The router sets preferred orientations per route.
+- Latest UI requirements override the old design palette: landscape-only (superseded for family screens, see above), white or very faint cream canvas, vibrant orange/blue/turquoise, smooth rounded buttons with white borders, polished aligned category cards. Initial language follows the device (Turkish otherwise English), editable later in parent settings; do not ask language at onboarding.
 - Read TODO.md with DEVELOPMENT_STATUS.md. Update relevant checkboxes after every concrete change, marking implemented but unverified and external blockers honestly. Application tasks must use GPT-6 Luna subagents under the latest execution policy below; integration/review stays with the primary Codex agent.
 
 ## Persistent execution policy — user instruction, 16 October 2026

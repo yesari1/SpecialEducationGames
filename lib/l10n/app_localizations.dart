@@ -2004,6 +2004,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Basket: {count} of {goal}'**
   String gameFillBasketCount(int count, int goal);
+
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Special Education Games'**
+  String get appTitle;
 }
 
 class _AppLocalizationsDelegate

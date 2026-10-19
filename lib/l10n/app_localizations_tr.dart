@@ -1096,4 +1096,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String gameFillBasketCount(int count, int goal) {
     return 'Sepette $count / $goal';
   }
+
+  @override
+  String get appTitle => 'Özel Eğitim Oyunları';
 }

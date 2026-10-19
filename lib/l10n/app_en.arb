@@ -1007,5 +1007,6 @@
   "gamePromptFillCount": "Put {count} in the basket",
   "@gamePromptFillCount": {"placeholders": {"count": {"type": "int"}}},
   "gameFillBasketCount": "Basket: {count} of {goal}",
-  "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}}
+  "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
+  "appTitle": "Special Education Games"
 }

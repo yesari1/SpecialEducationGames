@@ -1096,4 +1096,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String gameFillBasketCount(int count, int goal) {
     return 'Basket: $count of $goal';
   }
+
+  @override
+  String get appTitle => 'Special Education Games';
 }
