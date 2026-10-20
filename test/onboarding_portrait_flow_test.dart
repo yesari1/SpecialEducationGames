@@ -244,6 +244,31 @@ void main() {
     );
   }, variant: _host);
 
+  testWidgets('system Back walks back through the steps', (tester) async {
+    await loadFonts(tester);
+    final state = await buildState(tester);
+    addTearDown(state.dispose);
+    state.locale = 'en';
+    await pumpOnboarding(tester, state);
+    await tapKey(tester, 'welcome-start');
+    await tapKey(tester, 'onboarding-continue');
+    expect(find.byKey(const ValueKey('question-favorite')), findsOneWidget);
+    await tapKey(tester, 'onboarding-skip');
+    expect(find.byKey(const ValueKey('question-known')), findsOneWidget);
+    Future<void> systemBack() async {
+      await tester.binding.handlePopRoute();
+      await tester.pumpAndSettle();
+    }
+
+    await systemBack();
+    expect(find.byKey(const ValueKey('question-favorite')), findsOneWidget);
+    await systemBack();
+    expect(find.byKey(const ValueKey('child-title')), findsOneWidget);
+    await systemBack();
+    expect(find.byKey(const ValueKey('welcome-title')), findsOneWidget);
+    expect(state.profiles, isEmpty);
+  }, variant: _host);
+
   testWidgets('every step fits phone portrait at 1x and 2x text in TR/EN', (
     tester,
   ) async {

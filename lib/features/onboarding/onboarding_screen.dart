@@ -689,9 +689,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       OnboardingStep.handoff => _handoff(),
     };
     final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
-    return AnimatedSwitcher(
-      duration: reduced ? Duration.zero : SegMotion.appear,
-      child: KeyedSubtree(key: ValueKey('${step.name}-$question'), child: page),
+    // System Back walks back through the steps; only the first step leaves.
+    return PopScope(
+      canPop: step == OnboardingStep.welcome,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop && !saving) _back();
+      },
+      child: AnimatedSwitcher(
+        duration: reduced ? Duration.zero : SegMotion.appear,
+        child: KeyedSubtree(
+          key: ValueKey('${step.name}-$question'),
+          child: page,
+        ),
+      ),
     );
   }
 }
