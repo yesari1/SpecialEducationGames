@@ -681,8 +681,8 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
     style: ElevatedButton.styleFrom(
       minimumSize: const Size(48, 48),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      foregroundColor: secondary ? SegColors.primaryDeep : SegColors.ink,
-      backgroundColor: secondary ? SegColors.surface : SegColors.accent,
+      foregroundColor: secondary ? SegColors.primaryDeep : Colors.white,
+      backgroundColor: secondary ? SegColors.surface : SegColors.accentStrong,
       side: BorderSide(
         color: secondary ? SegColors.line : Colors.white,
         width: 2,
@@ -691,7 +691,13 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
         borderRadius: BorderRadius.circular(SegRadius.md),
       ),
     ),
-    child: Text(label, textAlign: TextAlign.center, style: SegText.item),
+    child: Text(
+      label,
+      textAlign: TextAlign.center,
+      style: SegText.item.copyWith(
+        color: secondary ? SegColors.primaryDeep : Colors.white,
+      ),
+    ),
   );
 
   Widget _errorText({bool compact = false}) => Text(

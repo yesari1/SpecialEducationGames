@@ -10,6 +10,9 @@ abstract final class SegColors {
       primaryDeep = Color(0xFF0868AF),
       primarySoft = Color(0xFFE5F4FF);
   static const accent = Color(0xFFFF8A32), accentDeep = Color(0xFFBA4C08);
+
+  /// End of the primary button gradient; white text sits on it.
+  static const accentStrong = Color(0xFFEE6A1C);
   static const turquoise = Color(0xFF10B7B0),
       turquoiseDeep = Color(0xFF087B80),
       sky = Color(0xFF63C6F4);

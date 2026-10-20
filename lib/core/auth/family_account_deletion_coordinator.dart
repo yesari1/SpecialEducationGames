@@ -18,10 +18,7 @@ class FamilyAccountDeletionResult {
   final FamilyAccountDeletionOutcome outcome;
   final FamilyAccountDeletionIssue? backendIssue;
 
-  const FamilyAccountDeletionResult(
-    this.outcome, {
-    this.backendIssue,
-  });
+  const FamilyAccountDeletionResult(this.outcome, {this.backendIssue});
 }
 
 /// Orders explicit parent confirmation, same-account reauthentication, and a
@@ -40,7 +37,8 @@ class FamilyAccountDeletionCoordinator {
   final Future<void> Function({
     required String expectedUid,
     required bool confirmed,
-  }) deleteAccount;
+  })
+  deleteAccount;
 
   bool _busy = false;
   bool get busy => _busy;
@@ -53,9 +51,7 @@ class FamilyAccountDeletionCoordinator {
     required this.deleteAccount,
   });
 
-  Future<FamilyAccountDeletionResult> delete({
-    required bool confirmed,
-  }) async {
+  Future<FamilyAccountDeletionResult> delete({required bool confirmed}) async {
     if (_busy) {
       return const FamilyAccountDeletionResult(
         FamilyAccountDeletionOutcome.busy,

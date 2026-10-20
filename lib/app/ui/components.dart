@@ -28,7 +28,7 @@ class SegButton extends StatelessWidget {
           : const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [SegColors.accent, Color(0xFFF36D24)],
+              colors: [SegColors.accent, SegColors.accentStrong],
             ),
       color: onPressed == null ? SegColors.surfaceMuted : SegColors.surface,
       boxShadow: onPressed == null || secondary
@@ -50,7 +50,9 @@ class SegButton extends StatelessWidget {
           shadowColor: Colors.transparent,
           backgroundColor: Colors.transparent,
           disabledBackgroundColor: Colors.transparent,
-          foregroundColor: secondary ? SegColors.primaryDeep : SegColors.ink,
+          // White on the orange gradient; every primary button shares it.
+          foregroundColor: secondary ? SegColors.primaryDeep : Colors.white,
+          disabledForegroundColor: SegColors.inkSoft,
           padding: const EdgeInsets.symmetric(
             horizontal: SegSpace.s5,
             vertical: SegSpace.s4,
@@ -74,7 +76,13 @@ class SegButton extends StatelessWidget {
             Flexible(
               child: Text(
                 label,
-                style: SegText.item,
+                style: SegText.item.copyWith(
+                  color: onPressed == null
+                      ? SegColors.inkSoft
+                      : secondary
+                      ? SegColors.primaryDeep
+                      : Colors.white,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),

@@ -47,9 +47,8 @@ class FamilyAccountDeletionBackend {
   factory FamilyAccountDeletionBackend.firebase({bool enabled = false}) {
     return FamilyAccountDeletionBackend(
       enabled: enabled,
-      currentUid: () => Firebase.apps.isEmpty
-          ? null
-          : FirebaseAuthCurrentUser.uid,
+      currentUid: () =>
+          Firebase.apps.isEmpty ? null : FirebaseAuthCurrentUser.uid,
       call: (data) async {
         final app = Firebase.apps.isEmpty ? null : Firebase.app();
         if (app == null) {
@@ -57,8 +56,9 @@ class FamilyAccountDeletionBackend {
             FamilyAccountDeletionIssue.unavailable,
           );
         }
-        final callable = FirebaseFunctions.instanceFor(app: app)
-            .httpsCallable(callableName);
+        final callable = FirebaseFunctions.instanceFor(
+          app: app,
+        ).httpsCallable(callableName);
         final result = await callable.call<Map<String, Object?>>(data);
         return result.data;
       },
@@ -126,24 +126,24 @@ class FamilyAccountDeletionBackend {
       value.length <= 128 &&
       RegExp(r'^[A-Za-z0-9_-]+$').hasMatch(value);
 
-  static FamilyAccountDeletionIssue _translateCode(String code) => switch (
-    code
-  ) {
-    'unauthenticated' || 'permission-denied' =>
-      FamilyAccountDeletionIssue.authenticationOrAppCheck,
+  static FamilyAccountDeletionIssue _translateCode(
+    String code,
+  ) => switch (code) {
+    'unauthenticated' ||
+    'permission-denied' => FamilyAccountDeletionIssue.authenticationOrAppCheck,
     // The server intentionally uses failed-precondition for both stale auth
     // and its disabled opt-in gate. The client cannot safely distinguish them.
     'failed-precondition' =>
       FamilyAccountDeletionIssue.recentLoginOrServerNotConfigured,
     'invalid-argument' => FamilyAccountDeletionIssue.invalidRequest,
-    'unavailable' || 'deadline-exceeded' || 'resource-exhausted' =>
-      FamilyAccountDeletionIssue.retryableUnavailable,
+    'unavailable' ||
+    'deadline-exceeded' ||
+    'resource-exhausted' => FamilyAccountDeletionIssue.retryableUnavailable,
     _ => FamilyAccountDeletionIssue.unavailable,
   };
 }
 
 /// Reads the UID from an app that the normal sign-in flow already initialized.
 abstract final class FirebaseAuthCurrentUser {
-  static String? get uid =>
-      FirebaseAuth.instance.currentUser?.uid;
+  static String? get uid => FirebaseAuth.instance.currentUser?.uid;
 }

@@ -67,195 +67,211 @@ class _GateState extends State<_Gate> {
 
   @override
   Widget build(BuildContext context) {
-    final MediaQueryData mq = MediaQuery.of(context);
     final l10n = scopedLocalizations(context, widget.state.locale);
-    final bool wide = mq.size.width >= 900;
-    final double inset = wide ? 16 : 8;
-    final double gap = wide ? 12 : 8;
-    final double gapSm = wide ? 8 : 6;
-    final TextStyle instruction = SegText.body;
-    final TextStyle math = SegText.title;
-    final TextStyle err = SegText.body.copyWith(
-      color: Theme.of(context).colorScheme.error,
-    );
-    final String promptText = usesPin
-        ? l10n.parentGateEnterPin
-        : l10n.parentGateContinuePrompt;
-    final String displayText = usesPin
+    final error = Theme.of(context).colorScheme.error;
+    final displayText = usesPin
         ? List.generate(4, (int i) => i < answer.length ? '●' : '○').join(' ')
         : '$a × $b = ${answer.isEmpty ? '?' : answer}';
-    final List<String> keys = <String>[
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '⌫',
-      '0',
-      '✓',
-    ];
-    return Dialog(
-      insetPadding: EdgeInsets.all(inset),
-      backgroundColor: Colors.white,
-      child: SafeArea(
-        child: SizedBox(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          child: LayoutBuilder(
-            builder: (BuildContext ctx, BoxConstraints c) {
-              final double leftWidth = c.maxWidth * 0.45;
-              final double rightWidth = c.maxWidth - leftWidth;
-              final double rowGap = gapSm;
-              return Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  SizedBox(
-                    width: leftWidth,
-                    child: Padding(
-                      padding: EdgeInsets.all(inset),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Row(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: const BoxDecoration(
-                                  color: SegColors.primarySoft,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: const Icon(
-                                  Icons.lock_outline_rounded,
-                                  color: SegColors.primaryDeep,
-                                  size: 22,
-                                ),
-                              ),
-                              SizedBox(width: gapSm),
-                              Flexible(
-                                child: Text(
-                                  l10n.parentGateTitle,
-                                  style: SegText.heading,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: gap),
-                          Text(promptText, style: instruction),
-                          SizedBox(height: gapSm),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: gap,
-                              vertical: gapSm,
-                            ),
-                            decoration: BoxDecoration(
-                              color: SegColors.familyCanvas,
-                              borderRadius: BorderRadius.circular(SegRadius.md),
-                              border: Border.all(color: SegColors.line),
-                            ),
-                            child: Text(displayText, style: math),
-                          ),
-                          if (message.isNotEmpty) ...<Widget>[
-                            SizedBox(height: gapSm),
-                            Text(message, style: err),
-                          ],
-                          if (usesPin) ...<Widget>[
-                            SizedBox(height: gapSm),
-                            TextButton(
-                              onPressed: () => setState(() {
-                                forceMath = true;
-                                message = '';
-                                reset();
-                              }),
-                              child: Text(l10n.parentGateForgotPin),
-                            ),
-                          ],
-                          const Spacer(),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: TextButton(
-                              onPressed: () => Navigator.pop(context, false),
-                              child: Text(l10n.parentGateCancel),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: rightWidth,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: inset,
-                        bottom: inset,
-                        right: inset,
-                        left: gapSm,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          for (int r = 0; r < 3; r++) ...<Widget>[
-                            if (r > 0) SizedBox(height: rowGap),
-                            Expanded(
-                              child: Row(
-                                children: <Widget>[
-                                  for (int col = 0; col < 4; col++) ...<Widget>[
-                                    if (col > 0) SizedBox(width: gapSm),
-                                    Expanded(
-                                      child: FilledButton.tonal(
-                                        style: FilledButton.styleFrom(
-                                          minimumSize: const Size(48, 48),
-                                          padding: const EdgeInsets.all(8),
-                                          visualDensity: VisualDensity.standard,
-                                          backgroundColor:
-                                              keys[r * 4 + col] == '✓'
-                                              ? SegColors.primary
-                                              : SegColors.familyCanvas,
-                                          foregroundColor:
-                                              keys[r * 4 + col] == '✓'
-                                              ? Colors.white
-                                              : SegColors.ink,
-                                          side: BorderSide(
-                                            color: keys[r * 4 + col] == '✓'
-                                                ? SegColors.primary
-                                                : SegColors.line,
-                                          ),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              SegRadius.md,
-                                            ),
-                                          ),
-                                        ),
-                                        onPressed: () =>
-                                            input(keys[r * 4 + col]),
-                                        child: Text(
-                                          keys[r * 4 + col],
-                                          style: SegText.heading.copyWith(
-                                            color: keys[r * 4 + col] == '✓'
-                                                ? Colors.white
-                                                : SegColors.ink,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ],
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            },
+    const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0', '✓'];
+
+    // Lock, title, the question and what was typed, centred as one block.
+    Widget info() => Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 56,
+          height: 56,
+          decoration: const BoxDecoration(
+            color: SegColors.primarySoft,
+            shape: BoxShape.circle,
           ),
+          child: const Icon(
+            Icons.lock_outline_rounded,
+            color: SegColors.primaryDeep,
+            size: 28,
+          ),
+        ),
+        const SizedBox(height: SegSpace.s3),
+        Text(
+          l10n.parentGateTitle,
+          style: SegText.heading,
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: SegSpace.s2),
+        Text(
+          usesPin ? l10n.parentGateEnterPin : l10n.parentGateContinuePrompt,
+          style: SegText.body.copyWith(color: SegColors.inkSoft),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: SegSpace.s3),
+        Container(
+          constraints: const BoxConstraints(minWidth: 200),
+          padding: const EdgeInsets.symmetric(
+            horizontal: SegSpace.s5,
+            vertical: SegSpace.s3,
+          ),
+          decoration: BoxDecoration(
+            color: SegColors.familyCanvas,
+            borderRadius: BorderRadius.circular(SegRadius.lg),
+            border: Border.all(color: SegColors.line),
+          ),
+          child: Text(
+            displayText,
+            style: SegText.title,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        if (message.isNotEmpty) ...[
+          const SizedBox(height: SegSpace.s2),
+          Text(
+            message,
+            style: SegText.body.copyWith(color: error),
+            textAlign: TextAlign.center,
+          ),
+        ],
+        if (usesPin)
+          TextButton(
+            onPressed: () => setState(() {
+              forceMath = true;
+              message = '';
+              reset();
+            }),
+            child: Text(l10n.parentGateForgotPin),
+          ),
+      ],
+    );
+
+    // A phone-style 3 × 4 keypad with square keys of one size.
+    Widget keypad(double key) {
+      const gap = SegSpace.s2;
+      Widget button(String k) {
+        final confirm = k == '✓';
+        return SizedBox.square(
+          dimension: key,
+          child: FilledButton.tonal(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(48, 48),
+              padding: EdgeInsets.zero,
+              backgroundColor: confirm
+                  ? SegColors.primary
+                  : SegColors.familyCanvas,
+              foregroundColor: confirm ? Colors.white : SegColors.ink,
+              side: BorderSide(
+                color: confirm ? SegColors.primary : SegColors.line,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(SegRadius.md),
+              ),
+            ),
+            onPressed: () => input(k),
+            child: FittedBox(
+              child: Text(
+                k,
+                style: SegText.heading.copyWith(
+                  color: confirm ? Colors.white : SegColors.ink,
+                ),
+              ),
+            ),
+          ),
+        );
+      }
+
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var r = 0; r < 4; r++) ...[
+            if (r > 0) const SizedBox(height: gap),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var c = 0; c < 3; c++) ...[
+                  if (c > 0) const SizedBox(width: gap),
+                  button(keys[r * 3 + c]),
+                ],
+              ],
+            ),
+          ],
+        ],
+      );
+    }
+
+    final cancel = TextButton(
+      onPressed: () => Navigator.pop(context, false),
+      child: Text(l10n.parentGateCancel),
+    );
+
+    return Dialog(
+      insetPadding: const EdgeInsets.all(SegSpace.s3),
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(SegRadius.xl),
+      ),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 760, maxHeight: 560),
+        child: LayoutBuilder(
+          builder: (context, c) {
+            const pad = SegSpace.s4, gap = SegSpace.s2;
+            final landscape = c.maxWidth > c.maxHeight;
+            if (landscape) {
+              // Info on the left, keypad on the right, both centred.
+              final key = ((c.maxHeight - pad * 2 - gap * 3) / 4).clamp(
+                48.0,
+                76.0,
+              );
+              return Padding(
+                padding: const EdgeInsets.all(pad),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Center(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: SizedBox(
+                                  width: (c.maxWidth - pad * 3) / 2 - key,
+                                  child: info(),
+                                ),
+                              ),
+                            ),
+                          ),
+                          cancel,
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: pad),
+                    Expanded(child: Center(child: keypad(key))),
+                  ],
+                ),
+              );
+            }
+            final key = ((c.maxWidth - pad * 2 - gap * 2) / 3).clamp(
+              48.0,
+              80.0,
+            );
+            return Padding(
+              padding: const EdgeInsets.all(pad),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SizedBox(
+                        width: c.maxWidth - pad * 2,
+                        child: info(),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: SegSpace.s4),
+                  keypad(key),
+                  const SizedBox(height: SegSpace.s2),
+                  cancel,
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
