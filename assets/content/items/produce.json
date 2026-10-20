@@ -476,13 +476,31 @@
       "en": "Mandarin"
     },
     "images": [
-      "assets/images/produce/mandarin_1.png"
+      "assets/images/produce/mandarin_real.png"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/mandarin_selected.mp3",
       "en": "assets/audio/en/produce/mandarin_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/mandarin_real.png": {
+        "author": "Filo gèn'",
+        "source": "https://commons.wikimedia.org/wiki/File:Citrus_reticulata_fruit_on_white_background.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "produce.mandarin",
+        "path": "assets/images/produce/mandarin_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/grabcut_rect_mask.py + tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "cf4003cecb2d25a65678f96a1a51f7bcb400d361754f58474c896a242bc68748",
+        "sha256": "9c82934f8b153a04b9cab3e3d647f432b6fb5dd5ecb9baede115cbe2e0d09363"
+      }
+    }
   },
   {
     "id": "produce.tomato",
@@ -582,13 +600,31 @@
       "en": "Cucumber"
     },
     "images": [
-      "assets/images/produce/cucumber_1.png"
+      "assets/images/produce/cucumber_real.png"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/cucumber_selected.mp3",
       "en": "assets/audio/en/produce/cucumber_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/cucumber_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Mini_cucumber.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "produce.cucumber",
+        "path": "assets/images/produce/cucumber_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "c83dbca9ec042b704180e88ac56aee5c46ab52aaa286b0a884345c703c79c7ad",
+        "sha256": "f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e"
+      }
+    }
   },
   {
     "id": "produce.corn",
@@ -972,13 +1008,31 @@
       "en": "Onion"
     },
     "images": [
-      "assets/images/produce/onion_1.png"
+      "assets/images/produce/onion_real.png"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/onion_selected.mp3",
       "en": "assets/audio/en/produce/onion_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/onion_real.png": {
+        "author": "Colin",
+        "source": "https://commons.wikimedia.org/wiki/File:Onion_on_White.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. Light grey floor shadow connected to the background cleared afterwards (HSV S < 0.24, V > 0.40), enclosed holes filled; a few shadow pixels by the root remain.",
+        "id": "produce.onion",
+        "path": "assets/images/produce/onion_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/grabcut_rect_mask.py + artifacts/produce-photos-attempt-r32-03/drop_outer_grey.py + tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "78ece07db34835f12f21375fb5ba362036f74136dbe271d349d684ddace31009",
+        "sha256": "bf12d25945ba06e541bd63b696a07016df97fc827a4c84d934b8ac1f2e3cd1e6"
+      }
+    }
   },
   {
     "id": "produce.cabbage",

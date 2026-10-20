@@ -388,8 +388,9 @@ void main() {
       state.locale = 'tr';
       await mount(tester, const Size(800, 360), 2.0, creditsScreen(state));
       final photos = flattenRealPhotoCreditEntries(photoAssets);
-      // 31 earlier verified photos plus ten Food & Drinks photos.
-      expect(photoAssets.length, 41);
+      // 31 earlier verified photos, ten Food & Drinks photos and the R32
+      // single-object cucumber, mandarin and onion.
+      expect(photoAssets.length, 44);
       // Ten animal recordings plus the round-end applause.
       expect(sounds.length, 11);
       expect(sounds.length + photos.length, greaterThanOrEqualTo(40));

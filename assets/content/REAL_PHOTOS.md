@@ -405,3 +405,37 @@ Changes: Existing transparent cutout from Wikimedia Commons retained (no new mas
 Original SHA-256: `1a3cc5b8446ea405eb340c4fff29eba08d1c19f1298b703ab01dd147cd67bfc3`.
 Adapted PNG SHA-256: `b4f1688fc82300a6c7e7af9243313d1ab89830a6d48e64b7f236969f348de3db`.
 Replaces the earlier small red sedan photo (kept on disk). Attempt folders: `artifacts/car-photo-attempt-01/` (shadow kept, rejected) and `-02/` (accepted). Local technical review only.
+
+<!-- produce-photos-r32 -->
+## produce.cucumber
+
+File: `assets/images/produce/cucumber_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Mini_cucumber.png
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `c83dbca9ec042b704180e88ac56aee5c46ab52aaa286b0a884345c703c79c7ad`.
+Adapted PNG SHA-256: `f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e`.
+Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical review only; final human approval pending.
+
+## produce.mandarin
+
+File: `assets/images/produce/mandarin_real.png`
+Photo author: Filo gèn'
+Source: https://commons.wikimedia.org/wiki/File:Citrus_reticulata_fruit_on_white_background.jpg
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `cf4003cecb2d25a65678f96a1a51f7bcb400d361754f58474c896a242bc68748`.
+Adapted PNG SHA-256: `9c82934f8b153a04b9cab3e3d647f432b6fb5dd5ecb9baede115cbe2e0d09363`.
+Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical review only; final human approval pending.
+
+## produce.onion
+
+File: `assets/images/produce/onion_real.png`
+Photo author: Colin
+Source: https://commons.wikimedia.org/wiki/File:Onion_on_White.JPG
+License: CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0
+Changes: Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. Light grey floor shadow connected to the background cleared afterwards (HSV S < 0.24, V > 0.40), enclosed holes filled; a few shadow pixels by the root remain.
+Original SHA-256: `78ece07db34835f12f21375fb5ba362036f74136dbe271d349d684ddace31009`.
+Adapted PNG SHA-256: `bf12d25945ba06e541bd63b696a07016df97fc827a4c84d934b8ac1f2e3cd1e6`.
+Attempt folder: `artifacts/produce-photos-attempt-r32-03/`. Local technical review only; final human approval pending.
