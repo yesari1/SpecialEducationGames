@@ -207,7 +207,13 @@ class _GateState extends State<_Gate> {
         borderRadius: BorderRadius.circular(SegRadius.xl),
       ),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 760, maxHeight: 560),
+        constraints: BoxConstraints(
+          maxWidth: 760,
+          // Upright the keypad sits under the question, so allow more height.
+          maxHeight: MediaQuery.orientationOf(context) == Orientation.portrait
+              ? 720
+              : 560,
+        ),
         child: LayoutBuilder(
           builder: (context, c) {
             const pad = SegSpace.s4, gap = SegSpace.s2;
@@ -246,10 +252,11 @@ class _GateState extends State<_Gate> {
                 ),
               );
             }
-            final key = ((c.maxWidth - pad * 2 - gap * 2) / 3).clamp(
-              48.0,
-              80.0,
-            );
+            // Leave the question about 250 px so it never has to shrink.
+            final key = min(
+              (c.maxWidth - pad * 2 - gap * 2) / 3,
+              (c.maxHeight - pad * 2 - 250 - 72 - gap * 3) / 4,
+            ).clamp(48.0, 80.0);
             return Padding(
               padding: const EdgeInsets.all(pad),
               child: Column(
@@ -259,7 +266,7 @@ class _GateState extends State<_Gate> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: SizedBox(
-                        width: c.maxWidth - pad * 2,
+                        width: min(340, c.maxWidth - pad * 2),
                         child: info(),
                       ),
                     ),

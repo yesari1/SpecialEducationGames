@@ -52,6 +52,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     s.billing.addListener(_billingChanged);
   }
 
+  bool _precached = false;
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Decode the welcome scene before the first frame needs it.
+    if (!_precached) {
+      _precached = true;
+      precacheImage(
+        const AssetImage('$_illustrations/hero_welcome.png'),
+        context,
+      );
+    }
+  }
+
   void _billingChanged() {
     if (mounted) setState(() {});
   }

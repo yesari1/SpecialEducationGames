@@ -198,7 +198,10 @@ Future<void> _tapEveryCardAndFinish(
   expect(tester.widget<SegButton>(previous).onPressed, isNull);
   expect(tester.widget<SegButton>(finish).onPressed, isNull);
   for (var index = 0; index < count; index++) {
-    final currentLabel = tester.widget<ItemVisual>(itemFinder).item.name(locale);
+    final currentLabel = tester
+        .widget<ItemVisual>(itemFinder)
+        .item
+        .name(locale);
     await tester.tap(itemFinder);
     await tester.pump();
     expect(_counter(tester), '${index + 1} / $count');
