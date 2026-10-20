@@ -457,7 +457,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   ),
                   Expanded(
                     flex: sideBySidePrompt && compact
-                        ? 3
+                        ? 4
                         : textOnlyPrompt
                         ? 1
                         : spec.count == null
