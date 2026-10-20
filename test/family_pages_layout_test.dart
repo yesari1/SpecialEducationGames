@@ -51,9 +51,16 @@ class _CreditsFixtureBundle extends CachingAssetBundle {
   _CreditsFixtureBundle(this.strings);
 
   @override
-  Future<ByteData> load(String key) => Future.error(
-    FlutterError('Unexpected binary asset request in credits fixture: $key'),
-  );
+  Future<ByteData> load(String key) {
+    final text = strings[key];
+    if (text == null) {
+      return Future.error(
+        FlutterError('Unexpected asset request in credits fixture: $key'),
+      );
+    }
+    final bytes = Uint8List.fromList(utf8.encode(text));
+    return SynchronousFuture<ByteData>(ByteData.sublistView(bytes));
+  }
 
   @override
   Future<String> loadString(String key, {bool cache = true}) =>
@@ -381,7 +388,8 @@ void main() {
       state.locale = 'tr';
       await mount(tester, const Size(800, 360), 2.0, creditsScreen(state));
       final photos = flattenRealPhotoCreditEntries(photoAssets);
-      expect(photoAssets.length, 31);
+      // 31 earlier verified photos plus nine Food & Drinks photos.
+      expect(photoAssets.length, 40);
       expect(sounds.length, 10);
       expect(sounds.length + photos.length, greaterThanOrEqualTo(40));
       final fishPhoto = photoAssets.cast<Map<String, dynamic>>().singleWhere(

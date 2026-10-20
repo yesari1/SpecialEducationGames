@@ -13,7 +13,10 @@
       "en": "Sun"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/sun_selected.mp3",
+      "en": "assets/audio/en/nature/sun_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -29,7 +32,10 @@
       "en": "Moon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/moon_selected.mp3",
+      "en": "assets/audio/en/nature/moon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -45,7 +51,10 @@
       "en": "Star"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/star_selected.mp3",
+      "en": "assets/audio/en/nature/star_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -61,7 +70,10 @@
       "en": "Cloud"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/cloud_selected.mp3",
+      "en": "assets/audio/en/nature/cloud_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -77,7 +89,10 @@
       "en": "Rain"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/rain_selected.mp3",
+      "en": "assets/audio/en/nature/rain_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -94,7 +109,10 @@
       "en": "Snow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/snow_selected.mp3",
+      "en": "assets/audio/en/nature/snow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -110,7 +128,10 @@
       "en": "Tree"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/tree_selected.mp3",
+      "en": "assets/audio/en/nature/tree_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -127,7 +148,10 @@
       "en": "Flower"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/flower_selected.mp3",
+      "en": "assets/audio/en/nature/flower_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -143,7 +167,10 @@
       "en": "Sea"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/sea_selected.mp3",
+      "en": "assets/audio/en/nature/sea_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -159,7 +186,10 @@
       "en": "Mountain"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/mountain_selected.mp3",
+      "en": "assets/audio/en/nature/mountain_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -175,7 +205,10 @@
       "en": "Rainbow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/rainbow_selected.mp3",
+      "en": "assets/audio/en/nature/rainbow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -191,7 +224,10 @@
       "en": "Snowman"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/snowman_selected.mp3",
+      "en": "assets/audio/en/nature/snowman_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -207,7 +243,10 @@
       "en": "Wind"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/wind_selected.mp3",
+      "en": "assets/audio/en/nature/wind_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -223,7 +262,10 @@
       "en": "Lightning"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/lightning_selected.mp3",
+      "en": "assets/audio/en/nature/lightning_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -240,7 +282,10 @@
       "en": "Leaf"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/leaf_selected.mp3",
+      "en": "assets/audio/en/nature/leaf_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -256,7 +301,10 @@
       "en": "Grass"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/grass_selected.mp3",
+      "en": "assets/audio/en/nature/grass_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -272,7 +320,10 @@
       "en": "River"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/river_selected.mp3",
+      "en": "assets/audio/en/nature/river_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -288,7 +339,10 @@
       "en": "Lake"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/lake_selected.mp3",
+      "en": "assets/audio/en/nature/lake_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -304,7 +358,10 @@
       "en": "Forest"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/forest_selected.mp3",
+      "en": "assets/audio/en/nature/forest_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -321,7 +378,10 @@
       "en": "Sand"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/sand_selected.mp3",
+      "en": "assets/audio/en/nature/sand_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -337,7 +397,10 @@
       "en": "Stone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/stone_selected.mp3",
+      "en": "assets/audio/en/nature/stone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -351,7 +414,10 @@
       "en": "Spring"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/spring_selected.mp3",
+      "en": "assets/audio/en/nature/spring_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -365,7 +431,10 @@
       "en": "Summer"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/summer_selected.mp3",
+      "en": "assets/audio/en/nature/summer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -379,7 +448,10 @@
       "en": "Autumn"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/autumn_selected.mp3",
+      "en": "assets/audio/en/nature/autumn_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -393,7 +465,10 @@
       "en": "Winter"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/winter_selected.mp3",
+      "en": "assets/audio/en/nature/winter_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -407,7 +482,10 @@
       "en": "Night"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/night_selected.mp3",
+      "en": "assets/audio/en/nature/night_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -421,7 +499,10 @@
       "en": "Day"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/day_selected.mp3",
+      "en": "assets/audio/en/nature/day_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -437,7 +518,10 @@
       "en": "Waterfall"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/waterfall_selected.mp3",
+      "en": "assets/audio/en/nature/waterfall_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -453,7 +537,10 @@
       "en": "Island"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/island_selected.mp3",
+      "en": "assets/audio/en/nature/island_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -469,7 +556,10 @@
       "en": "Desert"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/desert_selected.mp3",
+      "en": "assets/audio/en/nature/desert_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -485,7 +575,10 @@
       "en": "Cave"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/cave_selected.mp3",
+      "en": "assets/audio/en/nature/cave_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -501,7 +594,10 @@
       "en": "Volcano"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/volcano_selected.mp3",
+      "en": "assets/audio/en/nature/volcano_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -517,7 +613,10 @@
       "en": "Fog"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/fog_selected.mp3",
+      "en": "assets/audio/en/nature/fog_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -533,7 +632,10 @@
       "en": "Hail"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/hail_selected.mp3",
+      "en": "assets/audio/en/nature/hail_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -549,7 +651,10 @@
       "en": "Ice"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/ice_selected.mp3",
+      "en": "assets/audio/en/nature/ice_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -565,7 +670,10 @@
       "en": "Seed"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/seed_selected.mp3",
+      "en": "assets/audio/en/nature/seed_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -582,7 +690,10 @@
       "en": "Sprout"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/sprout_selected.mp3",
+      "en": "assets/audio/en/nature/sprout_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -599,7 +710,10 @@
       "en": "Pine cone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/pine_cone_selected.mp3",
+      "en": "assets/audio/en/nature/pine_cone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -615,7 +729,10 @@
       "en": "Mushroom"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/mushroom_selected.mp3",
+      "en": "assets/audio/en/nature/mushroom_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -631,7 +748,10 @@
       "en": "Cactus"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/cactus_selected.mp3",
+      "en": "assets/audio/en/nature/cactus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -647,7 +767,10 @@
       "en": "Sunrise"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/sunrise_selected.mp3",
+      "en": "assets/audio/en/nature/sunrise_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -663,7 +786,10 @@
       "en": "Wave"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/nature/wave_selected.mp3",
+      "en": "assets/audio/en/nature/wave_selected.mp3"
+    },
     "sfx": null
   }
 ]

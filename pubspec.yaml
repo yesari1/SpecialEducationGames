@@ -87,6 +87,7 @@ flutter:
     - assets/firebase/android_options.json
     - assets/content/
     - assets/content/items/
+    - assets/images/food/
     - assets/images/animals/
     - assets/images/produce/
     - assets/images/vehicles/
@@ -104,6 +105,8 @@ flutter:
     - assets/audio/en/vehicles/
     - assets/audio/tr/shapes/
     - assets/audio/en/shapes/
+    - assets/audio/tr/food/
+    - assets/audio/en/food/
     - assets/sfx/animals/
     - assets/sfx/vehicles/
     - assets/sfx/sources.json

@@ -13,7 +13,10 @@
       "en": "Eye"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/eye_selected.mp3",
+      "en": "assets/audio/en/body/eye_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -30,7 +33,10 @@
       "en": "Ear"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/ear_selected.mp3",
+      "en": "assets/audio/en/body/ear_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -47,7 +53,10 @@
       "en": "Nose"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/nose_selected.mp3",
+      "en": "assets/audio/en/body/nose_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -64,7 +73,10 @@
       "en": "Mouth"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/mouth_selected.mp3",
+      "en": "assets/audio/en/body/mouth_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -81,7 +93,10 @@
       "en": "Hand"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/hand_selected.mp3",
+      "en": "assets/audio/en/body/hand_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -97,7 +112,10 @@
       "en": "Foot"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/foot_selected.mp3",
+      "en": "assets/audio/en/body/foot_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -113,7 +131,10 @@
       "en": "Hair"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/hair_selected.mp3",
+      "en": "assets/audio/en/body/hair_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -129,7 +150,10 @@
       "en": "Tummy"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/tummy_selected.mp3",
+      "en": "assets/audio/en/body/tummy_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -143,7 +167,10 @@
       "en": "Head"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/head_selected.mp3",
+      "en": "assets/audio/en/body/head_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -159,7 +186,10 @@
       "en": "Teeth"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/teeth_selected.mp3",
+      "en": "assets/audio/en/body/teeth_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -175,7 +205,10 @@
       "en": "Arm"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/arm_selected.mp3",
+      "en": "assets/audio/en/body/arm_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -191,7 +224,10 @@
       "en": "Leg"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/leg_selected.mp3",
+      "en": "assets/audio/en/body/leg_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -207,7 +243,10 @@
       "en": "Finger"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/finger_selected.mp3",
+      "en": "assets/audio/en/body/finger_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -224,7 +263,10 @@
       "en": "Tongue"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/tongue_selected.mp3",
+      "en": "assets/audio/en/body/tongue_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -240,7 +282,10 @@
       "en": "Eyebrow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/eyebrow_selected.mp3",
+      "en": "assets/audio/en/body/eyebrow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -256,7 +301,10 @@
       "en": "Knee"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/knee_selected.mp3",
+      "en": "assets/audio/en/body/knee_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -272,7 +320,10 @@
       "en": "Shoulder"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/shoulder_selected.mp3",
+      "en": "assets/audio/en/body/shoulder_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -288,7 +339,10 @@
       "en": "Neck"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/neck_selected.mp3",
+      "en": "assets/audio/en/body/neck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -304,7 +358,10 @@
       "en": "Back"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/back_selected.mp3",
+      "en": "assets/audio/en/body/back_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -320,7 +377,10 @@
       "en": "Cheek"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/cheek_selected.mp3",
+      "en": "assets/audio/en/body/cheek_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -336,7 +396,10 @@
       "en": "Lips"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/lips_selected.mp3",
+      "en": "assets/audio/en/body/lips_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -352,7 +415,10 @@
       "en": "Chin"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/chin_selected.mp3",
+      "en": "assets/audio/en/body/chin_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -368,7 +434,10 @@
       "en": "Elbow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/elbow_selected.mp3",
+      "en": "assets/audio/en/body/elbow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -384,7 +453,10 @@
       "en": "Wrist"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/wrist_selected.mp3",
+      "en": "assets/audio/en/body/wrist_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -400,7 +472,10 @@
       "en": "Heel"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/heel_selected.mp3",
+      "en": "assets/audio/en/body/heel_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -416,7 +491,10 @@
       "en": "Nail"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/nail_selected.mp3",
+      "en": "assets/audio/en/body/nail_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -432,7 +510,10 @@
       "en": "Eyelash"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/eyelash_selected.mp3",
+      "en": "assets/audio/en/body/eyelash_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -448,7 +529,10 @@
       "en": "Forehead"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/forehead_selected.mp3",
+      "en": "assets/audio/en/body/forehead_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -464,7 +548,10 @@
       "en": "Waist"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/waist_selected.mp3",
+      "en": "assets/audio/en/body/waist_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -480,7 +567,10 @@
       "en": "Ankle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/ankle_selected.mp3",
+      "en": "assets/audio/en/body/ankle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -496,7 +586,10 @@
       "en": "Palm"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/palm_selected.mp3",
+      "en": "assets/audio/en/body/palm_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -512,7 +605,10 @@
       "en": "Toe"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/toe_selected.mp3",
+      "en": "assets/audio/en/body/toe_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -528,7 +624,10 @@
       "en": "Belly button"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/belly_button_selected.mp3",
+      "en": "assets/audio/en/body/belly_button_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -544,7 +643,10 @@
       "en": "Hip"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/body/hip_selected.mp3",
+      "en": "assets/audio/en/body/hip_selected.mp3"
+    },
     "sfx": null
   }
 ]

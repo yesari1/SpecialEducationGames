@@ -25,4 +25,15 @@ void main() {
       expect(r > l && b > t, isTrue, reason: key);
     }
   });
+
+  test('Food & Drinks photos carry verified provenance', () async {
+    final content = await ContentRepository.load();
+    final food = content.items.where(
+      (x) => x.theme == 'food' && x.images.isNotEmpty,
+    );
+    expect(food.length, greaterThanOrEqualTo(9));
+    for (final item in food) {
+      expect(item.verifiedPhotoPaths, item.images, reason: item.id);
+    }
+  });
 }

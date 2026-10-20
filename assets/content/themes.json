@@ -61,13 +61,22 @@
       "en": "Food and Drinks"
     },
     "palette": {
-      "bg": "#FFF3E0",
+      "bg": "#FFFEFC",
       "accent": "#E8A24D",
-      "deep": "#C88333"
+      "deep": "#B8741F"
     },
     "hero": "food.bread",
-    "active": false,
-    "games": []
+    "active": true,
+    "games": [
+      "G01",
+      "G02",
+      "G14",
+      "G55",
+      "G15",
+      "G17",
+      "G33",
+      "G36"
+    ]
   },
   {
     "id": "vehicles",

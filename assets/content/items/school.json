@@ -12,7 +12,10 @@
       "en": "Ball"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/ball_selected.mp3",
+      "en": "assets/audio/en/school/ball_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -28,7 +31,10 @@
       "en": "Doll"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/doll_selected.mp3",
+      "en": "assets/audio/en/school/doll_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -44,7 +50,10 @@
       "en": "Teddy bear"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/teddy_bear_selected.mp3",
+      "en": "assets/audio/en/school/teddy_bear_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -60,7 +69,10 @@
       "en": "Toy car"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/toy_car_selected.mp3",
+      "en": "assets/audio/en/school/toy_car_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -76,7 +88,10 @@
       "en": "Blocks"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/blocks_selected.mp3",
+      "en": "assets/audio/en/school/blocks_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -92,7 +107,10 @@
       "en": "Balloon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/balloon_selected.mp3",
+      "en": "assets/audio/en/school/balloon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -108,7 +126,10 @@
       "en": "Pencil"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/pencil_selected.mp3",
+      "en": "assets/audio/en/school/pencil_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -124,7 +145,10 @@
       "en": "Crayon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/crayon_selected.mp3",
+      "en": "assets/audio/en/school/crayon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -140,7 +164,10 @@
       "en": "Book"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/book_selected.mp3",
+      "en": "assets/audio/en/school/book_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -156,7 +183,10 @@
       "en": "School bag"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/school_bag_selected.mp3",
+      "en": "assets/audio/en/school/school_bag_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -172,7 +202,10 @@
       "en": "Slide"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/slide_selected.mp3",
+      "en": "assets/audio/en/school/slide_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -188,7 +221,10 @@
       "en": "Swing"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/swing_selected.mp3",
+      "en": "assets/audio/en/school/swing_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -204,7 +240,10 @@
       "en": "Puzzle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/puzzle_selected.mp3",
+      "en": "assets/audio/en/school/puzzle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -220,7 +259,10 @@
       "en": "Kite"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/kite_selected.mp3",
+      "en": "assets/audio/en/school/kite_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -236,7 +278,10 @@
       "en": "Eraser"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/eraser_selected.mp3",
+      "en": "assets/audio/en/school/eraser_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -252,7 +297,10 @@
       "en": "Sharpener"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/sharpener_selected.mp3",
+      "en": "assets/audio/en/school/sharpener_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -268,7 +316,10 @@
       "en": "Notebook"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/notebook_selected.mp3",
+      "en": "assets/audio/en/school/notebook_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -285,7 +336,10 @@
       "en": "Scissors"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/scissors_selected.mp3",
+      "en": "assets/audio/en/school/scissors_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -301,7 +355,10 @@
       "en": "Glue"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/glue_selected.mp3",
+      "en": "assets/audio/en/school/glue_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -317,7 +374,10 @@
       "en": "Ruler"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/ruler_selected.mp3",
+      "en": "assets/audio/en/school/ruler_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -333,7 +393,10 @@
       "en": "Board"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/board_selected.mp3",
+      "en": "assets/audio/en/school/board_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -349,7 +412,10 @@
       "en": "Jump rope"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/jump_rope_selected.mp3",
+      "en": "assets/audio/en/school/jump_rope_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -365,7 +431,10 @@
       "en": "Seesaw"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/seesaw_selected.mp3",
+      "en": "assets/audio/en/school/seesaw_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -381,7 +450,10 @@
       "en": "Sandbox"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/sandbox_selected.mp3",
+      "en": "assets/audio/en/school/sandbox_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -397,7 +469,10 @@
       "en": "Bucket spade"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/bucket_spade_selected.mp3",
+      "en": "assets/audio/en/school/bucket_spade_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -413,7 +488,10 @@
       "en": "Play dough"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/play_dough_selected.mp3",
+      "en": "assets/audio/en/school/play_dough_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -429,7 +507,10 @@
       "en": "Paintbrush"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/paintbrush_selected.mp3",
+      "en": "assets/audio/en/school/paintbrush_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -445,7 +526,10 @@
       "en": "Whistle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/whistle_selected.mp3",
+      "en": "assets/audio/en/school/whistle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -461,7 +545,10 @@
       "en": "Watercolor"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/watercolor_selected.mp3",
+      "en": "assets/audio/en/school/watercolor_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -477,7 +564,10 @@
       "en": "Chalk"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/chalk_selected.mp3",
+      "en": "assets/audio/en/school/chalk_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -493,7 +583,10 @@
       "en": "Pencil case"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/pencil_case_selected.mp3",
+      "en": "assets/audio/en/school/pencil_case_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -509,7 +602,10 @@
       "en": "Globe"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/globe_selected.mp3",
+      "en": "assets/audio/en/school/globe_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -525,7 +621,10 @@
       "en": "School desk"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/school_desk_selected.mp3",
+      "en": "assets/audio/en/school/school_desk_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -541,7 +640,10 @@
       "en": "School bell"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/school_bell_selected.mp3",
+      "en": "assets/audio/en/school/school_bell_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -557,7 +659,10 @@
       "en": "Computer"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/computer_selected.mp3",
+      "en": "assets/audio/en/school/computer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -573,7 +678,10 @@
       "en": "Climbing frame"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/climbing_frame_selected.mp3",
+      "en": "assets/audio/en/school/climbing_frame_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -589,7 +697,10 @@
       "en": "Spinning top"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/spinning_top_selected.mp3",
+      "en": "assets/audio/en/school/spinning_top_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -605,7 +716,10 @@
       "en": "Yoyo"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/yoyo_selected.mp3",
+      "en": "assets/audio/en/school/yoyo_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -621,7 +735,10 @@
       "en": "Marbles"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/marbles_selected.mp3",
+      "en": "assets/audio/en/school/marbles_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -637,7 +754,10 @@
       "en": "Toy robot"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/toy_robot_selected.mp3",
+      "en": "assets/audio/en/school/toy_robot_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -653,7 +773,10 @@
       "en": "Dominoes"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/dominoes_selected.mp3",
+      "en": "assets/audio/en/school/dominoes_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -669,7 +792,10 @@
       "en": "Hula hoop"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/school/hula_hoop_selected.mp3",
+      "en": "assets/audio/en/school/hula_hoop_selected.mp3"
+    },
     "sfx": null
   }
 ]

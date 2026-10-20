@@ -283,3 +283,103 @@ Transparent derivative: Paolo Villa, [Eurasian crag martin David Raju (transpare
 Source and adaptation license: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/ . Attribute both creators and share this adaptation under CC BY-SA 4.0.
 Changes: Paolo Villa’s existing derivative includes a color correction; its belly appears lighter than in the original JPEG. We retained the derivative alpha, cropped to its alpha bounds, resampled proportionally to a 900 px maximum extent, centered it on a 1024×1024 RGBA canvas, and added a 4 px white outer outline. No further RGB editing, background reconstruction, or generative processing was performed; RGB resampling occurred during resize. Final human approval of the generic “Kuş” / “Bird” label remains pending.
 Adapted PNG SHA-256: `951f45f39ef962649c49828c16a18e89ff3c7e2209ef87076f9f5e343ea1b288`.
+
+<!-- food-photos -->
+## food.bread
+
+File: `assets/images/food/bread_real.png`
+Photo author: User:Famartin
+Source: https://commons.wikimedia.org/wiki/File:Transparent_Slice_of_Sara_Lee_white_whole_grain_bread_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.png
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `9032de473a3bfee90ae37d6228f6d6c4d3d3ca01b732dfa9b0b9a0d820b5a868`.
+Adapted PNG SHA-256: `49598b93b1f82dff66c6d5531750d280e02c45f1e5dd0c86f2a588b6ff9fa586`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.egg
+
+File: `assets/images/food/egg_real.png`
+Photo author: User: MrX
+Source: https://commons.wikimedia.org/wiki/File:Chicken_egg.png
+License: CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `cc9f522c07b07f3c64106d9b94e01efb538508da3a5512a1743242719cdb0fa0`.
+Adapted PNG SHA-256: `70d1ad945d6b36917d38fbd993b4f651d67c747606624e3f760a61153f3e7d5f`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.cake
+
+File: `assets/images/food/cake_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Cake_2.png
+License: CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `10cbe0a489628c7045e48fc9c5ee070f96a232cf7bcad87d835d4ece9e770d72`.
+Adapted PNG SHA-256: `b74b589cdc0cdd0d080f07f916623d10863e84f346575e81e89f2ed41cfb5e71`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.cheese
+
+File: `assets/images/food/cheese_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Mustaleima.png
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `0231f9a64f5b17ae35f361f852ae169bc02175be4ee1d0844f33468ab5edf98c`.
+Adapted PNG SHA-256: `8127c1f0990de463a7f8d269e438e19091634be07408b8992740e7da980c675e`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.cookie
+
+File: `assets/images/food/cookie_real.png`
+Photo author: User:Evan-Amos
+Source: https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.png
+License: Public domain — https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.png
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `d904d9b9de3ddb522aa130f407dd7e5a41e054b9b63f272f201711ce2a5cffba`.
+Adapted PNG SHA-256: `a800e4d110437c24a78426ca80d438c6ea534b79a46ea3fd2964ecee17e618c8`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.ice_cream
+
+File: `assets/images/food/ice_cream_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Jaffatuutti.png
+License: CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `9547bd7fb248a40bbd61f8bb309f42c662dd422fd79fec891b458dff3c03d7cc`.
+Adapted PNG SHA-256: `a6178db4a5d303288805de93c84c131fd24f6cf07fee24020cfb7e323ac2de05`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.soup
+
+File: `assets/images/food/soup_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Salmon_soup.png
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `f15066f45d18f07ccadda05b557828366e84f430421c5af176be87e0645a6a2a`.
+Adapted PNG SHA-256: `4351c72338f4919659466962ae6624185b4792af206546e43af84d0570aaa233`.
+Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+
+## food.pasta
+
+File: `assets/images/food/pasta_real.png`
+Photo author: Tiia Monto
+Source: https://commons.wikimedia.org/wiki/File:Tagliatelle.png
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `9ecaf55a32b7ffb4391b99bf036f67fd26c859d1d35f7e917a613446134f2f03`.
+Adapted PNG SHA-256: `2c589d4c4ae4a89465fe2d08c60428323cb9d87b9c537c99061ba3ac5fe4d8b9`.
+Attempt folder: `artifacts/food-photos-attempt-02/`. Local technical review only; final human approval pending.
+
+## food.pizza
+
+File: `assets/images/food/pizza_real.png`
+Photo author: Florian838
+Source: https://commons.wikimedia.org/wiki/File:Pizza_Quattro_Stagioni_transparent.png
+License: CC0 — http://creativecommons.org/publicdomain/zero/1.0/deed.en
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `90a12f8a41d20a644a34160ed032fab7d9ccacb04b14568029e7559f6edf270f`.
+Adapted PNG SHA-256: `3032c7fbee3efa0bb36359e7847f93acd6e3c8c9e9f2c4f0cc1393fedc9ce5b9`.
+Attempt folder: `artifacts/food-photos-attempt-02/`. Local technical review only; final human approval pending.

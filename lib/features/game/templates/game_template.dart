@@ -451,18 +451,19 @@ class OddOneOutTemplate extends GameTemplate {
     final size = ctx.choiceCount.clamp(3, 4);
     List<ContentItem> group;
     ContentItem odd;
-    if (ctx.difficulty == Difficulty.hard) {
-      final tags =
-          pool
-              .expand((x) => x.tags)
-              .where(_groupTags.contains)
-              .toSet()
-              .where(
-                (tag) => pool.where((x) => x.tags.contains(tag)).length >= size,
-              )
-              .toList()
-            ..shuffle(random);
-      if (tags.isEmpty) throw StateError('No group large enough');
+    final tags =
+        pool
+            .expand((x) => x.tags)
+            .where(_groupTags.contains)
+            .toSet()
+            .where(
+              (tag) => pool.where((x) => x.tags.contains(tag)).length >= size,
+            )
+            .toList()
+          ..shuffle(random);
+    // Themes without group tags (e.g. food) use another theme's item even
+    // when hard.
+    if (ctx.difficulty == Difficulty.hard && tags.isNotEmpty) {
       final tag = tags.first;
       group = pool.where((x) => x.tags.contains(tag)).toList()..shuffle(random);
       final outsiders = pool

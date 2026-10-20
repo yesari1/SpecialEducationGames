@@ -31,6 +31,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = json.loads((ROOT / 'tools' / 'elevenlabs_voice_settings.json').read_text(encoding='utf-8'))
 MANIFEST = ROOT / 'assets' / 'content' / 'generated_voice_manifest.json'
 ACTIVE_THEMES = ['animals', 'produce', 'colors', 'numbers', 'vehicles', 'shapes']
+# Themes prepared ahead of activation (their words are voiced before photos land).
+UPCOMING_THEMES = ['body', 'clothes', 'emotions', 'food', 'home', 'jobs', 'music', 'nature', 'school']
+VOICED_THEMES = ACTIVE_THEMES + UPCOMING_THEMES
 
 # Spoken game instructions. Keys are file stems under assets/audio/<lang>/prompts/.
 PROMPTS = {
@@ -72,7 +75,7 @@ def load_manifest() -> dict:
 
 def item_jobs():
     jobs = []
-    for theme in ACTIVE_THEMES:
+    for theme in VOICED_THEMES:
         items = json.loads((ROOT / 'assets' / 'content' / 'items' / f'{theme}.json').read_text(encoding='utf-8'))
         for item in items:
             audio = item.get('audio') or {}
@@ -172,7 +175,7 @@ def apply():
     """Point item audio at generated clips (keeps the old files on disk)."""
     manifest = load_manifest()
     changed = 0
-    for theme in ACTIVE_THEMES:
+    for theme in VOICED_THEMES:
         path = ROOT / 'assets' / 'content' / 'items' / f'{theme}.json'
         raw = path.read_text(encoding='utf-8')
         items = json.loads(raw)

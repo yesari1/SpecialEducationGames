@@ -12,7 +12,7 @@ UNITY = Path('D:/GameDesktop/UnityProjects/SpecialEducationGames/Assets')
 THEMES = [
  ('animals','Hayvanlar','Animals','FFFEFC','10B7B0','087B80','cat'),
  ('produce','Meyve ve Sebzeler','Fruit and Vegetables','FFFEFC','FF8A32','BA4C08','apple'),
- ('food','Yiyecek ve İçecekler','Food and Drinks','FFF3E0','E8A24D','C88333','bread'),
+ ('food','Yiyecek ve İçecekler','Food and Drinks','FFFEFC','E8A24D','B8741F','bread'),
  ('vehicles','Taşıtlar','Vehicles','FFFEFC','1687D9','0868AF','car'),
  ('clothes','Kıyafet ve Aksesuarlar','Clothes','FBEFF3','D07A98','B25C7B','shirt'),
  ('home','Evimiz','Our Home','F4EFE8','A9805B','8B6441','bed'),
@@ -178,13 +178,14 @@ def main():
   writer=csv.DictWriter(f,fieldnames=rows[0].keys()); writer.writeheader(); writer.writerows(rows)
  for t in THEMES:
   write_json(ROOT/f'assets/content/items/{t[0]}.json',[x for x in items if x['theme']==t[0]])
- active=['animals','produce','colors','numbers','vehicles','shapes']
+ active=['animals','produce','colors','numbers','vehicles','shapes','food']
  theme_games={
  'animals':['G01','G10','G02','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
  'produce':['G01','G02','G14','G04','G33','G36','G55','G15','G17','G23','G38'],
  'colors':['G01','G02','G14','G55'],
  'numbers':['G35','G02','G10','G14','G33','G34','G36','G55','G37','G38'],
  'shapes':['G01','G02','G14','G55'],
+ 'food':['G01', 'G02', 'G14', 'G55', 'G15', 'G17', 'G33', 'G36'],
  'vehicles':['G02','G01','G10','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
  }
  write_json(ROOT/'assets/content/themes.json',[dict(id=t[0],name={'tr':t[1],'en':t[2]},palette=dict(zip(['bg','accent','deep'],['#'+x for x in t[3:6]])),hero=t[0]+'.'+t[6],active=t[0] in active,games=theme_games.get(t[0],[])) for t in THEMES])

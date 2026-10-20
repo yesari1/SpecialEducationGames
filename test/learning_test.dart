@@ -126,8 +126,8 @@ void main() {
       expect(
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
         // 35 phase-one cards, G15/G17/G23 on three themes, G37, G38 x2, G11 x2,
-        // and four Shapes games.
-        53,
+        // four Shapes games and eight Food & Drinks games.
+        61,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {

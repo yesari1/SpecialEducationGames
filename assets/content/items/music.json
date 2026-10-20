@@ -12,7 +12,10 @@
       "en": "Drum"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/drum_selected.mp3",
+      "en": "assets/audio/en/music/drum_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -28,7 +31,10 @@
       "en": "Piano"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/piano_selected.mp3",
+      "en": "assets/audio/en/music/piano_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -44,7 +50,10 @@
       "en": "Guitar"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/guitar_selected.mp3",
+      "en": "assets/audio/en/music/guitar_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -60,7 +69,10 @@
       "en": "Recorder"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/recorder_selected.mp3",
+      "en": "assets/audio/en/music/recorder_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -76,7 +88,10 @@
       "en": "Bell"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/bell_selected.mp3",
+      "en": "assets/audio/en/music/bell_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -92,7 +107,10 @@
       "en": "Xylophone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/xylophone_selected.mp3",
+      "en": "assets/audio/en/music/xylophone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -108,7 +126,10 @@
       "en": "Maracas"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/maracas_selected.mp3",
+      "en": "assets/audio/en/music/maracas_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -124,7 +145,10 @@
       "en": "Tambourine"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/tambourine_selected.mp3",
+      "en": "assets/audio/en/music/tambourine_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -140,7 +164,10 @@
       "en": "Violin"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/violin_selected.mp3",
+      "en": "assets/audio/en/music/violin_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -156,7 +183,10 @@
       "en": "Trumpet"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/trumpet_selected.mp3",
+      "en": "assets/audio/en/music/trumpet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -172,7 +202,10 @@
       "en": "Accordion"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/accordion_selected.mp3",
+      "en": "assets/audio/en/music/accordion_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -188,7 +221,10 @@
       "en": "Harmonica"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/harmonica_selected.mp3",
+      "en": "assets/audio/en/music/harmonica_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -205,7 +241,10 @@
       "en": "Baglama"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/baglama_selected.mp3",
+      "en": "assets/audio/en/music/baglama_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -222,7 +261,10 @@
       "en": "Darbuka"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/darbuka_selected.mp3",
+      "en": "assets/audio/en/music/darbuka_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -238,7 +280,10 @@
       "en": "Ukulele"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/ukulele_selected.mp3",
+      "en": "assets/audio/en/music/ukulele_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -254,7 +299,10 @@
       "en": "Triangle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/triangle_selected.mp3",
+      "en": "assets/audio/en/music/triangle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -270,7 +318,10 @@
       "en": "Keyboard"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/keyboard_selected.mp3",
+      "en": "assets/audio/en/music/keyboard_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -286,7 +337,10 @@
       "en": "Castanets"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/castanets_selected.mp3",
+      "en": "assets/audio/en/music/castanets_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -302,7 +356,10 @@
       "en": "Cello"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/cello_selected.mp3",
+      "en": "assets/audio/en/music/cello_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -318,7 +375,10 @@
       "en": "Harp"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/harp_selected.mp3",
+      "en": "assets/audio/en/music/harp_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -334,7 +394,10 @@
       "en": "Saxophone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/saxophone_selected.mp3",
+      "en": "assets/audio/en/music/saxophone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -350,7 +413,10 @@
       "en": "Clarinet"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/clarinet_selected.mp3",
+      "en": "assets/audio/en/music/clarinet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -366,7 +432,10 @@
       "en": "Trombone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/trombone_selected.mp3",
+      "en": "assets/audio/en/music/trombone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -382,7 +451,10 @@
       "en": "Flute"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/flute_selected.mp3",
+      "en": "assets/audio/en/music/flute_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -399,7 +471,10 @@
       "en": "Ney"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/ney_selected.mp3",
+      "en": "assets/audio/en/music/ney_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -416,7 +491,10 @@
       "en": "Kanun"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/kanun_selected.mp3",
+      "en": "assets/audio/en/music/kanun_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -433,7 +511,10 @@
       "en": "Zurna"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/zurna_selected.mp3",
+      "en": "assets/audio/en/music/zurna_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -450,7 +531,10 @@
       "en": "Oud"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/oud_selected.mp3",
+      "en": "assets/audio/en/music/oud_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -466,7 +550,10 @@
       "en": "Double bass"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/double_bass_selected.mp3",
+      "en": "assets/audio/en/music/double_bass_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -482,7 +569,10 @@
       "en": "Davul zurna"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/music/davul_zurna_selected.mp3",
+      "en": "assets/audio/en/music/davul_zurna_selected.mp3"
+    },
     "sfx": null
   }
 ]

@@ -29,14 +29,13 @@ class _CreditsScreenState extends State<CreditsScreen> {
   Future<({List<_CreditRecord> sounds, List<_CreditRecord> photos})>
   _loadCredits() async {
     final bundle = widget.assetBundle ?? rootBundle;
-    final sounds =
-        jsonDecode(await bundle.loadString('assets/sfx/sources.json')) as List;
+    // Decode here: loadString moves strings over 50 KB to a background
+    // isolate, which is needless for these small credit files.
+    Future<dynamic> json(String path) async =>
+        jsonDecode(utf8.decode((await bundle.load(path)).buffer.asUint8List()));
+    final sounds = await json('assets/sfx/sources.json') as List;
     final photoManifest =
-        jsonDecode(
-              await bundle.loadString(
-                'assets/content/real_photo_manifest.json',
-              ),
-            )
+        await json('assets/content/real_photo_manifest.json')
             as Map<String, dynamic>;
     final photoEntries = flattenRealPhotoCreditEntries(
       photoManifest['assets'] as List,

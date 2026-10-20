@@ -13,7 +13,10 @@
       "en": "Bed"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/bed_selected.mp3",
+      "en": "assets/audio/en/home/bed_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -30,7 +33,10 @@
       "en": "Pillow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/pillow_selected.mp3",
+      "en": "assets/audio/en/home/pillow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -47,7 +53,10 @@
       "en": "Table"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/table_selected.mp3",
+      "en": "assets/audio/en/home/table_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -64,7 +73,10 @@
       "en": "Chair"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/chair_selected.mp3",
+      "en": "assets/audio/en/home/chair_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -81,7 +93,10 @@
       "en": "Sofa"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/sofa_selected.mp3",
+      "en": "assets/audio/en/home/sofa_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -97,7 +112,10 @@
       "en": "Television"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/television_selected.mp3",
+      "en": "assets/audio/en/home/television_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -111,7 +129,10 @@
       "en": "Door"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/door_selected.mp3",
+      "en": "assets/audio/en/home/door_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -125,7 +146,10 @@
       "en": "Window"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/window_selected.mp3",
+      "en": "assets/audio/en/home/window_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -141,7 +165,10 @@
       "en": "Lamp"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/lamp_selected.mp3",
+      "en": "assets/audio/en/home/lamp_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -157,7 +184,10 @@
       "en": "Fridge"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/fridge_selected.mp3",
+      "en": "assets/audio/en/home/fridge_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -174,7 +204,10 @@
       "en": "Plate"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/plate_selected.mp3",
+      "en": "assets/audio/en/home/plate_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -191,7 +224,10 @@
       "en": "Glass"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/glass_selected.mp3",
+      "en": "assets/audio/en/home/glass_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -208,7 +244,10 @@
       "en": "Spoon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/spoon_selected.mp3",
+      "en": "assets/audio/en/home/spoon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -225,7 +264,10 @@
       "en": "Toothbrush"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/toothbrush_selected.mp3",
+      "en": "assets/audio/en/home/toothbrush_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -242,7 +284,10 @@
       "en": "Soap"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/soap_selected.mp3",
+      "en": "assets/audio/en/home/soap_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -259,7 +304,10 @@
       "en": "Towel"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/towel_selected.mp3",
+      "en": "assets/audio/en/home/towel_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -275,7 +323,10 @@
       "en": "Oven"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/oven_selected.mp3",
+      "en": "assets/audio/en/home/oven_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -291,7 +342,10 @@
       "en": "Stove"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/stove_selected.mp3",
+      "en": "assets/audio/en/home/stove_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -307,7 +361,10 @@
       "en": "Pot"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/pot_selected.mp3",
+      "en": "assets/audio/en/home/pot_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -323,7 +380,10 @@
       "en": "Pan"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/pan_selected.mp3",
+      "en": "assets/audio/en/home/pan_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -340,7 +400,10 @@
       "en": "Fork"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/fork_selected.mp3",
+      "en": "assets/audio/en/home/fork_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -356,7 +419,10 @@
       "en": "Teapot"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/teapot_selected.mp3",
+      "en": "assets/audio/en/home/teapot_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -373,7 +439,10 @@
       "en": "Washing machine"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/washing_machine_selected.mp3",
+      "en": "assets/audio/en/home/washing_machine_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -389,7 +458,10 @@
       "en": "Sink"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/sink_selected.mp3",
+      "en": "assets/audio/en/home/sink_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -406,7 +478,10 @@
       "en": "Bathtub"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/bathtub_selected.mp3",
+      "en": "assets/audio/en/home/bathtub_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -422,7 +497,10 @@
       "en": "Toilet"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/toilet_selected.mp3",
+      "en": "assets/audio/en/home/toilet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -438,7 +516,10 @@
       "en": "Mirror"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/mirror_selected.mp3",
+      "en": "assets/audio/en/home/mirror_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -454,7 +535,10 @@
       "en": "Comb"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/comb_selected.mp3",
+      "en": "assets/audio/en/home/comb_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -471,7 +555,10 @@
       "en": "Wardrobe"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/wardrobe_selected.mp3",
+      "en": "assets/audio/en/home/wardrobe_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -487,7 +574,10 @@
       "en": "Carpet"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/carpet_selected.mp3",
+      "en": "assets/audio/en/home/carpet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -503,7 +593,10 @@
       "en": "Curtain"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/curtain_selected.mp3",
+      "en": "assets/audio/en/home/curtain_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -520,7 +613,10 @@
       "en": "Blanket"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/blanket_selected.mp3",
+      "en": "assets/audio/en/home/blanket_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -536,7 +632,10 @@
       "en": "Clock"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/clock_selected.mp3",
+      "en": "assets/audio/en/home/clock_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -553,7 +652,10 @@
       "en": "Dishwasher"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/dishwasher_selected.mp3",
+      "en": "assets/audio/en/home/dishwasher_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -569,7 +671,10 @@
       "en": "Vacuum cleaner"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/vacuum_cleaner_selected.mp3",
+      "en": "assets/audio/en/home/vacuum_cleaner_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -585,7 +690,10 @@
       "en": "Iron"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/iron_selected.mp3",
+      "en": "assets/audio/en/home/iron_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -601,7 +709,10 @@
       "en": "Microwave"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/microwave_selected.mp3",
+      "en": "assets/audio/en/home/microwave_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -617,7 +728,10 @@
       "en": "Kettle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/kettle_selected.mp3",
+      "en": "assets/audio/en/home/kettle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -633,7 +747,10 @@
       "en": "Mixer"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/mixer_selected.mp3",
+      "en": "assets/audio/en/home/mixer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -649,7 +766,10 @@
       "en": "Flower pot"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/flower_pot_selected.mp3",
+      "en": "assets/audio/en/home/flower_pot_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -665,7 +785,10 @@
       "en": "Bookshelf"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/bookshelf_selected.mp3",
+      "en": "assets/audio/en/home/bookshelf_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -681,7 +804,10 @@
       "en": "Nightstand"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/nightstand_selected.mp3",
+      "en": "assets/audio/en/home/nightstand_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -698,7 +824,10 @@
       "en": "Shampoo"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/shampoo_selected.mp3",
+      "en": "assets/audio/en/home/shampoo_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -715,7 +844,10 @@
       "en": "Toothpaste"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/toothpaste_selected.mp3",
+      "en": "assets/audio/en/home/toothpaste_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -731,7 +863,10 @@
       "en": "Hair dryer"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/hair_dryer_selected.mp3",
+      "en": "assets/audio/en/home/hair_dryer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -747,7 +882,10 @@
       "en": "Trash can"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/trash_can_selected.mp3",
+      "en": "assets/audio/en/home/trash_can_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -761,7 +899,10 @@
       "en": "Key"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/key_selected.mp3",
+      "en": "assets/audio/en/home/key_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -777,7 +918,10 @@
       "en": "Telephone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/telephone_selected.mp3",
+      "en": "assets/audio/en/home/telephone_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -793,7 +937,10 @@
       "en": "Remote control"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/remote_control_selected.mp3",
+      "en": "assets/audio/en/home/remote_control_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -809,7 +956,10 @@
       "en": "Hanger"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/home/hanger_selected.mp3",
+      "en": "assets/audio/en/home/hanger_selected.mp3"
+    },
     "sfx": null
   }
 ]

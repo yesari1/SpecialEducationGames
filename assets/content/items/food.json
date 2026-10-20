@@ -11,9 +11,32 @@
       "tr": "Ekmek",
       "en": "Bread"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/bread_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/bread_selected.mp3",
+      "en": "assets/audio/en/food/bread_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/bread_real.png": {
+        "author": "User:Famartin",
+        "source": "https://commons.wikimedia.org/wiki/File:Transparent_Slice_of_Sara_Lee_white_whole_grain_bread_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.bread",
+        "path": "assets/images/food/bread_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "9032de473a3bfee90ae37d6228f6d6c4d3d3ca01b732dfa9b0b9a0d820b5a868",
+        "sha256": "49598b93b1f82dff66c6d5531750d280e02c45f1e5dd0c86f2a588b6ff9fa586"
+      }
+    }
   },
   {
     "id": "food.milk",
@@ -28,7 +51,10 @@
       "en": "Milk"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/milk_selected.mp3",
+      "en": "assets/audio/en/food/milk_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -44,7 +70,10 @@
       "en": "Water"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/water_selected.mp3",
+      "en": "assets/audio/en/food/water_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -59,9 +88,32 @@
       "tr": "Yumurta",
       "en": "Egg"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/egg_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/egg_selected.mp3",
+      "en": "assets/audio/en/food/egg_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/egg_real.png": {
+        "author": "User: MrX",
+        "source": "https://commons.wikimedia.org/wiki/File:Chicken_egg.png",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.egg",
+        "path": "assets/images/food/egg_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "cc9f522c07b07f3c64106d9b94e01efb538508da3a5512a1743242719cdb0fa0",
+        "sha256": "70d1ad945d6b36917d38fbd993b4f651d67c747606624e3f760a61153f3e7d5f"
+      }
+    }
   },
   {
     "id": "food.cheese",
@@ -75,9 +127,32 @@
       "tr": "Peynir",
       "en": "Cheese"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/cheese_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/cheese_selected.mp3",
+      "en": "assets/audio/en/food/cheese_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/cheese_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Mustaleima.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.cheese",
+        "path": "assets/images/food/cheese_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "0231f9a64f5b17ae35f361f852ae169bc02175be4ee1d0844f33468ab5edf98c",
+        "sha256": "8127c1f0990de463a7f8d269e438e19091634be07408b8992740e7da980c675e"
+      }
+    }
   },
   {
     "id": "food.yogurt",
@@ -90,7 +165,10 @@
       "en": "Yogurt"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/yogurt_selected.mp3",
+      "en": "assets/audio/en/food/yogurt_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -106,7 +184,10 @@
       "en": "Juice"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/juice_selected.mp3",
+      "en": "assets/audio/en/food/juice_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -121,9 +202,32 @@
       "tr": "Kek",
       "en": "Cake"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/cake_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/cake_selected.mp3",
+      "en": "assets/audio/en/food/cake_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/cake_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Cake_2.png",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.cake",
+        "path": "assets/images/food/cake_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "10cbe0a489628c7045e48fc9c5ee070f96a232cf7bcad87d835d4ece9e770d72",
+        "sha256": "b74b589cdc0cdd0d080f07f916623d10863e84f346575e81e89f2ed41cfb5e71"
+      }
+    }
   },
   {
     "id": "food.ice_cream",
@@ -138,9 +242,32 @@
       "tr": "Dondurma",
       "en": "Ice cream"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/ice_cream_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/ice_cream_selected.mp3",
+      "en": "assets/audio/en/food/ice_cream_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/ice_cream_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Jaffatuutti.png",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.ice_cream",
+        "path": "assets/images/food/ice_cream_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "9547bd7fb248a40bbd61f8bb309f42c662dd422fd79fec891b458dff3c03d7cc",
+        "sha256": "a6178db4a5d303288805de93c84c131fd24f6cf07fee24020cfb7e323ac2de05"
+      }
+    }
   },
   {
     "id": "food.pasta",
@@ -154,9 +281,32 @@
       "tr": "Makarna",
       "en": "Pasta"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/pasta_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/pasta_selected.mp3",
+      "en": "assets/audio/en/food/pasta_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/pasta_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Tagliatelle.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.pasta",
+        "path": "assets/images/food/pasta_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "9ecaf55a32b7ffb4391b99bf036f67fd26c859d1d35f7e917a613446134f2f03",
+        "sha256": "2c589d4c4ae4a89465fe2d08c60428323cb9d87b9c537c99061ba3ac5fe4d8b9"
+      }
+    }
   },
   {
     "id": "food.soup",
@@ -171,9 +321,32 @@
       "tr": "Çorba",
       "en": "Soup"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/soup_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/soup_selected.mp3",
+      "en": "assets/audio/en/food/soup_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/soup_real.png": {
+        "author": "Tiia Monto",
+        "source": "https://commons.wikimedia.org/wiki/File:Salmon_soup.png",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.soup",
+        "path": "assets/images/food/soup_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 4.0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "f15066f45d18f07ccadda05b557828366e84f430421c5af176be87e0645a6a2a",
+        "sha256": "4351c72338f4919659466962ae6624185b4792af206546e43af84d0570aaa233"
+      }
+    }
   },
   {
     "id": "food.rice",
@@ -188,7 +361,10 @@
       "en": "Rice"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/rice_selected.mp3",
+      "en": "assets/audio/en/food/rice_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -203,9 +379,32 @@
       "tr": "Kurabiye",
       "en": "Cookie"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/cookie_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/cookie_selected.mp3",
+      "en": "assets/audio/en/food/cookie_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/cookie_real.png": {
+        "author": "User:Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.png",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.png",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.cookie",
+        "path": "assets/images/food/cookie_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "Public domain",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "d904d9b9de3ddb522aa130f407dd7e5a41e054b9b63f272f201711ce2a5cffba",
+        "sha256": "a800e4d110437c24a78426ca80d438c6ea534b79a46ea3fd2964ecee17e618c8"
+      }
+    }
   },
   {
     "id": "food.simit",
@@ -220,7 +419,10 @@
       "en": "Simit"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/simit_selected.mp3",
+      "en": "assets/audio/en/food/simit_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -236,7 +438,10 @@
       "en": "Honey"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/honey_selected.mp3",
+      "en": "assets/audio/en/food/honey_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -252,7 +457,10 @@
       "en": "Olive"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/olive_selected.mp3",
+      "en": "assets/audio/en/food/olive_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -268,7 +476,10 @@
       "en": "Jam"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/jam_selected.mp3",
+      "en": "assets/audio/en/food/jam_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -284,7 +495,10 @@
       "en": "Butter"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/butter_selected.mp3",
+      "en": "assets/audio/en/food/butter_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -298,7 +512,10 @@
       "en": "Sandwich"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/sandwich_selected.mp3",
+      "en": "assets/audio/en/food/sandwich_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -311,9 +528,32 @@
       "tr": "Pizza",
       "en": "Pizza"
     },
-    "images": [],
-    "audio": {},
-    "sfx": null
+    "images": [
+      "assets/images/food/pizza_real.png"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/food/pizza_selected.mp3",
+      "en": "assets/audio/en/food/pizza_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/pizza_real.png": {
+        "author": "Florian838",
+        "source": "https://commons.wikimedia.org/wiki/File:Pizza_Quattro_Stagioni_transparent.png",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.pizza",
+        "path": "assets/images/food/pizza_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC0",
+        "processing": "tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "90a12f8a41d20a644a34160ed032fab7d9ccacb04b14568029e7559f6edf270f",
+        "sha256": "3032c7fbee3efa0bb36359e7847f93acd6e3c8c9e9f2c4f0cc1393fedc9ce5b9"
+      }
+    }
   },
   {
     "id": "food.meatball",
@@ -328,7 +568,10 @@
       "en": "Meatball"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/meatball_selected.mp3",
+      "en": "assets/audio/en/food/meatball_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -344,7 +587,10 @@
       "en": "Salad"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/salad_selected.mp3",
+      "en": "assets/audio/en/food/salad_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -358,7 +604,10 @@
       "en": "French fries"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/french_fries_selected.mp3",
+      "en": "assets/audio/en/food/french_fries_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -374,7 +623,10 @@
       "en": "Chocolate"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/chocolate_selected.mp3",
+      "en": "assets/audio/en/food/chocolate_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -390,7 +642,10 @@
       "en": "Birthday cake"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/birthday_cake_selected.mp3",
+      "en": "assets/audio/en/food/birthday_cake_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -406,7 +661,10 @@
       "en": "Ayran"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/ayran_selected.mp3",
+      "en": "assets/audio/en/food/ayran_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -422,7 +680,10 @@
       "en": "Pancake"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/pancake_selected.mp3",
+      "en": "assets/audio/en/food/pancake_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -438,7 +699,10 @@
       "en": "Cereal"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/cereal_selected.mp3",
+      "en": "assets/audio/en/food/cereal_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -452,7 +716,10 @@
       "en": "Borek"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/borek_selected.mp3",
+      "en": "assets/audio/en/food/borek_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -466,7 +733,10 @@
       "en": "Manti"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/manti_selected.mp3",
+      "en": "assets/audio/en/food/manti_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -480,7 +750,10 @@
       "en": "Dolma"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/dolma_selected.mp3",
+      "en": "assets/audio/en/food/dolma_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -494,7 +767,10 @@
       "en": "Lahmacun"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/lahmacun_selected.mp3",
+      "en": "assets/audio/en/food/lahmacun_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -510,7 +786,10 @@
       "en": "Menemen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/menemen_selected.mp3",
+      "en": "assets/audio/en/food/menemen_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -526,7 +805,10 @@
       "en": "Raisin"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/raisin_selected.mp3",
+      "en": "assets/audio/en/food/raisin_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -542,7 +824,10 @@
       "en": "Hazelnut"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/hazelnut_selected.mp3",
+      "en": "assets/audio/en/food/hazelnut_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -558,7 +843,10 @@
       "en": "Walnut"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/walnut_selected.mp3",
+      "en": "assets/audio/en/food/walnut_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -574,7 +862,10 @@
       "en": "Peanut"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/peanut_selected.mp3",
+      "en": "assets/audio/en/food/peanut_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -590,7 +881,10 @@
       "en": "Popcorn"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/popcorn_selected.mp3",
+      "en": "assets/audio/en/food/popcorn_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -606,7 +900,10 @@
       "en": "Sucuk"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/sucuk_selected.mp3",
+      "en": "assets/audio/en/food/sucuk_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -620,7 +917,10 @@
       "en": "Lentil"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/lentil_selected.mp3",
+      "en": "assets/audio/en/food/lentil_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -636,7 +936,10 @@
       "en": "Pudding"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/pudding_selected.mp3",
+      "en": "assets/audio/en/food/pudding_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -653,7 +956,10 @@
       "en": "Lemonade"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/food/lemonade_selected.mp3",
+      "en": "assets/audio/en/food/lemonade_selected.mp3"
+    },
     "sfx": null
   }
 ]

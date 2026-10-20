@@ -557,12 +557,14 @@ class ThemeGameCard extends StatelessWidget {
     'numbers' => const Color(0xFF7C73DF),
     'vehicles' => SegColors.sky,
     'shapes' => const Color(0xFF9C6AD6),
+    'food' => const Color(0xFFE8A24D),
     _ => SegColors.primary,
   };
 
   /// Round, compact subjects read as oversized when they fill the scene.
   double get _heroScale => switch (theme.id) {
     'produce' || 'colors' || 'shapes' => .7,
+    'food' => .8,
     'numbers' => .85,
     _ => 1,
   };

@@ -13,7 +13,10 @@
       "en": "Tshirt"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/tshirt_selected.mp3",
+      "en": "assets/audio/en/clothes/tshirt_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -29,7 +32,10 @@
       "en": "Trousers"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/trousers_selected.mp3",
+      "en": "assets/audio/en/clothes/trousers_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -45,7 +51,10 @@
       "en": "Shoes"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/shoes_selected.mp3",
+      "en": "assets/audio/en/clothes/shoes_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -61,7 +70,10 @@
       "en": "Socks"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/socks_selected.mp3",
+      "en": "assets/audio/en/clothes/socks_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -78,7 +90,10 @@
       "en": "Hat"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/hat_selected.mp3",
+      "en": "assets/audio/en/clothes/hat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -95,7 +110,10 @@
       "en": "Coat"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/coat_selected.mp3",
+      "en": "assets/audio/en/clothes/coat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -112,7 +130,10 @@
       "en": "Dress"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/dress_selected.mp3",
+      "en": "assets/audio/en/clothes/dress_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -128,7 +149,10 @@
       "en": "Skirt"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/skirt_selected.mp3",
+      "en": "assets/audio/en/clothes/skirt_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -145,7 +169,10 @@
       "en": "Shorts"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/shorts_selected.mp3",
+      "en": "assets/audio/en/clothes/shorts_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -161,7 +188,10 @@
       "en": "Pajamas"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/pajamas_selected.mp3",
+      "en": "assets/audio/en/clothes/pajamas_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -178,7 +208,10 @@
       "en": "Sweater"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/sweater_selected.mp3",
+      "en": "assets/audio/en/clothes/sweater_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -194,7 +227,10 @@
       "en": "Slippers"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/slippers_selected.mp3",
+      "en": "assets/audio/en/clothes/slippers_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -210,7 +246,10 @@
       "en": "Shirt"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/shirt_selected.mp3",
+      "en": "assets/audio/en/clothes/shirt_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -227,7 +266,10 @@
       "en": "Gloves"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/gloves_selected.mp3",
+      "en": "assets/audio/en/clothes/gloves_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -244,7 +286,10 @@
       "en": "Scarf"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/scarf_selected.mp3",
+      "en": "assets/audio/en/clothes/scarf_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -261,7 +306,10 @@
       "en": "Beanie"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/beanie_selected.mp3",
+      "en": "assets/audio/en/clothes/beanie_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -279,7 +327,10 @@
       "en": "Boots"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/boots_selected.mp3",
+      "en": "assets/audio/en/clothes/boots_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -296,7 +347,10 @@
       "en": "Sandals"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/sandals_selected.mp3",
+      "en": "assets/audio/en/clothes/sandals_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -312,7 +366,10 @@
       "en": "Swimsuit"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/swimsuit_selected.mp3",
+      "en": "assets/audio/en/clothes/swimsuit_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -329,7 +386,10 @@
       "en": "Raincoat"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/raincoat_selected.mp3",
+      "en": "assets/audio/en/clothes/raincoat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -345,7 +405,10 @@
       "en": "Cardigan"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/cardigan_selected.mp3",
+      "en": "assets/audio/en/clothes/cardigan_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -361,7 +424,10 @@
       "en": "Tracksuit"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/tracksuit_selected.mp3",
+      "en": "assets/audio/en/clothes/tracksuit_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -377,7 +443,10 @@
       "en": "Sneakers"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/sneakers_selected.mp3",
+      "en": "assets/audio/en/clothes/sneakers_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -393,7 +462,10 @@
       "en": "Glasses"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/glasses_selected.mp3",
+      "en": "assets/audio/en/clothes/glasses_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -410,7 +482,10 @@
       "en": "Sunglasses"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/sunglasses_selected.mp3",
+      "en": "assets/audio/en/clothes/sunglasses_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -427,7 +502,10 @@
       "en": "Umbrella"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/umbrella_selected.mp3",
+      "en": "assets/audio/en/clothes/umbrella_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -443,7 +521,10 @@
       "en": "Bag"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/bag_selected.mp3",
+      "en": "assets/audio/en/clothes/bag_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -459,7 +540,10 @@
       "en": "Vest"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/vest_selected.mp3",
+      "en": "assets/audio/en/clothes/vest_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -475,7 +559,10 @@
       "en": "Jacket"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/jacket_selected.mp3",
+      "en": "assets/audio/en/clothes/jacket_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -491,7 +578,10 @@
       "en": "Tie"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/tie_selected.mp3",
+      "en": "assets/audio/en/clothes/tie_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -507,7 +597,10 @@
       "en": "Bow tie"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/bow_tie_selected.mp3",
+      "en": "assets/audio/en/clothes/bow_tie_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -523,7 +616,10 @@
       "en": "Apron"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/apron_selected.mp3",
+      "en": "assets/audio/en/clothes/apron_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -539,7 +635,10 @@
       "en": "Belt"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/belt_selected.mp3",
+      "en": "assets/audio/en/clothes/belt_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -556,7 +655,10 @@
       "en": "Ankle boots"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/ankle_boots_selected.mp3",
+      "en": "assets/audio/en/clothes/ankle_boots_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -572,7 +674,10 @@
       "en": "Cap"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/cap_selected.mp3",
+      "en": "assets/audio/en/clothes/cap_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -589,7 +694,10 @@
       "en": "Earmuffs"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/earmuffs_selected.mp3",
+      "en": "assets/audio/en/clothes/earmuffs_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -606,7 +714,10 @@
       "en": "Wristwatch"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/wristwatch_selected.mp3",
+      "en": "assets/audio/en/clothes/wristwatch_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -622,7 +733,10 @@
       "en": "Bracelet"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/bracelet_selected.mp3",
+      "en": "assets/audio/en/clothes/bracelet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -639,7 +753,10 @@
       "en": "Necklace"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/necklace_selected.mp3",
+      "en": "assets/audio/en/clothes/necklace_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -655,7 +772,10 @@
       "en": "Backpack"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/backpack_selected.mp3",
+      "en": "assets/audio/en/clothes/backpack_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -671,7 +791,10 @@
       "en": "Cape"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/cape_selected.mp3",
+      "en": "assets/audio/en/clothes/cape_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -687,7 +810,10 @@
       "en": "Overalls"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/clothes/overalls_selected.mp3",
+      "en": "assets/audio/en/clothes/overalls_selected.mp3"
+    },
     "sfx": null
   }
 ]
