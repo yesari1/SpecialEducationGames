@@ -8,6 +8,7 @@
 - Şekiller teması açık (vektör çizim). Basılı tutma geri bildirimi düzeltildi. QA premium profile APK R27 (SHA-256 `e795edf24ff7168bd6672d4b1ee29e2962fc2910d952a6d6296bfab7f6880ef5`, 262.987.326 bayt), Google Drive "Special Education Games" klasörüne kopyalandı.
 - Doğrulama: analyze temiz, seri testler 238/238; emülatörde dokunma balonu, basılı tutma halkası, TEST rozeti, kilitsiz premium kartlar, Şekiller ve ses oynatımı (dumpsys audio başladı/durdu olayları) kontrol edildi: `artifacts/claude/r27/`.
 - Açık: seslerin insan dinleme onayı; fiziksel telefon/TalkBack/performans kabulü.
+- Sonra: tek dokunuş düğmeleri (R28); 672 ek klip (9 gelecek tema); Yiyecek ve İçecekler teması 10 lisanslı fotoğrafla açık (R29, SHA-256 `4d55c511b03720e6347f5638649733e995950f328ad83139f0a2b3853c290b86`). Seri testler 237/237. Emülatörde Yiyecek teması ve oyun kontrol edildi (`artifacts/claude/r29/`).
 
 ## 19 Ekim 2026 — Claude oturumu
 

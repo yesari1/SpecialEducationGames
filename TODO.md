@@ -28,7 +28,12 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] Basılı tutma düğmeleri (oyundan çıkış 1 sn, Aile 2 sn): kısa dokunuşta "Çıkmak için basılı tut / Aile için basılı tut" balonu, basılı tutarken dolan halka. Önceden kısa dokunuş hiçbir geri bildirim vermiyordu.
 - [x] QA derlemesi: `--dart-define=QA_PREMIUM=true` debug ve profile derlemede tüm oyunları açar, aile alanında TEST rozeti gösterir; release derlemede asla çalışmaz. R27: `artifacts/test-builds/2026-10-19/ozel-egitim-test-claude-r27-premium-qa.apk` (Google Drive'a da kopyalandı).
 
+- [x] 20 Ekim: tek dokunuş: Geri/Aile/ek süre basılı tutma kaldırıldı (Yunus kararı); çocuk kilidi Aile ve ek süre için ebeveyn kontrolü (soru/PIN). Onboarding 5. adım buna göre.
+- [x] 20 Ekim: açılmamış 9 temanın 336 kelimesi seslendirildi (672 klip); toplam 1.108 klip.
+- [x] 20 Ekim: Yiyecek ve İçecekler teması açık (G01, G02, G14, G55, G15, G17, G33, G36). 10 lisanslı gerçek fotoğraf (Commons): ekmek, yumurta, kek, peynir, kurabiye, dondurma, çorba, makarna, pizza (hazır şeffaf kesik) ve simit (klasik GrabCut maskesi). Süt ve meyve suyu maske denemeleri kurala uymadığı için reddedildi (`artifacts/food-photos-attempt-03/REVIEW.md`). Fotoğrafsız öğeler oyunlarda gösterilmez. R29 QA APK Drive'da.
+
 ### Yerelde yapılabilecek açıklar
+- [ ] Yiyecek temasında kalan fotoğraflar: içecekler (süt, su, meyve suyu, ayran), yoğurt, pilav ve orta/zor öğeler. Açık arka planlı uygun lisanslı fotoğraf bulunamadı; Pexels/Unsplash gibi kaynaklar veya özel çekim gerekebilir.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).
 
 ### Dış bağımlılıklar (yerelde yapılmadı)
