@@ -21,11 +21,14 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] Fotoğraf çerçeve sınırları `tools/build_photo_bounds.py` ile önceden hesaplanır (`assets/content/photo_bounds.json`); yeni fotoğraf eklenince yeniden çalıştırılmalı, test eksik olanı yakalar.
 - [x] Kalan `state.tr` metinleri (uygulama başlığı) ARB'ye taşındı; yeni metinler TR/EN ARB'de.
 - [x] Debug QA için `--dart-define=QA_PREMIUM=true` (yalnız debug derlemede; release/profile yok sayar).
-- [x] Testler: 234/234 seri host test geçer, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 8), dikey aile/abonelik/profil düzenleyici 1x/2x TR/EN, fotoğraf sınırı kapsamı.
+- [x] Testler: 238/238 seri host test geçer (20 Ekim); önceki 234/234, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 8), dikey aile/abonelik/profil düzenleyici 1x/2x TR/EN, fotoğraf sınırı kapsamı.
+
+- [x] 20 Ekim: Yunus'un onayıyla ElevenLabs seslendirmesi (TR İrem `uvU9jrgGLWNPeNA4NgNT`, EN Laura `GZ4PpFJV8ikEGUtBrjK7`, multilingual v2, ayarlar `tools/elevenlabs_voice_settings.json`): 436 klip, 3.813 karakter metin. Tüm oyun yönergeleri (yeni 6 oyun dahil, "sepete N tane koy" 1–7), aferin/tekrar dene, ve sesi eksik ya da TR/EN aynı (Türkçe) olan 195 öğe adı. `tools/generate_selected_voice.py`, kayıt `assets/content/generated_voice_manifest.json`; eski dosyalar korundu. Emülatörde ses oynatımı sistem ses olaylarıyla doğrulandı. İnsan dinleme onayı ayrıca bekler.
+- [x] Şekiller teması açıldı (G01, G02, G14, G55): 18 şekil vektörle çizilir (3B küp/küre/silindir/koni dahil), fotoğraf/AI görsel yok; TR/EN isimleri seslendirildi.
+- [x] Basılı tutma düğmeleri (oyundan çıkış 1 sn, Aile 2 sn): kısa dokunuşta "Çıkmak için basılı tut / Aile için basılı tut" balonu, basılı tutarken dolan halka. Önceden kısa dokunuş hiçbir geri bildirim vermiyordu.
+- [x] QA derlemesi: `--dart-define=QA_PREMIUM=true` debug ve profile derlemede tüm oyunları açar, aile alanında TEST rozeti gösterir; release derlemede asla çalışmaz. R27: `artifacts/test-builds/2026-10-19/ozel-egitim-test-claude-r27-premium-qa.apk` (Google Drive'a da kopyalandı).
 
 ### Yerelde yapılabilecek açıklar
-- [ ] Yeni oyunların yönerge sesleri yok (yalnız yazı + öğe adı). Ses üretimi aşağıdaki ses onayına bağlı.
-- [ ] Şekiller teması: şekiller vektörle çizilebilir (fotoğraf gerekmez) ama TR/EN seslendirme yok; ses onayı olmadan açılmadı.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).
 
 ### Dış bağımlılıklar (yerelde yapılmadı)

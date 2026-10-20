@@ -2,7 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
-## 19 Ekim 2026 — Claude oturumu (güncel)
+## 20 Ekim 2026 — Claude oturumu (güncel)
+
+- Ses: Yunus'un açık onayıyla ElevenLabs'te seçili seslerle (TR İrem, EN Laura; eleven_multilingual_v2; stability .35 / similarity .75 / style .43 / speed 1.0, tahmini ayarlar) 436 klip üretildi; tek tek bir kez istendi, hata 0. Metin toplamı 3.813 karakter; hesap sayacı 7.396 → 9.098 (222.253 limit). Kayıt: `assets/content/generated_voice_manifest.json`. Yönergeler oyun başında çalar (G10: önce "Dinle…", sonra doğal ses).
+- Şekiller teması açık (vektör çizim). Basılı tutma geri bildirimi düzeltildi. QA premium profile APK R27 (SHA-256 `e795edf24ff7168bd6672d4b1ee29e2962fc2910d952a6d6296bfab7f6880ef5`, 262.987.326 bayt), Google Drive "Special Education Games" klasörüne kopyalandı.
+- Doğrulama: analyze temiz, seri testler 238/238; emülatörde dokunma balonu, basılı tutma halkası, TEST rozeti, kilitsiz premium kartlar, Şekiller ve ses oynatımı (dumpsys audio başladı/durdu olayları) kontrol edildi: `artifacts/claude/r27/`.
+- Açık: seslerin insan dinleme onayı; fiziksel telefon/TalkBack/performans kabulü.
+
+## 19 Ekim 2026 — Claude oturumu
 
 Ayrıntılı liste TODO.md başında. Özet:
 - Git deposu kuruldu; her adım commit'li (`git log`).
