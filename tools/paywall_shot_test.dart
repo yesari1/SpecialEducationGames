@@ -1,7 +1,6 @@
 // Run explicitly: flutter test tools/paywall_shot_test.dart --update-goldens
 // Renders the upright Premium page (TR and EN) to artifacts/claude/r33/.
 import 'package:drift/native.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';

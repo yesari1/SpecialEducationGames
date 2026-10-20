@@ -23,6 +23,25 @@
   - `announcements/{id}`: ebeveyn duyuruları.
   - Kurallar: `firebase/firestore.rules`. Emülatörde 11/11 kural testi geçiyor (`firebase/rules-tests`).
 
+## Firestore `config/app` (oluşturuldu, konsoldan düzenlenebilir)
+
+20 Ekim'de uygulamanın varsayılanlarıyla oluşturuldu (`tools/create_config_app.cjs`, var olan belgenin üstüne yazmaz). Firebase konsolu → Firestore Database → `config` → `app`. Uygulama bu belgeyi açılışta okur (en çok 6 saatte bir) ve geçersiz alanları yok sayar. Oyun sırasında gelen değişiklik oyundan çıkınca uygulanır.
+
+| Alan | Tür | Ne işe yarar | Kurallar |
+|---|---|---|---|
+| `freeGames` | dizi (string) | Ücretsiz oyun kartları, `tema_oyun` biçiminde, örn. `animals_G01` | Tam **6** geçerli kart olmalı; değilse eski liste kalır |
+| `trialDays` | sayı | Ücretsiz deneme süresi (gün) | 1–30 |
+| `privacyUrl`, `termsUrl` | string | Premium sayfasındaki gizlilik/koşullar bağlantıları | Yalnız `https://`; boş bırakılırsa bağlantı gizlenir |
+| `paywallText` | map `{tr, en}` | Premium sayfası başlığı | Boş map: varsayılan başlıklar |
+| `disabledGames` | dizi | Geçici olarak kapatılan kartlar (`tema_oyun`) | Bilinmeyen kimlikler yok sayılır |
+| `hiddenThemes` | dizi | Gizlenen temalar (`animals`, `produce`…) | |
+| `newBadge` | dizi | "Yeni" rozeti gösterilecek temalar | |
+| `gameOrder` | map tema → dizi | Bir temadaki oyun sırası (isteğe bağlı) | |
+| `featuredTheme` | string | Öne çıkan tema (isteğe bağlı) | |
+| `announcementId` | string | `announcements/{id}` ebeveyn duyurusu (isteğe bağlı) | |
+| `minSupportedVersion` | sayı | Bundan küçük versionCode'da ebeveyne güncelleme notu | |
+| `difficultyDefaults` | map | `fadeAfterErrors` (yanlış sonrası soluklaştırma eşiği), `choiceCounts {easy, medium, hard}` | Seçenek sayısı 2–4 |
+
 ## Yunus'un yapması gerekenler
 
 ### 1. Firebase konsolu (proje `specialeducationgames`)
