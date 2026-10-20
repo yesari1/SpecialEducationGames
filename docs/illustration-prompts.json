@@ -1,0 +1,116 @@
+[
+ {
+  "name": "hero_welcome",
+  "size": "1536x1024",
+  "prompt": "A small floating rounded grassy island (soft green, gently rounded edges, no soil cross-section detail) holding a cozy friendly scene: a smiling cream-and-orange cat sitting on the left, a big shiny red apple with a green leaf in the middle-front, a small rounded orange toy car on the right, two chunky toy blocks (one turquoise with a star shape, one yellow with a circle shape) and a tiny blue flower. Two soft white clouds and a gentle pale-yellow sun float above. Transparent background around the island. Wide composition, everything visible.",
+  "path": "assets/illustrations/onboarding/hero_welcome.png"
+ },
+ {
+  "name": "opt_animals",
+  "size": "1024x1024",
+  "prompt": "A friendly cream-and-orange cat sitting and smiling, full body.",
+  "path": "assets/illustrations/onboarding/opt_animals.png"
+ },
+ {
+  "name": "opt_vehicles",
+  "size": "1024x1024",
+  "prompt": "A small rounded toy car in warm orange with blue windows and chunky dark-grey wheels, three-quarter view.",
+  "path": "assets/illustrations/onboarding/opt_vehicles.png"
+ },
+ {
+  "name": "opt_colors",
+  "size": "1024x1024",
+  "prompt": "A rounded wooden-cream paint palette with four paint dots (orange, blue, yellow, turquoise) and a short chunky paintbrush with an orange tip.",
+  "path": "assets/illustrations/onboarding/opt_colors.png"
+ },
+ {
+  "name": "opt_numbers",
+  "size": "1024x1024",
+  "prompt": "Three chunky rounded toy blocks in a row showing the numerals 1, 2, 3 (rounded bold numerals) in orange, blue and turquoise.",
+  "path": "assets/illustrations/onboarding/opt_numbers.png"
+ },
+ {
+  "name": "opt_music",
+  "size": "1024x1024",
+  "prompt": "A small cute drum (blue body, cream top, orange rim) with two drumsticks resting on top.",
+  "path": "assets/illustrations/onboarding/opt_music.png"
+ },
+ {
+  "name": "opt_food",
+  "size": "1024x1024",
+  "prompt": "A cozy cream bowl of warm orange soup with a small spoon, a slice of bread leaning next to it.",
+  "path": "assets/illustrations/onboarding/opt_food.png"
+ },
+ {
+  "name": "opt_fruit",
+  "size": "1024x1024",
+  "prompt": "One shiny red apple with a single green leaf.",
+  "path": "assets/illustrations/onboarding/opt_fruit.png"
+ },
+ {
+  "name": "opt_shapes",
+  "size": "1024x1024",
+  "prompt": "A neat little stack of soft toy shapes: a blue cube at the bottom, a yellow ball, and an orange triangle on top, plus a small turquoise star leaning on the cube.",
+  "path": "assets/illustrations/onboarding/opt_shapes.png"
+ },
+ {
+  "name": "opt_clothes",
+  "size": "1024x1024",
+  "prompt": "A small yellow child's t-shirt with a blue cap placed on it.",
+  "path": "assets/illustrations/onboarding/opt_clothes.png"
+ },
+ {
+  "name": "opt_home",
+  "size": "1024x1024",
+  "prompt": "A cozy small turquoise armchair with a cream cushion.",
+  "path": "assets/illustrations/onboarding/opt_home.png"
+ },
+ {
+  "name": "opt_body",
+  "size": "1024x1024",
+  "prompt": "A friendly open cartoon hand waving hello, warm peach skin tone, rounded fingers, no arm beyond the wrist cuff (a small blue sleeve cuff).",
+  "path": "assets/illustrations/onboarding/opt_body.png"
+ },
+ {
+  "name": "opt_feelings",
+  "size": "1024x1024",
+  "prompt": "Two soft round faces side by side: a sunny yellow one with a big smile and a light-blue one with a calm small smile, simple dot eyes.",
+  "path": "assets/illustrations/onboarding/opt_feelings.png"
+ },
+ {
+  "name": "opt_sound_yes",
+  "size": "1024x1024",
+  "prompt": "Soft orange child ear muffs (padded headphones without cables), resting upright.",
+  "path": "assets/illustrations/onboarding/opt_sound_yes.png"
+ },
+ {
+  "name": "opt_sound_little",
+  "size": "1024x1024",
+  "prompt": "A small rounded blue speaker with one small soft curved sound wave beside it.",
+  "path": "assets/illustrations/onboarding/opt_sound_little.png"
+ },
+ {
+  "name": "opt_sound_no",
+  "size": "1024x1024",
+  "prompt": "A small rounded turquoise speaker with three soft curved sound waves beside it, cheerful.",
+  "path": "assets/illustrations/onboarding/opt_sound_no.png"
+ },
+ {
+  "name": "opt_focus_short",
+  "size": "1024x1024",
+  "prompt": "A small rounded sand timer (hourglass) with orange sand mostly at the bottom.",
+  "path": "assets/illustrations/onboarding/opt_focus_short.png"
+ },
+ {
+  "name": "opt_focus_medium",
+  "size": "1024x1024",
+  "prompt": "A round blue alarm clock with two little bells on top and a cream face showing simple hands, no numbers.",
+  "path": "assets/illustrations/onboarding/opt_focus_medium.png"
+ },
+ {
+  "name": "opt_focus_long",
+  "size": "1024x1024",
+  "prompt": "A tall tidy tower of five chunky toy blocks in orange, blue, yellow, turquoise and pink.",
+  "path": "assets/illustrations/onboarding/opt_focus_long.png"
+ }
+]

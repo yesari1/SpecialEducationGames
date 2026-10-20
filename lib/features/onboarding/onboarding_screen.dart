@@ -4,10 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
-import '../../app/ui/game_object.dart';
 import '../../app/ui/initial_avatar.dart';
-import '../../app/ui/scene_backdrop.dart';
-import '../../core/content/content_repository.dart';
 import '../../core/entitlement/billing_repository.dart';
 import '../../core/learning/parent_pin.dart';
 import '../../core/learning/policies.dart';
@@ -24,6 +21,9 @@ class OnboardingScreen extends StatefulWidget {
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
+
+/// Onboarding illustrations (docs/illustration-style.md).
+const _illustrations = 'assets/illustrations/onboarding';
 
 enum OnboardingStep { welcome, child, question, goal, lock, trial, handoff }
 
@@ -299,41 +299,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Widget _welcome() => _frame(
     children: [
-      SizedBox(
+      // One illustrated scene in the app's illustration style
+      // (docs/illustration-style.md) on a soft sky-to-cream card.
+      Container(
+        key: const ValueKey('welcome-hero'),
         height: 240,
-        child: ClipRRect(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(SegRadius.xl),
-          child: SceneBackdrop(
-            tint: SegColors.turquoise,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 40, 16, 22),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  // Rough real-world proportions: a cat, an apple, a car.
-                  for (final (id, scale) in const [
-                    ('animals', 1.0),
-                    ('produce', .5),
-                    ('vehicles', .9),
-                  ])
-                    if (_hero(id) case final item?)
-                      Expanded(
-                        child: StagedObject(
-                          child: FractionallySizedBox(
-                            alignment: Alignment.bottomCenter,
-                            widthFactor: scale,
-                            heightFactor: scale,
-                            child: ItemVisual(
-                              item,
-                              alignment: Alignment.bottomCenter,
-                            ),
-                          ),
-                        ),
-                      ),
-                ],
-              ),
-            ),
+          gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
           ),
+        ),
+        padding: const EdgeInsets.all(SegSpace.s2),
+        child: Image.asset(
+          '$_illustrations/hero_welcome.png',
+          fit: BoxFit.contain,
+          excludeFromSemantics: true,
         ),
       ),
       const SizedBox(height: SegSpace.s5),
@@ -365,12 +348,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       onPressed: _next,
     ),
   );
-
-  ContentItem? _hero(String themeId) {
-    final theme = s.content.themes.where((t) => t.id == themeId).firstOrNull;
-    if (theme == null) return null;
-    return s.content.items.where((x) => x.id == theme.hero).firstOrNull;
-  }
 
   Widget _child() => _frame(
     children: [
@@ -491,50 +468,37 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
+  /// Every survey option uses an illustration from one set, never a photo.
   Widget _optionPicture(String key, int index) {
-    Widget icon(IconData data, Color color) =>
-        OptionIcon(icon: data, color: color);
-    Widget themed(String themeId, IconData fallback, Color color) {
-      final item = _hero(themeId);
-      return item == null ? icon(fallback, color) : ItemVisual(item);
-    }
-
-    switch (key) {
-      case 'favorite':
-        return switch (index) {
-          0 => themed('animals', Icons.pets_rounded, SegColors.turquoise),
-          1 => themed('vehicles', Icons.directions_car_rounded, SegColors.sky),
-          2 => themed('colors', Icons.palette_rounded, SegColors.primary),
-          3 => themed('numbers', Icons.pin_rounded, const Color(0xFF7C73DF)),
-          4 => icon(Icons.music_note_rounded, const Color(0xFFE76F8E)),
-          _ => themed('produce', Icons.restaurant_rounded, SegColors.accent),
-        };
-      case 'known':
-        return switch (index) {
-          0 => themed('animals', Icons.pets_rounded, SegColors.turquoise),
-          1 => themed('produce', Icons.eco_rounded, SegColors.accent),
-          2 => themed('colors', Icons.palette_rounded, SegColors.primary),
-          3 => themed('numbers', Icons.pin_rounded, const Color(0xFF7C73DF)),
-          4 => themed('vehicles', Icons.directions_car_rounded, SegColors.sky),
-          5 => icon(Icons.category_rounded, SegColors.primary),
-          6 => icon(Icons.checkroom_rounded, const Color(0xFFE76F8E)),
-          7 => icon(Icons.chair_rounded, SegColors.accentDeep),
-          8 => icon(Icons.accessibility_new_rounded, SegColors.turquoiseDeep),
-          _ => icon(Icons.sentiment_satisfied_rounded, SegColors.starDeep),
-        };
-      case 'sound':
-        return switch (index) {
-          0 => icon(Icons.volume_off_rounded, SegColors.accentDeep),
-          1 => icon(Icons.volume_down_rounded, SegColors.primary),
-          _ => icon(Icons.volume_up_rounded, SegColors.turquoiseDeep),
-        };
-      default:
-        return switch (index) {
-          0 => icon(Icons.hourglass_bottom_rounded, SegColors.accent),
-          1 => icon(Icons.timer_outlined, SegColors.primary),
-          _ => icon(Icons.all_inclusive_rounded, SegColors.turquoiseDeep),
-        };
-    }
+    final name = switch (key) {
+      'favorite' => const [
+        'animals',
+        'vehicles',
+        'colors',
+        'numbers',
+        'music',
+        'food',
+      ][index],
+      'known' => const [
+        'animals',
+        'fruit',
+        'colors',
+        'numbers',
+        'vehicles',
+        'shapes',
+        'clothes',
+        'home',
+        'body',
+        'feelings',
+      ][index],
+      'sound' => const ['sound_yes', 'sound_little', 'sound_no'][index],
+      _ => const ['focus_short', 'focus_medium', 'focus_long'][index],
+    };
+    return Image.asset(
+      '$_illustrations/opt_$name.png',
+      fit: BoxFit.contain,
+      excludeFromSemantics: true,
+    );
   }
 
   Widget _goal() => _frame(

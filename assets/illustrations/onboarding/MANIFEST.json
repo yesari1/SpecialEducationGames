@@ -1,0 +1,404 @@
+{
+ "style": "SEG soft clay",
+ "assets": [
+  {
+   "name": "hero_welcome",
+   "path": "assets/illustrations/onboarding/hero_welcome.png",
+   "size": [
+    1200,
+    800
+   ],
+   "original": "artifacts/illustrations-r32/originals/hero_welcome.png",
+   "originalSha256": "77feae984e6143ab08cce108a72b122af84367a3250aef8bc32a373bd7e7c7c3",
+   "sha256": "2ecb35c4494a025e4f09c5735e885e56415d1513c14f232d1456e8a84588cb4a",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small floating rounded grassy island (soft green, gently rounded edges, no soil cross-section detail) holding a cozy friendly scene: a smiling cream-and-orange cat sitting on the left, a big shiny red apple with a green leaf in the middle-front, a small rounded orange toy car on the right, two chunky toy blocks (one turquoise with a star shape, one yellow with a circle shape) and a tiny blue flower. Two soft white clouds and a gentle pale-yellow sun float above. Transparent background around the island. Wide composition, everything visible.",
+   "alphaBounds": [
+    0,
+    8,
+    1536,
+    1024
+   ]
+  },
+  {
+   "name": "opt_animals",
+   "path": "assets/illustrations/onboarding/opt_animals.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_animals.png",
+   "originalSha256": "272e22a4de78c4fb5f07744a6f021ef94af0625876d1af5f96e144975297320e",
+   "sha256": "391e95b0270689e32f3b7708d228bc40ddeafa09cf0dd7d565c85adccabec5c8",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A friendly cream-and-orange cat sitting and smiling, full body.",
+   "alphaBounds": [
+    0,
+    23,
+    1238,
+    1254
+   ]
+  },
+  {
+   "name": "opt_body",
+   "path": "assets/illustrations/onboarding/opt_body.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_body.png",
+   "originalSha256": "4166438c8ba216994243abc121694516e072af61500ea670a2f5ae9c7a452708",
+   "sha256": "09818cc2273879b7a79468630611e6ef8e972aea4dfd49e5d1fb00b8366d6a6f",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A friendly open cartoon hand waving hello, warm peach skin tone, rounded fingers, no arm beyond the wrist cuff (a small blue sleeve cuff).",
+   "alphaBounds": [
+    0,
+    15,
+    1014,
+    1011
+   ]
+  },
+  {
+   "name": "opt_clothes",
+   "path": "assets/illustrations/onboarding/opt_clothes.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_clothes.png",
+   "originalSha256": "7a7ab565a4ddc70f9322754b79bf88e8537e5d99df30ed0c57bf898b224ecdac",
+   "sha256": "a3dc57a106a75c1540c2fe98e08db8bd81b49d6aedc4ef94417b325a033a8951",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small yellow child's t-shirt with a blue cap placed on it.",
+   "alphaBounds": [
+    0,
+    14,
+    1011,
+    1024
+   ]
+  },
+  {
+   "name": "opt_colors",
+   "path": "assets/illustrations/onboarding/opt_colors.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_colors.png",
+   "originalSha256": "8e2c76f9d3d426c7b3dec72b4404afc8846ab037c4058d170416d9aca29100c9",
+   "sha256": "627111ff741ecdbe06ab97866a81461a74040331d818dae82a5509fc92f5c032",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A rounded wooden-cream paint palette with four paint dots (orange, blue, yellow, turquoise) and a short chunky paintbrush with an orange tip.",
+   "alphaBounds": [
+    20,
+    2,
+    1013,
+    1024
+   ]
+  },
+  {
+   "name": "opt_feelings",
+   "path": "assets/illustrations/onboarding/opt_feelings.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_feelings.png",
+   "originalSha256": "6d6b8bf517fd8f8bae2a7cfb457e4d0d0076041001f8f2486c02b4aede992eca",
+   "sha256": "639d02a85dc9b5c13f1f695aac530b7253b3d5c0e55ab7996790624b4b20b407",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "Two soft round faces side by side: a sunny yellow one with a big smile and a light-blue one with a calm small smile, simple dot eyes.",
+   "alphaBounds": [
+    0,
+    81,
+    1011,
+    1016
+   ]
+  },
+  {
+   "name": "opt_focus_long",
+   "path": "assets/illustrations/onboarding/opt_focus_long.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_focus_long.png",
+   "originalSha256": "08dc30e92294637f3cacf5e67a36a431d8309b133bcbafd46ce1cccccd6faac8",
+   "sha256": "9eaa2ea675d7e50fec5e0455031e4d84b5e7310fb96ab34cb4fa863541421106",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A tall tidy tower of five chunky toy blocks in orange, blue, yellow, turquoise and pink.",
+   "alphaBounds": [
+    30,
+    43,
+    1001,
+    1024
+   ]
+  },
+  {
+   "name": "opt_focus_medium",
+   "path": "assets/illustrations/onboarding/opt_focus_medium.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_focus_medium.png",
+   "originalSha256": "346f3cc0c3e4672249eb0cafc86fe6a7039eac73196aa4c8d12a99f652c9de97",
+   "sha256": "c7ebff7395b30aa86c9081deee357589cbb2bd558d91d8da91f894dfa2f7fedd",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A round blue alarm clock with two little bells on top and a cream face showing simple hands, no numbers.",
+   "alphaBounds": [
+    0,
+    0,
+    1013,
+    1024
+   ]
+  },
+  {
+   "name": "opt_focus_short",
+   "path": "assets/illustrations/onboarding/opt_focus_short.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_focus_short.png",
+   "originalSha256": "54af2b686f7b503f4b01e1d9b6334928a46777ed3ccda172ba80c1494090631b",
+   "sha256": "027c3ce72c28871922159ecbf81d8266ca6066e3f29dafd335c654615fb91300",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small rounded sand timer (hourglass) with orange sand mostly at the bottom.",
+   "alphaBounds": [
+    0,
+    19,
+    1011,
+    978
+   ]
+  },
+  {
+   "name": "opt_food",
+   "path": "assets/illustrations/onboarding/opt_food.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_food.png",
+   "originalSha256": "c0cc2f436dbbe8be299cd8a625a2cd792b8d70970f4a2b715e11db015f599c7e",
+   "sha256": "bbc6f3c003de1694b709d647eb443869d6d4d7276787b94f91b0abf35774ebe2",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A cozy cream bowl of warm orange soup with a small spoon, a slice of bread leaning next to it.",
+   "alphaBounds": [
+    0,
+    7,
+    998,
+    1024
+   ]
+  },
+  {
+   "name": "opt_fruit",
+   "path": "assets/illustrations/onboarding/opt_fruit.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_fruit.png",
+   "originalSha256": "e191d1e3426d7ed4e2029c591067673efa59e86c757ab4f33963a0dbf4c60beb",
+   "sha256": "86cb06532aab0bbeb65d563669bb6e2e8cfac8515ffe263e03af16560429e480",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "One shiny red apple with a single green leaf.",
+   "alphaBounds": [
+    87,
+    3,
+    1248,
+    1226
+   ]
+  },
+  {
+   "name": "opt_home",
+   "path": "assets/illustrations/onboarding/opt_home.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_home.png",
+   "originalSha256": "aba7207d848038ba5db8c6bde9e6002959f503e380b979292b3f3800fb255f15",
+   "sha256": "0f36e28f905ba66967820907b109bbae8913154f232196a3e1406661edd18f6e",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A cozy small turquoise armchair with a cream cushion.",
+   "alphaBounds": [
+    0,
+    6,
+    1011,
+    1024
+   ]
+  },
+  {
+   "name": "opt_music",
+   "path": "assets/illustrations/onboarding/opt_music.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_music.png",
+   "originalSha256": "9b53337cf2c95107cc74f90f483a0f2e6e3a33cbf23c09e8315f6aa85695e636",
+   "sha256": "3fdccd7c76cef39406ae91f7f8f974a98c439be697081a555f402308b932acfe",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small cute drum (blue body, cream top, orange rim) with two drumsticks resting on top.",
+   "alphaBounds": [
+    0,
+    7,
+    988,
+    1006
+   ]
+  },
+  {
+   "name": "opt_numbers",
+   "path": "assets/illustrations/onboarding/opt_numbers.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_numbers.png",
+   "originalSha256": "d05b6e9bb61c0f578f905c7acb0d1a7ae24a34fb67426dff4da655701903fdc6",
+   "sha256": "413f6f5d53c9fc8e07edc48f889953c43858175fd4bfa9dc9fea7ff09ccf1d0f",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "Three chunky rounded toy blocks in a row showing the numerals 1, 2, 3 (rounded bold numerals) in orange, blue and turquoise.",
+   "alphaBounds": [
+    0,
+    29,
+    1000,
+    1021
+   ]
+  },
+  {
+   "name": "opt_shapes",
+   "path": "assets/illustrations/onboarding/opt_shapes.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_shapes.png",
+   "originalSha256": "9f5a625589e524e637a991b38d67b69164709f8de269cea73e6c2be1caba0665",
+   "sha256": "e58f9fa4d237ba10db923ce01a3470ea942991b291d0448eff803908c4e1c6b2",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A neat little stack of soft toy shapes: a blue cube at the bottom, a yellow ball, and an orange triangle on top, plus a small turquoise star leaning on the cube.",
+   "alphaBounds": [
+    0,
+    16,
+    1013,
+    1024
+   ]
+  },
+  {
+   "name": "opt_sound_little",
+   "path": "assets/illustrations/onboarding/opt_sound_little.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_sound_little.png",
+   "originalSha256": "3164e84f287cf5678b1e5244c31e1802f797c486d5ad0f801209f68ee8887b9f",
+   "sha256": "0e82e1be985a7ffd6083196020b7a481c0ae936b67cb48d7b92d6953f753aac8",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small rounded blue speaker with one small soft curved sound wave beside it.",
+   "alphaBounds": [
+    0,
+    30,
+    1013,
+    1024
+   ]
+  },
+  {
+   "name": "opt_sound_no",
+   "path": "assets/illustrations/onboarding/opt_sound_no.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_sound_no.png",
+   "originalSha256": "fd3f0b4a944ea0acba29f38e6c0bd20ea88c6bfdc74750a91465a54ba1634dc4",
+   "sha256": "e9b22fda6cde26f75cc533fbf72209b1ba52e5a29d2371fabb29cd6b9b0342a3",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small rounded turquoise speaker with three soft curved sound waves beside it, cheerful.",
+   "alphaBounds": [
+    37,
+    19,
+    1014,
+    1024
+   ]
+  },
+  {
+   "name": "opt_sound_yes",
+   "path": "assets/illustrations/onboarding/opt_sound_yes.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_sound_yes.png",
+   "originalSha256": "29b9a92102a4dbbc204bd45d93047096d1fbaf996a7385a0677bfad206af5c8e",
+   "sha256": "39eb111bd9e09a103163553273d65dfb7535eb1785a4c81099a8594e36e451b0",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "Soft orange child ear muffs (padded headphones without cables), resting upright.",
+   "alphaBounds": [
+    17,
+    17,
+    1001,
+    1016
+   ]
+  },
+  {
+   "name": "opt_vehicles",
+   "path": "assets/illustrations/onboarding/opt_vehicles.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r32/originals/opt_vehicles.png",
+   "originalSha256": "4b0c50f00a03ac42192b660616449af5cf2acdd5674239334a977dd7a5ccf964",
+   "sha256": "6506076efe24f5e9ec408b7c2c7aac7be234b07e2b69f154af817ba8a3b3ff1e",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small rounded toy car in warm orange with blue windows and chunky dark-grey wheels, three-quarter view.",
+   "alphaBounds": [
+    0,
+    0,
+    1013,
+    1024
+   ]
+  }
+ ]
+}

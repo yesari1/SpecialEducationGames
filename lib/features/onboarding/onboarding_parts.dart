@@ -142,29 +142,6 @@ class AgeChoice extends StatelessWidget {
   );
 }
 
-class OptionIcon extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-  const OptionIcon({super.key, required this.icon, required this.color});
-  @override
-  Widget build(BuildContext context) => LayoutBuilder(
-    builder: (context, box) {
-      final side = math.min(box.maxWidth, box.maxHeight);
-      return Center(
-        child: Container(
-          width: side,
-          height: side,
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: .14),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(icon, color: color, size: side * .56),
-        ),
-      );
-    },
-  );
-}
-
 /// A picture answer. Multiple-choice options are announced as checkboxes.
 class PictureOption extends StatelessWidget {
   final String label;
@@ -204,7 +181,7 @@ class PictureOption extends StatelessWidget {
         child: wide
             ? Row(
                 children: [
-                  SizedBox(width: 48, height: 48, child: picture),
+                  SizedBox(width: 64, height: 64, child: picture),
                   const SizedBox(width: SegSpace.s3),
                   Expanded(child: text),
                   check,
@@ -214,7 +191,7 @@ class PictureOption extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      SizedBox.square(dimension: 64, child: picture),
+                      SizedBox.square(dimension: 80, child: picture),
                       const SizedBox(height: SegSpace.s2),
                       text,
                     ],
