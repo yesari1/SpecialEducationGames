@@ -54,8 +54,8 @@ class _CountedObjectsState extends State<CountedObjects> {
                 widget.onCount(number);
               },
         child: SizedBox(
-          width: 64,
-          height: 64,
+          width: _side,
+          height: _side,
           child: Stack(
             clipBehavior: Clip.none,
             children: [
@@ -116,26 +116,23 @@ class _CountedObjectsState extends State<CountedObjects> {
     );
   }
 
+  /// Large, easy-to-tap objects; the surrounding prompt scales down to fit.
+  double get _side => MediaQuery.sizeOf(context).height < 500 ? 84 : 112;
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    if (size.height < 500) {
-      return SizedBox(
-        width: size.width - 100,
-        height: 64,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: widget.count,
-          separatorBuilder: (_, _) => const SizedBox(width: SegSpace.s3),
-          itemBuilder: (context, i) => object(context, i),
+    final perRow = widget.count <= 5 ? widget.count : (widget.count / 2).ceil();
+    return SizedBox(
+      width: perRow * (_side + SegSpace.s3),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: SegSpace.s3,
+        runSpacing: SegSpace.s3,
+        children: List.generate(
+          widget.count,
+          (index) => object(context, index),
         ),
-      );
-    }
-    return Wrap(
-      alignment: WrapAlignment.center,
-      spacing: SegSpace.s3,
-      runSpacing: SegSpace.s3,
-      children: List.generate(widget.count, (index) => object(context, index)),
+      ),
     );
   }
 }

@@ -65,9 +65,13 @@ class _FillBasketViewState extends State<FillBasketView> {
           label: item.name(widget.hint.locale),
           child: Draggable<int>(
             data: index,
-            feedback: SizedBox.square(
-              dimension: objectSize,
-              child: ItemVisual(item),
+            dragAnchorStrategy: pointerDragAnchorStrategy,
+            feedback: Transform.translate(
+              offset: Offset(-objectSize / 2, -objectSize / 2),
+              child: SizedBox.square(
+                dimension: objectSize,
+                child: ItemVisual(item),
+              ),
             ),
             childWhenDragging: SizedBox.square(dimension: objectSize),
             child: PressableObject(
@@ -112,7 +116,14 @@ class _FillBasketViewState extends State<FillBasketView> {
                               for (var i = 0; i < _inBasket.length; i++)
                                 SizedBox.square(
                                   dimension: objectSize * .7,
-                                  child: ItemVisual(item),
+                                  // The newest one hops in with an arc.
+                                  child: i == _inBasket.length - 1
+                                      ? HopIn(
+                                          key: ValueKey('hop-$i'),
+                                          animate: !reduced,
+                                          child: ItemVisual(item),
+                                        )
+                                      : ItemVisual(item),
                                 ),
                             ],
                           ),
