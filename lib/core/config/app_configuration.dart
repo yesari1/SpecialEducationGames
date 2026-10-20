@@ -13,6 +13,12 @@ class AppConfiguration {
   final String? announcementId;
   final int minSupportedVersion;
 
+  /// Length of the one-time free trial per Google account (1-30 days).
+  final int trialDays;
+
+  /// Links shown on the paywall (https only; empty hides the link).
+  final String privacyUrl, termsUrl;
+
   final int fadeAfterErrors;
   static const defaultChoiceCounts = {'easy': 2, 'medium': 3, 'hard': 4};
   final Map<String, int> choiceCounts;
@@ -29,6 +35,9 @@ class AppConfiguration {
     this.featuredTheme,
     this.announcementId,
     this.minSupportedVersion = 0,
+    this.trialDays = 7,
+    this.privacyUrl = '',
+    this.termsUrl = '',
     this.fadeAfterErrors = 2,
     Map<String, int> choiceCounts = defaultChoiceCounts,
   }) : choiceCounts = Map.unmodifiable(choiceCounts);
@@ -123,6 +132,17 @@ class AppConfiguration {
       }
     }
     final version = data['minSupportedVersion'];
+    final trial = data['trialDays'];
+    String link(String key, String fallback) {
+      final value = data[key];
+      if (value is! String) return fallback;
+      if (value.isEmpty) return '';
+      final uri = Uri.tryParse(value);
+      return uri != null && uri.scheme == 'https' && uri.host.isNotEmpty
+          ? value
+          : fallback;
+    }
+
     final difficulty = validDifficultyDefaults(data['difficultyDefaults']);
     return AppConfiguration(
       freeGames: candidateFree?.length == 6 ? candidateFree! : freeGames,
@@ -149,6 +169,9 @@ class AppConfiguration {
       minSupportedVersion: version is int && version >= 0 && version <= 1000000
           ? version
           : minSupportedVersion,
+      trialDays: trial is int && trial >= 1 && trial <= 30 ? trial : trialDays,
+      privacyUrl: link('privacyUrl', privacyUrl),
+      termsUrl: link('termsUrl', termsUrl),
     );
   }
 
@@ -166,5 +189,8 @@ class AppConfiguration {
     'featuredTheme': featuredTheme,
     'announcementId': announcementId,
     'minSupportedVersion': minSupportedVersion,
+    'trialDays': trialDays,
+    'privacyUrl': privacyUrl,
+    'termsUrl': termsUrl,
   };
 }

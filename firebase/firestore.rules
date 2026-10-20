@@ -53,6 +53,16 @@ service cloud.firestore {
           || ('en' in request.resource.data.title && 'en' in request.resource.data.body));
       allow delete: if admin();
     }
+    // One free trial per Google account: the owner creates it once with the
+    // server time; it is never changed or deleted by clients, so reinstalling
+    // or another device cannot restart it.
+    match /trials/{uid} {
+      allow get: if owner(uid);
+      allow create: if owner(uid)
+        && exact(request.resource.data, ['startedAt'])
+        && request.resource.data.startedAt == request.time;
+      allow list, update, delete: if false;
+    }
     match /admins/{uid} {
       allow get: if owner(uid);
       allow list, write: if false;

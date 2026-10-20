@@ -8,6 +8,7 @@ import '../core/db/app_database.dart';
 import '../core/audio/audio_service.dart';
 import '../core/entitlement/entitlement_service.dart';
 import '../core/entitlement/billing_repository.dart';
+import '../core/entitlement/trial_store.dart';
 import '../core/learning/policies.dart';
 import '../core/learning/item_performance.dart';
 import '../core/learning/play_time_ledger.dart';
@@ -23,6 +24,47 @@ class AppState extends ChangeNotifier {
   final AudioService audio;
   late final EntitlementService entitlement;
   late final BillingRepository billing;
+  final TrialStore trialStore;
+  bool trialBusy = false;
+  TrialIssue? trialIssue;
+
+  /// Reads this Google account's trial from the server (sign-in or restore).
+  /// Offline the cached start stays; another account's cache is replaced.
+  Future<void> syncTrial(String? uid) async {
+    if (uid == null) return;
+    try {
+      final started = await trialStore.read(uid);
+      await entitlement.setTrial(uid, started);
+    } on TrialFailure {
+      if (entitlement.trialUid != uid) await entitlement.setTrial(uid, null);
+    }
+    if (!_disposed) notifyListeners();
+  }
+
+  /// Starts the one free trial of the signed-in account [uid]. Parent only.
+  /// Returns false with [trialIssue] set when it could not be started.
+  Future<bool> startTrial(String uid) async {
+    if (!familyUnlocked) throw StateError('parent_gate_required');
+    if (trialBusy) return false;
+    trialBusy = true;
+    trialIssue = null;
+    notifyListeners();
+    try {
+      final started = await trialStore.claim(uid);
+      await entitlement.setTrial(uid, started);
+      return entitlement.trialActive;
+    } on TrialFailure catch (failure) {
+      trialIssue = failure.issue;
+      return false;
+    } catch (_) {
+      trialIssue = TrialIssue.unavailable;
+      return false;
+    } finally {
+      trialBusy = false;
+      if (!_disposed) notifyListeners();
+    }
+  }
+
   late AppConfiguration configuration;
   late final ConfigRepository configs;
   AppConfiguration? _pendingConfiguration;
@@ -176,11 +218,16 @@ class AppState extends ChangeNotifier {
     this.db,
     this.audio, {
     DateTime Function()? playTimeNow,
-  }) : _playTimeNow = playTimeNow ?? DateTime.now {
+    TrialStore? trialStore,
+  }) : _playTimeNow = playTimeNow ?? DateTime.now,
+       trialStore = trialStore ?? FirestoreTrialStore() {
     playTime = PlayTimeLedger(db, now: _playTimeNow);
     configuration = AppConfiguration.defaults(content);
     configs = ConfigRepository(db, content);
-    entitlement = EntitlementService(db);
+    entitlement = EntitlementService(
+      db,
+      trialDaysOf: () => configuration.trialDays,
+    );
     billing = BillingRepository(entitlement);
     billing.addListener(notifyListeners);
   }

@@ -112,5 +112,17 @@
   "size": "1024x1024",
   "prompt": "A tall tidy tower of five chunky toy blocks in orange, blue, yellow, turquoise and pink.",
   "path": "assets/illustrations/onboarding/opt_focus_long.png"
+ },
+ {
+  "name": "paywall_hero",
+  "size": "1536x1024",
+  "path": "assets/illustrations/family/paywall_hero.png",
+  "prompt": "A cheerful little scene for a family subscription page: a soft orange gift box with a turquoise ribbon, slightly open, with a few soft toy items peeking out (a small yellow star, a blue toy car, a red apple and a small number block), sitting on a gentle cream rounded platform, two soft clouds behind. Transparent background. Wide composition, everything visible."
+ },
+ {
+  "name": "sign_in",
+  "size": "1024x1024",
+  "path": "assets/illustrations/family/sign_in.png",
+  "prompt": "A friendly rounded shield in soft blue with a cream heart in the middle and a small orange key leaning against it, suggesting a safe family account. Transparent background."
  }
 ]

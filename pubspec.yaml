@@ -89,6 +89,7 @@ flutter:
     - assets/content/items/
     - assets/images/food/
     - assets/illustrations/onboarding/
+    - assets/illustrations/family/
     - assets/images/animals/
     - assets/images/produce/
     - assets/images/vehicles/

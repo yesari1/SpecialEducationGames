@@ -171,3 +171,21 @@ A round blue alarm clock with two little bells on top and a cream face showing s
 ```
 A tall tidy tower of five chunky toy blocks in orange, blue, yellow, turquoise and pink.
 ```
+
+## paywall_hero
+
+- Output: `assets/illustrations/family/paywall_hero.png`
+- Size: 1536x1024, PNG with transparent background
+
+```
+A cheerful little scene for a family subscription page: a soft orange gift box with a turquoise ribbon, slightly open, with a few soft toy items peeking out (a small yellow star, a blue toy car, a red apple and a small number block), sitting on a gentle cream rounded platform, two soft clouds behind. Transparent background. Wide composition, everything visible.
+```
+
+## sign_in
+
+- Output: `assets/illustrations/family/sign_in.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A friendly rounded shield in soft blue with a cream heart in the middle and a small orange key leaning against it, suggesting a safe family account. Transparent background.
+```

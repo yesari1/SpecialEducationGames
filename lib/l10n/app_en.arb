@@ -1089,5 +1089,85 @@
   "ageBandPracticeInfo": "4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.",
   "@ageBandPracticeInfo": {
     "description": "Age band copy."
+  },
+  "paywallTrialTitle": "Try free for {days} days",
+  "@paywallTrialTitle": {
+    "description": "Paywall copy.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTrialBody": "Every game and level is open for {days} days. No payment details needed; afterwards the free games stay open.",
+  "@paywallTrialBody": {
+    "description": "Paywall copy.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTrialSignIn": "Sign in with Google to start",
+  "@paywallTrialSignIn": {
+    "description": "Paywall copy."
+  },
+  "paywallTrialStart": "Start free trial",
+  "@paywallTrialStart": {
+    "description": "Paywall copy."
+  },
+  "paywallTrialActive": "Trial active: {days} days left",
+  "@paywallTrialActive": {
+    "description": "Paywall copy.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTrialUsed": "This account's free trial has been used.",
+  "@paywallTrialUsed": {
+    "description": "Paywall copy."
+  },
+  "paywallTrialError": "The trial could not be started. Check the internet connection and try again.",
+  "@paywallTrialError": {
+    "description": "Paywall copy."
+  },
+  "paywallTrialNote": "One free trial per Google account.",
+  "@paywallTrialNote": {
+    "description": "Paywall copy."
+  },
+  "paywallFreeTier": "The free version always keeps {count} games open.",
+  "@paywallFreeTier": {
+    "description": "Paywall copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallLifetime": "One-time purchase",
+  "@paywallLifetime": {
+    "description": "Paywall copy."
+  },
+  "paywallLifetimeNote": "Pay once, keep it forever. No subscription.",
+  "@paywallLifetimeNote": {
+    "description": "Paywall copy."
+  },
+  "paywallBuy": "Buy",
+  "@paywallBuy": {
+    "description": "Paywall copy."
+  },
+  "paywallLifetimeOwned": "You own Premium for life.",
+  "@paywallLifetimeOwned": {
+    "description": "Paywall copy."
+  },
+  "paywallPrivacy": "Privacy policy",
+  "@paywallPrivacy": {
+    "description": "Paywall copy."
+  },
+  "paywallTerms": "Terms of use",
+  "@paywallTerms": {
+    "description": "Paywall copy."
   }
 }

@@ -2178,6 +2178,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.'**
   String get ageBandPracticeInfo;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Try free for {days} days'**
+  String paywallTrialTitle(int days);
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Every game and level is open for {days} days. No payment details needed; afterwards the free games stay open.'**
+  String paywallTrialBody(int days);
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google to start'**
+  String get paywallTrialSignIn;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Start free trial'**
+  String get paywallTrialStart;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Trial active: {days} days left'**
+  String paywallTrialActive(int days);
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This account\'s free trial has been used.'**
+  String get paywallTrialUsed;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The trial could not be started. Check the internet connection and try again.'**
+  String get paywallTrialError;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'One free trial per Google account.'**
+  String get paywallTrialNote;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The free version always keeps {count} games open.'**
+  String paywallFreeTier(int count);
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'One-time purchase'**
+  String get paywallLifetime;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay once, keep it forever. No subscription.'**
+  String get paywallLifetimeNote;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy'**
+  String get paywallBuy;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You own Premium for life.'**
+  String get paywallLifetimeOwned;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get paywallPrivacy;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of use'**
+  String get paywallTerms;
 }
 
 class _AppLocalizationsDelegate

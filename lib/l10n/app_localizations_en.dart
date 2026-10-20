@@ -1197,4 +1197,59 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get ageBandPracticeInfo =>
       '4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.';
+
+  @override
+  String paywallTrialTitle(int days) {
+    return 'Try free for $days days';
+  }
+
+  @override
+  String paywallTrialBody(int days) {
+    return 'Every game and level is open for $days days. No payment details needed; afterwards the free games stay open.';
+  }
+
+  @override
+  String get paywallTrialSignIn => 'Sign in with Google to start';
+
+  @override
+  String get paywallTrialStart => 'Start free trial';
+
+  @override
+  String paywallTrialActive(int days) {
+    return 'Trial active: $days days left';
+  }
+
+  @override
+  String get paywallTrialUsed => 'This account\'s free trial has been used.';
+
+  @override
+  String get paywallTrialError =>
+      'The trial could not be started. Check the internet connection and try again.';
+
+  @override
+  String get paywallTrialNote => 'One free trial per Google account.';
+
+  @override
+  String paywallFreeTier(int count) {
+    return 'The free version always keeps $count games open.';
+  }
+
+  @override
+  String get paywallLifetime => 'One-time purchase';
+
+  @override
+  String get paywallLifetimeNote =>
+      'Pay once, keep it forever. No subscription.';
+
+  @override
+  String get paywallBuy => 'Buy';
+
+  @override
+  String get paywallLifetimeOwned => 'You own Premium for life.';
+
+  @override
+  String get paywallPrivacy => 'Privacy policy';
+
+  @override
+  String get paywallTerms => 'Terms of use';
 }

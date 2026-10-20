@@ -1,0 +1,35 @@
+{
+ "style": "SEG soft clay",
+ "assets": [
+  {
+   "name": "paywall_hero",
+   "path": "assets/illustrations/family/paywall_hero.png",
+   "size": [
+    1200,
+    800
+   ],
+   "original": "artifacts/illustrations-r33/originals/paywall_hero.png",
+   "originalSha256": "fec99c468c6510eb4c69dbe3b4cb1bd93dfd5e9655b431659b08a592b293133f",
+   "sha256": "7174d6bdcb9405c9b751986ac4eb99606f28dbf20cc3816422dbdeef5616bfec",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A cheerful little scene for a family subscription page: a soft orange gift box with a turquoise ribbon, slightly open, with a few soft toy items peeking out (a small yellow star, a blue toy car, a red apple and a small number block), sitting on a gentle cream rounded platform, two soft clouds behind. Transparent background. Wide composition, everything visible."
+  },
+  {
+   "name": "sign_in",
+   "path": "assets/illustrations/family/sign_in.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r33/originals/sign_in.png",
+   "originalSha256": "ed153d33dc6f68574b734a09d37d23eceae13ebe511ccac7ef247a0a9bccce87",
+   "sha256": "1d0db1e209501dd065a75d3db719bfeead58ec321782474ecd4b7dd6d48e75f2",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations on 2026-10-20",
+   "generatedOn": "2026-10-20",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A friendly rounded shield in soft blue with a cream heart in the middle and a small orange key leaning against it, suggesting a safe family account. Transparent background."
+  }
+ ]
+}

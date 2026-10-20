@@ -1031,5 +1031,20 @@
   "ageBandFirstStepsInfo": "2 seçenek, 1–3 arası sayılar, oyun başına 5 soru, hızlı ipucu; önce dokunma oyunları.",
   "ageBandExploreInfo": "3 seçenek, 1–5 arası sayılar, oyun başına 6 soru; dokunma ve basit sürükleme.",
   "ageBandSchoolReadyInfo": "4 seçenek, 1–10 arası sayılar, oyun başına 8 soru; sürükleme, gruplama, sıralama.",
-  "ageBandPracticeInfo": "4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç."
+  "ageBandPracticeInfo": "4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç.",
+  "paywallTrialTitle": "{days} gün ücretsiz dene",
+  "paywallTrialBody": "Tüm oyunlar ve zorluklar {days} gün açık. Ödeme bilgisi istenmez; süre bitince ücretsiz oyunlarla devam edilir.",
+  "paywallTrialSignIn": "Google ile giriş yap ve başla",
+  "paywallTrialStart": "Ücretsiz denemeyi başlat",
+  "paywallTrialActive": "Deneme sürüyor: {days} gün kaldı",
+  "paywallTrialUsed": "Bu hesabın ücretsiz denemesi kullanıldı.",
+  "paywallTrialError": "Deneme başlatılamadı. İnternet bağlantısını kontrol edip tekrar deneyin.",
+  "paywallTrialNote": "Deneme her Google hesabı için bir kez verilir.",
+  "paywallFreeTier": "Ücretsiz sürümde {count} oyun her zaman açık.",
+  "paywallLifetime": "Tek seferlik",
+  "paywallLifetimeNote": "Bir kez öde, süresiz kullan. Abonelik yok.",
+  "paywallBuy": "Satın al",
+  "paywallLifetimeOwned": "Tek seferlik Premium sizde.",
+  "paywallPrivacy": "Gizlilik politikası",
+  "paywallTerms": "Kullanım koşulları"
 }

@@ -4,11 +4,21 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
 import 'entitlement_service.dart';
 
+/// Google Play product IDs (create them in Play Console with these IDs):
+/// a subscription with base plans `monthly` and `yearly`, and a one-time
+/// (non-consumable) lifetime product.
+abstract final class BillingProducts {
+  static const subscription = 'premium';
+  static const lifetime = 'premium_lifetime';
+  static const all = {subscription, lifetime};
+}
+
 class BillingPlan {
   final GooglePlayProductDetails product;
   final String id, recurringPrice, period;
   final String? offerToken;
   final bool sevenDayTrial;
+  bool get lifetime => id == 'lifetime';
   const BillingPlan(
     this.product,
     this.id,
@@ -48,7 +58,7 @@ class BillingRepository extends ChangeNotifier {
           notifyListeners();
         },
       );
-      final response = await store.queryProductDetails({'premium'});
+      final response = await store.queryProductDetails(BillingProducts.all);
       if (response.error != null) {
         error = 'store_error';
         return;
@@ -56,6 +66,14 @@ class BillingRepository extends ChangeNotifier {
       plans = [];
       for (final product
           in response.productDetails.whereType<GooglePlayProductDetails>()) {
+        if (product.id == BillingProducts.lifetime) {
+          if (!plans.any((p) => p.lifetime)) {
+            plans.add(
+              BillingPlan(product, 'lifetime', product.price, '', null, false),
+            );
+          }
+          continue;
+        }
         final index = product.subscriptionIndex;
         final offers = product.productDetails.subscriptionOfferDetails;
         if (index == null || offers == null) continue;
@@ -85,6 +103,9 @@ class BillingRepository extends ChangeNotifier {
           plans[existing] = plan;
         }
       }
+      // Monthly, yearly, then the one-time purchase.
+      const order = ['monthly', 'yearly', 'lifetime'];
+      plans.sort((a, b) => order.indexOf(a.id).compareTo(order.indexOf(b.id)));
       await restore();
     } catch (_) {
       error = 'store_error';
@@ -108,12 +129,15 @@ class BillingRepository extends ChangeNotifier {
       final current = result.pastPurchases
           .where(
             (p) =>
-                p.productID == 'premium' &&
+                BillingProducts.all.contains(p.productID) &&
                 (p.status == PurchaseStatus.purchased ||
                     p.status == PurchaseStatus.restored),
           )
           .toList();
-      await entitlement.confirmStoreState(current.isNotEmpty);
+      await entitlement.confirmStoreState(
+        current.any((p) => p.productID == BillingProducts.subscription),
+        lifetime: current.any((p) => p.productID == BillingProducts.lifetime),
+      );
       for (final p in current) {
         if (p.pendingCompletePurchase) await store.completePurchase(p);
       }
@@ -146,7 +170,7 @@ class BillingRepository extends ChangeNotifier {
 
   Future<void> _purchases(List<PurchaseDetails> purchases) async {
     for (final p in purchases) {
-      if (p.productID != 'premium') continue;
+      if (!BillingProducts.all.contains(p.productID)) continue;
       if (p.status == PurchaseStatus.pending) {
         pending = true;
         continue;

@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {after, before, beforeEach, test} from 'node:test';
 import {initializeTestEnvironment, assertFails, assertSucceeds} from '@firebase/rules-unit-testing';
-import {doc, collection, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp} from 'firebase/firestore';
+import {doc, collection, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
 
 test('persistent deletion marker blocks all family writes and is private',async () => {
   const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
@@ -80,6 +80,21 @@ test('public config allows direct get only; only pre-provisioned admin writes',a
   await assertFails(setDoc(doc(db('alice'),'admins/alice'),{enabled:true}));
   await assertFails(getDocs(collection(db('admin'),'admins')));
 });
+test('one free trial per account: owner creates once with server time, never changes it',async () => {
+  const own=doc(db('alice'),'trials/alice');
+  await assertFails(setDoc(own,{startedAt:stamp()}));
+  await assertFails(setDoc(own,{startedAt:serverTimestamp(),premium:true}));
+  await assertFails(setDoc(doc(db('bob'),'trials/alice'),{startedAt:serverTimestamp()}));
+  await assertFails(setDoc(doc(db(null),'trials/alice'),{startedAt:serverTimestamp()}));
+  await assertSucceeds(setDoc(own,{startedAt:serverTimestamp()}));
+  await assertSucceeds(getDoc(own));
+  await assertFails(getDoc(doc(db('bob'),'trials/alice')));
+  await assertFails(getDocs(collection(db('alice'),'trials')));
+  await assertFails(setDoc(own,{startedAt:serverTimestamp()}));
+  await assertFails(updateDoc(own,{startedAt:serverTimestamp()}));
+  await assertFails(deleteDoc(own));
+});
+
 test('raw trials and premium storage are denied even to owner/admin',async () => {
   for(const uid of ['alice','admin',null]) {
     for(const denied of ['trials/t1','premium/status','families/alice/trials/t1','families/alice/premium/status','families/alice/profiles/profile-1/trials/t1']) {

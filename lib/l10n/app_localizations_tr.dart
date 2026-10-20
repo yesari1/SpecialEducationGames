@@ -1197,4 +1197,60 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get ageBandPracticeInfo =>
       '4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç.';
+
+  @override
+  String paywallTrialTitle(int days) {
+    return '$days gün ücretsiz dene';
+  }
+
+  @override
+  String paywallTrialBody(int days) {
+    return 'Tüm oyunlar ve zorluklar $days gün açık. Ödeme bilgisi istenmez; süre bitince ücretsiz oyunlarla devam edilir.';
+  }
+
+  @override
+  String get paywallTrialSignIn => 'Google ile giriş yap ve başla';
+
+  @override
+  String get paywallTrialStart => 'Ücretsiz denemeyi başlat';
+
+  @override
+  String paywallTrialActive(int days) {
+    return 'Deneme sürüyor: $days gün kaldı';
+  }
+
+  @override
+  String get paywallTrialUsed => 'Bu hesabın ücretsiz denemesi kullanıldı.';
+
+  @override
+  String get paywallTrialError =>
+      'Deneme başlatılamadı. İnternet bağlantısını kontrol edip tekrar deneyin.';
+
+  @override
+  String get paywallTrialNote =>
+      'Deneme her Google hesabı için bir kez verilir.';
+
+  @override
+  String paywallFreeTier(int count) {
+    return 'Ücretsiz sürümde $count oyun her zaman açık.';
+  }
+
+  @override
+  String get paywallLifetime => 'Tek seferlik';
+
+  @override
+  String get paywallLifetimeNote =>
+      'Bir kez öde, süresiz kullan. Abonelik yok.';
+
+  @override
+  String get paywallBuy => 'Satın al';
+
+  @override
+  String get paywallLifetimeOwned => 'Tek seferlik Premium sizde.';
+
+  @override
+  String get paywallPrivacy => 'Gizlilik politikası';
+
+  @override
+  String get paywallTerms => 'Kullanım koşulları';
 }

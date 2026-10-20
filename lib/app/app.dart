@@ -35,6 +35,8 @@ class _EducationAppState extends State<EducationApp>
     final next = familyAuth.account?.uid;
     final old = _cachedAccountUid;
     _cachedAccountUid = next;
+    // The free trial belongs to the Google account: read it after sign-in.
+    if (next != null && next != old) unawaited(state.syncTrial(next));
     if (old != null && old != next) {
       // App-owned cleanup also runs when the account route is no longer mounted.
       unawaited(
@@ -111,8 +113,9 @@ class _EducationAppState extends State<EducationApp>
           routes: [
             GoRoute(
               path: 'subscription',
-              builder: (_, _) =>
-                  reactive(() => SubscriptionScreen(state: state)),
+              builder: (_, _) => reactive(
+                () => SubscriptionScreen(state: state, auth: familyAuth),
+              ),
             ),
             GoRoute(
               path: 'credits',
