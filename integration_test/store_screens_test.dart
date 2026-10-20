@@ -2,6 +2,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
@@ -33,13 +34,19 @@ void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   const locale = String.fromEnvironment('SHOT_LOCALE', defaultValue: 'tr');
 
-  Widget app(Widget home) => MaterialApp(
+  // A router so screens that navigate (round end → theme) do not throw.
+  Widget app(Widget home) => MaterialApp.router(
     debugShowCheckedModeBanner: false,
     theme: segTheme(),
     locale: const Locale(locale),
     supportedLocales: AppLocalizations.supportedLocales,
     localizationsDelegates: AppLocalizations.localizationsDelegates,
-    home: home,
+    routerConfig: GoRouter(
+      routes: [
+        GoRoute(path: '/', builder: (_, _) => home),
+        GoRoute(path: '/theme/:id', builder: (_, _) => const SizedBox()),
+      ],
+    ),
   );
 
   Future<void> frames(WidgetTester tester, int ms) async {
@@ -95,6 +102,13 @@ void main() {
       RoundChoicesView? view;
       for (var i = 0; i < 150 && view == null; i++) {
         await tester.pump(const Duration(milliseconds: 100));
+        // The round may be over: stop on the round-end page.
+        if (find
+            .byKey(const ValueKey('completion-summary'))
+            .evaluate()
+            .isNotEmpty) {
+          return;
+        }
         final found = find.byType(RoundChoicesView);
         if (found.evaluate().isEmpty) continue;
         final c = tester.widget<RoundChoicesView>(found);
@@ -181,7 +195,7 @@ void main() {
         break;
       }
     }
-    await frames(tester, 1400);
+    await frames(tester, 800);
     await shot('07-well-done');
     await tester.pumpWidget(const SizedBox.shrink());
 
