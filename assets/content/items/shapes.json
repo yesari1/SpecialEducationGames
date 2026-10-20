@@ -10,7 +10,10 @@
       "en": "Circle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/circle_selected.mp3",
+      "en": "assets/audio/en/shapes/circle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -26,7 +29,10 @@
     "images": [
       "assets/images/shapes/square_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/square_selected.mp3",
+      "en": "assets/audio/en/shapes/square_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -40,7 +46,10 @@
       "en": "Triangle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/triangle_selected.mp3",
+      "en": "assets/audio/en/shapes/triangle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -54,7 +63,10 @@
       "en": "Star"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/star_selected.mp3",
+      "en": "assets/audio/en/shapes/star_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -68,7 +80,10 @@
       "en": "Rectangle"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/rectangle_selected.mp3",
+      "en": "assets/audio/en/shapes/rectangle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -82,7 +97,10 @@
       "en": "Heart"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/heart_selected.mp3",
+      "en": "assets/audio/en/shapes/heart_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -96,7 +114,10 @@
       "en": "Oval"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/oval_selected.mp3",
+      "en": "assets/audio/en/shapes/oval_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -110,7 +131,10 @@
       "en": "Crescent"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/crescent_selected.mp3",
+      "en": "assets/audio/en/shapes/crescent_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -124,7 +148,10 @@
       "en": "Cross"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/cross_selected.mp3",
+      "en": "assets/audio/en/shapes/cross_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -138,7 +165,10 @@
       "en": "Arrow"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/arrow_selected.mp3",
+      "en": "assets/audio/en/shapes/arrow_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -152,7 +182,10 @@
       "en": "Hexagon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/hexagon_selected.mp3",
+      "en": "assets/audio/en/shapes/hexagon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -166,7 +199,10 @@
       "en": "Pentagon"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/pentagon_selected.mp3",
+      "en": "assets/audio/en/shapes/pentagon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -180,7 +216,10 @@
       "en": "Rhombus"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/rhombus_selected.mp3",
+      "en": "assets/audio/en/shapes/rhombus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -194,7 +233,10 @@
       "en": "Trapezoid"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/trapezoid_selected.mp3",
+      "en": "assets/audio/en/shapes/trapezoid_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -208,7 +250,10 @@
       "en": "Cube"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/cube_selected.mp3",
+      "en": "assets/audio/en/shapes/cube_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -222,7 +267,10 @@
       "en": "Sphere"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/sphere_selected.mp3",
+      "en": "assets/audio/en/shapes/sphere_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -236,7 +284,10 @@
       "en": "Cylinder"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/cylinder_selected.mp3",
+      "en": "assets/audio/en/shapes/cylinder_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -250,7 +301,10 @@
       "en": "Cone"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/shapes/cone_selected.mp3",
+      "en": "assets/audio/en/shapes/cone_selected.mp3"
+    },
     "sfx": null
   }
 ]

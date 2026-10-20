@@ -127,8 +127,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       introduceNewItems:
           s.introduction && SurveyMapper.map(survey).introduction,
       onIntroduced: s.markIntroduced,
-      playRetry: () =>
-          s.audio.playSequence(['assets/audio/${s.locale}/prompts/retry.mp3']),
+      playRetry: () => s.audio.playSequence([
+        'assets/audio/${s.locale}/prompts/retry_selected.mp3',
+      ]),
       playPrompt: playPrompt,
       saveTrial: (c) async {
         await s.record(
@@ -405,6 +406,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                       children: [
                         HoldButton(
                           semanticsLabel: l10n.gameHoldToLeave,
+                          hint: l10n.gameHoldToLeave,
                           duration: const Duration(seconds: 1),
                           onHeld: back,
                           child: const Icon(Icons.arrow_back_rounded),
@@ -878,7 +880,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           (x) =>
               x.images.isNotEmpty ||
               x.theme == 'colors' ||
-              x.theme == 'numbers',
+              x.theme == 'numbers' ||
+              x.theme == 'shapes',
         )
         .toList();
     if (items.isEmpty) {
@@ -965,6 +968,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   children: [
                     HoldButton(
                       semanticsLabel: l10n.gameHoldToLeave,
+                      hint: l10n.gameHoldToLeave,
                       duration: const Duration(seconds: 1),
                       onHeld: back,
                       child: const Icon(Icons.arrow_back_rounded),

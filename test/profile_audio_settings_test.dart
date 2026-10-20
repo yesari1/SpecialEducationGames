@@ -59,9 +59,15 @@ void main() {
           'vehicles_G02',
         ],
       }, content);
+      // English number names are recorded now, so both locales qualify;
+      // silencing speech still removes the game.
       state.locale = 'en';
+      expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
+      expect(state.dailyPathSteps, contains('numbers_G10'));
+      state.speechVolume = 0;
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isFalse);
       expect(state.dailyPathSteps, isNot(contains('numbers_G10')));
+      state.speechVolume = 100;
       state.locale = 'tr';
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
       expect(state.dailyPathSteps, contains('numbers_G10'));
@@ -186,7 +192,7 @@ void main() {
       state.locale = 'en';
       expect(state.hasRequiredGameAudio('vehicles', 'G10'), isTrue);
       expect(state.dailyPathSteps, contains('vehicles_G10'));
-      expect(state.hasRequiredGameAudio('numbers', 'G10'), isFalse);
+      expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
 
       state.locale = 'tr';
       expect(state.hasRequiredGameAudio('vehicles', 'G10'), isTrue);

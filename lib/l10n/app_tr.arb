@@ -1005,5 +1005,6 @@
   "gameFillBasketCount": "Sepette {count} / {goal}",
   "appTitle": "Özel Eğitim Oyunları",
   "gamePromptWhichSound": "Hangi ses onun?",
-  "gameListenToSound": "Dinle"
+  "gameListenToSound": "Dinle",
+  "homeHoldForFamily": "Aile için basılı tut"
 }

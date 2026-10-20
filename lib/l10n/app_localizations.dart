@@ -2022,6 +2022,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Listen'**
   String get gameListenToSound;
+
+  /// No description provided for @homeHoldForFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold for the family area'**
+  String get homeHoldForFamily;
 }
 
 class _AppLocalizationsDelegate

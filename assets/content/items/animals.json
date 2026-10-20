@@ -292,8 +292,8 @@
       "assets/images/animals/bird_real.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/bird.mp3",
-      "en": "assets/audio/en/animals/bird.mp3"
+      "tr": "assets/audio/tr/animals/bird_selected.mp3",
+      "en": "assets/audio/en/animals/bird_selected.mp3"
     },
     "sfx": null,
     "imageProvenance": {
@@ -340,8 +340,8 @@
       "assets/images/animals/fish_trout_real.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/fish.mp3",
-      "en": "assets/audio/en/animals/fish.mp3"
+      "tr": "assets/audio/tr/animals/fish_selected.mp3",
+      "en": "assets/audio/en/animals/fish_selected.mp3"
     },
     "sfx": null,
     "imageProvenance": {
@@ -553,8 +553,8 @@
       "assets/images/animals/cow_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/cow.mp3",
-      "en": "assets/audio/en/animals/cow.mp3"
+      "tr": "assets/audio/tr/animals/cow_selected.mp3",
+      "en": "assets/audio/en/animals/cow_selected.mp3"
     },
     "sfx": "assets/sfx/animals/cow.mp3"
   },
@@ -574,8 +574,8 @@
       "assets/images/animals/horse_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/horse.mp3",
-      "en": "assets/audio/en/animals/horse.mp3"
+      "tr": "assets/audio/tr/animals/horse_selected.mp3",
+      "en": "assets/audio/en/animals/horse_selected.mp3"
     },
     "sfx": "assets/sfx/animals/horse.mp3"
   },
@@ -595,8 +595,8 @@
       "assets/images/animals/sheep_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/sheep.mp3",
-      "en": "assets/audio/en/animals/sheep.mp3"
+      "tr": "assets/audio/tr/animals/sheep_selected.mp3",
+      "en": "assets/audio/en/animals/sheep_selected.mp3"
     },
     "sfx": "assets/sfx/animals/sheep.mp3"
   },
@@ -617,8 +617,8 @@
       "assets/images/animals/chicken_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/chicken.mp3",
-      "en": "assets/audio/en/animals/chicken.mp3"
+      "tr": "assets/audio/tr/animals/chicken_selected.mp3",
+      "en": "assets/audio/en/animals/chicken_selected.mp3"
     },
     "sfx": null
   },
@@ -639,8 +639,8 @@
       "assets/images/animals/duck_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/duck.mp3",
-      "en": "assets/audio/en/animals/duck.mp3"
+      "tr": "assets/audio/tr/animals/duck_selected.mp3",
+      "en": "assets/audio/en/animals/duck_selected.mp3"
     },
     "sfx": "assets/sfx/animals/duck.mp3"
   },
@@ -661,8 +661,8 @@
       "assets/images/animals/chick_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/chick.mp3",
-      "en": "assets/audio/en/animals/chick.mp3"
+      "tr": "assets/audio/tr/animals/chick_selected.mp3",
+      "en": "assets/audio/en/animals/chick_selected.mp3"
     },
     "sfx": null
   },
@@ -682,8 +682,8 @@
       "assets/images/animals/lion_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/lion.mp3",
-      "en": "assets/audio/en/animals/lion.mp3"
+      "tr": "assets/audio/tr/animals/lion_selected.mp3",
+      "en": "assets/audio/en/animals/lion_selected.mp3"
     },
     "sfx": null
   },
@@ -703,8 +703,8 @@
       "assets/images/animals/elephant_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/elephant.mp3",
-      "en": "assets/audio/en/animals/elephant.mp3"
+      "tr": "assets/audio/tr/animals/elephant_selected.mp3",
+      "en": "assets/audio/en/animals/elephant_selected.mp3"
     },
     "sfx": null
   },
@@ -724,8 +724,8 @@
       "assets/images/animals/monkey_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/monkey.mp3",
-      "en": "assets/audio/en/animals/monkey.mp3"
+      "tr": "assets/audio/tr/animals/monkey_selected.mp3",
+      "en": "assets/audio/en/animals/monkey_selected.mp3"
     },
     "sfx": null
   },
@@ -745,8 +745,8 @@
       "assets/images/animals/bear_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/bear.mp3",
-      "en": "assets/audio/en/animals/bear.mp3"
+      "tr": "assets/audio/tr/animals/bear_selected.mp3",
+      "en": "assets/audio/en/animals/bear_selected.mp3"
     },
     "sfx": null
   },
@@ -766,8 +766,8 @@
       "assets/images/animals/butterfly_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/butterfly.mp3",
-      "en": "assets/audio/en/animals/butterfly.mp3"
+      "tr": "assets/audio/tr/animals/butterfly_selected.mp3",
+      "en": "assets/audio/en/animals/butterfly_selected.mp3"
     },
     "sfx": null
   },
@@ -787,8 +787,8 @@
       "assets/images/animals/goat_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/goat.mp3",
-      "en": "assets/audio/en/animals/goat.mp3"
+      "tr": "assets/audio/tr/animals/goat_selected.mp3",
+      "en": "assets/audio/en/animals/goat_selected.mp3"
     },
     "sfx": null
   },
@@ -808,8 +808,8 @@
       "assets/images/animals/donkey_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/donkey.mp3",
-      "en": "assets/audio/en/animals/donkey.mp3"
+      "tr": "assets/audio/tr/animals/donkey_selected.mp3",
+      "en": "assets/audio/en/animals/donkey_selected.mp3"
     },
     "sfx": null
   },
@@ -830,8 +830,8 @@
       "assets/images/animals/rooster_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/rooster.mp3",
-      "en": "assets/audio/en/animals/rooster.mp3"
+      "tr": "assets/audio/tr/animals/rooster_selected.mp3",
+      "en": "assets/audio/en/animals/rooster_selected.mp3"
     },
     "sfx": null
   },
@@ -852,8 +852,8 @@
       "assets/images/animals/turkey_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/turkey.mp3",
-      "en": "assets/audio/en/animals/turkey.mp3"
+      "tr": "assets/audio/tr/animals/turkey_selected.mp3",
+      "en": "assets/audio/en/animals/turkey_selected.mp3"
     },
     "sfx": null
   },
@@ -873,8 +873,8 @@
       "assets/images/animals/bee_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/bee.mp3",
-      "en": "assets/audio/en/animals/bee.mp3"
+      "tr": "assets/audio/tr/animals/bee_selected.mp3",
+      "en": "assets/audio/en/animals/bee_selected.mp3"
     },
     "sfx": null
   },
@@ -894,8 +894,8 @@
       "assets/images/animals/turtle_real.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/turtle.mp3",
-      "en": "assets/audio/en/animals/turtle.mp3"
+      "tr": "assets/audio/tr/animals/turtle_selected.mp3",
+      "en": "assets/audio/en/animals/turtle_selected.mp3"
     },
     "sfx": null,
     "imageProvenance": {
@@ -934,8 +934,8 @@
       "assets/images/animals/mouse_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/mouse.mp3",
-      "en": "assets/audio/en/animals/mouse.mp3"
+      "tr": "assets/audio/tr/animals/mouse_selected.mp3",
+      "en": "assets/audio/en/animals/mouse_selected.mp3"
     },
     "sfx": null
   },
@@ -956,8 +956,8 @@
       "assets/images/animals/frog_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/frog.mp3",
-      "en": "assets/audio/en/animals/frog.mp3"
+      "tr": "assets/audio/tr/animals/frog_selected.mp3",
+      "en": "assets/audio/en/animals/frog_selected.mp3"
     },
     "sfx": null
   },
@@ -977,8 +977,8 @@
       "assets/images/animals/giraffe_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/giraffe.mp3",
-      "en": "assets/audio/en/animals/giraffe.mp3"
+      "tr": "assets/audio/tr/animals/giraffe_selected.mp3",
+      "en": "assets/audio/en/animals/giraffe_selected.mp3"
     },
     "sfx": null
   },
@@ -998,8 +998,8 @@
       "assets/images/animals/zebra_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/zebra.mp3",
-      "en": "assets/audio/en/animals/zebra.mp3"
+      "tr": "assets/audio/tr/animals/zebra_selected.mp3",
+      "en": "assets/audio/en/animals/zebra_selected.mp3"
     },
     "sfx": null
   },
@@ -1019,8 +1019,8 @@
       "assets/images/animals/tiger_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/tiger.mp3",
-      "en": "assets/audio/en/animals/tiger.mp3"
+      "tr": "assets/audio/tr/animals/tiger_selected.mp3",
+      "en": "assets/audio/en/animals/tiger_selected.mp3"
     },
     "sfx": null
   },
@@ -1040,8 +1040,8 @@
       "assets/images/animals/wolf_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/wolf.mp3",
-      "en": "assets/audio/en/animals/wolf.mp3"
+      "tr": "assets/audio/tr/animals/wolf_selected.mp3",
+      "en": "assets/audio/en/animals/wolf_selected.mp3"
     },
     "sfx": null
   },
@@ -1060,7 +1060,10 @@
     "images": [
       "assets/images/animals/fox_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/fox_selected.mp3",
+      "en": "assets/audio/en/animals/fox_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1078,7 +1081,10 @@
     "images": [
       "assets/images/animals/squirrel_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/squirrel_selected.mp3",
+      "en": "assets/audio/en/animals/squirrel_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1097,8 +1103,8 @@
       "assets/images/animals/owl_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/owl.mp3",
-      "en": "assets/audio/en/animals/owl.mp3"
+      "tr": "assets/audio/tr/animals/owl_selected.mp3",
+      "en": "assets/audio/en/animals/owl_selected.mp3"
     },
     "sfx": null
   },
@@ -1118,7 +1124,10 @@
     "images": [
       "assets/images/animals/penguin_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/penguin_selected.mp3",
+      "en": "assets/audio/en/animals/penguin_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1136,7 +1145,10 @@
     "images": [
       "assets/images/animals/dolphin_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/dolphin_selected.mp3",
+      "en": "assets/audio/en/animals/dolphin_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1155,8 +1167,8 @@
       "assets/images/animals/deer_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/deer.mp3",
-      "en": "assets/audio/en/animals/deer.mp3"
+      "tr": "assets/audio/tr/animals/deer_selected.mp3",
+      "en": "assets/audio/en/animals/deer_selected.mp3"
     },
     "sfx": null
   },
@@ -1176,8 +1188,8 @@
       "assets/images/animals/bull_1.png"
     ],
     "audio": {
-      "tr": "assets/audio/tr/animals/bull.mp3",
-      "en": "assets/audio/en/animals/bull.mp3"
+      "tr": "assets/audio/tr/animals/bull_selected.mp3",
+      "en": "assets/audio/en/animals/bull_selected.mp3"
     },
     "sfx": null
   },
@@ -1196,7 +1208,10 @@
     "images": [
       "assets/images/animals/hedgehog_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/hedgehog_selected.mp3",
+      "en": "assets/audio/en/animals/hedgehog_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1214,7 +1229,10 @@
     "images": [
       "assets/images/animals/ant_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/ant_selected.mp3",
+      "en": "assets/audio/en/animals/ant_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1232,7 +1250,10 @@
     "images": [
       "assets/images/animals/ladybug_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/ladybug_selected.mp3",
+      "en": "assets/audio/en/animals/ladybug_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1250,7 +1271,10 @@
     "images": [
       "assets/images/animals/octopus_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/octopus_selected.mp3",
+      "en": "assets/audio/en/animals/octopus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1268,7 +1292,10 @@
     "images": [
       "assets/images/animals/shark_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/shark_selected.mp3",
+      "en": "assets/audio/en/animals/shark_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1286,7 +1313,10 @@
     "images": [
       "assets/images/animals/whale_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/whale_selected.mp3",
+      "en": "assets/audio/en/animals/whale_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1304,7 +1334,10 @@
     "images": [
       "assets/images/animals/hippopotamus_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/hippopotamus_selected.mp3",
+      "en": "assets/audio/en/animals/hippopotamus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1322,7 +1355,10 @@
     "images": [
       "assets/images/animals/rhinoceros_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/rhinoceros_selected.mp3",
+      "en": "assets/audio/en/animals/rhinoceros_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1341,7 +1377,10 @@
     "images": [
       "assets/images/animals/crocodile_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/crocodile_selected.mp3",
+      "en": "assets/audio/en/animals/crocodile_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1359,7 +1398,10 @@
     "images": [
       "assets/images/animals/camel_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/camel_selected.mp3",
+      "en": "assets/audio/en/animals/camel_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1377,7 +1419,10 @@
     "images": [
       "assets/images/animals/kangaroo_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/kangaroo_selected.mp3",
+      "en": "assets/audio/en/animals/kangaroo_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1395,7 +1440,10 @@
     "images": [
       "assets/images/animals/gorilla_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/gorilla_selected.mp3",
+      "en": "assets/audio/en/animals/gorilla_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1413,7 +1461,10 @@
     "images": [
       "assets/images/animals/flamingo_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/flamingo_selected.mp3",
+      "en": "assets/audio/en/animals/flamingo_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1431,7 +1482,10 @@
     "images": [
       "assets/images/animals/ostrich_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/ostrich_selected.mp3",
+      "en": "assets/audio/en/animals/ostrich_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1449,7 +1503,10 @@
     "images": [
       "assets/images/animals/bat_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/bat_selected.mp3",
+      "en": "assets/audio/en/animals/bat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -1467,7 +1524,10 @@
     "images": [
       "assets/images/animals/chameleon_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/animals/chameleon_selected.mp3",
+      "en": "assets/audio/en/animals/chameleon_selected.mp3"
+    },
     "sfx": null
   }
 ]

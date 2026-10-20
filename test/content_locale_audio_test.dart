@@ -8,12 +8,23 @@ void main() {
   test(
     'legacy English mapping is unavailable while Turkish remains usable',
     () async {
-      final content = await ContentRepository.load();
-      final bird = content.items.firstWhere(
-        (item) => item.id == 'animals.bird',
-      );
+      // The catalog now uses real English recordings; the quarantine still
+      // applies to any item pointing at a legacy Turkish-in-English file.
+      final bird = ContentItem.fromJson({
+        'id': 'animals.bird',
+        'theme': 'animals',
+        'tier': 'easy',
+        'name': {'tr': 'Kuş', 'en': 'Bird'},
+        'audio': {
+          'tr': 'assets/audio/tr/animals/bird.mp3',
+          'en': 'assets/audio/en/animals/bird.mp3',
+        },
+      });
       expect(bird.audioFor('tr'), bird.audio['tr']);
       expect(bird.audioFor('en'), isNull);
+      final content = await ContentRepository.load();
+      final catalogBird = content.items.firstWhere((x) => x.id == bird.id);
+      expect(catalogBird.audioFor('en'), endsWith('bird_selected.mp3'));
     },
   );
 
@@ -46,9 +57,10 @@ void main() {
       true,
       reason: 'animal G10 uses its existing sound effects',
     );
+    // English colour names are recorded now (Laura voice).
     expect(
       content.hasLocalizedG10Content('colors', Difficulty.easy, 'en'),
-      false,
+      true,
     );
     expect(
       content.hasLocalizedG10Content('colors', Difficulty.easy, 'tr'),
@@ -67,7 +79,8 @@ void main() {
     );
 
     final english = controller('en')..start();
-    expect(english.error, 'content_missing');
+    expect(english.error, isNull);
+    expect(english.spec!.target.audioFor('en'), endsWith('_selected.mp3'));
     english.dispose();
     final turkish = controller('tr')..start();
     expect(turkish.spec, isNotNull);

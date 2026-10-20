@@ -25,6 +25,7 @@ void main() {
     await state.load();
     await state.createProfile('Mina', 'cat', {});
     state.sound = false;
+    state.audio.enabled = false;
     return state;
   }
 

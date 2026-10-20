@@ -5,6 +5,7 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../app/ui/family_nav_bar.dart';
+import '../../core/entitlement/entitlement_service.dart' show qaPremium;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/parent_pin.dart';
@@ -924,6 +925,28 @@ class _FamilyScreenState extends State<FamilyScreen> {
                           icon: const Icon(Icons.chevron_right_rounded),
                         ),
                       ],
+                      // A QA build must never look like a real subscription.
+                      if (qaPremium)
+                        Container(
+                          key: const ValueKey('qa-premium-badge'),
+                          margin: const EdgeInsets.only(right: SegSpace.s2),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: SegSpace.s2,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFFFE8B3),
+                            borderRadius: BorderRadius.circular(SegRadius.pill),
+                            border: Border.all(color: SegColors.starDeep),
+                          ),
+                          child: Text(
+                            'TEST',
+                            style: SegText.caption.copyWith(
+                              color: SegColors.starDeep,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
                       TextButton.icon(
                         style: TextButton.styleFrom(
                           minimumSize: const Size(48, 48),

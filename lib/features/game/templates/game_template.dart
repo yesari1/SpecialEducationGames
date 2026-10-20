@@ -27,6 +27,10 @@ class ModeContext {
   }) : _choiceCount = choiceCount;
 }
 
+/// Praise recorded with the selected voices.
+String praiseCue(String locale) =>
+    'assets/audio/$locale/prompts/praise_selected.mp3';
+
 abstract class GameTemplate {
   const GameTemplate();
   String get id;
@@ -37,32 +41,64 @@ abstract class GameTemplate {
     RoundCallbacks callbacks,
     HintViewState hint,
   ) => RoundChoicesView(spec: spec, callbacks: callbacks, hint: hint);
+
+  /// The spoken instruction for this round, recorded with the selected voices
+  /// (see tools/generate_selected_voice.py), or null when the round has none.
+  String? promptCue(RoundSpec spec, String locale) {
+    final stem = switch (spec.promptKey) {
+      GamePromptKey.counting => 'count',
+      GamePromptKey.compareMagnitude => 'compare_magnitude',
+      GamePromptKey.compareNumbers => 'compare_numbers',
+      GamePromptKey.groupMembership => 'group_membership',
+      GamePromptKey.findMatch => 'find_match',
+      GamePromptKey.listenForNumber => 'listen_number',
+      GamePromptKey.listenForSoundSource => 'listen_sound',
+      GamePromptKey.sequenceNext => 'sequence_next',
+      GamePromptKey.sequenceMissing => 'sequence_missing',
+      GamePromptKey.oddOneOut => 'odd_one_out',
+      GamePromptKey.shadowMatch => 'shadow_match',
+      GamePromptKey.sortIntoBasket => 'sort_basket',
+      GamePromptKey.numberQuantity => 'number_quantity',
+      GamePromptKey.whichSound => 'which_sound',
+      GamePromptKey.fillCount
+          when (spec.fillCount ?? 0) >= 1 && (spec.fillCount ?? 0) <= 7 =>
+        'fill_count_${spec.fillCount}',
+      _ => null,
+    };
+    return stem == null
+        ? null
+        : 'assets/audio/$locale/prompts/${stem}_selected.mp3';
+  }
+
   List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) {
-    if (ctx.gameId == 'G33') return [];
+    final prompt = promptCue(spec, locale);
+    if (ctx.gameId == 'G33') return [?prompt];
     if (ctx.gameId == 'G35') {
-      if (ctx.difficulty == Difficulty.hard) return [];
       return [
-        for (final number in spec.sequence.where((x) => x != '?'))
-          if (ctx.content.items
-                  .where((x) => x.id == 'numbers.$number')
-                  .firstOrNull
-                  ?.audioFor(locale)
-              case final String cue)
-            cue,
-        'assets/audio/$locale/prompts/next_number.mp3',
+        if (ctx.difficulty != Difficulty.hard)
+          for (final number in spec.sequence.where((x) => x != '?'))
+            if (ctx.content.items
+                    .where((x) => x.id == 'numbers.$number')
+                    .firstOrNull
+                    ?.audioFor(locale)
+                case final String cue)
+              cue,
+        ?prompt,
       ];
     }
-    if (ctx.gameId == 'G36') {
-      return ['assets/audio/$locale/prompts/compare.mp3'];
+    if (ctx.gameId == 'G36') return [?prompt];
+    // Group rounds name the object to sort after the question.
+    if (spec.promptKey == GamePromptKey.groupMembership) {
+      return [?prompt, ?spec.stimulus?.audioFor(locale)];
     }
     final cue = ctx.gameId == 'G10' && ctx.themeId != 'numbers'
         ? spec.target.sfx
         : spec.target.audioFor(locale);
-    return [?cue];
+    return [?prompt, ?cue];
   }
 
   List<String> successCues(RoundSpec spec, String locale) => [
-    'assets/audio/$locale/prompts/praise.mp3',
+    praiseCue(locale),
     if (spec.target.audioFor(locale) case final String cue) cue,
   ];
 }
@@ -75,8 +111,10 @@ class IdentifyTemplate extends GameTemplate {
   RoundSpec buildRound(ModeContext ctx) {
     var pool = ctx.content.pool(ctx.themeId, ctx.difficulty);
     // Unavailable images must not become indistinguishable answer cards.
+    // Numbers, colours and shapes are drawn, so they need no photo.
     if (ctx.themeId != 'numbers' &&
         ctx.themeId != 'colors' &&
+        ctx.themeId != 'shapes' &&
         ctx.gameId != 'G02' &&
         ctx.gameId != 'G55') {
       pool = pool.where((x) => x.images.isNotEmpty).toList();
@@ -460,7 +498,9 @@ class OddOneOutTemplate extends GameTemplate {
 
   // Saying the odd item's name would give the answer away.
   @override
-  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [];
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
+    ?promptCue(spec, locale),
+  ];
 }
 
 /// G15 "Gölgesini Bul": the photo is shown; choices are silhouettes. Drag the
@@ -516,12 +556,13 @@ class BasketSortTemplate extends GroupTemplate {
 
   @override
   List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
+    ?promptCue(spec, locale),
     ?spec.stimulus?.audioFor(locale),
   ];
 
   @override
   List<String> successCues(RoundSpec spec, String locale) => [
-    'assets/audio/$locale/prompts/praise.mp3',
+    praiseCue(locale),
     ?spec.stimulus?.audioFor(locale),
   ];
 }
@@ -603,6 +644,12 @@ class FillCountTemplate extends GameTemplate {
     );
   }
 
+  // "Put three in the basket." already says the number.
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
+    ?promptCue(spec, locale),
+  ];
+
   @override
   Widget buildView(
     BuildContext context,
@@ -645,11 +692,12 @@ class SoundChoiceTemplate extends GameTemplate {
   @override
   List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) => [
     ?spec.target.audioFor(locale),
+    ?promptCue(spec, locale),
   ];
 
   @override
   List<String> successCues(RoundSpec spec, String locale) => [
-    'assets/audio/$locale/prompts/praise.mp3',
+    praiseCue(locale),
     ?spec.target.sfx,
   ];
 }

@@ -74,6 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     HoldButton(
                       semanticsLabel: l10n.homeFamilyHint,
+                      hint: l10n.homeHoldForFamily,
                       onHeld: () async {
                         if (await showParentGate(context, s) &&
                             context.mounted) {
@@ -214,7 +215,8 @@ class _ThemeScreenState extends State<ThemeScreen> {
         (x) =>
             x.theme == t.id &&
             x.id != hero.id &&
-            (x.images.isNotEmpty || t.id == 'numbers' || t.id == 'colors') &&
+            (x.images.isNotEmpty ||
+                const {'numbers', 'colors', 'shapes'}.contains(t.id)) &&
             x.slug != '0',
       ),
     ];

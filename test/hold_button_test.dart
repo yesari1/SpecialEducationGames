@@ -32,4 +32,46 @@ void main() {
     expect(opened, 1);
     await held.up();
   });
+
+  for (final (label, hint, duration) in const [
+    ('Leave', 'Hold to leave', Duration(seconds: 1)),
+    ('Family', 'Hold for the family area', Duration(seconds: 2)),
+  ]) {
+    testWidgets('$label: a short tap shows the hint and a hold fires', (
+      tester,
+    ) async {
+      var fired = 0;
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Center(
+            child: HoldButton(
+              semanticsLabel: label,
+              hint: hint,
+              duration: duration,
+              onHeld: () => fired++,
+              child: Text(label),
+            ),
+          ),
+        ),
+      );
+      expect(find.text(hint), findsNothing);
+      await tester.tap(find.text(label));
+      await tester.pump(const Duration(milliseconds: 50));
+      expect(fired, 0, reason: 'a tap must not trigger');
+      expect(find.text(hint), findsOneWidget, reason: 'a tap explains itself');
+      await tester.pump(const Duration(seconds: 3));
+      await tester.pumpAndSettle();
+
+      final hold = await tester.startGesture(
+        tester.getCenter(find.text(label)),
+      );
+      await tester.pump(duration ~/ 2);
+      expect(fired, 0);
+      await tester.pump(duration);
+      expect(fired, 1, reason: 'holding long enough triggers once');
+      await hold.up();
+      await tester.pumpAndSettle();
+      expect(fired, 1);
+    });
+  }
 }

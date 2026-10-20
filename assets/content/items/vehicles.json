@@ -14,7 +14,10 @@
     "images": [
       "assets/images/vehicles/car_real.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/car_selected.mp3",
+      "en": "assets/audio/en/vehicles/car_selected.mp3"
+    },
     "sfx": "assets/sfx/vehicles/car.mp3",
     "imageProvenance": {
       "assets/images/vehicles/car_real.png": {
@@ -62,7 +65,10 @@
     "images": [
       "assets/images/vehicles/bus_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/bus_selected.mp3",
+      "en": "assets/audio/en/vehicles/bus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -80,7 +86,10 @@
     "images": [
       "assets/images/vehicles/truck_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/truck_selected.mp3",
+      "en": "assets/audio/en/vehicles/truck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -98,7 +107,10 @@
     "images": [
       "assets/images/vehicles/train_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/train_selected.mp3",
+      "en": "assets/audio/en/vehicles/train_selected.mp3"
+    },
     "sfx": "assets/sfx/vehicles/train.mp3",
     "sfxProvenance": {
       "title": "4000 class train horn.ogg",
@@ -128,7 +140,10 @@
     "images": [
       "assets/images/vehicles/airplane_real.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/airplane_selected.mp3",
+      "en": "assets/audio/en/vehicles/airplane_selected.mp3"
+    },
     "sfx": "assets/sfx/vehicles/airplane.mp3",
     "imageProvenance": {
       "assets/images/vehicles/airplane_real.png": {
@@ -180,7 +195,10 @@
     "images": [
       "assets/images/vehicles/ship_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/ship_selected.mp3",
+      "en": "assets/audio/en/vehicles/ship_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -198,7 +216,10 @@
     "images": [
       "assets/images/vehicles/bicycle_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/bicycle_selected.mp3",
+      "en": "assets/audio/en/vehicles/bicycle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -216,7 +237,10 @@
     "images": [
       "assets/images/vehicles/motorcycle_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/motorcycle_selected.mp3",
+      "en": "assets/audio/en/vehicles/motorcycle_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -235,7 +259,10 @@
     "images": [
       "assets/images/vehicles/ambulance_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/ambulance_selected.mp3",
+      "en": "assets/audio/en/vehicles/ambulance_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -254,7 +281,10 @@
     "images": [
       "assets/images/vehicles/fire_truck_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/fire_truck_selected.mp3",
+      "en": "assets/audio/en/vehicles/fire_truck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -273,7 +303,10 @@
     "images": [
       "assets/images/vehicles/police_car_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/police_car_selected.mp3",
+      "en": "assets/audio/en/vehicles/police_car_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -291,7 +324,10 @@
     "images": [
       "assets/images/vehicles/taxi_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/taxi_selected.mp3",
+      "en": "assets/audio/en/vehicles/taxi_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -309,7 +345,10 @@
     "images": [
       "assets/images/vehicles/helicopter_real.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/helicopter_selected.mp3",
+      "en": "assets/audio/en/vehicles/helicopter_selected.mp3"
+    },
     "sfx": "assets/sfx/vehicles/helicopter.mp3",
     "imageProvenance": {
       "assets/images/vehicles/helicopter_real.png": {
@@ -361,7 +400,10 @@
     "images": [
       "assets/images/vehicles/boat_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/boat_selected.mp3",
+      "en": "assets/audio/en/vehicles/boat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -380,7 +422,10 @@
     "images": [
       "assets/images/vehicles/tractor_2.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/tractor_selected.mp3",
+      "en": "assets/audio/en/vehicles/tractor_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -398,7 +443,10 @@
     "images": [
       "assets/images/vehicles/minibus_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/minibus_selected.mp3",
+      "en": "assets/audio/en/vehicles/minibus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -416,7 +464,10 @@
     "images": [
       "assets/images/vehicles/pickup_truck_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/pickup_truck_selected.mp3",
+      "en": "assets/audio/en/vehicles/pickup_truck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -435,7 +486,10 @@
     "images": [
       "assets/images/vehicles/garbage_truck_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/garbage_truck_selected.mp3",
+      "en": "assets/audio/en/vehicles/garbage_truck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -453,7 +507,10 @@
     "images": [
       "assets/images/vehicles/school_bus_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/school_bus_selected.mp3",
+      "en": "assets/audio/en/vehicles/school_bus_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -471,7 +528,10 @@
     "images": [
       "assets/images/vehicles/subway_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/subway_selected.mp3",
+      "en": "assets/audio/en/vehicles/subway_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -489,7 +549,10 @@
     "images": [
       "assets/images/vehicles/tram_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/tram_selected.mp3",
+      "en": "assets/audio/en/vehicles/tram_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -507,7 +570,10 @@
     "images": [
       "assets/images/vehicles/scooter_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/scooter_selected.mp3",
+      "en": "assets/audio/en/vehicles/scooter_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -525,7 +591,10 @@
     "images": [
       "assets/images/vehicles/excavator_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/excavator_selected.mp3",
+      "en": "assets/audio/en/vehicles/excavator_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -543,7 +612,10 @@
     "images": [
       "assets/images/vehicles/crane_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/crane_selected.mp3",
+      "en": "assets/audio/en/vehicles/crane_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -561,7 +633,10 @@
     "images": [
       "assets/images/vehicles/hot_air_balloon_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/hot_air_balloon_selected.mp3",
+      "en": "assets/audio/en/vehicles/hot_air_balloon_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -579,7 +654,10 @@
     "images": [
       "assets/images/vehicles/sailboat_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/sailboat_selected.mp3",
+      "en": "assets/audio/en/vehicles/sailboat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -597,7 +675,10 @@
     "images": [
       "assets/images/vehicles/speedboat_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/speedboat_selected.mp3",
+      "en": "assets/audio/en/vehicles/speedboat_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -615,7 +696,10 @@
     "images": [
       "assets/images/vehicles/caravan_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/caravan_selected.mp3",
+      "en": "assets/audio/en/vehicles/caravan_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -633,7 +717,10 @@
     "images": [
       "assets/images/vehicles/horse_cart_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/horse_cart_selected.mp3",
+      "en": "assets/audio/en/vehicles/horse_cart_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -652,7 +739,10 @@
     "images": [
       "assets/images/vehicles/tow_truck_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/tow_truck_selected.mp3",
+      "en": "assets/audio/en/vehicles/tow_truck_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -670,7 +760,10 @@
     "images": [
       "assets/images/vehicles/forklift_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/forklift_selected.mp3",
+      "en": "assets/audio/en/vehicles/forklift_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -688,7 +781,10 @@
     "images": [
       "assets/images/vehicles/cement_mixer_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/cement_mixer_selected.mp3",
+      "en": "assets/audio/en/vehicles/cement_mixer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -706,7 +802,10 @@
     "images": [
       "assets/images/vehicles/bulldozer_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/bulldozer_selected.mp3",
+      "en": "assets/audio/en/vehicles/bulldozer_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -724,7 +823,10 @@
     "images": [
       "assets/images/vehicles/road_roller_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/road_roller_selected.mp3",
+      "en": "assets/audio/en/vehicles/road_roller_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -742,7 +844,10 @@
     "images": [
       "assets/images/vehicles/cargo_ship_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/cargo_ship_selected.mp3",
+      "en": "assets/audio/en/vehicles/cargo_ship_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -760,7 +865,10 @@
     "images": [
       "assets/images/vehicles/submarine_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/submarine_selected.mp3",
+      "en": "assets/audio/en/vehicles/submarine_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -778,7 +886,10 @@
     "images": [
       "assets/images/vehicles/ferry_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/ferry_selected.mp3",
+      "en": "assets/audio/en/vehicles/ferry_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -796,7 +907,10 @@
     "images": [
       "assets/images/vehicles/canoe_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/canoe_selected.mp3",
+      "en": "assets/audio/en/vehicles/canoe_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -814,7 +928,10 @@
     "images": [
       "assets/images/vehicles/rocket_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/rocket_selected.mp3",
+      "en": "assets/audio/en/vehicles/rocket_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -832,7 +949,10 @@
     "images": [
       "assets/images/vehicles/jet_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/jet_selected.mp3",
+      "en": "assets/audio/en/vehicles/jet_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -850,7 +970,10 @@
     "images": [
       "assets/images/vehicles/airship_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/airship_selected.mp3",
+      "en": "assets/audio/en/vehicles/airship_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -868,7 +991,10 @@
     "images": [
       "assets/images/vehicles/glider_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/glider_selected.mp3",
+      "en": "assets/audio/en/vehicles/glider_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -886,7 +1012,10 @@
     "images": [
       "assets/images/vehicles/cable_car_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/cable_car_selected.mp3",
+      "en": "assets/audio/en/vehicles/cable_car_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -904,7 +1033,10 @@
     "images": [
       "assets/images/vehicles/snowmobile_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/snowmobile_selected.mp3",
+      "en": "assets/audio/en/vehicles/snowmobile_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -922,7 +1054,10 @@
     "images": [
       "assets/images/vehicles/high_speed_train_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/high_speed_train_selected.mp3",
+      "en": "assets/audio/en/vehicles/high_speed_train_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -940,7 +1075,10 @@
     "images": [
       "assets/images/vehicles/skateboard_1.png"
     ],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/vehicles/skateboard_selected.mp3",
+      "en": "assets/audio/en/vehicles/skateboard_selected.mp3"
+    },
     "sfx": null
   }
 ]

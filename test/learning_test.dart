@@ -45,10 +45,13 @@ void main() {
             greaterThan(1000),
           );
         }
+        // The spoken "listen" instruction, then the natural sound.
         expect(c.template.introCues(c.spec!, c.modeContext, 'tr'), [
+          'assets/audio/tr/prompts/listen_sound_selected.mp3',
           c.spec!.target.sfx,
         ]);
         expect(c.template.introCues(c.spec!, c.modeContext, 'en'), [
+          'assets/audio/en/prompts/listen_sound_selected.mp3',
           c.spec!.target.sfx,
         ]);
         c.dispose();
@@ -122,8 +125,9 @@ void main() {
       final repo = await ContentRepository.load();
       expect(
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
-        // 35 phase-one cards, G15/G17/G23 on three themes, G37, G38 x2, G11 x2.
-        49,
+        // 35 phase-one cards, G15/G17/G23 on three themes, G37, G38 x2, G11 x2,
+        // and four Shapes games.
+        53,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {

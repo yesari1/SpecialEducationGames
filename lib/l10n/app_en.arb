@@ -1010,5 +1010,6 @@
   "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
   "appTitle": "Special Education Games",
   "gamePromptWhichSound": "Which sound does it make?",
-  "gameListenToSound": "Listen"
+  "gameListenToSound": "Listen",
+  "homeHoldForFamily": "Hold for the family area"
 }

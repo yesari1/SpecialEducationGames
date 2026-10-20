@@ -6,6 +6,7 @@ import '../theme/tokens.dart';
 import '../../core/content/content_repository.dart';
 import 'game_object.dart';
 import 'scene_backdrop.dart';
+import 'shape_visual.dart';
 
 class SegButton extends StatelessWidget {
   final String label;
@@ -85,33 +86,74 @@ class SegButton extends StatelessWidget {
   );
 }
 
+/// A button that acts only after being held (child-safe exits and the family
+/// area). Holding fills a ring around it; a short tap shows a hint bubble so
+/// a parent never gets a silent "does nothing".
 class HoldButton extends StatefulWidget {
   final Widget child;
   final VoidCallback onHeld;
   final Duration duration;
   final String semanticsLabel;
+
+  /// Short text shown after a tap that was released too early.
+  final String? hint;
   const HoldButton({
     super.key,
     required this.child,
     required this.onHeld,
     this.duration = const Duration(seconds: 2),
     required this.semanticsLabel,
+    this.hint,
   });
   @override
   State<HoldButton> createState() => _HoldButtonState();
 }
 
-class _HoldButtonState extends State<HoldButton> {
-  Timer? timer;
-  bool held = false;
-  void cancel() {
-    timer?.cancel();
-    if (mounted) setState(() => held = false);
+class _HoldButtonState extends State<HoldButton>
+    with SingleTickerProviderStateMixin {
+  // The ring is only a visual; the timer decides, independent of frames.
+  late final AnimationController progress = AnimationController(
+    vsync: this,
+    duration: widget.duration,
+  );
+  final GlobalKey<TooltipState> _tooltip = GlobalKey<TooltipState>();
+  final Set<int> _pointers = {};
+  Timer? _timer;
+
+  void _fire() {
+    _timer = null;
+    _pointers.clear();
+    progress.value = 0;
+    widget.onHeld();
+  }
+
+  void _down(PointerDownEvent event) {
+    _pointers.add(event.pointer);
+    // A second finger restarts the hold rather than shortening it.
+    _timer?.cancel();
+    _timer = Timer(widget.duration, _fire);
+    progress.forward(from: 0);
+  }
+
+  void _release(PointerEvent event) {
+    if (!_pointers.remove(event.pointer) || _pointers.isNotEmpty) return;
+    if (_timer == null) return;
+    _timer!.cancel();
+    _timer = null;
+    progress.reverse();
+    _tooltip.currentState?.ensureTooltipVisible();
+  }
+
+  @override
+  void didUpdateWidget(HoldButton old) {
+    super.didUpdateWidget(old);
+    progress.duration = widget.duration;
   }
 
   @override
   void dispose() {
-    timer?.cancel();
+    _timer?.cancel();
+    progress.dispose();
     super.dispose();
   }
 
@@ -120,30 +162,72 @@ class _HoldButtonState extends State<HoldButton> {
     button: true,
     label: widget.semanticsLabel,
     onLongPress: widget.onHeld,
-    child: Listener(
-      onPointerDown: (_) {
-        timer?.cancel();
-        setState(() => held = true);
-        timer = Timer(widget.duration, () {
-          cancel();
-          widget.onHeld();
-        });
-      },
-      onPointerUp: (_) => cancel(),
-      onPointerCancel: (_) => cancel(),
-      child: AnimatedContainer(
-        duration: SegMotion.tap,
-        padding: const EdgeInsets.all(SegSpace.s4),
-        constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
-        decoration: BoxDecoration(
-          color: held ? SegColors.primarySoft : SegColors.surface,
-          borderRadius: BorderRadius.circular(SegRadius.pill),
-          border: Border.all(color: SegColors.line),
+    excludeSemantics: true,
+    child: Tooltip(
+      key: _tooltip,
+      message: widget.hint ?? widget.semanticsLabel,
+      triggerMode: TooltipTriggerMode.manual,
+      showDuration: const Duration(seconds: 2),
+      preferBelow: true,
+      decoration: BoxDecoration(
+        color: SegColors.ink.withValues(alpha: .9),
+        borderRadius: BorderRadius.circular(SegRadius.md),
+      ),
+      textStyle: SegText.label.copyWith(color: Colors.white),
+      child: Listener(
+        onPointerDown: _down,
+        onPointerUp: _release,
+        onPointerCancel: _release,
+        child: AnimatedBuilder(
+          animation: progress,
+          builder: (context, child) => CustomPaint(
+            foregroundPainter: _HoldRingPainter(progress.value),
+            child: AnimatedContainer(
+              duration: SegMotion.tap,
+              padding: const EdgeInsets.all(SegSpace.s4),
+              constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
+              decoration: BoxDecoration(
+                color: progress.value > 0
+                    ? SegColors.primarySoft
+                    : SegColors.surface,
+                borderRadius: BorderRadius.circular(SegRadius.pill),
+                border: Border.all(color: SegColors.line),
+              ),
+              child: child,
+            ),
+          ),
+          child: widget.child,
         ),
-        child: widget.child,
       ),
     ),
   );
+}
+
+class _HoldRingPainter extends CustomPainter {
+  final double value;
+  const _HoldRingPainter(this.value);
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (value <= 0) return;
+    final rect = (Offset.zero & size).deflate(1.5);
+    final rrect = RRect.fromRectAndRadius(
+      rect,
+      Radius.circular(rect.shortestSide / 2),
+    );
+    final path = Path()..addRRect(rrect);
+    final metric = path.computeMetrics().first;
+    canvas.drawPath(
+      metric.extractPath(0, metric.length * value),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 4
+        ..strokeCap = StrokeCap.round
+        ..color = SegColors.primary,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_HoldRingPainter old) => old.value != value;
 }
 
 class SegCard extends StatelessWidget {
@@ -228,6 +312,9 @@ class ItemVisual extends StatelessWidget {
           );
         },
       );
+    }
+    if (item.theme == 'shapes') {
+      return ShapeVisual(item.slug, alignment: alignment);
     }
     if (item.theme == 'numbers') {
       return FittedBox(alignment: alignment, child: StickerNumber(item.slug));
@@ -579,12 +666,13 @@ class ThemeGameCard extends StatelessWidget {
     'colors' => SegColors.primary,
     'numbers' => const Color(0xFF7C73DF),
     'vehicles' => SegColors.sky,
+    'shapes' => const Color(0xFF9C6AD6),
     _ => SegColors.primary,
   };
 
   /// Round, compact subjects read as oversized when they fill the scene.
   double get _heroScale => switch (theme.id) {
-    'produce' || 'colors' => .7,
+    'produce' || 'colors' || 'shapes' => .7,
     'numbers' => .85,
     _ => 1,
   };

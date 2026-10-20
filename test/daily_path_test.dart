@@ -145,6 +145,8 @@ void main() {
     );
     await state.load();
     await state.createProfile('Ada', 'cat', {});
+    // Items now have real recordings; keep host playback off.
+    state.audio.enabled = false;
     return state;
   }
 

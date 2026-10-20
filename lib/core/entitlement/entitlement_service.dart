@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 import '../db/app_database.dart';
 
-/// Emulator QA only: `--dart-define=QA_PREMIUM=true` unlocks premium games in
-/// debug builds. Release and profile builds ignore it (kDebugMode is false).
-const _qaPremium = kDebugMode && bool.fromEnvironment('QA_PREMIUM');
+/// Device QA only: `--dart-define=QA_PREMIUM=true` unlocks every game in
+/// debug and profile test builds so all cards can be tried without a store
+/// purchase. Release builds always ignore it (kReleaseMode).
+const qaPremium = !kReleaseMode && bool.fromEnvironment('QA_PREMIUM');
 
 class EntitlementService {
   final AppDatabase db;
@@ -15,7 +16,7 @@ class EntitlementService {
       lastConfirmedAt != null &&
       !now.isBefore(lastConfirmedAt!) &&
       now.difference(lastConfirmedAt!) < const Duration(days: 7);
-  bool get isPremium => _qaPremium || activeAt(DateTime.now());
+  bool get isPremium => qaPremium || activeAt(DateTime.now());
   Future<void> load() async {
     storeActive = await db.preference('premium.active') == 'true';
     lastConfirmedAt = DateTime.tryParse(

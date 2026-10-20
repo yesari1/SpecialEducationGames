@@ -1105,4 +1105,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Dinle';
+
+  @override
+  String get homeHoldForFamily => 'Aile için basılı tut';
 }

@@ -126,8 +126,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/blue.mp3",
-      "en": "assets/audio/en/colors/blue.mp3"
+      "tr": "assets/audio/tr/colors/blue_selected.mp3",
+      "en": "assets/audio/en/colors/blue_selected.mp3"
     },
     "sfx": null
   },
@@ -143,8 +143,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/yellow.mp3",
-      "en": "assets/audio/en/colors/yellow.mp3"
+      "tr": "assets/audio/tr/colors/yellow_selected.mp3",
+      "en": "assets/audio/en/colors/yellow_selected.mp3"
     },
     "sfx": null
   },
@@ -160,8 +160,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/green.mp3",
-      "en": "assets/audio/en/colors/green.mp3"
+      "tr": "assets/audio/tr/colors/green_selected.mp3",
+      "en": "assets/audio/en/colors/green_selected.mp3"
     },
     "sfx": null
   },
@@ -177,8 +177,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/orange.mp3",
-      "en": "assets/audio/en/colors/orange.mp3"
+      "tr": "assets/audio/tr/colors/orange_selected.mp3",
+      "en": "assets/audio/en/colors/orange_selected.mp3"
     },
     "sfx": null
   },
@@ -194,8 +194,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/purple.mp3",
-      "en": "assets/audio/en/colors/purple.mp3"
+      "tr": "assets/audio/tr/colors/purple_selected.mp3",
+      "en": "assets/audio/en/colors/purple_selected.mp3"
     },
     "sfx": null
   },
@@ -211,8 +211,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/pink.mp3",
-      "en": "assets/audio/en/colors/pink.mp3"
+      "tr": "assets/audio/tr/colors/pink_selected.mp3",
+      "en": "assets/audio/en/colors/pink_selected.mp3"
     },
     "sfx": null
   },
@@ -228,8 +228,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/brown.mp3",
-      "en": "assets/audio/en/colors/brown.mp3"
+      "tr": "assets/audio/tr/colors/brown_selected.mp3",
+      "en": "assets/audio/en/colors/brown_selected.mp3"
     },
     "sfx": null
   },
@@ -245,8 +245,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/black.mp3",
-      "en": "assets/audio/en/colors/black.mp3"
+      "tr": "assets/audio/tr/colors/black_selected.mp3",
+      "en": "assets/audio/en/colors/black_selected.mp3"
     },
     "sfx": null
   },
@@ -262,8 +262,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/white.mp3",
-      "en": "assets/audio/en/colors/white.mp3"
+      "tr": "assets/audio/tr/colors/white_selected.mp3",
+      "en": "assets/audio/en/colors/white_selected.mp3"
     },
     "sfx": null
   },
@@ -279,8 +279,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/colors/gray.mp3",
-      "en": "assets/audio/en/colors/gray.mp3"
+      "tr": "assets/audio/tr/colors/gray_selected.mp3",
+      "en": "assets/audio/en/colors/gray_selected.mp3"
     },
     "sfx": null
   },
@@ -295,7 +295,10 @@
       "en": "Navy"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/colors/navy_selected.mp3",
+      "en": "assets/audio/en/colors/navy_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -309,7 +312,10 @@
       "en": "Light blue"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/colors/light_blue_selected.mp3",
+      "en": "assets/audio/en/colors/light_blue_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -323,7 +329,10 @@
       "en": "Turquoise"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/colors/turquoise_selected.mp3",
+      "en": "assets/audio/en/colors/turquoise_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -337,7 +346,10 @@
       "en": "Gold"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/colors/gold_selected.mp3",
+      "en": "assets/audio/en/colors/gold_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -351,7 +363,10 @@
       "en": "Silver"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/colors/silver_selected.mp3",
+      "en": "assets/audio/en/colors/silver_selected.mp3"
+    },
     "sfx": null
   }
 ]

@@ -10,7 +10,10 @@
       "en": "Zero"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/0_selected.mp3",
+      "en": "assets/audio/en/numbers/0_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -25,8 +28,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/1.mp3",
-      "en": "assets/audio/en/numbers/1.mp3"
+      "tr": "assets/audio/tr/numbers/1_selected.mp3",
+      "en": "assets/audio/en/numbers/1_selected.mp3"
     },
     "sfx": null
   },
@@ -42,8 +45,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/2.mp3",
-      "en": "assets/audio/en/numbers/2.mp3"
+      "tr": "assets/audio/tr/numbers/2_selected.mp3",
+      "en": "assets/audio/en/numbers/2_selected.mp3"
     },
     "sfx": null
   },
@@ -174,8 +177,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/4.mp3",
-      "en": "assets/audio/en/numbers/4.mp3"
+      "tr": "assets/audio/tr/numbers/4_selected.mp3",
+      "en": "assets/audio/en/numbers/4_selected.mp3"
     },
     "sfx": null
   },
@@ -191,8 +194,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/5.mp3",
-      "en": "assets/audio/en/numbers/5.mp3"
+      "tr": "assets/audio/tr/numbers/5_selected.mp3",
+      "en": "assets/audio/en/numbers/5_selected.mp3"
     },
     "sfx": null
   },
@@ -208,8 +211,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/6.mp3",
-      "en": "assets/audio/en/numbers/6.mp3"
+      "tr": "assets/audio/tr/numbers/6_selected.mp3",
+      "en": "assets/audio/en/numbers/6_selected.mp3"
     },
     "sfx": null
   },
@@ -225,8 +228,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/7.mp3",
-      "en": "assets/audio/en/numbers/7.mp3"
+      "tr": "assets/audio/tr/numbers/7_selected.mp3",
+      "en": "assets/audio/en/numbers/7_selected.mp3"
     },
     "sfx": null
   },
@@ -242,8 +245,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/8.mp3",
-      "en": "assets/audio/en/numbers/8.mp3"
+      "tr": "assets/audio/tr/numbers/8_selected.mp3",
+      "en": "assets/audio/en/numbers/8_selected.mp3"
     },
     "sfx": null
   },
@@ -259,8 +262,8 @@
     },
     "images": [],
     "audio": {
-      "tr": "assets/audio/tr/numbers/9.mp3",
-      "en": "assets/audio/en/numbers/9.mp3"
+      "tr": "assets/audio/tr/numbers/9_selected.mp3",
+      "en": "assets/audio/en/numbers/9_selected.mp3"
     },
     "sfx": null
   },
@@ -275,7 +278,10 @@
       "en": "Ten"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/10_selected.mp3",
+      "en": "assets/audio/en/numbers/10_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -289,7 +295,10 @@
       "en": "Eleven"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/11_selected.mp3",
+      "en": "assets/audio/en/numbers/11_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -303,7 +312,10 @@
       "en": "Twelve"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/12_selected.mp3",
+      "en": "assets/audio/en/numbers/12_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -317,7 +329,10 @@
       "en": "Thirteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/13_selected.mp3",
+      "en": "assets/audio/en/numbers/13_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -331,7 +346,10 @@
       "en": "Fourteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/14_selected.mp3",
+      "en": "assets/audio/en/numbers/14_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -345,7 +363,10 @@
       "en": "Fifteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/15_selected.mp3",
+      "en": "assets/audio/en/numbers/15_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -359,7 +380,10 @@
       "en": "Sixteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/16_selected.mp3",
+      "en": "assets/audio/en/numbers/16_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -373,7 +397,10 @@
       "en": "Seventeen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/17_selected.mp3",
+      "en": "assets/audio/en/numbers/17_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -387,7 +414,10 @@
       "en": "Eighteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/18_selected.mp3",
+      "en": "assets/audio/en/numbers/18_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -401,7 +431,10 @@
       "en": "Nineteen"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/19_selected.mp3",
+      "en": "assets/audio/en/numbers/19_selected.mp3"
+    },
     "sfx": null
   },
   {
@@ -415,7 +448,10 @@
       "en": "Twenty"
     },
     "images": [],
-    "audio": {},
+    "audio": {
+      "tr": "assets/audio/tr/numbers/20_selected.mp3",
+      "en": "assets/audio/en/numbers/20_selected.mp3"
+    },
     "sfx": null
   }
 ]

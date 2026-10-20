@@ -1105,4 +1105,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Listen';
+
+  @override
+  String get homeHoldForFamily => 'Hold for the family area';
 }

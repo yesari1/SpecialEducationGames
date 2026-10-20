@@ -22,7 +22,7 @@ THEMES = [
  ('music','Müzik Aletleri','Musical Instruments','F6EDF6','B572B0','965593','guitar'),
  ('body','Vücudumuz','Our Body','FDF1EA','DB8D6A','BC6F4D','hand'),
  ('colors','Renkler','Colors','FFFEFC','1687D9','0868AF','red'),
- ('shapes','Şekiller','Shapes','EAF1FA','5B8FD1','4071B3','circle'),
+ ('shapes','Şekiller','Shapes','FFFEFC','9C6AD6','6F45A8','circle'),
  ('numbers','Sayılar','Numbers','FFFEFC','FFB92E','AC6B00','3'),
  ('emotions','Duygular','Feelings','FFF6E0','E3B23C','C29322','happy'),
  ('letters','Harfler','Letters','F1F4F8','5F7896','465E7A','a'),
@@ -178,12 +178,13 @@ def main():
   writer=csv.DictWriter(f,fieldnames=rows[0].keys()); writer.writeheader(); writer.writerows(rows)
  for t in THEMES:
   write_json(ROOT/f'assets/content/items/{t[0]}.json',[x for x in items if x['theme']==t[0]])
- active=['animals','produce','colors','numbers','vehicles']
+ active=['animals','produce','colors','numbers','vehicles','shapes']
  theme_games={
  'animals':['G01','G10','G02','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
  'produce':['G01','G02','G14','G04','G33','G36','G55','G15','G17','G23','G38'],
  'colors':['G01','G02','G14','G55'],
  'numbers':['G35','G02','G10','G14','G33','G34','G36','G55','G37','G38'],
+ 'shapes':['G01','G02','G14','G55'],
  'vehicles':['G02','G01','G10','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
  }
  write_json(ROOT/'assets/content/themes.json',[dict(id=t[0],name={'tr':t[1],'en':t[2]},palette=dict(zip(['bg','accent','deep'],['#'+x for x in t[3:6]])),hero=t[0]+'.'+t[6],active=t[0] in active,games=theme_games.get(t[0],[])) for t in THEMES])
