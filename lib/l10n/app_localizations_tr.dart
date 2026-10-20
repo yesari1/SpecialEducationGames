@@ -37,7 +37,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get homeDailyPath => 'Bugünün Yolu';
 
   @override
-  String get homeFamilyHint => 'Aile bölümü için iki saniye basılı tutun';
+  String get homeFamilyHint => 'Aile bölümü (ebeveyn kontrolü açılır)';
 
   @override
   String greeting(String name) {
@@ -792,7 +792,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bu oyun için yeterli içerik henüz hazır değil.';
 
   @override
-  String get gameHoldToLeave => 'Çıkmak için basılı tut';
+  String get gameHoldToLeave => 'Oyundan çık';
 
   @override
   String get gameListenAgain => 'Tekrar dinle';
@@ -1032,7 +1032,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obLockBody =>
-      'Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine iki saniye basılı tutun ve basit bir soruyu yanıtlayın.';
+      'Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine dokunun. Kısa bir ebeveyn kontrolü (basit bir soru ya da PIN’iniz) çocukların girmesini önler.';
 
   @override
   String get obPinSwitch => 'Ayrıca 4 haneli PIN belirle';
@@ -1105,7 +1105,4 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Dinle';
-
-  @override
-  String get homeHoldForFamily => 'Aile için basılı tut';
 }

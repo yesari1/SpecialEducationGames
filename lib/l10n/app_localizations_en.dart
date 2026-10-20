@@ -37,7 +37,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeDailyPath => 'Today’s Path';
 
   @override
-  String get homeFamilyHint => 'Hold for two seconds to open the family area';
+  String get homeFamilyHint => 'Family area (opens a parent check)';
 
   @override
   String greeting(String name) {
@@ -790,7 +790,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'There is not enough content for this game yet.';
 
   @override
-  String get gameHoldToLeave => 'Hold to leave';
+  String get gameHoldToLeave => 'Leave the game';
 
   @override
   String get gameListenAgain => 'Listen again';
@@ -1030,7 +1030,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obLockBody =>
-      'To return to the family area, press and hold “Family” on the home screen for two seconds, then answer a simple question.';
+      'To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.';
 
   @override
   String get obPinSwitch => 'Also set a 4-digit PIN';
@@ -1105,7 +1105,4 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Listen';
-
-  @override
-  String get homeHoldForFamily => 'Hold for the family area';
 }

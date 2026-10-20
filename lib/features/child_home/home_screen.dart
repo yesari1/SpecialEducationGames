@@ -72,10 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   alignment: WrapAlignment.spaceBetween,
                   children: [
-                    HoldButton(
+                    PillButton(
                       semanticsLabel: l10n.homeFamilyHint,
-                      hint: l10n.homeHoldForFamily,
-                      onHeld: () async {
+                      onPressed: () async {
                         if (await showParentGate(context, s) &&
                             context.mounted) {
                           context.go('/family');

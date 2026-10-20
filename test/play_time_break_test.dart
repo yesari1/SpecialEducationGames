@@ -172,7 +172,7 @@ void main() {
       }
 
       final extend = find.byKey(const ValueKey('time-limit-extend'));
-      tester.widget<HoldButton>(extend).onHeld();
+      tester.widget<PillButton>(extend).onPressed();
       await tester.pumpAndSettle();
       expect(find.text('To continue'), findsOneWidget);
       await tester.tap(find.text('Cancel'));

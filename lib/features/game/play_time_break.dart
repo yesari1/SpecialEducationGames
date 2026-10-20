@@ -165,10 +165,10 @@ class _PlayTimeBreakState extends State<PlayTimeBreak> {
           const SizedBox(height: SegSpace.s4),
           SizedBox(
             width: double.infinity,
-            child: HoldButton(
+            child: PillButton(
               key: const ValueKey('time-limit-extend'),
               semanticsLabel: strings.playTimeExtendHint,
-              onHeld: () async {
+              onPressed: () async {
                 if (!await showParentGate(context, state) || !context.mounted) {
                   return;
                 }

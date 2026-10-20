@@ -155,7 +155,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeFamilyHint.
   ///
   /// In en, this message translates to:
-  /// **'Hold for two seconds to open the family area'**
+  /// **'Family area (opens a parent check)'**
   String get homeFamilyHint;
 
   /// Child home greeting with the local profile nickname.
@@ -1462,7 +1462,7 @@ abstract class AppLocalizations {
   /// Game results and actions interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Hold to leave'**
+  /// **'Leave the game'**
   String get gameHoldToLeave;
 
   /// Game results and actions interface copy.
@@ -1888,7 +1888,7 @@ abstract class AppLocalizations {
   /// No description provided for @obLockBody.
   ///
   /// In en, this message translates to:
-  /// **'To return to the family area, press and hold “Family” on the home screen for two seconds, then answer a simple question.'**
+  /// **'To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.'**
   String get obLockBody;
 
   /// No description provided for @obPinSwitch.
@@ -2022,12 +2022,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Listen'**
   String get gameListenToSound;
-
-  /// No description provided for @homeHoldForFamily.
-  ///
-  /// In en, this message translates to:
-  /// **'Hold for the family area'**
-  String get homeHoldForFamily;
 }
 
 class _AppLocalizationsDelegate

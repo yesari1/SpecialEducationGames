@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
@@ -86,148 +85,38 @@ class SegButton extends StatelessWidget {
   );
 }
 
-/// A button that acts only after being held (child-safe exits and the family
-/// area). Holding fills a ring around it; a short tap shows a hint bubble so
-/// a parent never gets a silent "does nothing".
-class HoldButton extends StatefulWidget {
+/// The round white pill used for "back" and "Family". A single tap acts;
+/// the child lock lives behind it (the parent gate), not in a long hold.
+class PillButton extends StatelessWidget {
   final Widget child;
-  final VoidCallback onHeld;
-  final Duration duration;
+  final VoidCallback onPressed;
   final String semanticsLabel;
-
-  /// Short text shown after a tap that was released too early.
-  final String? hint;
-  const HoldButton({
+  const PillButton({
     super.key,
     required this.child,
-    required this.onHeld,
-    this.duration = const Duration(seconds: 2),
+    required this.onPressed,
     required this.semanticsLabel,
-    this.hint,
   });
-  @override
-  State<HoldButton> createState() => _HoldButtonState();
-}
-
-class _HoldButtonState extends State<HoldButton>
-    with SingleTickerProviderStateMixin {
-  // The ring is only a visual; the timer decides, independent of frames.
-  late final AnimationController progress = AnimationController(
-    vsync: this,
-    duration: widget.duration,
-  );
-  final GlobalKey<TooltipState> _tooltip = GlobalKey<TooltipState>();
-  final Set<int> _pointers = {};
-  Timer? _timer;
-
-  void _fire() {
-    _timer = null;
-    _pointers.clear();
-    progress.value = 0;
-    widget.onHeld();
-  }
-
-  void _down(PointerDownEvent event) {
-    _pointers.add(event.pointer);
-    // A second finger restarts the hold rather than shortening it.
-    _timer?.cancel();
-    _timer = Timer(widget.duration, _fire);
-    progress.forward(from: 0);
-  }
-
-  void _release(PointerEvent event) {
-    if (!_pointers.remove(event.pointer) || _pointers.isNotEmpty) return;
-    if (_timer == null) return;
-    _timer!.cancel();
-    _timer = null;
-    progress.reverse();
-    _tooltip.currentState?.ensureTooltipVisible();
-  }
-
-  @override
-  void didUpdateWidget(HoldButton old) {
-    super.didUpdateWidget(old);
-    progress.duration = widget.duration;
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    progress.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) => Semantics(
     button: true,
-    label: widget.semanticsLabel,
-    onLongPress: widget.onHeld,
+    label: semanticsLabel,
     excludeSemantics: true,
-    child: Tooltip(
-      key: _tooltip,
-      message: widget.hint ?? widget.semanticsLabel,
-      triggerMode: TooltipTriggerMode.manual,
-      showDuration: const Duration(seconds: 2),
-      preferBelow: true,
-      decoration: BoxDecoration(
-        color: SegColors.ink.withValues(alpha: .9),
-        borderRadius: BorderRadius.circular(SegRadius.md),
-      ),
-      textStyle: SegText.label.copyWith(color: Colors.white),
-      child: Listener(
-        onPointerDown: _down,
-        onPointerUp: _release,
-        onPointerCancel: _release,
-        child: AnimatedBuilder(
-          animation: progress,
-          builder: (context, child) => CustomPaint(
-            foregroundPainter: _HoldRingPainter(progress.value),
-            child: AnimatedContainer(
-              duration: SegMotion.tap,
-              padding: const EdgeInsets.all(SegSpace.s4),
-              constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
-              decoration: BoxDecoration(
-                color: progress.value > 0
-                    ? SegColors.primarySoft
-                    : SegColors.surface,
-                borderRadius: BorderRadius.circular(SegRadius.pill),
-                border: Border.all(color: SegColors.line),
-              ),
-              child: child,
-            ),
-          ),
-          child: widget.child,
+    child: Material(
+      color: SegColors.surface,
+      shape: const StadiumBorder(side: BorderSide(color: SegColors.line)),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onPressed,
+        child: Container(
+          padding: const EdgeInsets.all(SegSpace.s4),
+          constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
+          child: Center(widthFactor: 1, heightFactor: 1, child: child),
         ),
       ),
     ),
   );
-}
-
-class _HoldRingPainter extends CustomPainter {
-  final double value;
-  const _HoldRingPainter(this.value);
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (value <= 0) return;
-    final rect = (Offset.zero & size).deflate(1.5);
-    final rrect = RRect.fromRectAndRadius(
-      rect,
-      Radius.circular(rect.shortestSide / 2),
-    );
-    final path = Path()..addRRect(rrect);
-    final metric = path.computeMetrics().first;
-    canvas.drawPath(
-      metric.extractPath(0, metric.length * value),
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 4
-        ..strokeCap = StrokeCap.round
-        ..color = SegColors.primary,
-    );
-  }
-
-  @override
-  bool shouldRepaint(_HoldRingPainter old) => old.value != value;
 }
 
 class SegCard extends StatelessWidget {

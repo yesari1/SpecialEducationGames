@@ -564,7 +564,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       children: [
         _title(l10n.obLockTitle, key: const ValueKey('lock-title')),
         const SizedBox(height: SegSpace.s3),
-        HoldToOpenIllustration(label: l10n.homeFamily),
+        FamilyAccessIllustration(label: l10n.homeFamily),
         const SizedBox(height: SegSpace.s4),
         _body(l10n.obLockBody),
         const SizedBox(height: SegSpace.s4),

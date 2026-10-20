@@ -9,7 +9,7 @@
   "homeFamily": "Family",
   "homeGames": "Games",
   "homeDailyPath": "Today’s Path",
-  "homeFamilyHint": "Hold for two seconds to open the family area",
+  "homeFamilyHint": "Family area (opens a parent check)",
   "greeting": "Hello, {name}",
   "@greeting": {
     "description": "Child home greeting with the local profile nickname.",
@@ -710,7 +710,7 @@
   "@gameThereIsNotEnoughContentForThis": {
     "description": "Game results and actions interface copy."
   },
-  "gameHoldToLeave": "Hold to leave",
+  "gameHoldToLeave": "Leave the game",
   "@gameHoldToLeave": {
     "description": "Game results and actions interface copy."
   },
@@ -986,7 +986,7 @@
   "@obGoalMinutes": {"placeholders": {"minutes": {"type": "int"}}},
   "obRecommended": "Recommended",
   "obLockTitle": "Settings stay with you",
-  "obLockBody": "To return to the family area, press and hold “Family” on the home screen for two seconds, then answer a simple question.",
+  "obLockBody": "To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.",
   "obPinSwitch": "Also set a 4-digit PIN",
   "obPinField": "PIN",
   "obPinInvalid": "Enter four digits.",
@@ -1010,6 +1010,5 @@
   "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
   "appTitle": "Special Education Games",
   "gamePromptWhichSound": "Which sound does it make?",
-  "gameListenToSound": "Listen",
-  "homeHoldForFamily": "Hold for the family area"
+  "gameListenToSound": "Listen"
 }

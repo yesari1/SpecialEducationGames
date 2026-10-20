@@ -315,11 +315,11 @@ class _GoalRingPainter extends CustomPainter {
   bool shouldRepaint(_GoalRingPainter old) => old.fraction != fraction;
 }
 
-/// The home screen's "Family" button with a finger holding it and a ring that
-/// fills, explaining the two-second hold without words.
-class HoldToOpenIllustration extends StatelessWidget {
+/// The home screen's "Family" button with a finger tapping it and the
+/// parent-check lock that opens next.
+class FamilyAccessIllustration extends StatelessWidget {
   final String label;
-  const HoldToOpenIllustration({super.key, required this.label});
+  const FamilyAccessIllustration({super.key, required this.label});
   @override
   Widget build(BuildContext context) => ExcludeSemantics(
     child: Container(
@@ -329,95 +329,65 @@ class HoldToOpenIllustration extends StatelessWidget {
         borderRadius: BorderRadius.circular(SegRadius.lg),
         border: Border.all(color: SegColors.line),
       ),
-      child: Center(
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.center,
-          children: [
-            const SizedBox(
-              width: 150,
-              height: 150,
-              child: CustomPaint(painter: _HoldRingPainter()),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: SegSpace.s4,
-                vertical: SegSpace.s3,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SegRadius.pill),
-                border: Border.all(color: SegColors.line, width: 2),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.people_outline_rounded,
-                    color: SegColors.ink,
-                  ),
-                  const SizedBox(width: SegSpace.s2),
-                  Text(label, style: SegText.label),
-                ],
-              ),
-            ),
-            const Positioned(
-              right: 8,
-              bottom: 4,
-              child: Icon(
-                Icons.touch_app_rounded,
-                size: 44,
-                color: SegColors.accentDeep,
-              ),
-            ),
-            Positioned(
-              top: 6,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: SegSpace.s4,
+                  vertical: SegSpace.s3,
+                ),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFDDF6F3),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(SegRadius.pill),
+                  border: Border.all(color: SegColors.line, width: 2),
                 ),
-                child: Text(
-                  '2 s',
-                  style: SegText.caption.copyWith(
-                    color: SegColors.turquoiseDeep,
-                  ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.people_outline_rounded,
+                      color: SegColors.ink,
+                    ),
+                    const SizedBox(width: SegSpace.s2),
+                    Text(label, style: SegText.label),
+                  ],
                 ),
               ),
+              const Positioned(
+                right: -18,
+                bottom: -26,
+                child: Icon(
+                  Icons.touch_app_rounded,
+                  size: 40,
+                  color: SegColors.accentDeep,
+                ),
+              ),
+            ],
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: SegSpace.s5),
+            child: Icon(Icons.arrow_forward_rounded, color: SegColors.inkFaint),
+          ),
+          Container(
+            width: 56,
+            height: 56,
+            decoration: const BoxDecoration(
+              color: SegColors.primarySoft,
+              shape: BoxShape.circle,
             ),
-          ],
-        ),
+            child: const Icon(
+              Icons.lock_outline_rounded,
+              color: SegColors.primaryDeep,
+            ),
+          ),
+        ],
       ),
     ),
   );
-}
-
-class _HoldRingPainter extends CustomPainter {
-  const _HoldRingPainter();
-  @override
-  void paint(Canvas canvas, Size size) {
-    final rect = Rect.fromCircle(
-      center: size.center(Offset.zero),
-      radius: size.shortestSide / 2 - 14,
-    );
-    final paint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 6
-      ..strokeCap = StrokeCap.round
-      ..color = SegColors.line;
-    canvas.drawArc(rect, 0, math.pi * 2, false, paint);
-    canvas.drawArc(
-      rect,
-      -math.pi / 2,
-      math.pi * 1.4,
-      false,
-      paint..color = SegColors.turquoise,
-    );
-  }
-
-  @override
-  bool shouldRepaint(_HoldRingPainter old) => false;
 }
 
 /// An upright phone, a curved arrow and the same phone turned sideways with

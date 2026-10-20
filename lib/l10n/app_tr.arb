@@ -9,7 +9,7 @@
   "homeFamily": "Aile",
   "homeGames": "Oyunlar",
   "homeDailyPath": "Bugünün Yolu",
-  "homeFamilyHint": "Aile bölümü için iki saniye basılı tutun",
+  "homeFamilyHint": "Aile bölümü (ebeveyn kontrolü açılır)",
   "greeting": "Merhaba, {name}",
   "@greeting": {
     "description": "Yerel profil takma adı ile çocuk ana ekranı selamlaması.",
@@ -710,7 +710,7 @@
   "@gameThereIsNotEnoughContentForThis": {
     "description": "Game results and actions interface copy."
   },
-  "gameHoldToLeave": "Çıkmak için basılı tut",
+  "gameHoldToLeave": "Oyundan çık",
   "@gameHoldToLeave": {
     "description": "Game results and actions interface copy."
   },
@@ -983,7 +983,7 @@
   "obGoalMinutes": "{minutes} dk",
   "obRecommended": "Önerilen",
   "obLockTitle": "Ayarlar sizde kalır",
-  "obLockBody": "Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine iki saniye basılı tutun ve basit bir soruyu yanıtlayın.",
+  "obLockBody": "Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine dokunun. Kısa bir ebeveyn kontrolü (basit bir soru ya da PIN’iniz) çocukların girmesini önler.",
   "obPinSwitch": "Ayrıca 4 haneli PIN belirle",
   "obPinField": "PIN",
   "obPinInvalid": "Dört rakam girin.",
@@ -1005,6 +1005,5 @@
   "gameFillBasketCount": "Sepette {count} / {goal}",
   "appTitle": "Özel Eğitim Oyunları",
   "gamePromptWhichSound": "Hangi ses onun?",
-  "gameListenToSound": "Dinle",
-  "homeHoldForFamily": "Aile için basılı tut"
+  "gameListenToSound": "Dinle"
 }

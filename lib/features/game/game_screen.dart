@@ -404,11 +404,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        HoldButton(
+                        PillButton(
                           semanticsLabel: l10n.gameHoldToLeave,
-                          hint: l10n.gameHoldToLeave,
-                          duration: const Duration(seconds: 1),
-                          onHeld: back,
+                          onPressed: back,
                           child: const Icon(Icons.arrow_back_rounded),
                         ),
                         Flexible(
@@ -966,11 +964,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                 padding: EdgeInsets.all(compact ? SegSpace.s3 : SegSpace.s5),
                 child: Row(
                   children: [
-                    HoldButton(
+                    PillButton(
                       semanticsLabel: l10n.gameHoldToLeave,
-                      hint: l10n.gameHoldToLeave,
-                      duration: const Duration(seconds: 1),
-                      onHeld: back,
+                      onPressed: back,
                       child: const Icon(Icons.arrow_back_rounded),
                     ),
                     const SizedBox(width: SegSpace.s5),
