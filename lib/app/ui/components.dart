@@ -478,7 +478,8 @@ class _PhotoContourPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final photo = image;
     if (photo == null || size.shortestSide <= 8) return;
-    const stroke = 4.0;
+    // A thin white rim (about half the earlier 4 px) keeps the cutout look.
+    const stroke = 2.0;
     final available = Size(size.width - stroke * 2, size.height - stroke * 2);
     final w = photo.width.toDouble(), h = photo.height.toDouble();
     final fraction = crop;
@@ -926,4 +927,57 @@ class _BasketPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_BasketPainter old) => old.tint != tint;
+}
+
+/// A group shown as three of its members: two behind, one in front.
+class GroupCluster extends StatelessWidget {
+  final List<ContentItem> members;
+  const GroupCluster(this.members, {super.key});
+  @override
+  Widget build(BuildContext context) {
+    if (members.isEmpty) return const SizedBox.shrink();
+    Widget at(int i, Alignment alignment, double size) => Align(
+      alignment: alignment,
+      child: FractionallySizedBox(
+        widthFactor: size,
+        heightFactor: size,
+        child: ItemVisual(members[i], alignment: Alignment.bottomCenter),
+      ),
+    );
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        if (members.length > 1) at(1, const Alignment(-1, .2), .58),
+        if (members.length > 2) at(2, const Alignment(1, .2), .58),
+        at(0, Alignment.bottomCenter, members.length == 1 ? .95 : .66),
+      ],
+    );
+  }
+}
+
+/// The sorted item hopping in an arc into its group after a correct answer.
+class HopIn extends StatelessWidget {
+  final Widget child;
+  final bool animate;
+  const HopIn({super.key, required this.child, this.animate = true});
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) {
+      if (!animate || MediaQuery.disableAnimationsOf(context)) return child;
+      return TweenAnimationBuilder<double>(
+        tween: Tween(begin: 0, end: 1),
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeInOut,
+        builder: (context, t, child) => Transform.translate(
+          offset: Offset(
+            0,
+            -box.maxHeight * (1 - t) -
+                math.sin(t * math.pi) * box.maxHeight * .35,
+          ),
+          child: Transform.scale(scale: 1.25 - .25 * t, child: child),
+        ),
+        child: child,
+      );
+    },
+  );
 }

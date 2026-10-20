@@ -251,7 +251,8 @@ class RoundController extends ChangeNotifier {
       await onIntroduced?.call(spec!.target.id);
       if (_disposed || answeredSession != generation) return;
       final answer = _answerSpec!;
-      later(const Duration(milliseconds: 600), () => start(repeat: answer));
+      // Never advance faster than the name audio plus a calm pause.
+      later(const Duration(milliseconds: 1500), () => start(repeat: answer));
       return;
     }
     await saveTrial(this);

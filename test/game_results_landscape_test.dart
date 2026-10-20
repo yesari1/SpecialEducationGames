@@ -86,14 +86,11 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(GameScreen), findsOneWidget);
       expect(find.byType(ItemVisual), findsOneWidget);
-      for (var i = 0; i < 5; i++) {
-        await tester.tap(find.byType(ItemVisual).first);
+      for (var i = 0; i < 4; i++) {
+        await tester.tap(find.text('Next'));
         await tester.pump();
-        if (i < 4) {
-          await tester.tap(find.text('Next'));
-          await tester.pump();
-        }
       }
+      await tester.pump();
       final finish = find.byKey(const ValueKey('explore-finish'));
       expect(tester.widget<SegButton>(finish).onPressed, isNotNull);
       await tester.tap(finish);
@@ -102,7 +99,7 @@ void main() {
       );
       await tester.pump();
       await tester.pumpAndSettle();
-      expect(find.byKey(const ValueKey('completion-pages')), findsOneWidget);
+      expect(find.byKey(const ValueKey('completion-summary')), findsOneWidget);
 
       for (final locale in ['tr', 'en']) {
         state.locale = locale;
@@ -112,19 +109,10 @@ void main() {
           for (final value in [1.0, 1.6, 2.0]) {
             scale.value = value;
             await tester.pump();
-            final pager = tester.widget<PageView>(
-              find.byKey(const ValueKey('completion-pages')),
-            );
-            pager.controller!.jumpToPage(0);
-            await tester.pump();
             expect(
               find.text(state.tr('Aferin!', 'Well done!')),
               findsOneWidget,
             );
-            expect(_verticalScrollables(tester), isEmpty);
-            expect(tester.takeException(), isNull);
-            pager.controller!.jumpToPage(1);
-            await tester.pump();
             final labels = [
               state.tr('Tekrar', 'Again'),
               state.tr('Bugünün Yolu', 'Today’s Path'),
@@ -132,10 +120,9 @@ void main() {
             ];
             for (final label in labels) {
               expect(find.text(label), findsOneWidget);
-              expect(
-                tester.getRect(find.text(label)).bottom,
-                lessThanOrEqualTo(size.height),
-              );
+              final rect = tester.getRect(find.text(label));
+              expect(rect.bottom, lessThanOrEqualTo(size.height));
+              expect(rect.top, greaterThanOrEqualTo(0));
             }
             expect(_verticalScrollables(tester), isEmpty);
             expect(tester.takeException(), isNull);

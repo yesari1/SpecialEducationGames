@@ -14,6 +14,7 @@ import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
 import 'round_controller.dart';
+import 'templates/game_template.dart' show praiseCue;
 import 'widgets/round_choices_view.dart';
 import 'widgets/counted_objects.dart';
 import 'widgets/tap_discovery.dart';
@@ -37,11 +38,11 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
-  final PageController _completionPager = PageController();
-  int _completionPage = 0;
+  bool _roundEndCelebrated = false;
   RoundController? controller;
   int card = 0;
   final Set<String> _explored = {};
+  int? _autoSpokenCard;
   bool _exploreComplete = false;
   bool allowed = false;
   Timer? endTimer;
@@ -126,7 +127,14 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       introduced: s.introduced,
       introduceNewItems:
           s.introduction && SurveyMapper.map(survey).introduction,
-      onIntroduced: s.markIntroduced,
+      // After tapping a newly introduced item, say its name before moving on.
+      onIntroduced: (id) async {
+        final item = s.content.items.where((x) => x.id == id).firstOrNull;
+        if (item?.audioFor(s.locale) case final String cue) {
+          await s.audio.playSequence([cue]);
+        }
+        await s.markIntroduced(id);
+      },
       playRetry: () => s.audio.playSequence([
         'assets/audio/${s.locale}/prompts/retry_selected.mp3',
       ]),
@@ -268,7 +276,6 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     endTimer?.cancel();
     controller?.removeListener(changed);
     controller?.dispose();
-    _completionPager.dispose();
     s.audio.stop();
     super.dispose();
   }
@@ -651,191 +658,168 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     );
   }
 
-  Widget _completed(int stars) => Scaffold(
-    backgroundColor: s.content.theme(widget.themeId).bg,
-    body: SceneBackdrop(
-      tint: s.content.theme(widget.themeId).accent,
-      base: s.content.theme(widget.themeId).bg,
-      child: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) => Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              children: [
-                Expanded(
-                  child: PageView(
-                    key: const ValueKey('completion-pages'),
-                    controller: _completionPager,
-                    onPageChanged: (page) =>
-                        setState(() => _completionPage = page),
-                    children: [
-                      _completionSummary(stars),
-                      _completionActions(constraints.maxWidth - 16),
-                    ],
+  /// Round end: one calm, happy page. Stars pop in, a few stars drift down
+  /// (fewer for "simple", none for "off" or reduced motion), a soft applause
+  /// and a varied spoken praise play once.
+  Widget _completed(int stars) {
+    if (!_roundEndCelebrated) {
+      _roundEndCelebrated = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted || !s.sound) return;
+        s.audio.playSequence([
+          if (s.celebration != 'off') 'assets/sfx/ui/applause.mp3',
+          praiseCue(s.locale),
+        ]);
+      });
+    }
+    final theme = s.content.theme(widget.themeId);
+    final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
+    final particles = reduced || s.celebration == 'off'
+        ? 0
+        : s.celebration == 'full'
+        ? 26
+        : 12;
+    final compact = MediaQuery.sizeOf(context).height < 500;
+    return Scaffold(
+      backgroundColor: theme.bg,
+      body: SceneBackdrop(
+        tint: theme.accent,
+        base: theme.bg,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            if (particles > 0)
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: ExcludeSemantics(
+                    child: _DriftingStars(count: particles),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      key: const ValueKey('completion-previous'),
-                      tooltip: l10n.gamePreviousPage,
-                      onPressed: _completionPage == 0
-                          ? null
-                          : () => _completionPager.previousPage(
-                              duration: SegMotion.pageSlide,
-                              curve: Curves.easeOutCubic,
-                            ),
-                      icon: const Icon(Icons.chevron_left_rounded),
-                    ),
-                    Text(
-                      l10n.gameSummaryPage(_completionPage + 1, 2),
-                      key: const ValueKey('completion-page-indicator'),
-                      textAlign: TextAlign.center,
-                      style: SegText.caption,
-                    ),
-                    IconButton(
-                      key: const ValueKey('completion-next'),
-                      tooltip: l10n.gameNextPage,
-                      onPressed: _completionPage == 1
-                          ? null
-                          : () => _completionPager.nextPage(
-                              duration: SegMotion.pageSlide,
-                              curve: Curves.easeOutCubic,
-                            ),
-                      icon: const Icon(Icons.chevron_right_rounded),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-
-  Widget _completionSummary(int stars) => Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    child: Row(
-      children: [
-        Expanded(
-          flex: 2,
-          child: Center(
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 4,
-              runSpacing: 4,
-              children: List.generate(
-                stars,
-                (i) => _PoppingStar(
-                  delay: Duration(milliseconds: 120 * i),
-                  animate: !s.reducedMotion,
-                ),
               ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          flex: 3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                l10n.gameWellDone,
-                style: SegText.title.copyWith(color: SegColors.ink),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              if (s.hasTodaySticker) ...[
-                Row(
-                  children: [
-                    DaySticker(
-                      day: DateTime.now().toIso8601String().substring(0, 10),
-                      size: 52,
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        l10n.gameYouEarnedTodaysSticker,
-                        style: SegText.body,
-                        textAlign: TextAlign.center,
+            SafeArea(
+              child: Center(
+                // Everything on one page; very large text scales down to
+                // fit instead of scrolling.
+                child: FittedBox(
+                  key: const ValueKey('completion-summary'),
+                  fit: BoxFit.scaleDown,
+                  child: Padding(
+                    padding: const EdgeInsets.all(SegSpace.s4),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: math.max(
+                          320,
+                          math.min(900, MediaQuery.sizeOf(context).width - 32),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (stars > 0)
+                            Wrap(
+                              alignment: WrapAlignment.center,
+                              spacing: 6,
+                              children: List.generate(
+                                stars,
+                                (i) => _PoppingStar(
+                                  delay: Duration(milliseconds: 160 * i),
+                                  animate: !reduced,
+                                  size: compact ? 56 : 72,
+                                ),
+                              ),
+                            ),
+                          SizedBox(height: compact ? SegSpace.s2 : SegSpace.s4),
+                          Text(
+                            l10n.gameWellDone,
+                            textAlign: TextAlign.center,
+                            style: SegText.display.copyWith(
+                              color: SegColors.ink,
+                              fontSize: compact ? 36 : 44,
+                            ),
+                          ),
+                          const SizedBox(height: SegSpace.s2),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (s.hasTodaySticker) ...[
+                                DaySticker(
+                                  day: DateTime.now()
+                                      .toIso8601String()
+                                      .substring(0, 10),
+                                  size: 44,
+                                ),
+                                const SizedBox(width: SegSpace.s2),
+                              ],
+                              Flexible(
+                                child: Text(
+                                  s.hasTodaySticker
+                                      ? l10n.gameYouEarnedTodaysSticker
+                                      : l10n.gameWeExploredTogether,
+                                  textAlign: TextAlign.center,
+                                  style: SegText.body,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: compact ? SegSpace.s4 : SegSpace.s6),
+                          _completionActions(),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
-              ] else
-                Text(
-                  l10n.gameWeExploredTogether,
-                  style: SegText.body,
-                  textAlign: TextAlign.center,
-                ),
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
-      ],
-    ),
-  );
-
-  Widget _completionActions(double width) => Center(
-    child: ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 1120),
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 8,
-        runSpacing: 8,
-        children: [
-          SizedBox(
-            width: (width - 24) / 2,
-            child: SegButton(
-              label: l10n.gameAgain,
-              icon: Icons.replay_rounded,
-              onPressed: () {
-                endTimer?.cancel();
-                endTimer = null;
-                _sessionId = null;
-                _sessionFinished = false;
-                _sessionClock.reset();
-                _lastChargedMs = 0;
-                _explored.clear();
-                _exploreComplete = false;
-                if (widget.gameId == 'G02' || widget.gameId == 'G55') {
-                  card = 0;
-                  _explored.clear();
-                }
-                _startSession();
-                if (controller case final c?) {
-                  c.stage = 0;
-                  c.start();
-                }
-                setState(() {
-                  _completionPage = 0;
-                  _completionPager.jumpToPage(0);
-                });
-              },
-            ),
-          ),
-          SizedBox(
-            width: (width - 24) / 2,
-            child: SegButton(
-              label: l10n.gameTodaysPath,
-              icon: Icons.route_rounded,
-              onPressed: () => context.go('/?path=true'),
-            ),
-          ),
-          SizedBox(
-            width: (width - 24) / 2,
-            child: SegButton(
-              label: l10n.gameBackToTheme,
-              icon: Icons.arrow_forward_rounded,
-              onPressed: back,
-            ),
-          ),
-        ],
       ),
-    ),
+    );
+  }
+
+  Widget _completionActions() => Wrap(
+    alignment: WrapAlignment.center,
+    spacing: SegSpace.s3,
+    runSpacing: SegSpace.s3,
+    children: [
+      SegButton(
+        key: const ValueKey('completion-again'),
+        label: l10n.gameAgain,
+        icon: Icons.replay_rounded,
+        onPressed: () {
+          endTimer?.cancel();
+          endTimer = null;
+          _sessionId = null;
+          _sessionFinished = false;
+          _sessionClock.reset();
+          _lastChargedMs = 0;
+          _explored.clear();
+          _exploreComplete = false;
+          _autoSpokenCard = null;
+          _roundEndCelebrated = false;
+          if (widget.gameId == 'G02' || widget.gameId == 'G55') card = 0;
+          _startSession();
+          if (controller case final c?) {
+            c.stage = 0;
+            c.start();
+          }
+          setState(() {});
+        },
+      ),
+      SegButton(
+        key: const ValueKey('completion-path'),
+        label: l10n.gameTodaysPath,
+        icon: Icons.route_rounded,
+        secondary: true,
+        onPressed: () => context.go('/?path=true'),
+      ),
+      SegButton(
+        key: const ValueKey('completion-theme'),
+        label: l10n.gameBackToTheme,
+        icon: Icons.arrow_forward_rounded,
+        secondary: true,
+        onPressed: back,
+      ),
+    ],
   );
 
   /// The prompt object. In drag games it can be carried onto a choice; the
@@ -844,15 +828,25 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     final visual = StagedObject(
       child: ItemVisual(spec.stimulus!, alignment: Alignment.bottomCenter),
     );
+    // Once sorted, the item lives in its group (it hops in there).
+    if (spec.groupMembers.isNotEmpty && c.phase == RoundPhase.celebrating) {
+      return const SizedBox.shrink();
+    }
     if (!spec.dragStimulus || c.phase != RoundPhase.answering) return visual;
     return Draggable<ContentItem>(
       data: spec.stimulus,
       onDragStarted: () => c.noteInteraction(itemId: spec.stimulus!.id),
-      feedback: SizedBox.square(
-        dimension: 132,
-        child: Material(
-          type: MaterialType.transparency,
-          child: ItemVisual(spec.stimulus!),
+      // The object is centred under the finger, so where it looks dropped is
+      // where the drop is tested.
+      dragAnchorStrategy: pointerDragAnchorStrategy,
+      feedback: Transform.translate(
+        offset: const Offset(-66, -66),
+        child: SizedBox.square(
+          dimension: 132,
+          child: Material(
+            type: MaterialType.transparency,
+            child: ItemVisual(spec.stimulus!),
+          ),
         ),
       ),
       childWhenDragging: Opacity(opacity: .25, child: visual),
@@ -915,6 +909,14 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       if (cue != null) s.audio.playSequence([cue]);
     }
 
+    // Each card says its name once when it appears; that counts as seen,
+    // so reaching the last card means every card was presented.
+    if (_autoSpokenCard != card) {
+      _autoSpokenCard = card;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _autoSpokenCard == card && !_exploreComplete) speak();
+      });
+    }
     final explored = _explored.contains(item.id);
     final picture = Padding(
       padding: EdgeInsets.all(compact ? SegSpace.s1 : SegSpace.s3),
@@ -1029,33 +1031,33 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                               );
                             },
                     ),
-                    SegButton(
-                      key: const ValueKey('explore-finish'),
-                      label: l10n.gameFinish,
-                      icon: Icons.check_rounded,
-                      onPressed: _explored.length >= finishThreshold
-                          ? () async {
-                              s.audio.stop();
-                              await _finishSession(true);
-                              if (mounted) {
-                                setState(() => _exploreComplete = true);
+                    // On the last card "Next" turns into "Finish".
+                    if ((isFlashcards || isTapDiscovery) &&
+                        card >= sessionItems.length - 1)
+                      SegButton(
+                        key: const ValueKey('explore-finish'),
+                        label: l10n.gameFinish,
+                        icon: Icons.check_rounded,
+                        onPressed: _explored.length >= finishThreshold
+                            ? () async {
+                                s.audio.stop();
+                                await _finishSession(true);
+                                if (mounted) {
+                                  setState(() => _exploreComplete = true);
+                                }
                               }
-                            }
-                          : null,
-                    ),
-                    SegButton(
-                      key: const ValueKey('explore-next'),
-                      label: l10n.gameNext,
-                      icon: Icons.arrow_forward_rounded,
-                      onPressed:
-                          (isFlashcards || isTapDiscovery) &&
-                              card >= sessionItems.length - 1
-                          ? null
-                          : () {
-                              s.audio.stop();
-                              setState(() => card++);
-                            },
-                    ),
+                            : null,
+                      )
+                    else
+                      SegButton(
+                        key: const ValueKey('explore-next'),
+                        label: l10n.gameNext,
+                        icon: Icons.arrow_forward_rounded,
+                        onPressed: () {
+                          s.audio.stop();
+                          setState(() => card++);
+                        },
+                      ),
                   ],
                 ),
               ),
@@ -1071,12 +1073,17 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
 class _PoppingStar extends StatelessWidget {
   final Duration delay;
   final bool animate;
-  const _PoppingStar({required this.delay, required this.animate});
+  final double size;
+  const _PoppingStar({
+    required this.delay,
+    required this.animate,
+    this.size = 52,
+  });
   @override
   Widget build(BuildContext context) {
-    const star = Icon(
+    final star = Icon(
       Icons.star_rounded,
-      size: 52,
+      size: size,
       color: SegColors.star,
       shadows: [
         Shadow(color: Colors.white, blurRadius: 0, offset: Offset(0, -2)),
@@ -1154,4 +1161,88 @@ class _CelebrationBurstPainter extends CustomPainter {
   @override
   bool shouldRepaint(_CelebrationBurstPainter oldDelegate) =>
       oldDelegate.progress != progress;
+}
+
+/// A few stars drifting down once over the round-end page.
+class _DriftingStars extends StatefulWidget {
+  final int count;
+  const _DriftingStars({required this.count});
+  @override
+  State<_DriftingStars> createState() => _DriftingStarsState();
+}
+
+typedef _Particle = ({
+  double x,
+  double delay,
+  double size,
+  double sway,
+  Color color,
+});
+
+class _DriftingStarsState extends State<_DriftingStars>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 3200),
+  )..forward();
+  late final List<_Particle> _particles = [
+    for (var i = 0; i < widget.count; i++)
+      (
+        x: math.Random(i * 31 + 7).nextDouble(),
+        delay: math.Random(i * 17 + 3).nextDouble() * .35,
+        size: 10 + math.Random(i * 13 + 5).nextDouble() * 12,
+        sway: math.Random(i * 7 + 11).nextDouble() * 2 * math.pi,
+        color: const [
+          SegColors.star,
+          SegColors.turquoise,
+          SegColors.accent,
+          SegColors.primary,
+        ][i % 4],
+      ),
+  ];
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+    animation: _controller,
+    builder: (context, _) =>
+        CustomPaint(painter: _DriftPainter(_controller.value, _particles)),
+  );
+}
+
+class _DriftPainter extends CustomPainter {
+  final double t;
+  final List<_Particle> particles;
+  const _DriftPainter(this.t, this.particles);
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final p in particles) {
+      final local = ((t - p.delay) / (1 - p.delay)).clamp(0.0, 1.0);
+      if (local <= 0 || local >= 1) continue;
+      final y = -20 + local * (size.height * .9);
+      final x = p.x * size.width + math.sin(local * 6 + p.sway) * 18;
+      final fade = local < .8 ? 1.0 : (1 - local) / .2;
+      final paint = Paint()..color = p.color.withValues(alpha: .85 * fade);
+      final path = Path();
+      for (var k = 0; k < 10; k++) {
+        final a = -math.pi / 2 + k * math.pi / 5 + local * 2;
+        final r = k.isEven ? p.size / 2 : p.size / 4.5;
+        final point = Offset(x + math.cos(a) * r, y + math.sin(a) * r);
+        if (k == 0) {
+          path.moveTo(point.dx, point.dy);
+        } else {
+          path.lineTo(point.dx, point.dy);
+        }
+      }
+      canvas.drawPath(path..close(), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(_DriftPainter old) => old.t != t;
 }

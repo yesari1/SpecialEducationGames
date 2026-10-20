@@ -53,3 +53,12 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License link: https://creativecommons.org/licenses/by-sa/3.0/
 - App asset: assets/sfx/animals/duck.mp3
 - Changes: Converted to mono 44.1 kHz 96 kbps MP3; two-pass normalization target -24 LUFS / -6 dBTP; 40 ms fade-in and 80 ms fade-out; first 2.9 seconds selected from 3.465-second source.
+
+## Sound Effects - Applause after a concert.ogg
+
+- Author: Amada44
+- Source: https://commons.wikimedia.org/wiki/File:Sound_Effects_-_Applause_after_a_concert.ogg
+- License: CC0-1.0
+- License link: https://creativecommons.org/publicdomain/zero/1.0/
+- App asset: assets/sfx/ui/applause.mp3
+- Changes: Seconds 15.0-17.8 selected; 0.25 s fade-in, 1.0 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3.

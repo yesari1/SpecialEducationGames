@@ -1005,5 +1005,16 @@
   "gameFillBasketCount": "Sepette {count} / {goal}",
   "appTitle": "Özel Eğitim Oyunları",
   "gamePromptWhichSound": "Hangi ses onun?",
-  "gameListenToSound": "Dinle"
+  "gameListenToSound": "Dinle",
+  "famToday": "Bugün",
+  "famGoalShort": "{done} / {goal} dk",
+  "famGoalDone": "Bugünkü hedef tamam. Harika!",
+  "famGoalLeft": "Bugünkü hedefe {minutes} dakika kaldı.",
+  "famPlayedToday": "Bugün oynanan: {minutes} dk",
+  "famMinutesThisWeek": "Bu hafta dakika",
+  "famDaysPlayed": "Bu hafta oynanan gün",
+  "famThisWeek": "Bu hafta",
+  "famRecentlyPlayed": "Son oynananlar",
+  "famRecentlyLearned": "Son öğrenilenler",
+  "famNothingYet": "Henüz yok. Birlikte bir tur oynayın!"
 }

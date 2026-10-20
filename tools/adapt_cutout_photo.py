@@ -6,7 +6,7 @@ Lanczos resize so the subject spans at most 912 px, center on a 1024x1024
 RGBA canvas and add a 4 px white outline outside the subject. No new mask,
 no generative edits.
 
-    python -I tools/adapt_cutout_photo.py <original.png> <out.png>
+    python -I tools/adapt_cutout_photo.py <original.png> <out.png> [--drop-shadow]
 Prints the input and output SHA-256 for the credit record.
 """
 import hashlib
@@ -23,8 +23,21 @@ def sha(path):
     return hashlib.sha256(open(path, 'rb').read()).hexdigest()
 
 
-def adapt(src, dst):
+def remove_drop_shadow(image):
+    """Clear a baked-in soft shadow: dark pixels that are only partly opaque."""
+    pixels = image.load()
+    for y in range(image.height):
+        for x in range(image.width):
+            r, g, b, a = pixels[x, y]
+            if a < 200 and max(r, g, b) < 60:
+                pixels[x, y] = (r, g, b, 0)
+    return image
+
+
+def adapt(src, dst, drop_shadow=False):
     image = Image.open(src).convert('RGBA')
+    if drop_shadow:
+        image = remove_drop_shadow(image)
     alpha = image.getchannel('A')
     box = alpha.point(lambda a: 255 if a > 24 else 0).getbbox()
     if box is None:
@@ -48,5 +61,5 @@ def adapt(src, dst):
 
 if __name__ == '__main__':
     src, dst = sys.argv[1], sys.argv[2]
-    box, size = adapt(src, dst)
+    box, size = adapt(src, dst, drop_shadow='--drop-shadow' in sys.argv)
     print(f'input {sha(src)} crop {box} subject {size} output {sha(dst)}')

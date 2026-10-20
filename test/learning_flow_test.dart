@@ -175,7 +175,8 @@ void main() {
       expect(c.spec!.choices.length, 1);
       final target = c.spec!.target;
       await c.choose(target);
-      await tester.pump(const Duration(milliseconds: 650));
+      // The next round waits for the name audio and a calm 1.5 s pause.
+      await tester.pump(const Duration(milliseconds: 1550));
       await tester.pump();
       expect(records, 0);
       expect(introduced, [target.id]);
@@ -240,7 +241,8 @@ void main() {
       c.start();
       await tester.pump();
       await c.choose(c.spec!.target);
-      await tester.pump(const Duration(milliseconds: 650));
+      // The next round waits for the name audio and a calm 1.5 s pause.
+      await tester.pump(const Duration(milliseconds: 1550));
       await tester.pump();
       expect(c.spec!.choices.length, 2);
       c.dispose();

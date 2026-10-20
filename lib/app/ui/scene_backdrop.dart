@@ -76,7 +76,7 @@ class ScenePainter extends CustomPainter {
           colors: [color, color.withValues(alpha: 0)],
         ).createShader(Rect.fromCircle(center: c, radius: r)),
     );
-    blob(Offset(w * .02, h * .05), h * .55, tint.withValues(alpha: .10));
+    blob(Offset(w * .02, h * .05), h * .55, tint.withValues(alpha: .06));
     blob(
       Offset(w * .98, h * .12),
       h * .45,
@@ -84,7 +84,7 @@ class ScenePainter extends CustomPainter {
     );
 
     if (clouds) {
-      final cloud = Paint()..color = Colors.white.withValues(alpha: .9);
+      final cloud = Paint()..color = Colors.white.withValues(alpha: .6);
       void puff(double x, double y, double s) {
         final r = h * .055 * s;
         final c = Offset(w * x, h * y);
@@ -104,8 +104,8 @@ class ScenePainter extends CustomPainter {
         canvas.drawCircle(c + Offset(r * 1.2, r * .2), r * .75, cloud);
       }
 
-      puff(.2, .2, 1);
-      puff(.8, .3, .8);
+      // One small, faint cloud: calm, low-detail backdrop.
+      puff(.82, .16, .7);
     }
 
     if (hills) {
@@ -116,7 +116,7 @@ class ScenePainter extends CustomPainter {
         ..lineTo(w, h)
         ..lineTo(0, h)
         ..close();
-      canvas.drawPath(back, Paint()..color = _mix(.16));
+      canvas.drawPath(back, Paint()..color = _mix(.09));
       final front = Path()
         ..moveTo(0, h * .90)
         ..cubicTo(w * .22, h * .82, w * .45, h * .95, w * .66, h * .88)
@@ -124,7 +124,7 @@ class ScenePainter extends CustomPainter {
         ..lineTo(w, h)
         ..lineTo(0, h)
         ..close();
-      canvas.drawPath(front, Paint()..color = _mix(.26));
+      canvas.drawPath(front, Paint()..color = _mix(.16));
     }
   }
 

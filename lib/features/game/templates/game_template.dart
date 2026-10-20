@@ -27,9 +27,19 @@ class ModeContext {
   }) : _choiceCount = choiceCount;
 }
 
-/// Praise recorded with the selected voices.
-String praiseCue(String locale) =>
-    'assets/audio/$locale/prompts/praise_selected.mp3';
+/// One of ten recorded praise phrases ("Aferin!", "Süpersin!", ...),
+/// never the same one twice in a row.
+String praiseCue(String locale, {Random? random}) {
+  final pick = random ?? _praiseRandom;
+  var n = 1 + pick.nextInt(praiseCount);
+  if (n == _lastPraise) n = n % praiseCount + 1;
+  _lastPraise = n;
+  return 'assets/audio/$locale/praise/praise_$n.mp3';
+}
+
+const praiseCount = 10;
+final _praiseRandom = Random();
+int _lastPraise = 0;
 
 abstract class GameTemplate {
   const GameTemplate();
@@ -74,15 +84,16 @@ abstract class GameTemplate {
     final prompt = promptCue(spec, locale);
     if (ctx.gameId == 'G33') return [?prompt];
     if (ctx.gameId == 'G35') {
+      // Say the shown numbers in order, then the question:
+      // "Beş, altı... Sıradaki sayı hangisi?"
       return [
-        if (ctx.difficulty != Difficulty.hard)
-          for (final number in spec.sequence.where((x) => x != '?'))
-            if (ctx.content.items
-                    .where((x) => x.id == 'numbers.$number')
-                    .firstOrNull
-                    ?.audioFor(locale)
-                case final String cue)
-              cue,
+        for (final number in spec.sequence.where((x) => x != '?'))
+          if (ctx.content.items
+                  .where((x) => x.id == 'numbers.$number')
+                  .firstOrNull
+                  ?.audioFor(locale)
+              case final String cue)
+            cue,
         ?prompt,
       ];
     }
@@ -293,40 +304,66 @@ class GroupTemplate extends GameTemplate {
   const GroupTemplate();
   @override
   String get id => "group_choice";
+
+  /// Group names per theme; a tag only counts as a group in its own theme.
+  static const labels = {
+    'animals': {
+      'evcil': ['Evcil hayvanlar', 'Pets'],
+      'ciftlik': ['Çiftlik hayvanları', 'Farm animals'],
+      'vahsi': ['Vahşi hayvanlar', 'Wild animals'],
+      'deniz': ['Suda yaşayanlar', 'Water animals'],
+      'bocek': ['Böcekler', 'Insects'],
+      'kus': ['Kuşlar', 'Birds'],
+    },
+    'produce': {
+      'meyve': ['Meyveler', 'Fruits'],
+      'sebze': ['Sebzeler', 'Vegetables'],
+    },
+    'vehicles': {
+      'kara': ['Kara taşıtları', 'Road vehicles'],
+      'hava': ['Hava taşıtları', 'Aircraft'],
+      'rayli': ['Raylı taşıtlar', 'Rail vehicles'],
+      'is_makinesi': ['İş makineleri', 'Work machines'],
+      'deniz': ['Deniz taşıtları', 'Water vehicles'],
+    },
+  };
+
   @override
   RoundSpec buildRound(ModeContext ctx) {
+    final names = labels[ctx.themeId] ?? const {};
     final pool = ctx.content
         .pool(ctx.themeId, ctx.difficulty)
         .where((x) => x.images.isNotEmpty)
         .toList();
-    final stimulus = ctx.scheduler.next(pool, ctx.struggle);
-    const labels = {
-      'evcil': ['Evcil hayvanlar', 'Pets'],
-      'ciftlik': ['Çiftlik hayvanları', 'Farm animals'],
-      'vahsi': ['Vahşi hayvanlar', 'Wild animals'],
-      'deniz': ['Deniz', 'Sea'],
-      'bocek': ['Böcekler', 'Insects'],
-      'kus': ['Kuşlar', 'Birds'],
-      'meyve': ['Meyveler', 'Fruits'],
-      'sebze': ['Sebzeler', 'Vegetables'],
-      'kara': ['Kara taşıtları', 'Road vehicles'],
-      'hava': ['Hava taşıtları', 'Aircraft'],
-      'rayli': ['Raylı taşıtlar', 'Rail vehicles'],
-      'is_makinesi': ['İş makineleri', 'Construction vehicles'],
-    };
-    final groups = pool.expand((x) => x.tags).where(labels.containsKey).toSet();
+    final groups = pool.expand((x) => x.tags).where(names.containsKey).toSet();
+    // Only items that belong to a group and leave another group to choose.
+    final candidates = pool
+        .where(
+          (x) =>
+              x.tags.any(groups.contains) &&
+              groups.any((tag) => !x.tags.contains(tag)),
+        )
+        .toList();
+    if (candidates.isEmpty) throw StateError('No category for stimulus');
+    final stimulus = ctx.scheduler.next(candidates, ctx.struggle);
     final validTargets = stimulus.tags.where(groups.contains).toList();
-    if (validTargets.isEmpty) throw StateError('No category for stimulus');
     final targetTag =
         validTargets[ctx.scheduler.random.nextInt(validTargets.length)];
+    // Each group shows a few of its members, never the item being sorted.
+    final members = <String, List<ContentItem>>{};
     ContentItem category(String tag) {
-      final hero = pool.firstWhere((x) => x.tags.contains(tag));
+      final group =
+          pool
+              .where((x) => x.tags.contains(tag) && x.id != stimulus.id)
+              .toList()
+            ..shuffle(ctx.scheduler.random);
+      members['group.$tag'] = group.take(3).toList(growable: false);
       return ContentItem.fromJson({
         'id': 'group.$tag',
         'theme': ctx.themeId,
         'tier': 'easy',
-        'name': {'tr': labels[tag]![0], 'en': labels[tag]![1]},
-        'images': hero.images,
+        'name': {'tr': names[tag]![0], 'en': names[tag]![1]},
+        'images': group.isEmpty ? stimulus.images : group.first.images,
         'audio': {},
         'tags': [tag],
       });
@@ -339,17 +376,31 @@ class GroupTemplate extends GameTemplate {
             .map(category)
             .toList()
           ..shuffle(ctx.scheduler.random);
-    if (others.isEmpty) throw StateError('No unambiguous category distractor');
+    final choices = [target, ...others.take(ctx.choiceCount - 1)]
+      ..shuffle(ctx.scheduler.random);
     return RoundSpec(
       target: target,
-      choices: [target, ...others.take(ctx.choiceCount - 1)]
-        ..shuffle(ctx.scheduler.random),
+      choices: choices,
       promptTr: 'Bu hangi grupta?',
       promptEn: 'Which group does this belong to?',
       promptKey: GamePromptKey.groupMembership,
       stimulus: stimulus,
+      groupMembers: {for (final c in choices) c.id: members[c.id]!},
     );
   }
+
+  /// "Evet, inek bir çiftlik hayvanıdır." for the item and its group.
+  static String? explanationCue(RoundSpec spec, String locale) {
+    final item = spec.stimulus;
+    if (item == null || !spec.target.id.startsWith('group.')) return null;
+    final tag = spec.target.id.substring('group.'.length);
+    return 'assets/audio/$locale/explain/${item.theme}_${item.slug}_$tag.mp3';
+  }
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) => [
+    explanationCue(spec, locale) ?? praiseCue(locale),
+  ];
 }
 
 class SequenceMissingTemplate extends GameTemplate {
@@ -552,6 +603,7 @@ class BasketSortTemplate extends GroupTemplate {
       stimulus: grouped.stimulus,
       look: ChoiceLook.basket,
       dragStimulus: true,
+      groupMembers: grouped.groupMembers,
     );
   }
 
@@ -561,11 +613,7 @@ class BasketSortTemplate extends GroupTemplate {
     ?spec.stimulus?.audioFor(locale),
   ];
 
-  @override
-  List<String> successCues(RoundSpec spec, String locale) => [
-    praiseCue(locale),
-    ?spec.stimulus?.audioFor(locale),
-  ];
+  // Success inherits the group explanation sentence.
 }
 
 /// G37 "Sayı ve Miktar": a numeral is shown; pick the card with that many.

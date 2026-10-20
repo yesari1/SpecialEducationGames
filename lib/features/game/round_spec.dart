@@ -42,6 +42,9 @@ class RoundSpec {
 
   /// Fill-the-basket games: how many of [stimulus] go into the basket.
   final int? fillCount;
+
+  /// Group choices: a few member items drawn as the group's picture.
+  final Map<String, List<ContentItem>> groupMembers;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -59,6 +62,7 @@ class RoundSpec {
     this.look = ChoiceLook.object,
     this.dragStimulus = false,
     this.fillCount,
+    this.groupMembers = const {},
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -77,6 +81,7 @@ class RoundSpec {
     look: look,
     dragStimulus: dragStimulus,
     fillCount: fillCount,
+    groupMembers: groupMembers,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

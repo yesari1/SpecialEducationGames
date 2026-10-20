@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../app/ui/choice_card.dart';
@@ -126,6 +127,24 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
     }
 
     final look = widget.spec.look;
+    final members = widget.spec.groupMembers[item.id] ?? const [];
+    // The group's members; after a correct answer the sorted item hops in.
+    Widget groupVisual() => Stack(
+      fit: StackFit.expand,
+      children: [
+        GroupCluster(members),
+        if (correct && widget.hint.celebrating && widget.spec.stimulus != null)
+          HopIn(
+            animate: widget.hint.animate,
+            child: FractionallySizedBox(
+              alignment: Alignment.topCenter,
+              widthFactor: .7,
+              heightFactor: .7,
+              child: ItemVisual(widget.spec.stimulus!),
+            ),
+          ),
+      ],
+    );
     final card = ChoiceCard(
       key: ValueKey('${widget.hint.generation}:${item.id}'),
       item: item,
@@ -159,10 +178,9 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
               ).gameListenToSound,
             )
           : look == ChoiceLook.basket
-          ? BasketFrame(
-              tint: SegColors.accent,
-              child: ItemVisual(item, alignment: Alignment.bottomCenter),
-            )
+          ? BasketFrame(tint: SegColors.accent, child: groupVisual())
+          : members.isNotEmpty
+          ? groupVisual()
           : widget.spec.quantities.containsKey(item.id)
           ? QuantityVisual(
               count: widget.spec.quantities[item.id]!,
@@ -308,31 +326,43 @@ class QuantityVisual extends StatelessWidget {
   final ContentItem? item;
   const QuantityVisual({super.key, required this.count, this.item});
   @override
-  Widget build(BuildContext context) => FittedBox(
-    fit: BoxFit.contain,
-    child: SizedBox(
-      width: 144,
-      height: 144,
-      child: Center(
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 6,
-          runSpacing: 6,
-          children: List.generate(
-            count,
-            (_) => SizedBox(
-              width: 42,
-              height: 42,
-              child: item == null
-                  ? const CustomPaint(
-                      painter: ColorBlobPainter(SegColors.accent),
-                    )
-                  : ItemVisual(item!),
-            ),
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) {
+      // As large as the card allows: the most square grid for the count.
+      var best = 0.0, columns = 1;
+      for (var c = 1; c <= count; c++) {
+        final rows = (count / c).ceil();
+        final side = math.min(box.maxWidth / c, box.maxHeight / rows);
+        if (side > best) {
+          best = side;
+          columns = c;
+        }
+      }
+      final side = best * .94;
+      return Center(
+        child: SizedBox(
+          width: side * columns + 1,
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.center,
+            children: [
+              for (var i = 0; i < count; i++)
+                SizedBox.square(
+                  dimension: side,
+                  child: Padding(
+                    padding: EdgeInsets.all(side * .04),
+                    child: item == null
+                        ? const CustomPaint(
+                            painter: ColorBlobPainter(SegColors.accent),
+                          )
+                        : ItemVisual(item!),
+                  ),
+                ),
+            ],
           ),
         ),
-      ),
-    ),
+      );
+    },
   );
 }
 

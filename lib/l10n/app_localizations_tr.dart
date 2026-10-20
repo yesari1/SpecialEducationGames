@@ -1105,4 +1105,43 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Dinle';
+
+  @override
+  String get famToday => 'Bugün';
+
+  @override
+  String famGoalShort(int done, int goal) {
+    return '$done / $goal dk';
+  }
+
+  @override
+  String get famGoalDone => 'Bugünkü hedef tamam. Harika!';
+
+  @override
+  String famGoalLeft(int minutes) {
+    return 'Bugünkü hedefe $minutes dakika kaldı.';
+  }
+
+  @override
+  String famPlayedToday(int minutes) {
+    return 'Bugün oynanan: $minutes dk';
+  }
+
+  @override
+  String get famMinutesThisWeek => 'Bu hafta dakika';
+
+  @override
+  String get famDaysPlayed => 'Bu hafta oynanan gün';
+
+  @override
+  String get famThisWeek => 'Bu hafta';
+
+  @override
+  String get famRecentlyPlayed => 'Son oynananlar';
+
+  @override
+  String get famRecentlyLearned => 'Son öğrenilenler';
+
+  @override
+  String get famNothingYet => 'Henüz yok. Birlikte bir tur oynayın!';
 }

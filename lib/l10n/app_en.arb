@@ -1010,5 +1010,19 @@
   "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
   "appTitle": "Special Education Games",
   "gamePromptWhichSound": "Which sound does it make?",
-  "gameListenToSound": "Listen"
+  "gameListenToSound": "Listen",
+  "famToday": "Today",
+  "famGoalShort": "{done} / {goal} min",
+  "@famGoalShort": {"placeholders": {"done": {"type": "int"}, "goal": {"type": "int"}}},
+  "famGoalDone": "Today’s goal is reached. Well done!",
+  "famGoalLeft": "{minutes} more minutes to today’s goal.",
+  "@famGoalLeft": {"placeholders": {"minutes": {"type": "int"}}},
+  "famPlayedToday": "Played today: {minutes} min",
+  "@famPlayedToday": {"placeholders": {"minutes": {"type": "int"}}},
+  "famMinutesThisWeek": "Minutes this week",
+  "famDaysPlayed": "Days played this week",
+  "famThisWeek": "This week",
+  "famRecentlyPlayed": "Recently played",
+  "famRecentlyLearned": "Learned recently",
+  "famNothingYet": "Nothing yet. Play a round together!"
 }

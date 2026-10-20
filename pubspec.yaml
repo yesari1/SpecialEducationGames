@@ -107,8 +107,13 @@ flutter:
     - assets/audio/en/shapes/
     - assets/audio/tr/food/
     - assets/audio/en/food/
+    - assets/audio/tr/praise/
+    - assets/audio/en/praise/
+    - assets/audio/tr/explain/
+    - assets/audio/en/explain/
     - assets/sfx/animals/
     - assets/sfx/vehicles/
+    - assets/sfx/ui/
     - assets/sfx/sources.json
     - assets/sfx/SOURCES.md
   fonts:

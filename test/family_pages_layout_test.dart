@@ -390,7 +390,8 @@ void main() {
       final photos = flattenRealPhotoCreditEntries(photoAssets);
       // 31 earlier verified photos plus ten Food & Drinks photos.
       expect(photoAssets.length, 41);
-      expect(sounds.length, 10);
+      // Ten animal recordings plus the round-end applause.
+      expect(sounds.length, 11);
       expect(sounds.length + photos.length, greaterThanOrEqualTo(40));
       final fishPhoto = photoAssets.cast<Map<String, dynamic>>().singleWhere(
         (source) => source['id'] == 'animals.fish',

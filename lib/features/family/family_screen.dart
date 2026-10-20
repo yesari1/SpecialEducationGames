@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -1049,52 +1050,52 @@ class _FamilyScreenState extends State<FamilyScreen> {
     final week = report.trials;
     final independent = week.where(ReportDay.independent).length;
     _statIndex = 0;
+    final weekMinutes = report.days.fold<double>(
+      0,
+      (sum, d) => sum + d.minutes,
+    );
+    final daysPlayed = report.days.where((d) => d.sessions.isNotEmpty).length;
+    final todayRounds = s.sessions
+        .where((x) => DateUtilsHelper.sameDay(x.startedAt, now) && x.completed)
+        .length;
     return [
-      if (s.dailyGoalMinutes > 0) ...[
-        GoalRing(state: s, minutes: report.days.last.minutes),
-        const SizedBox(height: SegSpace.s5),
-      ],
-      SegCard(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.familyEveryStepMatters, style: SegText.heading),
-            const SizedBox(height: SegSpace.s4),
-            Text(l10n.familyYourChildIsExploringAtTheir),
-            const SizedBox(height: SegSpace.s5),
-            Wrap(
-              spacing: SegSpace.s3,
-              runSpacing: SegSpace.s3,
-              children: [
-                _stat('${s.todayStars}', l10n.familyStarsToday),
-                _stat(
-                  '${s.sessions.where((x) => DateUtilsHelper.sameDay(x.startedAt, now) && x.completed).length}',
-                  l10n.familyRoundsCompletedToday,
-                ),
-                _stat(
-                  (s.sessions
-                              .where(
-                                (x) =>
-                                    DateUtilsHelper.sameDay(x.startedAt, now),
-                              )
-                              .fold<int>(0, (sum, x) => sum + x.activeMs) /
-                          60000)
-                      .toStringAsFixed(1),
-                  l10n.familyMinutesToday,
-                ),
-                _stat('${week.length}', l10n.familyStagesThisWeek),
-                _stat(
+      GoalRing(state: s, minutes: report.days.last.minutes),
+      LayoutBuilder(
+        builder: (context, box) {
+          final tile = (box.maxWidth - SegSpace.s3) / 2;
+          return Wrap(
+            spacing: SegSpace.s3,
+            runSpacing: SegSpace.s3,
+            children: [
+              for (final (value, label) in [
+                ('${s.todayStars}', l10n.familyStarsToday),
+                ('$todayRounds', l10n.familyRoundsCompletedToday),
+                ('${weekMinutes.floor()}', l10n.famMinutesThisWeek),
+                ('$daysPlayed / 7', l10n.famDaysPlayed),
+                ('${week.length}', l10n.familyStagesThisWeek),
+                (
                   week.isEmpty
                       ? '—'
                       : '${(100 * independent / week.length).round()}%',
                   l10n.familyIndependentAnswers,
                 ),
-              ],
-            ),
+              ])
+                SizedBox(width: tile, child: _stat(value, label)),
+            ],
+          );
+        },
+      ),
+      SegCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.famThisWeek, style: SegText.heading),
+            const SizedBox(height: SegSpace.s3),
+            _WeekStrip(report: report, locale: s.locale),
           ],
         ),
       ),
-      const SizedBox(height: SegSpace.s5),
+      _recentCard(),
       WeeklyCharts(state: s, report: report),
       const SizedBox(height: SegSpace.s5),
       AttentionChart(state: s, report: report),
@@ -1149,7 +1150,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
   Widget _stat(String value, String label) {
     final (fill, ink, icon) = _statTints[_statIndex++ % _statTints.length];
     return Container(
-      width: 150,
       padding: const EdgeInsets.all(SegSpace.s3),
       decoration: BoxDecoration(
         color: fill,
@@ -1162,6 +1162,65 @@ class _FamilyScreenState extends State<FamilyScreen> {
           const SizedBox(height: SegSpace.s1),
           Text(value, style: SegText.title.copyWith(color: ink)),
           Text(label, style: SegText.caption.copyWith(color: SegColors.ink)),
+        ],
+      ),
+    );
+  }
+
+  /// Chips for the games played and the items answered on their own lately.
+  Widget _recentCard() {
+    final games = <String>[];
+    for (final session in s.sessions.reversed) {
+      final name =
+          '${s.content.game(session.gameId).name(s.locale)} · '
+          '${s.content.theme(session.themeId).name(s.locale)}';
+      if (!games.contains(name)) games.add(name);
+      if (games.length == 5) break;
+    }
+    final learned = <String>[];
+    for (final trial in s.trials.reversed) {
+      if (trial.wrongCount > 0 || trial.maxHint > 0) continue;
+      final item = s.content.items.where((x) => x.id == trial.targetId);
+      if (item.isEmpty) continue;
+      final name = item.first.name(s.locale);
+      if (!learned.contains(name)) learned.add(name);
+      if (learned.length == 8) break;
+    }
+    Widget chips(List<String> values) => values.isEmpty
+        ? Text(
+            l10n.famNothingYet,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          )
+        : Wrap(
+            spacing: SegSpace.s2,
+            runSpacing: SegSpace.s2,
+            children: [
+              for (final value in values)
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: SegSpace.s3,
+                    vertical: SegSpace.s1,
+                  ),
+                  decoration: BoxDecoration(
+                    color: SegColors.familyCanvas,
+                    borderRadius: BorderRadius.circular(SegRadius.pill),
+                    border: Border.all(color: SegColors.line),
+                  ),
+                  child: Text(value, style: SegText.label),
+                ),
+            ],
+          );
+    return SegCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l10n.famRecentlyPlayed, style: SegText.heading),
+          const SizedBox(height: SegSpace.s3),
+          chips(games),
+          const SizedBox(height: SegSpace.s5),
+          Text(l10n.famRecentlyLearned, style: SegText.heading),
+          const SizedBox(height: SegSpace.s3),
+          chips(learned),
         ],
       ),
     );
@@ -1633,4 +1692,48 @@ class _FamilyScreenState extends State<FamilyScreen> {
       ),
     ),
   ];
+}
+
+/// Seven day dots for the last week; filled where the child played.
+class _WeekStrip extends StatelessWidget {
+  final LearningReport report;
+  final String locale;
+  const _WeekStrip({required this.report, required this.locale});
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      for (final day in report.days)
+        Expanded(
+          child: Column(
+            children: [
+              Text(
+                DateFormat.E(locale).format(day.date),
+                textAlign: TextAlign.center,
+                style: SegText.caption.copyWith(color: SegColors.inkSoft),
+              ),
+              const SizedBox(height: SegSpace.s1),
+              Container(
+                width: 32,
+                height: 32,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: day.sessions.isNotEmpty
+                      ? SegColors.turquoise
+                      : SegColors.familyCanvas,
+                  border: Border.all(color: SegColors.line),
+                ),
+                child: day.sessions.isNotEmpty
+                    ? const Icon(
+                        Icons.check_rounded,
+                        color: Colors.white,
+                        size: 18,
+                      )
+                    : null,
+              ),
+            ],
+          ),
+        ),
+    ],
+  );
 }

@@ -248,16 +248,12 @@ void main() {
       await tester.pumpAndSettle();
       expect(state.dailyPath.count, 0);
       final finish = find.byKey(const ValueKey('explore-finish'));
-      expect(tester.widget<SegButton>(finish).onPressed, isNull);
-      for (var i = 0; i < 5; i++) {
-        await tester.tap(find.byType(ItemVisual).first);
+      expect(finish, findsNothing, reason: 'Finish appears on the last card');
+      for (var i = 0; i < 4; i++) {
+        await tester.tap(find.text('Next'));
         await tester.pump();
-        if (i < 4) {
-          expect(tester.widget<SegButton>(finish).onPressed, isNull);
-          await tester.tap(find.text('Next'));
-          await tester.pump();
-        }
       }
+      await tester.pump();
       expect(tester.widget<SegButton>(finish).onPressed, isNotNull);
       expect(state.dailyPath.count, 0);
       await tester.tap(finish);
@@ -268,7 +264,7 @@ void main() {
       expect(state.dailyPath.completed, {'vehicles_G02'});
       final chargedBeforeReplay = state.dailyPlayTime.usedMs;
       expect(find.text('Well done!'), findsOneWidget);
-      expect(find.byKey(const ValueKey('completion-next')), findsOneWidget);
+      expect(find.byKey(const ValueKey('completion-again')), findsOneWidget);
       expect(
         tester
             .widgetList<Scrollable>(find.byType(Scrollable))
@@ -279,23 +275,18 @@ void main() {
             ),
         isEmpty,
       );
-      await tester.tap(find.byKey(const ValueKey('completion-next')));
-      await tester.pumpAndSettle();
       expect(find.text('Again'), findsOneWidget);
       await tester.tap(find.text('Again'));
       await tester.pumpAndSettle();
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 200)),
       );
-      expect(tester.widget<SegButton>(finish).onPressed, isNull);
-      for (var i = 0; i < 5; i++) {
-        await tester.tap(find.byType(ItemVisual).first);
+      expect(finish, findsNothing);
+      for (var i = 0; i < 4; i++) {
+        await tester.tap(find.text('Next'));
         await tester.pump();
-        if (i < 4) {
-          await tester.tap(find.text('Next'));
-          await tester.pump();
-        }
       }
+      await tester.pump();
       await tester.tap(finish);
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 100)),
@@ -306,8 +297,6 @@ void main() {
         greaterThanOrEqualTo(chargedBeforeReplay + 150),
       );
       expect(state.dailyPath.completed, {'vehicles_G02'});
-      await tester.tap(find.byKey(const ValueKey('completion-next')));
-      await tester.pumpAndSettle();
       await tester.tap(find.text('Today’s Path'));
       await tester.pumpAndSettle();
       expect(find.byType(DailyPathView), findsOneWidget);

@@ -1105,4 +1105,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gameListenToSound => 'Listen';
+
+  @override
+  String get famToday => 'Today';
+
+  @override
+  String famGoalShort(int done, int goal) {
+    return '$done / $goal min';
+  }
+
+  @override
+  String get famGoalDone => 'Today’s goal is reached. Well done!';
+
+  @override
+  String famGoalLeft(int minutes) {
+    return '$minutes more minutes to today’s goal.';
+  }
+
+  @override
+  String famPlayedToday(int minutes) {
+    return 'Played today: $minutes min';
+  }
+
+  @override
+  String get famMinutesThisWeek => 'Minutes this week';
+
+  @override
+  String get famDaysPlayed => 'Days played this week';
+
+  @override
+  String get famThisWeek => 'This week';
+
+  @override
+  String get famRecentlyPlayed => 'Recently played';
+
+  @override
+  String get famRecentlyLearned => 'Learned recently';
+
+  @override
+  String get famNothingYet => 'Nothing yet. Play a round together!';
 }

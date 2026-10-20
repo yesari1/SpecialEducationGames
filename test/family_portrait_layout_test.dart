@@ -121,36 +121,34 @@ void main() {
     variant: _host,
   );
 
-  testWidgets(
-    'upright subscription and profile editor stay readable at 2x',
-    (tester) async {
-      await loadFonts(tester);
-      for (final locale in ['tr', 'en']) {
-        final state = await makeState(tester);
-        state.locale = locale;
-        await mount(tester, SubscriptionScreen(state: state), locale, 2);
-        expect(tester.takeException(), isNull, reason: '$locale paywall');
-        expect(find.byType(PageView), findsNothing, reason: locale);
+  testWidgets('upright subscription and profile editor stay readable at 2x', (
+    tester,
+  ) async {
+    await loadFonts(tester);
+    for (final locale in ['tr', 'en']) {
+      final state = await makeState(tester);
+      state.locale = locale;
+      await mount(tester, SubscriptionScreen(state: state), locale, 2);
+      expect(tester.takeException(), isNull, reason: '$locale paywall');
+      expect(find.byType(PageView), findsNothing, reason: locale);
 
-        await mount(
-          tester,
-          ProfileEditorScreen(state: state, profileId: state.active!.id),
-          locale,
-          2,
-        );
-        expect(tester.takeException(), isNull, reason: '$locale editor');
-        expect(find.byKey(const ValueKey('profile-initial')), findsOneWidget);
-        await tester.tap(find.byKey(const ValueKey('profile-editor-continue')));
-        await tester.pumpAndSettle();
-        // The first question is the exact-age grid, with 5 preselected.
-        expect(find.byKey(const ValueKey('profile-age-grid')), findsOneWidget);
-        await tester.tap(find.byKey(const ValueKey('profile-age-7')));
-        await tester.pumpAndSettle();
-        expect(tester.takeException(), isNull, reason: '$locale age');
-        await tester.pumpWidget(const SizedBox.shrink());
-        state.dispose();
-      }
-    },
-    variant: _host,
-  );
+      await mount(
+        tester,
+        ProfileEditorScreen(state: state, profileId: state.active!.id),
+        locale,
+        2,
+      );
+      expect(tester.takeException(), isNull, reason: '$locale editor');
+      expect(find.byKey(const ValueKey('profile-initial')), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey('profile-editor-continue')));
+      await tester.pumpAndSettle();
+      // The first question is the exact-age grid, with 5 preselected.
+      expect(find.byKey(const ValueKey('profile-age-grid')), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey('profile-age-7')));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull, reason: '$locale age');
+      await tester.pumpWidget(const SizedBox.shrink());
+      state.dispose();
+    }
+  }, variant: _host);
 }

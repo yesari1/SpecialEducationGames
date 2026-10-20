@@ -2022,6 +2022,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Listen'**
   String get gameListenToSound;
+
+  /// No description provided for @famToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get famToday;
+
+  /// No description provided for @famGoalShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} / {goal} min'**
+  String famGoalShort(int done, int goal);
+
+  /// No description provided for @famGoalDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s goal is reached. Well done!'**
+  String get famGoalDone;
+
+  /// No description provided for @famGoalLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} more minutes to today’s goal.'**
+  String famGoalLeft(int minutes);
+
+  /// No description provided for @famPlayedToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Played today: {minutes} min'**
+  String famPlayedToday(int minutes);
+
+  /// No description provided for @famMinutesThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes this week'**
+  String get famMinutesThisWeek;
+
+  /// No description provided for @famDaysPlayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Days played this week'**
+  String get famDaysPlayed;
+
+  /// No description provided for @famThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get famThisWeek;
+
+  /// No description provided for @famRecentlyPlayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently played'**
+  String get famRecentlyPlayed;
+
+  /// No description provided for @famRecentlyLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Learned recently'**
+  String get famRecentlyLearned;
+
+  /// No description provided for @famNothingYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing yet. Play a round together!'**
+  String get famNothingYet;
 }
 
 class _AppLocalizationsDelegate

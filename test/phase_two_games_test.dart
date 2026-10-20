@@ -122,8 +122,6 @@ void main() {
       ('numbers', 'G37'),
       ('numbers', 'G38'),
       ('produce', 'G38'),
-      ('animals', 'G11'),
-      ('vehicles', 'G11'),
     ]) {
       expect(content.theme(theme).games, contains(game), reason: theme);
       expect(() => TemplateRegistry.resolve(game), returnsNormally);

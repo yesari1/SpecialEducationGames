@@ -124,5 +124,17 @@
     "sha256": "e9eb8762b722eb2a746fb7d88a21d82d04e8aeffedc6d16dfad6df78f805d70d",
     "humanListeningApprovalPending": true,
     "contentNote": "Generic helicopter sound. Source is a twin-rotor Chinook; human perceptual approval and Griffin-specificity match remain pending."
+  },
+  {
+    "itemId": "ui.applause",
+    "asset": "assets/sfx/ui/applause.mp3",
+    "title": "Sound Effects - Applause after a concert.ogg",
+    "author": "Amada44",
+    "source": "https://commons.wikimedia.org/wiki/File:Sound_Effects_-_Applause_after_a_concert.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Seconds 15.0-17.8 selected; 0.25 s fade-in, 1.0 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3. Used softly on the round-end screen.",
+    "originalSha256": "a9bed3afd89d66c3ce13edb9f2be2a548ab87a2cc70827624905be90044f8e72",
+    "sha256": "87edc89aa60bfaa42253ce795911eb71e5bb4888f8c8393fdd6cdb82a50f2d5d"
   }
 ]

@@ -62,6 +62,68 @@ for n, (tr, en) in FILL_WORDS.items():
     PROMPTS[f'fill_count_{n}'] = (f'Sepete {tr} tane koy.', f'Put {en} in the basket.')
 
 
+PRAISE = [
+    ('Aferin!', 'Well done!'), ('Harika iş çıkardın!', 'Great job!'), ('Çok güzel!', 'Very nice!'),
+    ('Süpersin!', "You're super!"), ('Bravo!', 'Bravo!'), ('Tebrikler!', 'Congratulations!'),
+    ('Mükemmel!', 'Perfect!'), ('Çok iyi!', 'Very good!'), ('İşte bu!', "That's it!"),
+    ('Harikasın!', "You're amazing!"),
+]
+
+# Group explanations said after a correct sort: (TR template, EN template).
+GROUP_SENTENCES = {
+    'animals': {
+        'evcil': ('Evet, {x} bir evcil hayvandır.', 'Yes, the {x} is a pet.'),
+        'ciftlik': ('Evet, {x} bir çiftlik hayvanıdır.', 'Yes, the {x} is a farm animal.'),
+        'vahsi': ('Evet, {x} vahşi bir hayvandır.', 'Yes, the {x} is a wild animal.'),
+        'deniz': ('Evet, {x} suda yaşar.', 'Yes, the {x} lives in the water.'),
+        'bocek': ('Evet, {x} bir böcektir.', 'Yes, the {x} is an insect.'),
+        'kus': ('Evet, {x} bir kuştur.', 'Yes, the {x} is a bird.'),
+    },
+    'produce': {
+        'meyve': ('Evet, {x} bir meyvedir.', 'Yes, the {x} is a fruit.'),
+        'sebze': ('Evet, {x} bir sebzedir.', 'Yes, the {x} is a vegetable.'),
+    },
+    'vehicles': {
+        'kara': ('Evet, {x} yolda gider.', 'Yes, the {x} goes on the road.'),
+        'hava': ('Evet, {x} havada uçar.', 'Yes, the {x} flies in the air.'),
+        'rayli': ('Evet, {x} rayda gider.', 'Yes, the {x} runs on rails.'),
+        'is_makinesi': ('Evet, {x} bir iş makinesidir.', 'Yes, the {x} is a work machine.'),
+        'deniz': ('Evet, {x} suda gider.', 'Yes, the {x} goes on the water.'),
+    },
+}
+
+
+def tr_lower(text):
+    return text.replace('İ', 'i').replace('I', 'ı').lower()
+
+
+def extra_jobs():
+    jobs = []
+    for n, pair in enumerate(PRAISE, 1):
+        for lang, text in zip(('tr', 'en'), pair):
+            jobs.append({'key': f'praise.{n}:{lang}', 'kind': 'praise', 'lang': lang, 'text': text,
+                         'out': f'assets/audio/{lang}/praise/praise_{n}.mp3'})
+    for theme, groups in GROUP_SENTENCES.items():
+        items = json.loads((ROOT / 'assets' / 'content' / 'items' / f'{theme}.json').read_text(encoding='utf-8'))
+        for item in items:
+            if not item['images']:
+                continue
+            slug = item['id'].split('.', 1)[1]
+            for tag in item['tags']:
+                if tag not in groups:
+                    continue
+                tr_tpl, en_tpl = groups[tag]
+                texts = {'tr': tr_tpl.format(x=tr_lower(item['name']['tr'])),
+                         'en': en_tpl.format(x=item['name']['en'].lower())}
+                if item['id'] == 'animals.bird' and tag == 'kus':
+                    texts = {'tr': 'Evet, bu bir kuş.', 'en': 'Yes, this is a bird.'}
+                for lang in ('tr', 'en'):
+                    jobs.append({'key': f'explain.{item["id"]}.{tag}:{lang}', 'kind': 'explain',
+                                 'item': item['id'], 'lang': lang, 'text': texts[lang],
+                                 'out': f'assets/audio/{lang}/explain/{theme}_{slug}_{tag}.mp3'})
+    return jobs
+
+
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -129,7 +191,7 @@ def run():
     if not key:
         sys.exit('ELEVENLABS_API_KEY is not set')
     manifest = load_manifest()
-    jobs = pending(prompt_jobs() + item_jobs(), manifest)
+    jobs = pending(prompt_jobs() + item_jobs() + extra_jobs(), manifest)
     print(f'{len(jobs)} clips, {sum(len(j["text"]) for j in jobs)} characters to generate')
     lock = threading.Lock()
     failures = []
@@ -194,7 +256,7 @@ def apply():
 
 def plan():
     manifest = load_manifest()
-    jobs = pending(prompt_jobs() + item_jobs(), manifest)
+    jobs = pending(prompt_jobs() + item_jobs() + extra_jobs(), manifest)
     kinds = {}
     for job in jobs:
         kinds[job['kind']] = kinds.get(job['kind'], 0) + 1

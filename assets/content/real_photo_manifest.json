@@ -506,23 +506,6 @@
       "humanContentReviewPending": "Pending final human approval that this specific F-22 fighter aircraft is suitable for the generic catalog labels “Uçak” / “Airplane”."
     },
     {
-      "id": "vehicles.car",
-      "path": "assets/images/vehicles/car_real.png",
-      "author": "Jackson2161",
-      "source": "https://commons.wikimedia.org/wiki/File:BMWcar.jpg",
-      "original": "artifacts/real-vehicle-car-candidate/originals/bmwcar_jackson2161.jpg",
-      "originalSha256": "89b6c16f5072f657e2e413200bdcc02a0d9539126bfb646c0109b0692fa46094",
-      "license": "CC0 1.0",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "adaptationLicense": "CC0 1.0",
-      "licenseVerified": true,
-      "licenseVerifiedOn": "2026-10-17",
-      "processing": "artifacts/real-vehicle-car-candidate/process_car.py",
-      "whiteOutlinePixels": 4,
-      "changes": "Single complete photographed BMW E90 sedan, retaining the visible full body and both tires. Manually traced the car silhouette; source background outside the silhouette was made transparent while preserving photographed RGB details, including the natural scene visible through the windows. Alpha-bound crop, 16 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.",
-      "sha256": "22d721b6ea75a06bd3bca15dfb334bba1cf0b260f834ccb3118d6e6bb969687e"
-    },
-    {
       "id": "vehicles.helicopter",
       "path": "assets/images/vehicles/helicopter_real.png",
       "author": "Iain Thomson (Crown Copyright, RAF / Defence Imagery); transparent cutout retouched by Offnfopt",
@@ -724,6 +707,22 @@
       "whiteOutlinePixels": 4,
       "originalSha256": "c05c2c115cbdfef54efe7c746355b4b5fab25dbeb5445856d7c6e595bbfd1d4a",
       "sha256": "3e47080ddb5bd28fe99aec5d97c5e50e2bb788f10cfbe8d1fcde8d170aa06deb"
+    },
+    {
+      "author": "Rich Niewiroski Jr.",
+      "source": "https://commons.wikimedia.org/wiki/File:HondaS2000-004.png",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); baked-in soft drop shadow removed (dark pixels with alpha < 200 cleared); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+      "id": "vehicles.car",
+      "path": "assets/images/vehicles/car_honda_real.png",
+      "licenseVerified": true,
+      "licenseVerifiedOn": "2026-10-20",
+      "adaptationLicense": "CC BY 2.5",
+      "processing": "tools/adapt_cutout_photo.py --drop-shadow",
+      "whiteOutlinePixels": 4,
+      "originalSha256": "1a3cc5b8446ea405eb340c4fff29eba08d1c19f1298b703ab01dd147cd67bfc3",
+      "sha256": "b4f1688fc82300a6c7e7af9243313d1ab89830a6d48e64b7f236969f348de3db"
     }
   ]
 }

@@ -180,13 +180,13 @@ def main():
   write_json(ROOT/f'assets/content/items/{t[0]}.json',[x for x in items if x['theme']==t[0]])
  active=['animals','produce','colors','numbers','vehicles','shapes','food']
  theme_games={
- 'animals':['G01','G10','G02','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
- 'produce':['G01','G02','G14','G04','G33','G36','G55','G15','G17','G23','G38'],
- 'colors':['G01','G02','G14','G55'],
- 'numbers':['G35','G02','G10','G14','G33','G34','G36','G55','G37','G38'],
- 'shapes':['G01','G02','G14','G55'],
- 'food':['G01', 'G02', 'G14', 'G55', 'G15', 'G17', 'G33', 'G36'],
- 'vehicles':['G02','G01','G10','G14','G04','G33','G36','G55','G15','G17','G23','G11'],
+ 'animals':['G02', 'G01', 'G10', 'G14', 'G04', 'G33', 'G36', 'G15', 'G17', 'G23'],
+ 'produce':['G02', 'G01', 'G14', 'G04', 'G33', 'G36', 'G15', 'G17', 'G23', 'G38'],
+ 'food':['G02', 'G01', 'G14', 'G15', 'G17', 'G33', 'G36'],
+ 'vehicles':['G02', 'G01', 'G10', 'G14', 'G04', 'G33', 'G36', 'G15', 'G17', 'G23'],
+ 'colors':['G02', 'G01', 'G14'],
+ 'shapes':['G02', 'G01', 'G14'],
+ 'numbers':['G02', 'G35', 'G10', 'G14', 'G33', 'G34', 'G36', 'G37', 'G38'],
  }
  write_json(ROOT/'assets/content/themes.json',[dict(id=t[0],name={'tr':t[1],'en':t[2]},palette=dict(zip(['bg','accent','deep'],['#'+x for x in t[3:6]])),hero=t[0]+'.'+t[6],active=t[0] in active,games=theme_games.get(t[0],[])) for t in THEMES])
  game_defs=[('G01','Bul','Find','identify'),('G02','Öğren','Learn','flashcards'),('G04','Hangi Grupta?','Which Group?','identify'),('G10','Sesini Bul','Find the Sound','audio_choice'),('G14','Aynısını Bul','Find the Match','identify'),('G33','Say ve Seç','Count and Choose','count'),('G34','Rakamı Bul','Find the Number','identify'),('G35','Sonraki Sayı','Next Number','sequence_missing'),('G36','Karşılaştır','Compare','compare'),('G55','Dokun-Keşfet','Touch and Explore','cause_effect'),('G15','Gölgesini Bul','Find the Shadow','drag_to_target'),('G17','Farklı Olanı Bul','Odd One Out','odd_one_out'),('G23','Sepete Koy','Into the Basket','sort'),('G37','Sayı ve Miktar','Number and Amount','match_pair'),('G38','Sepeti Doldur','Fill the Basket','fill_count'),('G11','Doğru Sesi Seç','Pick the Sound','audio_choice')]

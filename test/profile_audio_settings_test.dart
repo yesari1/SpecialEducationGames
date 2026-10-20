@@ -97,7 +97,12 @@ void main() {
             .pool('vehicles', Difficulty.easy, requireSfx: true)
             .map((item) => item.id)
             .toSet(),
-        {'vehicles.car', 'vehicles.train', 'vehicles.airplane', 'vehicles.helicopter'},
+        {
+          'vehicles.car',
+          'vehicles.train',
+          'vehicles.airplane',
+          'vehicles.helicopter',
+        },
       );
       expect(
         content.hasLocalizedG10Content('vehicles', Difficulty.easy, 'en'),
@@ -159,7 +164,10 @@ void main() {
           expect(item.id, 'vehicles.helicopter');
           expect(source['author'], 'JoBrodie');
           expect(source['license'], 'CC0-1.0');
-          expect(source['source'], 'https://commons.wikimedia.org/wiki/File:Chinook_helicopter_flying_over_Greenwich_in_London.ogg');
+          expect(
+            source['source'],
+            'https://commons.wikimedia.org/wiki/File:Chinook_helicopter_flying_over_Greenwich_in_London.ogg',
+          );
           expect(source['humanListeningApprovalPending'], isTrue);
           expect(source['contentNote'], contains('Generic helicopter'));
         }
@@ -262,4 +270,3 @@ void main() {
     },
   );
 }
-

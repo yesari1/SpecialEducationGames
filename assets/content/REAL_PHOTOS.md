@@ -394,3 +394,14 @@ Changes: Background removed with classical OpenCV GrabCut (rectangle start, larg
 Original SHA-256: `c05c2c115cbdfef54efe7c746355b4b5fab25dbeb5445856d7c6e595bbfd1d4a`.
 Adapted PNG SHA-256: `3e47080ddb5bd28fe99aec5d97c5e50e2bb788f10cfbe8d1fcde8d170aa06deb`.
 Attempt folder: `artifacts/food-photos-attempt-03/`. Local technical review only; final human approval pending.
+
+## vehicles.car (replacement, 20 October 2026)
+
+File: `assets/images/vehicles/car_honda_real.png`
+Photo author: Rich Niewiroski Jr.
+Source: https://commons.wikimedia.org/wiki/File:HondaS2000-004.png
+License: CC BY 2.5 — https://creativecommons.org/licenses/by/2.5
+Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); baked-in soft drop shadow removed (dark pixels with alpha < 200 cleared); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `1a3cc5b8446ea405eb340c4fff29eba08d1c19f1298b703ab01dd147cd67bfc3`.
+Adapted PNG SHA-256: `b4f1688fc82300a6c7e7af9243313d1ab89830a6d48e64b7f236969f348de3db`.
+Replaces the earlier small red sedan photo (kept on disk). Attempt folders: `artifacts/car-photo-attempt-01/` (shadow kept, rejected) and `-02/` (accepted). Local technical review only.
