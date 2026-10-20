@@ -25,6 +25,13 @@ class FakeAudio implements AudioBackend {
 }
 
 void main() {
+  test('every clip in a sequence plays to its end (number chains)', () async {
+    final backend = StickyPlayingAudio();
+    final service = AudioService(backend: backend);
+    await service.playSequence(['five', 'six', 'which_next']);
+    expect(backend.played, ['five', 'six', 'which_next']);
+    await service.dispose();
+  });
   test(
     'A stalled native player cannot leave a child waiting forever',
     () async {
@@ -65,3 +72,32 @@ void main() {
     await service.dispose();
   });
 }
+
+/// Mimics just_audio: after a clip finishes the player still reports
+/// "playing", and play() on a playing player returns at once.
+class StickyPlayingAudio implements AudioBackend {
+  bool playing = false;
+  final played = <String>[];
+  String? _current;
+  @override
+  Future<Duration?> setAsset(String asset) async {
+    _current = asset;
+    return const Duration(milliseconds: 10);
+  }
+
+  @override
+  Future<void> play() async {
+    if (playing) return;
+    playing = true;
+    await Future<void>.delayed(const Duration(milliseconds: 10));
+    played.add(_current!);
+  }
+
+  @override
+  Future<void> setVolume(double volume) async {}
+  @override
+  Future<void> stop() async => playing = false;
+  @override
+  Future<void> dispose() async {}
+}
+

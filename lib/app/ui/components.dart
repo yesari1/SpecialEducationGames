@@ -947,9 +947,9 @@ class GroupCluster extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        if (members.length > 1) at(1, const Alignment(-1, .2), .58),
-        if (members.length > 2) at(2, const Alignment(1, .2), .58),
-        at(0, Alignment.bottomCenter, members.length == 1 ? .95 : .66),
+        if (members.length > 1) at(1, const Alignment(-1, -.2), .68),
+        if (members.length > 2) at(2, const Alignment(1, -.2), .68),
+        at(0, Alignment.bottomCenter, members.length == 1 ? .95 : .78),
       ],
     );
   }

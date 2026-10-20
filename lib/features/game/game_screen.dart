@@ -346,7 +346,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         ),
       );
     }
-    if (exploratory) return _exploreComplete ? _completed(0) : _explore(theme);
+    if (exploratory) return _exploreComplete ? _completed(3) : _explore(theme);
     final c = controller!;
     if (c.error != null) {
       final compact = MediaQuery.sizeOf(context).height < 500;
@@ -457,7 +457,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   ),
                   Expanded(
                     flex: sideBySidePrompt && compact
-                        ? 4
+                        ? 3
                         : textOnlyPrompt
                         ? 1
                         : spec.count == null
@@ -603,7 +603,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   ),
                   Expanded(
                     flex: sideBySidePrompt && compact
-                        ? 5
+                        ? 7
                         : spec.count == null
                         ? 3
                         : 2,

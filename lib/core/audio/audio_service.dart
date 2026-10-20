@@ -94,6 +94,10 @@ class AudioService {
               ),
             );
         await _backend.play().timeout(limit);
+        // A finished clip leaves the player "playing"; without a stop the
+        // next play() returns at once and the following clip cuts it off.
+        if (generation != _generation || _disposed) return;
+        await _safeStop();
       } catch (_) {
         // An old failed load must never stop newer narration.
         if (generation != _generation || _disposed) return;

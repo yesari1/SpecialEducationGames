@@ -338,8 +338,10 @@ class QuantityVisual extends StatelessWidget {
           columns = c;
         }
       }
-      final side = best * .94;
-      return Center(
+      final side = best * .86;
+      // Stand on the card's ground shadow, like single objects.
+      return Align(
+        alignment: Alignment.bottomCenter,
         child: SizedBox(
           width: side * columns + 1,
           child: Wrap(
