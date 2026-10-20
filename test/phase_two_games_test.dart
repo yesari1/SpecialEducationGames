@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:drift/native.dart';
@@ -319,6 +320,42 @@ void main() {
         isNot(containsAll(shared)),
         reason: 'the odd item must not belong to the shared group',
       );
+    }
+  });
+
+  test('group rounds speak and show the same item, never it as a member', () {
+    for (final template in const [GroupTemplate(), BasketSortTemplate()]) {
+      for (final theme in ['animals', 'produce', 'vehicles']) {
+        final scheduler = ItemScheduler(Random(11));
+        for (var i = 0; i < 60; i++) {
+          final ctx = ModeContext(
+            content: content,
+            themeId: theme,
+            gameId: template is BasketSortTemplate ? 'G23' : 'G04',
+            difficulty: Difficulty.values[i % 3],
+            scheduler: scheduler,
+            struggle: const {},
+          );
+          final spec = template.buildRound(ctx);
+          final item = spec.stimulus!;
+          for (final locale in ['tr', 'en']) {
+            final cues = template.introCues(spec, ctx, locale);
+            expect(cues.last, item.audioFor(locale), reason: item.id);
+            final explain = GroupTemplate.explanationCue(spec, locale)!;
+            expect(explain, contains('${item.theme}_${item.slug}_'));
+            expect(File(explain).existsSync(), isTrue, reason: explain);
+          }
+          for (final members in spec.groupMembers.values) {
+            expect(members.map((m) => m.id), isNot(contains(item.id)));
+            expect(members, isNotEmpty);
+          }
+          final tag = spec.target.id.substring('group.'.length);
+          expect(item.tags, contains(tag));
+          for (final choice in spec.choices.where((c) => c != spec.target)) {
+            expect(item.tags, isNot(contains(choice.id.substring(6))));
+          }
+        }
+      }
     }
   });
 }

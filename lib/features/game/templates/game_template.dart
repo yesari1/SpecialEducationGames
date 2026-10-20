@@ -351,9 +351,14 @@ class GroupTemplate extends GameTemplate {
         validTargets[ctx.scheduler.random.nextInt(validTargets.length)];
     // Each group shows a few of its members, never the item being sorted.
     final members = <String, List<ContentItem>>{};
+    // Members come from the whole theme so small tier pools never leave a
+    // group without pictures.
+    final everyone = ctx.content.items
+        .where((x) => x.theme == ctx.themeId && x.images.isNotEmpty)
+        .toList();
     ContentItem category(String tag) {
       final group =
-          pool
+          everyone
               .where((x) => x.tags.contains(tag) && x.id != stimulus.id)
               .toList()
             ..shuffle(ctx.scheduler.random);
