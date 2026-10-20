@@ -42,6 +42,9 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] 20 Ekim (R32): onboarding'de Android Geri önceki adıma; onboarding görselleri tek stil illüstrasyon (ChatGPT, `docs/illustration-style.md`); turuncu butonlarda beyaz yazı; ortalı/dengeli ebeveyn kapısı; tur sonunda kâğıt konfeti, 5,5 sn alkış, övgüden sonra 3,5 sn bekleme; ses tekrar düğmesi anlatımı baştan başlatmaz; EN "Bravo" → "You did it!"; tek nesneli salatalık/mandalina/soğan fotoğrafları. 250/250 host test, R32 QA APK Drive'da.
 - [ ] Çok nesneli kalan fotoğraflar: karpuz (bütün + dilim), kestane, bezelye, turp; uygun lisanslı tek nesne fotoğrafı bulunamadı.
 
+- [x] 20 Ekim (R33): Google hesabı başına 7 günlük ücretsiz deneme (Firestore `trials/{uid}`), abonelik (aylık/yıllık) + tek seferlik ürün, yeni Premium sayfası, Firestore kuralları ve testleri, kurulum adımları `docs/account-and-billing.md`. 261/261 host test, 11/11 kural testi.
+- [ ] Dış (Yunus): Firestore'u açma, Google girişi, SHA parmak izleri, kural yükleme, Play ürünleri/fiyatlar, lisans testi, dahili test kanalı, gizlilik politikası URL'si (`config/app.privacyUrl`).
+
 ### Yerelde yapılabilecek açıklar
 - [ ] Yiyecek temasında kalan fotoğraflar: içecekler (süt, su, meyve suyu, ayran), yoğurt, pilav ve orta/zor öğeler. Açık arka planlı uygun lisanslı fotoğraf bulunamadı; Pexels/Unsplash gibi kaynaklar veya özel çekim gerekebilir.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).

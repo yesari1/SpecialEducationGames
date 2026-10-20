@@ -2,6 +2,17 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 20 Ekim 2026 — R33 (Google ile giriş, deneme, paywall)
+
+- Ücretsiz deneme: Google hesabı başına bir kez, ödeme bilgisi istenmez, süresi `config/app.trialDays` (varsayılan 7). Başlangıç sunucuda `trials/{uid}` (yalnız `startedAt`, sunucu saati, bir kez oluşturulur, değiştirilemez/silinemez). Süre bitince ücretsiz sürüme döner. `EntitlementService` kaynakları: QA / abonelik / tek seferlik / deneme.
+- Play Billing: abonelik `premium` (`monthly`, `yearly`) + tek seferlik `premium_lifetime`. Satın alma cihazda Play yanıtıyla doğrulanır; sunucu doğrulaması yok (bilinçli sınır).
+- Premium sayfası yeniden: ChatGPT illüstrasyonu (`assets/illustrations/family/`), deneme kartı ("Google ile giriş yap ve başla"), Play'den gelen planlar, geri yükleme, abonelik yönetimi, `config/app.privacyUrl`/`termsUrl` bağlantıları. Giriş/satın alma yalnız ebeveyn alanında.
+- Firestore kuralları `trials/{uid}` ile güncellendi; emülatörde 11/11 kural testi. `firebase/firebase.json` + `.firebaserc` (proje `specialeducationgames`) yükleme için hazır; yükleme yapılmadı (CLI oturumu yok).
+- Yunus'un yapacakları: `docs/account-and-billing.md` (Firestore'u aç, Google girişini aç, SHA parmak izleri, kuralları yükle, Play ürünleri/fiyatlar, lisans testçileri, dahili test, gizlilik/Data safety).
+- Pazar ve dil araştırması: `docs/pazar-arastirmasi-2026-10.md`.
+- Doğrulama: analyze temiz, seri host testler 261/261 (`artifacts/claude/r33/host-tests.log`); yeni `test/entitlement_trial_test.dart` (11). Premium sayfası görüntüleri `artifacts/claude/r33/paywall-tr.png`, `paywall-en.png` (host çizimi; emülatör başka proje oturumunca kullanıldığı için cihaz görüntüsü alınmadı). Canlı Google girişi ve Play satın alması konsol adımlarından önce çalışmaz.
+- APK'lar (profile, debug imzalı, appId/versionCode 14): `artifacts/test-builds/2026-10-20/ozel-egitim-test-claude-r33-premium-qa.apk` (tüm oyunlar açık, SHA-256 `52ea3a25…cbcbf`) ve `…-r33-normal.apk` (ücretsiz/deneme yolu, SHA-256 `7b02d05a…0cac0`); ikisi de Drive'da.
+
 ## 20 Ekim 2026 — R32 (Yunus'un R31 geri bildirimi)
 
 - Onboarding: Android Geri bir önceki adıma döner (ilk adımda normal). Tüm onboarding görselleri tek stilde illüstrasyon: Yunus'un izniyle ChatGPT (Codex CLI, gpt-6.1-sol görüntü üretimi) ile "SEG soft clay" stilinde 19 görsel (hoş geldin sahnesi + 18 seçenek). Stil/ana prompt `docs/illustration-style.md`, varlık promptları `docs/illustration-prompts.md`, kayıt `assets/illustrations/onboarding/MANIFEST.json`, orijinaller `artifacts/illustrations-r32/originals/`. AGENTS.md kuralı buna göre daraltıldı (oyun içeriği gerçek fotoğraf kalır).
