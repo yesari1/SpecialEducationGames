@@ -2,7 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
-## 20 Ekim 2026 — Claude oturumu (güncel)
+## 20 Ekim 2026 — R30 (Yunus'un telefon geri bildirimi)
+
+- Değişiklikler TODO.md başında. Ses: 314 yeni klip (övgü + grup açıklamaları), STT ile 1.422 klip denetlendi, 12 klip yeniden kaydedildi (`tools/check_voice_stt.py`, `tools/regenerate_voice_clips.py`, kayıtlar `artifacts/voice-check/`). Alkış: Commons CC0 (Amada44), `assets/sfx/SOURCES.md`.
+- Kritik düzeltme: AudioService artık klipler arasında oynatıcıyı durduruyor (her ikinci klip kesiliyordu).
+- Yaş: şu an yalnız kaydediliyor (`ageYears` ve eski `age` aralığı); içerik, zorluk, seçenek sayısı, tur uzunluğu ya da ipuçları yaşa göre değişmiyor. Etkileyenler: "söylenen nesneyi gösterebiliyor" (başlangıç zorluğu ve tanıtım turu), bildiği temalar/saymayı biliyor mu (tema başlangıç zorluğu), ses hassasiyeti (kutlama ve ses), odak süresi (tur uzunluğu 3/5/8). Zorluk: Kolay/Orta/Zor = 2/3/4 seçenek ve 4/5/6 tur; 10 aşamadan sonra otomatik zorluk önerisi; ipucu gecikmesi öğe başarısına göre.
+- Doğrulama: analyze temiz, seri testler 236/236; emülatörde ebeveyn paneli, tur sonu, Öğren, Hangi Grupta, Sepete Koy (gerçek sürükle-bırak), Hangisi daha çok, Sonraki Sayı (ses olayları) kontrol edildi: `artifacts/claude/r30/`. Profile soğuk açılış emülatörde 9–12 sn.
+
+## 20 Ekim 2026 — Claude oturumu
 
 - Ses: Yunus'un açık onayıyla ElevenLabs'te seçili seslerle (TR İrem, EN Laura; eleven_multilingual_v2; stability .35 / similarity .75 / style .43 / speed 1.0, tahmini ayarlar) 436 klip üretildi; tek tek bir kez istendi, hata 0. Metin toplamı 3.813 karakter; hesap sayacı 7.396 → 9.098 (222.253 limit). Kayıt: `assets/content/generated_voice_manifest.json`. Yönergeler oyun başında çalar (G10: önce "Dinle…", sonra doğal ses).
 - Şekiller teması açık (vektör çizim). Basılı tutma geri bildirimi düzeltildi. QA premium profile APK R27 (SHA-256 `e795edf24ff7168bd6672d4b1ee29e2962fc2910d952a6d6296bfab7f6880ef5`, 262.987.326 bayt), Google Drive "Special Education Games" klasörüne kopyalandı.

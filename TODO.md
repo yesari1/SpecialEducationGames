@@ -21,7 +21,7 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] Fotoğraf çerçeve sınırları `tools/build_photo_bounds.py` ile önceden hesaplanır (`assets/content/photo_bounds.json`); yeni fotoğraf eklenince yeniden çalıştırılmalı, test eksik olanı yakalar.
 - [x] Kalan `state.tr` metinleri (uygulama başlığı) ARB'ye taşındı; yeni metinler TR/EN ARB'de.
 - [x] Debug QA için `--dart-define=QA_PREMIUM=true` (yalnız debug derlemede; release/profile yok sayar).
-- [x] Testler: 238/238 seri host test geçer (20 Ekim); önceki 234/234, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 8), dikey aile/abonelik/profil düzenleyici 1x/2x TR/EN, fotoğraf sınırı kapsamı.
+- [x] Testler: 236/236 (20 Ekim R30); önceki 238/238 seri host test geçer (20 Ekim); önceki 234/234, analyze temiz. Yeni testler: dikey onboarding akışı (4), yön kuralları, Faz 2 oyunları (sürükleme dahil, 8), dikey aile/abonelik/profil düzenleyici 1x/2x TR/EN, fotoğraf sınırı kapsamı.
 
 - [x] 20 Ekim: Yunus'un onayıyla ElevenLabs seslendirmesi (TR İrem `uvU9jrgGLWNPeNA4NgNT`, EN Laura `GZ4PpFJV8ikEGUtBrjK7`, multilingual v2, ayarlar `tools/elevenlabs_voice_settings.json`): 436 klip, 3.813 karakter metin. Tüm oyun yönergeleri (yeni 6 oyun dahil, "sepete N tane koy" 1–7), aferin/tekrar dene, ve sesi eksik ya da TR/EN aynı (Türkçe) olan 195 öğe adı. `tools/generate_selected_voice.py`, kayıt `assets/content/generated_voice_manifest.json`; eski dosyalar korundu. Emülatörde ses oynatımı sistem ses olaylarıyla doğrulandı. İnsan dinleme onayı ayrıca bekler.
 - [x] Şekiller teması açıldı (G01, G02, G14, G55): 18 şekil vektörle çizilir (3B küp/küre/silindir/koni dahil), fotoğraf/AI görsel yok; TR/EN isimleri seslendirildi.
@@ -31,6 +31,10 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] 20 Ekim: tek dokunuş: Geri/Aile/ek süre basılı tutma kaldırıldı (Yunus kararı); çocuk kilidi Aile ve ek süre için ebeveyn kontrolü (soru/PIN). Onboarding 5. adım buna göre.
 - [x] 20 Ekim: açılmamış 9 temanın 336 kelimesi seslendirildi (672 klip); toplam 1.108 klip.
 - [x] 20 Ekim: Yiyecek ve İçecekler teması açık (G01, G02, G14, G55, G15, G17, G33, G36). 10 lisanslı gerçek fotoğraf (Commons): ekmek, yumurta, kek, peynir, kurabiye, dondurma, çorba, makarna, pizza (hazır şeffaf kesik) ve simit (klasik GrabCut maskesi). Süt ve meyve suyu maske denemeleri kurala uymadığı için reddedildi (`artifacts/food-photos-attempt-03/REVIEW.md`). Fotoğrafsız öğeler oyunlarda gösterilmez. R29 QA APK Drive'da.
+
+- [x] 20 Ekim (R30, Yunus'un telefon geri bildirimi): yeni ebeveyn paneli (bugün halkası "4 / 15 dk", iki sütun kutular, hafta şeridi, son oynanan/öğrenilenler); tek sayfa tur sonu (yıldızlar, süzülen yıldızlar, CC0 alkış, 10 farklı övgü sesi); G55 ve G11 katalogdan çıktı, Öğren her temada ilk kart, Öğren'de Bitir yalnız son kartta; tanıtım sonrası ad sesi + 1,5 sn bekleme; Sonraki Sayı sayıları sırayla söyler; grup oyunlarında 3 örnek resim, öğe gruba zıplar ve açıklama cümlesi söylenir (294 cümle); sürükle-bırak parmak noktasında; "Hangisi daha çok" nesneleri büyük; yeni araba fotoğrafı; kontur 2 px; sade arka plan; tüm 1.422 sesin STT kontrolü, 12 klip yeniden kaydedildi (silver dahil).
+- [x] Önemli hata: ses dizilerinde her ikinci klip kesiliyordu (just_audio "playing" durumunda kalıyor). Sonraki Sayı'da ikinci sayı ve başarıdan sonra öğe adı duyulmuyordu. Düzeltildi, test eklendi.
+- [x] Tüm temalar × kartlar × zorluklar × TR/EN için otomatik oyun testi (246 kart cevaplandı). Yalnız G14 Zor çoğu temada içerik yetersiz (aynı nesnenin iki farklı doğrulanmış fotoğrafı yok); tema ekranında kilitli görünür.
 
 ### Yerelde yapılabilecek açıklar
 - [ ] Yiyecek temasında kalan fotoğraflar: içecekler (süt, su, meyve suyu, ayran), yoğurt, pilav ve orta/zor öğeler. Açık arka planlı uygun lisanslı fotoğraf bulunamadı; Pexels/Unsplash gibi kaynaklar veya özel çekim gerekebilir.

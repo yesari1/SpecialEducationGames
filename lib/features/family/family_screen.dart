@@ -1212,7 +1212,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
           );
     return SegCard(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(l10n.famRecentlyPlayed, style: SegText.heading),
           const SizedBox(height: SegSpace.s3),
