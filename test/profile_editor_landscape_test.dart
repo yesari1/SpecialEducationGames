@@ -296,7 +296,9 @@ void main() {
                     expect(find.text(theme.name(locale)), findsOneWidget);
                     expect(
                       find.text(
+                        // Age answer 0 (2–3) sets the band's start.
                         SurveyMapper.initialForTheme({
+                          'age': 0,
                           'known': knownSelections,
                         }, theme.id).label(locale),
                       ),
