@@ -56,3 +56,6 @@ app.*.map.json
 key.properties
 *.apk
 *.aab
+
+# Google Play bundles and store assets (kept locally and on Drive)
+GooglePlayBuild/

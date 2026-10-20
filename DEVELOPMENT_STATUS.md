@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 20 Ekim 2026 — R35 (sepet oyunu, mağaza hazırlığı, Play)
+
+- Play: yükleme anahtarı `D:\GameDesktop\UnityProjects\ProjectsKeys\SpecialEducationGames.keystore` (alias `specialeducationgames`, SHA-1 49:A5:07…, Play Upload key ile aynı). Şifreler git dışı `android/key.properties` içinde (Yunus yazdı). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.0-vc14-internal.aab` Internal testing'de yayında. Yunus Play'de `premium` (monthly 59,99 TL / yearly 449,99 TL) ve `premium_lifetime` (799,99 TL) oluşturdu. Firebase: kurallar yüklendi, `config/app` varsayılanlarla oluşturuldu, 6 SHA parmak izi kayıtlı, Google OAuth istemcileri tamam.
+- Sepet (G23) ve grup (G04) oyunları: en fazla 3 grup tek sırada (sayfalama yok), örnekler sepetin üstünde kendi alanında yan yana (dar alanda 2 büyük örnek), sepet çerçevesi taşmıyor. `test/basket_layout_test.dart` 3 boyut × 5 oyun/tema × 3 seviye = 45 durumda çakışma olmadığını doğrular. Önce/sonra: `artifacts/claude/r35/`.
+- Mağaza: `GooglePlayBuild/store-assets/` — TR/EN metinler, tanıtım görseli 1024×500 (TR/EN/yazısız, ChatGPT illüstrasyonu), 8+8 ekran görüntüsü (2:1 oranına uyarlanmış, Pixel_9a), Premium ürün ikonu. Drive "Store listing" klasöründe.
+- Doğrulama: seri host testler 264/264. R35 QA APK `artifacts/test-builds/2026-10-20/ozel-egitim-test-claude-r35-premium-qa.apk` Drive'da. Not: `integration_test/group_choices_test.dart` eski 4 seçenekli sayfalı G04'i bekliyor; cihazda çalıştırılırsa güncellenmeli.
+
 ## 20 Ekim 2026 — R34 (gizlilik politikası, Data safety, hesap silme)
 
 - Yayında (yesastudio.com, Cloudflare Pages; `D:\_WebProjects\yesastudio` commit 848f53d, push edildi): `/ozel-egitim-oyunlari/` (uygulama), `/privacy/`, `/terms/`, `/delete-account/`; TR/EN, KVKK/GDPR/COPPA/Birleşik Krallık Çocuk Kodu/Families kapsamı. Dördü de HTTP 200 doğrulandı.
