@@ -473,7 +473,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                     ),
                   ),
                   Expanded(
-                    flex: sideBySidePrompt && compact
+                    // Group and basket games give the baskets more room.
+                    flex: spec.groupMembers.isNotEmpty && !compact
+                        ? 3
+                        : sideBySidePrompt && compact
                         ? 4
                         : textOnlyPrompt
                         ? 1
@@ -619,7 +622,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                     ),
                   ),
                   Expanded(
-                    flex: sideBySidePrompt && compact
+                    flex: spec.groupMembers.isNotEmpty && !compact
+                        ? 8
+                        : sideBySidePrompt && compact
                         ? 7
                         : spec.count == null
                         ? 3

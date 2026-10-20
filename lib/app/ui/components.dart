@@ -868,28 +868,24 @@ class BasketFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      // Proportions follow the height so wide slots do not flatten it.
-      final width = math.min(box.maxWidth, box.maxHeight * 1.3);
-      final basketHeight = box.maxHeight * .4;
+      // Examples stand on the rim in their own area above the basket; the
+      // basket never covers them and nothing leaves the slot.
+      final width = math.min(box.maxWidth, box.maxHeight * 1.5);
+      final basketHeight = box.maxHeight * .28;
       return Center(
         child: SizedBox(
           width: width,
           height: box.maxHeight,
-          child: Stack(
+          child: Column(
             children: [
-              // The examples stand on the rim, inside the slot: nothing
-              // reaches above the basket's own area or into its neighbours.
-              Positioned(
-                left: width * .1,
-                right: width * .1,
-                top: 0,
-                bottom: basketHeight * .55,
-                child: child,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * .1),
+                  child: child,
+                ),
               ),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
+              SizedBox(
+                width: width,
                 height: basketHeight,
                 child: CustomPaint(painter: _BasketPainter(tint)),
               ),
@@ -945,9 +941,11 @@ class GroupCluster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (members.isEmpty) return const SizedBox.shrink();
-    final shown = members.take(3).toList();
     return LayoutBuilder(
       builder: (context, box) {
+        // Three examples when they still read well, otherwise two larger ones.
+        final roomy = box.maxWidth / 3 >= math.min(box.maxHeight, 96) * .9;
+        final shown = members.take(roomy ? 3 : 2).toList();
         final gap = box.maxWidth * .04;
         final side = math.min(
           (box.maxWidth - gap * (shown.length - 1)) / shown.length,
