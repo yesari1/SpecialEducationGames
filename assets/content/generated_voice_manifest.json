@@ -22228,16 +22228,17 @@
    }
   },
   "praise.5:en": {
-   "bytes": 10910,
-   "characters": 6,
+   "bytes": 12163,
+   "characters": 11,
    "item": null,
    "kind": "praise",
    "language": "en",
    "model_id": "eleven_multilingual_v2",
+   "note": "Re-recorded after STT check; installed take heard as 'You did it'.",
    "path": "assets/audio/en/praise/praise_5.mp3",
-   "requested_at": "2026-10-20T08:45:34.799719+00:00",
-   "sha256": "c5ff9e89714a786d0f98e57b6282ca84687aa2c7d47631f227e2fde578377ccc",
-   "text": "Bravo!",
+   "requested_at": "2026-10-20T14:56:06.418013+00:00",
+   "sha256": "f4d389921b314fe645fd91667c70a88d11cd1fee5ba7bd9977d95a29b6504f91",
+   "text": "You did it!",
    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
    "voice_name": "Laura - a top narration voice",
    "voice_settings": {

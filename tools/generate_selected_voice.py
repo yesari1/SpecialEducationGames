@@ -64,7 +64,7 @@ for n, (tr, en) in FILL_WORDS.items():
 
 PRAISE = [
     ('Aferin!', 'Well done!'), ('Harika iş çıkardın!', 'Great job!'), ('Çok güzel!', 'Very nice!'),
-    ('Süpersin!', "You're super!"), ('Bravo!', 'Bravo!'), ('Tebrikler!', 'Congratulations!'),
+    ('Süpersin!', "You're super!"), ('Bravo!', 'You did it!'), ('Tebrikler!', 'Congratulations!'),
     ('Mükemmel!', 'Perfect!'), ('Çok iyi!', 'Very good!'), ('İşte bu!', "That's it!"),
     ('Harikasın!', "You're amazing!"),
 ]
