@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 20 Ekim 2026 — R31 (yaş bantları, Yunus onayladı)
+
+- Dört yaş bandı (`lib/core/learning/age_band.dart`): 2–3 İlk adımlar, 4–5 Keşif, 6–7 Okula hazırlık, 8+ Pekiştirme. Bandın varsayılan seviyesinde seçenek 2/3/4/4, sayı aralığı 1–3/1–5/1–10/1–20, oyun başına soru 5/6/8/10. İpucu 2–3'te 1 sn erken, 8+'da 2 sn geç; 2–3'te sürükleme oyunları (G15, G23, G38) tema listesinde sona; 8+ bir üst içerik katmanından daha az bilinen öğeler görür.
+- Kolay/Orta/Zor ve ücretsiz katman değişmedi: bant yalnız her katmanın neye benzediğini belirler (bandın varsayılan katmanı 2–3 için Kolay, diğerleri Orta; Zor hiçbir zaman varsayılan değil, premium kalır). Bilinmeyen tema / saymayı bilmiyor yanıtı bir katman düşürür; otomatik zorluk katmanı yine taşır. Ebeveyn tur uzunluğu ayarı bandı ezer; odak "1–2 dk" ise soru sayısı 2 azalır.
+- Nesne çizip saydıran oyunlar (G33, G36, G37, G38) en fazla 10'da kalır (G38 sesli yönerge nedeniyle 7); 1–20 sayı tanıma ve karşılaştırma işaretlerinde kullanılır.
+- Ebeveyn: Ayarlar'da "Yaş seviyesi" kartı (dikey) bant adı + tek satır açıklama, "Daha kolay / Yaşına göre / Daha zor" (±1, profil anketinde `ageLevelShift`). Mevcut kullanıcılar: bant `ageYears`'tan, yoksa eski `age` aralığından. Yaş yoksa davranış eskisi gibi.
+- Doğrulama: analyze temiz; seri host testler 248/248 (`artifacts/claude/r31/host-tests-2.log`). Yeni: `test/age_band_test.dart` (11), `test/family_age_level_test.dart`, `integration_test/age_band_rounds_test.dart`. Emülatörde her bant için G01 hayvan, G01 sayı, G33 sayma 3'er tur otomatik oynandı + aile kartı: `artifacts/claude/r31/screens/`. Pixel_9a başka bir projede (com.yes.livemoment) açık olduğu için aynı yapılandırmanın klonu `SEG_Pixel9a_QA_R31` (emulator-5560) kullanıldı.
+- QA APK R31 (profile, QA_PREMIUM=true, applicationId/versionCode 14 değişmedi): `artifacts/test-builds/2026-10-20/ozel-egitim-test-claude-r31-premium-qa.apk`, 275.191.061 bayt, SHA-256 `29d082fc9b3e5c9f2c01dcd7441cdd58b371cea524f5eb2eda92d57d9f1006a5`; Google Drive "Special Education Games" klasörüne kopyalandı. Emülatöre kuruldu ve açıldı; APK içinde onboarding'den yaş seçerek elle tur oynanmadı (cihaz testi aynı kodu çalıştırır).
+
 ## 20 Ekim 2026 — R30 (Yunus'un telefon geri bildirimi)
 
 - Değişiklikler TODO.md başında. Ses: 314 yeni klip (övgü + grup açıklamaları), STT ile 1.422 klip denetlendi, 12 klip yeniden kaydedildi (`tools/check_voice_stt.py`, `tools/regenerate_voice_clips.py`, kayıtlar `artifacts/voice-check/`). Alkış: Commons CC0 (Amada44), `assets/sfx/SOURCES.md`.

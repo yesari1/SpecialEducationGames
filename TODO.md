@@ -36,6 +36,9 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] Önemli hata: ses dizilerinde her ikinci klip kesiliyordu (just_audio "playing" durumunda kalıyor). Sonraki Sayı'da ikinci sayı ve başarıdan sonra öğe adı duyulmuyordu. Düzeltildi, test eklendi.
 - [x] Tüm temalar × kartlar × zorluklar × TR/EN için otomatik oyun testi (246 kart cevaplandı). Yalnız G14 Zor çoğu temada içerik yetersiz (aynı nesnenin iki farklı doğrulanmış fotoğrafı yok); tema ekranında kilitli görünür.
 
+- [x] 20 Ekim (R31): yaş bantları (2–3 / 4–5 / 6–7 / 8+) başlangıç seviyesini belirler: seçenek, sayı aralığı, soru sayısı, ipucu zamanı, dokunma oyunları önce (2–3), daha az bilinen öğeler (8+). Ebeveyn Ayarlar'da ±1 kaydırır (TR/EN). Kolay/Orta/Zor ve ücretsiz kurallar değişmedi. 248/248 host test, emülatörde bant başına otomatik turlar. R31 QA APK Drive'da.
+- [ ] Yaş bantlarının gerçek çocuklarla/terapistle denenmesi (değerler Yunus'un onayladığı tablo; saha doğrulaması yok).
+
 ### Yerelde yapılabilecek açıklar
 - [ ] Yiyecek temasında kalan fotoğraflar: içecekler (süt, su, meyve suyu, ayran), yoğurt, pilav ve orta/zor öğeler. Açık arka planlı uygun lisanslı fotoğraf bulunamadı; Pexels/Unsplash gibi kaynaklar veya özel çekim gerekebilir.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).

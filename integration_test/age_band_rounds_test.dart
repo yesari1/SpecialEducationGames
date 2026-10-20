@@ -9,6 +9,8 @@ import 'package:special_education_games/core/audio/audio_service.dart';
 import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/core/learning/policies.dart';
+import 'package:special_education_games/app/ui/family_nav_bar.dart';
+import 'package:special_education_games/features/family/family_screen.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
 import 'package:special_education_games/features/game/widgets/round_choices_view.dart';
 import 'package:special_education_games/l10n/app_localizations.dart';
@@ -121,5 +123,73 @@ void main() {
       state.dispose();
       await tester.runAsync(db.close);
     }
+  });
+
+  testWidgets('family settings show the age level card upright', (
+    tester,
+  ) async {
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    await tester.pump(const Duration(seconds: 2));
+    final content = (await tester.runAsync(ContentRepository.load))!;
+    final db = AppDatabase.forTesting(NativeDatabase.memory());
+    final state = AppState(content, db, AudioService());
+    await tester.runAsync(state.load);
+    await tester.runAsync(
+      () => state.createProfile('Ada', 'cat', {'ageYears': 4, 'age': 1}),
+    );
+    state.locale = 'tr';
+    state.unlockFamily();
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: segTheme(),
+        locale: const Locale('tr'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        home: ListenableBuilder(
+          listenable: state,
+          builder: (_, _) => FamilyScreen(state: state),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    tester
+        .widget<FamilyNavBar>(find.byType(FamilyNavBar))
+        .onDestinationSelected!(3);
+    await tester.pumpAndSettle();
+    final shift = find.byKey(const ValueKey('age-level-shift'));
+    await tester.scrollUntilVisible(
+      shift,
+      200,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const ValueKey('family-list-3')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
+    await tester.pumpAndSettle();
+    // Show the whole card: title, band, explanation and the shift buttons.
+    await Scrollable.ensureVisible(
+      tester.element(find.byKey(const ValueKey('age-level-band'))),
+      alignment: 0.12,
+    );
+    await tester.pumpAndSettle();
+    await binding.convertFlutterSurfaceToImage();
+    await tester.pump();
+    await binding.takeScreenshot('r31-family-age-level');
+    await tester.tap(find.text('Daha zor'));
+    for (var i = 0; i < 20 && state.ageBand != AgeBand.schoolReady; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await tester.pump();
+    }
+    await tester.pumpAndSettle();
+    expect(state.ageBand, AgeBand.schoolReady);
+    await binding.takeScreenshot('r31-family-age-level-harder');
+    await tester.pumpWidget(const SizedBox.shrink());
+    state.lockFamily();
+    state.dispose();
+    await tester.runAsync(db.close);
   });
 }
