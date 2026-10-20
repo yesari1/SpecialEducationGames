@@ -39,6 +39,9 @@ Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun 
 - [x] 20 Ekim (R31): yaş bantları (2–3 / 4–5 / 6–7 / 8+) başlangıç seviyesini belirler: seçenek, sayı aralığı, soru sayısı, ipucu zamanı, dokunma oyunları önce (2–3), daha az bilinen öğeler (8+). Ebeveyn Ayarlar'da ±1 kaydırır (TR/EN). Kolay/Orta/Zor ve ücretsiz kurallar değişmedi. 248/248 host test, emülatörde bant başına otomatik turlar. R31 QA APK Drive'da.
 - [ ] Yaş bantlarının gerçek çocuklarla/terapistle denenmesi (değerler Yunus'un onayladığı tablo; saha doğrulaması yok).
 
+- [x] 20 Ekim (R32): onboarding'de Android Geri önceki adıma; onboarding görselleri tek stil illüstrasyon (ChatGPT, `docs/illustration-style.md`); turuncu butonlarda beyaz yazı; ortalı/dengeli ebeveyn kapısı; tur sonunda kâğıt konfeti, 5,5 sn alkış, övgüden sonra 3,5 sn bekleme; ses tekrar düğmesi anlatımı baştan başlatmaz; EN "Bravo" → "You did it!"; tek nesneli salatalık/mandalina/soğan fotoğrafları. 250/250 host test, R32 QA APK Drive'da.
+- [ ] Çok nesneli kalan fotoğraflar: karpuz (bütün + dilim), kestane, bezelye, turp; uygun lisanslı tek nesne fotoğrafı bulunamadı.
+
 ### Yerelde yapılabilecek açıklar
 - [ ] Yiyecek temasında kalan fotoğraflar: içecekler (süt, su, meyve suyu, ayran), yoğurt, pilav ve orta/zor öğeler. Açık arka planlı uygun lisanslı fotoğraf bulunamadı; Pexels/Unsplash gibi kaynaklar veya özel çekim gerekebilir.
 - [ ] Fiziksel cihaz, TalkBack ve performans kabulü (emülatör kontrolü bunun yerine geçmez).

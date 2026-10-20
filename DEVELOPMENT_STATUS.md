@@ -2,6 +2,19 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 20 Ekim 2026 — R32 (Yunus'un R31 geri bildirimi)
+
+- Onboarding: Android Geri bir önceki adıma döner (ilk adımda normal). Tüm onboarding görselleri tek stilde illüstrasyon: Yunus'un izniyle ChatGPT (Codex CLI, gpt-6.1-sol görüntü üretimi) ile "SEG soft clay" stilinde 19 görsel (hoş geldin sahnesi + 18 seçenek). Stil/ana prompt `docs/illustration-style.md`, varlık promptları `docs/illustration-prompts.md`, kayıt `assets/illustrations/onboarding/MANIFEST.json`, orijinaller `artifacts/illustrations-r32/originals/`. AGENTS.md kuralı buna göre daraltıldı (oyun içeriği gerçek fotoğraf kalır).
+- Birincil turuncu butonlarda yazı beyaz (`SegButton`, profil düzenleyici aksiyonları; gradyan `accent` → `accentStrong`).
+- Ebeveyn kapısı yeniden tasarlandı: ortalı kart, telefon tipi 3×4 tuş takımı, eşit kare tuşlar; yatayda soru solda, tuşlar sağda; dikeyde soru üstte.
+- Tur sonu: gökkuşağı/yıldız akışı yerine kâğıt konfeti (dönerek düşen dikdörtgenler, 5,2 sn); alkış 2,8 sn → 5,5 sn (aynı CC0 kaynak, `artifacts/sfx-applause-02/`); övgü bittikten sonra 3,5 sn bekleyip temaya döner (ses kapalıysa 7 sn).
+- Ses tekrar düğmesi ve boşta ipucu, devam eden anlatımı baştan başlatmaz (`AudioService.playSequenceIfIdle`, test eklendi).
+- İngilizce övgü 5 "Bravo!" → "You did it!" (Laura, multilingual v2, STT ilk denemede eşleşti; eski dosya `artifacts/voice-check/r32/`).
+- Fotoğraflar: salatalık (dilimli + bütün) → tek bütün salatalık (Tiia Monto, CC BY-SA 4.0); mandalina (soyulmuş + dilimler) → tek mandalina (CC BY-SA 4.0, GrabCut); soğan (iki + yarım) → tek soğan (Colin, CC BY-SA 3.0, GrabCut + gölge temizliği, kök yanında küçük artık). Denetimde karpuz (bütün + dilim), kestane (3 tane), bezelye (kabuk + açık), turp (demet) de çok nesneli; uygun lisanslı tek nesne fotoğrafı bulunamadı, açık iş. Kontrol sayfaları `artifacts/claude/r32/photo-audit/`.
+- Doğrulama: analyze temiz, seri host testler 250/250 (`artifacts/claude/r32/host-tests.log`). Cihaz ekran testi `integration_test/r32_screens_test.dart` (klon emülatör SEG_Pixel9a_QA_R31) geçti; görüntüler `artifacts/claude/r32/screens/` (önce: R31 hoş geldin, R30 tur sonu).
+- QA APK R32 (profile, QA_PREMIUM=true, appId/versionCode 14 değişmedi): `artifacts/test-builds/2026-10-20/ozel-egitim-test-claude-r32-premium-qa.apk`, 275.291.989 bayt, SHA-256 `27525ca6f925155c30848d3cb5776fc0c16a68172683dbfdbeef49e082e399a3`; Drive'a kopyalandı. Emülatöre kuruldu ve başlatıldı; emülatör başka bir proje oturumuyla paylaşıldığı için APK içinden ekran görüntüsü alınamadı.
+- Not: D: diski bu turda bir ara tamamen doldu (0 GB); geçici worktree silinerek yer açıldı. `D:\_MobileProjects\SEG_r31_before` içinde başka bir Gradle işleminin kilitlediği küçük bir klasör kaldı, elle silinebilir.
+
 ## 20 Ekim 2026 — R31 (yaş bantları, Yunus onayladı)
 
 - Dört yaş bandı (`lib/core/learning/age_band.dart`): 2–3 İlk adımlar, 4–5 Keşif, 6–7 Okula hazırlık, 8+ Pekiştirme. Bandın varsayılan seviyesinde seçenek 2/3/4/4, sayı aralığı 1–3/1–5/1–10/1–20, oyun başına soru 5/6/8/10. İpucu 2–3'te 1 sn erken, 8+'da 2 sn geç; 2–3'te sürükleme oyunları (G15, G23, G38) tema listesinde sona; 8+ bir üst içerik katmanından daha az bilinen öğeler görür.

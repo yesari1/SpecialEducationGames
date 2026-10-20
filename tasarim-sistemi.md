@@ -2,6 +2,8 @@
 
 > 16 Ekim kullanıcı güncellemesi: uygulama yalnızca yataydır. Zemin beyaz/çok hafif krem; palet canlı turuncu, mavi/açık mavi ve turkuaz; butonlar yumuşak yuvarlak ve beyaz kenarlıklı, kart metinleri düzgün hizalı olmalıdır. Gerçek fotoğraf PNG'lerinde beyaz özne konturu kullanılır. Eski palet ve dikey ekran hedefleri bu kararlara göre güncellenir. Uygulama durumu: [TODO.md](TODO.md).
 
+> 20 Ekim (R32) illüstrasyon kararı: tasarlanan bölümler (onboarding görselleri, başlık sahneleri, seçenek resimleri, dekoratif ikonlar) ChatGPT ile tek bir "SEG soft clay" stilinde üretilir; stil, ana prompt ve varlık promptları `docs/illustration-style.md` ve `docs/illustration-prompts.md` içindedir. Oyun içeriği gerçek lisanslı fotoğraf kalır. Birincil (turuncu) butonlarda yazı beyazdır (`SegColors.accent` → `accentStrong` gradyanı).
+
 > Ana rapor: [ozel-egitim-oyunlari-flutter-raporu.md](ozel-egitim-oyunlari-flutter-raporu.md)
 > Bu dosya uygulamanın **her ekranında** kullanılacak görsel dili tanımlar. Agent hiçbir ekranda bu dosyadaki tokenların dışında renk, yazı boyutu, köşe yarıçapı, gölge veya animasyon süresi kullanmamalıdır. Yeni bir bileşen gerekiyorsa önce buraya eklenir, sonra kodlanır.
 
