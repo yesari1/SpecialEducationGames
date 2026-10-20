@@ -6,6 +6,7 @@
 - Gemini routing is disabled. Do not call Gemini or change its installed configuration. Project execution follows the GPT-6 Luna worker / Codex orchestrator policy below.
 - Implement the three Turkish specification files in phase order. The later explicit six-game free tier in section 13.1b overrides the earlier summary.
 - Preserve Android applicationId `com.YeS.OzelEgitimOyunlari`, versionCode >= 14. Do not change or publish signing keys.
+- Google Play release bundles (signed .aab, upload key via git-ignored `android/key.properties`) go in the project-root folder `GooglePlayBuild/` (Yunus, 20 October 2026), not under artifacts/. Test APKs stay in `artifacts/test-builds/`.
 - Read DEVELOPMENT_STATUS.md before resuming. Keep actual completion and missing integrations distinct.
 - Flutter 3.41.6 is installed. Dependencies in pubspec.lock have been resolved against its Dart 3.11.4; avoid blanket upgrades.
 - Source Unity project is read-only: D:/GameDesktop/UnityProjects/SpecialEducationGames.
