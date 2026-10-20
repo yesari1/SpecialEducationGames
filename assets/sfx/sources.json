@@ -133,8 +133,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sound_Effects_-_Applause_after_a_concert.ogg",
     "license": "CC0-1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "changes": "Seconds 15.0-17.8 selected; 0.25 s fade-in, 1.0 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3. Used softly on the round-end screen.",
+    "changes": "Seconds 13.5-19.0 selected (R32; R30 used 15.0-17.8); 0.3 s fade-in, 1.2 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3. Used softly on the round-end screen.",
     "originalSha256": "a9bed3afd89d66c3ce13edb9f2be2a548ab87a2cc70827624905be90044f8e72",
-    "sha256": "87edc89aa60bfaa42253ce795911eb71e5bb4888f8c8393fdd6cdb82a50f2d5d"
+    "sha256": "2e830a832f2a3fa4f0bd5e93927e83fbd878767cfd73a0c3f6132f446c88449f"
   }
 ]

@@ -61,4 +61,4 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License: CC0-1.0
 - License link: https://creativecommons.org/publicdomain/zero/1.0/
 - App asset: assets/sfx/ui/applause.mp3
-- Changes: Seconds 15.0-17.8 selected; 0.25 s fade-in, 1.0 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3.
+- Changes: Seconds 13.5-19.0 selected (R32, longer applause; R30 used 15.0-17.8); 0.3 s fade-in, 1.2 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3.

@@ -46,6 +46,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   bool _exploreComplete = false;
   bool allowed = false;
   Timer? endTimer;
+
+  /// Bumped per round-end celebration so a late "audio finished" from an
+  /// earlier one never schedules the return.
+  int _celebration = 0;
   late Difficulty effectiveDifficulty;
   final Stopwatch _sessionClock = Stopwatch();
   Future<String>? _sessionId;
@@ -266,7 +270,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     setState(() {});
     if (controller!.phase == RoundPhase.complete) {
       unawaited(_finishSession(true));
-      endTimer ??= Timer(const Duration(seconds: 4), () {
+      // Fallback; with sound the return is rescheduled once the applause
+      // and praise have finished (see [_completed]).
+      endTimer ??= Timer(Duration(seconds: s.sound ? 15 : 7), () {
         if (mounted) back();
       });
     }
@@ -675,12 +681,24 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   Widget _completed(int stars) {
     if (!_roundEndCelebrated) {
       _roundEndCelebrated = true;
+      final token = ++_celebration;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted || !s.sound) return;
-        s.audio.playSequence([
-          if (s.celebration != 'off') 'assets/sfx/ui/applause.mp3',
-          praiseCue(s.locale),
-        ]);
+        s.audio
+            .playSequence([
+              if (s.celebration != 'off') 'assets/sfx/ui/applause.mp3',
+              praiseCue(s.locale),
+            ])
+            .whenComplete(() {
+              // Stay a few seconds after the praise before going back.
+              if (!mounted || token != _celebration || endTimer == null) {
+                return;
+              }
+              endTimer!.cancel();
+              endTimer = Timer(_afterPraise, () {
+                if (mounted) back();
+              });
+            });
       });
     }
     final theme = s.content.theme(widget.themeId);
@@ -688,8 +706,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     final particles = reduced || s.celebration == 'off'
         ? 0
         : s.celebration == 'full'
-        ? 26
-        : 12;
+        ? 70
+        : 36;
     final compact = MediaQuery.sizeOf(context).height < 500;
     return Scaffold(
       backgroundColor: theme.bg,
@@ -702,9 +720,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             if (particles > 0)
               Positioned.fill(
                 child: IgnorePointer(
-                  child: ExcludeSemantics(
-                    child: _DriftingStars(count: particles),
-                  ),
+                  child: ExcludeSemantics(child: _Confetti(count: particles)),
                 ),
               ),
             SafeArea(
@@ -799,6 +815,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         onPressed: () {
           endTimer?.cancel();
           endTimer = null;
+          _celebration++;
           _sessionId = null;
           _sessionFinished = false;
           _sessionClock.reset();
@@ -1174,43 +1191,55 @@ class _CelebrationBurstPainter extends CustomPainter {
       oldDelegate.progress != progress;
 }
 
-/// A few stars drifting down once over the round-end page.
-class _DriftingStars extends StatefulWidget {
+/// How long the round-end page stays after the spoken praise.
+const _afterPraise = Duration(milliseconds: 3500);
+
+/// Paper confetti falling and fluttering once over the round-end page.
+class _Confetti extends StatefulWidget {
   final int count;
-  const _DriftingStars({required this.count});
+  const _Confetti({required this.count});
   @override
-  State<_DriftingStars> createState() => _DriftingStarsState();
+  State<_Confetti> createState() => _ConfettiState();
 }
 
-typedef _Particle = ({
+typedef _Piece = ({
   double x,
   double delay,
-  double size,
+  double width,
+  double fall,
   double sway,
+  double spin,
   Color color,
 });
 
-class _DriftingStarsState extends State<_DriftingStars>
+class _ConfettiState extends State<_Confetti>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 3200),
+    duration: const Duration(milliseconds: 5200),
   )..forward();
-  late final List<_Particle> _particles = [
-    for (var i = 0; i < widget.count; i++)
-      (
-        x: math.Random(i * 31 + 7).nextDouble(),
-        delay: math.Random(i * 17 + 3).nextDouble() * .35,
-        size: 10 + math.Random(i * 13 + 5).nextDouble() * 12,
-        sway: math.Random(i * 7 + 11).nextDouble() * 2 * math.pi,
-        color: const [
-          SegColors.star,
-          SegColors.turquoise,
-          SegColors.accent,
-          SegColors.primary,
-        ][i % 4],
-      ),
-  ];
+  late final List<_Piece> _pieces = () {
+    final random = math.Random(42);
+    return [
+      for (var i = 0; i < widget.count; i++)
+        (
+          x: random.nextDouble(),
+          delay: random.nextDouble() * .45,
+          width: 9 + random.nextDouble() * 7,
+          fall: .75 + random.nextDouble() * .5,
+          sway: random.nextDouble() * 2 * math.pi,
+          spin: (random.nextBool() ? 1 : -1) * (2 + random.nextDouble() * 4),
+          color: const [
+            SegColors.star,
+            SegColors.turquoise,
+            SegColors.accent,
+            SegColors.primary,
+            Color(0xFFE76F8E),
+            Color(0xFF7C73DF),
+          ][i % 6],
+        ),
+    ];
+  }();
 
   @override
   void dispose() {
@@ -1222,38 +1251,43 @@ class _DriftingStarsState extends State<_DriftingStars>
   Widget build(BuildContext context) => AnimatedBuilder(
     animation: _controller,
     builder: (context, _) =>
-        CustomPaint(painter: _DriftPainter(_controller.value, _particles)),
+        CustomPaint(painter: _ConfettiPainter(_controller.value, _pieces)),
   );
 }
 
-class _DriftPainter extends CustomPainter {
+class _ConfettiPainter extends CustomPainter {
   final double t;
-  final List<_Particle> particles;
-  const _DriftPainter(this.t, this.particles);
+  final List<_Piece> pieces;
+  const _ConfettiPainter(this.t, this.pieces);
   @override
   void paint(Canvas canvas, Size size) {
-    for (final p in particles) {
+    for (final p in pieces) {
       final local = ((t - p.delay) / (1 - p.delay)).clamp(0.0, 1.0);
       if (local <= 0 || local >= 1) continue;
-      final y = -20 + local * (size.height * .9);
-      final x = p.x * size.width + math.sin(local * 6 + p.sway) * 18;
-      final fade = local < .8 ? 1.0 : (1 - local) / .2;
-      final paint = Paint()..color = p.color.withValues(alpha: .85 * fade);
-      final path = Path();
-      for (var k = 0; k < 10; k++) {
-        final a = -math.pi / 2 + k * math.pi / 5 + local * 2;
-        final r = k.isEven ? p.size / 2 : p.size / 4.5;
-        final point = Offset(x + math.cos(a) * r, y + math.sin(a) * r);
-        if (k == 0) {
-          path.moveTo(point.dx, point.dy);
-        } else {
-          path.lineTo(point.dx, point.dy);
-        }
-      }
-      canvas.drawPath(path..close(), paint);
+      final y = -24 + local * p.fall * (size.height + 48);
+      final x = p.x * size.width + math.sin(local * 7 + p.sway) * 26;
+      final fade = local < .85 ? 1.0 : (1 - local) / .15;
+      // A paper rectangle that turns while it falls: the width follows a
+      // cosine so it flips like a real piece of paper.
+      final flip = math.cos(local * 9 + p.sway).abs().clamp(.15, 1.0);
+      canvas
+        ..save()
+        ..translate(x, y)
+        ..rotate(local * p.spin + p.sway);
+      final rect = Rect.fromCenter(
+        center: Offset.zero,
+        width: p.width * flip,
+        height: p.width * .55,
+      );
+      canvas
+        ..drawRRect(
+          RRect.fromRectAndRadius(rect, const Radius.circular(1.5)),
+          Paint()..color = p.color.withValues(alpha: .9 * fade),
+        )
+        ..restore();
     }
   }
 
   @override
-  bool shouldRepaint(_DriftPainter old) => old.t != t;
+  bool shouldRepaint(_ConfettiPainter old) => old.t != t;
 }
