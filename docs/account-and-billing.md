@@ -56,9 +56,9 @@
 3. **Lisans test kullanıcıları:** Setup → License testing → kendi Gmail adresiniz. Test satın alımları ücretsiz olur.
 4. **Dahili test kanalı:** Billing yalnız Play'den yüklenmiş ve Play'e yüklenmiş sürümle çalışır. Release AAB'yi kendi upload anahtarınızla imzalayıp dahili teste yükleyin (versionCode ≥ 15 olmalı). Benim test APK'larım debug imzalı; Billing'i gerçekten bu yolla test etmek gerekir.
 5. **Politika:**
-   - Gizlilik politikası URL'si.
-   - Data safety: Google hesabı kimliği (UID) ve e-posta, kimlik doğrulama için; deneme başlangıç zamanı; ebeveyn onayıyla öğrenme özetleri; satın almalar Google Play tarafından işlenir; reklam yok.
-   - Families / Designed for Families beyanı: hedef kitle, ebeveyn kapısı, satın alma yalnız ebeveyn alanında.
+   - Gizlilik politikası: https://yesastudio.com/ozel-egitim-oyunlari/privacy/ (yayında; koşullar `/terms/`, hesap silme `/delete-account/`). Uygulama bu bağlantıları varsayılan olarak gösterir; `config/app.privacyUrl`/`termsUrl` ile değiştirilebilir.
+   - Data safety ve diğer beyanlar: soru soru cevaplar `docs/play-data-safety.md` içinde.
+   - Hesap silme: uygulama içinde Aile → Hesap → "Hesabı ve bulut verilerini sil" (sunucu fonksiyonu gerekmez); web için yukarıdaki sayfa.
 
 ### 3. Benden sonra (bu adımlar bitince)
 

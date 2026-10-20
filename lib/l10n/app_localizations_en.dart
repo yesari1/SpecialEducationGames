@@ -1252,4 +1252,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallTerms => 'Terms of use';
+
+  @override
+  String get familyAccountDelete => 'Delete account and cloud data';
+
+  @override
+  String get familyAccountDeleteTitle => 'Delete the account?';
+
+  @override
+  String get familyAccountDeleteBody =>
+      'The family account linked to your Google account and the learning summaries in the cloud are deleted permanently. You will be asked to confirm with Google first. Profiles and progress on this device are not deleted; uninstall the app to remove them.';
+
+  @override
+  String get familyAccountDeleteConfirm => 'Delete permanently';
+
+  @override
+  String get familyAccountDeleteCancel => 'Cancel';
+
+  @override
+  String get familyAccountDeleted => 'The account and cloud data were deleted.';
+
+  @override
+  String get familyAccountDeleteFailed =>
+      'The account could not be deleted. Check the internet connection and try again.';
 }

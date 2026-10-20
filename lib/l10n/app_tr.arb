@@ -1046,5 +1046,12 @@
   "paywallBuy": "Satın al",
   "paywallLifetimeOwned": "Tek seferlik Premium sizde.",
   "paywallPrivacy": "Gizlilik politikası",
-  "paywallTerms": "Kullanım koşulları"
+  "paywallTerms": "Kullanım koşulları",
+  "familyAccountDelete": "Hesabı ve bulut verilerini sil",
+  "familyAccountDeleteTitle": "Hesap silinsin mi?",
+  "familyAccountDeleteBody": "Google hesabınıza bağlı aile hesabı ve buluttaki öğrenme özetleri kalıcı olarak silinir. Önce Google ile yeniden doğrulama istenir. Bu cihazdaki profiller ve ilerleme silinmez; onları uygulamayı kaldırarak silebilirsiniz.",
+  "familyAccountDeleteConfirm": "Kalıcı olarak sil",
+  "familyAccountDeleteCancel": "Vazgeç",
+  "familyAccountDeleted": "Hesap ve bulut verileri silindi.",
+  "familyAccountDeleteFailed": "Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin."
 }

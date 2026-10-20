@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/page_navigation.dart';
+import '../../core/auth/family_account_deletion_coordinator.dart';
 import '../../core/auth/family_auth.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -14,12 +15,17 @@ class FamilyAccountCard extends StatefulWidget {
 
   /// Show every part at once (upright, scrolling page) instead of paging.
   final bool flat;
+
+  /// Deletes the account and its cloud data (Google Play account-deletion
+  /// requirement). Null hides the action.
+  final FamilyAccountDeletionCoordinator? deletion;
   const FamilyAccountCard({
     super.key,
     required this.auth,
     required this.turkish,
     this.reducedMotion = false,
     this.flat = false,
+    this.deletion,
   });
 
   @override
@@ -52,6 +58,45 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
   void dispose() {
     _pages.dispose();
     super.dispose();
+  }
+
+  Future<void> _delete(AppLocalizations l10n) async {
+    final deletion = widget.deletion;
+    if (deletion == null || deletion.busy) return;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.familyAccountDeleteTitle),
+        content: Text(l10n.familyAccountDeleteBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(l10n.familyAccountDeleteCancel),
+          ),
+          TextButton(
+            key: const ValueKey('family-account-delete-confirm'),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(
+              l10n.familyAccountDeleteConfirm,
+              style: const TextStyle(color: Color(0xFFB3261E)),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    final result = await deletion.delete(confirmed: true);
+    final done = result.outcome == FamilyAccountDeletionOutcome.completed;
+    // Firebase has already removed the user; also end the Google session.
+    if (done) await widget.auth.signOut();
+    if (!mounted) return;
+    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+      SnackBar(
+        content: Text(
+          done ? l10n.familyAccountDeleted : l10n.familyAccountDeleteFailed,
+        ),
+      ),
+    );
   }
 
   @override
@@ -99,6 +144,18 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
               ),
             if (widget.auth.account == null) Text(l10n.familyAccountNotNow),
           ]),
+          if (widget.auth.account != null && widget.deletion != null)
+            _pageContent([
+              TextButton.icon(
+                key: const ValueKey('family-account-delete'),
+                onPressed: widget.auth.busy ? null : () => _delete(l10n),
+                icon: const Icon(Icons.delete_outline_rounded),
+                label: Text(l10n.familyAccountDelete),
+                style: TextButton.styleFrom(
+                  foregroundColor: const Color(0xFFB3261E),
+                ),
+              ),
+            ]),
         ];
         if (widget.flat) {
           return SegCard(

@@ -1,0 +1,96 @@
+# Play Console: Veri güvenliği formu ve beyanlar (Özel Eğitim Oyunları)
+
+Bu cevaplar R33/R34 kodunun gerçekte yaptığına göre hazırlandı (20 Ekim 2026).
+
+- Uygulama hesap olmadan çalışır. Reklam, analitik, çökme raporu ve konum yoktur.
+- Google ile giriş isteğe bağlıdır ve yalnız ebeveyn alanındadır.
+- Buluta yalnızca şunlar gider: Firebase hesabı, deneme başlangıç zamanı ve (ebeveyn açarsa) günlük öğrenme özetleri.
+
+Kod değişirse bu formu da güncelleyin.
+
+**Bağlantılar (yayında):**
+
+- Gizlilik politikası: https://yesastudio.com/ozel-egitim-oyunlari/privacy/
+- Kullanım koşulları: https://yesastudio.com/ozel-egitim-oyunlari/terms/
+- Hesap silme (web): https://yesastudio.com/ozel-egitim-oyunlari/delete-account/
+
+---
+
+## 1. Uygulama içeriği → Gizlilik politikası
+
+- URL: `https://yesastudio.com/ozel-egitim-oyunlari/privacy/`
+
+## 2. Uygulama içeriği → Veri güvenliği
+
+### 2.1 Veri toplama ve güvenlik (ilk sayfa)
+
+| Soru | Cevap |
+|---|---|
+| Uygulamanız gerekli kullanıcı verisi türlerinden herhangi birini topluyor veya paylaşıyor mu? | **Evet** |
+| Uygulamanızın topladığı tüm kullanıcı verileri aktarım sırasında şifreleniyor mu? | **Evet** |
+| Hangi hesap oluşturma yöntemlerini destekliyorsunuz? | **OAuth (Google ile giriş)** |
+| Kullanıcıların verilerinin silinmesini istemelerinin bir yolunu sunuyor musunuz? | **Evet** |
+| Hesap silme URL'si | `https://yesastudio.com/ozel-egitim-oyunlari/delete-account/` |
+| Uygulamanız bağımsız bir güvenlik incelemesinden geçti mi? (isteğe bağlı) | **Hayır** (işaretlemeyin) |
+| Families politikasına uyum taahhüdü | **Evet** (Families politikasına uyduğunu onaylayın) |
+
+### 2.2 Veri türleri: işaretlenecekler
+
+Yalnızca aşağıdaki üç veri türünü işaretleyin. Diğerlerinin hepsi **toplanmıyor**: konum, telefon numarası, adres, finansal bilgi, sağlık, mesajlar, fotoğraf/video, ses, dosyalar, takvim, kişiler, web geçmişi, uygulama bilgisi ve performans, cihaz veya diğer kimlikler.
+
+**Kişisel bilgiler**
+
+| Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
+|---|---|---|---|---|---|
+| Ad | Evet | Hayır | Hayır | **İsteğe bağlı** (kullanıcı giriş yapmayı seçebilir) | **Hesap yönetimi** |
+| E-posta adresi | Evet | Hayır | Hayır | **İsteğe bağlı** | **Hesap yönetimi** |
+| Kullanıcı kimlikleri | Evet | Hayır | Hayır | **İsteğe bağlı** | **Uygulama işlevselliği**, **Hesap yönetimi**, **Sahtekârlığı önleme, güvenlik ve uygunluk** (deneme süresinin hesap başına bir kez verilmesi) |
+
+**Uygulama etkinliği**
+
+| Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
+|---|---|---|---|---|---|
+| Uygulama etkileşimleri | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn "günlük özet senkronu"nu açarsa) | **Uygulama işlevselliği** |
+
+Notlar:
+
+- "Ad" ve "E-posta": Google ile girişte Firebase Authentication bunları Google hesabından alır. Uygulama adı kullanmaz, ama Firebase sakladığı için "toplanıyor" sayılır.
+- "Kullanıcı kimlikleri": Firebase UID. Deneme kaydı (`trials/{uid}`, yalnız başlangıç zamanı) ve özetler bu kimlikle saklanır.
+- "Uygulama etkileşimleri": günlük özetler. İçerik: tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı. Çocuğun adı, yaşı ya da tek tek yanıtları gönderilmez.
+- "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
+- Satın almalar: Google Play işler, uygulama yalnız cihazda sahiplik durumunu okur ve bize göndermez. "Satın alma geçmişi" **işaretlenmez**.
+- Çocuk modunda oynanan her şey (profil, takma ad, yaş, anket, oyun sonuçları) yalnız cihazda kalır, gönderilmez. Bu yüzden form kapsamına girmez.
+
+### 2.3 Her veri türü için "Veriler nasıl kullanılıyor" sayfası
+
+Formda her veri türü için aynı sorular gelir:
+
+- "Bu veriler toplanıyor mu, paylaşılıyor mu, ikisi de mi?" → **Toplanıyor**
+- "Bu veriler geçici olarak mı işleniyor?" → **Hayır**
+- "Bu veri toplama işlemi zorunlu mu, yoksa kullanıcılar toplanıp toplanmayacağını seçebilir mi?" → **Kullanıcılar bu verilerin toplanıp toplanmayacağını seçebilir**
+- "Toplama amaçları" → tablodaki amaçlar.
+
+## 3. Uygulama içeriği → Diğer beyanlar
+
+| Beyan | Cevap |
+|---|---|
+| **Reklamlar:** Uygulamanız reklam içeriyor mu? | **Hayır** |
+| **Uygulama erişimi** (inceleme ekibi için) | **Tüm işlevler özel erişim gerektirmez.** Not: "Premium oyunlar için Aile alanı → Premium'da Google ile giriş yapıp 7 günlük ücretsiz deneme başlatılabilir. Ebeveyn kapısı çarpma sorusudur (ekranda yazar)." |
+| **Hedef kitle ve içerik** | Hedef yaş grupları: **5 yaş ve altı**, **6–8 yaş** (isteğe bağlı **9–12**). Çocuklara hitap ediyor mu: **Evet**. Families politikası kapsamına girer. |
+| **İçerik derecelendirmesi** anketi | Kategori: **Eğitim** / Referans. Şiddet, cinsellik, küfür, kumar, kullanıcı etkileşimi, konum paylaşımı, dijital ürün satın alma (**Evet**: uygulama içi satın alma var). Beklenen sonuç: **Herkes / 3+ (PEGI 3, IARC 3+)**. |
+| **Haber uygulaması** | Hayır |
+| **COVID-19 izleme** | Hayır |
+| **Sağlık uygulaması** beyanı | Sağlık/tıbbi işlev **yok**. Eğitim uygulamasıdır, tanı veya tedavi sunmaz. |
+| **Finansal özellikler** | Yok |
+| **Devlet uygulaması** | Hayır |
+| **Hesap silme** | Uygulama içinde: Aile → Hesap → "Hesabı ve bulut verilerini sil". Web: yukarıdaki URL. |
+
+## 4. Families programı notları
+
+- Çocuk modunda reklam, satın alma istemi, dış bağlantı ve giriş yok. Bunların hepsi ebeveyn kapısının arkasında, dikey ebeveyn ekranlarında.
+- Reklam kimliği (AAID) toplanmaz.
+  - Android 13+ için `com.google.android.gms.permission.AD_ID` izni manifestte **olmamalı**. Release AAB'de kontrol edin (`tools/audit_android_apk.py`).
+  - Bağımlılıklar reklam SDK'sı içermiyor.
+- Firebase SDK'ları: Auth, Firestore, Core (Families sertifikalı SDK listesinde). Firebase Analytics ve Crashlytics **yok**.
+- Uygulama içi satın almalar Google Play Billing ile yapılıyor; Families için uygun.
+- İsteğe bağlı: Play Console → "Teacher Approved" (Öğretmen Onaylı) programına başvuru; Kids sekmesinde görünürlük sağlar.

@@ -1169,5 +1169,33 @@
   "paywallTerms": "Terms of use",
   "@paywallTerms": {
     "description": "Paywall copy."
+  },
+  "familyAccountDelete": "Delete account and cloud data",
+  "@familyAccountDelete": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleteTitle": "Delete the account?",
+  "@familyAccountDeleteTitle": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleteBody": "The family account linked to your Google account and the learning summaries in the cloud are deleted permanently. You will be asked to confirm with Google first. Profiles and progress on this device are not deleted; uninstall the app to remove them.",
+  "@familyAccountDeleteBody": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleteConfirm": "Delete permanently",
+  "@familyAccountDeleteConfirm": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleteCancel": "Cancel",
+  "@familyAccountDeleteCancel": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleted": "The account and cloud data were deleted.",
+  "@familyAccountDeleted": {
+    "description": "Account deletion copy."
+  },
+  "familyAccountDeleteFailed": "The account could not be deleted. Check the internet connection and try again.",
+  "@familyAccountDeleteFailed": {
+    "description": "Account deletion copy."
   }
 }

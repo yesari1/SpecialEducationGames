@@ -2268,6 +2268,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms of use'**
   String get paywallTerms;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account and cloud data'**
+  String get familyAccountDelete;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the account?'**
+  String get familyAccountDeleteTitle;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The family account linked to your Google account and the learning summaries in the cloud are deleted permanently. You will be asked to confirm with Google first. Profiles and progress on this device are not deleted; uninstall the app to remove them.'**
+  String get familyAccountDeleteBody;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete permanently'**
+  String get familyAccountDeleteConfirm;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get familyAccountDeleteCancel;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The account and cloud data were deleted.'**
+  String get familyAccountDeleted;
+
+  /// Account deletion copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The account could not be deleted. Check the internet connection and try again.'**
+  String get familyAccountDeleteFailed;
 }
 
 class _AppLocalizationsDelegate

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
+import '../../core/auth/client_account_deletion.dart';
+import '../../core/auth/family_account_deletion_coordinator.dart';
 import '../../core/auth/family_auth.dart';
 import 'family_account_card.dart';
 import 'family_summary_sync_card.dart';
@@ -22,6 +24,17 @@ class FamilyAccountScreen extends StatefulWidget {
 class _FamilyAccountScreenState extends State<FamilyAccountScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs = TabController(length: 2, vsync: this);
+  late final FamilyAccountDeletionCoordinator _deletion =
+      FamilyAccountDeletionCoordinator(
+        enabled: true,
+        parentAuthorized: () => widget.state.familyUnlocked,
+        currentUid: () => widget.auth.account?.uid,
+        reauthenticate: ({required expectedUid}) =>
+            widget.auth.reauthenticate(),
+        deleteAccount: ClientAccountDeletion(
+          profileIds: () => widget.state.profiles.map((p) => p.id),
+        ).call,
+      );
 
   @override
   void initState() {
@@ -68,6 +81,7 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
                     turkish: widget.state.locale == 'tr',
                     reducedMotion: widget.state.reducedMotion,
                     flat: true,
+                    deletion: _deletion,
                   ),
                 ),
                 const SizedBox(height: SegSpace.s4),
@@ -89,6 +103,7 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
                       auth: widget.auth,
                       turkish: widget.state.locale == 'tr',
                       reducedMotion: widget.state.reducedMotion,
+                      deletion: _deletion,
                     ),
                   ),
                 ),

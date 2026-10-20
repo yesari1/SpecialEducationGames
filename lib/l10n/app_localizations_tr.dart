@@ -1253,4 +1253,27 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallTerms => 'Kullanım koşulları';
+
+  @override
+  String get familyAccountDelete => 'Hesabı ve bulut verilerini sil';
+
+  @override
+  String get familyAccountDeleteTitle => 'Hesap silinsin mi?';
+
+  @override
+  String get familyAccountDeleteBody =>
+      'Google hesabınıza bağlı aile hesabı ve buluttaki öğrenme özetleri kalıcı olarak silinir. Önce Google ile yeniden doğrulama istenir. Bu cihazdaki profiller ve ilerleme silinmez; onları uygulamayı kaldırarak silebilirsiniz.';
+
+  @override
+  String get familyAccountDeleteConfirm => 'Kalıcı olarak sil';
+
+  @override
+  String get familyAccountDeleteCancel => 'Vazgeç';
+
+  @override
+  String get familyAccountDeleted => 'Hesap ve bulut verileri silindi.';
+
+  @override
+  String get familyAccountDeleteFailed =>
+      'Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin.';
 }

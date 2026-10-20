@@ -18,6 +18,10 @@ class AppConfiguration {
 
   /// Links shown on the paywall (https only; empty hides the link).
   final String privacyUrl, termsUrl;
+  static const defaultPrivacyUrl =
+      'https://yesastudio.com/ozel-egitim-oyunlari/privacy/';
+  static const defaultTermsUrl =
+      'https://yesastudio.com/ozel-egitim-oyunlari/terms/';
 
   final int fadeAfterErrors;
   static const defaultChoiceCounts = {'easy': 2, 'medium': 3, 'hard': 4};
@@ -36,8 +40,8 @@ class AppConfiguration {
     this.announcementId,
     this.minSupportedVersion = 0,
     this.trialDays = 7,
-    this.privacyUrl = '',
-    this.termsUrl = '',
+    this.privacyUrl = defaultPrivacyUrl,
+    this.termsUrl = defaultTermsUrl,
     this.fadeAfterErrors = 2,
     Map<String, int> choiceCounts = defaultChoiceCounts,
   }) : choiceCounts = Map.unmodifiable(choiceCounts);

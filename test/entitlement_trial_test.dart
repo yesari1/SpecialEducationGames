@@ -136,7 +136,10 @@ void main() {
     }, content);
     expect(merged.trialDays, 14);
     expect(merged.privacyUrl, 'https://example.org/privacy');
-    expect(merged.termsUrl, '');
+    // An insecure link is ignored: the default site page stays.
+    expect(merged.termsUrl, AppConfiguration.defaultTermsUrl);
+    expect(base.privacyUrl, AppConfiguration.defaultPrivacyUrl);
+    expect(base.merge({'privacyUrl': ''}, content).privacyUrl, '');
     expect(base.merge({'trialDays': 90}, content).trialDays, 7);
   });
 
