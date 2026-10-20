@@ -54,7 +54,7 @@
    - Play tarafında ücretsiz deneme teklifi **eklemeyin**. Deneme uygulama içinde, ödeme bilgisi istemeden veriliyor. İki deneme kafa karıştırır.
 2. **Tek seferlik ürün:** Uygulama içi ürün kimliği `premium_lifetime` (tüketilmeyen). Önerilen 799,99 TL; 79,99–99,99 USD.
 3. **Lisans test kullanıcıları:** Setup → License testing → kendi Gmail adresiniz. Test satın alımları ücretsiz olur.
-4. **Dahili test kanalı:** Billing yalnız Play'den yüklenmiş ve Play'e yüklenmiş sürümle çalışır. Release AAB'yi kendi upload anahtarınızla imzalayıp dahili teste yükleyin (versionCode ≥ 15 olmalı). Benim test APK'larım debug imzalı; Billing'i gerçekten bu yolla test etmek gerekir.
+4. **Dahili test kanalı:** İmzalı AAB'ler proje kökündeki `GooglePlayBuild/` klasöründe (şifreler `android/key.properties`, git dışı; ilk dosya `ozel-egitim-oyunlari-2.0.0-vc14-internal.aab`). Billing yalnız Play'den yüklenmiş ve Play'e yüklenmiş sürümle çalışır. Release AAB'yi kendi upload anahtarınızla imzalayıp dahili teste yükleyin (versionCode ≥ 15 olmalı). Benim test APK'larım debug imzalı; Billing'i gerçekten bu yolla test etmek gerekir.
 5. **Politika:**
    - Gizlilik politikası: https://yesastudio.com/ozel-egitim-oyunlari/privacy/ (yayında; koşullar `/terms/`, hesap silme `/delete-account/`). Uygulama bu bağlantıları varsayılan olarak gösterir; `config/app.privacyUrl`/`termsUrl` ile değiştirilebilir.
    - Data safety ve diğer beyanlar: soru soru cevaplar `docs/play-data-safety.md` içinde.
