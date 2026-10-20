@@ -22,7 +22,7 @@ THEMES = [
  ('music','Müzik Aletleri','Musical Instruments','F6EDF6','B572B0','965593','guitar'),
  ('body','Vücudumuz','Our Body','FDF1EA','DB8D6A','BC6F4D','hand'),
  ('colors','Renkler','Colors','FFFEFC','1687D9','0868AF','red'),
- ('shapes','Şekiller','Shapes','FFFEFC','9C6AD6','6F45A8','circle'),
+ ('shapes','Şekiller','Shapes','FFFEFC','9C6AD6','6F45A8','star'),
  ('numbers','Sayılar','Numbers','FFFEFC','FFB92E','AC6B00','3'),
  ('emotions','Duygular','Feelings','FFF6E0','E3B23C','C29322','happy'),
  ('letters','Harfler','Letters','F1F4F8','5F7896','465E7A','a'),

@@ -291,6 +291,10 @@ class ItemVisual extends StatelessWidget {
   };
   @override
   Widget build(BuildContext context) {
+    // Shapes are always drawn, even where a legacy bitmap is listed.
+    if (item.theme == 'shapes') {
+      return ShapeVisual(item.slug, alignment: alignment);
+    }
     if (item.images.isNotEmpty) {
       return PhotoVisual(
         item.images.first,
@@ -312,9 +316,6 @@ class ItemVisual extends StatelessWidget {
           );
         },
       );
-    }
-    if (item.theme == 'shapes') {
-      return ShapeVisual(item.slug, alignment: alignment);
     }
     if (item.theme == 'numbers') {
       return FittedBox(alignment: alignment, child: StickerNumber(item.slug));

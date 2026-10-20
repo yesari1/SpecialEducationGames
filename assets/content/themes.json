@@ -233,7 +233,7 @@
       "accent": "#9C6AD6",
       "deep": "#6F45A8"
     },
-    "hero": "shapes.circle",
+    "hero": "shapes.star",
     "active": true,
     "games": [
       "G01",
