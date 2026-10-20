@@ -54,6 +54,8 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
   bool _needsPager(BuildContext context) {
     final compact = MediaQuery.sizeOf(context).height < 500;
     return compact &&
+        // Groups and baskets always stand in one row; there are at most three.
+        widget.spec.groupMembers.isEmpty &&
         widget.spec.stimulus != null &&
         widget.spec.count == null &&
         widget.spec.quantities.isEmpty &&
@@ -301,7 +303,10 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
           );
         }
 
-        final cols = spec.choices.length > 2 && size.maxWidth < 600
+        final cols =
+            spec.choices.length > 2 &&
+                size.maxWidth < 600 &&
+                spec.groupMembers.isEmpty
             ? 2
             : spec.choices.length;
         final width = (size.maxWidth - SegSpace.s5 * (cols - 1)) / cols;

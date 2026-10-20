@@ -408,7 +408,8 @@ class GroupTemplate extends GameTemplate {
             .map(category)
             .toList()
           ..shuffle(ctx.scheduler.random);
-    final choices = [target, ...others.take(ctx.choiceCount - 1)]
+    // At most three groups: more baskets do not fit side by side clearly.
+    final choices = [target, ...others.take(min(ctx.choiceCount, 3) - 1)]
       ..shuffle(ctx.scheduler.random);
     return RoundSpec(
       target: target,

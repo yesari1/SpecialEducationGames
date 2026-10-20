@@ -91,9 +91,11 @@ void main() {
             final spec = TemplateRegistry.resolve(
               game,
             ).buildRound(context(game, tier, choiceCount));
+            // Group games show at most three groups side by side.
+            final expected = choiceCount ?? tier.choices;
             expect(
               spec.choices.length,
-              choiceCount ?? tier.choices,
+              game == 'G04' ? min(expected, 3) : expected,
               reason: '$game ${tier.name} $choiceCount',
             );
             expect(
@@ -128,7 +130,7 @@ void main() {
     },
   );
 
-  test('G04 builds a four-choice round when frog is selected', () {
+  test('G04 asked for four choices builds at most three groups (frog)', () {
     final pool = realContent
         .pool('animals', Difficulty.medium)
         .where((item) => item.images.isNotEmpty)
@@ -152,8 +154,8 @@ void main() {
 
     expect(spec.stimulus?.id, 'animals.frog');
     expect(spec.target.id, 'group.vahsi');
-    expect(spec.choices, hasLength(4));
-    expect(spec.choices.map((item) => item.id).toSet(), hasLength(4));
+    expect(spec.choices, hasLength(3));
+    expect(spec.choices.map((item) => item.id).toSet(), hasLength(3));
     expect(spec.choices, contains(spec.target));
   });
 

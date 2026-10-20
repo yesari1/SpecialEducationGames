@@ -6,33 +6,36 @@ void main() {
   const uid = 'family_123';
 
   group('FamilyAccountDeletionBackend local gates', () {
-    test('is disabled by default without reading auth or calling transport', () async {
-      var uidReads = 0;
-      var calls = 0;
-      final backend = FamilyAccountDeletionBackend(
-        currentUid: () {
-          uidReads++;
-          return uid;
-        },
-        call: (_) async {
-          calls++;
-          return const {'deleted': true};
-        },
-      );
+    test(
+      'is disabled by default without reading auth or calling transport',
+      () async {
+        var uidReads = 0;
+        var calls = 0;
+        final backend = FamilyAccountDeletionBackend(
+          currentUid: () {
+            uidReads++;
+            return uid;
+          },
+          call: (_) async {
+            calls++;
+            return const {'deleted': true};
+          },
+        );
 
-      await expectLater(
-        backend.deleteAccount(expectedUid: uid, confirmed: true),
-        throwsA(
-          isA<FamilyAccountDeletionFailure>().having(
-            (error) => error.issue,
-            'issue',
-            FamilyAccountDeletionIssue.disabled,
+        await expectLater(
+          backend.deleteAccount(expectedUid: uid, confirmed: true),
+          throwsA(
+            isA<FamilyAccountDeletionFailure>().having(
+              (error) => error.issue,
+              'issue',
+              FamilyAccountDeletionIssue.disabled,
+            ),
           ),
-        ),
-      );
-      expect(uidReads, 0);
-      expect(calls, 0);
-    });
+        );
+        expect(uidReads, 0);
+        expect(calls, 0);
+      },
+    );
 
     test('refused confirmation does not read auth or call transport', () async {
       var uidReads = 0;
@@ -161,20 +164,23 @@ void main() {
   });
 
   group('FamilyAccountDeletionBackend callable contract', () {
-    test('sends only confirmation and accepts exact deleted response', () async {
-      Map<String, Object?>? sent;
-      final backend = FamilyAccountDeletionBackend(
-        enabled: true,
-        currentUid: () => uid,
-        call: (data) async {
-          sent = data;
-          return const {'deleted': true};
-        },
-      );
+    test(
+      'sends only confirmation and accepts exact deleted response',
+      () async {
+        Map<String, Object?>? sent;
+        final backend = FamilyAccountDeletionBackend(
+          enabled: true,
+          currentUid: () => uid,
+          call: (data) async {
+            sent = data;
+            return const {'deleted': true};
+          },
+        );
 
-      await backend.deleteAccount(expectedUid: uid, confirmed: true);
-      expect(sent, const {'confirmDelete': true});
-    });
+        await backend.deleteAccount(expectedUid: uid, confirmed: true);
+        expect(sent, const {'confirmDelete': true});
+      },
+    );
 
     test('rejects malformed or ambiguous success responses', () async {
       for (final response in <Object?>[
@@ -201,37 +207,42 @@ void main() {
       }
     });
 
-    test('translates auth/App Check, precondition, input and retryable errors', () async {
-      const cases = <String, FamilyAccountDeletionIssue>{
-        'unauthenticated': FamilyAccountDeletionIssue.authenticationOrAppCheck,
-        'permission-denied': FamilyAccountDeletionIssue.authenticationOrAppCheck,
-        'failed-precondition':
-            FamilyAccountDeletionIssue.recentLoginOrServerNotConfigured,
-        'invalid-argument': FamilyAccountDeletionIssue.invalidRequest,
-        'unavailable': FamilyAccountDeletionIssue.retryableUnavailable,
-        'deadline-exceeded': FamilyAccountDeletionIssue.retryableUnavailable,
-      };
-      for (final entry in cases.entries) {
-        final backend = FamilyAccountDeletionBackend(
-          enabled: true,
-          currentUid: () => uid,
-          call: (_) async => throw FirebaseFunctionsException(
-            code: entry.key,
-            message: 'server message ignored',
-          ),
-        );
-        await expectLater(
-          backend.deleteAccount(expectedUid: uid, confirmed: true),
-          throwsA(
-            isA<FamilyAccountDeletionFailure>().having(
-              (error) => error.issue,
-              'issue',
-              entry.value,
+    test(
+      'translates auth/App Check, precondition, input and retryable errors',
+      () async {
+        const cases = <String, FamilyAccountDeletionIssue>{
+          'unauthenticated':
+              FamilyAccountDeletionIssue.authenticationOrAppCheck,
+          'permission-denied':
+              FamilyAccountDeletionIssue.authenticationOrAppCheck,
+          'failed-precondition':
+              FamilyAccountDeletionIssue.recentLoginOrServerNotConfigured,
+          'invalid-argument': FamilyAccountDeletionIssue.invalidRequest,
+          'unavailable': FamilyAccountDeletionIssue.retryableUnavailable,
+          'deadline-exceeded': FamilyAccountDeletionIssue.retryableUnavailable,
+        };
+        for (final entry in cases.entries) {
+          final backend = FamilyAccountDeletionBackend(
+            enabled: true,
+            currentUid: () => uid,
+            call: (_) async => throw FirebaseFunctionsException(
+              code: entry.key,
+              message: 'server message ignored',
             ),
-          ),
-        );
-      }
-    });
+          );
+          await expectLater(
+            backend.deleteAccount(expectedUid: uid, confirmed: true),
+            throwsA(
+              isA<FamilyAccountDeletionFailure>().having(
+                (error) => error.issue,
+                'issue',
+                entry.value,
+              ),
+            ),
+          );
+        }
+      },
+    );
 
     test('does not expose unexpected transport errors', () async {
       final backend = FamilyAccountDeletionBackend(

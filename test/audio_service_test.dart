@@ -122,4 +122,3 @@ class StickyPlayingAudio implements AudioBackend {
   @override
   Future<void> dispose() async {}
 }
-

@@ -876,14 +876,14 @@ class BasketFrame extends StatelessWidget {
           width: width,
           height: box.maxHeight,
           child: Stack(
-            clipBehavior: Clip.none,
             children: [
-              // The example sits low so the basket's front covers its base.
+              // The examples stand on the rim, inside the slot: nothing
+              // reaches above the basket's own area or into its neighbours.
               Positioned(
-                left: width * .12,
-                right: width * .12,
-                top: -box.maxHeight * .08,
-                bottom: basketHeight * .62,
+                left: width * .1,
+                right: width * .1,
+                top: 0,
+                bottom: basketHeight * .55,
                 child: child,
               ),
               Positioned(
@@ -937,28 +937,43 @@ class _BasketPainter extends CustomPainter {
   bool shouldRepaint(_BasketPainter old) => old.tint != tint;
 }
 
-/// A group shown as three of its members: two behind, one in front.
+/// A group shown as up to three of its members side by side, each in its
+/// own square so they never cover one another.
 class GroupCluster extends StatelessWidget {
   final List<ContentItem> members;
   const GroupCluster(this.members, {super.key});
   @override
   Widget build(BuildContext context) {
     if (members.isEmpty) return const SizedBox.shrink();
-    Widget at(int i, Alignment alignment, double size) => Align(
-      alignment: alignment,
-      child: FractionallySizedBox(
-        widthFactor: size,
-        heightFactor: size,
-        child: ItemVisual(members[i], alignment: Alignment.bottomCenter),
-      ),
-    );
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        if (members.length > 1) at(1, const Alignment(-1, -.2), .68),
-        if (members.length > 2) at(2, const Alignment(1, -.2), .68),
-        at(0, Alignment.bottomCenter, members.length == 1 ? .95 : .78),
-      ],
+    final shown = members.take(3).toList();
+    return LayoutBuilder(
+      builder: (context, box) {
+        final gap = box.maxWidth * .04;
+        final side = math.min(
+          (box.maxWidth - gap * (shown.length - 1)) / shown.length,
+          box.maxHeight,
+        );
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              for (var i = 0; i < shown.length; i++) ...[
+                if (i > 0) SizedBox(width: gap),
+                SizedBox.square(
+                  key: ValueKey('group-member-${shown[i].id}'),
+                  dimension: side,
+                  child: ItemVisual(
+                    shown[i],
+                    alignment: Alignment.bottomCenter,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        );
+      },
     );
   }
 }

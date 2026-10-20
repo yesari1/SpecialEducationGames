@@ -108,7 +108,8 @@ void main() {
             find.byType(RoundChoicesView),
           );
           expect(round.hint.locale, locale, reason: tag);
-          final expectedChoices = game.id == 'G36' ? 3 : 4;
+          // Groups show at most three baskets/groups side by side.
+          final expectedChoices = game.id == 'G36' || game.id == 'G04' ? 3 : 4;
           expect(round.spec.choices, hasLength(expectedChoices), reason: tag);
           expect(round.hint.visibleChoices, expectedChoices, reason: tag);
           if (game.id == 'G04') {
@@ -178,17 +179,14 @@ void main() {
 
           final generation = round.hint.generation;
           final visitedChoices = <String>{};
-          final pageCount = game.id == 'G04'
-              ? (round.spec.choices.length + 1) ~/ 2
-              : 1;
+          // Groups (at most three) stand in one row without paging.
+          const pageCount = 1;
           for (var page = 0; page < pageCount; page++) {
             if (page > 0) {
               await tester.tap(find.byKey(const ValueKey('choices-next')));
               await tester.pumpAndSettle();
             }
-            final pageItems = game.id == 'G04'
-                ? round.spec.choices.skip(page * 2).take(2)
-                : round.spec.choices;
+            final pageItems = round.spec.choices;
             for (final item in pageItems) {
               visitedChoices.add(item.id);
               final key = ValueKey('$generation:${item.id}');
