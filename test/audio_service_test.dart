@@ -61,6 +61,28 @@ void main() {
     await current;
     await service.dispose();
   });
+  test('A replay while narration plays does not restart it', () async {
+    final backend = FakeAudio();
+    final service = AudioService(backend: backend);
+    final first = service.playSequence(['listen', 'which_number']);
+    await Future<void>.delayed(Duration.zero);
+    expect(service.busy, isTrue);
+    final stopsBefore = backend.stops;
+    await service.playSequenceIfIdle(['listen', 'which_number']);
+    // Nothing was stopped or restarted.
+    expect(backend.stops, stopsBefore);
+    expect(service.busy, isTrue);
+    backend.playing.complete();
+    await first;
+    expect(service.busy, isFalse);
+    // Once finished, a replay plays again.
+    final again = StickyPlayingAudio();
+    final idle = AudioService(backend: again);
+    await idle.playSequenceIfIdle(['listen']);
+    expect(again.played, ['listen']);
+    await service.dispose();
+    await idle.dispose();
+  });
   test('A stalled asset load is bounded too', () async {
     final backend = FakeAudio()..stallLoad = true;
     final service = AudioService(

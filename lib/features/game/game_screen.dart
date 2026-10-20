@@ -145,6 +145,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         'assets/audio/${s.locale}/prompts/retry_selected.mp3',
       ]),
       playPrompt: playPrompt,
+      replayPrompt: (spec) => playPrompt(spec, interrupt: false),
       saveTrial: (c) async {
         await s.record(
           TrialsCompanion.insert(
@@ -245,15 +246,19 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     }
   }
 
-  Future<void> playPrompt(RoundSpec spec) async {
-    if (spec.introduction) {
-      final cue = spec.target.audioFor(s.locale);
-      await s.audio.playSequence([?cue]);
-      return;
-    }
-    await s.audio.playSequence(
-      controller!.template.introCues(spec, controller!.modeContext, s.locale),
-    );
+  /// [interrupt] false (replay button, idle hint) leaves narration that is
+  /// still playing alone instead of starting it again.
+  Future<void> playPrompt(RoundSpec spec, {bool interrupt = true}) async {
+    final cues = spec.introduction
+        ? [?spec.target.audioFor(s.locale)]
+        : controller!.template.introCues(
+            spec,
+            controller!.modeContext,
+            s.locale,
+          );
+    await (interrupt
+        ? s.audio.playSequence(cues)
+        : s.audio.playSequenceIfIdle(cues));
   }
 
   void changed() {
@@ -453,7 +458,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                               minHeight: 64,
                             ),
                             color: SegColors.primaryDeep,
-                            onPressed: () => playPrompt(spec),
+                            onPressed: () => playPrompt(spec, interrupt: false),
                             icon: const Icon(Icons.volume_up_rounded),
                             tooltip: l10n.gameListenAgain,
                           ),

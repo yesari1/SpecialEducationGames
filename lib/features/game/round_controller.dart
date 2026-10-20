@@ -21,6 +21,10 @@ class RoundController extends ChangeNotifier {
   final Map<String, ItemPerformance> performance;
   final Future<void> Function(RoundController) saveTrial;
   final Future<void> Function(RoundSpec) playPrompt;
+
+  /// Replays the prompt for an idle hint; defaults to [playPrompt]. The game
+  /// screen passes one that leaves narration still playing alone.
+  final Future<void> Function(RoundSpec)? replayPrompt;
   final Future<void> Function(String itemId)? onIntroduced;
   final Future<void> Function()? playRetry;
   final bool introduceNewItems;
@@ -55,7 +59,9 @@ class RoundController extends ChangeNotifier {
   late final HintController hints = HintController(
     onChanged: (level) {
       if (_disposed) return;
-      if (level == 1 && spec != null) unawaited(playPrompt(spec!));
+      if (level == 1 && spec != null) {
+        unawaited((replayPrompt ?? playPrompt)(spec!));
+      }
       notifyListeners();
     },
   );
@@ -71,6 +77,7 @@ class RoundController extends ChangeNotifier {
     required this.struggle,
     required this.saveTrial,
     required this.playPrompt,
+    this.replayPrompt,
     Map<String, ItemPerformance>? performance,
     this.onIntroduced,
     this.playRetry,

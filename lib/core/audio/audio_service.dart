@@ -35,6 +35,10 @@ class AudioService {
     this.playbackTimeout,
   }) : _backend = backend ?? _JustAudioBackend();
   int _generation = 0;
+  int? _playing;
+
+  /// True while a sequence is still being spoken.
+  bool get busy => _playing != null && _playing == _generation;
   bool enabled = true, _disposed = false, lastPlaybackFailed = false;
   int speechVolume = 100, effectVolume = 60;
 
@@ -68,9 +72,25 @@ class AudioService {
     }
   }
 
+  /// Plays [assets] unless something is already being spoken; a replay
+  /// request never restarts narration halfway through.
+  Future<void> playSequenceIfIdle(List<String> assets) async {
+    if (busy) return;
+    await playSequence(assets);
+  }
+
   Future<void> playSequence(List<String> assets) async {
     if (_disposed) return;
     final generation = ++_generation;
+    _playing = generation;
+    try {
+      await _playSequence(generation, assets);
+    } finally {
+      if (_playing == generation) _playing = null;
+    }
+  }
+
+  Future<void> _playSequence(int generation, List<String> assets) async {
     lastPlaybackFailed = false;
     await _safeStop();
     if (!enabled || generation != _generation || _disposed) return;
