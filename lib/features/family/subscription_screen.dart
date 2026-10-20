@@ -76,7 +76,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         _section([Text(feature)]),
       if (s.entitlement.isPremium)
         _section([Text(l10n.subscriptionActive, style: SegText.heading)]),
-      if (!s.entitlement.isPaid) _section([_trialCard(l10n)]),
+      if (!s.entitlement.isPaid) _trialCard(l10n, compact: true),
       _section([
         SegButton(
           label: l10n.subscriptionShowPlans,
@@ -247,7 +247,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     if (!s.entitlement.trialUsed) await s.startTrial(uid);
   }
 
-  Widget _trialCard(AppLocalizations l10n) {
+  /// [compact]: one short page of the sideways pager (no body text).
+  Widget _trialCard(AppLocalizations l10n, {bool compact = false}) {
     final e = s.entitlement;
     final auth = widget.auth;
     final busy = s.trialBusy || (auth?.busy ?? false);
@@ -270,11 +271,13 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(l10n.paywallTrialTitle(days), style: SegText.heading),
-          const SizedBox(height: SegSpace.s2),
-          Text(
-            l10n.paywallTrialBody(days),
-            style: SegText.body.copyWith(color: SegColors.inkSoft),
-          ),
+          if (!compact) ...[
+            const SizedBox(height: SegSpace.s2),
+            Text(
+              l10n.paywallTrialBody(days),
+              style: SegText.body.copyWith(color: SegColors.inkSoft),
+            ),
+          ],
           const SizedBox(height: SegSpace.s3),
           SegButton(
             key: const ValueKey('paywall-trial-start'),
@@ -296,12 +299,25 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               style: SegText.caption.copyWith(color: SegColors.accentDeep),
             ),
           ],
-          const SizedBox(height: SegSpace.s2),
-          Text(
-            l10n.paywallTrialNote,
-            style: SegText.caption.copyWith(color: SegColors.inkSoft),
-          ),
+          if (!compact) ...[
+            const SizedBox(height: SegSpace.s2),
+            Text(
+              l10n.paywallTrialNote,
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
+          ],
         ],
+      );
+    }
+    if (compact) {
+      // A bounded pager page: large text scales down instead of overflowing.
+      return Align(
+        alignment: Alignment.topLeft,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.topLeft,
+          child: SizedBox(width: 420, child: body),
+        ),
       );
     }
     return SegCard(

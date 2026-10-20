@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import '../auth/firebase_client.dart';
 
@@ -34,6 +35,11 @@ class FirestoreTrialStore implements TrialStore {
   });
 
   Future<DocumentReference<Map<String, dynamic>>> _doc(String uid) async {
+    // A Google sign-in always initializes Firebase first; without it there
+    // is no account whose trial could be read.
+    if (firestore == null && Firebase.apps.isEmpty) {
+      throw const TrialFailure(TrialIssue.signedOut);
+    }
     try {
       await FirebaseClient.ensureInitialized();
     } catch (_) {
