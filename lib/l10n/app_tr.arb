@@ -1016,5 +1016,20 @@
   "famThisWeek": "Bu hafta",
   "famRecentlyPlayed": "Son oynananlar",
   "famRecentlyLearned": "Son öğrenilenler",
-  "famNothingYet": "Henüz yok. Birlikte bir tur oynayın!"
+  "famNothingYet": "Henüz yok. Birlikte bir tur oynayın!",
+  "familyAgeLevel": "Yaş seviyesi",
+  "familyAgeLevelEasier": "Daha kolay",
+  "familyAgeLevelByAge": "Yaşına göre",
+  "familyAgeLevelHarder": "Daha zor",
+  "familyAgeLevelFromAge": "Yaşına göre: {band}",
+  "familyAgeLevelNoAge": "Profilde yaş yok. Yaşı profil düzenleyiciden ekleyin.",
+  "familyAgeLevelNote": "Yeni oyunlara uygulanır. Kolay/Orta/Zor ve otomatik zorluk aynen çalışır; Zor yine premium.",
+  "ageBandFirstSteps": "İlk adımlar (2–3)",
+  "ageBandExplore": "Keşif (4–5)",
+  "ageBandSchoolReady": "Okula hazırlık (6–7)",
+  "ageBandPractice": "Pekiştirme (8+)",
+  "ageBandFirstStepsInfo": "2 seçenek, 1–3 arası sayılar, oyun başına 5 soru, hızlı ipucu; önce dokunma oyunları.",
+  "ageBandExploreInfo": "3 seçenek, 1–5 arası sayılar, oyun başına 6 soru; dokunma ve basit sürükleme.",
+  "ageBandSchoolReadyInfo": "4 seçenek, 1–10 arası sayılar, oyun başına 8 soru; sürükleme, gruplama, sıralama.",
+  "ageBandPracticeInfo": "4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç."
 }

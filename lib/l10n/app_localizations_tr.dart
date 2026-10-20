@@ -1144,4 +1144,57 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get famNothingYet => 'Henüz yok. Birlikte bir tur oynayın!';
+
+  @override
+  String get familyAgeLevel => 'Yaş seviyesi';
+
+  @override
+  String get familyAgeLevelEasier => 'Daha kolay';
+
+  @override
+  String get familyAgeLevelByAge => 'Yaşına göre';
+
+  @override
+  String get familyAgeLevelHarder => 'Daha zor';
+
+  @override
+  String familyAgeLevelFromAge(String band) {
+    return 'Yaşına göre: $band';
+  }
+
+  @override
+  String get familyAgeLevelNoAge =>
+      'Profilde yaş yok. Yaşı profil düzenleyiciden ekleyin.';
+
+  @override
+  String get familyAgeLevelNote =>
+      'Yeni oyunlara uygulanır. Kolay/Orta/Zor ve otomatik zorluk aynen çalışır; Zor yine premium.';
+
+  @override
+  String get ageBandFirstSteps => 'İlk adımlar (2–3)';
+
+  @override
+  String get ageBandExplore => 'Keşif (4–5)';
+
+  @override
+  String get ageBandSchoolReady => 'Okula hazırlık (6–7)';
+
+  @override
+  String get ageBandPractice => 'Pekiştirme (8+)';
+
+  @override
+  String get ageBandFirstStepsInfo =>
+      '2 seçenek, 1–3 arası sayılar, oyun başına 5 soru, hızlı ipucu; önce dokunma oyunları.';
+
+  @override
+  String get ageBandExploreInfo =>
+      '3 seçenek, 1–5 arası sayılar, oyun başına 6 soru; dokunma ve basit sürükleme.';
+
+  @override
+  String get ageBandSchoolReadyInfo =>
+      '4 seçenek, 1–10 arası sayılar, oyun başına 8 soru; sürükleme, gruplama, sıralama.';
+
+  @override
+  String get ageBandPracticeInfo =>
+      '4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç.';
 }

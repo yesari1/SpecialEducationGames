@@ -107,6 +107,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     }
     final survey =
         jsonDecode(s.active?.payload ?? '{}') as Map<String, dynamic>;
+    final band = AgeBand.of(survey);
     controller = RoundController(
       content: s.content,
       themeId: widget.themeId,
@@ -115,13 +116,18 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       difficulty: effectiveDifficulty,
       total: s.roundLength > 0
           ? s.roundLength
+          : band != null
+          ? band.stagesFor(survey)
           : survey.containsKey('focus')
           ? SurveyMapper.map(survey).stages
           : null,
+      band: band,
       hintSeconds: s.hintSeconds,
       fadeWrongChoices: s.fadeWrongChoices,
       fadeAfterErrors: s.configuration.fadeAfterErrors,
-      choiceCount: s.configuration.choicesFor(effectiveDifficulty),
+      choiceCount:
+          band?.choices(effectiveDifficulty) ??
+          s.configuration.choicesFor(effectiveDifficulty),
       struggle: s.struggle,
       performance: s.itemPerformance,
       introduced: s.introduced,

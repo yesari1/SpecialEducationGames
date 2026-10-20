@@ -2088,6 +2088,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nothing yet. Play a round together!'**
   String get famNothingYet;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Age level'**
+  String get familyAgeLevel;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Easier'**
+  String get familyAgeLevelEasier;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'By age'**
+  String get familyAgeLevelByAge;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Harder'**
+  String get familyAgeLevelHarder;
+
+  /// Family settings: the band the child's age gives.
+  ///
+  /// In en, this message translates to:
+  /// **'By age: {band}'**
+  String familyAgeLevelFromAge(String band);
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'No age in this profile. Add it in the profile editor.'**
+  String get familyAgeLevelNoAge;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applies to new games. Easy/Medium/Hard and automatic difficulty still work; Hard stays premium.'**
+  String get familyAgeLevelNote;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'First steps (2–3)'**
+  String get ageBandFirstSteps;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore (4–5)'**
+  String get ageBandExplore;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'School ready (6–7)'**
+  String get ageBandSchoolReady;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice (8+)'**
+  String get ageBandPractice;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'2 choices, numbers 1–3, 5 questions per game, quick hints; tap games first.'**
+  String get ageBandFirstStepsInfo;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'3 choices, numbers 1–5, 6 questions per game; tap and simple drag.'**
+  String get ageBandExploreInfo;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'4 choices, numbers 1–10, 8 questions per game; drag, group and sort.'**
+  String get ageBandSchoolReadyInfo;
+
+  /// Age band copy.
+  ///
+  /// In en, this message translates to:
+  /// **'4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.'**
+  String get ageBandPracticeInfo;
 }
 
 class _AppLocalizationsDelegate

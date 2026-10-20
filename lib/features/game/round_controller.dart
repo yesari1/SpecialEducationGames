@@ -32,6 +32,9 @@ class RoundController extends ChangeNotifier {
   final bool fadeWrongChoices;
   final Set<String> introduced;
   final int total;
+
+  /// Age band of the profile; shapes number ranges, content and hint timing.
+  final AgeBand? band;
   RoundSpec? spec, _answerSpec;
   RoundPhase phase = RoundPhase.preparing;
   int stage = 0,
@@ -78,6 +81,7 @@ class RoundController extends ChangeNotifier {
     int? choiceCount,
     Set<String>? introduced,
     int? total,
+    this.band,
     ItemScheduler? scheduler,
     Stopwatch? responseClock,
   }) : choiceCount = (choiceCount ?? difficulty.choices).clamp(2, 4),
@@ -96,6 +100,7 @@ class RoundController extends ChangeNotifier {
     choiceCount: choiceCount,
     scheduler: scheduler,
     struggle: struggle,
+    band: band,
   );
   void later(Duration delay, VoidCallback action) {
     final session = generation;
@@ -190,12 +195,16 @@ class RoundController extends ChangeNotifier {
           ? null
           : hintSeconds > 0
           ? Duration(seconds: hintSeconds)
-          : state.hintDelay(difficulty),
+          : _withBandOffset(state.hintDelay(difficulty)),
       elapsedMs: () => activeMs - _lastInteractionMs,
       paused: () => paused || phase != RoundPhase.answering,
     );
     notifyListeners();
   }
+
+  Duration _withBandOffset(Duration delay) => Duration(
+    seconds: max(2, delay.inSeconds + (band?.hintOffsetSeconds ?? 0)),
+  );
 
   void pause() {
     paused = true;

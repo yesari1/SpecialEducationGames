@@ -1144,4 +1144,57 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get famNothingYet => 'Nothing yet. Play a round together!';
+
+  @override
+  String get familyAgeLevel => 'Age level';
+
+  @override
+  String get familyAgeLevelEasier => 'Easier';
+
+  @override
+  String get familyAgeLevelByAge => 'By age';
+
+  @override
+  String get familyAgeLevelHarder => 'Harder';
+
+  @override
+  String familyAgeLevelFromAge(String band) {
+    return 'By age: $band';
+  }
+
+  @override
+  String get familyAgeLevelNoAge =>
+      'No age in this profile. Add it in the profile editor.';
+
+  @override
+  String get familyAgeLevelNote =>
+      'Applies to new games. Easy/Medium/Hard and automatic difficulty still work; Hard stays premium.';
+
+  @override
+  String get ageBandFirstSteps => 'First steps (2–3)';
+
+  @override
+  String get ageBandExplore => 'Explore (4–5)';
+
+  @override
+  String get ageBandSchoolReady => 'School ready (6–7)';
+
+  @override
+  String get ageBandPractice => 'Practice (8+)';
+
+  @override
+  String get ageBandFirstStepsInfo =>
+      '2 choices, numbers 1–3, 5 questions per game, quick hints; tap games first.';
+
+  @override
+  String get ageBandExploreInfo =>
+      '3 choices, numbers 1–5, 6 questions per game; tap and simple drag.';
+
+  @override
+  String get ageBandSchoolReadyInfo =>
+      '4 choices, numbers 1–10, 8 questions per game; drag, group and sort.';
+
+  @override
+  String get ageBandPracticeInfo =>
+      '4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.';
 }

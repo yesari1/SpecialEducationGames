@@ -15,6 +15,10 @@ class ModeContext {
   int get choiceCount => _choiceCount ?? difficulty.choices;
   final ItemScheduler scheduler;
   final Map<String, int> struggle;
+
+  /// The profile's age band (after the parent's shift); null keeps the
+  /// tier tables.
+  final AgeBand? band;
   const ModeContext({
     required this.content,
     required this.themeId,
@@ -24,7 +28,32 @@ class ModeContext {
     required this.scheduler,
     required this.struggle,
     int? choiceCount,
+    this.band,
   }) : _choiceCount = choiceCount;
+
+  /// Highest number for this round: the band's range, else [legacy] by tier.
+  int numberMax(List<int> legacy) =>
+      band?.maxNumber(difficulty) ?? legacy[difficulty.index];
+
+  /// Like [numberMax] for games that draw the objects to count.
+  int countableMax(List<int> legacy) =>
+      band?.countableMax(difficulty) ?? legacy[difficulty.index];
+
+  /// Theme items for this round. 8+ also gets less familiar items, and the
+  /// numbers theme keeps to the band's number range.
+  List<ContentItem> pool() {
+    final band = this.band;
+    final items = content.pool(
+      themeId,
+      band?.contentTier(difficulty) ?? difficulty,
+    );
+    if (band == null || themeId != 'numbers') return items;
+    final limit = band.maxNumber(difficulty);
+    final inRange = items
+        .where((x) => (int.tryParse(x.slug) ?? 0) <= limit)
+        .toList();
+    return inRange.length >= choiceCount ? inRange : items;
+  }
 }
 
 /// One of ten recorded praise phrases ("Aferin!", "Süpersin!", ...),
@@ -120,7 +149,7 @@ class IdentifyTemplate extends GameTemplate {
   String get id => 'identify';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    var pool = ctx.content.pool(ctx.themeId, ctx.difficulty);
+    var pool = ctx.pool();
     // Unavailable images must not become indistinguishable answer cards.
     // Numbers, colours and shapes are drawn, so they need no photo.
     if (ctx.themeId != 'numbers' &&
@@ -200,7 +229,7 @@ class CountTemplate extends GameTemplate {
   String get id => "count";
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final maximum = [3, 5, 10][ctx.difficulty.index];
+    final maximum = ctx.countableMax([3, 5, 10]);
     final numeric = ctx.content.items
         .where(
           (x) =>
@@ -236,17 +265,21 @@ class CompareTemplate extends GameTemplate {
   String get id => "compare";
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final maximum = ctx.difficulty == Difficulty.easy
-        ? 3
-        : ctx.difficulty == Difficulty.medium
-        ? 5
-        : 20;
+    final maximum = ctx.difficulty == Difficulty.hard
+        ? ctx.numberMax([3, 5, 20])
+        : ctx.countableMax([3, 5, 20]);
     final a = ctx.scheduler.random.nextInt(maximum) + 1,
         b = ctx.scheduler.random.nextInt(maximum) + 1;
     if (ctx.difficulty != Difficulty.hard) {
       final amounts = List.generate(maximum, (i) => i + 1)
         ..shuffle(ctx.scheduler.random);
-      final selected = amounts.take(ctx.difficulty.choices).toSet();
+      final selected = amounts
+          .take(
+            ctx.band == null
+                ? ctx.difficulty.choices
+                : min(ctx.choiceCount, maximum),
+          )
+          .toSet();
       final numbers = ctx.content.items
           .where(
             (x) => x.theme == 'numbers' && selected.contains(int.parse(x.slug)),
@@ -262,10 +295,7 @@ class CompareTemplate extends GameTemplate {
         promptEn: 'Which has more?',
         promptKey: GamePromptKey.compareMagnitude,
         quantities: {for (final item in numbers) item.id: int.parse(item.slug)},
-        quantityItem: ctx.content
-            .pool(ctx.themeId, ctx.difficulty)
-            .where((x) => x.images.isNotEmpty)
-            .firstOrNull,
+        quantityItem: ctx.pool().where((x) => x.images.isNotEmpty).firstOrNull,
       );
     }
     ContentItem relation(String symbol, String tr, String en) =>
@@ -331,10 +361,7 @@ class GroupTemplate extends GameTemplate {
   @override
   RoundSpec buildRound(ModeContext ctx) {
     final names = labels[ctx.themeId] ?? const {};
-    final pool = ctx.content
-        .pool(ctx.themeId, ctx.difficulty)
-        .where((x) => x.images.isNotEmpty)
-        .toList();
+    final pool = ctx.pool().where((x) => x.images.isNotEmpty).toList();
     final groups = pool.expand((x) => x.tags).where(names.containsKey).toSet();
     // Only items that belong to a group and leave another group to choose.
     final candidates = pool
@@ -420,11 +447,9 @@ class SequenceMissingTemplate extends GameTemplate {
               x.theme == 'numbers' &&
               int.parse(x.slug) >= 1 &&
               int.parse(x.slug) <=
-                  (ctx.difficulty == Difficulty.easy
-                      ? 5
-                      : ctx.difficulty == Difficulty.hard
-                      ? 20
-                      : 10),
+                  (ctx.band == null
+                      ? [5, 10, 20][ctx.difficulty.index]
+                      : max(5, ctx.numberMax(const [5, 10, 20]))),
         )
         .toList();
     final target = ctx.scheduler.next(
@@ -432,7 +457,8 @@ class SequenceMissingTemplate extends GameTemplate {
           .where(
             (x) =>
                 int.parse(x.slug) >= 3 &&
-                (ctx.difficulty != Difficulty.hard || int.parse(x.slug) < 20),
+                (ctx.difficulty != Difficulty.hard ||
+                    int.parse(x.slug) < pool.length),
           )
           .toList(),
       ctx.struggle,
@@ -467,10 +493,7 @@ class FlashcardsTemplate extends GameTemplate {
   String get id => 'flashcards';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final target = ctx.scheduler.next(
-      ctx.content.pool(ctx.themeId, ctx.difficulty),
-      ctx.struggle,
-    );
+    final target = ctx.scheduler.next(ctx.pool(), ctx.struggle);
     return RoundSpec(
       target: target,
       choices: [target],
@@ -499,10 +522,7 @@ class OddOneOutTemplate extends GameTemplate {
   };
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final pool = ctx.content
-        .pool(ctx.themeId, ctx.difficulty)
-        .where((x) => x.images.isNotEmpty)
-        .toList();
+    final pool = ctx.pool().where((x) => x.images.isNotEmpty).toList();
     final random = ctx.scheduler.random;
     final size = ctx.choiceCount.clamp(3, 4);
     List<ContentItem> group;
@@ -568,10 +588,7 @@ class ShadowMatchTemplate extends GameTemplate {
   String get id => 'drag_to_target';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final pool = ctx.content
-        .pool(ctx.themeId, ctx.difficulty)
-        .where((x) => x.images.isNotEmpty)
-        .toList();
+    final pool = ctx.pool().where((x) => x.images.isNotEmpty).toList();
     if (pool.length < 2) throw StateError('Not enough silhouettes');
     final target = ctx.scheduler.next(pool, ctx.struggle);
     final distractors = pool.where((x) => x.id != target.id).toList()
@@ -628,7 +645,7 @@ class NumberQuantityTemplate extends GameTemplate {
   String get id => 'match_pair';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final maximum = [3, 5, 10][ctx.difficulty.index];
+    final maximum = ctx.countableMax([3, 5, 10]);
     final numbers = ctx.content.items
         .where(
           (x) =>
@@ -669,7 +686,8 @@ class FillCountTemplate extends GameTemplate {
   String get id => 'fill_count';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final maximum = [3, 5, 7][ctx.difficulty.index];
+    // The spoken instruction exists for 1–7.
+    final maximum = min(7, ctx.countableMax([3, 5, 7]));
     final numbers = ctx.content.items
         .where(
           (x) =>
@@ -721,8 +739,8 @@ class SoundChoiceTemplate extends GameTemplate {
   String get id => 'audio_choice';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final pool = ctx.content
-        .pool(ctx.themeId, ctx.difficulty)
+    final pool = ctx
+        .pool()
         .where((x) => x.sfx != null && x.images.isNotEmpty)
         .toList();
     if (pool.length < 2) throw StateError('Not enough sounds');

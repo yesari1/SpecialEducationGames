@@ -1,5 +1,7 @@
 import 'dart:math';
 import '../content/content_repository.dart';
+import 'age_band.dart';
+export 'age_band.dart';
 
 abstract final class HintPolicy {
   static int afterWrong(int count, {int fadeAfterErrors = 2}) =>
@@ -102,21 +104,24 @@ abstract final class SurveyMapper {
     Map<String, dynamic> answers,
     String theme,
   ) {
+    // With a known age the band's default tier is the "ready" tier and an
+    // unfamiliar theme opens one tier lower; without one, Orta/Kolay.
+    final band = AgeBand.of(answers);
+    final ready = band?.defaultTier ?? Difficulty.medium;
+    final lower = Difficulty.values[max(0, ready.index - 1)];
     if (answers['receptive'] == 0) return Difficulty.easy;
     if (theme == 'numbers' && answers.containsKey('counting')) {
-      return (answers['counting'] as int) >= 2
-          ? Difficulty.medium
-          : Difficulty.easy;
+      return (answers['counting'] as int) >= 2 ? ready : lower;
     }
     if (answers.containsKey('known')) {
       return choices(answers['known']).any(
             (i) =>
                 i >= 0 && i < knownThemeIds.length && knownThemeIds[i] == theme,
           )
-          ? Difficulty.medium
-          : Difficulty.easy;
+          ? ready
+          : lower;
     }
-    return map(answers).difficulty;
+    return band?.defaultTier ?? map(answers).difficulty;
   }
 
   static SurveyResult map(Map<String, dynamic> answers) => SurveyResult(

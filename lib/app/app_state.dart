@@ -540,6 +540,35 @@ class AppState extends ChangeNotifier {
     await load();
   }
 
+  Map<String, dynamic> get activeSurvey =>
+      jsonDecode(active?.payload ?? '{}') as Map<String, dynamic>;
+
+  /// Age band of the active profile before the parent's shift.
+  AgeBand? get ageBandFromAge => AgeBand.fromAge(activeSurvey);
+
+  /// The band games use (after the parent's shift).
+  AgeBand? get ageBand => AgeBand.of(activeSurvey);
+  int get ageLevelShift => AgeBand.shiftOf(activeSurvey);
+
+  /// Parent's ±1 adjustment of the active profile's age band (family
+  /// settings, behind the parent gate). Stored with the survey.
+  Future<void> setAgeLevelShift(int shift) async {
+    if (!familyUnlocked) throw StateError('parent_gate_required');
+    if (shift < -1 || shift > 1) throw ArgumentError('ageLevelShift');
+    final profile = active;
+    if (profile == null) return;
+    final survey = jsonDecode(profile.payload) as Map<String, dynamic>;
+    if (shift == 0) {
+      survey.remove(AgeBand.shiftKey);
+    } else {
+      survey[AgeBand.shiftKey] = shift;
+    }
+    await (db.update(db.profiles)..where((p) => p.id.equals(profile.id))).write(
+      ProfilesCompanion(payload: Value(jsonEncode(survey))),
+    );
+    await load();
+  }
+
   Future<void> _applySurveySettings(
     String id,
     Map<String, dynamic> answers,

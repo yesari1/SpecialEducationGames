@@ -224,11 +224,16 @@ class _ThemeScreenState extends State<ThemeScreen> {
             .gamesForTheme(t.id)
             .where((id) => !s.onlyFree || s.canPlay(t.id, id, tier))
             .toList()
-          ..sort(
-            (a, b) => (s.canPlay(t.id, b, tier) ? 1 : 0).compareTo(
+          ..sort((a, b) {
+            final open = (s.canPlay(t.id, b, tier) ? 1 : 0).compareTo(
               s.canPlay(t.id, a, tier) ? 1 : 0,
-            ),
-          );
+            );
+            if (open != 0 || !(s.ageBand?.prefersTap ?? false)) return open;
+            // 2–3: tap games first, drag games after them.
+            return (AgeBand.dragGames.contains(a) ? 1 : 0).compareTo(
+              AgeBand.dragGames.contains(b) ? 1 : 0,
+            );
+          });
     return Scaffold(
       backgroundColor: SegColors.canvas,
       body: SceneBackdrop(

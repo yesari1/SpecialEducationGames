@@ -1024,5 +1024,70 @@
   "famThisWeek": "This week",
   "famRecentlyPlayed": "Recently played",
   "famRecentlyLearned": "Learned recently",
-  "famNothingYet": "Nothing yet. Play a round together!"
+  "famNothingYet": "Nothing yet. Play a round together!",
+  "familyAgeLevel": "Age level",
+  "@familyAgeLevel": {
+    "description": "Age band copy."
+  },
+  "familyAgeLevelEasier": "Easier",
+  "@familyAgeLevelEasier": {
+    "description": "Age band copy."
+  },
+  "familyAgeLevelByAge": "By age",
+  "@familyAgeLevelByAge": {
+    "description": "Age band copy."
+  },
+  "familyAgeLevelHarder": "Harder",
+  "@familyAgeLevelHarder": {
+    "description": "Age band copy."
+  },
+  "familyAgeLevelFromAge": "By age: {band}",
+  "@familyAgeLevelFromAge": {
+    "description": "Family settings: the band the child's age gives.",
+    "placeholders": {
+      "band": {
+        "type": "String"
+      }
+    }
+  },
+  "familyAgeLevelNoAge": "No age in this profile. Add it in the profile editor.",
+  "@familyAgeLevelNoAge": {
+    "description": "Age band copy."
+  },
+  "familyAgeLevelNote": "Applies to new games. Easy/Medium/Hard and automatic difficulty still work; Hard stays premium.",
+  "@familyAgeLevelNote": {
+    "description": "Age band copy."
+  },
+  "ageBandFirstSteps": "First steps (2–3)",
+  "@ageBandFirstSteps": {
+    "description": "Age band copy."
+  },
+  "ageBandExplore": "Explore (4–5)",
+  "@ageBandExplore": {
+    "description": "Age band copy."
+  },
+  "ageBandSchoolReady": "School ready (6–7)",
+  "@ageBandSchoolReady": {
+    "description": "Age band copy."
+  },
+  "ageBandPractice": "Practice (8+)",
+  "@ageBandPractice": {
+    "description": "Age band copy."
+  },
+  "ageBandFirstStepsInfo": "2 choices, numbers 1–3, 5 questions per game, quick hints; tap games first.",
+  "@ageBandFirstStepsInfo": {
+    "description": "Age band copy."
+  },
+  "ageBandExploreInfo": "3 choices, numbers 1–5, 6 questions per game; tap and simple drag.",
+  "@ageBandExploreInfo": {
+    "description": "Age band copy."
+  },
+  "ageBandSchoolReadyInfo": "4 choices, numbers 1–10, 8 questions per game; drag, group and sort.",
+  "@ageBandSchoolReadyInfo": {
+    "description": "Age band copy."
+  },
+  "ageBandPracticeInfo": "4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.",
+  "@ageBandPracticeInfo": {
+    "description": "Age band copy."
+  }
 }

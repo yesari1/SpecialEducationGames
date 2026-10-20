@@ -9,6 +9,7 @@ import '../../app/ui/family_nav_bar.dart';
 import '../../core/entitlement/entitlement_service.dart' show qaPremium;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
+import '../../core/learning/age_band.dart';
 import '../../core/learning/parent_pin.dart';
 import '../../core/learning/learning_report.dart';
 import 'progress_charts.dart';
@@ -240,6 +241,69 @@ class _FamilyScreenState extends State<FamilyScreen> {
 
   Widget _familyCard(Widget child) =>
       SegCard(padding: const EdgeInsets.all(SegSpace.s2), child: child);
+
+  String _bandName(AgeBand band) => switch (band) {
+    AgeBand.firstSteps => l10n.ageBandFirstSteps,
+    AgeBand.explore => l10n.ageBandExplore,
+    AgeBand.schoolReady => l10n.ageBandSchoolReady,
+    AgeBand.practice => l10n.ageBandPractice,
+  };
+
+  String _bandInfo(AgeBand band) => switch (band) {
+    AgeBand.firstSteps => l10n.ageBandFirstStepsInfo,
+    AgeBand.explore => l10n.ageBandExploreInfo,
+    AgeBand.schoolReady => l10n.ageBandSchoolReadyInfo,
+    AgeBand.practice => l10n.ageBandPracticeInfo,
+  };
+
+  /// Age band of the active profile with the parent's one-step shift.
+  List<Widget> _ageLevelControls() {
+    final fromAge = s.ageBandFromAge, band = s.ageBand;
+    if (fromAge == null || band == null) {
+      return [
+        Text(
+          l10n.familyAgeLevelNoAge,
+          key: const ValueKey('age-level-no-age'),
+          style: SegText.caption,
+        ),
+      ];
+    }
+    final shift = s.ageLevelShift;
+    return [
+      Text(
+        _bandName(band),
+        key: const ValueKey('age-level-band'),
+        style: SegText.item,
+      ),
+      Text(_bandInfo(band), style: SegText.caption),
+      if (band != fromAge)
+        Text(
+          l10n.familyAgeLevelFromAge(_bandName(fromAge)),
+          style: SegText.caption,
+        ),
+      const SizedBox(height: SegSpace.s2),
+      SegmentedButton<int>(
+        key: const ValueKey('age-level-shift'),
+        showSelectedIcon: false,
+        segments: [
+          ButtonSegment(
+            value: -1,
+            enabled: fromAge != AgeBand.firstSteps,
+            label: Text(l10n.familyAgeLevelEasier),
+          ),
+          ButtonSegment(value: 0, label: Text(l10n.familyAgeLevelByAge)),
+          ButtonSegment(
+            value: 1,
+            enabled: fromAge != AgeBand.practice,
+            label: Text(l10n.familyAgeLevelHarder),
+          ),
+        ],
+        selected: {shift},
+        onSelectionChanged: (value) => s.setAgeLevelShift(value.first),
+      ),
+      Text(l10n.familyAgeLevelNote, style: SegText.caption),
+    ];
+  }
 
   List<Widget> _compactDashboardPages() {
     final now = DateTime.now();
@@ -610,6 +674,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
           ),
         ],
       ]),
+      page(l10n.familyAgeLevel, _ageLevelControls()),
       page(l10n.familyDefaultDifficulty, [
         dropdown(
           s.difficultyOverride == 'hard' && !s.entitlement.isPremium
@@ -1430,6 +1495,16 @@ class _FamilyScreenState extends State<FamilyScreen> {
               child: Text(l10n.familyAdd10MinutesForToday),
             ),
           ],
+        ],
+      ),
+    ),
+    const SizedBox(height: SegSpace.s5),
+    SegCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.familyAgeLevel, style: SegText.label),
+          ..._ageLevelControls(),
         ],
       ),
     ),
