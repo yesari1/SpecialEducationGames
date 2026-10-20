@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 20 Ekim 2026 — R34 (gizlilik politikası, Data safety, hesap silme)
+
+- Yayında (yesastudio.com, Cloudflare Pages; `D:\_WebProjects\yesastudio` commit 848f53d, push edildi): `/ozel-egitim-oyunlari/` (uygulama), `/privacy/`, `/terms/`, `/delete-account/`; TR/EN, KVKK/GDPR/COPPA/Birleşik Krallık Çocuk Kodu/Families kapsamı. Dördü de HTTP 200 doğrulandı.
+- Uygulama: Aile → Hesap → "Hesabı ve bulut verilerini sil" (onay + Google yeniden doğrulama + `families/{uid}` altı + Firebase kullanıcısı; sunucu fonksiyonu yok). Paywall gizlilik/koşullar bağlantıları varsayılan olarak site sayfaları; `config/app` ile değişir.
+- `docs/play-data-safety.md`: Play Veri güvenliği formunun ve diğer beyanların soru soru cevapları (Drive'a da kopyalandı). Derlenmiş APK'da AD_ID izni yok (aapt ile doğrulandı).
+- Doğrulama: seri host testler 262/262, analyze temiz. R34 QA APK `artifacts/test-builds/2026-10-20/ozel-egitim-test-claude-r34-premium-qa.apk` (SHA-256 `ac8bcc57…36888`), Drive'da. Hesap silmenin canlı denemesi Firebase konsol adımlarından sonra yapılmalı.
+
 ## 20 Ekim 2026 — R33 (Google ile giriş, deneme, paywall)
 
 - Ücretsiz deneme: Google hesabı başına bir kez, ödeme bilgisi istenmez, süresi `config/app.trialDays` (varsayılan 7). Başlangıç sunucuda `trials/{uid}` (yalnız `startedAt`, sunucu saati, bir kez oluşturulur, değiştirilemez/silinemez). Süre bitince ücretsiz sürüme döner. `EntitlementService` kaynakları: QA / abonelik / tek seferlik / deneme.
