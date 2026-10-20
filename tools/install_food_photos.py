@@ -29,7 +29,13 @@ ACCEPTED = {
     'food.soup': 'food-photos-attempt-01',
     'food.pasta': 'food-photos-attempt-02',
     'food.pizza': 'food-photos-attempt-02',
+    'food.simit': 'food-photos-attempt-03',
 }
+MASKED = {'food.simit'}
+MASK_CHANGES = ('Background removed with classical OpenCV GrabCut (rectangle start, largest '
+                'component, 1 px feather; tools/grabcut_rect_mask.py), original photo pixels kept; '
+                'alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject '
+                'extent, centered 1024x1024 RGBA export and 4 px white outer outline.')
 CHANGES = ('Existing transparent cutout from Wikimedia Commons retained (no new mask); '
            'alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject '
            'extent, centered 1024x1024 RGBA export and 4 px white outer outline.')
@@ -55,7 +61,7 @@ def main():
         slug = item_id.split('.', 1)[1]
         folder = ROOT / 'artifacts' / attempt
         meta = json.loads((folder / 'originals' / 'chosen.json').read_text(encoding='utf-8'))[item_id]
-        original = folder / 'originals' / f'{slug}_original.png'
+        original = next((folder / 'originals').glob(f'{slug}_original.*'))
         output = folder / 'outputs' / f'{slug}_real.png'
         target = ROOT / 'assets/images/food' / f'{slug}_real.png'
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -69,13 +75,13 @@ def main():
             'source': meta['page'],
             'license': license_name,
             'licenseUrl': license_url if license_url.startswith('http') else 'https:' + license_url,
-            'changes': CHANGES,
+            'changes': MASK_CHANGES if item_id in MASKED else CHANGES,
             'id': item_id,
             'path': path,
             'licenseVerified': True,
             'licenseVerifiedOn': date.today().isoformat(),
             'adaptationLicense': adaptation,
-            'processing': 'tools/adapt_cutout_photo.py',
+            'processing': ('tools/grabcut_rect_mask.py + ' if item_id in MASKED else '') + 'tools/adapt_cutout_photo.py',
             'whiteOutlinePixels': 4,
             'originalSha256': sha(original),
             'sha256': sha(target),
@@ -87,7 +93,7 @@ def main():
         credits.append(
             f"## {item_id}\n\nFile: `{path}`\nPhoto author: {entry['author']}\n"
             f"Source: {entry['source']}\nLicense: {license_name} — {entry['licenseUrl']}\n"
-            f"Changes: {CHANGES}\nOriginal SHA-256: `{entry['originalSha256']}`.\n"
+            f"Changes: {entry['changes']}\nOriginal SHA-256: `{entry['originalSha256']}`.\n"
             f"Adapted PNG SHA-256: `{entry['sha256']}`.\n"
             f"Attempt folder: `artifacts/{attempt}/`. Local technical review only; final human approval pending.\n")
         print(item_id, path, license_name, entry['author'])

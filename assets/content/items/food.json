@@ -418,12 +418,32 @@
       "tr": "Simit",
       "en": "Simit"
     },
-    "images": [],
+    "images": [
+      "assets/images/food/simit_real.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/food/simit_selected.mp3",
       "en": "assets/audio/en/food/simit_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/food/simit_real.png": {
+        "author": "Barbarossa (Wikimedia Commons user, \"own picture\"; GFDL relicensed to CC BY-SA 3.0)",
+        "source": "https://commons.wikimedia.org/wiki/File:Simit-2x.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather; tools/grabcut_rect_mask.py), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "id": "food.simit",
+        "path": "assets/images/food/simit_real.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-20",
+        "adaptationLicense": "CC BY-SA 3.0",
+        "processing": "tools/grabcut_rect_mask.py + tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "originalSha256": "c05c2c115cbdfef54efe7c746355b4b5fab25dbeb5445856d7c6e595bbfd1d4a",
+        "sha256": "3e47080ddb5bd28fe99aec5d97c5e50e2bb788f10cfbe8d1fcde8d170aa06deb"
+      }
+    }
   },
   {
     "id": "food.honey",

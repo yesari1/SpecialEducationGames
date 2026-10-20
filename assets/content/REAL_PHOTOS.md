@@ -383,3 +383,14 @@ Changes: Existing transparent cutout from Wikimedia Commons retained (no new mas
 Original SHA-256: `90a12f8a41d20a644a34160ed032fab7d9ccacb04b14568029e7559f6edf270f`.
 Adapted PNG SHA-256: `3032c7fbee3efa0bb36359e7847f93acd6e3c8c9e9f2c4f0cc1393fedc9ce5b9`.
 Attempt folder: `artifacts/food-photos-attempt-02/`. Local technical review only; final human approval pending.
+
+## food.simit
+
+File: `assets/images/food/simit_real.png`
+Photo author: Barbarossa (Wikimedia Commons user, "own picture"; GFDL relicensed to CC BY-SA 3.0)
+Source: https://commons.wikimedia.org/wiki/File:Simit-2x.JPG
+License: CC BY-SA 3.0 — http://creativecommons.org/licenses/by-sa/3.0/
+Changes: Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather; tools/grabcut_rect_mask.py), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
+Original SHA-256: `c05c2c115cbdfef54efe7c746355b4b5fab25dbeb5445856d7c6e595bbfd1d4a`.
+Adapted PNG SHA-256: `3e47080ddb5bd28fe99aec5d97c5e50e2bb788f10cfbe8d1fcde8d170aa06deb`.
+Attempt folder: `artifacts/food-photos-attempt-03/`. Local technical review only; final human approval pending.
