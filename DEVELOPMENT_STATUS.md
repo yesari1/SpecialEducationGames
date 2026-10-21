@@ -2,6 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R36 (tema kapakları, tek ekran paywall, otomatik özet senkronu) — sürüm 2.0.2 (16)
+
+- Ana sayfa: her tema için aynı stil ve çerçevede tek illüstrasyon kapak (orijinaller `artifacts/illustrations-r36/originals/`). Kilitli oyun bildirimi tek sefer gösterilir (tekrar dokunma kuyruk yapmaz).
+- Paywall tek ekran: 7 gün deneme, aylık, yıllık (Play fiyatından % tasarruf), tek seferlik; tek "Devam" düğmesi; geri yükle/koşullar/gizlilik/ücretsiz devam. Onboarding sonunda ve Aile > Premium'da açılır, ebeveyn kapısı satın almadan önce kalır.
+- Google girişi ve Play satın alma sayfası dikey kalır. Girişte `families/{uid}` birleştirilir (createdAt bir kez, updatedAt, locale, token e-postası); kurallar değişmedi/yüklenmedi.
+- Ebeveyn girişliyken günlük özetler (oyun, konu, dakika, tur; çocuk adı yok) otomatik, gecikmeli ve çevrimdışına dayanıklı senkronlanır; Aile'de varsayılan açık anahtar.
+- Doğrulama: seri host testler 271/271 (`artifacts/claude/r36/host-tests.log`). Önce/sonra ekranlar (ana sayfa, paywall; TR+EN) `artifacts/claude/r36/` ve Drive `R36/`. QA APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r36-premium-qa.apk` (SHA-256 `de2fe1c6…67d8c31`). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.2-vc16.aab` (SHA-256 `60adf42a…24f8704`, vc15 ile aynı yükleme sertifikası); ikisi de Drive'da. Not: profile QA derlemesinden sonra release AAB, eski `GeneratedPluginRegistrant.java` (integration_test) yüzünden düşer; dosya silinip yeniden derlenmeli. Play'e yüklenmedi.
+
 ## 20 Ekim 2026 — R35 (sepet oyunu, mağaza hazırlığı, Play)
 
 - Play: yükleme anahtarı `D:\GameDesktop\UnityProjects\ProjectsKeys\SpecialEducationGames.keystore` (alias `specialeducationgames`, SHA-1 49:A5:07…, Play Upload key ile aynı). Şifreler git dışı `android/key.properties` içinde (Yunus yazdı). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.0-vc14-internal.aab` Internal testing'de yayında. Yunus Play'de `premium` (monthly 59,99 TL / yearly 449,99 TL) ve `premium_lifetime` (799,99 TL) oluşturdu. Firebase: kurallar yüklendi, `config/app` varsayılanlarla oluşturuldu, 6 SHA parmak izi kayıtlı, Google OAuth istemcileri tamam.
