@@ -2,6 +2,11 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R39 (uygulama ikonu 23) — sürüm 2.0.5 (19)
+
+- İkon 23 (uçan bulut, Yunus seçti): `GooglePlayBuild/store-assets/app-icon/` setinden adaptif ikon (ön plan + #8F7EFC arka plan + Android 13 tema/monochrome), yuvarlak ve eski mipmap'ler `android/app/src/main/res`'e kopyalandı; manifest'e `android:roundIcon` eklendi. Play mağaza ikonu: `play-icon-512.png` (Play Console'a Yunus yükleyecek).
+- Doğrulama: seri host testler 271/271. Pixel_9a'ya kuruldu, uygulama çekmecesinde ikon doğru (`artifacts/claude/r39/launcher-*.png`, Drive `R39/`). Normal test APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r39-normal.apk`, imzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.5-vc19.aab` (aynı yükleme sertifikası); ikisi de Drive'da. Play'e yüklenmedi.
+
 ## 21 Ekim 2026 — R38 (paywall düzeltmeleri) — sürüm 2.0.4 (18)
 
 - Düğme "7 gün ücretsiz dene" / "Try free for 7 days". Plan satırlarında fiyat sağda büyük (₺499,99), altında küçük not (₺41,67/ay, her ay, tek ödeme). "%31 tasarruf" kendi satırında. "Şimdilik ücretsiz devam et" kaldırıldı; çıkış sol üstteki X ile (onboarding paywall'ına da X eklendi), çıkınca ücretsiz sürüm sürer. Hoş geldin: deneme yazısı "Başlayalım"ın üstünde ayrı kutuda ("6 oyun hep ücretsiz" alt satırı).
