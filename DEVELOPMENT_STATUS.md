@@ -2,6 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R43 (hesap kartı, oyun aç/kapa, yeni çocuk) — sürüm 2.0.9 (23), Internal testing'de
+
+- Deneme başlayınca paywall "Deneme sürüyor: X gün kaldı" bildirimiyle kapanıyor (önceden açık kalıp fiyatlı düğme gösteriyordu). Paywall'ın altındaki "Kapat" kaldırıldı, sol üstteki X yeterli.
+- Aile > Profiller'in altına Hesap kartı eklendi: paket (Ücretsiz / Deneme X gün ve bitiş tarihi / Premium abonelik / tek seferlik / test), ödeme (Google Play / ödeme yok), Premium'a geç ya da aboneliği yönet, Google aile hesabı. Aylık/yıllık ayrımı Play'den okunmuyor, "Premium abonelik" yazar.
+- Aile > Oyunlar: her oyun için profile özel aç/kapa (`profile.<id>.hiddenGames`). Kapalı oyunlar çocuk modunda ve Bugünün Yolu'nda yok. Başta hepsi açık; onboarding cevaplarına göre otomatik kapatma yapılmadı.
+- Yeni çocuk (`/family/profile/new`): onboarding'in çocuk adımları (ad/yaş, 4 soru, günlük hedef), sonra Aile'ye dönüş. Mevcut profil düzenleme eski ekranda kaldı. Ücretsiz sürümde ikinci profil Premium sayfasına götürür; "ücretsiz sürümde bir profil" notu yalnız ücretsizde görünür.
+- Doğrulama: seri host testler 277/277 (yeni: oyun aç/kapa, yeni çocuk akışı, deneme sonrası kapanma). `tools/build_release.sh` geçti (Pixel_9a kapalıydı, açıldı; LiveMoment'ın LM_API33'üne dokunulmadı). Cihazda Hesap kartı ve oyun anahtarları görüldü (`artifacts/claude/r43/`). AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.9-vc23.aab` `tools/play_upload.py` ile Internal testing'e yüklendi; track: internal = vc23, production = vc13 (dokunulmadı).
+
 ## 21 Ekim 2026 — R42 (gri düğme, paywall sabitliği, yeni ücretsiz kural) — sürüm 2.0.8 (22)
 
 - Gri düğme: ekran görüntüsü, bildirim perdesi ve sistem pencereleri uygulamayı yalnızca `inactive` yapar. Bu durum ebeveyn alanını kilitliyordu, paywall düğmeleri de bu yüzden griydi. Kilit artık yalnızca `hidden`/`paused`/`detached` ile devreye giriyor. Paywall düğmeleri kilit yüzünden hiç grileşmez: kilit kapanmışsa (5 dk) ebeveyn kontrolü sorulur, sonra devam edilir. Satın alma sayfası Play'den haber gelmeden kapanırsa "bekleniyor" durumu uygulamaya dönüldükten 4 sn sonra temizlenir; Play'in bildirdiği gerçek bekleyen ödeme ise sürer. Pixel_9a'da sistem ekran görüntüsü sonrası düğme ve Geri yükle aktif kaldı.
