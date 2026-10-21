@@ -161,9 +161,16 @@ class _EducationAppState extends State<EducationApp>
   void didChangeAppLifecycleState(AppLifecycleState lifecycle) {
     if (lifecycle != AppLifecycleState.resumed) {
       state.audio.stop();
-      state.lockFamily();
+      // The Google account picker and the Play purchase sheet put the app in
+      // the background; keep the parent area (and its upright screen) open
+      // for them instead of locking it and sending the router to child mode.
+      if (!inExternalFlow) state.lockFamily();
     }
   }
+
+  /// A parent-started Google sign-in, trial start or Play purchase is open.
+  bool get inExternalFlow =>
+      familyAuth.busy || state.billing.pending || state.trialBusy;
 
   @override
   void dispose() {
