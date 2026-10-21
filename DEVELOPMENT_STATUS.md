@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R41 (kilitli oyunlar, Premium şeridi, paywall kayması) — sürüm 2.0.7 (21)
+
+- Paywall: alt not en uzun metin kadar yer ayırıyor; planı değiştirince sayfa kaymıyor (yıllık/tek seferlik görüntüleri piksel karşılaştırmasında aynı, öncesinde kayıyordu).
+- Kilitli oyun kartları gri ve soluk, ortada büyük kilit. Kilitli oyuna dokununca snackbar yerine çocuk için yuvarlak bir pencere açılıyor (turuncu kilit, "Bu oyun kilitli", "Açmak için ailene sor…", Tamam). Satın alma yok, üst üste açılmaz.
+- Aile alanı: Premium yoksa alt menünün üstünde sabit turuncu şerit ("7 gün ücretsiz dene" / deneme kullanıldıysa "Premium'a geç"), paywall'ı açar. Yalnızca ekran yüksekliği ≥ 600 olduğunda görünür; kısa yatay ekranda Ayarlar > Premium kullanılır.
+- Gelişim: ücretsiz hesapta özet kartları açık. Haftalık grafikler, dikkat, beceriler, öğe sonuçları ve tema ilerlemesi bulanık önizleme olarak görünür, üstünde "Premium ile aç". Kısa yatay sayfalarda tek kilit kartı. Premium ya da deneme sürerken hepsi açık.
+- Oyun kartlarındaki oyun türü ikonu 26 → 34 px.
+- Doğrulama: seri host testler 271/271 (yatay sayfa düzeni testi ayrıntılı sayfaları kapsamak için Premium ile çalışıyor; kilitli oyun testi yeni pencereyi kontrol ediyor). Önce/sonra ekranlar (TR+EN) `artifacts/claude/r41/` ve Drive `R41/`; cihazda kilitli oyun penceresi `device-locked-tap.png`. `tools/build_release.sh` geçti (Pixel_9a açılış). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.7-vc21.aab` (SHA-256 `53356a93…`); release APK ve normal test APK `artifacts/test-builds/2026-10-21/` ve Drive'da. Play'e yüklenmedi.
+
 ## 21 Ekim 2026 — R40 (açılışta çökme düzeltmesi) — sürüm 2.0.6 (20)
 
 - Hata: vc16–vc19 imzalı paketlerde `io.flutter.plugins.GeneratedPluginRegistrant` yoktu, bu yüzden eklentiler kaydolmadı ve uygulama açılışta kapandı (Yunus'un telefonunda vc18). Sebep: R36'da, profile derlemesinden kalan `integration_test` içeren eski dosya silindi ve `--no-pub` ile yapılan release derlemesi onu yeniden üretmedi. vc15 sağlam; profile/test APK'ları etkilenmedi. Pixel_9a'da release APK ile `ClassNotFoundException` olarak yeniden üretildi (`artifacts/claude/r40/logcat-release.txt`).
