@@ -164,6 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               s.gamesForTheme(t.id).length,
                             ),
                             visual: themeCover(t.id, hero),
+                            normalizedVisual: themeCovers.contains(t.id),
                             onTap: () => context.go('/theme/${t.id}'),
                           );
                         },

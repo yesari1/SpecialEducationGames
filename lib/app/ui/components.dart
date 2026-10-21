@@ -548,6 +548,10 @@ class ThemeGameCard extends StatelessWidget {
   final IconData? modeIcon;
   final bool locked;
   final VoidCallback onTap;
+
+  /// The visual is already normalized (illustrated theme covers): draw it at
+  /// full size instead of the per-theme photo scale.
+  final bool normalizedVisual;
   const ThemeGameCard({
     super.key,
     required this.theme,
@@ -558,6 +562,7 @@ class ThemeGameCard extends StatelessWidget {
     this.modeIcon,
     this.locked = false,
     this.badgeText,
+    this.normalizedVisual = false,
   });
   Color get accent => switch (theme.id) {
     'animals' => SegColors.turquoise,
@@ -571,12 +576,14 @@ class ThemeGameCard extends StatelessWidget {
   };
 
   /// Round, compact subjects read as oversized when they fill the scene.
-  double get _heroScale => switch (theme.id) {
-    'produce' || 'colors' || 'shapes' => .7,
-    'food' => .8,
-    'numbers' => .85,
-    _ => 1,
-  };
+  double get _heroScale => normalizedVisual
+      ? 1
+      : switch (theme.id) {
+          'produce' || 'colors' || 'shapes' => .7,
+          'food' => .8,
+          'numbers' => .85,
+          _ => 1,
+        };
 
   @override
   Widget build(BuildContext context) {
@@ -672,10 +679,21 @@ class ThemeGameCard extends StatelessWidget {
           ),
           const SizedBox(height: SegSpace.s1),
         ],
-        Text(
-          title,
-          style: SegText.item.copyWith(color: SegColors.ink),
-          textAlign: TextAlign.center,
+        // Every title reserves two lines, so one- and two-line names leave
+        // the pictures the same size from card to card.
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.textScalerOf(
+              context,
+            ).scale(SegText.item.fontSize! * SegText.item.height! * 2),
+          ),
+          child: Center(
+            child: Text(
+              title,
+              style: SegText.item.copyWith(color: SegColors.ink),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
         if (subtitle.isNotEmpty) ...[
           const SizedBox(height: SegSpace.s1),
