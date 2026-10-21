@@ -745,7 +745,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ),
         Text(l10n.familyAppliesToTheNextRoundIncorrect, style: SegText.caption),
       ]),
-      page(l10n.familyCloudSync, [
+      page(l10n.familyCloudSync, showHeading: false, [
         SwitchListTile(
           key: const ValueKey('cloud-sync-switch'),
           contentPadding: EdgeInsets.zero,
