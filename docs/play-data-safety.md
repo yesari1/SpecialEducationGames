@@ -4,7 +4,8 @@ Bu cevaplar R33/R34 kodunun gerçekte yaptığına göre hazırlandı (20 Ekim 2
 
 - Uygulama hesap olmadan çalışır. Reklam, analitik, çökme raporu ve konum yoktur.
 - Google ile giriş isteğe bağlıdır ve yalnız ebeveyn alanındadır.
-- Buluta yalnızca şunlar gider: Firebase hesabı, deneme başlangıç zamanı ve (ebeveyn açarsa) günlük öğrenme özetleri.
+- Buluta yalnızca şunlar gider: Firebase hesabı (e-posta `families/{uid}` içinde de saklanır), deneme başlangıç zamanı ve giriş yapılmışken otomatik gönderilen günlük öğrenme özetleri (Aile alanından kapatılabilir; 21 Ekim 2026 kararı).
+- Yesa Studio yöneticisi bu verileri yönetici sayfasından (yesastudio.com/ozel-egitim-oyunlari/admin/, Firestore kurallarıyla yalnız `admins/{uid}` hesapları) görebilir ve silebilir. Bu bir üçüncü tarafa paylaşım değildir.
 
 Kod değişirse bu formu da güncelleyin.
 
@@ -50,7 +51,7 @@ Yalnızca aşağıdaki üç veri türünü işaretleyin. Diğerlerinin hepsi **t
 
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
 |---|---|---|---|---|---|
-| Uygulama etkileşimleri | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn "günlük özet senkronu"nu açarsa) | **Uygulama işlevselliği** |
+| Uygulama etkileşimleri | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn Google ile giriş yaparsa; Aile alanından kapatılabilir) | **Uygulama işlevselliği**, **Analizler** (yönetici sayfasında kullanıcı bazında günlük oyun ve süre) |
 
 Notlar:
 
@@ -59,7 +60,7 @@ Notlar:
 - "Uygulama etkileşimleri": günlük özetler. İçerik: tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı. Çocuğun adı, yaşı ya da tek tek yanıtları gönderilmez.
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
 - Satın almalar: Google Play işler, uygulama yalnız cihazda sahiplik durumunu okur ve bize göndermez. "Satın alma geçmişi" **işaretlenmez**.
-- Çocuk modunda oynanan her şey (profil, takma ad, yaş, anket, oyun sonuçları) yalnız cihazda kalır, gönderilmez. Bu yüzden form kapsamına girmez.
+- Çocuk profili (takma ad, yaş, anket) ve tek tek oyun yanıtları yalnız cihazda kalır, gönderilmez. Buluta yalnız yukarıdaki günlük özetler gider (giriş yapılmışsa).
 
 ### 2.3 Her veri türü için "Veriler nasıl kullanılıyor" sayfası
 
