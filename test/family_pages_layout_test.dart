@@ -645,8 +645,8 @@ void main() {
               expect(
                 find.text(
                   locale == 'tr'
-                      ? 'Son 7 gün · Oynama süresi · dakika'
-                      : 'Last 7 days · Play time · minutes',
+                      ? 'Son 7 gün · Oynama süresi (dk)'
+                      : 'Last 7 days · Play time (min)',
                 ),
                 findsOneWidget,
                 reason: '$locale weekly card retains its full heading',

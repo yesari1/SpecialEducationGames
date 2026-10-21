@@ -463,28 +463,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyLast7Days => 'Son 7 gün';
 
   @override
-  String get familyPlayTimeMinutes => 'Oynama süresi · dakika';
+  String get familyPlayTimeMinutes => 'Oynama süresi (dk)';
 
   @override
-  String get familyIndependentFirstAnswers =>
-      'İpucusuz, ilk denemede doğru · %';
+  String get familyIndependentFirstAnswers => 'Kendi başına doğru (%)';
 
   @override
   String get familyProgressWillAppearHereAfterThe =>
-      'İlk oyundan sonra gelişimi burada görebilirsiniz.';
+      'Grafikler ilk oyundan sonra dolar.';
 
   @override
-  String get familyAttentionDailyAverageSeconds =>
-      'Dikkat · günlük ortalama saniye';
+  String get familyAttentionDailyAverageSeconds => 'Dikkat (sn)';
 
   @override
-  String get familyFirstResponse => 'İlk tepki';
+  String get familyFirstResponse => 'İlk cevap';
 
   @override
   String get familyS => 'sn';
 
   @override
-  String get familyIdleTime => 'Tepkisiz süre';
+  String get familyIdleTime => 'Bekleme';
 
   @override
   String get familyTimeInTheBackgroundIsExcluded =>
@@ -499,7 +497,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyNumericView => 'Sayısal görünüm';
 
   @override
-  String get familySkillAreas => 'Beceri alanları';
+  String get familySkillAreas => 'Beceriler';
 
   @override
   String get familyIndependentFirstAnswersInTheLast =>
@@ -525,14 +523,13 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bağımsız liste: son üç yanıt ipucusuz. Destek listesi: son üç aşamanın en az ikisinde belirgin destek.';
 
   @override
-  String get familyIndependentlyAnswered => 'Bağımsız yanıtladıkları';
+  String get familyIndependentlyAnswered => 'Kendi başına biliyor';
 
   @override
-  String get familyItemsNeedingMoreSupport => 'Daha fazla destek verdiklerimiz';
+  String get familyItemsNeedingMoreSupport => 'Daha çok destek istiyor';
 
   @override
-  String get familyItemsAppearHereAfterAtLeast =>
-      'En az üç aşamanın ardından burada öğeler görünür.';
+  String get familyItemsAppearHereAfterAtLeast => 'Üç denemeden sonra görünür.';
 
   @override
   String familyCountStagesLatestStreakAnswersIndependent(
@@ -563,7 +560,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyCountsActivePlayTimeABreak =>
-      'Aktif oyun süresini sayar. Süre dolunca mola ekranı açılır.';
+      'Süre dolunca mola ekranı açılır.';
 
   @override
   String get familyOff => 'Kapalı';
@@ -595,8 +592,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyHard => 'Zor';
 
   @override
-  String get familyAppliesToNewRoundsHardLevel =>
-      'Yeni turlarda uygulanır. Zor seviye Premium kapsamındadır.';
+  String get familyAppliesToNewRoundsHardLevel => 'Zor seviye Premium\'da.';
 
   @override
   String get familyRoundLength => 'Tur uzunluğu';
@@ -628,7 +624,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyAppliesToTheNextRoundIncorrect =>
-      'Yeni turda uygulanır. Zamanlı ipucu kapalıyken de yanlış yanıta destek verilir.';
+      'Sonraki turdan itibaren geçerli.';
 
   @override
   String get familyDailyMinuteGoal => 'Günlük dakika hedefi';
@@ -640,7 +636,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyAnOptionalReminderItDoesNot =>
-      'İsteğe bağlı hatırlatma; oyun süresini sınırlamaz.';
+      'Sadece hatırlatma, oyunu sınırlamaz.';
 
   @override
   String get familyMin => 'dk';
@@ -663,14 +659,14 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyShowOneCardFirstThenOffer =>
-      'Önce tek kartla göster, sonra seçeneklerle sor.';
+      'Önce tek kart, sonra seçenekler.';
 
   @override
   String get familyAdaptiveDifficulty => 'Otomatik zorluk önerisi';
 
   @override
   String get familyChangesApplyOnlyWhenANew =>
-      'Değişiklikler yalnızca yeni turda uygulanır.';
+      'Sonraki turdan itibaren geçerli.';
 
   @override
   String get familyAudio => 'Sesler';
@@ -701,7 +697,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familySubscriptionPricesAndTrialEligibilityCome =>
-      'Abonelik fiyatları ve deneme uygunluğu Google Play’den alınır.';
+      'Fiyatlar Google Play\'den gelir.';
 
   @override
   String get familyPlansAndRestore => 'Planlar ve geri yükleme';
@@ -717,7 +713,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyProfilesAndRawGameRecordsStay =>
-      'Profil ve ham oyun kayıtları bu cihazda tutulur. Hesap ekranında izin verip eşitlemeyi başlatırsanız yalnızca günlük özetler gönderilir. Reklam veya reklam kimliği kullanılmaz.';
+      'Oyun kayıtları bu cihazda kalır; hesabınıza yalnız günlük özetler gider. Reklam yok.';
 
   @override
   String get familyDoesNotReplaceProfessionalSupport =>
@@ -1313,7 +1309,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyCloudSyncNote =>
-      'Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.';
+      'Günlük özet (oyun, süre, tur) Google hesabınıza kaydedilir. Çocuğun adı gönderilmez.';
 
   @override
   String welcomeFreeTrial(int days) {
@@ -1440,4 +1436,20 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyPlanCardTitle => 'Hesap';
+
+  @override
+  String get familyGamesPremiumTitle => 'Oyunları çocuğunuza göre seçin';
+
+  @override
+  String get familyGamesPremiumBody =>
+      'Oyunları açıp kapatma Premium ve ücretsiz denemede var.';
+
+  @override
+  String familyGamesShownCount(int shown, int total) {
+    return '$total oyundan $shown açık';
+  }
+
+  @override
+  String get familyMoreProfilesPremium =>
+      'Daha fazla çocuk profili Premium ile';
 }

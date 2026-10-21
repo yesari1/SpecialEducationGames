@@ -129,6 +129,14 @@ class AppState extends ChangeNotifier {
   /// Games this child's family turned off (per profile).
   Set<String> hiddenGames = {};
 
+  /// Turns every game of a theme on or off for this child.
+  Future<void> setThemeShown(String theme, bool shown) async {
+    final keys = {for (final g in allGamesForTheme(theme)) '${theme}_$g'};
+    final next = {...hiddenGames};
+    shown ? next.removeAll(keys) : next.addAll(keys);
+    await setting('hiddenGames', (next.toList()..sort()).join(','));
+  }
+
   Future<void> setGameShown(String theme, String game, bool shown) async {
     final key = '${theme}_$game';
     final next = {...hiddenGames};
@@ -506,7 +514,7 @@ class AppState extends ChangeNotifier {
         !['cat', 'dog', 'rabbit', 'bear'].contains(avatar)) {
       throw ArgumentError('invalid_profile');
     }
-    if (profiles.length >= (entitlement.isPremium ? 5 : 1)) {
+    if (profiles.length >= profileLimit) {
       throw StateError('profile_limit');
     }
     final id = DateTime.now().microsecondsSinceEpoch.toString();
@@ -641,6 +649,11 @@ class AppState extends ChangeNotifier {
     await db.setPreference('activeProfile', profile.id);
     await load();
   }
+
+  /// Up to five children with paid Premium; one in the free version and
+  /// during the free trial.
+  int get profileLimit =>
+      entitlement.isPaid || entitlement.source == PremiumSource.qa ? 5 : 1;
 
   bool canSelectProfile(String id) =>
       entitlement.isPremium || profiles.firstOrNull?.id == id;

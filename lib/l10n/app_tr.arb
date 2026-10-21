@@ -293,23 +293,23 @@
   "@familyLast7Days": {
     "description": "Family area interface copy."
   },
-  "familyPlayTimeMinutes": "Oynama süresi · dakika",
+  "familyPlayTimeMinutes": "Oynama süresi (dk)",
   "@familyPlayTimeMinutes": {
     "description": "Family area interface copy."
   },
-  "familyIndependentFirstAnswers": "İpucusuz, ilk denemede doğru · %",
+  "familyIndependentFirstAnswers": "Kendi başına doğru (%)",
   "@familyIndependentFirstAnswers": {
     "description": "Family area interface copy."
   },
-  "familyProgressWillAppearHereAfterThe": "İlk oyundan sonra gelişimi burada görebilirsiniz.",
+  "familyProgressWillAppearHereAfterThe": "Grafikler ilk oyundan sonra dolar.",
   "@familyProgressWillAppearHereAfterThe": {
     "description": "Family area interface copy."
   },
-  "familyAttentionDailyAverageSeconds": "Dikkat · günlük ortalama saniye",
+  "familyAttentionDailyAverageSeconds": "Dikkat (sn)",
   "@familyAttentionDailyAverageSeconds": {
     "description": "Family area interface copy."
   },
-  "familyFirstResponse": "İlk tepki",
+  "familyFirstResponse": "İlk cevap",
   "@familyFirstResponse": {
     "description": "Family area interface copy."
   },
@@ -317,7 +317,7 @@
   "@familyS": {
     "description": "Family area interface copy."
   },
-  "familyIdleTime": "Tepkisiz süre",
+  "familyIdleTime": "Bekleme",
   "@familyIdleTime": {
     "description": "Family area interface copy."
   },
@@ -338,7 +338,7 @@
   "@familyNumericView": {
     "description": "Family area interface copy."
   },
-  "familySkillAreas": "Beceri alanları",
+  "familySkillAreas": "Beceriler",
   "@familySkillAreas": {
     "description": "Family area interface copy."
   },
@@ -371,15 +371,15 @@
   "@familyIndependentLastThreeAnswersWithoutHints": {
     "description": "Family area interface copy."
   },
-  "familyIndependentlyAnswered": "Bağımsız yanıtladıkları",
+  "familyIndependentlyAnswered": "Kendi başına biliyor",
   "@familyIndependentlyAnswered": {
     "description": "Family area interface copy."
   },
-  "familyItemsNeedingMoreSupport": "Daha fazla destek verdiklerimiz",
+  "familyItemsNeedingMoreSupport": "Daha çok destek istiyor",
   "@familyItemsNeedingMoreSupport": {
     "description": "Family area interface copy."
   },
-  "familyItemsAppearHereAfterAtLeast": "En az üç aşamanın ardından burada öğeler görünür.",
+  "familyItemsAppearHereAfterAtLeast": "Üç denemeden sonra görünür.",
   "@familyItemsAppearHereAfterAtLeast": {
     "description": "Family area interface copy."
   },
@@ -419,7 +419,7 @@
   "@familyDailyScreenTimeLimit": {
     "description": "Family area interface copy."
   },
-  "familyCountsActivePlayTimeABreak": "Aktif oyun süresini sayar. Süre dolunca mola ekranı açılır.",
+  "familyCountsActivePlayTimeABreak": "Süre dolunca mola ekranı açılır.",
   "@familyCountsActivePlayTimeABreak": {
     "description": "Family area interface copy."
   },
@@ -464,7 +464,7 @@
   "@familyHard": {
     "description": "Family area interface copy."
   },
-  "familyAppliesToNewRoundsHardLevel": "Yeni turlarda uygulanır. Zor seviye Premium kapsamındadır.",
+  "familyAppliesToNewRoundsHardLevel": "Zor seviye Premium'da.",
   "@familyAppliesToNewRoundsHardLevel": {
     "description": "Family area interface copy."
   },
@@ -504,7 +504,7 @@
   "@familyFadeIncorrectChoicesAfter2Mistakes": {
     "description": "Family area interface copy."
   },
-  "familyAppliesToTheNextRoundIncorrect": "Yeni turda uygulanır. Zamanlı ipucu kapalıyken de yanlış yanıta destek verilir.",
+  "familyAppliesToTheNextRoundIncorrect": "Sonraki turdan itibaren geçerli.",
   "@familyAppliesToTheNextRoundIncorrect": {
     "description": "Family area interface copy."
   },
@@ -524,7 +524,7 @@
       }
     }
   },
-  "familyAnOptionalReminderItDoesNot": "İsteğe bağlı hatırlatma; oyun süresini sınırlamaz.",
+  "familyAnOptionalReminderItDoesNot": "Sadece hatırlatma, oyunu sınırlamaz.",
   "@familyAnOptionalReminderItDoesNot": {
     "description": "Family area interface copy."
   },
@@ -552,7 +552,7 @@
   "@familyIntroduceNewItemsFirst": {
     "description": "Family area interface copy."
   },
-  "familyShowOneCardFirstThenOffer": "Önce tek kartla göster, sonra seçeneklerle sor.",
+  "familyShowOneCardFirstThenOffer": "Önce tek kart, sonra seçenekler.",
   "@familyShowOneCardFirstThenOffer": {
     "description": "Family area interface copy."
   },
@@ -560,7 +560,7 @@
   "@familyAdaptiveDifficulty": {
     "description": "Family area interface copy."
   },
-  "familyChangesApplyOnlyWhenANew": "Değişiklikler yalnızca yeni turda uygulanır.",
+  "familyChangesApplyOnlyWhenANew": "Sonraki turdan itibaren geçerli.",
   "@familyChangesApplyOnlyWhenANew": {
     "description": "Family area interface copy."
   },
@@ -600,7 +600,7 @@
   "@familyFull": {
     "description": "Doğru yanıt için kısa ve belirgin kutlama ebeveyn ayarı."
   },
-  "familySubscriptionPricesAndTrialEligibilityCome": "Abonelik fiyatları ve deneme uygunluğu Google Play’den alınır.",
+  "familySubscriptionPricesAndTrialEligibilityCome": "Fiyatlar Google Play'den gelir.",
   "@familySubscriptionPricesAndTrialEligibilityCome": {
     "description": "Family area interface copy."
   },
@@ -620,7 +620,7 @@
   "@familyCreditsAndLicenses": {
     "description": "Family area interface copy."
   },
-  "familyProfilesAndRawGameRecordsStay": "Profil ve ham oyun kayıtları bu cihazda tutulur. Hesap ekranında izin verip eşitlemeyi başlatırsanız yalnızca günlük özetler gönderilir. Reklam veya reklam kimliği kullanılmaz.",
+  "familyProfilesAndRawGameRecordsStay": "Oyun kayıtları bu cihazda kalır; hesabınıza yalnız günlük özetler gider. Reklam yok.",
   "@familyProfilesAndRawGameRecordsStay": {
     "description": "Family area interface copy."
   },
@@ -1070,7 +1070,7 @@
   "paywallClose": "Kapat",
   "paywallOneTimeShort": "Bir kez öde",
   "familyCloudSync": "Günlük özetleri buluta gönder",
-  "familyCloudSyncNote": "Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.",
+  "familyCloudSyncNote": "Günlük özet (oyun, süre, tur) Google hesabınıza kaydedilir. Çocuğun adı gönderilmez.",
   "welcomeFreeTrial": "Tüm oyunları {days} gün ücretsiz deneyin",
   "paywallBestValue": "En avantajlı",
   "paywallPerMonth": "{price}/ay",
@@ -1105,5 +1105,9 @@
   "familyPaymentNone": "Ödeme yok",
   "familyPaymentTrial": "Ödeme yok · Google hesabıyla deneme",
   "familyPaymentPlay": "Google Play",
-  "familyPlanCardTitle": "Hesap"
+  "familyPlanCardTitle": "Hesap",
+  "familyGamesPremiumTitle": "Oyunları çocuğunuza göre seçin",
+  "familyGamesPremiumBody": "Oyunları açıp kapatma Premium ve ücretsiz denemede var.",
+  "familyGamesShownCount": "{total} oyundan {shown} açık",
+  "familyMoreProfilesPremium": "Daha fazla çocuk profili Premium ile"
 }

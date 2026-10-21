@@ -764,15 +764,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
   );
 
   List<Widget> _compactGamePages() => [
-    _familyCard(
-      SwitchListTile(
-        contentPadding: EdgeInsets.zero,
-        title: Text(l10n.familyShowUnlockedGamesOnly),
-        subtitle: Text(l10n.familyHidesLockedCardsInChildMode),
-        value: s.onlyFree,
-        onChanged: (value) => s.setting('onlyFree', '$value'),
-      ),
-    ),
+    if (!_canChooseGames) _gamesPremiumCard(),
     for (final theme in s.content.themes)
       for (final id in s.allGamesForTheme(theme.id))
         _familyCard(
@@ -962,7 +954,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
         SwitchListTile(
           contentPadding: EdgeInsets.zero,
           title: Text(l10n.familyIntroduceNewItemsFirst),
-          subtitle: Text(l10n.familyShowOneCardFirstThenOffer),
+          subtitle: Text(
+            l10n.familyShowOneCardFirstThenOffer,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
           value: s.introduction,
           onChanged: (value) => s.setting('introduction', '$value'),
         ),
@@ -971,7 +966,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
         SwitchListTile(
           contentPadding: EdgeInsets.zero,
           title: Text(l10n.familyAdaptiveDifficulty),
-          subtitle: Text(l10n.familyChangesApplyOnlyWhenANew),
+          subtitle: Text(
+            l10n.familyChangesApplyOnlyWhenANew,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
           value: s.automaticDifficulty,
           onChanged: (value) => s.setting('automaticDifficulty', '$value'),
         ),
@@ -1491,73 +1489,138 @@ class _FamilyScreenState extends State<FamilyScreen> {
   }
 
   List<Widget> _games() => [
-    SegCard(
-      child: SwitchListTile(
-        contentPadding: EdgeInsets.zero,
-        title: Text(l10n.familyShowUnlockedGamesOnly),
-        subtitle: Text(l10n.familyHidesLockedCardsInChildMode),
-        value: s.onlyFree,
-        onChanged: (v) => s.setting('onlyFree', '$v'),
-      ),
-    ),
-    const SizedBox(height: SegSpace.s3),
-    Text(
-      l10n.familyGamesShownNote(s.active?.nickname ?? ''),
-      style: SegText.caption.copyWith(color: SegColors.inkSoft),
-    ),
-    const SizedBox(height: SegSpace.s3),
-    ...s.content.themes
-        .where((theme) => s.allGamesForTheme(theme.id).isNotEmpty)
-        .map(
-          (theme) => Padding(
-            padding: const EdgeInsets.only(bottom: SegSpace.s4),
-            child: SegCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(theme.name(s.locale), style: SegText.heading),
-                  const SizedBox(height: SegSpace.s2),
-                  for (final id in s.allGamesForTheme(theme.id))
-                    _gameSwitch(theme.id, id),
-                ],
+    if (!_canChooseGames) _gamesPremiumCard(),
+    for (final theme in s.content.themes)
+      if (s.allGamesForTheme(theme.id).isNotEmpty) _themeGames(theme.id),
+  ];
+
+  /// Choosing games is Premium (the free trial included).
+  bool get _canChooseGames => s.entitlement.isPremium;
+
+  Widget _gamesPremiumCard() => SegCard(
+    key: const ValueKey('games-premium-card'),
+    padding: const EdgeInsets.all(SegSpace.s4),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Icon(Icons.tune_rounded, color: SegColors.accentDeep),
+            const SizedBox(width: SegSpace.s2),
+            Expanded(
+              child: Text(
+                l10n.familyGamesPremiumTitle,
+                style: SegText.label.copyWith(color: SegColors.ink),
               ),
             ),
+          ],
+        ),
+        const SizedBox(height: SegSpace.s1),
+        Text(
+          l10n.familyGamesPremiumBody,
+          style: SegText.caption.copyWith(color: SegColors.inkSoft),
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: TextButton(
+            onPressed: () => context.go('/family/subscription'),
+            child: Text(l10n.familyPremiumStripBuy),
           ),
         ),
-  ];
+      ],
+    ),
+  );
+
+  /// One theme: a header with a switch for all of its games; tap to open the
+  /// single games.
+  Widget _themeGames(String themeId) {
+    final theme = s.content.theme(themeId);
+    final games = s.allGamesForTheme(themeId);
+    final shown = games
+        .where((g) => !s.hiddenGames.contains('${themeId}_$g'))
+        .length;
+    final editable = _canChooseGames && s.familyUnlocked;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: SegSpace.s3),
+      child: SegCard(
+        padding: EdgeInsets.zero,
+        child: Theme(
+          data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+          child: ExpansionTile(
+            key: PageStorageKey('games-$themeId'),
+            tilePadding: const EdgeInsets.fromLTRB(
+              SegSpace.s4,
+              SegSpace.s1,
+              SegSpace.s2,
+              SegSpace.s1,
+            ),
+            childrenPadding: const EdgeInsets.fromLTRB(
+              SegSpace.s4,
+              0,
+              SegSpace.s2,
+              SegSpace.s2,
+            ),
+            shape: const Border(),
+            collapsedShape: const Border(),
+            title: Text(theme.name(s.locale), style: SegText.heading),
+            subtitle: Text(
+              l10n.familyGamesShownCount(shown, games.length),
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Switch(
+                  key: ValueKey('theme-switch-$themeId'),
+                  value: shown > 0,
+                  onChanged: editable
+                      ? (value) => s.setThemeShown(themeId, value)
+                      : null,
+                ),
+                const Icon(Icons.expand_more_rounded),
+              ],
+            ),
+            children: [for (final id in games) _gameSwitch(themeId, id)],
+          ),
+        ),
+      ),
+    );
+  }
 
   /// One game of a theme: shown to the child or not (per profile).
   Widget _gameSwitch(String theme, String id) {
-    final free = s.configuration.freeGames.contains('${theme}_$id');
     final shown = !s.hiddenGames.contains('${theme}_$id');
     return SwitchListTile(
       key: ValueKey('game-switch-${theme}_$id'),
       contentPadding: EdgeInsets.zero,
-      secondary: Icon(
-        s.entitlement.isPremium || free
-            ? Icons.play_circle_outline_rounded
-            : Icons.lock_outline_rounded,
-        color: shown ? SegColors.primary : SegColors.inkFaint,
-      ),
-      title: Text(s.content.game(id).name(s.locale)),
-      subtitle: Text(
-        !s.entitlement.isPremium && free
-            ? l10n.familyEasyAndMediumUnlocked
-            : l10n.familyPremium,
+      dense: true,
+      title: Text(
+        s.content.game(id).name(s.locale),
+        style: SegText.body.copyWith(
+          color: shown ? SegColors.ink : SegColors.inkSoft,
+        ),
       ),
       value: shown,
-      onChanged: s.familyUnlocked
+      onChanged: _canChooseGames && s.familyUnlocked
           ? (value) => s.setGameShown(theme, id, value)
           : null,
     );
   }
 
   List<Widget> _profiles() => [
+    _accountCard(),
+    const SizedBox(height: SegSpace.s2),
+    SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.only(left: SegSpace.s1, top: SegSpace.s2),
+        child: Text(l10n.familyProfiles, style: SegText.heading),
+      ),
+    ),
     ...s.profiles.map(
       (profile) => SegCard(
         child: ListTile(
           title: Text(profile.nickname, style: SegText.heading),
-          subtitle: Text(l10n.familyStoredOnThisDevice),
           leading: InitialAvatar(name: profile.nickname, size: 44),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
@@ -1660,24 +1723,36 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ),
       ),
     ),
-    const SizedBox(height: SegSpace.s5),
-    SegButton(
-      label: l10n.familyProfileAction(
-        s.profiles.length < (s.entitlement.isPremium ? 5 : 1) ? 0 : 2,
+    const SizedBox(height: SegSpace.s2),
+    if (s.profiles.length < s.profileLimit)
+      SegButton(
+        key: const ValueKey('profile-add'),
+        label: l10n.familyProfileAction(0),
+        icon: Icons.person_add_alt_rounded,
+        secondary: true,
+        onPressed: () => context.go('/family/profile/new'),
+      )
+    else if (s.profileLimit == 1)
+      SegCard(
+        key: const ValueKey('profile-add-premium'),
+        padding: const EdgeInsets.all(SegSpace.s4),
+        child: Row(
+          children: [
+            const Icon(Icons.group_add_rounded, color: SegColors.accentDeep),
+            const SizedBox(width: SegSpace.s3),
+            Expanded(
+              child: Text(
+                l10n.familyMoreProfilesPremium,
+                style: SegText.label.copyWith(color: SegColors.ink),
+              ),
+            ),
+            TextButton(
+              onPressed: () => context.go('/family/subscription'),
+              child: Text(l10n.familyPremiumStripBuy),
+            ),
+          ],
+        ),
       ),
-      icon: Icons.person_add_alt_rounded,
-      onPressed: () => context.go(
-        s.profiles.length < (s.entitlement.isPremium ? 5 : 1)
-            ? '/family/profile/new'
-            : '/family/subscription',
-      ),
-    ),
-    if (!s.entitlement.isPremium) ...[
-      const SizedBox(height: SegSpace.s3),
-      Text(l10n.familyTheFreeVersionIncludesOneChild),
-    ],
-    const SizedBox(height: SegSpace.s5),
-    _accountCard(),
   ];
 
   /// What the family has: plan, how it was paid, trial days, and the way to
@@ -1774,30 +1849,29 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 style: SegText.caption.copyWith(color: SegColors.inkSoft),
               ),
             ),
-          const SizedBox(height: SegSpace.s3),
-          Wrap(
-            spacing: SegSpace.s2,
-            runSpacing: SegSpace.s1,
-            children: [
-              if (e.source == PremiumSource.subscription)
-                OutlinedButton(
-                  onPressed: () => context.go('/family/subscription'),
-                  child: Text(l10n.subscriptionManage),
-                )
-              else if (!e.isPaid)
-                FilledButton(
-                  key: const ValueKey('family-account-premium'),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: SegColors.accentStrong,
-                  ),
-                  onPressed: () => context.go('/family/subscription'),
-                  child: Text(l10n.familyPremiumStripBuy),
-                ),
-              OutlinedButton(
-                onPressed: () => context.go('/family/account'),
-                child: Text(l10n.familyGoogleFamilyAccount),
-              ),
-            ],
+          const SizedBox(height: SegSpace.s4),
+          if (e.source == PremiumSource.subscription)
+            SegButton(
+              label: l10n.subscriptionManage,
+              icon: Icons.settings_rounded,
+              secondary: true,
+              onPressed: () => context.go('/family/subscription'),
+            )
+          else if (!e.isPaid)
+            SegButton(
+              key: const ValueKey('family-account-premium'),
+              label: e.trialUsed
+                  ? l10n.familyPremiumStripBuy
+                  : l10n.paywallStartTrial(e.trialDays),
+              icon: Icons.workspace_premium_rounded,
+              onPressed: () => context.go('/family/subscription'),
+            ),
+          const SizedBox(height: SegSpace.s2),
+          SegButton(
+            label: l10n.familyGoogleFamilyAccount,
+            icon: Icons.account_circle_outlined,
+            secondary: true,
+            onPressed: () => context.go('/family/account'),
           ),
         ],
       ),
@@ -1810,7 +1884,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(l10n.familyDailyScreenTimeLimit, style: SegText.item),
-          Text(l10n.familyCountsActivePlayTimeABreak),
+          Text(
+            l10n.familyCountsActivePlayTimeABreak,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
           DropdownButton<int>(
             isExpanded: true,
             value: s.screenLimitMinutes,
@@ -1878,7 +1955,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
               if (value != null) s.setting('difficultyOverride', value);
             },
           ),
-          Text(l10n.familyAppliesToNewRoundsHardLevel),
+          Text(
+            l10n.familyAppliesToNewRoundsHardLevel,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
         ],
       ),
     ),
@@ -1934,7 +2014,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
             value: s.fadeWrongChoices,
             onChanged: (value) => s.setting('fadeWrongChoices', '$value'),
           ),
-          Text(l10n.familyAppliesToTheNextRoundIncorrect),
+          Text(
+            l10n.familyAppliesToTheNextRoundIncorrect,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
         ],
       ),
     ),
@@ -1950,7 +2033,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
             value: s.cloudSync,
             onChanged: (value) => s.setting('cloudSync', '$value'),
           ),
-          Text(l10n.familyCloudSyncNote),
+          Text(
+            l10n.familyCloudSyncNote,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
         ],
       ),
     ),
@@ -1959,7 +2045,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         title: Text(l10n.familyDailyMinuteGoal),
-        subtitle: Text(l10n.familyAnOptionalReminderItDoesNot),
+        subtitle: Text(
+          l10n.familyAnOptionalReminderItDoesNot,
+          style: SegText.caption.copyWith(color: SegColors.inkSoft),
+        ),
         trailing: DropdownButton<int>(
           value: s.dailyGoalMinutes,
           items: [
@@ -2004,14 +2093,20 @@ class _FamilyScreenState extends State<FamilyScreen> {
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(l10n.familyIntroduceNewItemsFirst),
-            subtitle: Text(l10n.familyShowOneCardFirstThenOffer),
+            subtitle: Text(
+              l10n.familyShowOneCardFirstThenOffer,
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
             value: s.introduction,
             onChanged: (v) => s.setting('introduction', '$v'),
           ),
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(l10n.familyAdaptiveDifficulty),
-            subtitle: Text(l10n.familyChangesApplyOnlyWhenANew),
+            subtitle: Text(
+              l10n.familyChangesApplyOnlyWhenANew,
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
             value: s.automaticDifficulty,
             onChanged: (v) => s.setting('automaticDifficulty', '$v'),
           ),
@@ -2096,7 +2191,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
         children: [
           Text(l10n.familyPremium, style: SegText.heading),
           const SizedBox(height: SegSpace.s4),
-          Text(l10n.familySubscriptionPricesAndTrialEligibilityCome),
+          Text(
+            l10n.familySubscriptionPricesAndTrialEligibilityCome,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
           const SizedBox(height: SegSpace.s4),
           SegButton(
             label: l10n.familyPlansAndRestore,
@@ -2121,9 +2219,15 @@ class _FamilyScreenState extends State<FamilyScreen> {
             child: Text(l10n.familyCreditsAndLicenses),
           ),
           const SizedBox(height: SegSpace.s4),
-          Text(l10n.familyProfilesAndRawGameRecordsStay),
+          Text(
+            l10n.familyProfilesAndRawGameRecordsStay,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
           const SizedBox(height: SegSpace.s4),
-          Text(l10n.familyDoesNotReplaceProfessionalSupport),
+          Text(
+            l10n.familyDoesNotReplaceProfessionalSupport,
+            style: SegText.caption.copyWith(color: SegColors.inkSoft),
+          ),
         ],
       ),
     ),

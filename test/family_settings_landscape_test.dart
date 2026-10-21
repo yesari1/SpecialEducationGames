@@ -91,10 +91,12 @@ void main() {
   Future<void> findByHorizontalPaging(
     WidgetTester tester,
     String copy,
-    String tag,
-  ) async {
+    String tag, {
+    Finder? target,
+  }) async {
+    final wanted = target ?? find.text(copy);
     for (var attempt = 0; attempt < 20; attempt++) {
-      if (find.text(copy).evaluate().isNotEmpty) return;
+      if (wanted.evaluate().isNotEmpty) return;
       final englishNext = find.byTooltip('Next section');
       final turkishNext = find.byTooltip('Sonraki bölüm');
       final next = englishNext.evaluate().isNotEmpty
@@ -122,7 +124,7 @@ void main() {
       }
       await tester.pumpAndSettle();
     }
-    expect(find.text(copy), findsWidgets, reason: '$tag copy reachable');
+    expect(wanted, findsWidgets, reason: '$tag copy reachable');
   }
 
   testWidgets('family sections stay bounded and text remains reachable', (
@@ -164,9 +166,7 @@ void main() {
             await selectTab(tester, 1);
             await findByHorizontalPaging(
               tester,
-              locale == 'tr'
-                  ? 'Yalnızca açık oyunları göster'
-                  : 'Show unlocked games only',
+              locale == 'tr' ? 'Hayvanlar' : 'Animals',
               '$tag games',
             );
             expectNoVerticalScroll(tester, '$tag games');
@@ -175,7 +175,9 @@ void main() {
             await findByHorizontalPaging(tester, 'Mina', '$tag profiles');
             await findByHorizontalPaging(
               tester,
-              locale == 'tr' ? 'Daha fazla profil' : 'More profiles',
+              locale == 'tr'
+                  ? 'Daha fazla çocuk profili Premium ile'
+                  : 'More child profiles with Premium',
               '$tag profile limit',
             );
             expectNoVerticalScroll(tester, '$tag profiles');
@@ -285,7 +287,12 @@ void main() {
       expect(state.hasParentPin, isTrue);
 
       await selectTab(tester, 2);
-      await findByHorizontalPaging(tester, 'Mina', 'profile deletion entry');
+      await findByHorizontalPaging(
+        tester,
+        'Mina',
+        'profile deletion entry',
+        target: find.byType(PopupMenuButton<String>),
+      );
       await tester.tap(find.byType(PopupMenuButton<String>));
       await tester.pumpAndSettle();
       await tester.tap(
@@ -329,7 +336,12 @@ void main() {
       state.locale = 'en';
       await mount(tester, state, const Size(800, 360), 2);
       await selectTab(tester, 2);
-      await findByHorizontalPaging(tester, nickname, '24-character profile');
+      await findByHorizontalPaging(
+        tester,
+        nickname,
+        '24-character profile',
+        target: find.byType(PopupMenuButton<String>),
+      );
       expectNoVerticalScroll(tester, '24-character profile label');
       final label = tester.getRect(find.text(nickname).first);
       expect(label.left, greaterThanOrEqualTo(-0.5));

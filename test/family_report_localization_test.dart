@@ -3,6 +3,8 @@ import 'package:drift/drift.dart' show Value;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -19,6 +21,9 @@ void main() {
 
   setUpAll(() async {
     content = await ContentRepository.load();
+    // The app gets these from its localization delegates.
+    await initializeDateFormatting('tr');
+    await initializeDateFormatting('en');
   });
 
   Future<AppState> makeState() async {
@@ -125,7 +130,7 @@ void main() {
       scale: 1,
     );
     expect(
-      find.textContaining('İlk oyundan sonra gelişimi burada görebilirsiniz.'),
+      find.textContaining('Grafikler ilk oyundan sonra dolar.'),
       findsOneWidget,
     );
     await tester.pumpWidget(const SizedBox());
@@ -186,14 +191,15 @@ void main() {
         expect(
           find.text(
             locale == 'en'
-                ? 'Progress will appear here after the first game.'
-                : 'İlk oyundan sonra gelişimi burada görebilirsiniz.',
+                ? 'Charts fill in after the first game.'
+                : 'Grafikler ilk oyundan sonra dolar.',
           ),
           findsNothing,
         );
         final day = report.days.last;
         final semanticsLabel =
-            '${day.date.day}/${day.date.month}: 2.0 ${locale == 'en' ? 'minutes' : 'dakika'}';
+            '${DateFormat.MMMd(locale).format(day.date)}: 2 '
+            '${locale == 'en' ? 'minutes' : 'dakika'}';
         final semantics = find.byWidgetPredicate(
           (widget) =>
               widget is Semantics && widget.properties.label == semanticsLabel,
@@ -237,9 +243,7 @@ void main() {
           .isEmpty) {
         await tester.tap(
           find.text(
-            locale == 'en'
-                ? 'Independently answered'
-                : 'Bağımsız yanıtladıkları',
+            locale == 'en' ? 'Knows on their own' : 'Kendi başına biliyor',
           ),
         );
       }
@@ -247,8 +251,8 @@ void main() {
       expect(
         find.text(
           locale == 'en'
-              ? 'Items appear here after at least three observations.'
-              : 'En az üç aşamanın ardından burada öğeler görünür.',
+              ? 'Shown after three tries.'
+              : 'Üç denemeden sonra görünür.',
         ),
         findsOneWidget,
       );
@@ -291,9 +295,7 @@ void main() {
           .isEmpty) {
         await tester.tap(
           find.text(
-            locale == 'en'
-                ? 'Independently answered'
-                : 'Bağımsız yanıtladıkları',
+            locale == 'en' ? 'Knows on their own' : 'Kendi başına biliyor',
           ),
         );
       }
@@ -353,28 +355,18 @@ void main() {
         scale: 1,
       );
       expect(
-        find.text(
-          locale == 'en'
-              ? 'Attention · daily average seconds'
-              : 'Dikkat · günlük ortalama saniye',
-        ),
+        find.text(locale == 'en' ? 'Attention (sec)' : 'Dikkat (sn)'),
         findsOneWidget,
       );
       expect(
-        find.textContaining(
-          locale == 'en'
-              ? '0–1.25 seconds. Time in the background is excluded.'
-              : '0–1.25 saniye. Arka planda geçen süre dahil değildir.',
-        ),
+        find.text(locale == 'en' ? 'First answer' : 'İlk cevap'),
         findsOneWidget,
       );
-      await tester.tap(
-        find.text(locale == 'en' ? 'Numeric view' : 'Sayısal görünüm'),
-      );
-      await tester.pumpAndSettle();
       expect(
-        find.textContaining(
-          locale == 'en' ? 'First response: 1.3 s' : 'İlk tepki: 1.3 sn',
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is Semantics &&
+              (widget.properties.label ?? '').contains('1.3'),
         ),
         findsOneWidget,
       );
@@ -389,19 +381,11 @@ void main() {
         scale: 1,
       );
       expect(
-        find.text(locale == 'en' ? 'Skill areas' : 'Beceri alanları'),
+        find.text(locale == 'en' ? 'Skills' : 'Beceriler'),
         findsOneWidget,
       );
       expect(
         find.textContaining(locale == 'en' ? '3 stages' : '3 aşama'),
-        findsOneWidget,
-      );
-      expect(
-        find.textContaining(
-          locale == 'en'
-              ? '0 points · compared with the previous week'
-              : '0 puan · önceki haftaya göre',
-        ),
         findsOneWidget,
       );
       expect(tester.takeException(), isNull);

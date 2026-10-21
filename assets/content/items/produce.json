@@ -298,19 +298,19 @@
       "assets/images/produce/orange_real.png": {
         "id": "produce.orange",
         "path": "assets/images/produce/orange_real.png",
-        "author": "Renee Comet (Photographer), National Cancer Institute",
-        "source": "https://commons.wikimedia.org/wiki/File:Orange_(1).jpg",
-        "original": "artifacts/photo_samples/batch2_source/orange.jpg",
-        "originalSha256": "08932e9acd8302a6577c9cc1989effdb95ed97064be67b4bec9852e251ef5b8b",
-        "license": "Public domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-        "adaptationLicense": "Public domain",
+        "author": "Evan-Amos",
+        "source": "https://commons.wikimedia.org/wiki/File:Orange-Whole-%26-Split.jpg",
+        "original": "artifacts/photo-replacements-r44/orange/attempt-09/originals/source.jpg",
+        "originalSha256": "bff01adc35ba190f0b22c3ef5d238fd7da04ec6f6c7a272879f78c0dc1aa452f",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "adaptationLicense": "CC BY-SA 3.0",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-16",
-        "processing": "tools/rebuild_legacy_real_photos.ps1",
+        "licenseVerifiedOn": "2026-10-21",
+        "processing": "Border-connected neutral near-white removal within whole-fruit ROI; original RGB retained; tools/adapt_cutout_photo.py (1024x1024 RGBA, 912px max extent, 4px white outline).",
         "whiteOutlinePixels": 4,
-        "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
-        "sha256": "9d8d711eb18c61af0b11198c5210f7985630b4180c2b6f225c7497ecf52e6354"
+        "changes": "Removed border-connected neutral near-white original background from a generous manually isolated whole-orange ROI; enclosed highlights and stem retained; preserved source RGB; aspect-preserving resize to 912px maximum subject extent, centered on 1024x1024 RGBA canvas with 4px white outline.",
+        "sha256": "ad4d8f62d69fcb3c9462c9364a75e0ba21e57b8aa6bee8f2f6f73e5f8b844799"
       }
     }
   },

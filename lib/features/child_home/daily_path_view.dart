@@ -4,10 +4,8 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/day_sticker.dart';
-import '../../app/ui/game_object.dart';
-import '../../app/ui/scene_backdrop.dart';
-import '../../core/content/content_repository.dart';
 import '../../l10n/scoped_localizations.dart';
+import 'home_screen.dart' show gameIcon;
 
 class DailyPathView extends StatelessWidget {
   final AppState state;
@@ -25,19 +23,45 @@ class DailyPathView extends StatelessWidget {
         ),
       );
     }
+    final nextIndex = progress.steps.indexWhere(
+      (x) => !progress.completed.contains(x),
+    );
     return Column(
       children: [
+        // Today's progress: one coloured segment per step, then the sticker.
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+          padding: const EdgeInsets.fromLTRB(24, 4, 12, 0),
           child: Row(
             children: [
               Expanded(
-                child: Text(
-                  state.hasTodaySticker
-                      ? l10n.dailyPathYouEarnedTodaysSticker
-                      : l10n.dailyPathEachCompletedGameIsOneStep,
-                  style: SegText.label.copyWith(color: SegColors.inkSoft),
+                child: Row(
+                  children: [
+                    for (var i = 0; i < progress.steps.length; i++)
+                      Expanded(
+                        child: Container(
+                          height: 12,
+                          margin: const EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                            color:
+                                progress.completed.contains(progress.steps[i])
+                                ? SegColors.turquoise
+                                : i == nextIndex
+                                ? SegColors.accent.withValues(alpha: .45)
+                                : SegColors.line,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
+              ),
+              const SizedBox(width: SegSpace.s2),
+              Icon(
+                Icons.emoji_events_rounded,
+                color: state.hasTodaySticker
+                    ? SegColors.starDeep
+                    : SegColors.inkFaint,
+                size: 28,
               ),
               TextButton.icon(
                 key: const ValueKey('sticker-album'),
@@ -49,133 +73,58 @@ class DailyPathView extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final textScale = MediaQuery.textScalerOf(context).scale(1);
-              final compact = constraints.maxHeight < 340 || textScale >= 1.6;
-              final nodeSize = compact
-                  ? textScale >= 1.6
-                        ? 44.0
-                        : (constraints.maxHeight * .48).clamp(48.0, 104.0)
-                  : 108.0;
-              return ListView.separated(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.fromLTRB(24, 4, 24, 12),
-                itemCount: progress.steps.length,
-                separatorBuilder: (_, _) => Center(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      for (var dot = 0; dot < 3; dot++)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 3),
-                          child: const CircleAvatar(
-                            radius: 4,
-                            backgroundColor: Color(0x5510B7B0),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-                itemBuilder: (context, index) {
-                  final key = progress.steps[index];
-                  final parts = key.split('_');
-                  final theme = state.content.theme(parts[0]);
-                  final game = state.content.game(parts[1]);
-                  final done = progress.completed.contains(key);
-                  // The first unfinished step is the one to play next.
-                  final next =
-                      !done &&
-                      progress.steps.indexWhere(
-                            (x) => !progress.completed.contains(x),
-                          ) ==
-                          index;
-                  final hero = state.content.items.firstWhere(
-                    (x) => x.id == theme.hero,
-                  );
-                  return SizedBox(
-                    width: compact ? (textScale >= 1.6 ? 400 : 240) : 194,
-                    child: Semantics(
-                      button: true,
-                      label:
-                          '${game.name(state.locale)}, ${theme.name(state.locale)}, ${done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
-                      child: PressableObject(
-                        key: ValueKey('daily-step-$key'),
-                        pivot: Alignment.center,
-                        depth: .5,
-                        onTap: () =>
-                            context.go('/game/${parts[0]}/${parts[1]}/easy'),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: compact
-                              ? Row(
-                                  children: [
-                                    _pathNode(
-                                      theme,
-                                      hero,
-                                      done,
-                                      next,
-                                      nodeSize,
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            l10n.dailyPathStepTitle(
-                                              index + 1,
-                                              game.name(state.locale),
-                                            ),
-                                            style: SegText.label,
-                                          ),
-                                          Text(
-                                            theme.name(state.locale),
-                                            style: SegText.caption.copyWith(
-                                              color: SegColors.inkSoft,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              : Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    _pathNode(
-                                      theme,
-                                      hero,
-                                      done,
-                                      next,
-                                      nodeSize,
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      l10n.dailyPathStepTitle(
-                                        index + 1,
-                                        game.name(state.locale),
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: SegText.label,
-                                    ),
-                                    Text(
-                                      theme.name(state.locale),
-                                      textAlign: TextAlign.center,
-                                      style: SegText.caption.copyWith(
-                                        color: SegColors.inkSoft,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                        ),
+          child: HorizontalCards(
+            count: progress.steps.length,
+            builder: (index) {
+              final key = progress.steps[index];
+              final parts = key.split('_');
+              final theme = state.content.theme(parts[0]);
+              final game = state.content.game(parts[1]);
+              final done = progress.completed.contains(key);
+              final next = index == nextIndex;
+              final hero = state.content.items.firstWhere(
+                (x) => x.id == theme.hero,
+              );
+              final card = ThemeGameCard(
+                theme: theme,
+                title: game.name(state.locale),
+                subtitle: '',
+                badgeText: done
+                    ? l10n.dailyPathCompleted
+                    : l10n.dailyPathStepTitle(
+                        index + 1,
+                        theme.name(state.locale),
                       ),
-                    ),
-                  );
-                },
+                visual: done
+                    ? const FittedBox(
+                        child: Icon(Icons.star_rounded, color: SegColors.star),
+                      )
+                    : ItemVisual(hero, alignment: Alignment.bottomCenter),
+                normalizedVisual: done,
+                modeIcon: done ? Icons.check_rounded : gameIcon(game.id),
+                onTap: () => context.go('/game/${parts[0]}/${parts[1]}/easy'),
+              );
+              return Semantics(
+                key: ValueKey('daily-step-$key'),
+                label:
+                    '${game.name(state.locale)}, ${theme.name(state.locale)}, '
+                    '${done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
+                child: next
+                    // The step to play next glows orange.
+                    ? DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(SegRadius.lg + 4),
+                          boxShadow: [
+                            BoxShadow(
+                              color: SegColors.accent.withValues(alpha: .45),
+                              blurRadius: 18,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: card,
+                      )
+                    : card,
               );
             },
           ),
@@ -191,53 +140,6 @@ class DailyPathView extends StatelessWidget {
       builder: (_) => StickerAlbumDialog(state: state, days: days),
     );
   }
-
-  /// A path stone: a tiny scene with the theme's object, a gold star once
-  /// done, and a soft orange ring around the step to play next.
-  Widget _pathNode(
-    ContentTheme theme,
-    ContentItem hero,
-    bool done,
-    bool next,
-    double nodeSize,
-  ) => Container(
-    width: nodeSize,
-    height: nodeSize,
-    decoration: BoxDecoration(
-      color: done ? SegColors.star : Colors.white,
-      shape: BoxShape.circle,
-      border: Border.all(
-        color: next ? SegColors.accent : Colors.white,
-        width: next ? 5 : 4,
-      ),
-      boxShadow: [
-        BoxShadow(
-          color: (next ? SegColors.accent : SegColors.ink).withValues(
-            alpha: next ? .25 : .09,
-          ),
-          blurRadius: next ? 16 : 12,
-          offset: const Offset(0, 4),
-        ),
-      ],
-    ),
-    child: ClipOval(
-      child: done
-          ? Icon(
-              Icons.star_rounded,
-              size: nodeSize * .55,
-              color: SegColors.starDeep,
-            )
-          : SceneBackdrop(
-              tint: theme.accent,
-              base: theme.bg,
-              clouds: false,
-              child: Padding(
-                padding: EdgeInsets.all(nodeSize * .14),
-                child: ItemVisual(hero, alignment: Alignment.bottomCenter),
-              ),
-            ),
-    ),
-  );
 }
 
 class StickerAlbumDialog extends StatefulWidget {

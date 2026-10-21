@@ -293,23 +293,23 @@
   "@familyLast7Days": {
     "description": "Family area interface copy."
   },
-  "familyPlayTimeMinutes": "Play time · minutes",
+  "familyPlayTimeMinutes": "Play time (min)",
   "@familyPlayTimeMinutes": {
     "description": "Family area interface copy."
   },
-  "familyIndependentFirstAnswers": "Independent first answers · %",
+  "familyIndependentFirstAnswers": "Correct on their own (%)",
   "@familyIndependentFirstAnswers": {
     "description": "Family area interface copy."
   },
-  "familyProgressWillAppearHereAfterThe": "Progress will appear here after the first game.",
+  "familyProgressWillAppearHereAfterThe": "Charts fill in after the first game.",
   "@familyProgressWillAppearHereAfterThe": {
     "description": "Family area interface copy."
   },
-  "familyAttentionDailyAverageSeconds": "Attention · daily average seconds",
+  "familyAttentionDailyAverageSeconds": "Attention (sec)",
   "@familyAttentionDailyAverageSeconds": {
     "description": "Family area interface copy."
   },
-  "familyFirstResponse": "First response",
+  "familyFirstResponse": "First answer",
   "@familyFirstResponse": {
     "description": "Family area interface copy."
   },
@@ -317,7 +317,7 @@
   "@familyS": {
     "description": "Family area interface copy."
   },
-  "familyIdleTime": "Idle time",
+  "familyIdleTime": "Waiting",
   "@familyIdleTime": {
     "description": "Family area interface copy."
   },
@@ -338,7 +338,7 @@
   "@familyNumericView": {
     "description": "Family area interface copy."
   },
-  "familySkillAreas": "Skill areas",
+  "familySkillAreas": "Skills",
   "@familySkillAreas": {
     "description": "Family area interface copy."
   },
@@ -371,15 +371,15 @@
   "@familyIndependentLastThreeAnswersWithoutHints": {
     "description": "Family area interface copy."
   },
-  "familyIndependentlyAnswered": "Independently answered",
+  "familyIndependentlyAnswered": "Knows on their own",
   "@familyIndependentlyAnswered": {
     "description": "Family area interface copy."
   },
-  "familyItemsNeedingMoreSupport": "Items needing more support",
+  "familyItemsNeedingMoreSupport": "Needs more help",
   "@familyItemsNeedingMoreSupport": {
     "description": "Family area interface copy."
   },
-  "familyItemsAppearHereAfterAtLeast": "Items appear here after at least three observations.",
+  "familyItemsAppearHereAfterAtLeast": "Shown after three tries.",
   "@familyItemsAppearHereAfterAtLeast": {
     "description": "Family area interface copy."
   },
@@ -419,7 +419,7 @@
   "@familyDailyScreenTimeLimit": {
     "description": "Family area interface copy."
   },
-  "familyCountsActivePlayTimeABreak": "Counts active play time. A break screen opens when time runs out.",
+  "familyCountsActivePlayTimeABreak": "A break screen opens when time is up.",
   "@familyCountsActivePlayTimeABreak": {
     "description": "Family area interface copy."
   },
@@ -464,7 +464,7 @@
   "@familyHard": {
     "description": "Family area interface copy."
   },
-  "familyAppliesToNewRoundsHardLevel": "Applies to new rounds. Hard level is included in Premium.",
+  "familyAppliesToNewRoundsHardLevel": "Hard level is Premium.",
   "@familyAppliesToNewRoundsHardLevel": {
     "description": "Family area interface copy."
   },
@@ -504,7 +504,7 @@
   "@familyFadeIncorrectChoicesAfter2Mistakes": {
     "description": "Family area interface copy."
   },
-  "familyAppliesToTheNextRoundIncorrect": "Applies to the next round. Incorrect answers still receive support when timed hints are off.",
+  "familyAppliesToTheNextRoundIncorrect": "Applies from the next round.",
   "@familyAppliesToTheNextRoundIncorrect": {
     "description": "Family area interface copy."
   },
@@ -524,7 +524,7 @@
       }
     }
   },
-  "familyAnOptionalReminderItDoesNot": "An optional reminder; it does not limit play time.",
+  "familyAnOptionalReminderItDoesNot": "A reminder only, play is not limited.",
   "@familyAnOptionalReminderItDoesNot": {
     "description": "Family area interface copy."
   },
@@ -552,7 +552,7 @@
   "@familyIntroduceNewItemsFirst": {
     "description": "Family area interface copy."
   },
-  "familyShowOneCardFirstThenOffer": "Show one card first, then offer choices.",
+  "familyShowOneCardFirstThenOffer": "One card first, then choices.",
   "@familyShowOneCardFirstThenOffer": {
     "description": "Family area interface copy."
   },
@@ -560,7 +560,7 @@
   "@familyAdaptiveDifficulty": {
     "description": "Family area interface copy."
   },
-  "familyChangesApplyOnlyWhenANew": "Changes apply only when a new round starts.",
+  "familyChangesApplyOnlyWhenANew": "Applies from the next round.",
   "@familyChangesApplyOnlyWhenANew": {
     "description": "Family area interface copy."
   },
@@ -600,7 +600,7 @@
   "@familyFull": {
     "description": "Parent setting for a brief enhanced correct-answer celebration."
   },
-  "familySubscriptionPricesAndTrialEligibilityCome": "Subscription prices and trial eligibility come from Google Play.",
+  "familySubscriptionPricesAndTrialEligibilityCome": "Prices come from Google Play.",
   "@familySubscriptionPricesAndTrialEligibilityCome": {
     "description": "Family area interface copy."
   },
@@ -620,7 +620,7 @@
   "@familyCreditsAndLicenses": {
     "description": "Family area interface copy."
   },
-  "familyProfilesAndRawGameRecordsStay": "Profiles and raw game records stay on this device. Only daily summaries are sent when you give permission and start sync in the account screen. No ads or advertising identifiers are used.",
+  "familyProfilesAndRawGameRecordsStay": "Game records stay on this device; only daily summaries go to your account. No ads.",
   "@familyProfilesAndRawGameRecordsStay": {
     "description": "Family area interface copy."
   },
@@ -1304,7 +1304,7 @@
   "@familyCloudSync": {
     "description": "Family settings: automatic cloud summary sync."
   },
-  "familyCloudSyncNote": "While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child's name is not sent.",
+  "familyCloudSyncNote": "A daily summary (game, minutes, rounds) is saved to your Google account. No child name.",
   "@familyCloudSyncNote": {
     "description": "Family settings: automatic cloud summary sync."
   },
@@ -1487,5 +1487,29 @@
   "familyPlanCardTitle": "Account",
   "@familyPlanCardTitle": {
     "description": "Family profiles tab: plan and payment card title."
+  },
+  "familyGamesPremiumTitle": "Choose the games for your child",
+  "@familyGamesPremiumTitle": {
+    "description": "Family area."
+  },
+  "familyGamesPremiumBody": "Turning games on and off comes with Premium and the free trial.",
+  "@familyGamesPremiumBody": {
+    "description": "Family area."
+  },
+  "familyGamesShownCount": "{shown} of {total} games on",
+  "@familyGamesShownCount": {
+    "description": "Family area.",
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyMoreProfilesPremium": "More child profiles with Premium",
+  "@familyMoreProfilesPremium": {
+    "description": "Family area."
   }
 }

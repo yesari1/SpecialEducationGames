@@ -1173,3 +1173,11 @@ Son kullanım kontrolü: beş saatlik kalan %6, haftalık %85. Beş saatlik eşi
 
 ## 19 Ekim 10:50 — sessiz limit kontrolü
 - Beş saatlik kalan %51, haftalık %0 (<%2). Yeni kod/model/test işi başlatılmadı; R25 değişmedi. Haftalık reset24Ekim23:40:37Europe/Istanbul; mevcut yarım saat kontrolleri aktif, reset kredisi kullanılmadı.
+
+
+## 21 October 2026 ? R44 photo replacements (partial)
+
+- Replaced only `produce.orange` at its existing path with the complete whole orange from Evan-Amos, Wikimedia Commons `Orange-Whole-&-Split.jpg`, CC BY-SA 3.0. Original RGB retained through background masking; unmodified `tools/adapt_cutout_photo.py` supplies 912 px framing, 1024x1024 RGBA and 4 px white outline. Updated only orange provenance/credits/manifest/bounds.
+- Independent validation: old backups match baseline for all five targets; orange has transparent corners and complete reviewed subject; re-adaptation reproduces its SHA-256 exactly; catalog behavior unchanged; manifest and bounds semantic changes limited to orange. Evidence: `artifacts/photo-replacements-r44/independent-validation.json`.
+- Remaining: mandarin and strawberry unchanged (candidate quality/occlusion/distinction issues; further Commons retrieval rate-limited). Watermelon and pasta unchanged because attempted masks retained background or lost subject edges. Existing watermelon remains a legacy 256x256 image. This does not complete the requested five replacements.
+- Sources, downloaded originals, masks, rejected numbered attempts, backups and read-only summary are preserved under `artifacts/photo-replacements-r44/`; see `SUMMARY.md` and additive `SUMMARY-CORRECTIONS.md`. No Flutter builds/tests were needed or run. Unrelated concurrently changing source files were preserved; this task made no Dart/test/l10n/pubspec/Android changes.

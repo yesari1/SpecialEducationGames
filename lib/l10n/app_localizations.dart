@@ -898,31 +898,31 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Play time · minutes'**
+  /// **'Play time (min)'**
   String get familyPlayTimeMinutes;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Independent first answers · %'**
+  /// **'Correct on their own (%)'**
   String get familyIndependentFirstAnswers;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Progress will appear here after the first game.'**
+  /// **'Charts fill in after the first game.'**
   String get familyProgressWillAppearHereAfterThe;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Attention · daily average seconds'**
+  /// **'Attention (sec)'**
   String get familyAttentionDailyAverageSeconds;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'First response'**
+  /// **'First answer'**
   String get familyFirstResponse;
 
   /// Family area interface copy.
@@ -934,7 +934,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Idle time'**
+  /// **'Waiting'**
   String get familyIdleTime;
 
   /// Family area interface copy.
@@ -958,7 +958,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Skill areas'**
+  /// **'Skills'**
   String get familySkillAreas;
 
   /// Family area interface copy.
@@ -1000,19 +1000,19 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Independently answered'**
+  /// **'Knows on their own'**
   String get familyIndependentlyAnswered;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Items needing more support'**
+  /// **'Needs more help'**
   String get familyItemsNeedingMoreSupport;
 
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Items appear here after at least three observations.'**
+  /// **'Shown after three tries.'**
   String get familyItemsAppearHereAfterAtLeast;
 
   /// Family area interface copy.
@@ -1060,7 +1060,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Counts active play time. A break screen opens when time runs out.'**
+  /// **'A break screen opens when time is up.'**
   String get familyCountsActivePlayTimeABreak;
 
   /// Family area interface copy.
@@ -1120,7 +1120,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Applies to new rounds. Hard level is included in Premium.'**
+  /// **'Hard level is Premium.'**
   String get familyAppliesToNewRoundsHardLevel;
 
   /// Family area interface copy.
@@ -1180,7 +1180,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Applies to the next round. Incorrect answers still receive support when timed hints are off.'**
+  /// **'Applies from the next round.'**
   String get familyAppliesToTheNextRoundIncorrect;
 
   /// Family area interface copy.
@@ -1198,7 +1198,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'An optional reminder; it does not limit play time.'**
+  /// **'A reminder only, play is not limited.'**
   String get familyAnOptionalReminderItDoesNot;
 
   /// Family area interface copy.
@@ -1240,7 +1240,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Show one card first, then offer choices.'**
+  /// **'One card first, then choices.'**
   String get familyShowOneCardFirstThenOffer;
 
   /// Family area interface copy.
@@ -1252,7 +1252,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Changes apply only when a new round starts.'**
+  /// **'Applies from the next round.'**
   String get familyChangesApplyOnlyWhenANew;
 
   /// Family area interface copy.
@@ -1312,7 +1312,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Subscription prices and trial eligibility come from Google Play.'**
+  /// **'Prices come from Google Play.'**
   String get familySubscriptionPricesAndTrialEligibilityCome;
 
   /// Family area interface copy.
@@ -1342,7 +1342,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Profiles and raw game records stay on this device. Only daily summaries are sent when you give permission and start sync in the account screen. No ads or advertising identifiers are used.'**
+  /// **'Game records stay on this device; only daily summaries go to your account. No ads.'**
   String get familyProfilesAndRawGameRecordsStay;
 
   /// Family area interface copy.
@@ -2380,7 +2380,7 @@ abstract class AppLocalizations {
   /// Family settings: automatic cloud summary sync.
   ///
   /// In en, this message translates to:
-  /// **'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.'**
+  /// **'A daily summary (game, minutes, rounds) is saved to your Google account. No child name.'**
   String get familyCloudSyncNote;
 
   /// Welcome page: trial banner above the start button.
@@ -2592,6 +2592,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account'**
   String get familyPlanCardTitle;
+
+  /// Family area.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the games for your child'**
+  String get familyGamesPremiumTitle;
+
+  /// Family area.
+  ///
+  /// In en, this message translates to:
+  /// **'Turning games on and off comes with Premium and the free trial.'**
+  String get familyGamesPremiumBody;
+
+  /// Family area.
+  ///
+  /// In en, this message translates to:
+  /// **'{shown} of {total} games on'**
+  String familyGamesShownCount(int shown, int total);
+
+  /// Family area.
+  ///
+  /// In en, this message translates to:
+  /// **'More child profiles with Premium'**
+  String get familyMoreProfilesPremium;
 }
 
 class _AppLocalizationsDelegate

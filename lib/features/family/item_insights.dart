@@ -60,10 +60,6 @@ class ItemInsights extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(l10n.familyItems, style: SegText.heading),
-          Text(
-            l10n.familyIndependentLastThreeAnswersWithoutHints,
-            style: SegText.caption,
-          ),
           section(
             l10n.familyIndependentlyAnswered,
             (x) => x.independentlyAnswered,

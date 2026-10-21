@@ -91,12 +91,13 @@ Changes: Decoded pixel RGBA checked identical after lossless96dpi working-copy n
 
 ## produce.orange
 
-File: assets/images/produce/orange_real.png
-Photo author: Renee Comet (Photographer), National Cancer Institute
-Source: https://commons.wikimedia.org/wiki/File:Orange_(1).jpg
-Source and adaptation license: Public domain — https://creativecommons.org/publicdomain/mark/1.0/
-Changes: Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.
-
+File: `assets/images/produce/orange_real.png`
+Photo author: Evan-Amos
+Source: https://commons.wikimedia.org/wiki/File:Orange-Whole-%26-Split.jpg
+License: CC BY-SA 3.0 - https://creativecommons.org/licenses/by-sa/3.0
+Original: `artifacts/photo-replacements-r44/orange/attempt-09/originals/source.jpg` (SHA-256 `bff01adc35ba190f0b22c3ef5d238fd7da04ec6f6c7a272879f78c0dc1aa452f`).
+Adapted PNG SHA-256: `ad4d8f62d69fcb3c9462c9364a75e0ba21e57b8aa6bee8f2f6f73e5f8b844799`.
+Changes: The complete whole orange was isolated from the separate half. Border-connected neutral near-white background was removed within a generous whole-fruit ROI; enclosed highlights and the stem were retained. Original photo RGB was preserved, then adapted with `tools/adapt_cutout_photo.py` to a 912 px maximum extent on a centered 1024x1024 RGBA canvas with a 4 px white outline. Attempt artifacts: `artifacts/photo-replacements-r44/orange/attempt-09/`.
 ## produce.pepper
 
 File: assets/images/produce/pepper_real.png

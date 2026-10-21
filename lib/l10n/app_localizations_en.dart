@@ -462,27 +462,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyLast7Days => 'Last 7 days';
 
   @override
-  String get familyPlayTimeMinutes => 'Play time · minutes';
+  String get familyPlayTimeMinutes => 'Play time (min)';
 
   @override
-  String get familyIndependentFirstAnswers => 'Independent first answers · %';
+  String get familyIndependentFirstAnswers => 'Correct on their own (%)';
 
   @override
   String get familyProgressWillAppearHereAfterThe =>
-      'Progress will appear here after the first game.';
+      'Charts fill in after the first game.';
 
   @override
-  String get familyAttentionDailyAverageSeconds =>
-      'Attention · daily average seconds';
+  String get familyAttentionDailyAverageSeconds => 'Attention (sec)';
 
   @override
-  String get familyFirstResponse => 'First response';
+  String get familyFirstResponse => 'First answer';
 
   @override
   String get familyS => 's';
 
   @override
-  String get familyIdleTime => 'Idle time';
+  String get familyIdleTime => 'Waiting';
 
   @override
   String get familyTimeInTheBackgroundIsExcluded =>
@@ -497,7 +496,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyNumericView => 'Numeric view';
 
   @override
-  String get familySkillAreas => 'Skill areas';
+  String get familySkillAreas => 'Skills';
 
   @override
   String get familyIndependentFirstAnswersInTheLast =>
@@ -523,14 +522,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Independent: last three answers without hints. Support: substantial help in at least two of the last three stages.';
 
   @override
-  String get familyIndependentlyAnswered => 'Independently answered';
+  String get familyIndependentlyAnswered => 'Knows on their own';
 
   @override
-  String get familyItemsNeedingMoreSupport => 'Items needing more support';
+  String get familyItemsNeedingMoreSupport => 'Needs more help';
 
   @override
-  String get familyItemsAppearHereAfterAtLeast =>
-      'Items appear here after at least three observations.';
+  String get familyItemsAppearHereAfterAtLeast => 'Shown after three tries.';
 
   @override
   String familyCountStagesLatestStreakAnswersIndependent(
@@ -561,7 +559,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyCountsActivePlayTimeABreak =>
-      'Counts active play time. A break screen opens when time runs out.';
+      'A break screen opens when time is up.';
 
   @override
   String get familyOff => 'Off';
@@ -593,8 +591,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyHard => 'Hard';
 
   @override
-  String get familyAppliesToNewRoundsHardLevel =>
-      'Applies to new rounds. Hard level is included in Premium.';
+  String get familyAppliesToNewRoundsHardLevel => 'Hard level is Premium.';
 
   @override
   String get familyRoundLength => 'Round length';
@@ -626,7 +623,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyAppliesToTheNextRoundIncorrect =>
-      'Applies to the next round. Incorrect answers still receive support when timed hints are off.';
+      'Applies from the next round.';
 
   @override
   String get familyDailyMinuteGoal => 'Daily minute goal';
@@ -638,7 +635,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyAnOptionalReminderItDoesNot =>
-      'An optional reminder; it does not limit play time.';
+      'A reminder only, play is not limited.';
 
   @override
   String get familyMin => 'min';
@@ -660,15 +657,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyIntroduceNewItemsFirst => 'Introduce new items first';
 
   @override
-  String get familyShowOneCardFirstThenOffer =>
-      'Show one card first, then offer choices.';
+  String get familyShowOneCardFirstThenOffer => 'One card first, then choices.';
 
   @override
   String get familyAdaptiveDifficulty => 'Adaptive difficulty';
 
   @override
-  String get familyChangesApplyOnlyWhenANew =>
-      'Changes apply only when a new round starts.';
+  String get familyChangesApplyOnlyWhenANew => 'Applies from the next round.';
 
   @override
   String get familyAudio => 'Audio';
@@ -699,7 +694,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familySubscriptionPricesAndTrialEligibilityCome =>
-      'Subscription prices and trial eligibility come from Google Play.';
+      'Prices come from Google Play.';
 
   @override
   String get familyPlansAndRestore => 'Plans and restore';
@@ -715,7 +710,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyProfilesAndRawGameRecordsStay =>
-      'Profiles and raw game records stay on this device. Only daily summaries are sent when you give permission and start sync in the account screen. No ads or advertising identifiers are used.';
+      'Game records stay on this device; only daily summaries go to your account. No ads.';
 
   @override
   String get familyDoesNotReplaceProfessionalSupport =>
@@ -1312,7 +1307,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyCloudSyncNote =>
-      'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.';
+      'A daily summary (game, minutes, rounds) is saved to your Google account. No child name.';
 
   @override
   String welcomeFreeTrial(int days) {
@@ -1438,4 +1433,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyPlanCardTitle => 'Account';
+
+  @override
+  String get familyGamesPremiumTitle => 'Choose the games for your child';
+
+  @override
+  String get familyGamesPremiumBody =>
+      'Turning games on and off comes with Premium and the free trial.';
+
+  @override
+  String familyGamesShownCount(int shown, int total) {
+    return '$shown of $total games on';
+  }
+
+  @override
+  String get familyMoreProfilesPremium => 'More child profiles with Premium';
 }
