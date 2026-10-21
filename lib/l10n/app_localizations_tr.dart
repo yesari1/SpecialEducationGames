@@ -1231,9 +1231,8 @@ class AppLocalizationsTr extends AppLocalizations {
       'Deneme her Google hesabı için bir kez verilir.';
 
   @override
-  String paywallFreeTier(int count) {
-    return 'Ücretsiz sürümde $count oyun her zaman açık.';
-  }
+  String get paywallFreeTier =>
+      'Her temada Öğren ve bir oyun her zaman ücretsiz.';
 
   @override
   String get paywallLifetime => 'Tek seferlik';
@@ -1356,9 +1355,8 @@ class AppLocalizationsTr extends AppLocalizations {
       'Google Play\'den istediğiniz zaman iptal edebilirsiniz.';
 
   @override
-  String welcomeFreeAfter(int count) {
-    return 'Sonrasında $count oyun hep ücretsiz.';
-  }
+  String get welcomeFreeAfter =>
+      'Sonrasında her temada Öğren ve bir oyun hep ücretsiz.';
 
   @override
   String get paywallEveryMonth => 'her ay';

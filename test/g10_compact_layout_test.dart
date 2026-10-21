@@ -63,6 +63,8 @@ void main() {
           state.hintSeconds = 0;
           state.reducedMotion = scenario.appReduced;
           state.celebration = 'full';
+          // Medium and Hard cards need Premium.
+          state.entitlement.lifetimeOwned = true;
           state.configuration = AppConfiguration(
             freeGames: const {'animals_G10'},
             choiceCounts: const {'easy': 2, 'medium': 4, 'hard': 4},

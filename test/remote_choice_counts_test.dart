@@ -253,6 +253,8 @@ void main() {
       state.audio.enabled = false;
       state.introduction = false;
       state.hintSeconds = 0;
+      // Medium and Hard cards need Premium.
+      state.entitlement.lifetimeOwned = true;
       state.configuration = AppConfiguration(
         freeGames: realContent.freeGames.toSet(),
         choiceCounts: const {'easy': 2, 'medium': 2, 'hard': 3},
@@ -280,6 +282,8 @@ void main() {
           .length;
       await mount('same');
       expect(choices(), 2);
+      // Medium and Hard cards need Premium.
+      state.entitlement.lifetimeOwned = true;
       state.configuration = AppConfiguration(
         freeGames: realContent.freeGames.toSet(),
         choiceCounts: const {'easy': 4, 'medium': 4, 'hard': 4},

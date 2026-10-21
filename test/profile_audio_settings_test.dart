@@ -58,6 +58,8 @@ void main() {
           'numbers_G35',
           'vehicles_G02',
         ],
+        // These themes have no free card in this list.
+        'hiddenThemes': ['food', 'shapes'],
       }, content);
       // English number names are recorded now, so both locales qualify;
       // silencing speech still removes the game.
@@ -193,6 +195,8 @@ void main() {
           'numbers_G10',
           'vehicles_G10',
         ],
+        // These themes have no free card in this list.
+        'hiddenThemes': ['food', 'shapes'],
       }, content);
 
       // Four licensed vehicle effects exceed G10's minimum in either locale;

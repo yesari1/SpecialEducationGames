@@ -8,6 +8,7 @@ import '../../core/auth/family_auth.dart';
 import '../../core/entitlement/billing_repository.dart';
 import '../../core/entitlement/entitlement_service.dart';
 import '../../l10n/scoped_localizations.dart';
+import 'parent_gate.dart';
 
 /// The Premium offer on one screen (no scrolling on a phone): a short
 /// hero, a strong headline, three check-mark benefits, full-width plans
@@ -80,8 +81,19 @@ class _PaywallViewState extends State<PaywallView> {
   /// button starts it (unless the one-time purchase is chosen).
   bool get _startsTrial => _trialOffered && !(_plan?.lifetime ?? false);
 
+  /// Purchases need a parent. If the parent area locked meanwhile (time
+  /// out), ask again instead of greying the buttons out.
+  Future<bool> _parentReady() async {
+    if (s.familyUnlocked) return true;
+    return showParentGate(context, s);
+  }
+
+  Future<void> _restore() async {
+    if (await _parentReady()) await s.billing.restore();
+  }
+
   Future<void> _continue() async {
-    if (!s.familyUnlocked) return;
+    if (!await _parentReady() || !mounted) return;
     if (_startsTrial) {
       final auth = widget.auth!;
       if (auth.account == null) await auth.signIn();
@@ -294,8 +306,8 @@ class _PaywallViewState extends State<PaywallView> {
           SegButton(
             key: const ValueKey('paywall-continue'),
             label: buttonLabel,
-            onPressed:
-                busy || (!_startsTrial && plan == null) || !s.familyUnlocked
+            // Disabled only while a sign-in, trial start or purchase runs.
+            onPressed: busy || (!_startsTrial && plan == null)
                 ? null
                 : _continue,
           ),
@@ -340,7 +352,7 @@ class _PaywallViewState extends State<PaywallView> {
             _SmallLink(
               key: const ValueKey('paywall-restore'),
               label: l10n.paywallRestoreShort,
-              onTap: s.familyUnlocked ? s.billing.restore : null,
+              onTap: _restore,
             ),
             if (e.source == PremiumSource.subscription)
               _SmallLink(

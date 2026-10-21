@@ -216,14 +216,19 @@ void main() {
       addTearDown(state.dispose);
       expect(state.dailyPathSteps, hasLength(6));
       state.configuration = state.configuration.merge({
-        'disabledGames': ['animals_G10'],
+        'disabledGames': ['animals_G01'],
         'hiddenThemes': ['vehicles'],
       }, state.content);
-      expect(state.dailyPathSteps, hasLength(4));
-      expect(state.dailyPathSteps, isNot(contains('animals_G10')));
-      expect(state.dailyPathSteps, isNot(contains('vehicles_G02')));
+      // Five free games remain, the sixth step is a free Learn card.
+      expect(state.dailyPathSteps, hasLength(6));
+      expect(state.dailyPathSteps, isNot(contains('animals_G01')));
+      expect(
+        state.dailyPathSteps.where((key) => key.startsWith('vehicles_')),
+        isEmpty,
+      );
+      expect(state.dailyPathSteps.last, endsWith('_G02'));
       await state.entitlement.confirmStoreState(true);
-      expect(state.dailyPathSteps, hasLength(4));
+      expect(state.dailyPathSteps, hasLength(6));
       expect(
         state.dailyPathSteps.every(state.configuration.freeGames.contains),
         true,
@@ -236,6 +241,14 @@ void main() {
       debugDefaultTargetPlatformOverride = TargetPlatform.linux;
       final state = (await tester.runAsync(fixture))!;
       state.sound = false;
+      // Only vehicles is free here, so its Learn card is a path step.
+      state.configuration = state.configuration.merge({
+        'freeGames': ['vehicles_G01', 'vehicles_G02'],
+        'hiddenThemes': [
+          for (final t in state.content.themes)
+            if (t.id != 'vehicles' && t.games.isNotEmpty) t.id,
+        ],
+      }, state.content);
       addTearDown(state.dispose);
       tester.view.devicePixelRatio = 1;
       tester.view.physicalSize = const Size(800, 360);

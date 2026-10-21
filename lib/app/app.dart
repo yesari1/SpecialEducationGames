@@ -161,9 +161,16 @@ class _EducationAppState extends State<EducationApp>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState lifecycle) {
-    if (lifecycle == AppLifecycleState.resumed) state.autoSync.request();
-    if (lifecycle != AppLifecycleState.resumed) {
-      state.audio.stop();
+    if (lifecycle == AppLifecycleState.resumed) {
+      state.autoSync.request();
+      state.billing.appResumed();
+    }
+    if (lifecycle != AppLifecycleState.resumed) state.audio.stop();
+    // Only leaving the app locks the parent area. `inactive` alone is a
+    // screenshot, the notification shade or a system dialog over the app.
+    if (lifecycle == AppLifecycleState.hidden ||
+        lifecycle == AppLifecycleState.paused ||
+        lifecycle == AppLifecycleState.detached) {
       // The Google account picker and the Play purchase sheet put the app in
       // the background; keep the parent area (and its upright screen) open
       // for them instead of locking it and sending the router to child mode.

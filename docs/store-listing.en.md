@@ -12,7 +12,7 @@ Parent-guided learning games in Turkish and English, playable offline.
 Özel Eğitim Oyunları offers short learning games where children choose answers from pictures and options. When the supported content is present on the device, the core game flow can be used without an internet connection.
 
 - Play with currently available content groups such as animals, fruit and vegetables, colors, numbers, and vehicles.
-- Start with six free games; available content and features can vary by app version.
+- Learn and one game in every theme are always free; available content and features can vary by app version.
 - Use Turkish or English. The app is designed for landscape screens.
 - Manage local profiles and game preferences in the family area, and view progress summaries stored on the device.
 - Google family-account sign-in is optional. Daily-summary sync requires parent consent and a separately initiated sync action; this feature has not been verified in a live environment.

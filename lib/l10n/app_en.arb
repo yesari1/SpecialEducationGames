@@ -1199,14 +1199,9 @@
   "@paywallTrialNote": {
     "description": "Paywall copy."
   },
-  "paywallFreeTier": "The free version always keeps {count} games open.",
+  "paywallFreeTier": "Learn and one game in every theme are always free.",
   "@paywallFreeTier": {
-    "description": "Paywall copy.",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
+    "description": "Paywall copy."
   },
   "paywallLifetime": "One-time",
   "@paywallLifetime": {
@@ -1374,14 +1369,9 @@
   "@paywallCancelAnytime": {
     "description": "Paywall line under the subscription button."
   },
-  "welcomeFreeAfter": "{count} games stay free afterwards.",
+  "welcomeFreeAfter": "Afterwards, Learn and one game in every theme stay free.",
   "@welcomeFreeAfter": {
-    "description": "Welcome page: second line of the trial banner.",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
+    "description": "Welcome page: second line of the trial banner."
   },
   "paywallEveryMonth": "every month",
   "@paywallEveryMonth": {

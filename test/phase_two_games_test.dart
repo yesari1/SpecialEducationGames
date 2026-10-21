@@ -127,8 +127,8 @@ void main() {
       expect(content.theme(theme).games, contains(game), reason: theme);
       expect(() => TemplateRegistry.resolve(game), returnsNormally);
     }
-    // The six free games are unchanged; new games stay premium.
-    expect(content.freeGames, hasLength(6));
+    // Learn + one game per theme are free; new games stay premium.
+    expect(content.freeGames, hasLength(14));
     expect(
       content.freeGames.where(
         (key) => ['G15', 'G17', 'G23', 'G37', 'G38', 'G11'].any(key.endsWith),

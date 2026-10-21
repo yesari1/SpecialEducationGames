@@ -51,6 +51,24 @@ class AppConfiguration {
         freeGames: Set.unmodifiable(content.freeGames),
       ).merge(content.configDefaults, content);
 
+  /// The free tier (Yunus, 21 October 2026): in every theme that has games,
+  /// Learn plus one game, Easy only. A remote list is used only if it keeps
+  /// one or two free cards in every such theme.
+  static bool _coversEveryTheme(
+    Set<String>? free,
+    ContentRepository content,
+    Set<String> hidden,
+  ) {
+    if (free == null) return false;
+    for (final theme in content.themes.where(
+      (t) => t.games.isNotEmpty && !hidden.contains(t.id),
+    )) {
+      final count = free.where((id) => id.startsWith('${theme.id}_')).length;
+      if (count < 1 || count > 2) return false;
+    }
+    return true;
+  }
+
   // Treat remote fields strictly as data. Unknown IDs/types cannot change access.
   AppConfiguration merge(Map<String, dynamic> data, ContentRepository content) {
     final themes = content.themes.map((x) => x.id).toSet();
@@ -149,7 +167,14 @@ class AppConfiguration {
 
     final difficulty = validDifficultyDefaults(data['difficultyDefaults']);
     return AppConfiguration(
-      freeGames: candidateFree?.length == 6 ? candidateFree! : freeGames,
+      freeGames:
+          _coversEveryTheme(
+            candidateFree,
+            content,
+            validSet(data['hiddenThemes'], themes) ?? hiddenThemes,
+          )
+          ? candidateFree!
+          : freeGames,
       disabledGames:
           validSet(data['disabledGames'], knownGames) ?? disabledGames,
       hiddenThemes: validSet(data['hiddenThemes'], themes) ?? hiddenThemes,

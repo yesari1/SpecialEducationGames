@@ -1230,9 +1230,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallTrialNote => 'One free trial per Google account.';
 
   @override
-  String paywallFreeTier(int count) {
-    return 'The free version always keeps $count games open.';
-  }
+  String get paywallFreeTier =>
+      'Learn and one game in every theme are always free.';
 
   @override
   String get paywallLifetime => 'One-time';
@@ -1354,9 +1353,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallCancelAnytime => 'Cancel anytime in Google Play.';
 
   @override
-  String welcomeFreeAfter(int count) {
-    return '$count games stay free afterwards.';
-  }
+  String get welcomeFreeAfter =>
+      'Afterwards, Learn and one game in every theme stay free.';
 
   @override
   String get paywallEveryMonth => 'every month';

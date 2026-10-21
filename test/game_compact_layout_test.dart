@@ -66,6 +66,8 @@ void main() {
           state.audio.enabled = false;
           state.introduction = false;
           state.hintSeconds = 0;
+          // Medium and Hard cards need Premium.
+          state.entitlement.lifetimeOwned = true;
           state.configuration = AppConfiguration(
             freeGames: {
               ...content.freeGames,
@@ -289,6 +291,8 @@ void main() {
       state.audio.enabled = false;
       state.introduction = false;
       state.hintSeconds = 0;
+      // Medium and Hard cards need Premium.
+      state.entitlement.lifetimeOwned = true;
       state.configuration = AppConfiguration(
         freeGames: const {'animals_G14'},
         choiceCounts: const {'easy': 2, 'medium': 4, 'hard': 4},
@@ -578,6 +582,8 @@ void main() {
     state.locale = 'tr';
     state.sound = false;
     state.audio.enabled = false;
+    // Medium and Hard cards need Premium.
+    state.entitlement.lifetimeOwned = true;
     state.configuration = AppConfiguration(
       freeGames: const {'animals_G04'},
       choiceCounts: const {'easy': 2, 'medium': 4, 'hard': 4},
@@ -644,6 +650,8 @@ void main() {
       state.sound = false;
       state.audio.enabled = false;
       state.difficultyOverride = 'hard';
+      // Medium and Hard cards need Premium.
+      state.entitlement.lifetimeOwned = true;
       state.configuration = AppConfiguration(
         freeGames: const {'animals_G14'},
         choiceCounts: const {'easy': 2, 'medium': 4, 'hard': 4},

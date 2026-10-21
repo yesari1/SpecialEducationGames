@@ -1,11 +1,19 @@
 {
   "freeGames": [
+    "animals_G02",
     "animals_G01",
+    "produce_G02",
     "produce_G01",
+    "food_G02",
+    "food_G01",
+    "vehicles_G02",
+    "vehicles_G01",
+    "colors_G02",
     "colors_G01",
-    "animals_G10",
-    "numbers_G35",
-    "vehicles_G02"
+    "shapes_G02",
+    "shapes_G01",
+    "numbers_G02",
+    "numbers_G35"
   ],
   "disabledGames": [],
   "hiddenThemes": [],

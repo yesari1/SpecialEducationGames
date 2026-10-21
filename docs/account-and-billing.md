@@ -2,7 +2,7 @@
 
 ## Uygulamada ne var
 
-- **Ücretsiz sürüm:** hesap gerekmez. 6 ücretsiz oyun kartı (Kolay + Orta) her zaman açık; liste Firestore `config/app.freeGames` ile değiştirilebilir. Zor seviye ve diğer oyunlar Premium.
+- **Ücretsiz sürüm:** hesap gerekmez. Her temada Öğren kartı ve bir oyun (Yunus, 21 Ekim 2026) Kolay seviyede her zaman açık; liste Firestore `config/app.freeGames` ile değiştirilebilir. Orta ve Zor seviyeler ile diğer oyunlar Premium.
 - **Ücretsiz deneme:** Google hesabı başına bir kez, ödeme bilgisi istenmeden, `config/app.trialDays` gün (varsayılan 7). Ebeveyn alanında Premium sayfasında: "Google ile giriş yap ve başla". Başlangıç zamanı sunucuda `trials/{uid}` belgesinde tutulur (yalnız `startedAt`, sunucu saati). Uygulama silinip kurulsa da ya da başka cihazda aynı hesapla tekrar başlatılamaz. Süre bitince profil otomatik olarak ücretsiz sürüme döner.
 - **Satın alma (Google Play Billing):**
   - Abonelik `premium`, temel planlar `monthly` ve `yearly`.
@@ -12,7 +12,7 @@
 - **Doğrulama:** satın alma cihazda Play'in "sahip olunan ürünler" yanıtıyla doğrulanır. Sunucu tarafı doğrulama (Cloud Functions / Play Developer API) yok; bu bilinçli bir sınırlama. Abonelik, internetsiz 7 gün geçerli kalır; tek seferlik ürün Play iade bildirene kadar kalır.
 - **Aile politikası:** giriş, deneme ve satın alma yalnız ebeveyn alanında, ebeveyn kapısının arkasında (dikey ekran). Çocuk modunda satın alma ya da giriş istemi yok.
 - **Firestore'dan değiştirilebilenler (`config/app`):**
-  - `freeGames` (tam 6 kart)
+  - `freeGames` (oyunu olan her temada 1–2 kart)
   - `trialDays` (1–30)
   - `paywallText` (`{tr, en}` başlık)
   - `privacyUrl` ve `termsUrl` (yalnız `https`; boşsa bağlantı gizlenir)
@@ -29,7 +29,7 @@
 
 | Alan | Tür | Ne işe yarar | Kurallar |
 |---|---|---|---|
-| `freeGames` | dizi (string) | Ücretsiz oyun kartları, `tema_oyun` biçiminde, örn. `animals_G01` | Tam **6** geçerli kart olmalı; değilse eski liste kalır |
+| `freeGames` | dizi (string) | Ücretsiz oyun kartları, `tema_oyun` biçiminde, örn. `animals_G01` | Oyunu olan **her temada 1–2** geçerli kart olmalı; değilse varsayılan liste kullanılır |
 | `trialDays` | sayı | Ücretsiz deneme süresi (gün) | 1–30 |
 | `privacyUrl`, `termsUrl` | string | Premium sayfasındaki gizlilik/koşullar bağlantıları | Yalnız `https://`; boş bırakılırsa bağlantı gizlenir |
 | `paywallText` | map `{tr, en}` | Premium sayfası başlığı | Boş map: varsayılan başlıklar |
@@ -63,7 +63,7 @@
    firebase deploy --only firestore:rules --project specialeducationgames
    ```
 
-6. **İsteğe bağlı:** Firestore'da `config/app` belgesini oluşturun. Örnek alanlar: `trialDays: 7`, `privacyUrl: "https://..."`, `termsUrl: "https://..."`, `freeGames: [...6 kart...]`. Konsoldan elle yazılabilir; yazma yalnız `admins/{uid}` belgesi olan hesaplara açık, konsol bu kurala takılmaz.
+6. **İsteğe bağlı:** Firestore'da `config/app` belgesini oluşturun. Örnek alanlar: `trialDays: 7`, `privacyUrl: "https://..."`, `termsUrl: "https://..."`, `freeGames: [...her temada Öğren + bir oyun...]`. Konsoldan elle yazılabilir; yazma yalnız `admins/{uid}` belgesi olan hesaplara açık, konsol bu kurala takılmaz.
 
 ### 2. Play Console
 

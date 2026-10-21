@@ -83,10 +83,22 @@ void main() {
       );
       // Leaving the app at any other time still locks the parent area (and
       // returns to the sideways child home).
+      // A screenshot or the notification shade only makes the app inactive:
+      // the parent area stays open (the paywall buttons stay usable).
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+      await tester.pump();
+      expect(state.familyUnlocked, isTrue);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pump();
+      expect(state.familyUnlocked, isTrue);
       tester.view.physicalSize = const Size(915, 412);
       tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.hidden);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
       await tester.pumpAndSettle();
       expect(state.familyUnlocked, isFalse);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.hidden);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
       tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(minutes: 10));

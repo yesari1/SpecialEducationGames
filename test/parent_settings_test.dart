@@ -55,9 +55,10 @@ void main() {
         throwsStateError,
       );
       await state.setting('difficultyOverride', 'medium');
+      // Free cards are Easy only, so the choice waits for Premium.
       expect(
         state.recommendedDifficulty('animals', 'G01', Difficulty.easy),
-        Difficulty.medium,
+        Difficulty.easy,
       );
       await state.entitlement.confirmStoreState(
         true,

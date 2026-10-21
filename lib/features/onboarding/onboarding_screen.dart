@@ -400,7 +400,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
                 Text(
-                  l10n.welcomeFreeAfter(s.configuration.freeGames.length),
+                  l10n.welcomeFreeAfter,
                   style: SegText.caption.copyWith(color: SegColors.inkSoft),
                 ),
               ],

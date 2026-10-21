@@ -127,7 +127,18 @@ class AppState extends ChangeNotifier {
   Set<String> get dailyStickers => _stickerProfileId == active?.id
       ? Set.unmodifiable(_dailyStickers)
       : const {};
-  List<String> get dailyPathSteps => configuration.freeGames.where((key) {
+
+  /// Six free cards a day: the games first, then free Learn cards if fewer
+  /// than six games are free.
+  List<String> get dailyPathSteps {
+    final free = _freePathCandidates;
+    return [
+      ...free.where((key) => !key.endsWith('_G02')),
+      ...free.where((key) => key.endsWith('_G02')),
+    ].take(6).toList();
+  }
+
+  List<String> get _freePathCandidates => configuration.freeGames.where((key) {
     final parts = key.split('_');
     if (parts.length != 2) return false;
     final effectiveDifficulty = recommendedDifficulty(
@@ -307,7 +318,8 @@ class AppState extends ChangeNotifier {
       !configuration.hiddenThemes.contains(theme) &&
       !configuration.disabledGames.contains('${theme}_$game') &&
       (entitlement.isPremium ||
-          (tier != Difficulty.hard &&
+          // Free cards are open on Easy only.
+          (tier == Difficulty.easy &&
               configuration.freeGames.contains('${theme}_$game')));
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();

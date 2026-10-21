@@ -2230,8 +2230,8 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'The free version always keeps {count} games open.'**
-  String paywallFreeTier(int count);
+  /// **'Learn and one game in every theme are always free.'**
+  String get paywallFreeTier;
 
   /// Paywall copy.
   ///
@@ -2440,8 +2440,8 @@ abstract class AppLocalizations {
   /// Welcome page: second line of the trial banner.
   ///
   /// In en, this message translates to:
-  /// **'{count} games stay free afterwards.'**
-  String welcomeFreeAfter(int count);
+  /// **'Afterwards, Learn and one game in every theme stay free.'**
+  String get welcomeFreeAfter;
 
   /// Paywall: small line under the monthly price.
   ///

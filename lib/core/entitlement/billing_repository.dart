@@ -51,6 +51,25 @@ class BillingRepository extends ChangeNotifier {
   StreamSubscription<List<PurchaseDetails>>? _subscription;
   List<BillingPlan> plans = [];
   bool available = false, loading = false, pending = false;
+
+  /// Play itself said the payment is pending (e.g. a slow payment method);
+  /// only then does "waiting" outlive the purchase sheet.
+  bool _storeReportedPending = false;
+  Timer? _settle;
+
+  /// Back in the app after the purchase sheet: if Play has sent nothing
+  /// within a few seconds, the sheet was closed, so the buttons come back.
+  void appResumed() {
+    if (!pending || _storeReportedPending) return;
+    _settle?.cancel();
+    _settle = Timer(const Duration(seconds: 4), () {
+      if (pending && !_storeReportedPending) {
+        pending = false;
+        notifyListeners();
+      }
+    });
+  }
+
   String? error;
   BillingRepository(this.entitlement, {InAppPurchase? store})
     : store = store ?? InAppPurchase.instance;
@@ -198,9 +217,11 @@ class BillingRepository extends ChangeNotifier {
       if (!BillingProducts.all.contains(p.productID)) continue;
       if (p.status == PurchaseStatus.pending) {
         pending = true;
+        _storeReportedPending = true;
         continue;
       }
       pending = false;
+      _storeReportedPending = false;
       if (p.status == PurchaseStatus.purchased ||
           p.status == PurchaseStatus.restored) {
         // Refresh active ownership from Play before unlocking access.
@@ -215,6 +236,7 @@ class BillingRepository extends ChangeNotifier {
 
   @override
   void dispose() {
+    _settle?.cancel();
     unawaited(_subscription?.cancel());
     super.dispose();
   }

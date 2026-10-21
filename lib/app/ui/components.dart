@@ -712,7 +712,9 @@ class ThemeGameCard extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: SegText.item.copyWith(color: SegColors.ink),
+              style: SegText.item.copyWith(
+                color: locked ? SegColors.inkSoft : SegColors.ink,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -736,33 +738,40 @@ class ThemeGameCard extends StatelessWidget {
         onTap: onTap,
         pivot: Alignment.center,
         depth: .35,
-        child: Container(
-          decoration: BoxDecoration(
-            color: SegColors.surface,
-            borderRadius: BorderRadius.circular(SegRadius.lg),
-            border: Border.all(color: Colors.white, width: 3),
-            boxShadow: [
-              BoxShadow(
-                color: accent.withValues(alpha: .22),
-                blurRadius: 0,
-                offset: const Offset(0, 5),
-              ),
-              BoxShadow(
-                color: SegColors.ink.withValues(alpha: .07),
-                blurRadius: 18,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          padding: EdgeInsets.all(horizontalContent ? 4 : 8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(child: cardVisual()),
-              SizedBox(height: horizontalContent ? SegSpace.s1 : SegSpace.s2),
-              labelContent(),
-              if (!horizontalContent) const SizedBox(height: SegSpace.s1),
-            ],
+        // Locked: the whole card (picture, accents, shadow) is black and
+        // white.
+        child: ColorFiltered(
+          colorFilter: locked
+              ? const ColorFilter.matrix(_greyscale)
+              : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
+          child: Container(
+            decoration: BoxDecoration(
+              color: SegColors.surface,
+              borderRadius: BorderRadius.circular(SegRadius.lg),
+              border: Border.all(color: Colors.white, width: 3),
+              boxShadow: [
+                BoxShadow(
+                  color: accent.withValues(alpha: .22),
+                  blurRadius: 0,
+                  offset: const Offset(0, 5),
+                ),
+                BoxShadow(
+                  color: SegColors.ink.withValues(alpha: .07),
+                  blurRadius: 18,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(horizontalContent ? 4 : 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: cardVisual()),
+                SizedBox(height: horizontalContent ? SegSpace.s1 : SegSpace.s2),
+                labelContent(),
+                if (!horizontalContent) const SizedBox(height: SegSpace.s1),
+              ],
+            ),
           ),
         ),
       ),

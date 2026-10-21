@@ -85,6 +85,8 @@ void main() {
         state.audio.enabled = false;
         state.introduction = false;
         state.hintSeconds = 0;
+        // Medium and Hard cards need Premium.
+        state.entitlement.lifetimeOwned = true;
         state.configuration = AppConfiguration(
           freeGames: {
             ...content.freeGames,
