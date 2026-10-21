@@ -336,15 +336,12 @@ void main() {
           await mount(tester, size, scale, SubscriptionScreen(state: state));
           expect(state.billing.loading, isFalse);
           expect(state.billing.plans, isEmpty);
-          for (
-            var i = 0;
-            i < 8 && find.text('Show plans').evaluate().isEmpty;
-            i++
-          ) {
-            await tester.tap(find.byTooltip('Next page'));
-            await tester.pumpAndSettle();
+          // One page: the primary action and the free way out are visible.
+          for (final key in ['paywall-continue', 'paywall-free']) {
+            final rect = tester.getRect(find.byKey(ValueKey(key)));
+            expect(rect.bottom, lessThanOrEqualTo(size.height), reason: key);
+            expect(rect.top, greaterThanOrEqualTo(0), reason: key);
           }
-          expect(find.text('Show plans'), findsOneWidget);
 
           for (final creditLocale in ['en', 'tr']) {
             state.locale = creditLocale;

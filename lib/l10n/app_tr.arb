@@ -1053,5 +1053,15 @@
   "familyAccountDeleteConfirm": "Kalıcı olarak sil",
   "familyAccountDeleteCancel": "Vazgeç",
   "familyAccountDeleted": "Hesap ve bulut verileri silindi.",
-  "familyAccountDeleteFailed": "Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin."
+  "familyAccountDeleteFailed": "Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin.",
+  "paywallHeadline": "Tüm oyunları aç",
+  "paywallNoPayment": "Ödeme bilgisi istenmez",
+  "paywallSave": "%{percent} tasarruf",
+  "paywallContinue": "Devam et",
+  "paywallContinueFree": "Şimdilik ücretsiz devam et",
+  "paywallRestoreShort": "Geri yükle",
+  "paywallPlansFailed": "Planlar yüklenemedi.",
+  "paywallRetry": "Tekrar dene",
+  "paywallClose": "Kapat",
+  "paywallOneTimeShort": "Bir kez öde"
 }

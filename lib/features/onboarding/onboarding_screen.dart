@@ -4,8 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
+import '../../core/auth/family_auth.dart';
+import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
-import '../../core/entitlement/billing_repository.dart';
 import '../../core/learning/parent_pin.dart';
 import '../../core/learning/policies.dart';
 import '../../l10n/app_localizations.dart';
@@ -17,7 +18,10 @@ import 'survey_questions.dart';
 /// question can be skipped. Nothing is saved until the hand-off screen.
 class OnboardingScreen extends StatefulWidget {
   final AppState state;
-  const OnboardingScreen({super.key, required this.state});
+
+  /// Google sign-in for the free trial on the Premium step.
+  final FamilyAuth? auth;
+  const OnboardingScreen({super.key, required this.state, this.auth});
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
@@ -78,9 +82,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.dispose();
   }
 
-  BillingPlan? get _trialPlan =>
-      s.billing.plans.where((p) => p.sevenDayTrial).firstOrNull;
-
   /// Steps that show progress dots (welcome and hand-off are framing screens).
   int get _progressIndex => switch (step) {
     OnboardingStep.child => 0,
@@ -90,7 +91,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingStep.trial => 3 + questions.length,
     _ => -1,
   };
-  int get _progressCount => 3 + questions.length + (_trialPlan == null ? 0 : 1);
+  int get _progressCount => 4 + questions.length;
 
   void _next() {
     FocusScope.of(context).unfocus();
@@ -110,9 +111,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         case OnboardingStep.goal:
           step = OnboardingStep.lock;
         case OnboardingStep.lock:
-          step = _trialPlan == null
-              ? OnboardingStep.handoff
-              : OnboardingStep.trial;
+          // Saved before the offer so the trial/purchase belong to a profile.
+          break;
         case OnboardingStep.trial:
           step = OnboardingStep.handoff;
         case OnboardingStep.handoff:
@@ -141,11 +141,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         case OnboardingStep.lock:
           step = OnboardingStep.goal;
         case OnboardingStep.trial:
-          step = OnboardingStep.lock;
         case OnboardingStep.handoff:
-          step = _trialPlan == null
-              ? OnboardingStep.lock
-              : OnboardingStep.trial;
+          // The profile is already saved; nothing to go back to.
+          break;
       }
     });
   }
@@ -171,8 +169,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     },
   };
 
-  Future<void> finish() async {
-    if (saving) return;
+  bool _saved = false;
+
+  /// Saves the profile after the lock step, then shows the Premium offer.
+  /// The parent is setting up, so the parent area stays open for the offer.
+  Future<void> _saveAndOffer() async {
+    if (saving || _saved) return;
     setState(() => saving = true);
     try {
       final survey = _survey;
@@ -185,13 +187,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       );
       await s.setting('celebration', result.celebration);
       if (survey['sound'] == 0) await s.setting('sound', 'false');
-      if (mounted) context.go('/');
+      s.unlockFamily();
+      _saved = true;
+      if (mounted) {
+        setState(() {
+          saving = false;
+          step = OnboardingStep.trial;
+        });
+      }
     } catch (_) {
       if (mounted) {
         setState(() => saving = false);
         showNotice(context, l10n.onboardingSaveError);
       }
     }
+  }
+
+  /// Hands the phone to the child: the parent area closes again.
+  void finish() {
+    s.lockFamily();
+    context.go('/');
   }
 
   // ---------------------------------------------------------------- frame --
@@ -578,49 +593,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ],
       ],
-      primary: _continue(onPressed: usePin && !pinValid ? null : _next),
+      primary: _continue(
+        label: saving ? l10n.onboardingSaving : null,
+        onPressed: usePin && !pinValid || saving ? null : _saveAndOffer,
+      ),
     );
   }
 
-  Widget _trial() {
-    final plan = _trialPlan;
-    return _frame(
-      children: [
-        _title(l10n.obTrialTitle, key: const ValueKey('trial-title')),
-        _body(l10n.obTrialBody),
-        const SizedBox(height: SegSpace.s4),
-        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint1),
-        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint2),
-        FeatureLine(icon: Icons.check_rounded, text: l10n.obTrialPoint3),
-        const SizedBox(height: SegSpace.s4),
-        if (plan != null)
-          Text(
-            l10n.subscriptionTrial(plan.recurringPrice),
-            style: SegText.caption.copyWith(color: SegColors.inkSoft),
-          ),
-        const SizedBox(height: SegSpace.s1),
-        Text(
-          l10n.obTrialNote,
-          style: SegText.caption.copyWith(color: SegColors.inkSoft),
+  /// The Premium offer, once, right after setup ([PaywallView]).
+  Widget _trial() => Scaffold(
+    backgroundColor: SegColors.familyCanvas,
+    body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          SegSpace.s5,
+          SegSpace.s4,
+          SegSpace.s5,
+          SegSpace.s3,
         ),
-      ],
-      primary: _continue(
-        key: const ValueKey('trial-continue-free'),
-        label: l10n.obContinueFree,
-        onPressed: _next,
+        child: PaywallView(state: s, auth: widget.auth, onDone: _next),
       ),
-      secondary: plan == null
-          ? null
-          : SegButton(
-              key: const ValueKey('trial-start'),
-              secondary: true,
-              label: s.billing.pending
-                  ? l10n.subscriptionWaiting
-                  : l10n.obTrialStart,
-              onPressed: s.billing.pending ? null : () => s.billing.buy(plan),
-            ),
-    );
-  }
+    ),
+  );
 
   Widget _handoff() => _frame(
     children: [
@@ -648,8 +642,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ],
     primary: _continue(
       key: const ValueKey('final-play'),
-      label: saving ? l10n.onboardingSaving : l10n.onboardingPlay,
-      onPressed: saving ? null : finish,
+      label: l10n.onboardingPlay,
+      onPressed: finish,
     ),
   );
 

@@ -245,8 +245,12 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      expect(find.text(l10n.paywallTrialSignIn), findsOneWidget);
-      final start = find.byKey(const ValueKey('paywall-trial-start'));
+      // The free trial is offered first and selected.
+      expect(
+        find.byKey(const ValueKey('paywall-option-trial')),
+        findsOneWidget,
+      );
+      final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.tap(start);
       for (var i = 0; i < 10; i++) {

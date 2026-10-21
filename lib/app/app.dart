@@ -88,7 +88,8 @@ class _EducationAppState extends State<EducationApp>
         ),
         GoRoute(
           path: '/welcome',
-          builder: (_, _) => reactive(() => OnboardingScreen(state: state)),
+          builder: (_, _) =>
+              reactive(() => OnboardingScreen(state: state, auth: familyAuth)),
         ),
         GoRoute(
           path: '/game/:theme/:game/:tier',

@@ -41,19 +41,6 @@ void main() {
     debugDefaultTargetPlatformOverride = null;
   }
 
-  Future<void> expectHeadingPages(
-    WidgetTester tester,
-    List<String> pages,
-  ) async {
-    for (var index = 0; index < pages.length; index++) {
-      expect(find.text(pages[index]), findsOneWidget);
-      if (index < pages.length - 1) {
-        await tester.tap(find.byIcon(Icons.arrow_forward_rounded));
-        await tester.pumpAndSettle();
-      }
-    }
-  }
-
   testWidgets(
     'New badge is localized and limited to configured visible category',
     (tester) async {
@@ -97,6 +84,9 @@ void main() {
           'en': 'Explore more together',
         },
       );
+      String headline() => tester
+          .widget<Text>(find.byKey(const ValueKey('paywall-headline')))
+          .data!;
       for (final locale in ['tr', 'en']) {
         state.locale = locale;
         await tester.pumpWidget(
@@ -106,40 +96,31 @@ void main() {
         );
         await tester.pumpAndSettle();
         expect(
-          find.byTooltip(locale == 'tr' ? 'Önceki sayfa' : 'Previous page'),
-          findsOneWidget,
-        );
-        expect(
-          find.byTooltip(locale == 'tr' ? 'Sonraki sayfa' : 'Next page'),
-          findsOneWidget,
-        );
-        await expectHeadingPages(
-          tester,
+          headline(),
           locale == 'tr'
-              ? ['Daha fazla birlikte', 'keşif']
-              : ['Explore more together'],
+              ? 'Daha fazla birlikte keşif'
+              : 'Explore more together',
         );
-        final plansLabel = locale == 'tr' ? 'Planları göster' : 'Show plans';
-        for (
-          var page = 0;
-          page < 10 && find.text(plansLabel).evaluate().isEmpty;
-          page++
-        ) {
-          await tester.tap(
-            find.byTooltip(locale == 'tr' ? 'Sonraki sayfa' : 'Next page'),
-          );
-          await tester.pumpAndSettle();
-        }
+        // No store on the host: no plan is invented, a retry is offered.
+        expect(state.billing.plans, isEmpty);
         expect(
-          find.text(plansLabel),
-          findsOneWidget,
-          reason: 'The plans CTA is available after the configured copy pages.',
-        );
-        expect(
-          find.text(locale == 'tr' ? 'Birlikte daha çok' : 'More discoveries'),
+          find.byWidgetPredicate(
+            (w) =>
+                w.key is ValueKey<String> &&
+                (w.key! as ValueKey<String>).value.startsWith(
+                  'paywall-option-',
+                ),
+          ),
           findsNothing,
         );
-        expect(state.billing.plans, isEmpty);
+        expect(
+          find.text(
+            locale == 'tr'
+                ? 'Planlar yüklenemedi.'
+                : 'Plans could not be loaded.',
+          ),
+          findsOneWidget,
+        );
         expect(tester.takeException(), isNull);
       }
       state.configuration = AppConfiguration(
@@ -156,11 +137,9 @@ void main() {
           ),
         );
         await tester.pumpAndSettle();
-        await expectHeadingPages(
-          tester,
-          locale == 'tr'
-              ? ['Birlikte daha çok', 'keşif']
-              : ['More discoveries', 'together'],
+        expect(
+          headline(),
+          locale == 'tr' ? 'Tüm oyunları aç' : 'Unlock every game',
         );
         expect(state.billing.plans, isEmpty);
       }
@@ -189,7 +168,7 @@ void main() {
     router.go('/family/subscription');
     await tester.pumpAndSettle();
     expect(find.byType(SubscriptionScreen), findsOneWidget);
-    await expectHeadingPages(tester, ['Parent only', 'discoveries']);
+    expect(find.text('Parent only discoveries'), findsOneWidget);
     await dispose(tester, state);
   });
 

@@ -2310,6 +2310,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The account could not be deleted. Check the internet connection and try again.'**
   String get familyAccountDeleteFailed;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock every game'**
+  String get paywallHeadline;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'No payment details'**
+  String get paywallNoPayment;
+
+  /// Paywall badge.
+  ///
+  /// In en, this message translates to:
+  /// **'Save {percent}%'**
+  String paywallSave(int percent);
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get paywallContinue;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with the free version'**
+  String get paywallContinueFree;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get paywallRestoreShort;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Plans could not be loaded.'**
+  String get paywallPlansFailed;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get paywallRetry;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get paywallClose;
+
+  /// Paywall copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay once'**
+  String get paywallOneTimeShort;
 }
 
 class _AppLocalizationsDelegate

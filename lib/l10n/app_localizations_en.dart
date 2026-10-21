@@ -1275,4 +1275,36 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get familyAccountDeleteFailed =>
       'The account could not be deleted. Check the internet connection and try again.';
+
+  @override
+  String get paywallHeadline => 'Unlock every game';
+
+  @override
+  String get paywallNoPayment => 'No payment details';
+
+  @override
+  String paywallSave(int percent) {
+    return 'Save $percent%';
+  }
+
+  @override
+  String get paywallContinue => 'Continue';
+
+  @override
+  String get paywallContinueFree => 'Continue with the free version';
+
+  @override
+  String get paywallRestoreShort => 'Restore';
+
+  @override
+  String get paywallPlansFailed => 'Plans could not be loaded.';
+
+  @override
+  String get paywallRetry => 'Try again';
+
+  @override
+  String get paywallClose => 'Close';
+
+  @override
+  String get paywallOneTimeShort => 'Pay once';
 }

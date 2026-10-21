@@ -61,7 +61,7 @@ void main() {
       router.go('/family/subscription');
       tester.view.physicalSize = const Size(412, 915);
       await tester.pumpAndSettle();
-      final start = find.byKey(const ValueKey('paywall-trial-start'));
+      final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.pumpAndSettle();
       await tester.tap(start);
@@ -91,5 +91,7 @@ void main() {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(minutes: 10));
     },
+    // The Linux target keeps the Play Billing plugin from connecting.
+    variant: TargetPlatformVariant.only(TargetPlatform.linux),
   );
 }

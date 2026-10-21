@@ -84,6 +84,18 @@ void main() {
     return router;
   }
 
+  /// After the lock step the profile is saved and the Premium offer shows;
+  /// continue with the free version.
+  Future<void> passOffer(WidgetTester tester) async {
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('paywall-continue')), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('paywall-free')));
+    await tester.pumpAndSettle();
+  }
+
   Future<void> tapKey(WidgetTester tester, String key) async {
     final finder = find.byKey(ValueKey(key));
     await tester.ensureVisible(finder);
@@ -170,9 +182,16 @@ void main() {
     await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-continue');
 
-    // No Play trial on the host, so the trial step is skipped.
-    expect(find.byKey(const ValueKey('trial-title')), findsNothing);
-    expect(find.text('Hazırız, Ada!'), findsOneWidget);
+    // The profile is saved, the parent area is open for the offer.
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+    await tester.pumpAndSettle();
+    expect(state.profiles, hasLength(1));
+    expect(state.familyUnlocked, isTrue);
+    await passOffer(tester);
+    // Saved profiles follow their own language setting (the test device's).
+    expect(find.textContaining('Ada!'), findsOneWidget);
     final play = find.byKey(const ValueKey('final-play'));
     await tester.tap(play);
     await tester.tap(play);
@@ -195,6 +214,8 @@ void main() {
     expect(state.hasParentPin, isTrue);
     expect(state.verifyParentPin('2468'), isTrue);
     expect(router.routeInformationProvider.value.uri.path, '/');
+    // Handing the phone to the child closes the parent area again.
+    expect(state.familyUnlocked, isFalse);
     expect(tester.takeException(), isNull);
   }, variant: _host);
 
@@ -213,6 +234,7 @@ void main() {
     }
     await tapKey(tester, 'onboarding-continue'); // goal (15 preselected)
     await tapKey(tester, 'onboarding-continue'); // lock, no PIN
+    await passOffer(tester);
     await tapKey(tester, 'final-play');
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 300)),
@@ -305,6 +327,7 @@ void main() {
         await tapKey(tester, 'onboarding-continue');
         await check('lock');
         await tapKey(tester, 'onboarding-continue');
+        await passOffer(tester);
         await check('handoff');
         await tester.pumpWidget(const SizedBox.shrink());
         state.dispose();

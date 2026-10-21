@@ -1197,5 +1197,50 @@
   "familyAccountDeleteFailed": "The account could not be deleted. Check the internet connection and try again.",
   "@familyAccountDeleteFailed": {
     "description": "Account deletion copy."
+  },
+  "paywallHeadline": "Unlock every game",
+  "@paywallHeadline": {
+    "description": "Paywall copy."
+  },
+  "paywallNoPayment": "No payment details",
+  "@paywallNoPayment": {
+    "description": "Paywall copy."
+  },
+  "paywallSave": "Save {percent}%",
+  "@paywallSave": {
+    "description": "Paywall badge.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallContinue": "Continue",
+  "@paywallContinue": {
+    "description": "Paywall copy."
+  },
+  "paywallContinueFree": "Continue with the free version",
+  "@paywallContinueFree": {
+    "description": "Paywall copy."
+  },
+  "paywallRestoreShort": "Restore",
+  "@paywallRestoreShort": {
+    "description": "Paywall copy."
+  },
+  "paywallPlansFailed": "Plans could not be loaded.",
+  "@paywallPlansFailed": {
+    "description": "Paywall copy."
+  },
+  "paywallRetry": "Try again",
+  "@paywallRetry": {
+    "description": "Paywall copy."
+  },
+  "paywallClose": "Close",
+  "@paywallClose": {
+    "description": "Paywall copy."
+  },
+  "paywallOneTimeShort": "Pay once",
+  "@paywallOneTimeShort": {
+    "description": "Paywall copy."
   }
 }

@@ -1276,4 +1276,36 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get familyAccountDeleteFailed =>
       'Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin.';
+
+  @override
+  String get paywallHeadline => 'Tüm oyunları aç';
+
+  @override
+  String get paywallNoPayment => 'Ödeme bilgisi istenmez';
+
+  @override
+  String paywallSave(int percent) {
+    return '%$percent tasarruf';
+  }
+
+  @override
+  String get paywallContinue => 'Devam et';
+
+  @override
+  String get paywallContinueFree => 'Şimdilik ücretsiz devam et';
+
+  @override
+  String get paywallRestoreShort => 'Geri yükle';
+
+  @override
+  String get paywallPlansFailed => 'Planlar yüklenemedi.';
+
+  @override
+  String get paywallRetry => 'Tekrar dene';
+
+  @override
+  String get paywallClose => 'Kapat';
+
+  @override
+  String get paywallOneTimeShort => 'Bir kez öde';
 }

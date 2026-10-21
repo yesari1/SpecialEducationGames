@@ -18,6 +18,9 @@ class BillingPlan {
   final String id, recurringPrice, period;
   final String? offerToken;
   final bool sevenDayTrial;
+
+  /// Price in micros of the store currency (for the yearly saving badge).
+  final int priceMicros;
   bool get lifetime => id == 'lifetime';
   const BillingPlan(
     this.product,
@@ -25,8 +28,21 @@ class BillingPlan {
     this.recurringPrice,
     this.period,
     this.offerToken,
-    this.sevenDayTrial,
-  );
+    this.sevenDayTrial, {
+    this.priceMicros = 0,
+  });
+
+  /// Whole-percent saving of a yearly price over twelve monthly payments.
+  static int? yearlySaving(List<BillingPlan> plans) {
+    final monthly = plans.where((p) => p.id == 'monthly').firstOrNull;
+    final yearly = plans.where((p) => p.id == 'yearly').firstOrNull;
+    if (monthly == null || yearly == null || monthly.priceMicros <= 0) {
+      return null;
+    }
+    final saving = 1 - yearly.priceMicros / (monthly.priceMicros * 12);
+    final percent = (saving * 100).round();
+    return percent >= 5 ? percent : null;
+  }
 }
 
 class BillingRepository extends ChangeNotifier {
@@ -69,7 +85,15 @@ class BillingRepository extends ChangeNotifier {
         if (product.id == BillingProducts.lifetime) {
           if (!plans.any((p) => p.lifetime)) {
             plans.add(
-              BillingPlan(product, 'lifetime', product.price, '', null, false),
+              BillingPlan(
+                product,
+                'lifetime',
+                product.price,
+                '',
+                null,
+                false,
+                priceMicros: (product.rawPrice * 1000000).round(),
+              ),
             );
           }
           continue;
@@ -95,6 +119,7 @@ class BillingRepository extends ChangeNotifier {
           recurring.billingPeriod,
           offer.offerIdToken,
           trial,
+          priceMicros: recurring.priceAmountMicros,
         );
         final existing = plans.indexWhere((p) => p.id == plan.id);
         if (existing < 0) {

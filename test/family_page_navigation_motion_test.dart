@@ -14,7 +14,6 @@ import 'package:special_education_games/features/family/credits_screen.dart';
 import 'package:special_education_games/features/family/family_account_card.dart';
 import 'package:special_education_games/features/family/family_account_screen.dart';
 import 'package:special_education_games/features/family/open_source_licenses_screen.dart';
-import 'package:special_education_games/features/family/subscription_screen.dart';
 
 const _firstPackage = 'a-motion-fixture';
 const _lastPackage = 'z-motion-fixture';
@@ -313,44 +312,6 @@ void main() {
     state.lockFamily();
   }
 
-  Future<void> verifySubscription(
-    WidgetTester tester,
-    AppState state, {
-    required bool disableAnimations,
-    required bool animated,
-  }) async {
-    await mount(
-      tester,
-      state,
-      SubscriptionScreen(state: state),
-      disableAnimations: disableAnimations,
-    );
-    final view = find.byType(PageView);
-    final controller = await pageController(tester, view);
-    List<String?> visibleText() => tester
-        .widgetList<Text>(find.byType(Text))
-        .map((text) => text.data)
-        .where((text) => text != null && !RegExp(r'^\d+ / \d+$').hasMatch(text))
-        .toList();
-
-    final before = visibleText();
-    await tester.tap(find.byTooltip('Next page'));
-    if (animated) {
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 60));
-      expect(controller.page!, greaterThan(0));
-      expect(controller.page!, lessThan(1));
-      await tester.pumpAndSettle();
-    } else {
-      await tester.pump();
-    }
-    expect(controller.page!.round(), 1);
-    expect(visibleText(), isNot(equals(before)));
-    expect(visibleText().any((text) => text!.trim().isNotEmpty), isTrue);
-    expect(tester.takeException(), isNull);
-    await tester.pumpWidget(const SizedBox());
-  }
-
   testWidgets(
     'AppState reducedMotion and MediaQuery disableAnimations jump every pager while normal motion animates',
     (tester) async {
@@ -378,12 +339,7 @@ void main() {
           disableAnimations: disableAnimations,
           animated: animated,
         );
-        await verifySubscription(
-          tester,
-          state,
-          disableAnimations: disableAnimations,
-          animated: animated,
-        );
+        // Premium is one page now (no pager); see paywall tests.
       }
 
       await state.setting('reducedMotion', 'true');
