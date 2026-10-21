@@ -10,6 +10,16 @@
 - Ebeveyn girişliyken günlük özetler (oyun, konu, dakika, tur; çocuk adı yok) otomatik, gecikmeli ve çevrimdışına dayanıklı senkronlanır; Aile'de varsayılan açık anahtar.
 - Doğrulama: seri host testler 271/271 (`artifacts/claude/r36/host-tests.log`). Önce/sonra ekranlar (ana sayfa, paywall; TR+EN) `artifacts/claude/r36/` ve Drive `R36/`. QA APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r36-premium-qa.apk` (SHA-256 `de2fe1c6…67d8c31`). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.2-vc16.aab` (SHA-256 `60adf42a…24f8704`, vc15 ile aynı yükleme sertifikası); ikisi de Drive'da. Not: profile QA derlemesinden sonra release AAB, eski `GeneratedPluginRegistrant.java` (integration_test) yüzünden düşer; dosya silinip yeniden derlenmeli. Play'e yüklenmedi.
 
+## 21 Ekim 2026 — R36 (Yunus'un vc14/15 telefon testi)
+
+- Ana sayfa tema kapakları: 7 tema için ChatGPT "SEG soft clay" kapakları (`assets/illustrations/themes/`), alfa sınırına göre kırpılıp eşit görsel ağırlığa (alanın karekökü) normalleştirildi; kartlarda tema bazlı küçültme kapalı, başlıklar normal yazıda iki satır yer ayırır.
+- Kilitli kart uyarısı tek sefer gösterilir (`showNotice`, uygulama genelinde).
+- Premium sayfası tek ekran: başlık + 3 madde, seçenekler (7 gün ücretsiz, Aylık, Yıllık "%X tasarruf" Play fiyatından, Tek seferlik), tek "Devam et", geri yükle/koşullar/gizlilik, "Şimdilik ücretsiz devam et". Onboarding'de profil kaydedildikten sonra gösterilir, sonra "yan çevir" adımı; ebeveyn alanı en sonda kilitlenir.
+- Google hesap seçici ve Play satın alma penceresi açıkken ebeveyn alanı kilitlenmez, ekran dikey kalır (önceden yataya dönüyor ve denemeyi bozuyordu).
+- Google girişinde `families/{uid}` (createdAt bir kez, updatedAt, locale, token e-postası) yazılır (Admin paneli için).
+- Ebeveyn girişliyken günlük özetler otomatik gönderilir (oyun bitişi, uygulamaya dönüş, giriş; 5 sn gecikmeli, çevrimdışında sessiz); aile ayarlarında "Günlük özetleri buluta gönder" anahtarı (varsayılan açık).
+- Doğrulama: seri host testler 271/271. R36 QA APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r36-premium-qa.apk`; imzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.2-vc16.aab` (upload key SHA-1 49:A5:07…, BILLING var, AD_ID yok). İkisi de Drive'da; önce/sonra görüntüleri Drive "R36". Play yıllık fiyatı 499,99 TL (koddan bağımsız).
+
 ## 20 Ekim 2026 — R35 (sepet oyunu, mağaza hazırlığı, Play)
 
 - Play: yükleme anahtarı `D:\GameDesktop\UnityProjects\ProjectsKeys\SpecialEducationGames.keystore` (alias `specialeducationgames`, SHA-1 49:A5:07…, Play Upload key ile aynı). Şifreler git dışı `android/key.properties` içinde (Yunus yazdı). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.0-vc14-internal.aab` Internal testing'de yayında. Yunus Play'de `premium` (monthly 59,99 TL / yearly 449,99 TL) ve `premium_lifetime` (799,99 TL) oluşturdu. Firebase: kurallar yüklendi, `config/app` varsayılanlarla oluşturuldu, 6 SHA parmak izi kayıtlı, Google OAuth istemcileri tamam.
