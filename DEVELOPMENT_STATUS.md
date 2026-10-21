@@ -2,6 +2,16 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R44 (aile alanı sadeleştirme, Bugünün Yolu, ilk açılış dikey) — sürüm 2.0.10 (24), Internal testing'de
+
+- Profiller: Hesap kartı en üstte (paket, ödeme, büyük Premium/deneme düğmesi, Google aile hesabı), altında "Profiller" ve profil kartları ("bu cihazda saklanır" kaldırıldı). Ücretsizde ve denemede tek profil (`profileLimit`); fazlası "Daha fazla çocuk profili Premium ile" kartına gider.
+- Oyunlar: "Sadece açık oyunlar" kartı ve ayarı kaldırıldı (çocuk modunda da filtre yok). Her tema açılır-kapanır kart: başlıkta "X oyundan Y açık" ve temanın tümü için anahtar; içinde oyun anahtarları ("Premium" yazıları yok). Ücretsizde üstte bilgi kartı ve anahtarlar kapalı; Premium ve denemede açık.
+- Gelişim (Premium): grafikler sadeleşti. Başlık yanında "15–21 Eki" aralığı, gün adları, renkli dakika çubukları, renkli "kendi başına doğru" daireleri, iki renkli dikkat grafiği, renkli beceri çubukları ve kısa metinler. Sayısal görünüm ve uzun açıklamalar kalktı. Ayarlar açıklamaları kısa ve soluk.
+- Bugünün Yolu: oyun kartı görünümünde kartlar (sıradaki turuncu parlıyor, bitenlerde yıldız ve tik), üstte adım çubuğu ve kupa.
+- Tema sayfası: Bul kartının altındaki tema adı kaldırıldı, kartlar eşit. İlk açılış: manifest `portrait`. Pixel_9a'da temiz kurulumda baştan sona `ROTATION_0`.
+- Fotoğraflar: Codex ile yalnız portakal yenilendi (Evan-Amos, CC BY-SA 3.0; `artifacts/photo-replacements-r44/`). Mandalina, çilek, karpuz ve makarna değişmedi: Commons hız sınırı ve maske kalitesi. Açık iş.
+- Doğrulama: seri host testler 277/277 (aile düzeni ve rapor testleri yeni tasarıma göre güncellendi). Ekranlar `artifacts/claude/r44/`. `tools/build_release.sh` geçti; vc24 `tools/play_upload.py` ile Internal testing'e yüklendi.
+
 ## 21 Ekim 2026 — R43 (hesap kartı, oyun aç/kapa, yeni çocuk) — sürüm 2.0.9 (23), Internal testing'de
 
 - Deneme başlayınca paywall "Deneme sürüyor: X gün kaldı" bildirimiyle kapanıyor (önceden açık kalıp fiyatlı düğme gösteriyordu). Paywall'ın altındaki "Kapat" kaldırıldı, sol üstteki X yeterli.
