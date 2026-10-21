@@ -2,6 +2,11 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R38 (paywall düzeltmeleri) — sürüm 2.0.4 (18)
+
+- Düğme "7 gün ücretsiz dene" / "Try free for 7 days". Plan satırlarında fiyat sağda büyük (₺499,99), altında küçük not (₺41,67/ay, her ay, tek ödeme). "%31 tasarruf" kendi satırında. "Şimdilik ücretsiz devam et" kaldırıldı; çıkış sol üstteki X ile (onboarding paywall'ına da X eklendi), çıkınca ücretsiz sürüm sürer. Hoş geldin: deneme yazısı "Başlayalım"ın üstünde ayrı kutuda ("6 oyun hep ücretsiz" alt satırı).
+- Doğrulama: seri host testler 271/271. Ekranlar `artifacts/claude/r38/` ve Drive `R38/`. Normal test APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r38-normal.apk` (SHA-256 `86347d27…a420ffd`). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.4-vc18.aab` (SHA-256 `4867456a…4376aeb`, aynı yükleme sertifikası). İkisi de Drive'da. Play'e yüklenmedi.
+
 ## 21 Ekim 2026 — R37 (paywall yeniden, hoş geldin metni) — sürüm 2.0.3 (17)
 
 - Paywall benzer çocuk/öğrenme uygulamalarının düzenine göre yeniden yapıldı (`docs/paywall-research.md`). Düzen: büyük görsel, ortalı başlık, 3 ✓ satırı. Altında tam genişlikte planlar: Yıllık seçili, "En avantajlı" etiketli, aylık karşılığı ve % tasarruf yazılı; sonra Aylık, Tek seferlik. Deneme ayrı bir seçenek değil, tek düğme taşıyor: deneme kullanılmamışsa "7 gün ücretsiz başla", altında "Kart gerekmez…" notu; deneme kullanılmışsa ya da tek seferlik seçiliyse "Devam et · fiyat".
