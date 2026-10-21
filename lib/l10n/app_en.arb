@@ -1242,5 +1242,13 @@
   "paywallOneTimeShort": "Pay once",
   "@paywallOneTimeShort": {
     "description": "Paywall copy."
+  },
+  "familyCloudSync": "Send daily summaries to the cloud",
+  "@familyCloudSync": {
+    "description": "Family settings: automatic cloud summary sync."
+  },
+  "familyCloudSyncNote": "While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child's name is not sent.",
+  "@familyCloudSyncNote": {
+    "description": "Family settings: automatic cloud summary sync."
   }
 }

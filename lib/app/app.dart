@@ -39,6 +39,7 @@ class _EducationAppState extends State<EducationApp>
     if (next != null && next != old) {
       unawaited(state.syncTrial(next));
       unawaited(state.recordFamily(next, familyAuth.account?.email));
+      state.autoSync.request();
     }
     if (old != null && old != next) {
       // App-owned cleanup also runs when the account route is no longer mounted.
@@ -160,6 +161,7 @@ class _EducationAppState extends State<EducationApp>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState lifecycle) {
+    if (lifecycle == AppLifecycleState.resumed) state.autoSync.request();
     if (lifecycle != AppLifecycleState.resumed) {
       state.audio.stop();
       // The Google account picker and the Play purchase sheet put the app in

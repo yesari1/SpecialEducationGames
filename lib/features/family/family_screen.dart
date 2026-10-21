@@ -745,6 +745,16 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ),
         Text(l10n.familyAppliesToTheNextRoundIncorrect, style: SegText.caption),
       ]),
+      page(l10n.familyCloudSync, [
+        SwitchListTile(
+          key: const ValueKey('cloud-sync-switch'),
+          contentPadding: EdgeInsets.zero,
+          title: Text(l10n.familyCloudSync),
+          value: s.cloudSync,
+          onChanged: (value) => s.setting('cloudSync', '$value'),
+        ),
+        Text(l10n.familyCloudSyncNote, style: SegText.caption),
+      ]),
       page(l10n.familyDailyMinuteGoal, [
         Text(l10n.familyAnOptionalReminderItDoesNot, style: SegText.caption),
         dropdown(
@@ -1590,6 +1600,22 @@ class _FamilyScreenState extends State<FamilyScreen> {
             onChanged: (value) => s.setting('fadeWrongChoices', '$value'),
           ),
           Text(l10n.familyAppliesToTheNextRoundIncorrect),
+        ],
+      ),
+    ),
+    const SizedBox(height: SegSpace.s5),
+    SegCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SwitchListTile(
+            key: const ValueKey('cloud-sync-switch'),
+            contentPadding: EdgeInsets.zero,
+            title: Text(l10n.familyCloudSync, style: SegText.item),
+            value: s.cloudSync,
+            onChanged: (value) => s.setting('cloudSync', '$value'),
+          ),
+          Text(l10n.familyCloudSyncNote),
         ],
       ),
     ),

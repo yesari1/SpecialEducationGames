@@ -1063,5 +1063,7 @@
   "paywallPlansFailed": "Planlar yüklenemedi.",
   "paywallRetry": "Tekrar dene",
   "paywallClose": "Kapat",
-  "paywallOneTimeShort": "Bir kez öde"
+  "paywallOneTimeShort": "Bir kez öde",
+  "familyCloudSync": "Günlük özetleri buluta gönder",
+  "familyCloudSyncNote": "Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez."
 }

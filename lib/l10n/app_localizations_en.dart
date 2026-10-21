@@ -1307,4 +1307,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallOneTimeShort => 'Pay once';
+
+  @override
+  String get familyCloudSync => 'Send daily summaries to the cloud';
+
+  @override
+  String get familyCloudSyncNote =>
+      'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.';
 }

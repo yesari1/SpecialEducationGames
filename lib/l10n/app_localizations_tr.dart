@@ -1308,4 +1308,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallOneTimeShort => 'Bir kez öde';
+
+  @override
+  String get familyCloudSync => 'Günlük özetleri buluta gönder';
+
+  @override
+  String get familyCloudSyncNote =>
+      'Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.';
 }

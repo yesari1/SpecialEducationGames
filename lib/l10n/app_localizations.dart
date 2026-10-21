@@ -2370,6 +2370,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pay once'**
   String get paywallOneTimeShort;
+
+  /// Family settings: automatic cloud summary sync.
+  ///
+  /// In en, this message translates to:
+  /// **'Send daily summaries to the cloud'**
+  String get familyCloudSync;
+
+  /// Family settings: automatic cloud summary sync.
+  ///
+  /// In en, this message translates to:
+  /// **'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.'**
+  String get familyCloudSyncNote;
 }
 
 class _AppLocalizationsDelegate

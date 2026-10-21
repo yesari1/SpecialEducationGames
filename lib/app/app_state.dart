@@ -9,7 +9,9 @@ import '../core/audio/audio_service.dart';
 import '../core/entitlement/entitlement_service.dart';
 import '../core/entitlement/billing_repository.dart';
 import '../core/entitlement/trial_store.dart';
+import '../core/sync/auto_summary_sync.dart';
 import '../core/sync/family_record.dart';
+import '../core/sync/summary_sync.dart';
 import '../core/learning/policies.dart';
 import '../core/learning/item_performance.dart';
 import '../core/learning/play_time_ledger.dart';
@@ -27,6 +29,11 @@ class AppState extends ChangeNotifier {
   late final BillingRepository billing;
   final TrialStore trialStore;
   final FamilyRecordStore familyRecords;
+
+  /// Daily summaries go to the cloud automatically while a parent is signed
+  /// in; the family setting `cloudSync` (default on) turns it off.
+  late final AutoSummarySync autoSync;
+  bool cloudSync = true;
 
   /// After every Google sign-in: keep `families/{uid}` (created once,
   /// updated time, locale, account e-mail) for the admin page. Best effort.
@@ -233,6 +240,8 @@ class AppState extends ChangeNotifier {
     DateTime Function()? playTimeNow,
     TrialStore? trialStore,
     FamilyRecordStore? familyRecords,
+    SummaryStore? summaryStore,
+    String? Function()? signedInUid,
   }) : _playTimeNow = playTimeNow ?? DateTime.now,
        trialStore = trialStore ?? FirestoreTrialStore(),
        familyRecords = familyRecords ?? const FirestoreFamilyRecordStore() {
@@ -244,6 +253,14 @@ class AppState extends ChangeNotifier {
       trialDaysOf: () => configuration.trialDays,
     );
     billing = BillingRepository(entitlement);
+    autoSync = AutoSummarySync(
+      enabled: () => cloudSync,
+      activeProfileId: () => active?.id,
+      sessions: () => sessions,
+      trials: () => trials,
+      store: summaryStore,
+      signedInUid: signedInUid,
+    );
     billing.addListener(notifyListeners);
   }
   String tr(String turkish, String english) =>
@@ -340,6 +357,7 @@ class AppState extends ChangeNotifier {
     introduction = await _readSetting('introduction') != 'false';
     automaticDifficulty = await _readSetting('automaticDifficulty') != 'false';
     reducedMotion = await _readSetting('reducedMotion') == 'true';
+    cloudSync = await db.preference('cloudSync') != 'false';
     final savedLength = int.tryParse(await _readSetting('roundLength') ?? '0');
     roundLength = [0, 3, 5, 8, 10].contains(savedLength) ? savedLength! : 0;
     final savedHint = int.tryParse(await _readSetting('hintSeconds') ?? '-1');
@@ -537,6 +555,11 @@ class AppState extends ChangeNotifier {
           !entitlement.isPremium) {
         throw StateError('premium_required');
       }
+    }
+    if (key == 'cloudSync') {
+      if (!familyUnlocked) throw StateError('parent_gate_required');
+      if (!['true', 'false'].contains(value)) throw ArgumentError(key);
+      if (value == 'false') autoSync.cancel();
     }
     if (key == 'dailyGoalMinutes' || key == 'screenLimitMinutes') {
       if (!familyUnlocked) throw StateError('parent_gate_required');
@@ -752,6 +775,7 @@ class AppState extends ChangeNotifier {
       ),
     );
     await refreshTrials();
+    autoSync.request();
   }
 
   Future<void> checkpointSession(String id, int milliseconds) async {
@@ -775,6 +799,7 @@ class AppState extends ChangeNotifier {
     _lockTimer?.cancel();
     billing.removeListener(notifyListeners);
     billing.dispose();
+    autoSync.dispose();
     unawaited(audio.dispose());
     unawaited(db.close());
     super.dispose();
