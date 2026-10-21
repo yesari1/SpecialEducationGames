@@ -1084,5 +1084,13 @@
   "paywallEveryMonth": "her ay",
   "paywallOnePayment": "tek ödeme",
   "paywallCancelShort": "İstediğiniz zaman iptal",
-  "paywallNoSubscription": "Abonelik yok"
+  "paywallNoSubscription": "Abonelik yok",
+  "lockedGameTitle": "Bu oyun kilitli",
+  "lockedGameBody": "Açmak için ailene sor. Şimdilik açık oyunlarla oynayabilirsin.",
+  "lockedGameOk": "Tamam",
+  "familyPremiumStripBuy": "Premium'a geç",
+  "familyPremiumStripNote": "Tüm oyunlar ve ayrıntılı ilerleme",
+  "familyLockedStatsTitle": "Ayrıntılı ilerleme Premium ile açılır",
+  "familyLockedStatsBody": "Haftalık grafikler, dikkat, beceriler ve öğe sonuçları.",
+  "familyLockedStatsButton": "Premium ile aç"
 }

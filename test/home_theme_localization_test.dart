@@ -154,8 +154,12 @@ void main() {
 
       await tester.tap(find.byType(ThemeGameCard));
       await tester.pumpAndSettle();
-      expect(find.text(l10n.themeUnlockWithFamily), findsOneWidget);
+      expect(find.text(l10n.lockedGameTitle), findsOneWidget);
+      expect(find.text(l10n.lockedGameBody), findsOneWidget);
       expect(find.text('game:G02'), findsNothing);
+      await tester.tap(find.byKey(const ValueKey('locked-game-ok')));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.lockedGameTitle), findsNothing);
       expect(tester.takeException(), isNull);
       await cleanup(tester, state, router);
     }

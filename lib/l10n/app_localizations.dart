@@ -2466,6 +2466,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No subscription'**
   String get paywallNoSubscription;
+
+  /// Child mode: locked game dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'This game is locked'**
+  String get lockedGameTitle;
+
+  /// Child mode: locked game dialog text.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your family to unlock it. You can play the open games for now.'**
+  String get lockedGameBody;
+
+  /// Child mode: locked game dialog button.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get lockedGameOk;
+
+  /// Family area: Premium strip title once the trial is used.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Premium'**
+  String get familyPremiumStripBuy;
+
+  /// Family area: Premium strip line.
+  ///
+  /// In en, this message translates to:
+  /// **'Every game and detailed progress'**
+  String get familyPremiumStripNote;
+
+  /// Family progress: locked statistics title.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed progress comes with Premium'**
+  String get familyLockedStatsTitle;
+
+  /// Family progress: locked statistics text.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly charts, attention, skills and per-item results.'**
+  String get familyLockedStatsBody;
+
+  /// Family progress: locked statistics button.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Premium'**
+  String get familyLockedStatsButton;
 }
 
 class _AppLocalizationsDelegate

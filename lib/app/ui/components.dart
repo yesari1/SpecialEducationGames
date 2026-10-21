@@ -540,6 +540,13 @@ class _PhotoContourPainter extends CustomPainter {
       oldDelegate.silhouette != silhouette;
 }
 
+const _greyscale = <double>[
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0, 0, 0, 1, 0,
+];
+
 class ThemeGameCard extends StatelessWidget {
   final ContentTheme theme;
   final String title, subtitle;
@@ -592,67 +599,79 @@ class ThemeGameCard extends StatelessWidget {
     final deep = Color.lerp(accent, SegColors.ink, .35)!;
 
     // A small scene: the hero object stands on soft hills in the theme colour.
+    // Locked cards are grey and faded, with a large lock in the middle.
     Widget cardVisual() => ClipRRect(
       borderRadius: BorderRadius.circular(SegRadius.md),
-      child: SceneBackdrop(
-        tint: accent,
-        base: Color.lerp(SegColors.canvas, accent, .06)!,
-        clouds: !horizontalContent,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 18, 12, 6),
-              child: Opacity(
-                opacity: locked ? .5 : 1,
-                child: StagedObject(
-                  child: FractionallySizedBox(
-                    alignment: Alignment.bottomCenter,
-                    widthFactor: _heroScale,
-                    heightFactor: _heroScale,
-                    child: visual,
+      child: ColorFiltered(
+        colorFilter: locked
+            ? const ColorFilter.matrix(_greyscale)
+            : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
+        child: SceneBackdrop(
+          tint: accent,
+          base: Color.lerp(SegColors.canvas, accent, .06)!,
+          clouds: !horizontalContent,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 18, 12, 6),
+                child: Opacity(
+                  opacity: locked ? .35 : 1,
+                  child: StagedObject(
+                    child: FractionallySizedBox(
+                      alignment: Alignment.bottomCenter,
+                      widthFactor: _heroScale,
+                      heightFactor: _heroScale,
+                      child: visual,
+                    ),
                   ),
                 ),
               ),
-            ),
-            if (modeIcon case final icon?)
-              Positioned(
-                right: 8,
-                bottom: 8,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: deep.withValues(alpha: .18),
-                        blurRadius: 8,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Icon(icon, size: 26, color: deep),
-                ),
-              ),
-            if (locked)
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  margin: const EdgeInsets.all(8),
-                  padding: const EdgeInsets.all(6),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.lock_outline_rounded,
-                    color: SegColors.inkSoft,
-                    size: 22,
+              if (modeIcon case final icon?)
+                Positioned(
+                  right: 8,
+                  bottom: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: deep.withValues(alpha: .18),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Icon(icon, size: 34, color: deep),
                   ),
                 ),
-              ),
-          ],
+              if (locked)
+                Center(
+                  child: Container(
+                    key: const ValueKey('game-card-lock'),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: SegColors.ink.withValues(alpha: .18),
+                          blurRadius: 10,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: const Icon(
+                      Icons.lock_rounded,
+                      color: SegColors.ink,
+                      size: 34,
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -1022,6 +1041,99 @@ class HopIn extends StatelessWidget {
       );
     },
   );
+}
+
+bool _lockedNoticeOpen = false;
+
+/// The friendly "this game is locked" card for the child: a big lock, two
+/// short lines and one button. Shown once; taps while it is open do nothing.
+/// No purchase prompt in child mode.
+Future<void> showLockedGameNotice(
+  BuildContext context, {
+  required String title,
+  required String body,
+  required String ok,
+}) async {
+  if (_lockedNoticeOpen) return;
+  _lockedNoticeOpen = true;
+  try {
+    await showGeneralDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: ok,
+      barrierColor: SegColors.ink.withValues(alpha: .35),
+      transitionDuration: const Duration(milliseconds: 220),
+      transitionBuilder: (context, animation, _, child) => ScaleTransition(
+        scale: CurvedAnimation(parent: animation, curve: Curves.easeOutBack),
+        child: FadeTransition(opacity: animation, child: child),
+      ),
+      pageBuilder: (context, _, _) => Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 440),
+          child: Material(
+            key: const ValueKey('locked-game-notice'),
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(SegRadius.xl),
+              side: const BorderSide(color: Colors.white, width: 4),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                SegSpace.s5,
+                SegSpace.s4,
+                SegSpace.s5,
+                SegSpace.s4,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 76,
+                      height: 76,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [Color(0xFFFFC46B), SegColors.accent],
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.lock_rounded,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                    const SizedBox(height: SegSpace.s3),
+                    Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: SegText.title.copyWith(color: SegColors.ink),
+                    ),
+                    const SizedBox(height: SegSpace.s2),
+                    Text(
+                      body,
+                      textAlign: TextAlign.center,
+                      style: SegText.body.copyWith(color: SegColors.inkSoft),
+                    ),
+                    const SizedBox(height: SegSpace.s4),
+                    SegButton(
+                      key: const ValueKey('locked-game-ok'),
+                      label: ok,
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  } finally {
+    _lockedNoticeOpen = false;
+  }
 }
 
 String? _visibleNotice;

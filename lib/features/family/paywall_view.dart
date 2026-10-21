@@ -299,16 +299,39 @@ class _PaywallViewState extends State<PaywallView> {
                 ? null
                 : _continue,
           ),
-          if (footnote != null)
-            Padding(
-              padding: const EdgeInsets.only(top: SegSpace.s2),
-              child: Text(
-                footnote,
-                key: const ValueKey('paywall-footnote'),
-                style: SegText.caption.copyWith(color: SegColors.inkSoft),
-                textAlign: TextAlign.center,
-              ),
+          // Every footnote takes the room of the longest one, so changing
+          // the plan never resizes or shifts the page.
+          Padding(
+            padding: const EdgeInsets.only(top: SegSpace.s2),
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                for (final text in [
+                  l10n.paywallTrialFootnote,
+                  l10n.paywallLifetimeNote,
+                  l10n.paywallCancelAnytime,
+                ])
+                  Visibility(
+                    visible: false,
+                    maintainSize: true,
+                    maintainAnimation: true,
+                    maintainState: true,
+                    child: Text(
+                      text,
+                      style: SegText.caption,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                if (footnote != null)
+                  Text(
+                    footnote,
+                    key: const ValueKey('paywall-footnote'),
+                    style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                    textAlign: TextAlign.center,
+                  ),
+              ],
             ),
+          ),
         ],
         const SizedBox(height: SegSpace.s1),
         Wrap(

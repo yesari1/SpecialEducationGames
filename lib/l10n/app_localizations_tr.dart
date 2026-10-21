@@ -1371,4 +1371,30 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallNoSubscription => 'Abonelik yok';
+
+  @override
+  String get lockedGameTitle => 'Bu oyun kilitli';
+
+  @override
+  String get lockedGameBody =>
+      'Açmak için ailene sor. Şimdilik açık oyunlarla oynayabilirsin.';
+
+  @override
+  String get lockedGameOk => 'Tamam';
+
+  @override
+  String get familyPremiumStripBuy => 'Premium\'a geç';
+
+  @override
+  String get familyPremiumStripNote => 'Tüm oyunlar ve ayrıntılı ilerleme';
+
+  @override
+  String get familyLockedStatsTitle => 'Ayrıntılı ilerleme Premium ile açılır';
+
+  @override
+  String get familyLockedStatsBody =>
+      'Haftalık grafikler, dikkat, beceriler ve öğe sonuçları.';
+
+  @override
+  String get familyLockedStatsButton => 'Premium ile aç';
 }

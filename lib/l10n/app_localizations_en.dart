@@ -1369,4 +1369,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallNoSubscription => 'No subscription';
+
+  @override
+  String get lockedGameTitle => 'This game is locked';
+
+  @override
+  String get lockedGameBody =>
+      'Ask your family to unlock it. You can play the open games for now.';
+
+  @override
+  String get lockedGameOk => 'OK';
+
+  @override
+  String get familyPremiumStripBuy => 'Go Premium';
+
+  @override
+  String get familyPremiumStripNote => 'Every game and detailed progress';
+
+  @override
+  String get familyLockedStatsTitle => 'Detailed progress comes with Premium';
+
+  @override
+  String get familyLockedStatsBody =>
+      'Weekly charts, attention, skills and per-item results.';
+
+  @override
+  String get familyLockedStatsButton => 'Unlock with Premium';
 }

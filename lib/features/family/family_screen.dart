@@ -1,3 +1,5 @@
+import 'dart:ui' show ImageFilter;
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:go_router/go_router.dart';
@@ -351,6 +353,17 @@ class _FamilyScreenState extends State<FamilyScreen> {
       if (s.dailyGoalMinutes > 0)
         GoalRing(state: s, minutes: report.days.last.minutes),
     ];
+    if (!s.entitlement.isPremium) {
+      // Short sideways pages: the card shrinks to its page instead of
+      // overflowing at large text.
+      return [
+        ...pages,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: SizedBox(width: 380, child: _lockedStatsCard()),
+        ),
+      ];
+    }
 
     for (final day in report.days) {
       pages.add(
@@ -569,6 +582,176 @@ class _FamilyScreenState extends State<FamilyScreen> {
       );
     }
     return pages;
+  }
+
+  /// Pinned above the bottom bar while Premium is not open.
+  Widget _premiumStrip() {
+    final e = s.entitlement;
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          SegSpace.s3,
+          SegSpace.s2,
+          SegSpace.s3,
+          SegSpace.s1,
+        ),
+        child: Material(
+          key: const ValueKey('family-premium-strip'),
+          borderRadius: BorderRadius.circular(SegRadius.lg),
+          clipBehavior: Clip.antiAlias,
+          child: Ink(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFFFF9A3D), SegColors.accentStrong],
+              ),
+            ),
+            child: InkWell(
+              onTap: () => context.go('/family/subscription'),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: SegSpace.s3,
+                  vertical: SegSpace.s2,
+                ),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.workspace_premium_rounded,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                    const SizedBox(width: SegSpace.s3),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            e.trialUsed
+                                ? l10n.familyPremiumStripBuy
+                                : l10n.paywallStartTrial(e.trialDays),
+                            style: SegText.label.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          Text(
+                            l10n.familyPremiumStripNote,
+                            style: SegText.caption.copyWith(
+                              color: Colors.white.withValues(alpha: .92),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(
+                      Icons.chevron_right_rounded,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _lockedStatsCard() => SegCard(
+    key: const ValueKey('family-locked-stats'),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(SegSpace.s3),
+          decoration: const BoxDecoration(
+            color: Color(0xFFFFF1E0),
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(
+            Icons.lock_rounded,
+            color: SegColors.accentDeep,
+            size: 30,
+          ),
+        ),
+        const SizedBox(height: SegSpace.s2),
+        Text(
+          l10n.familyLockedStatsTitle,
+          textAlign: TextAlign.center,
+          style: SegText.heading.copyWith(color: SegColors.ink),
+        ),
+        const SizedBox(height: SegSpace.s1),
+        Text(
+          l10n.familyLockedStatsBody,
+          textAlign: TextAlign.center,
+          style: SegText.caption.copyWith(color: SegColors.inkSoft),
+        ),
+        const SizedBox(height: SegSpace.s3),
+        SegButton(
+          key: const ValueKey('family-locked-stats-button'),
+          label: l10n.familyLockedStatsButton,
+          onPressed: () => context.go('/family/subscription'),
+        ),
+      ],
+    ),
+  );
+
+  /// Detailed statistics for Premium; free users see a blurred preview of
+  /// the top with an unlock card over it.
+  Widget _premiumOnly(Widget child) {
+    if (s.entitlement.isPremium) return child;
+    // Not a SizedBox: the page list drops SizedBox spacers.
+    return ConstrainedBox(
+      key: const ValueKey('family-premium-only'),
+      constraints: const BoxConstraints.tightFor(height: 460),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: ClipRect(
+              child: IgnorePointer(
+                child: ExcludeSemantics(
+                  child: ImageFiltered(
+                    imageFilter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
+                    child: OverflowBox(
+                      alignment: Alignment.topCenter,
+                      minHeight: 0,
+                      maxHeight: double.infinity,
+                      child: child,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    SegColors.familyCanvas.withValues(alpha: .2),
+                    SegColors.familyCanvas,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: const Alignment(0, -.2),
+            child: Padding(
+              padding: const EdgeInsets.all(SegSpace.s4),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: SizedBox(width: 380, child: _lockedStatsCard()),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _compactStat(String value, String label) => Column(
@@ -1085,35 +1268,46 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ),
-      bottomNavigationBar: FamilyNavBar(
-        selectedIndex: tab,
-        onDestinationSelected: (i) {
-          setState(() {
-            tab = i;
-            sectionPage = 0;
-          });
-          if (_sectionController.hasClients) _sectionController.jumpToPage(0);
-        },
-        items: [
-          FamilyNavItem(
-            icon: Icons.insights_outlined,
-            selectedIcon: Icons.insights_rounded,
-            label: l10n.familyProgress,
-          ),
-          FamilyNavItem(
-            icon: Icons.sports_esports_outlined,
-            selectedIcon: Icons.sports_esports_rounded,
-            label: l10n.familyGames,
-          ),
-          FamilyNavItem(
-            icon: Icons.people_outline_rounded,
-            selectedIcon: Icons.people_rounded,
-            label: l10n.familyProfiles,
-          ),
-          FamilyNavItem(
-            icon: Icons.settings_outlined,
-            selectedIcon: Icons.settings_rounded,
-            label: l10n.familySettings,
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Short sideways screens keep their room; Settings › Premium is there.
+          if (!s.entitlement.isPremium &&
+              MediaQuery.sizeOf(context).height >= 600)
+            _premiumStrip(),
+          FamilyNavBar(
+            selectedIndex: tab,
+            onDestinationSelected: (i) {
+              setState(() {
+                tab = i;
+                sectionPage = 0;
+              });
+              if (_sectionController.hasClients) {
+                _sectionController.jumpToPage(0);
+              }
+            },
+            items: [
+              FamilyNavItem(
+                icon: Icons.insights_outlined,
+                selectedIcon: Icons.insights_rounded,
+                label: l10n.familyProgress,
+              ),
+              FamilyNavItem(
+                icon: Icons.sports_esports_outlined,
+                selectedIcon: Icons.sports_esports_rounded,
+                label: l10n.familyGames,
+              ),
+              FamilyNavItem(
+                icon: Icons.people_outline_rounded,
+                selectedIcon: Icons.people_rounded,
+                label: l10n.familyProfiles,
+              ),
+              FamilyNavItem(
+                icon: Icons.settings_outlined,
+                selectedIcon: Icons.settings_rounded,
+                label: l10n.familySettings,
+              ),
+            ],
           ),
         ],
       ),
@@ -1171,46 +1365,55 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ),
       ),
       _recentCard(),
-      WeeklyCharts(state: s, report: report),
-      const SizedBox(height: SegSpace.s5),
-      AttentionChart(state: s, report: report),
-      const SizedBox(height: SegSpace.s5),
-      SkillsCard(state: s, report: report),
-      const SizedBox(height: SegSpace.s5),
-      ItemInsights(state: s),
-      const SizedBox(height: SegSpace.s5),
-      SegCard(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      _premiumOnly(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(l10n.familyProgressByTheme, style: SegText.heading),
-            ...s.content.themes.map((theme) {
-              final data = week.where((t) => t.themeId == theme.id).toList();
-              final rate = data.isEmpty
-                  ? 0.0
-                  : data.where(ReportDay.independent).length / data.length;
-              return Padding(
-                padding: const EdgeInsets.only(top: SegSpace.s5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('${theme.name(s.locale)} · ${data.length}'),
-                    const SizedBox(height: SegSpace.s2),
-                    LinearProgressIndicator(
-                      value: rate,
-                      color: SegColors.primary,
-                      backgroundColor: SegColors.line,
-                      minHeight: 8,
-                    ),
-                  ],
-                ),
-              );
-            }),
+            WeeklyCharts(state: s, report: report),
+            const SizedBox(height: SegSpace.s5),
+            AttentionChart(state: s, report: report),
+            const SizedBox(height: SegSpace.s5),
+            SkillsCard(state: s, report: report),
+            const SizedBox(height: SegSpace.s5),
+            ItemInsights(state: s),
+            const SizedBox(height: SegSpace.s5),
+            _themeProgress(week),
           ],
         ),
       ),
     ];
   }
+
+  Widget _themeProgress(List<Trial> week) => SegCard(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(l10n.familyProgressByTheme, style: SegText.heading),
+        ...s.content.themes.map((theme) {
+          final data = week.where((t) => t.themeId == theme.id).toList();
+          final rate = data.isEmpty
+              ? 0.0
+              : data.where(ReportDay.independent).length / data.length;
+          return Padding(
+            padding: const EdgeInsets.only(top: SegSpace.s5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${theme.name(s.locale)} · ${data.length}'),
+                const SizedBox(height: SegSpace.s2),
+                LinearProgressIndicator(
+                  value: rate,
+                  color: SegColors.primary,
+                  backgroundColor: SegColors.line,
+                  minHeight: 8,
+                ),
+              ],
+            ),
+          );
+        }),
+      ],
+    ),
+  );
 
   static const _statTints = [
     (Color(0xFFFFF4D6), SegColors.starDeep, Icons.star_rounded),

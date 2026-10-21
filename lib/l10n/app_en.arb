@@ -1398,5 +1398,37 @@
   "paywallNoSubscription": "No subscription",
   "@paywallNoSubscription": {
     "description": "Paywall: one-time plan line."
+  },
+  "lockedGameTitle": "This game is locked",
+  "@lockedGameTitle": {
+    "description": "Child mode: locked game dialog title."
+  },
+  "lockedGameBody": "Ask your family to unlock it. You can play the open games for now.",
+  "@lockedGameBody": {
+    "description": "Child mode: locked game dialog text."
+  },
+  "lockedGameOk": "OK",
+  "@lockedGameOk": {
+    "description": "Child mode: locked game dialog button."
+  },
+  "familyPremiumStripBuy": "Go Premium",
+  "@familyPremiumStripBuy": {
+    "description": "Family area: Premium strip title once the trial is used."
+  },
+  "familyPremiumStripNote": "Every game and detailed progress",
+  "@familyPremiumStripNote": {
+    "description": "Family area: Premium strip line."
+  },
+  "familyLockedStatsTitle": "Detailed progress comes with Premium",
+  "@familyLockedStatsTitle": {
+    "description": "Family progress: locked statistics title."
+  },
+  "familyLockedStatsBody": "Weekly charts, attention, skills and per-item results.",
+  "@familyLockedStatsBody": {
+    "description": "Family progress: locked statistics text."
+  },
+  "familyLockedStatsButton": "Unlock with Premium",
+  "@familyLockedStatsButton": {
+    "description": "Family progress: locked statistics button."
   }
 }

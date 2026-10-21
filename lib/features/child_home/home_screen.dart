@@ -322,10 +322,11 @@ class _ThemeScreenState extends State<ThemeScreen> {
                                 return;
                               }
                               if (locked) {
-                                showNotice(
+                                showLockedGameNotice(
                                   context,
-                                  l10n.themeUnlockWithFamily,
-                                  style: SegText.item,
+                                  title: l10n.lockedGameTitle,
+                                  body: l10n.lockedGameBody,
+                                  ok: l10n.lockedGameOk,
                                 );
                               } else {
                                 context.go(

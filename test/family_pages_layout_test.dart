@@ -567,6 +567,8 @@ void main() {
           announcementId: 'family-layout-update',
         )
         ..unlockFamily();
+      // Detailed report pages are Premium; cover their layout.
+      state.entitlement.lifetimeOwned = true;
       await tester.runAsync(() async {
         await state.db.setPreference(
           'announcement:family-layout-update',
