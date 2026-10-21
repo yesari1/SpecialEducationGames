@@ -59,3 +59,6 @@ key.properties
 
 # Google Play bundles and store assets (kept locally and on Drive)
 GooglePlayBuild/
+
+# Google Play upload service account key (never commit)
+android/play-service-account.json
