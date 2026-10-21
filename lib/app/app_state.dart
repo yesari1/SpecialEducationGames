@@ -9,6 +9,7 @@ import '../core/audio/audio_service.dart';
 import '../core/entitlement/entitlement_service.dart';
 import '../core/entitlement/billing_repository.dart';
 import '../core/entitlement/trial_store.dart';
+import '../core/sync/family_record.dart';
 import '../core/learning/policies.dart';
 import '../core/learning/item_performance.dart';
 import '../core/learning/play_time_ledger.dart';
@@ -25,6 +26,18 @@ class AppState extends ChangeNotifier {
   late final EntitlementService entitlement;
   late final BillingRepository billing;
   final TrialStore trialStore;
+  final FamilyRecordStore familyRecords;
+
+  /// After every Google sign-in: keep `families/{uid}` (created once,
+  /// updated time, locale, account e-mail) for the admin page. Best effort.
+  Future<void> recordFamily(String uid, String? email) async {
+    try {
+      await familyRecords.record(uid: uid, locale: locale, email: email);
+    } catch (_) {
+      // Offline or not configured: the next sign-in tries again.
+    }
+  }
+
   bool trialBusy = false;
   TrialIssue? trialIssue;
 
@@ -219,8 +232,10 @@ class AppState extends ChangeNotifier {
     this.audio, {
     DateTime Function()? playTimeNow,
     TrialStore? trialStore,
+    FamilyRecordStore? familyRecords,
   }) : _playTimeNow = playTimeNow ?? DateTime.now,
-       trialStore = trialStore ?? FirestoreTrialStore() {
+       trialStore = trialStore ?? FirestoreTrialStore(),
+       familyRecords = familyRecords ?? const FirestoreFamilyRecordStore() {
     playTime = PlayTimeLedger(db, now: _playTimeNow);
     configuration = AppConfiguration.defaults(content);
     configs = ConfigRepository(db, content);

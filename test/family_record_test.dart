@@ -1,0 +1,51 @@
+import 'package:drift/native.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:special_education_games/app/app_state.dart';
+import 'package:special_education_games/core/audio/audio_service.dart';
+import 'package:special_education_games/core/content/content_repository.dart';
+import 'package:special_education_games/core/db/app_database.dart';
+import 'package:special_education_games/core/sync/family_record.dart';
+
+class _FakeRecords implements FamilyRecordStore {
+  final calls = <Map<String, Object?>>[];
+  bool fail = false;
+  @override
+  Future<void> record({
+    required String uid,
+    required String locale,
+    String? email,
+  }) async {
+    if (fail) throw StateError('offline');
+    calls.add({'uid': uid, 'locale': locale, 'email': email});
+  }
+}
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  setUp(() => debugDefaultTargetPlatformOverride = TargetPlatform.linux);
+  tearDown(() => debugDefaultTargetPlatformOverride = null);
+
+  test('sign-in records the family with locale and account e-mail', () async {
+    final records = _FakeRecords();
+    final state = AppState(
+      await ContentRepository.load(),
+      AppDatabase.forTesting(NativeDatabase.memory()),
+      AudioService(),
+      familyRecords: records,
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    state.locale = 'tr';
+    await state.recordFamily('parent-1', 'parent@example.org');
+    expect(records.calls.single, {
+      'uid': 'parent-1',
+      'locale': 'tr',
+      'email': 'parent@example.org',
+    });
+    // Failures are swallowed: sign-in must never break because of it.
+    records.fail = true;
+    await state.recordFamily('parent-1', null);
+    expect(records.calls, hasLength(1));
+  });
+}

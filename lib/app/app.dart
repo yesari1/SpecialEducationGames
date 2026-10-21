@@ -36,7 +36,10 @@ class _EducationAppState extends State<EducationApp>
     final old = _cachedAccountUid;
     _cachedAccountUid = next;
     // The free trial belongs to the Google account: read it after sign-in.
-    if (next != null && next != old) unawaited(state.syncTrial(next));
+    if (next != null && next != old) {
+      unawaited(state.syncTrial(next));
+      unawaited(state.recordFamily(next, familyAuth.account?.email));
+    }
     if (old != null && old != next) {
       // App-owned cleanup also runs when the account route is no longer mounted.
       unawaited(
