@@ -316,24 +316,18 @@ class _ThemeScreenState extends State<ThemeScreen> {
                             locked: locked || contentUnavailable,
                             onTap: () {
                               if (contentUnavailable) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      l10n.gameThereIsNotEnoughContentForThis,
-                                      style: SegText.item,
-                                    ),
-                                  ),
+                                showNotice(
+                                  context,
+                                  l10n.gameThereIsNotEnoughContentForThis,
+                                  style: SegText.item,
                                 );
                                 return;
                               }
                               if (locked) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      l10n.themeUnlockWithFamily,
-                                      style: SegText.item,
-                                    ),
-                                  ),
+                                showNotice(
+                                  context,
+                                  l10n.themeUnlockWithFamily,
+                                  style: SegText.item,
                                 );
                               } else {
                                 context.go(

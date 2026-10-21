@@ -1002,3 +1002,21 @@ class HopIn extends StatelessWidget {
     },
   );
 }
+
+String? _visibleNotice;
+
+/// Shows a short message once: tapping again while the same message is on
+/// screen does nothing, and a different message replaces it instead of
+/// queueing behind it.
+void showNotice(BuildContext context, String message, {TextStyle? style}) {
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  if (messenger == null || _visibleNotice == message) return;
+  messenger.clearSnackBars();
+  _visibleNotice = message;
+  messenger
+      .showSnackBar(SnackBar(content: Text(message, style: style)))
+      .closed
+      .then((_) {
+        if (_visibleNotice == message) _visibleNotice = null;
+      });
+}

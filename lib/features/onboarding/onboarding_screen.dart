@@ -189,9 +189,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } catch (_) {
       if (mounted) {
         setState(() => saving = false);
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(l10n.onboardingSaveError)));
+        showNotice(context, l10n.onboardingSaveError);
       }
     }
   }

@@ -90,12 +90,9 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
     // Firebase has already removed the user; also end the Google session.
     if (done) await widget.auth.signOut();
     if (!mounted) return;
-    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-      SnackBar(
-        content: Text(
-          done ? l10n.familyAccountDeleted : l10n.familyAccountDeleteFailed,
-        ),
-      ),
+    showNotice(
+      context,
+      done ? l10n.familyAccountDeleted : l10n.familyAccountDeleteFailed,
     );
   }
 
