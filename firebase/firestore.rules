@@ -10,6 +10,9 @@ service cloud.firestore {
     function admin() {
       return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
+    // Admin page (yesastudio.com): admins listed in admins/{uid}, which only
+    // the Firebase console can write, may read and delete family data.
+    function ownerOrAdmin(uid) { return owner(uid) || admin(); }
     function safeId(value) { return value is string && value.matches('^[A-Za-z0-9-]{1,128}$'); }
     function count(value) { return value is int && value >= 0; }
     function stamp(value) { return value is timestamp && value > timestamp.value(0) && value <= request.time; }
@@ -57,24 +60,27 @@ service cloud.firestore {
     // server time; it is never changed or deleted by clients, so reinstalling
     // or another device cannot restart it.
     match /trials/{uid} {
-      allow get: if owner(uid);
+      allow get: if ownerOrAdmin(uid);
+      allow list: if admin();
       allow create: if owner(uid)
         && exact(request.resource.data, ['startedAt'])
         && request.resource.data.startedAt == request.time;
-      allow list, update, delete: if false;
+      allow update, delete: if false;
     }
     match /admins/{uid} {
       allow get: if owner(uid);
       allow list, write: if false;
     }
     match /families/{uid} {
-      allow read, delete: if owner(uid);
+      allow read, delete: if ownerOrAdmin(uid);
       allow create, update: if canWriteFamily(uid)
-        && exact(request.resource.data, ['createdAt', 'locale', 'updatedAt'])
+        && request.resource.data.keys().hasAll(['createdAt', 'locale', 'updatedAt'])
+        && request.resource.data.keys().hasOnly(['createdAt', 'locale', 'updatedAt', 'email'])
+        && (!('email' in request.resource.data) || request.resource.data.email == request.auth.token.email)
         && request.resource.data.locale in ['tr', 'en']
         && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
       match /profiles/{profileId} {
-        allow read, delete: if owner(uid);
+        allow read, delete: if ownerOrAdmin(uid);
         allow create, update: if canWriteFamily(uid) && safeId(profileId)
           && exact(request.resource.data, ['nickname', 'avatarId', 'ageRange', 'survey', 'settings', 'createdAt', 'updatedAt'])
           && request.resource.data.nickname is string && request.resource.data.nickname.size() > 0 && request.resource.data.nickname.size() <= 24
@@ -83,7 +89,7 @@ service cloud.firestore {
           && request.resource.data.survey is map && request.resource.data.settings is map
           && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
         match /progress/{summaryId} {
-          allow read, delete: if owner(uid);
+          allow read, delete: if ownerOrAdmin(uid);
           allow create, update: if canWriteFamily(uid) && safeId(profileId)
             && exact(request.resource.data, ['themeId', 'modeId', 'difficulty', 'stages', 'independent', 'maxHint', 'updatedAt'])
             && safeId(request.resource.data.themeId) && safeId(request.resource.data.modeId) && tier(request.resource.data.difficulty)
@@ -92,7 +98,7 @@ service cloud.firestore {
             && count(request.resource.data.maxHint) && request.resource.data.maxHint <= 4 && stamp(request.resource.data.updatedAt);
         }
         match /itemStats/{itemId} {
-          allow read, delete: if owner(uid);
+          allow read, delete: if ownerOrAdmin(uid);
           allow create, update: if canWriteFamily(uid) && safeId(profileId) && safeId(itemId)
             && exact(request.resource.data, ['correct', 'wrong', 'hintCounts', 'updatedAt'])
             && count(request.resource.data.correct) && count(request.resource.data.wrong)
@@ -102,11 +108,16 @@ service cloud.firestore {
             && count(request.resource.data.hintCounts[4]) && stamp(request.resource.data.updatedAt);
         }
         match /sessions/{summaryId} {
-          allow read, delete: if owner(uid);
+          allow read, delete: if ownerOrAdmin(uid);
           allow create, update: if canWriteFamily(uid) && safeId(profileId) && session(request.resource.data, summaryId);
         }
       }
     }
+    // Admin page: collection-group reads across families.
+    match /{path=**}/profiles/{id} { allow read: if admin(); }
+    match /{path=**}/sessions/{id} { allow read: if admin(); }
+    match /{path=**}/progress/{id} { allow read: if admin(); }
+    match /{path=**}/itemStats/{id} { allow read: if admin(); }
     // Unspecified collections, including raw trial logs, are denied.
   }
 }

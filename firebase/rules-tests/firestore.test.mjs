@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {after, before, beforeEach, test} from 'node:test';
 import {initializeTestEnvironment, assertFails, assertSucceeds} from '@firebase/rules-unit-testing';
-import {doc, collection, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
+import {doc, collection, collectionGroup, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
 
 test('persistent deletion marker blocks all family writes and is private',async () => {
   const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
@@ -169,4 +169,41 @@ test('announcements allow public exact reads, bounded admin text writes and no l
     await assertFails(setDoc(doc(db('admin'),target),{...payload,...change}));
   }
   await assertSucceeds(deleteDoc(doc(db('admin'),target)));
+});
+
+test('admin page: listed admin reads and deletes family data, others cannot',async () => {
+  const profile={nickname:'Deniz',avatarId:'cat',ageRange:'4-6',survey:{},settings:{},createdAt:stamp(),updatedAt:stamp()};
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{createdAt:stamp(),updatedAt:stamp(),locale:'tr'}));
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice/profiles/profile-1'),profile));
+  await assertSucceeds(setDoc(doc(db('alice'),path),summary()));
+  await assertSucceeds(setDoc(doc(db('alice'),'trials/alice'),{startedAt:serverTimestamp()}));
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  // Only a pre-provisioned admin reads across families.
+  for(const uid of ['bob','alice',null]) {
+    await assertFails(getDocs(collection(db(uid),'trials')));
+    await assertFails(getDocs(collectionGroup(db(uid),'sessions')));
+    await assertFails(getDocs(collectionGroup(db(uid),'profiles')));
+  }
+  await assertFails(deleteDoc(doc(db('bob'),path)));
+  const admin=db('admin');
+  await assertSucceeds(getDocs(collection(admin,'trials')));
+  await assertSucceeds(getDocs(collectionGroup(admin,'sessions')));
+  await assertSucceeds(getDocs(collectionGroup(admin,'profiles')));
+  await assertSucceeds(getDocs(collectionGroup(admin,'progress')));
+  await assertSucceeds(getDocs(collectionGroup(admin,'itemStats')));
+  await assertSucceeds(getDoc(doc(admin,'families/alice')));
+  // Admin can delete data but never write it, and never touch trials/admins.
+  await assertFails(setDoc(doc(admin,path),summary()));
+  await assertFails(deleteDoc(doc(admin,'trials/alice')));
+  await assertFails(setDoc(doc(admin,'admins/bob'),{enabled:true}));
+  await assertSucceeds(deleteDoc(doc(admin,path)));
+  await assertSucceeds(deleteDoc(doc(admin,'families/alice/profiles/profile-1')));
+  await assertSucceeds(deleteDoc(doc(admin,'families/alice')));
+});
+
+test('family document may carry only the signed-in e-mail',async () => {
+  const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
+  const alice=env.authenticatedContext('alice',{email:'alice@example.com'}).firestore();
+  await assertSucceeds(setDoc(doc(alice,'families/alice'),{...family,email:'alice@example.com'}));
+  await assertFails(setDoc(doc(alice,'families/alice'),{...family,email:'bob@example.com'}));
 });
