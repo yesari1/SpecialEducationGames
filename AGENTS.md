@@ -6,6 +6,7 @@
 - Gemini routing is disabled. Do not call Gemini or change its installed configuration. Project execution follows the GPT-6 Luna worker / Codex orchestrator policy below.
 - Implement the three Turkish specification files in phase order. The later explicit six-game free tier in section 13.1b overrides the earlier summary.
 - Preserve Android applicationId `com.YeS.OzelEgitimOyunlari`, versionCode >= 14. Do not change or publish signing keys.
+- Release bundles are built only with `bash tools/build_release.sh` (21 October 2026, after vc16–vc19 closed on launch). The script checks that GeneratedPluginRegistrant is in the bundle, that the bundle is upload-signed, and that a cold launch of the release build on Pixel_9a stays up. Never build release with `--no-pub` and never delete the generated plugin registrant. Never hand over a bundle whose release build has not been launched.
 - Google Play release bundles (signed .aab, upload key via git-ignored `android/key.properties`) go in the project-root folder `GooglePlayBuild/` (Yunus, 20 October 2026), not under artifacts/. Test APKs stay in `artifacts/test-builds/`.
 - Read DEVELOPMENT_STATUS.md before resuming. Keep actual completion and missing integrations distinct.
 - Flutter 3.41.6 is installed. Dependencies in pubspec.lock have been resolved against its Dart 3.11.4; avoid blanket upgrades.

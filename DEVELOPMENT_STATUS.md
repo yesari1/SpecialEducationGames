@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R40 (açılışta çökme düzeltmesi) — sürüm 2.0.6 (20)
+
+- Hata: vc16–vc19 imzalı paketlerde `io.flutter.plugins.GeneratedPluginRegistrant` yoktu, bu yüzden eklentiler kaydolmadı ve uygulama açılışta kapandı (Yunus'un telefonunda vc18). Sebep: R36'da, profile derlemesinden kalan `integration_test` içeren eski dosya silindi ve `--no-pub` ile yapılan release derlemesi onu yeniden üretmedi. vc15 sağlam; profile/test APK'ları etkilenmedi. Pixel_9a'da release APK ile `ClassNotFoundException` olarak yeniden üretildi (`artifacts/claude/r40/logcat-release.txt`).
+- Düzeltme: release derlemesi pub ile yapılıyor (lockfile değişmedi), registrant 12 eklentiyle ve `integration_test` olmadan yeniden üretiliyor. Play paketi yalnızca `bash tools/build_release.sh` ile yapılır. Betik şunları kontrol eder: registrant pakette var mı, paket yükleme anahtarıyla mı imzalı, aynı kodun release APK'sı Pixel_9a'da soğuk açılışta çalışmaya devam ediyor mu. AGENTS.md'ye kural eklendi.
+- Doğrulama: seri host testler 271/271. Yükleme anahtarıyla imzalı release APK'yla Pixel_9a'da açılış → onboarding → paywall → oyun (Hayvanlar, ördek) denendi; FATAL yok (`artifacts/claude/r40/release-*.png`, Drive `R40/`). Emülatörde planlar yüklenmedi (Play dışı kurulum, beklenen). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.6-vc20.aab` (SHA-256 `bb29ac95…`). Normal test APK `…-r40-normal.apk` ve yükleme anahtarıyla imzalı release APK `…-2.0.6-vc20-release.apk` `artifacts/test-builds/2026-10-21/` ve Drive'da. Play'e yüklenmedi.
+
 ## 21 Ekim 2026 — R39 (uygulama ikonu 23) — sürüm 2.0.5 (19)
 
 - İkon 23 (uçan bulut, Yunus seçti): `GooglePlayBuild/store-assets/app-icon/` setinden adaptif ikon (ön plan + #8F7EFC arka plan + Android 13 tema/monochrome), yuvarlak ve eski mipmap'ler `android/app/src/main/res`'e kopyalandı; manifest'e `android:roundIcon` eklendi. Play mağaza ikonu: `play-icon-512.png` (Play Console'a Yunus yükleyecek).
