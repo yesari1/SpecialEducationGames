@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -9,8 +10,10 @@ import '../../core/entitlement/entitlement_service.dart';
 import '../../l10n/scoped_localizations.dart';
 
 /// The Premium offer on one screen (no scrolling on a phone): a short
-/// header, three benefits, selectable options (free trial, monthly, yearly,
-/// one-time), ONE primary button, small links and a way to continue free.
+/// hero, a strong headline, three check-mark benefits, full-width plans
+/// (yearly preselected, monthly, one-time), ONE primary button that carries
+/// the free trial while it is unused, small links and a way to continue free.
+/// Pattern notes: docs/paywall-research.md.
 ///
 /// Used in the family area and right after onboarding. Purchases and the
 /// trial need the parent area unlocked; the caller is responsible for that.
@@ -33,7 +36,7 @@ class PaywallView extends StatefulWidget {
 
 class _PaywallViewState extends State<PaywallView> {
   AppState get s => widget.state;
-  String? _selected; // 'trial' or a plan id
+  String? _selected; // a plan id
 
   @override
   void initState() {
@@ -59,23 +62,27 @@ class _PaywallViewState extends State<PaywallView> {
     return widget.auth != null && !e.trialUsed && !e.isPremium;
   }
 
-  List<String> get _options => [
-    if (_trialOffered) 'trial',
-    for (final plan in s.billing.plans) plan.id,
-  ];
-
-  String? get _choice {
-    final options = _options;
-    if (_selected != null && options.contains(_selected)) return _selected;
-    if (options.contains('trial')) return 'trial';
-    if (options.contains('yearly')) return 'yearly';
-    return options.firstOrNull;
+  /// Yearly first (preselected, "Best value"), then monthly, then one-time.
+  List<BillingPlan> get _plans {
+    const order = {'yearly': 0, 'monthly': 1, 'lifetime': 2};
+    return [...s.billing.plans]
+      ..sort((a, b) => (order[a.id] ?? 3).compareTo(order[b.id] ?? 3));
   }
 
+  BillingPlan? get _plan {
+    final plans = _plans;
+    return plans.where((p) => p.id == _selected).firstOrNull ??
+        plans.where((p) => p.id == 'yearly').firstOrNull ??
+        plans.firstOrNull;
+  }
+
+  /// The trial is not a separate option: while it is unused the one
+  /// button starts it (unless the one-time purchase is chosen).
+  bool get _startsTrial => _trialOffered && !(_plan?.lifetime ?? false);
+
   Future<void> _continue() async {
-    final choice = _choice;
-    if (choice == null || !s.familyUnlocked) return;
-    if (choice == 'trial') {
+    if (!s.familyUnlocked) return;
+    if (_startsTrial) {
       final auth = widget.auth!;
       if (auth.account == null) await auth.signIn();
       final uid = auth.account?.uid;
@@ -84,12 +91,19 @@ class _PaywallViewState extends State<PaywallView> {
       if (!s.entitlement.trialUsed) await s.startTrial(uid);
       return;
     }
-    final plan = s.billing.plans.where((p) => p.id == choice).firstOrNull;
+    final plan = _plan;
     if (plan != null) await s.billing.buy(plan);
   }
 
   void _open(String url) =>
       launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+
+  String _perMonth(BillingPlan plan) => NumberFormat.currency(
+    // Same decimal style as the store's own price text ("₺59,99").
+    locale: RegExp(r',\d{2}$').hasMatch(plan.recurringPrice) ? 'tr' : 'en',
+    symbol: plan.product.currencySymbol,
+    decimalDigits: 2,
+  ).format(plan.priceMicros / 12 / 1000000);
 
   @override
   Widget build(BuildContext context) {
@@ -98,40 +112,49 @@ class _PaywallViewState extends State<PaywallView> {
     final busy =
         s.billing.pending || s.trialBusy || (widget.auth?.busy ?? false);
 
-    final header = Row(
-      children: [
-        Image.asset(
-          'assets/illustrations/family/paywall_hero.png',
-          width: 112,
-          height: 84,
-          fit: BoxFit.contain,
-          excludeFromSemantics: true,
-        ),
-        const SizedBox(width: SegSpace.s3),
-        Expanded(
-          child: Text(
-            s.configuration.paywallText[s.locale] ?? l10n.paywallHeadline,
-            key: const ValueKey('paywall-headline'),
-            style: SegText.title.copyWith(color: SegColors.ink),
-          ),
-        ),
-      ],
+    final hero = Image.asset(
+      'assets/illustrations/family/paywall_hero.png',
+      height: 150,
+      fit: BoxFit.contain,
+      excludeFromSemantics: true,
     );
-    Widget benefit(IconData icon, String text) => Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3),
+    final headline = Text(
+      s.configuration.paywallText[s.locale] ?? l10n.paywallHeadline,
+      key: const ValueKey('paywall-headline'),
+      style: SegText.display.copyWith(fontSize: 30, color: SegColors.ink),
+      textAlign: TextAlign.center,
+    );
+    Widget benefit(String text) => Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 22, color: SegColors.turquoiseDeep),
+          const Icon(
+            Icons.check_circle_rounded,
+            size: 22,
+            color: SegColors.turquoise,
+          ),
           const SizedBox(width: SegSpace.s2),
-          Expanded(child: Text(text, style: SegText.body)),
+          Flexible(
+            child: Text(
+              text,
+              style: SegText.body.copyWith(
+                color: SegColors.ink,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
         ],
       ),
     );
     final benefits = Column(
+      key: const ValueKey('paywall-benefits'),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        benefit(Icons.grid_view_rounded, l10n.subscriptionAllGames),
-        benefit(Icons.people_rounded, l10n.subscriptionProfiles),
-        benefit(Icons.block_rounded, l10n.subscriptionAdFree),
+        benefit(l10n.subscriptionAllGames),
+        benefit(l10n.subscriptionProfiles),
+        benefit(l10n.subscriptionAdFree),
       ],
     );
 
@@ -156,75 +179,50 @@ class _PaywallViewState extends State<PaywallView> {
       );
     } else {
       final saving = BillingPlan.yearlySaving(s.billing.plans);
-      final tiles = <Widget>[
-        if (_trialOffered)
-          _OptionTile(
-            key: const ValueKey('paywall-option-trial'),
-            title: l10n.paywallTrialTitle(e.trialDays),
-            subtitle: l10n.paywallNoPayment,
-            selected: _choice == 'trial',
-            highlight: true,
-            onTap: () => setState(() => _selected = 'trial'),
-          ),
-        for (final plan in s.billing.plans)
-          _OptionTile(
-            key: ValueKey('paywall-option-${plan.id}'),
-            title: switch (plan.id) {
-              'monthly' => l10n.subscriptionMonthly,
-              'yearly' => l10n.subscriptionYearly,
-              _ => l10n.paywallLifetime,
-            },
-            subtitle: plan.lifetime
-                ? '${plan.recurringPrice} · ${l10n.paywallOneTimeShort}'
-                : l10n.subscriptionPrice(
-                    plan.recurringPrice,
-                    plan.id == 'monthly'
-                        ? l10n.subscriptionMonth
-                        : l10n.subscriptionYear,
-                  ),
-            badge: plan.id == 'yearly' && saving != null
-                ? l10n.paywallSave(saving)
-                : null,
-            selected: _choice == plan.id,
-            onTap: () => setState(() => _selected = plan.id),
-          ),
-      ];
-      final status = e.trialActive
-          ? l10n.paywallTrialActive(e.trialDaysLeft)
-          : null;
+      final chosen = _plan;
       offer = Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (status != null)
+          if (e.trialActive)
             Padding(
               padding: const EdgeInsets.only(bottom: SegSpace.s2),
               child: Text(
-                status,
+                l10n.paywallTrialActive(e.trialDaysLeft),
                 key: const ValueKey('paywall-trial-active'),
                 style: SegText.label.copyWith(color: SegColors.turquoiseDeep),
                 textAlign: TextAlign.center,
               ),
             ),
-          // Two equal-height tiles per row.
-          for (var i = 0; i < tiles.length; i += 2) ...[
-            if (i > 0) const SizedBox(height: SegSpace.s2),
-            IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(child: tiles[i]),
-                  const SizedBox(width: SegSpace.s2),
-                  Expanded(
-                    child: i + 1 < tiles.length
-                        ? tiles[i + 1]
-                        : const SizedBox.shrink(),
-                  ),
-                ],
-              ),
+          for (final plan in _plans) ...[
+            _PlanRow(
+              key: ValueKey('paywall-option-${plan.id}'),
+              title: switch (plan.id) {
+                'monthly' => l10n.subscriptionMonthly,
+                'yearly' => l10n.subscriptionYearly,
+                _ => l10n.paywallLifetime,
+              },
+              subtitle: switch (plan.id) {
+                'monthly' => l10n.paywallRenewsMonthly,
+                'yearly' => [
+                  l10n.paywallPerYear(plan.recurringPrice),
+                  if (saving != null) l10n.paywallSave(saving),
+                ].join(' · '),
+                _ => l10n.paywallOneTimeShort,
+              },
+              price: switch (plan.id) {
+                'monthly' => l10n.paywallPerMonth(plan.recurringPrice),
+                'yearly' when plan.priceMicros > 0 => l10n.paywallPerMonth(
+                  _perMonth(plan),
+                ),
+                _ => plan.recurringPrice,
+              },
+              badge: plan.id == 'yearly' ? l10n.paywallBestValue : null,
+              selected: chosen?.id == plan.id,
+              onTap: () => setState(() => _selected = plan.id),
             ),
+            const SizedBox(height: SegSpace.s2),
           ],
           if (s.billing.plans.isEmpty) ...[
-            const SizedBox(height: SegSpace.s2),
             if (s.billing.loading)
               const Center(child: CircularProgressIndicator())
             else
@@ -246,19 +244,20 @@ class _PaywallViewState extends State<PaywallView> {
           ],
           if (s.trialIssue != null ||
               widget.auth?.issue != null ||
-              s.billing.error != null) ...[
-            const SizedBox(height: SegSpace.s2),
-            Text(
-              s.billing.error != null
-                  ? l10n.subscriptionStoreError
-                  : l10n.paywallTrialError,
-              style: SegText.caption.copyWith(color: SegColors.accentDeep),
-              textAlign: TextAlign.center,
+              s.billing.error != null)
+            Padding(
+              padding: const EdgeInsets.only(top: SegSpace.s1),
+              child: Text(
+                s.billing.error != null
+                    ? l10n.subscriptionStoreError
+                    : l10n.paywallTrialError,
+                style: SegText.caption.copyWith(color: SegColors.accentDeep),
+                textAlign: TextAlign.center,
+              ),
             ),
-          ],
           if (e.trialUsed && !e.trialActive)
             Padding(
-              padding: const EdgeInsets.only(top: SegSpace.s2),
+              padding: const EdgeInsets.only(top: SegSpace.s1),
               child: Text(
                 l10n.paywallTrialUsed,
                 key: const ValueKey('paywall-trial-used'),
@@ -270,17 +269,48 @@ class _PaywallViewState extends State<PaywallView> {
       );
     }
 
+    final plan = _plan;
+    final String buttonLabel;
+    final String? footnote;
+    if (busy) {
+      buttonLabel = l10n.subscriptionWaiting;
+      footnote = null;
+    } else if (_startsTrial) {
+      buttonLabel = l10n.paywallStartTrial(e.trialDays);
+      footnote = l10n.paywallTrialFootnote;
+    } else if (plan != null) {
+      buttonLabel = l10n.paywallContinuePrice(plan.recurringPrice);
+      footnote = plan.lifetime
+          ? l10n.paywallLifetimeNote
+          : l10n.paywallCancelAnytime;
+    } else {
+      buttonLabel = l10n.paywallContinue;
+      footnote = null;
+    }
     final actions = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (!e.isPaid)
+        if (!e.isPaid) ...[
           SegButton(
             key: const ValueKey('paywall-continue'),
-            label: busy ? l10n.subscriptionWaiting : l10n.paywallContinue,
-            onPressed: busy || _choice == null || !s.familyUnlocked
+            label: buttonLabel,
+            onPressed:
+                busy || (!_startsTrial && plan == null) || !s.familyUnlocked
                 ? null
                 : _continue,
           ),
+          if (footnote != null)
+            Padding(
+              padding: const EdgeInsets.only(top: SegSpace.s2),
+              child: Text(
+                footnote,
+                key: const ValueKey('paywall-footnote'),
+                style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                textAlign: TextAlign.center,
+              ),
+            ),
+        ],
+        const SizedBox(height: SegSpace.s1),
         Wrap(
           alignment: WrapAlignment.center,
           children: [
@@ -324,13 +354,15 @@ class _PaywallViewState extends State<PaywallView> {
         final landscape = box.maxWidth > box.maxHeight;
         final Widget content = landscape
             ? Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        header,
+                        hero,
+                        const SizedBox(height: SegSpace.s3),
+                        headline,
                         const SizedBox(height: SegSpace.s3),
                         benefits,
                       ],
@@ -341,11 +373,7 @@ class _PaywallViewState extends State<PaywallView> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        offer,
-                        const SizedBox(height: SegSpace.s3),
-                        actions,
-                      ],
+                      children: [offer, actions],
                     ),
                   ),
                 ],
@@ -354,12 +382,14 @@ class _PaywallViewState extends State<PaywallView> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  header,
+                  hero,
+                  const SizedBox(height: SegSpace.s2),
+                  headline,
                   const SizedBox(height: SegSpace.s3),
-                  benefits,
+                  Center(child: benefits),
                   const SizedBox(height: SegSpace.s4),
                   offer,
-                  const SizedBox(height: SegSpace.s4),
+                  const SizedBox(height: SegSpace.s2),
                   actions,
                 ],
               );
@@ -380,19 +410,20 @@ class _PaywallViewState extends State<PaywallView> {
   }
 }
 
-class _OptionTile extends StatelessWidget {
-  final String title, subtitle;
+/// One full-width plan row: radio, name (+ badge), detail line, price.
+class _PlanRow extends StatelessWidget {
+  final String title, subtitle, price;
   final String? badge;
-  final bool selected, highlight;
+  final bool selected;
   final VoidCallback onTap;
-  const _OptionTile({
+  const _PlanRow({
     super.key,
     required this.title,
     required this.subtitle,
+    required this.price,
     required this.selected,
     required this.onTap,
     this.badge,
-    this.highlight = false,
   });
 
   @override
@@ -400,68 +431,69 @@ class _OptionTile extends StatelessWidget {
     selected: selected,
     button: true,
     child: Material(
-      color: selected
-          ? SegColors.primarySoft
-          : highlight
-          ? const Color(0xFFFFF6EA)
-          : Colors.white,
+      color: selected ? SegColors.primarySoft : Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(SegRadius.md),
+        borderRadius: BorderRadius.circular(SegRadius.lg),
         side: BorderSide(
           color: selected ? SegColors.primary : SegColors.line,
           width: selected ? 2.5 : 1.5,
         ),
       ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(SegRadius.md),
+        borderRadius: BorderRadius.circular(SegRadius.lg),
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(SegSpace.s3),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
+              Icon(
+                selected
+                    ? Icons.radio_button_checked_rounded
+                    : Icons.radio_button_off_rounded,
+                size: 24,
+                color: selected ? SegColors.primary : SegColors.inkFaint,
+              ),
+              const SizedBox(width: SegSpace.s3),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
                       title,
-                      style: SegText.label.copyWith(color: SegColors.ink),
+                      style: SegText.heading.copyWith(color: SegColors.ink),
                     ),
-                  ),
-                  Icon(
-                    selected
-                        ? Icons.radio_button_checked_rounded
-                        : Icons.radio_button_off_rounded,
-                    size: 20,
-                    color: selected ? SegColors.primary : SegColors.inkFaint,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 2),
-              Text(
-                subtitle,
-                style: SegText.caption.copyWith(color: SegColors.inkSoft),
-              ),
-              if (badge != null) ...[
-                const SizedBox(height: 4),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: SegColors.accentStrong,
-                    borderRadius: BorderRadius.circular(99),
-                  ),
-                  child: Text(
-                    badge!,
-                    style: SegText.caption.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
+                    Text(
+                      subtitle,
+                      style: SegText.caption.copyWith(color: SegColors.inkSoft),
                     ),
-                  ),
+                    if (badge != null) ...[
+                      const SizedBox(height: 4),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: SegColors.accentStrong,
+                          borderRadius: BorderRadius.circular(99),
+                        ),
+                        child: Text(
+                          badge!,
+                          style: SegText.caption.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
-              ],
+              ),
+              const SizedBox(width: SegSpace.s2),
+              Text(
+                price,
+                style: SegText.heading.copyWith(color: SegColors.ink),
+              ),
             ],
           ),
         ),

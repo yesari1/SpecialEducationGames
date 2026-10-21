@@ -952,19 +952,24 @@
     "description": "Fixed instruction displayed in the G04 grouping game."
   },
   "gamePromptFindMatch": "Aynısını bul",
-  "@gamePromptFindMatch": { "description": "Fixed instruction displayed in G14."
+  "@gamePromptFindMatch": {
+    "description": "Fixed instruction displayed in G14."
   },
   "gamePromptListenForNumber": "Dinle. Hangi sayı?",
-  "@gamePromptListenForNumber": { "description": "Fixed instruction displayed in G10 for numbers."
+  "@gamePromptListenForNumber": {
+    "description": "Fixed instruction displayed in G10 for numbers."
   },
   "gamePromptListenForSoundSource": "Dinle. Ses kimden geliyor?",
-  "@gamePromptListenForSoundSource": { "description": "Fixed instruction displayed in G10 for non-number themes."
+  "@gamePromptListenForSoundSource": {
+    "description": "Fixed instruction displayed in G10 for non-number themes."
   },
   "gamePromptSequenceNext": "Sıradaki sayı hangisi?",
-  "@gamePromptSequenceNext": { "description": "Fixed non-hard instruction displayed in G35."
+  "@gamePromptSequenceNext": {
+    "description": "Fixed non-hard instruction displayed in G35."
   },
   "gamePromptSequenceMissing": "Eksik sayı hangisi?",
-  "@gamePromptSequenceMissing": { "description": "Fixed hard instruction displayed in G35."
+  "@gamePromptSequenceMissing": {
+    "description": "Fixed hard instruction displayed in G35."
   },
   "obStart": "Başlayalım",
   "obBack": "Geri",
@@ -1065,5 +1070,14 @@
   "paywallClose": "Kapat",
   "paywallOneTimeShort": "Bir kez öde",
   "familyCloudSync": "Günlük özetleri buluta gönder",
-  "familyCloudSyncNote": "Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez."
+  "familyCloudSyncNote": "Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.",
+  "welcomeFreeTrial": "{count} oyun her zaman ücretsiz. Tüm oyunları {days} gün ücretsiz deneyin.",
+  "paywallBestValue": "En avantajlı",
+  "paywallPerMonth": "{price}/ay",
+  "paywallPerYear": "Yılda {price}",
+  "paywallRenewsMonthly": "Her ay yenilenir",
+  "paywallStartTrial": "{days} gün ücretsiz başla",
+  "paywallTrialFootnote": "Kart gerekmez. Deneme bitince ücretsiz sürüme dönersiniz; isterseniz seçtiğiniz planla devam edersiniz.",
+  "paywallContinuePrice": "Devam et · {price}",
+  "paywallCancelAnytime": "Google Play'den istediğiniz zaman iptal edebilirsiniz."
 }

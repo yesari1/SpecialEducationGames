@@ -952,19 +952,24 @@
     "description": "Fixed instruction displayed in the G04 grouping game."
   },
   "gamePromptFindMatch": "Find the match",
-  "@gamePromptFindMatch": { "description": "Fixed instruction displayed in G14."
+  "@gamePromptFindMatch": {
+    "description": "Fixed instruction displayed in G14."
   },
   "gamePromptListenForNumber": "Listen. Which number?",
-  "@gamePromptListenForNumber": { "description": "Fixed instruction displayed in G10 for numbers."
+  "@gamePromptListenForNumber": {
+    "description": "Fixed instruction displayed in G10 for numbers."
   },
   "gamePromptListenForSoundSource": "Listen. What makes this sound?",
-  "@gamePromptListenForSoundSource": { "description": "Fixed instruction displayed in G10 for non-number themes."
+  "@gamePromptListenForSoundSource": {
+    "description": "Fixed instruction displayed in G10 for non-number themes."
   },
   "gamePromptSequenceNext": "Which number comes next?",
-  "@gamePromptSequenceNext": { "description": "Fixed non-hard instruction displayed in G35."
+  "@gamePromptSequenceNext": {
+    "description": "Fixed non-hard instruction displayed in G35."
   },
   "gamePromptSequenceMissing": "Which number is missing?",
-  "@gamePromptSequenceMissing": { "description": "Fixed hard instruction displayed in G35."
+  "@gamePromptSequenceMissing": {
+    "description": "Fixed hard instruction displayed in G35."
   },
   "obStart": "Let’s begin",
   "obBack": "Back",
@@ -975,15 +980,36 @@
   "obAgeTitle": "Age",
   "obAgeTenPlus": "10+",
   "obAgeYears": "{age} years old",
-  "@obAgeYears": {"placeholders": {"age": {"type": "int"}}},
+  "@obAgeYears": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
   "obDefaultNickname": "Little explorer",
   "obMultipleHint": "You can choose more than one.",
   "obStepSemantics": "Step {current} of {total}",
-  "@obStepSemantics": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "@obStepSemantics": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "obGoalTitle": "Daily play goal",
   "obGoalBody": "Short, regular sessions work best. Your child sees calm progress, never a countdown.",
   "obGoalMinutes": "{minutes} min",
-  "@obGoalMinutes": {"placeholders": {"minutes": {"type": "int"}}},
+  "@obGoalMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "obRecommended": "Recommended",
   "obLockTitle": "Settings stay with you",
   "obLockBody": "To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.",
@@ -1005,20 +1031,56 @@
   "gamePromptSortIntoBasket": "Put it in the right basket",
   "gamePromptNumberQuantity": "Find this many",
   "gamePromptFillCount": "Put {count} in the basket",
-  "@gamePromptFillCount": {"placeholders": {"count": {"type": "int"}}},
+  "@gamePromptFillCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "gameFillBasketCount": "Basket: {count} of {goal}",
-  "@gameFillBasketCount": {"placeholders": {"count": {"type": "int"}, "goal": {"type": "int"}}},
+  "@gameFillBasketCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
   "appTitle": "Special Education Games",
   "gamePromptWhichSound": "Which sound does it make?",
   "gameListenToSound": "Listen",
   "famToday": "Today",
   "famGoalShort": "{done} / {goal} min",
-  "@famGoalShort": {"placeholders": {"done": {"type": "int"}, "goal": {"type": "int"}}},
+  "@famGoalShort": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
   "famGoalDone": "Today’s goal is reached. Well done!",
   "famGoalLeft": "{minutes} more minutes to today’s goal.",
-  "@famGoalLeft": {"placeholders": {"minutes": {"type": "int"}}},
+  "@famGoalLeft": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "famPlayedToday": "Played today: {minutes} min",
-  "@famPlayedToday": {"placeholders": {"minutes": {"type": "int"}}},
+  "@famPlayedToday": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "famMinutesThisWeek": "Minutes this week",
   "famDaysPlayed": "Days played this week",
   "famThisWeek": "This week",
@@ -1146,7 +1208,7 @@
       }
     }
   },
-  "paywallLifetime": "One-time purchase",
+  "paywallLifetime": "One-time",
   "@paywallLifetime": {
     "description": "Paywall copy."
   },
@@ -1250,5 +1312,69 @@
   "familyCloudSyncNote": "While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child's name is not sent.",
   "@familyCloudSyncNote": {
     "description": "Family settings: automatic cloud summary sync."
+  },
+  "welcomeFreeTrial": "{count} games are always free. Try every game free for {days} days.",
+  "@welcomeFreeTrial": {
+    "description": "Welcome page: honest free tier and trial line.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBestValue": "Best value",
+  "@paywallBestValue": {
+    "description": "Paywall badge on the yearly plan."
+  },
+  "paywallPerMonth": "{price}/mo",
+  "@paywallPerMonth": {
+    "description": "Paywall: per-month equivalent of a plan.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallPerYear": "{price}/year",
+  "@paywallPerYear": {
+    "description": "Paywall: yearly price line.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallRenewsMonthly": "Renews every month",
+  "@paywallRenewsMonthly": {
+    "description": "Paywall: monthly plan line."
+  },
+  "paywallStartTrial": "Start {days}-day free trial",
+  "@paywallStartTrial": {
+    "description": "Paywall primary button while the trial is unused.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTrialFootnote": "No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.",
+  "@paywallTrialFootnote": {
+    "description": "Paywall line under the trial button."
+  },
+  "paywallContinuePrice": "Continue · {price}",
+  "@paywallContinuePrice": {
+    "description": "Paywall primary button for a purchase.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallCancelAnytime": "Cancel anytime in Google Play.",
+  "@paywallCancelAnytime": {
+    "description": "Paywall line under the subscription button."
   }
 }

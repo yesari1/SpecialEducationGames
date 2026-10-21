@@ -365,8 +365,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         text: l10n.parentGateSettings,
       ),
       FeatureLine(
-        icon: Icons.person_outline_rounded,
-        text: l10n.noAccountNeeded,
+        icon: Icons.card_giftcard_rounded,
+        text: l10n.welcomeFreeTrial(
+          s.configuration.freeGames.length,
+          s.entitlement.trialDays,
+        ),
       ),
     ],
     primary: _continue(

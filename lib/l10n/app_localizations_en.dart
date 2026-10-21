@@ -1235,7 +1235,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get paywallLifetime => 'One-time purchase';
+  String get paywallLifetime => 'One-time';
 
   @override
   String get paywallLifetimeNote =>
@@ -1314,4 +1314,42 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get familyCloudSyncNote =>
       'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.';
+
+  @override
+  String welcomeFreeTrial(int count, int days) {
+    return '$count games are always free. Try every game free for $days days.';
+  }
+
+  @override
+  String get paywallBestValue => 'Best value';
+
+  @override
+  String paywallPerMonth(String price) {
+    return '$price/mo';
+  }
+
+  @override
+  String paywallPerYear(String price) {
+    return '$price/year';
+  }
+
+  @override
+  String get paywallRenewsMonthly => 'Renews every month';
+
+  @override
+  String paywallStartTrial(int days) {
+    return 'Start $days-day free trial';
+  }
+
+  @override
+  String get paywallTrialFootnote =>
+      'No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.';
+
+  @override
+  String paywallContinuePrice(String price) {
+    return 'Continue · $price';
+  }
+
+  @override
+  String get paywallCancelAnytime => 'Cancel anytime in Google Play.';
 }

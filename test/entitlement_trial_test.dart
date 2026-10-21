@@ -245,11 +245,12 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      // The free trial is offered first and selected.
+      // The trial is not a separate option: the one button carries it.
       expect(
         find.byKey(const ValueKey('paywall-option-trial')),
-        findsOneWidget,
+        findsNothing,
       );
+      expect(find.textContaining('free trial'), findsOneWidget);
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.tap(start);

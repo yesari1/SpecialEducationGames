@@ -2236,7 +2236,7 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'One-time purchase'**
+  /// **'One-time'**
   String get paywallLifetime;
 
   /// Paywall copy.
@@ -2382,6 +2382,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.'**
   String get familyCloudSyncNote;
+
+  /// Welcome page: honest free tier and trial line.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} games are always free. Try every game free for {days} days.'**
+  String welcomeFreeTrial(int count, int days);
+
+  /// Paywall badge on the yearly plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Best value'**
+  String get paywallBestValue;
+
+  /// Paywall: per-month equivalent of a plan.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/mo'**
+  String paywallPerMonth(String price);
+
+  /// Paywall: yearly price line.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/year'**
+  String paywallPerYear(String price);
+
+  /// Paywall: monthly plan line.
+  ///
+  /// In en, this message translates to:
+  /// **'Renews every month'**
+  String get paywallRenewsMonthly;
+
+  /// Paywall primary button while the trial is unused.
+  ///
+  /// In en, this message translates to:
+  /// **'Start {days}-day free trial'**
+  String paywallStartTrial(int days);
+
+  /// Paywall line under the trial button.
+  ///
+  /// In en, this message translates to:
+  /// **'No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.'**
+  String get paywallTrialFootnote;
+
+  /// Paywall primary button for a purchase.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue · {price}'**
+  String paywallContinuePrice(String price);
+
+  /// Paywall line under the subscription button.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime in Google Play.'**
+  String get paywallCancelAnytime;
 }
 
 class _AppLocalizationsDelegate

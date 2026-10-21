@@ -1315,4 +1315,43 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get familyCloudSyncNote =>
       'Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.';
+
+  @override
+  String welcomeFreeTrial(int count, int days) {
+    return '$count oyun her zaman ücretsiz. Tüm oyunları $days gün ücretsiz deneyin.';
+  }
+
+  @override
+  String get paywallBestValue => 'En avantajlı';
+
+  @override
+  String paywallPerMonth(String price) {
+    return '$price/ay';
+  }
+
+  @override
+  String paywallPerYear(String price) {
+    return 'Yılda $price';
+  }
+
+  @override
+  String get paywallRenewsMonthly => 'Her ay yenilenir';
+
+  @override
+  String paywallStartTrial(int days) {
+    return '$days gün ücretsiz başla';
+  }
+
+  @override
+  String get paywallTrialFootnote =>
+      'Kart gerekmez. Deneme bitince ücretsiz sürüme dönersiniz; isterseniz seçtiğiniz planla devam edersiniz.';
+
+  @override
+  String paywallContinuePrice(String price) {
+    return 'Devam et · $price';
+  }
+
+  @override
+  String get paywallCancelAnytime =>
+      'Google Play\'den istediğiniz zaman iptal edebilirsiniz.';
 }
