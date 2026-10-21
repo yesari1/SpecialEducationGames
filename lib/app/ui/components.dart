@@ -683,9 +683,12 @@ class ThemeGameCard extends StatelessWidget {
         // the pictures the same size from card to card.
         ConstrainedBox(
           constraints: BoxConstraints(
-            minHeight: MediaQuery.textScalerOf(
-              context,
-            ).scale(SegText.item.fontSize! * SegText.item.height! * 2),
+            // Large text lays the card out sideways; no reserve there.
+            minHeight: horizontalContent
+                ? 0
+                : MediaQuery.textScalerOf(
+                    context,
+                  ).scale(SegText.item.fontSize! * SegText.item.height! * 2),
           ),
           child: Center(
             child: Text(
