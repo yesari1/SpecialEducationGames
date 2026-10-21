@@ -1,0 +1,117 @@
+{
+ "style": "SEG soft clay",
+ "assets": [
+  {
+   "name": "cover_animals",
+   "path": "assets/illustrations/themes/cover_animals.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_animals.png",
+   "originalSha256": "68798a06d13d9e038f171cd143a5444e3831ae9f237d3b78d19a3c25402c9672",
+   "sha256": "75702c615ca9af02c30b9fc1b2c8511ad576ca1137ba27c6348b1e1c78b7c4ee",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small friendly group: a cream-and-orange cat sitting in front, a brown puppy and a little yellow chick beside it, on a soft rounded green grass patch. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_colors",
+   "path": "assets/illustrations/themes/cover_colors.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_colors.png",
+   "originalSha256": "e9571c0fbfc6a80469ebb9d23554a919ec461dbb9a8e8ac1d9efb63d0f4af9aa",
+   "sha256": "0aa3f6d6cc1f79cae497c6e7b901f05ebcacaca1e54f81b5c4795948dfc90c6c",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A paint palette with bright paint dots and a brush, with a few soft color blobs (orange, blue, yellow, turquoise, pink) floating around it. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_food",
+   "path": "assets/illustrations/themes/cover_food.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_food.png",
+   "originalSha256": "233f0dc8a37367b42226e299a2b259fe2b652a0acdb752a4ef879271cf540b21",
+   "sha256": "f21fef991b7a8a5a98371f704a971284908f331327145afeb69cda47e695cfd0",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small cozy food group: a slice of bread, a cupcake with pink frosting and a bowl of warm soup, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_numbers",
+   "path": "assets/illustrations/themes/cover_numbers.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_numbers.png",
+   "originalSha256": "f109e9ea56d67ac80a615de510681986a9b621cf32edbb2e1cf5f215c4531819",
+   "sha256": "6a200d3c9b46927823cc4be87343fa1b65104dbeed28b29438bcf90ed23ebd99",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "Three chunky rounded toy blocks showing the numerals 1, 2 and 3 in orange, blue and turquoise, arranged in a gentle stair, on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_produce",
+   "path": "assets/illustrations/themes/cover_produce.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_produce.png",
+   "originalSha256": "2ae68f6b776044f317ca149e9c741ec28d0cccce89812038ebbb52d10b2d9848",
+   "sha256": "786bcc2bd56eea55469557b48fd64b478915e5fde6d905daaad7b01e05d7bc99",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small tidy group of fruit and vegetables: a red apple, a yellow banana, an orange carrot and a green pear, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_shapes",
+   "path": "assets/illustrations/themes/cover_shapes.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_shapes.png",
+   "originalSha256": "5b037a07195b4442331662c1c18df6199eed397f1464bcd7c5043c952345c8bb",
+   "sha256": "43fed85141d0d92ec671b94ee5b3ade76d7a9cb8e63649e25d36b52a334ee5a2",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small tidy group of soft toy shapes: a blue circle, an orange triangle, a yellow star and a turquoise square, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  },
+  {
+   "name": "cover_vehicles",
+   "path": "assets/illustrations/themes/cover_vehicles.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-r36/originals/cover_vehicles.png",
+   "originalSha256": "5cb45ef3aeb574aeeb584718bdaae7a5a03258f1e9627ca51a73e95ef7765084",
+   "sha256": "beafa499bd2bc75ae03699649dc4d9ad6e1325a403c2383542369d1051631dec",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-21",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A small group of toy vehicles: a rounded orange car in front, a blue bus and a little red airplane behind, on a soft rounded grey-blue road patch. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
+   "normalization": "cropped to alpha bounds, fitted into 88% of a 512 px square, bottom-aligned"
+  }
+ ]
+}

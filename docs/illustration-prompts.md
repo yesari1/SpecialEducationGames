@@ -189,3 +189,66 @@ A cheerful little scene for a family subscription page: a soft orange gift box w
 ```
 A friendly rounded shield in soft blue with a cream heart in the middle and a small orange key leaning against it, suggesting a safe family account. Transparent background.
 ```
+
+## cover_animals
+
+- Output: `assets/illustrations/themes/cover_animals.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A small friendly group: a cream-and-orange cat sitting in front, a brown puppy and a little yellow chick beside it, on a soft rounded green grass patch. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_produce
+
+- Output: `assets/illustrations/themes/cover_produce.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A small tidy group of fruit and vegetables: a red apple, a yellow banana, an orange carrot and a green pear, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_food
+
+- Output: `assets/illustrations/themes/cover_food.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A small cozy food group: a slice of bread, a cupcake with pink frosting and a bowl of warm soup, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_vehicles
+
+- Output: `assets/illustrations/themes/cover_vehicles.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A small group of toy vehicles: a rounded orange car in front, a blue bus and a little red airplane behind, on a soft rounded grey-blue road patch. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_colors
+
+- Output: `assets/illustrations/themes/cover_colors.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A paint palette with bright paint dots and a brush, with a few soft color blobs (orange, blue, yellow, turquoise, pink) floating around it. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_shapes
+
+- Output: `assets/illustrations/themes/cover_shapes.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+A small tidy group of soft toy shapes: a blue circle, an orange triangle, a yellow star and a turquoise square, arranged on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```
+
+## cover_numbers
+
+- Output: `assets/illustrations/themes/cover_numbers.png`
+- Size: 1024x1024, PNG with transparent background
+
+```
+Three chunky rounded toy blocks showing the numerals 1, 2 and 3 in orange, blue and turquoise, arranged in a gentle stair, on a soft rounded cream platform. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.
+```

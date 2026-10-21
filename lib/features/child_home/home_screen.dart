@@ -163,10 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             subtitle: l10n.homeThemeGameCount(
                               s.gamesForTheme(t.id).length,
                             ),
-                            visual: ItemVisual(
-                              hero,
-                              alignment: Alignment.bottomCenter,
-                            ),
+                            visual: themeCover(t.id, hero),
                             onTap: () => context.go('/theme/${t.id}'),
                           );
                         },
@@ -364,3 +361,26 @@ IconData gameIcon(String id) => switch (id) {
   'G11' => Icons.hearing_rounded,
   _ => Icons.search_rounded,
 };
+
+/// Themes with an illustrated cover (assets/illustrations/themes, one style,
+/// same framing). Others fall back to their hero photo.
+const themeCovers = {
+  'animals',
+  'produce',
+  'food',
+  'vehicles',
+  'colors',
+  'shapes',
+  'numbers',
+};
+
+Widget themeCover(String themeId, ContentItem hero) =>
+    themeCovers.contains(themeId)
+    ? Image.asset(
+        'assets/illustrations/themes/cover_$themeId.png',
+        key: ValueKey('theme-cover-$themeId'),
+        fit: BoxFit.contain,
+        alignment: Alignment.bottomCenter,
+        excludeFromSemantics: true,
+      )
+    : ItemVisual(hero, alignment: Alignment.bottomCenter);
