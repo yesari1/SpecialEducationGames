@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 21 Ekim 2026 — R37 (paywall yeniden, hoş geldin metni) — sürüm 2.0.3 (17)
+
+- Paywall benzer çocuk/öğrenme uygulamalarının düzenine göre yeniden yapıldı (`docs/paywall-research.md`). Düzen: büyük görsel, ortalı başlık, 3 ✓ satırı. Altında tam genişlikte planlar: Yıllık seçili, "En avantajlı" etiketli, aylık karşılığı ve % tasarruf yazılı; sonra Aylık, Tek seferlik. Deneme ayrı bir seçenek değil, tek düğme taşıyor: deneme kullanılmamışsa "7 gün ücretsiz başla", altında "Kart gerekmez…" notu; deneme kullanılmışsa ya da tek seferlik seçiliyse "Devam et · fiyat".
+- Hoş geldin: "Hesap gerekmez" yerine "6 oyun her zaman ücretsiz. Tüm oyunları 7 gün ücretsiz deneyin." Mağaza metni zaten doğruydu. Deneme bitince ücretsiz sürüme dönülür, 6 ücretsiz oyun açık kalır (mevcut mantık).
+- Doğrulama: seri host testler 271/271. Önce/sonra ekranlar (paywall, hoş geldin; TR+EN) `artifacts/claude/r37/` ve Drive `R37/`. Normal test APK `artifacts/test-builds/2026-10-21/ozel-egitim-test-claude-r37-normal.apk` (SHA-256 `93800d1e…0adf8a7`). İmzalı AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.3-vc17.aab` (SHA-256 `636557ce…1c37b4b`, aynı yükleme sertifikası). İkisi de Drive'da. Play'e yüklenmedi.
+
 ## 21 Ekim 2026 — R36 (tema kapakları, tek ekran paywall, otomatik özet senkronu) — sürüm 2.0.2 (16)
 
 - Ana sayfa: her tema için aynı stil ve çerçevede tek illüstrasyon kapak (orijinaller `artifacts/illustrations-r36/originals/`). Kilitli oyun bildirimi tek sefer gösterilir (tekrar dokunma kuyruk yapmaz).
