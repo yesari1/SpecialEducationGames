@@ -23,12 +23,12 @@ void main() {
     }
     expect(find.text('Locked'), findsOneWidget);
     // Let the one notice time out: nothing queued behind it.
-    await tester.pump(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    expect(find.byType(SnackBar), findsNothing);
-    await tester.pump(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    expect(find.byType(SnackBar), findsNothing);
+    for (var i = 0; i < 2; i++) {
+      await tester.pumpAndSettle();
+      await tester.pump(const Duration(seconds: 5));
+      await tester.pumpAndSettle();
+      expect(find.byType(SnackBar), findsNothing);
+    }
     // A different message replaces the current one immediately.
     showNotice(ctx, 'A');
     await tester.pump(const Duration(milliseconds: 100));
