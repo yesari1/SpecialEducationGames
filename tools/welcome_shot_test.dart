@@ -1,6 +1,6 @@
 // Run explicitly: flutter test tools/welcome_shot_test.dart --update-goldens
 // Renders the onboarding welcome page (TR and EN, phone portrait) to
-// artifacts/claude/r37/ (WELCOME_SHOT_PREFIX picks before/after).
+// artifacts/claude/r38/ (WELCOME_SHOT_PREFIX picks before/after).
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -124,7 +124,7 @@ void main() {
       await expectLater(
         find.byType(RepaintBoundary).first,
         matchesGoldenFile(
-          '../artifacts/claude/r37/${const String.fromEnvironment('WELCOME_SHOT_PREFIX', defaultValue: 'after')}-welcome-$locale.png',
+          '../artifacts/claude/r38/${const String.fromEnvironment('WELCOME_SHOT_PREFIX', defaultValue: 'after')}-welcome-$locale.png',
         ),
       );
       await tester.pumpWidget(const SizedBox.shrink());

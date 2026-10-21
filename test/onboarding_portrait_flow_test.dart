@@ -92,7 +92,7 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(find.byKey(const ValueKey('paywall-continue')), findsOneWidget);
-    await tester.tap(find.byKey(const ValueKey('paywall-free')));
+    await tester.tap(find.byKey(const ValueKey('paywall-close')));
     await tester.pumpAndSettle();
   }
 

@@ -1317,8 +1317,8 @@ class AppLocalizationsTr extends AppLocalizations {
       'Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.';
 
   @override
-  String welcomeFreeTrial(int count, int days) {
-    return '$count oyun her zaman ücretsiz. Tüm oyunları $days gün ücretsiz deneyin.';
+  String welcomeFreeTrial(int days) {
+    return 'Tüm oyunları $days gün ücretsiz deneyin';
   }
 
   @override
@@ -1339,7 +1339,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String paywallStartTrial(int days) {
-    return '$days gün ücretsiz başla';
+    return '$days gün ücretsiz dene';
   }
 
   @override
@@ -1354,4 +1354,21 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get paywallCancelAnytime =>
       'Google Play\'den istediğiniz zaman iptal edebilirsiniz.';
+
+  @override
+  String welcomeFreeAfter(int count) {
+    return 'Sonrasında $count oyun hep ücretsiz.';
+  }
+
+  @override
+  String get paywallEveryMonth => 'her ay';
+
+  @override
+  String get paywallOnePayment => 'tek ödeme';
+
+  @override
+  String get paywallCancelShort => 'İstediğiniz zaman iptal';
+
+  @override
+  String get paywallNoSubscription => 'Abonelik yok';
 }

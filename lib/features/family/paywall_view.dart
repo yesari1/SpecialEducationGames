@@ -202,19 +202,19 @@ class _PaywallViewState extends State<PaywallView> {
                 _ => l10n.paywallLifetime,
               },
               subtitle: switch (plan.id) {
-                'monthly' => l10n.paywallRenewsMonthly,
-                'yearly' => [
-                  l10n.paywallPerYear(plan.recurringPrice),
-                  if (saving != null) l10n.paywallSave(saving),
-                ].join(' · '),
-                _ => l10n.paywallOneTimeShort,
+                'monthly' => l10n.paywallCancelShort,
+                'yearly' => saving == null ? null : l10n.paywallSave(saving),
+                _ => l10n.paywallNoSubscription,
               },
-              price: switch (plan.id) {
-                'monthly' => l10n.paywallPerMonth(plan.recurringPrice),
+              highlightSubtitle: plan.id == 'yearly',
+              price: plan.recurringPrice,
+              priceNote: switch (plan.id) {
+                'monthly' => l10n.paywallEveryMonth,
                 'yearly' when plan.priceMicros > 0 => l10n.paywallPerMonth(
                   _perMonth(plan),
                 ),
-                _ => plan.recurringPrice,
+                'yearly' => null,
+                _ => l10n.paywallOnePayment,
               },
               badge: plan.id == 'yearly' ? l10n.paywallBestValue : null,
               selected: chosen?.id == plan.id,
@@ -338,14 +338,17 @@ class _PaywallViewState extends State<PaywallView> {
               ),
           ],
         ),
-        TextButton(
-          key: const ValueKey('paywall-free'),
-          onPressed: widget.onDone,
-          child: Text(
-            e.isPremium ? l10n.paywallClose : l10n.paywallContinueFree,
-            style: SegText.label.copyWith(color: SegColors.primaryDeep),
+        // No "continue free" link: the close button (X) leaves, and the
+        // free version simply continues.
+        if (e.isPremium)
+          TextButton(
+            key: const ValueKey('paywall-free'),
+            onPressed: widget.onDone,
+            child: Text(
+              l10n.paywallClose,
+              style: SegText.label.copyWith(color: SegColors.primaryDeep),
+            ),
           ),
-        ),
       ],
     );
 
@@ -410,20 +413,23 @@ class _PaywallViewState extends State<PaywallView> {
   }
 }
 
-/// One full-width plan row: radio, name (+ badge), detail line, price.
+/// One full-width plan row: radio, name (+ line, badge) and, on the right,
+/// the large price with a small note under it.
 class _PlanRow extends StatelessWidget {
-  final String title, subtitle, price;
-  final String? badge;
-  final bool selected;
+  final String title, price;
+  final String? subtitle, priceNote, badge;
+  final bool selected, highlightSubtitle;
   final VoidCallback onTap;
   const _PlanRow({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.price,
     required this.selected,
     required this.onTap,
+    this.subtitle,
+    this.priceNote,
     this.badge,
+    this.highlightSubtitle = false,
   });
 
   @override
@@ -462,10 +468,20 @@ class _PlanRow extends StatelessWidget {
                       title,
                       style: SegText.heading.copyWith(color: SegColors.ink),
                     ),
-                    Text(
-                      subtitle,
-                      style: SegText.caption.copyWith(color: SegColors.inkSoft),
-                    ),
+                    if (subtitle != null)
+                      Text(
+                        subtitle!,
+                        softWrap: false,
+                        overflow: TextOverflow.fade,
+                        style: highlightSubtitle
+                            ? SegText.label.copyWith(
+                                color: SegColors.accentDeep,
+                                fontWeight: FontWeight.w800,
+                              )
+                            : SegText.caption.copyWith(
+                                color: SegColors.inkSoft,
+                              ),
+                      ),
                     if (badge != null) ...[
                       const SizedBox(height: 4),
                       Container(
@@ -490,9 +506,20 @@ class _PlanRow extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: SegSpace.s2),
-              Text(
-                price,
-                style: SegText.heading.copyWith(color: SegColors.ink),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    price,
+                    key: ValueKey('paywall-price-$title'),
+                    style: SegText.title.copyWith(color: SegColors.ink),
+                  ),
+                  if (priceNote != null)
+                    Text(
+                      priceNote!,
+                      style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                    ),
+                ],
               ),
             ],
           ),

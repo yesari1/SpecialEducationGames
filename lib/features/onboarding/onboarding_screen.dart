@@ -215,6 +215,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     required List<Widget> children,
     required Widget primary,
     Widget? secondary,
+    Widget? above,
     bool skippable = false,
   }) {
     final dots = _progressIndex >= 0
@@ -287,6 +288,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      if (above != null) ...[
+                        above,
+                        const SizedBox(height: SegSpace.s3),
+                      ],
                       primary,
                       if (secondary != null) ...[
                         const SizedBox(height: SegSpace.s2),
@@ -364,14 +369,46 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         icon: Icons.lock_outline_rounded,
         text: l10n.parentGateSettings,
       ),
-      FeatureLine(
-        icon: Icons.card_giftcard_rounded,
-        text: l10n.welcomeFreeTrial(
-          s.configuration.freeGames.length,
-          s.entitlement.trialDays,
-        ),
-      ),
     ],
+    above: Container(
+      key: const ValueKey('welcome-trial'),
+      padding: const EdgeInsets.symmetric(
+        horizontal: SegSpace.s4,
+        vertical: SegSpace.s3,
+      ),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFF1E0),
+        borderRadius: BorderRadius.circular(SegRadius.lg),
+      ),
+      child: Row(
+        children: [
+          const Icon(
+            Icons.card_giftcard_rounded,
+            color: SegColors.accentDeep,
+            size: 28,
+          ),
+          const SizedBox(width: SegSpace.s3),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.welcomeFreeTrial(s.entitlement.trialDays),
+                  style: SegText.label.copyWith(
+                    color: SegColors.ink,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                Text(
+                  l10n.welcomeFreeAfter(s.configuration.freeGames.length),
+                  style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
     primary: _continue(
       key: const ValueKey('welcome-start'),
       label: l10n.obStart,
@@ -614,7 +651,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           SegSpace.s5,
           SegSpace.s3,
         ),
-        child: PaywallView(state: s, auth: widget.auth, onDone: _next),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              key: const ValueKey('paywall-close'),
+              tooltip: l10n.paywallClose,
+              onPressed: _next,
+              icon: const Icon(Icons.close_rounded),
+            ),
+            Expanded(
+              child: PaywallView(state: s, auth: widget.auth, onDone: _next),
+            ),
+          ],
+        ),
       ),
     ),
   );

@@ -1071,13 +1071,18 @@
   "paywallOneTimeShort": "Bir kez öde",
   "familyCloudSync": "Günlük özetleri buluta gönder",
   "familyCloudSyncNote": "Google ile giriş yapılıysa oynanan oyunların günlük özeti (oyun, süre, tur sayısı) hesabınıza otomatik kaydedilir. Çocuğun adı gönderilmez.",
-  "welcomeFreeTrial": "{count} oyun her zaman ücretsiz. Tüm oyunları {days} gün ücretsiz deneyin.",
+  "welcomeFreeTrial": "Tüm oyunları {days} gün ücretsiz deneyin",
   "paywallBestValue": "En avantajlı",
   "paywallPerMonth": "{price}/ay",
   "paywallPerYear": "Yılda {price}",
   "paywallRenewsMonthly": "Her ay yenilenir",
-  "paywallStartTrial": "{days} gün ücretsiz başla",
+  "paywallStartTrial": "{days} gün ücretsiz dene",
   "paywallTrialFootnote": "Kart gerekmez. Deneme bitince ücretsiz sürüme dönersiniz; isterseniz seçtiğiniz planla devam edersiniz.",
   "paywallContinuePrice": "Devam et · {price}",
-  "paywallCancelAnytime": "Google Play'den istediğiniz zaman iptal edebilirsiniz."
+  "paywallCancelAnytime": "Google Play'den istediğiniz zaman iptal edebilirsiniz.",
+  "welcomeFreeAfter": "Sonrasında {count} oyun hep ücretsiz.",
+  "paywallEveryMonth": "her ay",
+  "paywallOnePayment": "tek ödeme",
+  "paywallCancelShort": "İstediğiniz zaman iptal",
+  "paywallNoSubscription": "Abonelik yok"
 }

@@ -1313,13 +1313,10 @@
   "@familyCloudSyncNote": {
     "description": "Family settings: automatic cloud summary sync."
   },
-  "welcomeFreeTrial": "{count} games are always free. Try every game free for {days} days.",
+  "welcomeFreeTrial": "Try every game free for {days} days",
   "@welcomeFreeTrial": {
-    "description": "Welcome page: honest free tier and trial line.",
+    "description": "Welcome page: trial banner above the start button.",
     "placeholders": {
-      "count": {
-        "type": "int"
-      },
       "days": {
         "type": "int"
       }
@@ -1351,7 +1348,7 @@
   "@paywallRenewsMonthly": {
     "description": "Paywall: monthly plan line."
   },
-  "paywallStartTrial": "Start {days}-day free trial",
+  "paywallStartTrial": "Try free for {days} days",
   "@paywallStartTrial": {
     "description": "Paywall primary button while the trial is unused.",
     "placeholders": {
@@ -1376,5 +1373,30 @@
   "paywallCancelAnytime": "Cancel anytime in Google Play.",
   "@paywallCancelAnytime": {
     "description": "Paywall line under the subscription button."
+  },
+  "welcomeFreeAfter": "{count} games stay free afterwards.",
+  "@welcomeFreeAfter": {
+    "description": "Welcome page: second line of the trial banner.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallEveryMonth": "every month",
+  "@paywallEveryMonth": {
+    "description": "Paywall: small line under the monthly price."
+  },
+  "paywallOnePayment": "one payment",
+  "@paywallOnePayment": {
+    "description": "Paywall: small line under the one-time price."
+  },
+  "paywallCancelShort": "Cancel anytime",
+  "@paywallCancelShort": {
+    "description": "Paywall: monthly plan line."
+  },
+  "paywallNoSubscription": "No subscription",
+  "@paywallNoSubscription": {
+    "description": "Paywall: one-time plan line."
   }
 }

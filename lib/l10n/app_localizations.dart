@@ -2383,11 +2383,11 @@ abstract class AppLocalizations {
   /// **'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.'**
   String get familyCloudSyncNote;
 
-  /// Welcome page: honest free tier and trial line.
+  /// Welcome page: trial banner above the start button.
   ///
   /// In en, this message translates to:
-  /// **'{count} games are always free. Try every game free for {days} days.'**
-  String welcomeFreeTrial(int count, int days);
+  /// **'Try every game free for {days} days'**
+  String welcomeFreeTrial(int days);
 
   /// Paywall badge on the yearly plan.
   ///
@@ -2416,7 +2416,7 @@ abstract class AppLocalizations {
   /// Paywall primary button while the trial is unused.
   ///
   /// In en, this message translates to:
-  /// **'Start {days}-day free trial'**
+  /// **'Try free for {days} days'**
   String paywallStartTrial(int days);
 
   /// Paywall line under the trial button.
@@ -2436,6 +2436,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel anytime in Google Play.'**
   String get paywallCancelAnytime;
+
+  /// Welcome page: second line of the trial banner.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} games stay free afterwards.'**
+  String welcomeFreeAfter(int count);
+
+  /// Paywall: small line under the monthly price.
+  ///
+  /// In en, this message translates to:
+  /// **'every month'**
+  String get paywallEveryMonth;
+
+  /// Paywall: small line under the one-time price.
+  ///
+  /// In en, this message translates to:
+  /// **'one payment'**
+  String get paywallOnePayment;
+
+  /// Paywall: monthly plan line.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime'**
+  String get paywallCancelShort;
+
+  /// Paywall: one-time plan line.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscription'**
+  String get paywallNoSubscription;
 }
 
 class _AppLocalizationsDelegate

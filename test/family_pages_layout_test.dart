@@ -336,8 +336,8 @@ void main() {
           await mount(tester, size, scale, SubscriptionScreen(state: state));
           expect(state.billing.loading, isFalse);
           expect(state.billing.plans, isEmpty);
-          // One page: the primary action and the free way out are visible.
-          for (final key in ['paywall-continue', 'paywall-free']) {
+          // One page: the primary action and the links are visible.
+          for (final key in ['paywall-continue', 'paywall-restore']) {
             final rect = tester.getRect(find.byKey(ValueKey(key)));
             expect(rect.bottom, lessThanOrEqualTo(size.height), reason: key);
             expect(rect.top, greaterThanOrEqualTo(0), reason: key);

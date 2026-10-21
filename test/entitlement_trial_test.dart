@@ -250,7 +250,7 @@ void main() {
         find.byKey(const ValueKey('paywall-option-trial')),
         findsNothing,
       );
-      expect(find.textContaining('free trial'), findsOneWidget);
+      expect(find.textContaining('Try free for'), findsOneWidget);
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.tap(start);

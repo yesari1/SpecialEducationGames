@@ -1,6 +1,6 @@
 // Run explicitly: flutter test tools/paywall_shot_test.dart --update-goldens
 // Renders the one-screen Premium page (TR and EN, phone portrait) with the
-// prices Play shows today, to artifacts/claude/r37/.
+// prices Play shows today, to artifacts/claude/r38/.
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -125,7 +125,7 @@ void main() {
       }
       await expectLater(
         find.byType(RepaintBoundary).first,
-        matchesGoldenFile('../artifacts/claude/r37/after-paywall-$locale.png'),
+        matchesGoldenFile('../artifacts/claude/r38/after-paywall-$locale.png'),
       );
       await tester.pumpWidget(const SizedBox.shrink());
       state.lockFamily();

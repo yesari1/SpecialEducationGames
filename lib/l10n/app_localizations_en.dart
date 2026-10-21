@@ -1316,8 +1316,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'While signed in with Google, a daily summary of the games played (game, minutes, rounds) is saved to your account automatically. The child\'s name is not sent.';
 
   @override
-  String welcomeFreeTrial(int count, int days) {
-    return '$count games are always free. Try every game free for $days days.';
+  String welcomeFreeTrial(int days) {
+    return 'Try every game free for $days days';
   }
 
   @override
@@ -1338,7 +1338,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String paywallStartTrial(int days) {
-    return 'Start $days-day free trial';
+    return 'Try free for $days days';
   }
 
   @override
@@ -1352,4 +1352,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallCancelAnytime => 'Cancel anytime in Google Play.';
+
+  @override
+  String welcomeFreeAfter(int count) {
+    return '$count games stay free afterwards.';
+  }
+
+  @override
+  String get paywallEveryMonth => 'every month';
+
+  @override
+  String get paywallOnePayment => 'one payment';
+
+  @override
+  String get paywallCancelShort => 'Cancel anytime';
+
+  @override
+  String get paywallNoSubscription => 'No subscription';
 }
