@@ -553,7 +553,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Çocuk ekranındaki kilitli kartları gizler.';
 
   @override
-  String get familyEasyAndMediumUnlocked => 'Kolay ve Orta açık';
+  String get familyEasyAndMediumUnlocked => 'Ücretsiz (Kolay)';
 
   @override
   String get familyPremium => 'Premium';
@@ -1395,4 +1395,49 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyLockedStatsButton => 'Premium ile aç';
+
+  @override
+  String familyGamesShownNote(String name) {
+    return '$name için istemediğiniz oyunları kapatın. Kapalı oyunlar çocuk modunda görünmez.';
+  }
+
+  @override
+  String get familyAccountPlan => 'Paket';
+
+  @override
+  String get familyAccountPayment => 'Ödeme';
+
+  @override
+  String get familyPlanFree => 'Ücretsiz sürüm';
+
+  @override
+  String familyPlanTrial(int days) {
+    return 'Ücretsiz deneme · $days gün kaldı';
+  }
+
+  @override
+  String familyPlanTrialEnds(String date) {
+    return '$date tarihinde biter. Sonra ücretsiz sürüm devam eder.';
+  }
+
+  @override
+  String get familyPlanSubscription => 'Premium abonelik';
+
+  @override
+  String get familyPlanLifetime => 'Premium · tek seferlik';
+
+  @override
+  String get familyPlanTest => 'Premium (test sürümü)';
+
+  @override
+  String get familyPaymentNone => 'Ödeme yok';
+
+  @override
+  String get familyPaymentTrial => 'Ödeme yok · Google hesabıyla deneme';
+
+  @override
+  String get familyPaymentPlay => 'Google Play';
+
+  @override
+  String get familyPlanCardTitle => 'Hesap';
 }

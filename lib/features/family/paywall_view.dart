@@ -101,6 +101,15 @@ class _PaywallViewState extends State<PaywallView> {
       if (uid == null || !mounted) return;
       await s.syncTrial(uid);
       if (!s.entitlement.trialUsed) await s.startTrial(uid);
+      // The trial is on: leave the offer instead of showing prices.
+      if (mounted && s.entitlement.trialActive) {
+        final l10n = scopedLocalizations(context, s.locale);
+        showNotice(
+          context,
+          l10n.paywallTrialActive(s.entitlement.trialDaysLeft),
+        );
+        widget.onDone();
+      }
       return;
     }
     final plan = _plan;
@@ -373,17 +382,8 @@ class _PaywallViewState extends State<PaywallView> {
               ),
           ],
         ),
-        // No "continue free" link: the close button (X) leaves, and the
-        // free version simply continues.
-        if (e.isPremium)
-          TextButton(
-            key: const ValueKey('paywall-free'),
-            onPressed: widget.onDone,
-            child: Text(
-              l10n.paywallClose,
-              style: SegText.label.copyWith(color: SegColors.primaryDeep),
-            ),
-          ),
+        // No bottom "close" or "continue free": the X at the top leaves,
+        // and the free version simply continues.
       ],
     );
 

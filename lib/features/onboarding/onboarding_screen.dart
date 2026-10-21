@@ -21,7 +21,16 @@ class OnboardingScreen extends StatefulWidget {
 
   /// Google sign-in for the free trial on the Premium step.
   final FamilyAuth? auth;
-  const OnboardingScreen({super.key, required this.state, this.auth});
+
+  /// Family › Profiles › Add a child: only the child steps (name and age,
+  /// the short questions, daily goal), then back to the family area.
+  final bool addChild;
+  const OnboardingScreen({
+    super.key,
+    required this.state,
+    this.auth,
+    this.addChild = false,
+  });
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
@@ -53,6 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     super.initState();
+    if (widget.addChild) step = OnboardingStep.child;
     s.billing.addListener(_billingChanged);
   }
 
@@ -91,7 +101,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingStep.trial => 3 + questions.length,
     _ => -1,
   };
-  int get _progressCount => 4 + questions.length;
+  int get _progressCount => (widget.addChild ? 2 : 4) + questions.length;
 
   void _next() {
     FocusScope.of(context).unfocus();
@@ -109,7 +119,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             step = OnboardingStep.goal;
           }
         case OnboardingStep.goal:
-          step = OnboardingStep.lock;
+          if (widget.addChild) {
+            _saveChild();
+          } else {
+            step = OnboardingStep.lock;
+          }
         case OnboardingStep.lock:
           // Saved before the offer so the trial/purchase belong to a profile.
           break;
@@ -128,7 +142,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         case OnboardingStep.welcome:
           break;
         case OnboardingStep.child:
-          step = OnboardingStep.welcome;
+          if (widget.addChild) {
+            context.go('/family');
+          } else {
+            step = OnboardingStep.welcome;
+          }
         case OnboardingStep.question:
           if (question > 0) {
             question--;
@@ -195,6 +213,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           step = OnboardingStep.trial;
         });
       }
+    } catch (_) {
+      if (mounted) {
+        setState(() => saving = false);
+        showNotice(context, l10n.onboardingSaveError);
+      }
+    }
+  }
+
+  /// Add a child from the family area: save and go back there.
+  Future<void> _saveChild() async {
+    if (saving || _saved) return;
+    saving = true;
+    try {
+      final survey = _survey;
+      await s.completeOnboarding(
+        name: _nickname,
+        survey: survey,
+        dailyGoalMinutes: dailyGoal,
+      );
+      _saved = true;
+      if (mounted) context.go('/family');
     } catch (_) {
       if (mounted) {
         setState(() => saving = false);

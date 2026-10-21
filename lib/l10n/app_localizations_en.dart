@@ -551,7 +551,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Hides locked cards in Child Mode.';
 
   @override
-  String get familyEasyAndMediumUnlocked => 'Easy and Medium unlocked';
+  String get familyEasyAndMediumUnlocked => 'Free (Easy)';
 
   @override
   String get familyPremium => 'Premium';
@@ -1393,4 +1393,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyLockedStatsButton => 'Unlock with Premium';
+
+  @override
+  String familyGamesShownNote(String name) {
+    return 'Turn off the games you do not want $name to see. Turned-off games disappear from child mode.';
+  }
+
+  @override
+  String get familyAccountPlan => 'Plan';
+
+  @override
+  String get familyAccountPayment => 'Payment';
+
+  @override
+  String get familyPlanFree => 'Free version';
+
+  @override
+  String familyPlanTrial(int days) {
+    return 'Free trial · $days days left';
+  }
+
+  @override
+  String familyPlanTrialEnds(String date) {
+    return 'Ends on $date. Afterwards the free version continues.';
+  }
+
+  @override
+  String get familyPlanSubscription => 'Premium subscription';
+
+  @override
+  String get familyPlanLifetime => 'Premium · one-time purchase';
+
+  @override
+  String get familyPlanTest => 'Premium (test build)';
+
+  @override
+  String get familyPaymentNone => 'No payment';
+
+  @override
+  String get familyPaymentTrial => 'No payment · trial with a Google account';
+
+  @override
+  String get familyPaymentPlay => 'Google Play';
+
+  @override
+  String get familyPlanCardTitle => 'Account';
 }

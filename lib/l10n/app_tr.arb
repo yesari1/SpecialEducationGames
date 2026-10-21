@@ -407,7 +407,7 @@
   "@familyHidesLockedCardsInChildMode": {
     "description": "Family area interface copy."
   },
-  "familyEasyAndMediumUnlocked": "Kolay ve Orta açık",
+  "familyEasyAndMediumUnlocked": "Ücretsiz (Kolay)",
   "@familyEasyAndMediumUnlocked": {
     "description": "Family area interface copy."
   },
@@ -1092,5 +1092,18 @@
   "familyPremiumStripNote": "Tüm oyunlar ve ayrıntılı ilerleme",
   "familyLockedStatsTitle": "Ayrıntılı ilerleme Premium ile açılır",
   "familyLockedStatsBody": "Haftalık grafikler, dikkat, beceriler ve öğe sonuçları.",
-  "familyLockedStatsButton": "Premium ile aç"
+  "familyLockedStatsButton": "Premium ile aç",
+  "familyGamesShownNote": "{name} için istemediğiniz oyunları kapatın. Kapalı oyunlar çocuk modunda görünmez.",
+  "familyAccountPlan": "Paket",
+  "familyAccountPayment": "Ödeme",
+  "familyPlanFree": "Ücretsiz sürüm",
+  "familyPlanTrial": "Ücretsiz deneme · {days} gün kaldı",
+  "familyPlanTrialEnds": "{date} tarihinde biter. Sonra ücretsiz sürüm devam eder.",
+  "familyPlanSubscription": "Premium abonelik",
+  "familyPlanLifetime": "Premium · tek seferlik",
+  "familyPlanTest": "Premium (test sürümü)",
+  "familyPaymentNone": "Ödeme yok",
+  "familyPaymentTrial": "Ödeme yok · Google hesabıyla deneme",
+  "familyPaymentPlay": "Google Play",
+  "familyPlanCardTitle": "Hesap"
 }

@@ -1042,7 +1042,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Easy and Medium unlocked'**
+  /// **'Free (Easy)'**
   String get familyEasyAndMediumUnlocked;
 
   /// Family area interface copy.
@@ -2514,6 +2514,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unlock with Premium'**
   String get familyLockedStatsButton;
+
+  /// Family games tab: explanation of the switches.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off the games you do not want {name} to see. Turned-off games disappear from child mode.'**
+  String familyGamesShownNote(String name);
+
+  /// Family account card row.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get familyAccountPlan;
+
+  /// Family account card row.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment'**
+  String get familyAccountPayment;
+
+  /// Family account card plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Free version'**
+  String get familyPlanFree;
+
+  /// Family account card plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Free trial · {days} days left'**
+  String familyPlanTrial(int days);
+
+  /// Family account card trial end.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends on {date}. Afterwards the free version continues.'**
+  String familyPlanTrialEnds(String date);
+
+  /// Family account card plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium subscription'**
+  String get familyPlanSubscription;
+
+  /// Family account card plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium · one-time purchase'**
+  String get familyPlanLifetime;
+
+  /// Family account card plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium (test build)'**
+  String get familyPlanTest;
+
+  /// Family account card payment.
+  ///
+  /// In en, this message translates to:
+  /// **'No payment'**
+  String get familyPaymentNone;
+
+  /// Family account card payment.
+  ///
+  /// In en, this message translates to:
+  /// **'No payment · trial with a Google account'**
+  String get familyPaymentTrial;
+
+  /// Family account card payment.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Play'**
+  String get familyPaymentPlay;
+
+  /// Family profiles tab: plan and payment card title.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get familyPlanCardTitle;
 }
 
 class _AppLocalizationsDelegate

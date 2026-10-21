@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
@@ -232,16 +233,33 @@ void main() {
       addTearDown(tester.view.resetDevicePixelRatio);
       final l10n = lookupAppLocalizations(const Locale('en'));
       state.locale = 'en';
+      final router = GoRouter(
+        initialLocation: '/family/subscription',
+        routes: [
+          GoRoute(
+            path: '/family',
+            builder: (_, _) => const Scaffold(body: Text('family-home')),
+            routes: [
+              GoRoute(
+                path: 'subscription',
+                builder: (_, _) => ListenableBuilder(
+                  listenable: state,
+                  builder: (_, _) =>
+                      SubscriptionScreen(state: state, auth: auth),
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+      addTearDown(router.dispose);
       await tester.pumpWidget(
-        MaterialApp(
+        MaterialApp.router(
           theme: segTheme(),
           locale: const Locale('en'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
-          home: ListenableBuilder(
-            listenable: state,
-            builder: (_, _) => SubscriptionScreen(state: state, auth: auth),
-          ),
+          routerConfig: router,
         ),
       );
       await tester.pumpAndSettle();
@@ -259,11 +277,11 @@ void main() {
       }
       expect(auth.account?.uid, 'parent-1');
       expect(store.claims, 1);
-      expect(
-        find.byKey(const ValueKey('paywall-trial-active')),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.paywallTrialActive(7)), findsOneWidget);
+      // The trial is on: a notice says so and the offer closes.
+      expect(state.entitlement.trialActive, isTrue);
+      expect(find.text(l10n.paywallTrialActive(7)), findsWidgets);
+      await tester.pumpAndSettle();
+      expect(find.text('family-home'), findsOneWidget);
       expect(tester.takeException(), isNull);
       // Let the sign-in timeout timer expire before the test ends.
       await tester.pumpWidget(const SizedBox.shrink());

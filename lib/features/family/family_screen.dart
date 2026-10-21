@@ -8,8 +8,8 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../app/ui/family_nav_bar.dart';
-import '../../core/entitlement/entitlement_service.dart' show qaPremium;
-import '../../core/content/content_repository.dart';
+import '../../core/entitlement/entitlement_service.dart'
+    show PremiumSource, qaPremium;
 import '../../core/db/app_database.dart';
 import '../../core/learning/age_band.dart';
 import '../../core/learning/parent_pin.dart';
@@ -774,28 +774,14 @@ class _FamilyScreenState extends State<FamilyScreen> {
       ),
     ),
     for (final theme in s.content.themes)
-      for (final id in s.gamesForTheme(theme.id))
+      for (final id in s.allGamesForTheme(theme.id))
         _familyCard(
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(theme.name(s.locale), style: SegText.caption),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: Icon(
-                  s.canPlay(theme.id, id, Difficulty.easy)
-                      ? Icons.play_circle_outline_rounded
-                      : Icons.lock_outline_rounded,
-                  color: SegColors.primary,
-                ),
-                title: Text(s.content.game(id).name(s.locale)),
-                subtitle: Text(
-                  s.canPlay(theme.id, id, Difficulty.easy)
-                      ? l10n.familyEasyAndMediumUnlocked
-                      : l10n.familyPremium,
-                ),
-              ),
+              _gameSwitch(theme.id, id),
             ],
           ),
         ),
@@ -1514,41 +1500,58 @@ class _FamilyScreenState extends State<FamilyScreen> {
         onChanged: (v) => s.setting('onlyFree', '$v'),
       ),
     ),
-    const SizedBox(height: SegSpace.s5),
-    ...s.content.themes.map(
-      (theme) => Padding(
-        padding: const EdgeInsets.only(bottom: SegSpace.s4),
-        child: SegCard(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(theme.name(s.locale), style: SegText.heading),
-              const SizedBox(height: SegSpace.s4),
-              ...s
-                  .gamesForTheme(theme.id)
-                  .map(
-                    (id) => ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        s.canPlay(theme.id, id, Difficulty.easy)
-                            ? Icons.play_circle_outline_rounded
-                            : Icons.lock_outline_rounded,
-                        color: SegColors.primary,
-                      ),
-                      title: Text(s.content.game(id).name(s.locale)),
-                      subtitle: Text(
-                        s.canPlay(theme.id, id, Difficulty.easy)
-                            ? l10n.familyEasyAndMediumUnlocked
-                            : l10n.familyPremium,
-                      ),
-                    ),
-                  ),
-            ],
+    const SizedBox(height: SegSpace.s3),
+    Text(
+      l10n.familyGamesShownNote(s.active?.nickname ?? ''),
+      style: SegText.caption.copyWith(color: SegColors.inkSoft),
+    ),
+    const SizedBox(height: SegSpace.s3),
+    ...s.content.themes
+        .where((theme) => s.allGamesForTheme(theme.id).isNotEmpty)
+        .map(
+          (theme) => Padding(
+            padding: const EdgeInsets.only(bottom: SegSpace.s4),
+            child: SegCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(theme.name(s.locale), style: SegText.heading),
+                  const SizedBox(height: SegSpace.s2),
+                  for (final id in s.allGamesForTheme(theme.id))
+                    _gameSwitch(theme.id, id),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
-    ),
   ];
+
+  /// One game of a theme: shown to the child or not (per profile).
+  Widget _gameSwitch(String theme, String id) {
+    final free = s.configuration.freeGames.contains('${theme}_$id');
+    final shown = !s.hiddenGames.contains('${theme}_$id');
+    return SwitchListTile(
+      key: ValueKey('game-switch-${theme}_$id'),
+      contentPadding: EdgeInsets.zero,
+      secondary: Icon(
+        s.entitlement.isPremium || free
+            ? Icons.play_circle_outline_rounded
+            : Icons.lock_outline_rounded,
+        color: shown ? SegColors.primary : SegColors.inkFaint,
+      ),
+      title: Text(s.content.game(id).name(s.locale)),
+      subtitle: Text(
+        !s.entitlement.isPremium && free
+            ? l10n.familyEasyAndMediumUnlocked
+            : l10n.familyPremium,
+      ),
+      value: shown,
+      onChanged: s.familyUnlocked
+          ? (value) => s.setGameShown(theme, id, value)
+          : null,
+    );
+  }
+
   List<Widget> _profiles() => [
     ...s.profiles.map(
       (profile) => SegCard(
@@ -1669,9 +1672,138 @@ class _FamilyScreenState extends State<FamilyScreen> {
             : '/family/subscription',
       ),
     ),
+    if (!s.entitlement.isPremium) ...[
+      const SizedBox(height: SegSpace.s3),
+      Text(l10n.familyTheFreeVersionIncludesOneChild),
+    ],
     const SizedBox(height: SegSpace.s5),
-    Text(l10n.familyTheFreeVersionIncludesOneChild),
+    _accountCard(),
   ];
+
+  /// What the family has: plan, how it was paid, trial days, and the way to
+  /// manage or upgrade.
+  Widget _accountCard() {
+    final e = s.entitlement;
+    final (plan, payment) = switch (e.source) {
+      PremiumSource.subscription => (
+        l10n.familyPlanSubscription,
+        l10n.familyPaymentPlay,
+      ),
+      PremiumSource.lifetime => (
+        l10n.familyPlanLifetime,
+        l10n.familyPaymentPlay,
+      ),
+      PremiumSource.trial => (
+        l10n.familyPlanTrial(e.trialDaysLeft),
+        l10n.familyPaymentTrial,
+      ),
+      PremiumSource.qa => (l10n.familyPlanTest, l10n.familyPaymentNone),
+      PremiumSource.none => (l10n.familyPlanFree, l10n.familyPaymentNone),
+    };
+    Widget row(String label, String value) => Padding(
+      padding: const EdgeInsets.only(top: SegSpace.s2),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 96,
+            child: Text(
+              label,
+              style: SegText.caption.copyWith(color: SegColors.inkSoft),
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: SegText.label.copyWith(color: SegColors.ink),
+            ),
+          ),
+        ],
+      ),
+    );
+    final ends = e.trialEndsAt;
+    // On a short sideways page the card shrinks instead of overflowing.
+    return LayoutBuilder(
+      builder: (context, box) {
+        final card = _planCard(plan, payment, ends, row);
+        return box.hasBoundedHeight
+            ? FittedBox(
+                fit: BoxFit.scaleDown,
+                child: SizedBox(width: box.maxWidth, child: card),
+              )
+            : card;
+      },
+    );
+  }
+
+  Widget _planCard(
+    String plan,
+    String payment,
+    DateTime? ends,
+    Widget Function(String, String) row,
+  ) {
+    final e = s.entitlement;
+    return SegCard(
+      key: const ValueKey('family-account-card'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(
+                e.isPremium
+                    ? Icons.workspace_premium_rounded
+                    : Icons.account_circle_outlined,
+                color: e.isPremium
+                    ? SegColors.accentStrong
+                    : SegColors.primaryDeep,
+              ),
+              const SizedBox(width: SegSpace.s2),
+              Text(l10n.familyPlanCardTitle, style: SegText.heading),
+            ],
+          ),
+          row(l10n.familyAccountPlan, plan),
+          row(l10n.familyAccountPayment, payment),
+          if (e.source == PremiumSource.trial && ends != null)
+            Padding(
+              padding: const EdgeInsets.only(top: SegSpace.s2),
+              child: Text(
+                l10n.familyPlanTrialEnds(
+                  DateFormat.yMMMMd(s.locale).format(ends),
+                ),
+                style: SegText.caption.copyWith(color: SegColors.inkSoft),
+              ),
+            ),
+          const SizedBox(height: SegSpace.s3),
+          Wrap(
+            spacing: SegSpace.s2,
+            runSpacing: SegSpace.s1,
+            children: [
+              if (e.source == PremiumSource.subscription)
+                OutlinedButton(
+                  onPressed: () => context.go('/family/subscription'),
+                  child: Text(l10n.subscriptionManage),
+                )
+              else if (!e.isPaid)
+                FilledButton(
+                  key: const ValueKey('family-account-premium'),
+                  style: FilledButton.styleFrom(
+                    backgroundColor: SegColors.accentStrong,
+                  ),
+                  onPressed: () => context.go('/family/subscription'),
+                  child: Text(l10n.familyPremiumStripBuy),
+                ),
+              OutlinedButton(
+                onPressed: () => context.go('/family/account'),
+                child: Text(l10n.familyGoogleFamilyAccount),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   List<Widget> _settings() => [
     SegCard(
       child: Column(

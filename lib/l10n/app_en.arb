@@ -407,7 +407,7 @@
   "@familyHidesLockedCardsInChildMode": {
     "description": "Family area interface copy."
   },
-  "familyEasyAndMediumUnlocked": "Easy and Medium unlocked",
+  "familyEasyAndMediumUnlocked": "Free (Easy)",
   "@familyEasyAndMediumUnlocked": {
     "description": "Family area interface copy."
   },
@@ -1420,5 +1420,72 @@
   "familyLockedStatsButton": "Unlock with Premium",
   "@familyLockedStatsButton": {
     "description": "Family progress: locked statistics button."
+  },
+  "familyGamesShownNote": "Turn off the games you do not want {name} to see. Turned-off games disappear from child mode.",
+  "@familyGamesShownNote": {
+    "description": "Family games tab: explanation of the switches.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "familyAccountPlan": "Plan",
+  "@familyAccountPlan": {
+    "description": "Family account card row."
+  },
+  "familyAccountPayment": "Payment",
+  "@familyAccountPayment": {
+    "description": "Family account card row."
+  },
+  "familyPlanFree": "Free version",
+  "@familyPlanFree": {
+    "description": "Family account card plan."
+  },
+  "familyPlanTrial": "Free trial · {days} days left",
+  "@familyPlanTrial": {
+    "description": "Family account card plan.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "familyPlanTrialEnds": "Ends on {date}. Afterwards the free version continues.",
+  "@familyPlanTrialEnds": {
+    "description": "Family account card trial end.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "familyPlanSubscription": "Premium subscription",
+  "@familyPlanSubscription": {
+    "description": "Family account card plan."
+  },
+  "familyPlanLifetime": "Premium · one-time purchase",
+  "@familyPlanLifetime": {
+    "description": "Family account card plan."
+  },
+  "familyPlanTest": "Premium (test build)",
+  "@familyPlanTest": {
+    "description": "Family account card plan."
+  },
+  "familyPaymentNone": "No payment",
+  "@familyPaymentNone": {
+    "description": "Family account card payment."
+  },
+  "familyPaymentTrial": "No payment · trial with a Google account",
+  "@familyPaymentTrial": {
+    "description": "Family account card payment."
+  },
+  "familyPaymentPlay": "Google Play",
+  "@familyPaymentPlay": {
+    "description": "Family account card payment."
+  },
+  "familyPlanCardTitle": "Account",
+  "@familyPlanCardTitle": {
+    "description": "Family profiles tab: plan and payment card title."
   }
 }

@@ -115,10 +115,27 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> gamesForTheme(String theme) =>
+  /// Games the child sees: the family can turn single games off.
+  List<String> gamesForTheme(String theme) => allGamesForTheme(
+    theme,
+  ).where((g) => !hiddenGames.contains('${theme}_$g')).toList();
+
+  /// Every available game of a theme (the family Games tab lists them all).
+  List<String> allGamesForTheme(String theme) =>
       (configuration.gameOrder[theme] ?? content.theme(theme).games)
           .where((g) => !configuration.disabledGames.contains('${theme}_$g'))
           .toList();
+
+  /// Games this child's family turned off (per profile).
+  Set<String> hiddenGames = {};
+
+  Future<void> setGameShown(String theme, String game, bool shown) async {
+    final key = '${theme}_$game';
+    final next = {...hiddenGames};
+    shown ? next.remove(key) : next.add(key);
+    await setting('hiddenGames', (next.toList()..sort()).join(','));
+  }
+
   List<Profile> profiles = [];
   List<Trial> trials = [];
   List<GameSession> sessions = [];
@@ -147,6 +164,7 @@ class AppState extends ChangeNotifier {
       Difficulty.easy,
     );
     return parts.length == 2 &&
+        !hiddenGames.contains(key) &&
         canPlay(parts[0], parts[1], Difficulty.easy) &&
         content.isGameContentAvailable(
           parts[0],
@@ -375,6 +393,10 @@ class AppState extends ChangeNotifier {
     final savedHint = int.tryParse(await _readSetting('hintSeconds') ?? '-1');
     hintSeconds = [-1, 0, 4, 6, 10].contains(savedHint) ? savedHint! : -1;
     fadeWrongChoices = await _readSetting('fadeWrongChoices') != 'false';
+    hiddenGames = {
+      for (final key in (await _readSetting('hiddenGames') ?? '').split(','))
+        if (key.isNotEmpty) key,
+    };
     final savedDifficulty = await _readSetting('difficultyOverride') ?? 'auto';
     difficultyOverride =
         ['auto', 'easy', 'medium', 'hard'].contains(savedDifficulty) &&
@@ -568,6 +590,16 @@ class AppState extends ChangeNotifier {
         throw StateError('premium_required');
       }
     }
+    if (key == 'hiddenGames') {
+      if (!familyUnlocked) throw StateError('parent_gate_required');
+      final known = {
+        for (final t in content.themes)
+          for (final g in t.games) '${t.id}_$g',
+      };
+      if (value.split(',').any((k) => k.isNotEmpty && !known.contains(k))) {
+        throw ArgumentError(key);
+      }
+    }
     if (key == 'cloudSync') {
       if (!familyUnlocked) throw StateError('parent_gate_required');
       if (!['true', 'false'].contains(value)) throw ArgumentError(key);
@@ -597,6 +629,7 @@ class AppState extends ChangeNotifier {
           'hintSeconds',
           'fadeWrongChoices',
           'difficultyOverride',
+          'hiddenGames',
         ].contains(key);
     await db.setPreference(scoped ? 'profile.${active!.id}.$key' : key, value);
     await load();

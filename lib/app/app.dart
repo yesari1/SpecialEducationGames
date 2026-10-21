@@ -134,14 +134,20 @@ class _EducationAppState extends State<EducationApp>
             ),
             GoRoute(
               path: 'profile/:id',
-              builder: (_, s) => reactive(
-                () => ProfileEditorScreen(
-                  state: state,
-                  profileId: s.pathParameters['id'] == 'new'
-                      ? null
-                      : s.pathParameters['id'],
-                ),
-              ),
+              // A new child uses the onboarding's child steps; the editor
+              // is for an existing profile.
+              builder: (_, s) => s.pathParameters['id'] == 'new'
+                  ? OnboardingScreen(
+                      state: state,
+                      auth: familyAuth,
+                      addChild: true,
+                    )
+                  : reactive(
+                      () => ProfileEditorScreen(
+                        state: state,
+                        profileId: s.pathParameters['id'],
+                      ),
+                    ),
             ),
           ],
         ),
