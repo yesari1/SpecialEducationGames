@@ -1,15 +1,19 @@
 // Run explicitly: flutter test tools/paywall_shot_test.dart --update-goldens
-// Renders the upright Premium page (TR and EN) to artifacts/claude/r33/.
+// Renders the one-screen Premium page (TR and EN, phone portrait) with the
+// prices Play shows today, to artifacts/claude/r36/.
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:in_app_purchase_android/billing_client_wrappers.dart';
+import 'package:in_app_purchase_android/in_app_purchase_android.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
 import 'package:special_education_games/core/auth/family_auth.dart';
 import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
+import 'package:special_education_games/core/entitlement/billing_repository.dart';
 import 'package:special_education_games/features/family/subscription_screen.dart';
 import 'package:special_education_games/l10n/app_localizations.dart';
 
@@ -24,6 +28,22 @@ class _NoGoogle implements FamilyAuthBackend {
   void cancelPending() {}
 }
 
+GooglePlayProductDetails _product() =>
+    GooglePlayProductDetails.fromProductDetails(
+      const ProductDetailsWrapper(
+        description: 'Premium',
+        name: 'Premium',
+        productId: 'premium_lifetime',
+        productType: ProductType.inapp,
+        title: 'Premium',
+        oneTimePurchaseOfferDetails: OneTimePurchaseOfferDetailsWrapper(
+          formattedPrice: '₺799,99',
+          priceAmountMicros: 799990000,
+          priceCurrencyCode: 'TRY',
+        ),
+      ),
+    ).single;
+
 void main() {
   testWidgets('paywall shots', (tester) async {
     await tester.runAsync(() async {
@@ -31,10 +51,12 @@ void main() {
         'Nunito': 'assets/fonts/Nunito.ttf',
         'MaterialIcons': 'fonts/MaterialIcons-Regular.otf',
       }.entries) {
-        await (FontLoader(entry.key)..addFont(rootBundle.load(entry.value)))
-            .load();
+        await (FontLoader(
+          entry.key,
+        )..addFont(rootBundle.load(entry.value))).load();
       }
     });
+    final product = _product();
     for (final locale in ['tr', 'en']) {
       final state = (await tester.runAsync(() async {
         final s = AppState(
@@ -48,11 +70,40 @@ void main() {
         return s;
       }))!;
       state.locale = locale;
+      state.billing.plans = [
+        BillingPlan(
+          product,
+          'monthly',
+          '₺59,99',
+          'P1M',
+          null,
+          false,
+          priceMicros: 59990000,
+        ),
+        BillingPlan(
+          product,
+          'yearly',
+          '₺499,99',
+          'P1Y',
+          null,
+          false,
+          priceMicros: 499990000,
+        ),
+        BillingPlan(
+          product,
+          'lifetime',
+          '₺799,99',
+          '',
+          null,
+          false,
+          priceMicros: 799990000,
+        ),
+      ];
       final auth = FamilyAuth(
         backend: _NoGoogle(),
         parentAuthorized: () => state.familyUnlocked,
       );
-      tester.view.devicePixelRatio = 2.6;
+      tester.view.devicePixelRatio = 2.625;
       tester.view.physicalSize = const Size(1080, 2400);
       await tester.pumpWidget(
         RepaintBoundary(
@@ -74,7 +125,7 @@ void main() {
       }
       await expectLater(
         find.byType(RepaintBoundary).first,
-        matchesGoldenFile('../artifacts/claude/r33/paywall-$locale.png'),
+        matchesGoldenFile('../artifacts/claude/r36/after-paywall-$locale.png'),
       );
       await tester.pumpWidget(const SizedBox.shrink());
       state.lockFamily();

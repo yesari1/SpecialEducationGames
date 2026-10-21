@@ -205,21 +205,24 @@ class _PaywallViewState extends State<PaywallView> {
                 textAlign: TextAlign.center,
               ),
             ),
-          if (tiles.isNotEmpty)
-            LayoutBuilder(
-              builder: (context, box) {
-                const gap = SegSpace.s2;
-                final width = (box.maxWidth - gap) / 2;
-                return Wrap(
-                  spacing: gap,
-                  runSpacing: gap,
-                  children: [
-                    for (final tile in tiles)
-                      SizedBox(width: width, child: tile),
-                  ],
-                );
-              },
+          // Two equal-height tiles per row.
+          for (var i = 0; i < tiles.length; i += 2) ...[
+            if (i > 0) const SizedBox(height: SegSpace.s2),
+            IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(child: tiles[i]),
+                  const SizedBox(width: SegSpace.s2),
+                  Expanded(
+                    child: i + 1 < tiles.length
+                        ? tiles[i + 1]
+                        : const SizedBox.shrink(),
+                  ),
+                ],
+              ),
             ),
+          ],
           if (s.billing.plans.isEmpty) ...[
             const SizedBox(height: SegSpace.s2),
             if (s.billing.loading)
