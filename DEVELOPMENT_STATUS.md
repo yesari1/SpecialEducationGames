@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R48 (arayüz sesleri) — sürüm 2.0.17 (31), Internal testing'de
+
+- `UiSound` (audio_service.dart): her UI sesi kendi küçük oynatıcısında çalar, konuşmayı kesmez, ses kapalıysa ya da efekt sesi 0'sa susar. Seslerin hepsi uygulama için Python'da sentezlendi (kayıt ya da üçüncü taraf malzemesi yok; `assets/sfx/SOURCES.md`).
+- Baloncuk (`tap_bubble.wav`): SegButton, PillButton, PillToggle ve PressableObject (kartlar, seçenekler). Oyun açılışı (`game_open.wav`, arpej): tema sayfasındaki açık oyun kartı ve Bugünün Yolu durağı; bu kartta baloncuk çalmaz (`tapSound: false`). Sepet "pof" (`basket_drop.wav`): grup/sepet uçuşu bitince. Ebeveyn kilidi (`unlock.wav`, klik-ding): kilit doğru açılınca.
+- Yunus'un seçimleri: baloncuk = 3. örnek; oyun açılış c, sepet pof a, kilit açıldı b (`artifacts/ui-sounds-2/`).
+- Doğrulama: seri host testler 277/277. `tools/build_release.sh` geçti. vc31 Internal testing'e yüklendi. Seslerin cihazda duyulması elle denenmedi.
+
 ## 22 Ekim 2026 — R47 (sıradaki sayı, konfeti, "hangisi?" sesleri, Türkçe övgüler, çorba) — sürüm 2.0.16 (30), Internal testing'de
 
 - G35: `SequenceRow`. Boşluk küçük çerçeveli "?" kutusu; doğru cevapta seçilen sayı turuncu renkte büyüyerek yerleşir.
