@@ -421,22 +421,22 @@ Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical revi
 ## produce.mandarin
 
 File: `assets/images/produce/mandarin_real.png`
-Photo author: PublicDomainPictures (Pixabay)
-Source: https://pixabay.com/photos/citrus-clementine-food-fresh-fruit-2393/
+Photo author: Saramukitza (Pixabay)
+Source: https://pixabay.com/photos/mandarin-orange-clementines-fruit-1944930/
 Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
-Original: `artifacts/photo-replacements-r46/mandarin/attempt-01/original.jpg` (SHA-256 `ce25d33d2447a06a57c3d378520fd95b1922824133da4de93ab2745583dc3d8f`).
-Adapted PNG SHA-256: `7661e96fa62b40780667b75e81750c18bbcf6cdfb4010981b8b43a6e9ad8ac6d`.
-Changes: One whole clementine/mandarin with two green leaves on its stem. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
+Original: `artifacts/photo-replacements-r46/mandarin/attempt-1944930/original.jpg` (SHA-256 `7ddf238a2faa6a67128ba396f4be8da1aacfb1754cbff66a82d73a7d39512686`).
+Adapted PNG SHA-256: `d72e92634ad3c04b736def16b1408cb27e8f33c5a8a4ec23a3c0aa5f54c2fedb`.
+Changes: One whole mandarin with a short stem and one green leaf. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## produce.watermelon
 
 File: `assets/images/produce/watermelon_1.png`
-Photo author: segobou (Pixabay)
-Source: https://pixabay.com/photos/watermelon-summer-sweet-berrie-1504404/
+Photo author: TBIT (Pixabay)
+Source: https://pixabay.com/photos/melon-fruit-food-edible-yummy-943753/
 Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
-Original: `artifacts/photo-replacements-r46/watermelon/attempt-01/original.jpg` (SHA-256 `e91393e59a0836ec3280256c455e15753e670bf803c7d404c92111c9a1183ced`).
-Adapted PNG SHA-256: `fbdec83dbed852c210cd8e65f3c507dbf2c46ddc7d9651c68c5da1e37521db28`.
-Changes: One classic watermelon slice: red flesh, black seeds, green rind. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
+Original: `artifacts/photo-replacements-r46/watermelon/attempt-943753/original.jpg` (SHA-256 `23c4d0dac936aae92e821295e274501a50caef2caccf821e7c01244e8b95267c`).
+Adapted PNG SHA-256: `f5ecd207e1789eb2b2f511d5183afb0831ea733669632067c727b7699b4a8727`.
+Changes: One thick watermelon wedge: red flesh, black seeds, striped green rind. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## produce.onion
 
