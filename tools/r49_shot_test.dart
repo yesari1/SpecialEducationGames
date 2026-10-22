@@ -112,9 +112,13 @@ void main() {
       );
       await _settle(tester);
       await _save(tester, 'welcome-$locale');
-      await tester.tap(find.byKey(const ValueKey('welcome-sign-in')));
+      // A small phone: still one page.
+      tester.view.physicalSize = const Size(720, 1280);
+      tester.view.devicePixelRatio = 2;
       await _settle(tester);
-      await _save(tester, 'welcome-signin-$locale');
+      await _save(tester, 'welcome-small-$locale');
+      tester.view.devicePixelRatio = 2.625;
+      tester.view.physicalSize = const Size(1080, 2400);
       await tester.pumpWidget(const SizedBox.shrink());
 
       // Family settings, scrolled so cards run under the frosted bar.

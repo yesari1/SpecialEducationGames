@@ -6,7 +6,6 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../core/auth/family_auth.dart';
-import '../family/family_account_card.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/parent_pin.dart';
@@ -258,6 +257,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Widget? secondary,
     Widget? above,
     bool skippable = false,
+    bool fit = false,
   }) {
     final dots = _progressIndex >= 0
         ? OnboardingDots(
@@ -307,16 +307,43 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 560),
-                  child: ListView(
-                    key: ValueKey('onboarding-${step.name}-$question'),
-                    padding: const EdgeInsets.fromLTRB(
-                      SegSpace.s5,
-                      SegSpace.s2,
-                      SegSpace.s5,
-                      SegSpace.s5,
-                    ),
-                    children: children,
-                  ),
+                  // [fit]: one page without scrolling on every screen size.
+                  child: fit
+                      ? Padding(
+                          key: ValueKey('onboarding-${step.name}-$question'),
+                          padding: const EdgeInsets.fromLTRB(
+                            SegSpace.s5,
+                            SegSpace.s2,
+                            SegSpace.s5,
+                            SegSpace.s3,
+                          ),
+                          // Short phones scale the page down as a whole.
+                          child: LayoutBuilder(
+                            builder: (context, box) => FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.topCenter,
+                              child: SizedBox(
+                                width: box.maxWidth,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: children,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      : ListView(
+                          key: ValueKey('onboarding-${step.name}-$question'),
+                          padding: const EdgeInsets.fromLTRB(
+                            SegSpace.s5,
+                            SegSpace.s2,
+                            SegSpace.s5,
+                            SegSpace.s5,
+                          ),
+                          children: children,
+                        ),
                 ),
               ),
             ),
@@ -376,25 +403,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   // ---------------------------------------------------------------- steps --
 
   Widget _welcome() => _frame(
+    fit: true,
     children: [
       // One illustrated scene in the app's illustration style
       // (docs/illustration-style.md) on a soft sky-to-cream card.
-      Container(
-        key: const ValueKey('welcome-hero'),
-        height: 240,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(SegRadius.xl),
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+      // Short phones first give up scene height, then scale as a whole.
+      SizedBox(
+        height: (MediaQuery.sizeOf(context).height - 520).clamp(110.0, 240.0),
+        child: Container(
+          key: const ValueKey('welcome-hero'),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(SegRadius.xl),
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+            ),
           ),
-        ),
-        padding: const EdgeInsets.all(SegSpace.s2),
-        child: Image.asset(
-          '$_illustrations/hero_welcome.png',
-          fit: BoxFit.contain,
-          excludeFromSemantics: true,
+          padding: const EdgeInsets.all(SegSpace.s2),
+          child: Image.asset(
+            '$_illustrations/hero_welcome.png',
+            fit: BoxFit.contain,
+            excludeFromSemantics: true,
+          ),
         ),
       ),
       const SizedBox(height: SegSpace.s5),
@@ -485,28 +516,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
   );
 
-  /// "Already have an account?": the Google family account sheet. Once
-  /// signed in (Premium and the trial follow the account) setup goes on.
+  /// "Already have an account?": Google sign-in right away. Once signed in
+  /// (Premium and the trial follow the account) setup goes on.
   Future<void> _signIn() async {
     final auth = widget.auth;
     if (auth == null) return;
     UiSound.tap();
     // Nobody is set up yet, so the adult on this screen is the parent.
     if (s.profiles.isEmpty) s.unlockFamily();
-    final hadAccount = auth.account != null;
-    await showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: SegColors.familyCanvas,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(SegRadius.xl)),
-      ),
-      builder: (context) => _SignInSheet(
-        auth: auth,
-        turkish: s.locale == 'tr',
-        closeWhenSignedIn: !hadAccount,
-      ),
-    );
+    // Straight to Google's account picker.
+    if (auth.account == null) await auth.signIn();
     if (!mounted || auth.account == null) return;
     showNotice(
       context,
@@ -828,57 +847,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
-}
-
-/// The account card in a sheet; closes by itself once sign-in succeeds.
-class _SignInSheet extends StatefulWidget {
-  final FamilyAuth auth;
-  final bool turkish;
-  final bool closeWhenSignedIn;
-  const _SignInSheet({
-    required this.auth,
-    required this.turkish,
-    required this.closeWhenSignedIn,
-  });
-  @override
-  State<_SignInSheet> createState() => _SignInSheetState();
-}
-
-class _SignInSheetState extends State<_SignInSheet> {
-  @override
-  void initState() {
-    super.initState();
-    widget.auth.addListener(_changed);
-  }
-
-  void _changed() {
-    if (widget.closeWhenSignedIn && widget.auth.account != null && mounted) {
-      Navigator.of(context).maybePop();
-    }
-  }
-
-  @override
-  void dispose() {
-    widget.auth.removeListener(_changed);
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) => SafeArea(
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(
-        SegSpace.s4,
-        SegSpace.s4,
-        SegSpace.s4,
-        SegSpace.s4,
-      ),
-      child: SingleChildScrollView(
-        child: FamilyAccountCard(
-          auth: widget.auth,
-          turkish: widget.turkish,
-          flat: true,
-        ),
-      ),
-    ),
-  );
 }

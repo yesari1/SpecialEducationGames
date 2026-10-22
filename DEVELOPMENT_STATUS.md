@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R50 (hoş geldin sığdırma, doğrudan Google girişi, Premium kartı, sepeti doldur) — sürüm 2.0.19 (33), Internal testing'de
+
+- Hoş geldin ekranı kaydırmasız (`_frame(fit: true)`): sahne yüksekliği ekran yüksekliğine göre 110–240; yine sığmazsa sayfa bütün olarak küçülür (FittedBox). 1080×2400 ve 720×1280 ekranda kontrol edildi.
+- "Giriş yap" doğrudan `auth.signIn()` (Google hesap seçici); R49'daki hesap kartı alt sayfası kaldırıldı (Yunus istememişti).
+- Ayarlar (dikey) Premium kartı tam genişlik (`ConstrainedBox(minWidth: ∞)`; `_sectionPages` SizedBox'ları ayıkladığı için SizedBox kullanılamadı).
+- Sepeti doldur: sepetten geri çıkarınca sayı hedefe eşitse kabul (`_takeBack`).
+- Proje kuralları `CLAUDE.md`: yalnızca istenen değişiklik, önce numaralı adımlar.
+- Doğrulama: seri host testler 277/277; `tools/build_release.sh` geçti; vc33 Internal testing'e yüklendi.
+
 ## 22 Ekim 2026 — R49 (sepet uçuşu, pof sesi, uyarı kartı, buzlu menü, giriş bağlantısı) — sürüm 2.0.18 (32), Internal testing'de
 
 - Sepet/grup uçuşu (HopIn): başlangıç noktası canlı ölçülüyor (`HopOrigin` işaretçisi; sürüklemede bırakılan yer tek seferlik `dropped`), ölçüm anahtarı Transform dışında, uçan nesnenin yeri boş tutuluyor (sayfa kaymıyor). Yay alçaltıldı (lift = max(36, mesafe·.18)), eğri easeInOutSine, 650 ms. Kare kare kontrol: `tools/r49_hop_frames_test.dart` → `artifacts/claude/r49/hop-*.png`.

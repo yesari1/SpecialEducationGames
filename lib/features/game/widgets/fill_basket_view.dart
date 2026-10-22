@@ -49,6 +49,11 @@ class _FillBasketViewState extends State<FillBasketView> {
   void _takeBack() {
     if (widget.hint.celebrating || _inBasket.isEmpty) return;
     setState(() => _inBasket.remove(_inBasket.last));
+    widget.onCount?.call(_inBasket.length);
+    // Too many went in quickly and one came back out: the count is right now.
+    if (_inBasket.length == _goal) {
+      widget.callbacks.onSelect(widget.spec.target);
+    }
   }
 
   @override

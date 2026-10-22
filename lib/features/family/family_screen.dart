@@ -1887,17 +1887,22 @@ class _FamilyScreenState extends State<FamilyScreen> {
   }
 
   List<Widget> _settings() => [
-    SegCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(l10n.familyPremium, style: SegText.heading),
-          const SizedBox(height: SegSpace.s4),
-          SegButton(
-            label: l10n.familyPlansAndRestore,
-            onPressed: () => context.go('/family/subscription'),
-          ),
-        ],
+    // Full width like the other settings cards (not a SizedBox: those are
+    // dropped as spacers by _sectionPages).
+    ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: double.infinity),
+      child: SegCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.familyPremium, style: SegText.heading),
+            const SizedBox(height: SegSpace.s4),
+            SegButton(
+              label: l10n.familyPlansAndRestore,
+              onPressed: () => context.go('/family/subscription'),
+            ),
+          ],
+        ),
       ),
     ),
     const SizedBox(height: SegSpace.s5),
