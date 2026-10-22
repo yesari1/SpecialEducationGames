@@ -2,6 +2,16 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R47 (sıradaki sayı, konfeti, "hangisi?" sesleri, Türkçe övgüler, çorba) — sürüm 2.0.16 (30), Internal testing'de
+
+- G35: `SequenceRow`. Boşluk küçük çerçeveli "?" kutusu; doğru cevapta seçilen sayı turuncu renkte büyüyerek yerleşir.
+- Tur sonu konfetisi: Ticker ile sürekli yağar (en fazla 14 sn), tam kutlamada 140 parça (önce 70), sayfa övgüden sonra 5,5 sn kalır (önce 3,5).
+- G01 Bul: soru sesi tam cümle. `whichAudio` alanı ve 366 klip (183 öğe × TR/EN; "Kuş hangisi?" / "Which one is the bird?", renklerde "Which one is red?"). `tools/r47_voice.py which` ile üretildi; 8 rastgele klip STT ile doğrulandı.
+- Türkçe "Aferin" (övgü ve prompt), "Süpersin", "Bravo", "Sıradaki sayı hangisi?" ve "Üç" İrem sesiyle daha sakin ayarlarla yeniden kaydedildi (stability 0.6, style 0.1, speed 0.95). STT eşleşti; eski/yeni karşılaştırma Drive R47-sesler. Aksan değerlendirmesi Yunus'ta.
+- Çorba: Pixabay 622737 (beyaz kasede domates çorbası).
+- Dokunma sesi: üç sentez örnek (`artifacts/tap-sounds/`, Drive R47-sesler/dokunma-sesleri), Yunus'un seçimi bekleniyor; henüz uygulamada yok.
+- Doğrulama: seri host testler tam koşu (iki test yeni tasarıma/manifest alanlarına göre güncellendi, sonra geçti). `tools/build_release.sh` geçti. vc30 Internal testing'e yüklendi.
+
 ## 22 Ekim 2026 — R46 (Pixabay fotoğrafları, tam ekran yol) — sürüm 2.0.15 (29), Internal testing'de
 
 - Bugünün Yolu: harita ekranın tamamında, üstteki sekmelerin arkasında (o sekmede selam metni yok). Durak rozetleri artık sabit boyda (eskiden resme göre küçülüyordu).
