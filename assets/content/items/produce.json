@@ -337,21 +337,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/strawberry_real.png": {
-        "author": "Becks",
-        "source": "https://commons.wikimedia.org/wiki/File:Strawberry_(3667745793).jpg",
-        "original": "artifacts/photo-replacements-r45/strawberry/attempt-02/originals/strawberry.jpg",
-        "originalSha256": "d897da7b5901e5a47b9276e02f3c4615264240f708f938f5b6534257558d8f3e",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-        "changes": "Single complete photographed red strawberry with intact green calyx. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "produce.strawberry",
         "path": "assets/images/produce/strawberry_real.png",
+        "author": "Shutterbug26 (Pixabay)",
+        "source": "https://pixabay.com/photos/strawberry-berry-fruit-food-fresh-1238295/",
+        "original": "artifacts/photo-replacements-r46/strawberry/attempt-01/original.jpg",
+        "originalSha256": "7f53e310196362a977a9cf98a5b7edbc6364d84d39594d404c9df3aa9acdf998",
+        "license": "Pixabay Content License",
+        "licenseUrl": "https://pixabay.com/service/license-summary/",
+        "adaptationLicense": "Pixabay Content License",
+        "changes": "One whole, bright red strawberry with its green calyx. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-22",
-        "adaptationLicense": "CC BY 2.0",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "b973279e1891330b0125d561dd7800290070497f60bfde60bad75b7435ac0a34"
+        "sha256": "7e675e1c16528202bc1b846dce1dcbe5924ab5473f73f85dfbb34b0beccde22d"
       }
     }
   },
@@ -400,21 +400,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/watermelon_1.png": {
-        "author": "Stephen Audu",
-        "source": "https://www.pexels.com/photo/slice-of-a-watermelon-6604314/",
-        "original": "artifacts/photo-replacements-r45/watermelon/attempt-04/original.jpg",
-        "originalSha256": "e9f3cd883e81fc111f6bdd2c441ba8503328a13474b45b25ddda6b82fdc09a2b",
-        "license": "Pexels License",
-        "licenseUrl": "https://www.pexels.com/license/",
-        "changes": "Single complete classic watermelon wedge with red flesh, dark seeds and green rind. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "produce.watermelon",
         "path": "assets/images/produce/watermelon_1.png",
+        "author": "segobou (Pixabay)",
+        "source": "https://pixabay.com/photos/watermelon-summer-sweet-berrie-1504404/",
+        "original": "artifacts/photo-replacements-r46/watermelon/attempt-01/original.jpg",
+        "originalSha256": "e91393e59a0836ec3280256c455e15753e670bf803c7d404c92111c9a1183ced",
+        "license": "Pixabay Content License",
+        "licenseUrl": "https://pixabay.com/service/license-summary/",
+        "adaptationLicense": "Pixabay Content License",
+        "changes": "One classic watermelon slice: red flesh, black seeds, green rind. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-22",
-        "adaptationLicense": "Pexels License",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "1e8d01b4ffe986178945d269226843871c4d790c53bc1e8facf7c487af6f3507"
+        "sha256": "fbdec83dbed852c210cd8e65f3c507dbf2c46ddc7d9651c68c5da1e37521db28"
       }
     }
   },
@@ -504,21 +504,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/mandarin_real.png": {
-        "author": "Petr Kratochvil",
-        "source": "https://commons.wikimedia.org/wiki/File:Clementine_orange.jpg",
-        "original": "artifacts/photo-replacements-r45/mandarin/attempt-06/originals/clementine_white.jpg",
-        "originalSha256": "2e5203a6ad02cbecbb465bfd0b9329c6288a3ba08a1182c9fee0ed7d6c47ba5e",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "changes": "Single complete clementine with attached leaves. Foreground alpha generated with rembg U2Net from a downscaled 1800 px segmentation input while retaining original RGB; alpha-bound crop and aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "produce.mandarin",
         "path": "assets/images/produce/mandarin_real.png",
+        "author": "PublicDomainPictures (Pixabay)",
+        "source": "https://pixabay.com/photos/citrus-clementine-food-fresh-fruit-2393/",
+        "original": "artifacts/photo-replacements-r46/mandarin/attempt-01/original.jpg",
+        "originalSha256": "ce25d33d2447a06a57c3d378520fd95b1922824133da4de93ab2745583dc3d8f",
+        "license": "Pixabay Content License",
+        "licenseUrl": "https://pixabay.com/service/license-summary/",
+        "adaptationLicense": "Pixabay Content License",
+        "changes": "One whole clementine/mandarin with two green leaves on its stem. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-22",
-        "adaptationLicense": "CC0 1.0",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "d4d88cecd9532961697494a28f0dbdb2f10454d5a537a2e4a9b35112b509088b"
+        "sha256": "7661e96fa62b40780667b75e81750c18bbcf6cdfb4010981b8b43a6e9ad8ac6d"
       }
     }
   },

@@ -9,7 +9,12 @@ import 'home_screen.dart' show gameIcon;
 
 class DailyPathView extends StatelessWidget {
   final AppState state;
-  const DailyPathView({super.key, required this.state});
+
+  /// The home screen paints the map behind the whole screen itself.
+  final bool background;
+  const DailyPathView({super.key, required this.state, this.background = true});
+
+  static const mapAsset = 'assets/illustrations/path/map_background.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +34,9 @@ class DailyPathView extends StatelessWidget {
     // A small adventure map: the day's games are stops on a winding road
     // across a sunny meadow, with the sticker waiting at the end.
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+      padding: EdgeInsets.fromLTRB(16, 0, 16, background ? 12 : 0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(SegRadius.xl),
+        borderRadius: BorderRadius.circular(background ? SegRadius.xl : 0),
         child: LayoutBuilder(
           builder: (context, box) {
             final w = box.maxWidth, h = box.maxHeight;
@@ -47,14 +52,15 @@ class DailyPathView extends StatelessWidget {
             ];
             return Stack(
               children: [
-                Positioned.fill(
-                  child: Image.asset(
-                    'assets/illustrations/path/map_background.jpg',
-                    fit: BoxFit.cover,
-                    alignment: const Alignment(0, .15),
-                    excludeFromSemantics: true,
+                if (background)
+                  Positioned.fill(
+                    child: Image.asset(
+                      mapAsset,
+                      fit: BoxFit.cover,
+                      alignment: const Alignment(0, .15),
+                      excludeFromSemantics: true,
+                    ),
                   ),
-                ),
                 Positioned.fill(
                   child: CustomPaint(
                     painter: _RoadPainter(
@@ -272,23 +278,25 @@ class _StopState extends State<_Stop> with SingleTickerProviderStateMixin {
               return Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      border: Border.all(color: ring, width: size * .07),
-                      boxShadow: [
-                        BoxShadow(
-                          color:
-                              (widget.next ? SegColors.accent : SegColors.ink)
-                                  .withValues(alpha: widget.next ? .4 : .18),
-                          blurRadius: widget.next ? 16 : 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: ring, width: size * .07),
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                (widget.next ? SegColors.accent : SegColors.ink)
+                                    .withValues(alpha: widget.next ? .4 : .18),
+                            blurRadius: widget.next ? 16 : 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      padding: EdgeInsets.all(size * .12),
+                      child: ItemVisual(hero),
                     ),
-                    padding: EdgeInsets.all(size * .12),
-                    child: ItemVisual(hero),
                   ),
                   // Step number flag.
                   Positioned(

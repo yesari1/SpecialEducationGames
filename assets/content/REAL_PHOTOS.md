@@ -154,12 +154,12 @@ Adapted PNG SHA-256: `bd6126f09422d7e986a78611bb1ae14ed469c5ee2ee32658c9e5c9280b
 ## produce.strawberry
 
 File: `assets/images/produce/strawberry_real.png`
-Photo author: Becks
-Source: https://commons.wikimedia.org/wiki/File:Strawberry_(3667745793).jpg
-Source and adaptation license: CC BY 2.0 ? https://creativecommons.org/licenses/by/2.0/
-Original: `artifacts/photo-replacements-r45/strawberry/attempt-02/originals/strawberry.jpg` (SHA-256 `d897da7b5901e5a47b9276e02f3c4615264240f708f938f5b6534257558d8f3e`).
-Adapted PNG SHA-256: `b973279e1891330b0125d561dd7800290070497f60bfde60bad75b7435ac0a34`.
-Changes: Single complete photographed red strawberry with intact green calyx. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+Photo author: Shutterbug26 (Pixabay)
+Source: https://pixabay.com/photos/strawberry-berry-fruit-food-fresh-1238295/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Original: `artifacts/photo-replacements-r46/strawberry/attempt-01/original.jpg` (SHA-256 `7f53e310196362a977a9cf98a5b7edbc6364d84d39594d404c9df3aa9acdf998`).
+Adapted PNG SHA-256: `7e675e1c16528202bc1b846dce1dcbe5924ab5473f73f85dfbb34b0beccde22d`.
+Changes: One whole, bright red strawberry with its green calyx. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## produce.pomegranate
 
@@ -366,12 +366,12 @@ Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only
 ## food.pasta
 
 File: `assets/images/food/pasta_real.png`
-Photo author: Leonhard Lenz
-Source: https://commons.wikimedia.org/wiki/File:Penne_on_plate_2025-02-12_02.jpg
-Source and adaptation license: CC0 1.0 ? https://creativecommons.org/publicdomain/zero/1.0/
-Original: `artifacts/photo-replacements-r45/pasta/attempt-04/originals/pasta.jpg` (SHA-256 `c538a7f7cea8f1ec3b2f45fcbf80a9a1ece0860fb0e02805a3baf75cb5292047`).
-Adapted PNG SHA-256: `1794a2eb9f29a41087296360ef766ea5732cadfe48b8902c268c39cf2ea1eed5`.
-Changes: Photographed heap of penne retained as a single subject. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; neutral plate pixels in a small interior gap were masked manually. Alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+Photo author: eismannhans (Pixabay)
+Source: https://pixabay.com/photos/spaghetti-meal-food-nourishment-53364/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Original: `artifacts/photo-replacements-r46/pasta/attempt-01/original.jpg` (SHA-256 `9ee8d0a7addb5df292ee43ea54a4457c41be01d50d57c4becffb7a1fe27c1a14`).
+Adapted PNG SHA-256: `9307592e5dac9307a7944f2a1c64ac218e57427c97d3249e5e56c9a22ff21ed2`.
+Changes: One plate of spaghetti with tomato meat sauce and parsley, seen from above. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## food.pizza
 
@@ -421,23 +421,22 @@ Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical revi
 ## produce.mandarin
 
 File: `assets/images/produce/mandarin_real.png`
-Photo author: Petr Kratochvil
-Source: https://commons.wikimedia.org/wiki/File:Clementine_orange.jpg
-Source and adaptation license: CC0 1.0 ? https://creativecommons.org/publicdomain/zero/1.0/
-Original: `artifacts/photo-replacements-r45/mandarin/attempt-06/originals/clementine_white.jpg` (SHA-256 `2e5203a6ad02cbecbb465bfd0b9329c6288a3ba08a1182c9fee0ed7d6c47ba5e`).
-Adapted PNG SHA-256: `d4d88cecd9532961697494a28f0dbdb2f10454d5a537a2e4a9b35112b509088b`.
-Changes: Single complete clementine with attached leaves. Foreground alpha generated with rembg U2Net from a downscaled 1800 px segmentation input while retaining original RGB; alpha-bound crop and aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+Photo author: PublicDomainPictures (Pixabay)
+Source: https://pixabay.com/photos/citrus-clementine-food-fresh-fruit-2393/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Original: `artifacts/photo-replacements-r46/mandarin/attempt-01/original.jpg` (SHA-256 `ce25d33d2447a06a57c3d378520fd95b1922824133da4de93ab2745583dc3d8f`).
+Adapted PNG SHA-256: `7661e96fa62b40780667b75e81750c18bbcf6cdfb4010981b8b43a6e9ad8ac6d`.
+Changes: One whole clementine/mandarin with two green leaves on its stem. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## produce.watermelon
 
 File: `assets/images/produce/watermelon_1.png`
-Photo author: Stephen Audu
-Source: https://www.pexels.com/photo/slice-of-a-watermelon-6604314/
-Source and adaptation license: Pexels License ? https://www.pexels.com/license/
-Original: `artifacts/photo-replacements-r45/watermelon/attempt-04/original.jpg` (SHA-256 `e9f3cd883e81fc111f6bdd2c441ba8503328a13474b45b25ddda6b82fdc09a2b`).
-Adapted PNG SHA-256: `1e8d01b4ffe986178945d269226843871c4d790c53bc1e8facf7c487af6f3507`.
-Changes: Single complete classic watermelon wedge with red flesh, dark seeds and green rind. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
-
+Photo author: segobou (Pixabay)
+Source: https://pixabay.com/photos/watermelon-summer-sweet-berrie-1504404/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Original: `artifacts/photo-replacements-r46/watermelon/attempt-01/original.jpg` (SHA-256 `e91393e59a0836ec3280256c455e15753e670bf803c7d404c92111c9a1183ced`).
+Adapted PNG SHA-256: `fbdec83dbed852c210cd8e65f3c507dbf2c46ddc7d9651c68c5da1e37521db28`.
+Changes: One classic watermelon slice: red flesh, black seeds, green rind. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## produce.onion
 

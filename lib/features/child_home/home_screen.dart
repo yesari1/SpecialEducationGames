@@ -54,9 +54,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, s.locale);
+    Widget backdrop({required Widget child}) => path
+        // Today's Path: the map is the whole screen, behind the top bar too.
+        ? Stack(
+            children: [
+              Positioned.fill(
+                child: Image.asset(
+                  DailyPathView.mapAsset,
+                  fit: BoxFit.cover,
+                  excludeFromSemantics: true,
+                ),
+              ),
+              child,
+            ],
+          )
+        : SceneBackdrop(clouds: false, child: child);
     return Scaffold(
-      body: SceneBackdrop(
-        clouds: false,
+      body: backdrop(
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,18 +139,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
-                child: Text(
-                  l10n.greeting(s.active?.nickname ?? ''),
-                  style: MediaQuery.sizeOf(context).height < 500
-                      ? SegText.heading
-                      : SegText.title,
+              if (!path)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
+                  child: Text(
+                    l10n.greeting(s.active?.nickname ?? ''),
+                    style: MediaQuery.sizeOf(context).height < 500
+                        ? SegText.heading
+                        : SegText.title,
+                  ),
                 ),
-              ),
-              if (MediaQuery.sizeOf(context).height >= 500)
+              if (!path && MediaQuery.sizeOf(context).height >= 500)
                 const SizedBox(height: SegSpace.s2),
-              if (MediaQuery.sizeOf(context).height >= 500)
+              if (!path && MediaQuery.sizeOf(context).height >= 500)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
                   child: Text(
@@ -146,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               Expanded(
                 child: path
-                    ? DailyPathView(state: s)
+                    ? DailyPathView(state: s, background: false)
                     : HorizontalCards(
                         count: s.orderedThemes.length,
                         builder: (i) {
