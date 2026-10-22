@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R45 (harita yol, sepete uçuş, yıldızcık, fotoğraflar) — sürüm 2.0.11 (25)
+
+- Bugünün Yolu: ChatGPT kil stili manzara (`assets/illustrations/path/map_background.jpg`, MANIFEST) üzerinde kıvrılan kum yol, numaralı yuvarlak duraklar, sonda kupa. Sıradaki durak turuncu halkalı, "Oyna" yazıyor ve 6 kez hafifçe zıplıyor; bitenler altın halka ve tik alıyor, yürünen yol sarıya dönüyor.
+- Sepet (G23) ve grup (G04): doğru seçimde nesne ekrandaki yerinden (sürüklendiyse bırakıldığı yerden) yay çizerek gruba uçuyor (`HopOrigin`, `HopIn.fromOrigin`); önce üste ışınlanma yok.
+- Doğru seçim: yeşil parlama yerine yıldızcık/nokta patlaması ve beyaz halka (`_SparkleBurst`, hareket azaltmada yok).
+- Tema başlığı: geri ve başlık solda, seviyeler sağda sabit.
+- Fotoğraflar (Codex + rembg): mandalina (yapraklı), çilek, makarna (penne yığını) ve karpuz dilimi (Pexels, Stephen Audu) yenilendi; kaynaklar `REAL_PHOTOS.md` ve manifestte, ayrıntılar `artifacts/photo-replacements-r45/`. Mandalina/çilek/makarna kaynakları için SUMMARY.md'ye bakın.
+- Doğrulama: seri host testler 277/277 geçti; foto/kredi testleri karpuzdan sonra yeniden geçti. `tools/build_release.sh` geçti (Pixel_9a yeniden açıldı). AAB `GooglePlayBuild/ozel-egitim-oyunlari-2.0.11-vc25.aab` ve release APK Drive'da. Internal testing'e yükleme Yunus'un onayını bekliyor.
+
 ## 21 Ekim 2026 — R44 (aile alanı sadeleştirme, Bugünün Yolu, ilk açılış dikey) — sürüm 2.0.10 (24), Internal testing'de
 
 - Profiller: Hesap kartı en üstte (paket, ödeme, büyük Premium/deneme düğmesi, Google aile hesabı), altında "Profiller" ve profil kartları ("bu cihazda saklanır" kaldırıldı). Ücretsizde ve denemede tek profil (`profileLimit`); fazlası "Daha fazla çocuk profili Premium ile" kartına gider.
