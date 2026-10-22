@@ -107,6 +107,8 @@ class _PaywallViewState extends State<PaywallView> {
         showNotice(
           context,
           l10n.paywallTrialActive(s.entitlement.trialDaysLeft),
+          icon: Icons.celebration_rounded,
+          color: SegColors.turquoise,
         );
         widget.onDone();
       }

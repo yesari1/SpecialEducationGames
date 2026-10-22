@@ -805,6 +805,13 @@ class _FamilyScreenState extends State<FamilyScreen> {
       onChanged: onChanged,
     );
     return [
+      page(l10n.familyPremium, [
+        const SizedBox(height: SegSpace.s2),
+        SegButton(
+          label: l10n.familyPlansAndRestore,
+          onPressed: () => context.go('/family/subscription'),
+        ),
+      ]),
       page(l10n.familyDailyScreenTimeLimit, [
         Text(l10n.familyCountsActivePlayTimeABreak, style: SegText.caption),
         dropdown(
@@ -1039,16 +1046,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ]),
-      page(l10n.familyPremium, [
-        Text(
-          l10n.familySubscriptionPricesAndTrialEligibilityCome,
-          style: SegText.caption,
-        ),
-        SegButton(
-          label: l10n.familyPlansAndRestore,
-          onPressed: () => context.go('/family/subscription'),
-        ),
-      ]),
       page(l10n.familyPrivacy, [
         TextButton.icon(
           onPressed: () => context.go('/family/account'),
@@ -1078,8 +1075,11 @@ class _FamilyScreenState extends State<FamilyScreen> {
     child: Scaffold(
       backgroundColor: SegColors.familyCanvas,
       body: SafeArea(
+        // The bottom is the frosted bar's: lists scroll on beneath it.
+        bottom: false,
         child: LayoutBuilder(
           builder: (context, constraints) {
+            final barSpace = MediaQuery.paddingOf(context).bottom;
             // Upright (the normal family orientation): one scrolling column.
             // Landscape keeps the paged sections built for short screens.
             final portrait = constraints.maxHeight > constraints.maxWidth;
@@ -1088,8 +1088,14 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 (constraints.maxHeight < 500 ||
                     MediaQuery.textScalerOf(context).scale(1) >= 1.6);
             final pages = _sectionPages(compact: compact, portrait: portrait);
+            final gap = compact ? SegSpace.s1 : SegSpace.s5;
             return Padding(
-              padding: EdgeInsets.all(compact ? SegSpace.s1 : SegSpace.s5),
+              padding: EdgeInsets.fromLTRB(
+                gap,
+                gap,
+                gap,
+                portrait ? 0 : gap + barSpace,
+              ),
               child: Column(
                 children: [
                   Row(
@@ -1209,9 +1215,9 @@ class _FamilyScreenState extends State<FamilyScreen> {
                     Expanded(
                       child: ListView.separated(
                         key: ValueKey('family-list-$tab'),
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                           top: SegSpace.s3,
-                          bottom: SegSpace.s6,
+                          bottom: barSpace + SegSpace.s4,
                         ),
                         itemCount: pages.length,
                         separatorBuilder: (_, _) =>
@@ -1252,6 +1258,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ),
+      // The page runs on under the frosted bar.
+      extendBody: true,
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -1881,6 +1889,20 @@ class _FamilyScreenState extends State<FamilyScreen> {
   List<Widget> _settings() => [
     SegCard(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l10n.familyPremium, style: SegText.heading),
+          const SizedBox(height: SegSpace.s4),
+          SegButton(
+            label: l10n.familyPlansAndRestore,
+            onPressed: () => context.go('/family/subscription'),
+          ),
+        ],
+      ),
+    ),
+    const SizedBox(height: SegSpace.s5),
+    SegCard(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(l10n.familyDailyScreenTimeLimit, style: SegText.item),
@@ -2180,25 +2202,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 if (v != null) s.setting('celebration', v);
               },
             ),
-          ),
-        ],
-      ),
-    ),
-    const SizedBox(height: SegSpace.s5),
-    SegCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(l10n.familyPremium, style: SegText.heading),
-          const SizedBox(height: SegSpace.s4),
-          Text(
-            l10n.familySubscriptionPricesAndTrialEligibilityCome,
-            style: SegText.caption.copyWith(color: SegColors.inkSoft),
-          ),
-          const SizedBox(height: SegSpace.s4),
-          SegButton(
-            label: l10n.familyPlansAndRestore,
-            onPressed: () => context.go('/family/subscription'),
           ),
         ],
       ),

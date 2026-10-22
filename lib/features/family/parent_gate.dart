@@ -165,7 +165,10 @@ class _GateState extends State<_Gate> {
                 borderRadius: BorderRadius.circular(SegRadius.md),
               ),
             ),
-            onPressed: () => input(k),
+            onPressed: () {
+              UiSound.tap();
+              input(k);
+            },
             child: FittedBox(
               child: Text(
                 k,
@@ -198,7 +201,10 @@ class _GateState extends State<_Gate> {
     }
 
     final cancel = TextButton(
-      onPressed: () => Navigator.pop(context, false),
+      onPressed: () {
+        UiSound.tap();
+        Navigator.pop(context, false);
+      },
       child: Text(l10n.parentGateCancel),
     );
 

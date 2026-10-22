@@ -262,7 +262,10 @@ class _ThemeScreenState extends State<ThemeScreen> {
                 child: Row(
                   children: [
                     IconButton.filledTonal(
-                      onPressed: () => context.go('/'),
+                      onPressed: () {
+                        UiSound.tap();
+                        context.go('/');
+                      },
                       icon: const Icon(Icons.arrow_back_rounded),
                       tooltip: l10n.themeBack,
                     ),
@@ -347,7 +350,8 @@ class _ThemeScreenState extends State<ThemeScreen> {
                                 showNotice(
                                   context,
                                   l10n.gameThereIsNotEnoughContentForThis,
-                                  style: SegText.item,
+                                  icon: Icons.photo_library_rounded,
+                                  color: SegColors.accent,
                                 );
                                 return;
                               }

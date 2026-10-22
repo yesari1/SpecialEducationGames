@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -106,7 +107,10 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
       appBar: AppBar(
         title: Text(_title),
         leading: IconButton(
-          onPressed: () => context.go('/family'),
+          onPressed: () {
+            UiSound.tap();
+            context.go('/family');
+          },
           tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
           icon: const Icon(Icons.close_rounded),
         ),

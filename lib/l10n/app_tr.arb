@@ -972,6 +972,9 @@
     "description": "Fixed hard instruction displayed in G35."
   },
   "obStart": "Başlayalım",
+  "obHaveAccount": "Zaten hesabın var mı?",
+  "obSignIn": "Giriş yap",
+  "obSignedIn": "Giriş yapıldı. Şimdi çocuğunu ekleyelim.",
   "obBack": "Geri",
   "obSkip": "Atla",
   "obChildTitle": "Çocuğunuzu tanıyalım",

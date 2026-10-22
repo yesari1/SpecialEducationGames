@@ -974,6 +974,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get obBack => 'Geri';
 
   @override
+  String get obHaveAccount => 'Zaten hesabın var mı?';
+
+  @override
+  String get obSignIn => 'Giriş yap';
+
+  @override
+  String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunu ekleyelim.';
+
+  @override
   String get obSkip => 'Atla';
 
   @override

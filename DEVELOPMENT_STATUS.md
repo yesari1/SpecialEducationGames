@@ -2,6 +2,18 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R49 (sepet uçuşu, pof sesi, uyarı kartı, buzlu menü, giriş bağlantısı) — sürüm 2.0.18 (32), Internal testing'de
+
+- Sepet/grup uçuşu (HopIn): başlangıç noktası canlı ölçülüyor (`HopOrigin` işaretçisi; sürüklemede bırakılan yer tek seferlik `dropped`), ölçüm anahtarı Transform dışında, uçan nesnenin yeri boş tutuluyor (sayfa kaymıyor). Yay alçaltıldı (lift = max(36, mesafe·.18)), eğri easeInOutSine, 650 ms. Kare kare kontrol: `tools/r49_hop_frames_test.dart` → `artifacts/claude/r49/hop-*.png`.
+- `basket_drop.wav` yeniden sentezlendi (gövde ~520→320 Hz, tepe .9) ve tam efekt seviyesinde çalıyor; telefon hoparlöründe duyulabilir olması için. Cihazda elle dinlenmedi.
+- `showNotice`: koyu tam genişlik SnackBar yerine yüzen beyaz yuvarlak kart, renkli simge (deneme başladı: turkuaz kutlama; içerik yok: turuncu).
+- Ayarlar: Premium kartı en üstte; "Fiyatlar Google Play'den gelir" metni kaldırıldı.
+- Aile alt menüsü: yalnızca uzun bar, %78 beyaz + bulanıklık (BackdropFilter); Scaffold `extendBody`, liste barın altından akıyor.
+- Tur sonu: renkli birincil düğme "Temaya dön"; "Tekrar" ikincil. Varsayılan tur uzunluğu 5 (odak anketi 0 ise 3).
+- Dokunma sesi: tema geri, onboarding geri, abonelik/profil kapat, aile alt menüsü, ebeveyn kilidi tuş takımı ve İptal.
+- Hoş geldin: "Zaten hesabın var mı? Giriş yap" → Google aile hesabı kartı alt sayfada; giriş olunca kapanır, bildirim gösterir ve kuruluma geçer (profil yoksa kilit açık sayılır). Profiller hesaptan geri yüklenmez; yalnızca hesap/deneme/Premium bağlantısı.
+- Doğrulama: seri host testler 277/277; `tools/build_release.sh` geçti; vc32 Internal testing'e yüklendi. Ekranlar `tools/r49_shot_test.dart` → `artifacts/claude/r49/`.
+
 ## 22 Ekim 2026 — R48 (arayüz sesleri) — sürüm 2.0.17 (31), Internal testing'de
 
 - `UiSound` (audio_service.dart): her UI sesi kendi küçük oynatıcısında çalar, konuşmayı kesmez, ses kapalıysa ya da efekt sesi 0'sa susar. Seslerin hepsi uygulama için Python'da sentezlendi (kayıt ya da üçüncü taraf malzemesi yok; `assets/sfx/SOURCES.md`).

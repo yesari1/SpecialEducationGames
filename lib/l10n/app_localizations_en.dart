@@ -971,6 +971,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get obBack => 'Back';
 
   @override
+  String get obHaveAccount => 'Already have an account?';
+
+  @override
+  String get obSignIn => 'Sign in';
+
+  @override
+  String get obSignedIn => 'Signed in. Now let’s add your child.';
+
+  @override
   String get obSkip => 'Skip';
 
   @override

@@ -1,4 +1,6 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import '../theme/tokens.dart';
 
 class FamilyNavItem {
@@ -44,11 +46,12 @@ class FamilyNavBar extends StatelessWidget {
       // heightFactor keeps the bottom slot from growing; wide screens centre it.
       child: Align(
         heightFactor: 1,
+        // Only the long bar itself: frosted (the page shows through,
+        // softly blurred), no surface behind it.
         child: Container(
           height: short ? 52 : 68,
           constraints: const BoxConstraints(maxWidth: 640),
           decoration: BoxDecoration(
-            color: SegColors.surface,
             borderRadius: BorderRadius.circular(SegRadius.pill),
             boxShadow: [
               BoxShadow(
@@ -58,35 +61,48 @@ class FamilyNavBar extends StatelessWidget {
               ),
             ],
           ),
-          padding: EdgeInsets.all(short ? 2 : 6),
-          child: LayoutBuilder(
-            builder: (context, box) {
-              final width = box.maxWidth / items.length;
-              return Stack(
-                children: [
-                  AnimatedPositioned(
-                    duration: duration,
-                    curve: Curves.easeOutCubic,
-                    left: width * selectedIndex,
-                    top: 0,
-                    bottom: 0,
-                    width: width,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: SegColors.primarySoft,
-                        borderRadius: BorderRadius.circular(SegRadius.pill),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      for (var i = 0; i < items.length; i++)
-                        Expanded(child: _tab(context, i, duration, short)),
-                    ],
-                  ),
-                ],
-              );
-            },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(SegRadius.pill),
+            child: BackdropFilter(
+              filter: ui.ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+              child: Container(
+                color: SegColors.surface.withValues(alpha: .78),
+                padding: EdgeInsets.all(short ? 2 : 6),
+                child: LayoutBuilder(
+                  builder: (context, box) {
+                    final width = box.maxWidth / items.length;
+                    return Stack(
+                      children: [
+                        AnimatedPositioned(
+                          duration: duration,
+                          curve: Curves.easeOutCubic,
+                          left: width * selectedIndex,
+                          top: 0,
+                          bottom: 0,
+                          width: width,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: SegColors.primarySoft,
+                              borderRadius: BorderRadius.circular(
+                                SegRadius.pill,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            for (var i = 0; i < items.length; i++)
+                              Expanded(
+                                child: _tab(context, i, duration, short),
+                              ),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ),
           ),
         ),
       ),
@@ -106,7 +122,10 @@ class FamilyNavBar extends StatelessWidget {
         key: ValueKey('family-nav-$index'),
         onTap: onDestinationSelected == null
             ? null
-            : () => onDestinationSelected!(index),
+            : () {
+                UiSound.tap();
+                onDestinationSelected!(index);
+              },
         radius: 36,
         highlightShape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(SegRadius.pill),

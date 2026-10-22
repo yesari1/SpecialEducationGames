@@ -119,13 +119,13 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       gameId: widget.gameId,
       locale: s.locale,
       difficulty: effectiveDifficulty,
+      // Five rounds by default (Yunus, 22 October 2026); a short attention
+      // span keeps three. The family can choose another length.
       total: s.roundLength > 0
           ? s.roundLength
-          : band != null
-          ? band.stagesFor(survey)
-          : survey.containsKey('focus')
-          ? SurveyMapper.map(survey).stages
-          : null,
+          : survey['focus'] == 0
+          ? 3
+          : 5,
       band: band,
       hintSeconds: s.hintSeconds,
       fadeWrongChoices: s.fadeWrongChoices,
@@ -811,15 +811,30 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     );
   }
 
+  /// "Back to the theme" is the main way on; playing again is optional.
   Widget _completionActions() => Wrap(
     alignment: WrapAlignment.center,
     spacing: SegSpace.s3,
     runSpacing: SegSpace.s3,
     children: [
       SegButton(
+        key: const ValueKey('completion-theme'),
+        label: l10n.gameBackToTheme,
+        icon: Icons.arrow_forward_rounded,
+        onPressed: back,
+      ),
+      SegButton(
+        key: const ValueKey('completion-path'),
+        label: l10n.gameTodaysPath,
+        icon: Icons.route_rounded,
+        secondary: true,
+        onPressed: () => context.go('/?path=true'),
+      ),
+      SegButton(
         key: const ValueKey('completion-again'),
         label: l10n.gameAgain,
         icon: Icons.replay_rounded,
+        secondary: true,
         onPressed: () {
           endTimer?.cancel();
           endTimer = null;
@@ -841,20 +856,6 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           setState(() {});
         },
       ),
-      SegButton(
-        key: const ValueKey('completion-path'),
-        label: l10n.gameTodaysPath,
-        icon: Icons.route_rounded,
-        secondary: true,
-        onPressed: () => context.go('/?path=true'),
-      ),
-      SegButton(
-        key: const ValueKey('completion-theme'),
-        label: l10n.gameBackToTheme,
-        icon: Icons.arrow_forward_rounded,
-        secondary: true,
-        onPressed: back,
-      ),
     ],
   );
 
@@ -867,9 +868,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         child: ItemVisual(spec.stimulus!, alignment: Alignment.bottomCenter),
       ),
     );
-    // Once sorted, the item lives in its group (it hops in there).
+    // Once sorted, the item lives in its group (it hops in there). Its
+    // place stays reserved so nothing on the page shifts while it flies.
     if (spec.groupMembers.isNotEmpty && c.phase == RoundPhase.celebrating) {
-      return const SizedBox.shrink();
+      return IgnorePointer(child: Opacity(opacity: 0, child: visual));
     }
     if (!spec.dragStimulus || c.phase != RoundPhase.answering) return visual;
     return Draggable<ContentItem>(
@@ -879,8 +881,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       // where the drop is tested.
       dragAnchorStrategy: pointerDragAnchorStrategy,
       // Dropped on a basket: the hop starts where the finger let go.
-      onDragEnd: (details) =>
-          HopOrigin.rect = details.offset & const Size(132, 132),
+      // The feedback is centred under the finger (offset -66).
+      onDragEnd: (details) => HopOrigin.dropped =
+          (details.offset - const Offset(66, 66)) & const Size(132, 132),
       feedback: Transform.translate(
         offset: const Offset(-66, -66),
         child: SizedBox.square(

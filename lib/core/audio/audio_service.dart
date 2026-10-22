@@ -170,7 +170,9 @@ class AudioService {
         await player.setAsset(asset).timeout(loadTimeout);
         _effectPlayers[asset] = player;
       }
-      await player.setVolume(effectVolume / 100 * .7);
+      // The basket "pof" is short and soft; it plays at full effect level.
+      final level = asset.endsWith('basket_drop.wav') ? 1.0 : .7;
+      await player.setVolume(effectVolume / 100 * level);
       await player.seek(Duration.zero);
       unawaited(player.play());
     } catch (_) {

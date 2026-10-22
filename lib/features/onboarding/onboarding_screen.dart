@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../core/auth/family_auth.dart';
+import '../family/family_account_card.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/parent_pin.dart';
@@ -278,7 +280,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     IconButton(
                       key: const ValueKey('onboarding-back'),
                       tooltip: l10n.obBack,
-                      onPressed: saving ? null : _back,
+                      onPressed: saving
+                          ? null
+                          : () {
+                              UiSound.tap();
+                              _back();
+                            },
                       icon: const Icon(Icons.arrow_back_rounded),
                     )
                   else
@@ -453,7 +460,62 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       label: l10n.obStart,
       onPressed: _next,
     ),
+    secondary: widget.auth == null || widget.addChild
+        ? null
+        : Center(
+            child: TextButton(
+              key: const ValueKey('welcome-sign-in'),
+              onPressed: _signIn,
+              child: Text.rich(
+                TextSpan(
+                  text: '${l10n.obHaveAccount} ',
+                  style: SegText.body.copyWith(color: SegColors.inkSoft),
+                  children: [
+                    TextSpan(
+                      text: l10n.obSignIn,
+                      style: SegText.body.copyWith(
+                        color: SegColors.primaryDeep,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
   );
+
+  /// "Already have an account?": the Google family account sheet. Once
+  /// signed in (Premium and the trial follow the account) setup goes on.
+  Future<void> _signIn() async {
+    final auth = widget.auth;
+    if (auth == null) return;
+    UiSound.tap();
+    // Nobody is set up yet, so the adult on this screen is the parent.
+    if (s.profiles.isEmpty) s.unlockFamily();
+    final hadAccount = auth.account != null;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: SegColors.familyCanvas,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(SegRadius.xl)),
+      ),
+      builder: (context) => _SignInSheet(
+        auth: auth,
+        turkish: s.locale == 'tr',
+        closeWhenSignedIn: !hadAccount,
+      ),
+    );
+    if (!mounted || auth.account == null) return;
+    showNotice(
+      context,
+      l10n.obSignedIn,
+      icon: Icons.check_circle_rounded,
+      color: SegColors.turquoise,
+    );
+    if (step == OnboardingStep.welcome) _next();
+  }
 
   Widget _child() => _frame(
     children: [
@@ -766,4 +828,57 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+}
+
+/// The account card in a sheet; closes by itself once sign-in succeeds.
+class _SignInSheet extends StatefulWidget {
+  final FamilyAuth auth;
+  final bool turkish;
+  final bool closeWhenSignedIn;
+  const _SignInSheet({
+    required this.auth,
+    required this.turkish,
+    required this.closeWhenSignedIn,
+  });
+  @override
+  State<_SignInSheet> createState() => _SignInSheetState();
+}
+
+class _SignInSheetState extends State<_SignInSheet> {
+  @override
+  void initState() {
+    super.initState();
+    widget.auth.addListener(_changed);
+  }
+
+  void _changed() {
+    if (widget.closeWhenSignedIn && widget.auth.account != null && mounted) {
+      Navigator.of(context).maybePop();
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.auth.removeListener(_changed);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(
+        SegSpace.s4,
+        SegSpace.s4,
+        SegSpace.s4,
+        SegSpace.s4,
+      ),
+      child: SingleChildScrollView(
+        child: FamilyAccountCard(
+          auth: widget.auth,
+          turkish: widget.turkish,
+          flat: true,
+        ),
+      ),
+    ),
+  );
 }

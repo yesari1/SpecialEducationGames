@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -25,7 +26,10 @@ class SubscriptionScreen extends StatelessWidget {
           title: Text(l10n.subscriptionTitle),
           leading: IconButton(
             tooltip: l10n.paywallClose,
-            onPressed: () => context.go('/family'),
+            onPressed: () {
+              UiSound.tap();
+              context.go('/family');
+            },
             icon: const Icon(Icons.close_rounded),
           ),
         ),

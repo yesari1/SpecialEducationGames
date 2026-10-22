@@ -1047,10 +1047,24 @@ class GroupCluster extends StatelessWidget {
 /// Where the prompt object is on screen, so a sorted item can hop from there
 /// (not from the top of its basket) into its group.
 abstract final class HopOrigin {
-  static Rect? rect;
+  static _HopOriginMarkerState? _marker;
+
+  /// Where a drag was let go; used once, for the hop that follows.
+  static Rect? dropped;
+
+  /// The prompt object's place on screen right now (measured live, so an
+  /// entrance animation can never leave a stale start point behind).
+  static Rect? get rect {
+    final drop = dropped;
+    if (drop != null) {
+      dropped = null;
+      return drop;
+    }
+    return _marker?._rect();
+  }
 }
 
-/// Wraps the prompt object and keeps [HopOrigin.rect] up to date.
+/// Wraps the prompt object so [HopOrigin.rect] can measure it.
 class HopOriginMarker extends StatefulWidget {
   final Widget child;
   const HopOriginMarker({super.key, required this.child});
@@ -1061,17 +1075,27 @@ class HopOriginMarker extends StatefulWidget {
 class _HopOriginMarkerState extends State<HopOriginMarker> {
   final _key = GlobalKey();
 
-  void _record() {
+  Rect? _rect() {
     final box = _key.currentContext?.findRenderObject() as RenderBox?;
-    if (box == null || !box.hasSize || !box.attached) return;
-    HopOrigin.rect = box.localToGlobal(Offset.zero) & box.size;
+    if (box == null || !box.hasSize || !box.attached) return null;
+    return box.localToGlobal(Offset.zero) & box.size;
   }
 
   @override
-  Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) => _record());
-    return KeyedSubtree(key: _key, child: widget.child);
+  void initState() {
+    super.initState();
+    HopOrigin._marker = this;
   }
+
+  @override
+  void dispose() {
+    if (HopOrigin._marker == this) HopOrigin._marker = null;
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) =>
+      KeyedSubtree(key: _key, child: widget.child);
 }
 
 /// The sorted item hopping in an arc into its group after a correct answer.
@@ -1094,7 +1118,7 @@ class HopIn extends StatefulWidget {
 class _HopInState extends State<HopIn> with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 750),
+    duration: const Duration(milliseconds: 650),
   );
   final _key = GlobalKey();
   Offset? _start;
@@ -1137,36 +1161,41 @@ class _HopInState extends State<HopIn> with SingleTickerProviderStateMixin {
   }
 
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
-    builder: (context, box) => AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        final t = Curves.easeInOutCubic.transform(_controller.value);
-        final start = _start;
-        final Offset offset;
-        final double scale;
-        if (start != null) {
-          // A smooth arc from the prompt object down into the basket.
-          final lift = math.max(48.0, start.distance * .35);
-          offset = start * (1 - t) + Offset(0, -math.sin(t * math.pi) * lift);
-          scale = _startScale + (1 - _startScale) * t;
-        } else {
-          offset = Offset(
-            0,
-            -box.maxHeight * (1 - t) -
-                math.sin(t * math.pi) * box.maxHeight * .35,
+  // The key sits outside the transform so the measured place is where the
+  // item rests, not where the animation currently draws it.
+  Widget build(BuildContext context) => KeyedSubtree(
+    key: _key,
+    child: LayoutBuilder(
+      builder: (context, box) => AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          final t = Curves.easeInOutSine.transform(_controller.value);
+          final start = _start;
+          final Offset offset;
+          final double scale;
+          if (start != null) {
+            // A smooth arc from the prompt object down into the basket.
+            final lift = math.max(36.0, start.distance * .18);
+            offset = start * (1 - t) + Offset(0, -math.sin(t * math.pi) * lift);
+            scale = _startScale + (1 - _startScale) * t;
+          } else {
+            offset = Offset(
+              0,
+              -box.maxHeight * (1 - t) -
+                  math.sin(t * math.pi) * box.maxHeight * .35,
+            );
+            scale = 1.25 - .25 * t;
+          }
+          return Opacity(
+            opacity: _measured ? 1 : 0,
+            child: Transform.translate(
+              offset: offset,
+              child: Transform.scale(scale: scale, child: child),
+            ),
           );
-          scale = 1.25 - .25 * t;
-        }
-        return Opacity(
-          opacity: _measured ? 1 : 0,
-          child: Transform.translate(
-            offset: offset,
-            child: Transform.scale(scale: scale, child: child),
-          ),
-        );
-      },
-      child: KeyedSubtree(key: _key, child: widget.child),
+        },
+        child: widget.child,
+      ),
     ),
   );
 }
@@ -1269,13 +1298,76 @@ String? _visibleNotice;
 /// Shows a short message once: tapping again while the same message is on
 /// screen does nothing, and a different message replaces it instead of
 /// queueing behind it.
-void showNotice(BuildContext context, String message, {TextStyle? style}) {
+///
+/// It floats as a small rounded white card with a coloured icon, centred
+/// near the bottom, instead of a full-width dark bar.
+void showNotice(
+  BuildContext context,
+  String message, {
+  TextStyle? style,
+  IconData icon = Icons.info_rounded,
+  Color color = SegColors.primary,
+}) {
   final messenger = ScaffoldMessenger.maybeOf(context);
   if (messenger == null || _visibleNotice == message) return;
   messenger.clearSnackBars();
   _visibleNotice = message;
+  final width = MediaQuery.sizeOf(context).width;
   messenger
-      .showSnackBar(SnackBar(content: Text(message, style: style)))
+      .showSnackBar(
+        SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          padding: EdgeInsets.zero,
+          width: math.min(width - 2 * SegSpace.s4, 520),
+          duration: const Duration(milliseconds: 3200),
+          content: Container(
+            key: const ValueKey('seg-notice'),
+            padding: const EdgeInsets.fromLTRB(
+              SegSpace.s3,
+              SegSpace.s3,
+              SegSpace.s4,
+              SegSpace.s3,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(SegRadius.xl),
+              border: Border.all(color: color.withValues(alpha: .25), width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: SegColors.ink.withValues(alpha: .16),
+                  blurRadius: 24,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: .14),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(icon, color: color, size: 24),
+                ),
+                const SizedBox(width: SegSpace.s3),
+                Expanded(
+                  child: Text(
+                    message,
+                    style: (style ?? SegText.body).copyWith(
+                      color: SegColors.ink,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      )
       .closed
       .then((_) {
         if (_visibleNotice == message) _visibleNotice = null;

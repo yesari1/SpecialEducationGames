@@ -1795,6 +1795,24 @@ abstract class AppLocalizations {
   /// **'Back'**
   String get obBack;
 
+  /// No description provided for @obHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get obHaveAccount;
+
+  /// No description provided for @obSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get obSignIn;
+
+  /// No description provided for @obSignedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in. Now let’s add your child.'**
+  String get obSignedIn;
+
   /// No description provided for @obSkip.
   ///
   /// In en, this message translates to:
