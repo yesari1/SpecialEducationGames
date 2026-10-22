@@ -366,12 +366,12 @@ Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only
 ## food.pasta
 
 File: `assets/images/food/pasta_real.png`
-Photo author: eismannhans (Pixabay)
-Source: https://pixabay.com/photos/spaghetti-meal-food-nourishment-53364/
+Photo author: congerdesign (Pixabay)
+Source: https://pixabay.com/photos/fusilli-pasta-food-noodles-6001463/
 Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
-Original: `artifacts/photo-replacements-r46/pasta/attempt-01/original.jpg` (SHA-256 `9ee8d0a7addb5df292ee43ea54a4457c41be01d50d57c4becffb7a1fe27c1a14`).
-Adapted PNG SHA-256: `9307592e5dac9307a7944f2a1c64ac218e57427c97d3249e5e56c9a22ff21ed2`.
-Changes: One plate of spaghetti with tomato meat sauce and parsley, seen from above. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
+Original: `artifacts/photo-replacements-r46/pasta/attempt-6001463/original.jpg` (SHA-256 `bbab95fb412a14724ebfec12a671a2c3038268bde17381751f9ccbb7acc12c1b`).
+Adapted PNG SHA-256: `36d751cd68fe832ef7f0f25b9b4818ec5d8aa78ae99d83ab9846588cdadc2060`.
+Changes: One black bowl filled with cooked fusilli pasta. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## food.pizza
 
