@@ -68,16 +68,17 @@ service cloud.firestore {
       allow update, delete: if false;
     }
     // Set by an admin on the admin page: a package given to the account
-    // (premium until a date, or for good) and a test-account mark that keeps
-    // the account out of the statistics. The app only reads its own.
+    // (premium until a date, or for good) and `endTrial`, which ends the
+    // account's free trial early (back to the free games). The app only
+    // reads its own.
     match /grants/{uid} {
       allow get: if ownerOrAdmin(uid);
       allow list, delete: if admin();
       allow create, update: if admin()
-        && exact(request.resource.data, ['plan', 'until', 'test', 'updatedAt'])
+        && exact(request.resource.data, ['plan', 'until', 'endTrial', 'updatedAt'])
         && request.resource.data.plan in ['none', 'premium']
         && (request.resource.data.until == null || request.resource.data.until is timestamp)
-        && request.resource.data.test is bool
+        && request.resource.data.endTrial is bool
         && request.resource.data.updatedAt == request.time;
     }
     // Anonymous onboarding funnel: one document per install under a random

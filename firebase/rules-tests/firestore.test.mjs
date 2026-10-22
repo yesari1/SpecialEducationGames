@@ -208,9 +208,9 @@ test('family document may carry only the signed-in e-mail',async () => {
   await assertFails(setDoc(doc(alice,'families/alice'),{...family,email:'bob@example.com'}));
 });
 
-test('grants: only admin writes a package/test mark; owner reads own',async () => {
+test('grants: only admin writes a package or ends a trial; owner reads own',async () => {
   await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
-  const grant={plan:'premium',until:null,test:true,updatedAt:serverTimestamp()};
+  const grant={plan:'premium',until:null,endTrial:true,updatedAt:serverTimestamp()};
   await assertFails(setDoc(doc(db('alice'),'grants/alice'),grant));
   await assertSucceeds(setDoc(doc(db('admin'),'grants/alice'),grant));
   await assertSucceeds(setDoc(doc(db('admin'),'grants/alice'),{...grant,until:Timestamp.fromMillis(Date.now()+864e5)}));
