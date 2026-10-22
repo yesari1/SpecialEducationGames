@@ -337,21 +337,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/strawberry_real.png": {
+        "author": "Becks",
+        "source": "https://commons.wikimedia.org/wiki/File:Strawberry_(3667745793).jpg",
+        "original": "artifacts/photo-replacements-r45/strawberry/attempt-02/originals/strawberry.jpg",
+        "originalSha256": "d897da7b5901e5a47b9276e02f3c4615264240f708f938f5b6534257558d8f3e",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Single complete photographed red strawberry with intact green calyx. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "produce.strawberry",
         "path": "assets/images/produce/strawberry_real.png",
-        "author": "Paolo Neo",
-        "source": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
-        "original": "artifacts/real-produce-batch2/originals/strawberry_paolo_neo.jpg",
-        "originalSha256": "9baa5005b6f8885cf4729122476f40dfb57875718fdaf12ed447af6be97f7fa0",
-        "license": "Public domain (author dedication)",
-        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
-        "adaptationLicense": "Public domain (author dedication)",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-17",
-        "processing": "artifacts/real-produce-batch2/process_photos.py",
+        "licenseVerifiedOn": "2026-10-22",
+        "adaptationLicense": "CC BY 2.0",
+        "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "changes": "Single complete photographed strawberry with calyx. Border-connected near-white background and the two locally bounded background gaps between leaves were made transparent; photographed RGB detail retained. Alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.",
-        "sha256": "a8013b3c44d9f61648fa52a0f6a2856a03f5825e513b3acd27731333f6f1aea3"
+        "sha256": "b973279e1891330b0125d561dd7800290070497f60bfde60bad75b7435ac0a34"
       }
     }
   },
@@ -397,7 +397,26 @@
       "tr": "assets/audio/tr/produce/watermelon_selected.mp3",
       "en": "assets/audio/en/produce/watermelon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/produce/watermelon_1.png": {
+        "author": "Stephen Audu",
+        "source": "https://www.pexels.com/photo/slice-of-a-watermelon-6604314/",
+        "original": "artifacts/photo-replacements-r45/watermelon/attempt-04/original.jpg",
+        "originalSha256": "e9f3cd883e81fc111f6bdd2c441ba8503328a13474b45b25ddda6b82fdc09a2b",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "changes": "Single complete classic watermelon wedge with red flesh, dark seeds and green rind. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
+        "id": "produce.watermelon",
+        "path": "assets/images/produce/watermelon_1.png",
+        "licenseVerified": true,
+        "licenseVerifiedOn": "2026-10-22",
+        "adaptationLicense": "Pexels License",
+        "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
+        "whiteOutlinePixels": 4,
+        "sha256": "1e8d01b4ffe986178945d269226843871c4d790c53bc1e8facf7c487af6f3507"
+      }
+    }
   },
   {
     "id": "produce.pear",
@@ -485,20 +504,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/mandarin_real.png": {
-        "author": "Filo gèn'",
-        "source": "https://commons.wikimedia.org/wiki/File:Citrus_reticulata_fruit_on_white_background.jpg",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "author": "Petr Kratochvil",
+        "source": "https://commons.wikimedia.org/wiki/File:Clementine_orange.jpg",
+        "original": "artifacts/photo-replacements-r45/mandarin/attempt-06/originals/clementine_white.jpg",
+        "originalSha256": "2e5203a6ad02cbecbb465bfd0b9329c6288a3ba08a1182c9fee0ed7d6c47ba5e",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Single complete clementine with attached leaves. Foreground alpha generated with rembg U2Net from a downscaled 1800 px segmentation input while retaining original RGB; alpha-bound crop and aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "produce.mandarin",
         "path": "assets/images/produce/mandarin_real.png",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-20",
-        "adaptationLicense": "CC BY-SA 4.0",
-        "processing": "tools/grabcut_rect_mask.py + tools/adapt_cutout_photo.py",
+        "licenseVerifiedOn": "2026-10-22",
+        "adaptationLicense": "CC0 1.0",
+        "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "originalSha256": "cf4003cecb2d25a65678f96a1a51f7bcb400d361754f58474c896a242bc68748",
-        "sha256": "9c82934f8b153a04b9cab3e3d647f432b6fb5dd5ecb9baede115cbe2e0d09363"
+        "sha256": "d4d88cecd9532961697494a28f0dbdb2f10454d5a537a2e4a9b35112b509088b"
       }
     }
   },

@@ -438,19 +438,19 @@
     {
       "id": "produce.strawberry",
       "path": "assets/images/produce/strawberry_real.png",
-      "author": "Paolo Neo",
-      "source": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
-      "original": "artifacts/real-produce-batch2/originals/strawberry_paolo_neo.jpg",
-      "originalSha256": "9baa5005b6f8885cf4729122476f40dfb57875718fdaf12ed447af6be97f7fa0",
-      "license": "Public domain (author dedication)",
-      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg",
-      "adaptationLicense": "Public domain (author dedication)",
+      "author": "Becks",
+      "source": "https://commons.wikimedia.org/wiki/File:Strawberry_(3667745793).jpg",
+      "original": "artifacts/photo-replacements-r45/strawberry/attempt-02/originals/strawberry.jpg",
+      "originalSha256": "d897da7b5901e5a47b9276e02f3c4615264240f708f938f5b6534257558d8f3e",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "changes": "Single complete photographed red strawberry with intact green calyx. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
       "licenseVerified": true,
-      "licenseVerifiedOn": "2026-10-17",
-      "processing": "artifacts/real-produce-batch2/process_photos.py",
+      "licenseVerifiedOn": "2026-10-22",
+      "adaptationLicense": "CC BY 2.0",
+      "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
       "whiteOutlinePixels": 4,
-      "changes": "Single complete photographed strawberry with calyx. Border-connected near-white background and the two locally bounded background gaps between leaves were made transparent; photographed RGB detail retained. Alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.",
-      "sha256": "a8013b3c44d9f61648fa52a0f6a2856a03f5825e513b3acd27731333f6f1aea3"
+      "sha256": "b973279e1891330b0125d561dd7800290070497f60bfde60bad75b7435ac0a34"
     },
     {
       "id": "produce.tomato",
@@ -661,20 +661,21 @@
       "sha256": "4351c72338f4919659466962ae6624185b4792af206546e43af84d0570aaa233"
     },
     {
-      "author": "Tiia Monto",
-      "source": "https://commons.wikimedia.org/wiki/File:Tagliatelle.png",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
       "id": "food.pasta",
       "path": "assets/images/food/pasta_real.png",
+      "author": "Leonhard Lenz",
+      "source": "https://commons.wikimedia.org/wiki/File:Penne_on_plate_2025-02-12_02.jpg",
+      "original": "artifacts/photo-replacements-r45/pasta/attempt-04/originals/pasta.jpg",
+      "originalSha256": "c538a7f7cea8f1ec3b2f45fcbf80a9a1ece0860fb0e02805a3baf75cb5292047",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "Photographed heap of penne retained as a single subject. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; neutral plate pixels in a small interior gap were masked manually. Alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
       "licenseVerified": true,
-      "licenseVerifiedOn": "2026-10-20",
-      "adaptationLicense": "CC BY-SA 4.0",
-      "processing": "tools/adapt_cutout_photo.py",
+      "licenseVerifiedOn": "2026-10-22",
+      "adaptationLicense": "CC0 1.0",
+      "processing": "rembg U2Net + localized mask cleanup + tools/adapt_cutout_photo.py",
       "whiteOutlinePixels": 4,
-      "originalSha256": "9ecaf55a32b7ffb4391b99bf036f67fd26c859d1d35f7e917a613446134f2f03",
-      "sha256": "2c589d4c4ae4a89465fe2d08c60428323cb9d87b9c537c99061ba3ac5fe4d8b9"
+      "sha256": "1794a2eb9f29a41087296360ef766ea5732cadfe48b8902c268c39cf2ea1eed5"
     },
     {
       "author": "Florian838",
@@ -741,20 +742,21 @@
       "sha256": "f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e"
     },
     {
-      "author": "Filo gèn'",
-      "source": "https://commons.wikimedia.org/wiki/File:Citrus_reticulata_fruit_on_white_background.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
       "id": "produce.mandarin",
       "path": "assets/images/produce/mandarin_real.png",
+      "author": "Petr Kratochvil",
+      "source": "https://commons.wikimedia.org/wiki/File:Clementine_orange.jpg",
+      "original": "artifacts/photo-replacements-r45/mandarin/attempt-06/originals/clementine_white.jpg",
+      "originalSha256": "2e5203a6ad02cbecbb465bfd0b9329c6288a3ba08a1182c9fee0ed7d6c47ba5e",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "Single complete clementine with attached leaves. Foreground alpha generated with rembg U2Net from a downscaled 1800 px segmentation input while retaining original RGB; alpha-bound crop and aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
       "licenseVerified": true,
-      "licenseVerifiedOn": "2026-10-20",
-      "adaptationLicense": "CC BY-SA 4.0",
-      "processing": "tools/grabcut_rect_mask.py + tools/adapt_cutout_photo.py",
+      "licenseVerifiedOn": "2026-10-22",
+      "adaptationLicense": "CC0 1.0",
+      "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
       "whiteOutlinePixels": 4,
-      "originalSha256": "cf4003cecb2d25a65678f96a1a51f7bcb400d361754f58474c896a242bc68748",
-      "sha256": "9c82934f8b153a04b9cab3e3d647f432b6fb5dd5ecb9baede115cbe2e0d09363"
+      "sha256": "d4d88cecd9532961697494a28f0dbdb2f10454d5a537a2e4a9b35112b509088b"
     },
     {
       "author": "Colin",
@@ -771,6 +773,23 @@
       "whiteOutlinePixels": 4,
       "originalSha256": "78ece07db34835f12f21375fb5ba362036f74136dbe271d349d684ddace31009",
       "sha256": "bf12d25945ba06e541bd63b696a07016df97fc827a4c84d934b8ac1f2e3cd1e6"
+    },
+    {
+      "id": "produce.watermelon",
+      "path": "assets/images/produce/watermelon_1.png",
+      "author": "Stephen Audu",
+      "source": "https://www.pexels.com/photo/slice-of-a-watermelon-6604314/",
+      "original": "artifacts/photo-replacements-r45/watermelon/attempt-04/original.jpg",
+      "originalSha256": "e9f3cd883e81fc111f6bdd2c441ba8503328a13474b45b25ddda6b82fdc09a2b",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "changes": "Single complete classic watermelon wedge with red flesh, dark seeds and green rind. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
+      "licenseVerified": true,
+      "licenseVerifiedOn": "2026-10-22",
+      "adaptationLicense": "Pexels License",
+      "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
+      "whiteOutlinePixels": 4,
+      "sha256": "1e8d01b4ffe986178945d269226843871c4d790c53bc1e8facf7c487af6f3507"
     }
   ]
 }

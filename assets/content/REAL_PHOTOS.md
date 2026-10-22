@@ -154,12 +154,12 @@ Adapted PNG SHA-256: `bd6126f09422d7e986a78611bb1ae14ed469c5ee2ee32658c9e5c9280b
 ## produce.strawberry
 
 File: `assets/images/produce/strawberry_real.png`
-Photo author: Paolo Neo
-Source: https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg
-Source and adaptation license: Public domain (author dedication) — https://commons.wikimedia.org/wiki/File:Strawberry_fruit.jpg
-Original: `artifacts/real-produce-batch2/originals/strawberry_paolo_neo.jpg` (SHA-256 `9baa5005b6f8885cf4729122476f40dfb57875718fdaf12ed447af6be97f7fa0`).
-Adapted PNG SHA-256: `a8013b3c44d9f61648fa52a0f6a2856a03f5825e513b3acd27731333f6f1aea3`.
-Changes: Single complete photographed strawberry with calyx. Border-connected near-white background and the two locally bounded background gaps between leaves were made transparent; photographed RGB detail retained. Alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing.
+Photo author: Becks
+Source: https://commons.wikimedia.org/wiki/File:Strawberry_(3667745793).jpg
+Source and adaptation license: CC BY 2.0 ? https://creativecommons.org/licenses/by/2.0/
+Original: `artifacts/photo-replacements-r45/strawberry/attempt-02/originals/strawberry.jpg` (SHA-256 `d897da7b5901e5a47b9276e02f3c4615264240f708f938f5b6534257558d8f3e`).
+Adapted PNG SHA-256: `b973279e1891330b0125d561dd7800290070497f60bfde60bad75b7435ac0a34`.
+Changes: Single complete photographed red strawberry with intact green calyx. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
 
 ## produce.pomegranate
 
@@ -366,13 +366,12 @@ Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only
 ## food.pasta
 
 File: `assets/images/food/pasta_real.png`
-Photo author: Tiia Monto
-Source: https://commons.wikimedia.org/wiki/File:Tagliatelle.png
-License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
-Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
-Original SHA-256: `9ecaf55a32b7ffb4391b99bf036f67fd26c859d1d35f7e917a613446134f2f03`.
-Adapted PNG SHA-256: `2c589d4c4ae4a89465fe2d08c60428323cb9d87b9c537c99061ba3ac5fe4d8b9`.
-Attempt folder: `artifacts/food-photos-attempt-02/`. Local technical review only; final human approval pending.
+Photo author: Leonhard Lenz
+Source: https://commons.wikimedia.org/wiki/File:Penne_on_plate_2025-02-12_02.jpg
+Source and adaptation license: CC0 1.0 ? https://creativecommons.org/publicdomain/zero/1.0/
+Original: `artifacts/photo-replacements-r45/pasta/attempt-04/originals/pasta.jpg` (SHA-256 `c538a7f7cea8f1ec3b2f45fcbf80a9a1ece0860fb0e02805a3baf75cb5292047`).
+Adapted PNG SHA-256: `1794a2eb9f29a41087296360ef766ea5732cadfe48b8902c268c39cf2ea1eed5`.
+Changes: Photographed heap of penne retained as a single subject. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; neutral plate pixels in a small interior gap were masked manually. Alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
 
 ## food.pizza
 
@@ -422,13 +421,23 @@ Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical revi
 ## produce.mandarin
 
 File: `assets/images/produce/mandarin_real.png`
-Photo author: Filo gèn'
-Source: https://commons.wikimedia.org/wiki/File:Citrus_reticulata_fruit_on_white_background.jpg
-License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
-Changes: Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
-Original SHA-256: `cf4003cecb2d25a65678f96a1a51f7bcb400d361754f58474c896a242bc68748`.
-Adapted PNG SHA-256: `9c82934f8b153a04b9cab3e3d647f432b6fb5dd5ecb9baede115cbe2e0d09363`.
-Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical review only; final human approval pending.
+Photo author: Petr Kratochvil
+Source: https://commons.wikimedia.org/wiki/File:Clementine_orange.jpg
+Source and adaptation license: CC0 1.0 ? https://creativecommons.org/publicdomain/zero/1.0/
+Original: `artifacts/photo-replacements-r45/mandarin/attempt-06/originals/clementine_white.jpg` (SHA-256 `2e5203a6ad02cbecbb465bfd0b9329c6288a3ba08a1182c9fee0ed7d6c47ba5e`).
+Adapted PNG SHA-256: `d4d88cecd9532961697494a28f0dbdb2f10454d5a537a2e4a9b35112b509088b`.
+Changes: Single complete clementine with attached leaves. Foreground alpha generated with rembg U2Net from a downscaled 1800 px segmentation input while retaining original RGB; alpha-bound crop and aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+
+## produce.watermelon
+
+File: `assets/images/produce/watermelon_1.png`
+Photo author: Stephen Audu
+Source: https://www.pexels.com/photo/slice-of-a-watermelon-6604314/
+Source and adaptation license: Pexels License ? https://www.pexels.com/license/
+Original: `artifacts/photo-replacements-r45/watermelon/attempt-04/original.jpg` (SHA-256 `e9f3cd883e81fc111f6bdd2c441ba8503328a13474b45b25ddda6b82fdc09a2b`).
+Adapted PNG SHA-256: `1e8d01b4ffe986178945d269226843871c4d790c53bc1e8facf7c487af6f3507`.
+Changes: Single complete classic watermelon wedge with red flesh, dark seeds and green rind. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+
 
 ## produce.onion
 

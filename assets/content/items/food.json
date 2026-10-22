@@ -291,20 +291,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/food/pasta_real.png": {
-        "author": "Tiia Monto",
-        "source": "https://commons.wikimedia.org/wiki/File:Tagliatelle.png",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "author": "Leonhard Lenz",
+        "source": "https://commons.wikimedia.org/wiki/File:Penne_on_plate_2025-02-12_02.jpg",
+        "original": "artifacts/photo-replacements-r45/pasta/attempt-04/originals/pasta.jpg",
+        "originalSha256": "c538a7f7cea8f1ec3b2f45fcbf80a9a1ece0860fb0e02805a3baf75cb5292047",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Photographed heap of penne retained as a single subject. Foreground alpha generated with rembg U2Net from a downscaled segmentation input while retaining original RGB; neutral plate pixels in a small interior gap were masked manually. Alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.",
         "id": "food.pasta",
         "path": "assets/images/food/pasta_real.png",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-20",
-        "adaptationLicense": "CC BY-SA 4.0",
-        "processing": "tools/adapt_cutout_photo.py",
+        "licenseVerifiedOn": "2026-10-22",
+        "adaptationLicense": "CC0 1.0",
+        "processing": "rembg U2Net + localized mask cleanup + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "originalSha256": "9ecaf55a32b7ffb4391b99bf036f67fd26c859d1d35f7e917a613446134f2f03",
-        "sha256": "2c589d4c4ae4a89465fe2d08c60428323cb9d87b9c537c99061ba3ac5fe4d8b9"
+        "sha256": "1794a2eb9f29a41087296360ef766ea5732cadfe48b8902c268c39cf2ea1eed5"
       }
     }
   },
