@@ -62,3 +62,6 @@ GooglePlayBuild/
 
 # Google Play upload service account key (never commit)
 android/play-service-account.json
+
+# Pixabay API key (never commit)
+pixabay.key
