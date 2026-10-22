@@ -91,6 +91,9 @@ class ContentItem {
   };
   final String id, theme, tier;
   final Map<String, dynamic> names, audio;
+
+  /// "Kuş hangisi?" / "Which one is the bird?" for the Find game.
+  final Map<String, dynamic> whichAudio;
   final List<String> images, tags;
   final Map<String, dynamic> imageProvenance;
   final String? sfx;
@@ -100,6 +103,7 @@ class ContentItem {
       tier = j['tier'],
       names = Map<String, dynamic>.from(j['name']),
       audio = Map<String, dynamic>.from(j['audio'] ?? {}),
+      whichAudio = Map<String, dynamic>.from(j['whichAudio'] ?? {}),
       images = List<String>.from(j['images'] ?? []),
       imageProvenance = Map<String, dynamic>.from(j['imageProvenance'] ?? {}),
       tags = List<String>.from(j['tags'] ?? []),
@@ -120,6 +124,11 @@ class ContentItem {
     return other is String && other.isNotEmpty && names['tr'] == names['en']
         ? other
         : null;
+  }
+
+  String? whichAudioFor(String locale) {
+    final path = whichAudio[locale == 'en' ? 'en' : 'tr'];
+    return path is String && path.isNotEmpty ? path : null;
   }
 
   String get slug => id.split('.').last;

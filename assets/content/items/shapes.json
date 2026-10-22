@@ -14,7 +14,11 @@
       "tr": "assets/audio/tr/shapes/circle_selected.mp3",
       "en": "assets/audio/en/shapes/circle_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/circle_which.mp3",
+      "en": "assets/audio/en/shapes/circle_which.mp3"
+    }
   },
   {
     "id": "shapes.square",
@@ -33,7 +37,11 @@
       "tr": "assets/audio/tr/shapes/square_selected.mp3",
       "en": "assets/audio/en/shapes/square_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/square_which.mp3",
+      "en": "assets/audio/en/shapes/square_which.mp3"
+    }
   },
   {
     "id": "shapes.triangle",
@@ -50,7 +58,11 @@
       "tr": "assets/audio/tr/shapes/triangle_selected.mp3",
       "en": "assets/audio/en/shapes/triangle_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/triangle_which.mp3",
+      "en": "assets/audio/en/shapes/triangle_which.mp3"
+    }
   },
   {
     "id": "shapes.star",
@@ -67,7 +79,11 @@
       "tr": "assets/audio/tr/shapes/star_selected.mp3",
       "en": "assets/audio/en/shapes/star_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/star_which.mp3",
+      "en": "assets/audio/en/shapes/star_which.mp3"
+    }
   },
   {
     "id": "shapes.rectangle",
@@ -84,7 +100,11 @@
       "tr": "assets/audio/tr/shapes/rectangle_selected.mp3",
       "en": "assets/audio/en/shapes/rectangle_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/rectangle_which.mp3",
+      "en": "assets/audio/en/shapes/rectangle_which.mp3"
+    }
   },
   {
     "id": "shapes.heart",
@@ -101,7 +121,11 @@
       "tr": "assets/audio/tr/shapes/heart_selected.mp3",
       "en": "assets/audio/en/shapes/heart_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/heart_which.mp3",
+      "en": "assets/audio/en/shapes/heart_which.mp3"
+    }
   },
   {
     "id": "shapes.oval",
@@ -118,7 +142,11 @@
       "tr": "assets/audio/tr/shapes/oval_selected.mp3",
       "en": "assets/audio/en/shapes/oval_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/oval_which.mp3",
+      "en": "assets/audio/en/shapes/oval_which.mp3"
+    }
   },
   {
     "id": "shapes.crescent",
@@ -135,7 +163,11 @@
       "tr": "assets/audio/tr/shapes/crescent_selected.mp3",
       "en": "assets/audio/en/shapes/crescent_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/crescent_which.mp3",
+      "en": "assets/audio/en/shapes/crescent_which.mp3"
+    }
   },
   {
     "id": "shapes.cross",
@@ -152,7 +184,11 @@
       "tr": "assets/audio/tr/shapes/cross_selected.mp3",
       "en": "assets/audio/en/shapes/cross_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/cross_which.mp3",
+      "en": "assets/audio/en/shapes/cross_which.mp3"
+    }
   },
   {
     "id": "shapes.arrow",
@@ -169,7 +205,11 @@
       "tr": "assets/audio/tr/shapes/arrow_selected.mp3",
       "en": "assets/audio/en/shapes/arrow_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/arrow_which.mp3",
+      "en": "assets/audio/en/shapes/arrow_which.mp3"
+    }
   },
   {
     "id": "shapes.hexagon",
@@ -186,7 +226,11 @@
       "tr": "assets/audio/tr/shapes/hexagon_selected.mp3",
       "en": "assets/audio/en/shapes/hexagon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/hexagon_which.mp3",
+      "en": "assets/audio/en/shapes/hexagon_which.mp3"
+    }
   },
   {
     "id": "shapes.pentagon",
@@ -203,7 +247,11 @@
       "tr": "assets/audio/tr/shapes/pentagon_selected.mp3",
       "en": "assets/audio/en/shapes/pentagon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/pentagon_which.mp3",
+      "en": "assets/audio/en/shapes/pentagon_which.mp3"
+    }
   },
   {
     "id": "shapes.rhombus",
@@ -220,7 +268,11 @@
       "tr": "assets/audio/tr/shapes/rhombus_selected.mp3",
       "en": "assets/audio/en/shapes/rhombus_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/rhombus_which.mp3",
+      "en": "assets/audio/en/shapes/rhombus_which.mp3"
+    }
   },
   {
     "id": "shapes.trapezoid",
@@ -237,7 +289,11 @@
       "tr": "assets/audio/tr/shapes/trapezoid_selected.mp3",
       "en": "assets/audio/en/shapes/trapezoid_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/trapezoid_which.mp3",
+      "en": "assets/audio/en/shapes/trapezoid_which.mp3"
+    }
   },
   {
     "id": "shapes.cube",
@@ -254,7 +310,11 @@
       "tr": "assets/audio/tr/shapes/cube_selected.mp3",
       "en": "assets/audio/en/shapes/cube_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/cube_which.mp3",
+      "en": "assets/audio/en/shapes/cube_which.mp3"
+    }
   },
   {
     "id": "shapes.sphere",
@@ -271,7 +331,11 @@
       "tr": "assets/audio/tr/shapes/sphere_selected.mp3",
       "en": "assets/audio/en/shapes/sphere_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/sphere_which.mp3",
+      "en": "assets/audio/en/shapes/sphere_which.mp3"
+    }
   },
   {
     "id": "shapes.cylinder",
@@ -288,7 +352,11 @@
       "tr": "assets/audio/tr/shapes/cylinder_selected.mp3",
       "en": "assets/audio/en/shapes/cylinder_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/cylinder_which.mp3",
+      "en": "assets/audio/en/shapes/cylinder_which.mp3"
+    }
   },
   {
     "id": "shapes.cone",
@@ -305,6 +373,10 @@
       "tr": "assets/audio/tr/shapes/cone_selected.mp3",
       "en": "assets/audio/en/shapes/cone_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/shapes/cone_which.mp3",
+      "en": "assets/audio/en/shapes/cone_which.mp3"
+    }
   }
 ]

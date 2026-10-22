@@ -355,13 +355,12 @@ Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only
 ## food.soup
 
 File: `assets/images/food/soup_real.png`
-Photo author: Tiia Monto
-Source: https://commons.wikimedia.org/wiki/File:Salmon_soup.png
-License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
-Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
-Original SHA-256: `f15066f45d18f07ccadda05b557828366e84f430421c5af176be87e0645a6a2a`.
-Adapted PNG SHA-256: `4351c72338f4919659466962ae6624185b4792af206546e43af84d0570aaa233`.
-Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only; final human approval pending.
+Photo author: Security (Pixabay)
+Source: https://pixabay.com/photos/soup-cream-soup-tomatosoup-cook-622737/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Original: `artifacts/photo-replacements-r47/soup/attempt-01/original.jpg` (SHA-256 `ab52cefa551074e246ddc9b08a61790e4f4ad151e30ba06da8fe9a3334bf8fb5`).
+Adapted PNG SHA-256: `3582cfe301fd635a74a63dfa9647c7ba8273f66d9599e94f366db3129e640ad5`.
+Changes: One white bowl of tomato soup with a sprig of parsley. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## food.pasta
 

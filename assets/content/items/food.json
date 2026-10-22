@@ -36,6 +36,10 @@
         "originalSha256": "9032de473a3bfee90ae37d6228f6d6c4d3d3ca01b732dfa9b0b9a0d820b5a868",
         "sha256": "49598b93b1f82dff66c6d5531750d280e02c45f1e5dd0c86f2a588b6ff9fa586"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/bread_which.mp3",
+      "en": "assets/audio/en/food/bread_which.mp3"
     }
   },
   {
@@ -113,6 +117,10 @@
         "originalSha256": "cc9f522c07b07f3c64106d9b94e01efb538508da3a5512a1743242719cdb0fa0",
         "sha256": "70d1ad945d6b36917d38fbd993b4f651d67c747606624e3f760a61153f3e7d5f"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/egg_which.mp3",
+      "en": "assets/audio/en/food/egg_which.mp3"
     }
   },
   {
@@ -152,6 +160,10 @@
         "originalSha256": "0231f9a64f5b17ae35f361f852ae169bc02175be4ee1d0844f33468ab5edf98c",
         "sha256": "8127c1f0990de463a7f8d269e438e19091634be07408b8992740e7da980c675e"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/cheese_which.mp3",
+      "en": "assets/audio/en/food/cheese_which.mp3"
     }
   },
   {
@@ -227,6 +239,10 @@
         "originalSha256": "10cbe0a489628c7045e48fc9c5ee070f96a232cf7bcad87d835d4ece9e770d72",
         "sha256": "b74b589cdc0cdd0d080f07f916623d10863e84f346575e81e89f2ed41cfb5e71"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/cake_which.mp3",
+      "en": "assets/audio/en/food/cake_which.mp3"
     }
   },
   {
@@ -267,6 +283,10 @@
         "originalSha256": "9547bd7fb248a40bbd61f8bb309f42c662dd422fd79fec891b458dff3c03d7cc",
         "sha256": "a6178db4a5d303288805de93c84c131fd24f6cf07fee24020cfb7e323ac2de05"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/ice_cream_which.mp3",
+      "en": "assets/audio/en/food/ice_cream_which.mp3"
     }
   },
   {
@@ -307,6 +327,10 @@
         "whiteOutlinePixels": 4,
         "sha256": "c5bdd647c0e95fad7361f02d51adce31507d7a84ecc6fd5ae6e991435246173d"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/pasta_which.mp3",
+      "en": "assets/audio/en/food/pasta_which.mp3"
     }
   },
   {
@@ -332,21 +356,26 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/food/soup_real.png": {
-        "author": "Tiia Monto",
-        "source": "https://commons.wikimedia.org/wiki/File:Salmon_soup.png",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
         "id": "food.soup",
         "path": "assets/images/food/soup_real.png",
+        "author": "Security (Pixabay)",
+        "source": "https://pixabay.com/photos/soup-cream-soup-tomatosoup-cook-622737/",
+        "original": "artifacts/photo-replacements-r47/soup/attempt-01/original.jpg",
+        "originalSha256": "ab52cefa551074e246ddc9b08a61790e4f4ad151e30ba06da8fe9a3334bf8fb5",
+        "license": "Pixabay Content License",
+        "licenseUrl": "https://pixabay.com/service/license-summary/",
+        "adaptationLicense": "Pixabay Content License",
+        "changes": "One white bowl of tomato soup with a sprig of parsley. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-20",
-        "adaptationLicense": "CC BY-SA 4.0",
-        "processing": "tools/adapt_cutout_photo.py",
+        "licenseVerifiedOn": "2026-10-22",
+        "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "originalSha256": "f15066f45d18f07ccadda05b557828366e84f430421c5af176be87e0645a6a2a",
-        "sha256": "4351c72338f4919659466962ae6624185b4792af206546e43af84d0570aaa233"
+        "sha256": "3582cfe301fd635a74a63dfa9647c7ba8273f66d9599e94f366db3129e640ad5"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/soup_which.mp3",
+      "en": "assets/audio/en/food/soup_which.mp3"
     }
   },
   {
@@ -405,6 +434,10 @@
         "originalSha256": "d904d9b9de3ddb522aa130f407dd7e5a41e054b9b63f272f201711ce2a5cffba",
         "sha256": "a800e4d110437c24a78426ca80d438c6ea534b79a46ea3fd2964ecee17e618c8"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/cookie_which.mp3",
+      "en": "assets/audio/en/food/cookie_which.mp3"
     }
   },
   {
@@ -444,6 +477,10 @@
         "originalSha256": "c05c2c115cbdfef54efe7c746355b4b5fab25dbeb5445856d7c6e595bbfd1d4a",
         "sha256": "3e47080ddb5bd28fe99aec5d97c5e50e2bb788f10cfbe8d1fcde8d170aa06deb"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/simit_which.mp3",
+      "en": "assets/audio/en/food/simit_which.mp3"
     }
   },
   {
@@ -574,6 +611,10 @@
         "originalSha256": "90a12f8a41d20a644a34160ed032fab7d9ccacb04b14568029e7559f6edf270f",
         "sha256": "3032c7fbee3efa0bb36359e7847f93acd6e3c8c9e9f2c4f0cc1393fedc9ce5b9"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/food/pizza_which.mp3",
+      "en": "assets/audio/en/food/pizza_which.mp3"
     }
   },
   {

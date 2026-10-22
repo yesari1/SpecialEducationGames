@@ -131,6 +131,12 @@ abstract class GameTemplate {
     if (spec.promptKey == GamePromptKey.groupMembership) {
       return [?prompt, ?spec.stimulus?.audioFor(locale)];
     }
+    // Find: ask the whole question, "Kuş hangisi?", not just the name.
+    if (ctx.gameId == 'G01') {
+      if (spec.target.whichAudioFor(locale) case final String which) {
+        return [which];
+      }
+    }
     final cue = ctx.gameId == 'G10' && ctx.themeId != 'numbers'
         ? spec.target.sfx
         : spec.target.audioFor(locale);

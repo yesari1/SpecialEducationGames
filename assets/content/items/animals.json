@@ -134,6 +134,10 @@
           "scope": "Selected voice demonstration; pronunciation not user-approved"
         }
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/cat_which.mp3",
+      "en": "assets/audio/en/animals/cat_which.mp3"
     }
   },
   {
@@ -273,6 +277,10 @@
         "sha256": "e3b5b3f4fbdd6e374ab2eaf17dc02a1fe99ac8f1150fbce954080d98d8d971bc",
         "humanContentReviewPending": "Pending final human approval of this Labradoodle photograph for the generic catalog labels “Köpek” / “Dog”."
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/dog_which.mp3",
+      "en": "assets/audio/en/animals/dog_which.mp3"
     }
   },
   {
@@ -320,6 +328,10 @@
         "sha256": "951f45f39ef962649c49828c16a18e89ff3c7e2209ef87076f9f5e343ea1b288",
         "humanContentReviewPending": "Technical photo review accepted; final human approval of this bird photo for the generic “Kuş” / “Bird” labels remains pending."
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/bird_which.mp3",
+      "en": "assets/audio/en/animals/bird_which.mp3"
     }
   },
   {
@@ -416,6 +428,10 @@
         "changes": "Second, distinct generic fish photograph: Lake Trout (Salvelinus namaycush), not a Carassius frame/crop. Source photo by Allan Harris (CC0 1.0); Commons source-file contributor Lodewicus de Honsvels; transparent derivative/crop by Ellicrum (CC BY-SA 4.0). Existing derivative alpha and photo RGB were retained; alpha-bound crop, aspect-preserving Lanczos resize to 900 px maximum fish extent, centered 1024x1024 RGBA export and 4 px white outer outline. No new background mask, generative edits, or reconstructed pixels. The adapted file is shared under CC BY-SA 4.0 with all source/derivative attribution retained.",
         "sha256": "501e15f0f6fdac5620e512f6e3771d5265ad52d86d61c39976726dff0ba98bc8"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/fish_which.mp3",
+      "en": "assets/audio/en/animals/fish_which.mp3"
     }
   },
   {
@@ -535,6 +551,10 @@
           "scope": "Selected voice demonstration; pronunciation not user-approved"
         }
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/rabbit_which.mp3",
+      "en": "assets/audio/en/animals/rabbit_which.mp3"
     }
   },
   {
@@ -556,7 +576,11 @@
       "tr": "assets/audio/tr/animals/cow_selected.mp3",
       "en": "assets/audio/en/animals/cow_selected.mp3"
     },
-    "sfx": "assets/sfx/animals/cow.mp3"
+    "sfx": "assets/sfx/animals/cow.mp3",
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/cow_which.mp3",
+      "en": "assets/audio/en/animals/cow_which.mp3"
+    }
   },
   {
     "id": "animals.horse",
@@ -577,7 +601,11 @@
       "tr": "assets/audio/tr/animals/horse_selected.mp3",
       "en": "assets/audio/en/animals/horse_selected.mp3"
     },
-    "sfx": "assets/sfx/animals/horse.mp3"
+    "sfx": "assets/sfx/animals/horse.mp3",
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/horse_which.mp3",
+      "en": "assets/audio/en/animals/horse_which.mp3"
+    }
   },
   {
     "id": "animals.sheep",
@@ -598,7 +626,11 @@
       "tr": "assets/audio/tr/animals/sheep_selected.mp3",
       "en": "assets/audio/en/animals/sheep_selected.mp3"
     },
-    "sfx": "assets/sfx/animals/sheep.mp3"
+    "sfx": "assets/sfx/animals/sheep.mp3",
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/sheep_which.mp3",
+      "en": "assets/audio/en/animals/sheep_which.mp3"
+    }
   },
   {
     "id": "animals.chicken",
@@ -620,7 +652,11 @@
       "tr": "assets/audio/tr/animals/chicken_selected.mp3",
       "en": "assets/audio/en/animals/chicken_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/chicken_which.mp3",
+      "en": "assets/audio/en/animals/chicken_which.mp3"
+    }
   },
   {
     "id": "animals.duck",
@@ -642,7 +678,11 @@
       "tr": "assets/audio/tr/animals/duck_selected.mp3",
       "en": "assets/audio/en/animals/duck_selected.mp3"
     },
-    "sfx": "assets/sfx/animals/duck.mp3"
+    "sfx": "assets/sfx/animals/duck.mp3",
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/duck_which.mp3",
+      "en": "assets/audio/en/animals/duck_which.mp3"
+    }
   },
   {
     "id": "animals.chick",
@@ -664,7 +704,11 @@
       "tr": "assets/audio/tr/animals/chick_selected.mp3",
       "en": "assets/audio/en/animals/chick_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/chick_which.mp3",
+      "en": "assets/audio/en/animals/chick_which.mp3"
+    }
   },
   {
     "id": "animals.lion",
@@ -685,7 +729,11 @@
       "tr": "assets/audio/tr/animals/lion_selected.mp3",
       "en": "assets/audio/en/animals/lion_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/lion_which.mp3",
+      "en": "assets/audio/en/animals/lion_which.mp3"
+    }
   },
   {
     "id": "animals.elephant",
@@ -706,7 +754,11 @@
       "tr": "assets/audio/tr/animals/elephant_selected.mp3",
       "en": "assets/audio/en/animals/elephant_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/elephant_which.mp3",
+      "en": "assets/audio/en/animals/elephant_which.mp3"
+    }
   },
   {
     "id": "animals.monkey",
@@ -727,7 +779,11 @@
       "tr": "assets/audio/tr/animals/monkey_selected.mp3",
       "en": "assets/audio/en/animals/monkey_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/monkey_which.mp3",
+      "en": "assets/audio/en/animals/monkey_which.mp3"
+    }
   },
   {
     "id": "animals.bear",
@@ -748,7 +804,11 @@
       "tr": "assets/audio/tr/animals/bear_selected.mp3",
       "en": "assets/audio/en/animals/bear_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/bear_which.mp3",
+      "en": "assets/audio/en/animals/bear_which.mp3"
+    }
   },
   {
     "id": "animals.butterfly",
@@ -769,7 +829,11 @@
       "tr": "assets/audio/tr/animals/butterfly_selected.mp3",
       "en": "assets/audio/en/animals/butterfly_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/butterfly_which.mp3",
+      "en": "assets/audio/en/animals/butterfly_which.mp3"
+    }
   },
   {
     "id": "animals.goat",
@@ -790,7 +854,11 @@
       "tr": "assets/audio/tr/animals/goat_selected.mp3",
       "en": "assets/audio/en/animals/goat_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/goat_which.mp3",
+      "en": "assets/audio/en/animals/goat_which.mp3"
+    }
   },
   {
     "id": "animals.donkey",
@@ -811,7 +879,11 @@
       "tr": "assets/audio/tr/animals/donkey_selected.mp3",
       "en": "assets/audio/en/animals/donkey_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/donkey_which.mp3",
+      "en": "assets/audio/en/animals/donkey_which.mp3"
+    }
   },
   {
     "id": "animals.rooster",
@@ -833,7 +905,11 @@
       "tr": "assets/audio/tr/animals/rooster_selected.mp3",
       "en": "assets/audio/en/animals/rooster_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/rooster_which.mp3",
+      "en": "assets/audio/en/animals/rooster_which.mp3"
+    }
   },
   {
     "id": "animals.turkey",
@@ -855,7 +931,11 @@
       "tr": "assets/audio/tr/animals/turkey_selected.mp3",
       "en": "assets/audio/en/animals/turkey_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/turkey_which.mp3",
+      "en": "assets/audio/en/animals/turkey_which.mp3"
+    }
   },
   {
     "id": "animals.bee",
@@ -876,7 +956,11 @@
       "tr": "assets/audio/tr/animals/bee_selected.mp3",
       "en": "assets/audio/en/animals/bee_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/bee_which.mp3",
+      "en": "assets/audio/en/animals/bee_which.mp3"
+    }
   },
   {
     "id": "animals.turtle",
@@ -916,6 +1000,10 @@
         "changes": "Single complete photographed Red-Eared Slider turtle on a plain background. Classical OpenCV GrabCut used a reviewed source contour, central-shell and visible-head/forelimb foreground seeds, and background seeds (5 iterations at 1800x1200). Original RGB detail retained without repainting; aspect-preserving resize and centering on a 1024x1024 RGBA canvas, with a 4 px white outer outline. Rear limbs and tail are naturally tucked beneath the shell in the original photograph. No generative edits.",
         "sha256": "5e5ae81a9968aa151b9be8973bf7c44d4dfff95215944a2d250ebf3ac082b676"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/turtle_which.mp3",
+      "en": "assets/audio/en/animals/turtle_which.mp3"
     }
   },
   {
@@ -937,7 +1025,11 @@
       "tr": "assets/audio/tr/animals/mouse_selected.mp3",
       "en": "assets/audio/en/animals/mouse_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/mouse_which.mp3",
+      "en": "assets/audio/en/animals/mouse_which.mp3"
+    }
   },
   {
     "id": "animals.frog",
@@ -959,7 +1051,11 @@
       "tr": "assets/audio/tr/animals/frog_selected.mp3",
       "en": "assets/audio/en/animals/frog_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/frog_which.mp3",
+      "en": "assets/audio/en/animals/frog_which.mp3"
+    }
   },
   {
     "id": "animals.giraffe",
@@ -980,7 +1076,11 @@
       "tr": "assets/audio/tr/animals/giraffe_selected.mp3",
       "en": "assets/audio/en/animals/giraffe_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/giraffe_which.mp3",
+      "en": "assets/audio/en/animals/giraffe_which.mp3"
+    }
   },
   {
     "id": "animals.zebra",
@@ -1001,7 +1101,11 @@
       "tr": "assets/audio/tr/animals/zebra_selected.mp3",
       "en": "assets/audio/en/animals/zebra_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/zebra_which.mp3",
+      "en": "assets/audio/en/animals/zebra_which.mp3"
+    }
   },
   {
     "id": "animals.tiger",
@@ -1022,7 +1126,11 @@
       "tr": "assets/audio/tr/animals/tiger_selected.mp3",
       "en": "assets/audio/en/animals/tiger_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/tiger_which.mp3",
+      "en": "assets/audio/en/animals/tiger_which.mp3"
+    }
   },
   {
     "id": "animals.wolf",
@@ -1043,7 +1151,11 @@
       "tr": "assets/audio/tr/animals/wolf_selected.mp3",
       "en": "assets/audio/en/animals/wolf_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/wolf_which.mp3",
+      "en": "assets/audio/en/animals/wolf_which.mp3"
+    }
   },
   {
     "id": "animals.fox",
@@ -1064,7 +1176,11 @@
       "tr": "assets/audio/tr/animals/fox_selected.mp3",
       "en": "assets/audio/en/animals/fox_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/fox_which.mp3",
+      "en": "assets/audio/en/animals/fox_which.mp3"
+    }
   },
   {
     "id": "animals.squirrel",
@@ -1085,7 +1201,11 @@
       "tr": "assets/audio/tr/animals/squirrel_selected.mp3",
       "en": "assets/audio/en/animals/squirrel_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/squirrel_which.mp3",
+      "en": "assets/audio/en/animals/squirrel_which.mp3"
+    }
   },
   {
     "id": "animals.owl",
@@ -1106,7 +1226,11 @@
       "tr": "assets/audio/tr/animals/owl_selected.mp3",
       "en": "assets/audio/en/animals/owl_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/owl_which.mp3",
+      "en": "assets/audio/en/animals/owl_which.mp3"
+    }
   },
   {
     "id": "animals.penguin",
@@ -1128,7 +1252,11 @@
       "tr": "assets/audio/tr/animals/penguin_selected.mp3",
       "en": "assets/audio/en/animals/penguin_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/penguin_which.mp3",
+      "en": "assets/audio/en/animals/penguin_which.mp3"
+    }
   },
   {
     "id": "animals.dolphin",
@@ -1149,7 +1277,11 @@
       "tr": "assets/audio/tr/animals/dolphin_selected.mp3",
       "en": "assets/audio/en/animals/dolphin_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/dolphin_which.mp3",
+      "en": "assets/audio/en/animals/dolphin_which.mp3"
+    }
   },
   {
     "id": "animals.deer",
@@ -1170,7 +1302,11 @@
       "tr": "assets/audio/tr/animals/deer_selected.mp3",
       "en": "assets/audio/en/animals/deer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/deer_which.mp3",
+      "en": "assets/audio/en/animals/deer_which.mp3"
+    }
   },
   {
     "id": "animals.bull",
@@ -1191,7 +1327,11 @@
       "tr": "assets/audio/tr/animals/bull_selected.mp3",
       "en": "assets/audio/en/animals/bull_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/bull_which.mp3",
+      "en": "assets/audio/en/animals/bull_which.mp3"
+    }
   },
   {
     "id": "animals.hedgehog",
@@ -1212,7 +1352,11 @@
       "tr": "assets/audio/tr/animals/hedgehog_selected.mp3",
       "en": "assets/audio/en/animals/hedgehog_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/hedgehog_which.mp3",
+      "en": "assets/audio/en/animals/hedgehog_which.mp3"
+    }
   },
   {
     "id": "animals.ant",
@@ -1233,7 +1377,11 @@
       "tr": "assets/audio/tr/animals/ant_selected.mp3",
       "en": "assets/audio/en/animals/ant_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/ant_which.mp3",
+      "en": "assets/audio/en/animals/ant_which.mp3"
+    }
   },
   {
     "id": "animals.ladybug",
@@ -1254,7 +1402,11 @@
       "tr": "assets/audio/tr/animals/ladybug_selected.mp3",
       "en": "assets/audio/en/animals/ladybug_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/ladybug_which.mp3",
+      "en": "assets/audio/en/animals/ladybug_which.mp3"
+    }
   },
   {
     "id": "animals.octopus",
@@ -1275,7 +1427,11 @@
       "tr": "assets/audio/tr/animals/octopus_selected.mp3",
       "en": "assets/audio/en/animals/octopus_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/octopus_which.mp3",
+      "en": "assets/audio/en/animals/octopus_which.mp3"
+    }
   },
   {
     "id": "animals.shark",
@@ -1296,7 +1452,11 @@
       "tr": "assets/audio/tr/animals/shark_selected.mp3",
       "en": "assets/audio/en/animals/shark_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/shark_which.mp3",
+      "en": "assets/audio/en/animals/shark_which.mp3"
+    }
   },
   {
     "id": "animals.whale",
@@ -1317,7 +1477,11 @@
       "tr": "assets/audio/tr/animals/whale_selected.mp3",
       "en": "assets/audio/en/animals/whale_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/whale_which.mp3",
+      "en": "assets/audio/en/animals/whale_which.mp3"
+    }
   },
   {
     "id": "animals.hippopotamus",
@@ -1338,7 +1502,11 @@
       "tr": "assets/audio/tr/animals/hippopotamus_selected.mp3",
       "en": "assets/audio/en/animals/hippopotamus_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/hippopotamus_which.mp3",
+      "en": "assets/audio/en/animals/hippopotamus_which.mp3"
+    }
   },
   {
     "id": "animals.rhinoceros",
@@ -1359,7 +1527,11 @@
       "tr": "assets/audio/tr/animals/rhinoceros_selected.mp3",
       "en": "assets/audio/en/animals/rhinoceros_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/rhinoceros_which.mp3",
+      "en": "assets/audio/en/animals/rhinoceros_which.mp3"
+    }
   },
   {
     "id": "animals.crocodile",
@@ -1381,7 +1553,11 @@
       "tr": "assets/audio/tr/animals/crocodile_selected.mp3",
       "en": "assets/audio/en/animals/crocodile_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/crocodile_which.mp3",
+      "en": "assets/audio/en/animals/crocodile_which.mp3"
+    }
   },
   {
     "id": "animals.camel",
@@ -1402,7 +1578,11 @@
       "tr": "assets/audio/tr/animals/camel_selected.mp3",
       "en": "assets/audio/en/animals/camel_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/camel_which.mp3",
+      "en": "assets/audio/en/animals/camel_which.mp3"
+    }
   },
   {
     "id": "animals.kangaroo",
@@ -1423,7 +1603,11 @@
       "tr": "assets/audio/tr/animals/kangaroo_selected.mp3",
       "en": "assets/audio/en/animals/kangaroo_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/kangaroo_which.mp3",
+      "en": "assets/audio/en/animals/kangaroo_which.mp3"
+    }
   },
   {
     "id": "animals.gorilla",
@@ -1444,7 +1628,11 @@
       "tr": "assets/audio/tr/animals/gorilla_selected.mp3",
       "en": "assets/audio/en/animals/gorilla_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/gorilla_which.mp3",
+      "en": "assets/audio/en/animals/gorilla_which.mp3"
+    }
   },
   {
     "id": "animals.flamingo",
@@ -1465,7 +1653,11 @@
       "tr": "assets/audio/tr/animals/flamingo_selected.mp3",
       "en": "assets/audio/en/animals/flamingo_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/flamingo_which.mp3",
+      "en": "assets/audio/en/animals/flamingo_which.mp3"
+    }
   },
   {
     "id": "animals.ostrich",
@@ -1486,7 +1678,11 @@
       "tr": "assets/audio/tr/animals/ostrich_selected.mp3",
       "en": "assets/audio/en/animals/ostrich_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/ostrich_which.mp3",
+      "en": "assets/audio/en/animals/ostrich_which.mp3"
+    }
   },
   {
     "id": "animals.bat",
@@ -1507,7 +1703,11 @@
       "tr": "assets/audio/tr/animals/bat_selected.mp3",
       "en": "assets/audio/en/animals/bat_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/bat_which.mp3",
+      "en": "assets/audio/en/animals/bat_which.mp3"
+    }
   },
   {
     "id": "animals.chameleon",
@@ -1528,6 +1728,10 @@
       "tr": "assets/audio/tr/animals/chameleon_selected.mp3",
       "en": "assets/audio/en/animals/chameleon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/animals/chameleon_which.mp3",
+      "en": "assets/audio/en/animals/chameleon_which.mp3"
+    }
   }
 ]

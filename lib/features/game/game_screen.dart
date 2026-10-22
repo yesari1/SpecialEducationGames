@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart' show Ticker;
 import 'package:go_router/go_router.dart';
 import 'package:drift/drift.dart' show Value;
 import '../../app/app_state.dart';
@@ -592,9 +593,11 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                                           child: ItemVisual(spec.stimulus!),
                                         ),
                                       if (spec.sequence.isNotEmpty)
-                                        Text(
-                                          spec.sequence.join('   '),
-                                          style: SegText.display,
+                                        SequenceRow(
+                                          sequence: spec.sequence,
+                                          answer: spec.target.slug,
+                                          revealed:
+                                              c.phase == RoundPhase.celebrating,
                                         ),
                                       if (widget.gameId == 'G14')
                                         SizedBox(
@@ -711,8 +714,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     final particles = reduced || s.celebration == 'off'
         ? 0
         : s.celebration == 'full'
-        ? 70
-        : 36;
+        ? 140
+        : 70;
     final compact = MediaQuery.sizeOf(context).height < 500;
     return Scaffold(
       backgroundColor: theme.bg,
@@ -1203,9 +1206,10 @@ class _CelebrationBurstPainter extends CustomPainter {
 }
 
 /// How long the round-end page stays after the spoken praise.
-const _afterPraise = Duration(milliseconds: 3500);
+const _afterPraise = Duration(milliseconds: 5500);
 
-/// Paper confetti falling and fluttering once over the round-end page.
+/// Paper confetti that keeps falling and fluttering for as long as the
+/// round-end page is shown (each piece starts again from the top).
 class _Confetti extends StatefulWidget {
   final int count;
   const _Confetti({required this.count});
@@ -1225,10 +1229,19 @@ typedef _Piece = ({
 
 class _ConfettiState extends State<_Confetti>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 5200),
-  )..forward();
+  late final Ticker _ticker;
+  double _seconds = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _ticker = createTicker((elapsed) {
+      setState(() => _seconds = elapsed.inMicroseconds / 1e6);
+      // The page is gone well before this; never animate forever.
+      if (_seconds > 14) _ticker.stop();
+    })..start();
+  }
+
   late final List<_Piece> _pieces = () {
     final random = math.Random(42);
     return [
@@ -1254,30 +1267,32 @@ class _ConfettiState extends State<_Confetti>
 
   @override
   void dispose() {
-    _controller.dispose();
+    _ticker.dispose();
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) => AnimatedBuilder(
-    animation: _controller,
-    builder: (context, _) =>
-        CustomPaint(painter: _ConfettiPainter(_controller.value, _pieces)),
-  );
+  Widget build(BuildContext context) =>
+      CustomPaint(painter: _ConfettiPainter(_seconds, _pieces));
 }
 
 class _ConfettiPainter extends CustomPainter {
+  /// Seconds since the page opened.
   final double t;
   final List<_Piece> pieces;
   const _ConfettiPainter(this.t, this.pieces);
+
+  /// One fall from the top to the bottom takes about this long.
+  static const _fall = 3.4;
   @override
   void paint(Canvas canvas, Size size) {
     for (final p in pieces) {
-      final local = ((t - p.delay) / (1 - p.delay)).clamp(0.0, 1.0);
-      if (local <= 0 || local >= 1) continue;
+      final start = p.delay * _fall * 2;
+      if (t < start) continue;
+      final local = ((t - start) / (_fall / p.fall)) % 1.0;
       final y = -24 + local * p.fall * (size.height + 48);
       final x = p.x * size.width + math.sin(local * 7 + p.sway) * 26;
-      final fade = local < .85 ? 1.0 : (1 - local) / .15;
+      final fade = local < .9 ? 1.0 : (1 - local) / .1;
       // A paper rectangle that turns while it falls: the width follows a
       // cosine so it flips like a real piece of paper.
       final flip = math.cos(local * 9 + p.sway).abs().clamp(.15, 1.0);
@@ -1301,4 +1316,73 @@ class _ConfettiPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_ConfettiPainter old) => old.t != t;
+}
+
+/// "5  6  7  ?": the numbers are big, the gap is a small dashed box; on a
+/// right answer the chosen number grows into the gap so the whole row reads.
+class SequenceRow extends StatelessWidget {
+  final List<String> sequence;
+  final String answer;
+  final bool revealed;
+  const SequenceRow({
+    super.key,
+    required this.sequence,
+    required this.answer,
+    required this.revealed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final reduced = MediaQuery.disableAnimationsOf(context);
+    final size = SegText.display.fontSize ?? 40;
+    Widget gap() => Container(
+      key: const ValueKey('sequence-gap'),
+      width: size * 1.1,
+      height: size * 1.1,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: .7),
+        borderRadius: BorderRadius.circular(SegRadius.md),
+        border: Border.all(
+          color: SegColors.primary.withValues(alpha: .45),
+          width: 2,
+        ),
+      ),
+      child: Text(
+        '?',
+        style: SegText.heading.copyWith(color: SegColors.primary),
+      ),
+    );
+    Widget filled() => TweenAnimationBuilder<double>(
+      key: const ValueKey('sequence-answer'),
+      tween: Tween(begin: reduced ? 1 : 0, end: 1),
+      duration: const Duration(milliseconds: 520),
+      curve: Curves.easeOutBack,
+      builder: (context, t, child) =>
+          Transform.scale(scale: .4 + .8 * t - .2 * t * t, child: child),
+      child: Text(
+        answer,
+        style: SegText.display.copyWith(
+          color: SegColors.accentDeep,
+          fontSize: size * 1.25,
+        ),
+      ),
+    );
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        for (var i = 0; i < sequence.length; i++) ...[
+          if (i > 0) SizedBox(width: size * .45),
+          if (sequence[i] == '?')
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: revealed ? filled() : gap(),
+            )
+          else
+            Text(sequence[i], style: SegText.display),
+        ],
+      ],
+    );
+  }
 }

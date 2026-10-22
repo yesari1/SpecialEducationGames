@@ -134,6 +134,10 @@
           "scope": "Selected voice demonstration; pronunciation not user-approved"
         }
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/apple_which.mp3",
+      "en": "assets/audio/en/produce/apple_which.mp3"
     }
   },
   {
@@ -271,6 +275,10 @@
           "scope": "Selected voice demonstration; pronunciation not user-approved"
         }
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/banana_which.mp3",
+      "en": "assets/audio/en/produce/banana_which.mp3"
     }
   },
   {
@@ -312,6 +320,10 @@
         "changes": "Removed border-connected neutral near-white original background from a generous manually isolated whole-orange ROI; enclosed highlights and stem retained; preserved source RGB; aspect-preserving resize to 912px maximum subject extent, centered on 1024x1024 RGBA canvas with 4px white outline.",
         "sha256": "ad4d8f62d69fcb3c9462c9364a75e0ba21e57b8aa6bee8f2f6f73e5f8b844799"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/orange_which.mp3",
+      "en": "assets/audio/en/produce/orange_which.mp3"
     }
   },
   {
@@ -353,6 +365,10 @@
         "whiteOutlinePixels": 4,
         "sha256": "7e675e1c16528202bc1b846dce1dcbe5924ab5473f73f85dfbb34b0beccde22d"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/strawberry_which.mp3",
+      "en": "assets/audio/en/produce/strawberry_which.mp3"
     }
   },
   {
@@ -375,7 +391,11 @@
       "tr": "assets/audio/tr/produce/grape_selected.mp3",
       "en": "assets/audio/en/produce/grape_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/grape_which.mp3",
+      "en": "assets/audio/en/produce/grape_which.mp3"
+    }
   },
   {
     "id": "produce.watermelon",
@@ -416,6 +436,10 @@
         "whiteOutlinePixels": 4,
         "sha256": "f5ecd207e1789eb2b2f511d5183afb0831ea733669632067c727b7699b4a8727"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/watermelon_which.mp3",
+      "en": "assets/audio/en/produce/watermelon_which.mp3"
     }
   },
   {
@@ -457,6 +481,10 @@
         "changes": "Complete pear; source background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
         "sha256": "76ab1a1f8e7a6f3e63f019c11becefeffebc86624e38ccc48d2466798c550665"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/pear_which.mp3",
+      "en": "assets/audio/en/produce/pear_which.mp3"
     }
   },
   {
@@ -479,7 +507,11 @@
       "tr": "assets/audio/tr/produce/cherry_selected.mp3",
       "en": "assets/audio/en/produce/cherry_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/cherry_which.mp3",
+      "en": "assets/audio/en/produce/cherry_which.mp3"
+    }
   },
   {
     "id": "produce.mandarin",
@@ -520,6 +552,10 @@
         "whiteOutlinePixels": 4,
         "sha256": "d72e92634ad3c04b736def16b1408cb27e8f33c5a8a4ec23a3c0aa5f54c2fedb"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/mandarin_which.mp3",
+      "en": "assets/audio/en/produce/mandarin_which.mp3"
     }
   },
   {
@@ -561,6 +597,10 @@
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "sha256": "5b583c91b401fbc2115ec98d18c14a66c2b8ddad397be69c2d799155202c507d"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/tomato_which.mp3",
+      "en": "assets/audio/en/produce/tomato_which.mp3"
     }
   },
   {
@@ -583,7 +623,11 @@
       "tr": "assets/audio/tr/produce/carrot_selected.mp3",
       "en": "assets/audio/en/produce/carrot_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/carrot_which.mp3",
+      "en": "assets/audio/en/produce/carrot_which.mp3"
+    }
   },
   {
     "id": "produce.potato",
@@ -604,7 +648,11 @@
       "tr": "assets/audio/tr/produce/potato_selected.mp3",
       "en": "assets/audio/en/produce/potato_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/potato_which.mp3",
+      "en": "assets/audio/en/produce/potato_which.mp3"
+    }
   },
   {
     "id": "produce.cucumber",
@@ -644,6 +692,10 @@
         "originalSha256": "c83dbca9ec042b704180e88ac56aee5c46ab52aaa286b0a884345c703c79c7ad",
         "sha256": "f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/cucumber_which.mp3",
+      "en": "assets/audio/en/produce/cucumber_which.mp3"
     }
   },
   {
@@ -705,6 +757,10 @@
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "sha256": "4260648a6b537663133040e3a1f3f5393ff089e06cc45bc620613271286316fd"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/lemon_which.mp3",
+      "en": "assets/audio/en/produce/lemon_which.mp3"
     }
   },
   {
@@ -745,6 +801,10 @@
         "changes": "Single complete photographed peach with attached leaf. Border-connected neutral-white studio background was masked; original photographed RGB detail retained. Alpha-bound crop with 8 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
         "sha256": "4dcca154cdcba0bd36729216bf38556482078f3c3e1405f473e8337fb424458e"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/peach_which.mp3",
+      "en": "assets/audio/en/produce/peach_which.mp3"
     }
   },
   {
@@ -786,6 +846,10 @@
         "changes": "Selected the complete whole plum from the left of the source photo; cut half excluded with crop (35, 210, 1785, 1830) in original-image pixels; border-connected background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
         "sha256": "bd6126f09422d7e986a78611bb1ae14ed469c5ee2ee32658c9e5c9280bc3904d"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/plum_which.mp3",
+      "en": "assets/audio/en/produce/plum_which.mp3"
     }
   },
   {
@@ -827,6 +891,10 @@
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
         "sha256": "c86790ca9bdb148c8b9a59b86485eecc4c0e45557dc4686dde99d4d192655318"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/melon_which.mp3",
+      "en": "assets/audio/en/produce/melon_which.mp3"
     }
   },
   {
@@ -868,6 +936,10 @@
         "changes": "Single complete photographed pomegranate and crown. A traced closed Catmull-Rom perimeter, refined by red-rind chroma masking on the body, excludes the neutral studio background and cast shadow while retaining crown detail. Original photographed RGB detail retained; alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
         "sha256": "c5fc4cfa293972f43ea1b5ae4ca64876ac82efe9cab70a8190534a25b3c0f357"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/pomegranate_which.mp3",
+      "en": "assets/audio/en/produce/pomegranate_which.mp3"
     }
   },
   {
@@ -909,6 +981,10 @@
         "changes": "Single whole pineapple on a white studio backdrop. Edge-seeded near-white, low-chroma backdrop pixels were flood-filled to transparency; a source-coordinate contour removed the floor/contact shadow while preserving the complete fruit base and crown leaf openings. Original photographed RGB detail retained without repainting or reconstruction. Aspect-preserving 910 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
         "sha256": "9178f4c95b0a93aeaf60fd165c3229bb94888356e27ef740be0b08bfeaaed6a4"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/pineapple_which.mp3",
+      "en": "assets/audio/en/produce/pineapple_which.mp3"
     }
   },
   {
@@ -950,6 +1026,10 @@
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
         "sha256": "b7f832a361d885aa81c2e0628c9ee5922b5e6b01ffa4ae65a347071215d8c71e"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/kiwi_which.mp3",
+      "en": "assets/audio/en/produce/kiwi_which.mp3"
     }
   },
   {
@@ -991,6 +1071,10 @@
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "sha256": "97052200920193273f60354c4760d09a96ab92b6fae7a67dd157e5fcca7fc2a9"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/pepper_which.mp3",
+      "en": "assets/audio/en/produce/pepper_which.mp3"
     }
   },
   {
@@ -1013,7 +1097,11 @@
       "tr": "assets/audio/tr/produce/eggplant_selected.mp3",
       "en": "assets/audio/en/produce/eggplant_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/eggplant_which.mp3",
+      "en": "assets/audio/en/produce/eggplant_which.mp3"
+    }
   },
   {
     "id": "produce.onion",
@@ -1052,6 +1140,10 @@
         "originalSha256": "78ece07db34835f12f21375fb5ba362036f74136dbe271d349d684ddace31009",
         "sha256": "bf12d25945ba06e541bd63b696a07016df97fc827a4c84d934b8ac1f2e3cd1e6"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/onion_which.mp3",
+      "en": "assets/audio/en/produce/onion_which.mp3"
     }
   },
   {
@@ -1074,7 +1166,11 @@
       "tr": "assets/audio/tr/produce/cabbage_selected.mp3",
       "en": "assets/audio/en/produce/cabbage_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/cabbage_which.mp3",
+      "en": "assets/audio/en/produce/cabbage_which.mp3"
+    }
   },
   {
     "id": "produce.lettuce",
@@ -1096,7 +1192,11 @@
       "tr": "assets/audio/tr/produce/lettuce_selected.mp3",
       "en": "assets/audio/en/produce/lettuce_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/lettuce_which.mp3",
+      "en": "assets/audio/en/produce/lettuce_which.mp3"
+    }
   },
   {
     "id": "produce.zucchini",
@@ -1137,6 +1237,10 @@
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "sha256": "d71679c2be5bd0f75c27aa3eea53397b24988056df34b015ff3914ea08f3b24f"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/zucchini_which.mp3",
+      "en": "assets/audio/en/produce/zucchini_which.mp3"
     }
   },
   {
@@ -1159,7 +1263,11 @@
       "tr": "assets/audio/tr/produce/pea_selected.mp3",
       "en": "assets/audio/en/produce/pea_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/pea_which.mp3",
+      "en": "assets/audio/en/produce/pea_which.mp3"
+    }
   },
   {
     "id": "produce.green_bean",
@@ -1220,6 +1328,10 @@
         "changes": "Single whole photographed apricot on a white studio background. A smooth manually traced source-coordinate mask removes the background and lower studio/floor fringe while retaining the pale fruit rim and original photographic RGB detail. Aspect-preserving LANCZOS resize to an 870 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white outer silhouette. No generative edits. This adapted PNG is shared under CC BY-SA 3.0; attribution is Benjamint444, Wikimedia Commons, with source link, license link, and change notice.",
         "sha256": "cf1ae7a349a422598302457543160db485203a70f2a89f3777cf86dcc33913ad"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/apricot_which.mp3",
+      "en": "assets/audio/en/produce/apricot_which.mp3"
     }
   },
   {
@@ -1281,6 +1393,10 @@
         "changes": "Single complete photographed quince. Border-connected neutral studio backdrop and cast shadow were masked; original photographed RGB detail retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
         "sha256": "8c122b336cec59ac853f65955a9c7e507467d4c4b578a1621888b0dc29bbf0fe"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/quince_which.mp3",
+      "en": "assets/audio/en/produce/quince_which.mp3"
     }
   },
   {
@@ -1323,7 +1439,11 @@
       "tr": "assets/audio/tr/produce/blackberry_selected.mp3",
       "en": "assets/audio/en/produce/blackberry_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/blackberry_which.mp3",
+      "en": "assets/audio/en/produce/blackberry_which.mp3"
+    }
   },
   {
     "id": "produce.raspberry",
@@ -1364,6 +1484,10 @@
         "changes": "Single whole photographed raspberry. Classical OpenCV GrabCut used a loose traced probable-foreground polygon, definite foreground seeds restricted to the red berry interior, and reviewed definite-background seeds in the backdrop wedges (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; transparent exterior, alpha-bound crop, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction. Attribution: Ivar Leidus, Wikimedia Commons, source link and CC BY-SA 4.0 license link; changes are the mask, crop, resize, and outline. This adapted PNG is shared under CC BY-SA 4.0.",
         "sha256": "80552a2cc6e7ac868c02f222dd9df59a4c9f6382078e69c115a510a639b15564"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/raspberry_which.mp3",
+      "en": "assets/audio/en/produce/raspberry_which.mp3"
     }
   },
   {
@@ -1424,6 +1548,10 @@
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
         "sha256": "0bfa7f42ae5efdb6651c1b90cfcf0c1e2c59fd465a3c689b056f1aa5f9aee1b1"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/avocado_which.mp3",
+      "en": "assets/audio/en/produce/avocado_which.mp3"
     }
   },
   {
@@ -1464,6 +1592,10 @@
         "changes": "Single complete photographed coconut. A dense hand-traced shell silhouette masked the rail and outdoor background while preserving the original photographed RGB detail and natural surface texture. Alpha-bound crop with 16 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer contour. No generative edits. Pexels License permits free use and modifications, including use in an app; it prohibits redistribution as a stock photo and sale of unaltered copies.",
         "sha256": "5e1bac5b73b58fad003d30a249788af4eceab047b4ce952f6c1fa5e0c63cc1eb"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/coconut_which.mp3",
+      "en": "assets/audio/en/produce/coconut_which.mp3"
     }
   },
   {
@@ -1504,6 +1636,10 @@
         "changes": "The complete whole grapefruit was cropped from a source photo also showing a separate cut half. Border-connected near-neutral white and pale cream studio background/shadow were masked; the rind’s chromatic photographed RGB detail was retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; public-domain source dedication retained.",
         "sha256": "b8ed19cd92802e4495669f16b9520c297ba5532233ef0e7a316b8afb8ed2241f"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/grapefruit_which.mp3",
+      "en": "assets/audio/en/produce/grapefruit_which.mp3"
     }
   },
   {
@@ -1525,7 +1661,11 @@
       "tr": "assets/audio/tr/produce/chestnut_selected.mp3",
       "en": "assets/audio/en/produce/chestnut_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/chestnut_which.mp3",
+      "en": "assets/audio/en/produce/chestnut_which.mp3"
+    }
   },
   {
     "id": "produce.cauliflower",
@@ -1546,7 +1686,11 @@
       "tr": "assets/audio/tr/produce/cauliflower_selected.mp3",
       "en": "assets/audio/en/produce/cauliflower_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/cauliflower_which.mp3",
+      "en": "assets/audio/en/produce/cauliflower_which.mp3"
+    }
   },
   {
     "id": "produce.broccoli",
@@ -1568,7 +1712,11 @@
       "tr": "assets/audio/tr/produce/broccoli_selected.mp3",
       "en": "assets/audio/en/produce/broccoli_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/broccoli_which.mp3",
+      "en": "assets/audio/en/produce/broccoli_which.mp3"
+    }
   },
   {
     "id": "produce.spinach",
@@ -1590,7 +1738,11 @@
       "tr": "assets/audio/tr/produce/spinach_selected.mp3",
       "en": "assets/audio/en/produce/spinach_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/spinach_which.mp3",
+      "en": "assets/audio/en/produce/spinach_which.mp3"
+    }
   },
   {
     "id": "produce.radish",
@@ -1612,7 +1764,11 @@
       "tr": "assets/audio/tr/produce/radish_selected.mp3",
       "en": "assets/audio/en/produce/radish_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/radish_which.mp3",
+      "en": "assets/audio/en/produce/radish_which.mp3"
+    }
   },
   {
     "id": "produce.beetroot",
@@ -1711,6 +1867,10 @@
         "changes": "Decoded RGBA identity checked after lossless96dpi metadata normalization. Near-white neutral background alpha-keyed (minimum RGB249, channel difference<=8), including enclosed leaf gaps; photographed white stem retained. Largest silhouette retained, proportional912px resize, centered1024x1024 RGBA and4px white silhouette outline. Foreground photographic RGB retained without repainting or generative edits.",
         "sha256": "7ee35e08b10bf26a7cec234b8476c5748b08dc885a463852f0a0bc131f664d5f"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/leek_which.mp3",
+      "en": "assets/audio/en/produce/leek_which.mp3"
     }
   },
   {
@@ -1733,7 +1893,11 @@
       "tr": "assets/audio/tr/produce/mint_selected.mp3",
       "en": "assets/audio/en/produce/mint_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/mint_which.mp3",
+      "en": "assets/audio/en/produce/mint_which.mp3"
+    }
   },
   {
     "id": "produce.artichoke",
@@ -1774,6 +1938,10 @@
         "changes": "Single complete photographed artichoke with crown, side leaves, and cut stem retained. Classical OpenCV GrabCut refined a loose polygon from the existing hand-traced silhouette using protected interior foreground seeds and known green-background seeds (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; largest connected object alpha-cropped, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction.",
         "sha256": "5e033925045f0f4662202dfffea424913f9dd9050a23eed17e49b59cd771141c"
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/produce/artichoke_which.mp3",
+      "en": "assets/audio/en/produce/artichoke_which.mp3"
     }
   }
 ]

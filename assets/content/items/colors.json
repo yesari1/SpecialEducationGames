@@ -112,6 +112,10 @@
           "scope": "Selected voice demonstration; pronunciation not user-approved"
         }
       }
+    },
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/red_which.mp3",
+      "en": "assets/audio/en/colors/red_which.mp3"
     }
   },
   {
@@ -129,7 +133,11 @@
       "tr": "assets/audio/tr/colors/blue_selected.mp3",
       "en": "assets/audio/en/colors/blue_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/blue_which.mp3",
+      "en": "assets/audio/en/colors/blue_which.mp3"
+    }
   },
   {
     "id": "colors.yellow",
@@ -146,7 +154,11 @@
       "tr": "assets/audio/tr/colors/yellow_selected.mp3",
       "en": "assets/audio/en/colors/yellow_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/yellow_which.mp3",
+      "en": "assets/audio/en/colors/yellow_which.mp3"
+    }
   },
   {
     "id": "colors.green",
@@ -163,7 +175,11 @@
       "tr": "assets/audio/tr/colors/green_selected.mp3",
       "en": "assets/audio/en/colors/green_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/green_which.mp3",
+      "en": "assets/audio/en/colors/green_which.mp3"
+    }
   },
   {
     "id": "colors.orange",
@@ -180,7 +196,11 @@
       "tr": "assets/audio/tr/colors/orange_selected.mp3",
       "en": "assets/audio/en/colors/orange_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/orange_which.mp3",
+      "en": "assets/audio/en/colors/orange_which.mp3"
+    }
   },
   {
     "id": "colors.purple",
@@ -197,7 +217,11 @@
       "tr": "assets/audio/tr/colors/purple_selected.mp3",
       "en": "assets/audio/en/colors/purple_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/purple_which.mp3",
+      "en": "assets/audio/en/colors/purple_which.mp3"
+    }
   },
   {
     "id": "colors.pink",
@@ -214,7 +238,11 @@
       "tr": "assets/audio/tr/colors/pink_selected.mp3",
       "en": "assets/audio/en/colors/pink_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/pink_which.mp3",
+      "en": "assets/audio/en/colors/pink_which.mp3"
+    }
   },
   {
     "id": "colors.brown",
@@ -231,7 +259,11 @@
       "tr": "assets/audio/tr/colors/brown_selected.mp3",
       "en": "assets/audio/en/colors/brown_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/brown_which.mp3",
+      "en": "assets/audio/en/colors/brown_which.mp3"
+    }
   },
   {
     "id": "colors.black",
@@ -248,7 +280,11 @@
       "tr": "assets/audio/tr/colors/black_selected.mp3",
       "en": "assets/audio/en/colors/black_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/black_which.mp3",
+      "en": "assets/audio/en/colors/black_which.mp3"
+    }
   },
   {
     "id": "colors.white",
@@ -265,7 +301,11 @@
       "tr": "assets/audio/tr/colors/white_selected.mp3",
       "en": "assets/audio/en/colors/white_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/white_which.mp3",
+      "en": "assets/audio/en/colors/white_which.mp3"
+    }
   },
   {
     "id": "colors.gray",
@@ -282,7 +322,11 @@
       "tr": "assets/audio/tr/colors/gray_selected.mp3",
       "en": "assets/audio/en/colors/gray_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/gray_which.mp3",
+      "en": "assets/audio/en/colors/gray_which.mp3"
+    }
   },
   {
     "id": "colors.navy",
@@ -299,7 +343,11 @@
       "tr": "assets/audio/tr/colors/navy_selected.mp3",
       "en": "assets/audio/en/colors/navy_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/navy_which.mp3",
+      "en": "assets/audio/en/colors/navy_which.mp3"
+    }
   },
   {
     "id": "colors.light_blue",
@@ -316,7 +364,11 @@
       "tr": "assets/audio/tr/colors/light_blue_selected.mp3",
       "en": "assets/audio/en/colors/light_blue_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/light_blue_which.mp3",
+      "en": "assets/audio/en/colors/light_blue_which.mp3"
+    }
   },
   {
     "id": "colors.turquoise",
@@ -333,7 +385,11 @@
       "tr": "assets/audio/tr/colors/turquoise_selected.mp3",
       "en": "assets/audio/en/colors/turquoise_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/turquoise_which.mp3",
+      "en": "assets/audio/en/colors/turquoise_which.mp3"
+    }
   },
   {
     "id": "colors.gold",
@@ -350,7 +406,11 @@
       "tr": "assets/audio/tr/colors/gold_selected.mp3",
       "en": "assets/audio/en/colors/gold_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/gold_which.mp3",
+      "en": "assets/audio/en/colors/gold_which.mp3"
+    }
   },
   {
     "id": "colors.silver",
@@ -367,6 +427,10 @@
       "tr": "assets/audio/tr/colors/silver_selected.mp3",
       "en": "assets/audio/en/colors/silver_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/colors/silver_which.mp3",
+      "en": "assets/audio/en/colors/silver_which.mp3"
+    }
   }
 ]

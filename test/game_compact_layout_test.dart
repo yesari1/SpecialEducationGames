@@ -169,7 +169,7 @@ void main() {
             );
           }
           if (round.spec.sequence.isNotEmpty) {
-            final sequenceFinder = find.text(round.spec.sequence.join('   '));
+            final sequenceFinder = find.byType(SequenceRow);
             expect(sequenceFinder, findsOneWidget, reason: tag);
             _expectInBounds(
               tester,
