@@ -67,6 +67,44 @@ service cloud.firestore {
         && request.resource.data.startedAt == request.time;
       allow update, delete: if false;
     }
+    // Set by an admin on the admin page: a package given to the account
+    // (premium until a date, or for good) and a test-account mark that keeps
+    // the account out of the statistics. The app only reads its own.
+    match /grants/{uid} {
+      allow get: if ownerOrAdmin(uid);
+      allow list, delete: if admin();
+      allow create, update: if admin()
+        && exact(request.resource.data, ['plan', 'until', 'test', 'updatedAt'])
+        && request.resource.data.plan in ['none', 'premium']
+        && (request.resource.data.until == null || request.resource.data.until is timestamp)
+        && request.resource.data.test is bool
+        && request.resource.data.updatedAt == request.time;
+    }
+    // Anonymous onboarding funnel: one document per install under a random
+    // app-generated ID (no account, no device identifier, no child data).
+    // Each step is stamped once with the server time and never changed.
+    function step(name) {
+      let had = resource != null && name in resource.data;
+      return (had && name in request.resource.data && request.resource.data[name] == resource.data[name])
+        || (!had && (!(name in request.resource.data) || request.resource.data[name] == request.time));
+    }
+    function funnelDoc() {
+      let d = request.resource.data;
+      return d.keys().hasAll(['installedAt', 'platform'])
+        && d.keys().hasOnly(['installedAt', 'onboardingAt', 'signedInAt', 'paywallAt', 'trialAt', 'purchasedAt', 'platform', 'appVersion', 'locale'])
+        && d.platform in ['android', 'ios']
+        && (!('appVersion' in d) || (d.appVersion is string && d.appVersion.size() <= 32))
+        && (!('locale' in d) || d.locale in ['tr', 'en'])
+        && step('installedAt') && step('onboardingAt') && step('signedInAt')
+        && step('paywallAt') && step('trialAt') && step('purchasedAt');
+    }
+    match /funnel/{installId} {
+      allow list: if admin();
+      allow get: if false;
+      allow create: if safeId(installId) && installId.size() >= 16 && funnelDoc();
+      allow update: if funnelDoc();
+      allow delete: if admin();
+    }
     match /admins/{uid} {
       allow get: if owner(uid);
       allow list, write: if false;
@@ -75,8 +113,11 @@ service cloud.firestore {
       allow read, delete: if ownerOrAdmin(uid);
       allow create, update: if canWriteFamily(uid)
         && request.resource.data.keys().hasAll(['createdAt', 'locale', 'updatedAt'])
-        && request.resource.data.keys().hasOnly(['createdAt', 'locale', 'updatedAt', 'email'])
+        && request.resource.data.keys().hasOnly(['createdAt', 'locale', 'updatedAt', 'email', 'plan', 'lastSeenAt', 'appVersion'])
         && (!('email' in request.resource.data) || request.resource.data.email == request.auth.token.email)
+        && (!('plan' in request.resource.data) || request.resource.data.plan in ['free', 'trial', 'monthly', 'yearly', 'lifetime', 'granted'])
+        && (!('lastSeenAt' in request.resource.data) || stamp(request.resource.data.lastSeenAt))
+        && (!('appVersion' in request.resource.data) || (request.resource.data.appVersion is string && request.resource.data.appVersion.size() <= 32))
         && request.resource.data.locale in ['tr', 'en']
         && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
       match /profiles/{profileId} {

@@ -207,3 +207,40 @@ test('family document may carry only the signed-in e-mail',async () => {
   await assertSucceeds(setDoc(doc(alice,'families/alice'),{...family,email:'alice@example.com'}));
   await assertFails(setDoc(doc(alice,'families/alice'),{...family,email:'bob@example.com'}));
 });
+
+test('grants: only admin writes a package/test mark; owner reads own',async () => {
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  const grant={plan:'premium',until:null,test:true,updatedAt:serverTimestamp()};
+  await assertFails(setDoc(doc(db('alice'),'grants/alice'),grant));
+  await assertSucceeds(setDoc(doc(db('admin'),'grants/alice'),grant));
+  await assertSucceeds(setDoc(doc(db('admin'),'grants/alice'),{...grant,until:Timestamp.fromMillis(Date.now()+864e5)}));
+  await assertFails(setDoc(doc(db('admin'),'grants/alice'),{...grant,plan:'gold'}));
+  await assertFails(setDoc(doc(db('admin'),'grants/alice'),{...grant,extra:1}));
+  await assertSucceeds(getDoc(doc(db('alice'),'grants/alice')));
+  await assertFails(getDoc(doc(db('bob'),'grants/alice')));
+  await assertFails(getDocs(collection(db('alice'),'grants')));
+  await assertSucceeds(getDocs(collection(db('admin'),'grants')));
+  await assertSucceeds(deleteDoc(doc(db('admin'),'grants/alice')));
+});
+
+test('family document accepts plan, lastSeenAt and appVersion',async () => {
+  const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{...family,plan:'trial',lastSeenAt:stamp(),appVersion:'2.0.21+35'}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,plan:'gold'}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,lastSeenAt:'today'}));
+});
+
+test('funnel: anonymous install doc, each step stamped once, admin-only listing',async () => {
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  const id='a1b2c3d4-e5f6-4711-8899-aabbccddeeff';
+  const anon=db(null);
+  await assertFails(setDoc(doc(anon,'funnel/short'),{installedAt:serverTimestamp(),platform:'android'}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{installedAt:stamp(),platform:'android'}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{installedAt:serverTimestamp(),platform:'android',appVersion:'2.0.21',locale:'tr'}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{onboardingAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{onboardingAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{uid:'alice'},{merge:true}));
+  await assertFails(getDoc(doc(anon,`funnel/${id}`)));
+  await assertFails(getDocs(collection(db('alice'),'funnel')));
+  await assertSucceeds(getDocs(collection(db('admin'),'funnel')));
+});
