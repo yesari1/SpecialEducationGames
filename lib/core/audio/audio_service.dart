@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'package:just_audio/just_audio.dart';
 
@@ -22,6 +23,13 @@ class _JustAudioBackend implements AudioBackend {
   Future<void> stop() => _player?.stop() ?? Future.value();
   @override
   Future<void> dispose() => _player?.dispose() ?? Future.value();
+}
+
+/// The soft bubble "tap" for buttons and cards (Yunus, 22 October 2026).
+/// It plays on its own small player so it never cuts off speech.
+abstract final class UiSound {
+  static AudioService? service;
+  static Future<void> tap() => service?.tap() ?? Future.value();
 }
 
 class AudioService {
@@ -133,8 +141,30 @@ class AudioService {
     await _safeStop();
   }
 
+  static const tapAsset = 'assets/sfx/ui/tap_bubble.wav';
+  AudioPlayer? _tapPlayer;
+  bool _tapReady = false;
+
+  /// A short UI tap; silent when sound or effects are off.
+  Future<void> tap() async {
+    if (_disposed || !enabled || effectVolume == 0) return;
+    try {
+      final player = _tapPlayer ??= AudioPlayer();
+      if (!_tapReady) {
+        await player.setAsset(tapAsset).timeout(loadTimeout);
+        _tapReady = true;
+      }
+      await player.setVolume(effectVolume / 100 * .7);
+      await player.seek(Duration.zero);
+      unawaited(player.play());
+    } catch (_) {
+      // Native audio may be unavailable; taps are optional.
+    }
+  }
+
   Future<void> dispose() async {
     _disposed = true;
+    unawaited(_tapPlayer?.dispose());
     ++_generation;
     try {
       await _backend.dispose().timeout(stopTimeout);

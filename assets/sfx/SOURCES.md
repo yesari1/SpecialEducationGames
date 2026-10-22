@@ -62,3 +62,8 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License link: https://creativecommons.org/publicdomain/zero/1.0/
 - App asset: assets/sfx/ui/applause.mp3
 - Changes: Seconds 13.5-19.0 selected (R32, longer applause; R30 used 15.0-17.8); 0.3 s fade-in, 1.2 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3.
+
+## Bubble tap (app-made)
+
+- Made for this app on 22 October 2026: synthesized in Python (soft rising sine 260-560 Hz, 100 ms, gentle envelope and low-pass), no recording or third-party material. Chosen by Yunus from three samples (artifacts/tap-sounds/).
+- App asset: assets/sfx/ui/tap_bubble.wav

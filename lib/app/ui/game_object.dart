@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import '../theme/tokens.dart';
 
 /// Soft elliptical shadow that makes a cutout look like it stands on the scene.
@@ -145,7 +146,12 @@ class _PressableObjectState extends State<PressableObject>
     onTapDown: widget.onTap == null ? null : (_) => _down(),
     onTapUp: widget.onTap == null ? null : (_) => _up(),
     onTapCancel: widget.onTap == null ? null : _up,
-    onTap: widget.onTap,
+    onTap: widget.onTap == null
+        ? null
+        : () {
+            UiSound.tap();
+            widget.onTap!();
+          },
     child: AnimatedBuilder(
       animation: press,
       child: widget.child,

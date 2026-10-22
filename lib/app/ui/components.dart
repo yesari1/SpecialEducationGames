@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import '../theme/tokens.dart';
 import '../../core/content/content_repository.dart';
 import 'game_object.dart';
@@ -44,7 +45,12 @@ class SegButton extends StatelessWidget {
     child: ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 64),
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: onPressed == null
+            ? null
+            : () {
+                UiSound.tap();
+                onPressed!();
+              },
         style: ElevatedButton.styleFrom(
           elevation: 0,
           shadowColor: Colors.transparent,
@@ -116,7 +122,10 @@ class PillButton extends StatelessWidget {
       shape: const StadiumBorder(side: BorderSide(color: SegColors.line)),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: onPressed,
+        onTap: () {
+          UiSound.tap();
+          onPressed();
+        },
         child: Container(
           padding: const EdgeInsets.all(SegSpace.s4),
           constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
@@ -825,7 +834,12 @@ class PillToggle<T> extends StatelessWidget {
               excludeSemantics: true,
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
-                onTap: onChanged == null ? null : () => onChanged!(value),
+                onTap: onChanged == null
+                    ? null
+                    : () {
+                        UiSound.tap();
+                        onChanged!(value);
+                      },
                 child: AnimatedContainer(
                   duration: reduced ? Duration.zero : SegMotion.appear,
                   curve: Curves.easeOutCubic,
