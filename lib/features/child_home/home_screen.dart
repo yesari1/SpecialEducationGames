@@ -260,7 +260,10 @@ class _ThemeScreenState extends State<ThemeScreen> {
                       ),
                     ),
                     const SizedBox(width: SegSpace.s3),
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: MediaQuery.sizeOf(context).width * .55,
+                      ),
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         alignment: Alignment.centerRight,
