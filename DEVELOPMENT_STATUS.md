@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R46 (Pixabay fotoğrafları, tam ekran yol) — sürüm 2.0.15 (29), Internal testing'de
+
+- Bugünün Yolu: harita ekranın tamamında, üstteki sekmelerin arkasında (o sekmede selam metni yok). Durak rozetleri artık sabit boyda (eskiden resme göre küçülüyordu).
+- Fotoğraflar Pixabay API ile (anahtar `pixabay.key`, git dışı): mandalina 1944930, çilek 1238295, karpuz dilimi 943753, makarna penne yığını 2197831 (Yunus A'yı seçti). rembg (U2Net/ISNet) ve `tools/adapt_cutout_photo.py` kullanıldı. Kayıtlar REAL_PHOTOS.md, manifest ve item JSON'larında (Pixabay Content License). Adaylar, eskiler ve önizlemeler `artifacts/photo-replacements-r46/`. 70 fotoğrafın ölçüsü aynı standartta (1024 kare, 912 px nesne, 4 px beyaz kenarlık). Yayvan/yapraklı ürünler daha toplu adaylarla değiştirildi.
+- Görüntüler proje konuşmasına ek olarak ulaşmıyor; Drive linkiyle gönderiliyor.
+- Doğrulama: foto/kredi testleri geçti (tam seri koşu R45 kod değişikliklerinden sonra 277/277). `tools/build_release.sh` geçti (Pixel_9a yeniden açıldı). vc29 Internal testing'e yüklendi.
+
 ## 22 Ekim 2026 — R45 (harita yol, sepete uçuş, yıldızcık, fotoğraflar) — sürüm 2.0.11 (25)
 
 - Bugünün Yolu: ChatGPT kil stili manzara (`assets/illustrations/path/map_background.jpg`, MANIFEST) üzerinde kıvrılan kum yol, numaralı yuvarlak duraklar, sonda kupa. Sıradaki durak turuncu halkalı, "Oyna" yazıyor ve 6 kez hafifçe zıplıyor; bitenler altın halka ve tik alıyor, yürünen yol sarıya dönüyor.
