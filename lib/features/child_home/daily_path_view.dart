@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -265,7 +266,10 @@ class _StopState extends State<_Stop> with SingleTickerProviderStateMixin {
           '${widget.done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
       excludeSemantics: true,
       child: GestureDetector(
-        onTap: () => context.go('/game/${parts[0]}/${parts[1]}/easy'),
+        onTap: () {
+          UiSound.gameOpen();
+          context.go('/game/${parts[0]}/${parts[1]}/easy');
+        },
         child: AnimatedBuilder(
           animation: _bob,
           builder: (context, child) => Transform.translate(

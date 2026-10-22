@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../app/app_state.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import '../../app/theme/tokens.dart';
 import '../../l10n/scoped_localizations.dart';
 
@@ -50,6 +51,7 @@ class _GateState extends State<_Gate> {
           ? widget.state.verifyParentPin(answer)
           : int.tryParse(answer) == a * b) {
         widget.state.unlockFamily();
+        UiSound.unlock();
         Navigator.pop(context, true);
       } else {
         setState(() {

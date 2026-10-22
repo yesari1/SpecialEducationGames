@@ -67,3 +67,8 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 
 - Made for this app on 22 October 2026: synthesized in Python (soft rising sine 260-560 Hz, 100 ms, gentle envelope and low-pass), no recording or third-party material. Chosen by Yunus from three samples (artifacts/tap-sounds/).
 - App asset: assets/sfx/ui/tap_bubble.wav
+
+## Game open, basket drop, parent gate (app-made)
+
+- Made for this app on 22 October 2026: synthesized in Python (bell partials and filtered noise), no recording or third-party material. Chosen by Yunus from three samples each (artifacts/ui-sounds-2/: oyun-acilis-c, sepet-pof-a, kilit-acildi-b).
+- App assets: assets/sfx/ui/game_open.wav, assets/sfx/ui/basket_drop.wav, assets/sfx/ui/unlock.wav

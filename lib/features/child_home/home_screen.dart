@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -340,6 +341,7 @@ class _ThemeScreenState extends State<ThemeScreen> {
                             ),
                             modeIcon: g.id == 'G01' ? null : gameIcon(g.id),
                             locked: locked || contentUnavailable,
+                            tapSound: false,
                             onTap: () {
                               if (contentUnavailable) {
                                 showNotice(
@@ -350,6 +352,7 @@ class _ThemeScreenState extends State<ThemeScreen> {
                                 return;
                               }
                               if (locked) {
+                                UiSound.tap();
                                 showLockedGameNotice(
                                   context,
                                   title: l10n.lockedGameTitle,
@@ -357,6 +360,7 @@ class _ThemeScreenState extends State<ThemeScreen> {
                                   ok: l10n.lockedGameOk,
                                 );
                               } else {
+                                UiSound.gameOpen();
                                 context.go(
                                   '/game/${t.id}/${g.id}/${tier.name}',
                                 );

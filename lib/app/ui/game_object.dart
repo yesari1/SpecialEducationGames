@@ -97,6 +97,9 @@ class PressableObject extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
   final bool reducedMotion;
+
+  /// Plays the bubble tap; off where a card makes its own sound.
+  final bool tapSound;
   final Alignment pivot;
 
   /// 1 = full squash for small objects; lower for large cards.
@@ -106,6 +109,7 @@ class PressableObject extends StatefulWidget {
     required this.child,
     this.onTap,
     this.reducedMotion = false,
+    this.tapSound = true,
     this.pivot = Alignment.bottomCenter,
     this.depth = 1,
   });
@@ -149,7 +153,7 @@ class _PressableObjectState extends State<PressableObject>
     onTap: widget.onTap == null
         ? null
         : () {
-            UiSound.tap();
+            if (widget.tapSound) UiSound.tap();
             widget.onTap!();
           },
     child: AnimatedBuilder(

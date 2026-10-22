@@ -568,6 +568,9 @@ class ThemeGameCard extends StatelessWidget {
   /// The visual is already normalized (illustrated theme covers): draw it at
   /// full size instead of the per-theme photo scale.
   final bool normalizedVisual;
+
+  /// False for cards that play their own sound (opening a game).
+  final bool tapSound;
   const ThemeGameCard({
     super.key,
     required this.theme,
@@ -579,6 +582,7 @@ class ThemeGameCard extends StatelessWidget {
     this.locked = false,
     this.badgeText,
     this.normalizedVisual = false,
+    this.tapSound = true,
   });
   Color get accent => switch (theme.id) {
     'animals' => SegColors.turquoise,
@@ -745,6 +749,7 @@ class ThemeGameCard extends StatelessWidget {
       excludeSemantics: true,
       child: PressableObject(
         onTap: onTap,
+        tapSound: tapSound,
         pivot: Alignment.center,
         depth: .35,
         // Locked: the whole card (picture, accents, shadow) is black and
@@ -1117,7 +1122,9 @@ class _HopInState extends State<HopIn> with SingleTickerProviderStateMixin {
           _startScale = (origin.shortestSide / math.max(1.0, here.shortestSide))
               .clamp(.4, 2.5);
         }
-        _controller.forward();
+        _controller.forward().then((_) {
+          if (mounted && widget.fromOrigin) UiSound.basketDrop();
+        });
       }
       setState(() => _measured = true);
     });

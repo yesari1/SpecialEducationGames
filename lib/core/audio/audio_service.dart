@@ -29,7 +29,22 @@ class _JustAudioBackend implements AudioBackend {
 /// It plays on its own small player so it never cuts off speech.
 abstract final class UiSound {
   static AudioService? service;
-  static Future<void> tap() => service?.tap() ?? Future.value();
+
+  /// Buttons, tabs and cards (bubble).
+  static Future<void> tap() =>
+      service?.effect(AudioService.tapAsset) ?? Future.value();
+
+  /// A game card opens a game (three-note arpeggio).
+  static Future<void> gameOpen() =>
+      service?.effect('assets/sfx/ui/game_open.wav') ?? Future.value();
+
+  /// A sorted item lands in its basket (soft "pof").
+  static Future<void> basketDrop() =>
+      service?.effect('assets/sfx/ui/basket_drop.wav') ?? Future.value();
+
+  /// The parent gate opens (click and ding).
+  static Future<void> unlock() =>
+      service?.effect('assets/sfx/ui/unlock.wav') ?? Future.value();
 }
 
 class AudioService {
@@ -142,29 +157,34 @@ class AudioService {
   }
 
   static const tapAsset = 'assets/sfx/ui/tap_bubble.wav';
-  AudioPlayer? _tapPlayer;
-  bool _tapReady = false;
+  final Map<String, AudioPlayer> _effectPlayers = {};
 
-  /// A short UI tap; silent when sound or effects are off.
-  Future<void> tap() async {
+  /// A short UI sound on its own player (never cuts off speech); silent
+  /// when sound or effects are off.
+  Future<void> effect(String asset) async {
     if (_disposed || !enabled || effectVolume == 0) return;
     try {
-      final player = _tapPlayer ??= AudioPlayer();
-      if (!_tapReady) {
-        await player.setAsset(tapAsset).timeout(loadTimeout);
-        _tapReady = true;
+      var player = _effectPlayers[asset];
+      if (player == null) {
+        player = AudioPlayer();
+        await player.setAsset(asset).timeout(loadTimeout);
+        _effectPlayers[asset] = player;
       }
       await player.setVolume(effectVolume / 100 * .7);
       await player.seek(Duration.zero);
       unawaited(player.play());
     } catch (_) {
-      // Native audio may be unavailable; taps are optional.
+      // Native audio may be unavailable; UI sounds are optional.
     }
   }
 
+  Future<void> tap() => effect(tapAsset);
+
   Future<void> dispose() async {
     _disposed = true;
-    unawaited(_tapPlayer?.dispose());
+    for (final player in _effectPlayers.values) {
+      unawaited(player.dispose());
+    }
     ++_generation;
     try {
       await _backend.dispose().timeout(stopTimeout);
