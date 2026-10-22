@@ -366,12 +366,12 @@ Attempt folder: `artifacts/food-photos-attempt-01/`. Local technical review only
 ## food.pasta
 
 File: `assets/images/food/pasta_real.png`
-Photo author: congerdesign (Pixabay)
-Source: https://pixabay.com/photos/fusilli-pasta-food-noodles-6001463/
+Photo author: Miroslavik (Pixabay)
+Source: https://pixabay.com/photos/pasta-food-paste-nutrition-2197831/
 Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
-Original: `artifacts/photo-replacements-r46/pasta/attempt-6001463/original.jpg` (SHA-256 `bbab95fb412a14724ebfec12a671a2c3038268bde17381751f9ccbb7acc12c1b`).
-Adapted PNG SHA-256: `36d751cd68fe832ef7f0f25b9b4818ec5d8aa78ae99d83ab9846588cdadc2060`.
-Changes: One black bowl filled with cooked fusilli pasta. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
+Original: `artifacts/photo-replacements-r46/pasta/attempt-2197831-b/original.jpg` (SHA-256 `9e4bdf73bd59675d75b49396817489bdbf7a7a5f939c1eb5c687b2493115c6dc`).
+Adapted PNG SHA-256: `c5bdd647c0e95fad7361f02d51adce31507d7a84ecc6fd5ae6e991435246173d`.
+Changes: One heap of dry penne pasta on its own, no plate. Foreground alpha with rembg ISNet, near-white gaps between pieces cleared and tiny islands removed (original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.
 
 ## food.pizza
 

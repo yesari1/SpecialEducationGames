@@ -293,19 +293,19 @@
       "assets/images/food/pasta_real.png": {
         "id": "food.pasta",
         "path": "assets/images/food/pasta_real.png",
-        "author": "congerdesign (Pixabay)",
-        "source": "https://pixabay.com/photos/fusilli-pasta-food-noodles-6001463/",
-        "original": "artifacts/photo-replacements-r46/pasta/attempt-6001463/original.jpg",
-        "originalSha256": "bbab95fb412a14724ebfec12a671a2c3038268bde17381751f9ccbb7acc12c1b",
+        "author": "Miroslavik (Pixabay)",
+        "source": "https://pixabay.com/photos/pasta-food-paste-nutrition-2197831/",
+        "original": "artifacts/photo-replacements-r46/pasta/attempt-2197831-b/original.jpg",
+        "originalSha256": "9e4bdf73bd59675d75b49396817489bdbf7a7a5f939c1eb5c687b2493115c6dc",
         "license": "Pixabay Content License",
         "licenseUrl": "https://pixabay.com/service/license-summary/",
         "adaptationLicense": "Pixabay Content License",
-        "changes": "One black bowl filled with cooked fusilli pasta. Foreground alpha with rembg U2Net (largest region kept, holes filled, original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
+        "changes": "One heap of dry penne pasta on its own, no plate. Foreground alpha with rembg ISNet, near-white gaps between pieces cleared and tiny islands removed (original RGB retained); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing.",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-22",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "36d751cd68fe832ef7f0f25b9b4818ec5d8aa78ae99d83ab9846588cdadc2060"
+        "sha256": "c5bdd647c0e95fad7361f02d51adce31507d7a84ecc6fd5ae6e991435246173d"
       }
     }
   },
