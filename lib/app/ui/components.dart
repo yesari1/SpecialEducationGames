@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
@@ -1294,13 +1295,14 @@ Future<void> showLockedGameNotice(
 }
 
 String? _visibleNotice;
+OverlayEntry? _noticeEntry;
 
 /// Shows a short message once: tapping again while the same message is on
 /// screen does nothing, and a different message replaces it instead of
 /// queueing behind it.
 ///
-/// It floats as a small rounded white card with a coloured icon, centred
-/// near the bottom, instead of a full-width dark bar.
+/// A small rounded white toast with a coloured icon at the top of the
+/// screen (never over the buttons at the bottom), without a shadow.
 void showNotice(
   BuildContext context,
   String message, {
@@ -1308,68 +1310,137 @@ void showNotice(
   IconData icon = Icons.info_rounded,
   Color color = SegColors.primary,
 }) {
-  final messenger = ScaffoldMessenger.maybeOf(context);
-  if (messenger == null || _visibleNotice == message) return;
-  messenger.clearSnackBars();
+  final overlay = Overlay.maybeOf(context, rootOverlay: true);
+  if (overlay == null || _visibleNotice == message) return;
+  _noticeEntry?.remove();
   _visibleNotice = message;
-  final width = MediaQuery.sizeOf(context).width;
-  messenger
-      .showSnackBar(
-        SnackBar(
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          padding: EdgeInsets.zero,
-          width: math.min(width - 2 * SegSpace.s4, 520),
-          duration: const Duration(milliseconds: 3200),
-          content: Container(
-            key: const ValueKey('seg-notice'),
-            padding: const EdgeInsets.fromLTRB(
-              SegSpace.s3,
-              SegSpace.s3,
-              SegSpace.s4,
-              SegSpace.s3,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(SegRadius.xl),
-              border: Border.all(color: color.withValues(alpha: .25), width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: SegColors.ink.withValues(alpha: .16),
-                  blurRadius: 24,
-                  offset: const Offset(0, 8),
+  late final OverlayEntry entry;
+  void close() {
+    if (_noticeEntry != entry) return;
+    entry.remove();
+    _noticeEntry = null;
+    _visibleNotice = null;
+  }
+
+  entry = OverlayEntry(
+    builder: (context) => _TopNotice(
+      message: message,
+      style: style,
+      icon: icon,
+      color: color,
+      onDone: close,
+    ),
+  );
+  _noticeEntry = entry;
+  overlay.insert(entry);
+}
+
+class _TopNotice extends StatefulWidget {
+  final String message;
+  final TextStyle? style;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onDone;
+  const _TopNotice({
+    required this.message,
+    required this.style,
+    required this.icon,
+    required this.color,
+    required this.onDone,
+  });
+  @override
+  State<_TopNotice> createState() => _TopNoticeState();
+}
+
+class _TopNoticeState extends State<_TopNotice>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 220),
+  )..forward();
+
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer(const Duration(milliseconds: 3200), () async {
+      if (!mounted) return;
+      await _controller.reverse();
+      if (mounted) widget.onDone();
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+    final curve = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
+    return Positioned(
+      top: MediaQuery.paddingOf(context).top + SegSpace.s3,
+      left: 0,
+      right: 0,
+      child: Center(
+        child: FadeTransition(
+          opacity: curve,
+          child: SlideTransition(
+            position: Tween(
+              begin: const Offset(0, -.4),
+              end: Offset.zero,
+            ).animate(curve),
+            child: Material(
+              type: MaterialType.transparency,
+              child: Container(
+                key: const ValueKey('seg-notice'),
+                width: math.min(width - 2 * SegSpace.s4, 520),
+                padding: const EdgeInsets.fromLTRB(
+                  SegSpace.s3,
+                  SegSpace.s3,
+                  SegSpace.s4,
+                  SegSpace.s3,
                 ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: .14),
-                    shape: BoxShape.circle,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SegRadius.xl),
+                  border: Border.all(
+                    color: widget.color.withValues(alpha: .25),
+                    width: 2,
                   ),
-                  child: Icon(icon, color: color, size: 24),
                 ),
-                const SizedBox(width: SegSpace.s3),
-                Expanded(
-                  child: Text(
-                    message,
-                    style: (style ?? SegText.body).copyWith(
-                      color: SegColors.ink,
-                      fontWeight: FontWeight.w700,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: widget.color.withValues(alpha: .14),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(widget.icon, color: widget.color, size: 24),
                     ),
-                  ),
+                    const SizedBox(width: SegSpace.s3),
+                    Expanded(
+                      child: Text(
+                        widget.message,
+                        style: (widget.style ?? SegText.body).copyWith(
+                          color: SegColors.ink,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
-      )
-      .closed
-      .then((_) {
-        if (_visibleNotice == message) _visibleNotice = null;
-      });
+      ),
+    );
+  }
 }

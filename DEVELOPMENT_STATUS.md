@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 22 Ekim 2026 — R51 (paywall yanlış hata, üstte gölgesiz bildirim) — sürüm 2.0.20 (34), Internal testing'de
+
+- Hata: hoş geldin "Giriş yap" → Google penceresi kapatılınca `FamilyAuth.issue = cancelled` kalıyordu; paywall bunu görünce "Deneme başlatılamadı…" yazıyordu. Onboarding `_signIn` artık vazgeçişte `issue`'yu temizliyor.
+- `showNotice`: SnackBar yerine üstte (güvenli alanın altında) Overlay toast; gölge yok, beyaz zemin + ince renkli çerçeve + simge kaldı. Aynı mesaj tekrarlanmaz, yenisi eskisinin yerini alır.
+- Doğrulama: show_notice ve onboarding testleri geçti; `tools/build_release.sh` geçti; vc34 Internal testing'e yüklendi. Tam seri tur yükleme sırasında sürüyordu.
+
 ## 22 Ekim 2026 — R50 (hoş geldin sığdırma, doğrudan Google girişi, Premium kartı, sepeti doldur) — sürüm 2.0.19 (33), Internal testing'de
 
 - Hoş geldin ekranı kaydırmasız (`_frame(fit: true)`): sahne yüksekliği ekran yüksekliğine göre 110–240; yine sığmazsa sayfa bütün olarak küçülür (FittedBox). 1080×2400 ve 720×1280 ekranda kontrol edildi.

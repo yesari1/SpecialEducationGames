@@ -526,7 +526,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     if (s.profiles.isEmpty) s.unlockFamily();
     // Straight to Google's account picker.
     if (auth.account == null) await auth.signIn();
-    if (!mounted || auth.account == null) return;
+    if (auth.account == null) {
+      // Closed without signing in: nothing went wrong, so leave no issue
+      // behind (the Premium offer would read it as a failed trial).
+      auth.issue = null;
+      return;
+    }
+    if (!mounted) return;
     showNotice(
       context,
       l10n.obSignedIn,
