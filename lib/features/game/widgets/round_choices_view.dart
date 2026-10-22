@@ -138,6 +138,7 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         if (correct && widget.hint.celebrating && widget.spec.stimulus != null)
           HopIn(
             animate: widget.hint.animate,
+            fromOrigin: true,
             child: FractionallySizedBox(
               alignment: Alignment.topCenter,
               widthFactor: .7,

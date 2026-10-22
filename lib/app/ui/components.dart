@@ -1025,30 +1025,128 @@ class GroupCluster extends StatelessWidget {
   }
 }
 
+/// Where the prompt object is on screen, so a sorted item can hop from there
+/// (not from the top of its basket) into its group.
+abstract final class HopOrigin {
+  static Rect? rect;
+}
+
+/// Wraps the prompt object and keeps [HopOrigin.rect] up to date.
+class HopOriginMarker extends StatefulWidget {
+  final Widget child;
+  const HopOriginMarker({super.key, required this.child});
+  @override
+  State<HopOriginMarker> createState() => _HopOriginMarkerState();
+}
+
+class _HopOriginMarkerState extends State<HopOriginMarker> {
+  final _key = GlobalKey();
+
+  void _record() {
+    final box = _key.currentContext?.findRenderObject() as RenderBox?;
+    if (box == null || !box.hasSize || !box.attached) return;
+    HopOrigin.rect = box.localToGlobal(Offset.zero) & box.size;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) => _record());
+    return KeyedSubtree(key: _key, child: widget.child);
+  }
+}
+
 /// The sorted item hopping in an arc into its group after a correct answer.
-class HopIn extends StatelessWidget {
+/// With [fromOrigin] it starts where the prompt object was ([HopOrigin]) and
+/// flies smoothly from there; otherwise it drops in from above.
+class HopIn extends StatefulWidget {
   final Widget child;
   final bool animate;
-  const HopIn({super.key, required this.child, this.animate = true});
+  final bool fromOrigin;
+  const HopIn({
+    super.key,
+    required this.child,
+    this.animate = true,
+    this.fromOrigin = false,
+  });
+  @override
+  State<HopIn> createState() => _HopInState();
+}
+
+class _HopInState extends State<HopIn> with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 750),
+  );
+  final _key = GlobalKey();
+  Offset? _start;
+  double _startScale = 1;
+  bool _measured = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (!widget.animate) {
+      _measured = true;
+      _controller.value = 1;
+      return;
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (MediaQuery.disableAnimationsOf(context)) {
+        _controller.value = 1;
+      } else {
+        final origin = widget.fromOrigin ? HopOrigin.rect : null;
+        final box = _key.currentContext?.findRenderObject() as RenderBox?;
+        if (origin != null && box != null && box.hasSize) {
+          final here = box.localToGlobal(Offset.zero) & box.size;
+          _start = origin.center - here.center;
+          _startScale = (origin.shortestSide / math.max(1.0, here.shortestSide))
+              .clamp(.4, 2.5);
+        }
+        _controller.forward();
+      }
+      setState(() => _measured = true);
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-    builder: (context, box) {
-      if (!animate || MediaQuery.disableAnimationsOf(context)) return child;
-      return TweenAnimationBuilder<double>(
-        tween: Tween(begin: 0, end: 1),
-        duration: const Duration(milliseconds: 700),
-        curve: Curves.easeInOut,
-        builder: (context, t, child) => Transform.translate(
-          offset: Offset(
+    builder: (context, box) => AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        final t = Curves.easeInOutCubic.transform(_controller.value);
+        final start = _start;
+        final Offset offset;
+        final double scale;
+        if (start != null) {
+          // A smooth arc from the prompt object down into the basket.
+          final lift = math.max(48.0, start.distance * .35);
+          offset = start * (1 - t) + Offset(0, -math.sin(t * math.pi) * lift);
+          scale = _startScale + (1 - _startScale) * t;
+        } else {
+          offset = Offset(
             0,
             -box.maxHeight * (1 - t) -
                 math.sin(t * math.pi) * box.maxHeight * .35,
+          );
+          scale = 1.25 - .25 * t;
+        }
+        return Opacity(
+          opacity: _measured ? 1 : 0,
+          child: Transform.translate(
+            offset: offset,
+            child: Transform.scale(scale: scale, child: child),
           ),
-          child: Transform.scale(scale: 1.25 - .25 * t, child: child),
-        ),
-        child: child,
-      );
-    },
+        );
+      },
+      child: KeyedSubtree(key: _key, child: widget.child),
+    ),
   );
 }
 

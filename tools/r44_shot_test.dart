@@ -39,7 +39,7 @@ Widget _app(String locale, Widget home) => RepaintBoundary(
 
 Future<void> _save(WidgetTester tester, String name) => expectLater(
   find.byType(RepaintBoundary).first,
-  matchesGoldenFile('../artifacts/claude/r44/$_shot-$name.png'),
+  matchesGoldenFile('../artifacts/claude/r45/$_shot-$name.png'),
 );
 
 void main() {

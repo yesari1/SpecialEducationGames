@@ -1,0 +1,21 @@
+{
+ "style": "SEG soft clay",
+ "assets": [
+  {
+   "name": "map_background",
+   "path": "assets/illustrations/path/map_background.jpg",
+   "size": [
+    1536,
+    1024
+   ],
+   "original": "artifacts/illustrations-r45/map_background_original.png",
+   "originalSha256": "5c3c9810b0d873e56b8d278f7fbd9f83de1f638b7e1bb5053978700cf870fb13",
+   "sha256": "80cf6daee023c4de8fe511f40a775559c36477bbccb716841d67037c4942e800",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-10-22",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "A wide, sunny, peaceful countryside adventure map from a slight high angle: soft sky with a round sun top-left and puffy clouds, rolling green hills and soft mountains, a turquoise river winding from top-right to bottom-left with a small wooden bridge, a few cosy clay houses near the edges, round trees and flower bushes near the edges; a wide calm empty meadow across the middle band (the app draws the path on it). No road, no characters, no text.",
+   "processing": "converted to JPEG quality 86 for size; used behind Today's Path"
+  }
+ ]
+}

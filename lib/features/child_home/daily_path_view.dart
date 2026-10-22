@@ -26,110 +26,87 @@ class DailyPathView extends StatelessWidget {
     final nextIndex = progress.steps.indexWhere(
       (x) => !progress.completed.contains(x),
     );
-    return Column(
-      children: [
-        // Today's progress: one coloured segment per step, then the sticker.
-        Padding(
-          padding: const EdgeInsets.fromLTRB(24, 4, 12, 0),
-          child: Row(
-            children: [
-              Expanded(
-                child: Row(
-                  children: [
-                    for (var i = 0; i < progress.steps.length; i++)
-                      Expanded(
-                        child: Container(
-                          height: 12,
-                          margin: const EdgeInsets.symmetric(horizontal: 2),
-                          decoration: BoxDecoration(
-                            color:
-                                progress.completed.contains(progress.steps[i])
-                                ? SegColors.turquoise
-                                : i == nextIndex
-                                ? SegColors.accent.withValues(alpha: .45)
-                                : SegColors.line,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                        ),
-                      ),
-                  ],
+    // A small adventure map: the day's games are stops on a winding road
+    // across a sunny meadow, with the sticker waiting at the end.
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(SegRadius.xl),
+        child: LayoutBuilder(
+          builder: (context, box) {
+            final w = box.maxWidth, h = box.maxHeight;
+            final n = progress.steps.length;
+            final stop = (h * .3).clamp(56.0, 130.0);
+            Offset at(int i) => Offset(
+              w * (.09 + .72 * (n == 1 ? 0 : i / (n - 1))),
+              h * (i.isEven ? .44 : .72),
+            );
+            final points = [
+              for (var i = 0; i < n; i++) at(i),
+              Offset(w * .92, h * .5),
+            ];
+            return Stack(
+              children: [
+                Positioned.fill(
+                  child: Image.asset(
+                    'assets/illustrations/path/map_background.jpg',
+                    fit: BoxFit.cover,
+                    alignment: const Alignment(0, .15),
+                    excludeFromSemantics: true,
+                  ),
                 ),
-              ),
-              const SizedBox(width: SegSpace.s2),
-              Icon(
-                Icons.emoji_events_rounded,
-                color: state.hasTodaySticker
-                    ? SegColors.starDeep
-                    : SegColors.inkFaint,
-                size: 28,
-              ),
-              TextButton.icon(
-                key: const ValueKey('sticker-album'),
-                icon: const Icon(Icons.auto_awesome_rounded),
-                label: Text(l10n.dailyPathMyStickers),
-                onPressed: () => _album(context),
-              ),
-            ],
-          ),
+                Positioned.fill(
+                  child: CustomPaint(
+                    painter: _RoadPainter(
+                      points,
+                      done: progress.steps
+                          .takeWhile(progress.completed.contains)
+                          .length,
+                    ),
+                  ),
+                ),
+                // The sticker at the end of the road.
+                Positioned(
+                  left: points.last.dx - stop * .45,
+                  top: points.last.dy - stop * .45,
+                  width: stop * .9,
+                  height: stop * .9,
+                  child: _Goal(earned: state.hasTodaySticker),
+                ),
+                for (var i = 0; i < n; i++)
+                  Positioned(
+                    left: points[i].dx - stop / 2,
+                    top: points[i].dy - stop / 2,
+                    width: stop,
+                    height: stop,
+                    child: _Stop(
+                      key: ValueKey('daily-step-${progress.steps[i]}'),
+                      state: state,
+                      stepKey: progress.steps[i],
+                      number: i + 1,
+                      done: progress.completed.contains(progress.steps[i]),
+                      next: i == nextIndex,
+                    ),
+                  ),
+                Positioned(
+                  right: 8,
+                  top: 8,
+                  child: Material(
+                    color: Colors.white.withValues(alpha: .9),
+                    shape: const StadiumBorder(),
+                    child: TextButton.icon(
+                      key: const ValueKey('sticker-album'),
+                      icon: const Icon(Icons.auto_awesome_rounded),
+                      label: Text(l10n.dailyPathMyStickers),
+                      onPressed: () => _album(context),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
-        Expanded(
-          child: HorizontalCards(
-            count: progress.steps.length,
-            builder: (index) {
-              final key = progress.steps[index];
-              final parts = key.split('_');
-              final theme = state.content.theme(parts[0]);
-              final game = state.content.game(parts[1]);
-              final done = progress.completed.contains(key);
-              final next = index == nextIndex;
-              final hero = state.content.items.firstWhere(
-                (x) => x.id == theme.hero,
-              );
-              final card = ThemeGameCard(
-                theme: theme,
-                title: game.name(state.locale),
-                subtitle: '',
-                badgeText: done
-                    ? l10n.dailyPathCompleted
-                    : l10n.dailyPathStepTitle(
-                        index + 1,
-                        theme.name(state.locale),
-                      ),
-                visual: done
-                    ? const FittedBox(
-                        child: Icon(Icons.star_rounded, color: SegColors.star),
-                      )
-                    : ItemVisual(hero, alignment: Alignment.bottomCenter),
-                normalizedVisual: done,
-                modeIcon: done ? Icons.check_rounded : gameIcon(game.id),
-                onTap: () => context.go('/game/${parts[0]}/${parts[1]}/easy'),
-              );
-              return Semantics(
-                key: ValueKey('daily-step-$key'),
-                label:
-                    '${game.name(state.locale)}, ${theme.name(state.locale)}, '
-                    '${done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
-                child: next
-                    // The step to play next glows orange.
-                    ? DecoratedBox(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(SegRadius.lg + 4),
-                          boxShadow: [
-                            BoxShadow(
-                              color: SegColors.accent.withValues(alpha: .45),
-                              blurRadius: 18,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: card,
-                      )
-                    : card,
-              );
-            },
-          ),
-        ),
-      ],
+      ),
     );
   }
 
@@ -140,6 +117,290 @@ class DailyPathView extends StatelessWidget {
       builder: (_) => StickerAlbumDialog(state: state, days: days),
     );
   }
+}
+
+/// The sandy road through the stops; the part already walked is golden.
+class _RoadPainter extends CustomPainter {
+  final List<Offset> points;
+  final int done;
+  _RoadPainter(this.points, {required this.done});
+
+  Path _through(List<Offset> pts) {
+    final path = Path()..moveTo(pts.first.dx, pts.first.dy);
+    for (var i = 1; i < pts.length; i++) {
+      final a = pts[i - 1], b = pts[i];
+      final mid = (b.dx - a.dx) / 2;
+      path.cubicTo(a.dx + mid, a.dy, b.dx - mid, b.dy, b.dx, b.dy);
+    }
+    return path;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (points.length < 2) return;
+    final road = _through(points);
+    final width = (size.height * .085).clamp(16.0, 34.0);
+    canvas.drawPath(
+      road,
+      Paint()
+        ..color = const Color(0xFFC79A5B)
+        ..style = PaintingStyle.stroke
+        ..strokeCap = StrokeCap.round
+        ..strokeWidth = width + 6,
+    );
+    canvas.drawPath(
+      road,
+      Paint()
+        ..color = const Color(0xFFF3D9A4)
+        ..style = PaintingStyle.stroke
+        ..strokeCap = StrokeCap.round
+        ..strokeWidth = width,
+    );
+    if (done > 0) {
+      canvas.drawPath(
+        _through(points.take(done + 1).toList()),
+        Paint()
+          ..color = SegColors.star
+          ..style = PaintingStyle.stroke
+          ..strokeCap = StrokeCap.round
+          ..strokeWidth = width * .45,
+      );
+    }
+    // Little white stepping dashes along the middle of the road.
+    final dash = Paint()
+      ..color = Colors.white.withValues(alpha: .85)
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = width * .16;
+    for (final metric in road.computeMetrics()) {
+      for (var d = 0.0; d < metric.length; d += width * 1.4) {
+        canvas.drawPath(metric.extractPath(d, d + width * .5), dash);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _RoadPainter old) =>
+      old.points != points || old.done != done;
+}
+
+/// One stop on the road: the game's picture in a round badge with its
+/// number; a star once played; the next one bobs gently and says "Play".
+class _Stop extends StatefulWidget {
+  final AppState state;
+  final String stepKey;
+  final int number;
+  final bool done, next;
+  const _Stop({
+    super.key,
+    required this.state,
+    required this.stepKey,
+    required this.number,
+    required this.done,
+    required this.next,
+  });
+  @override
+  State<_Stop> createState() => _StopState();
+}
+
+class _StopState extends State<_Stop> with SingleTickerProviderStateMixin {
+  late final AnimationController _bob = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1400),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _sync();
+  }
+
+  @override
+  void didUpdateWidget(_Stop old) {
+    super.didUpdateWidget(old);
+    _sync();
+  }
+
+  void _sync() {
+    if (widget.next && !widget.state.reducedMotion) {
+      // A few gentle bobs, then it rests (calm, and the screen can idle).
+      if (!_bob.isAnimating && _bob.value == 0) {
+        _bob.repeat(reverse: true, count: 6);
+      }
+    } else {
+      _bob.stop();
+      _bob.value = 0;
+    }
+  }
+
+  @override
+  void dispose() {
+    _bob.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.state;
+    final l10n = scopedLocalizations(context, s.locale);
+    final parts = widget.stepKey.split('_');
+    final theme = s.content.theme(parts[0]);
+    final game = s.content.game(parts[1]);
+    final hero = s.content.items.firstWhere((x) => x.id == theme.hero);
+    final ring = widget.done
+        ? SegColors.star
+        : widget.next
+        ? SegColors.accent
+        : Colors.white;
+    return Semantics(
+      button: true,
+      label:
+          '${game.name(s.locale)}, ${theme.name(s.locale)}, '
+          '${widget.done ? l10n.dailyPathCompleted : l10n.dailyPathPlay}',
+      excludeSemantics: true,
+      child: GestureDetector(
+        onTap: () => context.go('/game/${parts[0]}/${parts[1]}/easy'),
+        child: AnimatedBuilder(
+          animation: _bob,
+          builder: (context, child) => Transform.translate(
+            offset: Offset(0, -6 * Curves.easeInOut.transform(_bob.value)),
+            child: child,
+          ),
+          child: LayoutBuilder(
+            builder: (context, box) {
+              final size = box.maxWidth;
+              return Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: ring, width: size * .07),
+                      boxShadow: [
+                        BoxShadow(
+                          color:
+                              (widget.next ? SegColors.accent : SegColors.ink)
+                                  .withValues(alpha: widget.next ? .4 : .18),
+                          blurRadius: widget.next ? 16 : 8,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    padding: EdgeInsets.all(size * .12),
+                    child: ItemVisual(hero),
+                  ),
+                  // Step number flag.
+                  Positioned(
+                    left: -size * .04,
+                    top: -size * .04,
+                    child: Container(
+                      width: size * .34,
+                      height: size * .34,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: widget.done ? SegColors.turquoise : theme.accent,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 2),
+                      ),
+                      child: widget.done
+                          ? Icon(
+                              Icons.check_rounded,
+                              color: Colors.white,
+                              size: size * .22,
+                            )
+                          : Text(
+                              '${widget.number}',
+                              style: SegText.label.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: size * .18,
+                              ),
+                            ),
+                    ),
+                  ),
+                  if (widget.next)
+                    Positioned(
+                      left: -size,
+                      right: -size,
+                      bottom: -size * .2,
+                      child: Center(
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 3,
+                          ),
+                          decoration: BoxDecoration(
+                            color: SegColors.accent,
+                            borderRadius: BorderRadius.circular(SegRadius.pill),
+                            border: Border.all(color: Colors.white, width: 2),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                gameIcon(game.id),
+                                color: Colors.white,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                l10n.dailyPathPlay,
+                                style: SegText.caption.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// The sticker waiting at the end of the road.
+class _Goal extends StatelessWidget {
+  final bool earned;
+  const _Goal({required this.earned});
+  @override
+  Widget build(BuildContext context) => Container(
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: earned
+            ? const [Color(0xFFFFE08A), SegColors.star]
+            : const [Colors.white, Color(0xFFFFF1D6)],
+      ),
+      border: Border.all(color: Colors.white, width: 3),
+      boxShadow: [
+        BoxShadow(
+          color: SegColors.starDeep.withValues(alpha: .3),
+          blurRadius: 12,
+          offset: const Offset(0, 4),
+        ),
+      ],
+    ),
+    child: FractionallySizedBox(
+      widthFactor: .62,
+      heightFactor: .62,
+      child: FittedBox(
+        child: Icon(
+          Icons.emoji_events_rounded,
+          color: earned ? SegColors.starDeep : const Color(0xFFE0B04A),
+        ),
+      ),
+    ),
+  );
 }
 
 class StickerAlbumDialog extends StatefulWidget {

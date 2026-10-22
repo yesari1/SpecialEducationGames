@@ -858,8 +858,11 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   /// The prompt object. In drag games it can be carried onto a choice; the
   /// choices still accept taps, so dragging is never required.
   Widget _stimulus(RoundSpec spec, RoundController c) {
-    final visual = StagedObject(
-      child: ItemVisual(spec.stimulus!, alignment: Alignment.bottomCenter),
+    // Its place on screen is where a sorted item hops from.
+    final visual = HopOriginMarker(
+      child: StagedObject(
+        child: ItemVisual(spec.stimulus!, alignment: Alignment.bottomCenter),
+      ),
     );
     // Once sorted, the item lives in its group (it hops in there).
     if (spec.groupMembers.isNotEmpty && c.phase == RoundPhase.celebrating) {
@@ -872,6 +875,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       // The object is centred under the finger, so where it looks dropped is
       // where the drop is tested.
       dragAnchorStrategy: pointerDragAnchorStrategy,
+      // Dropped on a basket: the hop starts where the finger let go.
+      onDragEnd: (details) =>
+          HopOrigin.rect = details.offset & const Size(132, 132),
       feedback: Transform.translate(
         offset: const Offset(-66, -66),
         child: SizedBox.square(

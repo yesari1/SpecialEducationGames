@@ -241,33 +241,47 @@ class _ThemeScreenState extends State<ThemeScreen> {
                   horizontal: SegSpace.s5,
                   vertical: SegSpace.s3,
                 ),
-                child: Wrap(
-                  spacing: SegSpace.s5,
-                  runSpacing: SegSpace.s4,
-                  crossAxisAlignment: WrapCrossAlignment.center,
+                // Back and title stay on the left, the levels on the right,
+                // whatever the length of the theme name.
+                child: Row(
                   children: [
                     IconButton.filledTonal(
                       onPressed: () => context.go('/'),
                       icon: const Icon(Icons.arrow_back_rounded),
                       tooltip: l10n.themeBack,
                     ),
-                    Text(t.name(s.locale), style: SegText.title),
-                    PillToggle<Difficulty>(
-                      values: Difficulty.values,
-                      selected: tier,
-                      label: (d) => switch (d) {
-                        Difficulty.easy => l10n.difficultyEasy,
-                        Difficulty.medium => l10n.difficultyMedium,
-                        Difficulty.hard => l10n.difficultyHard,
-                      },
-                      icon: (d) => [
-                        Icons.circle,
-                        Icons.square_rounded,
-                        Icons.change_history_rounded,
-                      ][d.index],
-                      onChanged: s.difficultyOverride == 'auto'
-                          ? (v) => setState(() => difficulty = v)
-                          : null,
+                    const SizedBox(width: SegSpace.s3),
+                    Expanded(
+                      child: Text(
+                        t.name(s.locale),
+                        style: SegText.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    const SizedBox(width: SegSpace.s3),
+                    Flexible(
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerRight,
+                        child: PillToggle<Difficulty>(
+                          values: Difficulty.values,
+                          selected: tier,
+                          label: (d) => switch (d) {
+                            Difficulty.easy => l10n.difficultyEasy,
+                            Difficulty.medium => l10n.difficultyMedium,
+                            Difficulty.hard => l10n.difficultyHard,
+                          },
+                          icon: (d) => [
+                            Icons.circle,
+                            Icons.square_rounded,
+                            Icons.change_history_rounded,
+                          ][d.index],
+                          onChanged: s.difficultyOverride == 'auto'
+                              ? (v) => setState(() => difficulty = v)
+                              : null,
+                        ),
+                      ),
                     ),
                   ],
                 ),

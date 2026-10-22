@@ -167,18 +167,28 @@ class _ChoiceCardState extends State<ChoiceCard> with TickerProviderStateMixin {
             clipBehavior: Clip.none,
             fit: StackFit.expand,
             children: [
-              Positioned.fill(
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween(end: success || hinting ? 1 : 0),
-                  duration: reduced ? SegMotion.tap : SegMotion.focus,
-                  builder: (context, presence, _) => ObjectHalo(
-                    key: success ? const ValueKey('choice-success-halo') : null,
-                    color: success ? SegColors.successGlow : SegColors.hintGlow,
-                    strength:
-                        presence * (hinting ? .65 + breathe.value * .35 : 1),
+              // Hints glow softly; a correct answer gets a small burst of
+              // coloured sparkles behind it instead of a green glow.
+              if (!success)
+                Positioned.fill(
+                  child: TweenAnimationBuilder<double>(
+                    tween: Tween(end: hinting ? 1 : 0),
+                    duration: reduced ? SegMotion.tap : SegMotion.focus,
+                    builder: (context, presence, _) => ObjectHalo(
+                      color: SegColors.hintGlow,
+                      strength: presence * (.65 + breathe.value * .35),
+                    ),
+                  ),
+                )
+              else
+                Positioned.fill(
+                  child: IgnorePointer(
+                    child: CustomPaint(
+                      key: const ValueKey('choice-success-halo'),
+                      painter: _SparkleBurst(reduced ? 1 : hop.value),
+                    ),
                   ),
                 ),
-              ),
               Positioned(
                 left: (box.maxWidth - shadowWidth) / 2,
                 width: shadowWidth,
@@ -259,4 +269,65 @@ class _ChoiceCardState extends State<ChoiceCard> with TickerProviderStateMixin {
       ),
     );
   }
+}
+
+/// A short burst of small coloured sparkles flying out from behind the
+/// object (progress 0 → 1), then gone. Calm: few, soft, quick.
+class _SparkleBurst extends CustomPainter {
+  final double progress;
+  _SparkleBurst(this.progress);
+
+  static const _colors = [
+    SegColors.star,
+    SegColors.accent,
+    SegColors.turquoise,
+    Color(0xFFE76F8E),
+    SegColors.sky,
+  ];
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (progress <= 0 || progress >= 1) return;
+    final t = Curves.easeOutCubic.transform(progress);
+    final fade = 1 - Curves.easeIn.transform(progress);
+    final center = Offset(size.width / 2, size.height * .5);
+    final reach = math.min(size.width, size.height) * .62;
+    const count = 14;
+    for (var i = 0; i < count; i++) {
+      final angle = i * 2 * math.pi / count + (i.isEven ? .12 : -.12);
+      final distance = reach * (.55 + .6 * t) * (i.isEven ? 1 : .82);
+      final position =
+          center + Offset(math.cos(angle), math.sin(angle)) * distance;
+      final paint = Paint()
+        ..color = _colors[i % _colors.length].withValues(alpha: fade);
+      final radius = (i.isEven ? 10.0 : 7.0) * (1.15 - .45 * t);
+      if (i % 3 == 0) {
+        // A tiny four-pointed star.
+        final star = Path();
+        for (var k = 0; k < 8; k++) {
+          final a = k * math.pi / 4;
+          final r = k.isEven ? radius * 1.6 : radius * .55;
+          final point = position + Offset(math.cos(a), math.sin(a)) * r;
+          k == 0
+              ? star.moveTo(point.dx, point.dy)
+              : star.lineTo(point.dx, point.dy);
+        }
+        canvas.drawPath(star..close(), paint);
+      } else {
+        canvas.drawCircle(position, radius, paint);
+      }
+    }
+    // A soft white ring that widens once.
+    canvas.drawCircle(
+      center,
+      reach * (.3 + .55 * t),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3 * fade
+        ..color = Colors.white.withValues(alpha: .8 * fade),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _SparkleBurst old) => old.progress != progress;
 }
