@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {after, before, beforeEach, test} from 'node:test';
 import {initializeTestEnvironment, assertFails, assertSucceeds} from '@firebase/rules-unit-testing';
-import {doc, collection, collectionGroup, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
+import {doc, collection, collectionGroup, query, orderBy, startAt, endAt, documentId, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
 
 test('persistent deletion marker blocks all family writes and is private',async () => {
   const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
@@ -243,4 +243,14 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertFails(getDoc(doc(anon,`funnel/${id}`)));
   await assertFails(getDocs(collection(db('alice'),'funnel')));
   await assertSucceeds(getDocs(collection(db('admin'),'funnel')));
+});
+
+test('admin page: per-family collection-group range finds only that family',async () => {
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  await assertSucceeds(setDoc(doc(db('alice'),path),summary()));
+  await assertSucceeds(setDoc(doc(db('bob'),path.replace('alice','bob')),summary()));
+  const admin=db('admin');
+  const range=uid=>query(collectionGroup(admin,'sessions'),orderBy(documentId()),startAt(`families/${uid}`),endAt(`families/${uid}//`));
+  const snap=await assertSucceeds(getDocs(range('alice')));
+  if(snap.docs.length!==1||!snap.docs[0].ref.path.startsWith('families/alice/')) throw new Error('range mismatch '+snap.docs.map(d=>d.ref.path));
 });
