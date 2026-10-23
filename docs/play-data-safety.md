@@ -53,6 +53,8 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 |---|---|---|---|---|---|
 | Uygulama etkileşimleri | Evet | Hayır | Hayır | **Zorunlu** (kurulum istatistiği her kurulumda gider; günlük oyun özetleri yalnız girişte ve kapatılabilir) | **Uygulama işlevselliği**, **Analizler** (yönetici sayfası: günlük oyun ve süre, funnel) |
 
+| Kullanıcı tarafından oluşturulan diğer içerikler | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn ayarlardan geri bildirim gönderirse) | **Uygulama işlevselliği** (destek ve iyileştirme) |
+
 **Finansal bilgiler**
 
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
@@ -73,6 +75,7 @@ Notlar:
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
 - Satın almalar: ödemeyi Google Play işler; ödeme bilgisi bize gelmez. Giriş yapılmışsa hesabın planı (ücretsiz/deneme/aylık/yıllık/ömür boyu/tanımlı) `families/{uid}.plan` olarak gider, bu yüzden "Satın alma geçmişi" **işaretlenir**.
 - "Cihaz veya diğer kimlikler": uygulamanın ürettiği rastgele kurulum kimliği (`funnel/{installId}`); yalnız kurulum adımlarının ilk zamanları, platform, sürüm ve dil. Android ID, AAID, IMEI gibi kimlikler **kullanılmaz**; Google hesabına bağlanmaz.
+- "Kullanıcı tarafından oluşturulan diğer içerikler": ayarlardaki geri bildirim mesajı (`feedback/{id}`; mesaj, zaman, sürüm, dil, platform, kurulum kimliği; giriş yapılmışsa UID ve e-posta). Yalnız yönetici okur. (23 Ekim 2026)
 - Son açılış ve uygulama sürümü (`families/{uid}.lastSeenAt`, `appVersion`) "Uygulama etkileşimleri" kapsamındadır.
 - Çocuk profili (takma ad, yaş, anket) ve tek tek oyun yanıtları yalnız cihazda kalır, gönderilmez. Buluta yalnız yukarıdaki günlük özetler (giriş yapılmışsa) ve hesapsız kurulum istatistiği gider.
 
