@@ -52,8 +52,8 @@ class GoogleFamilyAuthBackend
           lastSignInAt: user.metadata.lastSignInTime,
         );
 
-  /// Where Firebase's password-free sign-in links point (the project's
-  /// Firebase Hosting domain; Android App Links open the app from it).
+  /// The project's default Firebase Hosting domain: sign-in links come from
+  /// it, and its assetlinks.json lets Android open the app from them.
   static const _linkDomain = 'specialeducationgames.firebaseapp.com';
 
   static FamilyAuthIssue _emailIssue(FirebaseAuthException error) =>
@@ -95,7 +95,8 @@ class GoogleFamilyAuthBackend
         email: email,
         actionCodeSettings: ActionCodeSettings(
           url: 'https://$_linkDomain/sign-in',
-          linkDomain: _linkDomain,
+          // No `linkDomain`: Firebase refuses the default Hosting domains
+          // there, and without it the link comes from that domain anyway.
           handleCodeInApp: true,
           androidPackageName: 'com.YeS.OzelEgitimOyunlari',
           androidInstallApp: false,

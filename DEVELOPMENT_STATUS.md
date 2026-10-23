@@ -2,6 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R68–R69 (e-posta link düzeltmesi, giriş sayfası görünümü, Hosting) — sürüm 2.0.27 (41), Internal testing'de
+
+- Firebase Hosting yayınlandı (Yunus onayı): `firebase/hosting/` → specialeducationgames.web.app / .firebaseapp.com; `/.well-known/assetlinks.json` iki SHA-256 ile (Play imzalama 67:F0:BA:…:0E:A3, Play API `generatedApks` ile okundu; upload 24:1D:C6:…:A0:4E). Digital Asset Links servisi doğruladı.
+- Hata: `sendSignInLinkToEmail` → INVALID_HOSTING_LINK_DOMAIN ("varsayılan Hosting alanı olamaz"). `linkDomain` kaldırıldı; REST ile (example.com adresine) gönderim başarılı.
+- test@yesastudio.com "hatalı e-posta/şifre": e-posta/şifre sağlayıcısı açık (REST INVALID_LOGIN_CREDENTIALS); kullanıcı ya da şifre Firebase'de kontrol edilmeli (Yunus'a iletildi).
+- Giriş sayfası: Google stili buton (`GoogleSignInButton`, beyaz, çok renkli G çizimi), içerik dikeyde ortalı, en fazla 480 genişlik.
+- Doğrulama: seri host testler 284/284 (buton değişikliğinden önce; sonra giriş testleri ayrıca geçti); `tools/build_release.sh` geçti; vc41 Internal testing'e yüklendi.
+
 ## 23 Ekim 2026 — R64–R67 (e-posta girişi, Hesap sayfası, granted Premium) — sürüm 2.0.26 (40), Internal testing'de
 
 - Ortak giriş sayfası (`lib/features/onboarding/sign_in_screen.dart`): Google / "veya" / e-posta. `test@yesastudio.com` (Play inceleme hesabı) şifreyle (`signInWithEmailAndPassword`); diğer adreslere Firebase şifresiz giriş linki (`sendSignInLinkToEmail`, `linkDomain: specialeducationgames.firebaseapp.com`, `handleCodeInApp`). Bekleyen e-posta `auth.pendingEmail` tercihinde. Hoş geldin "Giriş yap" ve deneme düğmesi (onboarding sonu, kapı, Aile › Premium) bu sayfayı açar; sonrası eski akış.

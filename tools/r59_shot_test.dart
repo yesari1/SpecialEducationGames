@@ -20,6 +20,7 @@ import 'package:special_education_games/core/entitlement/billing_repository.dart
 import 'package:special_education_games/features/onboarding/onboarding_screen.dart';
 import 'package:special_education_games/features/family/feedback_screen.dart';
 import 'package:special_education_games/features/family/account_gate_screen.dart';
+import 'package:special_education_games/features/onboarding/sign_in_screen.dart';
 import 'package:special_education_games/features/family/family_screen.dart';
 import 'package:special_education_games/features/family/family_account_screen.dart';
 import 'package:special_education_games/features/family/family_screen.dart';
@@ -114,6 +115,9 @@ void main() {
       );
       tester.view.devicePixelRatio = 2.625;
       tester.view.physicalSize = const Size(1080, 2400);
+      await tester.pumpWidget(_app(locale, SignInScreen(state: state, auth: auth)));
+      await _settle(tester);
+      await _save(tester, 'signin-$locale');
       await tester.pumpWidget(_app(locale, const AccountLoadingScreen()));
       await tester.pump(const Duration(milliseconds: 300));
       await _save(tester, 'loading-$locale');
