@@ -65,6 +65,9 @@ void main() {
       await tester.ensureVisible(start);
       await tester.pumpAndSettle();
       await tester.tap(start);
+      await tester.pumpAndSettle();
+      // The shared sign-in page, then Google's picker.
+      await tester.tap(find.byKey(const ValueKey('sign-in-google')));
       await tester.pump();
       // The account picker covers the app.
       tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);

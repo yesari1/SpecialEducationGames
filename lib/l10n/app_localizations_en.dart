@@ -977,6 +977,64 @@ class AppLocalizationsEn extends AppLocalizations {
       'No account found for this Google account. Tap Let\'s begin to start.';
 
   @override
+  String get signInTitle => 'Sign in';
+
+  @override
+  String get signInOr => 'or';
+
+  @override
+  String get signInEmail => 'E-mail';
+
+  @override
+  String get signInPassword => 'Password';
+
+  @override
+  String get signInContinue => 'Continue with e-mail';
+
+  @override
+  String get signInWrongPassword => 'Wrong e-mail or password.';
+
+  @override
+  String signInLinkSent(String email) {
+    return 'We sent a sign-in link to $email. Tap the link in the e-mail on this phone.';
+  }
+
+  @override
+  String get familyAccountDetails => 'Details';
+
+  @override
+  String get accountDeleteHelpTitle => 'How to delete the account';
+
+  @override
+  String get accountDeleteHelpBody =>
+      'Tap \"Delete account and cloud data\" above and confirm with your Google account. The family record, child profiles and daily summaries are deleted from the cloud. If you cannot open the app: yesastudio.com/ozel-egitim-oyunlari/delete-account';
+
+  @override
+  String get accountPlanMonthly => 'Premium · monthly';
+
+  @override
+  String get accountPlanYearly => 'Premium · yearly';
+
+  @override
+  String get accountTrialEnds => 'Trial ends';
+
+  @override
+  String get accountPremiumUntil => 'Premium until';
+
+  @override
+  String get accountPurchased => 'Purchased';
+
+  @override
+  String get accountCreated => 'Account created';
+
+  @override
+  String get accountLastSignIn => 'Last sign-in';
+
+  @override
+  String get accountNextPaymentNote =>
+      'The next payment date and cancelling are in Google Play → Payments & subscriptions.';
+
+  @override
   String get obSignedIn => 'Signed in. Now let’s add your child.';
 
   @override

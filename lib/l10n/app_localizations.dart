@@ -1813,6 +1813,114 @@ abstract class AppLocalizations {
   /// **'No account found for this Google account. Tap Let\'s begin to start.'**
   String get obNoAccountFound;
 
+  /// No description provided for @signInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signInTitle;
+
+  /// No description provided for @signInOr.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get signInOr;
+
+  /// No description provided for @signInEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'E-mail'**
+  String get signInEmail;
+
+  /// No description provided for @signInPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get signInPassword;
+
+  /// No description provided for @signInContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with e-mail'**
+  String get signInContinue;
+
+  /// No description provided for @signInWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong e-mail or password.'**
+  String get signInWrongPassword;
+
+  /// No description provided for @signInLinkSent.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a sign-in link to {email}. Tap the link in the e-mail on this phone.'**
+  String signInLinkSent(String email);
+
+  /// No description provided for @familyAccountDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get familyAccountDetails;
+
+  /// No description provided for @accountDeleteHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to delete the account'**
+  String get accountDeleteHelpTitle;
+
+  /// No description provided for @accountDeleteHelpBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"Delete account and cloud data\" above and confirm with your Google account. The family record, child profiles and daily summaries are deleted from the cloud. If you cannot open the app: yesastudio.com/ozel-egitim-oyunlari/delete-account'**
+  String get accountDeleteHelpBody;
+
+  /// No description provided for @accountPlanMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium · monthly'**
+  String get accountPlanMonthly;
+
+  /// No description provided for @accountPlanYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium · yearly'**
+  String get accountPlanYearly;
+
+  /// No description provided for @accountTrialEnds.
+  ///
+  /// In en, this message translates to:
+  /// **'Trial ends'**
+  String get accountTrialEnds;
+
+  /// No description provided for @accountPremiumUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium until'**
+  String get accountPremiumUntil;
+
+  /// No description provided for @accountPurchased.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchased'**
+  String get accountPurchased;
+
+  /// No description provided for @accountCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Account created'**
+  String get accountCreated;
+
+  /// No description provided for @accountLastSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Last sign-in'**
+  String get accountLastSignIn;
+
+  /// No description provided for @accountNextPaymentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The next payment date and cancelling are in Google Play → Payments & subscriptions.'**
+  String get accountNextPaymentNote;
+
   /// No description provided for @obSignedIn.
   ///
   /// In en, this message translates to:

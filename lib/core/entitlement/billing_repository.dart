@@ -189,6 +189,13 @@ class BillingRepository extends ChangeNotifier {
         current.any((p) => p.productID == BillingProducts.subscription),
         lifetime: current.any((p) => p.productID == BillingProducts.lifetime),
       );
+      // Purchase time Play reports for what is owned (milliseconds).
+      final times = [
+        for (final p in current)
+          if (int.tryParse(p.transactionDate ?? '') case final ms?)
+            DateTime.fromMillisecondsSinceEpoch(ms),
+      ]..sort();
+      await entitlement.setPurchasedAt(times.lastOrNull);
       for (final p in current) {
         if (p.pendingCompletePurchase) await store.completePurchase(p);
       }

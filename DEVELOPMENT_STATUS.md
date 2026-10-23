@@ -2,6 +2,16 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R64–R67 (e-posta girişi, Hesap sayfası, granted Premium) — sürüm 2.0.26 (40), Internal testing'de
+
+- Ortak giriş sayfası (`lib/features/onboarding/sign_in_screen.dart`): Google / "veya" / e-posta. `test@yesastudio.com` (Play inceleme hesabı) şifreyle (`signInWithEmailAndPassword`); diğer adreslere Firebase şifresiz giriş linki (`sendSignInLinkToEmail`, `linkDomain: specialeducationgames.firebaseapp.com`, `handleCodeInApp`). Bekleyen e-posta `auth.pendingEmail` tercihinde. Hoş geldin "Giriş yap" ve deneme düğmesi (onboarding sonu, kapı, Aile › Premium) bu sayfayı açar; sonrası eski akış.
+- Link dönüşü: Android App Link (manifest intent-filter `https://specialeducationgames.firebaseapp.com/__/auth/links`, `flutter_deeplinking_enabled=false`), `app_links` 7.0.0 ile `EducationApp`'te yakalanır; sayfa açıksa ona döner, değilse hoş geldindeki hesap kontrolünü yapar.
+- Firebase konsolu (Yunus'ta): Email/Password + Email link açık; test@yesastudio.com kullanıcısı; Hosting "Get started" (şu an "Site Not Found", assetlinks yok) ve SHA-256'lar (upload: 24:1D:C6:…:A0:4E + Play imzalama anahtarı). Bunlar olmadan link uygulamayı açmaz; şifreli test girişi A+B ile çalışır. "Enable create (sign-up)" açık kalmalı.
+- Profiller: granted Premium = 5 profil; Premium/deneme düğmesi yalnız ücretsiz ve denemede. Hesap kartında Google fotoğrafı/adı/e-postası (`AccountHeader`), "Detaylar" → Hesap sayfası.
+- Hesap sayfası: `AccountInfoCard` (paket aylık/yıllık, deneme ve Premium bitişi, Play satın alma tarihi `premium.purchasedAt`, hesap oluşturma/son giriş, abonelikte sonraki ödeme notu + "Aboneliği yönet"), aile hesabı, günlük özet, "Hesap nasıl silinir?". Sonraki ödeme tarihi istemcide yok (Play Developer API gerekir).
+- Düzeltme: Hesap sayfasında TabController dikeyde ilk kez dispose'da oluşuyordu; initState'e alındı.
+- Doğrulama: seri host testler 284/284; yeni `sign_in_screen_test.dart`; paywall testleri giriş sayfasına göre güncellendi. `tools/build_release.sh` geçti; vc40 Internal testing.e yüklendi.
+
 ## 23 Ekim 2026 — R62 (hoş geldin tanıtımı, ilk açılış yönü, giriş bildirimi) — sürüm 2.0.25 (39), Internal testing'de
 
 - Hoş geldin satırları (Yunus seçimi): "Çocuğunuz eğlenirken öğrenir", "Hayvanlar, renkler, sayılar", "Yaşa göre ayarlanır", "Reklam yok." (EN: "Your child learns while playing", "Animals, colors, numbers", "Adjusts to your child's age", "No ads."); "Ayarlar ebeveyn kilidinde" satırı kaldırıldı.

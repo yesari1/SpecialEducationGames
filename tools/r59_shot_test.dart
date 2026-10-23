@@ -21,13 +21,19 @@ import 'package:special_education_games/features/onboarding/onboarding_screen.da
 import 'package:special_education_games/features/family/feedback_screen.dart';
 import 'package:special_education_games/features/family/account_gate_screen.dart';
 import 'package:special_education_games/features/family/family_screen.dart';
+import 'package:special_education_games/features/family/family_account_screen.dart';
+import 'package:special_education_games/features/family/family_screen.dart';
 import 'package:special_education_games/l10n/app_localizations.dart';
 
 const _shot = String.fromEnvironment('SHOT', defaultValue: 'after');
 
 class _NoGoogle implements FamilyAuthBackend {
   @override
-  Future<FamilyAccount?> restore() async => null;
+  Future<FamilyAccount?> restore() async => const FamilyAccount(
+    'p1',
+    email: 'yunus@example.com',
+    name: 'Yunus Esari',
+  );
   @override
   Future<FamilyAccount?> signIn() async => null;
   @override
@@ -117,6 +123,23 @@ void main() {
       );
       await _settle(tester);
       await _save(tester, 'gate-$locale');
+      await tester.runAsync(auth.restoreAtStart);
+      state.unlockFamily();
+      await tester.runAsync(
+        () => state.entitlement.setGrant('p1', premium: true, endTrial: false),
+      );
+      await tester.pumpWidget(
+        _app(locale, FamilyScreen(state: state, auth: auth)),
+      );
+      await _settle(tester);
+      await tester.tap(find.byKey(const ValueKey('family-nav-2')));
+      await _settle(tester);
+      await _save(tester, 'profiles-$locale');
+      await tester.pumpWidget(
+        _app(locale, FamilyAccountScreen(state: state, auth: auth)),
+      );
+      await _settle(tester);
+      await _save(tester, 'account-$locale');
       await tester.pumpWidget(_app(locale, FeedbackScreen(state: state)));
       await _settle(tester);
       await _save(tester, 'feedback-$locale');

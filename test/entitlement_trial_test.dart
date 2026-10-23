@@ -269,6 +269,9 @@ void main() {
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.tap(start);
+      await tester.pumpAndSettle();
+      // The shared sign-in page: Google on top.
+      await tester.tap(find.byKey(const ValueKey('sign-in-google')));
       for (var i = 0; i < 10; i++) {
         await tester.runAsync(
           () => Future<void>.delayed(const Duration(milliseconds: 20)),

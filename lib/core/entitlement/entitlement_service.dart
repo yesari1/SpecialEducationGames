@@ -36,6 +36,9 @@ class EntitlementService {
   /// Play base plan of the subscription bought on this device.
   String? subscriptionPlan;
 
+  /// When Google Play says the owned product was bought (this device).
+  DateTime? purchasedAt;
+
   bool get grantActive {
     final until = grantUntil;
     return grantPremium && (until == null || now().isBefore(until));
@@ -110,6 +113,9 @@ class EntitlementService {
     grantUntil = DateTime.tryParse(await db.preference('grant.until') ?? '');
     trialEnded = await db.preference('grant.endTrial') == 'true';
     subscriptionPlan = await db.preference('premium.basePlan');
+    purchasedAt = DateTime.tryParse(
+      await db.preference('premium.purchasedAt') ?? '',
+    );
   }
 
   /// Plan name for the admin list: free | trial | monthly | yearly |
@@ -122,6 +128,14 @@ class EntitlementService {
     PremiumSource.trial => 'trial',
     PremiumSource.none || PremiumSource.qa => 'free',
   };
+
+  Future<void> setPurchasedAt(DateTime? at) async {
+    purchasedAt = at;
+    await db.setPreference(
+      'premium.purchasedAt',
+      at?.toUtc().toIso8601String() ?? '',
+    );
+  }
 
   Future<void> setSubscriptionPlan(String basePlan) async {
     subscriptionPlan = basePlan;

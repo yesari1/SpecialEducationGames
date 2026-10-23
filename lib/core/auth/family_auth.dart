@@ -4,10 +4,34 @@ import 'package:flutter/foundation.dart';
 class FamilyAccount {
   final String uid;
   final String? email;
-  const FamilyAccount(this.uid, {this.email});
+
+  /// Google profile name and picture (shown in the family area only).
+  final String? name;
+  final String? photoUrl;
+
+  /// When the account was created and last signed in (Firebase).
+  final DateTime? createdAt;
+  final DateTime? lastSignInAt;
+  const FamilyAccount(
+    this.uid, {
+    this.email,
+    this.name,
+    this.photoUrl,
+    this.createdAt,
+    this.lastSignInAt,
+  });
 }
 
-enum FamilyAuthIssue { cancelled, offline, configuration, timeout, unavailable }
+enum FamilyAuthIssue {
+  cancelled,
+  offline,
+  configuration,
+  timeout,
+  unavailable,
+
+  /// E-mail and password did not match (the review account).
+  wrongPassword,
+}
 
 class FamilyAuthFailure implements Exception {
   final FamilyAuthIssue issue;
@@ -19,6 +43,15 @@ abstract interface class FamilyAuthBackend {
   Future<FamilyAccount?> signIn();
   Future<void> signOut();
   void cancelPending();
+}
+
+/// E-mail sign-in: a password for the store-review account, and Firebase's
+/// password-free sign-in link for everyone else.
+abstract interface class FamilyEmailAuthBackend {
+  Future<FamilyAccount?> signInWithPassword(String email, String password);
+  Future<void> sendSignInLink(String email);
+  bool isSignInLink(String link);
+  Future<FamilyAccount?> signInWithLink(String email, String link);
 }
 
 /// Optional capability for refreshing credentials on the already selected
@@ -61,6 +94,57 @@ class FamilyAuth extends ChangeNotifier {
   }
 
   Future<void> signIn() => _run(backend.signIn);
+
+  FamilyEmailAuthBackend? get _email => backend is FamilyEmailAuthBackend
+      ? backend as FamilyEmailAuthBackend
+      : null;
+
+  Future<void> signInWithPassword(String email, String password) async {
+    final email0 = _email;
+    if (email0 == null) return;
+    await _run(() => email0.signInWithPassword(email, password));
+  }
+
+  /// Sends the sign-in link; false (with [issue]) when it could not.
+  Future<bool> sendSignInLink(String email) async {
+    final backend0 = _email;
+    if (backend0 == null || _disposed || busy || !parentAuthorized()) {
+      return false;
+    }
+    busy = true;
+    issue = null;
+    notifyListeners();
+    var sent = false;
+    try {
+      await backend0.sendSignInLink(email).timeout(timeout);
+      sent = true;
+    } on TimeoutException {
+      issue = FamilyAuthIssue.timeout;
+    } on FamilyAuthFailure catch (failure) {
+      issue = failure.issue;
+    } catch (_) {
+      issue = FamilyAuthIssue.unavailable;
+    } finally {
+      busy = false;
+      if (!_disposed) notifyListeners();
+    }
+    return sent;
+  }
+
+  bool isSignInLink(String link) {
+    try {
+      return _email?.isSignInLink(link) ?? false;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  Future<void> signInWithLink(String email, String link) async {
+    final backend0 = _email;
+    if (backend0 == null) return;
+    await _run(() => backend0.signInWithLink(email, link));
+  }
+
   Future<bool> reauthenticate() async {
     if (_disposed || busy || !parentAuthorized()) return false;
     final existing = account;

@@ -982,6 +982,64 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım\'a dokun.';
 
   @override
+  String get signInTitle => 'Giriş yap';
+
+  @override
+  String get signInOr => 'veya';
+
+  @override
+  String get signInEmail => 'E-posta';
+
+  @override
+  String get signInPassword => 'Şifre';
+
+  @override
+  String get signInContinue => 'E-posta ile devam et';
+
+  @override
+  String get signInWrongPassword => 'E-posta ya da şifre hatalı.';
+
+  @override
+  String signInLinkSent(String email) {
+    return '$email adresine giriş bağlantısı gönderdik. Bu telefonda e-postadaki bağlantıya dokunun.';
+  }
+
+  @override
+  String get familyAccountDetails => 'Detaylar';
+
+  @override
+  String get accountDeleteHelpTitle => 'Hesap nasıl silinir?';
+
+  @override
+  String get accountDeleteHelpBody =>
+      'Yukarıdaki \"Hesabı ve bulut verilerini sil\"e dokunun ve Google hesabınızla onaylayın. Aile kaydı, çocuk profilleri ve günlük özetler buluttan silinir. Uygulamaya erişemiyorsanız: yesastudio.com/ozel-egitim-oyunlari/delete-account';
+
+  @override
+  String get accountPlanMonthly => 'Premium · aylık';
+
+  @override
+  String get accountPlanYearly => 'Premium · yıllık';
+
+  @override
+  String get accountTrialEnds => 'Deneme bitişi';
+
+  @override
+  String get accountPremiumUntil => 'Premium bitişi';
+
+  @override
+  String get accountPurchased => 'Satın alma';
+
+  @override
+  String get accountCreated => 'Hesap oluşturma';
+
+  @override
+  String get accountLastSignIn => 'Son giriş';
+
+  @override
+  String get accountNextPaymentNote =>
+      'Sonraki ödeme tarihi ve iptal Google Play → Ödemeler ve abonelikler bölümündedir.';
+
+  @override
   String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunu ekleyelim.';
 
   @override

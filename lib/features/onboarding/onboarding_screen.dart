@@ -15,6 +15,7 @@ import '../../core/learning/policies.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 import 'onboarding_parts.dart';
+import 'sign_in_screen.dart';
 import 'survey_questions.dart';
 
 /// Parent-facing first run, shown upright. One decision per screen; every
@@ -546,9 +547,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     UiSound.tap();
     // Nobody is set up yet, so the adult on this screen is the parent.
     if (s.profiles.isEmpty) s.unlockFamily();
+    // Google, or e-mail (password for the review account, otherwise a
+    // sign-in link), on its own page.
+    if (auth.account == null) {
+      await Navigator.of(context).push<bool>(
+        MaterialPageRoute(
+          builder: (_) => SignInScreen(state: s, auth: auth),
+        ),
+      );
+      if (!mounted) return;
+    }
     setState(() => _signingIn = true);
     try {
-      if (auth.account == null) await auth.signIn();
       final account = auth.account;
       if (account == null) {
         // Closed without signing in: nothing went wrong, so leave no issue

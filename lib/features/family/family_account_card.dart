@@ -43,6 +43,7 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
         FamilyAuthIssue.configuration => l10n.familyAccountConfiguration,
         FamilyAuthIssue.timeout => l10n.familyAccountTimeout,
         FamilyAuthIssue.unavailable => l10n.familyAccountUnavailable,
+        FamilyAuthIssue.wrongPassword => l10n.signInWrongPassword,
       };
 
   void _keepCurrentPageInRange(int pageCount) {

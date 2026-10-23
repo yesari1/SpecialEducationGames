@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../../app/ui/components.dart';
+import 'account_info_card.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../core/auth/client_account_deletion.dart';
@@ -23,7 +25,9 @@ class FamilyAccountScreen extends StatefulWidget {
 
 class _FamilyAccountScreenState extends State<FamilyAccountScreen>
     with SingleTickerProviderStateMixin {
-  late final TabController _tabs = TabController(length: 2, vsync: this);
+  // Made at once: a lazy controller would first be created in dispose()
+  // when the upright page (no tabs) closes.
+  late final TabController _tabs;
   late final FamilyAccountDeletionCoordinator _deletion =
       FamilyAccountDeletionCoordinator(
         enabled: true,
@@ -39,6 +43,7 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
   @override
   void initState() {
     super.initState();
+    _tabs = TabController(length: 2, vsync: this);
     unawaited(widget.auth.restore());
   }
 
@@ -74,6 +79,8 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
           ? ListView(
               padding: const EdgeInsets.all(SegSpace.s4),
               children: [
+                AccountInfoCard(state: widget.state, auth: widget.auth),
+                const SizedBox(height: SegSpace.s4),
                 ListenableBuilder(
                   listenable: widget.state,
                   builder: (context, _) => FamilyAccountCard(
@@ -89,6 +96,30 @@ class _FamilyAccountScreenState extends State<FamilyAccountScreen>
                   state: widget.state,
                   auth: widget.auth,
                   flat: true,
+                ),
+                const SizedBox(height: SegSpace.s4),
+                SegCard(
+                  key: const ValueKey('account-delete-help'),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        scopedLocalizations(
+                          context,
+                          widget.state.locale,
+                        ).accountDeleteHelpTitle,
+                        style: SegText.heading,
+                      ),
+                      const SizedBox(height: SegSpace.s2),
+                      Text(
+                        scopedLocalizations(
+                          context,
+                          widget.state.locale,
+                        ).accountDeleteHelpBody,
+                        style: SegText.body.copyWith(color: SegColors.inkSoft),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             )

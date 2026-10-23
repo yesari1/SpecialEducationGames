@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -10,7 +11,10 @@ import 'firebase_client.dart';
 /// preferences, logs or Firestore. Requests are serialized so a late cancelled
 /// sign-in cannot replace a later account selection.
 class GoogleFamilyAuthBackend
-    implements FamilyAuthBackend, FamilyReauthenticationBackend {
+    implements
+        FamilyAuthBackend,
+        FamilyReauthenticationBackend,
+        FamilyEmailAuthBackend {
   static const _serverClientId =
       '579874152426-e7a15kto2l2nhmfnhfdmoc3a5cnnpfk6.apps.googleusercontent.com';
   GoogleSignIn? _google;
@@ -37,8 +41,90 @@ class GoogleFamilyAuthBackend
     );
   }
 
-  FamilyAccount? _account(User? user) =>
-      user == null ? null : FamilyAccount(user.uid, email: user.email);
+  FamilyAccount? _account(User? user) => user == null
+      ? null
+      : FamilyAccount(
+          user.uid,
+          email: user.email,
+          name: user.displayName,
+          photoUrl: user.photoURL,
+          createdAt: user.metadata.creationTime,
+          lastSignInAt: user.metadata.lastSignInTime,
+        );
+
+  /// Where Firebase's password-free sign-in links point (the project's
+  /// Firebase Hosting domain; Android App Links open the app from it).
+  static const _linkDomain = 'specialeducationgames.firebaseapp.com';
+
+  static FamilyAuthIssue _emailIssue(FirebaseAuthException error) =>
+      switch (error.code) {
+        'network-request-failed' => FamilyAuthIssue.offline,
+        'wrong-password' ||
+        'invalid-credential' ||
+        'user-not-found' ||
+        'invalid-email' ||
+        'user-disabled' => FamilyAuthIssue.wrongPassword,
+        'operation-not-allowed' ||
+        'invalid-api-key' ||
+        'app-not-authorized' ||
+        'unauthorized-continue-uri' ||
+        'invalid-continue-uri' => FamilyAuthIssue.configuration,
+        _ => FamilyAuthIssue.unavailable,
+      };
+
+  @override
+  Future<FamilyAccount?> signInWithPassword(String email, String password) =>
+      _serial(() async {
+        await _initialize();
+        try {
+          final result = await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: email,
+            password: password,
+          );
+          return _account(result.user);
+        } on FirebaseAuthException catch (error) {
+          throw FamilyAuthFailure(_emailIssue(error));
+        }
+      });
+
+  @override
+  Future<void> sendSignInLink(String email) => _serial(() async {
+    await _initialize();
+    try {
+      await FirebaseAuth.instance.sendSignInLinkToEmail(
+        email: email,
+        actionCodeSettings: ActionCodeSettings(
+          url: 'https://$_linkDomain/sign-in',
+          linkDomain: _linkDomain,
+          handleCodeInApp: true,
+          androidPackageName: 'com.YeS.OzelEgitimOyunlari',
+          androidInstallApp: false,
+        ),
+      );
+    } on FirebaseAuthException catch (error) {
+      throw FamilyAuthFailure(_emailIssue(error));
+    }
+  });
+
+  @override
+  bool isSignInLink(String link) =>
+      Firebase.apps.isNotEmpty &&
+      FirebaseAuth.instance.isSignInWithEmailLink(link);
+
+  @override
+  Future<FamilyAccount?> signInWithLink(String email, String link) =>
+      _serial(() async {
+        await _initialize();
+        try {
+          final result = await FirebaseAuth.instance.signInWithEmailLink(
+            email: email,
+            emailLink: link,
+          );
+          return _account(result.user);
+        } on FirebaseAuthException catch (error) {
+          throw FamilyAuthFailure(_emailIssue(error));
+        }
+      });
 
   @override
   Future<FamilyAccount?> restore() => _serial(() async {

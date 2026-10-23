@@ -976,6 +976,31 @@
   "obHaveAccount": "Already have an account?",
   "obSignIn": "Sign in",
   "obNoAccountFound": "No account found for this Google account. Tap Let's begin to start.",
+  "signInTitle": "Sign in",
+  "signInOr": "or",
+  "signInEmail": "E-mail",
+  "signInPassword": "Password",
+  "signInContinue": "Continue with e-mail",
+  "signInWrongPassword": "Wrong e-mail or password.",
+  "signInLinkSent": "We sent a sign-in link to {email}. Tap the link in the e-mail on this phone.",
+  "@signInLinkSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "familyAccountDetails": "Details",
+  "accountDeleteHelpTitle": "How to delete the account",
+  "accountDeleteHelpBody": "Tap \"Delete account and cloud data\" above and confirm with your Google account. The family record, child profiles and daily summaries are deleted from the cloud. If you cannot open the app: yesastudio.com/ozel-egitim-oyunlari/delete-account",
+  "accountPlanMonthly": "Premium · monthly",
+  "accountPlanYearly": "Premium · yearly",
+  "accountTrialEnds": "Trial ends",
+  "accountPremiumUntil": "Premium until",
+  "accountPurchased": "Purchased",
+  "accountCreated": "Account created",
+  "accountLastSignIn": "Last sign-in",
+  "accountNextPaymentNote": "The next payment date and cancelling are in Google Play → Payments & subscriptions.",
   "obSignedIn": "Signed in. Now let’s add your child.",
   "obSkip": "Skip",
   "obChildTitle": "Tell us about your child",

@@ -20,6 +20,7 @@ import 'item_insights.dart';
 import 'goal_ring.dart';
 import '../../core/auth/family_auth.dart';
 import 'ask_cards.dart';
+import 'account_header.dart';
 import 'parent_announcement_card.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -1876,20 +1877,23 @@ class _FamilyScreenState extends State<FamilyScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              Icon(
-                e.isPremium
-                    ? Icons.workspace_premium_rounded
-                    : Icons.account_circle_outlined,
-                color: e.isPremium
-                    ? SegColors.accentStrong
-                    : SegColors.primaryDeep,
-              ),
-              const SizedBox(width: SegSpace.s2),
-              Text(l10n.familyPlanCardTitle, style: SegText.heading),
-            ],
-          ),
+          if (widget.auth?.account case final account?)
+            AccountHeader(account: account, premium: e.isPremium)
+          else
+            Row(
+              children: [
+                Icon(
+                  e.isPremium
+                      ? Icons.workspace_premium_rounded
+                      : Icons.account_circle_outlined,
+                  color: e.isPremium
+                      ? SegColors.accentStrong
+                      : SegColors.primaryDeep,
+                ),
+                const SizedBox(width: SegSpace.s2),
+                Text(l10n.familyPlanCardTitle, style: SegText.heading),
+              ],
+            ),
           row(l10n.familyAccountPlan, plan),
           row(l10n.familyAccountPayment, payment),
           if (e.source == PremiumSource.trial && ends != null)
@@ -1910,7 +1914,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
               secondary: true,
               onPressed: () => context.go('/family/subscription'),
             )
-          else if (!e.isPaid)
+          else if (e.source == PremiumSource.none ||
+              e.source == PremiumSource.trial)
             SegButton(
               key: const ValueKey('family-account-premium'),
               label: e.trialUsed
@@ -1921,8 +1926,9 @@ class _FamilyScreenState extends State<FamilyScreen> {
             ),
           const SizedBox(height: SegSpace.s2),
           SegButton(
-            label: l10n.familyGoogleFamilyAccount,
-            icon: Icons.account_circle_outlined,
+            key: const ValueKey('family-account-details'),
+            label: l10n.familyAccountDetails,
+            icon: Icons.chevron_right_rounded,
             secondary: true,
             onPressed: () => context.go('/family/account'),
           ),

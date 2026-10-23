@@ -9,6 +9,7 @@ import '../../core/entitlement/billing_repository.dart';
 import '../../core/entitlement/entitlement_service.dart';
 import '../../l10n/scoped_localizations.dart';
 import 'parent_gate.dart';
+import '../onboarding/sign_in_screen.dart';
 
 /// The Premium offer on one screen (no scrolling on a phone): a short
 /// hero, a strong headline, three check-mark benefits, full-width plans
@@ -97,7 +98,15 @@ class _PaywallViewState extends State<PaywallView> {
     if (!await _parentReady() || !mounted) return;
     if (_startsTrial) {
       final auth = widget.auth!;
-      if (auth.account == null) await auth.signIn();
+      if (auth.account == null) {
+        // Google or e-mail, on the shared sign-in page.
+        await Navigator.of(context).push<bool>(
+          MaterialPageRoute(
+            builder: (_) => SignInScreen(state: s, auth: auth),
+          ),
+        );
+        if (auth.account == null) auth.issue = null;
+      }
       final uid = auth.account?.uid;
       if (uid == null || !mounted) return;
       await s.syncTrial(uid);

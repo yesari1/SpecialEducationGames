@@ -1,12 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
+import '../l10n/scoped_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'app_state.dart';
 import 'orientation.dart';
 import 'theme/tokens.dart';
 import '../core/content/content_repository.dart';
 import '../features/onboarding/onboarding_screen.dart';
+import '../features/onboarding/sign_in_screen.dart';
+import '../app/ui/components.dart' show showNotice;
+import '../core/auth/firebase_client.dart';
+import 'package:app_links/app_links.dart';
 import '../features/child_home/home_screen.dart';
 import '../features/family/family_screen.dart';
 import '../features/family/subscription_screen.dart';
@@ -94,6 +99,69 @@ class _EducationAppState extends State<EducationApp>
     }
   }
 
+  StreamSubscription<Uri>? _links;
+
+  /// Firebase's password-free sign-in link, opened on this phone (App
+  /// Links). It finishes the sign-in started on the "Sign in" page.
+  void _listenForSignInLinks() {
+    final links = AppLinks();
+    _links = links.uriLinkStream.listen(
+      (uri) => unawaited(_signInLink(uri)),
+      onError: (Object _) {},
+    );
+  }
+
+  Future<void> _signInLink(Uri uri) async {
+    final link = uri.toString();
+    try {
+      await FirebaseClient.ensureInitialized();
+    } catch (_) {
+      return;
+    }
+    if (!familyAuth.isSignInLink(link) || familyAuth.account != null) return;
+    final email = await state.db.preference(pendingSignInEmailKey);
+    if (email == null || email.isEmpty) return;
+    // Started from the welcome page (no profile yet) or by the parent on
+    // the trial page (parent area still open).
+    final welcome = state.profiles.isEmpty;
+    if (!welcome && !state.familyUnlocked) return;
+    if (welcome) state.unlockFamily();
+    await familyAuth.signInWithLink(email, link);
+    final account = familyAuth.account;
+    if (account == null) return;
+    await state.db.setPreference(pendingSignInEmailKey, '');
+    final page = SignInScreen.openPage;
+    if (page != null && page.mounted) {
+      // The welcome page goes on with its usual account check.
+      (page as dynamic).linkSignedIn();
+      return;
+    }
+    // On the trial page the parent taps "try free" again (now signed in).
+    if (!welcome) return;
+    // App was started from the link: the same check as the welcome page.
+    final context = router.routerDelegate.navigatorKey.currentContext;
+    if (!await state.accountHasRecord(account.uid)) {
+      await familyAuth.signOut();
+      familyAuth.issue = null;
+      if (context != null && context.mounted) {
+        showNotice(
+          context,
+          scopedLocalizations(context, state.locale).obNoAccountFound,
+          icon: Icons.info_rounded,
+          color: SegColors.accent,
+        );
+      }
+      return;
+    }
+    for (var i = 0; i < 300 && !state.accountReady; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+    if (state.active != null) {
+      unawaited(state.recordFamily(account.uid, account.email));
+      router.go('/');
+    }
+  }
+
   AppState get state => widget.state;
   Widget reactive(Widget Function() child) =>
       ListenableBuilder(listenable: state, builder: (_, _) => child());
@@ -106,6 +174,7 @@ class _EducationAppState extends State<EducationApp>
     );
     familyAuth.addListener(_accountChanged);
     state.billing.addListener(_planChanged);
+    if (widget.accountGate) _listenForSignInLinks();
     if (widget.accountGate) {
       unawaited(
         familyAuth.restoreAtStart().whenComplete(() {
@@ -282,6 +351,7 @@ class _EducationAppState extends State<EducationApp>
     router.dispose();
     familyAuth.removeListener(_accountChanged);
     state.billing.removeListener(_planChanged);
+    unawaited(_links?.cancel());
     familyAuth.dispose();
     super.dispose();
   }

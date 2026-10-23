@@ -984,7 +984,11 @@ class AppState extends ChangeNotifier {
   /// Up to five children with paid Premium; one in the free version and
   /// during the free trial.
   int get profileLimit =>
-      entitlement.isPaid || entitlement.source == PremiumSource.qa ? 5 : 1;
+      entitlement.isPaid ||
+          entitlement.source == PremiumSource.qa ||
+          entitlement.source == PremiumSource.granted
+      ? 5
+      : 1;
 
   bool canSelectProfile(String id) =>
       entitlement.isPremium || profiles.firstOrNull?.id == id;
