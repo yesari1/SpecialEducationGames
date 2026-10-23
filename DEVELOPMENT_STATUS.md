@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R73 (test süresi)
+
+- Tam test turu paralel: `flutter test --no-pub --concurrency=4` → 286/286, ~1 dk 45 sn (seri tur 6-13 dk). R25'teki "paralel tur başarısız ama testler geçmiş" durumunun ve ara sıra görülen `game_catalog_rounds_test` yükleme hatasının sebebi bulundu: `g14_alternate_photo_test`'in son testi Android platformunda AppState kuruyor, test bittikten sonra Play Billing bağlantı hatası (`InAppPurchaseApi.startConnection`) geç düşüyordu. Test Linux platformunda koşacak şekilde düzeltildi.
+- En yavaş dosyalar (paralelde): family_page_navigation_motion ~84 sn, family_pages_layout ~83 sn, all_game_cards_smoke ~47 sn, family_settings_landscape ~38 sn.
+- Kural: build ile testler aynı anda koşmaz (derleme sırasında plugin registrant değişebiliyor).
+
 ## 23 Ekim 2026 — R72 (çevrimdışı sınır, saat koruması, plan değiştirme) — sürüm 2.0.29 (43), Internal testing'de
 
 - Çevrimdışı: abonelik (`activeAt`) ve admin grant'i (`grantCheckedAt`) son internetli doğrulamadan sonra `EntitlementService.offlineGrace` = 3 gün geçerli (önceden abonelik 7 gün, grant süresiz). Sonra uyarısız ücretsiz sürüm; açılışta Play/sunucu cevabıyla kendiliğinden döner. Ömür boyu çevrimdışı açık kalır; deneme kendi bitişine kadar.

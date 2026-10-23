@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'dart:math';
 
 import 'package:drift/native.dart';
@@ -217,6 +218,9 @@ void main() {
   test(
     'daily path excludes G14 when its effective difficulty is unavailable',
     () {
+      // Not Android: no Google Play billing connection left behind.
+      debugDefaultTargetPlatformOverride = TargetPlatform.linux;
+      addTearDown(() => debugDefaultTargetPlatformOverride = null);
       final content = repository(withVariants: false);
       final state = AppState(
         content,
