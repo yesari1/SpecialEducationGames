@@ -30,6 +30,9 @@ class EntitlementService {
   /// [grantUntil] (null = no end), and [trialEnded] ends the trial early.
   bool grantPremium = false;
   DateTime? grantUntil;
+
+  /// When the grant was last read from the server.
+  DateTime? grantCheckedAt;
   bool trialEnded = false;
   String? grantUid;
 
@@ -40,8 +43,14 @@ class EntitlementService {
   DateTime? purchasedAt;
 
   bool get grantActive {
-    final until = grantUntil;
-    return grantPremium && (until == null || now().isBefore(until));
+    final until = grantUntil, checked = grantCheckedAt;
+    final at = now();
+    return grantPremium &&
+        !clockSetBack &&
+        (until == null || at.isBefore(until)) &&
+        checked != null &&
+        !at.isBefore(checked) &&
+        at.difference(checked) < offlineGrace;
   }
 
   /// Trial length; the app passes the remote `config/app.trialDays`.
@@ -55,17 +64,28 @@ class EntitlementService {
   }) : now = now ?? DateTime.now,
        trialDaysOf = trialDaysOf ?? (() => 7);
 
-  /// A subscription confirmed by Play stays valid for a week offline.
+  /// Offline, a subscription or an admin grant stays valid this long after
+  /// it was last confirmed online; then the free games until the next
+  /// online check (which happens by itself at start).
+  static const offlineGrace = Duration(days: 3);
+
+  /// The latest time this phone has shown; a clock set back before it
+  /// (minus an hour) voids time-limited access until an online check.
+  DateTime? maxSeenAt;
+  bool clockSetBack = false;
+
+  /// A subscription confirmed by Play stays valid [offlineGrace] offline.
   bool activeAt(DateTime at) =>
       storeActive &&
       lastConfirmedAt != null &&
       !at.isBefore(lastConfirmedAt!) &&
-      at.difference(lastConfirmedAt!) < const Duration(days: 7);
+      at.difference(lastConfirmedAt!) < offlineGrace;
 
   DateTime? get trialEndsAt => trialStartedAt?.add(Duration(days: trialDays));
   bool trialActiveAt(DateTime at) {
     final start = trialStartedAt, end = trialEndsAt;
     return !trialEnded &&
+        !clockSetBack &&
         start != null &&
         end != null &&
         !at.isBefore(start.subtract(const Duration(minutes: 5))) &&
@@ -86,7 +106,7 @@ class EntitlementService {
   PremiumSource get source {
     if (qaPremium) return PremiumSource.qa;
     if (lifetimeOwned) return PremiumSource.lifetime;
-    if (activeAt(now())) return PremiumSource.subscription;
+    if (!clockSetBack && activeAt(now())) return PremiumSource.subscription;
     if (grantActive) return PremiumSource.granted;
     if (trialActive) return PremiumSource.trial;
     return PremiumSource.none;
@@ -111,6 +131,10 @@ class EntitlementService {
     grantUid = await db.preference('grant.uid');
     grantPremium = await db.preference('grant.premium') == 'true';
     grantUntil = DateTime.tryParse(await db.preference('grant.until') ?? '');
+    grantCheckedAt = DateTime.tryParse(
+      await db.preference('grant.checkedAt') ?? '',
+    );
+    await noteClock();
     trialEnded = await db.preference('grant.endTrial') == 'true';
     subscriptionPlan = await db.preference('premium.basePlan');
     purchasedAt = DateTime.tryParse(
@@ -170,10 +194,16 @@ class EntitlementService {
     DateTime? until,
     required bool endTrial,
   }) async {
+    await _onlineNow();
     grantUid = uid;
     grantPremium = premium;
     grantUntil = until;
     trialEnded = endTrial;
+    grantCheckedAt = now();
+    await db.setPreference(
+      'grant.checkedAt',
+      grantCheckedAt!.toUtc().toIso8601String(),
+    );
     await db.setPreference('grant.uid', uid);
     await db.setPreference('grant.premium', '$premium');
     await db.setPreference(
@@ -183,8 +213,36 @@ class EntitlementService {
     await db.setPreference('grant.endTrial', '$endTrial');
   }
 
+  /// Remembers the latest time seen; flags a clock set back before it.
+  Future<void> noteClock() async {
+    final at = now();
+    maxSeenAt ??= DateTime.tryParse(
+      await db.preference('clock.maxSeenAt') ?? '',
+    );
+    final seen = maxSeenAt;
+    if (seen != null && at.isBefore(seen.subtract(const Duration(hours: 1)))) {
+      clockSetBack = true;
+      return;
+    }
+    if (seen == null || at.isAfter(seen)) {
+      maxSeenAt = at;
+      await db.setPreference('clock.maxSeenAt', at.toUtc().toIso8601String());
+    }
+  }
+
+  /// An online answer (Play or our server) trusts the clock again.
+  Future<void> _onlineNow() async {
+    clockSetBack = false;
+    maxSeenAt = now();
+    await db.setPreference(
+      'clock.maxSeenAt',
+      maxSeenAt!.toUtc().toIso8601String(),
+    );
+  }
+
   /// Play's answer about what this device owns right now.
   Future<void> confirmStoreState(bool active, {bool lifetime = false}) async {
+    await _onlineNow();
     storeActive = active;
     lifetimeOwned = lifetime;
     lastConfirmedAt = now();
@@ -198,6 +256,7 @@ class EntitlementService {
 
   /// Caches the server's trial start for [uid] (null: this account has none).
   Future<void> setTrial(String uid, DateTime? startedAt) async {
+    await _onlineNow();
     trialUid = uid;
     trialStartedAt = startedAt;
     await db.setPreference('trial.uid', uid);

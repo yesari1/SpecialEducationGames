@@ -1035,6 +1035,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'The next payment date and cancelling are in Google Play → Payments & subscriptions.';
 
   @override
+  String get paywallLifetimeSubscribedTitle => 'Your subscription continues';
+
+  @override
+  String get paywallLifetimeSubscribedBody =>
+      'After the one-time purchase your subscription does not stop by itself. To stop its payments, cancel it in Google Play → Payments & subscriptions.';
+
+  @override
+  String get paywallLifetimeSubscribedContinue => 'Continue to purchase';
+
+  @override
   String get obSignedIn => 'Signed in. Now let’s add your child.';
 
   @override

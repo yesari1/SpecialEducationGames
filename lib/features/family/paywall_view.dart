@@ -134,7 +134,46 @@ class _PaywallViewState extends State<PaywallView> {
       return;
     }
     final plan = _plan;
-    if (plan != null) await s.billing.buy(plan);
+    if (plan == null) return;
+    // A subscription does not stop by itself when the one-time purchase is
+    // bought: say so first, with the way to cancel it.
+    if (plan.lifetime &&
+        s.entitlement.source == PremiumSource.subscription &&
+        !await _lifetimeWhileSubscribed()) {
+      return;
+    }
+    await s.billing.buy(plan);
+  }
+
+  Future<bool> _lifetimeWhileSubscribed() async {
+    final l10n = scopedLocalizations(context, s.locale);
+    final go = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        key: const ValueKey('lifetime-cancel-note'),
+        title: Text(l10n.paywallLifetimeSubscribedTitle),
+        content: Text(l10n.paywallLifetimeSubscribedBody),
+        actions: [
+          TextButton(
+            onPressed: () => _open(
+              'https://play.google.com/store/account/subscriptions'
+              '?sku=${BillingProducts.subscription}'
+              '&package=com.YeS.OzelEgitimOyunlari',
+            ),
+            child: Text(l10n.subscriptionManage),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.parentGateCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.paywallLifetimeSubscribedContinue),
+          ),
+        ],
+      ),
+    );
+    return go == true;
   }
 
   void _open(String url) =>

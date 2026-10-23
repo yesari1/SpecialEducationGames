@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R72 (çevrimdışı sınır, saat koruması, plan değiştirme) — sürüm 2.0.29 (43), Internal testing'de
+
+- Çevrimdışı: abonelik (`activeAt`) ve admin grant'i (`grantCheckedAt`) son internetli doğrulamadan sonra `EntitlementService.offlineGrace` = 3 gün geçerli (önceden abonelik 7 gün, grant süresiz). Sonra uyarısız ücretsiz sürüm; açılışta Play/sunucu cevabıyla kendiliğinden döner. Ömür boyu çevrimdışı açık kalır; deneme kendi bitişine kadar.
+- Saat koruması: `clock.maxSeenAt`; açılışta saat bundan 1 saatten fazla gerideyse `clockSetBack` → deneme, abonelik ve grant geçersiz; Play/sunucu cevabı (`confirmStoreState`, `setTrial`, `setGrant`) sıfırlar.
+- Plan değiştirme: aktif abonelikte farklı temel plan alınırken `ChangeSubscriptionParam` (yıllığa `chargeFullPrice`, aylığa `deferred`); önceden Play "zaten sahip" derdi. `BillingRepository.ownedSubscription` restore'dan.
+- Aboneyken ömür boyu: satın almadan önce iptal hatırlatma diyaloğu ("Aboneliği yönet" / İptal / Devam).
+- İptal: abonelik Play'den iptal edilir; Hesap kartı, Hesap sayfası ve paywall'da "Aboneliği yönet" Play abonelik sayfasını açar.
+- Doğrulama: seri host testler 286/286 (yeni: çevrimdışı grant + saat geri alma); `tools/build_release.sh` geçti (testlerle aynı anda değil); vc43 Internal testing'e yüklendi.
+
 ## 23 Ekim 2026 — R70–R71 (çıkış sonrası giriş, fiyat tekrar deneme, hoş geldin genişliği) — sürüm 2.0.28 (42), Internal testing'de
 
 - Çıkışta (`old != null && next == null`) `AppState.signedOut()` → `EntitlementService.clearAccount()`: o hesabın deneme ve grant önbelleği silinir (Play satın almaları kalır). Önceden çıkış sonrası paywall eski "Deneme aktif" bilgisini gösterip yalnız satın alma sunuyordu.

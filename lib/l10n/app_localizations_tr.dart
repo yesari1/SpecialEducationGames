@@ -1040,6 +1040,16 @@ class AppLocalizationsTr extends AppLocalizations {
       'Sonraki ödeme tarihi ve iptal Google Play → Ödemeler ve abonelikler bölümündedir.';
 
   @override
+  String get paywallLifetimeSubscribedTitle => 'Aboneliğin devam ediyor';
+
+  @override
+  String get paywallLifetimeSubscribedBody =>
+      'Ömür boyu satın aldıktan sonra aboneliğin kendiliğinden durmaz. Ödemenin devam etmemesi için Google Play → Ödemeler ve abonelikler bölümünden aboneliği iptal et.';
+
+  @override
+  String get paywallLifetimeSubscribedContinue => 'Satın almaya devam et';
+
+  @override
   String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunu ekleyelim.';
 
   @override

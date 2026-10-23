@@ -1921,6 +1921,24 @@ abstract class AppLocalizations {
   /// **'The next payment date and cancelling are in Google Play → Payments & subscriptions.'**
   String get accountNextPaymentNote;
 
+  /// No description provided for @paywallLifetimeSubscribedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription continues'**
+  String get paywallLifetimeSubscribedTitle;
+
+  /// No description provided for @paywallLifetimeSubscribedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'After the one-time purchase your subscription does not stop by itself. To stop its payments, cancel it in Google Play → Payments & subscriptions.'**
+  String get paywallLifetimeSubscribedBody;
+
+  /// No description provided for @paywallLifetimeSubscribedContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to purchase'**
+  String get paywallLifetimeSubscribedContinue;
+
   /// No description provided for @obSignedIn.
   ///
   /// In en, this message translates to:

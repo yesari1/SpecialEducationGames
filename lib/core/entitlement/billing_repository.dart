@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:in_app_purchase_android/billing_client_wrappers.dart'
+    show ReplacementMode;
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
 import 'entitlement_service.dart';
 
@@ -77,6 +79,9 @@ class BillingRepository extends ChangeNotifier {
 
   /// Base plan of the purchase sheet that is open (monthly or yearly).
   String? _buyingPlan;
+
+  /// The active subscription purchase Play reported (for a plan change).
+  GooglePlayPurchaseDetails? ownedSubscription;
 
   BillingRepository(this.entitlement, {InAppPurchase? store, this.onPurchased})
     : store = store ?? InAppPurchase.instance;
@@ -201,6 +206,10 @@ class BillingRepository extends ChangeNotifier {
             DateTime.fromMillisecondsSinceEpoch(ms),
       ]..sort();
       await entitlement.setPurchasedAt(times.lastOrNull);
+      ownedSubscription = current
+          .whereType<GooglePlayPurchaseDetails>()
+          .where((p) => p.productID == BillingProducts.subscription)
+          .firstOrNull;
       for (final p in current) {
         if (p.pendingCompletePurchase) await store.completePurchase(p);
       }
@@ -218,10 +227,26 @@ class BillingRepository extends ChangeNotifier {
     _buyingPlan = plan.id;
     notifyListeners();
     try {
+      // Monthly <-> yearly is a plan change of the same subscription: to
+      // yearly at once (full yearly price, unused monthly days credited by
+      // Play), to monthly when the paid year ends.
+      final owned = ownedSubscription;
+      final change =
+          owned != null &&
+              !plan.lifetime &&
+              entitlement.subscriptionPlan != plan.id
+          ? ChangeSubscriptionParam(
+              oldPurchaseDetails: owned,
+              replacementMode: plan.id == 'yearly'
+                  ? ReplacementMode.chargeFullPrice
+                  : ReplacementMode.deferred,
+            )
+          : null;
       final launched = await store.buyNonConsumable(
         purchaseParam: GooglePlayPurchaseParam(
           productDetails: plan.product,
           offerToken: plan.offerToken,
+          changeSubscriptionParam: change,
         ),
       );
       if (!launched) pending = false;
