@@ -65,6 +65,7 @@ class _EducationAppState extends State<EducationApp>
     _cachedAccountUid = next;
     // The free trial belongs to the Google account: read it after sign-in.
     if (next != old) state.setAccount(next, ready: next == null);
+    if (old != null && next == null) unawaited(state.signedOut());
     if (next != null && next != old) {
       final email = familyAuth.account?.email;
       // Trial, admin grant, plan and child profiles first: the loading page

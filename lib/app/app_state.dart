@@ -43,6 +43,12 @@ class AppState extends ChangeNotifier {
   /// its trial, grant and child profiles); the app shows its loading page.
   bool accountReady = false;
 
+  /// After signing out: forget the account's trial and grant here.
+  Future<void> signedOut() async {
+    await entitlement.clearAccount();
+    if (!_disposed) notifyListeners();
+  }
+
   void setAccount(String? uid, {required bool ready}) {
     accountUid = uid;
     accountReady = ready;

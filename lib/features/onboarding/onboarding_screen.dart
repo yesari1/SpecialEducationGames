@@ -323,21 +323,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             SegSpace.s5,
                             SegSpace.s3,
                           ),
-                          // Short phones scale the page down as a whole.
+                          // Text keeps its full width and size; the scene
+                          // (a Flexible child) gives up height to fit. Only
+                          // very short screens or very large text scale the
+                          // page down as a whole.
                           child: LayoutBuilder(
-                            builder: (context, box) => FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment.topCenter,
-                              child: SizedBox(
-                                width: box.maxWidth,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: children,
+                            builder: (context, box) {
+                              final roomy =
+                                  box.maxHeight >= 520 &&
+                                  MediaQuery.textScalerOf(context).scale(1) <
+                                      1.4;
+                              final column = Column(
+                                mainAxisSize: roomy
+                                    ? MainAxisSize.max
+                                    : MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: children,
+                              );
+                              if (roomy) return column;
+                              return FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.topCenter,
+                                child: SizedBox(
+                                  width: box.maxWidth,
+                                  child: column,
                                 ),
-                              ),
-                            ),
+                              );
+                            },
                           ),
                         )
                       : ListView(
@@ -415,24 +427,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       children: [
         // One illustrated scene in the app's illustration style
         // (docs/illustration-style.md) on a soft sky-to-cream card.
-        // Short phones first give up scene height, then scale as a whole.
-        SizedBox(
-          height: (MediaQuery.sizeOf(context).height - 520).clamp(110.0, 240.0),
-          child: Container(
-            key: const ValueKey('welcome-hero'),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(SegRadius.xl),
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+        // The scene takes the height that is left (at most 240).
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 240),
+            child: Container(
+              key: const ValueKey('welcome-hero'),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(SegRadius.xl),
+                gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+                ),
               ),
-            ),
-            padding: const EdgeInsets.all(SegSpace.s2),
-            child: Image.asset(
-              '$_illustrations/hero_welcome.png',
-              fit: BoxFit.contain,
-              excludeFromSemantics: true,
+              padding: const EdgeInsets.all(SegSpace.s2),
+              child: Image.asset(
+                '$_illustrations/hero_welcome.png',
+                fit: BoxFit.contain,
+                excludeFromSemantics: true,
+              ),
             ),
           ),
         ),

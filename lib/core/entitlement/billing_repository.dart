@@ -80,8 +80,13 @@ class BillingRepository extends ChangeNotifier {
 
   BillingRepository(this.entitlement, {InAppPurchase? store, this.onPurchased})
     : store = store ?? InAppPurchase.instance;
+
+  /// Plans were asked for at least once (the app start does that).
+  bool started = false;
+
   Future<void> initialize() async {
     if (loading) return;
+    started = true;
     loading = true;
     error = null;
     notifyListeners();

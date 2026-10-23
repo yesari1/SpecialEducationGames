@@ -45,7 +45,16 @@ class _PaywallViewState extends State<PaywallView> {
     super.initState();
     s.billing.addListener(_changed);
     widget.auth?.addListener(_changed);
-    // Plans are loaded at app start (main); "Try again" reloads them.
+    // Plans are loaded at app start (main); when that did not get them (Play
+    // not ready yet), ask again now. "Try again" reloads them too.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted &&
+          s.billing.started &&
+          s.billing.plans.isEmpty &&
+          !s.billing.loading) {
+        s.billing.initialize();
+      }
+    });
     s.funnelStep('paywall');
   }
 

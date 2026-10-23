@@ -123,6 +123,23 @@ void main() {
     expect(fields.toString(), isNot(contains('focus')));
   });
 
+  test('signing out forgets the account trial and grant here', () async {
+    final state = await build(_FakeChildren());
+    addTearDown(state.dispose);
+    await state.entitlement.setTrial('parent-1', DateTime.now());
+    await state.entitlement.setGrant(
+      'parent-1',
+      premium: true,
+      endTrial: false,
+    );
+    expect(state.entitlement.trialActive, isTrue);
+    await state.signedOut();
+    expect(state.entitlement.trialUsed, isFalse);
+    expect(state.entitlement.grantActive, isFalse);
+    await state.entitlement.load();
+    expect(state.entitlement.trialUsed, isFalse, reason: 'also after restart');
+  });
+
   test('"Already have an account?" needs a family record or a trial', () async {
     final children = _FakeChildren();
     final state = await build(children);

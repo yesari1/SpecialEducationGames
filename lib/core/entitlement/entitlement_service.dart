@@ -142,6 +142,27 @@ class EntitlementService {
     await db.setPreference('premium.basePlan', basePlan);
   }
 
+  /// Sign-out: the account's trial and admin grant no longer apply on this
+  /// phone (Play purchases belong to the Play account and stay).
+  Future<void> clearAccount() async {
+    trialUid = null;
+    trialStartedAt = null;
+    grantUid = null;
+    grantPremium = false;
+    grantUntil = null;
+    trialEnded = false;
+    for (final key in [
+      'trial.uid',
+      'trial.startedAt',
+      'grant.uid',
+      'grant.premium',
+      'grant.until',
+      'grant.endTrial',
+    ]) {
+      await db.setPreference(key, '');
+    }
+  }
+
   /// Caches the admin grant of [uid] (all false/null: no grant).
   Future<void> setGrant(
     String uid, {

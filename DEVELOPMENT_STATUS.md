@@ -2,6 +2,16 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R70–R71 (çıkış sonrası giriş, fiyat tekrar deneme, hoş geldin genişliği) — sürüm 2.0.28 (42), Internal testing'de
+
+- Çıkışta (`old != null && next == null`) `AppState.signedOut()` → `EntitlementService.clearAccount()`: o hesabın deneme ve grant önbelleği silinir (Play satın almaları kalır). Önceden çıkış sonrası paywall eski "Deneme aktif" bilgisini gösterip yalnız satın alma sunuyordu.
+- Giriş/deneme kapısında giriş yoksa "Zaten hesabın var mı? Giriş yap" (ebeveyn kilidi → ortak giriş sayfası).
+- Paywall açılınca fiyatlar boşsa Play'den yeniden ister (yalnız açılışta bir kez denendiyse: `BillingRepository.started`; testlerde platform kanalı beklemesin diye).
+- Hoş geldin: tüm sayfayı ölçeklemek yerine sahne `Flexible` (en fazla 240) kısalır; metin tam genişlik. Yalnız < 520 yükseklik ya da ≥1.4 yazı ölçeğinde eski ölçekleme.
+- Not: build ile tam testler aynı anda koşunca derleme sırasında GeneratedPluginRegistrant'a integration_test girdi ve bundleRelease düştü; build tek başına yeniden alındı. Bundan sonra build ile testleri aynı anda koşmayın.
+- Plan geçişleri (Yunus'a raporlandı, onay bekliyor): aylık↔yıllık şu an Play "zaten sahip" der (değiştirme parametresi yok); öneri CHARGE_FULL_PRICE (yukarı) / DEFERRED (aşağı). Aboneyken ömür boyu: abonelik kendiliğinden iptal olmaz, uyarı + "Aboneliği yönet" önerildi. Deneme bizim sistemimizde; Play'de ücretsiz deneme teklifi yok.
+- Doğrulama: seri tam tur 284/285 — tek hata bilinen ara sıra `game_catalog_rounds_test` yüklemesi (ayrı koşuda geçti); yeni test: çıkışta deneme/grant silinir. `tools/build_release.sh` geçti; vc42 Internal testing'e yüklendi.
+
 ## 23 Ekim 2026 — R68–R69 (e-posta link düzeltmesi, giriş sayfası görünümü, Hosting) — sürüm 2.0.27 (41), Internal testing'de
 
 - Firebase Hosting yayınlandı (Yunus onayı): `firebase/hosting/` → specialeducationgames.web.app / .firebaseapp.com; `/.well-known/assetlinks.json` iki SHA-256 ile (Play imzalama 67:F0:BA:…:0E:A3, Play API `generatedApks` ile okundu; upload 24:1D:C6:…:A0:4E). Digital Asset Links servisi doğruladı.
