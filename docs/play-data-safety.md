@@ -1,11 +1,11 @@
 # Play Console: Veri güvenliği formu ve beyanlar (Özel Eğitim Oyunları)
 
-Bu cevaplar R33/R34 kodunun gerçekte yaptığına göre hazırlandı (20 Ekim 2026).
+Bu cevaplar 2.0.25 (39) kodunun gerçekte gönderdiklerine göre kontrol edildi (23 Ekim 2026).
 
 - Ebeveynin Google ile girişi zorunludur (23 Ekim 2026 kararı); giriş yalnız ebeveyn ekranlarında. Reklam, üçüncü taraf analitik, çökme raporu ve konum yoktur.
 - Çocuk profili (ad, yaş, avatar, profil ayarları) ebeveynin hesabıyla `families/{uid}/children/{id}` altında saklanır; fotoğraf yok.
-- Buluta yalnızca şunlar gider: Firebase hesabı (e-posta `families/{uid}` içinde de saklanır), deneme başlangıç zamanı ve giriş yapılmışken otomatik gönderilen günlük öğrenme özetleri (Aile alanından kapatılabilir; 21 Ekim 2026 kararı).
-- Yesa Studio yöneticisi bu verileri yönetici sayfasından (yesastudio.com/ozel-egitim-oyunlari/admin/, Firestore kurallarıyla yalnız `admins/{uid}` hesapları) görebilir ve silebilir. Bu bir üçüncü tarafa paylaşım değildir.
+- Buluta yalnızca şunlar gider: Firebase hesabı; aile kaydı `families/{uid}` (e-posta, dil, plan, son açılış, uygulama sürümü); çocuk profilleri; deneme başlangıç zamanı `trials/{uid}`; otomatik gönderilen günlük öğrenme özetleri (Aile alanından kapatılabilir); hesapsız kurulum istatistiği `funnel/{installId}`; isteğe bağlı geri bildirim ve anket `feedback/{id}`. Yöneticinin yazdığı `grants/{uid}` (tanımlı paket, denemeyi bitirme) uygulama tarafından yalnız okunur.
+- Yesa Studio yöneticisi bu verileri yönetici sayfasından (seg.yesastudio.com, Firestore kurallarıyla yalnız `admins/{uid}` hesapları) görebilir ve silebilir. Bu bir üçüncü tarafa paylaşım değildir.
 
 Kod değişirse bu formu da güncelleyin.
 
@@ -45,6 +45,7 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026: plan bilgisi,
 |---|---|---|---|---|---|
 | Ad | Evet | Hayır | Hayır | **Zorunlu** | **Uygulama işlevselliği** (çocuk profili), **Hesap yönetimi** |
 | E-posta adresi | Evet | Hayır | Hayır | **Zorunlu** | **Hesap yönetimi** |
+| Diğer bilgiler | Evet | Hayır | Hayır | **Zorunlu** | **Uygulama işlevselliği** (çocuk profili: yaş / yaş bandı, avatar, profil ayarları) |
 | Kullanıcı kimlikleri | Evet | Hayır | Hayır | **Zorunlu** | **Uygulama işlevselliği**, **Hesap yönetimi**, **Sahtekârlığı önleme, güvenlik ve uygunluk** (deneme süresinin hesap başına bir kez verilmesi) |
 
 **Uygulama etkinliği**
@@ -69,10 +70,10 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026: plan bilgisi,
 Notlar:
 
 - "Ad": ebeveynin Google adı (Firebase Authentication) ve ebeveynin girdiği çocuk adı/takma adı (çocuk profili).
-- "Diğer bilgiler": çocuğun yaşı / yaş bandı, avatar ve profil ayarları (`families/{uid}/children/{id}`). Formda "Kişisel bilgiler → Diğer bilgiler" de işaretlenir: Evet, paylaşılmıyor, geçici değil, zorunlu, Uygulama işlevselliği.
+- "Diğer bilgiler": çocuğun yaşı / yaş bandı, avatar ve profil ayarları (`families/{uid}/children/{id}`).
 - "E-posta": Google ile girişte Firebase Authentication alır; ayrıca `families/{uid}.email`.
 - "Kullanıcı kimlikleri": Firebase UID. Deneme kaydı (`trials/{uid}`, yalnız başlangıç zamanı) ve özetler bu kimlikle saklanır.
-- "Uygulama etkileşimleri": günlük özetler. İçerik: tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı. Çocuğun adı, yaşı ya da tek tek yanıtları gönderilmez.
+- "Uygulama etkileşimleri": günlük özetler (tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı; özetlerde çocuğun adı ya da tek tek yanıtları yok), son açılış ve kurulum adımları.
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
 - Satın almalar: ödemeyi Google Play işler; ödeme bilgisi bize gelmez. Giriş yapılmışsa hesabın planı (ücretsiz/deneme/aylık/yıllık/ömür boyu/tanımlı) `families/{uid}.plan` olarak gider, bu yüzden "Satın alma geçmişi" **işaretlenir**.
 - "Cihaz veya diğer kimlikler": uygulamanın ürettiği rastgele kurulum kimliği (`funnel/{installId}`); yalnız kurulum adımlarının ilk zamanları, platform, sürüm ve dil. Android ID, AAID, IMEI gibi kimlikler **kullanılmaz**; Google hesabına bağlanmaz.
