@@ -2,6 +2,11 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R61 (hoş geldin metni) — sürüm 2.0.24 (38), Internal testing'de
+
+- Hoş geldin: "Reklam yok. İnternet şart değil." → yalnız "Reklam yok." (EN "No ads."), Yunus'un isteği; girişte internet gerektiği için.
+- Doğrulama: seri host testler 283/283; `tools/build_release.sh` geçti; vc38 Internal testing'e yüklendi.
+
 ## 23 Ekim 2026 — R59–R60 (zorunlu giriş, deneme kapısı, profiller hesapta) — sürüm 2.0.23 (37), Internal testing'de
 
 - Kaynak: Drive `giris-deneme-profil.md` + `profil-ek.md` (Yunus onaylı).
