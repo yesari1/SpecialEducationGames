@@ -254,3 +254,26 @@ test('admin page: per-family collection-group range finds only that family',asyn
   const snap=await assertSucceeds(getDocs(range('alice')));
   if(snap.docs.length!==1||!snap.docs[0].ref.path.startsWith('families/alice/')) throw new Error('range mismatch '+snap.docs.map(d=>d.ref.path));
 });
+
+test('feedback: app creates (signed in or not), only admin reads, marks and deletes',async () => {
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  const base={message:'Çok güzel bir uygulama',createdAt:serverTimestamp(),uid:null,email:null,installId:'a1b2c3d4-e5f6-4711-8899-aabbccddeeff',appVersion:'2.0.22+36',locale:'tr',platform:'android'};
+  await assertSucceeds(setDoc(doc(db(null),'feedback/f1'),base));
+  const alice=env.authenticatedContext('alice',{email:'alice@example.com'}).firestore();
+  await assertSucceeds(setDoc(doc(alice,'feedback/f2'),{...base,uid:'alice',email:'alice@example.com'}));
+  await assertFails(setDoc(doc(alice,'feedback/f3'),{...base,uid:'bob'}));
+  await assertFails(setDoc(doc(db(null),'feedback/f4'),{...base,email:'x@y.z'}));
+  await assertFails(setDoc(doc(db(null),'feedback/f5'),{...base,message:''}));
+  await assertFails(setDoc(doc(db(null),'feedback/f6'),{...base,message:'x'.repeat(2001)}));
+  await assertFails(setDoc(doc(db(null),'feedback/f7'),{...base,createdAt:stamp()}));
+  await assertFails(setDoc(doc(db(null),'feedback/f8'),{...base,extra:1}));
+  await assertFails(getDoc(doc(alice,'feedback/f2')));
+  await assertFails(getDocs(collection(alice,'feedback')));
+  await assertFails(updateDoc(doc(alice,'feedback/f2'),{message:'changed'}));
+  const admin=db('admin');
+  await assertSucceeds(getDocs(collection(admin,'feedback')));
+  await assertSucceeds(updateDoc(doc(admin,'feedback/f1'),{status:'read'}));
+  await assertFails(updateDoc(doc(admin,'feedback/f1'),{status:'spam'}));
+  await assertFails(updateDoc(doc(admin,'feedback/f1'),{message:'edited'}));
+  await assertSucceeds(deleteDoc(doc(admin,'feedback/f1')));
+});

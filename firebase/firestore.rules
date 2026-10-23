@@ -106,6 +106,25 @@ service cloud.firestore {
       allow update: if funnelDoc();
       allow delete: if admin();
     }
+    // Feedback a parent sends from the app settings. Create-only from the
+    // app (signed in or not; an account field must match the sender); only
+    // admins read it, mark it ('new' | 'read' | 'done') or delete it.
+    match /feedback/{id} {
+      allow create: if exact(request.resource.data, ['message', 'createdAt', 'uid', 'email', 'installId', 'appVersion', 'locale', 'platform'])
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 1 && request.resource.data.message.size() <= 2000
+        && request.resource.data.createdAt == request.time
+        && (request.resource.data.uid == null || (request.auth != null && request.resource.data.uid == request.auth.uid))
+        && (request.resource.data.email == null || (request.auth != null && request.resource.data.email == request.auth.token.email))
+        && safeId(request.resource.data.installId)
+        && request.resource.data.appVersion is string && request.resource.data.appVersion.size() <= 32
+        && request.resource.data.locale in ['tr', 'en']
+        && request.resource.data.platform in ['android', 'ios'];
+      allow read, delete: if admin();
+      allow update: if admin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status in ['new', 'read', 'done'];
+    }
     match /admins/{uid} {
       allow get: if owner(uid);
       allow list, write: if false;
