@@ -155,6 +155,20 @@ service cloud.firestore {
         && (!('appVersion' in request.resource.data) || (request.resource.data.appVersion is string && request.resource.data.appVersion.size() <= 32))
         && request.resource.data.locale in ['tr', 'en']
         && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
+      // Child profiles kept with the parent's account so they come back on a
+      // new device: first name, age, avatar and a small settings map.
+      match /children/{childId} {
+        allow read, delete: if ownerOrAdmin(uid);
+        allow create, update: if canWriteFamily(uid) && safeId(childId)
+          && request.resource.data.keys().hasAll(['name', 'createdAt', 'updatedAt'])
+          && request.resource.data.keys().hasOnly(['name', 'age', 'ageBand', 'avatarId', 'settings', 'createdAt', 'updatedAt'])
+          && request.resource.data.name is string && request.resource.data.name.size() >= 1 && request.resource.data.name.size() <= 40
+          && (!('age' in request.resource.data) || (request.resource.data.age is int && request.resource.data.age >= 1 && request.resource.data.age <= 18))
+          && (!('ageBand' in request.resource.data) || (request.resource.data.ageBand is string && request.resource.data.ageBand.size() <= 24))
+          && (!('avatarId' in request.resource.data) || safeId(request.resource.data.avatarId))
+          && (!('settings' in request.resource.data) || (request.resource.data.settings is map && request.resource.data.settings.size() <= 30))
+          && stamp(request.resource.data.createdAt) && stamp(request.resource.data.updatedAt);
+      }
       match /profiles/{profileId} {
         allow read, delete: if ownerOrAdmin(uid);
         allow create, update: if canWriteFamily(uid) && safeId(profileId)
@@ -191,6 +205,7 @@ service cloud.firestore {
     }
     // Admin page: collection-group reads across families.
     match /{path=**}/profiles/{id} { allow read: if admin(); }
+    match /{path=**}/children/{id} { allow read: if admin(); }
     match /{path=**}/sessions/{id} { allow read: if admin(); }
     match /{path=**}/progress/{id} { allow read: if admin(); }
     match /{path=**}/itemStats/{id} { allow read: if admin(); }

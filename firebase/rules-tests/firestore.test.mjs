@@ -291,3 +291,22 @@ test('feedback survey: ticked choice IDs with optional message',async () => {
   await assertFails(setDoc(doc(anon,'feedback/s8'),{...base,message:'x',choices:['a']}));
   await assertSucceeds(setDoc(doc(anon,'feedback/s9'),{...base,kind:'feedback',message:'Merhaba'}));
 });
+
+test('children: owner writes child profiles, admin reads and deletes, others cannot',async () => {
+  await env.withSecurityRulesDisabled(async context => setDoc(doc(context.firestore(),'admins/admin'),{enabled:true}));
+  const child={name:'Deniz',age:5,avatarId:'cat',settings:{sound:true},createdAt:stamp(),updatedAt:stamp()};
+  const ref=uid=>doc(db(uid),'families/alice/children/child-1');
+  await assertSucceeds(setDoc(ref('alice'),child));
+  await assertSucceeds(setDoc(ref('alice'),{name:'Ela',ageBand:'4-6',createdAt:stamp(),updatedAt:stamp()}));
+  await assertFails(setDoc(ref('alice'),{...child,name:''}));
+  await assertFails(setDoc(ref('alice'),{...child,name:'x'.repeat(41)}));
+  await assertFails(setDoc(ref('alice'),{...child,age:30}));
+  await assertFails(setDoc(ref('alice'),{...child,photo:'x'}));
+  await assertFails(setDoc(ref('bob'),child));
+  await assertFails(getDoc(ref('bob')));
+  await assertFails(setDoc(ref('admin'),child));
+  await assertSucceeds(getDoc(ref('alice')));
+  await assertSucceeds(getDocs(collectionGroup(db('admin'),'children')));
+  await assertFails(getDocs(collectionGroup(db('bob'),'children')));
+  await assertSucceeds(deleteDoc(ref('admin')));
+});
