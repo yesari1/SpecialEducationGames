@@ -259,8 +259,8 @@ void main() {
         );
         final signIn = turkish ? 'Google ile giriş' : 'Sign in with Google';
         final offline = turkish
-            ? 'Bağlantı kurulamadı. Çevrimdışı devam edebilirsiniz.'
-            : 'Could not connect. You can continue offline.';
+            ? 'Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.'
+            : 'Could not connect. Check the internet connection and try again.';
         expect(
           find.text(turkish ? 'Aile hesabı' : 'Family account'),
           findsOneWidget,

@@ -72,6 +72,9 @@ class ClientAccountDeletion {
         }
         refs.add(profile);
       }
+      // Child profiles kept with the account (name, age, avatar, settings).
+      final children = await family.collection('children').get(server);
+      refs.addAll(children.docs.map((d) => d.reference));
       refs.add(family);
       for (var i = 0; i < refs.length; i += 400) {
         final batch = db.batch();

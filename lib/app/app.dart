@@ -13,6 +13,7 @@ import '../features/family/subscription_screen.dart';
 import '../features/family/credits_screen.dart';
 import '../features/family/feedback_screen.dart';
 import '../features/family/family_account_screen.dart';
+import '../features/family/account_gate_screen.dart';
 import '../core/auth/family_auth.dart';
 import '../core/auth/google_family_auth_backend.dart';
 import '../core/sync/summary_snapshot_cache.dart';
@@ -22,7 +23,16 @@ import '../features/game/game_screen.dart';
 class EducationApp extends StatefulWidget {
   final AppState state;
   final FamilyAuthBackend? familyAuthBackend;
-  const EducationApp({super.key, required this.state, this.familyAuthBackend});
+
+  /// The release app: Google sign-in and a started trial (or Premium) are
+  /// required (sign-in / trial page). Widget tests leave it off.
+  final bool accountGate;
+  const EducationApp({
+    super.key,
+    required this.state,
+    this.familyAuthBackend,
+    this.accountGate = false,
+  });
   @override
   State<EducationApp> createState() => _EducationAppState();
 }
@@ -49,16 +59,25 @@ class _EducationAppState extends State<EducationApp>
     final old = _cachedAccountUid;
     _cachedAccountUid = next;
     // The free trial belongs to the Google account: read it after sign-in.
+    if (next != old) state.setAccount(next, ready: next == null);
     if (next != null && next != old) {
       final email = familyAuth.account?.email;
-      // Trial and admin grant first, so the family record carries the plan.
+      // Trial, admin grant, plan and child profiles first: the loading page
+      // stays until the app knows whether the sign-in / trial page is due.
       unawaited(
         Future.wait([
           state.syncTrial(next),
           state.syncGrant(next),
           state.syncPlan(next),
+          state.syncChildren(next),
         ]).whenComplete(() {
+          if (familyAuth.account?.uid == next) {
+            state.setAccount(next, ready: true);
+          }
           _recordedPlan = state.entitlement.planName;
+          // No family record yet for a Google account only being checked on
+          // the welcome page ("Already have an account?").
+          if (state.active == null) return null;
           return state.recordFamily(next, email);
         }),
       );
@@ -87,13 +106,38 @@ class _EducationAppState extends State<EducationApp>
     );
     familyAuth.addListener(_accountChanged);
     state.billing.addListener(_planChanged);
+    if (widget.accountGate) {
+      unawaited(
+        familyAuth.restoreAtStart().whenComplete(() {
+          if (familyAuth.account == null) state.setAccount(null, ready: true);
+        }),
+      );
+    } else {
+      state.accountReady = true;
+    }
     WidgetsBinding.instance.addObserver(this);
     router = GoRouter(
-      initialLocation: state.active == null ? '/welcome' : '/',
+      initialLocation: widget.accountGate
+          ? '/loading'
+          : state.active == null
+          ? '/welcome'
+          : '/',
       refreshListenable: state,
       redirect: (context, s) {
         final path = s.uri.path;
+        final gate = widget.accountGate;
+        if (gate && !state.accountReady) {
+          // The welcome and sign-in pages show their own loading cover.
+          return ['/loading', '/welcome', '/gate'].contains(path)
+              ? null
+              : '/loading';
+        }
+        if (path == '/loading') return state.active == null ? '/welcome' : '/';
         if (state.active == null && path != '/welcome') return '/welcome';
+        if (gate && path != '/welcome' && !state.accountGatePassed) {
+          return path == '/gate' ? null : '/gate';
+        }
+        if (path == '/gate') return '/';
         if (path.startsWith('/family') && !state.familyUnlocked) return '/';
         return null;
       },
@@ -135,6 +179,15 @@ class _EducationAppState extends State<EducationApp>
               ),
             ),
           ),
+        ),
+        GoRoute(
+          path: '/loading',
+          builder: (_, _) => const AccountLoadingScreen(),
+        ),
+        GoRoute(
+          path: '/gate',
+          builder: (_, _) =>
+              reactive(() => AccountGateScreen(state: state, auth: familyAuth)),
         ),
         GoRoute(
           path: '/family',

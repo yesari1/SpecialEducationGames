@@ -22,9 +22,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get parentGateSettings => 'Ayarlar ebeveyn kilidinin arkasında.';
 
   @override
-  String get noAccountNeeded => 'Hesap açmanız gerekmez.';
-
-  @override
   String get letsGetStarted => 'Birlikte başlayalım';
 
   @override
@@ -174,10 +171,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyAccountTitle => 'Aile hesabı';
 
   @override
-  String get familyAccountOptional =>
-      'Google ile giriş isteğe bağlıdır. Giriş yapmadan tüm yerel özellikleri kullanabilirsiniz.';
-
-  @override
   String get familyAccountSignedIn => 'Google hesabına giriş yapıldı.';
 
   @override
@@ -191,27 +184,23 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyAccountSignOut => 'Çıkış yap';
 
   @override
-  String get familyAccountNotNow =>
-      'Şimdi değil: Bu ekranı kapatıp oynamaya devam edebilirsiniz.';
-
-  @override
   String get familyAccountCancelled => 'Giriş iptal edildi.';
 
   @override
   String get familyAccountOffline =>
-      'Bağlantı kurulamadı. Çevrimdışı devam edebilirsiniz.';
+      'Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.';
 
   @override
   String get familyAccountConfiguration =>
-      'Google girişi henüz yapılandırılmadı. Yerel verileriniz güvende.';
+      'Google girişi henüz yapılandırılmadı.';
 
   @override
   String get familyAccountTimeout =>
-      'Giriş zaman aşımına uğradı. Çevrimdışı devam edebilirsiniz.';
+      'Giriş zaman aşımına uğradı. Tekrar deneyin.';
 
   @override
   String get familyAccountUnavailable =>
-      'Giriş şu anda kullanılamıyor. Yerel modda devam edebilirsiniz.';
+      'Giriş şu anda kullanılamıyor. Biraz sonra tekrar deneyin.';
 
   @override
   String get creditsTitle => 'Kaynaklar ve lisanslar';
@@ -713,7 +702,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyProfilesAndRawGameRecordsStay =>
-      'Oyun kayıtları bu cihazda kalır; hesabınıza yalnız günlük özetler gider. Reklam yok.';
+      'Çocuk profilleri hesabınıza kaydedilir; ayrıntılı oyun kayıtları bu cihazda kalır. Reklam yok.';
 
   @override
   String get familyDoesNotReplaceProfessionalSupport =>
@@ -978,6 +967,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obSignIn => 'Giriş yap';
+
+  @override
+  String get obNoAccountFound =>
+      'Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım\'a dokun.';
 
   @override
   String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunu ekleyelim.';
@@ -1472,6 +1465,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get feedbackTitle => 'Geri bildirim gönder';
+
+  @override
+  String get feedbackIntro =>
+      'Hata, öneri ya da görmek istediğiniz oyunlarla ilgili bize yazabilirsiniz.';
 
   @override
   String get feedbackSend => 'Gönder';

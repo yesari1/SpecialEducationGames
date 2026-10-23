@@ -22,9 +22,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get parentGateSettings => 'Settings stay behind a parent gate.';
 
   @override
-  String get noAccountNeeded => 'No account needed.';
-
-  @override
   String get letsGetStarted => 'Let’s get started';
 
   @override
@@ -174,10 +171,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyAccountTitle => 'Family account';
 
   @override
-  String get familyAccountOptional =>
-      'Google sign-in is optional. All local features work without an account.';
-
-  @override
   String get familyAccountSignedIn => 'Signed in with Google.';
 
   @override
@@ -191,27 +184,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyAccountSignOut => 'Sign out';
 
   @override
-  String get familyAccountNotNow =>
-      'Not now: Close this screen and keep playing.';
-
-  @override
   String get familyAccountCancelled => 'Sign-in cancelled.';
 
   @override
   String get familyAccountOffline =>
-      'Could not connect. You can continue offline.';
+      'Could not connect. Check the internet connection and try again.';
 
   @override
-  String get familyAccountConfiguration =>
-      'Google sign-in needs setup. Your local data is safe.';
+  String get familyAccountConfiguration => 'Google sign-in needs setup.';
 
   @override
-  String get familyAccountTimeout =>
-      'Sign-in timed out. You can continue offline.';
+  String get familyAccountTimeout => 'Sign-in timed out. Please try again.';
 
   @override
   String get familyAccountUnavailable =>
-      'Sign-in is unavailable. You can continue locally.';
+      'Sign-in is unavailable right now. Please try again later.';
 
   @override
   String get creditsTitle => 'Credits and licenses';
@@ -710,7 +697,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyProfilesAndRawGameRecordsStay =>
-      'Game records stay on this device; only daily summaries go to your account. No ads.';
+      'Child profiles are saved to your account; detailed game records stay on this device. No ads.';
 
   @override
   String get familyDoesNotReplaceProfessionalSupport =>
@@ -975,6 +962,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obSignIn => 'Sign in';
+
+  @override
+  String get obNoAccountFound =>
+      'No account found for this Google account. Tap Let\'s begin to start.';
 
   @override
   String get obSignedIn => 'Signed in. Now let’s add your child.';
@@ -1470,6 +1461,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get feedbackTitle => 'Send feedback';
+
+  @override
+  String get feedbackIntro =>
+      'Write to us about bugs, ideas or games you\'d like to see.';
 
   @override
   String get feedbackSend => 'Send';

@@ -122,12 +122,6 @@ abstract class AppLocalizations {
   /// **'Settings stay behind a parent gate.'**
   String get parentGateSettings;
 
-  /// No description provided for @noAccountNeeded.
-  ///
-  /// In en, this message translates to:
-  /// **'No account needed.'**
-  String get noAccountNeeded;
-
   /// No description provided for @letsGetStarted.
   ///
   /// In en, this message translates to:
@@ -386,12 +380,6 @@ abstract class AppLocalizations {
   /// **'Family account'**
   String get familyAccountTitle;
 
-  /// No description provided for @familyAccountOptional.
-  ///
-  /// In en, this message translates to:
-  /// **'Google sign-in is optional. All local features work without an account.'**
-  String get familyAccountOptional;
-
   /// No description provided for @familyAccountSignedIn.
   ///
   /// In en, this message translates to:
@@ -416,12 +404,6 @@ abstract class AppLocalizations {
   /// **'Sign out'**
   String get familyAccountSignOut;
 
-  /// No description provided for @familyAccountNotNow.
-  ///
-  /// In en, this message translates to:
-  /// **'Not now: Close this screen and keep playing.'**
-  String get familyAccountNotNow;
-
   /// No description provided for @familyAccountCancelled.
   ///
   /// In en, this message translates to:
@@ -431,25 +413,25 @@ abstract class AppLocalizations {
   /// No description provided for @familyAccountOffline.
   ///
   /// In en, this message translates to:
-  /// **'Could not connect. You can continue offline.'**
+  /// **'Could not connect. Check the internet connection and try again.'**
   String get familyAccountOffline;
 
   /// No description provided for @familyAccountConfiguration.
   ///
   /// In en, this message translates to:
-  /// **'Google sign-in needs setup. Your local data is safe.'**
+  /// **'Google sign-in needs setup.'**
   String get familyAccountConfiguration;
 
   /// No description provided for @familyAccountTimeout.
   ///
   /// In en, this message translates to:
-  /// **'Sign-in timed out. You can continue offline.'**
+  /// **'Sign-in timed out. Please try again.'**
   String get familyAccountTimeout;
 
   /// No description provided for @familyAccountUnavailable.
   ///
   /// In en, this message translates to:
-  /// **'Sign-in is unavailable. You can continue locally.'**
+  /// **'Sign-in is unavailable right now. Please try again later.'**
   String get familyAccountUnavailable;
 
   /// No description provided for @creditsTitle.
@@ -1342,7 +1324,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Game records stay on this device; only daily summaries go to your account. No ads.'**
+  /// **'Child profiles are saved to your account; detailed game records stay on this device. No ads.'**
   String get familyProfilesAndRawGameRecordsStay;
 
   /// Family area interface copy.
@@ -1806,6 +1788,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign in'**
   String get obSignIn;
+
+  /// No description provided for @obNoAccountFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No account found for this Google account. Tap Let\'s begin to start.'**
+  String get obNoAccountFound;
 
   /// No description provided for @obSignedIn.
   ///
@@ -2664,6 +2652,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send feedback'**
   String get feedbackTitle;
+
+  /// No description provided for @feedbackIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Write to us about bugs, ideas or games you\'d like to see.'**
+  String get feedbackIntro;
 
   /// No description provided for @feedbackSend.
   ///

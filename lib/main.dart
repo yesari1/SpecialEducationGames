@@ -23,7 +23,7 @@ Future<void> main() async {
   );
   await state.load();
   UiSound.service = state.audio;
-  runApp(ProviderScope(child: EducationApp(state: state)));
+  runApp(ProviderScope(child: EducationApp(state: state, accountGate: true)));
   unawaited(state.billing.initialize());
   unawaited(state.refreshConfiguration(FirestoreConfigSource.read));
   unawaited(state.reportInstall());

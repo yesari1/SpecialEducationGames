@@ -92,7 +92,15 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(find.byKey(const ValueKey('paywall-continue')), findsOneWidget);
-    await tester.tap(find.byKey(const ValueKey('paywall-close')));
+    // No close button: the offer is left once the account has its trial.
+    expect(find.byKey(const ValueKey('paywall-close')), findsNothing);
+    final state =
+        (tester.state(find.byType(OnboardingScreen)) as dynamic).widget.state
+            as AppState;
+    await tester.runAsync(
+      () => state.entitlement.setTrial('parent-1', DateTime.now()),
+    );
+    state.setAccount('parent-1', ready: true);
     await tester.pumpAndSettle();
   }
 

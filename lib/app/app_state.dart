@@ -12,6 +12,7 @@ import '../core/entitlement/billing_repository.dart';
 import '../core/entitlement/trial_store.dart';
 import '../core/sync/auto_summary_sync.dart';
 import '../core/sync/admin_link.dart';
+import '../core/sync/child_profiles.dart';
 import '../core/sync/family_record.dart';
 import 'app_version.dart';
 import '../core/sync/summary_sync.dart';
@@ -33,6 +34,151 @@ class AppState extends ChangeNotifier {
   final TrialStore trialStore;
   final FamilyRecordStore familyRecords;
   final AdminLink adminLink;
+  final ChildProfileStore childStore;
+
+  /// The signed-in Google account (null: signed out). Set by the app.
+  String? accountUid;
+
+  /// False until the saved sign-in was read at start (and, when signed in,
+  /// its trial, grant and child profiles); the app shows its loading page.
+  bool accountReady = false;
+
+  void setAccount(String? uid, {required bool ready}) {
+    accountUid = uid;
+    accountReady = ready;
+    if (!_disposed) notifyListeners();
+  }
+
+  /// Signed in, and this account has started its free trial (running or
+  /// over, then the free games stay) or has Premium. Otherwise the app shows
+  /// the sign-in / trial page.
+  bool get accountGatePassed {
+    final uid = accountUid;
+    if (uid == null) return false;
+    final e = entitlement;
+    return e.isPaid ||
+        e.grantActive ||
+        e.source == PremiumSource.qa ||
+        (e.trialUid == uid && e.trialUsed);
+  }
+
+  /// "Already have an account?": the account was set up before
+  /// (`families/{uid}`) or has started a trial.
+  Future<bool> accountHasRecord(String uid) async {
+    try {
+      if (await childStore.familyExists(uid)) return true;
+    } catch (_) {}
+    try {
+      return await trialStore.read(uid) != null;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  static const _childSettings = [
+    'locale',
+    'sound',
+    'speechVolume',
+    'effectVolume',
+    'showLabels',
+    'celebration',
+    'introduction',
+    'automaticDifficulty',
+    'reducedMotion',
+    'dailyGoalMinutes',
+    'screenLimitMinutes',
+    'roundLength',
+    'hintSeconds',
+    'fadeWrongChoices',
+    'difficultyOverride',
+    'hiddenGames',
+  ];
+
+  Future<CloudChild?> _cloudChild(String id) async {
+    final p = await (db.select(
+      db.profiles,
+    )..where((t) => t.id.equals(id))).getSingleOrNull();
+    if (p == null) return null;
+    final settings = <String, String>{};
+    for (final key in _childSettings) {
+      final value = await db.preference('profile.$id.$key');
+      if (value != null) settings[key] = value;
+    }
+    final survey = jsonDecode(p.payload) as Map<String, dynamic>;
+    final shift = AgeBand.shiftOf(survey);
+    if (shift != 0) settings[AgeBand.shiftKey] = '$shift';
+    final years = survey['ageYears'];
+    return CloudChild(
+      id: id,
+      name: p.nickname,
+      avatar: p.avatar,
+      age: years is int ? years : null,
+      ageBand: AgeBand.fromAge(survey)?.name,
+      settings: settings,
+    );
+  }
+
+  /// Saves child [id] to the account (best effort; retried at next sign-in).
+  Future<void> _pushChild(String id) async {
+    final uid = accountUid;
+    if (uid == null) return;
+    try {
+      final child = await _cloudChild(id);
+      if (child != null) await childStore.put(uid, child);
+    } catch (_) {}
+  }
+
+  /// Sign-in: brings back the account's child profiles that are missing
+  /// here (new install, cleared data, another device), then saves the ones
+  /// that are only here.
+  Future<void> syncChildren(String uid) async {
+    List<CloudChild> cloud;
+    try {
+      cloud = await childStore.list(uid);
+    } catch (_) {
+      return;
+    }
+    final local = {for (final p in profiles) p.id};
+    for (final c in cloud) {
+      if (local.contains(c.id)) continue;
+      // Only age (or its band) and the parent's shift come back; the other
+      // onboarding answers never left the phone that made the profile.
+      final band = AgeBand.values.where((b) => b.name == c.ageBand).firstOrNull;
+      final shift = int.tryParse(c.settings[AgeBand.shiftKey] ?? '');
+      final survey = <String, dynamic>{
+        if (c.age != null) 'ageYears': c.age,
+        if (c.age == null && band != null) 'age': band.index,
+        if (shift != null && shift != 0) AgeBand.shiftKey: shift.clamp(-1, 1),
+      };
+      await db
+          .into(db.profiles)
+          .insertOnConflictUpdate(
+            ProfilesCompanion.insert(
+              id: c.id,
+              nickname: c.name.length > 24 ? c.name.substring(0, 24) : c.name,
+              avatar: Value(
+                ['cat', 'dog', 'rabbit', 'bear'].contains(c.avatar)
+                    ? c.avatar
+                    : 'cat',
+              ),
+              payload: Value(jsonEncode(survey)),
+            ),
+          );
+      for (final e in c.settings.entries) {
+        if (_childSettings.contains(e.key)) {
+          await db.setPreference('profile.${c.id}.${e.key}', e.value);
+        }
+      }
+    }
+    if (cloud.isNotEmpty && await db.preference('activeProfile') == null) {
+      await db.setPreference('activeProfile', cloud.first.id);
+    }
+    final cloudIds = {for (final c in cloud) c.id};
+    for (final id in local) {
+      if (!cloudIds.contains(id)) await _pushChild(id);
+    }
+    await load();
+  }
 
   /// Daily summaries go to the cloud automatically while a parent is signed
   /// in; the family setting `cloudSync` (default on) turns it off.
@@ -447,12 +593,14 @@ class AppState extends ChangeNotifier {
     TrialStore? trialStore,
     FamilyRecordStore? familyRecords,
     AdminLink? adminLink,
+    ChildProfileStore? childStore,
     SummaryStore? summaryStore,
     String? Function()? signedInUid,
   }) : _playTimeNow = playTimeNow ?? DateTime.now,
        trialStore = trialStore ?? FirestoreTrialStore(),
        familyRecords = familyRecords ?? const FirestoreFamilyRecordStore(),
-       adminLink = adminLink ?? const FirestoreAdminLink() {
+       adminLink = adminLink ?? const FirestoreAdminLink(),
+       childStore = childStore ?? const FirestoreChildProfileStore() {
     playTime = PlayTimeLedger(db, now: _playTimeNow);
     configuration = AppConfiguration.defaults(content);
     configs = ConfigRepository(db, content);
@@ -710,6 +858,7 @@ class AppState extends ChangeNotifier {
     await db.setPreference('activeProfile', id);
     await _applySurveySettings(id, survey, {});
     await load();
+    unawaited(_pushChild(id));
   }
 
   /// First-run setup made by the parent in onboarding: the child profile plus
@@ -742,6 +891,7 @@ class AppState extends ChangeNotifier {
       await db.setPreference('parentPinHash', ParentPin.hash(pin, salt));
     }
     await load();
+    unawaited(_pushChild(id));
     unawaited(funnelStep('onboarding'));
   }
 
@@ -821,6 +971,7 @@ class AppState extends ChangeNotifier {
         ].contains(key);
     await db.setPreference(scoped ? 'profile.${active!.id}.$key' : key, value);
     await load();
+    if (scoped) unawaited(_pushChild(active!.id));
   }
 
   Future<void> selectProfile(Profile profile) async {
@@ -861,6 +1012,7 @@ class AppState extends ChangeNotifier {
     );
     await _applySurveySettings(id, survey, jsonDecode(old.payload));
     await load();
+    unawaited(_pushChild(id));
   }
 
   Map<String, dynamic> get activeSurvey =>
@@ -890,6 +1042,7 @@ class AppState extends ChangeNotifier {
       ProfilesCompanion(payload: Value(jsonEncode(survey))),
     );
     await load();
+    unawaited(_pushChild(profile.id));
   }
 
   Future<void> _applySurveySettings(
@@ -932,6 +1085,10 @@ class AppState extends ChangeNotifier {
       )..where((p) => p.key.like('profile.$id.%'))).go();
     });
     await load();
+    final uid = accountUid;
+    if (uid != null) {
+      unawaited(childStore.delete(uid, id).catchError((Object _) {}));
+    }
   }
 
   Future<void> record(TrialsCompanion trial) async {

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:flutter/services.dart';
@@ -6,6 +7,7 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../core/auth/family_auth.dart';
+import '../family/account_gate_screen.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/parent_pin.dart';
@@ -65,6 +67,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.initState();
     if (widget.addChild) step = OnboardingStep.child;
     s.billing.addListener(_billingChanged);
+    // The offer step waits for the account's trial (see [build]).
+    s.addListener(_stateChanged);
   }
 
   bool _precached = false;
@@ -88,6 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void dispose() {
     s.billing.removeListener(_billingChanged);
+    s.removeListener(_stateChanged);
     name.dispose();
     pin.dispose();
     super.dispose();
@@ -402,144 +407,185 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   // ---------------------------------------------------------------- steps --
 
-  Widget _welcome() => _frame(
-    fit: true,
-    children: [
-      // One illustrated scene in the app's illustration style
-      // (docs/illustration-style.md) on a soft sky-to-cream card.
-      // Short phones first give up scene height, then scale as a whole.
-      SizedBox(
-        height: (MediaQuery.sizeOf(context).height - 520).clamp(110.0, 240.0),
-        child: Container(
-          key: const ValueKey('welcome-hero'),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(SegRadius.xl),
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+  Widget _welcome() => AccountLoadingOverlay(
+    busy: _signingIn,
+    child: _frame(
+      fit: true,
+      children: [
+        // One illustrated scene in the app's illustration style
+        // (docs/illustration-style.md) on a soft sky-to-cream card.
+        // Short phones first give up scene height, then scale as a whole.
+        SizedBox(
+          height: (MediaQuery.sizeOf(context).height - 520).clamp(110.0, 240.0),
+          child: Container(
+            key: const ValueKey('welcome-hero'),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(SegRadius.xl),
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
+              ),
             ),
-          ),
-          padding: const EdgeInsets.all(SegSpace.s2),
-          child: Image.asset(
-            '$_illustrations/hero_welcome.png',
-            fit: BoxFit.contain,
-            excludeFromSemantics: true,
+            padding: const EdgeInsets.all(SegSpace.s2),
+            child: Image.asset(
+              '$_illustrations/hero_welcome.png',
+              fit: BoxFit.contain,
+              excludeFromSemantics: true,
+            ),
           ),
         ),
-      ),
-      const SizedBox(height: SegSpace.s5),
-      Text(
-        l10n.welcomeTitle,
-        key: const ValueKey('welcome-title'),
-        style: SegText.display.copyWith(fontSize: 32, color: SegColors.ink),
-      ),
-      const SizedBox(height: SegSpace.s2),
-      Text(
-        l10n.welcomeSubtitle,
-        key: const ValueKey('welcome-subtitle'),
-        style: SegText.body.copyWith(color: SegColors.inkSoft),
-      ),
-      const SizedBox(height: SegSpace.s5),
-      FeatureLine(icon: Icons.spa_rounded, text: l10n.noAdsOffline),
-      FeatureLine(
-        icon: Icons.lock_outline_rounded,
-        text: l10n.parentGateSettings,
-      ),
-    ],
-    above: Container(
-      key: const ValueKey('welcome-trial'),
-      padding: const EdgeInsets.symmetric(
-        horizontal: SegSpace.s4,
-        vertical: SegSpace.s3,
-      ),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFFF1E0),
-        borderRadius: BorderRadius.circular(SegRadius.lg),
-      ),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.card_giftcard_rounded,
-            color: SegColors.accentDeep,
-            size: 28,
-          ),
-          const SizedBox(width: SegSpace.s3),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n.welcomeFreeTrial(s.entitlement.trialDays),
-                  style: SegText.label.copyWith(
-                    color: SegColors.ink,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Text(
-                  l10n.welcomeFreeAfter,
-                  style: SegText.caption.copyWith(color: SegColors.inkSoft),
-                ),
-              ],
+        const SizedBox(height: SegSpace.s5),
+        Text(
+          l10n.welcomeTitle,
+          key: const ValueKey('welcome-title'),
+          style: SegText.display.copyWith(fontSize: 32, color: SegColors.ink),
+        ),
+        const SizedBox(height: SegSpace.s2),
+        Text(
+          l10n.welcomeSubtitle,
+          key: const ValueKey('welcome-subtitle'),
+          style: SegText.body.copyWith(color: SegColors.inkSoft),
+        ),
+        const SizedBox(height: SegSpace.s5),
+        FeatureLine(icon: Icons.spa_rounded, text: l10n.noAdsOffline),
+        FeatureLine(
+          icon: Icons.lock_outline_rounded,
+          text: l10n.parentGateSettings,
+        ),
+      ],
+      above: Container(
+        key: const ValueKey('welcome-trial'),
+        padding: const EdgeInsets.symmetric(
+          horizontal: SegSpace.s4,
+          vertical: SegSpace.s3,
+        ),
+        decoration: BoxDecoration(
+          color: const Color(0xFFFFF1E0),
+          borderRadius: BorderRadius.circular(SegRadius.lg),
+        ),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.card_giftcard_rounded,
+              color: SegColors.accentDeep,
+              size: 28,
             ),
-          ),
-        ],
-      ),
-    ),
-    primary: _continue(
-      key: const ValueKey('welcome-start'),
-      label: l10n.obStart,
-      onPressed: _next,
-    ),
-    secondary: widget.auth == null || widget.addChild
-        ? null
-        : Center(
-            child: TextButton(
-              key: const ValueKey('welcome-sign-in'),
-              onPressed: _signIn,
-              child: Text.rich(
-                TextSpan(
-                  text: '${l10n.obHaveAccount} ',
-                  style: SegText.body.copyWith(color: SegColors.inkSoft),
-                  children: [
-                    TextSpan(
-                      text: l10n.obSignIn,
-                      style: SegText.body.copyWith(
-                        color: SegColors.primaryDeep,
-                        fontWeight: FontWeight.w800,
-                      ),
+            const SizedBox(width: SegSpace.s3),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.welcomeFreeTrial(s.entitlement.trialDays),
+                    style: SegText.label.copyWith(
+                      color: SegColors.ink,
+                      fontWeight: FontWeight.w800,
                     ),
-                  ],
+                  ),
+                  Text(
+                    l10n.welcomeFreeAfter,
+                    style: SegText.caption.copyWith(color: SegColors.inkSoft),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      primary: _continue(
+        key: const ValueKey('welcome-start'),
+        label: l10n.obStart,
+        onPressed: _next,
+      ),
+      secondary: widget.auth == null || widget.addChild
+          ? null
+          : Center(
+              child: TextButton(
+                key: const ValueKey('welcome-sign-in'),
+                onPressed: _signIn,
+                child: Text.rich(
+                  TextSpan(
+                    text: '${l10n.obHaveAccount} ',
+                    style: SegText.body.copyWith(color: SegColors.inkSoft),
+                    children: [
+                      TextSpan(
+                        text: l10n.obSignIn,
+                        style: SegText.body.copyWith(
+                          color: SegColors.primaryDeep,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
+    ),
   );
 
   /// "Already have an account?": Google sign-in right away. Once signed in
   /// (Premium and the trial follow the account) setup goes on.
+  void _stateChanged() {
+    if (mounted && step == OnboardingStep.trial) setState(() {});
+  }
+
+  bool _signingIn = false;
+  bool _leavingOffer = false;
+
+  /// "Already have an account?": Google sign-in, then
+  /// - no record for that account: a short note, signed out again, stay;
+  /// - known account: its child profiles come back and the app opens (or
+  ///   the child steps follow when the account has no profile yet).
+  /// The loading page covers the screen meanwhile.
   Future<void> _signIn() async {
     final auth = widget.auth;
-    if (auth == null) return;
+    if (auth == null || _signingIn) return;
     UiSound.tap();
     // Nobody is set up yet, so the adult on this screen is the parent.
     if (s.profiles.isEmpty) s.unlockFamily();
-    // Straight to Google's account picker.
-    if (auth.account == null) await auth.signIn();
-    if (auth.account == null) {
-      // Closed without signing in: nothing went wrong, so leave no issue
-      // behind (the Premium offer would read it as a failed trial).
-      auth.issue = null;
-      return;
+    setState(() => _signingIn = true);
+    try {
+      if (auth.account == null) await auth.signIn();
+      final account = auth.account;
+      if (account == null) {
+        // Closed without signing in: nothing went wrong, so leave no issue
+        // behind (the Premium offer would read it as a failed trial).
+        auth.issue = null;
+        return;
+      }
+      if (!await s.accountHasRecord(account.uid)) {
+        await auth.signOut();
+        auth.issue = null;
+        if (!mounted) return;
+        showNotice(
+          context,
+          l10n.obNoAccountFound,
+          icon: Icons.info_rounded,
+          color: SegColors.accent,
+        );
+        return;
+      }
+      // Wait for the app to bring back the account's profiles and trial.
+      for (var i = 0; i < 300 && !s.accountReady; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 100));
+      }
+      if (!mounted) return;
+      showNotice(
+        context,
+        l10n.obSignedIn,
+        icon: Icons.check_circle_rounded,
+        color: SegColors.turquoise,
+      );
+      if (s.active != null) {
+        unawaited(s.recordFamily(account.uid, account.email));
+        context.go('/');
+      } else if (step == OnboardingStep.welcome) {
+        _next();
+      }
+    } finally {
+      if (mounted) setState(() => _signingIn = false);
     }
-    if (!mounted) return;
-    showNotice(
-      context,
-      l10n.obSignedIn,
-      icon: Icons.check_circle_rounded,
-      color: SegColors.turquoise,
-    );
-    if (step == OnboardingStep.welcome) _next();
   }
 
   Widget _child() => _frame(
@@ -767,33 +813,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   /// The Premium offer, once, right after setup ([PaywallView]).
-  Widget _trial() => Scaffold(
-    backgroundColor: SegColors.familyCanvas,
-    body: SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(
-          SegSpace.s5,
-          SegSpace.s4,
-          SegSpace.s5,
-          SegSpace.s3,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IconButton(
-              key: const ValueKey('paywall-close'),
-              tooltip: l10n.paywallClose,
-              onPressed: _next,
-              icon: const Icon(Icons.close_rounded),
+  /// The free trial (Google sign-in) or Premium, needed to go on: no close
+  /// button. An account that already used its trial goes on to the free
+  /// games (see [build]).
+  Widget _trial() {
+    final auth = widget.auth;
+    Widget page() => AccountLoadingOverlay(
+      busy: (auth?.busy ?? false) || (s.accountUid != null && !s.accountReady),
+      child: Scaffold(
+        backgroundColor: SegColors.familyCanvas,
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              SegSpace.s5,
+              SegSpace.s4,
+              SegSpace.s5,
+              SegSpace.s3,
             ),
-            Expanded(
-              child: PaywallView(state: s, auth: widget.auth, onDone: _next),
-            ),
-          ],
+            child: PaywallView(state: s, auth: auth, onDone: _next),
+          ),
         ),
       ),
-    ),
-  );
+    );
+    return auth == null
+        ? page()
+        : ListenableBuilder(listenable: auth, builder: (_, _) => page());
+  }
 
   Widget _handoff() => _frame(
     children: [
@@ -828,6 +873,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Signed in with a started trial (or Premium): the offer is done.
+    if (step == OnboardingStep.trial &&
+        s.accountReady &&
+        s.accountGatePassed &&
+        !_leavingOffer) {
+      _leavingOffer = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && step == OnboardingStep.trial) _next();
+      });
+    }
     final page = switch (step) {
       OnboardingStep.welcome => _welcome(),
       OnboardingStep.child => _child(),

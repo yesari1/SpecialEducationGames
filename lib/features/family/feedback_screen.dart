@@ -93,26 +93,29 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           ),
         ),
         body: SafeArea(
-          child: Padding(
+          child: SingleChildScrollView(
             padding: const EdgeInsets.all(SegSpace.s5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                  child: TextField(
-                    key: const ValueKey('feedback-text'),
-                    controller: _text,
-                    maxLength: 2000,
-                    maxLines: null,
-                    expands: true,
-                    textAlignVertical: TextAlignVertical.top,
-                    keyboardType: TextInputType.multiline,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(SegRadius.lg),
-                      ),
+                Text(
+                  l10n.feedbackIntro,
+                  style: SegText.body.copyWith(color: SegColors.inkSoft),
+                ),
+                const SizedBox(height: SegSpace.s3),
+                TextField(
+                  key: const ValueKey('feedback-text'),
+                  controller: _text,
+                  maxLength: 2000,
+                  minLines: 5,
+                  maxLines: 5,
+                  textAlignVertical: TextAlignVertical.top,
+                  keyboardType: TextInputType.multiline,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(SegRadius.lg),
                     ),
                   ),
                 ),

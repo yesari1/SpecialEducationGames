@@ -2,6 +2,17 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R59–R60 (zorunlu giriş, deneme kapısı, profiller hesapta) — sürüm 2.0.23 (37), Internal testing'de
+
+- Kaynak: Drive `giris-deneme-profil.md` + `profil-ek.md` (Yunus onaylı).
+- `EducationApp(accountGate: true)` yalnız main.dart'ta (widget testleri kapalı). Açılışta `FamilyAuth.restoreAtStart()` kayıtlı oturumu ebeveyn kilidi olmadan okur; deneme/grant/plan/çocuklar eşitlenene kadar `/loading` (logo + gösterge). Profil yoksa `/welcome`; giriş yok ya da bu hesapta deneme hiç başlatılmamış ve Premium değilse `/gate` (X'siz PaywallView); çıkışta da kapıya dönülür. Deneme bitmiş/endTrial: kapı geçilir, ücretsiz sürüm.
+- Onboarding sonu: X yok; hesap deneme/Premium kazanınca kendiliğinden devam.
+- Hoş geldin "Giriş yap": hesabın `families/{uid}` kaydı ya da denemesi yoksa "Bu hesapla kayıt bulunamadı…" + çıkış; varsa profiller gelir ve doğrudan içeri. Kontrol edilen hesap için families kaydı yazılmaz. Bu sırada yükleme kapağı.
+- Çocuk profilleri `families/{uid}/children/{childId}`: yalnız name, age, ageBand, avatarId, settings (≤30, yaş seviyesi kaydırması dahil), createdAt, updatedAt. Anket cevapları telefonda kalır. Oluştur/düzenle/ayar/sil eşitlenir; girişte eksikler geri yüklenir, yalnız yerelde olanlar gönderilir. Hesap silme `children`'ı da siler.
+- Metinler: "giriş isteğe bağlı"/"şimdi değil" kaldırıldı; bağlantı hataları "tekrar deneyin"; gizlilik cümlesi profillerin hesaba kaydedildiğini söylüyor. Geri bildirim sayfası: açıklama + 5 satırlık kutu.
+- Açık konu (Yunus'a soruldu): hoş geldindeki "İnternet şart değil" cümlesi değişmedi.
+- Doğrulama: seri tam tur 282/283 — tek hata `game_catalog_rounds_test` yüklenirken (R57'de de görülen ara sıra zamanlama; dosyalar ayrı geçiyor). Yeni testler: `test/account_gate_test.dart` (kapı, profil eşitleme, izinli alanlar, kayıt kontrolü). `tools/build_release.sh` geçti (emülatörde yükleme → hoş geldin görüldü); vc37 Internal testing'e yüklendi (ilk denemede Play 503, ikincide tamam).
+
 ## 23 Ekim 2026 — R58 (abonelik planı başka cihazda) — sürüm 2.0.22 (36), Internal testing'de
 
 - Play uygulamaya yalnız "abonelik aktif" der, aylık/yıllık bilgisini vermez (bunu Play'den okumak Play Developer API = sunucu/Cloud Functions ister, Blaze bekliyor). Çözüm: plan değişince (satın alma) `families/{uid}.plan` hemen yazılıyor (`_planChanged`, billing dinleyicisi); başka cihazda girişte yerel plan bilinmiyorsa `families/{uid}.plan` okunup (`syncPlan`) saklanıyor. Lifetime ayrı ürün, zaten doğruydu. Play aboneliği Play hesabına bağlıdır; farklı Play hesabında Premium görünmez.

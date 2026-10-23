@@ -108,12 +108,10 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
               l10n.familyAccountTitle,
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(height: 8),
-            Text(
-              widget.auth.account == null
-                  ? l10n.familyAccountOptional
-                  : l10n.familyAccountSignedIn,
-            ),
+            if (widget.auth.account != null) ...[
+              const SizedBox(height: 8),
+              Text(l10n.familyAccountSignedIn),
+            ],
           ]),
           _pageContent([
             if (widget.auth.account?.email != null)
@@ -139,7 +137,6 @@ class _FamilyAccountCardState extends State<FamilyAccountCard> {
                     ? widget.auth.signIn
                     : widget.auth.signOut,
               ),
-            if (widget.auth.account == null) Text(l10n.familyAccountNotNow),
           ]),
           if (widget.auth.account != null && widget.deletion != null)
             _pageContent([

@@ -47,6 +47,19 @@ class FamilyAuth extends ChangeNotifier {
   });
 
   Future<void> restore() => _run(backend.restore);
+
+  /// App start: reads the saved sign-in. It opens no account picker, so no
+  /// parent gate is needed.
+  Future<void> restoreAtStart() async {
+    if (_disposed || busy) return;
+    try {
+      account = await backend.restore().timeout(timeout);
+    } catch (_) {
+      account = null;
+    }
+    if (!_disposed) notifyListeners();
+  }
+
   Future<void> signIn() => _run(backend.signIn);
   Future<bool> reauthenticate() async {
     if (_disposed || busy || !parentAuthorized()) return false;
