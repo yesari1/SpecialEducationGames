@@ -52,7 +52,6 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
 |---|---|---|---|---|---|
 | Uygulama etkileşimleri | Evet | Hayır | Hayır | **Zorunlu** (kurulum istatistiği her kurulumda gider; günlük oyun özetleri yalnız girişte ve kapatılabilir) | **Uygulama işlevselliği**, **Analizler** (yönetici sayfası: günlük oyun ve süre, funnel) |
-
 | Kullanıcı tarafından oluşturulan diğer içerikler | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn ayarlardan geri bildirim gönderirse) | **Uygulama işlevselliği** (destek ve iyileştirme) |
 
 **Finansal bilgiler**
