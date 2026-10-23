@@ -16,7 +16,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Çocuğunuzun hızında, sakin ve eğlenceli öğrenme.';
 
   @override
-  String get noAdsOffline => 'Reklam yok. İnternet şart değil.';
+  String get noAdsOffline => 'Reklam yok.';
 
   @override
   String get parentGateSettings => 'Ayarlar ebeveyn kilidinin arkasında.';

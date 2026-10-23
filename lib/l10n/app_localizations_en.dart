@@ -16,7 +16,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Calm, playful learning at your child’s own pace.';
 
   @override
-  String get noAdsOffline => 'No ads. No internet required.';
+  String get noAdsOffline => 'No ads.';
 
   @override
   String get parentGateSettings => 'Settings stay behind a parent gate.';

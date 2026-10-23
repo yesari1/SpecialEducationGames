@@ -113,7 +113,7 @@ abstract class AppLocalizations {
   /// No description provided for @noAdsOffline.
   ///
   /// In en, this message translates to:
-  /// **'No ads. No internet required.'**
+  /// **'No ads.'**
   String get noAdsOffline;
 
   /// No description provided for @parentGateSettings.
