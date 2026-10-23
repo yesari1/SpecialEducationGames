@@ -1,5 +1,18 @@
 # Uygulama geliştirme kontrol listesi
 
+## Sıradaki sürüm için notlar — Yunus, 23 Ekim 2026 (yapılmadı)
+
+- [ ] Paywall: Premium'daysa mevcut planın kartında "Mevcut plan" etiketi (aylık / yıllık / ömür boyu).
+- [ ] Yıllık abonedeyse aylığa geçiş seçeneği gösterilmesin (yıl zaten ödenmiş). İade konusu Play'in kendi sürecinde; uygulamada iade yok.
+- [ ] Ayarlar: "Premium / Planlar ve geri yükleme" kartı tamamen kalksın (ücretsizken Profiller'deki hesap kartında Premium zaten var).
+- [ ] Aile alt menüsünün üstündeki renkli şerit her sekmede (Gelişim, Oyunlar, Profiller, Ayarlar) sabit dursun; duruma göre metin:
+  - ücretsiz: "7 gün ücretsiz dene" (deneme hakkı varsa) ya da "Premium al";
+  - denemede: "Premium'a geç";
+  - aylık abone: "Yıllığa geç, tasarruf et";
+  - yıllık / ömür boyu / admin Premium: şerit yok.
+  Şu an yalnız ücretsizken ve yüksek ekranda görünüyor.
+- [ ] Hesap sayfası: "Çıkış yap" butonu tam genişlik ve ortalı; Günlük özet kartındaki "Şimdi eşitle" ve altındaki buton da tam genişlik, ortalı.
+
 ## Güncel liste — Claude, 19 Ekim 2026 (bu bölüm günceldir)
 
 Yunus işi Claude'a devretti: ChatGPT/Codex'in bıraktığı yerden devam, oyun hissi, tüm sayfalarda UI cilası, ardından yerelde yapılabilen TODO maddeleri. Kod artık git deposunda (`git log` her adımı gösterir). Aşağıdaki eski bölümler tarihçedir.
