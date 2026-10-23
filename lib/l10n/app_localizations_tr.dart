@@ -16,6 +16,15 @@ class AppLocalizationsTr extends AppLocalizations {
       'Çocuğunuzun hızında, sakin ve eğlenceli öğrenme.';
 
   @override
+  String get welcomeLearnPlaying => 'Çocuğunuz eğlenirken öğrenir';
+
+  @override
+  String get welcomeTopics => 'Hayvanlar, renkler, sayılar';
+
+  @override
+  String get welcomeOwnPace => 'Yaşa göre ayarlanır';
+
+  @override
   String get noAdsOffline => 'Reklam yok.';
 
   @override

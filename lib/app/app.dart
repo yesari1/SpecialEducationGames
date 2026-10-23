@@ -245,7 +245,11 @@ class _EducationAppState extends State<EducationApp>
     final path = router.routerDelegate.currentConfiguration.isEmpty
         ? (state.active == null ? '/welcome' : '/')
         : router.routerDelegate.currentConfiguration.uri.path;
-    AppOrientation.apply(path);
+    // The start-up loading page takes the side of what comes next: upright
+    // for a first start (onboarding), sideways for a set-up child.
+    AppOrientation.apply(
+      path == '/loading' ? (state.active == null ? '/welcome' : '/') : path,
+    );
   }
 
   @override

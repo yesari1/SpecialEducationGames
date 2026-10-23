@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R62 (hoş geldin tanıtımı, ilk açılış yönü, giriş bildirimi) — sürüm 2.0.25 (39), Internal testing'de
+
+- Hoş geldin satırları (Yunus seçimi): "Çocuğunuz eğlenirken öğrenir", "Hayvanlar, renkler, sayılar", "Yaşa göre ayarlanır", "Reklam yok." (EN: "Your child learns while playing", "Animals, colors, numbers", "Adjusts to your child's age", "No ads."); "Ayarlar ebeveyn kilidinde" satırı kaldırıldı.
+- İlk açılış yönü: R59'daki `/loading` çocuk rotası sayılıp yataya çeviriyordu. Artık yükleme ekranı profil yoksa dikey, varsa yatay; `/gate` dikey. Emülatörde veri silinip açıldı: 12 karede de ROTATION_0 (dikey).
+- "Zaten hesabın var mı": profiller geri gelince bildirim yok; "Şimdi çocuğunu ekleyelim" yalnız profilsiz hesapta.
+- Doğrulama: seri host testler 283/283 (metin değişikliğinden önce; sonra onboarding testleri ayrıca geçti); `tools/build_release.sh` geçti; vc39 Internal testing'e yüklendi. Production yüklemesi araçta yok/yapılmadı.
+
 ## 23 Ekim 2026 — R61 (hoş geldin metni) — sürüm 2.0.24 (38), Internal testing'de
 
 - Hoş geldin: "Reklam yok. İnternet şart değil." → yalnız "Reklam yok." (EN "No ads."), Yunus'un isteği; girişte internet gerektiği için.

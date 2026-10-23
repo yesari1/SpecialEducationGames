@@ -16,6 +16,15 @@ class AppLocalizationsEn extends AppLocalizations {
       'Calm, playful learning at your child’s own pace.';
 
   @override
+  String get welcomeLearnPlaying => 'Your child learns while playing';
+
+  @override
+  String get welcomeTopics => 'Animals, colors, numbers';
+
+  @override
+  String get welcomeOwnPace => 'Adjusts to your child\'s age';
+
+  @override
   String get noAdsOffline => 'No ads.';
 
   @override

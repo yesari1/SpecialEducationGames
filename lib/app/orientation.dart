@@ -4,7 +4,10 @@ import 'package:flutter/services.dart';
 /// child's play space (home, themes, games, path, album, breaks) is landscape.
 abstract final class AppOrientation {
   static bool isFamilyPath(String path) =>
-      path == '/welcome' || path == '/family' || path.startsWith('/family/');
+      path == '/welcome' ||
+      path == '/gate' ||
+      path == '/family' ||
+      path.startsWith('/family/');
 
   static List<DeviceOrientation> forPath(String path) => isFamilyPath(path)
       ? const [DeviceOrientation.portraitUp]

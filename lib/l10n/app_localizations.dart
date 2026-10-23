@@ -110,6 +110,24 @@ abstract class AppLocalizations {
   /// **'Calm, playful learning at your child’s own pace.'**
   String get welcomeSubtitle;
 
+  /// No description provided for @welcomeLearnPlaying.
+  ///
+  /// In en, this message translates to:
+  /// **'Your child learns while playing'**
+  String get welcomeLearnPlaying;
+
+  /// No description provided for @welcomeTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Animals, colors, numbers'**
+  String get welcomeTopics;
+
+  /// No description provided for @welcomeOwnPace.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjusts to your child\'s age'**
+  String get welcomeOwnPace;
+
   /// No description provided for @noAdsOffline.
   ///
   /// In en, this message translates to:

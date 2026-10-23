@@ -448,11 +448,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           style: SegText.body.copyWith(color: SegColors.inkSoft),
         ),
         const SizedBox(height: SegSpace.s5),
-        FeatureLine(icon: Icons.spa_rounded, text: l10n.noAdsOffline),
         FeatureLine(
-          icon: Icons.lock_outline_rounded,
-          text: l10n.parentGateSettings,
+          icon: Icons.sentiment_very_satisfied_rounded,
+          text: l10n.welcomeLearnPlaying,
         ),
+        FeatureLine(icon: Icons.pets_rounded, text: l10n.welcomeTopics),
+        FeatureLine(icon: Icons.child_care_rounded, text: l10n.welcomeOwnPace),
+        FeatureLine(icon: Icons.spa_rounded, text: l10n.noAdsOffline),
       ],
       above: Container(
         key: const ValueKey('welcome-trial'),
@@ -571,16 +573,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         await Future<void>.delayed(const Duration(milliseconds: 100));
       }
       if (!mounted) return;
-      showNotice(
-        context,
-        l10n.obSignedIn,
-        icon: Icons.check_circle_rounded,
-        color: SegColors.turquoise,
-      );
       if (s.active != null) {
+        // The account's children are back: straight to play, no note.
         unawaited(s.recordFamily(account.uid, account.email));
         context.go('/');
       } else if (step == OnboardingStep.welcome) {
+        // Known account without a child profile yet.
+        showNotice(
+          context,
+          l10n.obSignedIn,
+          icon: Icons.check_circle_rounded,
+          color: SegColors.turquoise,
+        );
         _next();
       }
     } finally {

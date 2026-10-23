@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
 /// One child profile as kept in the parent's account: name, age, avatar and
 /// profile settings only. Individual onboarding answers stay on the phone.
 class CloudChild {
