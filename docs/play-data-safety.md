@@ -2,8 +2,8 @@
 
 Bu cevaplar R33/R34 kodunun gerçekte yaptığına göre hazırlandı (20 Ekim 2026).
 
-- Uygulama hesap olmadan çalışır. Reklam, analitik, çökme raporu ve konum yoktur.
-- Google ile giriş isteğe bağlıdır ve yalnız ebeveyn alanındadır.
+- Ebeveynin Google ile girişi zorunludur (23 Ekim 2026 kararı); giriş yalnız ebeveyn ekranlarında. Reklam, üçüncü taraf analitik, çökme raporu ve konum yoktur.
+- Çocuk profili (ad, yaş, avatar, profil ayarları) ebeveynin hesabıyla `families/{uid}/children/{id}` altında saklanır; fotoğraf yok.
 - Buluta yalnızca şunlar gider: Firebase hesabı (e-posta `families/{uid}` içinde de saklanır), deneme başlangıç zamanı ve giriş yapılmışken otomatik gönderilen günlük öğrenme özetleri (Aile alanından kapatılabilir; 21 Ekim 2026 kararı).
 - Yesa Studio yöneticisi bu verileri yönetici sayfasından (yesastudio.com/ozel-egitim-oyunlari/admin/, Firestore kurallarıyla yalnız `admins/{uid}` hesapları) görebilir ve silebilir. Bu bir üçüncü tarafa paylaşım değildir.
 
@@ -43,9 +43,9 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
 |---|---|---|---|---|---|
-| Ad | Evet | Hayır | Hayır | **İsteğe bağlı** (kullanıcı giriş yapmayı seçebilir) | **Hesap yönetimi** |
-| E-posta adresi | Evet | Hayır | Hayır | **İsteğe bağlı** | **Hesap yönetimi** |
-| Kullanıcı kimlikleri | Evet | Hayır | Hayır | **İsteğe bağlı** | **Uygulama işlevselliği**, **Hesap yönetimi**, **Sahtekârlığı önleme, güvenlik ve uygunluk** (deneme süresinin hesap başına bir kez verilmesi) |
+| Ad | Evet | Hayır | Hayır | **Zorunlu** | **Uygulama işlevselliği** (çocuk profili), **Hesap yönetimi** |
+| E-posta adresi | Evet | Hayır | Hayır | **Zorunlu** | **Hesap yönetimi** |
+| Kullanıcı kimlikleri | Evet | Hayır | Hayır | **Zorunlu** | **Uygulama işlevselliği**, **Hesap yönetimi**, **Sahtekârlığı önleme, güvenlik ve uygunluk** (deneme süresinin hesap başına bir kez verilmesi) |
 
 **Uygulama etkinliği**
 
@@ -68,7 +68,9 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 
 Notlar:
 
-- "Ad" ve "E-posta": Google ile girişte Firebase Authentication bunları Google hesabından alır. Uygulama adı kullanmaz, ama Firebase sakladığı için "toplanıyor" sayılır.
+- "Ad": ebeveynin Google adı (Firebase Authentication) ve ebeveynin girdiği çocuk adı/takma adı (çocuk profili).
+- "Diğer bilgiler": çocuğun yaşı (çocuk profili). Formda "Kişisel bilgiler → Diğer bilgiler" de işaretlenir: Evet, paylaşılmıyor, geçici değil, zorunlu, Uygulama işlevselliği.
+- "E-posta": Google ile girişte Firebase Authentication alır; ayrıca `families/{uid}.email`.
 - "Kullanıcı kimlikleri": Firebase UID. Deneme kaydı (`trials/{uid}`, yalnız başlangıç zamanı) ve özetler bu kimlikle saklanır.
 - "Uygulama etkileşimleri": günlük özetler. İçerik: tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı. Çocuğun adı, yaşı ya da tek tek yanıtları gönderilmez.
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
