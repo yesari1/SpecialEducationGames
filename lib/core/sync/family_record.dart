@@ -3,7 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 /// Keeps `families/{uid}` current for a signed-in parent: `createdAt` once,
-/// then `updatedAt`, `locale` and the account e-mail on every sign-in. The
+/// then `updatedAt`, `lastSeenAt`, `locale`, `appVersion`, `plan` and the
+/// account e-mail on every app open while signed in. The
 /// admin page lists families from these documents; the rules accept the
 /// e-mail only when it equals the signed-in token's e-mail.
 abstract interface class FamilyRecordStore {
@@ -11,6 +12,8 @@ abstract interface class FamilyRecordStore {
     required String uid,
     required String locale,
     String? email,
+    String? appVersion,
+    String? plan,
   });
 }
 
@@ -24,6 +27,8 @@ class FirestoreFamilyRecordStore implements FamilyRecordStore {
     required String uid,
     required String locale,
     String? email,
+    String? appVersion,
+    String? plan,
   }) async {
     if (firestore == null && Firebase.apps.isEmpty) return;
     final user = (auth ?? FirebaseAuth.instance).currentUser;
@@ -38,7 +43,13 @@ class FirestoreFamilyRecordStore implements FamilyRecordStore {
           tx.set(ref, {
             if (!snap.exists) 'createdAt': FieldValue.serverTimestamp(),
             'updatedAt': FieldValue.serverTimestamp(),
+            'lastSeenAt': FieldValue.serverTimestamp(),
             'locale': locale == 'tr' ? 'tr' : 'en',
+            if (appVersion != null)
+              'appVersion': appVersion.length > 32
+                  ? appVersion.substring(0, 32)
+                  : appVersion,
+            'plan': ?plan,
             'email': ?verifiedEmail,
           }, SetOptions(merge: true));
         })

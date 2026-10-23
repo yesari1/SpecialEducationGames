@@ -71,7 +71,14 @@ class BillingRepository extends ChangeNotifier {
   }
 
   String? error;
-  BillingRepository(this.entitlement, {InAppPurchase? store})
+
+  /// A new purchase went through (not a restore); for the install funnel.
+  final void Function()? onPurchased;
+
+  /// Base plan of the purchase sheet that is open (monthly or yearly).
+  String? _buyingPlan;
+
+  BillingRepository(this.entitlement, {InAppPurchase? store, this.onPurchased})
     : store = store ?? InAppPurchase.instance;
   Future<void> initialize() async {
     if (loading) return;
@@ -196,6 +203,7 @@ class BillingRepository extends ChangeNotifier {
     if (!available || pending) return;
     pending = true;
     error = null;
+    _buyingPlan = plan.id;
     notifyListeners();
     try {
       final launched = await store.buyNonConsumable(
@@ -224,6 +232,14 @@ class BillingRepository extends ChangeNotifier {
       _storeReportedPending = false;
       if (p.status == PurchaseStatus.purchased ||
           p.status == PurchaseStatus.restored) {
+        if (p.status == PurchaseStatus.purchased) {
+          final plan = _buyingPlan;
+          if (p.productID == BillingProducts.subscription &&
+              (plan == 'monthly' || plan == 'yearly')) {
+            await entitlement.setSubscriptionPlan(plan!);
+          }
+          onPurchased?.call();
+        }
         // Refresh active ownership from Play before unlocking access.
         await restore();
         if (p.pendingCompletePurchase) await store.completePurchase(p);

@@ -1429,6 +1429,61 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyPlanLifetime => 'Premium · one-time purchase';
 
   @override
+  String get askSurveyMoreGames => 'Add more games';
+
+  @override
+  String get askSurveyMoreThemes => 'Add more themes and categories';
+
+  @override
+  String get askSurveyPrice => 'The price should be lower';
+
+  @override
+  String get askSurveySatisfaction => 'How satisfied are you with the app?';
+
+  @override
+  String get askSurveyWho => 'Who uses the app?';
+
+  @override
+  String get askSurveyUserParent => 'Parent';
+
+  @override
+  String get askSurveyUserTeacher => 'Teacher';
+
+  @override
+  String get askSurveyUserSpecialist =>
+      'Special education specialist or therapist';
+
+  @override
+  String get askSurveyUserOther => 'Other';
+
+  @override
+  String get askSurveyImprove => 'What should we improve?';
+
+  @override
+  String get askSurveyVoices => 'The voices should be better';
+
+  @override
+  String get askSurveyReports => 'Progress reports should be more detailed';
+
+  @override
+  String get askSurveyNote => 'Anything you would like to add';
+
+  @override
+  String get feedbackTitle => 'Send feedback';
+
+  @override
+  String get feedbackSend => 'Send';
+
+  @override
+  String get feedbackSent => 'Thank you, your feedback was sent';
+
+  @override
+  String get feedbackFailed => 'Could not send. Please try again.';
+
+  @override
+  String get familyPlanGranted => 'Premium';
+
+  @override
   String get familyPlanTest => 'Premium (test build)';
 
   @override

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' show WidgetsBinding;
 import 'package:drift/drift.dart';
@@ -10,7 +11,9 @@ import '../core/entitlement/entitlement_service.dart';
 import '../core/entitlement/billing_repository.dart';
 import '../core/entitlement/trial_store.dart';
 import '../core/sync/auto_summary_sync.dart';
+import '../core/sync/admin_link.dart';
 import '../core/sync/family_record.dart';
+import 'app_version.dart';
 import '../core/sync/summary_sync.dart';
 import '../core/learning/policies.dart';
 import '../core/learning/item_performance.dart';
@@ -29,6 +32,7 @@ class AppState extends ChangeNotifier {
   late final BillingRepository billing;
   final TrialStore trialStore;
   final FamilyRecordStore familyRecords;
+  final AdminLink adminLink;
 
   /// Daily summaries go to the cloud automatically while a parent is signed
   /// in; the family setting `cloudSync` (default on) turns it off.
@@ -39,10 +43,159 @@ class AppState extends ChangeNotifier {
   /// updated time, locale, account e-mail) for the admin page. Best effort.
   Future<void> recordFamily(String uid, String? email) async {
     try {
-      await familyRecords.record(uid: uid, locale: locale, email: email);
+      await familyRecords.record(
+        uid: uid,
+        locale: locale,
+        email: email,
+        appVersion: appVersion,
+        plan: entitlement.planName,
+      );
     } catch (_) {
       // Offline or not configured: the next sign-in tries again.
     }
+  }
+
+  /// Reads the admin grant of [uid] (`grants/{uid}`). Offline the cached
+  /// grant stays; another account's cache is replaced.
+  Future<void> syncGrant(String? uid) async {
+    if (uid == null) return;
+    try {
+      final g = await adminLink.grant(uid);
+      await entitlement.setGrant(
+        uid,
+        premium: g.premium,
+        until: g.until,
+        endTrial: g.endTrial,
+      );
+    } catch (_) {
+      if (entitlement.grantUid != uid) {
+        await entitlement.setGrant(uid, premium: false, endTrial: false);
+      }
+    }
+    if (!_disposed) notifyListeners();
+  }
+
+  /// Anonymous install funnel (`funnel/{installId}`): a random id made once
+  /// on this device, no account or child data. Off until [reportInstall]
+  /// runs (the app start), so tests never reach the network.
+  bool _funnelOn = false;
+  String? _installId;
+  String? get installId => _installId;
+
+  static String _newInstallId() {
+    final r = math.Random.secure();
+    final b = List<int>.generate(16, (_) => r.nextInt(256));
+    b[6] = (b[6] & 0x0f) | 0x40;
+    b[8] = (b[8] & 0x3f) | 0x80;
+    final h = b.map((x) => x.toRadixString(16).padLeft(2, '0')).join();
+    return '${h.substring(0, 8)}-${h.substring(8, 12)}-${h.substring(12, 16)}-'
+        '${h.substring(16, 20)}-${h.substring(20)}';
+  }
+
+  Future<String> _ensureInstallId() async {
+    var id = _installId ?? await db.preference('funnel.installId');
+    if (id == null || id.isEmpty) {
+      id = _newInstallId();
+      await db.setPreference('funnel.installId', id);
+    }
+    return _installId = id;
+  }
+
+  /// App start: the install document once, then any step stamps that did
+  /// not get through before. Failures are silent and retried next start.
+  Future<void> reportInstall() async {
+    _funnelOn = true;
+    try {
+      final id = await _ensureInstallId();
+      if (await db.preference('funnel.sent.install') != 'true') {
+        await adminLink.funnel(id, {
+          'installedAt': serverNow(),
+          'platform': 'android',
+          'appVersion': appVersion,
+          'locale': locale == 'tr' ? 'tr' : 'en',
+        });
+        await db.setPreference('funnel.sent.install', 'true');
+      }
+      for (final step in _funnelSteps) {
+        if (await db.preference('funnel.due.$step') == 'true') {
+          await funnelStep(step);
+        }
+      }
+    } catch (_) {}
+  }
+
+  static const _funnelSteps = [
+    'onboarding',
+    'signedIn',
+    'paywall',
+    'trial',
+    'purchased',
+  ];
+
+  /// Stamps `<step>At` once ([_funnelSteps]); the rules reject a second
+  /// stamp, so sent steps are remembered here.
+  Future<void> funnelStep(String step) async {
+    if (!_funnelOn) return;
+    try {
+      if (await db.preference('funnel.sent.$step') == 'true') return;
+      await db.setPreference('funnel.due.$step', 'true');
+      final id = await _ensureInstallId();
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(id, {'${step}At': serverNow()});
+      await db.setPreference('funnel.sent.$step', 'true');
+      await db.setPreference('funnel.due.$step', 'false');
+    } catch (_) {}
+  }
+
+  /// Device QA only: `--dart-define=SHOW_ASKS=true` shows the survey and
+  /// rating cards at once in debug/profile builds (never in release).
+  static const _qaAsks = !kReleaseMode && bool.fromEnvironment('SHOW_ASKS');
+
+  bool surveyDone = false;
+  bool ratingDone = false;
+  DateTime? ratingLaterUntil;
+
+  /// Different days with play and minutes played (active profile).
+  int get playDays => sessions
+      .map(
+        (x) => DateTime(x.startedAt.year, x.startedAt.month, x.startedAt.day),
+      )
+      .toSet()
+      .length;
+  int get playMinutes =>
+      sessions.fold<int>(0, (sum, x) => sum + x.activeMs) ~/ 60000;
+
+  /// Family area: the short survey after 2 play days or 20 minutes.
+  bool get showSurvey =>
+      !surveyDone && (_qaAsks || playDays >= 2 || playMinutes >= 20);
+
+  /// Family area: Google Play's rating card after 5 play days, once the
+  /// survey is closed; tried again a month later at the earliest.
+  bool get showRating {
+    if (ratingDone || !surveyDone && !_qaAsks) return false;
+    final later = ratingLaterUntil;
+    if (later != null && DateTime.now().isBefore(later)) return false;
+    return _qaAsks || playDays >= 5;
+  }
+
+  Future<void> closeSurvey() async {
+    surveyDone = true;
+    await db.setPreference('ask.surveyDone', 'true');
+    notifyListeners();
+  }
+
+  Future<void> closeRating({required bool later}) async {
+    if (later) {
+      ratingLaterUntil = DateTime.now().add(const Duration(days: 30));
+      await db.setPreference(
+        'ask.ratingLaterUntil',
+        ratingLaterUntil!.toIso8601String(),
+      );
+    } else {
+      ratingDone = true;
+      await db.setPreference('ask.ratingDone', 'true');
+    }
+    notifyListeners();
   }
 
   bool trialBusy = false;
@@ -72,6 +225,7 @@ class AppState extends ChangeNotifier {
     try {
       final started = await trialStore.claim(uid);
       await entitlement.setTrial(uid, started);
+      if (entitlement.trialActive) unawaited(funnelStep('trial'));
       return entitlement.trialActive;
     } on TrialFailure catch (failure) {
       trialIssue = failure.issue;
@@ -277,11 +431,13 @@ class AppState extends ChangeNotifier {
     DateTime Function()? playTimeNow,
     TrialStore? trialStore,
     FamilyRecordStore? familyRecords,
+    AdminLink? adminLink,
     SummaryStore? summaryStore,
     String? Function()? signedInUid,
   }) : _playTimeNow = playTimeNow ?? DateTime.now,
        trialStore = trialStore ?? FirestoreTrialStore(),
-       familyRecords = familyRecords ?? const FirestoreFamilyRecordStore() {
+       familyRecords = familyRecords ?? const FirestoreFamilyRecordStore(),
+       adminLink = adminLink ?? const FirestoreAdminLink() {
     playTime = PlayTimeLedger(db, now: _playTimeNow);
     configuration = AppConfiguration.defaults(content);
     configs = ConfigRepository(db, content);
@@ -289,7 +445,10 @@ class AppState extends ChangeNotifier {
       db,
       trialDaysOf: () => configuration.trialDays,
     );
-    billing = BillingRepository(entitlement);
+    billing = BillingRepository(
+      entitlement,
+      onPurchased: () => unawaited(funnelStep('purchased')),
+    );
     autoSync = AutoSummarySync(
       enabled: () => cloudSync,
       activeProfileId: () => active?.id,
@@ -350,6 +509,11 @@ class AppState extends ChangeNotifier {
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();
     await entitlement.load();
+    surveyDone = await db.preference('ask.surveyDone') == 'true';
+    ratingDone = await db.preference('ask.ratingDone') == 'true';
+    ratingLaterUntil = DateTime.tryParse(
+      await db.preference('ask.ratingLaterUntil') ?? '',
+    );
     profiles = await (db.select(
       db.profiles,
     )..orderBy([(p) => OrderingTerm.asc(p.id)])).get();
@@ -563,6 +727,7 @@ class AppState extends ChangeNotifier {
       await db.setPreference('parentPinHash', ParentPin.hash(pin, salt));
     }
     await load();
+    unawaited(funnelStep('onboarding'));
   }
 
   Future<void> setting(String key, String value) async {

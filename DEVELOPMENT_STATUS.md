@@ -2,6 +2,20 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R52–R57 (admin bağlantıları, geri bildirim, anket, Play puanlama) — sürüm 2.0.21 (35), Internal testing'de
+
+- Kaynak: Drive `admin-uygulama-degisiklikleri.md` ve `anket-tasarimi.md` (Yunus onaylı).
+- `families/{uid}`: oturum açıkken her açılışta `lastSeenAt`, `appVersion` (`lib/app/app_version.dart`, pubspec ile testle eşit tutulur) ve `plan` (free|trial|monthly|yearly|lifetime|granted). Girişte önce deneme ve grant okunur, sonra kayıt yazılır.
+- `grants/{uid}`: `plan: 'premium'` ve `until` boş ya da gelecekteyse `PremiumSource.granted` (çevrimdışı önbellek `grant.*`); `endTrial: true` denemeyi bitirir, false olunca normal deneme döner. Hesap kartında granted = "Premium".
+- Aylık/yıllık ayrımı: yalnızca bu cihazda satın alınan abonelik için bilinir (`premium.basePlan`); bilinmiyorsa "monthly" raporlanır.
+- Anonim `funnel/{installId}`: rastgele UUID v4 (yerel), ilk açılış belgesi; `onboardingAt`, `signedInAt`, `paywallAt`, `trialAt`, `purchasedAt` birer kez; gönderilemeyen adım sonraki açılışta tekrar denenir. Testlerde ağ yok (`reportInstall` yalnız main'de).
+- Ayarlar › "Geri bildirim gönder" kartı ve sayfası (başlık, metin, Gönder) → `feedback/{autoId}`; başarıda üstte teşekkür bildirimi.
+- Anket pop-up'ı (aile alanına girişte, 2 oyun günü ya da 20 dk sonra; X ya da Gönder ile bir daha çıkmaz): 5 yüzlü memnuniyet, kim kullanıyor, 5 geliştirme seçeneği, not. `feedback`'e `kind: 'survey'`, `choices` kimlikleri ve okunur `message`.
+- Google Play puanlama: kendi pop-up'ımız yok (Play kuralı: öncesinde soru sorulmaz); 5 oyun günü ve anket kapandıktan sonra doğrudan In-App Review isteniyor (`in_app_review` 2.0.12), en erken 30 günde bir. Play penceresi yalnız Play'den kurulu sürümde açılır.
+- QA: `--dart-define=SHOW_ASKS=true` (yalnız debug/profil) kartları hemen gösterir; emülatör görüntüleri `integration_test/r53_asks_shot_test.dart` → `artifacts/claude/r53/`.
+- Doğrulama: seri tam tur 277/278 — tek hata build ile aynı anda çalışırken `game_catalog_rounds_test` yüklemesinde (CPU yükü); dosya ve yavaş `family_settings_landscape_test` tek başına geçti. `tools/build_release.sh` geçti, vc35 Internal testing'e yüklendi.
+- Reddedilen/kaldırılan: üstte yapışık kartlar, kedi-yıldız puan pop-up'ı (görsel `artifacts/illustrations-r55/` içinde saklı, uygulamada yok).
+
 ## 22 Ekim 2026 — R51 (paywall yanlış hata, üstte gölgesiz bildirim) — sürüm 2.0.20 (34), Internal testing'de
 
 - Hata: hoş geldin "Giriş yap" → Google penceresi kapatılınca `FamilyAuth.issue = cancelled` kalıyordu; paywall bunu görünce "Deneme başlatılamadı…" yazıyordu. Onboarding `_signIn` artık vazgeçişte `issue`'yu temizliyor.

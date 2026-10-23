@@ -18,6 +18,7 @@ import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/core/entitlement/billing_repository.dart';
 import 'package:special_education_games/features/onboarding/onboarding_screen.dart';
+import 'package:special_education_games/features/family/feedback_screen.dart';
 import 'package:special_education_games/features/family/family_screen.dart';
 import 'package:special_education_games/l10n/app_localizations.dart';
 
@@ -134,6 +135,12 @@ void main() {
       await tester.drag(find.byType(ListView).first, const Offset(0, -900));
       await _settle(tester);
       await _save(tester, 'settings-scrolled-$locale');
+      await tester.drag(find.byType(ListView).first, const Offset(0, -6000));
+      await _settle(tester);
+      await _save(tester, 'settings-bottom-$locale');
+      await tester.pumpWidget(_app(locale, FeedbackScreen(state: state)));
+      await _settle(tester);
+      await _save(tester, 'feedback-$locale');
 
       // The notice card.
       await tester.pumpWidget(

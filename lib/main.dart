@@ -26,6 +26,7 @@ Future<void> main() async {
   runApp(ProviderScope(child: EducationApp(state: state)));
   unawaited(state.billing.initialize());
   unawaited(state.refreshConfiguration(FirestoreConfigSource.read));
+  unawaited(state.reportInstall());
 }
 
 /// Precomputed photo framing (see tools/build_photo_bounds.py). Missing or

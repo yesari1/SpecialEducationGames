@@ -11,6 +11,7 @@ import '../features/child_home/home_screen.dart';
 import '../features/family/family_screen.dart';
 import '../features/family/subscription_screen.dart';
 import '../features/family/credits_screen.dart';
+import '../features/family/feedback_screen.dart';
 import '../features/family/family_account_screen.dart';
 import '../core/auth/family_auth.dart';
 import '../core/auth/google_family_auth_backend.dart';
@@ -37,8 +38,15 @@ class _EducationAppState extends State<EducationApp>
     _cachedAccountUid = next;
     // The free trial belongs to the Google account: read it after sign-in.
     if (next != null && next != old) {
-      unawaited(state.syncTrial(next));
-      unawaited(state.recordFamily(next, familyAuth.account?.email));
+      final email = familyAuth.account?.email;
+      // Trial and admin grant first, so the family record carries the plan.
+      unawaited(
+        Future.wait([
+          state.syncTrial(next),
+          state.syncGrant(next),
+        ]).whenComplete(() => state.recordFamily(next, email)),
+      );
+      unawaited(state.funnelStep('signedIn'));
       state.autoSync.request();
     }
     if (old != null && old != next) {
@@ -113,7 +121,8 @@ class _EducationAppState extends State<EducationApp>
         ),
         GoRoute(
           path: '/family',
-          builder: (_, _) => reactive(() => FamilyScreen(state: state)),
+          builder: (_, _) =>
+              reactive(() => FamilyScreen(state: state, auth: familyAuth)),
           // Nested so system Back on a family page returns to the family area.
           routes: [
             GoRoute(
@@ -121,6 +130,10 @@ class _EducationAppState extends State<EducationApp>
               builder: (_, _) => reactive(
                 () => SubscriptionScreen(state: state, auth: familyAuth),
               ),
+            ),
+            GoRoute(
+              path: 'feedback',
+              builder: (_, _) => FeedbackScreen(state: state, auth: familyAuth),
             ),
             GoRoute(
               path: 'credits',

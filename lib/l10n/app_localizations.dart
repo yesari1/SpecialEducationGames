@@ -2581,6 +2581,114 @@ abstract class AppLocalizations {
   /// **'Premium · one-time purchase'**
   String get familyPlanLifetime;
 
+  /// No description provided for @askSurveyMoreGames.
+  ///
+  /// In en, this message translates to:
+  /// **'Add more games'**
+  String get askSurveyMoreGames;
+
+  /// No description provided for @askSurveyMoreThemes.
+  ///
+  /// In en, this message translates to:
+  /// **'Add more themes and categories'**
+  String get askSurveyMoreThemes;
+
+  /// No description provided for @askSurveyPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'The price should be lower'**
+  String get askSurveyPrice;
+
+  /// No description provided for @askSurveySatisfaction.
+  ///
+  /// In en, this message translates to:
+  /// **'How satisfied are you with the app?'**
+  String get askSurveySatisfaction;
+
+  /// No description provided for @askSurveyWho.
+  ///
+  /// In en, this message translates to:
+  /// **'Who uses the app?'**
+  String get askSurveyWho;
+
+  /// No description provided for @askSurveyUserParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent'**
+  String get askSurveyUserParent;
+
+  /// No description provided for @askSurveyUserTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher'**
+  String get askSurveyUserTeacher;
+
+  /// No description provided for @askSurveyUserSpecialist.
+  ///
+  /// In en, this message translates to:
+  /// **'Special education specialist or therapist'**
+  String get askSurveyUserSpecialist;
+
+  /// No description provided for @askSurveyUserOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get askSurveyUserOther;
+
+  /// No description provided for @askSurveyImprove.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we improve?'**
+  String get askSurveyImprove;
+
+  /// No description provided for @askSurveyVoices.
+  ///
+  /// In en, this message translates to:
+  /// **'The voices should be better'**
+  String get askSurveyVoices;
+
+  /// No description provided for @askSurveyReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress reports should be more detailed'**
+  String get askSurveyReports;
+
+  /// No description provided for @askSurveyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Anything you would like to add'**
+  String get askSurveyNote;
+
+  /// No description provided for @feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Send feedback'**
+  String get feedbackTitle;
+
+  /// No description provided for @feedbackSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get feedbackSend;
+
+  /// No description provided for @feedbackSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you, your feedback was sent'**
+  String get feedbackSent;
+
+  /// No description provided for @feedbackFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not send. Please try again.'**
+  String get feedbackFailed;
+
+  /// No description provided for @familyPlanGranted.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get familyPlanGranted;
+
   /// Family account card plan.
   ///
   /// In en, this message translates to:

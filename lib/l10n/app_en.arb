@@ -1471,6 +1471,24 @@
   "@familyPlanLifetime": {
     "description": "Family account card plan."
   },
+  "askSurveyMoreGames": "Add more games",
+  "askSurveyMoreThemes": "Add more themes and categories",
+  "askSurveyPrice": "The price should be lower",
+  "askSurveySatisfaction": "How satisfied are you with the app?",
+  "askSurveyWho": "Who uses the app?",
+  "askSurveyUserParent": "Parent",
+  "askSurveyUserTeacher": "Teacher",
+  "askSurveyUserSpecialist": "Special education specialist or therapist",
+  "askSurveyUserOther": "Other",
+  "askSurveyImprove": "What should we improve?",
+  "askSurveyVoices": "The voices should be better",
+  "askSurveyReports": "Progress reports should be more detailed",
+  "askSurveyNote": "Anything you would like to add",
+  "feedbackTitle": "Send feedback",
+  "feedbackSend": "Send",
+  "feedbackSent": "Thank you, your feedback was sent",
+  "feedbackFailed": "Could not send. Please try again.",
+  "familyPlanGranted": "Premium",
   "familyPlanTest": "Premium (test build)",
   "@familyPlanTest": {
     "description": "Family account card plan."

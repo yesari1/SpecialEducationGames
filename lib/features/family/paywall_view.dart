@@ -45,6 +45,7 @@ class _PaywallViewState extends State<PaywallView> {
     s.billing.addListener(_changed);
     widget.auth?.addListener(_changed);
     // Plans are loaded at app start (main); "Try again" reloads them.
+    s.funnelStep('paywall');
   }
 
   void _changed() {

@@ -1,6 +1,7 @@
 import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:intl/intl.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
@@ -17,6 +18,8 @@ import '../../core/learning/learning_report.dart';
 import 'progress_charts.dart';
 import 'item_insights.dart';
 import 'goal_ring.dart';
+import '../../core/auth/family_auth.dart';
+import 'ask_cards.dart';
 import 'parent_announcement_card.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -196,7 +199,10 @@ ButtonStyle get _dialogButtonStyle => TextButton.styleFrom(
 
 class FamilyScreen extends StatefulWidget {
   final AppState state;
-  const FamilyScreen({super.key, required this.state});
+
+  /// The parent's Google account (for the survey's uid/e-mail), if any.
+  final FamilyAuth? auth;
+  const FamilyScreen({super.key, required this.state, this.auth});
   @override
   State<FamilyScreen> createState() => _FamilyScreenState();
 }
@@ -207,6 +213,21 @@ class _FamilyScreenState extends State<FamilyScreen> {
   final PageController _sectionController = PageController();
   AppState get s => widget.state;
   AppLocalizations get l10n => scopedLocalizations(context, s.locale);
+
+  @override
+  void initState() {
+    super.initState();
+    // When due on entering the family area: the survey pop-up, later
+    // Google Play's own rating card.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (s.showSurvey) {
+        showAskDialog(context, SurveyCard(state: s, auth: widget.auth));
+      } else if (s.showRating) {
+        requestPlayReview(s);
+      }
+    });
+  }
 
   @override
   void dispose() {
@@ -1046,6 +1067,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ]),
+      _feedbackCard(),
       page(l10n.familyPrivacy, [
         TextButton.icon(
           onPressed: () => context.go('/family/account'),
@@ -1763,6 +1785,28 @@ class _FamilyScreenState extends State<FamilyScreen> {
       ),
   ];
 
+  /// Settings › "Send feedback": opens the feedback page. Full width like
+  /// the other settings cards.
+  Widget _feedbackCard() => ConstrainedBox(
+    constraints: const BoxConstraints(minWidth: double.infinity),
+    child: SegCard(
+      child: InkWell(
+        key: const ValueKey('settings-feedback'),
+        borderRadius: BorderRadius.circular(SegRadius.lg),
+        onTap: () {
+          UiSound.tap();
+          context.go('/family/feedback');
+        },
+        child: Row(
+          children: [
+            Expanded(child: Text(l10n.feedbackTitle, style: SegText.heading)),
+            const Icon(Icons.chevron_right_rounded, color: SegColors.inkSoft),
+          ],
+        ),
+      ),
+    ),
+  );
+
   /// What the family has: plan, how it was paid, trial days, and the way to
   /// manage or upgrade.
   Widget _accountCard() {
@@ -1781,6 +1825,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
         l10n.familyPaymentTrial,
       ),
       PremiumSource.qa => (l10n.familyPlanTest, l10n.familyPaymentNone),
+      PremiumSource.granted => (l10n.familyPlanGranted, l10n.familyPaymentNone),
       PremiumSource.none => (l10n.familyPlanFree, l10n.familyPaymentNone),
     };
     Widget row(String label, String value) => Padding(
@@ -2211,6 +2256,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ],
       ),
     ),
+    const SizedBox(height: SegSpace.s5),
+    _feedbackCard(),
     const SizedBox(height: SegSpace.s5),
     SegCard(
       child: Column(

@@ -7,7 +7,7 @@ import '../db/app_database.dart';
 const qaPremium = !kReleaseMode && bool.fromEnvironment('QA_PREMIUM');
 
 /// Why every game is open right now.
-enum PremiumSource { none, qa, subscription, lifetime, trial }
+enum PremiumSource { none, qa, subscription, lifetime, trial, granted }
 
 /// Access is read on the device: Google Play ownership (subscription or the
 /// one-time lifetime product) and the one free trial per Google account,
@@ -25,6 +25,21 @@ class EntitlementService {
   /// Server start of this account's free trial, cached for offline use.
   DateTime? trialStartedAt;
   String? trialUid;
+
+  /// Admin grant (`grants/{uid}`), cached for offline use: Premium until
+  /// [grantUntil] (null = no end), and [trialEnded] ends the trial early.
+  bool grantPremium = false;
+  DateTime? grantUntil;
+  bool trialEnded = false;
+  String? grantUid;
+
+  /// Play base plan of the subscription bought on this device.
+  String? subscriptionPlan;
+
+  bool get grantActive {
+    final until = grantUntil;
+    return grantPremium && (until == null || now().isBefore(until));
+  }
 
   /// Trial length; the app passes the remote `config/app.trialDays`.
   final int Function() trialDaysOf;
@@ -47,7 +62,8 @@ class EntitlementService {
   DateTime? get trialEndsAt => trialStartedAt?.add(Duration(days: trialDays));
   bool trialActiveAt(DateTime at) {
     final start = trialStartedAt, end = trialEndsAt;
-    return start != null &&
+    return !trialEnded &&
+        start != null &&
         end != null &&
         !at.isBefore(start.subtract(const Duration(minutes: 5))) &&
         at.isBefore(end);
@@ -68,6 +84,7 @@ class EntitlementService {
     if (qaPremium) return PremiumSource.qa;
     if (lifetimeOwned) return PremiumSource.lifetime;
     if (activeAt(now())) return PremiumSource.subscription;
+    if (grantActive) return PremiumSource.granted;
     if (trialActive) return PremiumSource.trial;
     return PremiumSource.none;
   }
@@ -88,6 +105,47 @@ class EntitlementService {
       await db.preference('trial.startedAt') ?? '',
     );
     trialUid = await db.preference('trial.uid');
+    grantUid = await db.preference('grant.uid');
+    grantPremium = await db.preference('grant.premium') == 'true';
+    grantUntil = DateTime.tryParse(await db.preference('grant.until') ?? '');
+    trialEnded = await db.preference('grant.endTrial') == 'true';
+    subscriptionPlan = await db.preference('premium.basePlan');
+  }
+
+  /// Plan name for the admin list: free | trial | monthly | yearly |
+  /// lifetime | granted.
+  String get planName => switch (source) {
+    PremiumSource.lifetime => 'lifetime',
+    PremiumSource.subscription =>
+      subscriptionPlan == 'yearly' ? 'yearly' : 'monthly',
+    PremiumSource.granted => 'granted',
+    PremiumSource.trial => 'trial',
+    PremiumSource.none || PremiumSource.qa => 'free',
+  };
+
+  Future<void> setSubscriptionPlan(String basePlan) async {
+    subscriptionPlan = basePlan;
+    await db.setPreference('premium.basePlan', basePlan);
+  }
+
+  /// Caches the admin grant of [uid] (all false/null: no grant).
+  Future<void> setGrant(
+    String uid, {
+    required bool premium,
+    DateTime? until,
+    required bool endTrial,
+  }) async {
+    grantUid = uid;
+    grantPremium = premium;
+    grantUntil = until;
+    trialEnded = endTrial;
+    await db.setPreference('grant.uid', uid);
+    await db.setPreference('grant.premium', '$premium');
+    await db.setPreference(
+      'grant.until',
+      until?.toUtc().toIso8601String() ?? '',
+    );
+    await db.setPreference('grant.endTrial', '$endTrial');
   }
 
   /// Play's answer about what this device owns right now.

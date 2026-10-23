@@ -1432,6 +1432,60 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyPlanLifetime => 'Premium · tek seferlik';
 
   @override
+  String get askSurveyMoreGames => 'Daha fazla oyun eklenmeli';
+
+  @override
+  String get askSurveyMoreThemes => 'Daha fazla tema/kategori eklenmeli';
+
+  @override
+  String get askSurveyPrice => 'Fiyat daha uygun olmalı';
+
+  @override
+  String get askSurveySatisfaction => 'Uygulamadan ne kadar memnunsunuz?';
+
+  @override
+  String get askSurveyWho => 'Uygulamayı kim kullanıyor?';
+
+  @override
+  String get askSurveyUserParent => 'Ebeveyn';
+
+  @override
+  String get askSurveyUserTeacher => 'Öğretmen';
+
+  @override
+  String get askSurveyUserSpecialist => 'Özel eğitim uzmanı veya terapist';
+
+  @override
+  String get askSurveyUserOther => 'Diğer';
+
+  @override
+  String get askSurveyImprove => 'Neleri geliştirelim?';
+
+  @override
+  String get askSurveyVoices => 'Seslendirme daha iyi olmalı';
+
+  @override
+  String get askSurveyReports => 'İlerleme raporları daha detaylı olmalı';
+
+  @override
+  String get askSurveyNote => 'Eklemek istediklerin';
+
+  @override
+  String get feedbackTitle => 'Geri bildirim gönder';
+
+  @override
+  String get feedbackSend => 'Gönder';
+
+  @override
+  String get feedbackSent => 'Teşekkürler, geri bildirimin gönderildi';
+
+  @override
+  String get feedbackFailed => 'Gönderilemedi. Lütfen tekrar dene.';
+
+  @override
+  String get familyPlanGranted => 'Premium';
+
+  @override
   String get familyPlanTest => 'Premium (test sürümü)';
 
   @override
