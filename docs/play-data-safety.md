@@ -2,7 +2,7 @@
 
 Bu cevaplar 2.0.25 (39) kodunun gerçekte gönderdiklerine göre kontrol edildi (23 Ekim 2026).
 
-- Ebeveynin Google ile girişi zorunludur (23 Ekim 2026 kararı); giriş yalnız ebeveyn ekranlarında. Reklam, üçüncü taraf analitik, çökme raporu ve konum yoktur.
+- Ebeveynin girişi zorunludur (23 Ekim 2026 kararı): Google ile ya da şifresiz e-posta bağlantısıyla (2.0.26); giriş yalnız ebeveyn ekranlarında. Reklam, üçüncü taraf analitik, çökme raporu ve konum yoktur.
 - Çocuk profili (ad, yaş, avatar, profil ayarları) ebeveynin hesabıyla `families/{uid}/children/{id}` altında saklanır; fotoğraf yok.
 - Buluta yalnızca şunlar gider: Firebase hesabı; aile kaydı `families/{uid}` (e-posta, dil, plan, son açılış, uygulama sürümü); çocuk profilleri; deneme başlangıç zamanı `trials/{uid}`; otomatik gönderilen günlük öğrenme özetleri (Aile alanından kapatılabilir); hesapsız kurulum istatistiği `funnel/{installId}`; isteğe bağlı geri bildirim ve anket `feedback/{id}`. Yöneticinin yazdığı `grants/{uid}` (tanımlı paket, denemeyi bitirme) uygulama tarafından yalnız okunur.
 - Yesa Studio yöneticisi bu verileri yönetici sayfasından (seg.yesastudio.com, Firestore kurallarıyla yalnız `admins/{uid}` hesapları) görebilir ve silebilir. Bu bir üçüncü tarafa paylaşım değildir.
@@ -29,7 +29,7 @@ Kod değişirse bu formu da güncelleyin.
 |---|---|
 | Uygulamanız gerekli kullanıcı verisi türlerinden herhangi birini topluyor veya paylaşıyor mu? | **Evet** |
 | Uygulamanızın topladığı tüm kullanıcı verileri aktarım sırasında şifreleniyor mu? | **Evet** |
-| Hangi hesap oluşturma yöntemlerini destekliyorsunuz? | **OAuth (Google ile giriş)** |
+| Hangi hesap oluşturma yöntemlerini destekliyorsunuz? | **OAuth** (Google ile giriş) ve **Kullanıcı adı ve diğer kimlik doğrulama** / şifresiz e-posta bağlantısı (2.0.26'dan beri; Firebase e-posta bağlantısı). İnceleme hesabı `test@yesastudio.com` şifreyle girer. |
 | Hesap silme URL'si (OAuth işaretli olduğu için zorunlu) | `https://yesastudio.com/ozel-egitim-oyunlari/delete-account/` |
 | Kullanıcıların hesabı silmeden verilerinin bir kısmını/tamamını silmesini istemelerinin bir yolunu sunuyor musunuz? | **Evet** (23 Ekim 2026, Yunus). Veri silme URL'si: aynı sayfa; sayfada "Hesabı silmeden veri silme" bölümü **olmalı** (çocuk profilini silme, günlük özetleri kapatma, e-postayla talep). |
 | Uygulamanız bağımsız bir güvenlik incelemesinden geçti mi? (isteğe bağlı) | **Hayır** (işaretlemeyin) |
@@ -71,7 +71,7 @@ Notlar:
 
 - "Ad": ebeveynin Google adı (Firebase Authentication) ve ebeveynin girdiği çocuk adı/takma adı (çocuk profili).
 - "Diğer bilgiler": çocuğun yaşı / yaş bandı, avatar ve profil ayarları (`families/{uid}/children/{id}`).
-- "E-posta": Google ile girişte Firebase Authentication alır; ayrıca `families/{uid}.email`.
+- "E-posta": Google ile ya da e-posta bağlantısıyla girişte Firebase Authentication alır; ayrıca `families/{uid}.email`. E-postayla giren kullanıcıda ad ve fotoğraf yoktur.
 - "Kullanıcı kimlikleri": Firebase UID. Deneme kaydı (`trials/{uid}`, yalnız başlangıç zamanı) ve özetler bu kimlikle saklanır.
 - "Uygulama etkileşimleri": günlük özetler (tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı; özetlerde çocuğun adı ya da tek tek yanıtları yok), son açılış ve kurulum adımları.
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
