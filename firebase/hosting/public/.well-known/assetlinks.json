@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.YeS.OzelEgitimOyunlari",
+      "sha256_cert_fingerprints": [
+        "67:F0:BA:24:1D:44:E5:0A:65:BE:A4:92:A0:FE:E5:F4:AC:BC:BE:26:88:5D:A7:C2:52:79:59:69:C1:89:0E:A3",
+        "24:1D:C6:0B:6D:3B:2C:23:E4:1E:8B:75:A2:94:34:74:BB:8A:DB:B1:F1:AB:F9:2E:9E:0F:F8:BF:C2:95:A0:4E"
+      ]
+    }
+  }
+]
