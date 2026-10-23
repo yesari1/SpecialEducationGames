@@ -32,6 +32,18 @@ class _EducationAppState extends State<EducationApp>
   late final GoRouter router;
   late final FamilyAuth familyAuth;
   String? _cachedAccountUid;
+  String? _recordedPlan;
+
+  /// A purchase (or its end) changes the plan: record it in
+  /// `families/{uid}` at once, so other devices of the account see it.
+  void _planChanged() {
+    final uid = familyAuth.account?.uid;
+    final plan = state.entitlement.planName;
+    if (uid == null || _recordedPlan == null || plan == _recordedPlan) return;
+    _recordedPlan = plan;
+    unawaited(state.recordFamily(uid, familyAuth.account?.email));
+  }
+
   void _accountChanged() {
     final next = familyAuth.account?.uid;
     final old = _cachedAccountUid;
@@ -44,7 +56,11 @@ class _EducationAppState extends State<EducationApp>
         Future.wait([
           state.syncTrial(next),
           state.syncGrant(next),
-        ]).whenComplete(() => state.recordFamily(next, email)),
+          state.syncPlan(next),
+        ]).whenComplete(() {
+          _recordedPlan = state.entitlement.planName;
+          return state.recordFamily(next, email);
+        }),
       );
       unawaited(state.funnelStep('signedIn'));
       state.autoSync.request();
@@ -70,6 +86,7 @@ class _EducationAppState extends State<EducationApp>
       parentAuthorized: () => state.familyUnlocked,
     );
     familyAuth.addListener(_accountChanged);
+    state.billing.addListener(_planChanged);
     WidgetsBinding.instance.addObserver(this);
     router = GoRouter(
       initialLocation: state.active == null ? '/welcome' : '/',
@@ -207,6 +224,7 @@ class _EducationAppState extends State<EducationApp>
     router.routerDelegate.removeListener(_syncOrientation);
     router.dispose();
     familyAuth.removeListener(_accountChanged);
+    state.billing.removeListener(_planChanged);
     familyAuth.dispose();
     super.dispose();
   }

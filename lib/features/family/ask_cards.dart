@@ -127,8 +127,7 @@ class _SurveyCardState extends State<SurveyCard> {
         'locale': s.locale == 'tr' ? 'tr' : 'en',
         'platform': 'android',
         'kind': 'survey',
-        if (picked.isNotEmpty)
-          'choices': [for (final i in picked) _improvements[i].$1],
+        'choices': [for (final i in picked) _improvements[i].$1],
       });
       if (!mounted) return;
       showNotice(

@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 23 Ekim 2026 — R58 (abonelik planı başka cihazda) — sürüm 2.0.22 (36), Internal testing'de
+
+- Play uygulamaya yalnız "abonelik aktif" der, aylık/yıllık bilgisini vermez (bunu Play'den okumak Play Developer API = sunucu/Cloud Functions ister, Blaze bekliyor). Çözüm: plan değişince (satın alma) `families/{uid}.plan` hemen yazılıyor (`_planChanged`, billing dinleyicisi); başka cihazda girişte yerel plan bilinmiyorsa `families/{uid}.plan` okunup (`syncPlan`) saklanıyor. Lifetime ayrı ürün, zaten doğruydu. Play aboneliği Play hesabına bağlıdır; farklı Play hesabında Premium görünmez.
+- Anket: kural `kind: 'survey'` için `choices` listesini zorunlu istiyor; artık boş liste de gönderiliyor (yalnız yazılı anket reddediliyordu).
+- Doğrulama: seri host testler 279/279 (yeni: başka cihazda yıllık plan testi); `tools/build_release.sh` geçti; vc36 Internal testing'e yüklendi.
+
 ## 23 Ekim 2026 — R52–R57 (admin bağlantıları, geri bildirim, anket, Play puanlama) — sürüm 2.0.21 (35), Internal testing'de
 
 - Kaynak: Drive `admin-uygulama-degisiklikleri.md` ve `anket-tasarimi.md` (Yunus onaylı).

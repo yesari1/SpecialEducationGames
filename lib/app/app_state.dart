@@ -55,6 +55,21 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// Play says only "subscribed", not monthly or yearly. When this device
+  /// did not buy it, the plan recorded in `families/{uid}` by the buying
+  /// device is used.
+  Future<void> syncPlan(String? uid) async {
+    if (uid == null || entitlement.subscriptionPlan != null) return;
+    try {
+      final plan = await familyRecords.plan(uid);
+      if (plan == 'monthly' || plan == 'yearly') {
+        await entitlement.setSubscriptionPlan(plan!);
+      }
+    } catch (_) {
+      // Offline: reported as monthly until the next sign-in.
+    }
+  }
+
   /// Reads the admin grant of [uid] (`grants/{uid}`). Offline the cached
   /// grant stays; another account's cache is replaced.
   Future<void> syncGrant(String? uid) async {

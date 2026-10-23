@@ -15,12 +15,29 @@ abstract interface class FamilyRecordStore {
     String? appVersion,
     String? plan,
   });
+
+  /// The plan last written for [uid] (another device may have bought it).
+  Future<String?> plan(String uid);
 }
 
 class FirestoreFamilyRecordStore implements FamilyRecordStore {
   final FirebaseFirestore? firestore;
   final FirebaseAuth? auth;
   const FirestoreFamilyRecordStore({this.firestore, this.auth});
+
+  @override
+  Future<String?> plan(String uid) async {
+    if (firestore == null && Firebase.apps.isEmpty) return null;
+    final user = (auth ?? FirebaseAuth.instance).currentUser;
+    if (user == null || user.uid != uid) return null;
+    final snap = await (firestore ?? FirebaseFirestore.instance)
+        .collection('families')
+        .doc(uid)
+        .get(const GetOptions(source: Source.server))
+        .timeout(const Duration(seconds: 15));
+    final value = snap.data()?['plan'];
+    return value is String ? value : null;
+  }
 
   @override
   Future<void> record({
