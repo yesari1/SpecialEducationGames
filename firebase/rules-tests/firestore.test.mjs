@@ -277,3 +277,17 @@ test('feedback: app creates (signed in or not), only admin reads, marks and dele
   await assertFails(updateDoc(doc(admin,'feedback/f1'),{message:'edited'}));
   await assertSucceeds(deleteDoc(doc(admin,'feedback/f1')));
 });
+
+test('feedback survey: ticked choice IDs with optional message',async () => {
+  const base={message:'',createdAt:serverTimestamp(),uid:null,email:null,installId:'a1b2c3d4-e5f6-4711-8899-aabbccddeeff',appVersion:'2.0.22+36',locale:'tr',platform:'android'};
+  const anon=db(null);
+  await assertSucceeds(setDoc(doc(anon,'feedback/s1'),{...base,kind:'survey',choices:['more_games','price']}));
+  await assertSucceeds(setDoc(doc(anon,'feedback/s2'),{...base,kind:'survey',choices:[],message:'Sadece yorum'}));
+  await assertFails(setDoc(doc(anon,'feedback/s3'),{...base,kind:'survey',choices:[]}));
+  await assertFails(setDoc(doc(anon,'feedback/s4'),{...base,kind:'survey',choices:['Bad Id!']}));
+  await assertFails(setDoc(doc(anon,'feedback/s5'),{...base,kind:'survey',choices:['a','b','c','d','e','f','g','h','i']}));
+  await assertFails(setDoc(doc(anon,'feedback/s6'),{...base,kind:'poll',choices:['a']}));
+  await assertFails(setDoc(doc(anon,'feedback/s7'),{...base,message:''}));
+  await assertFails(setDoc(doc(anon,'feedback/s8'),{...base,message:'x',choices:['a']}));
+  await assertSucceeds(setDoc(doc(anon,'feedback/s9'),{...base,kind:'feedback',message:'Merhaba'}));
+});

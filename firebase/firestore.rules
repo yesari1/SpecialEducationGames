@@ -109,10 +109,25 @@ service cloud.firestore {
     // Feedback a parent sends from the app settings. Create-only from the
     // app (signed in or not; an account field must match the sender); only
     // admins read it, mark it ('new' | 'read' | 'done') or delete it.
+    function choiceId(v) { return v is string && v.matches('^[a-z0-9_]{1,40}$'); }
+    function choiceIds(l) {
+      return (l.size() < 1 || choiceId(l[0])) && (l.size() < 2 || choiceId(l[1]))
+        && (l.size() < 3 || choiceId(l[2])) && (l.size() < 4 || choiceId(l[3]))
+        && (l.size() < 5 || choiceId(l[4])) && (l.size() < 6 || choiceId(l[5]))
+        && (l.size() < 7 || choiceId(l[6])) && (l.size() < 8 || choiceId(l[7]));
+    }
     match /feedback/{id} {
-      allow create: if exact(request.resource.data, ['message', 'createdAt', 'uid', 'email', 'installId', 'appVersion', 'locale', 'platform'])
-        && request.resource.data.message is string
-        && request.resource.data.message.size() >= 1 && request.resource.data.message.size() <= 2000
+      // A plain message (kind 'feedback', the default), or a short survey ('survey'): up to 8 ticked choice
+      // IDs plus an optional message.
+      allow create: if request.resource.data.keys().hasAll(['message', 'createdAt', 'uid', 'email', 'installId', 'appVersion', 'locale', 'platform'])
+        && request.resource.data.keys().hasOnly(['message', 'createdAt', 'uid', 'email', 'installId', 'appVersion', 'locale', 'platform', 'kind', 'choices'])
+        && request.resource.data.message is string && request.resource.data.message.size() <= 2000
+        && (request.resource.data.get('kind', 'feedback') == 'feedback'
+          ? (request.resource.data.message.size() >= 1 && !('choices' in request.resource.data))
+          : (request.resource.data.kind == 'survey'
+            && request.resource.data.choices is list && request.resource.data.choices.size() <= 8
+            && (request.resource.data.choices.size() >= 1 || request.resource.data.message.size() >= 1)
+            && choiceIds(request.resource.data.choices)))
         && request.resource.data.createdAt == request.time
         && (request.resource.data.uid == null || (request.auth != null && request.resource.data.uid == request.auth.uid))
         && (request.resource.data.email == null || (request.auth != null && request.resource.data.email == request.auth.token.email))
