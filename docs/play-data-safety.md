@@ -30,14 +30,14 @@ Kod değişirse bu formu da güncelleyin.
 | Uygulamanız gerekli kullanıcı verisi türlerinden herhangi birini topluyor veya paylaşıyor mu? | **Evet** |
 | Uygulamanızın topladığı tüm kullanıcı verileri aktarım sırasında şifreleniyor mu? | **Evet** |
 | Hangi hesap oluşturma yöntemlerini destekliyorsunuz? | **OAuth (Google ile giriş)** |
-| Kullanıcıların verilerinin silinmesini istemelerinin bir yolunu sunuyor musunuz? | **Evet** |
-| Hesap silme URL'si | `https://yesastudio.com/ozel-egitim-oyunlari/delete-account/` |
+| Hesap silme URL'si (OAuth işaretli olduğu için zorunlu) | `https://yesastudio.com/ozel-egitim-oyunlari/delete-account/` |
+| Kullanıcıların hesabı silmeden verilerinin bir kısmını/tamamını silmesini istemelerinin bir yolunu sunuyor musunuz? | **Evet** (23 Ekim 2026, Yunus). Veri silme URL'si: aynı sayfa; sayfada "Hesabı silmeden veri silme" bölümü **olmalı** (çocuk profilini silme, günlük özetleri kapatma, e-postayla talep). |
 | Uygulamanız bağımsız bir güvenlik incelemesinden geçti mi? (isteğe bağlı) | **Hayır** (işaretlemeyin) |
 | Families politikasına uyum taahhüdü | **Evet** (Families politikasına uyduğunu onaylayın) |
 
 ### 2.2 Veri türleri: işaretlenecekler
 
-Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi: plan bilgisi, son açılış ve hesapsız kurulum istatistiği eklendi). Diğerlerinin hepsi **toplanmıyor**: konum, telefon numarası, adres, sağlık, mesajlar, fotoğraf/video, ses, dosyalar, takvim, kişiler, web geçmişi, uygulama bilgisi ve performans.
+Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026: plan bilgisi, son açılış ve hesapsız kurulum istatistiği; 23 Ekim 2026: zorunlu giriş, çocuk profilleri hesapta, anket). Diğerlerinin hepsi **toplanmıyor**: konum, telefon numarası, adres, sağlık, mesajlar, fotoğraf/video, ses, dosyalar, takvim, kişiler, web geçmişi, uygulama bilgisi ve performans.
 
 **Kişisel bilgiler**
 
@@ -52,13 +52,13 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
 |---|---|---|---|---|---|
 | Uygulama etkileşimleri | Evet | Hayır | Hayır | **Zorunlu** (kurulum istatistiği her kurulumda gider; günlük oyun özetleri yalnız girişte ve kapatılabilir) | **Uygulama işlevselliği**, **Analizler** (yönetici sayfası: günlük oyun ve süre, funnel) |
-| Kullanıcı tarafından oluşturulan diğer içerikler | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn ayarlardan geri bildirim gönderirse) | **Uygulama işlevselliği** (destek ve iyileştirme) |
+| Kullanıcı tarafından oluşturulan diğer içerikler | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız ebeveyn geri bildirim ya da anket gönderirse) | **Uygulama işlevselliği** (destek ve iyileştirme), **Analizler** (anket) |
 
 **Finansal bilgiler**
 
 | Veri türü | Toplanıyor mu | Paylaşılıyor mu | Geçici mi | Zorunlu / isteğe bağlı | Amaç |
 |---|---|---|---|---|---|
-| Satın alma geçmişi | Evet | Hayır | Hayır | **İsteğe bağlı** (yalnız giriş yapılmışsa; hesabın planı) | **Uygulama işlevselliği**, **Hesap yönetimi**, **Analizler** |
+| Satın alma geçmişi | Evet | Hayır | Hayır | **Zorunlu** (giriş zorunlu; hesabın planı) | **Uygulama işlevselliği**, **Hesap yönetimi**, **Analizler** |
 
 **Cihaz veya diğer kimlikler**
 
@@ -69,16 +69,17 @@ Yalnızca aşağıdaki veri türlerini işaretleyin (22 Ekim 2026 güncellemesi:
 Notlar:
 
 - "Ad": ebeveynin Google adı (Firebase Authentication) ve ebeveynin girdiği çocuk adı/takma adı (çocuk profili).
-- "Diğer bilgiler": çocuğun yaşı (çocuk profili). Formda "Kişisel bilgiler → Diğer bilgiler" de işaretlenir: Evet, paylaşılmıyor, geçici değil, zorunlu, Uygulama işlevselliği.
+- "Diğer bilgiler": çocuğun yaşı / yaş bandı, avatar ve profil ayarları (`families/{uid}/children/{id}`). Formda "Kişisel bilgiler → Diğer bilgiler" de işaretlenir: Evet, paylaşılmıyor, geçici değil, zorunlu, Uygulama işlevselliği.
 - "E-posta": Google ile girişte Firebase Authentication alır; ayrıca `families/{uid}.email`.
 - "Kullanıcı kimlikleri": Firebase UID. Deneme kaydı (`trials/{uid}`, yalnız başlangıç zamanı) ve özetler bu kimlikle saklanır.
 - "Uygulama etkileşimleri": günlük özetler. İçerik: tarih, tema, oyun türü, zorluk, aktif süre, tur ve aşama sayısı, kendi başına doğru sayısı. Çocuğun adı, yaşı ya da tek tek yanıtları gönderilmez.
 - "Paylaşılıyor" = **Hayır**. Google (Firebase, Play) bizim adımıza veri işleyen hizmet sağlayıcıdır; Play'in tanımına göre bu paylaşım sayılmaz.
 - Satın almalar: ödemeyi Google Play işler; ödeme bilgisi bize gelmez. Giriş yapılmışsa hesabın planı (ücretsiz/deneme/aylık/yıllık/ömür boyu/tanımlı) `families/{uid}.plan` olarak gider, bu yüzden "Satın alma geçmişi" **işaretlenir**.
 - "Cihaz veya diğer kimlikler": uygulamanın ürettiği rastgele kurulum kimliği (`funnel/{installId}`); yalnız kurulum adımlarının ilk zamanları, platform, sürüm ve dil. Android ID, AAID, IMEI gibi kimlikler **kullanılmaz**; Google hesabına bağlanmaz.
-- "Kullanıcı tarafından oluşturulan diğer içerikler": ayarlardaki geri bildirim mesajı (`feedback/{id}`; mesaj, zaman, sürüm, dil, platform, kurulum kimliği; giriş yapılmışsa UID ve e-posta). Yalnız yönetici okur. (23 Ekim 2026)
+- "Kullanıcı tarafından oluşturulan diğer içerikler": ayarlardaki geri bildirim mesajı ve kısa anket (`feedback/{id}`; mesaj, anket için memnuniyet 1-5, kim kullanıyor, geliştirme seçimleri; zaman, sürüm, dil, platform, kurulum kimliği, UID ve e-posta). Yalnız yönetici okur. (23 Ekim 2026)
 - Son açılış ve uygulama sürümü (`families/{uid}.lastSeenAt`, `appVersion`) "Uygulama etkileşimleri" kapsamındadır.
-- Çocuk profili (takma ad, yaş, anket) ve tek tek oyun yanıtları yalnız cihazda kalır, gönderilmez. Buluta yalnız yukarıdaki günlük özetler (giriş yapılmışsa) ve hesapsız kurulum istatistiği gider.
+- Çocuk profili hesapta saklanır: ad (≤40 karakter), yaş ya da yaş bandı, avatar kimliği ve profil ayarları (`families/{uid}/children/{id}`; 23 Ekim 2026). Onboarding anket cevapları ve tek tek oyun yanıtları yalnız cihazda kalır. Fotoğraf yok.
+- Google Play değerlendirme penceresi (In-App Review) Play'in kendi arayüzüdür; uygulama puanı ya da yorumu görmez.
 
 ### 2.3 Her veri türü için "Veriler nasıl kullanılıyor" sayfası
 
@@ -94,7 +95,7 @@ Formda her veri türü için aynı sorular gelir:
 | Beyan | Cevap |
 |---|---|
 | **Reklamlar:** Uygulamanız reklam içeriyor mu? | **Hayır** |
-| **Uygulama erişimi** (inceleme ekibi için) | **Tüm işlevler özel erişim gerektirmez.** Not: "Premium oyunlar için Aile alanı → Premium'da Google ile giriş yapıp 7 günlük ücretsiz deneme başlatılabilir. Ebeveyn kapısı çarpma sorusudur (ekranda yazar)." |
+| **Uygulama erişimi** (inceleme ekibi için) | **İşlevlerin tamamı veya bir kısmı kısıtlı** (23 Ekim 2026'dan beri giriş zorunlu). Talimat: "Uygulama herhangi bir Google hesabıyla açılır (özel hesap gerekmez). Kurulumun sonunda 'Google ile giriş' yapın ve '7 gün ücretsiz dene'ye dokunun; ödeme istenmez. Ebeveyn kapısı ekranda yazan çarpma sorusudur." Kullanıcı adı/şifre alanlarını boş bırakın, gerekiyorsa bir test Google hesabı ekleyin. |
 | **Hedef kitle ve içerik** | Hedef yaş grupları: **5 yaş ve altı**, **6–8 yaş** (isteğe bağlı **9–12**). Çocuklara hitap ediyor mu: **Evet**. Families politikası kapsamına girer. |
 | **İçerik derecelendirmesi** anketi | Kategori: **Eğitim** / Referans. Şiddet, cinsellik, küfür, kumar, kullanıcı etkileşimi, konum paylaşımı, dijital ürün satın alma (**Evet**: uygulama içi satın alma var). Beklenen sonuç: **Herkes / 3+ (PEGI 3, IARC 3+)**. |
 | **Haber uygulaması** | Hayır |
@@ -102,7 +103,8 @@ Formda her veri türü için aynı sorular gelir:
 | **Sağlık uygulaması** beyanı | Sağlık/tıbbi işlev **yok**. Eğitim uygulamasıdır, tanı veya tedavi sunmaz. |
 | **Finansal özellikler** | Yok |
 | **Devlet uygulaması** | Hayır |
-| **Hesap silme** | Uygulama içinde: Aile → Hesap → "Hesabı ve bulut verilerini sil". Web: yukarıdaki URL. |
+| **Hesap silme** | Uygulama içinde: Aile → Hesap → "Hesabı ve bulut verilerini sil" (Firebase hesabı, aile kaydı, çocuk profilleri, günlük özetler silinir). Web: yukarıdaki URL. |
+| **Hesabı silmeden veri silme** | Aile → Profiller'de bir çocuk profilini silmek onun hesaptaki kaydını da siler; günlük özet gönderimi Aile alanından kapatılır; diğer talepler e-postayla. |
 
 ## 4. Families programı notları
 
