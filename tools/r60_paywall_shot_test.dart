@@ -63,6 +63,8 @@ void main() {
       ('tr', const Size(720, 1280), 2.0, 'small'),
       ('tr', const Size(1080, 2400), 2.625, 'monthly'),
       ('en', const Size(720, 1280), 2.0, 'small'),
+      ('en', const Size(1080, 2340), 2.75, 'big'),
+      ('tr', const Size(1080, 2400), 2.625, 'yearly'),
     ]) {
       final state = (await tester.runAsync(() async {
         final s = AppState(
@@ -120,6 +122,13 @@ void main() {
             locale: Locale(locale),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
+            // 'big': a phone with larger system text.
+            builder: (context, child) => MediaQuery(
+              data: MediaQuery.of(context).copyWith(
+                textScaler: TextScaler.linear(tag == 'big' ? 1.2 : 1),
+              ),
+              child: child!,
+            ),
             home: AccountGateScreen(state: state, auth: auth),
           ),
         ),
@@ -129,6 +138,16 @@ void main() {
           () => Future<void>.delayed(const Duration(milliseconds: 100)),
         );
         await tester.pump();
+      }
+      if (tag == 'yearly') {
+        await tester.tap(find.byKey(const ValueKey('paywall-option-yearly')));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
+        await expectLater(
+          find.byType(RepaintBoundary).first,
+          matchesGoldenFile('../artifacts/claude/r60/gate-tr-yearly-mid.png'),
+        );
+        await tester.pump(const Duration(seconds: 1));
       }
       if (tag == 'monthly') {
         await tester.tap(find.byKey(const ValueKey('paywall-option-monthly')));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../app/app_state.dart';
@@ -43,6 +44,10 @@ class PaywallView extends StatefulWidget {
 
 class _PaywallViewState extends State<PaywallView> {
   AppState get s => widget.state;
+
+  /// Height of everything under the picture (portrait), measured once laid
+  /// out; the picture gets what is left.
+  double? _restHeight;
   String? _selected; // a plan id
 
   @override
@@ -506,7 +511,7 @@ class _PaywallViewState extends State<PaywallView> {
     final page = LayoutBuilder(
       builder: (context, box) {
         final landscape = box.maxWidth > box.maxHeight;
-        final Widget content = landscape
+        final Widget? content = landscape
             ? Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -532,21 +537,63 @@ class _PaywallViewState extends State<PaywallView> {
                   ),
                 ],
               )
-            : Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  hero,
-                  const SizedBox(height: SegSpace.s2),
-                  headline,
-                  const SizedBox(height: SegSpace.s3),
-                  Center(child: benefits),
-                  const SizedBox(height: SegSpace.s4),
-                  offer,
-                  const SizedBox(height: SegSpace.s2),
-                  actions,
-                ],
-              );
+            : null;
+        if (content == null) {
+          // Portrait: the text, plans and buttons keep their full size and
+          // width; the picture takes the height that is left (at most 150).
+          // Only when even a small picture does not fit does the page scale
+          // down as a whole.
+          final width = box.maxWidth.clamp(0.0, 520.0);
+          final rest = _MeasureHeight(
+            onHeight: (h) {
+              if (h != _restHeight) setState(() => _restHeight = h);
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                headline,
+                const SizedBox(height: SegSpace.s3),
+                Center(child: benefits),
+                const SizedBox(height: SegSpace.s4),
+                offer,
+                const SizedBox(height: SegSpace.s2),
+                actions,
+              ],
+            ),
+          );
+          final measured = _restHeight;
+          final heroHeight = measured == null
+              ? 150.0
+              : (box.maxHeight - measured - SegSpace.s2).clamp(0.0, 150.0);
+          final column = Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: heroHeight < 70 ? 70 : heroHeight,
+                child: Image.asset(
+                  'assets/illustrations/family/paywall_hero.png',
+                  fit: BoxFit.contain,
+                  excludeFromSemantics: true,
+                ),
+              ),
+              const SizedBox(height: SegSpace.s2),
+              rest,
+            ],
+          );
+          return Opacity(
+            // One frame to measure before the page shows.
+            opacity: measured == null ? 0 : 1,
+            child: Center(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.topCenter,
+                child: SizedBox(width: width, child: column),
+              ),
+            ),
+          );
+        }
         // Everything on one page: very large text scales down instead of
         // scrolling.
         return Center(
@@ -603,8 +650,9 @@ class _PlanRow extends StatelessWidget {
         : SegText.caption.copyWith(color: SegColors.inkSoft),
   );
 
-  /// The badge ("Best value") sits on the middle of the top border, and
-  /// that row's border takes the badge's orange.
+  /// The badge ("Best value") sits on the middle of the top border. When
+  /// that row is chosen, its orange border grows out of the badge to both
+  /// sides at once and meets at the bottom.
   @override
   Widget build(BuildContext context) {
     final row = Semantics(
@@ -616,13 +664,12 @@ class _PlanRow extends StatelessWidget {
         color: selected ? SegColors.primarySoft : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(SegRadius.md),
+          // A badge row draws its chosen (orange) border on top instead.
           side: BorderSide(
-            color: badge != null
-                ? SegColors.accentStrong
-                : selected
+            color: selected && badge == null
                 ? SegColors.primary
                 : SegColors.line,
-            width: selected || badge != null ? 2.5 : 1.5,
+            width: selected && badge == null ? 2.5 : 1.5,
           ),
         ),
         child: InkWell(
@@ -696,7 +743,16 @@ class _PlanRow extends StatelessWidget {
       clipBehavior: Clip.none,
       alignment: Alignment.topCenter,
       children: [
-        row,
+        TweenAnimationBuilder<double>(
+          tween: Tween(end: selected ? 1 : 0),
+          duration: MediaQuery.disableAnimationsOf(context)
+              ? Duration.zero
+              : const Duration(milliseconds: 450),
+          curve: Curves.easeInOut,
+          builder: (context, t, child) =>
+              CustomPaint(foregroundPainter: _GrowingBorder(t), child: child),
+          child: row,
+        ),
         Positioned(
           top: -12,
           child: IgnorePointer(
@@ -736,4 +792,84 @@ class _SmallLink extends StatelessWidget {
     ),
     child: Text(label, style: SegText.caption),
   );
+}
+
+/// Reports its child's laid-out height after each layout that changes it.
+class _MeasureHeight extends SingleChildRenderObjectWidget {
+  final ValueChanged<double> onHeight;
+  const _MeasureHeight({required this.onHeight, required super.child});
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      _RenderMeasureHeight(onHeight);
+
+  @override
+  void updateRenderObject(
+    BuildContext context,
+    _RenderMeasureHeight renderObject,
+  ) => renderObject.onHeight = onHeight;
+}
+
+class _RenderMeasureHeight extends RenderProxyBox {
+  ValueChanged<double> onHeight;
+  double? _last;
+  _RenderMeasureHeight(this.onHeight);
+
+  @override
+  void performLayout() {
+    super.performLayout();
+    final h = size.height;
+    if (h == _last) return;
+    _last = h;
+    WidgetsBinding.instance.addPostFrameCallback((_) => onHeight(h));
+  }
+}
+
+/// The chosen border of a badge row: from the top middle along both sides,
+/// [t] of the way round (0 none, 1 closed at the bottom).
+class _GrowingBorder extends CustomPainter {
+  final double t;
+  const _GrowingBorder(this.t);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (t <= 0) return;
+    const stroke = 2.5;
+    final rect = (Offset.zero & size).deflate(stroke / 2);
+    final r = SegRadius.md - stroke / 2;
+    final cx = rect.center.dx;
+    // One loop, clockwise, starting and ending at the top middle.
+    final path = Path()
+      ..moveTo(cx, rect.top)
+      ..lineTo(rect.right - r, rect.top)
+      ..arcToPoint(Offset(rect.right, rect.top + r), radius: Radius.circular(r))
+      ..lineTo(rect.right, rect.bottom - r)
+      ..arcToPoint(
+        Offset(rect.right - r, rect.bottom),
+        radius: Radius.circular(r),
+      )
+      ..lineTo(rect.left + r, rect.bottom)
+      ..arcToPoint(
+        Offset(rect.left, rect.bottom - r),
+        radius: Radius.circular(r),
+      )
+      ..lineTo(rect.left, rect.top + r)
+      ..arcToPoint(Offset(rect.left + r, rect.top), radius: Radius.circular(r))
+      ..close();
+    final metric = path.computeMetrics().first;
+    final half = metric.length / 2 * t;
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = stroke
+      ..strokeCap = StrokeCap.round
+      ..color = SegColors.accentStrong;
+    canvas.drawPath(metric.extractPath(0, half), paint);
+    canvas.drawPath(
+      metric.extractPath(metric.length - half, metric.length),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_GrowingBorder old) => old.t != t;
 }
