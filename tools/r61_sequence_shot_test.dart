@@ -109,13 +109,19 @@ void main() {
     await tester.tap(
       find.byKey(ValueKey('${view.hint.generation}:${target.id}')).first,
     );
-    for (final ms in [80, 200, 600]) {
+    for (final ms in [80, 200, 600, 1000]) {
       await tester.pump(Duration(milliseconds: ms));
       debugPrint(
         'after $ms ms: first ${at(numbers)} row ${at(find.byType(SequenceRow))}'
         ' choices ${at(find.byType(RoundChoicesView))}',
       );
       expect(at(numbers), firstBefore);
+      if (ms == 200) {
+        await expectLater(
+          find.byType(RepaintBoundary).first,
+          matchesGoldenFile('../artifacts/claude/r61/g35-grow.png'),
+        );
+      }
       expect(at(find.byType(SequenceRow)), rowBefore);
       expect(at(find.byType(RoundChoicesView)), choicesBefore);
     }

@@ -277,14 +277,17 @@ const _numberTints = [
   Color(0xFFE76F8E),
 ];
 
+/// The tint a number's sticker uses ([StickerNumber]).
+Color numberTint(String text) =>
+    _numberTints[(int.tryParse(text) ?? text.length) % _numberTints.length];
+
 /// A chunky numeral with a white sticker rim and a soft inner tint.
 class StickerNumber extends StatelessWidget {
   final String text;
   const StickerNumber(this.text, {super.key});
   @override
   Widget build(BuildContext context) {
-    final tint =
-        _numberTints[(int.tryParse(text) ?? text.length) % _numberTints.length];
+    final tint = numberTint(text);
     final base = SegText.display.copyWith(fontSize: 72, height: 1.1);
     return Stack(
       children: [

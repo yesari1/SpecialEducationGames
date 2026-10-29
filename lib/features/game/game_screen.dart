@@ -594,6 +594,11 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                                         ),
                                       if (spec.sequence.isNotEmpty)
                                         SequenceRow(
+                                          // A new round starts clean: the
+                                          // last answer never fades over it.
+                                          key: ValueKey(
+                                            'sequence-${c.generation}',
+                                          ),
                                           sequence: spec.sequence,
                                           answer: spec.target.slug,
                                           revealed:
@@ -1358,20 +1363,32 @@ class SequenceRow extends StatelessWidget {
         style: SegText.heading.copyWith(color: SegColors.primary),
       ),
     );
+    // The chosen number appears in its sticker colour, grows a little past
+    // its size, then settles to the size and colour of the other numbers.
+    final tint = numberTint(answer);
+    final ink =
+        SegText.display.color ??
+        DefaultTextStyle.of(context).style.color ??
+        SegColors.ink;
     Widget filled() => TweenAnimationBuilder<double>(
       key: const ValueKey('sequence-answer'),
       tween: Tween(begin: reduced ? 1 : 0, end: 1),
-      duration: const Duration(milliseconds: 520),
-      curve: Curves.easeOutBack,
-      builder: (context, t, child) =>
-          Transform.scale(scale: .4 + .8 * t - .2 * t * t, child: child),
-      child: Text(
-        answer,
-        style: SegText.display.copyWith(
-          color: SegColors.accentDeep,
-          fontSize: size * 1.25,
-        ),
-      ),
+      duration: const Duration(milliseconds: 1600),
+      builder: (context, t, _) {
+        final grow = Curves.easeOutBack.transform((t / .35).clamp(0.0, 1.0));
+        final settle = Curves.easeInOut.transform(
+          ((t - .55) / .45).clamp(0.0, 1.0),
+        );
+        return Transform.scale(
+          scale: (.4 + .9 * grow) - .3 * settle,
+          child: Text(
+            answer,
+            style: SegText.display.copyWith(
+              color: Color.lerp(tint, ink, settle),
+            ),
+          ),
+        );
+      },
     );
     return Row(
       mainAxisSize: MainAxisSize.min,

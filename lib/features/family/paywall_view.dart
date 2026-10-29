@@ -300,6 +300,8 @@ class _PaywallViewState extends State<PaywallView> {
               ),
             ),
           for (final plan in _plans) ...[
+            // Room for the badge on the yearly row's top border.
+            if (plan.id == 'yearly') const SizedBox(height: SegSpace.s2),
             _PlanRow(
               key: ValueKey('paywall-option-${plan.id}'),
               title: switch (plan.id) {
@@ -601,118 +603,124 @@ class _PlanRow extends StatelessWidget {
         : SegText.caption.copyWith(color: SegColors.inkSoft),
   );
 
+  /// The badge ("Best value") sits on the middle of the top border, and
+  /// that row's border takes the badge's orange.
   @override
-  Widget build(BuildContext context) => Semantics(
-    selected: selected,
-    button: true,
-    child: Material(
-      // The border changes at once with the choice (no shape animation).
-      animationDuration: Duration.zero,
-      color: selected ? SegColors.primarySoft : Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(SegRadius.md),
-        side: BorderSide(
-          color: selected ? SegColors.primary : SegColors.line,
-          width: selected ? 2.5 : 1.5,
+  Widget build(BuildContext context) {
+    final row = Semantics(
+      selected: selected,
+      button: true,
+      child: Material(
+        // The border changes at once with the choice (no shape animation).
+        animationDuration: Duration.zero,
+        color: selected ? SegColors.primarySoft : Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(SegRadius.md),
+          side: BorderSide(
+            color: badge != null
+                ? SegColors.accentStrong
+                : selected
+                ? SegColors.primary
+                : SegColors.line,
+            width: selected || badge != null ? 2.5 : 1.5,
+          ),
         ),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(SegRadius.md),
-        onTap: onTap,
-        // Every row has the same height, whatever its lines.
-        child: Container(
-          height: 88,
-          padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
-          child: Row(
-            children: [
-              Icon(
-                selected
-                    ? Icons.radio_button_checked_rounded
-                    : Icons.radio_button_off_rounded,
-                size: 24,
-                color: selected ? SegColors.primary : SegColors.inkFaint,
-              ),
-              const SizedBox(width: SegSpace.s3),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // The badge sits next to the name, not under it; on a
-                    // narrow row both shrink together.
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            title,
-                            maxLines: 1,
-                            style: SegText.heading.copyWith(
-                              color: SegColors.ink,
-                            ),
-                          ),
-                          if (badge != null) ...[
-                            const SizedBox(width: SegSpace.s2),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8,
-                                vertical: 2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: SegColors.accentStrong,
-                                borderRadius: BorderRadius.circular(99),
-                              ),
-                              child: Text(
-                                badge!,
-                                maxLines: 1,
-                                style: SegText.caption.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
+        child: InkWell(
+          borderRadius: BorderRadius.circular(SegRadius.md),
+          onTap: onTap,
+          // Every row has the same height, whatever its lines.
+          child: Container(
+            height: 88,
+            padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
+            child: Row(
+              children: [
+                Icon(
+                  selected
+                      ? Icons.radio_button_checked_rounded
+                      : Icons.radio_button_off_rounded,
+                  size: 24,
+                  color: selected ? SegColors.primary : SegColors.inkFaint,
+                ),
+                const SizedBox(width: SegSpace.s3),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: SegText.heading.copyWith(color: SegColors.ink),
                       ),
+                      if (subtitle != null)
+                        if (fitSubtitle)
+                          // One line, made smaller instead of cut.
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: _subtitleText(),
+                          )
+                        else
+                          _subtitleText(),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: SegSpace.s2),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      price,
+                      key: ValueKey('paywall-price-$title'),
+                      style: SegText.title.copyWith(color: SegColors.ink),
                     ),
-                    if (subtitle != null)
-                      if (fitSubtitle)
-                        // One line, made smaller instead of cut.
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: Alignment.centerLeft,
-                          child: _subtitleText(),
-                        )
-                      else
-                        _subtitleText(),
+                    if (priceNote != null)
+                      Text(
+                        priceNote!,
+                        style: SegText.caption.copyWith(
+                          color: SegColors.inkSoft,
+                        ),
+                      ),
                   ],
                 ),
-              ),
-              const SizedBox(width: SegSpace.s2),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    price,
-                    key: ValueKey('paywall-price-$title'),
-                    style: SegText.title.copyWith(color: SegColors.ink),
-                  ),
-                  if (priceNote != null)
-                    Text(
-                      priceNote!,
-                      style: SegText.caption.copyWith(color: SegColors.inkSoft),
-                    ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
-  );
+    );
+    if (badge == null) return row;
+    return Stack(
+      clipBehavior: Clip.none,
+      alignment: Alignment.topCenter,
+      children: [
+        row,
+        Positioned(
+          top: -12,
+          child: IgnorePointer(
+            child: Container(
+              key: const ValueKey('paywall-badge'),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+              decoration: BoxDecoration(
+                color: SegColors.accentStrong,
+                borderRadius: BorderRadius.circular(99),
+              ),
+              child: Text(
+                badge!,
+                maxLines: 1,
+                style: SegText.caption.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 class _SmallLink extends StatelessWidget {

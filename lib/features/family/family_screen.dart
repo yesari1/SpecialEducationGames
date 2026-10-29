@@ -827,13 +827,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
       onChanged: onChanged,
     );
     return [
-      page(l10n.familyPremium, [
-        const SizedBox(height: SegSpace.s2),
-        SegButton(
-          label: l10n.familyPlansAndRestore,
-          onPressed: () => context.go('/family/subscription'),
-        ),
-      ]),
       page(l10n.familyDailyScreenTimeLimit, [
         Text(l10n.familyCountsActivePlayTimeABreak, style: SegText.caption),
         dropdown(
@@ -1938,25 +1931,6 @@ class _FamilyScreenState extends State<FamilyScreen> {
   }
 
   List<Widget> _settings() => [
-    // Full width like the other settings cards (not a SizedBox: those are
-    // dropped as spacers by _sectionPages).
-    ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: double.infinity),
-      child: SegCard(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.familyPremium, style: SegText.heading),
-            const SizedBox(height: SegSpace.s4),
-            SegButton(
-              label: l10n.familyPlansAndRestore,
-              onPressed: () => context.go('/family/subscription'),
-            ),
-          ],
-        ),
-      ),
-    ),
-    const SizedBox(height: SegSpace.s5),
     SegCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
