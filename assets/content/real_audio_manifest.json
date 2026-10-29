@@ -168,7 +168,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "bd64697eb6061f4f6ae69f943b0e70a6acbbcaca42be24608b5b1d06b9144d6f",
+      "sha256": "20a8699b6de4cad6d04a599a3a365dc5aa90045d64dcc403ebbda0efea21d64f",
       "source": "artifacts/voice_samples_selected/tr_dog.mp3",
       "validation": {
         "duration_seconds": 0.835918,
@@ -191,7 +191,8 @@
         "existingSampleReuse": true,
         "newGeneration": false,
         "scope": "Selected voice demonstration; pronunciation not user-approved"
-      }
+      },
+      "note": "Re-recorded 29 Oct 2026 with Turkish fixed (turbo v2.5, language tr); Yunus listened and approved."
     },
     {
       "id": "animals.rabbit",
@@ -552,7 +553,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "0d8d8e7b120ddde3f9e8efe16f08464c6f7d0789f0bd52a388bb60723448cd2e",
+      "sha256": "902af0fef60833674fc36db99739237ce738db26d666b374de2e4a15ac775eac",
       "source": "artifacts/voice_samples_selected/tr_apple.mp3",
       "validation": {
         "duration_seconds": 0.696599,
@@ -575,7 +576,8 @@
         "existingSampleReuse": true,
         "newGeneration": false,
         "scope": "Selected voice demonstration; pronunciation not user-approved"
-      }
+      },
+      "note": "Re-recorded 29 Oct 2026 with Turkish fixed (turbo v2.5, language tr); Yunus listened and approved."
     },
     {
       "id": "produce.banana",

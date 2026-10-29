@@ -7,6 +7,8 @@ Key: android/play-service-account.json (git-ignored, Yunus, 21 October 2026).
   python tools/play_upload.py upload GooglePlayBuild/<bundle>.aab "notes TR" "notes EN"
       Uploads the bundle and rolls it out to the internal testing track.
       Only bundles that passed tools/build_release.sh belong here.
+  python tools/play_upload.py upload <bundle>.aab "notes TR" "notes EN" production
+      The same to production (Yunus's explicit OK each time); it goes to review.
 """
 import sys
 from pathlib import Path
@@ -58,7 +60,7 @@ def check():
     print('OK: key works (nothing was changed)')
 
 
-def upload(aab, notes_tr, notes_en):
+def upload(aab, notes_tr, notes_en, track='internal'):
     s = session()
     edit = ok(s.post(f'{API}/edits'))['id']
     committed = False
@@ -70,8 +72,8 @@ def upload(aab, notes_tr, notes_en):
                 timeout=1800))
         code = bundle['versionCode']
         print('uploaded versionCode', code)
-        ok(s.put(f'{API}/edits/{edit}/tracks/internal', json={
-            'track': 'internal',
+        ok(s.put(f'{API}/edits/{edit}/tracks/{track}', json={
+            'track': track,
             'releases': [{
                 'versionCodes': [str(code)],
                 'status': 'completed',
@@ -83,7 +85,7 @@ def upload(aab, notes_tr, notes_en):
         }))
         ok(s.post(f'{API}/edits/{edit}:commit'))
         committed = True
-        print('OK: versionCode', code, 'is live on internal testing')
+        print('OK: versionCode', code, 'is committed to', track)
     finally:
         if not committed:
             s.delete(f'{API}/edits/{edit}')
@@ -92,8 +94,10 @@ def upload(aab, notes_tr, notes_en):
 if __name__ == '__main__':
     if sys.argv[1:2] == ['check']:
         check()
-    elif sys.argv[1:2] == ['upload'] and len(sys.argv) == 5:
-        upload(*sys.argv[2:5])
+    elif sys.argv[1:2] == ['upload'] and len(sys.argv) in (5, 6):
+        if len(sys.argv) == 6 and sys.argv[5] not in ('internal', 'production'):
+            sys.exit('track must be internal or production')
+        upload(*sys.argv[2:])
     else:
         print(__doc__)
         sys.exit(2)
