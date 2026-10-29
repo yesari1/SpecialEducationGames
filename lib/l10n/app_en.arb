@@ -1382,6 +1382,8 @@
   },
   "paywallTrialOptionNote": "No card · No automatic charge",
   "paywallFreePrice": "Free",
+  "signInCheckEmail": "Check your e-mail",
+  "signInUseOtherEmail": "Use a different e-mail",
   "paywallTrialOption": "{days} days free",
   "@paywallTrialOption": {
     "description": "Start offer: the free trial as the first plan row.",

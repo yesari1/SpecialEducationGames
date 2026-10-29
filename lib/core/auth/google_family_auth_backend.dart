@@ -91,6 +91,10 @@ class GoogleFamilyAuthBackend
   Future<void> sendSignInLink(String email) => _serial(() async {
     await _initialize();
     try {
+      // The e-mail in the phone's language (Turkish or English).
+      await FirebaseAuth.instance.setLanguageCode(
+        PlatformDispatcher.instance.locale.languageCode == 'tr' ? 'tr' : 'en',
+      );
       await FirebaseAuth.instance.sendSignInLinkToEmail(
         email: email,
         actionCodeSettings: ActionCodeSettings(

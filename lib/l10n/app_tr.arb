@@ -1106,6 +1106,8 @@
   "paywallTrialOption": "{days} gün ücretsiz",
   "paywallTrialOptionNote": "Kart yok · Otomatik ücret yok",
   "paywallFreePrice": "Ücretsiz",
+  "signInCheckEmail": "E-postanı kontrol et",
+  "signInUseOtherEmail": "Farklı e-posta kullan",
   "paywallTrialFootnote": "Google ile giriş yapılır. Deneme bitince ücretsiz sürüme dönersiniz.",
   "paywallContinuePrice": "Devam et · {price}",
   "paywallCancelAnytime": "Google Play'den istediğiniz zaman iptal edebilirsiniz.",

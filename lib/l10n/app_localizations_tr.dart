@@ -1426,6 +1426,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallFreePrice => 'Ücretsiz';
 
   @override
+  String get signInCheckEmail => 'E-postanı kontrol et';
+
+  @override
+  String get signInUseOtherEmail => 'Farklı e-posta kullan';
+
+  @override
   String paywallTrialOption(int days) {
     return '$days gün ücretsiz';
   }

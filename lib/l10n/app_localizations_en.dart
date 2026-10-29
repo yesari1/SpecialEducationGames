@@ -1422,6 +1422,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallFreePrice => 'Free';
 
   @override
+  String get signInCheckEmail => 'Check your e-mail';
+
+  @override
+  String get signInUseOtherEmail => 'Use a different e-mail';
+
+  @override
   String paywallTrialOption(int days) {
     return '$days days free';
   }

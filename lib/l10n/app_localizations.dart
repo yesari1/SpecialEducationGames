@@ -2587,6 +2587,18 @@ abstract class AppLocalizations {
   /// **'Free'**
   String get paywallFreePrice;
 
+  /// No description provided for @signInCheckEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your e-mail'**
+  String get signInCheckEmail;
+
+  /// No description provided for @signInUseOtherEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a different e-mail'**
+  String get signInUseOtherEmail;
+
   /// Start offer: the free trial as the first plan row.
   ///
   /// In en, this message translates to:

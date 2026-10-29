@@ -6,8 +6,10 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/auth/family_auth.dart';
+import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 import '../family/account_gate_screen.dart';
+import '../family/parent_gate.dart';
 
 /// The store-review account signs in with a password; every other e-mail
 /// gets Firebase's password-free sign-in link.
@@ -74,8 +76,16 @@ class _SignInScreenState extends State<SignInScreen> {
     if (mounted && auth.account != null) Navigator.of(context).pop(true);
   }
 
+  /// Account actions are for the parent: when the parent area locked
+  /// meanwhile (time out), ask again instead of doing nothing.
+  Future<bool> _parentReady() async {
+    if (s.familyUnlocked) return true;
+    return showParentGate(context, s);
+  }
+
   Future<void> _google() async {
     UiSound.tap();
+    if (!await _parentReady() || !mounted) return;
     if (auth.account == null) await auth.signIn();
     if (auth.account == null) auth.issue = null;
     _done();
@@ -84,6 +94,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<void> _continue() async {
     UiSound.tap();
     FocusScope.of(context).unfocus();
+    if (!await _parentReady() || !mounted) return;
     final email = _email.text.trim();
     if (_isReview) {
       await auth.signInWithPassword(email, _password.text);
@@ -95,6 +106,57 @@ class _SignInScreenState extends State<SignInScreen> {
       if (mounted) setState(() => _linkSentTo = email);
     }
   }
+
+  /// After the link was sent: its own page instead of the form (nothing to
+  /// tap twice), with a way back to type another address.
+  List<Widget> _linkSentPage(AppLocalizations l10n) => [
+    Center(
+      child: Container(
+        key: const ValueKey('sign-in-link-sent'),
+        width: 128,
+        height: 128,
+        decoration: const BoxDecoration(
+          color: SegColors.primarySoft,
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(
+          Icons.mark_email_unread_rounded,
+          size: 64,
+          color: SegColors.primary,
+        ),
+      ),
+    ),
+    const SizedBox(height: SegSpace.s5),
+    Text(
+      l10n.signInCheckEmail,
+      textAlign: TextAlign.center,
+      style: SegText.title.copyWith(color: SegColors.ink),
+    ),
+    const SizedBox(height: SegSpace.s3),
+    Text(
+      l10n.signInLinkSent(_linkSentTo!),
+      textAlign: TextAlign.center,
+      style: SegText.body.copyWith(color: SegColors.inkSoft),
+    ),
+    const SizedBox(height: SegSpace.s5),
+    Center(
+      child: TextButton(
+        key: const ValueKey('sign-in-other-email'),
+        style: TextButton.styleFrom(minimumSize: const Size(200, 52)),
+        onPressed: () {
+          UiSound.tap();
+          setState(() => _linkSentTo = null);
+        },
+        child: Text(
+          l10n.signInUseOtherEmail,
+          style: SegText.body.copyWith(
+            color: SegColors.primaryDeep,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -140,118 +202,113 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Text(
-                              l10n.signInTitle,
-                              textAlign: TextAlign.center,
-                              style: SegText.title.copyWith(
-                                color: SegColors.ink,
-                              ),
-                            ),
-                            const SizedBox(height: SegSpace.s5),
-                            GoogleSignInButton(
-                              key: const ValueKey('sign-in-google'),
-                              label: l10n.familyAccountSignIn,
-                              onPressed: _google,
-                            ),
-                            const SizedBox(height: SegSpace.s4),
-                            Row(
-                              children: [
-                                const Expanded(child: Divider()),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: SegSpace.s3,
-                                  ),
-                                  child: Text(
-                                    l10n.signInOr,
-                                    style: SegText.label.copyWith(
-                                      color: SegColors.inkSoft,
+                          children: _linkSentTo != null && !_isReview
+                              ? _linkSentPage(l10n)
+                              : [
+                                  Text(
+                                    l10n.signInTitle,
+                                    textAlign: TextAlign.center,
+                                    style: SegText.title.copyWith(
+                                      color: SegColors.ink,
                                     ),
                                   ),
-                                ),
-                                const Expanded(child: Divider()),
-                              ],
-                            ),
-                            const SizedBox(height: SegSpace.s4),
-                            TextField(
-                              key: const ValueKey('sign-in-email'),
-                              controller: _email,
-                              keyboardType: TextInputType.emailAddress,
-                              autocorrect: false,
-                              textInputAction: TextInputAction.next,
-                              decoration: InputDecoration(
-                                labelText: l10n.signInEmail,
-                                filled: true,
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    SegRadius.lg,
+                                  const SizedBox(height: SegSpace.s5),
+                                  GoogleSignInButton(
+                                    key: const ValueKey('sign-in-google'),
+                                    label: l10n.familyAccountSignIn,
+                                    onPressed: _google,
                                   ),
-                                ),
-                              ),
-                            ),
-                            if (_isReview) ...[
-                              const SizedBox(height: SegSpace.s3),
-                              TextField(
-                                key: const ValueKey('sign-in-password'),
-                                controller: _password,
-                                obscureText: true,
-                                autocorrect: false,
-                                enableSuggestions: false,
-                                decoration: InputDecoration(
-                                  labelText: l10n.signInPassword,
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      SegRadius.lg,
+                                  const SizedBox(height: SegSpace.s4),
+                                  Row(
+                                    children: [
+                                      const Expanded(child: Divider()),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: SegSpace.s3,
+                                        ),
+                                        child: Text(
+                                          l10n.signInOr,
+                                          style: SegText.label.copyWith(
+                                            color: SegColors.inkSoft,
+                                          ),
+                                        ),
+                                      ),
+                                      const Expanded(child: Divider()),
+                                    ],
+                                  ),
+                                  const SizedBox(height: SegSpace.s4),
+                                  TextField(
+                                    key: const ValueKey('sign-in-email'),
+                                    controller: _email,
+                                    keyboardType: TextInputType.emailAddress,
+                                    autocorrect: false,
+                                    textInputAction: TextInputAction.next,
+                                    decoration: InputDecoration(
+                                      labelText: l10n.signInEmail,
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(
+                                          SegRadius.lg,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                            ],
-                            const SizedBox(height: SegSpace.s4),
-                            SegButton(
-                              key: const ValueKey('sign-in-email-continue'),
-                              label: l10n.signInContinue,
-                              secondary: true,
-                              onPressed:
-                                  !_emailValid ||
-                                      (_isReview && _password.text.isEmpty)
-                                  ? null
-                                  : _continue,
-                            ),
-                            if (_linkSentTo != null && !_isReview) ...[
-                              const SizedBox(height: SegSpace.s4),
-                              Text(
-                                l10n.signInLinkSent(_linkSentTo!),
-                                key: const ValueKey('sign-in-link-sent'),
-                                style: SegText.body.copyWith(
-                                  color: SegColors.turquoiseDeep,
-                                ),
-                              ),
-                            ],
-                            if (issue != null &&
-                                issue != FamilyAuthIssue.cancelled) ...[
-                              const SizedBox(height: SegSpace.s3),
-                              Text(
-                                switch (issue) {
-                                  FamilyAuthIssue.wrongPassword =>
-                                    l10n.signInWrongPassword,
-                                  FamilyAuthIssue.offline =>
-                                    l10n.familyAccountOffline,
-                                  FamilyAuthIssue.timeout =>
-                                    l10n.familyAccountTimeout,
-                                  FamilyAuthIssue.configuration =>
-                                    l10n.familyAccountConfiguration,
-                                  _ => l10n.familyAccountUnavailable,
-                                },
-                                style: SegText.body.copyWith(
-                                  color: SegColors.accentDeep,
-                                ),
-                              ),
-                            ],
-                          ],
+                                  if (_isReview) ...[
+                                    const SizedBox(height: SegSpace.s3),
+                                    TextField(
+                                      key: const ValueKey('sign-in-password'),
+                                      controller: _password,
+                                      obscureText: true,
+                                      autocorrect: false,
+                                      enableSuggestions: false,
+                                      decoration: InputDecoration(
+                                        labelText: l10n.signInPassword,
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            SegRadius.lg,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                  const SizedBox(height: SegSpace.s4),
+                                  SegButton(
+                                    key: const ValueKey(
+                                      'sign-in-email-continue',
+                                    ),
+                                    label: l10n.signInContinue,
+                                    secondary: true,
+                                    onPressed:
+                                        !_emailValid ||
+                                            (_isReview &&
+                                                _password.text.isEmpty)
+                                        ? null
+                                        : _continue,
+                                  ),
+                                  if (issue != null &&
+                                      issue != FamilyAuthIssue.cancelled) ...[
+                                    const SizedBox(height: SegSpace.s3),
+                                    Text(
+                                      switch (issue) {
+                                        FamilyAuthIssue.wrongPassword =>
+                                          l10n.signInWrongPassword,
+                                        FamilyAuthIssue.offline =>
+                                          l10n.familyAccountOffline,
+                                        FamilyAuthIssue.timeout =>
+                                          l10n.familyAccountTimeout,
+                                        FamilyAuthIssue.configuration =>
+                                          l10n.familyAccountConfiguration,
+                                        _ => l10n.familyAccountUnavailable,
+                                      },
+                                      style: SegText.body.copyWith(
+                                        color: SegColors.accentDeep,
+                                      ),
+                                    ),
+                                  ],
+                                ],
                         ),
                       ),
                     ),

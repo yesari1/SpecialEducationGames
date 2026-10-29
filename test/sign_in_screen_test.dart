@@ -98,6 +98,11 @@ void main() {
         'parent@example.org',
       );
 
+      // The link has its own page; the form is gone until "use another".
+      expect(find.byKey(const ValueKey('sign-in-email')), findsNothing);
+      await tester.tap(find.byKey(const ValueKey('sign-in-other-email')));
+      await tester.pumpAndSettle();
+
       // The review account: password field, then signed in.
       await tester.enterText(
         find.byKey(const ValueKey('sign-in-email')),
