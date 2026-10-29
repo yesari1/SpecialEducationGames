@@ -80,6 +80,11 @@ class _SignInScreenState extends State<SignInScreen> {
   /// meanwhile (time out), ask again instead of doing nothing.
   Future<bool> _parentReady() async {
     if (s.familyUnlocked) return true;
+    // Before the start page is passed nothing else is open: no question.
+    if (!s.accountGatePassed) {
+      s.unlockFamily();
+      return true;
+    }
     return showParentGate(context, s);
   }
 

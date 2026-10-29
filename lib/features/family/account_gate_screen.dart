@@ -91,9 +91,14 @@ class AccountGateScreen extends StatelessWidget {
                   child: PaywallView(
                     state: state,
                     auth: auth,
-                    onDone: () => context.go('/'),
+                    // The child takes over: the parent area locks again.
+                    onDone: () {
+                      state.lockFamily();
+                      context.go('/');
+                    },
                     onContinueFree: () async {
                       await state.chooseFree();
+                      state.lockFamily();
                       if (context.mounted) context.go('/');
                     },
                   ),

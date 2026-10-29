@@ -125,11 +125,11 @@ class _EducationAppState extends State<EducationApp>
     if (!familyAuth.isSignInLink(link) || familyAuth.account != null) return;
     final email = await state.db.preference(pendingSignInEmailKey);
     if (email == null || email.isEmpty) return;
-    // Started from the welcome page (no profile yet) or by the parent on
-    // the trial page (parent area still open).
+    // Started from the welcome page (no profile yet) or from the trial
+    // button on a start offer; the link itself is the parent's.
     final welcome = state.profiles.isEmpty;
-    if (!welcome && !state.familyUnlocked) return;
-    if (welcome) state.unlockFamily();
+    if (!welcome && !state.familyUnlocked && state.accountGatePassed) return;
+    state.unlockFamily();
     await familyAuth.signInWithLink(email, link);
     final account = familyAuth.account;
     if (account == null) return;
@@ -140,8 +140,26 @@ class _EducationAppState extends State<EducationApp>
       (page as dynamic).linkSignedIn();
       return;
     }
-    // On the trial page the parent taps "try free" again (now signed in).
-    if (!welcome) return;
+    // Opened from the trial button (the sign-in page is gone, e.g. the app
+    // restarted from the link): start the account's trial here, as the
+    // button would have, so the app opens instead of the offer again.
+    if (!welcome) {
+      final onGate =
+          router.routerDelegate.currentConfiguration.uri.path == '/gate';
+      for (var i = 0; i < 300 && !state.accountReady; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 100));
+      }
+      final e = state.entitlement;
+      if (!state.accountGatePassed && !e.trialUsed && !e.isPremium) {
+        await state.startTrial(account.uid);
+      }
+      // On the start page the child takes over next (first run goes on to
+      // its hand-off page, which locks the parent area itself).
+      if (state.accountGatePassed && onGate) {
+        state.lockFamily();
+      }
+      return;
+    }
     // App was started from the link: the same check as the welcome page.
     final context = router.routerDelegate.navigatorKey.currentContext;
     if (!await state.accountHasRecord(account.uid)) {

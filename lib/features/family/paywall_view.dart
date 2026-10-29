@@ -110,6 +110,12 @@ class _PaywallViewState extends State<PaywallView> {
   /// out), ask again instead of greying the buttons out.
   Future<bool> _parentReady() async {
     if (s.familyUnlocked) return true;
+    // The start offers (first run and the start page): whoever opens the app
+    // there is the parent, and nothing works before it; no question.
+    if (widget.onContinueFree != null) {
+      s.unlockFamily();
+      return true;
+    }
     return showParentGate(context, s);
   }
 
