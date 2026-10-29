@@ -87,7 +87,10 @@ class _EducationAppState extends State<EducationApp>
           return state.recordFamily(next, email);
         }),
       );
-      unawaited(state.funnelStep('signedIn'));
+      // A Google account only being checked on the welcome page ("Already
+      // have an account?") is not a sign-in yet; that page stamps it once
+      // the account turns out to exist.
+      if (state.active != null) unawaited(state.funnelStep('signedIn'));
       state.autoSync.request();
     }
     if (old != null && old != next) {

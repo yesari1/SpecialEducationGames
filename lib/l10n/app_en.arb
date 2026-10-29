@@ -1308,7 +1308,7 @@
   "@paywallContinue": {
     "description": "Paywall copy."
   },
-  "paywallContinueFree": "Continue with the free version",
+  "paywallContinueFree": "Continue without signing in",
   "@paywallContinueFree": {
     "description": "Paywall copy."
   },
@@ -1376,6 +1376,21 @@
     "description": "Paywall: monthly plan line."
   },
   "paywallStartTrial": "Try free for {days} days",
+  "paywallStartFreeTrial": "Start trial",
+  "@paywallStartFreeTrial": {
+    "description": "Start offer primary button while the trial is unused."
+  },
+  "paywallTrialOptionNote": "No card · No automatic charge",
+  "paywallFreePrice": "Free",
+  "paywallTrialOption": "{days} days free",
+  "@paywallTrialOption": {
+    "description": "Start offer: the free trial as the first plan row.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallStartTrial": {
     "description": "Paywall primary button while the trial is unused.",
     "placeholders": {
@@ -1384,7 +1399,7 @@
       }
     }
   },
-  "paywallTrialFootnote": "No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.",
+  "paywallTrialFootnote": "You sign in with Google. When the trial ends you go back to the free version.",
   "@paywallTrialFootnote": {
     "description": "Paywall line under the trial button."
   },

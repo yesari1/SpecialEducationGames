@@ -25,11 +25,16 @@ class PaywallView extends StatefulWidget {
 
   /// "Continue with the free version" (and "Close" once Premium is open).
   final VoidCallback onDone;
+
+  /// First run and the start page: a "Continue with the free version"
+  /// button under the trial button (no account needed).
+  final VoidCallback? onContinueFree;
   const PaywallView({
     super.key,
     required this.state,
     required this.onDone,
     this.auth,
+    this.onContinueFree,
   });
 
   @override
@@ -74,23 +79,27 @@ class _PaywallViewState extends State<PaywallView> {
     return widget.auth != null && !e.trialUsed && !e.isPremium;
   }
 
-  /// Yearly first (preselected, "Best value"), then monthly, then one-time.
+  /// Monthly first, then yearly ("Best value"). While the
+  /// free trial is offered it is the first row and chosen: the button
+  /// starts it, and tapping a plan switches the button to that purchase.
   List<BillingPlan> get _plans {
-    const order = {'yearly': 0, 'monthly': 1, 'lifetime': 2};
-    return [...s.billing.plans]
-      ..sort((a, b) => (order[a.id] ?? 3).compareTo(order[b.id] ?? 3));
+    const order = {'monthly': 0, 'yearly': 1};
+    // The one-time purchase is not offered for now.
+    return [...s.billing.plans.where((p) => !p.lifetime)]
+      ..sort((a, b) => (order[a.id] ?? 2).compareTo(order[b.id] ?? 2));
   }
 
   BillingPlan? get _plan {
     final plans = _plans;
-    return plans.where((p) => p.id == _selected).firstOrNull ??
-        plans.where((p) => p.id == 'yearly').firstOrNull ??
+    final chosen = plans.where((p) => p.id == _selected).firstOrNull;
+    if (chosen != null || _trialOffered) return chosen;
+    return plans.where((p) => p.id == 'yearly').firstOrNull ??
         plans.firstOrNull;
   }
 
-  /// The trial is not a separate option: while it is unused the one
-  /// button starts it (unless the one-time purchase is chosen).
-  bool get _startsTrial => _trialOffered && !(_plan?.lifetime ?? false);
+  /// While the trial is unused and no plan is tapped, the one button
+  /// starts it.
+  bool get _startsTrial => _trialOffered && _plan == null;
 
   /// Purchases need a parent. If the parent area locked meanwhile (time
   /// out), ask again instead of greying the buttons out.
@@ -264,6 +273,22 @@ class _PaywallViewState extends State<PaywallView> {
       offer = Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          if (_trialOffered) ...[
+            _PlanRow(
+              key: const ValueKey('paywall-option-trial'),
+              title: l10n.paywallTrialOption(e.trialDays),
+              subtitle: l10n.paywallTrialOptionNote,
+              highlightSubtitle: true,
+              // "₺0" in the store's currency; the word when plans are not in.
+              price: s.billing.plans.isEmpty
+                  ? l10n.paywallFreePrice
+                  : '${s.billing.plans.first.product.currencySymbol}0',
+              fitSubtitle: true,
+              selected: _selected == null,
+              onTap: () => setState(() => _selected = null),
+            ),
+            const SizedBox(height: SegSpace.s2),
+          ],
           if (e.trialActive)
             Padding(
               padding: const EdgeInsets.only(bottom: SegSpace.s2),
@@ -357,8 +382,9 @@ class _PaywallViewState extends State<PaywallView> {
       buttonLabel = l10n.subscriptionWaiting;
       footnote = null;
     } else if (_startsTrial) {
-      buttonLabel = l10n.paywallStartTrial(e.trialDays);
-      footnote = l10n.paywallTrialFootnote;
+      buttonLabel = l10n.paywallStartFreeTrial;
+      // The trial row already says it all: no note under the button.
+      footnote = null;
     } else if (plan != null) {
       buttonLabel = l10n.paywallContinuePrice(plan.recurringPrice);
       footnote = plan.lifetime
@@ -380,18 +406,44 @@ class _PaywallViewState extends State<PaywallView> {
                 ? null
                 : _continue,
           ),
-          // Every footnote takes the room of the longest one, so changing
-          // the plan never resizes or shifts the page.
+          if (widget.onContinueFree != null) ...[
+            const SizedBox(height: SegSpace.s3),
+            Center(
+              child: TextButton(
+                key: const ValueKey('paywall-continue-free'),
+                onPressed: busy ? null : widget.onContinueFree,
+                // A large tap area around the short text.
+                style: TextButton.styleFrom(
+                  minimumSize: const Size(240, 52),
+                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
+                ),
+                child: Text(
+                  l10n.paywallContinueFree,
+                  style: SegText.body.copyWith(
+                    color: SegColors.primaryDeep,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ],
+    );
+    // Restore, terms and privacy (and the plan's note) stay at the bottom.
+    final bottom = Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // The plan's note above the links; it always takes the same room,
+        // so changing the plan never shifts the page.
+        if (!e.isPaid)
           Padding(
-            padding: const EdgeInsets.only(top: SegSpace.s2),
+            padding: const EdgeInsets.only(bottom: SegSpace.s1),
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                for (final text in [
-                  l10n.paywallTrialFootnote,
-                  l10n.paywallLifetimeNote,
-                  l10n.paywallCancelAnytime,
-                ])
+                for (final text in [l10n.paywallCancelAnytime])
                   Visibility(
                     visible: false,
                     maintainSize: true,
@@ -413,41 +465,43 @@ class _PaywallViewState extends State<PaywallView> {
               ],
             ),
           ),
-        ],
-        const SizedBox(height: SegSpace.s1),
-        Wrap(
-          alignment: WrapAlignment.center,
-          children: [
-            _SmallLink(
-              key: const ValueKey('paywall-restore'),
-              label: l10n.paywallRestoreShort,
-              onTap: _restore,
-            ),
-            if (e.source == PremiumSource.subscription)
+        // One line; smaller on a narrow phone.
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            key: const ValueKey('paywall-links'),
+            mainAxisSize: MainAxisSize.min,
+            children: [
               _SmallLink(
-                label: l10n.subscriptionManage,
-                onTap: () => _open(
-                  'https://play.google.com/store/account/subscriptions?sku=${BillingProducts.subscription}&package=com.YeS.OzelEgitimOyunlari',
+                key: const ValueKey('paywall-restore'),
+                label: l10n.paywallRestoreShort,
+                onTap: _restore,
+              ),
+              if (e.source == PremiumSource.subscription)
+                _SmallLink(
+                  label: l10n.subscriptionManage,
+                  onTap: () => _open(
+                    'https://play.google.com/store/account/subscriptions?sku=${BillingProducts.subscription}&package=com.YeS.OzelEgitimOyunlari',
+                  ),
                 ),
-              ),
-            if (s.configuration.termsUrl.isNotEmpty)
-              _SmallLink(
-                label: l10n.paywallTerms,
-                onTap: () => _open(s.configuration.termsUrl),
-              ),
-            if (s.configuration.privacyUrl.isNotEmpty)
-              _SmallLink(
-                label: l10n.paywallPrivacy,
-                onTap: () => _open(s.configuration.privacyUrl),
-              ),
-          ],
+              if (s.configuration.termsUrl.isNotEmpty)
+                _SmallLink(
+                  label: l10n.paywallTerms,
+                  onTap: () => _open(s.configuration.termsUrl),
+                ),
+              if (s.configuration.privacyUrl.isNotEmpty)
+                _SmallLink(
+                  label: l10n.paywallPrivacy,
+                  onTap: () => _open(s.configuration.privacyUrl),
+                ),
+            ],
+          ),
         ),
-        // No bottom "close" or "continue free": the X at the top leaves,
-        // and the free version simply continues.
+        // No bottom "close": the X at the top leaves the family-area offer.
       ],
     );
 
-    return LayoutBuilder(
+    final page = LayoutBuilder(
       builder: (context, box) {
         final landscape = box.maxWidth > box.maxHeight;
         final Widget content = landscape
@@ -505,6 +559,13 @@ class _PaywallViewState extends State<PaywallView> {
         );
       },
     );
+    return Column(
+      children: [
+        Expanded(child: page),
+        const SizedBox(height: SegSpace.s2),
+        bottom,
+      ],
+    );
   }
 }
 
@@ -513,7 +574,7 @@ class _PaywallViewState extends State<PaywallView> {
 class _PlanRow extends StatelessWidget {
   final String title, price;
   final String? subtitle, priceNote, badge;
-  final bool selected, highlightSubtitle;
+  final bool selected, highlightSubtitle, fitSubtitle;
   final VoidCallback onTap;
   const _PlanRow({
     super.key,
@@ -525,26 +586,43 @@ class _PlanRow extends StatelessWidget {
     this.priceNote,
     this.badge,
     this.highlightSubtitle = false,
+    this.fitSubtitle = false,
   });
+
+  Widget _subtitleText() => Text(
+    subtitle!,
+    softWrap: false,
+    overflow: fitSubtitle ? null : TextOverflow.fade,
+    style: highlightSubtitle
+        ? SegText.label.copyWith(
+            color: SegColors.accentDeep,
+            fontWeight: FontWeight.w800,
+          )
+        : SegText.caption.copyWith(color: SegColors.inkSoft),
+  );
 
   @override
   Widget build(BuildContext context) => Semantics(
     selected: selected,
     button: true,
     child: Material(
+      // The border changes at once with the choice (no shape animation).
+      animationDuration: Duration.zero,
       color: selected ? SegColors.primarySoft : Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(SegRadius.lg),
+        borderRadius: BorderRadius.circular(SegRadius.md),
         side: BorderSide(
           color: selected ? SegColors.primary : SegColors.line,
           width: selected ? 2.5 : 1.5,
         ),
       ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(SegRadius.lg),
+        borderRadius: BorderRadius.circular(SegRadius.md),
         onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(SegSpace.s3),
+        // Every row has the same height, whatever its lines.
+        child: Container(
+          height: 88,
+          padding: const EdgeInsets.symmetric(horizontal: SegSpace.s3),
           child: Row(
             children: [
               Icon(
@@ -557,51 +635,64 @@ class _PlanRow extends StatelessWidget {
               const SizedBox(width: SegSpace.s3),
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: SegText.heading.copyWith(color: SegColors.ink),
+                    // The badge sits next to the name, not under it; on a
+                    // narrow row both shrink together.
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            title,
+                            maxLines: 1,
+                            style: SegText.heading.copyWith(
+                              color: SegColors.ink,
+                            ),
+                          ),
+                          if (badge != null) ...[
+                            const SizedBox(width: SegSpace.s2),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: SegColors.accentStrong,
+                                borderRadius: BorderRadius.circular(99),
+                              ),
+                              child: Text(
+                                badge!,
+                                maxLines: 1,
+                                style: SegText.caption.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
                     ),
                     if (subtitle != null)
-                      Text(
-                        subtitle!,
-                        softWrap: false,
-                        overflow: TextOverflow.fade,
-                        style: highlightSubtitle
-                            ? SegText.label.copyWith(
-                                color: SegColors.accentDeep,
-                                fontWeight: FontWeight.w800,
-                              )
-                            : SegText.caption.copyWith(
-                                color: SegColors.inkSoft,
-                              ),
-                      ),
-                    if (badge != null) ...[
-                      const SizedBox(height: 4),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: SegColors.accentStrong,
-                          borderRadius: BorderRadius.circular(99),
-                        ),
-                        child: Text(
-                          badge!,
-                          style: SegText.caption.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ),
-                    ],
+                      if (fitSubtitle)
+                        // One line, made smaller instead of cut.
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: _subtitleText(),
+                        )
+                      else
+                        _subtitleText(),
                   ],
                 ),
               ),
               const SizedBox(width: SegSpace.s2),
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(

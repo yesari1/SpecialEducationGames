@@ -239,6 +239,8 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{installedAt:serverTimestamp(),platform:'android',appVersion:'2.0.21',locale:'tr'}));
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{onboardingAt:serverTimestamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{onboardingAt:serverTimestamp()},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{obChildAt:serverTimestamp(),obFavoriteAt:serverTimestamp(),obKnownAt:serverTimestamp(),freeAt:serverTimestamp(),firstGameAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{firstGameAt:serverTimestamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{uid:'alice'},{merge:true}));
   await assertFails(getDoc(doc(anon,`funnel/${id}`)));
   await assertFails(getDocs(collection(db('alice'),'funnel')));

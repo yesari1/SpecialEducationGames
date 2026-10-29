@@ -1362,7 +1362,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallContinue => 'Continue';
 
   @override
-  String get paywallContinueFree => 'Continue with the free version';
+  String get paywallContinueFree => 'Continue without signing in';
 
   @override
   String get paywallRestoreShort => 'Restore';
@@ -1413,8 +1413,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get paywallStartFreeTrial => 'Start trial';
+
+  @override
+  String get paywallTrialOptionNote => 'No card · No automatic charge';
+
+  @override
+  String get paywallFreePrice => 'Free';
+
+  @override
+  String paywallTrialOption(int days) {
+    return '$days days free';
+  }
+
+  @override
   String get paywallTrialFootnote =>
-      'No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.';
+      'You sign in with Google. When the trial ends you go back to the free version.';
 
   @override
   String paywallContinuePrice(String price) {

@@ -1366,7 +1366,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallContinue => 'Devam et';
 
   @override
-  String get paywallContinueFree => 'Şimdilik ücretsiz devam et';
+  String get paywallContinueFree => 'Giriş yapmadan devam et';
 
   @override
   String get paywallRestoreShort => 'Geri yükle';
@@ -1417,8 +1417,22 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get paywallStartFreeTrial => 'Denemeyi başlat';
+
+  @override
+  String get paywallTrialOptionNote => 'Kart yok · Otomatik ücret yok';
+
+  @override
+  String get paywallFreePrice => 'Ücretsiz';
+
+  @override
+  String paywallTrialOption(int days) {
+    return '$days gün ücretsiz';
+  }
+
+  @override
   String get paywallTrialFootnote =>
-      'Kart gerekmez. Deneme bitince ücretsiz sürüme dönersiniz; isterseniz seçtiğiniz planla devam edersiniz.';
+      'Google ile giriş yapılır. Deneme bitince ücretsiz sürüme dönersiniz.';
 
   @override
   String paywallContinuePrice(String price) {

@@ -92,12 +92,14 @@ service cloud.firestore {
     function funnelDoc() {
       let d = request.resource.data;
       return d.keys().hasAll(['installedAt', 'platform'])
-        && d.keys().hasOnly(['installedAt', 'onboardingAt', 'signedInAt', 'paywallAt', 'trialAt', 'purchasedAt', 'platform', 'appVersion', 'locale'])
+        && d.keys().hasOnly(['installedAt', 'obChildAt', 'obFavoriteAt', 'obKnownAt', 'onboardingAt', 'signedInAt', 'paywallAt', 'freeAt', 'trialAt', 'purchasedAt', 'firstGameAt', 'platform', 'appVersion', 'locale'])
         && d.platform in ['android', 'ios']
         && (!('appVersion' in d) || (d.appVersion is string && d.appVersion.size() <= 32))
         && (!('locale' in d) || d.locale in ['tr', 'en'])
         && step('installedAt') && step('onboardingAt') && step('signedInAt')
-        && step('paywallAt') && step('trialAt') && step('purchasedAt');
+        && step('paywallAt') && step('trialAt') && step('purchasedAt')
+        && step('obChildAt') && step('obFavoriteAt') && step('obKnownAt')
+        && step('freeAt') && step('firstGameAt');
     }
     match /funnel/{installId} {
       allow list: if admin();

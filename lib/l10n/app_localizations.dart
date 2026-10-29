@@ -2488,7 +2488,7 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'Continue with the free version'**
+  /// **'Continue without signing in'**
   String get paywallContinueFree;
 
   /// Paywall copy.
@@ -2569,10 +2569,34 @@ abstract class AppLocalizations {
   /// **'Try free for {days} days'**
   String paywallStartTrial(int days);
 
+  /// Start offer primary button while the trial is unused.
+  ///
+  /// In en, this message translates to:
+  /// **'Start trial'**
+  String get paywallStartFreeTrial;
+
+  /// No description provided for @paywallTrialOptionNote.
+  ///
+  /// In en, this message translates to:
+  /// **'No card · No automatic charge'**
+  String get paywallTrialOptionNote;
+
+  /// No description provided for @paywallFreePrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get paywallFreePrice;
+
+  /// Start offer: the free trial as the first plan row.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days free'**
+  String paywallTrialOption(int days);
+
   /// Paywall line under the trial button.
   ///
   /// In en, this message translates to:
-  /// **'No card needed. When the trial ends you go back to the free version, or continue with the plan you choose.'**
+  /// **'You sign in with Google. When the trial ends you go back to the free version.'**
   String get paywallTrialFootnote;
 
   /// Paywall primary button for a purchase.

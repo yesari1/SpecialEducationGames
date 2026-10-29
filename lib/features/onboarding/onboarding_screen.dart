@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
-import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
@@ -10,7 +9,6 @@ import '../../core/auth/family_auth.dart';
 import '../family/account_gate_screen.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
-import '../../core/learning/parent_pin.dart';
 import '../../core/learning/policies.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -42,24 +40,27 @@ class OnboardingScreen extends StatefulWidget {
 /// Onboarding illustrations (docs/illustration-style.md).
 const _illustrations = 'assets/illustrations/onboarding';
 
-enum OnboardingStep { welcome, child, question, goal, lock, trial, handoff }
+enum OnboardingStep { welcome, child, question, goal, trial, handoff }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   /// The short get-to-know set; the full survey stays in the profile editor.
+  /// First run asks only the first two (setup in four screens); adding a
+  /// child from the family area keeps all four.
   static const questionKeys = ['favorite', 'known', 'sound', 'focus'];
-  static final questions = [
+  static final _allQuestions = [
     for (final key in questionKeys)
       surveyQuestions.firstWhere((q) => q.key == key),
   ];
+  List<SurveyQuestion> get questions =>
+      widget.addChild ? _allQuestions : _allQuestions.take(2).toList();
 
   OnboardingStep step = OnboardingStep.welcome;
   int question = 0;
   final name = TextEditingController();
-  final pin = TextEditingController();
   final answers = <String, dynamic>{};
   int? ageYears;
   int dailyGoal = 15;
-  bool usePin = false, saving = false;
+  bool saving = false;
   AppState get s => widget.state;
   AppLocalizations get l10n => scopedLocalizations(context, s.locale);
 
@@ -95,7 +96,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     s.billing.removeListener(_billingChanged);
     s.removeListener(_stateChanged);
     name.dispose();
-    pin.dispose();
     super.dispose();
   }
 
@@ -104,14 +104,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingStep.child => 0,
     OnboardingStep.question => 1 + question,
     OnboardingStep.goal => 1 + questions.length,
-    OnboardingStep.lock => 2 + questions.length,
-    OnboardingStep.trial => 3 + questions.length,
+    OnboardingStep.trial => 2 + questions.length,
     _ => -1,
   };
-  int get _progressCount => (widget.addChild ? 2 : 4) + questions.length;
+  int get _progressCount => (widget.addChild ? 2 : 3) + questions.length;
 
   void _next() {
     FocusScope.of(context).unfocus();
+    // Install funnel: which setup screen people leave (first run only).
+    if (!widget.addChild) {
+      if (step == OnboardingStep.child) unawaited(s.funnelStep('obChild'));
+      if (step == OnboardingStep.question) {
+        final key = questions[question].key;
+        unawaited(
+          s.funnelStep('ob${key[0].toUpperCase()}${key.substring(1)}'),
+        );
+      }
+    }
+    if (step == OnboardingStep.goal) {
+      // Saved before the offer so the trial/purchase belong to a profile.
+      widget.addChild ? _saveChild() : _saveAndOffer();
+      return;
+    }
     setState(() {
       switch (step) {
         case OnboardingStep.welcome:
@@ -126,13 +140,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             step = OnboardingStep.goal;
           }
         case OnboardingStep.goal:
-          if (widget.addChild) {
-            _saveChild();
-          } else {
-            step = OnboardingStep.lock;
-          }
-        case OnboardingStep.lock:
-          // Saved before the offer so the trial/purchase belong to a profile.
           break;
         case OnboardingStep.trial:
           step = OnboardingStep.handoff;
@@ -163,8 +170,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         case OnboardingStep.goal:
           step = OnboardingStep.question;
           question = questions.length - 1;
-        case OnboardingStep.lock:
-          step = OnboardingStep.goal;
         case OnboardingStep.trial:
         case OnboardingStep.handoff:
           // The profile is already saved; nothing to go back to.
@@ -196,7 +201,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   bool _saved = false;
 
-  /// Saves the profile after the lock step, then shows the Premium offer.
+  /// Saves the profile after the goal step, then shows the Premium offer.
   /// The parent is setting up, so the parent area stays open for the offer.
   Future<void> _saveAndOffer() async {
     if (saving || _saved) return;
@@ -208,7 +213,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         name: _nickname,
         survey: survey,
         dailyGoalMinutes: dailyGoal,
-        pin: usePin ? pin.text : null,
       );
       await s.setting('celebration', result.celebration);
       if (survey['sound'] == 0) await s.setting('sound', 'false');
@@ -597,6 +601,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         await Future<void>.delayed(const Duration(milliseconds: 100));
       }
       if (!mounted) return;
+      unawaited(s.funnelStep('signedIn'));
       if (s.active != null) {
         // The account's children are back: straight to play, no note.
         unawaited(s.recordFamily(account.uid, account.email));
@@ -786,64 +791,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ],
       _body(l10n.onboardingFamilyHint),
     ],
-    primary: _continue(onPressed: _next),
+    primary: _continue(
+      label: saving ? l10n.onboardingSaving : null,
+      onPressed: saving ? null : _next,
+    ),
   );
 
-  Widget _lock() {
-    final pinValid = ParentPin.valid(pin.text);
-    return _frame(
-      children: [
-        _title(l10n.obLockTitle, key: const ValueKey('lock-title')),
-        const SizedBox(height: SegSpace.s3),
-        FamilyAccessIllustration(label: l10n.homeFamily),
-        const SizedBox(height: SegSpace.s4),
-        _body(l10n.obLockBody),
-        const SizedBox(height: SegSpace.s4),
-        Material(
-          color: SegColors.surface,
-          borderRadius: BorderRadius.circular(SegRadius.md),
-          child: SwitchListTile(
-            key: const ValueKey('pin-switch'),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(SegRadius.md),
-            ),
-            title: Text(l10n.obPinSwitch, style: SegText.label),
-            value: usePin,
-            onChanged: (value) => setState(() => usePin = value),
-          ),
-        ),
-        if (usePin) ...[
-          const SizedBox(height: SegSpace.s3),
-          TextField(
-            key: const ValueKey('pin-field'),
-            controller: pin,
-            autofocus: true,
-            obscureText: true,
-            keyboardType: TextInputType.number,
-            maxLength: 4,
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-            onChanged: (_) => setState(() {}),
-            decoration: InputDecoration(
-              labelText: l10n.obPinField,
-              counterText: '',
-              errorText: pin.text.isEmpty || pinValid
-                  ? null
-                  : l10n.obPinInvalid,
-            ),
-          ),
-        ],
-      ],
-      primary: _continue(
-        label: saving ? l10n.onboardingSaving : null,
-        onPressed: usePin && !pinValid || saving ? null : _saveAndOffer,
-      ),
-    );
-  }
-
-  /// The Premium offer, once, right after setup ([PaywallView]).
-  /// The free trial (Google sign-in) or Premium, needed to go on: no close
-  /// button. An account that already used its trial goes on to the free
-  /// games (see [build]).
+  /// The Premium offer, once, right after setup ([PaywallView]): the free
+  /// trial (Google sign-in), Premium, or the free version. An account that
+  /// already used its trial goes on to the free games (see [build]).
   Widget _trial() {
     final auth = widget.auth;
     Widget page() => AccountLoadingOverlay(
@@ -858,7 +814,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               SegSpace.s5,
               SegSpace.s3,
             ),
-            child: PaywallView(state: s, auth: auth, onDone: _next),
+            child: PaywallView(
+              state: s,
+              auth: auth,
+              onDone: _next,
+              onContinueFree: () async {
+                await s.chooseFree();
+                if (mounted && step == OnboardingStep.trial) _next();
+              },
+            ),
           ),
         ),
       ),
@@ -916,7 +880,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       OnboardingStep.child => _child(),
       OnboardingStep.question => _question(),
       OnboardingStep.goal => _goal(),
-      OnboardingStep.lock => _lock(),
       OnboardingStep.trial => _trial(),
       OnboardingStep.handoff => _handoff(),
     };

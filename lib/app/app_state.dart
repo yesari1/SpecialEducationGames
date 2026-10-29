@@ -55,10 +55,22 @@ class AppState extends ChangeNotifier {
     if (!_disposed) notifyListeners();
   }
 
-  /// Signed in, and this account has started its free trial (running or
-  /// over, then the free games stay) or has Premium. Otherwise the app shows
-  /// the sign-in / trial page.
+  /// "Continue with the free version" was chosen on the offer: the app
+  /// opens with the free games, no account needed.
+  bool freeChosen = false;
+
+  Future<void> chooseFree() async {
+    await db.setPreference('account.freeChosen', 'true');
+    freeChosen = true;
+    unawaited(funnelStep('free'));
+    if (!_disposed) notifyListeners();
+  }
+
+  /// Free version chosen, or signed in and this account has started its
+  /// free trial (running or over, then the free games stay) or has Premium.
+  /// Otherwise the app shows the sign-in / trial page.
   bool get accountGatePassed {
+    if (freeChosen) return true;
     final uid = accountUid;
     if (uid == null) return false;
     final e = entitlement;
@@ -292,11 +304,16 @@ class AppState extends ChangeNotifier {
   }
 
   static const _funnelSteps = [
+    'obChild',
+    'obFavorite',
+    'obKnown',
     'onboarding',
     'signedIn',
     'paywall',
+    'free',
     'trial',
     'purchased',
+    'firstGame',
   ];
 
   /// Stamps `<step>At` once ([_funnelSteps]); the rules reject a second
@@ -678,6 +695,7 @@ class AppState extends ChangeNotifier {
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();
     await entitlement.load();
+    freeChosen = await db.preference('account.freeChosen') == 'true';
     surveyDone = await db.preference('ask.surveyDone') == 'true';
     ratingDone = await db.preference('ask.ratingDone') == 'true';
     ratingLaterUntil = DateTime.tryParse(
@@ -1164,6 +1182,7 @@ class AppState extends ChangeNotifier {
             startedAt: DateTime.now(),
           ),
         );
+    unawaited(funnelStep('firstGame'));
     return id;
   }
 

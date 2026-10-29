@@ -130,7 +130,7 @@ void main() {
     expect(AppOrientation.isFamilyPath('/familyish'), isFalse);
   });
 
-  testWidgets('full flow saves profile, age, answers, goal and PIN once', (
+  testWidgets('full flow saves profile, age, answers and goal once', (
     tester,
   ) async {
     await loadFonts(tester);
@@ -160,34 +160,13 @@ void main() {
     await tapKey(tester, 'survey-option-1');
     await tapKey(tester, 'survey-option-0');
     await tapKey(tester, 'onboarding-continue');
-    // known: skipped.
+    // known: skipped. First run asks only these two questions.
     expect(find.byKey(const ValueKey('question-known')), findsOneWidget);
     await tapKey(tester, 'onboarding-skip');
-    // sound (single choice)
-    expect(find.byKey(const ValueKey('question-sound')), findsOneWidget);
-    await tapKey(tester, 'survey-option-1');
-    await tapKey(tester, 'onboarding-continue');
-    // focus
-    await tapKey(tester, 'survey-option-2');
-    await tapKey(tester, 'onboarding-continue');
 
+    // Goal, then straight to the offer: no PIN step.
     expect(find.byKey(const ValueKey('goal-title')), findsOneWidget);
     await tapKey(tester, 'goal-20');
-    await tapKey(tester, 'onboarding-continue');
-
-    expect(find.byKey(const ValueKey('lock-title')), findsOneWidget);
-    await tapKey(tester, 'pin-switch');
-    await tester.enterText(find.byKey(const ValueKey('pin-field')), '12');
-    await tester.pumpAndSettle();
-    final blocked = tester.widget<ElevatedButton>(
-      find.descendant(
-        of: find.byKey(const ValueKey('onboarding-continue')),
-        matching: find.byType(ElevatedButton),
-      ),
-    );
-    expect(blocked.onPressed, isNull, reason: 'an incomplete PIN blocks');
-    await tester.enterText(find.byKey(const ValueKey('pin-field')), '2468');
-    await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-continue');
 
     // The profile is saved, the parent area is open for the offer.
@@ -216,11 +195,10 @@ void main() {
     expect(survey['age'], 1);
     expect(survey['favorite'], [1]);
     expect(survey.containsKey('known'), isFalse);
-    expect(survey['sound'], 1);
-    expect(survey['focus'], 2);
+    expect(survey.containsKey('sound'), isFalse);
+    expect(survey.containsKey('focus'), isFalse);
     expect(state.dailyGoalMinutes, 20);
-    expect(state.hasParentPin, isTrue);
-    expect(state.verifyParentPin('2468'), isTrue);
+    expect(state.hasParentPin, isFalse);
     expect(router.routeInformationProvider.value.uri.path, '/');
     // Handing the phone to the child closes the parent area again.
     expect(state.familyUnlocked, isFalse);
@@ -237,11 +215,10 @@ void main() {
     await pumpOnboarding(tester, state);
     await tapKey(tester, 'welcome-start');
     await tapKey(tester, 'onboarding-continue');
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 2; i++) {
       await tapKey(tester, 'onboarding-skip');
     }
     await tapKey(tester, 'onboarding-continue'); // goal (15 preselected)
-    await tapKey(tester, 'onboarding-continue'); // lock, no PIN
     await passOffer(tester);
     await tapKey(tester, 'final-play');
     await tester.runAsync(

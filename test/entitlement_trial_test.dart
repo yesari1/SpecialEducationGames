@@ -186,6 +186,17 @@ void main() {
       expect(store.starts['parent-1'], DateTime.utc(2026, 9, 1));
     });
 
+    test('the free version opens the app without an account', () async {
+      expect(state.accountGatePassed, isFalse);
+      await state.chooseFree();
+      expect(state.accountGatePassed, isTrue);
+      expect(state.entitlement.isPremium, isFalse);
+      // Remembered on the next start.
+      state.freeChosen = false;
+      await state.load();
+      expect(state.accountGatePassed, isTrue);
+    });
+
     test('offline start reports the issue and keeps the free tier', () async {
       state.unlockFamily();
       store.offline = true;
@@ -263,9 +274,9 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      // The trial is not a separate option: the one button carries it.
-      expect(find.byKey(const ValueKey('paywall-option-trial')), findsNothing);
-      expect(find.textContaining('Try free for'), findsOneWidget);
+      // The trial is the first row, chosen; the one button starts it.
+      expect(find.byKey(const ValueKey('paywall-option-trial')), findsOneWidget);
+      expect(find.text(l10n.paywallStartFreeTrial), findsOneWidget);
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
       await tester.tap(start);
