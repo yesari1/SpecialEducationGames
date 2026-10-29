@@ -116,9 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (step == OnboardingStep.child) unawaited(s.funnelStep('obChild'));
       if (step == OnboardingStep.question) {
         final key = questions[question].key;
-        unawaited(
-          s.funnelStep('ob${key[0].toUpperCase()}${key.substring(1)}'),
-        );
+        unawaited(s.funnelStep('ob${key[0].toUpperCase()}${key.substring(1)}'));
       }
     }
     if (step == OnboardingStep.goal) {
@@ -281,38 +279,41 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
-              height: 56,
-              child: Row(
-                children: [
-                  const SizedBox(width: SegSpace.s2),
-                  if (step != OnboardingStep.welcome)
-                    IconButton(
-                      key: const ValueKey('onboarding-back'),
-                      tooltip: l10n.obBack,
-                      onPressed: saving
-                          ? null
-                          : () {
-                              UiSound.tap();
-                              _back();
-                            },
-                      icon: const Icon(Icons.arrow_back_rounded),
-                    )
-                  else
-                    const SizedBox(width: 48),
-                  Expanded(child: Center(child: dots)),
-                  if (skippable)
-                    TextButton(
-                      key: const ValueKey('onboarding-skip'),
-                      onPressed: _next,
-                      child: Text(l10n.obSkip, style: SegText.label),
-                    )
-                  else
-                    const SizedBox(width: 64),
-                  const SizedBox(width: SegSpace.s2),
-                ],
+            // The welcome page has no back button or dots: no empty bar on
+            // top, so its picture keeps its full size.
+            if (step != OnboardingStep.welcome)
+              SizedBox(
+                height: 56,
+                child: Row(
+                  children: [
+                    const SizedBox(width: SegSpace.s2),
+                    if (step != OnboardingStep.welcome)
+                      IconButton(
+                        key: const ValueKey('onboarding-back'),
+                        tooltip: l10n.obBack,
+                        onPressed: saving
+                            ? null
+                            : () {
+                                UiSound.tap();
+                                _back();
+                              },
+                        icon: const Icon(Icons.arrow_back_rounded),
+                      )
+                    else
+                      const SizedBox(width: 48),
+                    Expanded(child: Center(child: dots)),
+                    if (skippable)
+                      TextButton(
+                        key: const ValueKey('onboarding-skip'),
+                        onPressed: _next,
+                        child: Text(l10n.obSkip, style: SegText.label),
+                      )
+                    else
+                      const SizedBox(width: 64),
+                    const SizedBox(width: SegSpace.s2),
+                  ],
+                ),
               ),
-            ),
             Expanded(
               child: Center(
                 child: ConstrainedBox(
@@ -327,24 +328,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             SegSpace.s5,
                             SegSpace.s3,
                           ),
-                          // Text keeps its full width and size; the scene
-                          // (a Flexible child) gives up height to fit. Only
-                          // very short screens or very large text scale the
-                          // page down as a whole.
+                          // Everything keeps its full size (the picture too);
+                          // only a screen too short for the whole page scales
+                          // it down as one.
                           child: LayoutBuilder(
                             builder: (context, box) {
-                              final roomy =
-                                  box.maxHeight >= 520 &&
-                                  MediaQuery.textScalerOf(context).scale(1) <
-                                      1.4;
                               final column = Column(
-                                mainAxisSize: roomy
-                                    ? MainAxisSize.max
-                                    : MainAxisSize.min,
+                                mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: children,
                               );
-                              if (roomy) return column;
                               return FittedBox(
                                 fit: BoxFit.scaleDown,
                                 alignment: Alignment.topCenter,
@@ -431,26 +424,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       children: [
         // One illustrated scene in the app's illustration style
         // (docs/illustration-style.md) on a soft sky-to-cream card.
-        // The scene takes the height that is left (at most 240).
-        Flexible(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 240),
-            child: Container(
-              key: const ValueKey('welcome-hero'),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(SegRadius.xl),
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
-                ),
+        // The scene always has its full height.
+        SizedBox(
+          height: 240,
+          child: Container(
+            key: const ValueKey('welcome-hero'),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(SegRadius.xl),
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xFFDDF2FD), Color(0xFFFFF6EA)],
               ),
-              padding: const EdgeInsets.all(SegSpace.s2),
-              child: Image.asset(
-                '$_illustrations/hero_welcome.png',
-                fit: BoxFit.contain,
-                excludeFromSemantics: true,
-              ),
+            ),
+            padding: const EdgeInsets.all(SegSpace.s2),
+            child: Image.asset(
+              '$_illustrations/hero_welcome.png',
+              fit: BoxFit.contain,
+              excludeFromSemantics: true,
             ),
           ),
         ),

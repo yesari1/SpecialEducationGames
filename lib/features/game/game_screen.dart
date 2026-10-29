@@ -1323,6 +1323,8 @@ class _ConfettiPainter extends CustomPainter {
 
 /// "5  6  7  ?": the numbers are big, the gap is a small dashed box; on a
 /// right answer the chosen number grows into the gap so the whole row reads.
+/// Every number sits in a cell of the same fixed size (the gap too), so the
+/// row is evenly spaced, never changes size and nothing moves.
 class SequenceRow extends StatelessWidget {
   final List<String> sequence;
   final String answer;
@@ -1375,16 +1377,31 @@ class SequenceRow extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        for (var i = 0; i < sequence.length; i++) ...[
-          if (i > 0) SizedBox(width: size * .45),
+        for (var i = 0; i < sequence.length; i++)
           if (sequence[i] == '?')
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
-              child: revealed ? filled() : gap(),
+            SizedBox(
+              key: const ValueKey('sequence-slot'),
+              width: size * 1.5,
+              height: size * 1.7,
+              child: Center(
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  // The number grows in place; the slot keeps its size.
+                  layoutBuilder: (current, previous) => Stack(
+                    alignment: Alignment.center,
+                    children: [...previous, ?current],
+                  ),
+                  child: revealed
+                      ? FittedBox(fit: BoxFit.scaleDown, child: filled())
+                      : gap(),
+                ),
+              ),
             )
           else
-            Text(sequence[i], style: SegText.display),
-        ],
+            SizedBox(
+              width: size * 1.5,
+              child: Center(child: Text(sequence[i], style: SegText.display)),
+            ),
       ],
     );
   }
