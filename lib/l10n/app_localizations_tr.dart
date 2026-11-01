@@ -826,6 +826,31 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gameNext => 'Sonraki';
 
   @override
+  String get gameNextGame => 'Sonraki oyun';
+
+  @override
+  String get reminderTitle => 'Oyun zamanı';
+
+  @override
+  String get reminderBody => 'Bugün birlikte birkaç dakika oynayalım mı?';
+
+  @override
+  String get reminderChannel => 'Günlük oyun hatırlatması';
+
+  @override
+  String get reminderOfferTitle => 'Günlük hatırlatma';
+
+  @override
+  String get reminderOfferBody =>
+      'Çocuğunuzun her günkü eğitimi için size hatırlatma yapalım mı?';
+
+  @override
+  String get reminderOfferYes => 'Evet, hatırlat';
+
+  @override
+  String get reminderOfferNo => 'Şimdi değil';
+
+  @override
   String get gameObject => 'Nesne';
 
   @override

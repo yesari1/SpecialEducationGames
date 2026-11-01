@@ -1537,6 +1537,54 @@ abstract class AppLocalizations {
   /// **'Next'**
   String get gameNext;
 
+  /// No description provided for @gameNextGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Next game'**
+  String get gameNextGame;
+
+  /// No description provided for @reminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Play time'**
+  String get reminderTitle;
+
+  /// No description provided for @reminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shall we play together for a few minutes today?'**
+  String get reminderBody;
+
+  /// No description provided for @reminderChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily play reminder'**
+  String get reminderChannel;
+
+  /// No description provided for @reminderOfferTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder'**
+  String get reminderOfferTitle;
+
+  /// No description provided for @reminderOfferBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shall we remind you about your child\'s daily learning?'**
+  String get reminderOfferBody;
+
+  /// No description provided for @reminderOfferYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, remind me'**
+  String get reminderOfferYes;
+
+  /// No description provided for @reminderOfferNo.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get reminderOfferNo;
+
   /// No description provided for @gameObject.
   ///
   /// In en, this message translates to:

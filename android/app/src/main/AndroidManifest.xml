@@ -2,6 +2,8 @@
     <!-- Optional parent sign-in and remote configuration also need networking
          in release builds; local play remains available offline. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Daily play reminder: keeps the scheduled reminders after a restart. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:appCategory="game"
         android:label="Özel Eğitim Oyunları"
@@ -45,6 +47,16 @@
                     android:pathPrefix="/__/auth/links"/>
             </intent-filter>
         </activity>
+        <!-- Daily play reminder (flutter_local_notifications). -->
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

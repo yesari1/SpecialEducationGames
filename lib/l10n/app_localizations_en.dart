@@ -821,6 +821,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gameNext => 'Next';
 
   @override
+  String get gameNextGame => 'Next game';
+
+  @override
+  String get reminderTitle => 'Play time';
+
+  @override
+  String get reminderBody => 'Shall we play together for a few minutes today?';
+
+  @override
+  String get reminderChannel => 'Daily play reminder';
+
+  @override
+  String get reminderOfferTitle => 'Daily reminder';
+
+  @override
+  String get reminderOfferBody =>
+      'Shall we remind you about your child\'s daily learning?';
+
+  @override
+  String get reminderOfferYes => 'Yes, remind me';
+
+  @override
+  String get reminderOfferNo => 'Not now';
+
+  @override
   String get gameObject => 'Object';
 
   @override

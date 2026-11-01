@@ -759,6 +759,14 @@
     "description": "Game results and actions interface copy."
   },
   "gameNext": "Next",
+  "gameNextGame": "Next game",
+  "reminderTitle": "Play time",
+  "reminderBody": "Shall we play together for a few minutes today?",
+  "reminderChannel": "Daily play reminder",
+  "reminderOfferTitle": "Daily reminder",
+  "reminderOfferBody": "Shall we remind you about your child's daily learning?",
+  "reminderOfferYes": "Yes, remind me",
+  "reminderOfferNo": "Not now",
   "gameObject": "Object",
   "gameCountedObjectSemantics": "{object}, count {number}",
   "@gameCountedObjectSemantics": {

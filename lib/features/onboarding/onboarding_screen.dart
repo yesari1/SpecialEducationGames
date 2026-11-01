@@ -10,6 +10,7 @@ import '../family/account_gate_screen.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/policies.dart';
+import '../child_home/reminder_offer.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 import 'onboarding_parts.dart';
@@ -216,6 +217,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (survey['sound'] == 0) await s.setting('sound', 'false');
       s.unlockFamily();
       _saved = true;
+      // Right after the daily goal, while the parent holds the phone upright:
+      // our own reminder question; only a yes asks Android for permission.
+      if (mounted && await s.shouldOfferReminder() && mounted) {
+        await s.answerReminderOffer(await showReminderOffer(context, s));
+      }
       if (mounted) {
         setState(() {
           saving = false;

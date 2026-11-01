@@ -11,6 +11,7 @@ import '../../app/ui/components.dart';
 import '../../app/ui/game_object.dart';
 import '../../app/ui/scene_backdrop.dart';
 import '../../app/ui/day_sticker.dart';
+import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
@@ -19,6 +20,7 @@ import 'templates/game_template.dart' show praiseCue;
 import 'widgets/round_choices_view.dart';
 import 'widgets/counted_objects.dart';
 import 'widgets/tap_discovery.dart';
+import 'widgets/next_game_button.dart';
 import 'play_time_break.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -27,12 +29,17 @@ class GameScreen extends StatefulWidget {
   final AppState state;
   final String themeId, gameId;
   final Difficulty difficulty;
+
+  /// Opened from today's path (not a theme page): "Next game" follows the
+  /// path instead of the theme.
+  final bool fromPath;
   const GameScreen({
     super.key,
     required this.state,
     required this.themeId,
     required this.gameId,
     required this.difficulty,
+    this.fromPath = false,
   });
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -55,6 +62,12 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   final Stopwatch _sessionClock = Stopwatch();
   Future<String>? _sessionId;
   bool _sessionFinished = false;
+  bool _suspended = false;
+
+  /// Set when a round ends: where "Next game" leads, and whether its ring is
+  /// filling (after the praise, so it never talks over it).
+  String? _nextRoute;
+  final ValueNotifier<bool> _countdown = ValueNotifier(false);
   bool _g14HardContentUnavailable = false;
   Timer? _checkpoint;
   Timer? _budgetTick;
@@ -241,14 +254,35 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
       if (!_sessionFinished && !_limitReached && _sessionId != null) {
+        if (_suspended) unawaited(_resumeSession());
         _sessionClock.start();
         controller?.resume();
       }
     } else {
       _sessionClock.stop();
       controller?.pause();
-      unawaited(_saveSessionTime());
+      // `inactive` alone is the notification shade or a system dialog; leaving
+      // the app records the round so far, since the app may never come back.
+      if (state == AppLifecycleState.inactive) {
+        unawaited(_saveSessionTime());
+      } else {
+        unawaited(_suspendSession());
+      }
     }
+  }
+
+  Future<void> _suspendSession() async {
+    if (_sessionFinished || _sessionId == null || _suspended) return;
+    _suspended = true;
+    await _chargeTime(checkLimit: false);
+    final id = await _sessionId!;
+    await s.suspendSession(id, _sessionClock.elapsedMilliseconds);
+  }
+
+  Future<void> _resumeSession() async {
+    _suspended = false;
+    final id = await _sessionId!;
+    await s.resumeSession(id);
   }
 
   /// [interrupt] false (replay button, idle hint) leaves narration that is
@@ -274,7 +308,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       // Fallback; with sound the return is rescheduled once the applause
       // and praise have finished (see [_completed]).
       endTimer ??= Timer(Duration(seconds: s.sound ? 15 : 7), () {
-        if (mounted) back();
+        if (!mounted) return;
+        _nextRoute == null ? back() : _countdown.value = true;
       });
     }
   }
@@ -292,6 +327,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     WidgetsBinding.instance.removeObserver(this);
     unawaited(_finishSession(false));
     endTimer?.cancel();
+    _countdown.dispose();
     controller?.removeListener(changed);
     controller?.dispose();
     s.audio.stop();
@@ -695,18 +731,33 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     if (!_roundEndCelebrated) {
       _roundEndCelebrated = true;
       final token = ++_celebration;
+      _nextRoute = s.nextGameRoute(
+        widget.themeId,
+        widget.gameId,
+        widget.difficulty,
+        fromPath: widget.fromPath,
+      );
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!mounted || !s.sound) return;
+        if (!mounted) return;
+        if (!s.sound) {
+          if (_nextRoute != null) _countdown.value = true;
+          return;
+        }
         s.audio
             .playSequence([
               if (s.celebration != 'off') 'assets/sfx/ui/applause.mp3',
               praiseCue(s.locale),
             ])
             .whenComplete(() {
-              // Stay a few seconds after the praise before going back.
-              if (!mounted || token != _celebration || endTimer == null) {
+              if (!mounted || token != _celebration) return;
+              // The next game's ring starts filling once the praise is over.
+              if (_nextRoute != null) {
+                endTimer?.cancel();
+                _countdown.value = true;
                 return;
               }
+              // Stay a few seconds after the praise before going back.
+              if (endTimer == null) return;
               endTimer!.cancel();
               endTimer = Timer(_afterPraise, () {
                 if (mounted) back();
@@ -816,53 +867,110 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     );
   }
 
-  /// "Back to the theme" is the main way on; playing again is optional.
-  Widget _completionActions() => Wrap(
-    alignment: WrapAlignment.center,
-    spacing: SegSpace.s3,
-    runSpacing: SegSpace.s3,
-    children: [
-      SegButton(
-        key: const ValueKey('completion-theme'),
-        label: l10n.gameBackToTheme,
-        icon: Icons.arrow_forward_rounded,
-        onPressed: back,
-      ),
-      SegButton(
-        key: const ValueKey('completion-path'),
-        label: l10n.gameTodaysPath,
-        icon: Icons.route_rounded,
-        secondary: true,
-        onPressed: () => context.go('/?path=true'),
-      ),
-      SegButton(
-        key: const ValueKey('completion-again'),
-        label: l10n.gameAgain,
-        icon: Icons.replay_rounded,
-        secondary: true,
-        onPressed: () {
-          endTimer?.cancel();
-          endTimer = null;
-          _celebration++;
-          _sessionId = null;
-          _sessionFinished = false;
-          _sessionClock.reset();
-          _lastChargedMs = 0;
-          _explored.clear();
-          _exploreComplete = false;
-          _autoSpokenCard = null;
-          _roundEndCelebrated = false;
-          if (widget.gameId == 'G02' || widget.gameId == 'G55') card = 0;
-          _startSession();
-          if (controller case final c?) {
-            c.stage = 0;
-            c.start();
-          }
-          setState(() {});
-        },
-      ),
-    ],
+  void _goNext() {
+    final route = _nextRoute;
+    if (!mounted || route == null) return;
+    endTimer?.cancel();
+    s.audio.stop();
+    UiSound.gameOpen();
+    context.go(route);
+  }
+
+  /// One main way on, big in the middle: the next game (its ring fills and
+  /// the game opens on its own), or the theme when nothing else is open.
+  /// Playing again and going back to the theme are small round icons below.
+  Widget _completionActions() {
+    final next = _nextRoute != null;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (next)
+          NextGameButton(
+            key: const ValueKey('completion-next-game'),
+            label: l10n.gameNextGame,
+            running: _countdown,
+            animate:
+                !(s.reducedMotion || MediaQuery.disableAnimationsOf(context)),
+            onNext: _goNext,
+          )
+        else
+          SegButton(
+            key: const ValueKey('completion-theme'),
+            label: l10n.gameBackToTheme,
+            icon: Icons.arrow_forward_rounded,
+            onPressed: back,
+          ),
+        const SizedBox(height: SegSpace.s3),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _roundAction(
+              key: const ValueKey('completion-again'),
+              icon: Icons.replay_rounded,
+              label: l10n.gameAgain,
+              onPressed: _playAgain,
+            ),
+            if (next) ...[
+              const SizedBox(width: SegSpace.s4),
+              _roundAction(
+                key: const ValueKey('completion-theme'),
+                icon: Icons.arrow_back_rounded,
+                label: l10n.gameBackToTheme,
+                onPressed: back,
+              ),
+            ],
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _roundAction({
+    required Key key,
+    required IconData icon,
+    required String label,
+    required VoidCallback onPressed,
+  }) => DecoratedBox(
+    key: key,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      shape: BoxShape.circle,
+      border: Border.all(color: SegColors.line, width: 2),
+    ),
+    child: IconButton(
+      iconSize: 30,
+      constraints: const BoxConstraints(minWidth: 60, minHeight: 60),
+      color: SegColors.primaryDeep,
+      tooltip: label,
+      icon: Icon(icon),
+      onPressed: () {
+        UiSound.tap();
+        onPressed();
+      },
+    ),
   );
+
+  void _playAgain() {
+    endTimer?.cancel();
+    endTimer = null;
+    _countdown.value = false;
+    _celebration++;
+    _sessionId = null;
+    _sessionFinished = false;
+    _sessionClock.reset();
+    _lastChargedMs = 0;
+    _explored.clear();
+    _exploreComplete = false;
+    _autoSpokenCard = null;
+    _roundEndCelebrated = false;
+    if (widget.gameId == 'G02' || widget.gameId == 'G55') card = 0;
+    _startSession();
+    if (controller case final c?) {
+      c.stage = 0;
+      c.start();
+    }
+    setState(() {});
+  }
 
   /// The prompt object. In drag games it can be carried onto a choice; the
   /// choices still accept taps, so dragging is never required.

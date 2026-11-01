@@ -275,7 +275,10 @@ void main() {
       );
       await tester.pumpAndSettle();
       // The trial is the first row, chosen; the one button starts it.
-      expect(find.byKey(const ValueKey('paywall-option-trial')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('paywall-option-trial')),
+        findsOneWidget,
+      );
       expect(find.text(l10n.paywallStartFreeTrial), findsOneWidget);
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);

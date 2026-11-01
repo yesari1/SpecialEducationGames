@@ -99,4 +99,40 @@ void main() {
     expect(state.autoSync.lastIssue, isNull);
     expect(store.merged, isNotEmpty);
   });
+
+  test('leaving the app mid-game sends the time played so far', () async {
+    final (state, store, _) = await setup();
+    addTearDown(state.dispose);
+    final id = await state.beginSession('colors', 'G02', Difficulty.easy);
+    // Stored times are whole seconds; let a full second pass.
+    await Future<void>.delayed(const Duration(milliseconds: 1100));
+    await state.checkpointSession(id, 20);
+    await state.suspendSession(id, 30);
+    // Sent right away, without the usual debounce.
+    await Future<void>.delayed(const Duration(milliseconds: 300));
+    final sent = store.merged['parent-1/${state.active!.id}']!;
+    final colors = sent.singleWhere((s) => s.themeId == 'colors');
+    expect(colors.activeMs, 30);
+    expect(colors.rounds, 0);
+    // Coming back reopens the round; finishing it counts it in full.
+    await state.resumeSession(id);
+    await state.checkpointSession(id, 35);
+    await state.finishSession(id, 40, true);
+    final row = state.sessions.singleWhere((s) => s.id == id);
+    expect(row.activeMs, 40);
+    expect(row.completed, isTrue);
+  });
+
+  test('a game the app was killed in ends at its last checkpoint', () async {
+    final (state, _, _) = await setup();
+    addTearDown(state.dispose);
+    // Session ids are clock based; keep them apart from the setup's.
+    await Future<void>.delayed(const Duration(milliseconds: 5));
+    final id = await state.beginSession('colors', 'G02', Difficulty.easy);
+    await state.checkpointSession(id, 25);
+    await state.load();
+    final row = state.sessions.singleWhere((s) => s.id == id);
+    expect(row.activeMs, 25);
+    expect(row.endedAt, row.startedAt.add(const Duration(seconds: 1)));
+  });
 }

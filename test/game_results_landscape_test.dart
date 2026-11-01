@@ -98,7 +98,8 @@ void main() {
         () => Future<void>.delayed(const Duration(milliseconds: 100)),
       );
       await tester.pump();
-      await tester.pumpAndSettle();
+      // The "Next game" ring starts at once without sound; stay before it ends.
+      await tester.pump(const Duration(milliseconds: 500));
       expect(find.byKey(const ValueKey('completion-summary')), findsOneWidget);
 
       for (final locale in ['tr', 'en']) {
@@ -113,14 +114,18 @@ void main() {
               find.text(state.tr('Aferin!', 'Well done!')),
               findsOneWidget,
             );
-            final labels = [
-              state.tr('Tekrar', 'Again'),
-              state.tr('Bugünün Yolu', 'Today’s Path'),
-              state.tr('Temaya dön', 'Back to theme'),
+            final actions = [
+              find.text(state.tr('Sonraki oyun', 'Next game')),
+              find.byKey(const ValueKey('completion-again')),
+              find.byKey(const ValueKey('completion-theme')),
             ];
-            for (final label in labels) {
-              expect(find.text(label), findsOneWidget);
-              final rect = tester.getRect(find.text(label));
+            expect(
+              find.text(state.tr('Bugünün Yolu', 'Today’s Path')),
+              findsNothing,
+            );
+            for (final action in actions) {
+              expect(action, findsOneWidget);
+              final rect = tester.getRect(action);
               expect(rect.bottom, lessThanOrEqualTo(size.height));
               expect(rect.top, greaterThanOrEqualTo(0));
             }
@@ -129,7 +134,7 @@ void main() {
           }
         }
       }
-      await tester.tap(find.text(state.tr('Temaya dön', 'Back to theme')));
+      await tester.tap(find.byKey(const ValueKey('completion-theme')));
       await tester.pumpAndSettle();
       expect(find.text('theme destination'), findsOneWidget);
       await tester.pumpWidget(const SizedBox());

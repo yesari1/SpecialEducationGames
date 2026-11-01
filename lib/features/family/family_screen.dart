@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ import '../../core/auth/family_auth.dart';
 import 'ask_cards.dart';
 import 'account_header.dart';
 import 'parent_announcement_card.dart';
+import '../child_home/reminder_offer.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 
@@ -226,8 +228,16 @@ class _FamilyScreenState extends State<FamilyScreen> {
         showAskDialog(context, SurveyCard(state: s, auth: widget.auth));
       } else if (s.showRating) {
         requestPlayReview(s);
+      } else {
+        unawaited(_offerReminder());
       }
     });
+  }
+
+  /// Families set up before the reminder existed are asked once here.
+  Future<void> _offerReminder() async {
+    if (!await s.shouldOfferReminder() || !mounted) return;
+    await s.answerReminderOffer(await showReminderOffer(context, s));
   }
 
   @override

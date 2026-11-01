@@ -268,7 +268,7 @@ class _StopState extends State<_Stop> with SingleTickerProviderStateMixin {
       child: GestureDetector(
         onTap: () {
           UiSound.gameOpen();
-          context.go('/game/${parts[0]}/${parts[1]}/easy');
+          context.go('/game/${parts[0]}/${parts[1]}/easy?from=path');
         },
         child: AnimatedBuilder(
           animation: _bob,

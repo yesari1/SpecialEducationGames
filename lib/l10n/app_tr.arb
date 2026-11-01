@@ -759,6 +759,14 @@
     "description": "Game results and actions interface copy."
   },
   "gameNext": "Sonraki",
+  "gameNextGame": "Sonraki oyun",
+  "reminderTitle": "Oyun zamanı",
+  "reminderBody": "Bugün birlikte birkaç dakika oynayalım mı?",
+  "reminderChannel": "Günlük oyun hatırlatması",
+  "reminderOfferTitle": "Günlük hatırlatma",
+  "reminderOfferBody": "Çocuğunuzun her günkü eğitimi için size hatırlatma yapalım mı?",
+  "reminderOfferYes": "Evet, hatırlat",
+  "reminderOfferNo": "Şimdi değil",
   "gameObject": "Nesne",
   "gameCountedObjectSemantics": "{object}, say {number}",
   "@gameCountedObjectSemantics": {

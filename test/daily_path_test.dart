@@ -273,7 +273,10 @@ void main() {
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 100)),
       );
-      await tester.pumpAndSettle();
+      // Stay on the result page: the "Next game" ring would move on after
+      // a few seconds (no sound in tests, so it starts at once).
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
       expect(state.dailyPath.completed, {'vehicles_G02'});
       final chargedBeforeReplay = state.dailyPlayTime.usedMs;
       expect(find.text('Well done!'), findsOneWidget);
@@ -288,8 +291,9 @@ void main() {
             ),
         isEmpty,
       );
-      expect(find.text('Again'), findsOneWidget);
-      await tester.tap(find.text('Again'));
+      final again = find.byKey(const ValueKey('completion-again'));
+      expect(again, findsOneWidget);
+      await tester.tap(again);
       await tester.pumpAndSettle();
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 200)),
@@ -304,15 +308,19 @@ void main() {
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 100)),
       );
-      await tester.pumpAndSettle();
+      // Stay on the result page: the "Next game" ring would move on after
+      // a few seconds (no sound in tests, so it starts at once).
+      await tester.pump(const Duration(milliseconds: 500));
+      await tester.pump(const Duration(milliseconds: 500));
       expect(
         state.dailyPlayTime.usedMs,
         greaterThanOrEqualTo(chargedBeforeReplay + 150),
       );
       expect(state.dailyPath.completed, {'vehicles_G02'});
-      await tester.tap(find.text('Today’s Path'));
+      // The next game comes from today's path once the ring closes.
+      await tester.pump(const Duration(seconds: 9));
       await tester.pumpAndSettle();
-      expect(find.byType(DailyPathView), findsOneWidget);
+      expect(find.byKey(const ValueKey('completion-summary')), findsNothing);
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());
       debugDefaultTargetPlatformOverride = null;

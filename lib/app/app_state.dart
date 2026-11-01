@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart' show WidgetsBinding;
+import 'package:flutter/widgets.dart' show Locale, WidgetsBinding;
 import 'package:drift/drift.dart';
 import '../core/content/content_repository.dart';
 import '../core/db/app_database.dart';
@@ -24,6 +24,8 @@ import '../core/learning/daily_path.dart';
 import '../core/config/app_configuration.dart';
 import '../core/config/config_repository.dart';
 import '../core/sync/summary_snapshot_cache.dart';
+import '../core/reminder/play_reminder.dart';
+import '../l10n/app_localizations.dart';
 
 class AppState extends ChangeNotifier {
   final ContentRepository content;
@@ -526,6 +528,38 @@ class AppState extends ChangeNotifier {
     now: now,
   );
   DailyPathProgress get dailyPath => dailyPathAt(DateTime.now());
+
+  /// Where a finished round leads on its own. Opened from today's path: the
+  /// next unplayed stop of the path (the theme once the path is done).
+  /// Opened from a theme page: the next open game of that theme. Null when
+  /// nothing else can be played.
+  String? nextGameRoute(
+    String theme,
+    String game,
+    Difficulty tier, {
+    bool fromPath = false,
+  }) {
+    final current = '${theme}_$game';
+    final path = dailyPath;
+    if (fromPath) {
+      for (final step in path.steps) {
+        if (step == current || path.completed.contains(step)) continue;
+        final parts = step.split('_');
+        return '/game/${parts[0]}/${parts[1]}/easy?from=path';
+      }
+    }
+    final games = gamesForTheme(theme);
+    final from = games.indexOf(game);
+    for (var i = 1; i < games.length; i++) {
+      final next = games[(from + i) % games.length];
+      if (next == game || !canPlay(theme, next, tier)) continue;
+      final effective = recommendedDifficulty(theme, next, tier);
+      if (!content.isGameContentAvailable(theme, next, effective)) continue;
+      return '/game/$theme/$next/${tier.name}';
+    }
+    return null;
+  }
+
   bool get hasTodaySticker =>
       dailyStickers.contains(DailyPathProgress.dayKey(DateTime.now()));
   Set<String> introduced = {};
@@ -694,6 +728,7 @@ class AppState extends ChangeNotifier {
               configuration.freeGames.contains('${theme}_$game')));
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();
+    if (_activeGames == 0) await _closeLeftoverSessions();
     await entitlement.load();
     freeChosen = await db.preference('account.freeChosen') == 'true';
     surveyDone = await db.preference('ask.surveyDone') == 'true';
@@ -793,6 +828,49 @@ class AppState extends ChangeNotifier {
     if (_disposed || active?.id != profileId) return;
     _setPlayTime(nextTime);
     notifyListeners();
+    unawaited(refreshReminder());
+  }
+
+  /// Daily play reminder (local notifications only).
+  final PlayReminder reminder = PlayReminder();
+
+  /// Re-plans the evening reminders: none today once a game was started.
+  Future<void> refreshReminder() async {
+    if (active == null || !PlayReminder.supported) return;
+    // Only after the parent said yes to the offer.
+    if (await db.preference('reminder.on') != 'true') {
+      await reminder.cancel();
+      return;
+    }
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final played = await (db.select(
+      db.gameSessions,
+    )..where((t) => t.startedAt.isBiggerOrEqualValue(today))).get();
+    final l10n = lookupAppLocalizations(Locale(locale));
+    await reminder.reschedule(
+      playedToday: played.isNotEmpty,
+      title: l10n.reminderTitle,
+      body: l10n.reminderBody,
+      channel: l10n.reminderChannel,
+    );
+  }
+
+  /// The reminder is offered once: in setup right after the daily goal, or
+  /// for families set up earlier, when the family area first opens.
+  Future<bool> shouldOfferReminder() async =>
+      active != null &&
+      PlayReminder.supported &&
+      await db.preference('reminder.asked') != 'true';
+
+  /// The parent's answer to our own offer; only a yes brings up Android's
+  /// permission dialog. Either way it is not offered again.
+  Future<void> answerReminderOffer(bool yes) async {
+    await db.setPreference('reminder.asked', 'true');
+    await db.setPreference('reminder.on', '$yes');
+    if (!yes) return;
+    await reminder.requestPermission();
+    await refreshReminder();
   }
 
   Future<void> refreshTrials() async {
@@ -1183,6 +1261,7 @@ class AppState extends ChangeNotifier {
           ),
         );
     unawaited(funnelStep('firstGame'));
+    unawaited(refreshReminder());
     return id;
   }
 
@@ -1200,6 +1279,64 @@ class AppState extends ChangeNotifier {
     );
     await refreshTrials();
     autoSync.request();
+  }
+
+  /// The database keeps whole seconds; rounding the end up keeps the active
+  /// time within the stored start and end, which the summaries require.
+  static DateTime _endAfter(DateTime start, int milliseconds) {
+    final end = start.add(Duration(milliseconds: milliseconds));
+    final whole = end.subtract(
+      Duration(microseconds: end.microsecondsSinceEpoch % 1000000),
+    );
+    return whole == end ? end : whole.add(const Duration(seconds: 1));
+  }
+
+  /// A game the app was closed in (killed before it could record leaving)
+  /// ends at its last checkpoint, so its play time still counts.
+  Future<void> _closeLeftoverSessions() async {
+    final open = await (db.select(
+      db.gameSessions,
+    )..where((t) => t.endedAt.isNull())).get();
+    for (final session in open) {
+      await (db.update(
+        db.gameSessions,
+      )..where((t) => t.id.equals(session.id))).write(
+        GameSessionsCompanion(
+          endedAt: Value(_endAfter(session.startedAt, session.activeMs)),
+        ),
+      );
+    }
+  }
+
+  /// The app left the foreground mid-game: record the round so far as an
+  /// interrupted one and send it now, since the app may be closed for good.
+  /// [resumeSession] reopens it if the child comes back.
+  Future<void> suspendSession(String id, int milliseconds) async {
+    final open = await (db.select(
+      db.gameSessions,
+    )..where((t) => t.id.equals(id) & t.endedAt.isNull())).getSingleOrNull();
+    if (open == null) return;
+    // Stored in whole seconds: keep the active time within start and end
+    // (the summaries skip a session claiming more time than it lasted).
+    final now = DateTime.now();
+    final stored = now.subtract(
+      Duration(microseconds: now.microsecondsSinceEpoch % 1000000),
+    );
+    final lasted = stored.difference(open.startedAt).inMilliseconds;
+    await (db.update(db.gameSessions)..where((t) => t.id.equals(id))).write(
+      GameSessionsCompanion(
+        activeMs: Value(milliseconds.clamp(0, lasted < 0 ? 0 : lasted)),
+        endedAt: Value(now),
+      ),
+    );
+    await refreshTrials();
+    unawaited(autoSync.run());
+  }
+
+  Future<void> resumeSession(String id) async {
+    await (db.update(db.gameSessions)
+          ..where((t) => t.id.equals(id) & t.completed.equals(false)))
+        .write(const GameSessionsCompanion(endedAt: Value(null)));
   }
 
   Future<void> checkpointSession(String id, int milliseconds) async {
