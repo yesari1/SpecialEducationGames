@@ -723,9 +723,8 @@ class AppState extends ChangeNotifier {
       !configuration.hiddenThemes.contains(theme) &&
       !configuration.disabledGames.contains('${theme}_$game') &&
       (entitlement.isPremium ||
-          // Free cards are open on Easy only.
-          (tier == Difficulty.easy &&
-              configuration.freeGames.contains('${theme}_$game')));
+          // Free cards (Learn and one game per theme) are open on every tier.
+          configuration.freeGames.contains('${theme}_$game'));
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();
     if (_activeGames == 0) await _closeLeftoverSessions();

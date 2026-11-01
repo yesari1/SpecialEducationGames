@@ -2,6 +2,12 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 1 Kasım 2026 — Ücretsiz oyunlar her seviyede — sürüm 2.0.38 (52), yüklenmedi
+
+- Neden: 4 yaş ve üstü ücretsiz kullanıcı konu sayfasını Orta'da açıyor, ücretsiz kartlar yalnız Kolay'da açık olduğu için tüm oyunları kilitli görüyordu.
+- `canPlay`: ücretsiz kartlar (her temada Öğren + bir oyun, `freeGames`) Kolay, Orta ve Zor'da açık. Aile ayarındaki "Zor" zorluk seçimi kilidi değişmedi.
+- Testler: seviye kilidi testleri ücretli oyunla (animals_G10) güncellendi; ücretsiz kart üç seviyede açık testi eklendi. Pixel_9a'da (premium olmayan test kopyası) Hayvanlar Orta ve Zor'da Öğren + Bul açık, Zor > Bul açıldı.
+
 ## 1 Kasım 2026 — Gerçek oyun süresi, "Sonraki oyun" halkası, günlük hatırlatma — sürüm 2.0.37 (51), yüklenmedi
 
 - Neden: 2.0.29'da deneme açan 12 gerçek aileden 7'si toplam 1 dakikanın altında oynamış, kimse ikinci gün oynamamış; tur bitince oyun 5-15 sn içinde konu menüsüne dönüyordu, yarıda kapatılan oyunların süresi buluta hiç gitmiyordu, hatırlatma yoktu.

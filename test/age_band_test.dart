@@ -230,9 +230,14 @@ void main() {
       await state.setAgeLevelShift(0);
       expect(state.ageBand, AgeBand.explore);
       expect(state.activeSurvey.containsKey('ageLevelShift'), isFalse);
-      // A band never unlocks premium: Zor stays locked for a free profile.
+      // A band never unlocks premium: a paid game stays locked on Zor for a
+      // free profile, while the free cards are open on every tier.
       await state.setAgeLevelShift(1);
-      expect(state.canPlay('animals', 'G01', Difficulty.hard), isFalse);
+      expect(state.canPlay('animals', 'G10', Difficulty.hard), isFalse);
+      for (final tier in Difficulty.values) {
+        expect(state.canPlay('animals', 'G01', tier), isTrue);
+        expect(state.canPlay('animals', 'G02', tier), isTrue);
+      }
     },
   );
 }
