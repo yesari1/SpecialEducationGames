@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 3 Kasım 2026 — Hesapsız kurulumların oyun süresi admin panelinde — sürüm 2.0.39 (53)
+
+- Neden: oyun süresi yalnız hesaplı ailelerin günlük özetleriyle buluta gidiyordu; "Giriş yapmadan devam" diyenlerin süresi panelde hiç görünmüyordu (Yunus, 3 Kasım).
+- `AppState.reportPlayTime`: her oyun bitişinde ve oyundan çıkışta (`finishSession`, `suspendSession`) cihazdaki tüm bitmiş turlardan `playMs` (toplam), `playDays` (oynanan gün), `todayMs` ve `playDate` hesaplanıp `funnel/{installId}` kaydına yazılır. Adım damgalarından ayrı yazılır, hata sessizdir; hesaplı eşitleme değişmedi.
+- Kurallar: `funnel` belgesine bu dört alan (tür ve sınır kontrollü) eklendi; kural testleri 20/20. Admin paneli (seg-admin c70a263) hesapsız satırlarda bugünkü süre, oynadığı gün ve Oynayan filtresini bu alanlardan gösterir.
+- Testler: 293 geçti, 1 hata önceden bilinen `entitlement_trial_test` parent gate testi.
+
 ## 1 Kasım 2026 — Ücretsiz oyunlar her seviyede — sürüm 2.0.38 (52), yüklenmedi
 
 - Neden: 4 yaş ve üstü ücretsiz kullanıcı konu sayfasını Orta'da açıyor, ücretsiz kartlar yalnız Kolay'da açık olduğu için tüm oyunları kilitli görüyordu.

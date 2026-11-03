@@ -333,6 +333,44 @@ class AppState extends ChangeNotifier {
     } catch (_) {}
   }
 
+  /// Play time on this install (all profiles, signed in or not) for the
+  /// admin page: total, days played, today's time and its date. Rewritten
+  /// after each game; kept out of [funnelStep] so a rejected write never
+  /// holds back a step stamp. Failures are silent.
+  Future<void> reportPlayTime() async {
+    if (!_funnelOn) return;
+    try {
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      final id = await _ensureInstallId();
+      final ended = await (db.select(
+        db.gameSessions,
+      )..where((t) => t.endedAt.isNotNull())).get();
+      String day(DateTime d) {
+        final l = d.toLocal();
+        return '${l.year.toString().padLeft(4, '0')}-'
+            '${l.month.toString().padLeft(2, '0')}-'
+            '${l.day.toString().padLeft(2, '0')}';
+      }
+
+      final today = day(DateTime.now());
+      var total = 0, todayMs = 0;
+      final days = <String>{};
+      for (final s in ended) {
+        if (s.activeMs <= 0) continue;
+        final d = day(s.endedAt!);
+        total += s.activeMs;
+        days.add(d);
+        if (d == today) todayMs += s.activeMs;
+      }
+      await adminLink.funnel(id, {
+        'playMs': total.clamp(0, 1000000000),
+        'playDays': days.length.clamp(0, 10000),
+        'todayMs': todayMs.clamp(0, 86400000),
+        'playDate': today,
+      });
+    } catch (_) {}
+  }
+
   /// Device QA only: `--dart-define=SHOW_ASKS=true` shows the survey and
   /// rating cards at once in debug/profile builds (never in release).
   static const _qaAsks = !kReleaseMode && bool.fromEnvironment('SHOW_ASKS');
@@ -1278,6 +1316,7 @@ class AppState extends ChangeNotifier {
     );
     await refreshTrials();
     autoSync.request();
+    unawaited(reportPlayTime());
   }
 
   /// The database keeps whole seconds; rounding the end up keeps the active
@@ -1330,6 +1369,7 @@ class AppState extends ChangeNotifier {
     );
     await refreshTrials();
     unawaited(autoSync.run());
+    unawaited(reportPlayTime());
   }
 
   Future<void> resumeSession(String id) async {

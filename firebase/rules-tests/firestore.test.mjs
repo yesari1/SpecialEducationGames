@@ -242,6 +242,13 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{obChildAt:serverTimestamp(),obFavoriteAt:serverTimestamp(),obKnownAt:serverTimestamp(),freeAt:serverTimestamp(),firstGameAt:serverTimestamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{firstGameAt:serverTimestamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{uid:'alice'},{merge:true}));
+  const play={playMs:125000,playDays:2,todayMs:65000,playDate:'2026-11-03'};
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),play,{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{...play,playMs:190000,todayMs:130000},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{playMs:-1},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{playDays:1.5},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{todayMs:86400001},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{playDate:'3 Kas'},{merge:true}));
   await assertFails(getDoc(doc(anon,`funnel/${id}`)));
   await assertFails(getDocs(collection(db('alice'),'funnel')));
   await assertSucceeds(getDocs(collection(db('admin'),'funnel')));
