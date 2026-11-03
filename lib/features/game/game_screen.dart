@@ -763,30 +763,26 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       );
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
-        if (!s.sound) {
-          if (_nextRoute != null) _countdown.value = true;
-          return;
+        // The next game's ring starts filling at once; applause and the
+        // sentence play together and are over well before it closes
+        // (Yunus, 3 November 2026).
+        if (_nextRoute != null) {
+          endTimer?.cancel();
+          _countdown.value = true;
         }
-        s.audio
-            .playSequence([
-              if (s.celebration != 'off') 'assets/sfx/ui/applause.mp3',
-              successSentenceCue(s.locale),
-            ])
-            .whenComplete(() {
-              if (!mounted || token != _celebration) return;
-              // The next game's ring starts filling once the praise is over.
-              if (_nextRoute != null) {
-                endTimer?.cancel();
-                _countdown.value = true;
-                return;
-              }
-              // Stay a few seconds after the praise before going back.
-              if (endTimer == null) return;
-              endTimer!.cancel();
-              endTimer = Timer(_afterPraise, () {
-                if (mounted) back();
-              });
-            });
+        if (!s.sound) return;
+        if (s.celebration != 'off') {
+          unawaited(s.audio.effect('assets/sfx/ui/applause.mp3'));
+        }
+        s.audio.playSequence([successSentenceCue(s.locale)]).whenComplete(() {
+          if (!mounted || token != _celebration || _nextRoute != null) return;
+          // Stay a few seconds after the praise before going back.
+          if (endTimer == null) return;
+          endTimer!.cancel();
+          endTimer = Timer(_afterPraise, () {
+            if (mounted) back();
+          });
+        });
       });
     }
     final theme = s.content.theme(widget.themeId);
@@ -915,6 +911,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             running: _countdown,
             animate:
                 !(s.reducedMotion || MediaQuery.disableAnimationsOf(context)),
+            duration: const Duration(seconds: 5),
             onNext: _goNext,
           )
         else
