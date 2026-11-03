@@ -684,14 +684,14 @@
         "license": "Pixabay Content License",
         "licenseUrl": "https://pixabay.com/service/license-summary/",
         "adaptationLicense": "Pixabay Content License",
-        "changes": "One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), turned 30 degrees so it fills the square card; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing. Replaces the earlier Commons photo (Yunus, 3 November 2026).",
+        "changes": "One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), alpha edge hardened (threshold and 1 px erode) so the white outline is crisp like the other photos; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing. Replaces the earlier Commons photo (Yunus, 3 November 2026).",
         "id": "produce.cucumber",
         "path": "assets/images/produce/cucumber_real.png",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-11-03",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "23e7f2fdc2720bbceffd2c242c2d0dd3d385401588d47677fc9bd2bf49ce888f"
+        "sha256": "1bb1f491770edb47da799e5b0fba66da187a8f9fcebe1086e58a2308ea90e20a"
       }
     },
     "whichAudio": {

@@ -412,9 +412,9 @@ File: `assets/images/produce/cucumber_real.png`
 Photo author: Pavlofox (Pixabay)
 Source: https://pixabay.com/photos/cucumber-green-vegetable-long-845953/
 Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
-Changes: One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), turned 30 degrees so it fills the square card; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+Changes: One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), alpha edge hardened (threshold and 1 px erode) so the white outline is crisp like the other photos; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
 Original SHA-256: `b397a79ef7f66e2f92ff01c484cb9e4b58495c9e4487e3867367df8776d97492`.
-Adapted PNG SHA-256: `23e7f2fdc2720bbceffd2c242c2d0dd3d385401588d47677fc9bd2bf49ce888f`.
+Adapted PNG SHA-256: `1bb1f491770edb47da799e5b0fba66da187a8f9fcebe1086e58a2308ea90e20a`.
 Attempt folder: `artifacts/cucumber-r1/`. Replaces the earlier Commons photo (Yunus, 3 November 2026).
 
 ## produce.mandarin
