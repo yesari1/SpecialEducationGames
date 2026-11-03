@@ -633,7 +633,7 @@
       "path": "assets/audio/tr/produce/banana_selected.mp3",
       "text": "Muz.",
       "voiceId": "uvU9jrgGLWNPeNA4NgNT",
-      "modelId": "eleven_multilingual_v2",
+      "modelId": "eleven_turbo_v2_5",
       "voiceSettings": {
         "stability": 0.35,
         "similarity_boost": 0.75,
@@ -650,8 +650,8 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "1af9dc82fc8373f80f6f98c8061ca6dca616c30f69f399be0f80e7bccc540350",
-      "source": "artifacts/voice_samples_selected/tr_banana.mp3",
+      "sha256": "cbc0be9430051fe1690f14a39357b80cb750a9de14c8ff71cea8b205ef704809",
+      "source": "artifacts/voice-review-2026-11-03/kelimeler/Muz_2.mp3",
       "validation": {
         "duration_seconds": 0.789478,
         "streams": [

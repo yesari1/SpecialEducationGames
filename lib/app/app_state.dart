@@ -499,6 +499,10 @@ class AppState extends ChangeNotifier {
   bool _disposed = false;
   int _refreshGeneration = 0;
   void enterGame() => _activeGames++;
+
+  /// True while a game screen is open (another one may have opened before
+  /// the previous one is disposed).
+  bool get inGame => _activeGames > 0;
   void leaveGame() {
     _activeGames = (_activeGames - 1).clamp(0, 100);
     scheduleMicrotask(() {

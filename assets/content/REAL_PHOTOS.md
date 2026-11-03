@@ -409,13 +409,13 @@ Replaces the earlier small red sedan photo (kept on disk). Attempt folders: `art
 ## produce.cucumber
 
 File: `assets/images/produce/cucumber_real.png`
-Photo author: Tiia Monto
-Source: https://commons.wikimedia.org/wiki/File:Mini_cucumber.png
-License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0
-Changes: Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.
-Original SHA-256: `c83dbca9ec042b704180e88ac56aee5c46ab52aaa286b0a884345c703c79c7ad`.
-Adapted PNG SHA-256: `f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e`.
-Attempt folder: `artifacts/produce-photos-attempt-r32-01/`. Local technical review only; final human approval pending.
+Photo author: Pavlofox (Pixabay)
+Source: https://pixabay.com/photos/cucumber-green-vegetable-long-845953/
+Source and adaptation license: Pixabay Content License - https://pixabay.com/service/license-summary/
+Changes: One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), turned 30 degrees so it fills the square card; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. No generative editing.
+Original SHA-256: `b397a79ef7f66e2f92ff01c484cb9e4b58495c9e4487e3867367df8776d97492`.
+Adapted PNG SHA-256: `23e7f2fdc2720bbceffd2c242c2d0dd3d385401588d47677fc9bd2bf49ce888f`.
+Attempt folder: `artifacts/cucumber-r1/`. Replaces the earlier Commons photo (Yunus, 3 November 2026).
 
 ## produce.mandarin
 

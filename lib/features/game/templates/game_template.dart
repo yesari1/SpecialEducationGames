@@ -67,6 +67,19 @@ String praiseCue(String locale, {Random? random}) {
 }
 
 const praiseCount = 10;
+
+/// One of five short spoken sentences for a finished game ("Harika,
+/// başardın!"), never the same one twice in a row (Yunus, 3 November 2026).
+String successSentenceCue(String locale, {Random? random}) {
+  final pick = random ?? _praiseRandom;
+  var n = 1 + pick.nextInt(successSentenceCount);
+  if (n == _lastSuccess) n = n % successSentenceCount + 1;
+  _lastSuccess = n;
+  return 'assets/audio/$locale/success/success_$n.mp3';
+}
+
+const successSentenceCount = 5;
+int? _lastSuccess;
 final _praiseRandom = Random();
 int _lastPraise = 0;
 

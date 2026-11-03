@@ -185,7 +185,7 @@
         "path": "assets/audio/tr/produce/banana_selected.mp3",
         "text": "Muz.",
         "voiceId": "uvU9jrgGLWNPeNA4NgNT",
-        "modelId": "eleven_multilingual_v2",
+        "modelId": "eleven_turbo_v2_5",
         "voiceSettings": {
           "stability": 0.35,
           "similarity_boost": 0.75,
@@ -202,8 +202,8 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "1af9dc82fc8373f80f6f98c8061ca6dca616c30f69f399be0f80e7bccc540350",
-        "source": "artifacts/voice_samples_selected/tr_banana.mp3",
+        "sha256": "cbc0be9430051fe1690f14a39357b80cb750a9de14c8ff71cea8b205ef704809",
+        "source": "artifacts/voice-review-2026-11-03/kelimeler/Muz_2.mp3",
         "validation": {
           "duration_seconds": 0.789478,
           "streams": [
@@ -677,20 +677,21 @@
     "sfx": null,
     "imageProvenance": {
       "assets/images/produce/cucumber_real.png": {
-        "author": "Tiia Monto",
-        "source": "https://commons.wikimedia.org/wiki/File:Mini_cucumber.png",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
+        "author": "Pavlofox (Pixabay)",
+        "source": "https://pixabay.com/photos/cucumber-green-vegetable-long-845953/",
+        "original": "artifacts/cucumber-r1/large_23_845953.jpg",
+        "originalSha256": "b397a79ef7f66e2f92ff01c484cb9e4b58495c9e4487e3867367df8776d97492",
+        "license": "Pixabay Content License",
+        "licenseUrl": "https://pixabay.com/service/license-summary/",
+        "adaptationLicense": "Pixabay Content License",
+        "changes": "One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), turned 30 degrees so it fills the square card; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing. Replaces the earlier Commons photo (Yunus, 3 November 2026).",
         "id": "produce.cucumber",
         "path": "assets/images/produce/cucumber_real.png",
         "licenseVerified": true,
-        "licenseVerifiedOn": "2026-10-20",
-        "adaptationLicense": "CC BY-SA 4.0",
-        "processing": "tools/adapt_cutout_photo.py",
+        "licenseVerifiedOn": "2026-11-03",
+        "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "originalSha256": "c83dbca9ec042b704180e88ac56aee5c46ab52aaa286b0a884345c703c79c7ad",
-        "sha256": "f4d78932512b3c212987b13fc0f871da9ce1b03abc6104c91ba2af64e844f29e"
+        "sha256": "23e7f2fdc2720bbceffd2c242c2d0dd3d385401588d47677fc9bd2bf49ce888f"
       }
     },
     "whichAudio": {
