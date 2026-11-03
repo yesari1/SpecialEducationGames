@@ -20,6 +20,7 @@ class _FakeRecords implements FamilyRecordStore {
     String? email,
     String? appVersion,
     String? plan,
+    String? fcmToken,
   }) async {
     if (fail) throw StateError('offline');
     calls.add({'uid': uid, 'locale': locale, 'email': email, 'plan': plan});

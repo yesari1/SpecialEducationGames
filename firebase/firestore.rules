@@ -92,7 +92,11 @@ service cloud.firestore {
     function funnelDoc() {
       let d = request.resource.data;
       return d.keys().hasAll(['installedAt', 'platform'])
-        && d.keys().hasOnly(['installedAt', 'obChildAt', 'obFavoriteAt', 'obKnownAt', 'onboardingAt', 'signedInAt', 'paywallAt', 'freeAt', 'trialAt', 'purchasedAt', 'firstGameAt', 'platform', 'appVersion', 'locale', 'playMs', 'playDays', 'todayMs', 'playDate'])
+        && d.keys().hasOnly(['installedAt', 'obChildAt', 'obFavoriteAt', 'obKnownAt', 'onboardingAt', 'signedInAt', 'paywallAt', 'freeAt', 'trialAt', 'purchasedAt', 'firstGameAt', 'reminderYesAt', 'reminderNoAt', 'platform', 'appVersion', 'locale', 'playMs', 'playDays', 'todayMs', 'playDate', 'fcmToken', 'uninstalledAt'])
+        // The push address of this install; `uninstalledAt` only by the worker (kept as is).
+        && (!('fcmToken' in d) || (d.fcmToken is string && d.fcmToken.size() > 0 && d.fcmToken.size() <= 512))
+        && ((resource == null && !('uninstalledAt' in d))
+          || (resource != null && d.get('uninstalledAt', null) == resource.data.get('uninstalledAt', null)))
         && d.platform in ['android', 'ios']
         // Play time on this install (also without an account), rewritten after each game.
         && (!('playMs' in d) || (d.playMs is int && d.playMs >= 0 && d.playMs <= 1000000000))
@@ -104,7 +108,8 @@ service cloud.firestore {
         && step('installedAt') && step('onboardingAt') && step('signedInAt')
         && step('paywallAt') && step('trialAt') && step('purchasedAt')
         && step('obChildAt') && step('obFavoriteAt') && step('obKnownAt')
-        && step('freeAt') && step('firstGameAt');
+        && step('freeAt') && step('firstGameAt')
+        && step('reminderYesAt') && step('reminderNoAt');
     }
     match /funnel/{installId} {
       allow list: if admin();
@@ -147,6 +152,19 @@ service cloud.firestore {
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
         && request.resource.data.status in ['new', 'read', 'done'];
     }
+    // Push notifications and e-mails written on the admin page; the
+    // seg-notify worker (service account) sends them and fills the results.
+    // `unsubscribes/{uid}` is written by the worker's unsubscribe link.
+    match /campaigns/{id} {
+      allow read, write: if admin();
+    }
+    match /emails/{id} {
+      allow read, write: if admin();
+    }
+    match /unsubscribes/{uid} {
+      allow read, delete: if admin();
+      allow write: if false;
+    }
     match /admins/{uid} {
       allow get: if owner(uid);
       allow list, write: if false;
@@ -155,7 +173,10 @@ service cloud.firestore {
       allow read, delete: if ownerOrAdmin(uid);
       allow create, update: if canWriteFamily(uid)
         && request.resource.data.keys().hasAll(['createdAt', 'locale', 'updatedAt'])
-        && request.resource.data.keys().hasOnly(['createdAt', 'locale', 'updatedAt', 'email', 'plan', 'lastSeenAt', 'appVersion'])
+        && request.resource.data.keys().hasOnly(['createdAt', 'locale', 'updatedAt', 'email', 'plan', 'lastSeenAt', 'appVersion', 'fcmToken', 'uninstalledAt'])
+        && (!('fcmToken' in request.resource.data) || (request.resource.data.fcmToken is string && request.resource.data.fcmToken.size() > 0 && request.resource.data.fcmToken.size() <= 512))
+        // `uninstalledAt` is set only by the seg-notify worker; clients keep it as it is.
+        && request.resource.data.get('uninstalledAt', null) == (resource == null ? null : resource.data.get('uninstalledAt', null))
         && (!('email' in request.resource.data) || request.resource.data.email == request.auth.token.email)
         && (!('plan' in request.resource.data) || request.resource.data.plan in ['free', 'trial', 'monthly', 'yearly', 'lifetime', 'granted'])
         && (!('lastSeenAt' in request.resource.data) || stamp(request.resource.data.lastSeenAt))

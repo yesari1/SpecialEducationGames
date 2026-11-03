@@ -12,6 +12,7 @@ import '../core/entitlement/billing_repository.dart';
 import '../core/entitlement/trial_store.dart';
 import '../core/sync/auto_summary_sync.dart';
 import '../core/sync/admin_link.dart';
+import '../core/sync/push_messages.dart';
 import '../core/sync/child_profiles.dart';
 import '../core/sync/family_record.dart';
 import 'app_version.dart';
@@ -215,6 +216,7 @@ class AppState extends ChangeNotifier {
         email: email,
         appVersion: appVersion,
         plan: entitlement.planName,
+        fcmToken: await db.preference('funnel.fcmToken'),
       );
     } catch (_) {
       // Offline or not configured: the next sign-in tries again.
@@ -302,6 +304,31 @@ class AppState extends ChangeNotifier {
           await funnelStep(step);
         }
       }
+      unawaited(_reportPushToken());
+    } catch (_) {}
+  }
+
+  /// Sends this install's push address to its funnel record (when it is new
+  /// or changed) so the admin page can reach it. Failures are silent.
+  Future<void> _reportPushToken() async {
+    try {
+      await PushMessages.listen(
+        onToken: (token) => unawaited(_sendPushToken(token)),
+        channelName: tr('Duyurular', 'Announcements'),
+      );
+      final token = await PushMessages.token();
+      if (token != null) await _sendPushToken(token);
+    } catch (_) {}
+  }
+
+  Future<void> _sendPushToken(String token) async {
+    try {
+      if (token.isEmpty || token.length > 512) return;
+      if (await db.preference('funnel.fcmToken') == token) return;
+      await adminLink.funnel(await _ensureInstallId(), {'fcmToken': token});
+      await db.setPreference('funnel.fcmToken', token);
+      final uid = accountUid;
+      if (uid != null) await recordFamily(uid, null);
     } catch (_) {}
   }
 
@@ -316,6 +343,8 @@ class AppState extends ChangeNotifier {
     'trial',
     'purchased',
     'firstGame',
+    'reminderYes',
+    'reminderNo',
   ];
 
   /// Stamps `<step>At` once ([_funnelSteps]); the rules reject a second
@@ -905,6 +934,7 @@ class AppState extends ChangeNotifier {
   Future<void> answerReminderOffer(bool yes) async {
     await db.setPreference('reminder.asked', 'true');
     await db.setPreference('reminder.on', '$yes');
+    unawaited(funnelStep(yes ? 'reminderYes' : 'reminderNo'));
     if (!yes) return;
     await reminder.requestPermission();
     await refreshReminder();

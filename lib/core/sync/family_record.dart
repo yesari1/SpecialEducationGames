@@ -14,6 +14,7 @@ abstract interface class FamilyRecordStore {
     String? email,
     String? appVersion,
     String? plan,
+    String? fcmToken,
   });
 
   /// The plan last written for [uid] (another device may have bought it).
@@ -46,6 +47,7 @@ class FirestoreFamilyRecordStore implements FamilyRecordStore {
     String? email,
     String? appVersion,
     String? plan,
+    String? fcmToken,
   }) async {
     if (firestore == null && Firebase.apps.isEmpty) return;
     final user = (auth ?? FirebaseAuth.instance).currentUser;
@@ -71,5 +73,14 @@ class FirestoreFamilyRecordStore implements FamilyRecordStore {
           }, SetOptions(merge: true));
         })
         .timeout(const Duration(seconds: 15));
+    // This phone's push address, for messages from the admin page. A
+    // separate write, so a rejection never holds back the rest.
+    if (fcmToken != null) {
+      try {
+        await ref
+            .set({'fcmToken': fcmToken}, SetOptions(merge: true))
+            .timeout(const Duration(seconds: 15));
+      } catch (_) {}
+    }
   }
 }

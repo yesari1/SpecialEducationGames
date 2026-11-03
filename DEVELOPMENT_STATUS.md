@@ -2,6 +2,13 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 3 Kasım 2026 — Bildirim cevabı, anlık bildirim adresi — sürüm 2.0.40 (54)
+
+- Bildirim teklifine Evet/Şimdi değil cevabı `funnel` kaydına `reminderYesAt`/`reminderNoAt` olarak bir kez yazılır.
+- `firebase_messaging` 15.2.10: açılışta telefonun bildirim adresi (FCM token) kurulum kaydına (`funnel.fcmToken`), giriş yapılmışsa hesap kaydına da (`families.fcmToken`) yazılır; ayrı yazımlar, hata sessiz. Uygulama açıkken gelen bildirim `PushMessages` ile gösterilir (kanal Duyurular). Kurulum kaydı ile hesap birbirine bağlanmaz.
+- Gönderim: Cloudflare Worker `D:\_WebProjects\seg-notify` (planlı bildirim, Resend ile mail + abonelikten çıkma, günlük silme kontrolü `uninstalledAt`). Kurallar: `campaigns`, `emails` (admin), `unsubscribes` (admin okur, yalnız worker yazar). Admin paneli seg-admin 781ff90.
+- Testler: kural testleri 20/20; uygulama 293 geçti, 1 hata önceden bilinen `entitlement_trial_test`.
+
 ## 3 Kasım 2026 — Hesapsız kurulumların oyun süresi admin panelinde — sürüm 2.0.39 (53)
 
 - Neden: oyun süresi yalnız hesaplı ailelerin günlük özetleriyle buluta gidiyordu; "Giriş yapmadan devam" diyenlerin süresi panelde hiç görünmüyordu (Yunus, 3 Kasım).

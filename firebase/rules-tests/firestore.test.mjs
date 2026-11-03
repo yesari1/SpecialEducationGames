@@ -228,6 +228,10 @@ test('family document accepts plan, lastSeenAt and appVersion',async () => {
   await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{...family,plan:'trial',lastSeenAt:stamp(),appVersion:'2.0.21+35'}));
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,plan:'gold'}));
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,lastSeenAt:'today'}));
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{...family,fcmToken:'tok:abc'}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,fcmToken:''}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,uninstalledAt:stamp()}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,installId:'a1b2c3d4-e5f6-4711-8899-aabbccddeeff'}));
 });
 
 test('funnel: anonymous install doc, each step stamped once, admin-only listing',async () => {
@@ -241,6 +245,9 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{onboardingAt:serverTimestamp()},{merge:true}));
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{obChildAt:serverTimestamp(),obFavoriteAt:serverTimestamp(),obKnownAt:serverTimestamp(),freeAt:serverTimestamp(),firstGameAt:serverTimestamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{firstGameAt:serverTimestamp()},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{reminderYesAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{reminderYesAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{reminderNoAt:stamp()},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{uid:'alice'},{merge:true}));
   const play={playMs:125000,playDays:2,todayMs:65000,playDate:'2026-11-03'};
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),play,{merge:true}));
@@ -249,6 +256,16 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{playDays:1.5},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{todayMs:86400001},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{playDate:'3 Kas'},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{fcmToken:'tok:abc'},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{fcmToken:'tok:def'},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{fcmToken:''},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{uninstalledAt:serverTimestamp()},{merge:true}));
+  await assertFails(getDocs(collection(anon,'campaigns')));
+  await assertFails(setDoc(doc(db('alice'),'campaigns/c1'),{title:'x'}));
+  await assertSucceeds(setDoc(doc(db('admin'),'campaigns/c1'),{title:'x'}));
+  await assertSucceeds(setDoc(doc(db('admin'),'emails/e1'),{subject:'x'}));
+  await assertFails(setDoc(doc(db('admin'),'unsubscribes/alice'),{at:serverTimestamp()}));
+  await assertSucceeds(getDocs(collection(db('admin'),'unsubscribes')));
   await assertFails(getDoc(doc(anon,`funnel/${id}`)));
   await assertFails(getDocs(collection(db('alice'),'funnel')));
   await assertSucceeds(getDocs(collection(db('admin'),'funnel')));
