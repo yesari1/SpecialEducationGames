@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
+import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' show Locale, WidgetsBinding;
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:drift/drift.dart';
 import '../core/content/content_repository.dart';
 import '../core/db/app_database.dart';
@@ -217,6 +219,7 @@ class AppState extends ChangeNotifier {
         appVersion: appVersion,
         plan: entitlement.planName,
         fcmToken: await db.preference('funnel.fcmToken'),
+        deviceModel: await _deviceModel(),
       );
     } catch (_) {
       // Offline or not configured: the next sign-in tries again.
@@ -305,6 +308,40 @@ class AppState extends ChangeNotifier {
         }
       }
       unawaited(_reportPushToken());
+      unawaited(_reportDeviceModel());
+    } catch (_) {}
+  }
+
+  String? _model;
+
+  /// The phone's maker and model ("Google Pixel 9a") for the admin page;
+  /// null off Android or when it cannot be read.
+  Future<String?> _deviceModel() async {
+    if (_model != null) return _model;
+    if (kIsWeb || !Platform.isAndroid) return null;
+    try {
+      final info = await DeviceInfoPlugin().androidInfo;
+      final maker = info.manufacturer.trim();
+      final model = info.model.trim();
+      final both = model.toLowerCase().startsWith(maker.toLowerCase())
+          ? model
+          : '${maker.isEmpty ? '' : '${maker[0].toUpperCase()}${maker.substring(1)} '}$model';
+      final value = both.trim();
+      if (value.isEmpty) return null;
+      return _model = value.length > 64 ? value.substring(0, 64) : value;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// The phone model on the install record, once (again if it changed).
+  Future<void> _reportDeviceModel() async {
+    try {
+      final model = await _deviceModel();
+      if (model == null) return;
+      if (await db.preference('funnel.deviceModel') == model) return;
+      await adminLink.funnel(await _ensureInstallId(), {'deviceModel': model});
+      await db.setPreference('funnel.deviceModel', model);
     } catch (_) {}
   }
 

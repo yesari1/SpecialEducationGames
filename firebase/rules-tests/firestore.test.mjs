@@ -230,6 +230,8 @@ test('family document accepts plan, lastSeenAt and appVersion',async () => {
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,lastSeenAt:'today'}));
   await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{...family,fcmToken:'tok:abc'}));
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,fcmToken:''}));
+  await assertSucceeds(setDoc(doc(db('alice'),'families/alice'),{...family,deviceModel:'Samsung SM-A546E'}));
+  await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,deviceModel:7}));
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,uninstalledAt:stamp()}));
   await assertFails(setDoc(doc(db('alice'),'families/alice'),{...family,installId:'a1b2c3d4-e5f6-4711-8899-aabbccddeeff'}));
 });
@@ -259,6 +261,8 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{fcmToken:'tok:abc'},{merge:true}));
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{fcmToken:'tok:def'},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{fcmToken:''},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{deviceModel:'Google Pixel 9a'},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{deviceModel:'x'.repeat(65)},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{uninstalledAt:serverTimestamp()},{merge:true}));
   await assertFails(getDocs(collection(anon,'campaigns')));
   await assertFails(setDoc(doc(db('alice'),'campaigns/c1'),{title:'x'}));
