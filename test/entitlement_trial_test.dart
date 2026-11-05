@@ -168,12 +168,12 @@ void main() {
     });
 
     test('starting needs the parent gate and unlocks premium games', () async {
-      expect(state.canPlay('animals', 'G10', Difficulty.hard), isFalse);
+      expect(state.canPlay('animals', 'G14', Difficulty.hard), isFalse);
       await expectLater(state.startTrial('parent-1'), throwsStateError);
       state.unlockFamily();
       expect(await state.startTrial('parent-1'), isTrue);
       expect(state.entitlement.source, PremiumSource.trial);
-      expect(state.canPlay('animals', 'G10', Difficulty.hard), isTrue);
+      expect(state.canPlay('animals', 'G14', Difficulty.hard), isTrue);
     });
 
     test('the same account cannot start a second trial', () async {

@@ -1332,7 +1332,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallFreeTier =>
-      'Her temada Öğren ve bir oyun her zaman ücretsiz.';
+      'Her temada Öğren ve iki oyun her zaman ücretsiz.';
 
   @override
   String get paywallLifetime => 'Tek seferlik';
@@ -1476,7 +1476,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get welcomeFreeAfter =>
-      'Sonrasında her temada Öğren ve bir oyun hep ücretsiz.';
+      'Sonrasında her temada Öğren ve iki oyun hep ücretsiz.';
 
   @override
   String get paywallEveryMonth => 'her ay';

@@ -2,7 +2,7 @@
 
 ## Uygulamada ne var
 
-- **Ücretsiz sürüm:** hesap gerekmez. Her temada Öğren kartı ve bir oyun (Yunus, 21 Ekim 2026) Kolay seviyede her zaman açık; liste Firestore `config/app.freeGames` ile değiştirilebilir. Orta ve Zor seviyeler ile diğer oyunlar Premium.
+- **Ücretsiz sürüm:** hesap gerekmez. Her temada Öğren kartı ve iki oyun (Yunus, 5 Kasım 2026; önce bir oyundu) tüm seviyelerde her zaman açık; liste Firestore `config/app.freeGames` ile değiştirilebilir. Orta ve Zor seviyeler ile diğer oyunlar Premium.
 - **Ücretsiz deneme:** Google hesabı başına bir kez, ödeme bilgisi istenmeden, `config/app.trialDays` gün (varsayılan 7). Ebeveyn alanında Premium sayfasında: "Google ile giriş yap ve başla". Başlangıç zamanı sunucuda `trials/{uid}` belgesinde tutulur (yalnız `startedAt`, sunucu saati). Uygulama silinip kurulsa da ya da başka cihazda aynı hesapla tekrar başlatılamaz. Süre bitince profil otomatik olarak ücretsiz sürüme döner.
 - **Satın alma (Google Play Billing):**
   - Abonelik `premium`, temel planlar `monthly` ve `yearly`.
@@ -63,7 +63,7 @@
    firebase deploy --only firestore:rules --project specialeducationgames
    ```
 
-6. **İsteğe bağlı:** Firestore'da `config/app` belgesini oluşturun. Örnek alanlar: `trialDays: 7`, `privacyUrl: "https://..."`, `termsUrl: "https://..."`, `freeGames: [...her temada Öğren + bir oyun...]`. Konsoldan elle yazılabilir; yazma yalnız `admins/{uid}` belgesi olan hesaplara açık, konsol bu kurala takılmaz.
+6. **İsteğe bağlı:** Firestore'da `config/app` belgesini oluşturun. Örnek alanlar: `trialDays: 7`, `privacyUrl: "https://..."`, `termsUrl: "https://..."`, `freeGames: [...her temada Öğren + bir veya iki oyun...]`. Konsoldan elle yazılabilir; yazma yalnız `admins/{uid}` belgesi olan hesaplara açık, konsol bu kurala takılmaz.
 
 ### 2. Play Console
 

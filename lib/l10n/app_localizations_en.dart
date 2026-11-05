@@ -1328,7 +1328,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallFreeTier =>
-      'Learn and one game in every theme are always free.';
+      'Learn and two games in every theme are always free.';
 
   @override
   String get paywallLifetime => 'One-time';
@@ -1471,7 +1471,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeFreeAfter =>
-      'Afterwards, Learn and one game in every theme stay free.';
+      'Afterwards, Learn and two games in every theme stay free.';
 
   @override
   String get paywallEveryMonth => 'every month';

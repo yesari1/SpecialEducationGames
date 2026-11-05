@@ -12,7 +12,7 @@ Türkçe ve İngilizce, ebeveyn ayarlı çevrimdışı öğrenme oyunları.
 Özel Eğitim Oyunları, çocukların resim ve seçenekler arasından yanıt verdiği kısa öğrenme oyunları sunar. Desteklenen içerikler cihazda bulunduğunda, oyunların temel akışı internet bağlantısı olmadan kullanılabilir.
 
 - Hayvanlar, meyve-sebzeler, renkler, sayılar ve taşıtlar gibi mevcut içerik gruplarında oyun oynayın.
-- Her temada Öğren ve bir oyun her zaman ücretsiz; uygulamanın sunduğu içerik ve özellikler sürüme göre değişebilir.
+- Her temada Öğren ve iki oyun her zaman ücretsiz; uygulamanın sunduğu içerik ve özellikler sürüme göre değişebilir.
 - Türkçe veya İngilizce kullanın. Uygulama yatay ekran düzeni için tasarlanmıştır.
 - Ebeveyn alanında yerel profil ve oyun tercihlerini yönetin; cihazda saklanan ilerleme özetlerini görüntüleyin.
 - Google ile aile hesabı kullanımı isteğe bağlıdır. Günlük özet eşitleme, ebeveyn onayı ve ayrıca başlatılan eşitleme eylemi gerektirir; bu özellik canlı ortamda doğrulanmamıştır.

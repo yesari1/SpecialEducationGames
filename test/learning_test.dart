@@ -220,14 +220,17 @@ void main() {
     expect(result.tapAlternative, true);
   });
   test(
-    'Content has the approved free cards (Learn + one game per theme) and unique IDs',
+    'Content has the approved free cards (Learn + two games per theme) and unique IDs',
     () async {
       final repo = await ContentRepository.load();
       expect(repo.freeGames, {
-        'animals_G02', 'animals_G01', 'produce_G02', 'produce_G01', //
-        'food_G02', 'food_G01', 'vehicles_G02', 'vehicles_G01', //
-        'colors_G02', 'colors_G01', 'shapes_G02', 'shapes_G01', //
-        'numbers_G02', 'numbers_G35',
+        'animals_G02', 'animals_G01', 'animals_G10', //
+        'produce_G02', 'produce_G01', 'produce_G14', //
+        'food_G02', 'food_G01', 'food_G14', //
+        'vehicles_G02', 'vehicles_G01', 'vehicles_G10', //
+        'colors_G02', 'colors_G01', 'colors_G14', //
+        'shapes_G02', 'shapes_G01', 'shapes_G14', //
+        'numbers_G02', 'numbers_G35', 'numbers_G10',
       });
       expect(repo.items.map((i) => i.id).toSet().length, repo.items.length);
       for (final theme in repo.themes) {

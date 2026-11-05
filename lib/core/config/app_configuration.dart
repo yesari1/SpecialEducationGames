@@ -64,7 +64,7 @@ class AppConfiguration {
       (t) => t.games.isNotEmpty && !hidden.contains(t.id),
     )) {
       final count = free.where((id) => id.startsWith('${theme.id}_')).length;
-      if (count < 1 || count > 2) return false;
+      if (count < 1 || count > 3) return false;
     }
     return true;
   }

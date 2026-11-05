@@ -1,5 +1,5 @@
 // Sets only `freeGames` in Firestore `config/app` to the list in
-// assets/config_defaults.json (Learn + one game per theme, 21 October 2026).
+// assets/config_defaults.json (Learn + two games per theme, 5 November 2026).
 // Every other field of the document stays as it is. Uses the logged-in
 // Firebase CLI account (never prints the token). The document must exist.
 //

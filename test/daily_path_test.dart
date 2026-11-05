@@ -219,14 +219,14 @@ void main() {
         'disabledGames': ['animals_G01'],
         'hiddenThemes': ['vehicles'],
       }, state.content);
-      // Five free games remain, the sixth step is a free Learn card.
+      // Enough free games remain for all six steps (two free games per theme).
       expect(state.dailyPathSteps, hasLength(6));
       expect(state.dailyPathSteps, isNot(contains('animals_G01')));
       expect(
         state.dailyPathSteps.where((key) => key.startsWith('vehicles_')),
         isEmpty,
       );
-      expect(state.dailyPathSteps.last, endsWith('_G02'));
+      expect(state.configuration.freeGames, containsAll(state.dailyPathSteps));
       await state.entitlement.confirmStoreState(true);
       expect(state.dailyPathSteps, hasLength(6));
       expect(

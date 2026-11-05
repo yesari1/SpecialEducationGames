@@ -62,7 +62,7 @@ void main() {
         Difficulty.medium,
       );
       expect(
-        state.recommendedDifficulty('animals', 'G10', Difficulty.easy),
+        state.recommendedDifficulty('animals', 'G14', Difficulty.easy),
         Difficulty.easy,
       );
       await state.entitlement.confirmStoreState(
