@@ -192,9 +192,11 @@ test('admin page: listed admin reads and deletes family data, others cannot',asy
   await assertSucceeds(getDocs(collectionGroup(admin,'progress')));
   await assertSucceeds(getDocs(collectionGroup(admin,'itemStats')));
   await assertSucceeds(getDoc(doc(admin,'families/alice')));
-  // Admin can delete data but never write it, and never touch trials/admins.
+  // Admin can delete data (a deleted user's trial too) but never write it or admins.
   await assertFails(setDoc(doc(admin,path),summary()));
-  await assertFails(deleteDoc(doc(admin,'trials/alice')));
+  await assertFails(setDoc(doc(admin,'trials/alice'),{startedAt:serverTimestamp()}));
+  await assertFails(updateDoc(doc(admin,'trials/alice'),{startedAt:serverTimestamp()}));
+  await assertSucceeds(deleteDoc(doc(admin,'trials/alice')));
   await assertFails(setDoc(doc(admin,'admins/bob'),{enabled:true}));
   await assertSucceeds(deleteDoc(doc(admin,path)));
   await assertSucceeds(deleteDoc(doc(admin,'families/alice/profiles/profile-1')));

@@ -58,14 +58,15 @@ service cloud.firestore {
     }
     // One free trial per Google account: the owner creates it once with the
     // server time; it is never changed or deleted by clients, so reinstalling
-    // or another device cannot restart it.
+    // or another device cannot restart it. Only an admin deleting the user
+    // removes it (the next sign-in then starts a fresh trial).
     match /trials/{uid} {
       allow get: if ownerOrAdmin(uid);
-      allow list: if admin();
+      allow list, delete: if admin();
       allow create: if owner(uid)
         && exact(request.resource.data, ['startedAt'])
         && request.resource.data.startedAt == request.time;
-      allow update, delete: if false;
+      allow update: if false;
     }
     // Set by an admin on the admin page: a package given to the account
     // (premium until a date, or for good) and `endTrial`, which ends the
