@@ -84,8 +84,32 @@ void main() {
     return router;
   }
 
-  /// After the lock step the profile is saved and the Premium offer shows;
-  /// continue with the free version.
+  /// After the goal the plan pages show: "Building the plan" moves on by
+  /// itself, the 7-day plan waits for its button. [check] runs on the plan.
+  Future<void> passPlan(
+    WidgetTester tester, [
+    Future<void> Function(String step)? check,
+  ]) async {
+    final building = find.byKey(const ValueKey('plan-building'));
+    // The profile is saved first (real database work).
+    for (var i = 0; i < 30 && building.evaluate().isEmpty; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await tester.pump();
+    }
+    if (building.evaluate().isNotEmpty) {
+      await tester.pump(const Duration(seconds: 3));
+    }
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('plan-ready-title')), findsOneWidget);
+    if (check != null) await check('plan ready');
+    await tester.tap(find.byKey(const ValueKey('plan-continue')));
+    await tester.pumpAndSettle();
+  }
+
+  /// After the plan pages the Premium offer shows; continue with the free
+  /// version.
   Future<void> passOffer(WidgetTester tester) async {
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 300)),
@@ -176,6 +200,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(state.profiles, hasLength(1));
     expect(state.familyUnlocked, isTrue);
+    await passPlan(tester);
     await passOffer(tester);
     // Saved profiles follow their own language setting (the test device's).
     expect(find.textContaining('Ada!'), findsOneWidget);
@@ -219,6 +244,7 @@ void main() {
       await tapKey(tester, 'onboarding-skip');
     }
     await tapKey(tester, 'onboarding-continue'); // goal (15 preselected)
+    await passPlan(tester);
     await passOffer(tester);
     await tapKey(tester, 'final-play');
     await tester.runAsync(
@@ -228,6 +254,93 @@ void main() {
     expect(state.profiles.single.nickname, 'Little explorer');
     expect(state.dailyGoalMinutes, 15);
     expect(state.hasParentPin, isFalse);
+  }, variant: _host);
+
+  testWidgets('goal leads to the plan pages, then the offer', (tester) async {
+    await loadFonts(tester);
+    final state = await buildState(tester);
+    addTearDown(state.dispose);
+    state.locale = 'tr';
+    await pumpOnboarding(tester, state);
+    await tapKey(tester, 'welcome-start');
+    await tester.enterText(find.byKey(const ValueKey('nickname-field')), 'Ada');
+    await tapKey(tester, 'age-4');
+    await tapKey(tester, 'onboarding-continue');
+    await tapKey(tester, 'survey-option-1'); // Taşıtlar
+    await tapKey(tester, 'onboarding-continue');
+    await tapKey(tester, 'onboarding-skip');
+    await tapKey(tester, 'goal-10');
+    await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
+
+    // Building the plan: the parent's answers, ticked one by one.
+    final building = find.byKey(const ValueKey('plan-building'));
+    for (var i = 0; i < 30 && building.evaluate().isEmpty; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await tester.pump();
+    }
+    expect(find.byKey(const ValueKey('plan-building-title')), findsOneWidget);
+    // Saved profiles follow their own language setting (the test device's).
+    expect(find.text('Level for ages 4–5 selected'), findsOneWidget);
+    expect(find.text('Favourite topics added: Vehicles'), findsOneWidget);
+    expect(find.text('Daily goal: 10 minutes'), findsOneWidget);
+    // After the page transition: no back button, nothing ticked yet.
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(find.byKey(const ValueKey('onboarding-back')), findsNothing);
+    expect(find.byKey(const ValueKey('plan-check')), findsNothing);
+    await tester.pump(const Duration(milliseconds: 1100));
+    expect(find.byKey(const ValueKey('plan-check')), findsWidgets);
+    expect(find.byKey(const ValueKey('plan-ready-title')), findsNothing);
+
+    // Moves on by itself after about three seconds.
+    await tester.pump(const Duration(milliseconds: 1600));
+    await tester.pumpAndSettle();
+    expect(find.text("Ada's 7-day plan is ready"), findsOneWidget);
+    for (var day = 1; day <= 7; day++) {
+      expect(find.byKey(ValueKey('plan-day-$day')), findsOneWidget);
+    }
+    expect(find.text('Day 1'), findsOneWidget);
+    // System Back does not leave the plan (the profile is saved).
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('plan-ready-title')), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('plan-continue')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('paywall-continue')), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    state.lockFamily(); // Ends the parent area's five-minute timer.
+  }, variant: _host);
+
+  testWidgets('reduced motion ticks every plan line at once', (tester) async {
+    await loadFonts(tester);
+    final state = await buildState(tester);
+    addTearDown(state.dispose);
+    state.locale = 'en';
+    tester.platformDispatcher.accessibilityFeaturesTestValue =
+        const FakeAccessibilityFeatures(disableAnimations: true);
+    addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
+    await pumpOnboarding(tester, state);
+    await tapKey(tester, 'welcome-start');
+    await tapKey(tester, 'onboarding-continue');
+    await tapKey(tester, 'onboarding-skip');
+    await tapKey(tester, 'onboarding-skip');
+    await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
+    final building = find.byKey(const ValueKey('plan-building'));
+    for (var i = 0; i < 30 && building.evaluate().isEmpty; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await tester.pump();
+    }
+    expect(find.byKey(const ValueKey('plan-check')), findsNWidgets(3));
+    expect(find.text('Starting level selected'), findsOneWidget);
+    expect(find.text('All topics added'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 3));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('plan-ready-title')), findsOneWidget);
+    state.lockFamily(); // Ends the parent area's five-minute timer.
   }, variant: _host);
 
   testWidgets('back returns through steps and keeps answers', (tester) async {
@@ -304,14 +417,14 @@ void main() {
         await tapKey(tester, 'welcome-start');
         await check('child');
         await tapKey(tester, 'onboarding-continue');
-        for (var i = 0; i < 4; i++) {
+        // First run asks two questions.
+        for (var i = 0; i < 2; i++) {
           await check('question $i');
           await tapKey(tester, 'onboarding-continue');
         }
         await check('goal');
         await tapKey(tester, 'onboarding-continue');
-        await check('lock');
-        await tapKey(tester, 'onboarding-continue');
+        await passPlan(tester, check);
         await passOffer(tester);
         await check('handoff');
         await tester.pumpWidget(const SizedBox.shrink());

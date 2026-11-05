@@ -1587,5 +1587,57 @@
   "familyMoreProfilesPremium": "More child profiles with Premium",
   "@familyMoreProfilesPremium": {
     "description": "Family area."
+  },
+  "obPlanBuildingTitle": "Building the plan",
+  "@obPlanBuildingTitle": {
+    "description": "Onboarding: plan building screen title."
+  },
+  "obPlanAge": "Level for ages {range} selected",
+  "@obPlanAge": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "obPlanAgeDefault": "Starting level selected",
+  "@obPlanAgeDefault": {
+    "description": "Onboarding plan line when no age was chosen."
+  },
+  "obPlanTopics": "Favourite topics added: {topics}",
+  "@obPlanTopics": {
+    "placeholders": {
+      "topics": {
+        "type": "String"
+      }
+    }
+  },
+  "obPlanTopicsAll": "All topics added",
+  "@obPlanTopicsAll": {
+    "description": "Onboarding plan line when no favourite was chosen."
+  },
+  "obPlanGoal": "Daily goal: {minutes} minutes",
+  "@obPlanGoal": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "obPlanReadyTitle": "{name}'s 7-day plan is ready",
+  "@obPlanReadyTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "obPlanDay": "Day {day}",
+  "@obPlanDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
   }
 }

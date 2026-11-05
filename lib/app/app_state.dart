@@ -24,6 +24,7 @@ import '../core/learning/item_performance.dart';
 import '../core/learning/play_time_ledger.dart';
 import '../core/learning/parent_pin.dart';
 import '../core/learning/daily_path.dart';
+import '../core/learning/week_plan.dart';
 import '../core/config/app_configuration.dart';
 import '../core/config/config_repository.dart';
 import '../core/sync/summary_snapshot_cache.dart';
@@ -610,6 +611,21 @@ class AppState extends ChangeNotifier {
       ...free.where((key) => key.endsWith('_G02')),
     ].take(6).toList();
   }
+
+  /// The first-run 7-day plan (onboarding): home-screen theme order, each
+  /// theme's visible games, the free cards first on the early days.
+  List<PlanDay> get weekPlan => WeekPlan.build(
+    themes: [
+      for (final t in orderedThemes)
+        if (_planGames(t.id).isNotEmpty) t.id,
+    ],
+    gamesOf: _planGames,
+    isFree: (theme, game) => configuration.freeGames.contains('${theme}_$game'),
+  );
+
+  List<String> _planGames(String theme) => allGamesForTheme(
+    theme,
+  ).where((g) => !hiddenGames.contains('${theme}_$g')).toList();
 
   List<String> get _freePathCandidates => configuration.freeGames.where((key) {
     final parts = key.split('_');

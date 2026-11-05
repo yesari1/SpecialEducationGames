@@ -1167,5 +1167,13 @@
   "familyGamesPremiumTitle": "Oyunları çocuğunuza göre seçin",
   "familyGamesPremiumBody": "Oyunları açıp kapatma Premium ve ücretsiz denemede var.",
   "familyGamesShownCount": "{total} oyundan {shown} açık",
-  "familyMoreProfilesPremium": "Daha fazla çocuk profili Premium ile"
+  "familyMoreProfilesPremium": "Daha fazla çocuk profili Premium ile",
+  "obPlanBuildingTitle": "Planı hazırlıyoruz",
+  "obPlanAge": "{range} yaş seviyesi seçildi",
+  "obPlanAgeDefault": "Başlangıç seviyesi seçildi",
+  "obPlanTopics": "Sevdiği konular eklendi: {topics}",
+  "obPlanTopicsAll": "Tüm konular eklendi",
+  "obPlanGoal": "Günlük hedef: {minutes} dakika",
+  "obPlanReadyTitle": "{name} için 7 günlük plan hazır",
+  "obPlanDay": "Gün {day}"
 }
