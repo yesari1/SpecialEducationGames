@@ -125,8 +125,9 @@ void main() {
       final repo = await ContentRepository.load();
       expect(
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
-        // Cards after removing G55 and G11 (Learn is the first card everywhere).
-        52,
+        // Cards after removing G55 and G11 (Learn is the first card everywhere),
+        // plus Feelings and Our Body (3 each, Nov 2026).
+        58,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {
@@ -230,7 +231,9 @@ void main() {
         'vehicles_G02', 'vehicles_G01', 'vehicles_G10', //
         'colors_G02', 'colors_G01', 'colors_G14', //
         'shapes_G02', 'shapes_G01', 'shapes_G14', //
-        'numbers_G02', 'numbers_G35', 'numbers_G10',
+        'numbers_G02', 'numbers_G35', 'numbers_G10', //
+        'emotions_G02', 'emotions_G01', 'emotions_G14', //
+        'body_G02', 'body_G01', 'body_G14',
       });
       expect(repo.items.map((i) => i.id).toSet().length, repo.items.length);
       for (final theme in repo.themes) {

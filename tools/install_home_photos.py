@@ -19,6 +19,37 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 # item id -> attempt folder whose original/output was reviewed and accepted.
 ACCEPTED = {
+    'home.pillow': 'home-photos-attempt-01',
+    'home.table': 'home-photos-attempt-01',
+    'home.chair': 'home-photos-attempt-01',
+    'home.door': 'home-photos-attempt-01',
+    'home.plate': 'home-photos-attempt-01',
+    'home.glass': 'home-photos-attempt-01',
+    'home.spoon': 'home-photos-attempt-01',
+    'home.clock': 'home-photos-attempt-02',
+    'home.vacuum_cleaner': 'home-photos-attempt-02',
+    'home.kettle': 'home-photos-attempt-02',
+    'home.towel': 'home-photos-attempt-02',
+    'home.toothbrush': 'home-photos-attempt-02',
+    'home.pot': 'home-photos-attempt-02',
+    'home.pan': 'home-photos-attempt-02',
+    'home.fork': 'home-photos-attempt-02',
+    'home.teapot': 'home-photos-attempt-02',
+    'home.fridge': 'home-photos-attempt-02',
+    'home.mixer': 'home-photos-attempt-03',
+    'home.flower_pot': 'home-photos-attempt-03',
+    'home.shampoo': 'home-photos-attempt-03',
+    'home.telephone': 'home-photos-attempt-03',
+    'home.hanger': 'home-photos-attempt-03',
+    'home.sofa': 'home-photos-attempt-04',
+    'home.iron': 'home-photos-attempt-04',
+    'home.lamp': 'home-photos-attempt-05',
+    'home.curtain': 'home-photos-attempt-05',
+    'home.comb': 'home-photos-attempt-05',
+    'home.mirror': 'home-photos-attempt-05',
+    'home.key': 'home-photos-attempt-05',
+    'home.trash_can': 'home-photos-attempt-05',
+    'home.remote_control': 'home-photos-attempt-05',
 }
 CHANGES = ('Foreground alpha with rembg U2Net, hardened (alpha threshold 140, 1 px erode, '
            '0.6 px blur, small stray regions dropped), original photo RGB retained; alpha-bound '
