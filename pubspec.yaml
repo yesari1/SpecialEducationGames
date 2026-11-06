@@ -122,6 +122,12 @@ flutter:
     - assets/audio/en/praise/
     - assets/audio/tr/success/
     - assets/audio/en/success/
+    - assets/stories/teeth/
+    - assets/audio/tr/stories/teeth/
+    - assets/audio/en/stories/teeth/
+    - assets/stories/angry/
+    - assets/audio/tr/stories/angry/
+    - assets/audio/en/stories/angry/
     - assets/audio/tr/explain/
     - assets/audio/en/explain/
     - assets/sfx/animals/

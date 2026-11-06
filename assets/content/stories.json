@@ -19,7 +19,7 @@
             "en": "assets/audio/en/stories/teeth/p1.mp3"
           }
         },
-        "image": "assets/stories/teeth/page1.png"
+        "image": "assets/stories/teeth/page1.jpg"
       },
       {
         "line": {
@@ -32,7 +32,7 @@
             "en": "assets/audio/en/stories/teeth/p2.mp3"
           }
         },
-        "image": "assets/stories/teeth/page2.png"
+        "image": "assets/stories/teeth/page2.jpg"
       },
       {
         "line": {
@@ -77,7 +77,7 @@
             "en": "assets/audio/en/stories/teeth/p4.mp3"
           }
         },
-        "image": "assets/stories/teeth/page4.png"
+        "image": "assets/stories/teeth/page4.jpg"
       },
       {
         "line": {
@@ -154,7 +154,7 @@
             "en": "assets/audio/en/stories/teeth/p7.mp3"
           }
         },
-        "image": "assets/stories/teeth/page7.png"
+        "image": "assets/stories/teeth/page7.jpg"
       }
     ],
     "praise": {
@@ -188,7 +188,7 @@
             "en": "assets/audio/en/stories/angry/p1.mp3"
           }
         },
-        "image": "assets/stories/angry/page1.png"
+        "image": "assets/stories/angry/page1.jpg"
       },
       {
         "line": {
@@ -201,7 +201,7 @@
             "en": "assets/audio/en/stories/angry/p2.mp3"
           }
         },
-        "image": "assets/stories/angry/page2.png"
+        "image": "assets/stories/angry/page2.jpg"
       },
       {
         "line": {
@@ -260,7 +260,7 @@
             "en": "assets/audio/en/stories/angry/p4.mp3"
           }
         },
-        "image": "assets/stories/angry/page4.png"
+        "image": "assets/stories/angry/page4.jpg"
       },
       {
         "line": {
@@ -297,7 +297,7 @@
                 "en": "assets/audio/en/stories/angry/p5_throw.mp3"
               }
             },
-            "resultImage": "assets/stories/angry/result_throw.png"
+            "resultImage": "assets/stories/angry/result_throw.jpg"
           },
           {
             "image": "assets/stories/angry/choice_tell.png",
@@ -316,7 +316,7 @@
             "en": "assets/audio/en/stories/angry/p6.mp3"
           }
         },
-        "image": "assets/stories/angry/page6.png"
+        "image": "assets/stories/angry/page6.jpg"
       },
       {
         "line": {
@@ -329,7 +329,7 @@
             "en": "assets/audio/en/stories/angry/p7.mp3"
           }
         },
-        "image": "assets/stories/angry/page7.png"
+        "image": "assets/stories/angry/page7.jpg"
       }
     ],
     "praise": {

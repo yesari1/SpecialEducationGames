@@ -2,8 +2,8 @@
 
 The source holds only the texts; this script adds the picture and narration
 paths by one naming rule, so the app catalog never has hand-typed paths:
-  pictures  assets/stories/<id>/cover.png, page<N>.png, choice_<key>.png,
-            result_<key>.png (only where the source sets "resultImage")
+  pictures  assets/stories/<id>/cover.png, page<N>.jpg, choice_<key>.png,
+            result_<key>.jpg (only where the source sets "resultImage")
   narration assets/audio/<lang>/stories/<id>/p<N>.mp3, p<N>_retry.mp3,
             p<N>_<key>.mp3 (a wrong choice's result), praise.mp3
 Usage: python -I tools/stories/build_stories.py [--check]
@@ -42,11 +42,11 @@ def build(source):
                     if 'result' in choice:
                         item['result'] = line(choice['result'], f'p{n}_{key}', sid)
                     if choice.get('resultImage'):
-                        item['resultImage'] = f'{base}/result_{key}.png'
+                        item['resultImage'] = f'{base}/result_{key}.jpg'
                     choices.append(item)
                 built['choices'] = choices
             else:
-                built['image'] = f'{base}/page{n}.png'
+                built['image'] = f'{base}/page{n}.jpg'
             pages.append(built)
         entry = {'id': sid, 'free': story.get('free', False), 'title': story['title'],
                  'cover': f'{base}/cover.png', 'pages': pages}

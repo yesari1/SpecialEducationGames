@@ -1,0 +1,830 @@
+{
+  "assets/audio/en/stories/angry/p1.mp3": {
+    "bytes": 54377,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:09.562445+00:00",
+    "sha256": "4a03310048a3087ae36468d6a345d61454a05fcda92b736fd622eb73e2d90ced",
+    "text": "Ali is playing with a toy car with his sister Elif.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p2.mp3": {
+    "bytes": 45600,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:10.803589+00:00",
+    "sha256": "c4de0fcb438518b0d4546946ece531d0c9c54c50fb83a4db295c17b3421932a0",
+    "text": "Elif takes the car. Ali's car is gone.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p3.mp3": {
+    "bytes": 25538,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:11.945463+00:00",
+    "sha256": "40803ff72deaf393d5d8a114271fb060c449d4b1d73ed3019c9c3dd9524db02d",
+    "text": "How does Ali feel now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p3_happy.mp3": {
+    "bytes": 42674,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:13.096741+00:00",
+    "sha256": "55e31ac79724f2edf04798d7fb7524534d7bd0e62d0d7516c7b447a6cf32cdaa",
+    "text": "Look at Ali's face. Ali is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p3_sad.mp3": {
+    "bytes": 41838,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:14.282879+00:00",
+    "sha256": "59b0ba502bee6f0316595d33738218d44a604ce5c28ef33eaa1bde83e52ef6a5",
+    "text": "Look at Ali's face. Ali is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p4.mp3": {
+    "bytes": 47272,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:15.540888+00:00",
+    "sha256": "34767b9d9124754abe5a6f97f3174bfe4ae9a0e25e5faa37418fb9ee77b6e776",
+    "text": "Ali is very angry. He has a toy in his hand.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p5.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:16.575926+00:00",
+    "sha256": "346735b7f6f7508e0ac787d2400317affd92ebb66bbe4acf78ceb5e976dc8d9b",
+    "text": "What can Ali do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p5_retry.mp3": {
+    "bytes": 20523,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:17.681167+00:00",
+    "sha256": "b502be0aae9b7c8cde73afe037035756ea660d520b97c655232620158a825ccf",
+    "text": "What else can he do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p5_throw.mp3": {
+    "bytes": 38077,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:18.856847+00:00",
+    "sha256": "80205f00e28d931ba270cf49f4a49b0f6596b0d6f0d6516a3169c09f65172cc1",
+    "text": "The toy fell. Elif is sad.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p6.mp3": {
+    "bytes": 61901,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:20.209741+00:00",
+    "sha256": "1ec052989e9143251ad9894caed32b7059641e93bf2a7f1d3271195baf919535",
+    "text": "Ali said, \"I am angry!\" He took a deep breath with Mom.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p7.mp3": {
+    "bytes": 44346,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:21.565523+00:00",
+    "sha256": "ad031455985ae20893c89af80b85ef86dafa28aef460cbf31b6a1c6de9e7d2e9",
+    "text": "Elif gave the car back. They took turns.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/praise.mp3": {
+    "bytes": 31390,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:22.716077+00:00",
+    "sha256": "a713c49ff4563704594063f1da0e436b7591d1b3491ebfdb09c23df1adbfb561",
+    "text": "Well done! You helped Ali.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p1.mp3": {
+    "bytes": 35987,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:19:56.345247+00:00",
+    "sha256": "72571022f8013242d7506baa14c29fbfc455f2fba5e829ff017ca5776d67eceb",
+    "text": "This is Ali. It is time for bed.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p2.mp3": {
+    "bytes": 51452,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:19:57.549865+00:00",
+    "sha256": "4c7c5661bd94dbfc7144222d69050baf5e8536c4010051cb3849d6936d277a5c",
+    "text": "Ali goes to the bathroom. He takes his toothbrush.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p3.mp3": {
+    "bytes": 51452,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:19:58.818328+00:00",
+    "sha256": "6caedd9e906bc09835f1029a54282b8f5f35836c1e552b7134c7a1c4498b7f2e",
+    "text": "We put toothpaste on the brush. What do we do now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p3_bed.mp3": {
+    "bytes": 24702,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:19:59.936911+00:00",
+    "sha256": "8ca8911f2755471483146d6fcf60ec13e4a2d37a72c0da75144e24f3849a4b38",
+    "text": "First we brush our teeth.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p4.mp3": {
+    "bytes": 46436,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:01.178004+00:00",
+    "sha256": "2602c85ea191e9a7b7937f38368f26aba621491887b3b001a8922fe0fdca3e91",
+    "text": "Ali brushes his teeth slowly. Up and down.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p5.mp3": {
+    "bytes": 38913,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:02.367805+00:00",
+    "sha256": "c5db94a50550d3142c05b312e7b4c2fb45a5ce92028f9047223d18c8352fc848",
+    "text": "Brushing is done. What do we do now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p5_shoes.mp3": {
+    "bytes": 32225,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:03.551343+00:00",
+    "sha256": "feb6d7d1d458d211f7d78db9abcbf5feb218e825a02972c811d5b2e84f374b6c",
+    "text": "First we rinse our mouth with water.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p6.mp3": {
+    "bytes": 44346,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:04.765336+00:00",
+    "sha256": "dd621fb164ede627eb655d4d24e54360618442a721c884cacf7370e428e0d635",
+    "text": "His teeth are clean! How does Ali feel?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p6_sad.mp3": {
+    "bytes": 45600,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:05.995102+00:00",
+    "sha256": "9bd6e8ffa1a46869bf801d6b2fa68042f0e7bd1ca6e233c18d2dcfdae9bdf276",
+    "text": "Look, Ali is smiling. Ali is happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p7.mp3": {
+    "bytes": 38077,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:07.173276+00:00",
+    "sha256": "f52051da567ba97419bbfa2d1cb7abc708ab71cf54cc5ecfc7c50f481b3be017",
+    "text": "Ali goes to bed. Good night, Ali!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/praise.mp3": {
+    "bytes": 31390,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-06T17:20:08.320308+00:00",
+    "sha256": "82e269a2f7d799673de15e20b5e8029941b274dde5843fb16b732795efed62e7",
+    "text": "Well done! You helped Ali.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p1.mp3": {
+    "bytes": 40585,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:08.853757+00:00",
+    "sha256": "28f63da1ed2a6a9b6b7a88a0769747abcf6c9c0ea8ff471ecc8967f5570997a9",
+    "text": "Ali, kardeşi Elif'le arabayla oynuyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p2.mp3": {
+    "bytes": 45600,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:10.121604+00:00",
+    "sha256": "b80e50efa09f0e043a8ac032b17f32c157120348d0fc324da4bd4591248ab104",
+    "text": "Elif arabayı alıyor. Ali'nin arabası gitti.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p3.mp3": {
+    "bytes": 24702,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:11.333352+00:00",
+    "sha256": "a5651eb9e19001a7600f2c2976be472b9fbcd23c22c6b68482a219fea997af05",
+    "text": "Ali şimdi ne hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p3_happy.mp3": {
+    "bytes": 39749,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:12.463228+00:00",
+    "sha256": "acbb4ec003bd5aecf5db25ea9d8b0f488ab273236e4df781ef4163f73466a64c",
+    "text": "Ali'nin yüzüne bak. Ali kızgın.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p3_sad.mp3": {
+    "bytes": 38077,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:13.617246+00:00",
+    "sha256": "58855ab2393c70f8a659fa70e7909b4823f658517ac760a9c28c3b1175d3268e",
+    "text": "Ali'nin yüzüne bak. Ali kızgın.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p4.mp3": {
+    "bytes": 41838,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:14.848977+00:00",
+    "sha256": "f724bf1996c4aa6a9a4b35e5ddec0a06b298d601b74dcb2d1c4fd900f8524bdf",
+    "text": "Ali çok kızdı. Elinde bir oyuncak var.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p5.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:16.020503+00:00",
+    "sha256": "1b8325b82363bf7743be8a09e19501d8d7822b82628b3e8b2f8b208f421caf5c",
+    "text": "Ali ne yapabilir?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p5_retry.mp3": {
+    "bytes": 24702,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:17.092059+00:00",
+    "sha256": "841145655d532d80e9e17d8e00c01dda0eb5f26fd26e9c0de4d5eaa150fb5f8c",
+    "text": "Başka ne yapabilir?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p5_throw.mp3": {
+    "bytes": 38913,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:18.207881+00:00",
+    "sha256": "ec57a289b6fc93e74a352260eb8d2392afe85f72fa97172a3b29b29b69fd7fdb",
+    "text": "Oyuncak düştü. Elif üzüldü.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p6.mp3": {
+    "bytes": 60647,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:19.437116+00:00",
+    "sha256": "ceff6dcf88ed79b7453160d96707e5319516f4d7abd69ea09ba4bd453b7d4482",
+    "text": "Ali \"Kızgınım!\" dedi. Annesiyle derin bir nefes aldı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p7.mp3": {
+    "bytes": 50198,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:20.857127+00:00",
+    "sha256": "0387934daa264e7f9099cdd182f5a10b9d0a9ed9adfdef09f0b897c2335e1559",
+    "text": "Elif arabayı geri verdi. Sırayla oynadılar.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/praise.mp3": {
+    "bytes": 38913,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:22.085540+00:00",
+    "sha256": "738b634a20af68bd67a3051f8b27a1ac9dbd607ac72be09d599ffba75f8e8a8d",
+    "text": "Çok güzel! Ali'ye yardım ettin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p1.mp3": {
+    "bytes": 35987,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:19:55.638139+00:00",
+    "sha256": "4f33ba6c1c5301878bb890eecdc2646dd13efa12907c7cfd4197f5b5af22d819",
+    "text": "Bu Ali. Yatma zamanı geldi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p2.mp3": {
+    "bytes": 42674,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:19:56.889943+00:00",
+    "sha256": "e1bf33dca044c882e39f7902dca23f8c0579b77ae0ace533d7928fee72b34335",
+    "text": "Ali banyoya gidiyor. Diş fırçasını alıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p3.mp3": {
+    "bytes": 43510,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:19:58.111655+00:00",
+    "sha256": "c4cbd15721d2995ab8abbb7f2b1921908c9d52949f3db754bf4070439c25b929",
+    "text": "Fırçaya macun sürdük. Şimdi ne yapıyoruz?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p3_bed.mp3": {
+    "bytes": 31390,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:19:59.355041+00:00",
+    "sha256": "25feddf8ed364ffde39531cd46ce480021ed9a409bd6a2dcdd0fc3f298924ce2",
+    "text": "Önce dişlerimizi fırçalıyoruz.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p4.mp3": {
+    "bytes": 56885,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:00.502165+00:00",
+    "sha256": "8529fdc60cd9dae2a2038c8ac33a8bbe194a6c9a0ad64b3ef2dd642bfa186d94",
+    "text": "Ali dişlerini yavaşça fırçalıyor. Yukarı, aşağı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p5.mp3": {
+    "bytes": 39749,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:01.708678+00:00",
+    "sha256": "f6734dea4b88ed62ef253defe7c096ceec28f05dc8ff130793234bf5ada80f7b",
+    "text": "Fırçalama bitti. Şimdi ne yapıyoruz?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p5_shoes.mp3": {
+    "bytes": 38077,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:02.899190+00:00",
+    "sha256": "fd968969a6d7fe07c3dbd7a9fff8291af7ae45b071e168c4b90998a56833d822",
+    "text": "Önce ağzımızı suyla çalkalıyoruz.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p6.mp3": {
+    "bytes": 40585,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:04.092862+00:00",
+    "sha256": "fac0a87661d507015a9f57ae242a7b2cd6f78d32d000faa8ac1822c4f6736a93",
+    "text": "Dişleri tertemiz! Ali ne hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p6_sad.mp3": {
+    "bytes": 38913,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:05.313206+00:00",
+    "sha256": "82e9f55cb21e2d22087d8d535e4d7e22b7b4cbb64971cf5565fc0922be1b534a",
+    "text": "Bak, Ali gülümsüyor. Ali mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p7.mp3": {
+    "bytes": 40585,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:06.542784+00:00",
+    "sha256": "33c2f7afb7718c84b008abe6538129823ae9ef853c1f2295ae32b7703593da09",
+    "text": "Ali yatağına gidiyor. İyi geceler, Ali!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/praise.mp3": {
+    "bytes": 37659,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_turbo_v2_5",
+    "requested_at": "2026-11-06T17:20:07.711694+00:00",
+    "sha256": "6e13fde9dfdf25e9b7e8bf8d0e0d78bd4c63d18270354e1991f609712cca8940",
+    "text": "Çok güzel! Ali'ye yardım ettin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.92,
+      "stability": 0.6,
+      "style": 0.15,
+      "use_speaker_boost": true
+    }
+  }
+}
