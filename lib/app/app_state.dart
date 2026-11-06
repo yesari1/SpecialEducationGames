@@ -681,14 +681,72 @@ class AppState extends ChangeNotifier {
       ? Set.unmodifiable(_dailyStickers)
       : const {};
 
-  /// Six free cards a day: the games first, then free Learn cards if fewer
-  /// than six games are free.
-  List<String> get dailyPathSteps {
-    final free = _freePathCandidates;
-    return [
-      ...free.where((key) => !key.endsWith('_G02')),
-      ...free.where((key) => key.endsWith('_G02')),
-    ].take(6).toList();
+  /// Cards on today's path (short, so a small child reaches the sticker).
+  static const pathLength = 3;
+
+  /// Today's path follows the first-run 7-day plan ([weekPlan], liked themes
+  /// first): the plan's day (days since the plan started, then round
+  /// again), its cards that can be played, then more of that theme, then
+  /// the next days' cards, then any free card.
+  List<String> get dailyPathSteps => dailyPathStepsAt(DateTime.now());
+
+  List<String> dailyPathStepsAt(DateTime now) {
+    final steps = <String>[];
+    void add(String theme, String game) {
+      final key = '${theme}_$game';
+      if (steps.length < pathLength &&
+          !steps.contains(key) &&
+          pathPlayable(key)) {
+        steps.add(key);
+      }
+    }
+
+    final plan = weekPlan;
+    if (plan.isNotEmpty) {
+      final start = planDayAt(now) % plan.length;
+      final today = plan[start];
+      for (final g in today.games) {
+        add(today.theme, g);
+      }
+      final more = _planGames(today.theme);
+      for (final g in [
+        ...more.where((g) => g != WeekPlan.learn),
+        ...more.where((g) => g == WeekPlan.learn),
+      ]) {
+        add(today.theme, g);
+      }
+      for (var i = 1; i < plan.length; i++) {
+        final day = plan[(start + i) % plan.length];
+        for (final g in day.games) {
+          add(day.theme, g);
+        }
+      }
+    }
+    for (final key in _freePathCandidates) {
+      final parts = key.split('_');
+      add(parts[0], parts[1]);
+    }
+    return steps;
+  }
+
+  /// The day the active child's plan started (`YYYY-MM-DD`): set up, or the
+  /// first start of this version for children set up before.
+  String? _planStart;
+  String? _planStartProfileId;
+
+  /// 0 on the plan's first day, 1 the next day, ...
+  int planDayAt(DateTime now) {
+    final start = _planStartProfileId == active?.id
+        ? DateTime.tryParse(_planStart ?? '')
+        : null;
+    if (start == null) return 0;
+    final local = now.toLocal();
+    final days = DateTime.utc(
+      local.year,
+      local.month,
+      local.day,
+    ).difference(DateTime.utc(start.year, start.month, start.day)).inDays;
+    return days < 0 ? 0 : days;
   }
 
   /// The first-run 7-day plan (onboarding): home-screen theme order, each
@@ -706,7 +764,12 @@ class AppState extends ChangeNotifier {
     theme,
   ).where((g) => !hiddenGames.contains('${theme}_$g')).toList();
 
-  List<String> get _freePathCandidates => configuration.freeGames.where((key) {
+  List<String> get _freePathCandidates =>
+      configuration.freeGames.where(pathPlayable).toList()..sort();
+
+  /// Whether a card can stand on today's path now (playable, shown, with
+  /// its content and the sound it needs).
+  bool pathPlayable(String key) {
     final parts = key.split('_');
     if (parts.length != 2) return false;
     final effectiveDifficulty = recommendedDifficulty(
@@ -723,9 +786,10 @@ class AppState extends ChangeNotifier {
           effectiveDifficulty,
         ) &&
         hasRequiredGameAudio(parts[0], parts[1]);
-  }).toList()..sort();
+  }
+
   DailyPathProgress dailyPathAt(DateTime now) => DailyPathProgress.fromSessions(
-    steps: dailyPathSteps,
+    steps: dailyPathStepsAt(now),
     sessions: sessions,
     profileId: active?.id ?? '',
     now: now,
@@ -1097,6 +1161,12 @@ class AppState extends ChangeNotifier {
     }
     trials = nextTrials;
     sessions = nextSessions;
+    final planKey = 'profile.$profileId.planStart';
+    var planStart = await db.preference(planKey);
+    if (profileId != null && DateTime.tryParse(planStart ?? '') == null) {
+      planStart = DailyPathProgress.dayKey(DateTime.now());
+      await db.setPreference(planKey, planStart);
+    }
     final stickerKey = 'profile.$profileId.dailyStickers';
     final storedStickers = await db.preference(stickerKey);
     if (_disposed ||
@@ -1117,6 +1187,8 @@ class AppState extends ChangeNotifier {
       _dailyStickers = {};
     }
     _stickerProfileId = profileId;
+    _planStart = planStart;
+    _planStartProfileId = profileId;
     if (profileId != null && dailyPath.complete) {
       _dailyStickers.add(DailyPathProgress.dayKey(DateTime.now()));
       await db.setPreference(

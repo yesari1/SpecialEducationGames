@@ -134,18 +134,6 @@ abstract class AppLocalizations {
   /// **'No ads.'**
   String get noAdsOffline;
 
-  /// No description provided for @parentGateSettings.
-  ///
-  /// In en, this message translates to:
-  /// **'Settings stay behind a parent gate.'**
-  String get parentGateSettings;
-
-  /// No description provided for @letsGetStarted.
-  ///
-  /// In en, this message translates to:
-  /// **'Let’s get started'**
-  String get letsGetStarted;
-
   /// No description provided for @homeFamily.
   ///
   /// In en, this message translates to:
@@ -230,12 +218,6 @@ abstract class AppLocalizations {
   /// **'No unlocked games at this level. Try Easy.'**
   String get themeNoUnlockedGames;
 
-  /// No description provided for @themeUnlockWithFamily.
-  ///
-  /// In en, this message translates to:
-  /// **'You can unlock this with your family.'**
-  String get themeUnlockWithFamily;
-
   /// No description provided for @parentGateTitle.
   ///
   /// In en, this message translates to:
@@ -290,12 +272,6 @@ abstract class AppLocalizations {
   /// **'Ready, {name}!'**
   String onboardingReadyTitle(String name);
 
-  /// No description provided for @onboardingSuggestedStart.
-  ///
-  /// In en, this message translates to:
-  /// **'Suggested starting point'**
-  String get onboardingSuggestedStart;
-
   /// No description provided for @onboardingFamilyHint.
   ///
   /// In en, this message translates to:
@@ -319,24 +295,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue'**
   String get onboardingContinue;
-
-  /// No description provided for @onboardingSkipQuestion.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip this question'**
-  String get onboardingSkipQuestion;
-
-  /// No description provided for @onboardingNickname.
-  ///
-  /// In en, this message translates to:
-  /// **'Nickname'**
-  String get onboardingNickname;
-
-  /// No description provided for @onboardingProfileQuestion.
-  ///
-  /// In en, this message translates to:
-  /// **'Who is our little explorer?'**
-  String get onboardingProfileQuestion;
 
   /// No description provided for @onboardingNicknameHint.
   ///
@@ -373,18 +331,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Option {current} of {total}'**
   String surveyOptionProgress(int current, int total);
-
-  /// No description provided for @onboardingPreviousRecommendation.
-  ///
-  /// In en, this message translates to:
-  /// **'Previous recommendation'**
-  String get onboardingPreviousRecommendation;
-
-  /// No description provided for @onboardingNextRecommendation.
-  ///
-  /// In en, this message translates to:
-  /// **'Next recommendation'**
-  String get onboardingNextRecommendation;
 
   /// No description provided for @accountTitle.
   ///
@@ -437,7 +383,7 @@ abstract class AppLocalizations {
   /// No description provided for @familyAccountConfiguration.
   ///
   /// In en, this message translates to:
-  /// **'Google sign-in needs setup.'**
+  /// **'Sign-in is not available right now.'**
   String get familyAccountConfiguration;
 
   /// No description provided for @familyAccountTimeout.
@@ -475,12 +421,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Real photographs'**
   String get creditsRealPhotographs;
-
-  /// No description provided for @creditsSoundChanges.
-  ///
-  /// In en, this message translates to:
-  /// **'Changes: mono MP3, reduced volume, short fades, at most 3 seconds.'**
-  String get creditsSoundChanges;
 
   /// No description provided for @creditsAdaptationLicense.
   ///
@@ -577,12 +517,6 @@ abstract class AppLocalizations {
   /// **'News'**
   String get familyNewsHeading;
 
-  /// No description provided for @applicationName.
-  ///
-  /// In en, this message translates to:
-  /// **'Special Education Games'**
-  String get applicationName;
-
   /// No description provided for @creditsOpenSourceLicenses.
   ///
   /// In en, this message translates to:
@@ -598,7 +532,7 @@ abstract class AppLocalizations {
   /// No description provided for @summarySyncDescription.
   ///
   /// In en, this message translates to:
-  /// **'Only daily time, round and independent response totals are shared. Raw choices, child name and survey answers are not sent. This is not a full profile backup.'**
+  /// **'Only daily time and the number of rounds go to the cloud. Your child\'s answers are not sent.'**
   String get summarySyncDescription;
 
   /// No description provided for @summarySyncRequirements.
@@ -616,7 +550,7 @@ abstract class AppLocalizations {
   /// No description provided for @summarySyncManualNotice.
   ///
   /// In en, this message translates to:
-  /// **'Sync starts only with the button below. Revoking permission clears the downloaded snapshot on this device; it does not delete server data.'**
+  /// **'Sync starts only with the button below. Turning permission off clears the summary on this phone; it does not delete cloud data.'**
   String get summarySyncManualNotice;
 
   /// No description provided for @summarySyncNow.
@@ -634,7 +568,7 @@ abstract class AppLocalizations {
   /// No description provided for @summarySyncCapacity.
   ///
   /// In en, this message translates to:
-  /// **'The summary count exceeds the supported limit. Local records are preserved.'**
+  /// **'There are too many records; some could not be sent. The records on this phone are kept.'**
   String get summarySyncCapacity;
 
   /// No description provided for @summarySyncUnavailable.
@@ -648,18 +582,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Premium'**
   String get subscriptionTitle;
-
-  /// No description provided for @subscriptionShowPlans.
-  ///
-  /// In en, this message translates to:
-  /// **'Show plans'**
-  String get subscriptionShowPlans;
-
-  /// No description provided for @subscriptionHeading.
-  ///
-  /// In en, this message translates to:
-  /// **'More discoveries together'**
-  String get subscriptionHeading;
 
   /// No description provided for @subscriptionAllGames.
   ///
@@ -676,7 +598,7 @@ abstract class AppLocalizations {
   /// No description provided for @subscriptionAdFree.
   ///
   /// In en, this message translates to:
-  /// **'Ad-free, offline learning'**
+  /// **'Detailed progress reports'**
   String get subscriptionAdFree;
 
   /// No description provided for @subscriptionActive.
@@ -684,12 +606,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your Premium access is active.'**
   String get subscriptionActive;
-
-  /// No description provided for @subscriptionUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Google Play products are unavailable right now. You can continue with the free games.'**
-  String get subscriptionUnavailable;
 
   /// No description provided for @subscriptionMonthly.
   ///
@@ -703,65 +619,17 @@ abstract class AppLocalizations {
   /// **'Yearly'**
   String get subscriptionYearly;
 
-  /// No description provided for @subscriptionMonth.
-  ///
-  /// In en, this message translates to:
-  /// **'month'**
-  String get subscriptionMonth;
-
-  /// No description provided for @subscriptionYear.
-  ///
-  /// In en, this message translates to:
-  /// **'year'**
-  String get subscriptionYear;
-
-  /// Unmodified store formatted recurring price with localized period.
-  ///
-  /// In en, this message translates to:
-  /// **'{recurringPrice} / {period}'**
-  String subscriptionPrice(String recurringPrice, String period);
-
-  /// Shown only when the store plan includes the supported seven-day trial.
-  ///
-  /// In en, this message translates to:
-  /// **'7 days free, then {recurringPrice}. Cancel through Google Play before the trial ends.'**
-  String subscriptionTrial(String recurringPrice);
-
-  /// No description provided for @subscriptionRenewal.
-  ///
-  /// In en, this message translates to:
-  /// **'Renews automatically. You can cancel at any time through Google Play.'**
-  String get subscriptionRenewal;
-
   /// No description provided for @subscriptionWaiting.
   ///
   /// In en, this message translates to:
   /// **'Waiting for Google Play…'**
   String get subscriptionWaiting;
 
-  /// No description provided for @subscriptionStartTrial.
-  ///
-  /// In en, this message translates to:
-  /// **'Start 7-day trial'**
-  String get subscriptionStartTrial;
-
-  /// No description provided for @subscriptionContinue.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue with Google Play'**
-  String get subscriptionContinue;
-
   /// No description provided for @subscriptionStoreError.
   ///
   /// In en, this message translates to:
   /// **'Could not connect to the store. Please try again later.'**
   String get subscriptionStoreError;
-
-  /// No description provided for @subscriptionRestore.
-  ///
-  /// In en, this message translates to:
-  /// **'Restore purchases'**
-  String get subscriptionRestore;
 
   /// No description provided for @subscriptionManage.
   ///
@@ -916,7 +784,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Attention (sec)'**
+  /// **'Answer time (sec)'**
   String get familyAttentionDailyAverageSeconds;
 
   /// Family area interface copy.
@@ -934,7 +802,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Waiting'**
+  /// **'Waiting without an answer'**
   String get familyIdleTime;
 
   /// Family area interface copy.
@@ -942,18 +810,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Time in the background is excluded.'**
   String get familyTimeInTheBackgroundIsExcluded;
-
-  /// Upper bound shown for average response and idle time.
-  ///
-  /// In en, this message translates to:
-  /// **'0–{maximum} seconds.'**
-  String familySecondsRange(double maximum);
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Numeric view'**
-  String get familyNumericView;
 
   /// Family area interface copy.
   ///
@@ -976,7 +832,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'{count} stages'**
+  /// **'{count, plural, =1{1 stage} other{{count} stages}}'**
   String familyCountStages(int count);
 
   /// Family area interface copy.
@@ -994,7 +850,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Independent: last three answers without hints. Support: substantial help in at least two of the last three stages.'**
+  /// **'On their own: last 3 answers right without hints. Support: needed help in 2 of the last 3 rounds.'**
   String get familyIndependentLastThreeAnswersWithoutHints;
 
   /// Family area interface copy.
@@ -1030,30 +886,6 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Show unlocked games only'**
-  String get familyShowUnlockedGamesOnly;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Hides locked cards in Child Mode.'**
-  String get familyHidesLockedCardsInChildMode;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Free (Easy)'**
-  String get familyEasyAndMediumUnlocked;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Premium'**
-  String get familyPremium;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
   /// **'Daily screen time limit'**
   String get familyDailyScreenTimeLimit;
 
@@ -1078,7 +910,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Remaining today: {minutes} minutes'**
+  /// **'Remaining today: {minutes, plural, =1{1 minute} other{{minutes} minutes}}'**
   String familyRemainingTodayMinutesMinutes(int minutes);
 
   /// Family area interface copy.
@@ -1096,7 +928,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Automatic / theme selection'**
+  /// **'Automatic by theme'**
   String get familyAutomaticThemeSelection;
 
   /// Family area interface copy.
@@ -1132,7 +964,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Survey / difficulty setting'**
+  /// **'Based on the starting survey'**
   String get familySurveyDifficultySetting;
 
   /// Family area interface copy.
@@ -1198,7 +1030,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'A reminder only, play is not limited.'**
+  /// **'A goal only; play is not limited.'**
   String get familyAnOptionalReminderItDoesNot;
 
   /// Family area interface copy.
@@ -1246,7 +1078,7 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Adaptive difficulty'**
+  /// **'Automatic difficulty suggestion'**
   String get familyAdaptiveDifficulty;
 
   /// Family area interface copy.
@@ -1308,18 +1140,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Full'**
   String get familyFull;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Prices come from Google Play.'**
-  String get familySubscriptionPricesAndTrialEligibilityCome;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Plans and restore'**
-  String get familyPlansAndRestore;
 
   /// Family area interface copy.
   ///
@@ -1402,12 +1222,6 @@ abstract class AppLocalizations {
   /// Family area interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Stored on this device'**
-  String get familyStoredOnThisDevice;
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
   /// **'Delete profile'**
   String get familyDeleteProfile;
 
@@ -1434,12 +1248,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =0{Create a profile} one{Create a profile} other{More profiles}}'**
   String familyProfileAction(int count);
-
-  /// Family area interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'The free version includes one child profile.'**
-  String get familyTheFreeVersionIncludesOneChild;
 
   /// Game results and actions interface copy.
   ///
@@ -1510,12 +1318,6 @@ abstract class AppLocalizations {
   /// Game results and actions interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Today’s Path'**
-  String get gameTodaysPath;
-
-  /// Game results and actions interface copy.
-  ///
-  /// In en, this message translates to:
   /// **'Images for this theme are not ready yet.'**
   String get gameImagesForThisThemeAreNotReady;
 
@@ -1546,7 +1348,7 @@ abstract class AppLocalizations {
   /// No description provided for @reminderTitle.
   ///
   /// In en, this message translates to:
-  /// **'Play time'**
+  /// **'Time to play'**
   String get reminderTitle;
 
   /// No description provided for @reminderBody.
@@ -1570,7 +1372,7 @@ abstract class AppLocalizations {
   /// No description provided for @reminderOfferBody.
   ///
   /// In en, this message translates to:
-  /// **'Shall we remind you about your child\'s daily learning?'**
+  /// **'If you haven\'t played that day, shall we send a short reminder at 6 pm?'**
   String get reminderOfferBody;
 
   /// No description provided for @reminderOfferYes.
@@ -1602,18 +1404,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No games are available today.'**
   String get dailyPathNoGamesAreAvailableToday;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'You earned today’s sticker!'**
-  String get dailyPathYouEarnedTodaysSticker;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Each completed game is one step.'**
-  String get dailyPathEachCompletedGameIsOneStep;
 
   /// Daily path and sticker album interface copy.
   ///
@@ -1668,18 +1458,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Close'**
   String get dailyPathClose;
-
-  /// Game completion summary pager position.
-  ///
-  /// In en, this message translates to:
-  /// **'Summary · page {current} of {total}'**
-  String gameSummaryPage(int current, int total);
-
-  /// Numbered daily path game title.
-  ///
-  /// In en, this message translates to:
-  /// **'{index}. {game}'**
-  String dailyPathStepTitle(int index, String game);
 
   /// Profile editor interface copy.
   ///
@@ -2062,7 +1840,7 @@ abstract class AppLocalizations {
   /// No description provided for @obGoalBody.
   ///
   /// In en, this message translates to:
-  /// **'Short, regular sessions work best. Your child sees calm progress, never a countdown.'**
+  /// **'Short, regular sessions work best. Your child never sees a pressuring countdown.'**
   String get obGoalBody;
 
   /// No description provided for @obGoalMinutes.
@@ -2076,84 +1854,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recommended'**
   String get obRecommended;
-
-  /// No description provided for @obLockTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Settings stay with you'**
-  String get obLockTitle;
-
-  /// No description provided for @obLockBody.
-  ///
-  /// In en, this message translates to:
-  /// **'To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.'**
-  String get obLockBody;
-
-  /// No description provided for @obPinSwitch.
-  ///
-  /// In en, this message translates to:
-  /// **'Also set a 4-digit PIN'**
-  String get obPinSwitch;
-
-  /// No description provided for @obPinField.
-  ///
-  /// In en, this message translates to:
-  /// **'PIN'**
-  String get obPinField;
-
-  /// No description provided for @obPinInvalid.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter four digits.'**
-  String get obPinInvalid;
-
-  /// No description provided for @obTrialTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Explore every game'**
-  String get obTrialTitle;
-
-  /// No description provided for @obTrialBody.
-  ///
-  /// In en, this message translates to:
-  /// **'The free games stay free. Premium opens every theme and game, all difficulty levels and up to five child profiles.'**
-  String get obTrialBody;
-
-  /// No description provided for @obTrialPoint1.
-  ///
-  /// In en, this message translates to:
-  /// **'All themes and games'**
-  String get obTrialPoint1;
-
-  /// No description provided for @obTrialPoint2.
-  ///
-  /// In en, this message translates to:
-  /// **'Every difficulty level'**
-  String get obTrialPoint2;
-
-  /// No description provided for @obTrialPoint3.
-  ///
-  /// In en, this message translates to:
-  /// **'Up to five child profiles'**
-  String get obTrialPoint3;
-
-  /// No description provided for @obTrialStart.
-  ///
-  /// In en, this message translates to:
-  /// **'Try 7 days free'**
-  String get obTrialStart;
-
-  /// No description provided for @obTrialNote.
-  ///
-  /// In en, this message translates to:
-  /// **'Billed by Google Play after the trial. You can cancel any time in Google Play.'**
-  String get obTrialNote;
-
-  /// No description provided for @obContinueFree.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue for free'**
-  String get obContinueFree;
 
   /// No description provided for @obHandoffBody.
   ///
@@ -2242,7 +1942,7 @@ abstract class AppLocalizations {
   /// No description provided for @famGoalLeft.
   ///
   /// In en, this message translates to:
-  /// **'{minutes} more minutes to today’s goal.'**
+  /// **'{minutes, plural, =1{1 more minute} other{{minutes} more minutes}} to today’s goal.'**
   String famGoalLeft(int minutes);
 
   /// No description provided for @famPlayedToday.
@@ -2380,31 +2080,7 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'Try free for {days} days'**
-  String paywallTrialTitle(int days);
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Every game and level is open for {days} days. No payment details needed; afterwards the free games stay open.'**
-  String paywallTrialBody(int days);
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with Google to start'**
-  String get paywallTrialSignIn;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Start free trial'**
-  String get paywallTrialStart;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Trial active: {days} days left'**
+  /// **'Trial active: {days, plural, =1{1 day left} other{{days} days left}}'**
   String paywallTrialActive(int days);
 
   /// Paywall copy.
@@ -2422,18 +2098,6 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'One free trial per Google account.'**
-  String get paywallTrialNote;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Learn and two games in every theme are always free.'**
-  String get paywallFreeTier;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
   /// **'One-time'**
   String get paywallLifetime;
 
@@ -2442,12 +2106,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pay once, keep it forever. No subscription.'**
   String get paywallLifetimeNote;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Buy'**
-  String get paywallBuy;
 
   /// Paywall copy.
   ///
@@ -2515,12 +2173,6 @@ abstract class AppLocalizations {
   /// **'Unlock every game'**
   String get paywallHeadline;
 
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'No payment details'**
-  String get paywallNoPayment;
-
   /// Paywall badge.
   ///
   /// In en, this message translates to:
@@ -2536,7 +2188,7 @@ abstract class AppLocalizations {
   /// Paywall copy.
   ///
   /// In en, this message translates to:
-  /// **'Continue without signing in'**
+  /// **'Continue with the free version'**
   String get paywallContinueFree;
 
   /// Paywall copy.
@@ -2562,12 +2214,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Close'**
   String get paywallClose;
-
-  /// Paywall copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Pay once'**
-  String get paywallOneTimeShort;
 
   /// Family settings: automatic cloud summary sync.
   ///
@@ -2598,18 +2244,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{price}/mo'**
   String paywallPerMonth(String price);
-
-  /// Paywall: yearly price line.
-  ///
-  /// In en, this message translates to:
-  /// **'{price}/year'**
-  String paywallPerYear(String price);
-
-  /// Paywall: monthly plan line.
-  ///
-  /// In en, this message translates to:
-  /// **'Renews every month'**
-  String get paywallRenewsMonthly;
 
   /// Paywall primary button while the trial is unused.
   ///
@@ -2652,12 +2286,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{days} days free'**
   String paywallTrialOption(int days);
-
-  /// Paywall line under the trial button.
-  ///
-  /// In en, this message translates to:
-  /// **'You sign in with Google. When the trial ends you go back to the free version.'**
-  String get paywallTrialFootnote;
 
   /// Paywall primary button for a purchase.
   ///
@@ -2749,12 +2377,6 @@ abstract class AppLocalizations {
   /// **'Unlock with Premium'**
   String get familyLockedStatsButton;
 
-  /// Family games tab: explanation of the switches.
-  ///
-  /// In en, this message translates to:
-  /// **'Turn off the games you do not want {name} to see. Turned-off games disappear from child mode.'**
-  String familyGamesShownNote(String name);
-
   /// Family account card row.
   ///
   /// In en, this message translates to:
@@ -2776,7 +2398,7 @@ abstract class AppLocalizations {
   /// Family account card plan.
   ///
   /// In en, this message translates to:
-  /// **'Free trial · {days} days left'**
+  /// **'Free trial · {days, plural, =1{1 day left} other{{days} days left}}'**
   String familyPlanTrial(int days);
 
   /// Family account card trial end.
@@ -2994,12 +2616,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All topics added'**
   String get obPlanTopicsAll;
-
-  /// No description provided for @obPlanGoal.
-  ///
-  /// In en, this message translates to:
-  /// **'Daily goal: {minutes} minutes'**
-  String obPlanGoal(int minutes);
 
   /// No description provided for @obPlanReadyTitle.
   ///

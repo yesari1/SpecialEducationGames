@@ -28,12 +28,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noAdsOffline => 'Reklam yok.';
 
   @override
-  String get parentGateSettings => 'Ayarlar ebeveyn kilidinin arkasında.';
-
-  @override
-  String get letsGetStarted => 'Birlikte başlayalım';
-
-  @override
   String get homeFamily => 'Aile';
 
   @override
@@ -88,9 +82,6 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bu zorlukta açık oyun yok. Kolay’ı seçebilirsin.';
 
   @override
-  String get themeUnlockWithFamily => 'Bunu ailenle açabilirsin.';
-
-  @override
   String get parentGateTitle => 'Aile bölümü';
 
   @override
@@ -120,9 +111,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get onboardingSuggestedStart => 'Önerilen başlangıç';
-
-  @override
   String get onboardingFamilyHint => 'Aile bölümünden değiştirebilirsiniz.';
 
   @override
@@ -133,15 +121,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get onboardingContinue => 'Devam et';
-
-  @override
-  String get onboardingSkipQuestion => 'Bu soruyu atla';
-
-  @override
-  String get onboardingNickname => 'Takma ad';
-
-  @override
-  String get onboardingProfileQuestion => 'Minik kaşifimiz kim?';
 
   @override
   String get onboardingNicknameHint => 'Bir takma ad yeterli.';
@@ -166,12 +145,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String surveyOptionProgress(int current, int total) {
     return 'Seçenek $current / $total';
   }
-
-  @override
-  String get onboardingPreviousRecommendation => 'Önceki öneri';
-
-  @override
-  String get onboardingNextRecommendation => 'Sonraki öneri';
 
   @override
   String get accountTitle => 'Hesap';
@@ -200,8 +173,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.';
 
   @override
-  String get familyAccountConfiguration =>
-      'Google girişi henüz yapılandırılmadı.';
+  String get familyAccountConfiguration => 'Giriş şu anda kullanılamıyor.';
 
   @override
   String get familyAccountTimeout =>
@@ -222,10 +194,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get creditsRealPhotographs => 'Gerçek fotoğraflar';
-
-  @override
-  String get creditsSoundChanges =>
-      'Değişiklikler: mono MP3, azaltılmış ses düzeyi, kısa giriş/çıkış ve en fazla 3 saniye.';
 
   @override
   String get creditsAdaptationLicense => 'Uyarlama lisansı';
@@ -282,9 +250,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyNewsHeading => 'Yenilikler';
 
   @override
-  String get applicationName => 'Özel Eğitim Oyunları';
-
-  @override
   String get creditsOpenSourceLicenses => 'Açık kaynak yazılım lisansları';
 
   @override
@@ -292,7 +257,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get summarySyncDescription =>
-      'Yalnız günlük süre, tur ve bağımsız yanıt sayıları paylaşılır. Ham seçimler, çocuk adı ve anket yanıtları gönderilmez. Bu, tam profil yedeği değildir.';
+      'Buluta yalnız günlük süre ve tur sayısı gider. Çocuğun cevapları gitmez.';
 
   @override
   String get summarySyncRequirements =>
@@ -304,7 +269,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get summarySyncManualNotice =>
-      'Eşitleme yalnız aşağıdaki düğmeyle başlar. İzni kaldırmak cihazdaki indirilen özeti temizler; sunucudaki veriyi silmez.';
+      'Eşitleme yalnız aşağıdaki düğmeyle başlar. İzni kaldırmak bu telefondaki özeti temizler; buluttaki veriyi silmez.';
 
   @override
   String get summarySyncNow => 'Şimdi eşitle';
@@ -316,7 +281,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get summarySyncCapacity =>
-      'Özet sayısı desteklenen sınırı aşıyor. Yerel kayıtlar korunuyor.';
+      'Çok fazla kayıt var, bir kısmı gönderilemedi. Telefondaki kayıtlar duruyor.';
 
   @override
   String get summarySyncUnavailable =>
@@ -326,26 +291,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get subscriptionTitle => 'Premium';
 
   @override
-  String get subscriptionShowPlans => 'Planları göster';
-
-  @override
-  String get subscriptionHeading => 'Birlikte daha çok keşif';
-
-  @override
   String get subscriptionAllGames => 'Tüm oyunlar ve zorluklar';
 
   @override
   String get subscriptionProfiles => 'Beş çocuk profiline kadar';
 
   @override
-  String get subscriptionAdFree => 'Reklamsız, çevrimdışı öğrenme';
+  String get subscriptionAdFree => 'Ayrıntılı ilerleme raporları';
 
   @override
   String get subscriptionActive => 'Premium erişiminiz açık.';
-
-  @override
-  String get subscriptionUnavailable =>
-      'Google Play ürünleri şu anda alınamıyor. Ücretsiz oyunlarla devam edebilirsiniz.';
 
   @override
   String get subscriptionMonthly => 'Aylık';
@@ -354,40 +309,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get subscriptionYearly => 'Yıllık';
 
   @override
-  String get subscriptionMonth => 'ay';
-
-  @override
-  String get subscriptionYear => 'yıl';
-
-  @override
-  String subscriptionPrice(String recurringPrice, String period) {
-    return '$recurringPrice / $period';
-  }
-
-  @override
-  String subscriptionTrial(String recurringPrice) {
-    return '7 gün ücretsiz, sonra $recurringPrice. Deneme bitmeden Google Play’den iptal edebilirsiniz.';
-  }
-
-  @override
-  String get subscriptionRenewal =>
-      'Otomatik yenilenir. Google Play’den istediğiniz zaman iptal edebilirsiniz.';
-
-  @override
   String get subscriptionWaiting => 'Google Play bekleniyor…';
-
-  @override
-  String get subscriptionStartTrial => '7 günlük denemeyi başlat';
-
-  @override
-  String get subscriptionContinue => 'Google Play ile devam et';
 
   @override
   String get subscriptionStoreError =>
       'Mağazaya bağlanılamadı. Lütfen daha sonra tekrar deneyin.';
-
-  @override
-  String get subscriptionRestore => 'Satın alımları geri yükle';
 
   @override
   String get subscriptionManage => 'Aboneliği yönet / iptal et';
@@ -471,7 +397,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Grafikler ilk oyundan sonra dolar.';
 
   @override
-  String get familyAttentionDailyAverageSeconds => 'Dikkat (sn)';
+  String get familyAttentionDailyAverageSeconds => 'Cevap süresi (sn)';
 
   @override
   String get familyFirstResponse => 'İlk cevap';
@@ -480,19 +406,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyS => 'sn';
 
   @override
-  String get familyIdleTime => 'Bekleme';
+  String get familyIdleTime => 'Cevapsız bekleme';
 
   @override
   String get familyTimeInTheBackgroundIsExcluded =>
       'Arka planda geçen süre dahil değildir.';
-
-  @override
-  String familySecondsRange(double maximum) {
-    return '0–$maximum saniye.';
-  }
-
-  @override
-  String get familyNumericView => 'Sayısal görünüm';
 
   @override
   String get familySkillAreas => 'Beceriler';
@@ -518,7 +436,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyIndependentLastThreeAnswersWithoutHints =>
-      'Bağımsız liste: son üç yanıt ipucusuz. Destek listesi: son üç aşamanın en az ikisinde belirgin destek.';
+      'Kendi başına: son 3 cevap ipucusuz doğru. Destek: son 3 turun 2’sinde yardım aldı.';
 
   @override
   String get familyIndependentlyAnswered => 'Kendi başına biliyor';
@@ -539,19 +457,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyProgressByTheme => 'Tema gelişimi';
-
-  @override
-  String get familyShowUnlockedGamesOnly => 'Yalnızca açık oyunları göster';
-
-  @override
-  String get familyHidesLockedCardsInChildMode =>
-      'Çocuk ekranındaki kilitli kartları gizler.';
-
-  @override
-  String get familyEasyAndMediumUnlocked => 'Ücretsiz (Kolay)';
-
-  @override
-  String get familyPremium => 'Premium';
 
   @override
   String get familyDailyScreenTimeLimit => 'Günlük ekran süresi sınırı';
@@ -578,7 +483,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyDefaultDifficulty => 'Genel zorluk';
 
   @override
-  String get familyAutomaticThemeSelection => 'Otomatik / tema seçimi';
+  String get familyAutomaticThemeSelection => 'Temaya göre otomatik';
 
   @override
   String get familyEasy => 'Kolay';
@@ -596,7 +501,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyRoundLength => 'Tur uzunluğu';
 
   @override
-  String get familySurveyDifficultySetting => 'Anket / zorluk ayarı';
+  String get familySurveyDifficultySetting => 'Başlangıç anketine göre';
 
   @override
   String get familyStages => 'aşama';
@@ -634,7 +539,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyAnOptionalReminderItDoesNot =>
-      'Sadece hatırlatma, oyunu sınırlamaz.';
+      'Sadece bir hedef; oyunu sınırlamaz.';
 
   @override
   String get familyMin => 'dk';
@@ -694,13 +599,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyFull => 'Tam';
 
   @override
-  String get familySubscriptionPricesAndTrialEligibilityCome =>
-      'Fiyatlar Google Play\'den gelir.';
-
-  @override
-  String get familyPlansAndRestore => 'Planlar ve geri yükleme';
-
-  @override
   String get familyPrivacy => 'Gizlilik';
 
   @override
@@ -742,9 +640,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familySettings => 'Ayarlar';
 
   @override
-  String get familyStoredOnThisDevice => 'Bu cihazda saklanır';
-
-  @override
   String get familyDeleteProfile => 'Profili sil';
 
   @override
@@ -769,10 +664,6 @@ class AppLocalizationsTr extends AppLocalizations {
     );
     return '$_temp0';
   }
-
-  @override
-  String get familyTheFreeVersionIncludesOneChild =>
-      'Ücretsiz sürümde bir çocuk profili bulunur.';
 
   @override
   String get gameBackToTheme => 'Temaya dön';
@@ -810,9 +701,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gameAgain => 'Tekrar';
 
   @override
-  String get gameTodaysPath => 'Bugünün Yolu';
-
-  @override
   String get gameImagesForThisThemeAreNotReady =>
       'Bu temanın görselleri henüz hazır değil.';
 
@@ -842,7 +730,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get reminderOfferBody =>
-      'Çocuğunuzun her günkü eğitimi için size hatırlatma yapalım mı?';
+      'O gün oynanmadıysa akşam 18:00\'de kısa bir hatırlatma gönderelim mi?';
 
   @override
   String get reminderOfferYes => 'Evet, hatırlat';
@@ -860,14 +748,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get dailyPathNoGamesAreAvailableToday => 'Bugün açık oyun bulunmuyor.';
-
-  @override
-  String get dailyPathYouEarnedTodaysSticker =>
-      'Bugünün çıkartmasını kazandın!';
-
-  @override
-  String get dailyPathEachCompletedGameIsOneStep =>
-      'Her tamamlanan oyun bir adım.';
 
   @override
   String get dailyPathMyStickers => 'Çıkartmalarım';
@@ -898,16 +778,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get dailyPathClose => 'Kapat';
-
-  @override
-  String gameSummaryPage(int current, int total) {
-    return 'Özet · sayfa $current / $total';
-  }
-
-  @override
-  String dailyPathStepTitle(int index, String game) {
-    return '$index. $game';
-  }
 
   @override
   String get profileEditorNameRequired => 'Bir takma ad yazın.';
@@ -997,14 +867,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get obBack => 'Geri';
 
   @override
-  String get obHaveAccount => 'Zaten hesabın var mı?';
+  String get obHaveAccount => 'Zaten hesabınız var mı?';
 
   @override
   String get obSignIn => 'Giriş yap';
 
   @override
   String get obNoAccountFound =>
-      'Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım\'a dokun.';
+      'Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım\'a dokunun.';
 
   @override
   String get signInTitle => 'Giriş yap';
@@ -1069,13 +939,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallLifetimeSubscribedBody =>
-      'Ömür boyu satın aldıktan sonra aboneliğin kendiliğinden durmaz. Ödemenin devam etmemesi için Google Play → Ödemeler ve abonelikler bölümünden aboneliği iptal et.';
+      'Ömür boyu satın aldıktan sonra aboneliğiniz kendiliğinden durmaz. Ödemenin devam etmemesi için Google Play → Ödemeler ve abonelikler bölümünden aboneliği iptal edin.';
 
   @override
   String get paywallLifetimeSubscribedContinue => 'Satın almaya devam et';
 
   @override
-  String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunu ekleyelim.';
+  String get obSignedIn => 'Giriş yapıldı. Şimdi çocuğunuzu ekleyelim.';
 
   @override
   String get obSkip => 'Atla';
@@ -1117,7 +987,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obGoalBody =>
-      'Kısa ve düzenli oturumlar en iyisidir. Çocuğunuz sakin bir ilerleme görür, geri sayım görmez.';
+      'Kısa ve düzenli oturumlar en iyisidir. Çocuğunuz baskı yaratan bir sayaç görmez.';
 
   @override
   String obGoalMinutes(int minutes) {
@@ -1126,48 +996,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obRecommended => 'Önerilen';
-
-  @override
-  String get obLockTitle => 'Ayarlar sizde kalır';
-
-  @override
-  String get obLockBody =>
-      'Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine dokunun. Kısa bir ebeveyn kontrolü (basit bir soru ya da PIN’iniz) çocukların girmesini önler.';
-
-  @override
-  String get obPinSwitch => 'Ayrıca 4 haneli PIN belirle';
-
-  @override
-  String get obPinField => 'PIN';
-
-  @override
-  String get obPinInvalid => 'Dört rakam girin.';
-
-  @override
-  String get obTrialTitle => 'Tüm oyunları keşfedin';
-
-  @override
-  String get obTrialBody =>
-      'Ücretsiz oyunlar hep ücretsiz kalır. Premium tüm temaları ve oyunları, tüm zorluk seviyelerini ve beş çocuk profilini açar.';
-
-  @override
-  String get obTrialPoint1 => 'Tüm temalar ve oyunlar';
-
-  @override
-  String get obTrialPoint2 => 'Tüm zorluk seviyeleri';
-
-  @override
-  String get obTrialPoint3 => 'Beş çocuk profiline kadar';
-
-  @override
-  String get obTrialStart => '7 gün ücretsiz dene';
-
-  @override
-  String get obTrialNote =>
-      'Deneme sonrası ödeme Google Play üzerinden alınır. Google Play\'den istediğiniz zaman iptal edebilirsiniz.';
-
-  @override
-  String get obContinueFree => 'Ücretsiz devam et';
 
   @override
   String get obHandoffBody => 'Telefonu yan çevirip çocuğunuza verin.';
@@ -1299,22 +1127,6 @@ class AppLocalizationsTr extends AppLocalizations {
       '4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç.';
 
   @override
-  String paywallTrialTitle(int days) {
-    return '$days gün ücretsiz dene';
-  }
-
-  @override
-  String paywallTrialBody(int days) {
-    return 'Tüm oyunlar ve zorluklar $days gün açık. Ödeme bilgisi istenmez; süre bitince ücretsiz oyunlarla devam edilir.';
-  }
-
-  @override
-  String get paywallTrialSignIn => 'Google ile giriş yap ve başla';
-
-  @override
-  String get paywallTrialStart => 'Ücretsiz denemeyi başlat';
-
-  @override
   String paywallTrialActive(int days) {
     return 'Deneme sürüyor: $days gün kaldı';
   }
@@ -1327,22 +1139,11 @@ class AppLocalizationsTr extends AppLocalizations {
       'Deneme başlatılamadı. İnternet bağlantısını kontrol edip tekrar deneyin.';
 
   @override
-  String get paywallTrialNote =>
-      'Deneme her Google hesabı için bir kez verilir.';
-
-  @override
-  String get paywallFreeTier =>
-      'Her temada Öğren ve iki oyun her zaman ücretsiz.';
-
-  @override
   String get paywallLifetime => 'Tek seferlik';
 
   @override
   String get paywallLifetimeNote =>
       'Bir kez öde, süresiz kullan. Abonelik yok.';
-
-  @override
-  String get paywallBuy => 'Satın al';
 
   @override
   String get paywallLifetimeOwned => 'Tek seferlik Premium sizde.';
@@ -1380,9 +1181,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallHeadline => 'Tüm oyunları aç';
 
   @override
-  String get paywallNoPayment => 'Ödeme bilgisi istenmez';
-
-  @override
   String paywallSave(int percent) {
     return '%$percent tasarruf';
   }
@@ -1391,7 +1189,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallContinue => 'Devam et';
 
   @override
-  String get paywallContinueFree => 'Giriş yapmadan devam et';
+  String get paywallContinueFree => 'Ücretsiz sürümle devam et';
 
   @override
   String get paywallRestoreShort => 'Geri yükle';
@@ -1404,9 +1202,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get paywallClose => 'Kapat';
-
-  @override
-  String get paywallOneTimeShort => 'Bir kez öde';
 
   @override
   String get familyCloudSync => 'Günlük özetleri buluta gönder';
@@ -1429,14 +1224,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String paywallPerYear(String price) {
-    return 'Yılda $price';
-  }
-
-  @override
-  String get paywallRenewsMonthly => 'Her ay yenilenir';
-
-  @override
   String paywallStartTrial(int days) {
     return '$days gün ücretsiz dene';
   }
@@ -1451,19 +1238,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallFreePrice => 'Ücretsiz';
 
   @override
-  String get signInCheckEmail => 'E-postanı kontrol et';
+  String get signInCheckEmail => 'E-postanızı kontrol edin';
 
   @override
-  String get signInUseOtherEmail => 'Farklı e-posta kullan';
+  String get signInUseOtherEmail => 'Başka bir e-posta kullanın';
 
   @override
   String paywallTrialOption(int days) {
     return '$days gün ücretsiz';
   }
-
-  @override
-  String get paywallTrialFootnote =>
-      'Google ile giriş yapılır. Deneme bitince ücretsiz sürüme dönersiniz.';
 
   @override
   String paywallContinuePrice(String price) {
@@ -1515,11 +1298,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get familyLockedStatsButton => 'Premium ile aç';
-
-  @override
-  String familyGamesShownNote(String name) {
-    return '$name için istemediğiniz oyunları kapatın. Kapalı oyunlar çocuk modunda görünmez.';
-  }
 
   @override
   String get familyAccountPlan => 'Paket';
@@ -1583,7 +1361,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get askSurveyReports => 'İlerleme raporları daha detaylı olmalı';
 
   @override
-  String get askSurveyNote => 'Eklemek istediklerin';
+  String get askSurveyNote => 'Eklemek istedikleriniz';
 
   @override
   String get feedbackTitle => 'Geri bildirim gönder';
@@ -1596,10 +1374,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get feedbackSend => 'Gönder';
 
   @override
-  String get feedbackSent => 'Teşekkürler, geri bildirimin gönderildi';
+  String get feedbackSent => 'Teşekkürler, geri bildiriminiz gönderildi';
 
   @override
-  String get feedbackFailed => 'Gönderilemedi. Lütfen tekrar dene.';
+  String get feedbackFailed => 'Gönderilemedi. Lütfen tekrar deneyin.';
 
   @override
   String get familyPlanGranted => 'Premium';
@@ -1653,11 +1431,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obPlanTopicsAll => 'Tüm konular eklendi';
-
-  @override
-  String obPlanGoal(int minutes) {
-    return 'Günlük hedef: $minutes dakika';
-  }
 
   @override
   String obPlanReadyTitle(String name) {

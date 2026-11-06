@@ -44,31 +44,31 @@ class OnboardingScreen extends StatefulWidget {
 /// Onboarding illustrations (docs/illustration-style.md).
 const _illustrations = 'assets/illustrations/onboarding';
 
+/// First run: welcome, child, one question, "Building the plan" (moves on
+/// by itself), the 7-day plan, the Premium offer, the daily goal (with the
+/// reminder question), hand-off. Adding a child: child, questions, goal.
 enum OnboardingStep {
   welcome,
   child,
   question,
-  goal,
-
-  /// First run only: "Building the plan" (moves on by itself), then the
-  /// 7-day plan, before the Premium offer.
   planBuilding,
   planReady,
   trial,
+  goal,
   handoff,
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   /// The short get-to-know set; the full survey stays in the profile editor.
-  /// First run asks only the first two (setup in four screens); adding a
-  /// child from the family area keeps all four.
+  /// First run asks only the first (the offer comes after four taps);
+  /// adding a child from the family area keeps all four.
   static const questionKeys = ['favorite', 'known', 'sound', 'focus'];
   static final _allQuestions = [
     for (final key in questionKeys)
       surveyQuestions.firstWhere((q) => q.key == key),
   ];
   List<SurveyQuestion> get questions =>
-      widget.addChild ? _allQuestions : _allQuestions.take(2).toList();
+      widget.addChild ? _allQuestions : _allQuestions.take(1).toList();
 
   OnboardingStep step = OnboardingStep.welcome;
   int question = 0;
@@ -119,8 +119,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int get _progressIndex => switch (step) {
     OnboardingStep.child => 0,
     OnboardingStep.question => 1 + question,
-    OnboardingStep.goal => 1 + questions.length,
-    OnboardingStep.trial => 2 + questions.length,
+    OnboardingStep.goal => (widget.addChild ? 1 : 2) + questions.length,
+    OnboardingStep.trial => 1 + questions.length,
     _ => -1,
   };
   int get _progressCount => (widget.addChild ? 2 : 3) + questions.length;
@@ -143,8 +143,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       }
     }
     if (step == OnboardingStep.goal) {
-      // Saved before the offer so the trial/purchase belong to a profile.
-      widget.addChild ? _saveChild() : _saveAndOffer();
+      widget.addChild ? _saveChild() : _saveGoal();
+      return;
+    }
+    if (!widget.addChild &&
+        step == OnboardingStep.question &&
+        question == questions.length - 1) {
+      // Saved before the plan and the offer, so the plan has the answers
+      // and the trial/purchase belong to a profile.
+      _saveAndPlan();
       return;
     }
     setState(() {
@@ -167,7 +174,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         case OnboardingStep.planReady:
           step = OnboardingStep.trial;
         case OnboardingStep.trial:
-          step = OnboardingStep.handoff;
+          step = OnboardingStep.goal;
         case OnboardingStep.handoff:
           break;
       }
@@ -193,11 +200,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             step = OnboardingStep.child;
           }
         case OnboardingStep.goal:
-          step = OnboardingStep.question;
-          question = questions.length - 1;
+          // First run: the profile is saved and the offer is behind.
+          if (widget.addChild) {
+            step = OnboardingStep.question;
+            question = questions.length - 1;
+          }
+        case OnboardingStep.trial:
+          unawaited(s.funnelStep('paywallBack'));
         case OnboardingStep.planBuilding:
         case OnboardingStep.planReady:
-        case OnboardingStep.trial:
         case OnboardingStep.handoff:
           // The profile is already saved; nothing to go back to.
           break;
@@ -228,9 +239,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   bool _saved = false;
 
-  /// Saves the profile after the goal step, then shows the Premium offer.
-  /// The parent is setting up, so the parent area stays open for the offer.
-  Future<void> _saveAndOffer() async {
+  /// Saves the profile after the question (with the recommended daily
+  /// goal), then builds the plan. The parent is setting up, so the parent
+  /// area stays open for the offer and the goal.
+  Future<void> _saveAndPlan() async {
     if (saving || _saved) return;
     setState(() => saving = true);
     try {
@@ -245,11 +257,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (survey['sound'] == 0) await s.setting('sound', 'false');
       s.unlockFamily();
       _saved = true;
-      // Right after the daily goal, while the parent holds the phone upright:
-      // our own reminder question; only a yes asks Android for permission.
-      if (mounted && await s.shouldOfferReminder() && mounted) {
-        await s.answerReminderOffer(await showReminderOffer(context, s));
-      }
       if (mounted) {
         setState(() {
           saving = false;
@@ -261,6 +268,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         setState(() => saving = false);
         showNotice(context, l10n.onboardingSaveError);
       }
+    }
+  }
+
+  /// After the offer: the chosen daily goal, then our own reminder question
+  /// (only a yes asks Android for permission), then the hand-off.
+  Future<void> _saveGoal() async {
+    if (saving) return;
+    setState(() => saving = true);
+    try {
+      s.unlockFamily();
+      await s.setting('dailyGoalMinutes', '$dailyGoal');
+      if (mounted && await s.shouldOfferReminder() && mounted) {
+        await s.answerReminderOffer(await showReminderOffer(context, s));
+      }
+    } catch (_) {}
+    if (mounted) {
+      setState(() {
+        saving = false;
+        step = OnboardingStep.handoff;
+      });
     }
   }
 
@@ -288,7 +315,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   /// Hands the phone to the child: the parent area closes again.
   void finish() {
     s.lockFamily();
-    context.go('/');
+    // The child starts on today's path (the plan's first day).
+    context.go('/?path=true');
   }
 
   // ---------------------------------------------------------------- frame --
@@ -744,14 +772,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         LayoutBuilder(
           builder: (context, box) {
             const gap = SegSpace.s3;
-            final columns = options.length <= 3 ? 1 : 2;
+            final columns = q.shown.length <= 3 ? 1 : 2;
             final width = (box.maxWidth - gap * (columns - 1)) / columns;
             return Wrap(
               key: ValueKey('survey-options-${q.key}'),
               spacing: gap,
               runSpacing: gap,
               children: [
-                for (var i = 0; i < options.length; i++)
+                for (final i in q.shown)
                   SizedBox(
                     width: width,
                     child: PictureOption(
@@ -791,6 +819,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         'numbers',
         'music',
         'food',
+        'fruit',
+        'shapes',
       ][index],
       'known' => const [
         'animals',
@@ -803,6 +833,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         'home',
         'body',
         'feelings',
+        'food',
       ][index],
       'sound' => const ['sound_yes', 'sound_little', 'sound_no'][index],
       _ => const ['focus_short', 'focus_medium', 'focus_long'][index],
@@ -887,7 +918,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       liked.isEmpty
           ? l10n.obPlanTopicsAll
           : l10n.obPlanTopics(liked.join(', ')),
-      l10n.obPlanGoal(dailyGoal),
     ];
   }
 

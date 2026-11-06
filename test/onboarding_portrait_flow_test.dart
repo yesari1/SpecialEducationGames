@@ -84,7 +84,7 @@ void main() {
     return router;
   }
 
-  /// After the goal the plan pages show: "Building the plan" moves on by
+  /// After the question the plan pages show: "Building the plan" moves on by
   /// itself, the 7-day plan waits for its button. [check] runs on the plan.
   Future<void> passPlan(
     WidgetTester tester, [
@@ -183,25 +183,26 @@ void main() {
     await tapKey(tester, 'survey-option-0');
     await tapKey(tester, 'survey-option-1');
     await tapKey(tester, 'survey-option-0');
-    await tapKey(tester, 'onboarding-continue');
-    // known: skipped. First run asks only these two questions.
-    expect(find.byKey(const ValueKey('question-known')), findsOneWidget);
-    await tapKey(tester, 'onboarding-skip');
-
-    // Goal, then straight to the offer: no PIN step.
-    expect(find.byKey(const ValueKey('goal-title')), findsOneWidget);
-    await tapKey(tester, 'goal-20');
-    await tapKey(tester, 'onboarding-continue');
-
-    // The profile is saved, the parent area is open for the offer.
+    // First run asks only this question; the profile is saved, the parent
+    // area is open for the plan and the offer.
+    await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 300)),
     );
-    await tester.pumpAndSettle();
+    await tester.pump();
     expect(state.profiles, hasLength(1));
     expect(state.familyUnlocked, isTrue);
     await passPlan(tester);
     await passOffer(tester);
+
+    // The daily goal comes after the offer: no PIN step.
+    expect(find.byKey(const ValueKey('goal-title')), findsOneWidget);
+    await tapKey(tester, 'goal-20');
+    await tapKey(tester, 'onboarding-continue');
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+    await tester.pumpAndSettle();
     // Saved profiles follow their own language setting (the test device's).
     expect(find.textContaining('Ada!'), findsOneWidget);
     final play = find.byKey(const ValueKey('final-play'));
@@ -225,6 +226,11 @@ void main() {
     expect(state.dailyGoalMinutes, 20);
     expect(state.hasParentPin, isFalse);
     expect(router.routeInformationProvider.value.uri.path, '/');
+    // The child starts on today's path.
+    expect(
+      router.routeInformationProvider.value.uri.queryParameters['path'],
+      'true',
+    );
     // Handing the phone to the child closes the parent area again.
     expect(state.familyUnlocked, isFalse);
     expect(tester.takeException(), isNull);
@@ -240,12 +246,14 @@ void main() {
     await pumpOnboarding(tester, state);
     await tapKey(tester, 'welcome-start');
     await tapKey(tester, 'onboarding-continue');
-    for (var i = 0; i < 2; i++) {
-      await tapKey(tester, 'onboarding-skip');
-    }
-    await tapKey(tester, 'onboarding-continue'); // goal (15 preselected)
+    await tester.tap(find.byKey(const ValueKey('onboarding-skip')));
     await passPlan(tester);
     await passOffer(tester);
+    await tapKey(tester, 'onboarding-continue'); // goal (15 preselected)
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+    await tester.pumpAndSettle();
     await tapKey(tester, 'final-play');
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 300)),
@@ -256,7 +264,9 @@ void main() {
     expect(state.hasParentPin, isFalse);
   }, variant: _host);
 
-  testWidgets('goal leads to the plan pages, then the offer', (tester) async {
+  testWidgets('the question leads to the plan pages, then the offer', (
+    tester,
+  ) async {
     await loadFonts(tester);
     final state = await buildState(tester);
     addTearDown(state.dispose);
@@ -267,9 +277,6 @@ void main() {
     await tapKey(tester, 'age-4');
     await tapKey(tester, 'onboarding-continue');
     await tapKey(tester, 'survey-option-1'); // Taşıtlar
-    await tapKey(tester, 'onboarding-continue');
-    await tapKey(tester, 'onboarding-skip');
-    await tapKey(tester, 'goal-10');
     await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
 
     // Building the plan: the parent's answers, ticked one by one.
@@ -284,7 +291,6 @@ void main() {
     // Saved profiles follow their own language setting (the test device's).
     expect(find.text('Level for ages 4–5 selected'), findsOneWidget);
     expect(find.text('Favourite topics added: Vehicles'), findsOneWidget);
-    expect(find.text('Daily goal: 10 minutes'), findsOneWidget);
     // After the page transition: no back button, nothing ticked yet.
     await tester.pump(const Duration(milliseconds: 400));
     expect(find.byKey(const ValueKey('onboarding-back')), findsNothing);
@@ -333,9 +339,7 @@ void main() {
     await pumpOnboarding(tester, state);
     await tapKey(tester, 'welcome-start');
     await tapKey(tester, 'onboarding-continue');
-    await tapKey(tester, 'onboarding-skip');
-    await tapKey(tester, 'onboarding-skip');
-    await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
+    await tester.tap(find.byKey(const ValueKey('onboarding-skip')));
     final building = find.byKey(const ValueKey('plan-building'));
     for (var i = 0; i < 30 && building.evaluate().isEmpty; i++) {
       await tester.runAsync(
@@ -343,7 +347,7 @@ void main() {
       );
       await tester.pump();
     }
-    expect(find.byKey(const ValueKey('plan-check')), findsNWidgets(3));
+    expect(find.byKey(const ValueKey('plan-check')), findsNWidgets(2));
     expect(find.text('Starting level selected'), findsOneWidget);
     expect(find.text('All topics added'), findsOneWidget);
     await tester.pump(const Duration(seconds: 3));
@@ -382,15 +386,11 @@ void main() {
     await tapKey(tester, 'welcome-start');
     await tapKey(tester, 'onboarding-continue');
     expect(find.byKey(const ValueKey('question-favorite')), findsOneWidget);
-    await tapKey(tester, 'onboarding-skip');
-    expect(find.byKey(const ValueKey('question-known')), findsOneWidget);
     Future<void> systemBack() async {
       await tester.binding.handlePopRoute();
       await tester.pumpAndSettle();
     }
 
-    await systemBack();
-    expect(find.byKey(const ValueKey('question-favorite')), findsOneWidget);
     await systemBack();
     expect(find.byKey(const ValueKey('child-title')), findsOneWidget);
     await systemBack();
@@ -426,15 +426,17 @@ void main() {
         await tapKey(tester, 'welcome-start');
         await check('child');
         await tapKey(tester, 'onboarding-continue');
-        // First run asks two questions.
-        for (var i = 0; i < 2; i++) {
-          await check('question $i');
-          await tapKey(tester, 'onboarding-continue');
-        }
-        await check('goal');
-        await tapKey(tester, 'onboarding-continue');
+        // First run asks one question.
+        await check('question');
+        await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
         await passPlan(tester, check);
         await passOffer(tester);
+        await check('goal');
+        await tapKey(tester, 'onboarding-continue');
+        await tester.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 300)),
+        );
+        await tester.pumpAndSettle();
         await check('handoff');
         await tester.pumpWidget(const SizedBox.shrink());
         state.dispose();

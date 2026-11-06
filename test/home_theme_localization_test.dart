@@ -206,7 +206,6 @@ void main() {
           find.text(l10n.gameThereIsNotEnoughContentForThis),
           findsOneWidget,
         );
-        expect(find.text(l10n.themeUnlockWithFamily), findsNothing);
         expect(find.text('game:G14'), findsNothing);
         expect(tester.takeException(), isNull);
         await cleanup(tester, state, router);

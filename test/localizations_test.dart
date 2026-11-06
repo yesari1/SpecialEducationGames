@@ -49,10 +49,6 @@ void main() {
         'String',
       );
       expect(
-        arb['@familySecondsRange']['placeholders']['maximum']['type'],
-        'double',
-      );
-      expect(
         arb['@familyTodayGoalProgress']['placeholders']['minutes']['type'],
         'double',
       );
@@ -85,18 +81,6 @@ void main() {
           'int',
         );
       }
-      expect(
-        arb['@subscriptionPrice']['placeholders']['recurringPrice']['type'],
-        'String',
-      );
-      expect(
-        arb['@subscriptionPrice']['placeholders']['period']['type'],
-        'String',
-      );
-      expect(
-        arb['@subscriptionTrial']['placeholders']['recurringPrice']['type'],
-        'String',
-      );
     }
   });
 
@@ -119,8 +103,6 @@ void main() {
       final turkish = lookupAppLocalizations(const Locale('tr'));
       expect(english.familyNewsHeading, 'News');
       expect(turkish.familyNewsHeading, 'Yenilikler');
-      expect(english.subscriptionShowPlans, 'Show plans');
-      expect(turkish.subscriptionShowPlans, 'Planları göster');
       expect(english.playTimeBreakPageCount(2, 2), 'Break · 2 of 2');
       expect(turkish.playTimeBreakPageCount(2, 2), 'Mola · 2 / 2');
       expect(
@@ -142,14 +124,12 @@ void main() {
   );
 
   test('Typed game and daily path resources preserve pager counts', () {
-    for (final (locale, summary, pathPage) in [
-      ('tr', 'Özet · sayfa 2 / 3', 'Sayfa 2 / 3'),
-      ('en', 'Summary · page 2 of 3', 'Page 2 of 3'),
+    for (final (locale, pathPage) in [
+      ('tr', 'Sayfa 2 / 3'),
+      ('en', 'Page 2 of 3'),
     ]) {
       final l10n = lookupAppLocalizations(Locale(locale));
-      expect(l10n.gameSummaryPage(2, 3), summary);
       expect(l10n.dailyPathPageCurrentOfTotal(2, 3), pathPage);
-      expect(l10n.dailyPathStepTitle(4, 'Meyveler'), '4. Meyveler');
     }
   });
 
@@ -196,16 +176,16 @@ void main() {
     'Preview without delegates follows requested locale and fallback',
     (tester) async {
       for (final (locale, expected) in [
-        ('tr', 'Birlikte başlayalım'),
-        ('en', 'Let’s get started'),
-        ('de', 'Let’s get started'),
+        ('tr', 'Başlayalım'),
+        ('en', 'Let’s begin'),
+        ('de', 'Let’s begin'),
       ]) {
         await tester.pumpWidget(
           MaterialApp(
             home: Builder(
               builder: (context) {
                 return Text(
-                  scopedLocalizations(context, locale).letsGetStarted,
+                  scopedLocalizations(context, locale).obStart,
                 );
               },
             ),

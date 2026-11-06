@@ -27,9 +27,13 @@ class _SurveyOptionsState extends State<SurveyOptions> {
   late final PageController _controller;
   int _index = 0;
 
-  List<String> get _options => widget.locale == 'tr'
-      ? widget.question.trOptions
-      : widget.question.enOptions;
+  /// The options shown, by their stored index (retired ones left out).
+  List<(int, String)> get _options {
+    final all = widget.locale == 'tr'
+        ? widget.question.trOptions
+        : widget.question.enOptions;
+    return [for (final i in widget.question.shown) (i, all[i])];
+  }
 
   Set<int> get _selected => Set<int>.from(
     widget.value is List
@@ -184,7 +188,8 @@ class _SurveyOptionsState extends State<SurveyOptions> {
         key: ValueKey('survey-options-${widget.question.key}'),
         itemCount: options.length,
         separatorBuilder: (_, _) => const SizedBox(height: SegSpace.s2),
-        itemBuilder: (context, index) => _option(index, options[index]),
+        itemBuilder: (context, index) =>
+            _option(options[index].$1, options[index].$2),
       );
     }
     return Column(
@@ -216,7 +221,7 @@ class _SurveyOptionsState extends State<SurveyOptions> {
                               : double.infinity,
                           maxHeight: constraints.maxHeight,
                         ),
-                        child: _option(index, options[index]),
+                        child: _option(options[index].$1, options[index].$2),
                       ),
                     ),
                   ),

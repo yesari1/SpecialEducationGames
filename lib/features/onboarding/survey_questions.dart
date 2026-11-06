@@ -2,6 +2,11 @@ class SurveyQuestion {
   final String key, tr, en;
   final List<String> trOptions, enOptions;
   final bool multiple;
+
+  /// Options no longer offered (closed themes). Answers are stored as option
+  /// indexes, so an option is never removed or moved: it is retired here and
+  /// new ones are added at the end.
+  final Set<int> retired;
   const SurveyQuestion({
     required this.key,
     required this.tr,
@@ -9,7 +14,14 @@ class SurveyQuestion {
     required this.trOptions,
     required this.enOptions,
     this.multiple = false,
+    this.retired = const {},
   });
+
+  /// The indexes of the options shown, in order.
+  List<int> get shown => [
+    for (var i = 0; i < trOptions.length; i++)
+      if (!retired.contains(i)) i,
+  ];
 }
 
 const surveyQuestions = <SurveyQuestion>[
@@ -63,10 +75,10 @@ const surveyQuestions = <SurveyQuestion>[
   SurveyQuestion(
     key: 'known',
     tr: 'Hangilerini tanıyor?',
-    en: 'Which themes are familiar?',
+    en: 'Which of these does your child know?',
     trOptions: [
       'Hayvanlar',
-      'Meyveler',
+      'Meyve ve Sebzeler',
       'Renkler',
       'Sayılar',
       'Taşıtlar',
@@ -75,10 +87,11 @@ const surveyQuestions = <SurveyQuestion>[
       'Ev eşyaları',
       'Vücut',
       'Duygular',
+      'Yiyecek ve İçecekler',
     ],
     enOptions: [
       'Animals',
-      'Fruit',
+      'Fruit and Vegetables',
       'Colors',
       'Numbers',
       'Vehicles',
@@ -87,8 +100,11 @@ const surveyQuestions = <SurveyQuestion>[
       'Household items',
       'Body',
       'Feelings',
+      'Food and Drinks',
     ],
     multiple: true,
+    // Closed themes.
+    retired: {6, 7, 8, 9},
   ),
   SurveyQuestion(
     key: 'counting',
@@ -107,9 +123,22 @@ const surveyQuestions = <SurveyQuestion>[
       'Renkler',
       'Sayılar',
       'Müzik',
-      'Yemekler',
+      'Yiyecek ve İçecekler',
+      'Meyve ve Sebzeler',
+      'Şekiller',
     ],
-    enOptions: ['Animals', 'Vehicles', 'Colors', 'Numbers', 'Music', 'Food'],
+    enOptions: [
+      'Animals',
+      'Vehicles',
+      'Colors',
+      'Numbers',
+      'Music',
+      'Food and Drinks',
+      'Fruit and Vegetables',
+      'Shapes',
+    ],
     multiple: true,
+    // Closed theme.
+    retired: {4},
   ),
 ];
