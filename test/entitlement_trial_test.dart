@@ -151,7 +151,7 @@ void main() {
     setUp(() async {
       // Keeps the Play Billing plugin from connecting on the host.
       debugDefaultTargetPlatformOverride = TargetPlatform.linux;
-      now = DateTime.utc(2026, 10, 20, 12);
+      now = DateTime.now().toUtc(); // the trial is checked against the clock
       store = FakeTrialStore(() => now);
       state = AppState(
         await ContentRepository.load(),
@@ -282,10 +282,8 @@ void main() {
       expect(find.text(l10n.paywallStartFreeTrial), findsOneWidget);
       final start = find.byKey(const ValueKey('paywall-continue'));
       await tester.ensureVisible(start);
+      // Google's account chooser opens right away (no sign-in page).
       await tester.tap(start);
-      await tester.pumpAndSettle();
-      // The shared sign-in page: Google on top.
-      await tester.tap(find.byKey(const ValueKey('sign-in-google')));
       for (var i = 0; i < 10; i++) {
         await tester.runAsync(
           () => Future<void>.delayed(const Duration(milliseconds: 20)),

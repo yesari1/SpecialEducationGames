@@ -308,8 +308,89 @@ class AppState extends ChangeNotifier {
           await funnelStep(step);
         }
       }
+      final permission = await db.preference('funnel.due.notifPermission');
+      if (permission == 'granted' || permission == 'denied') {
+        await reportNotifPermission(permission == 'granted');
+      }
       unawaited(_reportPushToken());
       unawaited(_reportDeviceModel());
+      unawaited(reportOpenDay());
+    } catch (_) {}
+  }
+
+  static String _localDay(DateTime d) {
+    final l = d.toLocal();
+    return '${l.year.toString().padLeft(4, '0')}-'
+        '${l.month.toString().padLeft(2, '0')}-'
+        '${l.day.toString().padLeft(2, '0')}';
+  }
+
+  /// The local dates this install was opened (the last 60), for day 1 / 7 /
+  /// 30 return. Sent at start and when the app comes back to the front;
+  /// once a day. Failures are silent and retried next time.
+  Future<void> reportOpenDay() async {
+    if (!_funnelOn) return;
+    try {
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      final today = _localDay(DateTime.now());
+      if (await db.preference('funnel.openSent') == today) return;
+      final days = (await db.preference('funnel.openDays') ?? '')
+          .split(',')
+          .where((d) => d.isNotEmpty)
+          .toList();
+      if (!days.contains(today)) days.add(today);
+      final kept = days.length > 60 ? days.sublist(days.length - 60) : days;
+      await db.setPreference('funnel.openDays', kept.join(','));
+      await adminLink.funnel(await _ensureInstallId(), {'openDays': kept});
+      await db.setPreference('funnel.openSent', today);
+    } catch (_) {}
+  }
+
+  /// One more opened (or completed) round of a card on the install record:
+  /// `cards.<theme>_<game>.opened|completed`. Not retried: a count that
+  /// does not get through is simply missing.
+  Future<void> reportCard(
+    String theme,
+    String game, {
+    required bool completed,
+  }) async {
+    if (!_funnelOn) return;
+    try {
+      final key = '${theme}_$game';
+      if (!RegExp(r'^[A-Za-z0-9_]{1,40}$').hasMatch(key)) return;
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'cards': {
+          key: {completed ? 'completed' : 'opened': countUp()},
+        },
+      });
+    } catch (_) {}
+  }
+
+  /// The plan tapped on the offer (the last one tapped).
+  Future<void> reportPaywallPlan(String planId) async {
+    unawaited(funnelStep('paywallPlanTap'));
+    if (!_funnelOn) return;
+    try {
+      if (!RegExp(r'^[a-z0-9_]{1,32}$').hasMatch(planId)) return;
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'paywallPlanId': planId,
+      });
+    } catch (_) {}
+  }
+
+  /// Android's answer in its own notification permission dialog.
+  Future<void> reportNotifPermission(bool granted) async {
+    if (!_funnelOn) return;
+    try {
+      final value = granted ? 'granted' : 'denied';
+      await db.setPreference('funnel.due.notifPermission', value);
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'notifPermission': value,
+      });
+      await db.setPreference('funnel.due.notifPermission', '');
     } catch (_) {}
   }
 
@@ -383,6 +464,10 @@ class AppState extends ChangeNotifier {
     'firstGame',
     'reminderYes',
     'reminderNo',
+    'firstRound',
+    'paywallTrialTap',
+    'paywallPlanTap',
+    'paywallBack',
   ];
 
   /// Stamps `<step>At` once ([_funnelSteps]); the rules reject a second
@@ -412,13 +497,7 @@ class AppState extends ChangeNotifier {
       final ended = await (db.select(
         db.gameSessions,
       )..where((t) => t.endedAt.isNotNull())).get();
-      String day(DateTime d) {
-        final l = d.toLocal();
-        return '${l.year.toString().padLeft(4, '0')}-'
-            '${l.month.toString().padLeft(2, '0')}-'
-            '${l.day.toString().padLeft(2, '0')}';
-      }
-
+      const day = _localDay;
       final today = day(DateTime.now());
       var total = 0, todayMs = 0;
       final days = <String>{};
@@ -602,14 +681,84 @@ class AppState extends ChangeNotifier {
       ? Set.unmodifiable(_dailyStickers)
       : const {};
 
-  /// Six free cards a day: the games first, then free Learn cards if fewer
-  /// than six games are free.
-  List<String> get dailyPathSteps {
-    final free = _freePathCandidates;
-    return [
-      ...free.where((key) => !key.endsWith('_G02')),
-      ...free.where((key) => key.endsWith('_G02')),
-    ].take(6).toList();
+  /// Cards on today's path (short, so a small child reaches the sticker).
+  static const pathLength = 3;
+
+  /// Today's path follows the first-run 7-day plan ([weekPlan], liked themes
+  /// first): the plan's day (days since the plan started, then round
+  /// again), its cards that can be played, then more of that theme, then
+  /// the next days' cards, then any free card.
+  List<String> get dailyPathSteps => dailyPathStepsAt(DateTime.now());
+
+  List<String> dailyPathStepsAt(DateTime now) {
+    final steps = <String>[];
+    void add(String theme, String game) {
+      final key = '${theme}_$game';
+      if (steps.length < pathLength &&
+          !steps.contains(key) &&
+          pathPlayable(key)) {
+        steps.add(key);
+      }
+    }
+
+    final plan = weekPlan;
+    if (plan.isNotEmpty) {
+      final start = planDayAt(now) % plan.length;
+      final today = plan[start];
+      for (final g in today.games) {
+        add(today.theme, g);
+      }
+      final more = _planGames(today.theme);
+      for (final g in [
+        ...more.where((g) => g != WeekPlan.learn),
+        ...more.where((g) => g == WeekPlan.learn),
+      ]) {
+        add(today.theme, g);
+      }
+      for (var i = 1; i < plan.length; i++) {
+        final day = plan[(start + i) % plan.length];
+        for (final g in day.games) {
+          add(day.theme, g);
+        }
+      }
+    }
+    for (final key in _freePathCandidates) {
+      final parts = key.split('_');
+      add(parts[0], parts[1]);
+    }
+    return steps;
+  }
+
+  /// The day the active child's plan started (`YYYY-MM-DD`): set up, or the
+  /// first start of this version for children set up before.
+  String? _planStart;
+  String? _planStartProfileId;
+
+  /// A child set up in the first-run setup: the mascot greets them before
+  /// their first game, once.
+  bool _mascotHelloDue = false;
+  bool get mascotHelloDue =>
+      _mascotHelloDue && _planStartProfileId == active?.id;
+
+  Future<void> mascotHelloDone() async {
+    _mascotHelloDue = false;
+    final id = active?.id;
+    if (id != null) await db.setPreference('profile.$id.mascotHello', 'done');
+  }
+
+  /// 0 on the plan's first day, 1 the next day, ...
+  int planDayAt(DateTime now) {
+    final start = _planStartProfileId == active?.id
+        ? DateTime.tryParse(_planStart ?? '')
+        : null;
+    if (start == null) return 0;
+    final local = now.toLocal();
+    final days = DateTime.utc(
+      local.year,
+      local.month,
+      local.day,
+    ).difference(DateTime.utc(start.year, start.month, start.day)).inDays;
+    return days < 0 ? 0 : days;
   }
 
   /// The first-run 7-day plan (onboarding): home-screen theme order, each
@@ -627,7 +776,12 @@ class AppState extends ChangeNotifier {
     theme,
   ).where((g) => !hiddenGames.contains('${theme}_$g')).toList();
 
-  List<String> get _freePathCandidates => configuration.freeGames.where((key) {
+  List<String> get _freePathCandidates =>
+      configuration.freeGames.where(pathPlayable).toList()..sort();
+
+  /// Whether a card can stand on today's path now (playable, shown, with
+  /// its content and the sound it needs).
+  bool pathPlayable(String key) {
     final parts = key.split('_');
     if (parts.length != 2) return false;
     final effectiveDifficulty = recommendedDifficulty(
@@ -644,9 +798,10 @@ class AppState extends ChangeNotifier {
           effectiveDifficulty,
         ) &&
         hasRequiredGameAudio(parts[0], parts[1]);
-  }).toList()..sort();
+  }
+
   DailyPathProgress dailyPathAt(DateTime now) => DailyPathProgress.fromSessions(
-    steps: dailyPathSteps,
+    steps: dailyPathStepsAt(now),
     sessions: sessions,
     profileId: active?.id ?? '',
     now: now,
@@ -862,6 +1017,7 @@ class AppState extends ChangeNotifier {
     ratingLaterUntil = DateTime.tryParse(
       await db.preference('ask.ratingLaterUntil') ?? '',
     );
+    await _loadReminder();
     profiles = await (db.select(
       db.profiles,
     )..orderBy([(p) => OrderingTerm.asc(p.id)])).get();
@@ -960,11 +1116,70 @@ class AppState extends ChangeNotifier {
   /// Daily play reminder (local notifications only).
   final PlayReminder reminder = PlayReminder();
 
-  /// Re-plans the evening reminders: none today once a game was started.
+  /// Daily reminder on (the parent said yes) and its hour.
+  bool reminderOn = false;
+  int reminderHour = PlayReminder.hour;
+
+  Future<void> _loadReminder() async {
+    reminderOn = await db.preference('reminder.on') == 'true';
+    final hour = int.tryParse(await db.preference('reminder.hour') ?? '');
+    reminderHour = PlayReminder.hours.contains(hour)
+        ? hour!
+        : PlayReminder.hour;
+  }
+
+  /// Family area: the reminders on or off (on asks Android's permission).
+  Future<void> setReminder(bool on) async {
+    if (!familyUnlocked) throw StateError('parent_gate_required');
+    await db.setPreference('reminder.asked', 'true');
+    await db.setPreference('reminder.on', '$on');
+    reminderOn = on;
+    if (on) {
+      final granted = await reminder.requestPermission();
+      unawaited(reportNotifPermission(granted));
+    }
+    await refreshReminder();
+    if (!_disposed) notifyListeners();
+  }
+
+  Future<void> setReminderHour(int hour) async {
+    if (!familyUnlocked) throw StateError('parent_gate_required');
+    if (!PlayReminder.hours.contains(hour)) throw ArgumentError('hour');
+    await db.setPreference('reminder.hour', '$hour');
+    reminderHour = hour;
+    await refreshReminder();
+    if (!_disposed) notifyListeners();
+  }
+
+  /// Days in a row with play, up to today (a day not played yet today does
+  /// not break it until the day is over).
+  int dayStreakAt(DateTime now) {
+    String key(DateTime d) => DailyPathProgress.dayKey(d);
+    final played = {
+      for (final x in sessions)
+        if (x.activeMs > 0 || x.completed) key(x.startedAt),
+    };
+    var day = DateTime(now.year, now.month, now.day);
+    if (!played.contains(key(day))) {
+      day = DateTime(day.year, day.month, day.day - 1);
+    }
+    var streak = 0;
+    while (played.contains(key(day))) {
+      streak++;
+      day = DateTime(day.year, day.month, day.day - 1);
+    }
+    return streak;
+  }
+
+  int get dayStreak => dayStreakAt(DateTime.now());
+
+  /// Re-plans the evening reminders (none today once a game was started)
+  /// and the Sunday summary of the week.
   Future<void> refreshReminder() async {
     if (active == null || !PlayReminder.supported) return;
-    // Only after the parent said yes to the offer.
-    if (await db.preference('reminder.on') != 'true') {
+    await _loadReminder();
+    // Only after the parent said yes.
+    if (!reminderOn) {
       await reminder.cancel();
       return;
     }
@@ -974,11 +1189,34 @@ class AppState extends ChangeNotifier {
       db.gameSessions,
     )..where((t) => t.startedAt.isBiggerOrEqualValue(today))).get();
     final l10n = lookupAppLocalizations(Locale(locale));
+    // The summary covers Monday to the Sunday it is shown on.
+    final sunday = PlayReminder.weeklyAt(now, at: reminderHour);
+    final monday = DateTime(sunday.year, sunday.month, sunday.day - 6);
+    final week = await (db.select(db.gameSessions)..where(
+          (t) =>
+              t.profileId.equals(active!.id) &
+              t.startedAt.isBiggerOrEqualValue(monday),
+        ))
+        .get();
+    final days = {
+      for (final x in week)
+        if (x.activeMs > 0) DailyPathProgress.dayKey(x.startedAt),
+    }.length;
+    final minutes = (week.fold<int>(0, (sum, x) => sum + x.activeMs) / 60000)
+        .round();
+    final name = active!.nickname;
     await reminder.reschedule(
       playedToday: played.isNotEmpty,
       title: l10n.reminderTitle,
       body: l10n.reminderBody,
       channel: l10n.reminderChannel,
+      at: reminderHour,
+      weekly: (
+        l10n.weeklySummaryTitle,
+        days == 0
+            ? l10n.weeklySummaryNone(name)
+            : l10n.weeklySummaryBody(name, days, minutes < 1 ? 1 : minutes),
+      ),
     );
   }
 
@@ -994,9 +1232,11 @@ class AppState extends ChangeNotifier {
   Future<void> answerReminderOffer(bool yes) async {
     await db.setPreference('reminder.asked', 'true');
     await db.setPreference('reminder.on', '$yes');
+    reminderOn = yes;
     unawaited(funnelStep(yes ? 'reminderYes' : 'reminderNo'));
     if (!yes) return;
-    await reminder.requestPermission();
+    final granted = await reminder.requestPermission();
+    unawaited(reportNotifPermission(granted));
     await refreshReminder();
   }
 
@@ -1020,6 +1260,13 @@ class AppState extends ChangeNotifier {
     }
     trials = nextTrials;
     sessions = nextSessions;
+    final planKey = 'profile.$profileId.planStart';
+    var planStart = await db.preference(planKey);
+    if (profileId != null && DateTime.tryParse(planStart ?? '') == null) {
+      planStart = DailyPathProgress.dayKey(DateTime.now());
+      await db.setPreference(planKey, planStart);
+    }
+    final hello = await db.preference('profile.$profileId.mascotHello');
     final stickerKey = 'profile.$profileId.dailyStickers';
     final storedStickers = await db.preference(stickerKey);
     if (_disposed ||
@@ -1040,6 +1287,9 @@ class AppState extends ChangeNotifier {
       _dailyStickers = {};
     }
     _stickerProfileId = profileId;
+    _planStart = planStart;
+    _planStartProfileId = profileId;
+    _mascotHelloDue = hello == 'due';
     if (profileId != null && dailyPath.complete) {
       _dailyStickers.add(DailyPathProgress.dayKey(DateTime.now()));
       await db.setPreference(
@@ -1108,6 +1358,7 @@ class AppState extends ChangeNotifier {
     if (pin != null && !ParentPin.valid(pin)) throw ArgumentError('pin');
     await createProfile(name, 'cat', survey);
     final id = active!.id;
+    await db.setPreference('profile.$id.mascotHello', 'due');
     if (dailyGoalMinutes != null) {
       await db.setPreference(
         'profile.$id.dailyGoalMinutes',
@@ -1388,6 +1639,7 @@ class AppState extends ChangeNotifier {
           ),
         );
     unawaited(funnelStep('firstGame'));
+    unawaited(reportCard(theme, game, completed: false));
     unawaited(refreshReminder());
     return id;
   }
@@ -1407,6 +1659,17 @@ class AppState extends ChangeNotifier {
     await refreshTrials();
     autoSync.request();
     unawaited(reportPlayTime());
+    // The Sunday summary counts this game too.
+    unawaited(refreshReminder());
+    if (completed) {
+      unawaited(funnelStep('firstRound'));
+      final s = await (db.select(
+        db.gameSessions,
+      )..where((t) => t.id.equals(id))).getSingleOrNull();
+      if (s != null) {
+        unawaited(reportCard(s.themeId, s.gameId, completed: true));
+      }
+    }
   }
 
   /// The database keeps whole seconds; rounding the end up keeps the active

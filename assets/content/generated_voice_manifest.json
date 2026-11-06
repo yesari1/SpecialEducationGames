@@ -21549,6 +21549,48 @@
     "use_speaker_boost": true
    }
   },
+  "mascot.hello:en": {
+   "bytes": 25538,
+   "characters": 24,
+   "item": null,
+   "kind": "mascot",
+   "language": "en",
+   "model_id": "eleven_multilingual_v2",
+   "path": "assets/audio/en/prompts/mascot_hello.mp3",
+   "requested_at": "2026-11-06T17:13:58.476916+00:00",
+   "sha256": "cc80c4a48cdbf166197e2c0e83a461a83c0c600966b8fc606e9db2e7df4ee1e0",
+   "text": "Hi! Let's play together.",
+   "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+   "voice_name": "Laura - a top narration voice",
+   "voice_settings": {
+    "similarity_boost": 0.75,
+    "speed": 1.0,
+    "stability": 0.35,
+    "style": 0.43,
+    "use_speaker_boost": true
+   }
+  },
+  "mascot.hello:tr": {
+   "bytes": 33897,
+   "characters": 33,
+   "item": null,
+   "kind": "mascot",
+   "language": "tr",
+   "model_id": "eleven_multilingual_v2",
+   "path": "assets/audio/tr/prompts/mascot_hello.mp3",
+   "requested_at": "2026-11-06T17:13:57.517447+00:00",
+   "sha256": "ec0c7278dac0be9d795d647928be631728a57656213357015e68191b216bde4e",
+   "text": "Merhaba! Hadi birlikte oynayalım.",
+   "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+   "voice_name": "İrem - Authoritarian Female Voice",
+   "voice_settings": {
+    "similarity_boost": 0.75,
+    "speed": 1.0,
+    "stability": 0.35,
+    "style": 0.43,
+    "use_speaker_boost": true
+   }
+  },
   "music.accordion:en": {
    "bytes": 16761,
    "characters": 10,

@@ -35,7 +35,7 @@ class DailyPathProgress {
 
   int get count => completed.length;
   // A remotely reduced path with fewer than four games is not a full daily path.
-  bool get complete => steps.length >= 4 && count == steps.length;
+  bool get complete => steps.length >= 3 && count == steps.length;
   static String dayKey(DateTime value) {
     final day = value.toLocal();
     return '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';

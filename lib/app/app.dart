@@ -372,6 +372,7 @@ class _EducationAppState extends State<EducationApp>
     if (lifecycle == AppLifecycleState.resumed) {
       state.autoSync.request();
       state.billing.appResumed();
+      unawaited(state.reportOpenDay());
     }
     if (lifecycle != AppLifecycleState.resumed) state.audio.stop();
     // Only leaving the app locks the parent area. `inactive` alone is a

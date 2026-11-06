@@ -28,12 +28,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noAdsOffline => 'No ads.';
 
   @override
-  String get parentGateSettings => 'Settings stay behind a parent gate.';
-
-  @override
-  String get letsGetStarted => 'Let’s get started';
-
-  @override
   String get homeFamily => 'Family';
 
   @override
@@ -106,9 +100,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'No unlocked games at this level. Try Easy.';
 
   @override
-  String get themeUnlockWithFamily => 'You can unlock this with your family.';
-
-  @override
   String get parentGateTitle => 'Family area';
 
   @override
@@ -138,9 +129,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get onboardingSuggestedStart => 'Suggested starting point';
-
-  @override
   String get onboardingFamilyHint => 'You can adjust these in the Family area.';
 
   @override
@@ -151,15 +139,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingContinue => 'Continue';
-
-  @override
-  String get onboardingSkipQuestion => 'Skip this question';
-
-  @override
-  String get onboardingNickname => 'Nickname';
-
-  @override
-  String get onboardingProfileQuestion => 'Who is our little explorer?';
 
   @override
   String get onboardingNicknameHint => 'A nickname is all we need.';
@@ -184,12 +163,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String surveyOptionProgress(int current, int total) {
     return 'Option $current of $total';
   }
-
-  @override
-  String get onboardingPreviousRecommendation => 'Previous recommendation';
-
-  @override
-  String get onboardingNextRecommendation => 'Next recommendation';
 
   @override
   String get accountTitle => 'Account';
@@ -218,7 +191,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Could not connect. Check the internet connection and try again.';
 
   @override
-  String get familyAccountConfiguration => 'Google sign-in needs setup.';
+  String get familyAccountConfiguration =>
+      'Sign-in is not available right now.';
 
   @override
   String get familyAccountTimeout => 'Sign-in timed out. Please try again.';
@@ -238,10 +212,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get creditsRealPhotographs => 'Real photographs';
-
-  @override
-  String get creditsSoundChanges =>
-      'Changes: mono MP3, reduced volume, short fades, at most 3 seconds.';
 
   @override
   String get creditsAdaptationLicense => 'Adaptation license';
@@ -298,9 +268,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyNewsHeading => 'News';
 
   @override
-  String get applicationName => 'Special Education Games';
-
-  @override
   String get creditsOpenSourceLicenses => 'Open source software licenses';
 
   @override
@@ -308,7 +275,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get summarySyncDescription =>
-      'Only daily time, round and independent response totals are shared. Raw choices, child name and survey answers are not sent. This is not a full profile backup.';
+      'Only daily time and the number of rounds go to the cloud. Your child\'s answers are not sent.';
 
   @override
   String get summarySyncRequirements =>
@@ -320,7 +287,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get summarySyncManualNotice =>
-      'Sync starts only with the button below. Revoking permission clears the downloaded snapshot on this device; it does not delete server data.';
+      'Sync starts only with the button below. Turning permission off clears the summary on this phone; it does not delete cloud data.';
 
   @override
   String get summarySyncNow => 'Sync now';
@@ -332,7 +299,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get summarySyncCapacity =>
-      'The summary count exceeds the supported limit. Local records are preserved.';
+      'There are too many records; some could not be sent. The records on this phone are kept.';
 
   @override
   String get summarySyncUnavailable =>
@@ -342,26 +309,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subscriptionTitle => 'Premium';
 
   @override
-  String get subscriptionShowPlans => 'Show plans';
-
-  @override
-  String get subscriptionHeading => 'More discoveries together';
-
-  @override
   String get subscriptionAllGames => 'All games and difficulty levels';
 
   @override
   String get subscriptionProfiles => 'Up to five child profiles';
 
   @override
-  String get subscriptionAdFree => 'Ad-free, offline learning';
+  String get subscriptionAdFree => 'Detailed progress reports';
 
   @override
   String get subscriptionActive => 'Your Premium access is active.';
-
-  @override
-  String get subscriptionUnavailable =>
-      'Google Play products are unavailable right now. You can continue with the free games.';
 
   @override
   String get subscriptionMonthly => 'Monthly';
@@ -370,40 +327,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subscriptionYearly => 'Yearly';
 
   @override
-  String get subscriptionMonth => 'month';
-
-  @override
-  String get subscriptionYear => 'year';
-
-  @override
-  String subscriptionPrice(String recurringPrice, String period) {
-    return '$recurringPrice / $period';
-  }
-
-  @override
-  String subscriptionTrial(String recurringPrice) {
-    return '7 days free, then $recurringPrice. Cancel through Google Play before the trial ends.';
-  }
-
-  @override
-  String get subscriptionRenewal =>
-      'Renews automatically. You can cancel at any time through Google Play.';
-
-  @override
   String get subscriptionWaiting => 'Waiting for Google Play…';
-
-  @override
-  String get subscriptionStartTrial => 'Start 7-day trial';
-
-  @override
-  String get subscriptionContinue => 'Continue with Google Play';
 
   @override
   String get subscriptionStoreError =>
       'Could not connect to the store. Please try again later.';
-
-  @override
-  String get subscriptionRestore => 'Restore purchases';
 
   @override
   String get subscriptionManage => 'Manage / cancel subscription';
@@ -486,7 +414,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Charts fill in after the first game.';
 
   @override
-  String get familyAttentionDailyAverageSeconds => 'Attention (sec)';
+  String get familyAttentionDailyAverageSeconds => 'Answer time (sec)';
 
   @override
   String get familyFirstResponse => 'First answer';
@@ -495,19 +423,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyS => 's';
 
   @override
-  String get familyIdleTime => 'Waiting';
+  String get familyIdleTime => 'Waiting without an answer';
 
   @override
   String get familyTimeInTheBackgroundIsExcluded =>
       'Time in the background is excluded.';
-
-  @override
-  String familySecondsRange(double maximum) {
-    return '0–$maximum seconds.';
-  }
-
-  @override
-  String get familyNumericView => 'Numeric view';
 
   @override
   String get familySkillAreas => 'Skills';
@@ -521,7 +441,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String familyCountStages(int count) {
-    return '$count stages';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count stages',
+      one: '1 stage',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -533,7 +459,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyIndependentLastThreeAnswersWithoutHints =>
-      'Independent: last three answers without hints. Support: substantial help in at least two of the last three stages.';
+      'On their own: last 3 answers right without hints. Support: needed help in 2 of the last 3 rounds.';
 
   @override
   String get familyIndependentlyAnswered => 'Knows on their own';
@@ -556,19 +482,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyProgressByTheme => 'Progress by theme';
 
   @override
-  String get familyShowUnlockedGamesOnly => 'Show unlocked games only';
-
-  @override
-  String get familyHidesLockedCardsInChildMode =>
-      'Hides locked cards in Child Mode.';
-
-  @override
-  String get familyEasyAndMediumUnlocked => 'Free (Easy)';
-
-  @override
-  String get familyPremium => 'Premium';
-
-  @override
   String get familyDailyScreenTimeLimit => 'Daily screen time limit';
 
   @override
@@ -583,7 +496,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String familyRemainingTodayMinutesMinutes(int minutes) {
-    return 'Remaining today: $minutes minutes';
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '1 minute',
+    );
+    return 'Remaining today: $_temp0';
   }
 
   @override
@@ -593,7 +512,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyDefaultDifficulty => 'Default difficulty';
 
   @override
-  String get familyAutomaticThemeSelection => 'Automatic / theme selection';
+  String get familyAutomaticThemeSelection => 'Automatic by theme';
 
   @override
   String get familyEasy => 'Easy';
@@ -611,7 +530,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyRoundLength => 'Round length';
 
   @override
-  String get familySurveyDifficultySetting => 'Survey / difficulty setting';
+  String get familySurveyDifficultySetting => 'Based on the starting survey';
 
   @override
   String get familyStages => 'stages';
@@ -649,7 +568,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyAnOptionalReminderItDoesNot =>
-      'A reminder only, play is not limited.';
+      'A goal only; play is not limited.';
 
   @override
   String get familyMin => 'min';
@@ -674,7 +593,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyShowOneCardFirstThenOffer => 'One card first, then choices.';
 
   @override
-  String get familyAdaptiveDifficulty => 'Adaptive difficulty';
+  String get familyAdaptiveDifficulty => 'Automatic difficulty suggestion';
 
   @override
   String get familyChangesApplyOnlyWhenANew => 'Applies from the next round.';
@@ -705,13 +624,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyFull => 'Full';
-
-  @override
-  String get familySubscriptionPricesAndTrialEligibilityCome =>
-      'Prices come from Google Play.';
-
-  @override
-  String get familyPlansAndRestore => 'Plans and restore';
 
   @override
   String get familyPrivacy => 'Privacy';
@@ -755,9 +667,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familySettings => 'Settings';
 
   @override
-  String get familyStoredOnThisDevice => 'Stored on this device';
-
-  @override
   String get familyDeleteProfile => 'Delete profile';
 
   @override
@@ -782,10 +691,6 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
-
-  @override
-  String get familyTheFreeVersionIncludesOneChild =>
-      'The free version includes one child profile.';
 
   @override
   String get gameBackToTheme => 'Back to theme';
@@ -823,9 +728,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gameAgain => 'Again';
 
   @override
-  String get gameTodaysPath => 'Today’s Path';
-
-  @override
   String get gameImagesForThisThemeAreNotReady =>
       'Images for this theme are not ready yet.';
 
@@ -842,7 +744,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gameNextGame => 'Next game';
 
   @override
-  String get reminderTitle => 'Play time';
+  String get reminderTitle => 'Time to play';
 
   @override
   String get reminderBody => 'Shall we play together for a few minutes today?';
@@ -855,7 +757,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reminderOfferBody =>
-      'Shall we remind you about your child\'s daily learning?';
+      'If you haven\'t played that day, shall we send a short reminder at 6 pm?';
 
   @override
   String get reminderOfferYes => 'Yes, remind me';
@@ -874,13 +776,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get dailyPathNoGamesAreAvailableToday =>
       'No games are available today.';
-
-  @override
-  String get dailyPathYouEarnedTodaysSticker => 'You earned today’s sticker!';
-
-  @override
-  String get dailyPathEachCompletedGameIsOneStep =>
-      'Each completed game is one step.';
 
   @override
   String get dailyPathMyStickers => 'My stickers';
@@ -911,16 +806,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dailyPathClose => 'Close';
-
-  @override
-  String gameSummaryPage(int current, int total) {
-    return 'Summary · page $current of $total';
-  }
-
-  @override
-  String dailyPathStepTitle(int index, String game) {
-    return '$index. $game';
-  }
 
   @override
   String get profileEditorNameRequired => 'Enter a nickname.';
@@ -1130,7 +1015,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obGoalBody =>
-      'Short, regular sessions work best. Your child sees calm progress, never a countdown.';
+      'Short, regular sessions work best. Your child never sees a pressuring countdown.';
 
   @override
   String obGoalMinutes(int minutes) {
@@ -1139,48 +1024,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obRecommended => 'Recommended';
-
-  @override
-  String get obLockTitle => 'Settings stay with you';
-
-  @override
-  String get obLockBody =>
-      'To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.';
-
-  @override
-  String get obPinSwitch => 'Also set a 4-digit PIN';
-
-  @override
-  String get obPinField => 'PIN';
-
-  @override
-  String get obPinInvalid => 'Enter four digits.';
-
-  @override
-  String get obTrialTitle => 'Explore every game';
-
-  @override
-  String get obTrialBody =>
-      'The free games stay free. Premium opens every theme and game, all difficulty levels and up to five child profiles.';
-
-  @override
-  String get obTrialPoint1 => 'All themes and games';
-
-  @override
-  String get obTrialPoint2 => 'Every difficulty level';
-
-  @override
-  String get obTrialPoint3 => 'Up to five child profiles';
-
-  @override
-  String get obTrialStart => 'Try 7 days free';
-
-  @override
-  String get obTrialNote =>
-      'Billed by Google Play after the trial. You can cancel any time in Google Play.';
-
-  @override
-  String get obContinueFree => 'Continue for free';
 
   @override
   String get obHandoffBody =>
@@ -1234,7 +1077,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String famGoalLeft(int minutes) {
-    return '$minutes more minutes to today’s goal.';
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes more minutes',
+      one: '1 more minute',
+    );
+    return '$_temp0 to today’s goal.';
   }
 
   @override
@@ -1314,24 +1163,14 @@ class AppLocalizationsEn extends AppLocalizations {
       '4 choices, numbers 1–20, 10 questions per game, less familiar items, later hints.';
 
   @override
-  String paywallTrialTitle(int days) {
-    return 'Try free for $days days';
-  }
-
-  @override
-  String paywallTrialBody(int days) {
-    return 'Every game and level is open for $days days. No payment details needed; afterwards the free games stay open.';
-  }
-
-  @override
-  String get paywallTrialSignIn => 'Sign in with Google to start';
-
-  @override
-  String get paywallTrialStart => 'Start free trial';
-
-  @override
   String paywallTrialActive(int days) {
-    return 'Trial active: $days days left';
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days left',
+      one: '1 day left',
+    );
+    return 'Trial active: $_temp0';
   }
 
   @override
@@ -1342,21 +1181,11 @@ class AppLocalizationsEn extends AppLocalizations {
       'The trial could not be started. Check the internet connection and try again.';
 
   @override
-  String get paywallTrialNote => 'One free trial per Google account.';
-
-  @override
-  String get paywallFreeTier =>
-      'Learn and two games in every theme are always free.';
-
-  @override
   String get paywallLifetime => 'One-time';
 
   @override
   String get paywallLifetimeNote =>
       'Pay once, keep it forever. No subscription.';
-
-  @override
-  String get paywallBuy => 'Buy';
 
   @override
   String get paywallLifetimeOwned => 'You own Premium for life.';
@@ -1394,9 +1223,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallHeadline => 'Unlock every game';
 
   @override
-  String get paywallNoPayment => 'No payment details';
-
-  @override
   String paywallSave(int percent) {
     return 'Save $percent%';
   }
@@ -1405,7 +1231,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paywallContinue => 'Continue';
 
   @override
-  String get paywallContinueFree => 'Continue without signing in';
+  String get paywallContinueFree => 'Continue with the free version';
 
   @override
   String get paywallRestoreShort => 'Restore';
@@ -1418,9 +1244,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallClose => 'Close';
-
-  @override
-  String get paywallOneTimeShort => 'Pay once';
 
   @override
   String get familyCloudSync => 'Send daily summaries to the cloud';
@@ -1441,14 +1264,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String paywallPerMonth(String price) {
     return '$price/mo';
   }
-
-  @override
-  String paywallPerYear(String price) {
-    return '$price/year';
-  }
-
-  @override
-  String get paywallRenewsMonthly => 'Renews every month';
 
   @override
   String paywallStartTrial(int days) {
@@ -1474,10 +1289,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String paywallTrialOption(int days) {
     return '$days days free';
   }
-
-  @override
-  String get paywallTrialFootnote =>
-      'You sign in with Google. When the trial ends you go back to the free version.';
 
   @override
   String paywallContinuePrice(String price) {
@@ -1530,11 +1341,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyLockedStatsButton => 'Unlock with Premium';
 
   @override
-  String familyGamesShownNote(String name) {
-    return 'Turn off the games you do not want $name to see. Turned-off games disappear from child mode.';
-  }
-
-  @override
   String get familyAccountPlan => 'Plan';
 
   @override
@@ -1545,7 +1351,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String familyPlanTrial(int days) {
-    return 'Free trial · $days days left';
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days left',
+      one: '1 day left',
+    );
+    return 'Free trial · $_temp0';
   }
 
   @override
@@ -1668,11 +1480,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get obPlanTopicsAll => 'All topics added';
 
   @override
-  String obPlanGoal(int minutes) {
-    return 'Daily goal: $minutes minutes';
-  }
-
-  @override
   String obPlanReadyTitle(String name) {
     return '$name\'s 7-day plan is ready';
   }
@@ -1684,4 +1491,45 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obPlanToday => 'Today';
+
+  @override
+  String get gameMascotHello => 'Hi! Let\'s play together.';
+
+  @override
+  String get weeklySummaryTitle => 'This week';
+
+  @override
+  String weeklySummaryBody(String name, int days, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '1 minute',
+    );
+    return '$name played on $_temp0 this week, $_temp1 in total.';
+  }
+
+  @override
+  String weeklySummaryNone(String name) {
+    return '$name hasn\'t played this week yet. How about a few minutes together?';
+  }
+
+  @override
+  String get familyReminder => 'Daily reminder';
+
+  @override
+  String get familyReminderNote =>
+      'If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week\'s summary.';
+
+  @override
+  String get familyReminderTime => 'Time';
+
+  @override
+  String get famDayStreak => 'Days in a row';
 }

@@ -81,6 +81,7 @@ abstract final class SurveyMapper {
     'home',
     'body',
     'emotions',
+    'food',
   ];
   static const favoriteThemeIds = [
     'animals',
@@ -89,6 +90,8 @@ abstract final class SurveyMapper {
     'numbers',
     'music',
     'food',
+    'produce',
+    'shapes',
   ];
   static List<int> choices(dynamic value) => value is List
       ? value.whereType<int>().toList()

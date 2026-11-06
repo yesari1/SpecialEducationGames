@@ -6,8 +6,6 @@
   "welcomeTopics": "Hayvanlar, renkler, sayılar",
   "welcomeOwnPace": "Yaşa göre ayarlanır",
   "noAdsOffline": "Reklam yok.",
-  "parentGateSettings": "Ayarlar ebeveyn kilidinin arkasında.",
-  "letsGetStarted": "Birlikte başlayalım",
   "homeFamily": "Aile",
   "homeGames": "Oyunlar",
   "homeDailyPath": "Bugünün Yolu",
@@ -50,7 +48,6 @@
   "difficultyMedium": "Orta",
   "difficultyHard": "Zor",
   "themeNoUnlockedGames": "Bu zorlukta açık oyun yok. Kolay’ı seçebilirsin.",
-  "themeUnlockWithFamily": "Bunu ailenle açabilirsin.",
   "parentGateTitle": "Aile bölümü",
   "parentGateEnterPin": "PIN girin",
   "parentGateContinuePrompt": "Devam etmek için",
@@ -68,14 +65,10 @@
       }
     }
   },
-  "onboardingSuggestedStart": "Önerilen başlangıç",
   "onboardingFamilyHint": "Aile bölümünden değiştirebilirsiniz.",
   "onboardingSaving": "Kaydediliyor…",
   "onboardingPlay": "Oyunlara geç",
   "onboardingContinue": "Devam et",
-  "onboardingSkipQuestion": "Bu soruyu atla",
-  "onboardingNickname": "Takma ad",
-  "onboardingProfileQuestion": "Minik kaşifimiz kim?",
   "onboardingNicknameHint": "Bir takma ad yeterli.",
   "onboardingStepCount": "{current} / {total}",
   "@onboardingStepCount": {
@@ -115,8 +108,6 @@
       }
     }
   },
-  "onboardingPreviousRecommendation": "Önceki öneri",
-  "onboardingNextRecommendation": "Sonraki öneri",
   "accountTitle": "Hesap",
   "familyAccountTitle": "Aile hesabı",
   "familyAccountSignedIn": "Google hesabına giriş yapıldı.",
@@ -125,14 +116,13 @@
   "familyAccountSignOut": "Çıkış yap",
   "familyAccountCancelled": "Giriş iptal edildi.",
   "familyAccountOffline": "Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.",
-  "familyAccountConfiguration": "Google girişi henüz yapılandırılmadı.",
+  "familyAccountConfiguration": "Giriş şu anda kullanılamıyor.",
   "familyAccountTimeout": "Giriş zaman aşımına uğradı. Tekrar deneyin.",
   "familyAccountUnavailable": "Giriş şu anda kullanılamıyor. Biraz sonra tekrar deneyin.",
   "creditsTitle": "Kaynaklar ve lisanslar",
   "creditsLoadFailure": "Kaynak bilgileri yüklenemedi.",
   "creditsAnimalRecordings": "Doğal sesler",
   "creditsRealPhotographs": "Gerçek fotoğraflar",
-  "creditsSoundChanges": "Değişiklikler: mono MP3, azaltılmış ses düzeyi, kısa giriş/çıkış ve en fazla 3 saniye.",
   "creditsAdaptationLicense": "Uyarlama lisansı",
   "creditsAuthor": "Sanatçı",
   "creditsLicense": "Lisans",
@@ -165,13 +155,12 @@
   "creditsLicensesLoadFailure": "Lisans bilgileri yüklenemedi.",
   "creditsLicensesEmpty": "Kayıtlı lisans yok.",
   "familyNewsHeading": "Yenilikler",
-  "applicationName": "Özel Eğitim Oyunları",
   "creditsOpenSourceLicenses": "Açık kaynak yazılım lisansları",
   "summarySyncTitle": "Günlük özetleri eşitle",
-  "summarySyncDescription": "Yalnız günlük süre, tur ve bağımsız yanıt sayıları paylaşılır. Ham seçimler, çocuk adı ve anket yanıtları gönderilmez. Bu, tam profil yedeği değildir.",
+  "summarySyncDescription": "Buluta yalnız günlük süre ve tur sayısı gider. Çocuğun cevapları gitmez.",
   "summarySyncRequirements": "Eşitlemek için ebeveyn erişimi, bir profil ve Google girişi gerekir.",
   "summarySyncConsent": "Bu hesap ve profil için günlük özet paylaşımına izin veriyorum.",
-  "summarySyncManualNotice": "Eşitleme yalnız aşağıdaki düğmeyle başlar. İzni kaldırmak cihazdaki indirilen özeti temizler; sunucudaki veriyi silmez.",
+  "summarySyncManualNotice": "Eşitleme yalnız aşağıdaki düğmeyle başlar. İzni kaldırmak bu telefondaki özeti temizler; buluttaki veriyi silmez.",
   "summarySyncNow": "Şimdi eşitle",
   "summarySyncSnapshot": "Cihazdaki eşitlenmiş özet: {count} kayıt. Kaydedildi: {savedAt}",
   "@summarySyncSnapshot": {
@@ -185,47 +174,17 @@
       }
     }
   },
-  "summarySyncCapacity": "Özet sayısı desteklenen sınırı aşıyor. Yerel kayıtlar korunuyor.",
+  "summarySyncCapacity": "Çok fazla kayıt var, bir kısmı gönderilemedi. Telefondaki kayıtlar duruyor.",
   "summarySyncUnavailable": "Eşitleme tamamlanamadı. Bağlantı veya sunucu kullanılamıyor olabilir. Yerel kayıtlar korunuyor.",
   "subscriptionTitle": "Premium",
-  "subscriptionShowPlans": "Planları göster",
-  "subscriptionHeading": "Birlikte daha çok keşif",
   "subscriptionAllGames": "Tüm oyunlar ve zorluklar",
   "subscriptionProfiles": "Beş çocuk profiline kadar",
-  "subscriptionAdFree": "Reklamsız, çevrimdışı öğrenme",
+  "subscriptionAdFree": "Ayrıntılı ilerleme raporları",
   "subscriptionActive": "Premium erişiminiz açık.",
-  "subscriptionUnavailable": "Google Play ürünleri şu anda alınamıyor. Ücretsiz oyunlarla devam edebilirsiniz.",
   "subscriptionMonthly": "Aylık",
   "subscriptionYearly": "Yıllık",
-  "subscriptionMonth": "ay",
-  "subscriptionYear": "yıl",
-  "subscriptionPrice": "{recurringPrice} / {period}",
-  "@subscriptionPrice": {
-    "description": "Mağazanın biçimlendirdiği fiyat değiştirilmeden yerel dönemle gösterilir.",
-    "placeholders": {
-      "recurringPrice": {
-        "type": "String"
-      },
-      "period": {
-        "type": "String"
-      }
-    }
-  },
-  "subscriptionTrial": "7 gün ücretsiz, sonra {recurringPrice}. Deneme bitmeden Google Play’den iptal edebilirsiniz.",
-  "@subscriptionTrial": {
-    "description": "Yalnız mağaza planında desteklenen yedi günlük deneme varsa gösterilir.",
-    "placeholders": {
-      "recurringPrice": {
-        "type": "String"
-      }
-    }
-  },
-  "subscriptionRenewal": "Otomatik yenilenir. Google Play’den istediğiniz zaman iptal edebilirsiniz.",
   "subscriptionWaiting": "Google Play bekleniyor…",
-  "subscriptionStartTrial": "7 günlük denemeyi başlat",
-  "subscriptionContinue": "Google Play ile devam et",
   "subscriptionStoreError": "Mağazaya bağlanılamadı. Lütfen daha sonra tekrar deneyin.",
-  "subscriptionRestore": "Satın alımları geri yükle",
   "subscriptionManage": "Aboneliği yönet / iptal et",
   "playTimeBreakTitle": "Bugünlük bu kadar, harikaydın!",
   "playTimeBreakSubtitle": "Şimdi küçük bir mola verelim.",
@@ -316,7 +275,7 @@
   "@familyProgressWillAppearHereAfterThe": {
     "description": "Family area interface copy."
   },
-  "familyAttentionDailyAverageSeconds": "Dikkat (sn)",
+  "familyAttentionDailyAverageSeconds": "Cevap süresi (sn)",
   "@familyAttentionDailyAverageSeconds": {
     "description": "Family area interface copy."
   },
@@ -328,25 +287,12 @@
   "@familyS": {
     "description": "Family area interface copy."
   },
-  "familyIdleTime": "Bekleme",
+  "familyIdleTime": "Cevapsız bekleme",
   "@familyIdleTime": {
     "description": "Family area interface copy."
   },
   "familyTimeInTheBackgroundIsExcluded": "Arka planda geçen süre dahil değildir.",
   "@familyTimeInTheBackgroundIsExcluded": {
-    "description": "Family area interface copy."
-  },
-  "familySecondsRange": "0–{maximum} saniye.",
-  "@familySecondsRange": {
-    "description": "Upper bound shown for average response and idle time.",
-    "placeholders": {
-      "maximum": {
-        "type": "double"
-      }
-    }
-  },
-  "familyNumericView": "Sayısal görünüm",
-  "@familyNumericView": {
     "description": "Family area interface copy."
   },
   "familySkillAreas": "Beceriler",
@@ -378,7 +324,7 @@
   "@familyItems": {
     "description": "Family area interface copy."
   },
-  "familyIndependentLastThreeAnswersWithoutHints": "Bağımsız liste: son üç yanıt ipucusuz. Destek listesi: son üç aşamanın en az ikisinde belirgin destek.",
+  "familyIndependentLastThreeAnswersWithoutHints": "Kendi başına: son 3 cevap ipucusuz doğru. Destek: son 3 turun 2’sinde yardım aldı.",
   "@familyIndependentLastThreeAnswersWithoutHints": {
     "description": "Family area interface copy."
   },
@@ -408,22 +354,6 @@
   },
   "familyProgressByTheme": "Tema gelişimi",
   "@familyProgressByTheme": {
-    "description": "Family area interface copy."
-  },
-  "familyShowUnlockedGamesOnly": "Yalnızca açık oyunları göster",
-  "@familyShowUnlockedGamesOnly": {
-    "description": "Family area interface copy."
-  },
-  "familyHidesLockedCardsInChildMode": "Çocuk ekranındaki kilitli kartları gizler.",
-  "@familyHidesLockedCardsInChildMode": {
-    "description": "Family area interface copy."
-  },
-  "familyEasyAndMediumUnlocked": "Ücretsiz (Kolay)",
-  "@familyEasyAndMediumUnlocked": {
-    "description": "Family area interface copy."
-  },
-  "familyPremium": "Premium",
-  "@familyPremium": {
     "description": "Family area interface copy."
   },
   "familyDailyScreenTimeLimit": "Günlük ekran süresi sınırı",
@@ -459,7 +389,7 @@
   "@familyDefaultDifficulty": {
     "description": "Family area interface copy."
   },
-  "familyAutomaticThemeSelection": "Otomatik / tema seçimi",
+  "familyAutomaticThemeSelection": "Temaya göre otomatik",
   "@familyAutomaticThemeSelection": {
     "description": "Family area interface copy."
   },
@@ -483,7 +413,7 @@
   "@familyRoundLength": {
     "description": "Family area interface copy."
   },
-  "familySurveyDifficultySetting": "Anket / zorluk ayarı",
+  "familySurveyDifficultySetting": "Başlangıç anketine göre",
   "@familySurveyDifficultySetting": {
     "description": "Family area interface copy."
   },
@@ -535,7 +465,7 @@
       }
     }
   },
-  "familyAnOptionalReminderItDoesNot": "Sadece hatırlatma, oyunu sınırlamaz.",
+  "familyAnOptionalReminderItDoesNot": "Sadece bir hedef; oyunu sınırlamaz.",
   "@familyAnOptionalReminderItDoesNot": {
     "description": "Family area interface copy."
   },
@@ -611,14 +541,6 @@
   "@familyFull": {
     "description": "Doğru yanıt için kısa ve belirgin kutlama ebeveyn ayarı."
   },
-  "familySubscriptionPricesAndTrialEligibilityCome": "Fiyatlar Google Play'den gelir.",
-  "@familySubscriptionPricesAndTrialEligibilityCome": {
-    "description": "Family area interface copy."
-  },
-  "familyPlansAndRestore": "Planlar ve geri yükleme",
-  "@familyPlansAndRestore": {
-    "description": "Family area interface copy."
-  },
   "familyPrivacy": "Gizlilik",
   "@familyPrivacy": {
     "description": "Family area interface copy."
@@ -671,10 +593,6 @@
   "@familySettings": {
     "description": "Family area interface copy."
   },
-  "familyStoredOnThisDevice": "Bu cihazda saklanır",
-  "@familyStoredOnThisDevice": {
-    "description": "Family area interface copy."
-  },
   "familyDeleteProfile": "Profili sil",
   "@familyDeleteProfile": {
     "description": "Family area interface copy."
@@ -704,10 +622,6 @@
         "type": "int"
       }
     }
-  },
-  "familyTheFreeVersionIncludesOneChild": "Ücretsiz sürümde bir çocuk profili bulunur.",
-  "@familyTheFreeVersionIncludesOneChild": {
-    "description": "Family area interface copy."
   },
   "gameBackToTheme": "Temaya dön",
   "@gameBackToTheme": {
@@ -753,10 +667,6 @@
   "@gameAgain": {
     "description": "Game results and actions interface copy."
   },
-  "gameTodaysPath": "Bugünün Yolu",
-  "@gameTodaysPath": {
-    "description": "Game results and actions interface copy."
-  },
   "gameImagesForThisThemeAreNotReady": "Bu temanın görselleri henüz hazır değil.",
   "@gameImagesForThisThemeAreNotReady": {
     "description": "Game results and actions interface copy."
@@ -775,7 +685,7 @@
   "reminderBody": "Bugün birlikte birkaç dakika oynayalım mı?",
   "reminderChannel": "Günlük oyun hatırlatması",
   "reminderOfferTitle": "Günlük hatırlatma",
-  "reminderOfferBody": "Çocuğunuzun her günkü eğitimi için size hatırlatma yapalım mı?",
+  "reminderOfferBody": "O gün oynanmadıysa akşam 18:00'de kısa bir hatırlatma gönderelim mi?",
   "reminderOfferYes": "Evet, hatırlat",
   "reminderOfferNo": "Şimdi değil",
   "gameObject": "Nesne",
@@ -796,14 +706,6 @@
   },
   "dailyPathNoGamesAreAvailableToday": "Bugün açık oyun bulunmuyor.",
   "@dailyPathNoGamesAreAvailableToday": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathYouEarnedTodaysSticker": "Bugünün çıkartmasını kazandın!",
-  "@dailyPathYouEarnedTodaysSticker": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathEachCompletedGameIsOneStep": "Her tamamlanan oyun bir adım.",
-  "@dailyPathEachCompletedGameIsOneStep": {
     "description": "Daily path and sticker album interface copy."
   },
   "dailyPathMyStickers": "Çıkartmalarım",
@@ -849,30 +751,6 @@
   "dailyPathClose": "Kapat",
   "@dailyPathClose": {
     "description": "Daily path and sticker album interface copy."
-  },
-  "gameSummaryPage": "Özet · sayfa {current} / {total}",
-  "@gameSummaryPage": {
-    "description": "Game completion summary pager position.",
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "dailyPathStepTitle": "{index}. {game}",
-  "@dailyPathStepTitle": {
-    "description": "Numbered daily path game title.",
-    "placeholders": {
-      "index": {
-        "type": "int"
-      },
-      "game": {
-        "type": "String"
-      }
-    }
   },
   "profileEditorNameRequired": "Bir takma ad yazın.",
   "@profileEditorNameRequired": {
@@ -991,9 +869,9 @@
     "description": "Fixed hard instruction displayed in G35."
   },
   "obStart": "Başlayalım",
-  "obHaveAccount": "Zaten hesabın var mı?",
+  "obHaveAccount": "Zaten hesabınız var mı?",
   "obSignIn": "Giriş yap",
-  "obNoAccountFound": "Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım'a dokun.",
+  "obNoAccountFound": "Bu hesapla kayıt bulunamadı. Başlamak için Başlayalım'a dokunun.",
   "signInTitle": "Giriş yap",
   "signInOr": "veya",
   "signInEmail": "E-posta",
@@ -1013,9 +891,9 @@
   "accountLastSignIn": "Son giriş",
   "accountNextPaymentNote": "Sonraki ödeme tarihi ve iptal Google Play → Ödemeler ve abonelikler bölümündedir.",
   "paywallLifetimeSubscribedTitle": "Aboneliğin devam ediyor",
-  "paywallLifetimeSubscribedBody": "Ömür boyu satın aldıktan sonra aboneliğin kendiliğinden durmaz. Ödemenin devam etmemesi için Google Play → Ödemeler ve abonelikler bölümünden aboneliği iptal et.",
+  "paywallLifetimeSubscribedBody": "Ömür boyu satın aldıktan sonra aboneliğiniz kendiliğinden durmaz. Ödemenin devam etmemesi için Google Play → Ödemeler ve abonelikler bölümünden aboneliği iptal edin.",
   "paywallLifetimeSubscribedContinue": "Satın almaya devam et",
-  "obSignedIn": "Giriş yapıldı. Şimdi çocuğunu ekleyelim.",
+  "obSignedIn": "Giriş yapıldı. Şimdi çocuğunuzu ekleyelim.",
   "obBack": "Geri",
   "obSkip": "Atla",
   "obChildTitle": "Çocuğunuzu tanıyalım",
@@ -1028,22 +906,9 @@
   "obMultipleHint": "Birden fazla seçebilirsiniz.",
   "obStepSemantics": "Adım {current} / {total}",
   "obGoalTitle": "Günlük oyun hedefi",
-  "obGoalBody": "Kısa ve düzenli oturumlar en iyisidir. Çocuğunuz sakin bir ilerleme görür, geri sayım görmez.",
+  "obGoalBody": "Kısa ve düzenli oturumlar en iyisidir. Çocuğunuz baskı yaratan bir sayaç görmez.",
   "obGoalMinutes": "{minutes} dk",
   "obRecommended": "Önerilen",
-  "obLockTitle": "Ayarlar sizde kalır",
-  "obLockBody": "Aile bölümüne dönmek için ana ekrandaki “Aile” düğmesine dokunun. Kısa bir ebeveyn kontrolü (basit bir soru ya da PIN’iniz) çocukların girmesini önler.",
-  "obPinSwitch": "Ayrıca 4 haneli PIN belirle",
-  "obPinField": "PIN",
-  "obPinInvalid": "Dört rakam girin.",
-  "obTrialTitle": "Tüm oyunları keşfedin",
-  "obTrialBody": "Ücretsiz oyunlar hep ücretsiz kalır. Premium tüm temaları ve oyunları, tüm zorluk seviyelerini ve beş çocuk profilini açar.",
-  "obTrialPoint1": "Tüm temalar ve oyunlar",
-  "obTrialPoint2": "Tüm zorluk seviyeleri",
-  "obTrialPoint3": "Beş çocuk profiline kadar",
-  "obTrialStart": "7 gün ücretsiz dene",
-  "obTrialNote": "Deneme sonrası ödeme Google Play üzerinden alınır. Google Play'den istediğiniz zaman iptal edebilirsiniz.",
-  "obContinueFree": "Ücretsiz devam et",
   "obHandoffBody": "Telefonu yan çevirip çocuğunuza verin.",
   "obHandoffNote": "Oyunlar yatay açılır. Aile bölümü dik açılır.",
   "gamePromptOddOneOut": "Farklı olanı bul",
@@ -1081,18 +946,11 @@
   "ageBandExploreInfo": "3 seçenek, 1–5 arası sayılar, oyun başına 6 soru; dokunma ve basit sürükleme.",
   "ageBandSchoolReadyInfo": "4 seçenek, 1–10 arası sayılar, oyun başına 8 soru; sürükleme, gruplama, sıralama.",
   "ageBandPracticeInfo": "4 seçenek, 1–20 arası sayılar, oyun başına 10 soru, daha az bilinen nesneler, ipucu daha geç.",
-  "paywallTrialTitle": "{days} gün ücretsiz dene",
-  "paywallTrialBody": "Tüm oyunlar ve zorluklar {days} gün açık. Ödeme bilgisi istenmez; süre bitince ücretsiz oyunlarla devam edilir.",
-  "paywallTrialSignIn": "Google ile giriş yap ve başla",
-  "paywallTrialStart": "Ücretsiz denemeyi başlat",
   "paywallTrialActive": "Deneme sürüyor: {days} gün kaldı",
   "paywallTrialUsed": "Bu hesabın ücretsiz denemesi kullanıldı.",
   "paywallTrialError": "Deneme başlatılamadı. İnternet bağlantısını kontrol edip tekrar deneyin.",
-  "paywallTrialNote": "Deneme her Google hesabı için bir kez verilir.",
-  "paywallFreeTier": "Her temada Öğren ve iki oyun her zaman ücretsiz.",
   "paywallLifetime": "Tek seferlik",
   "paywallLifetimeNote": "Bir kez öde, süresiz kullan. Abonelik yok.",
-  "paywallBuy": "Satın al",
   "paywallLifetimeOwned": "Tek seferlik Premium sizde.",
   "paywallPrivacy": "Gizlilik politikası",
   "paywallTerms": "Kullanım koşulları",
@@ -1104,30 +962,25 @@
   "familyAccountDeleted": "Hesap ve bulut verileri silindi.",
   "familyAccountDeleteFailed": "Hesap silinemedi. İnternet bağlantısını kontrol edip tekrar deneyin.",
   "paywallHeadline": "Tüm oyunları aç",
-  "paywallNoPayment": "Ödeme bilgisi istenmez",
   "paywallSave": "%{percent} tasarruf",
   "paywallContinue": "Devam et",
-  "paywallContinueFree": "Giriş yapmadan devam et",
+  "paywallContinueFree": "Ücretsiz sürümle devam et",
   "paywallRestoreShort": "Geri yükle",
   "paywallPlansFailed": "Planlar yüklenemedi.",
   "paywallRetry": "Tekrar dene",
   "paywallClose": "Kapat",
-  "paywallOneTimeShort": "Bir kez öde",
   "familyCloudSync": "Günlük özetleri buluta gönder",
   "familyCloudSyncNote": "Günlük özet (oyun, süre, tur) Google hesabınıza kaydedilir. Çocuğun adı gönderilmez.",
   "welcomeFreeTrial": "Tüm oyunları {days} gün ücretsiz deneyin",
   "paywallBestValue": "En avantajlı",
   "paywallPerMonth": "{price}/ay",
-  "paywallPerYear": "Yılda {price}",
-  "paywallRenewsMonthly": "Her ay yenilenir",
   "paywallStartTrial": "{days} gün ücretsiz dene",
   "paywallStartFreeTrial": "Denemeyi başlat",
   "paywallTrialOption": "{days} gün ücretsiz",
   "paywallTrialOptionNote": "Kart yok · Otomatik ücret yok",
   "paywallFreePrice": "Ücretsiz",
-  "signInCheckEmail": "E-postanı kontrol et",
-  "signInUseOtherEmail": "Farklı e-posta kullan",
-  "paywallTrialFootnote": "Google ile giriş yapılır. Deneme bitince ücretsiz sürüme dönersiniz.",
+  "signInCheckEmail": "E-postanızı kontrol edin",
+  "signInUseOtherEmail": "Başka bir e-posta kullanın",
   "paywallContinuePrice": "Devam et · {price}",
   "paywallCancelAnytime": "Google Play'den istediğiniz zaman iptal edebilirsiniz.",
   "welcomeFreeAfter": "Sonrasında her temada Öğren ve iki oyun hep ücretsiz.",
@@ -1143,7 +996,6 @@
   "familyLockedStatsTitle": "Ayrıntılı ilerleme Premium ile açılır",
   "familyLockedStatsBody": "Haftalık grafikler, dikkat, beceriler ve öğe sonuçları.",
   "familyLockedStatsButton": "Premium ile aç",
-  "familyGamesShownNote": "{name} için istemediğiniz oyunları kapatın. Kapalı oyunlar çocuk modunda görünmez.",
   "familyAccountPlan": "Paket",
   "familyAccountPayment": "Ödeme",
   "familyPlanFree": "Ücretsiz sürüm",
@@ -1163,12 +1015,12 @@
   "askSurveyImprove": "Neleri geliştirelim?",
   "askSurveyVoices": "Seslendirme daha iyi olmalı",
   "askSurveyReports": "İlerleme raporları daha detaylı olmalı",
-  "askSurveyNote": "Eklemek istediklerin",
+  "askSurveyNote": "Eklemek istedikleriniz",
   "feedbackTitle": "Geri bildirim gönder",
   "feedbackIntro": "Hata, öneri ya da görmek istediğiniz oyunlarla ilgili bize yazabilirsiniz.",
   "feedbackSend": "Gönder",
-  "feedbackSent": "Teşekkürler, geri bildirimin gönderildi",
-  "feedbackFailed": "Gönderilemedi. Lütfen tekrar dene.",
+  "feedbackSent": "Teşekkürler, geri bildiriminiz gönderildi",
+  "feedbackFailed": "Gönderilemedi. Lütfen tekrar deneyin.",
   "familyPlanGranted": "Premium",
   "familyPlanTest": "Premium (test sürümü)",
   "familyPaymentNone": "Ödeme yok",
@@ -1184,8 +1036,15 @@
   "obPlanAgeDefault": "Başlangıç seviyesi seçildi",
   "obPlanTopics": "Sevdiği konular eklendi: {topics}",
   "obPlanTopicsAll": "Tüm konular eklendi",
-  "obPlanGoal": "Günlük hedef: {minutes} dakika",
   "obPlanReadyTitle": "{name} için 7 günlük plan hazır",
   "obPlanDay": "Gün {day}",
-  "obPlanToday": "Bugün"
+  "obPlanToday": "Bugün",
+  "gameMascotHello": "Merhaba! Hadi birlikte oynayalım.",
+  "weeklySummaryTitle": "Haftanın özeti",
+  "weeklySummaryBody": "{name} bu hafta {days} gün, toplam {minutes} dakika oynadı.",
+  "weeklySummaryNone": "{name} bu hafta henüz oynamadı. Birlikte birkaç dakika oynamaya ne dersiniz?",
+  "familyReminder": "Günlük hatırlatma",
+  "familyReminderNote": "O gün oynanmadıysa seçtiğiniz saatte kısa bir bildirim gelir; pazar akşamı haftanın özeti gelir.",
+  "familyReminderTime": "Saat",
+  "famDayStreak": "Üst üste oynanan gün"
 }

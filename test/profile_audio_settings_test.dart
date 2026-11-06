@@ -31,7 +31,7 @@ void main() {
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isFalse);
       state.effectVolume = 0;
       expect(state.hasRequiredGameAudio('animals', 'G10'), isFalse);
-      expect(state.dailyPathSteps, isNot(contains('animals_G10')));
+      expect(state.pathPlayable('animals_G10'), isFalse);
       expect(state.hasRequiredGameAudio('animals', 'G01'), isTrue);
       state.effectVolume = 60;
       state.sound = false;
@@ -65,14 +65,14 @@ void main() {
       // silencing speech still removes the game.
       state.locale = 'en';
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
-      expect(state.dailyPathSteps, contains('numbers_G10'));
+      expect(state.pathPlayable('numbers_G10'), isTrue);
       state.speechVolume = 0;
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isFalse);
-      expect(state.dailyPathSteps, isNot(contains('numbers_G10')));
+      expect(state.pathPlayable('numbers_G10'), isFalse);
       state.speechVolume = 100;
       state.locale = 'tr';
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
-      expect(state.dailyPathSteps, contains('numbers_G10'));
+      expect(state.pathPlayable('numbers_G10'), isTrue);
     },
   );
   test(
@@ -203,7 +203,7 @@ void main() {
       // number G10 still depends on the selected speech locale.
       state.locale = 'en';
       expect(state.hasRequiredGameAudio('vehicles', 'G10'), isTrue);
-      expect(state.dailyPathSteps, contains('vehicles_G10'));
+      expect(state.pathPlayable('vehicles_G10'), isTrue);
       expect(state.hasRequiredGameAudio('numbers', 'G10'), isTrue);
 
       state.locale = 'tr';

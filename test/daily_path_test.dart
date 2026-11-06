@@ -118,7 +118,7 @@ void main() {
       );
       expect(
         DailyPathProgress.fromSessions(
-          steps: steps.sublist(0, 3),
+          steps: steps.sublist(0, 2),
           sessions: completed,
           profileId: 'a',
           now: midnight,
@@ -181,7 +181,7 @@ void main() {
       final first = state.active!;
       expect(state.todayStars, 0);
       await completePath(state);
-      expect(state.todayStars, 6);
+      expect(state.todayStars, AppState.pathLength);
       expect(state.hasTodaySticker, true);
       await Future.wait([state.refreshTrials(), state.refreshTrials()]);
       final key = 'profile.${first.id}.dailyStickers';
@@ -210,31 +210,89 @@ void main() {
     },
   );
   test(
-    'Path never adds premium games, disabled games or hidden themes',
+    'Free path never adds premium games, disabled games or hidden themes',
     () async {
       final state = await fixture();
       addTearDown(state.dispose);
-      expect(state.dailyPathSteps, hasLength(6));
+      expect(state.dailyPathSteps, hasLength(AppState.pathLength));
       state.configuration = state.configuration.merge({
         'disabledGames': ['animals_G01'],
         'hiddenThemes': ['vehicles'],
       }, state.content);
-      // Enough free games remain for all six steps (two free games per theme).
-      expect(state.dailyPathSteps, hasLength(6));
+      expect(state.dailyPathSteps, hasLength(AppState.pathLength));
       expect(state.dailyPathSteps, isNot(contains('animals_G01')));
       expect(
         state.dailyPathSteps.where((key) => key.startsWith('vehicles_')),
         isEmpty,
       );
-      expect(state.configuration.freeGames, containsAll(state.dailyPathSteps));
+      for (var day = 0; day < 7; day++) {
+        final steps = state.dailyPathStepsAt(
+          DateTime.now().add(Duration(days: day)),
+        );
+        expect(steps, hasLength(AppState.pathLength));
+        expect(state.configuration.freeGames, containsAll(steps));
+      }
+      // Premium: the plan's Premium cards may join the path.
       await state.entitlement.confirmStoreState(true);
-      expect(state.dailyPathSteps, hasLength(6));
+      expect(state.dailyPathSteps, hasLength(AppState.pathLength));
+    },
+  );
+  test(
+    'Path follows the 7-day plan: favorite theme first, a new day each day',
+    () async {
+      final state = await fixture();
+      addTearDown(state.dispose);
+      final plan = state.weekPlan;
+      final now = DateTime.now();
+      // Day 1 is the plan's first day and its theme.
+      expect(state.planDayAt(now), 0);
+      expect(state.dailyPathSteps.first, startsWith('${plan[0].theme}_'));
+      for (var day = 0; day < 7; day++) {
+        final at = DateTime(now.year, now.month, now.day + day, 12);
+        expect(state.planDayAt(at), day);
+        final steps = state.dailyPathStepsAt(at);
+        expect(steps.first, startsWith('${plan[day].theme}_'));
+      }
+      // After the seventh day the plan starts again.
       expect(
-        state.dailyPathSteps.every(state.configuration.freeGames.contains),
-        true,
+        state.dailyPathStepsAt(DateTime(now.year, now.month, now.day + 7, 12)),
+        state.dailyPathStepsAt(DateTime(now.year, now.month, now.day, 12)),
       );
     },
   );
+  test('Path starts with the favorite theme', () async {
+    final state = AppState(
+      await ContentRepository.load(),
+      AppDatabase.forTesting(NativeDatabase.memory()),
+      AudioService(),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    state.audio.enabled = false;
+    await state.completeOnboarding(
+      name: 'Can',
+      // Favorite option 1 = Vehicles.
+      survey: {
+        'favorite': [1],
+      },
+    );
+    expect(state.dailyPathSteps.first, startsWith('vehicles_'));
+  });
+  test('A child set up in setup gets the mascot hello once', () async {
+    final state = AppState(
+      await ContentRepository.load(),
+      AppDatabase.forTesting(NativeDatabase.memory()),
+      AudioService(),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    expect(state.mascotHelloDue, isFalse);
+    await state.completeOnboarding(name: 'Can', survey: {});
+    expect(state.mascotHelloDue, isTrue);
+    await state.mascotHelloDone();
+    await state.load();
+    expect(state.mascotHelloDue, isFalse);
+  });
   testWidgets(
     'G02 requires five distinct taps and explicit finish before daily progress',
     (tester) async {

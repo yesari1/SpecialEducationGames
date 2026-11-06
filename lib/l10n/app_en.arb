@@ -6,8 +6,6 @@
   "welcomeTopics": "Animals, colors, numbers",
   "welcomeOwnPace": "Adjusts to your child's age",
   "noAdsOffline": "No ads.",
-  "parentGateSettings": "Settings stay behind a parent gate.",
-  "letsGetStarted": "Let’s get started",
   "homeFamily": "Family",
   "homeGames": "Games",
   "homeDailyPath": "Today’s Path",
@@ -50,7 +48,6 @@
   "difficultyMedium": "Medium",
   "difficultyHard": "Hard",
   "themeNoUnlockedGames": "No unlocked games at this level. Try Easy.",
-  "themeUnlockWithFamily": "You can unlock this with your family.",
   "parentGateTitle": "Family area",
   "parentGateEnterPin": "Enter PIN",
   "parentGateContinuePrompt": "To continue",
@@ -68,14 +65,10 @@
       }
     }
   },
-  "onboardingSuggestedStart": "Suggested starting point",
   "onboardingFamilyHint": "You can adjust these in the Family area.",
   "onboardingSaving": "Saving…",
   "onboardingPlay": "Let’s play",
   "onboardingContinue": "Continue",
-  "onboardingSkipQuestion": "Skip this question",
-  "onboardingNickname": "Nickname",
-  "onboardingProfileQuestion": "Who is our little explorer?",
   "onboardingNicknameHint": "A nickname is all we need.",
   "onboardingStepCount": "{current} / {total}",
   "@onboardingStepCount": {
@@ -115,8 +108,6 @@
       }
     }
   },
-  "onboardingPreviousRecommendation": "Previous recommendation",
-  "onboardingNextRecommendation": "Next recommendation",
   "accountTitle": "Account",
   "familyAccountTitle": "Family account",
   "familyAccountSignedIn": "Signed in with Google.",
@@ -125,14 +116,13 @@
   "familyAccountSignOut": "Sign out",
   "familyAccountCancelled": "Sign-in cancelled.",
   "familyAccountOffline": "Could not connect. Check the internet connection and try again.",
-  "familyAccountConfiguration": "Google sign-in needs setup.",
+  "familyAccountConfiguration": "Sign-in is not available right now.",
   "familyAccountTimeout": "Sign-in timed out. Please try again.",
   "familyAccountUnavailable": "Sign-in is unavailable right now. Please try again later.",
   "creditsTitle": "Credits and licenses",
   "creditsLoadFailure": "Could not load credits.",
   "creditsAnimalRecordings": "Natural sounds",
   "creditsRealPhotographs": "Real photographs",
-  "creditsSoundChanges": "Changes: mono MP3, reduced volume, short fades, at most 3 seconds.",
   "creditsAdaptationLicense": "Adaptation license",
   "creditsAuthor": "Author",
   "creditsLicense": "License",
@@ -165,13 +155,12 @@
   "creditsLicensesLoadFailure": "License information could not be loaded.",
   "creditsLicensesEmpty": "No registered licenses.",
   "familyNewsHeading": "News",
-  "applicationName": "Special Education Games",
   "creditsOpenSourceLicenses": "Open source software licenses",
   "summarySyncTitle": "Sync daily summaries",
-  "summarySyncDescription": "Only daily time, round and independent response totals are shared. Raw choices, child name and survey answers are not sent. This is not a full profile backup.",
+  "summarySyncDescription": "Only daily time and the number of rounds go to the cloud. Your child's answers are not sent.",
   "summarySyncRequirements": "Parent access, a profile and Google sign-in are required to sync.",
   "summarySyncConsent": "I allow daily summary sharing for this account and profile.",
-  "summarySyncManualNotice": "Sync starts only with the button below. Revoking permission clears the downloaded snapshot on this device; it does not delete server data.",
+  "summarySyncManualNotice": "Sync starts only with the button below. Turning permission off clears the summary on this phone; it does not delete cloud data.",
   "summarySyncNow": "Sync now",
   "summarySyncSnapshot": "Synced snapshot on device: {count} records. Saved: {savedAt}",
   "@summarySyncSnapshot": {
@@ -185,47 +174,17 @@
       }
     }
   },
-  "summarySyncCapacity": "The summary count exceeds the supported limit. Local records are preserved.",
+  "summarySyncCapacity": "There are too many records; some could not be sent. The records on this phone are kept.",
   "summarySyncUnavailable": "Sync could not finish. The connection or server may be unavailable. Local records are preserved.",
   "subscriptionTitle": "Premium",
-  "subscriptionShowPlans": "Show plans",
-  "subscriptionHeading": "More discoveries together",
   "subscriptionAllGames": "All games and difficulty levels",
   "subscriptionProfiles": "Up to five child profiles",
-  "subscriptionAdFree": "Ad-free, offline learning",
+  "subscriptionAdFree": "Detailed progress reports",
   "subscriptionActive": "Your Premium access is active.",
-  "subscriptionUnavailable": "Google Play products are unavailable right now. You can continue with the free games.",
   "subscriptionMonthly": "Monthly",
   "subscriptionYearly": "Yearly",
-  "subscriptionMonth": "month",
-  "subscriptionYear": "year",
-  "subscriptionPrice": "{recurringPrice} / {period}",
-  "@subscriptionPrice": {
-    "description": "Unmodified store formatted recurring price with localized period.",
-    "placeholders": {
-      "recurringPrice": {
-        "type": "String"
-      },
-      "period": {
-        "type": "String"
-      }
-    }
-  },
-  "subscriptionTrial": "7 days free, then {recurringPrice}. Cancel through Google Play before the trial ends.",
-  "@subscriptionTrial": {
-    "description": "Shown only when the store plan includes the supported seven-day trial.",
-    "placeholders": {
-      "recurringPrice": {
-        "type": "String"
-      }
-    }
-  },
-  "subscriptionRenewal": "Renews automatically. You can cancel at any time through Google Play.",
   "subscriptionWaiting": "Waiting for Google Play…",
-  "subscriptionStartTrial": "Start 7-day trial",
-  "subscriptionContinue": "Continue with Google Play",
   "subscriptionStoreError": "Could not connect to the store. Please try again later.",
-  "subscriptionRestore": "Restore purchases",
   "subscriptionManage": "Manage / cancel subscription",
   "playTimeBreakTitle": "That’s enough for today. You did great!",
   "playTimeBreakSubtitle": "Let’s take a little break now.",
@@ -316,7 +275,7 @@
   "@familyProgressWillAppearHereAfterThe": {
     "description": "Family area interface copy."
   },
-  "familyAttentionDailyAverageSeconds": "Attention (sec)",
+  "familyAttentionDailyAverageSeconds": "Answer time (sec)",
   "@familyAttentionDailyAverageSeconds": {
     "description": "Family area interface copy."
   },
@@ -328,25 +287,12 @@
   "@familyS": {
     "description": "Family area interface copy."
   },
-  "familyIdleTime": "Waiting",
+  "familyIdleTime": "Waiting without an answer",
   "@familyIdleTime": {
     "description": "Family area interface copy."
   },
   "familyTimeInTheBackgroundIsExcluded": "Time in the background is excluded.",
   "@familyTimeInTheBackgroundIsExcluded": {
-    "description": "Family area interface copy."
-  },
-  "familySecondsRange": "0–{maximum} seconds.",
-  "@familySecondsRange": {
-    "description": "Upper bound shown for average response and idle time.",
-    "placeholders": {
-      "maximum": {
-        "type": "double"
-      }
-    }
-  },
-  "familyNumericView": "Numeric view",
-  "@familyNumericView": {
     "description": "Family area interface copy."
   },
   "familySkillAreas": "Skills",
@@ -361,7 +307,7 @@
   "@familyNoRecordsYet": {
     "description": "Family area interface copy."
   },
-  "familyCountStages": "{count} stages",
+  "familyCountStages": "{count, plural, =1{1 stage} other{{count} stages}}",
   "@familyCountStages": {
     "description": "Family area interface copy.",
     "placeholders": {
@@ -378,7 +324,7 @@
   "@familyItems": {
     "description": "Family area interface copy."
   },
-  "familyIndependentLastThreeAnswersWithoutHints": "Independent: last three answers without hints. Support: substantial help in at least two of the last three stages.",
+  "familyIndependentLastThreeAnswersWithoutHints": "On their own: last 3 answers right without hints. Support: needed help in 2 of the last 3 rounds.",
   "@familyIndependentLastThreeAnswersWithoutHints": {
     "description": "Family area interface copy."
   },
@@ -410,22 +356,6 @@
   "@familyProgressByTheme": {
     "description": "Family area interface copy."
   },
-  "familyShowUnlockedGamesOnly": "Show unlocked games only",
-  "@familyShowUnlockedGamesOnly": {
-    "description": "Family area interface copy."
-  },
-  "familyHidesLockedCardsInChildMode": "Hides locked cards in Child Mode.",
-  "@familyHidesLockedCardsInChildMode": {
-    "description": "Family area interface copy."
-  },
-  "familyEasyAndMediumUnlocked": "Free (Easy)",
-  "@familyEasyAndMediumUnlocked": {
-    "description": "Family area interface copy."
-  },
-  "familyPremium": "Premium",
-  "@familyPremium": {
-    "description": "Family area interface copy."
-  },
   "familyDailyScreenTimeLimit": "Daily screen time limit",
   "@familyDailyScreenTimeLimit": {
     "description": "Family area interface copy."
@@ -442,7 +372,7 @@
   "@familyMinutes": {
     "description": "Family area interface copy."
   },
-  "familyRemainingTodayMinutesMinutes": "Remaining today: {minutes} minutes",
+  "familyRemainingTodayMinutesMinutes": "Remaining today: {minutes, plural, =1{1 minute} other{{minutes} minutes}}",
   "@familyRemainingTodayMinutesMinutes": {
     "description": "Family area interface copy.",
     "placeholders": {
@@ -459,7 +389,7 @@
   "@familyDefaultDifficulty": {
     "description": "Family area interface copy."
   },
-  "familyAutomaticThemeSelection": "Automatic / theme selection",
+  "familyAutomaticThemeSelection": "Automatic by theme",
   "@familyAutomaticThemeSelection": {
     "description": "Family area interface copy."
   },
@@ -483,7 +413,7 @@
   "@familyRoundLength": {
     "description": "Family area interface copy."
   },
-  "familySurveyDifficultySetting": "Survey / difficulty setting",
+  "familySurveyDifficultySetting": "Based on the starting survey",
   "@familySurveyDifficultySetting": {
     "description": "Family area interface copy."
   },
@@ -535,7 +465,7 @@
       }
     }
   },
-  "familyAnOptionalReminderItDoesNot": "A reminder only, play is not limited.",
+  "familyAnOptionalReminderItDoesNot": "A goal only; play is not limited.",
   "@familyAnOptionalReminderItDoesNot": {
     "description": "Family area interface copy."
   },
@@ -567,7 +497,7 @@
   "@familyShowOneCardFirstThenOffer": {
     "description": "Family area interface copy."
   },
-  "familyAdaptiveDifficulty": "Adaptive difficulty",
+  "familyAdaptiveDifficulty": "Automatic difficulty suggestion",
   "@familyAdaptiveDifficulty": {
     "description": "Family area interface copy."
   },
@@ -610,14 +540,6 @@
   "familyFull": "Full",
   "@familyFull": {
     "description": "Parent setting for a brief enhanced correct-answer celebration."
-  },
-  "familySubscriptionPricesAndTrialEligibilityCome": "Prices come from Google Play.",
-  "@familySubscriptionPricesAndTrialEligibilityCome": {
-    "description": "Family area interface copy."
-  },
-  "familyPlansAndRestore": "Plans and restore",
-  "@familyPlansAndRestore": {
-    "description": "Family area interface copy."
   },
   "familyPrivacy": "Privacy",
   "@familyPrivacy": {
@@ -671,10 +593,6 @@
   "@familySettings": {
     "description": "Family area interface copy."
   },
-  "familyStoredOnThisDevice": "Stored on this device",
-  "@familyStoredOnThisDevice": {
-    "description": "Family area interface copy."
-  },
   "familyDeleteProfile": "Delete profile",
   "@familyDeleteProfile": {
     "description": "Family area interface copy."
@@ -704,10 +622,6 @@
         "type": "int"
       }
     }
-  },
-  "familyTheFreeVersionIncludesOneChild": "The free version includes one child profile.",
-  "@familyTheFreeVersionIncludesOneChild": {
-    "description": "Family area interface copy."
   },
   "gameBackToTheme": "Back to theme",
   "@gameBackToTheme": {
@@ -753,10 +667,6 @@
   "@gameAgain": {
     "description": "Game results and actions interface copy."
   },
-  "gameTodaysPath": "Today’s Path",
-  "@gameTodaysPath": {
-    "description": "Game results and actions interface copy."
-  },
   "gameImagesForThisThemeAreNotReady": "Images for this theme are not ready yet.",
   "@gameImagesForThisThemeAreNotReady": {
     "description": "Game results and actions interface copy."
@@ -771,11 +681,11 @@
   },
   "gameNext": "Next",
   "gameNextGame": "Next game",
-  "reminderTitle": "Play time",
+  "reminderTitle": "Time to play",
   "reminderBody": "Shall we play together for a few minutes today?",
   "reminderChannel": "Daily play reminder",
   "reminderOfferTitle": "Daily reminder",
-  "reminderOfferBody": "Shall we remind you about your child's daily learning?",
+  "reminderOfferBody": "If you haven't played that day, shall we send a short reminder at 6 pm?",
   "reminderOfferYes": "Yes, remind me",
   "reminderOfferNo": "Not now",
   "gameObject": "Object",
@@ -796,14 +706,6 @@
   },
   "dailyPathNoGamesAreAvailableToday": "No games are available today.",
   "@dailyPathNoGamesAreAvailableToday": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathYouEarnedTodaysSticker": "You earned today’s sticker!",
-  "@dailyPathYouEarnedTodaysSticker": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathEachCompletedGameIsOneStep": "Each completed game is one step.",
-  "@dailyPathEachCompletedGameIsOneStep": {
     "description": "Daily path and sticker album interface copy."
   },
   "dailyPathMyStickers": "My stickers",
@@ -849,30 +751,6 @@
   "dailyPathClose": "Close",
   "@dailyPathClose": {
     "description": "Daily path and sticker album interface copy."
-  },
-  "gameSummaryPage": "Summary · page {current} of {total}",
-  "@gameSummaryPage": {
-    "description": "Game completion summary pager position.",
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "dailyPathStepTitle": "{index}. {game}",
-  "@dailyPathStepTitle": {
-    "description": "Numbered daily path game title.",
-    "placeholders": {
-      "index": {
-        "type": "int"
-      },
-      "game": {
-        "type": "String"
-      }
-    }
   },
   "profileEditorNameRequired": "Enter a nickname.",
   "@profileEditorNameRequired": {
@@ -1052,7 +930,7 @@
     }
   },
   "obGoalTitle": "Daily play goal",
-  "obGoalBody": "Short, regular sessions work best. Your child sees calm progress, never a countdown.",
+  "obGoalBody": "Short, regular sessions work best. Your child never sees a pressuring countdown.",
   "obGoalMinutes": "{minutes} min",
   "@obGoalMinutes": {
     "placeholders": {
@@ -1062,19 +940,6 @@
     }
   },
   "obRecommended": "Recommended",
-  "obLockTitle": "Settings stay with you",
-  "obLockBody": "To return to the family area, tap “Family” on the home screen. A short parent check (a simple question, or your PIN) keeps children out.",
-  "obPinSwitch": "Also set a 4-digit PIN",
-  "obPinField": "PIN",
-  "obPinInvalid": "Enter four digits.",
-  "obTrialTitle": "Explore every game",
-  "obTrialBody": "The free games stay free. Premium opens every theme and game, all difficulty levels and up to five child profiles.",
-  "obTrialPoint1": "All themes and games",
-  "obTrialPoint2": "Every difficulty level",
-  "obTrialPoint3": "Up to five child profiles",
-  "obTrialStart": "Try 7 days free",
-  "obTrialNote": "Billed by Google Play after the trial. You can cancel any time in Google Play.",
-  "obContinueFree": "Continue for free",
   "obHandoffBody": "Turn the phone sideways and hand it to your child.",
   "obHandoffNote": "The games open in landscape. The family area opens upright.",
   "gamePromptOddOneOut": "Find the one that is different",
@@ -1116,7 +981,7 @@
     }
   },
   "famGoalDone": "Today’s goal is reached. Well done!",
-  "famGoalLeft": "{minutes} more minutes to today’s goal.",
+  "famGoalLeft": "{minutes, plural, =1{1 more minute} other{{minutes} more minutes}} to today’s goal.",
   "@famGoalLeft": {
     "placeholders": {
       "minutes": {
@@ -1203,33 +1068,7 @@
   "@ageBandPracticeInfo": {
     "description": "Age band copy."
   },
-  "paywallTrialTitle": "Try free for {days} days",
-  "@paywallTrialTitle": {
-    "description": "Paywall copy.",
-    "placeholders": {
-      "days": {
-        "type": "int"
-      }
-    }
-  },
-  "paywallTrialBody": "Every game and level is open for {days} days. No payment details needed; afterwards the free games stay open.",
-  "@paywallTrialBody": {
-    "description": "Paywall copy.",
-    "placeholders": {
-      "days": {
-        "type": "int"
-      }
-    }
-  },
-  "paywallTrialSignIn": "Sign in with Google to start",
-  "@paywallTrialSignIn": {
-    "description": "Paywall copy."
-  },
-  "paywallTrialStart": "Start free trial",
-  "@paywallTrialStart": {
-    "description": "Paywall copy."
-  },
-  "paywallTrialActive": "Trial active: {days} days left",
+  "paywallTrialActive": "Trial active: {days, plural, =1{1 day left} other{{days} days left}}",
   "@paywallTrialActive": {
     "description": "Paywall copy.",
     "placeholders": {
@@ -1246,24 +1085,12 @@
   "@paywallTrialError": {
     "description": "Paywall copy."
   },
-  "paywallTrialNote": "One free trial per Google account.",
-  "@paywallTrialNote": {
-    "description": "Paywall copy."
-  },
-  "paywallFreeTier": "Learn and two games in every theme are always free.",
-  "@paywallFreeTier": {
-    "description": "Paywall copy."
-  },
   "paywallLifetime": "One-time",
   "@paywallLifetime": {
     "description": "Paywall copy."
   },
   "paywallLifetimeNote": "Pay once, keep it forever. No subscription.",
   "@paywallLifetimeNote": {
-    "description": "Paywall copy."
-  },
-  "paywallBuy": "Buy",
-  "@paywallBuy": {
     "description": "Paywall copy."
   },
   "paywallLifetimeOwned": "You own Premium for life.",
@@ -1310,10 +1137,6 @@
   "@paywallHeadline": {
     "description": "Paywall copy."
   },
-  "paywallNoPayment": "No payment details",
-  "@paywallNoPayment": {
-    "description": "Paywall copy."
-  },
   "paywallSave": "Save {percent}%",
   "@paywallSave": {
     "description": "Paywall badge.",
@@ -1327,7 +1150,7 @@
   "@paywallContinue": {
     "description": "Paywall copy."
   },
-  "paywallContinueFree": "Continue without signing in",
+  "paywallContinueFree": "Continue with the free version",
   "@paywallContinueFree": {
     "description": "Paywall copy."
   },
@@ -1345,10 +1168,6 @@
   },
   "paywallClose": "Close",
   "@paywallClose": {
-    "description": "Paywall copy."
-  },
-  "paywallOneTimeShort": "Pay once",
-  "@paywallOneTimeShort": {
     "description": "Paywall copy."
   },
   "familyCloudSync": "Send daily summaries to the cloud",
@@ -1381,19 +1200,6 @@
       }
     }
   },
-  "paywallPerYear": "{price}/year",
-  "@paywallPerYear": {
-    "description": "Paywall: yearly price line.",
-    "placeholders": {
-      "price": {
-        "type": "String"
-      }
-    }
-  },
-  "paywallRenewsMonthly": "Renews every month",
-  "@paywallRenewsMonthly": {
-    "description": "Paywall: monthly plan line."
-  },
   "paywallStartTrial": "Try free for {days} days",
   "paywallStartFreeTrial": "Start trial",
   "@paywallStartFreeTrial": {
@@ -1419,10 +1225,6 @@
         "type": "int"
       }
     }
-  },
-  "paywallTrialFootnote": "You sign in with Google. When the trial ends you go back to the free version.",
-  "@paywallTrialFootnote": {
-    "description": "Paywall line under the trial button."
   },
   "paywallContinuePrice": "Continue · {price}",
   "@paywallContinuePrice": {
@@ -1489,15 +1291,6 @@
   "@familyLockedStatsButton": {
     "description": "Family progress: locked statistics button."
   },
-  "familyGamesShownNote": "Turn off the games you do not want {name} to see. Turned-off games disappear from child mode.",
-  "@familyGamesShownNote": {
-    "description": "Family games tab: explanation of the switches.",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
   "familyAccountPlan": "Plan",
   "@familyAccountPlan": {
     "description": "Family account card row."
@@ -1510,7 +1303,7 @@
   "@familyPlanFree": {
     "description": "Family account card plan."
   },
-  "familyPlanTrial": "Free trial · {days} days left",
+  "familyPlanTrial": "Free trial · {days, plural, =1{1 day left} other{{days} days left}}",
   "@familyPlanTrial": {
     "description": "Family account card plan.",
     "placeholders": {
@@ -1627,14 +1420,6 @@
   "@obPlanTopicsAll": {
     "description": "Onboarding plan line when no favourite was chosen."
   },
-  "obPlanGoal": "Daily goal: {minutes} minutes",
-  "@obPlanGoal": {
-    "placeholders": {
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
   "obPlanReadyTitle": "{name}'s 7-day plan is ready",
   "@obPlanReadyTitle": {
     "placeholders": {
@@ -1654,5 +1439,38 @@
   "obPlanToday": "Today",
   "@obPlanToday": {
     "description": "Chip on day 1 of the onboarding 7-day plan."
-  }
+  },
+  "gameMascotHello": "Hi! Let's play together.",
+  "@gameMascotHello": {
+    "description": "The mascot's hello before the child's very first game (spoken as well)."
+  },
+  "weeklySummaryTitle": "This week",
+  "weeklySummaryBody": "{name} played on {days, plural, =1{1 day} other{{days} days}} this week, {minutes, plural, =1{1 minute} other{{minutes} minutes}} in total.",
+  "@weeklySummaryBody": {
+    "description": "Sunday evening local notification to the parent.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "weeklySummaryNone": "{name} hasn't played this week yet. How about a few minutes together?",
+  "@weeklySummaryNone": {
+    "description": "Sunday evening local notification when nothing was played this week.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "familyReminder": "Daily reminder",
+  "familyReminderNote": "If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week's summary.",
+  "familyReminderTime": "Time",
+  "famDayStreak": "Days in a row"
 }

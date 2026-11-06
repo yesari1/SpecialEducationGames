@@ -24,6 +24,7 @@ import 'ask_cards.dart';
 import 'account_header.dart';
 import 'parent_announcement_card.dart';
 import '../child_home/reminder_offer.dart';
+import '../../core/reminder/play_reminder.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 
@@ -358,6 +359,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
           ],
         ),
       ),
+      _familyCard(_compactStat('${s.dayStreak}', l10n.famDayStreak)),
       _familyCard(_compactStat('${s.todayStars}', l10n.familyStarsToday)),
       _familyCard(
         _compactStat(
@@ -786,6 +788,41 @@ class _FamilyScreenState extends State<FamilyScreen> {
     );
   }
 
+  /// The daily reminder on or off, its hour; the note says what comes when.
+  Widget _reminderControls() => Column(
+    mainAxisSize: MainAxisSize.min,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      SwitchListTile(
+        key: const ValueKey('reminder-switch'),
+        contentPadding: EdgeInsets.zero,
+        title: Text(l10n.familyReminder),
+        value: s.reminderOn,
+        onChanged: (value) => s.setReminder(value),
+      ),
+      if (s.reminderOn)
+        ListTile(
+          contentPadding: EdgeInsets.zero,
+          title: Text(l10n.familyReminderTime),
+          trailing: DropdownButton<int>(
+            key: const ValueKey('reminder-hour'),
+            value: s.reminderHour,
+            items: [
+              for (final hour in PlayReminder.hours)
+                DropdownMenuItem(value: hour, child: Text('$hour:00')),
+            ],
+            onChanged: (value) {
+              if (value != null) s.setReminderHour(value);
+            },
+          ),
+        ),
+      Text(
+        l10n.familyReminderNote,
+        style: SegText.caption.copyWith(color: SegColors.inkSoft),
+      ),
+    ],
+  );
+
   Widget _compactStat(String value, String label) => Column(
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -966,6 +1003,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
           },
         ),
       ]),
+      if (PlayReminder.supported)
+        page(l10n.familyReminder, [_reminderControls()], showHeading: false),
       if (s.configuration.minSupportedVersion > 14)
         page(l10n.familyUpdate, [
           Text(l10n.familyANewVersionIsAvailableYou, style: SegText.caption),
@@ -1354,6 +1393,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
             spacing: SegSpace.s3,
             runSpacing: SegSpace.s3,
             children: [
+              SizedBox(
+                width: box.maxWidth,
+                child: _stat('${s.dayStreak}', l10n.famDayStreak),
+              ),
               for (final (value, label) in [
                 ('${s.todayStars}', l10n.familyStarsToday),
                 ('$todayRounds', l10n.familyRoundsCompletedToday),
@@ -2128,6 +2171,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
         ),
       ),
     ),
+    if (PlayReminder.supported) ...[
+      const SizedBox(height: SegSpace.s5),
+      SegCard(child: _reminderControls()),
+    ],
     const SizedBox(height: SegSpace.s5),
     if (s.configuration.minSupportedVersion > 14) ...[
       SegCard(

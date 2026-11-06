@@ -355,7 +355,7 @@ void main() {
         scale: 1,
       );
       expect(
-        find.text(locale == 'en' ? 'Attention (sec)' : 'Dikkat (sn)'),
+        find.text(locale == 'en' ? 'Answer time (sec)' : 'Cevap süresi (sn)'),
         findsOneWidget,
       );
       expect(
