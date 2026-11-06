@@ -350,7 +350,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Row(
                   children: [
                     const SizedBox(width: SegSpace.s2),
-                    if (step != OnboardingStep.welcome)
+                    // After the offer (first run) there is nothing to go
+                    // back to: no back button on the goal.
+                    if (step != OnboardingStep.welcome &&
+                        (widget.addChild || step != OnboardingStep.goal))
                       IconButton(
                         key: const ValueKey('onboarding-back'),
                         tooltip: l10n.obBack,
