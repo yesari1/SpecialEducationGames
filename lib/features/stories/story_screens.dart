@@ -532,27 +532,40 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
         child: AnimatedOpacity(
           duration: reduced ? Duration.zero : SegMotion.fadeHint,
           opacity: faded ? .35 : 1,
-          child: AnimatedContainer(
-            duration: reduced ? Duration.zero : SegMotion.focus,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(SegRadius.lg),
-              border: Border.all(color: glow ?? Colors.white, width: 6),
-              boxShadow: [
-                BoxShadow(
-                  color: (glow ?? SegColors.ink).withValues(
-                    alpha: glow == null ? .10 : .9,
+          // No box: the transparent picture stands on the scene like a game
+          // choice; a soft round glow behind it marks the hint or the answer.
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Center(
+                child: FractionallySizedBox(
+                  widthFactor: .82,
+                  heightFactor: .82,
+                  child: AnimatedContainer(
+                    duration: reduced ? Duration.zero : SegMotion.focus,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: (glow ?? SegColors.hintGlow).withValues(
+                        alpha: glow == null ? 0 : .35,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: (glow ?? SegColors.hintGlow).withValues(
+                            alpha: glow == null ? 0 : .9,
+                          ),
+                          blurRadius: 48,
+                          spreadRadius: 6,
+                        ),
+                      ],
+                    ),
                   ),
-                  blurRadius: glow == null ? 16 : 22,
-                  spreadRadius: glow == null ? 0 : 4,
-                  offset: const Offset(0, 6),
                 ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(SegRadius.lg - 6),
-              child: storyPicture(choice.image),
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(SegSpace.s2),
+                child: PhotoVisual(choice.image),
+              ),
+            ],
           ),
         ),
       ),
@@ -578,10 +591,16 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
             child: Center(
               child: AspectRatio(
                 aspectRatio: choice.resultImage == null ? 1 : 3 / 2,
-                child: _framedPicture(
-                  image,
-                  key: const ValueKey('story-result-picture'),
-                ),
+                // A scene keeps its frame; a choice picture has no box.
+                child: choice.resultImage == null
+                    ? PhotoVisual(
+                        image,
+                        key: const ValueKey('story-result-picture'),
+                      )
+                    : _framedPicture(
+                        image,
+                        key: const ValueKey('story-result-picture'),
+                      ),
               ),
             ),
           ),
