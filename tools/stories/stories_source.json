@@ -2,108 +2,323 @@
   {
     "id": "teeth",
     "free": true,
-    "title": {"tr": "Dişlerimi fırçalıyorum", "en": "I brush my teeth"},
+    "title": {
+      "tr": "Dişlerimi fırçalıyorum",
+      "en": "I brush my teeth"
+    },
     "pages": [
-      {"tr": "İşte Ali! Uyku vakti geldi.", "en": "Here is Ali! It's bedtime."},
-      {"tr": "Ali banyoya gitti, diş fırçasını aldı.", "en": "Ali went to the bathroom and picked up his toothbrush."},
-      {"tr": "Fırçaya macunu sürdük. Şimdi ne yapacağız?", "en": "The toothpaste is on the brush. What do we do now?",
-       "choices": [
-         {"key": "brush", "correct": true},
-         {"key": "bed", "result": {"tr": "Önce dişlerimizi fırçalayalım, sonra yatarız.", "en": "Let's brush our teeth first, then we go to bed."}}
-       ]},
-      {"tr": "Ali dişlerini yavaş yavaş fırçalıyor. Aşağı, yukarı.", "en": "Ali brushes his teeth nice and slow. Up and down."},
-      {"tr": "Fırçalamayı bitirdik. Sırada ne var?", "en": "All done brushing. What comes next?",
-       "choices": [
-         {"key": "rinse", "correct": true},
-         {"key": "shoes", "result": {"tr": "Önce ağzımızı suyla çalkalayalım.", "en": "First, let's rinse our mouth with water."}}
-       ]},
-      {"tr": "Dişleri pırıl pırıl oldu! Ali nasıl hissediyor?", "en": "His teeth are sparkling clean! How does Ali feel?",
-       "choices": [
-         {"key": "happy", "correct": true},
-         {"key": "sad", "result": {"tr": "Bak, Ali gülümsüyor. Ali çok mutlu.", "en": "Look, Ali is smiling. Ali is very happy."}}
-       ]},
-      {"tr": "Ali yatağına girdi. İyi geceler Ali!", "en": "Ali climbed into bed. Good night, Ali!"}
+      {
+        "tr": "İşte Ali! Uyku vakti geldi.",
+        "en": "Here is Ali! It's bedtime."
+      },
+      {
+        "tr": "Ali banyoya gitti, diş fırçasını aldı.",
+        "en": "Ali went to the bathroom and picked up his toothbrush."
+      },
+      {
+        "tr": "Fırçaya macunu sürdük. Şimdi ne yapacağız?",
+        "en": "The toothpaste is on the brush. What do we do now?",
+        "choices": [
+          {
+            "key": "brush",
+            "correct": true
+          },
+          {
+            "key": "bed",
+            "result": {
+              "tr": "Önce dişlerimizi fırçalayalım, sonra yatarız.",
+              "en": "Let's brush our teeth first, then we go to bed."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Ali dişlerini yavaş yavaş fırçalıyor. Aşağı, yukarı.",
+        "en": "Ali brushes his teeth nice and slow. Up and down."
+      },
+      {
+        "tr": "Fırçalamayı bitirdik. Sırada ne var?",
+        "en": "All done brushing. What comes next?",
+        "choices": [
+          {
+            "key": "rinse",
+            "correct": true
+          },
+          {
+            "key": "shoes",
+            "result": {
+              "tr": "Önce ağzımızı suyla çalkalayalım.",
+              "en": "First, let's rinse our mouth with water."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Dişleri pırıl pırıl oldu! Ali nasıl hissediyor?",
+        "en": "His teeth are sparkling clean! How does Ali feel?",
+        "choices": [
+          {
+            "key": "happy",
+            "correct": true
+          },
+          {
+            "key": "sad",
+            "result": {
+              "tr": "Bak, Ali gülümsüyor. Ali çok mutlu.",
+              "en": "Look, Ali is smiling. Ali is very happy."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Ali yatağına girdi. İyi geceler Ali!",
+        "en": "Ali climbed into bed. Good night, Ali!"
+      }
     ],
-    "praise": {"tr": "Aferin sana! Ali'ye çok güzel yardım ettin.", "en": "Well done! You were a great help to Ali."}
+    "praise": {
+      "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
+      "en": "Well done! You were a great help to Ali."
+    }
   },
   {
     "id": "angry",
     "free": true,
-    "title": {"tr": "Kızınca ne yaparım?", "en": "What can I do when I'm angry?"},
+    "title": {
+      "tr": "Kızınca ne yaparım?",
+      "en": "What can I do when I'm angry?"
+    },
     "pages": [
-      {"tr": "Ali ile kardeşi Elif arabayla oynuyorlar.", "en": "Ali and his little sister Elif are playing with a toy car."},
-      {"tr": "Elif arabayı aldı. Ali'nin elinde araba kalmadı.", "en": "Elif took the car. Now Ali has nothing to play with."},
-      {"tr": "Sence Ali şimdi ne hissediyor?", "en": "How do you think Ali feels now?",
-       "choices": [
-         {"key": "angry", "correct": true},
-         {"key": "happy", "result": {"tr": "Ali'nin yüzüne bir bak. Ali kızdı.", "en": "Take a look at Ali's face. Ali is angry."}},
-         {"key": "sad", "result": {"tr": "Ali'nin yüzüne bir bak. Ali kızdı.", "en": "Take a look at Ali's face. Ali is angry."}}
-       ]},
-      {"tr": "Ali çok kızdı. Elinde de bir oyuncak var.", "en": "Ali is really angry. He has a toy in his hand."},
-      {"tr": "Ali ne yapsın?", "en": "What should Ali do?",
-       "retry": {"tr": "Başka ne yapabilir?", "en": "What else could he do?"},
-       "choices": [
-         {"key": "throw", "result": {"tr": "Oyuncak yere düştü. Elif çok üzüldü.", "en": "The toy fell on the floor. Elif is very sad."}, "resultImage": true},
-         {"key": "tell", "correct": true}
-       ]},
-      {"tr": "Ali, \"Ben kızdım!\" dedi. Annesiyle birlikte derin bir nefes aldı.", "en": "Ali said, \"I'm angry!\" He took a big, deep breath with Mom."},
-      {"tr": "Elif arabayı geri verdi. Sırayla oynadılar.", "en": "Elif gave the car back. They took turns playing."}
+      {
+        "tr": "Ali ile kardeşi Elif arabayla oynuyorlar.",
+        "en": "Ali and his little sister Elif are playing with a toy car."
+      },
+      {
+        "tr": "Elif arabayı aldı. Ali'nin elinde araba kalmadı.",
+        "en": "Elif took the car. Now Ali has nothing to play with."
+      },
+      {
+        "tr": "Sence Ali şimdi ne hissediyor?",
+        "en": "How do you think Ali feels now?",
+        "choices": [
+          {
+            "key": "angry",
+            "correct": true
+          },
+          {
+            "key": "happy",
+            "result": {
+              "tr": "Ali'nin yüzüne bir bak. Ali kızdı.",
+              "en": "Take a look at Ali's face. Ali is angry."
+            }
+          },
+          {
+            "key": "sad",
+            "result": {
+              "tr": "Ali'nin yüzüne bir bak. Ali kızdı.",
+              "en": "Take a look at Ali's face. Ali is angry."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Ali çok kızdı. Elinde de bir oyuncak var.",
+        "en": "Ali is really angry. He has a toy in his hand."
+      },
+      {
+        "tr": "Ali ne yapsın?",
+        "en": "What should Ali do?",
+        "retry": {
+          "tr": "Başka ne yapabilir?",
+          "en": "What else could he do?"
+        },
+        "choices": [
+          {
+            "key": "throw",
+            "result": {
+              "tr": "Oyuncak yere düştü. Elif çok üzüldü.",
+              "en": "The toy fell on the floor. Elif is very sad."
+            },
+            "resultImage": true
+          },
+          {
+            "key": "tell",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "tr": "Ali, \"Ben kızdım!\" dedi. Annesiyle birlikte derin bir nefes aldı.",
+        "en": "Ali said, \"I'm angry!\" He took a big, deep breath with Mom."
+      },
+      {
+        "tr": "Elif arabayı geri verdi. Sırayla oynadılar.",
+        "en": "Elif gave the car back. They took turns playing."
+      }
     ],
-    "praise": {"tr": "Aferin sana! Ali'ye çok güzel yardım ettin.", "en": "Well done! You were a great help to Ali."}
+    "praise": {
+      "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
+      "en": "Well done! You were a great help to Ali."
+    }
   },
   {
     "id": "turn",
-    "title": {"tr": "Sıramı bekliyorum", "en": "I wait for my turn"},
+    "title": {
+      "tr": "Sıramı bekliyorum",
+      "en": "I wait for my turn"
+    },
     "pages": [
-      {"tr": "Ali parka geldi. Kaydırak ne kadar güzel!", "en": "Ali is at the park. Look at that slide!"},
-      {"tr": "Elif kaydırağın merdiveninde. Şimdi o kayacak.", "en": "Elif is on the slide ladder. It's her turn now."},
-      {"tr": "Ali de kaymak istiyor. Ne yapsın?", "en": "Ali wants to slide too. What should he do?",
-       "retry": {"tr": "Başka ne yapabilir?", "en": "What else could he do?"},
-       "choices": [
-         {"key": "wait", "correct": true},
-         {"key": "cut", "result": {"tr": "Ali, Elif'in önüne geçti. Elif çok üzüldü.", "en": "Ali cut in front of Elif. Elif is very sad."}, "resultImage": true}
-       ]},
-      {"tr": "Ali sırasını bekliyor. Bir, iki, üç...", "en": "Ali waits for his turn. One, two, three..."},
-      {"tr": "Elif kaydı. Şimdi sıra kimde?", "en": "Elif went down the slide. Whose turn is it now?",
-       "choices": [
-         {"key": "ali_slides", "correct": true},
-         {"key": "elif_again", "result": {"tr": "Elif kaydı, şimdi sıra Ali'de!", "en": "Elif had her turn. Now it's Ali's turn!"}}
-       ]},
-      {"tr": "Ali kaydı! Ali nasıl hissediyor?", "en": "Ali went down the slide! How does Ali feel?",
-       "choices": [
-         {"key": "happy", "correct": true},
-         {"key": "angry", "result": {"tr": "Bak, Ali gülüyor. Ali çok mutlu.", "en": "Look, Ali is laughing. Ali is very happy."}}
-       ]},
-      {"tr": "Sırayla oynamak çok eğlenceli!", "en": "Taking turns is so much fun!"}
+      {
+        "tr": "Ali parka geldi. Kaydırak ne kadar güzel!",
+        "en": "Ali is at the park. Look at that slide!"
+      },
+      {
+        "tr": "Elif kaydırağın merdiveninde. Şimdi o kayacak.",
+        "en": "Elif is on the slide ladder. It's her turn now."
+      },
+      {
+        "tr": "Ali de kaymak istiyor. Ne yapmalı?",
+        "en": "Ali wants to slide too. What should he do?",
+        "retry": {
+          "tr": "Başka ne yapabilir?",
+          "en": "What else could he do?"
+        },
+        "choices": [
+          {
+            "key": "line",
+            "correct": true
+          },
+          {
+            "key": "pull",
+            "result": {
+              "tr": "Elif merdivenden düştü. Canı yandı, ağlıyor.",
+              "en": "Elif fell off the ladder. She got hurt and she is crying."
+            },
+            "resultImage": true
+          }
+        ]
+      },
+      {
+        "tr": "Ali sırasını bekliyor. Bir, iki, üç...",
+        "en": "Ali waits for his turn. One, two, three..."
+      },
+      {
+        "tr": "Elif kaydı. Şimdi sıra Ali'de!",
+        "en": "Elif went down the slide. Now it's Ali's turn!"
+      },
+      {
+        "tr": "Ali kaydı! Ali nasıl hissediyor?",
+        "en": "Ali went down the slide! How does Ali feel?",
+        "choices": [
+          {
+            "key": "happy",
+            "correct": true
+          },
+          {
+            "key": "angry",
+            "result": {
+              "tr": "Bak, Ali gülüyor. Ali çok mutlu.",
+              "en": "Look, Ali is laughing. Ali is very happy."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Sırayla oynamak çok eğlenceli!",
+        "en": "Taking turns is so much fun!"
+      }
     ],
-    "praise": {"tr": "Aferin sana! Sıra beklemeyi öğrendin.", "en": "Well done! You learned how to wait for your turn."}
+    "praise": {
+      "tr": "Aferin sana! Sıra beklemeyi öğrendin.",
+      "en": "Well done! You learned how to wait for your turn."
+    }
   },
   {
     "id": "doctor",
-    "title": {"tr": "Doktora gidiyorum", "en": "I go to the doctor"},
+    "title": {
+      "tr": "Doktora gidiyorum",
+      "en": "I go to the doctor"
+    },
     "pages": [
-      {"tr": "Bugün Ali doktora gidiyor. Annesi de yanında.", "en": "Today Ali is going to the doctor. Mom is with him."},
-      {"tr": "Bekleme odasına oturdular. Ali biraz korkuyor.", "en": "They sit down in the waiting room. Ali feels a little scared."},
-      {"tr": "Ali korkunca ne yapabilir?", "en": "What can Ali do when he feels scared?",
-       "retry": {"tr": "Başka ne yapabilir?", "en": "What else could he do?"},
-       "choices": [
-         {"key": "hug", "correct": true},
-         {"key": "run", "result": {"tr": "Ali kapıya koştu. Annesi çok telaşlandı.", "en": "Ali ran to the door. Mom got very worried."}, "resultImage": true}
-       ]},
-      {"tr": "Doktor geldi. Gülümseyerek \"Merhaba Ali!\" dedi.", "en": "The doctor came in. She smiled and said, \"Hello, Ali!\""},
-      {"tr": "Doktor kalbini dinleyecek. Ali ne yapsın?", "en": "The doctor wants to listen to his heart. What should Ali do?",
-       "retry": {"tr": "Başka ne yapabilir?", "en": "What else could he do?"},
-       "choices": [
-         {"key": "still", "correct": true},
-         {"key": "push", "result": {"tr": "Doktor kalbini dinleyemedi. Haydi, biraz sakin duralım.", "en": "The doctor couldn't hear his heart. Let's sit still for a moment."}}
-       ]},
-      {"tr": "Muayene bitti! Ali şimdi nasıl hissediyor?", "en": "The checkup is over! How does Ali feel now?",
-       "choices": [
-         {"key": "happy", "correct": true},
-         {"key": "scared", "result": {"tr": "Bak, Ali gülümsüyor. Korkusu geçti.", "en": "Look, Ali is smiling. He isn't scared anymore."}}
-       ]},
-      {"tr": "Doktor Ali'ye bir yıldız verdi. Çok cesurdun Ali!", "en": "The doctor gave Ali a star sticker. You were so brave, Ali!"}
+      {
+        "tr": "Bugün Ali doktora gidiyor. Annesi de yanında.",
+        "en": "Today Ali is going to the doctor. Mom is with him."
+      },
+      {
+        "tr": "Bekleme odasına oturdular. Ali biraz korkuyor.",
+        "en": "They sit down in the waiting room. Ali feels a little scared."
+      },
+      {
+        "tr": "Ali korkunca ne yapabilir?",
+        "en": "What can Ali do when he feels scared?",
+        "retry": {
+          "tr": "Başka ne yapabilir?",
+          "en": "What else could he do?"
+        },
+        "choices": [
+          {
+            "key": "hug",
+            "correct": true
+          },
+          {
+            "key": "tantrum",
+            "result": {
+              "tr": "Ali yere yatıp bağırdı. Herkes ona baktı, Ali daha çok korktu.",
+              "en": "Ali lay on the floor and screamed. Everyone looked at him, and he felt even more scared."
+            },
+            "resultImage": true
+          }
+        ]
+      },
+      {
+        "tr": "Doktor geldi. Gülümseyerek \"Merhaba Ali!\" dedi.",
+        "en": "The doctor came in. She smiled and said, \"Hello, Ali!\""
+      },
+      {
+        "tr": "Doktor kalbini dinleyecek. Ali ne yapmalı?",
+        "en": "The doctor wants to listen to his heart. What should Ali do?",
+        "retry": {
+          "tr": "Başka ne yapabilir?",
+          "en": "What else could he do?"
+        },
+        "choices": [
+          {
+            "key": "still",
+            "correct": true
+          },
+          {
+            "key": "push",
+            "result": {
+              "tr": "Doktor kalbini dinleyemedi. Haydi, sakince oturalım.",
+              "en": "The doctor couldn't hear his heart. Let's sit still and calm."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Muayene bitti! Ali şimdi nasıl hissediyor?",
+        "en": "The checkup is over! How does Ali feel now?",
+        "choices": [
+          {
+            "key": "happy",
+            "correct": true
+          },
+          {
+            "key": "scared",
+            "result": {
+              "tr": "Bak, Ali gülümsüyor. Korkusu geçti.",
+              "en": "Look, Ali is smiling. He isn't scared anymore."
+            }
+          }
+        ]
+      },
+      {
+        "tr": "Doktor Ali'ye bir yıldız verdi. Çok cesurdun Ali!",
+        "en": "The doctor gave Ali a star sticker. You were so brave, Ali!"
+      }
     ],
-    "praise": {"tr": "Aferin sana! Ali'ye çok güzel yardım ettin.", "en": "Well done! You were a great help to Ali."}
+    "praise": {
+      "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
+      "en": "Well done! You were a great help to Ali."
+    }
   }
 ]

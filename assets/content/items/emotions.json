@@ -9,12 +9,31 @@
       "tr": "Mutlu",
       "en": "Happy"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/happy.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/happy_selected.mp3",
       "en": "assets/audio/en/emotions/happy_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/happy_which.mp3",
+      "en": "assets/audio/en/emotions/happy_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/happy.png": {
+        "id": "emotions.happy",
+        "path": "assets/images/emotions/happy.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "7d0c29113bffd990acceb8d0245d95df87d6cda4d9bcd5eb57735a9233e86dc2"
+      }
+    }
   },
   {
     "id": "emotions.sad",
@@ -26,12 +45,31 @@
       "tr": "Üzgün",
       "en": "Sad"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/sad.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/sad_selected.mp3",
       "en": "assets/audio/en/emotions/sad_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/sad_which.mp3",
+      "en": "assets/audio/en/emotions/sad_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/sad.png": {
+        "id": "emotions.sad",
+        "path": "assets/images/emotions/sad.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "c6f5920f0e67b0769a88573f8739807b88a980a70e5b0754824c1b61ee337057"
+      }
+    }
   },
   {
     "id": "emotions.angry",
@@ -43,12 +81,31 @@
       "tr": "Kızgın",
       "en": "Angry"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/angry.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/angry_selected.mp3",
       "en": "assets/audio/en/emotions/angry_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/angry_which.mp3",
+      "en": "assets/audio/en/emotions/angry_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/angry.png": {
+        "id": "emotions.angry",
+        "path": "assets/images/emotions/angry.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "8b17d386956bb28a2c4bd1c01e9f612c10ad245d91733d0e80e7f7cde6570d61"
+      }
+    }
   },
   {
     "id": "emotions.scared",
@@ -60,12 +117,31 @@
       "tr": "Korkmuş",
       "en": "Scared"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/scared.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/scared_selected.mp3",
       "en": "assets/audio/en/emotions/scared_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/scared_which.mp3",
+      "en": "assets/audio/en/emotions/scared_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/scared.png": {
+        "id": "emotions.scared",
+        "path": "assets/images/emotions/scared.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "ce94d68baaf60c6ba15243e67915f675e020a2f7ebc9556322f9f7e9225b357e"
+      }
+    }
   },
   {
     "id": "emotions.surprised",
@@ -77,12 +153,31 @@
       "tr": "Şaşkın",
       "en": "Surprised"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/surprised.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/surprised_selected.mp3",
       "en": "assets/audio/en/emotions/surprised_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/surprised_which.mp3",
+      "en": "assets/audio/en/emotions/surprised_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/surprised.png": {
+        "id": "emotions.surprised",
+        "path": "assets/images/emotions/surprised.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "a7ab20b2ec0255b4ff4b8a3b868bb95025857911083ae1aa14f3204323197506"
+      }
+    }
   },
   {
     "id": "emotions.sleepy",
@@ -94,12 +189,31 @@
       "tr": "Uykulu",
       "en": "Sleepy"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/sleepy.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/sleepy_selected.mp3",
       "en": "assets/audio/en/emotions/sleepy_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/sleepy_which.mp3",
+      "en": "assets/audio/en/emotions/sleepy_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/sleepy.png": {
+        "id": "emotions.sleepy",
+        "path": "assets/images/emotions/sleepy.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "9d483f8d22eefe7b926f1f553c26a7fde6e56d004bdb00d22c6a62c41fc10785"
+      }
+    }
   },
   {
     "id": "emotions.laughing",
@@ -108,15 +222,34 @@
     "chapter": 1,
     "tags": [],
     "name": {
-      "tr": "Gülen/Kahkaha",
+      "tr": "Gülen",
       "en": "Laughing"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/laughing.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/laughing_selected.mp3",
       "en": "assets/audio/en/emotions/laughing_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/laughing_which.mp3",
+      "en": "assets/audio/en/emotions/laughing_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/laughing.png": {
+        "id": "emotions.laughing",
+        "path": "assets/images/emotions/laughing.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "5a9cd56233582e6209614efb809882882766ad2fae3a84008bd9697695aa1d1f"
+      }
+    }
   },
   {
     "id": "emotions.calm",
@@ -128,12 +261,31 @@
       "tr": "Sakin",
       "en": "Calm"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/calm.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/calm_selected.mp3",
       "en": "assets/audio/en/emotions/calm_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/calm_which.mp3",
+      "en": "assets/audio/en/emotions/calm_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/calm.png": {
+        "id": "emotions.calm",
+        "path": "assets/images/emotions/calm.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "5de73ddbfbc107c5de53f9b3fbdbd4b7db016f091ef027b1d7961fe6b836fdcf"
+      }
+    }
   },
   {
     "id": "emotions.shy",
@@ -145,12 +297,31 @@
       "tr": "Utangaç",
       "en": "Shy"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/shy.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/shy_selected.mp3",
       "en": "assets/audio/en/emotions/shy_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/shy_which.mp3",
+      "en": "assets/audio/en/emotions/shy_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/shy.png": {
+        "id": "emotions.shy",
+        "path": "assets/images/emotions/shy.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "96f095d5b33a1207fb43bf158cb625f0a604d79a0c8dd296e4c50869eec87ea5"
+      }
+    }
   },
   {
     "id": "emotions.proud",
@@ -162,12 +333,31 @@
       "tr": "Gururlu",
       "en": "Proud"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/proud.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/proud_selected.mp3",
       "en": "assets/audio/en/emotions/proud_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/proud_which.mp3",
+      "en": "assets/audio/en/emotions/proud_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/proud.png": {
+        "id": "emotions.proud",
+        "path": "assets/images/emotions/proud.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "d185cd9915f325499c562b085c83396c2a555612f99f0efd66b62c111b969d6d"
+      }
+    }
   },
   {
     "id": "emotions.bored",
@@ -179,12 +369,31 @@
       "tr": "Sıkılmış",
       "en": "Bored"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/bored.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/bored_selected.mp3",
       "en": "assets/audio/en/emotions/bored_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/bored_which.mp3",
+      "en": "assets/audio/en/emotions/bored_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/bored.png": {
+        "id": "emotions.bored",
+        "path": "assets/images/emotions/bored.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "d07e18e6ed3dd07d1f9413430afb79bd907e74e960de643a1c4c0848f1c1b9fa"
+      }
+    }
   },
   {
     "id": "emotions.worried",
@@ -196,12 +405,31 @@
       "tr": "Endişeli",
       "en": "Worried"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/worried.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/worried_selected.mp3",
       "en": "assets/audio/en/emotions/worried_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/worried_which.mp3",
+      "en": "assets/audio/en/emotions/worried_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/worried.png": {
+        "id": "emotions.worried",
+        "path": "assets/images/emotions/worried.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "78515e90e2c84c08b03be048fc3ebb6dc9ec9b34148b41e32fc338aa3cc37074"
+      }
+    }
   },
   {
     "id": "emotions.excited",
@@ -213,12 +441,31 @@
       "tr": "Heyecanlı",
       "en": "Excited"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/excited.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/excited_selected.mp3",
       "en": "assets/audio/en/emotions/excited_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/excited_which.mp3",
+      "en": "assets/audio/en/emotions/excited_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/excited.png": {
+        "id": "emotions.excited",
+        "path": "assets/images/emotions/excited.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "38e43461e172f0c89f36aaabcc188b0bed6d4a9be74d382a5123b63ef01c56f0"
+      }
+    }
   },
   {
     "id": "emotions.disgusted",
@@ -230,11 +477,30 @@
       "tr": "Tiksinmiş",
       "en": "Disgusted"
     },
-    "images": [],
+    "images": [
+      "assets/images/emotions/disgusted.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/emotions/disgusted_selected.mp3",
       "en": "assets/audio/en/emotions/disgusted_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/emotions/disgusted_which.mp3",
+      "en": "assets/audio/en/emotions/disgusted_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/emotions/disgusted.png": {
+        "id": "emotions.disgusted",
+        "path": "assets/images/emotions/disgusted.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-06",
+        "sha256": "b2f971daec10727cacb692af8a58967e65290146aee5d2c35563f09efd330056"
+      }
+    }
   }
 ]

@@ -50,7 +50,13 @@ void main() {
         'tr' => 'uvU9jrgGLWNPeNA4NgNT',
         _ => 'GZ4PpFJV8ikEGUtBrjK7',
       });
-      expect(clip['model_id'], 'eleven_multilingual_v2');
+      // Turkish clips recorded since Nov 2026 use eleven_v4 (clearer Turkish).
+      expect(
+        clip['model_id'],
+        clip['language'] == 'tr'
+            ? anyOf('eleven_multilingual_v2', 'eleven_v4')
+            : 'eleven_multilingual_v2',
+      );
     }
     for (final lang in ['tr', 'en']) {
       for (final stem in [

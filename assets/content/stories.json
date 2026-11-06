@@ -381,7 +381,7 @@
       {
         "line": {
           "text": {
-            "tr": "Ali de kaymak istiyor. Ne yapsın?",
+            "tr": "Ali de kaymak istiyor. Ne yapmalı?",
             "en": "Ali wants to slide too. What should he do?"
           },
           "audio": {
@@ -401,23 +401,23 @@
         },
         "choices": [
           {
-            "image": "assets/stories/turn/choice_wait.png",
+            "image": "assets/stories/turn/choice_line.png",
             "correct": true
           },
           {
-            "image": "assets/stories/turn/choice_cut.png",
+            "image": "assets/stories/turn/choice_pull.png",
             "correct": false,
             "result": {
               "text": {
-                "tr": "Ali, Elif'in önüne geçti. Elif çok üzüldü.",
-                "en": "Ali cut in front of Elif. Elif is very sad."
+                "tr": "Elif merdivenden düştü. Canı yandı, ağlıyor.",
+                "en": "Elif fell off the ladder. She got hurt and she is crying."
               },
               "audio": {
-                "tr": "assets/audio/tr/stories/turn/p3_cut.mp3",
-                "en": "assets/audio/en/stories/turn/p3_cut.mp3"
+                "tr": "assets/audio/tr/stories/turn/p3_pull.mp3",
+                "en": "assets/audio/en/stories/turn/p3_pull.mp3"
               }
             },
-            "resultImage": "assets/stories/turn/result_cut.jpg"
+            "resultImage": "assets/stories/turn/result_pull.jpg"
           }
         ]
       },
@@ -437,34 +437,15 @@
       {
         "line": {
           "text": {
-            "tr": "Elif kaydı. Şimdi sıra kimde?",
-            "en": "Elif went down the slide. Whose turn is it now?"
+            "tr": "Elif kaydı. Şimdi sıra Ali'de!",
+            "en": "Elif went down the slide. Now it's Ali's turn!"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p5.mp3",
             "en": "assets/audio/en/stories/turn/p5.mp3"
           }
         },
-        "choices": [
-          {
-            "image": "assets/stories/turn/choice_ali_slides.png",
-            "correct": true
-          },
-          {
-            "image": "assets/stories/turn/choice_elif_again.png",
-            "correct": false,
-            "result": {
-              "text": {
-                "tr": "Elif kaydı, şimdi sıra Ali'de!",
-                "en": "Elif had her turn. Now it's Ali's turn!"
-              },
-              "audio": {
-                "tr": "assets/audio/tr/stories/turn/p5_elif_again.mp3",
-                "en": "assets/audio/en/stories/turn/p5_elif_again.mp3"
-              }
-            }
-          }
-        ]
+        "image": "assets/stories/turn/page5.jpg"
       },
       {
         "line": {
@@ -585,19 +566,19 @@
             "correct": true
           },
           {
-            "image": "assets/stories/doctor/choice_run.png",
+            "image": "assets/stories/doctor/choice_tantrum.png",
             "correct": false,
             "result": {
               "text": {
-                "tr": "Ali kapıya koştu. Annesi çok telaşlandı.",
-                "en": "Ali ran to the door. Mom got very worried."
+                "tr": "Ali yere yatıp bağırdı. Herkes ona baktı, Ali daha çok korktu.",
+                "en": "Ali lay on the floor and screamed. Everyone looked at him, and he felt even more scared."
               },
               "audio": {
-                "tr": "assets/audio/tr/stories/doctor/p3_run.mp3",
-                "en": "assets/audio/en/stories/doctor/p3_run.mp3"
+                "tr": "assets/audio/tr/stories/doctor/p3_tantrum.mp3",
+                "en": "assets/audio/en/stories/doctor/p3_tantrum.mp3"
               }
             },
-            "resultImage": "assets/stories/doctor/result_run.jpg"
+            "resultImage": "assets/stories/doctor/result_tantrum.jpg"
           }
         ]
       },
@@ -617,7 +598,7 @@
       {
         "line": {
           "text": {
-            "tr": "Doktor kalbini dinleyecek. Ali ne yapsın?",
+            "tr": "Doktor kalbini dinleyecek. Ali ne yapmalı?",
             "en": "The doctor wants to listen to his heart. What should Ali do?"
           },
           "audio": {
@@ -645,8 +626,8 @@
             "correct": false,
             "result": {
               "text": {
-                "tr": "Doktor kalbini dinleyemedi. Haydi, biraz sakin duralım.",
-                "en": "The doctor couldn't hear his heart. Let's sit still for a moment."
+                "tr": "Doktor kalbini dinleyemedi. Haydi, sakince oturalım.",
+                "en": "The doctor couldn't hear his heart. Let's sit still and calm."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p5_push.mp3",

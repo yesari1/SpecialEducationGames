@@ -20,7 +20,13 @@
     "shapes_G14",
     "numbers_G02",
     "numbers_G35",
-    "numbers_G10"
+    "numbers_G10",
+    "emotions_G02",
+    "emotions_G01",
+    "emotions_G14",
+    "body_G02",
+    "body_G01",
+    "body_G14"
   ],
   "disabledGames": [],
   "hiddenThemes": [],

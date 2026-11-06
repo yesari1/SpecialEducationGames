@@ -112,6 +112,54 @@
    "masterPrompt": "docs/illustration-style.md",
    "prompt": "A small group of toy vehicles: a rounded orange car in front, a blue bus and a little red airplane behind, on a soft rounded grey-blue road patch. Same scale and framing as every other theme cover: the group fills about 75% of the frame, centred, with even margins. Transparent background.",
    "normalization": "cropped to alpha bounds, scaled to equal visual weight (sqrt of area = 90% of 512 px, max 99%), bottom-aligned"
+  },
+  {
+   "name": "cover_emotions",
+   "path": "assets/illustrations/themes/cover_emotions.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-covers/originals/cover_emotions.png",
+   "originalSha256": "aefb2203197ab5df3805bcb7929f2dff3c36bd8c38b945010809310c151c5dc7",
+   "sha256": "9a6cba3313e8685017f00adec46b62135718d56e48298aeda49c9740d9146d5b",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-06",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "FEELINGS theme — three round clay face balls side by side on the base: a yellow happy face, a blue sad face, a red-orange angry face (simple dot eyes, gentle expressions).",
+   "normalization": "cropped to alpha bounds, scaled to the same visual weight as the existing covers (sqrt of area about 390 px), bottom at 465 px"
+  },
+  {
+   "name": "cover_body",
+   "path": "assets/illustrations/themes/cover_body.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-covers/originals/cover_body.png",
+   "originalSha256": "ccb2eb7a3ec41c4d814dd1c2783d89330e197753207734ed8a2be2091019fc13",
+   "sha256": "40c19c31e034c78e69e8257d1f7f57f9d5060277417fcea49ac97209c2984d8f",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-06",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "OUR BODY theme — Ali (exactly as in the character sheet) standing on the base, waving with one hand and pointing to his nose with the other, smiling.",
+   "normalization": "cropped to alpha bounds, scaled to the same visual weight as the existing covers (sqrt of area about 390 px), bottom at 465 px"
+  },
+  {
+   "name": "cover_home",
+   "path": "assets/illustrations/themes/cover_home.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-covers/originals/cover_home.png",
+   "originalSha256": "923d35f601ee94b424075b432106f56331783d5e918a2e60d4c68e968b06f552",
+   "sha256": "b06cb52a386b634af19080f44b4076fb1993afe263d50f87348a9be03dcf2073",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-06",
+   "masterPrompt": "docs/illustration-style.md",
+   "prompt": "OUR HOME theme — a small cosy clay house (soft orange roof, cream walls, a round window, a little blue door) with a small green bush beside it, on the base.",
+   "normalization": "cropped to alpha bounds, scaled to the same visual weight as the existing covers (sqrt of area about 390 px), bottom at 465 px"
   }
  ]
 }

@@ -134,6 +134,12 @@ flutter:
     - assets/stories/doctor/
     - assets/audio/tr/stories/doctor/
     - assets/audio/en/stories/doctor/
+    - assets/images/emotions/
+    - assets/audio/tr/emotions/
+    - assets/audio/en/emotions/
+    - assets/images/body/
+    - assets/audio/tr/body/
+    - assets/audio/en/body/
     - assets/audio/tr/explain/
     - assets/audio/en/explain/
     - assets/sfx/animals/

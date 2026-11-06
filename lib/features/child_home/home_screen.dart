@@ -413,6 +413,9 @@ const themeCovers = {
   'colors',
   'shapes',
   'numbers',
+  'emotions',
+  'body',
+  'home',
 };
 
 Widget themeCover(String themeId, ContentItem hero) =>
