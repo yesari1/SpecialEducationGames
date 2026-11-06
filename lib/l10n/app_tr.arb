@@ -1027,5 +1027,13 @@
   "obPlanTopicsAll": "Tüm konular eklendi",
   "obPlanReadyTitle": "{name} için 7 günlük plan hazır",
   "obPlanDay": "Gün {day}",
-  "obPlanToday": "Bugün"
+  "obPlanToday": "Bugün",
+  "gameMascotHello": "Merhaba! Hadi birlikte oynayalım.",
+  "weeklySummaryTitle": "Haftanın özeti",
+  "weeklySummaryBody": "{name} bu hafta {days} gün, toplam {minutes} dakika oynadı.",
+  "weeklySummaryNone": "{name} bu hafta henüz oynamadı. Birlikte birkaç dakika oynamaya ne dersiniz?",
+  "familyReminder": "Günlük hatırlatma",
+  "familyReminderNote": "O gün oynanmadıysa seçtiğiniz saatte kısa bir bildirim gelir; pazar akşamı haftanın özeti gelir.",
+  "familyReminderTime": "Saat",
+  "famDayStreak": "Üst üste oynanan gün"
 }

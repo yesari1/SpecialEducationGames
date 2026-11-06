@@ -278,6 +278,21 @@ void main() {
     );
     expect(state.dailyPathSteps.first, startsWith('vehicles_'));
   });
+  test('A child set up in setup gets the mascot hello once', () async {
+    final state = AppState(
+      await ContentRepository.load(),
+      AppDatabase.forTesting(NativeDatabase.memory()),
+      AudioService(),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    expect(state.mascotHelloDue, isFalse);
+    await state.completeOnboarding(name: 'Can', survey: {});
+    expect(state.mascotHelloDue, isTrue);
+    await state.mascotHelloDone();
+    await state.load();
+    expect(state.mascotHelloDue, isFalse);
+  });
   testWidgets(
     'G02 requires five distinct taps and explicit finish before daily progress',
     (tester) async {

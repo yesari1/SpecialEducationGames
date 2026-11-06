@@ -1473,4 +1473,45 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get obPlanToday => 'Today';
+
+  @override
+  String get gameMascotHello => 'Hi! Let\'s play together.';
+
+  @override
+  String get weeklySummaryTitle => 'This week';
+
+  @override
+  String weeklySummaryBody(String name, int days, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '1 minute',
+    );
+    return '$name played on $_temp0 this week, $_temp1 in total.';
+  }
+
+  @override
+  String weeklySummaryNone(String name) {
+    return '$name hasn\'t played this week yet. How about a few minutes together?';
+  }
+
+  @override
+  String get familyReminder => 'Daily reminder';
+
+  @override
+  String get familyReminderNote =>
+      'If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week\'s summary.';
+
+  @override
+  String get familyReminderTime => 'Time';
+
+  @override
+  String get famDayStreak => 'Days in a row';
 }

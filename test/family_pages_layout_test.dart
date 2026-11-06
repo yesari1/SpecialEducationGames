@@ -627,7 +627,7 @@ void main() {
             ),
           );
           expect(counter, findsOneWidget);
-          var reachedPage7 = false;
+          var reachedWeekly = false;
           for (var attempt = 0; attempt < 64; attempt++) {
             final match = RegExp(
               r'^(\d+) / (\d+)$',
@@ -641,7 +641,7 @@ void main() {
               reason:
                   '$locale progress page $current at $logicalViewport x2 safe=$safePadding',
             );
-            if (current == 7) {
+            if (current == 8) {
               expect(
                 find.text(
                   locale == 'tr'
@@ -652,7 +652,7 @@ void main() {
                 reason: '$locale weekly card retains its full heading',
               );
             }
-            if (current == 7) reachedPage7 = true;
+            if (current == 8) reachedWeekly = true;
             final next = tester.widget<IconButton>(button);
             if (next.onPressed == null) {
               expect(current, total - 1);
@@ -662,7 +662,7 @@ void main() {
             await tester.pumpAndSettle();
           }
           expect(
-            reachedPage7,
+            reachedWeekly,
             isTrue,
             reason: '$locale report page 7 is covered',
           );

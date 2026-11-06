@@ -15,6 +15,7 @@ import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
+import '../onboarding/plan_views.dart' show MascotSlot;
 import 'round_controller.dart';
 import 'templates/game_template.dart' show successSentenceCue;
 import 'widgets/round_choices_view.dart';
@@ -119,6 +120,41 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     if (_limitReached) return;
     if (!s.hasRequiredGameAudio(widget.themeId, widget.gameId)) return;
     if (_g14HardContentUnavailable) return;
+    // The child's very first game: the mascot says hello, then it starts.
+    if (s.mascotHelloDue) {
+      _greeting = true;
+      unawaited(s.mascotHelloDone());
+      WidgetsBinding.instance.addPostFrameCallback((_) => _greet());
+      return;
+    }
+    _begin();
+  }
+
+  /// The mascot's hello before the first game (see [_MascotHello]).
+  bool _greeting = false;
+
+  Future<void> _greet() async {
+    final started = DateTime.now();
+    await s.audio.playSequence([
+      'assets/audio/${s.locale}/prompts/mascot_hello.mp3',
+    ]);
+    // Without sound the hello still stays a moment.
+    final rest =
+        const Duration(milliseconds: 2500) -
+        DateTime.now().difference(started);
+    if (rest > Duration.zero) await Future<void>.delayed(rest);
+    _endGreeting();
+  }
+
+  void _endGreeting() {
+    if (!mounted || !_greeting) return;
+    setState(() {
+      _greeting = false;
+      _begin();
+    });
+  }
+
+  void _begin() {
     if (exploratory) {
       _startSession();
       return;
@@ -400,6 +436,18 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             ),
           ),
         ),
+      );
+    }
+    if (_greeting) {
+      return _MascotHello(
+        tint: theme.accent,
+        base: theme.bg,
+        text: l10n.gameMascotHello,
+        reduced: s.reducedMotion || MediaQuery.disableAnimationsOf(context),
+        onTap: () {
+          s.audio.stop();
+          _endGreeting();
+        },
       );
     }
     if (exploratory) return _exploreComplete ? _completed(3) : _explore(theme);
@@ -1255,6 +1303,101 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
 }
 
 /// A star that pops in once (no loop), as a sticker with a white rim.
+/// The mascot (the app icon's cloud) greets the child before the very first
+/// game: one short sentence, spoken; a tap starts the game at once.
+class _MascotHello extends StatelessWidget {
+  final Color tint, base;
+  final String text;
+  final bool reduced;
+  final VoidCallback onTap;
+  const _MascotHello({
+    required this.tint,
+    required this.base,
+    required this.text,
+    required this.reduced,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    final mascot = (size.shortestSide * .5).clamp(120.0, 260.0);
+    final content = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(
+          height: mascot,
+          width: mascot,
+          child: Image.asset(
+            MascotSlot.mascotCloud,
+            fit: BoxFit.contain,
+            excludeFromSemantics: true,
+          ),
+        ),
+        const SizedBox(width: SegSpace.s4),
+        Flexible(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 420),
+            padding: const EdgeInsets.symmetric(
+              horizontal: SegSpace.s5,
+              vertical: SegSpace.s4,
+            ),
+            decoration: BoxDecoration(
+              color: SegColors.surface,
+              borderRadius: BorderRadius.circular(SegRadius.lg),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x14000000),
+                  blurRadius: 12,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Text(
+              text,
+              key: const ValueKey('mascot-hello'),
+              style: SegText.title.copyWith(color: SegColors.ink),
+            ),
+          ),
+        ),
+      ],
+    );
+    return Scaffold(
+      backgroundColor: base,
+      body: SceneBackdrop(
+        tint: tint,
+        base: base,
+        child: SafeArea(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: onTap,
+            child: Padding(
+              padding: const EdgeInsets.all(SegSpace.s5),
+              child: Center(
+                child: reduced
+                    ? content
+                    : TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 0, end: 1),
+                        duration: const Duration(milliseconds: 450),
+                        curve: Curves.easeOutBack,
+                        builder: (context, t, child) => Opacity(
+                          opacity: t.clamp(0.0, 1.0),
+                          child: Transform.scale(
+                            scale: .85 + .15 * t,
+                            child: child,
+                          ),
+                        ),
+                        child: content,
+                      ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _PoppingStar extends StatelessWidget {
   final Duration delay;
   final bool animate;

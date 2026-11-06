@@ -1428,5 +1428,38 @@
   "obPlanToday": "Today",
   "@obPlanToday": {
     "description": "Chip on day 1 of the onboarding 7-day plan."
-  }
+  },
+  "gameMascotHello": "Hi! Let's play together.",
+  "@gameMascotHello": {
+    "description": "The mascot's hello before the child's very first game (spoken as well)."
+  },
+  "weeklySummaryTitle": "This week",
+  "weeklySummaryBody": "{name} played on {days, plural, =1{1 day} other{{days} days}} this week, {minutes, plural, =1{1 minute} other{{minutes} minutes}} in total.",
+  "@weeklySummaryBody": {
+    "description": "Sunday evening local notification to the parent.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "weeklySummaryNone": "{name} hasn't played this week yet. How about a few minutes together?",
+  "@weeklySummaryNone": {
+    "description": "Sunday evening local notification when nothing was played this week.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "familyReminder": "Daily reminder",
+  "familyReminderNote": "If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week's summary.",
+  "familyReminderTime": "Time",
+  "famDayStreak": "Days in a row"
 }

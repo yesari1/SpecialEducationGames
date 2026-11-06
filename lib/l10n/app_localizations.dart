@@ -2634,6 +2634,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Today'**
   String get obPlanToday;
+
+  /// The mascot's hello before the child's very first game (spoken as well).
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! Let\'s play together.'**
+  String get gameMascotHello;
+
+  /// No description provided for @weeklySummaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get weeklySummaryTitle;
+
+  /// Sunday evening local notification to the parent.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} played on {days, plural, =1{1 day} other{{days} days}} this week, {minutes, plural, =1{1 minute} other{{minutes} minutes}} in total.'**
+  String weeklySummaryBody(String name, int days, int minutes);
+
+  /// Sunday evening local notification when nothing was played this week.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} hasn\'t played this week yet. How about a few minutes together?'**
+  String weeklySummaryNone(String name);
+
+  /// No description provided for @familyReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder'**
+  String get familyReminder;
+
+  /// No description provided for @familyReminderNote.
+  ///
+  /// In en, this message translates to:
+  /// **'If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week\'s summary.'**
+  String get familyReminderNote;
+
+  /// No description provided for @familyReminderTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get familyReminderTime;
+
+  /// No description provided for @famDayStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Days in a row'**
+  String get famDayStreak;
 }
 
 class _AppLocalizationsDelegate

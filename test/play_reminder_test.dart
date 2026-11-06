@@ -11,16 +11,18 @@ import 'package:special_education_games/l10n/app_localizations.dart';
 import 'package:special_education_games/core/reminder/play_reminder.dart';
 
 void main() {
-  test('a reminder each evening, none today once played', () {
+  test('a reminder each evening for a week, then a few over the month', () {
     final morning = DateTime(2026, 11, 1, 9);
     final unplayed = PlayReminder.evenings(morning, playedToday: false);
-    expect(unplayed, hasLength(PlayReminder.days));
+    expect(unplayed, hasLength(PlayReminder.dayOffsets.length));
     expect(unplayed.first, DateTime(2026, 11, 1, PlayReminder.hour));
-    expect(unplayed.last, DateTime(2026, 11, 7, PlayReminder.hour));
+    expect(unplayed[6], DateTime(2026, 11, 7, PlayReminder.hour));
+    // Still reminded when the app stays closed after the first week.
+    expect(unplayed.last, DateTime(2026, 11, 30, PlayReminder.hour));
 
     final played = PlayReminder.evenings(morning, playedToday: true);
     expect(played.first, DateTime(2026, 11, 2, PlayReminder.hour));
-    expect(played, hasLength(PlayReminder.days - 1));
+    expect(played, hasLength(PlayReminder.dayOffsets.length - 1));
 
     // Past the hour: today is over either way.
     final night = DateTime(2026, 11, 1, 21);
@@ -30,8 +32,34 @@ void main() {
     );
     // Month ends roll over.
     expect(
-      PlayReminder.evenings(DateTime(2026, 11, 29, 9), playedToday: true).last,
+      PlayReminder.evenings(DateTime(2026, 11, 29, 9), playedToday: true)[5],
       DateTime(2026, 12, 5, PlayReminder.hour),
+    );
+    // The parent's hour.
+    expect(
+      PlayReminder.evenings(morning, playedToday: false, at: 20).first,
+      DateTime(2026, 11, 1, 20),
+    );
+  });
+
+  test('the weekly summary comes on Sunday evening', () {
+    // 6 Nov 2026 is a Friday.
+    expect(
+      PlayReminder.weeklyAt(DateTime(2026, 11, 6, 10)),
+      DateTime(2026, 11, 8, PlayReminder.hour + 1),
+    );
+    // Sunday before the time: today; after it: next Sunday.
+    expect(
+      PlayReminder.weeklyAt(DateTime(2026, 11, 8, 10)),
+      DateTime(2026, 11, 8, PlayReminder.hour + 1),
+    );
+    expect(
+      PlayReminder.weeklyAt(DateTime(2026, 11, 8, 21)),
+      DateTime(2026, 11, 15, PlayReminder.hour + 1),
+    );
+    expect(
+      PlayReminder.weeklyAt(DateTime(2026, 11, 6, 10), at: 20),
+      DateTime(2026, 11, 8, 21),
     );
   });
 

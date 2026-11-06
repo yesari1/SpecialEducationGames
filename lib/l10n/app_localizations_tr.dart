@@ -1444,4 +1444,33 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get obPlanToday => 'Bugün';
+
+  @override
+  String get gameMascotHello => 'Merhaba! Hadi birlikte oynayalım.';
+
+  @override
+  String get weeklySummaryTitle => 'Haftanın özeti';
+
+  @override
+  String weeklySummaryBody(String name, int days, int minutes) {
+    return '$name bu hafta $days gün, toplam $minutes dakika oynadı.';
+  }
+
+  @override
+  String weeklySummaryNone(String name) {
+    return '$name bu hafta henüz oynamadı. Birlikte birkaç dakika oynamaya ne dersiniz?';
+  }
+
+  @override
+  String get familyReminder => 'Günlük hatırlatma';
+
+  @override
+  String get familyReminderNote =>
+      'O gün oynanmadıysa seçtiğiniz saatte kısa bir bildirim gelir; pazar akşamı haftanın özeti gelir.';
+
+  @override
+  String get familyReminderTime => 'Saat';
+
+  @override
+  String get famDayStreak => 'Üst üste oynanan gün';
 }
