@@ -79,3 +79,6 @@ class FirestoreAdminLink implements AdminLink {
 
 /// Firestore server time, for the stamps the rules expect.
 Object serverNow() => FieldValue.serverTimestamp();
+
+/// Adds one to a counter on the server.
+Object countUp() => FieldValue.increment(1);

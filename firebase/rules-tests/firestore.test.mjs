@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import {after, before, beforeEach, test} from 'node:test';
 import {initializeTestEnvironment, assertFails, assertSucceeds} from '@firebase/rules-unit-testing';
-import {doc, collection, collectionGroup, query, orderBy, startAt, endAt, documentId, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp} from 'firebase/firestore';
+import {doc, collection, collectionGroup, query, orderBy, startAt, endAt, documentId, getDoc, getDocs, setDoc, updateDoc, deleteDoc, Timestamp, serverTimestamp, increment} from 'firebase/firestore';
 
 test('persistent deletion marker blocks all family writes and is private',async () => {
   const family={createdAt:stamp(),updatedAt:stamp(),locale:'tr'};
@@ -266,6 +266,27 @@ test('funnel: anonymous install doc, each step stamped once, admin-only listing'
   await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{deviceModel:'Google Pixel 9a'},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{deviceModel:'x'.repeat(65)},{merge:true}));
   await assertFails(setDoc(doc(anon,`funnel/${id}`),{uninstalledAt:serverTimestamp()},{merge:true}));
+  // Open days, first round, per-card counters, offer choice, notification permission.
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{openDays:['2026-11-06']},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{openDays:['2026-11-06','2026-11-07']},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{openDays:['6 Kas']},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{openDays:[]},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{openDays:Array.from({length:61},(_,i)=>`2026-01-${String(i%28+1).padStart(2,'0')}`)},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{openDays:[20261106]},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{firstRoundAt:serverTimestamp()},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{firstRoundAt:serverTimestamp()},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{cards:{animals_G02:{opened:increment(1)}}},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{cards:{animals_G02:{completed:increment(1)}}},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{cards:{food_G01:{opened:increment(1)}}},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{cards:{a_G01:{opened:increment(1)},b_G01:{opened:increment(1)}}},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{cards:{'bad key!':{opened:increment(1)}}},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{paywallTrialTapAt:serverTimestamp(),paywallPlanTapAt:serverTimestamp(),paywallBackAt:serverTimestamp(),paywallPlanId:'yearly'},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{paywallBackAt:serverTimestamp()},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{paywallPlanId:'monthly'},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{paywallPlanId:'Yearly plan'},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{notifPermission:'granted'},{merge:true}));
+  await assertSucceeds(setDoc(doc(anon,`funnel/${id}`),{notifPermission:'denied'},{merge:true}));
+  await assertFails(setDoc(doc(anon,`funnel/${id}`),{notifPermission:'maybe'},{merge:true}));
   await assertFails(getDocs(collection(anon,'campaigns')));
   await assertFails(setDoc(doc(db('alice'),'campaigns/c1'),{title:'x'}));
   await assertSucceeds(setDoc(doc(db('admin'),'campaigns/c1'),{title:'x'}));

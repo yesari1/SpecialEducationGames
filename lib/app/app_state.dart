@@ -308,8 +308,89 @@ class AppState extends ChangeNotifier {
           await funnelStep(step);
         }
       }
+      final permission = await db.preference('funnel.due.notifPermission');
+      if (permission == 'granted' || permission == 'denied') {
+        await reportNotifPermission(permission == 'granted');
+      }
       unawaited(_reportPushToken());
       unawaited(_reportDeviceModel());
+      unawaited(reportOpenDay());
+    } catch (_) {}
+  }
+
+  static String _localDay(DateTime d) {
+    final l = d.toLocal();
+    return '${l.year.toString().padLeft(4, '0')}-'
+        '${l.month.toString().padLeft(2, '0')}-'
+        '${l.day.toString().padLeft(2, '0')}';
+  }
+
+  /// The local dates this install was opened (the last 60), for day 1 / 7 /
+  /// 30 return. Sent at start and when the app comes back to the front;
+  /// once a day. Failures are silent and retried next time.
+  Future<void> reportOpenDay() async {
+    if (!_funnelOn) return;
+    try {
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      final today = _localDay(DateTime.now());
+      if (await db.preference('funnel.openSent') == today) return;
+      final days = (await db.preference('funnel.openDays') ?? '')
+          .split(',')
+          .where((d) => d.isNotEmpty)
+          .toList();
+      if (!days.contains(today)) days.add(today);
+      final kept = days.length > 60 ? days.sublist(days.length - 60) : days;
+      await db.setPreference('funnel.openDays', kept.join(','));
+      await adminLink.funnel(await _ensureInstallId(), {'openDays': kept});
+      await db.setPreference('funnel.openSent', today);
+    } catch (_) {}
+  }
+
+  /// One more opened (or completed) round of a card on the install record:
+  /// `cards.<theme>_<game>.opened|completed`. Not retried: a count that
+  /// does not get through is simply missing.
+  Future<void> reportCard(
+    String theme,
+    String game, {
+    required bool completed,
+  }) async {
+    if (!_funnelOn) return;
+    try {
+      final key = '${theme}_$game';
+      if (!RegExp(r'^[A-Za-z0-9_]{1,40}$').hasMatch(key)) return;
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'cards': {
+          key: {completed ? 'completed' : 'opened': countUp()},
+        },
+      });
+    } catch (_) {}
+  }
+
+  /// The plan tapped on the offer (the last one tapped).
+  Future<void> reportPaywallPlan(String planId) async {
+    unawaited(funnelStep('paywallPlanTap'));
+    if (!_funnelOn) return;
+    try {
+      if (!RegExp(r'^[a-z0-9_]{1,32}$').hasMatch(planId)) return;
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'paywallPlanId': planId,
+      });
+    } catch (_) {}
+  }
+
+  /// Android's answer in its own notification permission dialog.
+  Future<void> reportNotifPermission(bool granted) async {
+    if (!_funnelOn) return;
+    try {
+      final value = granted ? 'granted' : 'denied';
+      await db.setPreference('funnel.due.notifPermission', value);
+      if (await db.preference('funnel.sent.install') != 'true') return;
+      await adminLink.funnel(await _ensureInstallId(), {
+        'notifPermission': value,
+      });
+      await db.setPreference('funnel.due.notifPermission', '');
     } catch (_) {}
   }
 
@@ -383,6 +464,10 @@ class AppState extends ChangeNotifier {
     'firstGame',
     'reminderYes',
     'reminderNo',
+    'firstRound',
+    'paywallTrialTap',
+    'paywallPlanTap',
+    'paywallBack',
   ];
 
   /// Stamps `<step>At` once ([_funnelSteps]); the rules reject a second
@@ -412,13 +497,7 @@ class AppState extends ChangeNotifier {
       final ended = await (db.select(
         db.gameSessions,
       )..where((t) => t.endedAt.isNotNull())).get();
-      String day(DateTime d) {
-        final l = d.toLocal();
-        return '${l.year.toString().padLeft(4, '0')}-'
-            '${l.month.toString().padLeft(2, '0')}-'
-            '${l.day.toString().padLeft(2, '0')}';
-      }
-
+      const day = _localDay;
       final today = day(DateTime.now());
       var total = 0, todayMs = 0;
       final days = <String>{};
@@ -993,7 +1072,8 @@ class AppState extends ChangeNotifier {
     await db.setPreference('reminder.on', '$yes');
     unawaited(funnelStep(yes ? 'reminderYes' : 'reminderNo'));
     if (!yes) return;
-    await reminder.requestPermission();
+    final granted = await reminder.requestPermission();
+    unawaited(reportNotifPermission(granted));
     await refreshReminder();
   }
 
@@ -1385,6 +1465,7 @@ class AppState extends ChangeNotifier {
           ),
         );
     unawaited(funnelStep('firstGame'));
+    unawaited(reportCard(theme, game, completed: false));
     unawaited(refreshReminder());
     return id;
   }
@@ -1404,6 +1485,15 @@ class AppState extends ChangeNotifier {
     await refreshTrials();
     autoSync.request();
     unawaited(reportPlayTime());
+    if (completed) {
+      unawaited(funnelStep('firstRound'));
+      final s = await (db.select(
+        db.gameSessions,
+      )..where((t) => t.id.equals(id))).getSingleOrNull();
+      if (s != null) {
+        unawaited(reportCard(s.themeId, s.gameId, completed: true));
+      }
+    }
   }
 
   /// The database keeps whole seconds; rounding the end up keeps the active

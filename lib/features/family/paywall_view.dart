@@ -126,6 +126,7 @@ class _PaywallViewState extends State<PaywallView> {
   Future<void> _continue() async {
     if (!await _parentReady() || !mounted) return;
     if (_startsTrial) {
+      s.funnelStep('paywallTrialTap');
       final auth = widget.auth!;
       if (auth.account == null) {
         // Google or e-mail, on the shared sign-in page.
@@ -155,6 +156,7 @@ class _PaywallViewState extends State<PaywallView> {
     }
     final plan = _plan;
     if (plan == null) return;
+    s.reportPaywallPlan(plan.id);
     // A subscription does not stop by itself when the one-time purchase is
     // bought: say so first, with the way to cancel it.
     if (plan.lifetime &&
