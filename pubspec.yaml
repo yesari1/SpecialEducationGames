@@ -128,6 +128,12 @@ flutter:
     - assets/stories/angry/
     - assets/audio/tr/stories/angry/
     - assets/audio/en/stories/angry/
+    - assets/stories/turn/
+    - assets/audio/tr/stories/turn/
+    - assets/audio/en/stories/turn/
+    - assets/stories/doctor/
+    - assets/audio/tr/stories/doctor/
+    - assets/audio/en/stories/doctor/
     - assets/audio/tr/explain/
     - assets/audio/en/explain/
     - assets/sfx/animals/

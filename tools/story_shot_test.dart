@@ -118,6 +118,22 @@ void main() {
         await settle();
       }
       await shot('$tag-8-end');
+
+      // The Premium stories: first page and first question.
+      for (final id in ['turn', 'doctor']) {
+        final story = state.content.story(id)!;
+        await show(StoryPlayerScreen(state: state, story: story));
+        await shot('$tag-9-$id-page');
+        while (!story.pages[0].isQuestion &&
+            find.byKey(const ValueKey('story-next')).evaluate().isNotEmpty) {
+          await tester.tap(find.byKey(const ValueKey('story-next')));
+          await settle();
+          if (find.byKey(const ValueKey('story-choice-0')).evaluate().isNotEmpty) {
+            break;
+          }
+        }
+        await shot('$tag-9-$id-question');
+      }
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 1));
     }

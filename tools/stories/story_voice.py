@@ -2,8 +2,8 @@
 
     python -I tools/stories/story_voice.py [story_id ...] [--force]
 
-Turkish: İrem with eleven_turbo_v2_5 and language_code "tr" (multilingual v2
-reads Turkish words with an English accent). English: Laura with
+Turkish: İrem with eleven_v4 and language_code "tr" (Yunus, 6 Nov 2026: the
+turbo v2.5 takes sounded muffled, distant or flat). English: Laura with
 eleven_multilingual_v2. Reads every line from assets/content/stories.json,
 skips clips that already exist (unless --force) and records text, voice,
 model and sha256 of each clip in tools/stories/voice_manifest.json.
@@ -20,11 +20,25 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / 'tools/stories/voice_manifest.json'
 VOICES = {
-    'tr': {'voice_id': 'uvU9jrgGLWNPeNA4NgNT', 'name': 'İrem', 'model_id': 'eleven_turbo_v2_5', 'language_code': 'tr'},
+    'tr': {'voice_id': 'uvU9jrgGLWNPeNA4NgNT', 'name': 'İrem', 'model_id': 'eleven_v4', 'language_code': 'tr'},
     'en': {'voice_id': 'GZ4PpFJV8ikEGUtBrjK7', 'name': 'Laura', 'model_id': 'eleven_multilingual_v2'},
 }
-# Calm storytelling: steadier and a little slower than the game prompts.
-SETTINGS = {'stability': 0.6, 'similarity_boost': 0.8, 'style': 0.15, 'speed': 0.92, 'use_speaker_boost': True}
+# Warm storytelling: some expression, a little slower than the game prompts.
+SETTINGS = {'stability': 0.5, 'similarity_boost': 0.8, 'style': 0.35, 'speed': 0.95, 'use_speaker_boost': True}
+# Every clip at one loudness, without leading silence, so no line sounds
+# distant or starts late.
+FILTER = ('silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,'
+          'loudnorm=I=-16:TP=-1.5:LRA=11')
+
+
+def finish(raw, out):
+    import subprocess, tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / 'raw.mp3'
+        src.write_bytes(raw)
+        subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(src), '-af', FILTER,
+                        '-ar', '44100', '-ac', '1', '-b:a', '128k', str(out)], check=True)
+    return out.read_bytes()
 
 
 def lines(story):
@@ -72,11 +86,11 @@ def main():
                     continue
                 audio = synthesize(line['text'][lang], lang, key)
                 out.parent.mkdir(parents=True, exist_ok=True)
-                out.write_bytes(audio)
+                audio = finish(audio, out)
                 voice = VOICES[lang]
                 manifest[path] = {
                     'text': line['text'][lang], 'language': lang, 'voice_id': voice['voice_id'],
-                    'voice_name': voice['name'], 'model_id': voice['model_id'],
+                    'voice_name': voice['name'], 'model_id': voice['model_id'], 'post': FILTER,
                     'language_code': voice.get('language_code'), 'voice_settings': SETTINGS,
                     'sha256': hashlib.sha256(audio).hexdigest(), 'bytes': len(audio),
                     'requested_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
