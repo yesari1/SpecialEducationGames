@@ -34,6 +34,17 @@
       }
     }
   },
+  "storiesTitle": "Stories",
+  "storiesCount": "{count, plural, =0{0 stories} one{{count} story} other{{count} stories}}",
+  "@storiesCount": {
+    "description": "Count of stories shown on the Stories card.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storyNext": "Next",
   "themeBack": "Back",
   "difficultyEasy": "Easy",
   "difficultyMedium": "Medium",

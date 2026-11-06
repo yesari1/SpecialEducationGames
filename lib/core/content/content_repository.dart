@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'story.dart';
+export 'story.dart';
 
 enum Difficulty { easy, medium, hard }
 
@@ -193,12 +195,16 @@ class ContentRepository {
   final List<GameDef> games;
   final Set<String> freeGames;
   final Map<String, dynamic> configDefaults;
+
+  /// Social stories (assets/content/stories.json), in shelf order.
+  final List<Story> stories;
   ContentRepository(
     this.themes,
     this.items,
     this.games,
     this.freeGames, [
     this.configDefaults = const {},
+    this.stories = const [],
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -220,15 +226,21 @@ class ContentRepository {
         .map((j) => GameDef.fromJson(j))
         .toList();
     final config = await read('config_defaults.json');
+    final stories = [
+      for (final j in await read('content/stories.json') as List)
+        Story.fromJson(j as Map<String, dynamic>),
+    ];
     return ContentRepository(
       themes,
       items,
       games,
       Set<String>.from(config['freeGames']),
       Map<String, dynamic>.from(config),
+      stories,
     );
   }
 
+  Story? story(String id) => stories.where((x) => x.id == id).firstOrNull;
   ContentTheme theme(String id) => themes.firstWhere((x) => x.id == id);
   GameDef game(String id) => games.firstWhere((x) => x.id == id);
   List<ContentItem> pool(

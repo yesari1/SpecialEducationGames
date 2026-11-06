@@ -849,6 +849,9 @@ class AppState extends ChangeNotifier {
       (entitlement.isPremium ||
           // Free cards (Learn and two games per theme) are open on every tier.
           configuration.freeGames.contains('${theme}_$game'));
+  /// Free stories are open to everyone; the rest need Premium.
+  bool canPlayStory(Story story) => story.free || entitlement.isPremium;
+
   Future<void> load() async {
     if (_activeGames == 0) configuration = await configs.load();
     if (_activeGames == 0) await _closeLeftoverSessions();

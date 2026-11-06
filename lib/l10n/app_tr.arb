@@ -34,6 +34,17 @@
       }
     }
   },
+  "storiesTitle": "Hikâyeler",
+  "storiesCount": "{count, plural, =0{0 hikâye} one{{count} hikâye} other{{count} hikâye}}",
+  "@storiesCount": {
+    "description": "Hikâyeler kartında gösterilen hikâye sayısı.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storyNext": "Devam",
   "themeBack": "Geri",
   "difficultyEasy": "Kolay",
   "difficultyMedium": "Orta",

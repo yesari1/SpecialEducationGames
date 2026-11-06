@@ -1,0 +1,346 @@
+[
+  {
+    "id": "teeth",
+    "free": true,
+    "title": {
+      "tr": "Dişlerimi fırçalıyorum",
+      "en": "I brush my teeth"
+    },
+    "cover": "assets/stories/teeth/cover.png",
+    "pages": [
+      {
+        "line": {
+          "text": {
+            "tr": "Bu Ali. Yatma zamanı geldi.",
+            "en": "This is Ali. It is time for bed."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p1.mp3",
+            "en": "assets/audio/en/stories/teeth/p1.mp3"
+          }
+        },
+        "image": "assets/stories/teeth/page1.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali banyoya gidiyor. Diş fırçasını alıyor.",
+            "en": "Ali goes to the bathroom. He takes his toothbrush."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p2.mp3",
+            "en": "assets/audio/en/stories/teeth/p2.mp3"
+          }
+        },
+        "image": "assets/stories/teeth/page2.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Fırçaya macun sürdük. Şimdi ne yapıyoruz?",
+            "en": "We put toothpaste on the brush. What do we do now?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p3.mp3",
+            "en": "assets/audio/en/stories/teeth/p3.mp3"
+          }
+        },
+        "choices": [
+          {
+            "image": "assets/stories/teeth/choice_brush.png",
+            "correct": true
+          },
+          {
+            "image": "assets/stories/teeth/choice_bed.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Önce dişlerimizi fırçalıyoruz.",
+                "en": "First we brush our teeth."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p3_bed.mp3",
+                "en": "assets/audio/en/stories/teeth/p3_bed.mp3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali dişlerini yavaşça fırçalıyor. Yukarı, aşağı.",
+            "en": "Ali brushes his teeth slowly. Up and down."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p4.mp3",
+            "en": "assets/audio/en/stories/teeth/p4.mp3"
+          }
+        },
+        "image": "assets/stories/teeth/page4.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Fırçalama bitti. Şimdi ne yapıyoruz?",
+            "en": "Brushing is done. What do we do now?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p5.mp3",
+            "en": "assets/audio/en/stories/teeth/p5.mp3"
+          }
+        },
+        "choices": [
+          {
+            "image": "assets/stories/teeth/choice_rinse.png",
+            "correct": true
+          },
+          {
+            "image": "assets/stories/teeth/choice_shoes.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Önce ağzımızı suyla çalkalıyoruz.",
+                "en": "First we rinse our mouth with water."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p5_shoes.mp3",
+                "en": "assets/audio/en/stories/teeth/p5_shoes.mp3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Dişleri tertemiz! Ali ne hissediyor?",
+            "en": "His teeth are clean! How does Ali feel?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p6.mp3",
+            "en": "assets/audio/en/stories/teeth/p6.mp3"
+          }
+        },
+        "choices": [
+          {
+            "image": "assets/stories/teeth/choice_happy.png",
+            "correct": true
+          },
+          {
+            "image": "assets/stories/teeth/choice_sad.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Bak, Ali gülümsüyor. Ali mutlu.",
+                "en": "Look, Ali is smiling. Ali is happy."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p6_sad.mp3",
+                "en": "assets/audio/en/stories/teeth/p6_sad.mp3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali yatağına gidiyor. İyi geceler, Ali!",
+            "en": "Ali goes to bed. Good night, Ali!"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/teeth/p7.mp3",
+            "en": "assets/audio/en/stories/teeth/p7.mp3"
+          }
+        },
+        "image": "assets/stories/teeth/page7.png"
+      }
+    ],
+    "praise": {
+      "text": {
+        "tr": "Çok güzel! Ali'ye yardım ettin.",
+        "en": "Well done! You helped Ali."
+      },
+      "audio": {
+        "tr": "assets/audio/tr/stories/teeth/praise.mp3",
+        "en": "assets/audio/en/stories/teeth/praise.mp3"
+      }
+    }
+  },
+  {
+    "id": "angry",
+    "free": true,
+    "title": {
+      "tr": "Kızınca ne yaparım?",
+      "en": "What do I do when I am angry?"
+    },
+    "cover": "assets/stories/angry/cover.png",
+    "pages": [
+      {
+        "line": {
+          "text": {
+            "tr": "Ali, kardeşi Elif'le arabayla oynuyor.",
+            "en": "Ali is playing with a toy car with his sister Elif."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p1.mp3",
+            "en": "assets/audio/en/stories/angry/p1.mp3"
+          }
+        },
+        "image": "assets/stories/angry/page1.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Elif arabayı alıyor. Ali'nin arabası gitti.",
+            "en": "Elif takes the car. Ali's car is gone."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p2.mp3",
+            "en": "assets/audio/en/stories/angry/p2.mp3"
+          }
+        },
+        "image": "assets/stories/angry/page2.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali şimdi ne hissediyor?",
+            "en": "How does Ali feel now?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p3.mp3",
+            "en": "assets/audio/en/stories/angry/p3.mp3"
+          }
+        },
+        "choices": [
+          {
+            "image": "assets/stories/angry/choice_angry.png",
+            "correct": true
+          },
+          {
+            "image": "assets/stories/angry/choice_happy.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Ali'nin yüzüne bak. Ali kızgın.",
+                "en": "Look at Ali's face. Ali is angry."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/angry/p3_happy.mp3",
+                "en": "assets/audio/en/stories/angry/p3_happy.mp3"
+              }
+            }
+          },
+          {
+            "image": "assets/stories/angry/choice_sad.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Ali'nin yüzüne bak. Ali kızgın.",
+                "en": "Look at Ali's face. Ali is angry."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/angry/p3_sad.mp3",
+                "en": "assets/audio/en/stories/angry/p3_sad.mp3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali çok kızdı. Elinde bir oyuncak var.",
+            "en": "Ali is very angry. He has a toy in his hand."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p4.mp3",
+            "en": "assets/audio/en/stories/angry/p4.mp3"
+          }
+        },
+        "image": "assets/stories/angry/page4.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali ne yapabilir?",
+            "en": "What can Ali do?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p5.mp3",
+            "en": "assets/audio/en/stories/angry/p5.mp3"
+          }
+        },
+        "retry": {
+          "text": {
+            "tr": "Başka ne yapabilir?",
+            "en": "What else can he do?"
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p5_retry.mp3",
+            "en": "assets/audio/en/stories/angry/p5_retry.mp3"
+          }
+        },
+        "choices": [
+          {
+            "image": "assets/stories/angry/choice_throw.png",
+            "correct": false,
+            "result": {
+              "text": {
+                "tr": "Oyuncak düştü. Elif üzüldü.",
+                "en": "The toy fell. Elif is sad."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/angry/p5_throw.mp3",
+                "en": "assets/audio/en/stories/angry/p5_throw.mp3"
+              }
+            },
+            "resultImage": "assets/stories/angry/result_throw.png"
+          },
+          {
+            "image": "assets/stories/angry/choice_tell.png",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Ali \"Kızgınım!\" dedi. Annesiyle derin bir nefes aldı.",
+            "en": "Ali said, \"I am angry!\" He took a deep breath with Mom."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p6.mp3",
+            "en": "assets/audio/en/stories/angry/p6.mp3"
+          }
+        },
+        "image": "assets/stories/angry/page6.png"
+      },
+      {
+        "line": {
+          "text": {
+            "tr": "Elif arabayı geri verdi. Sırayla oynadılar.",
+            "en": "Elif gave the car back. They took turns."
+          },
+          "audio": {
+            "tr": "assets/audio/tr/stories/angry/p7.mp3",
+            "en": "assets/audio/en/stories/angry/p7.mp3"
+          }
+        },
+        "image": "assets/stories/angry/page7.png"
+      }
+    ],
+    "praise": {
+      "text": {
+        "tr": "Çok güzel! Ali'ye yardım ettin.",
+        "en": "Well done! You helped Ali."
+      },
+      "audio": {
+        "tr": "assets/audio/tr/stories/angry/praise.mp3",
+        "en": "assets/audio/en/stories/angry/praise.mp3"
+      }
+    }
+  }
+]

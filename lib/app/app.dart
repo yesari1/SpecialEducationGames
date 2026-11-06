@@ -7,6 +7,7 @@ import 'app_state.dart';
 import 'orientation.dart';
 import 'theme/tokens.dart';
 import '../core/content/content_repository.dart';
+import '../features/stories/story_screens.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/onboarding/sign_in_screen.dart';
 import '../app/ui/components.dart' show showNotice;
@@ -245,7 +246,29 @@ class _EducationAppState extends State<EducationApp>
                     ThemeScreen(state: state, themeId: s.pathParameters['id']!),
               ),
             ),
+            GoRoute(
+              path: 'stories',
+              builder: (_, _) =>
+                  reactive(() => StoryShelfScreen(state: state)),
+            ),
           ],
+        ),
+        GoRoute(
+          path: '/story/:id',
+          redirect: (_, s) {
+            final story = state.content.story(s.pathParameters['id']!);
+            return story == null || !state.canPlayStory(story)
+                ? '/stories'
+                : null;
+          },
+          builder: (_, s) => PopScope(
+            canPop: false,
+            child: StoryPlayerScreen(
+              key: ValueKey('story-${s.pathParameters['id']}'),
+              state: state,
+              story: state.content.story(s.pathParameters['id']!)!,
+            ),
+          ),
         ),
         GoRoute(
           path: '/welcome',

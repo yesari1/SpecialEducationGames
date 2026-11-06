@@ -11,6 +11,7 @@ import '../../core/content/content_repository.dart';
 import '../../core/learning/policies.dart';
 import '../family/parent_gate.dart';
 import 'daily_path_view.dart';
+import '../stories/story_screens.dart';
 import '../../l10n/scoped_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, s.locale);
+    final stories = s.content.stories.isNotEmpty;
     Widget backdrop({required Widget child}) => path
         // Today's Path: the map is the whole screen, behind the top bar too.
         ? Stack(
@@ -164,9 +166,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: path
                     ? DailyPathView(state: s, background: false)
                     : HorizontalCards(
-                        count: s.orderedThemes.length,
+                        count: s.orderedThemes.length + (stories ? 1 : 0),
                         builder: (i) {
-                          final t = s.orderedThemes[i];
+                          if (stories && i == 0) return StoriesCard(state: s);
+                          final t = s.orderedThemes[i - (stories ? 1 : 0)];
                           final hero = s.content.items.firstWhere(
                             (x) => x.id == t.hero,
                           );

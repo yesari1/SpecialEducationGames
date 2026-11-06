@@ -200,6 +200,24 @@ abstract class AppLocalizations {
   /// **'{count, plural, =0{0 games} one{{count} game} other{{count} games}}'**
   String homeThemeGameCount(int count);
 
+  /// No description provided for @storiesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stories'**
+  String get storiesTitle;
+
+  /// Count of stories shown on the Stories card.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{0 stories} one{{count} story} other{{count} stories}}'**
+  String storiesCount(int count);
+
+  /// No description provided for @storyNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get storyNext;
+
   /// No description provided for @themeBack.
   ///
   /// In en, this message translates to:

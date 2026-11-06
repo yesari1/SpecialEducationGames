@@ -1,0 +1,54 @@
+[
+  {
+    "id": "teeth",
+    "free": true,
+    "title": {"tr": "Dişlerimi fırçalıyorum", "en": "I brush my teeth"},
+    "pages": [
+      {"tr": "Bu Ali. Yatma zamanı geldi.", "en": "This is Ali. It is time for bed."},
+      {"tr": "Ali banyoya gidiyor. Diş fırçasını alıyor.", "en": "Ali goes to the bathroom. He takes his toothbrush."},
+      {"tr": "Fırçaya macun sürdük. Şimdi ne yapıyoruz?", "en": "We put toothpaste on the brush. What do we do now?",
+       "choices": [
+         {"key": "brush", "correct": true},
+         {"key": "bed", "result": {"tr": "Önce dişlerimizi fırçalıyoruz.", "en": "First we brush our teeth."}}
+       ]},
+      {"tr": "Ali dişlerini yavaşça fırçalıyor. Yukarı, aşağı.", "en": "Ali brushes his teeth slowly. Up and down."},
+      {"tr": "Fırçalama bitti. Şimdi ne yapıyoruz?", "en": "Brushing is done. What do we do now?",
+       "choices": [
+         {"key": "rinse", "correct": true},
+         {"key": "shoes", "result": {"tr": "Önce ağzımızı suyla çalkalıyoruz.", "en": "First we rinse our mouth with water."}}
+       ]},
+      {"tr": "Dişleri tertemiz! Ali ne hissediyor?", "en": "His teeth are clean! How does Ali feel?",
+       "choices": [
+         {"key": "happy", "correct": true},
+         {"key": "sad", "result": {"tr": "Bak, Ali gülümsüyor. Ali mutlu.", "en": "Look, Ali is smiling. Ali is happy."}}
+       ]},
+      {"tr": "Ali yatağına gidiyor. İyi geceler, Ali!", "en": "Ali goes to bed. Good night, Ali!"}
+    ],
+    "praise": {"tr": "Çok güzel! Ali'ye yardım ettin.", "en": "Well done! You helped Ali."}
+  },
+  {
+    "id": "angry",
+    "free": true,
+    "title": {"tr": "Kızınca ne yaparım?", "en": "What do I do when I am angry?"},
+    "pages": [
+      {"tr": "Ali, kardeşi Elif'le arabayla oynuyor.", "en": "Ali is playing with a toy car with his sister Elif."},
+      {"tr": "Elif arabayı alıyor. Ali'nin arabası gitti.", "en": "Elif takes the car. Ali's car is gone."},
+      {"tr": "Ali şimdi ne hissediyor?", "en": "How does Ali feel now?",
+       "choices": [
+         {"key": "angry", "correct": true},
+         {"key": "happy", "result": {"tr": "Ali'nin yüzüne bak. Ali kızgın.", "en": "Look at Ali's face. Ali is angry."}},
+         {"key": "sad", "result": {"tr": "Ali'nin yüzüne bak. Ali kızgın.", "en": "Look at Ali's face. Ali is angry."}}
+       ]},
+      {"tr": "Ali çok kızdı. Elinde bir oyuncak var.", "en": "Ali is very angry. He has a toy in his hand."},
+      {"tr": "Ali ne yapabilir?", "en": "What can Ali do?",
+       "retry": {"tr": "Başka ne yapabilir?", "en": "What else can he do?"},
+       "choices": [
+         {"key": "throw", "result": {"tr": "Oyuncak düştü. Elif üzüldü.", "en": "The toy fell. Elif is sad."}, "resultImage": true},
+         {"key": "tell", "correct": true}
+       ]},
+      {"tr": "Ali \"Kızgınım!\" dedi. Annesiyle derin bir nefes aldı.", "en": "Ali said, \"I am angry!\" He took a deep breath with Mom."},
+      {"tr": "Elif arabayı geri verdi. Sırayla oynadılar.", "en": "Elif gave the car back. They took turns."}
+    ],
+    "praise": {"tr": "Çok güzel! Ali'ye yardım ettin.", "en": "Well done! You helped Ali."}
+  }
+]

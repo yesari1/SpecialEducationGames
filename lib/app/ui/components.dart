@@ -599,6 +599,7 @@ class ThemeGameCard extends StatelessWidget {
     'vehicles' => SegColors.sky,
     'shapes' => const Color(0xFF9C6AD6),
     'food' => const Color(0xFFE8A24D),
+    'stories' => SegColors.accent,
     _ => SegColors.primary,
   };
 

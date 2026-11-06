@@ -100,7 +100,12 @@ void main() {
 
       expect(find.text(l10n.greeting('Ada')), findsOneWidget);
       expect(find.text(l10n.homeNewBadge), findsOneWidget);
-      final firstThemeCard = find.byType(ThemeGameCard).first;
+      // The Stories card comes first; the first theme card follows it.
+      final firstThemeCard = find
+          .byWidgetPredicate(
+            (w) => w is ThemeGameCard && w.theme.id != 'stories',
+          )
+          .first;
       expect(tester.widget<ThemeGameCard>(firstThemeCard).theme.id, 'animals');
       expect(
         find.descendant(

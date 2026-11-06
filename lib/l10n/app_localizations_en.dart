@@ -72,6 +72,24 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get storiesTitle => 'Stories';
+
+  @override
+  String storiesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count stories',
+      one: '$count story',
+      zero: '0 stories',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get storyNext => 'Next';
+
+  @override
   String get themeBack => 'Back';
 
   @override
