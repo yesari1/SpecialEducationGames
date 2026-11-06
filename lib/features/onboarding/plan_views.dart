@@ -157,86 +157,124 @@ class _PlanLine extends StatelessWidget {
   );
 }
 
-/// One day of the 7-day plan: the first days as full rows, the rest compact.
+/// One day of the 7-day plan. Every day is the same row: a coloured day
+/// badge, the theme's home-card picture, the theme name and its games.
+/// [today] (day 1) adds a "Today" chip and a soft tint. [height] fixes the
+/// row height (rows share the page evenly); null keeps the natural height
+/// (large text, the page scrolls).
 class PlanDayRow extends StatelessWidget {
   final String day, theme, games;
-  final bool compact;
   final Color tint;
+  final Widget thumbnail;
+  final String? today;
+  final double? height;
   const PlanDayRow({
     super.key,
     required this.day,
     required this.theme,
     required this.games,
     required this.tint,
-    this.compact = false,
+    required this.thumbnail,
+    this.today,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
-    final label = Container(
-      width: compact ? 64 : 72,
-      padding: EdgeInsets.symmetric(vertical: compact ? 2 : SegSpace.s1),
-      decoration: BoxDecoration(
-        color: tint.withValues(alpha: 0.22),
-        borderRadius: BorderRadius.circular(SegRadius.pill),
-      ),
-      alignment: Alignment.center,
-      child: Text(
-        day,
-        style: SegText.caption.copyWith(
-          color: SegColors.ink,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
-    );
-    if (compact) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: SegSpace.s2),
-        child: Row(
-          children: [
-            label,
-            const SizedBox(width: SegSpace.s3),
-            Expanded(
-              child: Text(
-                '$theme · $games',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: SegText.caption.copyWith(color: SegColors.inkSoft),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    final fixed = height != null;
+    final thumb = fixed ? (height! - 2 * SegSpace.s2).clamp(36.0, 52.0) : 52.0;
+    final chip = today;
     return Container(
-      margin: const EdgeInsets.only(bottom: SegSpace.s2),
+      height: height,
       padding: const EdgeInsets.symmetric(
         horizontal: SegSpace.s3,
-        vertical: SegSpace.s3,
+        vertical: SegSpace.s2,
       ),
       decoration: BoxDecoration(
-        color: SegColors.surface,
+        color: chip != null
+            ? Color.lerp(SegColors.surface, SegColors.primary, .06)
+            : SegColors.surface,
         borderRadius: BorderRadius.circular(SegRadius.md),
-        border: Border.all(color: SegColors.line),
+        border: Border.all(
+          color: chip != null
+              ? SegColors.primary.withValues(alpha: .45)
+              : SegColors.line,
+          width: chip != null ? 1.5 : 1,
+        ),
       ),
       child: Row(
         children: [
-          label,
+          ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 60),
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: SegSpace.s2,
+                vertical: SegSpace.s1,
+              ),
+              decoration: BoxDecoration(
+                color: tint.withValues(alpha: .22),
+                borderRadius: BorderRadius.circular(SegRadius.xs),
+              ),
+              child: Text(
+                day,
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                style: SegText.caption.copyWith(
+                  color: SegColors.ink,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: SegSpace.s3),
+          SizedBox.square(dimension: thumb, child: thumbnail),
           const SizedBox(width: SegSpace.s3),
           Expanded(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  theme,
-                  style: SegText.label.copyWith(
-                    color: SegColors.ink,
-                    fontWeight: FontWeight.w800,
-                  ),
+                Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        theme,
+                        maxLines: fixed ? 1 : 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: SegText.label.copyWith(
+                          color: SegColors.ink,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                    if (chip != null) ...[
+                      const SizedBox(width: SegSpace.s2),
+                      Container(
+                        key: const ValueKey('plan-today'),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: SegSpace.s2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: SegColors.primary,
+                          borderRadius: BorderRadius.circular(SegRadius.pill),
+                        ),
+                        child: Text(
+                          chip,
+                          maxLines: 1,
+                          style: SegText.caption.copyWith(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
                 Text(
                   games,
-                  maxLines: 1,
+                  maxLines: fixed ? 1 : 3,
                   overflow: TextOverflow.ellipsis,
                   style: SegText.caption.copyWith(color: SegColors.inkSoft),
                 ),
@@ -245,6 +283,96 @@ class PlanDayRow extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// The plan page body: the mascot beside the title, then the seven days.
+/// At normal text size the rows share the height evenly (no scrolling);
+/// large text or a very short screen keeps the rows readable and scrolls.
+class PlanReadyBody extends StatelessWidget {
+  final Widget title;
+  final int count;
+  final Widget Function(int index, double? height) day;
+  const PlanReadyBody({
+    super.key,
+    required this.title,
+    required this.count,
+    required this.day,
+  });
+
+  static const _minRow = 56.0, _maxRow = 80.0, _gap = SegSpace.s2;
+
+  @override
+  Widget build(BuildContext context) {
+    final header = Row(
+      children: [
+        const MascotSlot(height: 68),
+        const SizedBox(width: SegSpace.s3),
+        Expanded(child: title),
+      ],
+    );
+    if (MediaQuery.textScalerOf(context).scale(1) > 1.3) {
+      return SingleChildScrollView(
+        key: const ValueKey('plan-scroll'),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            header,
+            const SizedBox(height: SegSpace.s4),
+            for (var i = 0; i < count; i++)
+              Padding(
+                padding: const EdgeInsets.only(bottom: _gap),
+                child: day(i, null),
+              ),
+          ],
+        ),
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        header,
+        const SizedBox(height: SegSpace.s4),
+        Expanded(
+          child: LayoutBuilder(
+            builder: (context, box) {
+              final share = (box.maxHeight - (count - 1) * _gap) / count;
+              if (share < _minRow) {
+                return ListView(
+                  key: const ValueKey('plan-scroll'),
+                  padding: EdgeInsets.zero,
+                  children: [
+                    for (var i = 0; i < count; i++)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: _gap),
+                        child: day(i, _minRow),
+                      ),
+                  ],
+                );
+              }
+              final row = share.clamp(_minRow, _maxRow);
+              // Space left by full-height rows goes evenly between them.
+              final gap = count < 2
+                  ? 0.0
+                  : ((box.maxHeight - count * row) / (count - 1)).clamp(
+                      _gap,
+                      SegSpace.s5,
+                    );
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  for (var i = 0; i < count; i++) ...[
+                    if (i > 0) SizedBox(height: gap),
+                    day(i, row),
+                  ],
+                ],
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

@@ -3012,6 +3012,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Day {day}'**
   String obPlanDay(int day);
+
+  /// Chip on day 1 of the onboarding 7-day plan.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get obPlanToday;
 }
 
 class _AppLocalizationsDelegate

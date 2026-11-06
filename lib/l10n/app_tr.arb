@@ -1175,5 +1175,6 @@
   "obPlanTopicsAll": "Tüm konular eklendi",
   "obPlanGoal": "Günlük hedef: {minutes} dakika",
   "obPlanReadyTitle": "{name} için 7 günlük plan hazır",
-  "obPlanDay": "Gün {day}"
+  "obPlanDay": "Gün {day}",
+  "obPlanToday": "Bugün"
 }

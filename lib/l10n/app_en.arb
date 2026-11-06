@@ -1639,5 +1639,9 @@
         "type": "int"
       }
     }
+  },
+  "obPlanToday": "Today",
+  "@obPlanToday": {
+    "description": "Chip on day 1 of the onboarding 7-day plan."
   }
 }

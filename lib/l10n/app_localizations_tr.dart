@@ -1668,4 +1668,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String obPlanDay(int day) {
     return 'Gün $day';
   }
+
+  @override
+  String get obPlanToday => 'Bugün';
 }

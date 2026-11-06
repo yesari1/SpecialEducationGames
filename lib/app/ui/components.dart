@@ -588,7 +588,10 @@ class ThemeGameCard extends StatelessWidget {
     this.normalizedVisual = false,
     this.tapSound = true,
   });
-  Color get accent => switch (theme.id) {
+  Color get accent => accentFor(theme.id);
+
+  /// The theme colour of a theme card (also the 7-day plan's thumbnails).
+  static Color accentFor(String themeId) => switch (themeId) {
     'animals' => SegColors.turquoise,
     'produce' => SegColors.accent,
     'colors' => SegColors.primary,
@@ -600,9 +603,12 @@ class ThemeGameCard extends StatelessWidget {
   };
 
   /// Round, compact subjects read as oversized when they fill the scene.
-  double get _heroScale => normalizedVisual
+  double get _heroScale => heroScaleFor(theme.id, normalized: normalizedVisual);
+
+  static double heroScaleFor(String themeId, {required bool normalized}) =>
+      normalized
       ? 1
-      : switch (theme.id) {
+      : switch (themeId) {
           'produce' || 'colors' || 'shapes' => .7,
           'food' => .8,
           'numbers' => .85,

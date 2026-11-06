@@ -301,6 +301,15 @@ void main() {
       expect(find.byKey(ValueKey('plan-day-$day')), findsOneWidget);
     }
     expect(find.text('Day 1'), findsOneWidget);
+    // Only day 1 carries the "Today" chip.
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('plan-day-1')),
+        matching: find.text('Today'),
+      ),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('plan-today')), findsOneWidget);
     // System Back does not leave the plan (the profile is saved).
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();

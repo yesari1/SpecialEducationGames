@@ -10,6 +10,8 @@ import '../family/account_gate_screen.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/policies.dart';
+import '../../app/ui/scene_backdrop.dart';
+import '../child_home/home_screen.dart' show themeCover, themeCovers;
 import '../child_home/reminder_offer.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -298,6 +300,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Widget? above,
     bool skippable = false,
     bool fit = false,
+    Widget? fill,
   }) {
     final dots = _progressIndex >= 0
         ? OnboardingDots(
@@ -350,8 +353,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 560),
+                  // [fill]: the page lays out its own height (7-day plan).
                   // [fit]: one page without scrolling on every screen size.
-                  child: fit
+                  child: fill != null
+                      ? Padding(
+                          key: ValueKey('onboarding-${step.name}-$question'),
+                          padding: const EdgeInsets.fromLTRB(
+                            SegSpace.s5,
+                            SegSpace.s4,
+                            SegSpace.s5,
+                            SegSpace.s3,
+                          ),
+                          child: fill,
+                        )
+                      : fit
                       ? Padding(
                           key: ValueKey('onboarding-${step.name}-$question'),
                           padding: const EdgeInsets.fromLTRB(
@@ -876,36 +891,66 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ];
   }
 
-  /// "{name}'s 7-day plan is ready": the first three days in full, the rest
-  /// compact; one button to the Premium offer.
+  /// "{name}'s 7-day plan is ready": the mascot beside the title, seven
+  /// identical day rows (day 1 marked "Today"); one button to the offer.
   Widget _planReady() {
     final plan = s.weekPlan;
     return _frame(
-      fit: true,
-      children: [
-        const SizedBox(height: SegSpace.s3),
-        const Center(child: MascotSlot(height: 88)),
-        const SizedBox(height: SegSpace.s3),
-        _title(
+      children: const [],
+      fill: PlanReadyBody(
+        title: Text(
           l10n.obPlanReadyTitle(_nickname),
           key: const ValueKey('plan-ready-title'),
+          style: SegText.title.copyWith(color: SegColors.ink),
         ),
-        const SizedBox(height: SegSpace.s3),
-        for (var i = 0; i < plan.length; i++)
-          PlanDayRow(
+        count: plan.length,
+        day: (i, height) {
+          final theme = s.content.theme(plan[i].theme);
+          return PlanDayRow(
             key: ValueKey('plan-day-${i + 1}'),
             day: l10n.obPlanDay(i + 1),
-            theme: s.content.theme(plan[i].theme).name(s.locale),
+            theme: theme.name(s.locale),
             games: [
               for (final g in plan[i].games) s.content.game(g).name(s.locale),
             ].join(', '),
-            tint: s.content.theme(plan[i].theme).accent,
-            compact: i >= 3,
-          ),
-      ],
+            tint: ThemeGameCard.accentFor(theme.id),
+            thumbnail: _planThumb(theme.id, theme.hero),
+            today: i == 0 ? l10n.obPlanToday : null,
+            height: height,
+          );
+        },
+      ),
       primary: _continue(
         key: const ValueKey('plan-continue'),
         onPressed: _next,
+      ),
+    );
+  }
+
+  /// A theme's home-card picture, small: the same cover (or hero photo),
+  /// scale and soft scene as [ThemeGameCard].
+  Widget _planThumb(String themeId, String heroId) {
+    final hero = s.content.items.firstWhere((x) => x.id == heroId);
+    final accent = ThemeGameCard.accentFor(themeId);
+    final scale = ThemeGameCard.heroScaleFor(
+      themeId,
+      normalized: themeCovers.contains(themeId),
+    );
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(SegRadius.xs),
+      child: SceneBackdrop(
+        tint: accent,
+        base: Color.lerp(SegColors.canvas, accent, .06)!,
+        clouds: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(3, 5, 3, 2),
+          child: FractionallySizedBox(
+            alignment: Alignment.bottomCenter,
+            widthFactor: scale,
+            heightFactor: scale,
+            child: themeCover(themeId, hero),
+          ),
+        ),
       ),
     );
   }
