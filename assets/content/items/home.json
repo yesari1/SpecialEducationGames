@@ -12,12 +12,31 @@
       "tr": "Yatak",
       "en": "Bed"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/bed.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/bed_selected.mp3",
       "en": "assets/audio/en/home/bed_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/bed_which.mp3",
+      "en": "assets/audio/en/home/bed_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/bed.png": {
+        "id": "home.bed",
+        "path": "assets/images/home/bed.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "1925f2374a8531010a3b64173297bf21aba4bec28988cec23b6424b85c3343c8"
+      }
+    }
   },
   {
     "id": "home.pillow",
@@ -32,12 +51,31 @@
       "tr": "Yastık",
       "en": "Pillow"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/pillow.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/pillow_selected.mp3",
       "en": "assets/audio/en/home/pillow_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/pillow_which.mp3",
+      "en": "assets/audio/en/home/pillow_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/pillow.png": {
+        "id": "home.pillow",
+        "path": "assets/images/home/pillow.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "fa9a97f65334c9ddd3aa284ed133378d06eebcf0ca166dd836648af97b894115"
+      }
+    }
   },
   {
     "id": "home.table",
@@ -52,12 +90,31 @@
       "tr": "Masa",
       "en": "Table"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/table.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/table_selected.mp3",
       "en": "assets/audio/en/home/table_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/table_which.mp3",
+      "en": "assets/audio/en/home/table_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/table.png": {
+        "id": "home.table",
+        "path": "assets/images/home/table.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "f42a705f2d1ccc56d992c37e44a807bd5eb0a67d10d5ac29d36da4be010b915e"
+      }
+    }
   },
   {
     "id": "home.chair",
@@ -72,12 +129,31 @@
       "tr": "Sandalye",
       "en": "Chair"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/chair.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/chair_selected.mp3",
       "en": "assets/audio/en/home/chair_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/chair_which.mp3",
+      "en": "assets/audio/en/home/chair_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/chair.png": {
+        "id": "home.chair",
+        "path": "assets/images/home/chair.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "bfd043793aed69326e5d2388bf4a5234550824fac9dfba45be8e1ebf1771a581"
+      }
+    }
   },
   {
     "id": "home.sofa",
@@ -92,12 +168,31 @@
       "tr": "Koltuk",
       "en": "Sofa"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/sofa.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/sofa_selected.mp3",
       "en": "assets/audio/en/home/sofa_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/sofa_which.mp3",
+      "en": "assets/audio/en/home/sofa_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/sofa.png": {
+        "id": "home.sofa",
+        "path": "assets/images/home/sofa.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "02f52370aa9bc4e06ed975ba7728e6b7f0e74a2ead1c5f78ee5308ba6db2ece6"
+      }
+    }
   },
   {
     "id": "home.television",
@@ -111,12 +206,31 @@
       "tr": "Televizyon",
       "en": "Television"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/television.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/television_selected.mp3",
       "en": "assets/audio/en/home/television_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/television_which.mp3",
+      "en": "assets/audio/en/home/television_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/television.png": {
+        "id": "home.television",
+        "path": "assets/images/home/television.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "94b015826d0491042b87aab4f640eec3d1a9ad24f2a1d80f7c9d03dc3eb707e9"
+      }
+    }
   },
   {
     "id": "home.door",
@@ -128,12 +242,31 @@
       "tr": "Kapı",
       "en": "Door"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/door.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/door_selected.mp3",
       "en": "assets/audio/en/home/door_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/door_which.mp3",
+      "en": "assets/audio/en/home/door_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/door.png": {
+        "id": "home.door",
+        "path": "assets/images/home/door.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "cefea8253d30ce6410b31404dc19335e9b98a08f90e56c9f5bbded3caedad62a"
+      }
+    }
   },
   {
     "id": "home.window",
@@ -145,12 +278,31 @@
       "tr": "Pencere",
       "en": "Window"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/window.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/window_selected.mp3",
       "en": "assets/audio/en/home/window_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/window_which.mp3",
+      "en": "assets/audio/en/home/window_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/window.png": {
+        "id": "home.window",
+        "path": "assets/images/home/window.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "5c2d18d615e503c963c324b8d3aad6b88af6b29b47bf853339122d71ff09c3ba"
+      }
+    }
   },
   {
     "id": "home.lamp",
@@ -164,12 +316,31 @@
       "tr": "Lamba",
       "en": "Lamp"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/lamp.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/lamp_selected.mp3",
       "en": "assets/audio/en/home/lamp_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/lamp_which.mp3",
+      "en": "assets/audio/en/home/lamp_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/lamp.png": {
+        "id": "home.lamp",
+        "path": "assets/images/home/lamp.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "7282b892ae3ab306af0ca7347130d56f6ae04db7f48b711d1b53938a93226a72"
+      }
+    }
   },
   {
     "id": "home.fridge",
@@ -183,12 +354,31 @@
       "tr": "Buzdolabı",
       "en": "Fridge"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/fridge.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/fridge_selected.mp3",
       "en": "assets/audio/en/home/fridge_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/fridge_which.mp3",
+      "en": "assets/audio/en/home/fridge_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/fridge.png": {
+        "id": "home.fridge",
+        "path": "assets/images/home/fridge.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "3f5b6d9c3ec5dbd349941a348ed6d60c479bffa02d34d57358de3d6d23ea64a9"
+      }
+    }
   },
   {
     "id": "home.plate",
@@ -203,12 +393,31 @@
       "tr": "Tabak",
       "en": "Plate"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/plate.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/plate_selected.mp3",
       "en": "assets/audio/en/home/plate_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/plate_which.mp3",
+      "en": "assets/audio/en/home/plate_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/plate.png": {
+        "id": "home.plate",
+        "path": "assets/images/home/plate.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "fb78d6104144c34151c569da02666c91c4dcb409be7e3932b9dcdabf509e87be"
+      }
+    }
   },
   {
     "id": "home.glass",
@@ -223,12 +432,31 @@
       "tr": "Bardak",
       "en": "Glass"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/glass.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/glass_selected.mp3",
       "en": "assets/audio/en/home/glass_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/glass_which.mp3",
+      "en": "assets/audio/en/home/glass_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/glass.png": {
+        "id": "home.glass",
+        "path": "assets/images/home/glass.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "c9a62a8a45a09f5d12c9613ace6da23b91def9ad06d0076127bd57406fe2294b"
+      }
+    }
   },
   {
     "id": "home.spoon",
@@ -243,12 +471,31 @@
       "tr": "Kaşık",
       "en": "Spoon"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/spoon.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/spoon_selected.mp3",
       "en": "assets/audio/en/home/spoon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/spoon_which.mp3",
+      "en": "assets/audio/en/home/spoon_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/spoon.png": {
+        "id": "home.spoon",
+        "path": "assets/images/home/spoon.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "c1270b823d86bdfb43f2651bcf5f29407c355716cabd0047c99ac81b4def04c1"
+      }
+    }
   },
   {
     "id": "home.toothbrush",
@@ -263,12 +510,31 @@
       "tr": "Diş fırçası",
       "en": "Toothbrush"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/toothbrush.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/toothbrush_selected.mp3",
       "en": "assets/audio/en/home/toothbrush_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/toothbrush_which.mp3",
+      "en": "assets/audio/en/home/toothbrush_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/toothbrush.png": {
+        "id": "home.toothbrush",
+        "path": "assets/images/home/toothbrush.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "29d3e60e763f711653aef3ec7aaba04a85712dcb2cc55c2390451119a670f787"
+      }
+    }
   },
   {
     "id": "home.soap",
@@ -283,12 +549,31 @@
       "tr": "Sabun",
       "en": "Soap"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/soap.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/soap_selected.mp3",
       "en": "assets/audio/en/home/soap_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/soap_which.mp3",
+      "en": "assets/audio/en/home/soap_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/soap.png": {
+        "id": "home.soap",
+        "path": "assets/images/home/soap.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "18018902ab545e32e32d8f3c6431163ebaed43569d57b90c11107c0893ed8f24"
+      }
+    }
   },
   {
     "id": "home.towel",
@@ -303,12 +588,31 @@
       "tr": "Havlu",
       "en": "Towel"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/towel.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/towel_selected.mp3",
       "en": "assets/audio/en/home/towel_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/towel_which.mp3",
+      "en": "assets/audio/en/home/towel_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/towel.png": {
+        "id": "home.towel",
+        "path": "assets/images/home/towel.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "e20feb6164937a6af38e8f6a0e415abfbecfdbbb14b8a5a2ef7288daab59d3cf"
+      }
+    }
   },
   {
     "id": "home.oven",
@@ -322,12 +626,31 @@
       "tr": "Fırın",
       "en": "Oven"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/oven.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/oven_selected.mp3",
       "en": "assets/audio/en/home/oven_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/oven_which.mp3",
+      "en": "assets/audio/en/home/oven_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/oven.png": {
+        "id": "home.oven",
+        "path": "assets/images/home/oven.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "e8fa26a93249e70632ce1e72dad2abf97c2c923a245faa003ab69fccee7e26c5"
+      }
+    }
   },
   {
     "id": "home.stove",
@@ -341,12 +664,31 @@
       "tr": "Ocak",
       "en": "Stove"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/stove.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/stove_selected.mp3",
       "en": "assets/audio/en/home/stove_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/stove_which.mp3",
+      "en": "assets/audio/en/home/stove_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/stove.png": {
+        "id": "home.stove",
+        "path": "assets/images/home/stove.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "f67d47f25bc515894c1580af7df7c6cfe0c37e0ad6944171ca754b48d36aa082"
+      }
+    }
   },
   {
     "id": "home.pot",
@@ -360,12 +702,31 @@
       "tr": "Tencere",
       "en": "Pot"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/pot.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/pot_selected.mp3",
       "en": "assets/audio/en/home/pot_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/pot_which.mp3",
+      "en": "assets/audio/en/home/pot_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/pot.png": {
+        "id": "home.pot",
+        "path": "assets/images/home/pot.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "b882d5db3340a3baa6b6d209991c18a9ce991e09abc5bc6bde631015f7a29742"
+      }
+    }
   },
   {
     "id": "home.pan",
@@ -379,12 +740,31 @@
       "tr": "Tava",
       "en": "Pan"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/pan.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/pan_selected.mp3",
       "en": "assets/audio/en/home/pan_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/pan_which.mp3",
+      "en": "assets/audio/en/home/pan_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/pan.png": {
+        "id": "home.pan",
+        "path": "assets/images/home/pan.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "fe3d5bb7b47410c458c5f9e97e906054ee9f860e89d2fff03d6e07e5a099e644"
+      }
+    }
   },
   {
     "id": "home.fork",
@@ -399,12 +779,31 @@
       "tr": "Çatal",
       "en": "Fork"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/fork.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/fork_selected.mp3",
       "en": "assets/audio/en/home/fork_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/fork_which.mp3",
+      "en": "assets/audio/en/home/fork_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/fork.png": {
+        "id": "home.fork",
+        "path": "assets/images/home/fork.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "494022b98a94d5a25fd6d01d5a9066fd87b0041ea0a862038bce23a0ac0dde8a"
+      }
+    }
   },
   {
     "id": "home.teapot",
@@ -418,12 +817,31 @@
       "tr": "Çaydanlık",
       "en": "Teapot"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/teapot.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/teapot_selected.mp3",
       "en": "assets/audio/en/home/teapot_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/teapot_which.mp3",
+      "en": "assets/audio/en/home/teapot_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/teapot.png": {
+        "id": "home.teapot",
+        "path": "assets/images/home/teapot.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "0b1b4ca43490f1fe3689030c83d3232b5e1eab11f3949c125d711308c85676b4"
+      }
+    }
   },
   {
     "id": "home.washing_machine",
@@ -438,12 +856,31 @@
       "tr": "Çamaşır makinesi",
       "en": "Washing machine"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/washing_machine.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/washing_machine_selected.mp3",
       "en": "assets/audio/en/home/washing_machine_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/washing_machine_which.mp3",
+      "en": "assets/audio/en/home/washing_machine_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/washing_machine.png": {
+        "id": "home.washing_machine",
+        "path": "assets/images/home/washing_machine.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "ea41e96b7125903607024b77ebd6cf1bcbac0ec69601adb23868494865889223"
+      }
+    }
   },
   {
     "id": "home.sink",
@@ -457,12 +894,31 @@
       "tr": "Lavabo",
       "en": "Sink"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/sink.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/sink_selected.mp3",
       "en": "assets/audio/en/home/sink_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/sink_which.mp3",
+      "en": "assets/audio/en/home/sink_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/sink.png": {
+        "id": "home.sink",
+        "path": "assets/images/home/sink.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "c4f1069890cef0a4a22be83c3cc3139bc442568f674772c7a2ea3b47717c8b47"
+      }
+    }
   },
   {
     "id": "home.bathtub",
@@ -477,12 +933,31 @@
       "tr": "Küvet",
       "en": "Bathtub"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/bathtub.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/bathtub_selected.mp3",
       "en": "assets/audio/en/home/bathtub_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/bathtub_which.mp3",
+      "en": "assets/audio/en/home/bathtub_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/bathtub.png": {
+        "id": "home.bathtub",
+        "path": "assets/images/home/bathtub.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "2cb317fa4496163ac293fec1ba707eb8bb83eb60a3211eef13d983c024742d43"
+      }
+    }
   },
   {
     "id": "home.toilet",
@@ -496,12 +971,31 @@
       "tr": "Tuvalet",
       "en": "Toilet"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/toilet.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/toilet_selected.mp3",
       "en": "assets/audio/en/home/toilet_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/toilet_which.mp3",
+      "en": "assets/audio/en/home/toilet_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/toilet.png": {
+        "id": "home.toilet",
+        "path": "assets/images/home/toilet.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "87c4bb8b2da0e37ebe8a4af1a40122c9b0872c0e591d7cfef98f7dd018facdc3"
+      }
+    }
   },
   {
     "id": "home.mirror",
@@ -515,12 +1009,31 @@
       "tr": "Ayna",
       "en": "Mirror"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/mirror.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/mirror_selected.mp3",
       "en": "assets/audio/en/home/mirror_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/mirror_which.mp3",
+      "en": "assets/audio/en/home/mirror_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/mirror.png": {
+        "id": "home.mirror",
+        "path": "assets/images/home/mirror.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "53d667fd49029cd41548a1eb23edeba561dd76dc9957b3d8b0d072b50bde1c82"
+      }
+    }
   },
   {
     "id": "home.comb",
@@ -534,12 +1047,31 @@
       "tr": "Tarak",
       "en": "Comb"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/comb.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/comb_selected.mp3",
       "en": "assets/audio/en/home/comb_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/comb_which.mp3",
+      "en": "assets/audio/en/home/comb_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/comb.png": {
+        "id": "home.comb",
+        "path": "assets/images/home/comb.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "2d4888a9d2d7c9c744b60d816b9450fff3094f4d3e8372ef399358b311de9178"
+      }
+    }
   },
   {
     "id": "home.wardrobe",
@@ -554,12 +1086,31 @@
       "tr": "Gardırop",
       "en": "Wardrobe"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/wardrobe.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/wardrobe_selected.mp3",
       "en": "assets/audio/en/home/wardrobe_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/wardrobe_which.mp3",
+      "en": "assets/audio/en/home/wardrobe_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/wardrobe.png": {
+        "id": "home.wardrobe",
+        "path": "assets/images/home/wardrobe.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "577771be289be057bcd952659b51bf92902347c1e6853d4e82608e066cc9fe7f"
+      }
+    }
   },
   {
     "id": "home.carpet",
@@ -573,12 +1124,31 @@
       "tr": "Halı",
       "en": "Carpet"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/carpet.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/carpet_selected.mp3",
       "en": "assets/audio/en/home/carpet_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/carpet_which.mp3",
+      "en": "assets/audio/en/home/carpet_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/carpet.png": {
+        "id": "home.carpet",
+        "path": "assets/images/home/carpet.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "7f564468efe7b3870281bd9dac9479df50b9abbbd72334b2e5a7043650e56210"
+      }
+    }
   },
   {
     "id": "home.curtain",
@@ -592,12 +1162,31 @@
       "tr": "Perde",
       "en": "Curtain"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/curtain.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/curtain_selected.mp3",
       "en": "assets/audio/en/home/curtain_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/curtain_which.mp3",
+      "en": "assets/audio/en/home/curtain_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/curtain.png": {
+        "id": "home.curtain",
+        "path": "assets/images/home/curtain.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "e0266a9a8450db65369ce0ebce2e3204bd5df242b939ce298177dfa2c362549a"
+      }
+    }
   },
   {
     "id": "home.blanket",
@@ -612,12 +1201,31 @@
       "tr": "Battaniye",
       "en": "Blanket"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/blanket.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/blanket_selected.mp3",
       "en": "assets/audio/en/home/blanket_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/blanket_which.mp3",
+      "en": "assets/audio/en/home/blanket_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/blanket.png": {
+        "id": "home.blanket",
+        "path": "assets/images/home/blanket.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "b12b6e61653b4c359a7e1e8f124f4af6e1bc8f781312fd0e8d79028d15dd6f28"
+      }
+    }
   },
   {
     "id": "home.clock",
@@ -631,12 +1239,31 @@
       "tr": "Saat",
       "en": "Clock"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/clock.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/clock_selected.mp3",
       "en": "assets/audio/en/home/clock_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/clock_which.mp3",
+      "en": "assets/audio/en/home/clock_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/clock.png": {
+        "id": "home.clock",
+        "path": "assets/images/home/clock.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "a92d879d10166fcbb8d1d3059f2fbfe19f960db9f337b3a44c1f919a8cdfe1e0"
+      }
+    }
   },
   {
     "id": "home.dishwasher",
@@ -651,12 +1278,31 @@
       "tr": "Bulaşık makinesi",
       "en": "Dishwasher"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/dishwasher.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/dishwasher_selected.mp3",
       "en": "assets/audio/en/home/dishwasher_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/dishwasher_which.mp3",
+      "en": "assets/audio/en/home/dishwasher_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/dishwasher.png": {
+        "id": "home.dishwasher",
+        "path": "assets/images/home/dishwasher.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "20661c3ea62d7a400586a70265d6a5c64dc8d744d0a5b31748a8331a6f1d4b3e"
+      }
+    }
   },
   {
     "id": "home.vacuum_cleaner",
@@ -670,12 +1316,31 @@
       "tr": "Süpürge",
       "en": "Vacuum cleaner"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/vacuum_cleaner.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/vacuum_cleaner_selected.mp3",
       "en": "assets/audio/en/home/vacuum_cleaner_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/vacuum_cleaner_which.mp3",
+      "en": "assets/audio/en/home/vacuum_cleaner_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/vacuum_cleaner.png": {
+        "id": "home.vacuum_cleaner",
+        "path": "assets/images/home/vacuum_cleaner.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "a3283b2a02872a9258a3e18ebc0455eafc5bdec911d7df446330539bbae37b4e"
+      }
+    }
   },
   {
     "id": "home.iron",
@@ -689,12 +1354,31 @@
       "tr": "Ütü",
       "en": "Iron"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/iron.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/iron_selected.mp3",
       "en": "assets/audio/en/home/iron_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/iron_which.mp3",
+      "en": "assets/audio/en/home/iron_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/iron.png": {
+        "id": "home.iron",
+        "path": "assets/images/home/iron.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "5508719abaf49128bc809b31916d7c9a893974c1e6a5f725580a290338de526e"
+      }
+    }
   },
   {
     "id": "home.microwave",
@@ -708,12 +1392,31 @@
       "tr": "Mikrodalga",
       "en": "Microwave"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/microwave.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/microwave_selected.mp3",
       "en": "assets/audio/en/home/microwave_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/microwave_which.mp3",
+      "en": "assets/audio/en/home/microwave_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/microwave.png": {
+        "id": "home.microwave",
+        "path": "assets/images/home/microwave.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "1311ee91893b095a1aa6d7d31963f2c9b9d3c52e17e4fc5844ae52ec051b95cc"
+      }
+    }
   },
   {
     "id": "home.kettle",
@@ -727,12 +1430,31 @@
       "tr": "Su ısıtıcısı",
       "en": "Kettle"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/kettle.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/kettle_selected.mp3",
       "en": "assets/audio/en/home/kettle_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/kettle_which.mp3",
+      "en": "assets/audio/en/home/kettle_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/kettle.png": {
+        "id": "home.kettle",
+        "path": "assets/images/home/kettle.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "888ea6b16a59a2f566b9b0c652ee8ab390156e39ba071be29e93b309aa60c0fd"
+      }
+    }
   },
   {
     "id": "home.mixer",
@@ -746,12 +1468,31 @@
       "tr": "Mikser",
       "en": "Mixer"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/mixer.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/mixer_selected.mp3",
       "en": "assets/audio/en/home/mixer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/mixer_which.mp3",
+      "en": "assets/audio/en/home/mixer_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/mixer.png": {
+        "id": "home.mixer",
+        "path": "assets/images/home/mixer.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "40b21d93d83f45aaa086f4a089e369d8e2dfadd65b11e335a5972e7c3f970d4b"
+      }
+    }
   },
   {
     "id": "home.flower_pot",
@@ -765,12 +1506,31 @@
       "tr": "Saksı",
       "en": "Flower pot"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/flower_pot.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/flower_pot_selected.mp3",
       "en": "assets/audio/en/home/flower_pot_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/flower_pot_which.mp3",
+      "en": "assets/audio/en/home/flower_pot_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/flower_pot.png": {
+        "id": "home.flower_pot",
+        "path": "assets/images/home/flower_pot.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "8b6c45cbdf4752b8b2aa36e037125ab0294dfe8ac041107ea36a429d55bdb098"
+      }
+    }
   },
   {
     "id": "home.bookshelf",
@@ -784,12 +1544,31 @@
       "tr": "Kitaplık",
       "en": "Bookshelf"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/bookshelf.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/bookshelf_selected.mp3",
       "en": "assets/audio/en/home/bookshelf_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/bookshelf_which.mp3",
+      "en": "assets/audio/en/home/bookshelf_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/bookshelf.png": {
+        "id": "home.bookshelf",
+        "path": "assets/images/home/bookshelf.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "e03f9774d75e02a855b6dc2d6b74037e743023df961bb36cb1fb7283a216128d"
+      }
+    }
   },
   {
     "id": "home.nightstand",
@@ -803,12 +1582,31 @@
       "tr": "Komodin",
       "en": "Nightstand"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/nightstand.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/nightstand_selected.mp3",
       "en": "assets/audio/en/home/nightstand_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/nightstand_which.mp3",
+      "en": "assets/audio/en/home/nightstand_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/nightstand.png": {
+        "id": "home.nightstand",
+        "path": "assets/images/home/nightstand.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "ff1bd500a93818fea22b4679ed8e066a671637be403fa4f97489cfea2340b09c"
+      }
+    }
   },
   {
     "id": "home.shampoo",
@@ -823,12 +1621,31 @@
       "tr": "Şampuan",
       "en": "Shampoo"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/shampoo.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/shampoo_selected.mp3",
       "en": "assets/audio/en/home/shampoo_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/shampoo_which.mp3",
+      "en": "assets/audio/en/home/shampoo_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/shampoo.png": {
+        "id": "home.shampoo",
+        "path": "assets/images/home/shampoo.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "2043c85602c0838bb6b087ef41e4c376e246ec9f4387f73b361fae75f4aeec6b"
+      }
+    }
   },
   {
     "id": "home.toothpaste",
@@ -843,12 +1660,31 @@
       "tr": "Diş macunu",
       "en": "Toothpaste"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/toothpaste.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/toothpaste_selected.mp3",
       "en": "assets/audio/en/home/toothpaste_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/toothpaste_which.mp3",
+      "en": "assets/audio/en/home/toothpaste_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/toothpaste.png": {
+        "id": "home.toothpaste",
+        "path": "assets/images/home/toothpaste.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "842fdba0ec18e39aff51b4747ce8506677b5c3d76f73a75448fe91a50b5b9939"
+      }
+    }
   },
   {
     "id": "home.hair_dryer",
@@ -862,12 +1698,31 @@
       "tr": "Saç kurutma makinesi",
       "en": "Hair dryer"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/hair_dryer.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/hair_dryer_selected.mp3",
       "en": "assets/audio/en/home/hair_dryer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/hair_dryer_which.mp3",
+      "en": "assets/audio/en/home/hair_dryer_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/hair_dryer.png": {
+        "id": "home.hair_dryer",
+        "path": "assets/images/home/hair_dryer.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "f2adabba3e596f1a31bb81ddea51dd943cc7e29afba1aa83d90a309ffd3e16d9"
+      }
+    }
   },
   {
     "id": "home.trash_can",
@@ -881,12 +1736,31 @@
       "tr": "Çöp kutusu",
       "en": "Trash can"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/trash_can.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/trash_can_selected.mp3",
       "en": "assets/audio/en/home/trash_can_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/trash_can_which.mp3",
+      "en": "assets/audio/en/home/trash_can_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/trash_can.png": {
+        "id": "home.trash_can",
+        "path": "assets/images/home/trash_can.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "dd0a4cf28ef72226759051f9669cb93c91216c7474c57e7782ddfcc0721b1aa0"
+      }
+    }
   },
   {
     "id": "home.key",
@@ -898,12 +1772,31 @@
       "tr": "Anahtar",
       "en": "Key"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/key.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/key_selected.mp3",
       "en": "assets/audio/en/home/key_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/key_which.mp3",
+      "en": "assets/audio/en/home/key_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/key.png": {
+        "id": "home.key",
+        "path": "assets/images/home/key.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "af384273fadb67bcc7e9e7715dd004a75b42324a23cea0810ecd60a0ef5a530f"
+      }
+    }
   },
   {
     "id": "home.telephone",
@@ -917,12 +1810,31 @@
       "tr": "Telefon",
       "en": "Telephone"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/telephone.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/telephone_selected.mp3",
       "en": "assets/audio/en/home/telephone_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/telephone_which.mp3",
+      "en": "assets/audio/en/home/telephone_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/telephone.png": {
+        "id": "home.telephone",
+        "path": "assets/images/home/telephone.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "01c6bf52452044bf459836f658c6f1e31875335e576152d45a9aeb8e3058b5f4"
+      }
+    }
   },
   {
     "id": "home.remote_control",
@@ -936,12 +1848,31 @@
       "tr": "Kumanda",
       "en": "Remote control"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/remote_control.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/remote_control_selected.mp3",
       "en": "assets/audio/en/home/remote_control_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/remote_control_which.mp3",
+      "en": "assets/audio/en/home/remote_control_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/remote_control.png": {
+        "id": "home.remote_control",
+        "path": "assets/images/home/remote_control.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "5e15ef606c7224ac28f40c5c14247bc2c3034e2268426db5b479cc55675367c0"
+      }
+    }
   },
   {
     "id": "home.hanger",
@@ -955,11 +1886,30 @@
       "tr": "Askı",
       "en": "Hanger"
     },
-    "images": [],
+    "images": [
+      "assets/images/home/hanger.png"
+    ],
     "audio": {
       "tr": "assets/audio/tr/home/hanger_selected.mp3",
       "en": "assets/audio/en/home/hanger_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "whichAudio": {
+      "tr": "assets/audio/tr/home/hanger_which.mp3",
+      "en": "assets/audio/en/home/hanger_which.mp3"
+    },
+    "imageProvenance": {
+      "assets/images/home/hanger.png": {
+        "id": "home.hanger",
+        "path": "assets/images/home/hanger.png",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-07",
+        "sha256": "13adf5e5ab93474486ca1f590a3e36f5ff2a675ae42153225dabfb5926f5c12b"
+      }
+    }
   }
 ]

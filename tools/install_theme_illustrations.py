@@ -1,8 +1,8 @@
-"""Installs the drawn item pictures of the Emotions and Our Body themes.
+"""Installs the drawn item pictures of the Emotions, Our Body and Our Home themes.
 
-    python -I tools/install_theme_illustrations.py emotions body
+    python -I tools/install_theme_illustrations.py emotions body home
 
-Yunus (6 Nov 2026) chose drawings over photos for these two themes. The
+Yunus chose drawings over photos for these themes (6-7 Nov 2026). The
 pictures were made with ChatGPT image generation (Codex) in the SEG soft
 clay style, all showing the story character Ali. Originals are kept under
 artifacts/theme-illustrations/<theme>/. Each picture is cropped to its

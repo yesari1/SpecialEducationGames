@@ -127,8 +127,16 @@
       "deep": "#8B6441"
     },
     "hero": "home.bed",
-    "active": false,
-    "games": []
+    "active": true,
+    "games": [
+      "G02",
+      "G01",
+      "G14",
+      "G15",
+      "G17",
+      "G33",
+      "G36"
+    ]
   },
   {
     "id": "school",

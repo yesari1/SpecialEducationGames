@@ -126,8 +126,8 @@ void main() {
       expect(
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
         // Cards after removing G55 and G11 (Learn is the first card everywhere),
-        // plus Feelings and Our Body (3 each, Nov 2026).
-        58,
+        // plus Feelings and Our Body (3 each) and Our Home (7), Nov 2026.
+        65,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {
@@ -233,7 +233,8 @@ void main() {
         'shapes_G02', 'shapes_G01', 'shapes_G14', //
         'numbers_G02', 'numbers_G35', 'numbers_G10', //
         'emotions_G02', 'emotions_G01', 'emotions_G14', //
-        'body_G02', 'body_G01', 'body_G14',
+        'body_G02', 'body_G01', 'body_G14', //
+        'home_G02', 'home_G01', 'home_G14',
       });
       expect(repo.items.map((i) => i.id).toSet().length, repo.items.length);
       for (final theme in repo.themes) {

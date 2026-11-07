@@ -777,7 +777,9 @@ void main() {
               ),
             );
             expect(counter, findsOneWidget, reason: '$stage counter');
-            for (var page = 0; page < 64; page++) {
+            // The games tab grew with the Feelings, Our Body and Our Home
+            // themes (Nov 2026).
+            for (var page = 0; page < 128; page++) {
               await checkCurrentPage('$stage page $page');
               final button = tester.widget<IconButton>(next);
               if (button.onPressed == null) return;
