@@ -107,3 +107,59 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - Source: https://commons.wikimedia.org/wiki/File:Thunder.ogg
 - License: CC-BY-3.0 — https://creativecommons.org/licenses/by/3.0/
 - App asset: assets/sfx/nature/thunder.mp3
+
+## Piano acústico, acorde C.ogg
+
+- Author: ZappaMidiPF
+- Source: https://commons.wikimedia.org/wiki/File:Piano_ac%C3%BAstico%2C_acorde_C.ogg
+- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- App asset: assets/sfx/music/piano.mp3
+
+## A-major.ogg
+
+- Author: WBOSITG
+- Source: https://commons.wikimedia.org/wiki/File:A-major.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/music/guitar.mp3
+
+## Bell-ring.flac
+
+- Author: qubodup
+- Source: https://commons.wikimedia.org/wiki/File:Bell-ring.flac
+- License: CC0-1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+- App asset: assets/sfx/music/bell.mp3
+
+## SopranoRecorder.ogg
+
+- Author: Thparkth
+- Source: https://commons.wikimedia.org/wiki/File:SopranoRecorder.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/music/recorder.mp3
+
+## Tambourine.ogg
+
+- Author: Freddythehat
+- Source: https://commons.wikimedia.org/wiki/File:Tambourine.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/music/tambourine.mp3
+
+## Violin-440Hz.ogg
+
+- Author: SVGguru
+- Source: https://commons.wikimedia.org/wiki/File:Violin-440Hz.ogg
+- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- App asset: assets/sfx/music/violin.mp3
+
+## Derbake Grave.ogg
+
+- Author: ZappaMidiPF
+- Source: https://commons.wikimedia.org/wiki/File:Derbake_Grave.ogg
+- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- App asset: assets/sfx/music/darbuka.mp3
+
+## Floor tom.ogg
+
+- Author: Clngre (Wikimedia Commons)
+- Source: https://commons.wikimedia.org/wiki/File:Floor_tom.ogg
+- License: CC-BY-SA-3.0 — https://creativecommons.org/licenses/by-sa/3.0/
+- App asset: assets/sfx/music/drum.mp3

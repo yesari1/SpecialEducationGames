@@ -14,6 +14,7 @@ import '../app/ui/components.dart' show showNotice;
 import '../core/auth/firebase_client.dart';
 import 'package:app_links/app_links.dart';
 import '../features/child_home/home_screen.dart';
+import '../features/child_home/stickers_screen.dart';
 import '../features/family/family_screen.dart';
 import '../features/family/subscription_screen.dart';
 import '../features/family/credits_screen.dart';
@@ -25,6 +26,9 @@ import '../core/auth/google_family_auth_backend.dart';
 import '../core/sync/summary_snapshot_cache.dart';
 import '../features/profiles/profile_editor_screen.dart';
 import '../features/game/game_screen.dart';
+import '../features/park/bubbles_screen.dart';
+import '../features/park/coloring_screen.dart';
+import '../features/park/puzzle_screen.dart';
 
 class EducationApp extends StatefulWidget {
   final AppState state;
@@ -245,6 +249,22 @@ class _EducationAppState extends State<EducationApp>
                 () =>
                     ThemeScreen(state: state, themeId: s.pathParameters['id']!),
               ),
+            ),
+            GoRoute(
+              path: 'stickers',
+              builder: (_, _) => reactive(() => StickersScreen(state: state)),
+            ),
+            GoRoute(
+              path: 'park/coloring',
+              builder: (_, _) => ColoringScreen(state: state),
+            ),
+            GoRoute(
+              path: 'park/puzzle',
+              builder: (_, _) => PuzzleScreen(state: state),
+            ),
+            GoRoute(
+              path: 'park/bubbles',
+              builder: (_, _) => BubblesScreen(state: state),
             ),
             GoRoute(
               path: 'stories',

@@ -129,6 +129,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     _begin();
   }
 
+  /// The sticker this round earned, shown on the round-end page.
+  Sticker? _earned;
+
   /// The mascot's hello before the first game (see [_MascotHello]).
   bool _greeting = false;
 
@@ -283,6 +286,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     final pendingId = _sessionId!;
     final id = await pendingId;
     await s.finishSession(id, elapsed, completed);
+    if (completed) {
+      final sticker = await s.earnSticker(widget.themeId);
+      if (mounted && sticker != null) setState(() => _earned = sticker);
+    }
   }
 
   @override
@@ -951,11 +958,33 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                             ),
                           ),
                           const SizedBox(height: SegSpace.s2),
-                          Text(
-                            l10n.gameWeExploredTogether,
-                            textAlign: TextAlign.center,
-                            style: SegText.body,
-                          ),
+                          if (_earned case final sticker?)
+                            Row(
+                              key: const ValueKey('round-end-sticker'),
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  sticker.image,
+                                  width: 64,
+                                  height: 64,
+                                  excludeFromSemantics: true,
+                                ),
+                                const SizedBox(width: SegSpace.s2),
+                                Flexible(
+                                  child: Text(
+                                    l10n.gameNewSticker,
+                                    textAlign: TextAlign.center,
+                                    style: SegText.body,
+                                  ),
+                                ),
+                              ],
+                            )
+                          else
+                            Text(
+                              l10n.gameWeExploredTogether,
+                              textAlign: TextAlign.center,
+                              style: SegText.body,
+                            ),
                           SizedBox(height: compact ? SegSpace.s4 : SegSpace.s6),
                           _completionActions(),
                         ],

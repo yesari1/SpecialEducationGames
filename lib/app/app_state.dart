@@ -963,6 +963,30 @@ class AppState extends ChangeNotifier {
   }
   String tr(String turkish, String english) =>
       locale == 'tr' ? turkish : english;
+  Set<String> _themeStickers = {};
+
+  /// The stickers this child has earned (one per finished round).
+  Set<String> get themeStickers => _stickerProfileId == active?.id
+      ? Set.unmodifiable(_themeStickers)
+      : const {};
+
+  /// A finished round earns the theme's next missing sticker, if one is left.
+  Future<Sticker?> earnSticker(String theme) async {
+    final id = active?.id;
+    if (id == null || _stickerProfileId != id) return null;
+    final next = content.stickers
+        .where((s) => s.theme == theme && !_themeStickers.contains(s.id))
+        .firstOrNull;
+    if (next == null) return null;
+    _themeStickers.add(next.id);
+    await db.setPreference(
+      'profile.$id.themeStickers',
+      jsonEncode(_themeStickers.toList()..sort()),
+    );
+    notifyListeners();
+    return next;
+  }
+
   /// The section open on the child's home; stays while a game is played.
   HomeTab homeTab = HomeTab.learn;
 
@@ -1294,6 +1318,19 @@ class AppState extends ChangeNotifier {
       _dailyStickers = {};
     } on TypeError {
       _dailyStickers = {};
+    }
+    try {
+      final stored = await db.preference('profile.$profileId.themeStickers');
+      _themeStickers = Set<String>.from(jsonDecode(stored ?? '[]') as List);
+    } on FormatException {
+      _themeStickers = {};
+    } on TypeError {
+      _themeStickers = {};
+    }
+    if (_disposed ||
+        generation != _refreshGeneration ||
+        profileId != active?.id) {
+      return;
     }
     _stickerProfileId = profileId;
     _planStart = planStart;

@@ -2724,6 +2724,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bubbles'**
   String get parkBubbles;
+
+  /// No description provided for @gameNewSticker.
+  ///
+  /// In en, this message translates to:
+  /// **'You earned a new sticker!'**
+  String get gameNewSticker;
 }
 
 class _AppLocalizationsDelegate

@@ -79,6 +79,8 @@ def main():
     extra = {x['id']: x for x in read(CONTENT / 'extra_items.json')}
     config = read(ROOT / 'assets/config_defaults.json')
 
+    item_sfx = {k: v for src in sources for k, v in getattr(src, 'ITEM_SFX', {}).items()}
+
     def build_items(theme, rows):
         items = []
         for slug, tier, tr, en in rows:
@@ -87,7 +89,7 @@ def main():
             base = f'assets/audio/{{lang}}/{theme}/{slug}_selected.mp3'
             lines[base] = {'tr': f'{tr}.', 'en': f'{en}.'}
             item = {'id': item_id, 'theme': theme, 'tier': tier, 'chapter': 1, 'tags': [], 'name': {'tr': tr, 'en': en},
-                    'images': images, 'audio': {l: base.replace('{lang}', l) for l in ('tr', 'en')}, 'sfx': None}
+                    'images': images, 'audio': {l: base.replace('{lang}', l) for l in ('tr', 'en')}, 'sfx': item_sfx.get(item_id)}
             if provenance:
                 item['imageProvenance'] = provenance
             items.append(item)

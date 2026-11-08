@@ -2,9 +2,11 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'pair_games.dart';
 import 'scene_games.dart';
+import 'sticker.dart';
 import 'story.dart';
 export 'pair_games.dart';
 export 'scene_games.dart';
+export 'sticker.dart';
 export 'story.dart';
 
 enum Difficulty { easy, medium, hard }
@@ -216,6 +218,9 @@ class ContentRepository {
 
   /// Games played on a picture (assets/content/scene_games.json) by game id.
   final Map<String, SceneGame> sceneGames;
+
+  /// The stickers of each theme (assets/content/stickers.json).
+  final List<Sticker> stickers;
   ContentRepository(
     this.themes,
     this.items,
@@ -227,6 +232,7 @@ class ContentRepository {
     this.pairGames = const {},
     this.bodyMap = const {},
     this.sceneGames = const {},
+    this.stickers = const [],
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -278,6 +284,10 @@ class ContentRepository {
                 .entries)
           e.key: SceneGame.fromJson(e.key, e.value as Map<String, dynamic>),
       },
+      [
+        for (final j in await read('content/stickers.json') as List)
+          Sticker.fromJson(j as Map<String, dynamic>),
+      ],
     );
   }
 

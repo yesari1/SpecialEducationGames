@@ -145,6 +145,10 @@ class RoundController extends ChangeNotifier {
   void _limitTotalToFreshRounds() {
     if (_totalChecked) return;
     _totalChecked = true;
+    if (template.fixedRounds case final rounds?) {
+      total = rounds;
+      return;
+    }
     scheduler.noRepeat = difficulty != Difficulty.easy;
     if (!scheduler.noRepeat) return;
     final probe = ItemScheduler(Random(0))..noRepeat = true;

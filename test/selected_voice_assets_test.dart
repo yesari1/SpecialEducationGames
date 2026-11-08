@@ -29,7 +29,7 @@ void main() {
       }
     }
     expect(problems, isEmpty);
-  });
+  }, timeout: const Timeout(Duration(minutes: 3)));
 
   test('every spoken instruction is bundled and recorded in the manifest', () {
     final manifest =

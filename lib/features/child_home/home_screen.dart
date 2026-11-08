@@ -10,7 +10,6 @@ import '../../app/ui/scene_backdrop.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/learning/policies.dart';
 import '../family/parent_gate.dart';
-import 'daily_path_view.dart';
 import '../stories/story_screens.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
@@ -125,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     PillButton(
                       key: const ValueKey('home-stickers'),
                       semanticsLabel: l10n.dailyPathMyStickers,
-                      onPressed: () => DailyPathView.openAlbum(context, s),
+                      onPressed: () => context.go('/stickers'),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -676,6 +675,9 @@ IconData gameIcon(String id) => switch (id) {
   'G71' => Icons.local_florist_rounded,
   'G72' => Icons.park_rounded,
   'G73' => Icons.cloud_rounded,
+  'G74' => Icons.hearing_rounded,
+  'G75' => Icons.touch_app_rounded,
+  'G76' => Icons.music_note_rounded,
   _ => Icons.search_rounded,
 };
 

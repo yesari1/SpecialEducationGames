@@ -130,7 +130,7 @@ void main() {
         // plus the Nov 2026 games: Colors +3, Shapes +2, Feelings +3,
         // Our Body +3; the Nov 2026 themes: Keeping Clean, Clothes, Kitchen,
         // Jobs, Nature (4 cards each), one card moved from Our Body to Clothes.
-        91,
+        95,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {

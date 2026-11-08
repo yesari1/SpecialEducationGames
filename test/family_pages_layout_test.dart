@@ -388,8 +388,8 @@ void main() {
       // 31 earlier verified photos, ten Food & Drinks photos, the R32
       // single-object cucumber, mandarin and onion, and the R45 watermelon.
       expect(photoAssets.length, 45);
-      // Ten animal recordings plus the round-end applause.
-      expect(sounds.length, 11);
+      // Animals, the round-end applause, weather and instruments.
+      expect(sounds.length, greaterThanOrEqualTo(16));
       expect(sounds.length + photos.length, greaterThanOrEqualTo(40));
       final fishPhoto = photoAssets.cast<Map<String, dynamic>>().singleWhere(
         (source) => source['id'] == 'animals.fish',

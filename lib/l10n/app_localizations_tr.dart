@@ -1495,4 +1495,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get parkBubbles => 'Baloncuklar';
+
+  @override
+  String get gameNewSticker => 'Yeni çıkartma kazandın!';
 }

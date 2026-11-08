@@ -196,5 +196,101 @@
     "changes": "Cut to 5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
     "originalSha256": "c66da284f376957f337230533671c004e08364b87b73959f067986cbfa8504dd",
     "sha256": "d4ae5c4e98f37b57d3dcefa72cbefddba9dac88e34c625a9f8b7c3f69db0a1ed"
+  },
+  {
+    "itemId": "music.piano",
+    "asset": "assets/sfx/music/piano.mp3",
+    "title": "Piano acústico, acorde C.ogg",
+    "author": "ZappaMidiPF",
+    "source": "https://commons.wikimedia.org/wiki/File:Piano_ac%C3%BAstico%2C_acorde_C.ogg",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "e6b5367b93fef55cfa9e41eb9261fb82d087bccffcb2971bf82f4a000e4aba32",
+    "sha256": "f0e39d8c5be143a518b2c10b1bbb0d213111f589c94ef5176f140932bcf63a35"
+  },
+  {
+    "itemId": "music.guitar",
+    "asset": "assets/sfx/music/guitar.mp3",
+    "title": "A-major.ogg",
+    "author": "WBOSITG",
+    "source": "https://commons.wikimedia.org/wiki/File:A-major.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "28dd1640451a913861118414a2ff0ea9f855d232f4534272f2e4862d00c2dc07",
+    "sha256": "fc375f1e1b5c66dbb3ee33039a6104e5529e4e7481b4e1bbec1865068b99febe"
+  },
+  {
+    "itemId": "music.bell",
+    "asset": "assets/sfx/music/bell.mp3",
+    "title": "Bell-ring.flac",
+    "author": "qubodup",
+    "source": "https://commons.wikimedia.org/wiki/File:Bell-ring.flac",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Cut to 2.5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "f1a3a5aaa3dfc62e1bbe1045b1078e23a7ff65933493fd6d6a8ec01830f00b5a",
+    "sha256": "a96fe4861c72a49f29cd86db8c333a73efcf739ca0d07bb88afdf7f9651f72b4"
+  },
+  {
+    "itemId": "music.recorder",
+    "asset": "assets/sfx/music/recorder.mp3",
+    "title": "SopranoRecorder.ogg",
+    "author": "Thparkth",
+    "source": "https://commons.wikimedia.org/wiki/File:SopranoRecorder.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "bd7d724a96fb54aa287fa012a150429319bdec12440d24d1fcc4ae18153a20f8",
+    "sha256": "91fc5525d21ce6fa21b8c9c190908dfd7133f5371e083ec4cb998bf5150a30c4"
+  },
+  {
+    "itemId": "music.tambourine",
+    "asset": "assets/sfx/music/tambourine.mp3",
+    "title": "Tambourine.ogg",
+    "author": "Freddythehat",
+    "source": "https://commons.wikimedia.org/wiki/File:Tambourine.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 2 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "a7e996a777f066f0e3362bbcf84775f3b71c87f0b046f98eb42f51d82829057e",
+    "sha256": "435d6a2748911927a22382df7604eb8773dee490dc9905edfff7345120bbd7e4"
+  },
+  {
+    "itemId": "music.violin",
+    "asset": "assets/sfx/music/violin.mp3",
+    "title": "Violin-440Hz.ogg",
+    "author": "SVGguru",
+    "source": "https://commons.wikimedia.org/wiki/File:Violin-440Hz.ogg",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "949ee0d956187cedaa015903a34c291ef02afbbc389e0b500f1078922c796a4a",
+    "sha256": "fb6f63333339602802dfe9073e45b3e64bffa142796a781e20111c23cd914fb9"
+  },
+  {
+    "itemId": "music.darbuka",
+    "asset": "assets/sfx/music/darbuka.mp3",
+    "title": "Derbake Grave.ogg",
+    "author": "ZappaMidiPF",
+    "source": "https://commons.wikimedia.org/wiki/File:Derbake_Grave.ogg",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Cut to 0.6 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "401d097448388bb506f2394351a063c7a426ed297c8bd8cfd438988f431e031d",
+    "sha256": "ec91d967e531a6f1a12f523360710a2d56cbc2a39755a0c5fd55a6bfd37e1be5"
+  },
+  {
+    "itemId": "music.drum",
+    "asset": "assets/sfx/music/drum.mp3",
+    "title": "Floor tom.ogg",
+    "author": "Clngre (Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:Floor_tom.ogg",
+    "license": "CC-BY-SA-3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Cut to 2 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "1bcc040c03315063dd912c46e199d54b784a4d1121c7027c17059f5ae5673ac3",
+    "sha256": "61e02c9338337bf7117c77662f0ee49453560308db06547bfa83050e73bb4fd5"
   }
 ]

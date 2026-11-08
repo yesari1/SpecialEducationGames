@@ -26,7 +26,7 @@ def search(term):
         info = page['imageinfo'][0]
         meta = info.get('extmetadata', {})
         licence = meta.get('LicenseShortName', {}).get('value', '')
-        if not OK.match(licence):
+        if not OK.match(licence) or page['title'].startswith(('File:LL-', 'File:En-', 'File:De-', 'File:Fr-')):
             continue
         author = re.sub(r'<[^>]+>', '', meta.get('Artist', {}).get('value', ''))[:40]
         yield round(info.get('duration') or 0, 1), info.get('size', 0), licence, author, page['title']

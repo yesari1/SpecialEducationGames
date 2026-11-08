@@ -1536,4 +1536,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get parkBubbles => 'Bubbles';
+
+  @override
+  String get gameNewSticker => 'You earned a new sticker!';
 }

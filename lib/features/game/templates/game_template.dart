@@ -8,6 +8,8 @@ import '../widgets/fill_basket_view.dart';
 import '../widgets/body_map_view.dart';
 import '../widgets/paint_view.dart';
 import '../widgets/scene_game_view.dart';
+import '../widgets/music_views.dart';
+import '../../../l10n/scoped_localizations.dart';
 import '../widgets/round_choices_view.dart';
 
 class ModeContext {
@@ -90,6 +92,9 @@ int _lastPraise = 0;
 abstract class GameTemplate {
   const GameTemplate();
   String get id;
+
+  /// A game of exactly this many rounds, whatever the family's length is.
+  int? get fixedRounds => null;
   RoundSpec buildRound(ModeContext ctx);
   Widget buildView(
     BuildContext context,
@@ -1151,6 +1156,111 @@ class SceneTemplate extends GameTemplate {
   ) => SceneGameView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
+/// G75 "Sen de Çal": the instrument plays, the child plays it back.
+class EchoTemplate extends GameTemplate {
+  const EchoTemplate();
+  @override
+  String get id => 'echo';
+
+  static Map<String, String> _clips(String key) => {
+    for (final lang in const ['tr', 'en'])
+      lang: 'assets/audio/$lang/scenes/$key.mp3',
+  };
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final pool = ctx.pool().where((x) => x.sfx != null).toList();
+    if (pool.length < 2) throw StateError('No instruments');
+    final target = ctx.scheduler.next(pool, ctx.struggle);
+    final wrong = pool.firstWhere((x) => x.id != target.id);
+    return RoundSpec(
+      target: target,
+      choices: [target, wrong],
+      promptTr: 'Dinle, sonra sen de çal.',
+      promptEn: 'Listen, then you play too.',
+      fillCount: ctx.difficulty.index + 2,
+      fullStage: true,
+      promptCues: {
+        for (final e in _clips('g75_listen').entries) e.key: [e.value],
+      },
+    );
+  }
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) => [
+    praiseCue(locale),
+  ];
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => EchoView(
+    spec: spec,
+    callbacks: callbacks,
+    hint: hint,
+    againAudio: _clips('g75_again'),
+  );
+}
+
+/// G76 "Çal Bakalım": free play on every instrument.
+class FreePlayTemplate extends GameTemplate {
+  const FreePlayTemplate();
+  @override
+  String get id => 'free_play';
+
+  @override
+  int? get fixedRounds => 1;
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final pool = ctx.content
+        .pool(ctx.themeId, Difficulty.hard)
+        .where((x) => x.sfx != null)
+        .toList();
+    if (pool.isEmpty) throw StateError('No instruments');
+    return RoundSpec(
+      target: pool.first,
+      choices: pool,
+      promptTr: 'Hangisini istersen çal.',
+      promptEn: 'Play whichever you like.',
+      fullStage: true,
+      promptCues: {
+        for (final lang in const ['tr', 'en'])
+          lang: ['assets/audio/$lang/scenes/g76_play.mp3'],
+      },
+    );
+  }
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) => [
+    praiseCue(locale),
+  ];
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => FreePlayView(
+    spec: spec,
+    callbacks: callbacks,
+    hint: hint,
+    doneLabel: scopedLocalizations(context, hint.locale).gameFinish,
+  );
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -1170,7 +1280,9 @@ abstract final class TemplateRegistry {
     'G47' => const BodyMapTemplate(),
     'G40' || 'G41' || 'G43' || 'G44' || 'G45' || 'G46' || 'G48' || 'G49' =>
       const PairTemplate(),
-    'G62' || 'G64' || 'G67' || 'G68' || 'G69' || 'G70' || 'G73' =>
+    'G75' => const EchoTemplate(),
+    'G76' => const FreePlayTemplate(),
+    'G62' || 'G64' || 'G67' || 'G68' || 'G69' || 'G70' || 'G73' || 'G74' =>
       const PairTemplate(),
     'G60' || 'G61' || 'G63' || 'G65' || 'G66' || 'G71' || 'G72' =>
       const SceneTemplate(),
