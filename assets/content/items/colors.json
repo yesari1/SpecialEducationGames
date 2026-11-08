@@ -39,7 +39,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "081a5d2aa6ecb09efef31a265c3fbbd578e15884c340d0a79ba20502b32a342c",
+        "sha256": "6c6939f1c7ebd5fee85164b96bc3d36821ad0bda9e02893c1ed2b505eef9d674",
         "source": "artifacts/voice_samples_selected/tr_red.mp3",
         "validation": {
           "duration_seconds": 1.068118,
@@ -87,7 +87,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "bcdbc1df05c9c06ea294bffe617e3d43977397f1b6196b6b0f6a875c3319237d",
+        "sha256": "2eeede15614969812a0bd465095017d5bde2cf636917b53e68ea5c67d46f4d39",
         "source": "artifacts/voice_samples_selected/en_red.mp3",
         "validation": {
           "duration_seconds": 0.743039,

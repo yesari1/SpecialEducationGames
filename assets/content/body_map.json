@@ -1,7 +1,7 @@
 {
   "pictures": [
     {
-      "picture": "assets/images/wear/ali_face.png",
+      "picture": "assets/images/wear/ali_face.webp",
       "aspect": 1.3781512605042017,
       "spots": [
         {
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "picture": "assets/images/wear/ali_full.png",
+      "picture": "assets/images/wear/ali_full.webp",
       "aspect": 0.4685714285714286,
       "spots": [
         {

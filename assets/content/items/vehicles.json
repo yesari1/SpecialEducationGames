@@ -12,7 +12,7 @@
       "en": "Car"
     },
     "images": [
-      "assets/images/vehicles/car_honda_real.png"
+      "assets/images/vehicles/car_honda_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/car_selected.mp3",
@@ -20,21 +20,21 @@
     },
     "sfx": "assets/sfx/vehicles/car.mp3",
     "imageProvenance": {
-      "assets/images/vehicles/car_honda_real.png": {
+      "assets/images/vehicles/car_honda_real.webp": {
         "author": "Rich Niewiroski Jr.",
         "source": "https://commons.wikimedia.org/wiki/File:HondaS2000-004.png",
         "license": "CC BY 2.5",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
         "changes": "Existing transparent cutout from Wikimedia Commons retained (no new mask); baked-in soft drop shadow removed (dark pixels with alpha < 200 cleared); alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline.",
         "id": "vehicles.car",
-        "path": "assets/images/vehicles/car_honda_real.png",
+        "path": "assets/images/vehicles/car_honda_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-20",
         "adaptationLicense": "CC BY 2.5",
         "processing": "tools/adapt_cutout_photo.py --drop-shadow",
         "whiteOutlinePixels": 4,
         "originalSha256": "1a3cc5b8446ea405eb340c4fff29eba08d1c19f1298b703ab01dd147cd67bfc3",
-        "sha256": "b4f1688fc82300a6c7e7af9243313d1ab89830a6d48e64b7f236969f348de3db"
+        "sha256": "5641f0da98995d51480682b49fcfc0f15c6b0f631a244e1947e4ad97fd73a00d"
       }
     },
     "sfxProvenance": {
@@ -66,7 +66,7 @@
       "en": "Bus"
     },
     "images": [
-      "assets/images/vehicles/bus_1.png"
+      "assets/images/vehicles/bus_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/bus_selected.mp3",
@@ -91,7 +91,7 @@
       "en": "Truck"
     },
     "images": [
-      "assets/images/vehicles/truck_1.png"
+      "assets/images/vehicles/truck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/truck_selected.mp3",
@@ -116,7 +116,7 @@
       "en": "Train"
     },
     "images": [
-      "assets/images/vehicles/train_1.png"
+      "assets/images/vehicles/train_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/train_selected.mp3",
@@ -153,7 +153,7 @@
       "en": "Airplane"
     },
     "images": [
-      "assets/images/vehicles/airplane_real.png"
+      "assets/images/vehicles/airplane_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/airplane_selected.mp3",
@@ -161,9 +161,9 @@
     },
     "sfx": "assets/sfx/vehicles/airplane.mp3",
     "imageProvenance": {
-      "assets/images/vehicles/airplane_real.png": {
+      "assets/images/vehicles/airplane_real.webp": {
         "id": "vehicles.airplane",
-        "path": "assets/images/vehicles/airplane_real.png",
+        "path": "assets/images/vehicles/airplane_real.webp",
         "author": "U.S. Air Force photo by TSgt Ben Bloker; transparent derivative by Kjetil r",
         "source": "https://commons.wikimedia.org/wiki/File:Jagerfly.png",
         "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Two_F-22A_Raptor_in_column_flight.jpg",
@@ -176,7 +176,7 @@
         "licenseVerifiedOn": "2026-10-18",
         "processing": "artifacts/vehicle-alpha-r15/attempt-01/prepared/prepare.py",
         "whiteOutlinePixels": 4,
-        "sha256": "3bad0f57f8b46d504558c1c84d2b42b58f0001dd1ac476f57826b36f73503530",
+        "sha256": "b98169acb431082102104a403086a790e60266de42a85fd376d7df13f91efa51",
         "changes": "Retained existing transparent photographic cutout and alpha by Kjetil r; alpha-bound crop (existing alpha bounds span the full source dimensions), aspect-preserving Lanczos resize to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer contour. No new mask, background reconstruction, or generative editing.",
         "humanContentReviewPending": "Pending final human approval that this specific F-22 fighter aircraft is suitable for the generic catalog labels “Uçak” / “Airplane”."
       }
@@ -212,7 +212,7 @@
       "en": "Ship"
     },
     "images": [
-      "assets/images/vehicles/ship_1.png"
+      "assets/images/vehicles/ship_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/ship_selected.mp3",
@@ -237,7 +237,7 @@
       "en": "Bicycle"
     },
     "images": [
-      "assets/images/vehicles/bicycle_1.png"
+      "assets/images/vehicles/bicycle_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/bicycle_selected.mp3",
@@ -262,7 +262,7 @@
       "en": "Motorcycle"
     },
     "images": [
-      "assets/images/vehicles/motorcycle_1.png"
+      "assets/images/vehicles/motorcycle_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/motorcycle_selected.mp3",
@@ -288,7 +288,7 @@
       "en": "Ambulance"
     },
     "images": [
-      "assets/images/vehicles/ambulance_1.png"
+      "assets/images/vehicles/ambulance_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/ambulance_selected.mp3",
@@ -314,7 +314,7 @@
       "en": "Fire truck"
     },
     "images": [
-      "assets/images/vehicles/fire_truck_1.png"
+      "assets/images/vehicles/fire_truck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/fire_truck_selected.mp3",
@@ -340,7 +340,7 @@
       "en": "Police car"
     },
     "images": [
-      "assets/images/vehicles/police_car_1.png"
+      "assets/images/vehicles/police_car_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/police_car_selected.mp3",
@@ -365,7 +365,7 @@
       "en": "Taxi"
     },
     "images": [
-      "assets/images/vehicles/taxi_1.png"
+      "assets/images/vehicles/taxi_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/taxi_selected.mp3",
@@ -390,7 +390,7 @@
       "en": "Helicopter"
     },
     "images": [
-      "assets/images/vehicles/helicopter_real.png"
+      "assets/images/vehicles/helicopter_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/helicopter_selected.mp3",
@@ -398,9 +398,9 @@
     },
     "sfx": "assets/sfx/vehicles/helicopter.mp3",
     "imageProvenance": {
-      "assets/images/vehicles/helicopter_real.png": {
+      "assets/images/vehicles/helicopter_real.webp": {
         "id": "vehicles.helicopter",
-        "path": "assets/images/vehicles/helicopter_real.png",
+        "path": "assets/images/vehicles/helicopter_real.webp",
         "author": "Iain Thomson (Crown Copyright, RAF / Defence Imagery); transparent cutout retouched by Offnfopt",
         "source": "https://commons.wikimedia.org/wiki/File:Griffin-HT1-Helicopter.png",
         "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:A_Griffin_Helicopter,_with_an_underslung_load,_shown_in_silhouette_against_a_full_moon.jpg",
@@ -414,7 +414,7 @@
         "licenseVerifiedOn": "2026-10-19",
         "processing": "artifacts/vehicles-helicopter-candidate-r23/attempt-01/process_variant.py",
         "whiteOutlinePixels": 4,
-        "sha256": "f2e2d5342dbb6fb6eedd0b8273a005f5003e56da3e4d503d53fce744e68e9ba5",
+        "sha256": "a2948d19cdf008c76825b437123d35ff4120d4fa891bbf59276556648c55a279",
         "changes": "Retained the existing transparent photographed Griffin HT1 cutout and alpha by Offnfopt; alpha-bound crop, aspect-preserving Lanczos resize to a 900 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer contour. The cutout removes the moon/background and suspended load from the source photograph. No AI, generative edits, or rerendering.",
         "humanContentReviewPending": "Pending human review of this dark backlit Griffin HT1 photograph for the generic “Helikopter” / “Helicopter” label."
       }
@@ -449,7 +449,7 @@
       "en": "Boat"
     },
     "images": [
-      "assets/images/vehicles/boat_1.png"
+      "assets/images/vehicles/boat_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/boat_selected.mp3",
@@ -475,7 +475,7 @@
       "en": "Tractor"
     },
     "images": [
-      "assets/images/vehicles/tractor_2.png"
+      "assets/images/vehicles/tractor_2.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/tractor_selected.mp3",
@@ -500,7 +500,7 @@
       "en": "Minibus"
     },
     "images": [
-      "assets/images/vehicles/minibus_1.png"
+      "assets/images/vehicles/minibus_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/minibus_selected.mp3",
@@ -525,7 +525,7 @@
       "en": "Pickup truck"
     },
     "images": [
-      "assets/images/vehicles/pickup_truck_1.png"
+      "assets/images/vehicles/pickup_truck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/pickup_truck_selected.mp3",
@@ -551,7 +551,7 @@
       "en": "Garbage truck"
     },
     "images": [
-      "assets/images/vehicles/garbage_truck_1.png"
+      "assets/images/vehicles/garbage_truck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/garbage_truck_selected.mp3",
@@ -576,7 +576,7 @@
       "en": "School bus"
     },
     "images": [
-      "assets/images/vehicles/school_bus_1.png"
+      "assets/images/vehicles/school_bus_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/school_bus_selected.mp3",
@@ -601,7 +601,7 @@
       "en": "Subway"
     },
     "images": [
-      "assets/images/vehicles/subway_1.png"
+      "assets/images/vehicles/subway_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/subway_selected.mp3",
@@ -626,7 +626,7 @@
       "en": "Tram"
     },
     "images": [
-      "assets/images/vehicles/tram_1.png"
+      "assets/images/vehicles/tram_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/tram_selected.mp3",
@@ -651,7 +651,7 @@
       "en": "Scooter"
     },
     "images": [
-      "assets/images/vehicles/scooter_1.png"
+      "assets/images/vehicles/scooter_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/scooter_selected.mp3",
@@ -676,7 +676,7 @@
       "en": "Excavator"
     },
     "images": [
-      "assets/images/vehicles/excavator_1.png"
+      "assets/images/vehicles/excavator_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/excavator_selected.mp3",
@@ -701,7 +701,7 @@
       "en": "Crane"
     },
     "images": [
-      "assets/images/vehicles/crane_1.png"
+      "assets/images/vehicles/crane_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/crane_selected.mp3",
@@ -726,7 +726,7 @@
       "en": "Hot air balloon"
     },
     "images": [
-      "assets/images/vehicles/hot_air_balloon_1.png"
+      "assets/images/vehicles/hot_air_balloon_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/hot_air_balloon_selected.mp3",
@@ -751,7 +751,7 @@
       "en": "Sailboat"
     },
     "images": [
-      "assets/images/vehicles/sailboat_1.png"
+      "assets/images/vehicles/sailboat_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/sailboat_selected.mp3",
@@ -776,7 +776,7 @@
       "en": "Speedboat"
     },
     "images": [
-      "assets/images/vehicles/speedboat_1.png"
+      "assets/images/vehicles/speedboat_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/speedboat_selected.mp3",
@@ -801,7 +801,7 @@
       "en": "Caravan"
     },
     "images": [
-      "assets/images/vehicles/caravan_1.png"
+      "assets/images/vehicles/caravan_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/caravan_selected.mp3",
@@ -826,7 +826,7 @@
       "en": "Horse cart"
     },
     "images": [
-      "assets/images/vehicles/horse_cart_1.png"
+      "assets/images/vehicles/horse_cart_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/horse_cart_selected.mp3",
@@ -852,7 +852,7 @@
       "en": "Tow truck"
     },
     "images": [
-      "assets/images/vehicles/tow_truck_1.png"
+      "assets/images/vehicles/tow_truck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/tow_truck_selected.mp3",
@@ -877,7 +877,7 @@
       "en": "Forklift"
     },
     "images": [
-      "assets/images/vehicles/forklift_1.png"
+      "assets/images/vehicles/forklift_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/forklift_selected.mp3",
@@ -902,7 +902,7 @@
       "en": "Cement mixer"
     },
     "images": [
-      "assets/images/vehicles/cement_mixer_1.png"
+      "assets/images/vehicles/cement_mixer_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/cement_mixer_selected.mp3",
@@ -927,7 +927,7 @@
       "en": "Bulldozer"
     },
     "images": [
-      "assets/images/vehicles/bulldozer_1.png"
+      "assets/images/vehicles/bulldozer_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/bulldozer_selected.mp3",
@@ -952,7 +952,7 @@
       "en": "Road roller"
     },
     "images": [
-      "assets/images/vehicles/road_roller_1.png"
+      "assets/images/vehicles/road_roller_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/road_roller_selected.mp3",
@@ -977,7 +977,7 @@
       "en": "Cargo ship"
     },
     "images": [
-      "assets/images/vehicles/cargo_ship_1.png"
+      "assets/images/vehicles/cargo_ship_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/cargo_ship_selected.mp3",
@@ -1002,7 +1002,7 @@
       "en": "Submarine"
     },
     "images": [
-      "assets/images/vehicles/submarine_1.png"
+      "assets/images/vehicles/submarine_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/submarine_selected.mp3",
@@ -1027,7 +1027,7 @@
       "en": "Ferry"
     },
     "images": [
-      "assets/images/vehicles/ferry_1.png"
+      "assets/images/vehicles/ferry_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/ferry_selected.mp3",
@@ -1052,7 +1052,7 @@
       "en": "Canoe"
     },
     "images": [
-      "assets/images/vehicles/canoe_1.png"
+      "assets/images/vehicles/canoe_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/canoe_selected.mp3",
@@ -1077,7 +1077,7 @@
       "en": "Rocket"
     },
     "images": [
-      "assets/images/vehicles/rocket_1.png"
+      "assets/images/vehicles/rocket_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/rocket_selected.mp3",
@@ -1102,7 +1102,7 @@
       "en": "Jet"
     },
     "images": [
-      "assets/images/vehicles/jet_1.png"
+      "assets/images/vehicles/jet_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/jet_selected.mp3",
@@ -1127,7 +1127,7 @@
       "en": "Airship"
     },
     "images": [
-      "assets/images/vehicles/airship_1.png"
+      "assets/images/vehicles/airship_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/airship_selected.mp3",
@@ -1152,7 +1152,7 @@
       "en": "Glider"
     },
     "images": [
-      "assets/images/vehicles/glider_1.png"
+      "assets/images/vehicles/glider_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/glider_selected.mp3",
@@ -1177,7 +1177,7 @@
       "en": "Cable car"
     },
     "images": [
-      "assets/images/vehicles/cable_car_1.png"
+      "assets/images/vehicles/cable_car_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/cable_car_selected.mp3",
@@ -1202,7 +1202,7 @@
       "en": "Snowmobile"
     },
     "images": [
-      "assets/images/vehicles/snowmobile_1.png"
+      "assets/images/vehicles/snowmobile_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/snowmobile_selected.mp3",
@@ -1227,7 +1227,7 @@
       "en": "High speed train"
     },
     "images": [
-      "assets/images/vehicles/high_speed_train_1.png"
+      "assets/images/vehicles/high_speed_train_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/high_speed_train_selected.mp3",
@@ -1252,7 +1252,7 @@
       "en": "Skateboard"
     },
     "images": [
-      "assets/images/vehicles/skateboard_1.png"
+      "assets/images/vehicles/skateboard_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/vehicles/skateboard_selected.mp3",

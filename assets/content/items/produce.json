@@ -13,7 +13,7 @@
       "en": "Apple"
     },
     "images": [
-      "assets/images/produce/apple_real.png"
+      "assets/images/produce/apple_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/apple_selected.mp3",
@@ -21,20 +21,20 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/apple_real.png": {
+      "assets/images/produce/apple_real.webp": {
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Honeycrisp-Apple.jpg",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "id": "produce.apple",
-        "path": "assets/images/produce/apple_real.png",
+        "path": "assets/images/produce/apple_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-16",
         "adaptationLicense": "CC0 1.0",
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
-        "sha256": "2e7b59d3708aaf048b5224c2a5888c6d641b35cbb4f5dfef51e2e8fef39d9a0e"
+        "sha256": "5a8dadd99e021d2b81ac0dcde444a4ce56adf928a5ee030f8459e7867b61ce38"
       }
     },
     "audioProvenance": {
@@ -109,7 +109,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "af5fb7078244743791a4c8519a1875d26871173c0ac3e19ff10f1d1d29659701",
+        "sha256": "12c62c863a5f78d486169750d02219f7babb06fe296f5a752fd2e54cdbcbad31",
         "source": "artifacts/voice_samples_selected/en_apple.mp3",
         "validation": {
           "duration_seconds": 0.603719,
@@ -154,7 +154,7 @@
       "en": "Banana"
     },
     "images": [
-      "assets/images/produce/banana_real.png"
+      "assets/images/produce/banana_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/banana_selected.mp3",
@@ -162,20 +162,20 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/banana_real.png": {
+      "assets/images/produce/banana_real.webp": {
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Banana-Single.jpg",
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
         "id": "produce.banana",
-        "path": "assets/images/produce/banana_real.png",
+        "path": "assets/images/produce/banana_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-16",
         "adaptationLicense": "CC BY-SA 3.0",
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
-        "sha256": "2f83ec655fc8a3d2975276118d4bb22f0bd95f16aa764aba4059d319d78d8a72"
+        "sha256": "61c24f5314d89d45534f2f7912667a8433ecd162e5cc77684ca3346295607763"
       }
     },
     "audioProvenance": {
@@ -202,7 +202,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "cbc0be9430051fe1690f14a39357b80cb750a9de14c8ff71cea8b205ef704809",
+        "sha256": "bbc566d1ab8339084a7b89d152ffa030645ebc534f9ff1ca4e00d98785a8def4",
         "source": "artifacts/voice-review-2026-11-03/kelimeler/Muz_2.mp3",
         "validation": {
           "duration_seconds": 0.789478,
@@ -250,7 +250,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "ae2d63723a6e09fcf6c7c687505531b508d76f1ad2508a96fa34414cce7a9598",
+        "sha256": "e2adec98f71f649d980f2c4666b933c3df22a154c2b2a81b612873e5f84b22fc",
         "source": "artifacts/voice_samples_selected/en_banana.mp3",
         "validation": {
           "duration_seconds": 0.789478,
@@ -295,7 +295,7 @@
       "en": "Orange"
     },
     "images": [
-      "assets/images/produce/orange_real.png"
+      "assets/images/produce/orange_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/orange_selected.mp3",
@@ -303,9 +303,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/orange_real.png": {
+      "assets/images/produce/orange_real.webp": {
         "id": "produce.orange",
-        "path": "assets/images/produce/orange_real.png",
+        "path": "assets/images/produce/orange_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Orange-Whole-%26-Split.jpg",
         "original": "artifacts/photo-replacements-r44/orange/attempt-09/originals/source.jpg",
@@ -318,7 +318,7 @@
         "processing": "Border-connected neutral near-white removal within whole-fruit ROI; original RGB retained; tools/adapt_cutout_photo.py (1024x1024 RGBA, 912px max extent, 4px white outline).",
         "whiteOutlinePixels": 4,
         "changes": "Removed border-connected neutral near-white original background from a generous manually isolated whole-orange ROI; enclosed highlights and stem retained; preserved source RGB; aspect-preserving resize to 912px maximum subject extent, centered on 1024x1024 RGBA canvas with 4px white outline.",
-        "sha256": "ad4d8f62d69fcb3c9462c9364a75e0ba21e57b8aa6bee8f2f6f73e5f8b844799"
+        "sha256": "f3d1b780ca78ae044eed6f3cc3cc647d7841bd9cc4b229f0671dc9a616688c43"
       }
     },
     "whichAudio": {
@@ -340,7 +340,7 @@
       "en": "Strawberry"
     },
     "images": [
-      "assets/images/produce/strawberry_real.png"
+      "assets/images/produce/strawberry_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/strawberry_selected.mp3",
@@ -348,9 +348,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/strawberry_real.png": {
+      "assets/images/produce/strawberry_real.webp": {
         "id": "produce.strawberry",
-        "path": "assets/images/produce/strawberry_real.png",
+        "path": "assets/images/produce/strawberry_real.webp",
         "author": "Shutterbug26 (Pixabay)",
         "source": "https://pixabay.com/photos/strawberry-berry-fruit-food-fresh-1238295/",
         "original": "artifacts/photo-replacements-r46/strawberry/attempt-01/original.jpg",
@@ -363,7 +363,7 @@
         "licenseVerifiedOn": "2026-10-22",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "7e675e1c16528202bc1b846dce1dcbe5924ab5473f73f85dfbb34b0beccde22d"
+        "sha256": "d8ac7c9533ce5770f1be18f2c9e73c2fd330e797765d5f695bbfad48d8e2aa1f"
       }
     },
     "whichAudio": {
@@ -385,7 +385,7 @@
       "en": "Grape"
     },
     "images": [
-      "assets/images/produce/grape_1.png"
+      "assets/images/produce/grape_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/grape_selected.mp3",
@@ -411,7 +411,7 @@
       "en": "Watermelon"
     },
     "images": [
-      "assets/images/produce/watermelon_1.png"
+      "assets/images/produce/watermelon_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/watermelon_selected.mp3",
@@ -419,9 +419,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/watermelon_1.png": {
+      "assets/images/produce/watermelon_1.webp": {
         "id": "produce.watermelon",
-        "path": "assets/images/produce/watermelon_1.png",
+        "path": "assets/images/produce/watermelon_1.webp",
         "author": "TBIT (Pixabay)",
         "source": "https://pixabay.com/photos/melon-fruit-food-edible-yummy-943753/",
         "original": "artifacts/photo-replacements-r46/watermelon/attempt-943753/original.jpg",
@@ -434,7 +434,7 @@
         "licenseVerifiedOn": "2026-10-22",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "f5ecd207e1789eb2b2f511d5183afb0831ea733669632067c727b7699b4a8727"
+        "sha256": "ca895a1e0ebdc8cd835a56676276eb392ab098e83130586d96fb5570285bcabb"
       }
     },
     "whichAudio": {
@@ -456,7 +456,7 @@
       "en": "Pear"
     },
     "images": [
-      "assets/images/produce/pear_real.png"
+      "assets/images/produce/pear_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/pear_selected.mp3",
@@ -464,9 +464,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/pear_real.png": {
+      "assets/images/produce/pear_real.webp": {
         "id": "produce.pear",
-        "path": "assets/images/produce/pear_real.png",
+        "path": "assets/images/produce/pear_real.webp",
         "author": "Fructibus",
         "source": "https://commons.wikimedia.org/wiki/File:Conference_pear_2017_D1.jpg",
         "original": "artifacts/real-produce-next/source/pear.jpg",
@@ -479,7 +479,7 @@
         "processing": "artifacts/real-produce-next/prepare_assets.py",
         "whiteOutlinePixels": 4,
         "changes": "Complete pear; source background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
-        "sha256": "76ab1a1f8e7a6f3e63f019c11becefeffebc86624e38ccc48d2466798c550665"
+        "sha256": "aae475a8368dd8a21dfb729571f7537c42dc149ab71c770c08e137ec71b48db5"
       }
     },
     "whichAudio": {
@@ -501,7 +501,7 @@
       "en": "Cherry"
     },
     "images": [
-      "assets/images/produce/cherry_1.png"
+      "assets/images/produce/cherry_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/cherry_selected.mp3",
@@ -527,7 +527,7 @@
       "en": "Mandarin"
     },
     "images": [
-      "assets/images/produce/mandarin_real.png"
+      "assets/images/produce/mandarin_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/mandarin_selected.mp3",
@@ -535,9 +535,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/mandarin_real.png": {
+      "assets/images/produce/mandarin_real.webp": {
         "id": "produce.mandarin",
-        "path": "assets/images/produce/mandarin_real.png",
+        "path": "assets/images/produce/mandarin_real.webp",
         "author": "Saramukitza (Pixabay)",
         "source": "https://pixabay.com/photos/mandarin-orange-clementines-fruit-1944930/",
         "original": "artifacts/photo-replacements-r46/mandarin/attempt-1944930/original.jpg",
@@ -550,7 +550,7 @@
         "licenseVerifiedOn": "2026-10-22",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "d72e92634ad3c04b736def16b1408cb27e8f33c5a8a4ec23a3c0aa5f54c2fedb"
+        "sha256": "4fe041dbe2904cebb30abac702e89533b69554301b97621fa3416dbe9c4eaaed"
       }
     },
     "whichAudio": {
@@ -572,7 +572,7 @@
       "en": "Tomato"
     },
     "images": [
-      "assets/images/produce/tomato_real.png"
+      "assets/images/produce/tomato_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/tomato_selected.mp3",
@@ -580,9 +580,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/tomato_real.png": {
+      "assets/images/produce/tomato_real.webp": {
         "id": "produce.tomato",
-        "path": "assets/images/produce/tomato_real.png",
+        "path": "assets/images/produce/tomato_real.webp",
         "author": "Renee Comet (Photographer), National Cancer Institute",
         "source": "https://commons.wikimedia.org/wiki/File:Tomato_(1).jpg",
         "original": "artifacts/photo_samples/batch2_source/tomato.jpg",
@@ -595,7 +595,7 @@
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
-        "sha256": "5b583c91b401fbc2115ec98d18c14a66c2b8ddad397be69c2d799155202c507d"
+        "sha256": "3b36653aa53acf185a8caa0c6eb63b4d91a3ae96a5a975056b6a1428c871f14e"
       }
     },
     "whichAudio": {
@@ -617,7 +617,7 @@
       "en": "Carrot"
     },
     "images": [
-      "assets/images/produce/carrot_1.png"
+      "assets/images/produce/carrot_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/carrot_selected.mp3",
@@ -642,7 +642,7 @@
       "en": "Potato"
     },
     "images": [
-      "assets/images/produce/potato_1.png"
+      "assets/images/produce/potato_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/potato_selected.mp3",
@@ -668,7 +668,7 @@
       "en": "Cucumber"
     },
     "images": [
-      "assets/images/produce/cucumber_real.png"
+      "assets/images/produce/cucumber_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/cucumber_selected.mp3",
@@ -676,7 +676,7 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/cucumber_real.png": {
+      "assets/images/produce/cucumber_real.webp": {
         "author": "Pavlofox (Pixabay)",
         "source": "https://pixabay.com/photos/cucumber-green-vegetable-long-845953/",
         "original": "artifacts/cucumber-r1/large_23_845953.jpg",
@@ -686,12 +686,12 @@
         "adaptationLicense": "Pixabay Content License",
         "changes": "One whole cucumber, both tips visible. Foreground alpha with rembg U2Net (original RGB retained), alpha edge hardened (threshold and 1 px erode) so the white outline is crisp like the other photos; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline (tools/adapt_cutout_photo.py). No generative editing. Replaces the earlier Commons photo (Yunus, 3 November 2026).",
         "id": "produce.cucumber",
-        "path": "assets/images/produce/cucumber_real.png",
+        "path": "assets/images/produce/cucumber_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-11-03",
         "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
-        "sha256": "1bb1f491770edb47da799e5b0fba66da187a8f9fcebe1086e58a2308ea90e20a"
+        "sha256": "4b4bf4e11a621f8df0068e822ae0eb73d10a1de635250ba8a922de589dea2f09"
       }
     },
     "whichAudio": {
@@ -733,7 +733,7 @@
       "en": "Lemon"
     },
     "images": [
-      "assets/images/produce/lemon_real.png"
+      "assets/images/produce/lemon_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/lemon_selected.mp3",
@@ -741,9 +741,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/lemon_real.png": {
+      "assets/images/produce/lemon_real.webp": {
         "id": "produce.lemon",
-        "path": "assets/images/produce/lemon_real.png",
+        "path": "assets/images/produce/lemon_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Whole-Lemon.jpg",
         "original": "artifacts/photo_samples/source/Whole-Lemon.jpg",
@@ -756,7 +756,7 @@
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
-        "sha256": "4260648a6b537663133040e3a1f3f5393ff089e06cc45bc620613271286316fd"
+        "sha256": "fc907194ad2dda15cd2783d2a5404d5ab37eb8f70450e02d7d2f9bb1a1a23a23"
       }
     },
     "whichAudio": {
@@ -777,7 +777,7 @@
       "en": "Peach"
     },
     "images": [
-      "assets/images/produce/peach_real.png"
+      "assets/images/produce/peach_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/peach_selected.mp3",
@@ -785,9 +785,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/peach_real.png": {
+      "assets/images/produce/peach_real.webp": {
         "id": "produce.peach",
-        "path": "assets/images/produce/peach_real.png",
+        "path": "assets/images/produce/peach_real.webp",
         "author": "Renee Comet (Photographer), National Cancer Institute",
         "source": "https://commons.wikimedia.org/wiki/File:Peach_(1).jpg",
         "original": "artifacts/real-produce-peach-candidate/originals/peach_renee_comet.jpg",
@@ -800,7 +800,7 @@
         "processing": "artifacts/real-produce-peach-candidate/process_peach.py",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed peach with attached leaf. Border-connected neutral-white studio background was masked; original photographed RGB detail retained. Alpha-bound crop with 8 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
-        "sha256": "4dcca154cdcba0bd36729216bf38556482078f3c3e1405f473e8337fb424458e"
+        "sha256": "3bafdb6d9d697e7a2fc6cfebd5dbdda02e3e38a907070b0d3619122771edd061"
       }
     },
     "whichAudio": {
@@ -822,7 +822,7 @@
       "en": "Plum"
     },
     "images": [
-      "assets/images/produce/plum_real.png"
+      "assets/images/produce/plum_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/plum_selected.mp3",
@@ -830,9 +830,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/plum_real.png": {
+      "assets/images/produce/plum_real.webp": {
         "id": "produce.plum",
-        "path": "assets/images/produce/plum_real.png",
+        "path": "assets/images/produce/plum_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Red-Plums.jpg",
         "original": "artifacts/real-produce-next/source/plum.jpg",
@@ -845,7 +845,7 @@
         "processing": "artifacts/real-produce-next/prepare_assets.py",
         "whiteOutlinePixels": 4,
         "changes": "Selected the complete whole plum from the left of the source photo; cut half excluded with crop (35, 210, 1785, 1830) in original-image pixels; border-connected background and cast shadow masked. Original photographed RGB detail retained; transparent exterior created by masking, alpha-bound crop, aspect-preserving resize to a maximum 912 px, centered 1024x1024 RGBA export, and 4 px white silhouette contour. No generative editing.",
-        "sha256": "bd6126f09422d7e986a78611bb1ae14ed469c5ee2ee32658c9e5c9280bc3904d"
+        "sha256": "9fef6259a77ea7dcca8494ac5e042e318fa2eacd39e918af492dcb1dfe29612f"
       }
     },
     "whichAudio": {
@@ -867,7 +867,7 @@
       "en": "Melon"
     },
     "images": [
-      "assets/images/produce/melon_real.png"
+      "assets/images/produce/melon_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/melon_selected.mp3",
@@ -875,9 +875,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/melon_real.png": {
+      "assets/images/produce/melon_real.webp": {
         "id": "produce.melon",
-        "path": "assets/images/produce/melon_real.png",
+        "path": "assets/images/produce/melon_real.webp",
         "author": "Tiia Monto",
         "source": "https://commons.wikimedia.org/wiki/File:Galia_melon.jpg",
         "original": "artifacts/photo_samples/batch3_source/melon.jpg",
@@ -890,7 +890,7 @@
         "processing": "tools/prepare_produce_photos_batch3.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
-        "sha256": "c86790ca9bdb148c8b9a59b86485eecc4c0e45557dc4686dde99d4d192655318"
+        "sha256": "6268ed662cf2db9b28dc54ca5b20e6a2a827759eaeca1c441d8aabc57dd7e03e"
       }
     },
     "whichAudio": {
@@ -912,7 +912,7 @@
       "en": "Pomegranate"
     },
     "images": [
-      "assets/images/produce/pomegranate_real.png"
+      "assets/images/produce/pomegranate_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/pomegranate_selected.mp3",
@@ -920,9 +920,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/pomegranate_real.png": {
+      "assets/images/produce/pomegranate_real.webp": {
         "id": "produce.pomegranate",
-        "path": "assets/images/produce/pomegranate_real.png",
+        "path": "assets/images/produce/pomegranate_real.webp",
         "author": "Rhododendrites",
         "source": "https://commons.wikimedia.org/wiki/File:Pomegranate_on_white.jpg",
         "original": "artifacts/real-produce-batch2/originals/pomegranate_rhododendrites.jpg",
@@ -935,7 +935,7 @@
         "processing": "artifacts/real-produce-batch2/process_photos.py",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed pomegranate and crown. A traced closed Catmull-Rom perimeter, refined by red-rind chroma masking on the body, excludes the neutral studio background and cast shadow while retaining crown detail. Original photographed RGB detail retained; alpha-bound crop with 1.2% padding, aspect-preserving LANCZOS resize to 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
-        "sha256": "c5fc4cfa293972f43ea1b5ae4ca64876ac82efe9cab70a8190534a25b3c0f357"
+        "sha256": "7f6f202ef5274d98ef7eb61622c9210e1cc5aa3fe9574f8e8c063b0ca0f95e33"
       }
     },
     "whichAudio": {
@@ -957,7 +957,7 @@
       "en": "Pineapple"
     },
     "images": [
-      "assets/images/produce/pineapple_real.png"
+      "assets/images/produce/pineapple_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/pineapple_selected.mp3",
@@ -965,9 +965,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/pineapple_real.png": {
+      "assets/images/produce/pineapple_real.webp": {
         "id": "produce.pineapple",
-        "path": "assets/images/produce/pineapple_real.png",
+        "path": "assets/images/produce/pineapple_real.webp",
         "author": "Tony Wu",
         "source": "https://www.pexels.com/photo/photo-of-an-pineapple-against-white-background-16814688/",
         "original": "artifacts/real-produce-pineapple-candidate/pineapple-original.jpg",
@@ -980,7 +980,7 @@
         "processing": "artifacts/real-produce-pineapple-candidate/process_pineapple.py",
         "whiteOutlinePixels": 4,
         "changes": "Single whole pineapple on a white studio backdrop. Edge-seeded near-white, low-chroma backdrop pixels were flood-filled to transparency; a source-coordinate contour removed the floor/contact shadow while preserving the complete fruit base and crown leaf openings. Original photographed RGB detail retained without repainting or reconstruction. Aspect-preserving 910 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white silhouette outline. No generative editing.",
-        "sha256": "9178f4c95b0a93aeaf60fd165c3229bb94888356e27ef740be0b08bfeaaed6a4"
+        "sha256": "d2821a2ec4c0910bfd1189ba2c4bc8c9d051985f7be229c80a3cd44d5926cb7c"
       }
     },
     "whichAudio": {
@@ -1002,7 +1002,7 @@
       "en": "Kiwi"
     },
     "images": [
-      "assets/images/produce/kiwi_real.png"
+      "assets/images/produce/kiwi_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/kiwi_selected.mp3",
@@ -1010,9 +1010,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/kiwi_real.png": {
+      "assets/images/produce/kiwi_real.webp": {
         "id": "produce.kiwi",
-        "path": "assets/images/produce/kiwi_real.png",
+        "path": "assets/images/produce/kiwi_real.webp",
         "author": "Boris Stumpf",
         "source": "https://commons.wikimedia.org/wiki/File:Whole_kiwifruit_on_white_background.jpg",
         "original": "artifacts/photo_samples/batch3_source/kiwi-boris.jpg",
@@ -1025,7 +1025,7 @@
         "processing": "tools/prepare_produce_photos_batch3.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
-        "sha256": "b7f832a361d885aa81c2e0628c9ee5922b5e6b01ffa4ae65a347071215d8c71e"
+        "sha256": "771fa7f275d689b5d211c69e8ac21a23db7185d55ad262e88bc5a53cfba57e0b"
       }
     },
     "whichAudio": {
@@ -1047,7 +1047,7 @@
       "en": "Pepper"
     },
     "images": [
-      "assets/images/produce/pepper_real.png"
+      "assets/images/produce/pepper_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/pepper_selected.mp3",
@@ -1055,9 +1055,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/pepper_real.png": {
+      "assets/images/produce/pepper_real.webp": {
         "id": "produce.pepper",
-        "path": "assets/images/produce/pepper_real.png",
+        "path": "assets/images/produce/pepper_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Green-Bell-Pepper.jpg",
         "original": "artifacts/photo_samples/source/Green-Bell-Pepper.jpg",
@@ -1070,7 +1070,7 @@
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
-        "sha256": "97052200920193273f60354c4760d09a96ab92b6fae7a67dd157e5fcca7fc2a9"
+        "sha256": "8a2f96711bb4bd9942d5eafd2d1c6d369ab92c8e825f8cc6fc6a8ac706169612"
       }
     },
     "whichAudio": {
@@ -1092,7 +1092,7 @@
       "en": "Eggplant"
     },
     "images": [
-      "assets/images/produce/eggplant_1.png"
+      "assets/images/produce/eggplant_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/eggplant_selected.mp3",
@@ -1117,7 +1117,7 @@
       "en": "Onion"
     },
     "images": [
-      "assets/images/produce/onion_real.png"
+      "assets/images/produce/onion_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/onion_selected.mp3",
@@ -1125,21 +1125,21 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/onion_real.png": {
+      "assets/images/produce/onion_real.webp": {
         "author": "Colin",
         "source": "https://commons.wikimedia.org/wiki/File:Onion_on_White.JPG",
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "changes": "Background removed with classical OpenCV GrabCut (rectangle start, largest component, 1 px feather), original photo pixels kept; alpha-bound crop, aspect-preserving Lanczos resize to a 912 px maximum subject extent, centered 1024x1024 RGBA export and 4 px white outer outline. Light grey floor shadow connected to the background cleared afterwards (HSV S < 0.24, V > 0.40), enclosed holes filled; a few shadow pixels by the root remain.",
         "id": "produce.onion",
-        "path": "assets/images/produce/onion_real.png",
+        "path": "assets/images/produce/onion_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-20",
         "adaptationLicense": "CC BY-SA 3.0",
         "processing": "tools/grabcut_rect_mask.py + artifacts/produce-photos-attempt-r32-03/drop_outer_grey.py + tools/adapt_cutout_photo.py",
         "whiteOutlinePixels": 4,
         "originalSha256": "78ece07db34835f12f21375fb5ba362036f74136dbe271d349d684ddace31009",
-        "sha256": "bf12d25945ba06e541bd63b696a07016df97fc827a4c84d934b8ac1f2e3cd1e6"
+        "sha256": "8d8eb77e3fbf4e5d5eb992c200c7a93faea781108a44761872c0ab401e8e0fa4"
       }
     },
     "whichAudio": {
@@ -1161,7 +1161,7 @@
       "en": "Cabbage"
     },
     "images": [
-      "assets/images/produce/cabbage_1.png"
+      "assets/images/produce/cabbage_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/cabbage_selected.mp3",
@@ -1187,7 +1187,7 @@
       "en": "Lettuce"
     },
     "images": [
-      "assets/images/produce/lettuce_1.png"
+      "assets/images/produce/lettuce_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/lettuce_selected.mp3",
@@ -1213,7 +1213,7 @@
       "en": "Zucchini"
     },
     "images": [
-      "assets/images/produce/zucchini_real.png"
+      "assets/images/produce/zucchini_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/zucchini_selected.mp3",
@@ -1221,9 +1221,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/zucchini_real.png": {
+      "assets/images/produce/zucchini_real.webp": {
         "id": "produce.zucchini",
-        "path": "assets/images/produce/zucchini_real.png",
+        "path": "assets/images/produce/zucchini_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Zucchini-Whole.jpg",
         "original": "artifacts/photo_samples/source/Zucchini-Whole.jpg",
@@ -1236,7 +1236,7 @@
         "processing": "tools/rebuild_legacy_real_photos.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Initial copy uses identical source/destination pixel rectangles, independent of source DPI; decoded opaque RGB and alpha identity verified. Border-connected neutral white removed mechanically; disconnected background specks discarded retaining largest silhouette; original photographic detail retained before one proportional 912px bicubic resize, centered 1024x1024 RGBA canvas and 4px white silhouette outline. No generative editing.",
-        "sha256": "d71679c2be5bd0f75c27aa3eea53397b24988056df34b015ff3914ea08f3b24f"
+        "sha256": "25dcfffb108b1d1ed3afbed54246b4a9e69b31c38db3db220d3df97af6b5867f"
       }
     },
     "whichAudio": {
@@ -1258,7 +1258,7 @@
       "en": "Pea"
     },
     "images": [
-      "assets/images/produce/pea_1.png"
+      "assets/images/produce/pea_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/pea_selected.mp3",
@@ -1304,7 +1304,7 @@
       "en": "Apricot"
     },
     "images": [
-      "assets/images/produce/apricot_real.png"
+      "assets/images/produce/apricot_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/apricot_selected.mp3",
@@ -1312,9 +1312,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/apricot_real.png": {
+      "assets/images/produce/apricot_real.webp": {
         "id": "produce.apricot",
-        "path": "assets/images/produce/apricot_real.png",
+        "path": "assets/images/produce/apricot_real.webp",
         "author": "Benjamint444",
         "source": "https://commons.wikimedia.org/wiki/File:Apricot_whole444.jpg",
         "original": "artifacts/real-produce-apricot-fig-candidate/apricot_original.jpg",
@@ -1327,7 +1327,7 @@
         "processing": "artifacts/real-produce-apricot-fig-candidate/process_apricot.py",
         "whiteOutlinePixels": 4,
         "changes": "Single whole photographed apricot on a white studio background. A smooth manually traced source-coordinate mask removes the background and lower studio/floor fringe while retaining the pale fruit rim and original photographic RGB detail. Aspect-preserving LANCZOS resize to an 870 px maximum extent, centered 1024x1024 RGBA export and approximately 4 px white outer silhouette. No generative edits. This adapted PNG is shared under CC BY-SA 3.0; attribution is Benjamint444, Wikimedia Commons, with source link, license link, and change notice.",
-        "sha256": "cf1ae7a349a422598302457543160db485203a70f2a89f3777cf86dcc33913ad"
+        "sha256": "aefc907e4b2bd4e7382e71e85163b5e87cc35bbea235dc4e68fe72f972bdd9eb"
       }
     },
     "whichAudio": {
@@ -1369,7 +1369,7 @@
       "en": "Quince"
     },
     "images": [
-      "assets/images/produce/quince_real.png"
+      "assets/images/produce/quince_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/quince_selected.mp3",
@@ -1377,9 +1377,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/quince_real.png": {
+      "assets/images/produce/quince_real.webp": {
         "id": "produce.quince",
-        "path": "assets/images/produce/quince_real.png",
+        "path": "assets/images/produce/quince_real.webp",
         "author": "Rhododendrites",
         "source": "https://commons.wikimedia.org/wiki/File:Quince_(10889s).jpg",
         "original": "artifacts/real-produce-batch3/originals/quince_rhododendrites.jpg",
@@ -1392,7 +1392,7 @@
         "processing": "artifacts/real-produce-batch3/process_photos.py",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed quince. Border-connected neutral studio backdrop and cast shadow were masked; original photographed RGB detail retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; adaptation shared under CC BY-SA 4.0.",
-        "sha256": "8c122b336cec59ac853f65955a9c7e507467d4c4b578a1621888b0dc29bbf0fe"
+        "sha256": "75a6f5a5c3f7fa087e24482f10fbc10beb9cff24f838800a749eefba9a81c786"
       }
     },
     "whichAudio": {
@@ -1434,7 +1434,7 @@
       "en": "Blackberry"
     },
     "images": [
-      "assets/images/produce/blackberry_1.png"
+      "assets/images/produce/blackberry_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/blackberry_selected.mp3",
@@ -1460,7 +1460,7 @@
       "en": "Raspberry"
     },
     "images": [
-      "assets/images/produce/raspberry_real.png"
+      "assets/images/produce/raspberry_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/raspberry_selected.mp3",
@@ -1468,9 +1468,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/raspberry_real.png": {
+      "assets/images/produce/raspberry_real.webp": {
         "id": "produce.raspberry",
-        "path": "assets/images/produce/raspberry_real.png",
+        "path": "assets/images/produce/raspberry_real.webp",
         "author": "Ivar Leidus",
         "source": "https://commons.wikimedia.org/wiki/File:Raspberry_-_whole_(Rubus_idaeus).jpg",
         "original": "artifacts/real-produce-fig-raspberry-candidate/originals/raspberry-whole.jpg",
@@ -1483,7 +1483,7 @@
         "processing": "artifacts/real-produce-fig-raspberry-candidate/SEED_STRATEGY.md",
         "whiteOutlinePixels": 4,
         "changes": "Single whole photographed raspberry. Classical OpenCV GrabCut used a loose traced probable-foreground polygon, definite foreground seeds restricted to the red berry interior, and reviewed definite-background seeds in the backdrop wedges (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; transparent exterior, alpha-bound crop, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction. Attribution: Ivar Leidus, Wikimedia Commons, source link and CC BY-SA 4.0 license link; changes are the mask, crop, resize, and outline. This adapted PNG is shared under CC BY-SA 4.0.",
-        "sha256": "80552a2cc6e7ac868c02f222dd9df59a4c9f6382078e69c115a510a639b15564"
+        "sha256": "e0a30588f3dbfdd45f0210c67a12491557f1da39e99c89b640f26e7e4f2aacd9"
       }
     },
     "whichAudio": {
@@ -1524,7 +1524,7 @@
       "en": "Avocado"
     },
     "images": [
-      "assets/images/produce/avocado_real.png"
+      "assets/images/produce/avocado_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/avocado_selected.mp3",
@@ -1532,9 +1532,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/avocado_real.png": {
+      "assets/images/produce/avocado_real.webp": {
         "id": "produce.avocado",
-        "path": "assets/images/produce/avocado_real.png",
+        "path": "assets/images/produce/avocado_real.webp",
         "author": "Tiia Monto",
         "source": "https://commons.wikimedia.org/wiki/File:Avocado.png",
         "original": "artifacts/photo_samples/batch3_source/avocado.png",
@@ -1547,7 +1547,7 @@
         "processing": "tools/prepare_produce_photos_batch3.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Decoded pixel RGBA checked identical after lossless96dpi working-copy normalization (prevents GDI DrawImageUnscaled physical-size clipping). Existing source transparency retained where present; border-connected neutral white otherwise removed mechanically; disconnected background specks discarded while retaining the largest photographed silhouette. Original RGB detail retained; alpha crop, proportional 912px resize, centered 1024x1024 RGBA and 4px white silhouette outline. No generative editing.",
-        "sha256": "0bfa7f42ae5efdb6651c1b90cfcf0c1e2c59fd465a3c689b056f1aa5f9aee1b1"
+        "sha256": "7fd1ca83584c62e16f8fe03f0e913f3dadf6f5a7c11cea7e47421db40c4d2d67"
       }
     },
     "whichAudio": {
@@ -1568,7 +1568,7 @@
       "en": "Coconut"
     },
     "images": [
-      "assets/images/produce/coconut_real.png"
+      "assets/images/produce/coconut_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/coconut_selected.mp3",
@@ -1576,9 +1576,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/coconut_real.png": {
+      "assets/images/produce/coconut_real.webp": {
         "id": "produce.coconut",
-        "path": "assets/images/produce/coconut_real.png",
+        "path": "assets/images/produce/coconut_real.webp",
         "author": "Leiliane Dutra",
         "source": "https://www.pexels.com/photo/close-up-of-a-rough-coconut-on-a-surface-35788125/",
         "original": "artifacts/real-produce-missing-batch6/pexels-coconut-original.jpeg",
@@ -1591,7 +1591,7 @@
         "processing": "artifacts/real-produce-missing-batch6/process_candidate.py",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed coconut. A dense hand-traced shell silhouette masked the rail and outdoor background while preserving the original photographed RGB detail and natural surface texture. Alpha-bound crop with 16 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer contour. No generative edits. Pexels License permits free use and modifications, including use in an app; it prohibits redistribution as a stock photo and sale of unaltered copies.",
-        "sha256": "5e1bac5b73b58fad003d30a249788af4eceab047b4ce952f6c1fa5e0c63cc1eb"
+        "sha256": "a97c80f1e5d34ef2b6ceb87eb83f364ada6276ce5f40787c3effff60d6f624d7"
       }
     },
     "whichAudio": {
@@ -1612,7 +1612,7 @@
       "en": "Grapefruit"
     },
     "images": [
-      "assets/images/produce/grapefruit_real.png"
+      "assets/images/produce/grapefruit_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/grapefruit_selected.mp3",
@@ -1620,9 +1620,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/grapefruit_real.png": {
+      "assets/images/produce/grapefruit_real.webp": {
         "id": "produce.grapefruit",
-        "path": "assets/images/produce/grapefruit_real.png",
+        "path": "assets/images/produce/grapefruit_real.webp",
         "author": "Evan-Amos",
         "source": "https://commons.wikimedia.org/wiki/File:Grapefruit-Whole-%26-Split.jpg",
         "original": "artifacts/real-produce-batch3/originals/grapefruit_evan_amos.jpg",
@@ -1635,7 +1635,7 @@
         "processing": "artifacts/real-produce-batch3/process_photos.py",
         "whiteOutlinePixels": 4,
         "changes": "The complete whole grapefruit was cropped from a source photo also showing a separate cut half. Border-connected near-neutral white and pale cream studio background/shadow were masked; the rind’s chromatic photographed RGB detail was retained. Alpha-bound crop with 14 px padding, aspect-preserving LANCZOS resize to a 912 px maximum extent, centered 1024x1024 RGBA export and 4 px white silhouette outline. No generative editing; public-domain source dedication retained.",
-        "sha256": "b8ed19cd92802e4495669f16b9520c297ba5532233ef0e7a316b8afb8ed2241f"
+        "sha256": "e0a683070903bee496df95212b6a473ea020e1c89ec6d45b10064cce3614a9ed"
       }
     },
     "whichAudio": {
@@ -1656,7 +1656,7 @@
       "en": "Chestnut"
     },
     "images": [
-      "assets/images/produce/chestnut_1.png"
+      "assets/images/produce/chestnut_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/chestnut_selected.mp3",
@@ -1681,7 +1681,7 @@
       "en": "Cauliflower"
     },
     "images": [
-      "assets/images/produce/cauliflower_1.png"
+      "assets/images/produce/cauliflower_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/cauliflower_selected.mp3",
@@ -1707,7 +1707,7 @@
       "en": "Broccoli"
     },
     "images": [
-      "assets/images/produce/broccoli_1.png"
+      "assets/images/produce/broccoli_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/broccoli_selected.mp3",
@@ -1733,7 +1733,7 @@
       "en": "Spinach"
     },
     "images": [
-      "assets/images/produce/spinach_1.png"
+      "assets/images/produce/spinach_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/spinach_selected.mp3",
@@ -1759,7 +1759,7 @@
       "en": "Radish"
     },
     "images": [
-      "assets/images/produce/radish_1.png"
+      "assets/images/produce/radish_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/radish_selected.mp3",
@@ -1843,7 +1843,7 @@
       "en": "Leek"
     },
     "images": [
-      "assets/images/produce/leek_real.png"
+      "assets/images/produce/leek_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/leek_selected.mp3",
@@ -1851,9 +1851,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/leek_real.png": {
+      "assets/images/produce/leek_real.webp": {
         "id": "produce.leek",
-        "path": "assets/images/produce/leek_real.png",
+        "path": "assets/images/produce/leek_real.webp",
         "author": "Amada44",
         "source": "https://commons.wikimedia.org/wiki/File:Leek_on_white_background_-_0947.jpg",
         "original": "artifacts/photo_samples/batch4_source/leek.jpg",
@@ -1866,7 +1866,7 @@
         "processing": "tools/prepare_produce_photos_batch4.ps1",
         "whiteOutlinePixels": 4,
         "changes": "Decoded RGBA identity checked after lossless96dpi metadata normalization. Near-white neutral background alpha-keyed (minimum RGB249, channel difference<=8), including enclosed leaf gaps; photographed white stem retained. Largest silhouette retained, proportional912px resize, centered1024x1024 RGBA and4px white silhouette outline. Foreground photographic RGB retained without repainting or generative edits.",
-        "sha256": "7ee35e08b10bf26a7cec234b8476c5748b08dc885a463852f0a0bc131f664d5f"
+        "sha256": "a4074b5851ae34861776d86e1ae1ae2f74d45df1142cea6d866145af00b50600"
       }
     },
     "whichAudio": {
@@ -1888,7 +1888,7 @@
       "en": "Mint"
     },
     "images": [
-      "assets/images/produce/mint_1.png"
+      "assets/images/produce/mint_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/mint_selected.mp3",
@@ -1914,7 +1914,7 @@
       "en": "Artichoke"
     },
     "images": [
-      "assets/images/produce/artichoke_real.png"
+      "assets/images/produce/artichoke_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/produce/artichoke_selected.mp3",
@@ -1922,9 +1922,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/produce/artichoke_real.png": {
+      "assets/images/produce/artichoke_real.webp": {
         "id": "produce.artichoke",
-        "path": "assets/images/produce/artichoke_real.png",
+        "path": "assets/images/produce/artichoke_real.webp",
         "author": "Antonio Filigno",
         "source": "https://www.pexels.com/photo/an-artichoke-on-a-green-surface-8538302/",
         "original": "artifacts/real-produce-artichoke-greenbean-candidate/originals/pexels-antonio-filigno-8538302.jpg",
@@ -1937,7 +1937,7 @@
         "processing": "artifacts/photo-tools/artichoke-pilot/README.md",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed artichoke with crown, side leaves, and cut stem retained. Classical OpenCV GrabCut refined a loose polygon from the existing hand-traced silhouette using protected interior foreground seeds and known green-background seeds (5 iterations, processing side capped at 1800 px). Original photographic RGB detail retained; largest connected object alpha-cropped, aspect-preserving resize to 900 px maximum extent, centered 1024x1024 RGBA export, and 4 px white outer contour. No generative edits or RGB reconstruction.",
-        "sha256": "5e033925045f0f4662202dfffea424913f9dd9050a23eed17e49b59cd771141c"
+        "sha256": "8f45faa581b1a077523780d3505bdc046dcce4852c97a250a18e8d2f2f69ce9d"
       }
     },
     "whichAudio": {

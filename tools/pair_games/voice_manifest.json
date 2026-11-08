@@ -2,1134 +2,1134 @@
   "assets/audio/en/pairs/G40_1.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a2eb55c552a2063775e3b0d03c95b1b820eb7096e9915a469e189804bcfa8054",
+    "sha256": "f9b8e9cf3e4a424238836f613b3608df22bdde8224994e00002c2a24b2b932b9",
     "text": "What color is the tomato?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_10.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "4348d2c7fc221bb60663a0421a9242a26c55e359931811eb2f3f1f28af923433",
+    "sha256": "0d4343cde919fe9c6bd6913f372093a1c69e6f2ad4f391a5f8dcab56f44342dc",
     "text": "What color is the carrot?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_11.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a349cad1b125f9d2ee96c5d743250e4f6d20ad4c0503b48e20ab5cb0d8967c5b",
+    "sha256": "c4558ce7bdca46fdde9b5008a63fd2ad2fb92ffb72d4c0f4f1ac179878613452",
     "text": "What color is the orange?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_12.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "39e8e866a2ef30cd393ece9eeb8b3d34ca9d19e38029dc32f4fa5d520013fa8b",
+    "sha256": "279224953cf5c79a14e3863a31c5df48af6310c14076697f8156f8e4f9936f08",
     "text": "What color is the tangerine?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_13.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "dd43a3a2b437d4ba02db812d583ffcaf66a3b9b6dceb1b3f78102c7be74b70d5",
+    "sha256": "c10b9e18d2575e4112d7a3653a97ad7afd6e0c72ce45fa9908ca79ed2a6a3b4f",
     "text": "What color is the cucumber?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_14.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3927f9287141d1b74276905416bce74b4e29347841f73e2cb5bdbb2b8bbac763",
+    "sha256": "5e404f6e4b276cc9ce8462ea30f3798af3bb1005791347b9be2c28deca2e2e59",
     "text": "What color is the frog?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_15.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "8106a40d2c84926547fe8c5316a46b834ee964df342e6d95efabb78be54f5af9",
+    "sha256": "ef72f51849ba64ce51544758c9971aa1c1e28a0ade2abc36f32067ec17750e0f",
     "text": "What color is the broccoli?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_16.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "2b6031850d60918b8cbaea6b1b4c2edc3d7f1aba92ce3e8f521c737168bd14a6",
+    "sha256": "10024c386eaa2108d436c9a8b0cb3d881eed4415e56a2879bd28943b25675344",
     "text": "What color is the lettuce?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_17.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "0c03d2798d5c1b9dff43b8c5407497326f79a403a4b0362cff033b5204bc457c",
+    "sha256": "b2b429873f912596d2f12a261a926c510859842c3bee0830e5923efae8a90585",
     "text": "What color is the eggplant?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_18.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "0cff9a7796ddba05e239a4aba5681ae5f278916896894b6683116134972be754",
+    "sha256": "6b1555ed023b9da02bfd4c98c5b7e4dbd182030c106238e51b81b48323d6961f",
     "text": "What color is the flamingo?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_19.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "eabe7cea076cf4b4b9af2be41554277ddfb448559dfe41ee7382d35e28b0ff46",
+    "sha256": "f6ab9761f6be3e33a4985a41f5a208661640db29c240bc91e347f1a2647ce954",
     "text": "What color is the chestnut?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_2.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a34daccf554825d88136cd943077b7f6edeb4dd4b0e2c1c8a9ba062d87286178",
+    "sha256": "246342f05edf297f2d5b44e9ab94e0582e5dae5d343169f5250a065e29c38cd4",
     "text": "What color is the strawberry?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_20.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "7ee89f9ed0e830c41a01f2ae4fefe87481fec21b103810377839c063d01dcacb",
+    "sha256": "e47c7cdf75c478527989b32a1b7677b5ce9bf0e1b7f3e6e9711bd5e9ddc636d3",
     "text": "What color is the bear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_21.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "0ee9e1cf702e35be6153ffe6fe245ae96dad7462a1d6810297c834fbff4143fa",
+    "sha256": "4da843d7ca7c4c1523909e9fa7cef9ec6f572cff961d046fec8a1e4576cdf8bf",
     "text": "What color is the coconut?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_22.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "84dc6f94b6c6f21a1d3cb266ea33577aa8e3947a46a07b4f9ca32e2d790fb5d1",
+    "sha256": "6e89a7168b652d4288dc697019655b1654a77650a1fad4aba2875dac42f2c6e2",
     "text": "What color is the sheep?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_23.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "caca4ac95f2c963b31d2e34113a26e831d9f2487b3895683cac798fb39ae6b7d",
+    "sha256": "32b50d337a9aea2c8fe9eaba9daa6db2c1d237c03c9d5a9a2a01566b00fadff2",
     "text": "What color is the egg?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_24.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "68a3097fd5746aab94397f0122efcbf2c55a641080570ea41eceaf72a0ab400a",
+    "sha256": "618ca2f06c1372319279b1585359236617ea682158c4191fed4fb5ea7b1f31a4",
     "text": "What color is the elephant?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_25.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "65ca5dc5928df5b3ecf50e895db1f8779702c178a626ad8c2b00f7028eb52078",
+    "sha256": "b8ff51850c19432f14551b4f24053046c122e64c6bf9807c1b571668ce76c97e",
     "text": "What color is the rhino?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_26.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3cc5602d40dc89f5bb16bb8bc8d8e4bb73089df030893fce280be6a1c189a9df",
+    "sha256": "47c64e8b7b13e367f24790d9dec7e54190f5ef1f57424debd2f45a746ca78407",
     "text": "What color is the chair?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_27.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "81d6216d62311f4f77383841f2b5267e26d3f82ef66703c4bce4638e44784adb",
+    "sha256": "d8bb92f34f66e293afc9f1ced01fb1ec320a064865c6043457a064982bec0b98",
     "text": "What color is the remote control?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_3.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "e55e47bad7b73dab6d30a4990c2644a25f93203df6d9292aae74d80196e66228",
+    "sha256": "d81e94c7acf169a0a7d4a874e095e6a4b4210257d58a9129ca9b8a1b39499dce",
     "text": "What color is the apple?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_4.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "284132c8ae311107aa11e3e816e83c30aca8b494451f1d842da5aa1bc412f6ad",
+    "sha256": "c12a3679332f89129fdac57bb454a6ad03b3ff00fedba006af29d335edc69157",
     "text": "What color is the cherry?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_5.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "28c38886f2d607767cb408219de5ada545432858b6ca7ba82957318067d10d1b",
+    "sha256": "918339cdb10bd043ec22ce7e5268009cece0705ca00390061f512acb60e4f191",
     "text": "What color is the fire truck?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_6.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3117e5ea4dfdda2a401e93a612cd7d66cdfd8116c6ee255b7920779b7141eb97",
+    "sha256": "da28d784d2a2bd94d756c590378c883a8e6e0ad68b3559fb7cc4638a8617b789",
     "text": "What color is the banana?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_7.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "06786c1123fe08c7b84a75c87034c3fb27a5b52b011455f17677909e27de532c",
+    "sha256": "2998a7b92d118ef7af41125b9e5b80ea767ac89f39b3fd95de429e518be58b5d",
     "text": "What color is the lemon?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_8.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "ddd769d8a29c3254a22425f4b860387b035f16b72428a19bc5138880e27f3efa",
+    "sha256": "734def2e0b52d9147c2f0c5139451d328bc8a07227533e5b93e3a6ba66618118",
     "text": "What color is the taxi?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G40_9.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "5b0e30cafd85133b4268d31c0cb06be54bc2810e47ffb8e5d992f0a19342dca1",
+    "sha256": "9a64ade416539933cb542d85b8557c5f7330200ff75002ec56df61f460e0cf53",
     "text": "What color is the school bus?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G41_basket.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "9a41c8474388901c5a9feca3ae458875f954011057f12604f9baee0ad7e3ca8e",
+    "sha256": "f1916d23dcf45d343f9e5c8e6ba49858ffa1738def0aecc9205e485e1f0bb935",
     "text": "Put it in the basket with the same color.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_blue.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "d1067401269433a6cd3099dc6a708123955cdb56b4cb533f4382028747d985d5",
+    "sha256": "be131fb358ec6bd78ef4a205c638421e80c686fd2884597ee452e2e1abad5279",
     "text": "Let's paint it blue.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_brown.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "bfd6b6e73e32c3b2b0200d7de6e237e6781bdcee08930ee03dc70c6aea46a52c",
+    "sha256": "93bc7133dde1f44de3c9ace391d2d6f98ecede30c3fa8237ab4477693c5eb493",
     "text": "Let's paint it brown.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_green.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a77e5143c533718e739ad2af291fd16ce34c056e3a323af32901ea198654b6ee",
+    "sha256": "b07d16a5d8d34c9ddb870a9753af3f4348fcb43c5fa49e53ffefaf1480b3f21e",
     "text": "Let's paint it green.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_orange.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "591ed0807e4c5907e21e60e47632dc4f8ef2642bde9f0a741dc3fdae151a61ba",
+    "sha256": "017e1acddba76417cebf508aed293816a76e01fc509210b3fb04553a00e6baf9",
     "text": "Let's paint it orange.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_pink.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "2d0b6801c1fc0c72b53d871fcff387a5c26f3762f1b37c16fb52ce88b61791c7",
+    "sha256": "830b131a63b9a64bd8e56498b9fca1a0601c3bed401be537dde7c82a682c28a7",
     "text": "Let's paint it pink.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_purple.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "2ebb5f3458d8df050d4ebcdb05eacf2ace164fc9ebebb4e8ad7ddf2cfd2a1a7c",
+    "sha256": "9b552f7a58153d03448fbb0a39a77233544e1d1b0e2e0001b93a084ebfc8f0ad",
     "text": "Let's paint it purple.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_red.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "56673eee99d247eeb520efb7b6de82e576245e0ba759127de7de100d33ad81f7",
+    "sha256": "569b057e9926024a0be9be44d45cd8dff8104bdad81f3060aec0e007bb607732",
     "text": "Let's paint it red.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_yellow.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "b82c8e1e6f711b846ab69e0ee869e90f620c0624f27eb142b32502b584659093",
+    "sha256": "e9dab00ff77d4326e5cdef736bf2fe1c563532332419baeddddaa0b5fca913aa",
     "text": "Let's paint it yellow.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_circle.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3f7ae1578309f306c696f0c946d9a52e42b885b922a69055728deab1dfa6cb5f",
+    "sha256": "9051bd9122e0e7e83ce6de309d7e3b40a52bd876acdfe87a8fe108425c7219a1",
     "text": "Which one looks like a circle?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_heart.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3cd9032b4d1afd0bcc8127b5420a5faab1992fef9281111b021e4985e9953c7a",
+    "sha256": "e4b73280724fec216b53e93c6b8778c5880b64c29a63ef4a09cd8e97bc249807",
     "text": "Which one looks like a heart?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_oval.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "79388f954aa55e72a3a998d87a765b3c1199e684428c26c9d34a33973c416f8a",
+    "sha256": "a6bc905ce274182c5adf76569a1e547093d2fd2b33979ac6b37bb96d315fdfef",
     "text": "Which one looks like an oval?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_rectangle.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a7cc166f843a35e97baa2a6accc4e3ce95c7798a211f475dcdb753f9c49245c2",
+    "sha256": "8a8c2815a864c6dc53bf1441d06135994438efc3a379612597d632261980b041",
     "text": "Which one looks like a rectangle?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_square.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "02480f7bb5c440db313e2682b11a8ff595787125ac638e8d727896154095f122",
+    "sha256": "31f4ad8ee1cd9a0fe587867d54572eb48ae3290afc1505a9d1b3abd1c14afb69",
     "text": "Which one looks like a square?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_star.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "769e1bdf4888a8c7e44bc32de173f91a0347e2807c695bd7354fff97cf45e535",
+    "sha256": "f23c959eb1189cf2c387373f1b565511a4f19bf569c9807eb1e8b8f74b6f3812",
     "text": "Which one looks like a star?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_triangle.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "7cb0f190def91b959c69fa2072d910a4b1b9671dd10c125256afc203a3d98d2c",
+    "sha256": "b6b2b3e474835a79234b378114dd0e890d8e0d13cdd7d1436e847bd726ac0676",
     "text": "Which one looks like a triangle?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_1.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a192e4163de2640f3a48bca1a380a5ebce649d30fc6400c10873e18f345c79e5",
+    "sha256": "fcba7128ff739faae6c855cda1fa125d22845bffd3d09b210233214d04b9381e",
     "text": "Ali dropped his ice cream. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_2.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "4e9248d888c5ca13dd4272510f5e05ed4b09e3b9af37d9b9d94383ab0289a3f5",
+    "sha256": "7ec61e277f2d67e207ae24690de741a38135a9af716acec113fbec9c68ed15fc",
     "text": "Ali got a present. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_3.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "18ba87204f139b6e631b016faa6a636d6cbc31b573f2c0fdf1dc851a2b59d5f5",
+    "sha256": "4938d95ea3295e3be6393dd38d6383d7a9eb9aaa1f2c76703ee3aa6ebc492b99",
     "text": "A big dog barked. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_4.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "9dab0a40a4f10dd07485325e75853c492ba5220b0995eb116103f1088b5cd376",
+    "sha256": "d7870f8b3b0de1be34d9ce0792dac876c974666428c66bde9de14ad2cb375c07",
     "text": "A toy popped out of the box. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_5.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "2771e555068f1c6a61d742c358db4eef42bac3a4bf2bf25db34c65c1e4f85089",
+    "sha256": "0a72501faf7a4346b82dc871aaccac18a2ad58511ed12db4e79acbf3713d2893",
     "text": "Elif knocked down Ali's tower. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_6.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "7fe776e45a217bc3dd9579a6ed553193fce110a8dd374eb62298cfa94e7ed0ee",
+    "sha256": "6dbf3c3e6cabaefca880cfd920edf8082297b8291f4882d04b6f69aaf66d8073",
     "text": "It is evening and Ali is yawning. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_7.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "e38be7891697a6aa9d48d414729b1190988561e48518043d7234fe74173cb822",
+    "sha256": "b183fc5c72ee6787ccacbfb656946ea82c6efe5fa7f6b009e0d9410f8733cc00",
     "text": "Ali finished his drawing and Mom claps. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G44_8.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "d353485009b05ee9cd37ac93e7f41264a5292f4cf4c3d014aaacb9d8efebe39d",
+    "sha256": "a9738ffed5c2160bfd724919c131c5cdddc9fb5b06738523170cc9b2f59ec794",
     "text": "Mom is tickling Ali. How does Ali feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G45_same.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "29c3762e7ef384ad466bd026c0523bbfb0e28e2c50179cade72ec46c9000a8d8",
+    "sha256": "edbee9ed3323542f3b71aa13848092bf9b97de5a1a82a77b3d45e816a194ead2",
     "text": "Who feels the same way?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G46_listen.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "d40318208fff9598647b8c950f7d630b6633ecf13452101bcec82d1a2a833e03",
+    "sha256": "4fb288b9e1da19f0d5402e5531465737d6aa42db48deadfdb495563981f842aa",
     "text": "Listen. How is this person feeling?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_arm.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "1fb1ce4349766cc826930937aa0686c83903a745cfed1e999213b58d90377ece",
+    "sha256": "53e3ef32627a6090a1861c7207862bc941751d58331ae67c8dbfec661c1fccc9",
     "text": "Where is Ali's arm?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_ear.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "d24a4682111cd29ae1880b39760104ae9ddee93db027efa2760f5bcd49a980a5",
+    "sha256": "f5e06e43c64bbbeb39cab10f7daa63fdd638da906e1f8fc596b3791b6e96c4a9",
     "text": "Where is Ali's ear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_eye.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "602d67fdad4df8ca361e511d0cc9eceb232685b07ebbcdc0a69d6f164f2c163e",
+    "sha256": "7f24eaef9d514b6d055d22ae19c3ff77a4cf115607d53e56952b53e318b1017a",
     "text": "Where is Ali's eye?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_foot.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "8060a2f6569cfc839fc8763468404685561ecf64381a2e0cb87defa0bbdde2dd",
+    "sha256": "b89c1eee65e8d419a0118ad6b90241758afbe1875a7b1f886aaf0054f843177d",
     "text": "Where is Ali's foot?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_hair.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "b31a28cbdd6807d9fb517bdf56788f88616e4afb530300fa67edfd7b243bbf10",
+    "sha256": "5f305701908eba8ab1c2bbef7e67e45201c0ec9a6301a21bc7705f4d02321a22",
     "text": "Where is Ali's hair?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_hand.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "f620d4f677a7fb05d91b89ef7e740c2384e58998c8f6cb1f4a6118ee0d86ec83",
+    "sha256": "617fe341d334eb25c6f03f0fdd016dd32a024c2601e932bf9b370f94992f3ba3",
     "text": "Where is Ali's hand?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_leg.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "50f77b76a9fee8dd58e79684dc9d91aa0a5a775b0cacbb673dbb59007cf886af",
+    "sha256": "0cbedee765129e49f43ed418af9c9936c56a09ae82a8422554c330d6e8f92be5",
     "text": "Where is Ali's leg?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_mouth.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "b19c9ae09590e7b05806a6d890ac9ca08f7816c9ab4b88392aa57b16c4a59edc",
+    "sha256": "15de8e2933731c71a05ec9636d0d1975fa43f1b657612396f183bb45069816c1",
     "text": "Where is Ali's mouth?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_neck.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "9af70d821362f9dce0527dff75d4c03ba4cc30230b503d2a710931964213d253",
+    "sha256": "2728bd7bd1403a7a2967729693b5ee194b1e278cbd13021cd319ea1cde4d186a",
     "text": "Where is Ali's neck?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_nose.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "bb675771b20571a98ef0b81bcd5920e6d9ba0d3cd2d9ee77ebc834dd5ae7a988",
+    "sha256": "3da830d5f6f9c82885e33079dd5ad0d5d7b8fa8c308245f3eafa7988946b45c7",
     "text": "Where is Ali's nose?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_shoulder.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "fea86b1a942ec99d1bb3a4383c9a5e59dfa99867e8353d59004e3e6229672075",
+    "sha256": "c4f832a2b6a37d79e62240337dc51ee155256c93d6c096f8395a3f371b6eee90",
     "text": "Where is Ali's shoulder?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_tummy.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "6caf585a9614f88b6cfdd978575807455ac777f6cabd05069de9f159f0c697db",
+    "sha256": "c4aaaa774355a915cb0dad65e305bd5bcd94f8f91f7540842d26cbf9f73bb069",
     "text": "Where is Ali's tummy?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_1.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "987b7c39b4aff2fe95d6443d5a2a7b5b89451d9943601a19b84629696c86a4f7",
+    "sha256": "bed2fac59c2e8ff1c61c205383e9be6c90794fa0ada6a5c932279bd59405b383",
     "text": "What do we see with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_2.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "37b1ff38ecc1b5ee12a43b03abb20dba0268d4847c3f87d360ef1d212e42ab48",
+    "sha256": "844288aac2098ffaf07901479f94af24701ed48247ef512cf1a172cf779ba0ee",
     "text": "What do we hear with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_3.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "220986aa51681cd3f69da3c495c9475b07b6f3a93c2d09fe85dcd8e0de468386",
+    "sha256": "289251733246dd128befd551219edbde1426df45c03be00765ad9e4fb2bcd00d",
     "text": "What do we smell with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_4.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "f3e2f5e3f17e90805739f2cb49d5a37b620b0822eb1692b604fa6e94c3b06297",
+    "sha256": "d4b8cf1e61705c71da0b74574e4ee2c6895dfc92cb80a065ca1007b6aeabd713",
     "text": "What do we talk with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_5.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "8549e633c2a5a08d0e1d2c5240969c71592085427730445c9f0c74ffcb2d1f1c",
+    "sha256": "488636f45b84ec59b475eff62db0533334265c7c8f8b13c7b08c1504c4046d5e",
     "text": "What do we hold things with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_6.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "c5f8c964815121222b77a1dba40b1db7aa494672e563c60616dfe55a70ba1427",
+    "sha256": "3c5a144e13b44ae4b9858a54f7ff7caf66a986a43a148f7085fb9343684f9776",
     "text": "What do we walk with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_7.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "3564b409fed6fbcda63fadfb401113a4a3604388904f35786cf045ae4aa2fe8f",
+    "sha256": "870d4b8826151aa32fe5e61313e7e95ecdd25d78c836761800e3653663e186ac",
     "text": "What do we bite with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G48_8.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "401e0e71ffd1ace90b68f6e471c5b42b262827a6f4744d4f71b447fd4bd847cf",
+    "sha256": "64ea445d2b5f65bc50649c1c9b122a53434ec10685a2381b0f34f0f095230e93",
     "text": "What do we taste with?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_1.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "56ba131d171cee3ce873dbc3df98c5daa6f532c63a033cee1e87c222cab8fa05",
+    "sha256": "a4507d6c5077a83f8fd48ca36a9268eaef0453c9abfb32c2be2fcfa2998953c8",
     "text": "Where do we wear gloves?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_2.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "1af9433b18bb7725f66a8ca6c5e909f58231ef46cacf51a8183d3ccb06b82bbc",
+    "sha256": "23ee36093e2ac19bc848ba64c652a26b28082f148fe95dd266218cada89b73eb",
     "text": "Where do we wear socks?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_3.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "4a627de42fece6d1b4941b84b694b81d9ff215cc6d778e555e25ef8e59462457",
+    "sha256": "4853f3f9405f78757808f5cb0143daac87ca701560be4f7a397ccedd646115bb",
     "text": "Where do we wear shoes?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_4.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "378389f9276c4db9da7e4b1ea05324bd3c877cc4a24d584868ab75395c9a6dcb",
+    "sha256": "eb4effcfa34eae7d977584688e72986e1be8dba59a4920af8c49804218c49ea8",
     "text": "Where do we wear a hat?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_5.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "06e75ced950c36888f133e051da9bb834e4ece4160dfd52c31ba5de399b33539",
+    "sha256": "8831b4c03057eab4aaf8af2ea3690bba7221b0a4b024b4ef0f9b527f81249ab2",
     "text": "Where do we wear glasses?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_6.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "31b94486d0c71352cf72e1ea09e586ce611f3b804bbc55f455d9f542930522f6",
+    "sha256": "bc4a362e00cfadfcdadfcb6698bebeb829beddaa5ebbdba05d5e83736d446630",
     "text": "Where do we wear a scarf?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_7.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "a92d56727d020bc6cb9fc1e4ff724cf29bdd6654be95a43409348d073c700424",
+    "sha256": "f9dc8184bfb6f834ba0f729b4264b3c0d83899b32aee28197ea95a4bd5ff1e67",
     "text": "Where do we wear a ring?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G49_8.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "88c04f058cb6806e13bad5a0116ab3a286cb674151158aba4ff43247400b34a0",
+    "sha256": "85d9fcad5c8512440bf9f91214336d029209d04b6604d982ddf653da8303c6e7",
     "text": "Where do we wear earmuffs?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/tr/pairs/G40_1.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "4d0d28cad67b6791437918740afc0b735ec043e6a3edcabef64ffd7351334376",
+    "sha256": "76b1efcea0dc00539c160c7422fdd54db508ed81063ef44a785075f249f515e8",
     "text": "Domates ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_10.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "75ae4785d5cb29f82128ff6ed27e447e10fd5cafd1c878bf7bbdf76d763dd9cd",
+    "sha256": "1b820abd59df170defab14dca54c2e4e5f74e49583336dd327e18da6b91b0bfe",
     "text": "Havuç ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_11.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ecd3ac3bf21127eee1b6866d7070a743e22e85a1f907ddfc1753d13c18c6405a",
+    "sha256": "ead17047fdbd3741f0a2840b043f5b8b5baef6c6fe1c3a311f93268d716f7ade",
     "text": "Portakal ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_12.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ebbf13a269ac84dab84d97c15e992cbf1bbc0635ecdb2de7135feb44ce6992a4",
+    "sha256": "93525aba3d52e06c0bc945ec2985c56002bc0279875440ea3f02e9806bb7a55a",
     "text": "Mandalina ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_13.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "886112acbae91e12c04b3306358de9f98b7452af31a8180f0bd30b0adb34cf7e",
+    "sha256": "8b5849fd9dfb597ac7884e67a321c858dc0f7702d20c42f2f42a29d8caff34a6",
     "text": "Salatalık ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_14.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a33fe1c9720928eaf81b5b2d78c6716b2a23cf0e123aa8f6c09cb17e16ca89c8",
+    "sha256": "b83056145cacfbcbdf9ffea264951a20b476e401fbc50da473d5bac02594f906",
     "text": "Kurbağa ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_15.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "f3014954ae21b95b54ba4958868ea1810e1ae6ed1e514f0d4d239d6d45a47161",
+    "sha256": "a0b036a029bdeca402cd5746b3b198562aaa9e25cd4c25568792de2d29d7b76b",
     "text": "Brokoli ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_16.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "5c2e06f183116a0d2575c246d220c6acc43d714bb81769a7190b52944eabec61",
+    "sha256": "244ab48dd26c9d48ab96478e79131c703c497db0af8792a4b9bc44fbf995361c",
     "text": "Marul ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_17.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d8a5465595cc907b7bf3dcfac7641a6f2e632c62ad0446b2a430f24986c52e83",
+    "sha256": "4e548ac66f50b38d35437d2af46d2e2eb85aefde84df1b92e860c55f182fd0ee",
     "text": "Patlıcan ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_18.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "cd4e273eb027e554160508efd893fe6714fb86ac93620b045eada4665c3bef1f",
+    "sha256": "a66451a8a9779a2d33bd60834d7d82fee8d0174ecd3ecd22aece4bff1b17fe39",
     "text": "Flamingo ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_19.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "4358ff699663269de96701ece1c3a13bc16f481dea9d5d905fa7323514bd5345",
+    "sha256": "f6f18b5a79c8ba1f8ccdffd76f595bfb1b664a7c5ae0b71c677484787589158b",
     "text": "Kestane ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_2.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "65cb37f2c3040f100a956c8ebae4b9bd0ca61e4935d272663b28e6f713a83a96",
+    "sha256": "6b23e0c61482a7814af70fc8f17b911696ce7fb1545e977f9a1d2a1ad0829e88",
     "text": "Çilek ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_20.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "361f80a02b36c4068b7223ae313a4bbc92cbc1a2a232481db61726621504cbfd",
+    "sha256": "cdbe21b794b47e55263489b7acc5c4fab612d9738cde72a8fbd9eb946dc45265",
     "text": "Ayı ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_21.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "13f3140a1f86c525fc59153b52a0d52923030410916fbb9ee9b6b9924fd04e7e",
+    "sha256": "daf1a6adf7e0585683d5cef0966116804d95bbc9b82b01a7ea413493c9ef4b9b",
     "text": "Hindistan cevizi ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_22.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "14ab226dc66e5d0d961c2b32c622fa53bc35df39c7b8ffcc01d2c41845fcd2a4",
+    "sha256": "843e3c3f8915243736ec7ff500a26aa3cdcde5c133f0e6ed23845c72d0ec63fe",
     "text": "Koyun ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_23.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d962265599617e280ebec9cc0b04da0386d6f3334363331014dcce79cd8d6899",
+    "sha256": "403d4f129c3c4fb3e44d5c715ae4a6ba72bd393b4b436a01da696db783cfacf1",
     "text": "Yumurta ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_24.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "b5190a2985a8d962cd77ac177a62538722a6b73e06f664d3a1cd55d504207de3",
+    "sha256": "a77ece5178024df088eab08971b74c244172bc365359274edc85f8351e759bb8",
     "text": "Fil ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_25.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "751bce93263f197b450045c9f24f8ac0b56662dc0fc741a57e15b96e9c458138",
+    "sha256": "c1be64f6c8e32c58c6da9dd3645ce49682855409e3214d944a513e46e0c3b9c7",
     "text": "Gergedan ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_26.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "2ba794fc8b618426ac6779d653360ca90ad06aa64b680b0cacca3e684b607967",
+    "sha256": "3a311dd6b237a09997e8dc4f4c8cc575d168e63119ce3dde36b6860ba0514429",
     "text": "Sandalye ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_27.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "1fa2a38e8fcdd0b21641b7390b17f72bf650399abaf9de0980a74e1d4a0c2fb5",
+    "sha256": "74ce653d643e6fe560546fe8bddd2557cb83e325e3fd23f43dd5996451d2f13e",
     "text": "Kumanda ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_3.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "5890db9db20ef3db0875e2bdfe25c66eab7fce6ce9a8f3ff9fac9965a7e6cbf9",
+    "sha256": "66f75f8bc3be91163e9764ab286ad371f1c6960ff5cddd6825c78e23e65eb041",
     "text": "Elma ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_4.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "e13ebe161acd38290c80a3f5b5a79ccbc5e5a944db7828393cd3e5dcbccabe4c",
+    "sha256": "227653e22c25109cdd41b898ff60eba288ef3991e8f9cc9823a9f5817296fc67",
     "text": "Kiraz ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_5.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "fc264fd68c69216557c83db2c1007cf156cb93e385f041a86b4122e7e6fc3a86",
+    "sha256": "6119199873b5a12863d4fffff0fd853e0d950fd33aacfaec7098f44e0727f633",
     "text": "İtfaiye arabası ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_6.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "fdb0692d2711a934a098862fcdc9aedbbe0b7a97c1be7f753c2f412af59699c2",
+    "sha256": "894384e7647307e888002bd009a781c8d0025b749df22ccf19d293d68c899a51",
     "text": "Muz ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_7.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "dea42599aa7e516f20c0d36e95c846ac2246b867737d40ca3210c858adb21072",
+    "sha256": "7fb8921034fbaec742ed7b03e87124e0fdb24f6b9c66e27649d5c57590866ddd",
     "text": "Limon ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_8.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ed72e730c208c941e844c66e7e36e224c52a0ccfdda704dcef3b536a2fa759ce",
+    "sha256": "d3fc5069964be5e24c8686dcad5ec66fdd0179c341f80a3eaf44130e2ee3ea08",
     "text": "Taksi ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_9.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "bcdbce73e992226a5ff6b3beb81be148396133ab7050426d2fc9a9ec770e90c4",
+    "sha256": "db3bfa5d67a52c6f648101fa69e023108fcf313885e989cbd2d58fcdecd48556",
     "text": "Okul otobüsü ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G41_basket.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a20a8f844823981a42a91d4e1453c1bee86b67ebcf5a6d347ae7b8c03ce4fa4c",
+    "sha256": "4e879ce8fd1479f0eb0685243595e9600fec68c160915b65306593988f91e2a2",
     "text": "Aynı renkteki sepete koy.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_blue.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "062a2803b63bfdff1ad87f358bf0d47a5a01bb23fe41e8656e93d75e6a255b59",
+    "sha256": "4c50e245e7c287606c2d52c9b71b1e1bd9554f06748ee76de3d7335b1cbcb541",
     "text": "Hadi, maviye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_brown.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "bccffd1602f0a03b73602b2f4d2e6cb35235dfbee41e02de5c2b027c66c17212",
+    "sha256": "ffc9f32361a4ef3166c41ac05ad473b21e2a838c58292cbf6350e6cd0a5c53aa",
     "text": "Hadi, kahverengiye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_green.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a2b4cb54d6363c79865d5cbd9435c7b1ad54a91999b679109a4f4cfe41828d00",
+    "sha256": "d2d2f9029d57bebfce55c4c7101d1f847c1c58018d8460b811a88e2dfe47fe2a",
     "text": "Hadi, yeşile boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_orange.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "fc180ae99c7c9aa49f8d28b005aae9a86c76fd9261c62e9e0be35caf9eb5a195",
+    "sha256": "e339ffd06439939cee1b3a9dfe75ccb4b28c1d2c04bf5850947bd6fc802067a3",
     "text": "Hadi, turuncuya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_pink.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "0fe0402a311ba09e4bf5a2cdba5da215dd8538b4d2cc324943c54dfd1889717a",
+    "sha256": "b42e9e28eabfc187fea433c5b32f84c9f908551d8c3454eb393c79ba8457baca",
     "text": "Hadi, pembeye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_purple.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "e750fe37acc1aa93bdc670bbe15e173a047a0fefbac5a41cafedd0709ba2c2a0",
+    "sha256": "98586721007c93ae5467700f4c8dcbd3771c26f77a988508cf39d4190876267c",
     "text": "Hadi, mora boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_red.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ee2459fa21a8c3f085570a64db868d7f5c52a7089cc450949d8de32bc009e797",
+    "sha256": "f08f9882860281eec6c17a80f6bb85531d2613e5ecdc8efd489227761196d99f",
     "text": "Hadi, kırmızıya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_yellow.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "fb86e0606a79eb14400dac52b92c324ff431c3d83788a06f4f7b5a3a4a0a5890",
+    "sha256": "16b1beb4169a127777310283826de86dc48fff91a4229d0ce98511b423e6dcb2",
     "text": "Hadi, sarıya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_circle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ffc020b77cef6646d54a27039ddb1fa7e02ea22dd44e92afabb2864007755b9b",
+    "sha256": "25d6ef8292497e93b0ba577f889a915b170552b906ecee5b1291ece4316c2af2",
     "text": "Hangisi daireye benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_heart.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d03598e5c410de72c0f97dbdedf9e3575e290c89ef9cf29998a5f3248ff36fbc",
+    "sha256": "00efdc5450e77a6dbe89586b118c23aac2bba72a8cd65b5a39d8ba19eeb6a243",
     "text": "Hangisi kalbe benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_oval.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ba8d0830627712fe25bcec2ece738da330a0466fb4b19dfb02c8c580abad3c76",
+    "sha256": "c824cc8c4cdd5106618c8b5f61508efb8d53bd3aa1212495d5588428be62879c",
     "text": "Hangisi ovale benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_rectangle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d7b4cb6b6b42d6f783f842f0f47188e6ff00f3af95cde80808997c44da665da0",
+    "sha256": "068bbbe1fb6efc66bcd8b4a9dd0e7ef406fd0a32cc4d6caa2952c948639d7e13",
     "text": "Hangisi dikdörtgene benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_square.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ea86d61a17b72d47a90ad734d027ea7bdbd652c945dbfa24a968094bc114ec08",
+    "sha256": "8a216e1f86b3c7f4f8c3cd7b15d62217e94869dd2ce1c231b8ed7514e69c7ebb",
     "text": "Hangisi kareye benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_star.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "31e583a9753964e24ea030fbaa24c1329e77f2e400a965f8c50d35f93ec3e8f7",
+    "sha256": "233e9535ddcd2bdf7c477ee363da174538885827d339834502815f95ac472016",
     "text": "Hangisi yıldıza benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_triangle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a1fb92d1b676f19035f1c16c2aaa72edde2b4a2fa03f31c48ba154714d32546e",
+    "sha256": "a4740cf47dfdd5e5ba8d236ead141654dd8e535b2b287766b16d63f11cca4b9d",
     "text": "Hangisi üçgene benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_1.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "7128c0978e498acfa96bbd6b69732beb1a97e5c69bc65fa730899d19c9241856",
+    "sha256": "91b6b3147f00d57722f0360ad3c953570c839ad469bdbdeea7a8ec375f8730a1",
     "text": "Ali'nin dondurması yere düştü. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_2.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "3d4dcc99389a46106fdd79a0843e08d6a7c12a2871c1e5a096a6a283768c1001",
+    "sha256": "0f093df1b4105b0adc3f4c30dcdf76d443333bdcc4a5af70190c88cbb7556f29",
     "text": "Ali bir hediye aldı. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_3.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "bd4ec90a36fe09922586e89e7081dc3386fe46774cf3a8828e6f6f4233fa19d6",
+    "sha256": "f26d9add43196328370012fc1500dec47c5543e77637f4202dc10b73a50b6a16",
     "text": "Büyük bir köpek havladı. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_4.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "51a020b00b2e39fd1b1fd23d2cb52c0fb4e56a8b8bad589ac420f8d2a677f4da",
+    "sha256": "06dab279e1e5a6ceda9de501eb490d7d3b10191559990cca1bb66e2f3d89c2bc",
     "text": "Kutudan birden bir oyuncak fırladı. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_5.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "3b0657152b3d0f8263425184323cd2c8b93e341e54fa88edc9ce717d5df26173",
+    "sha256": "8a3d7146fcfe99ec7205f4717348041fe1d4c6a1bd0747aa66919a21e603e3b6",
     "text": "Elif, Ali'nin kulesini yıktı. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_6.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "42ba1d533654b729691e12f709a755fe96172f2b24a7019aa20f0c77d6320305",
+    "sha256": "28d36c2d52962bf67e66bdc61469887fb393ba2b9bc48d407eaa2840b56e7fae",
     "text": "Akşam oldu, Ali esniyor. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_7.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "c428c41f278580af860f34c77f34f1c7dfca35ada1af395b041224924145cde0",
+    "sha256": "d30884a4e6155fe4e4fd572adcffb5227b33e5ae7d6c0f110dc807472fe5aa48",
     "text": "Ali resmini bitirdi, annesi alkışlıyor. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_8.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d395e776229512621100dc01da54c25c8970f7b7a101762530acedd5216b03ce",
+    "sha256": "7320b148d6e1ba4f64089c3605ac91d9630c54d6904a7b9c939ebaa46af2f2cf",
     "text": "Annesi Ali'yi gıdıklıyor. Ali ne hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G45_same.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "0ecdc97fab10a31a214e141c1c6a54ef0625642f07c56250b3a32d705b2e477a",
+    "sha256": "57599c388222e9b63d71eba9045bae8b45b51344527237d25834ea27ee2b9630",
     "text": "Kim de böyle hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G46_listen.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "35352affaaf7ff3ccbee0bae80a533695027e15fcd54983c54dfa2dba7fc4b39",
+    "sha256": "eaf067dc79a1d7d0147ff435976873ccdec8b86e25b333edb2d9d1ff0a469efd",
     "text": "Dinle bakalım. Nasıl hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_arm.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "c4232c5d7b59d18d8a1b5f7cd207c78490c128c6fd43e0d79304b18bdb622075",
+    "sha256": "400df84ed469ca030193b0267e35148d74af3820f8528ad5289126c2b9d4af9c",
     "text": "Ali'nin kolu nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_ear.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "58f973d7628b3c4e1c77c1c704d2d7ee4e81d37c3ce903d0ceeda7235b79a05e",
+    "sha256": "295667464d47890d5083e59c1abe60b4bd3d18ff83383e7fe9892ec86f0ba600",
     "text": "Ali'nin kulağı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_eye.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "4f95044266a9b75c05c9ff6c1c1140145fc9fb20a17f41f66a1ba8bac05e04a2",
+    "sha256": "326bcf9f8f9d33be66ad33e28ce38ef8fc45f31706622d632d409c4b517e921b",
     "text": "Ali'nin gözü nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_foot.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "8530da2db09fe7dbb485b8338d3da41781cf9100a2a3fa4a9543ab1645c0eb88",
+    "sha256": "8e45fcc79a776937be8eab3b35eb41cfbce9e4b7afb0d622390f3f9367eee34d",
     "text": "Ali'nin ayağı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_hair.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "f9dac3cd74bc13a87857dab84f0c68964c5b0041d79423231b02e9dda9ac0cd8",
+    "sha256": "e52533fbc9dfa70d4691b1ddf1c81c20aeefa612d83885b0687db85eb086c794",
     "text": "Ali'nin saçı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_hand.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "daadf0da734c7874996a3d0922efaea0d707d39c013f8518d34e225b3164e8d9",
+    "sha256": "ff7a5214f4b8095fc683bb39552d4703512c7f1ece7e8e2001762bf43b91c22e",
     "text": "Ali'nin eli nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_leg.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "3842adfc1160139d6f7a9821c889ba74e76ad936a36cab981d7e62c4fdb7d238",
+    "sha256": "53c64fa526c21ef4c04d34d728287ffa291547b6183e8f26dd5be3ec69a41d56",
     "text": "Ali'nin bacağı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_mouth.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "82c76fc511db15dc670f9c0523a18c0864be41a8e58ae7d139a9c480d7614cc2",
+    "sha256": "629ea221ac643264d43eecf6dcc44a88640fe9c88111c9f1d577d40db0d4dcc7",
     "text": "Ali'nin ağzı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_neck.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "82a197635409ed7bb0bffd4578aea3569f66e70d190b8c74066725f3a64347f1",
+    "sha256": "183f2bb048814eba93cc1f3da905047555063f303307c157f7c976264ca5e4c3",
     "text": "Ali'nin boynu nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_nose.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "807499c7509c1e0cab0a62622eef45b60dd4405e2c86137a2e8755ab1f08eff1",
+    "sha256": "7c2d3bc77863e9d98d021619a6487931734f239380aaf732241e504b3ece3001",
     "text": "Ali'nin burnu nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_shoulder.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "813a0c42c4337d9a66680bb7dec3102359a2ef3915612c22b43361e5e7c26561",
+    "sha256": "0fa39eaf059cd565e756c758ee8a505462fd0578020accaa0c9a39ffa519b0ba",
     "text": "Ali'nin omzu nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_tummy.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "29882a6dcf0960ebb5df08fcb00a6bd112e35a50c1d8063c29fcb6eb0ec012d3",
+    "sha256": "2255909d2c24664e41cd97313290efe0883fa38f84ed1c78e44bd8ef3ae18e5d",
     "text": "Ali'nin karnı nerede?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_1.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "1bc955dde2a88f15d53544530111aff92965c0423e5003ce3bb0d207c92e5b35",
+    "sha256": "873935e413b91843c6a30fc17a7952a05635aebbabce1142d25c341a349d3e04",
     "text": "Neyle görürüz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_2.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a9a5ee9359808a25bdf8eaa1c5b17f63674e3e4b6f24658e7c07161e41efda52",
+    "sha256": "700903aac72bcbcc0dad512290130e42b8f4b996ffa7c2dabbecaede6bcddac1",
     "text": "Neyle duyarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_3.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a3edd9451f078fd0688f960de3935b50cbfc5dfeea70cf9cf82972b0687f560f",
+    "sha256": "6ac255cf29452753df3ea0387e117ba66c9910783c87e6fbb5018ee9945c7331",
     "text": "Neyle koklarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_4.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "2fe71269083266bc8cb4e40f52a0ef2cc1267f30eb4135db4e24ba20febc52bc",
+    "sha256": "559915a15bc394242e61384850f7bba90b890ec26a82d913f37687e6ea26d87b",
     "text": "Neyle konuşuruz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_5.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "cf76e9794645513180f4dc69726dfe68534a517cd1cf6637ce5d9adfadd6704b",
+    "sha256": "2a389e95cc56799bbc3bad39de3989140e32775204e4eac14f05483e9506bdd4",
     "text": "Neyle tutarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_6.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "c4b3b0d23da5eaf1771d506219d395a15bd8550b4d9bc195b715a5346e5a187b",
+    "sha256": "e06ee1a98d13a821aaf21e4762c36ca66837c087b97b3942975c9d9a5ce8bb15",
     "text": "Neyle yürürüz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_7.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "ed6bf8e89173d4a727a54a79f4403237bd27bba4df140180eb03d4b1f290b6c2",
+    "sha256": "1c884775a9664a5e357b7a6f21ee834e23e2a4efa383e8d3f28a2dd7c5889efe",
     "text": "Neyle ısırırız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G48_8.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "52b5c5637fa45b5a810f1e006436384b57a7e45077be0fe9cb1b9d5ebc3c385f",
+    "sha256": "81ad9ad099ea8dbbe793af786f7ef2e7570642a70e75e5f806cd3fa0c5618372",
     "text": "Neyle tat alırız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_1.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "7f8d680b23e9225460e876899b2ffe29b5b9f6a9963926d183251d224c1e5538",
+    "sha256": "a2506fea5e0711d9f93db9ec14ffb93a3da7c2edcefb7c2d73ff5cf73fd2a424",
     "text": "Eldiveni nereye giyeriz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_2.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "1dea785fc83154db4bf0f9301e9d82fa6b8d2a73a88a0a4a86d5bbe8768f02a5",
+    "sha256": "0d41e4cce12e5b86586bfdd9c89bc3c90a3190455bf496724d2d608b3aab43ae",
     "text": "Çorabı nereye giyeriz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_3.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "f2e3ae4b25681978337ecfd980f78fa90bba9f2508aa21dd845a1f83c0480ccb",
+    "sha256": "bf12cafa3294df10ddc19582a2ee37bf1f53e1cb37ed8b6fb25ba01ae21773b5",
     "text": "Ayakkabıyı nereye giyeriz?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_4.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "04d080d84f894913819e49ddff2795393a26a3288480f7802375fed30057dca7",
+    "sha256": "2eff5587ee4d936512394a44be81ebbbd7942d124b0eed540716841cd5cd31dc",
     "text": "Şapkayı nereye takarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_5.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "b8c1bbf33ce22531b68c78fe9ef60c03914b8dcdb8a69c67aa1bcdf4969cd44f",
+    "sha256": "5e2e9ec686e2292cac2d4168711d7f3d6d3d75d0dd52a6d0580824810bad0ce7",
     "text": "Gözlüğü nereye takarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_6.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "f4e46c0876d9f81e44dc412971c5434b279793bbcfaa872cb202ced127680884",
+    "sha256": "0da43d10c88345c6ffbf3d7d7a9d33afb930e231e72779798451e3a2e152d1d9",
     "text": "Atkıyı nereye takarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_7.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "91da1abb2a9056b10795ba1285de0003272f5c6f434bbb7b74617ce50722eb6a",
+    "sha256": "ab230d5ed376d290196cb0d93183c4f18564573a89a1a7a16953904eb9c9fdba",
     "text": "Yüzüğü nereye takarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G49_8.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "dc98ccb8825f5a46d54658370c9c1c731cb82da8dac405458af5b51e66c23e5f",
+    "sha256": "2484b97e5c5062942f3bf8160d200c15360a1848070b3a4098e2c3ef6e805b73",
     "text": "Kulaklığı nereye takarız?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   }

@@ -138,7 +138,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "050f4ff8e36e8ffb12f68624f5b9669e10f56410d230b3cc08b1c3f7c27c42fb",
+        "sha256": "e8c5667a6f45e91ecd140704227603be81007576757dadc2df408d05961668a4",
         "source": "artifacts/voice_samples_selected/en_three.mp3",
         "validation": {
           "duration_seconds": 0.743039,

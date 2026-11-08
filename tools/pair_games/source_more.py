@@ -6,32 +6,32 @@ Colors games and build_pair_games.py for how this becomes app data.
 
 # ---- Extra pictures used only inside games: id -> (path, tr, en) ----
 EXTRA = {
-    'props.ball': ('assets/images/props/ball.png', 'Top', 'Ball'),
-    'props.gift': ('assets/images/props/gift.png', 'Hediye kutusu', 'Gift box'),
-    'props.dice': ('assets/images/props/dice.png', 'Zar', 'Dice'),
-    'props.pizza_slice': ('assets/images/props/pizza_slice.png', 'Pizza dilimi', 'Pizza slice'),
-    'props.tent': ('assets/images/props/tent.png', 'Çadır', 'Tent'),
-    'props.sign_triangle': ('assets/images/props/sign_triangle.png', 'Uyarı levhası', 'Warning sign'),
-    'props.book': ('assets/images/props/book.png', 'Kitap', 'Book'),
-    'props.starfish': ('assets/images/props/starfish.png', 'Deniz yıldızı', 'Starfish'),
-    'props.heart_balloon': ('assets/images/props/heart_balloon.png', 'Kalp balon', 'Heart balloon'),
-    'props.egg': ('assets/images/props/egg.png', 'Yumurta', 'Egg'),
-    'paint.balloon': ('assets/images/paint/balloon.png', 'Balon', 'Balloon'),
-    'paint.flower': ('assets/images/paint/flower.png', 'Çiçek', 'Flower'),
-    'paint.car': ('assets/images/paint/car.png', 'Araba', 'Car'),
-    'paint.ball': ('assets/images/paint/ball.png', 'Top', 'Ball'),
-    'paint.apple': ('assets/images/paint/apple.png', 'Elma', 'Apple'),
-    'paint.fish': ('assets/images/paint/fish.png', 'Balık', 'Fish'),
-    'paint.butterfly': ('assets/images/paint/butterfly.png', 'Kelebek', 'Butterfly'),
-    'paint.house': ('assets/images/paint/house.png', 'Ev', 'House'),
-    'wear.gloves': ('assets/images/wear/gloves.png', 'Eldiven', 'Gloves'),
-    'wear.socks': ('assets/images/wear/socks.png', 'Çorap', 'Socks'),
-    'wear.shoes': ('assets/images/wear/shoes.png', 'Ayakkabı', 'Shoes'),
-    'wear.hat': ('assets/images/wear/hat.png', 'Şapka', 'Hat'),
-    'wear.glasses': ('assets/images/wear/glasses.png', 'Gözlük', 'Glasses'),
-    'wear.scarf': ('assets/images/wear/scarf.png', 'Atkı', 'Scarf'),
-    'wear.ring': ('assets/images/wear/ring.png', 'Yüzük', 'Ring'),
-    'wear.earmuffs': ('assets/images/wear/earmuffs.png', 'Kulaklık', 'Earmuffs'),
+    'props.ball': ('assets/images/props/ball.webp', 'Top', 'Ball'),
+    'props.gift': ('assets/images/props/gift.webp', 'Hediye kutusu', 'Gift box'),
+    'props.dice': ('assets/images/props/dice.webp', 'Zar', 'Dice'),
+    'props.pizza_slice': ('assets/images/props/pizza_slice.webp', 'Pizza dilimi', 'Pizza slice'),
+    'props.tent': ('assets/images/props/tent.webp', 'Çadır', 'Tent'),
+    'props.sign_triangle': ('assets/images/props/sign_triangle.webp', 'Uyarı levhası', 'Warning sign'),
+    'props.book': ('assets/images/props/book.webp', 'Kitap', 'Book'),
+    'props.starfish': ('assets/images/props/starfish.webp', 'Deniz yıldızı', 'Starfish'),
+    'props.heart_balloon': ('assets/images/props/heart_balloon.webp', 'Kalp balon', 'Heart balloon'),
+    'props.egg': ('assets/images/props/egg.webp', 'Yumurta', 'Egg'),
+    'paint.balloon': ('assets/images/paint/balloon.webp', 'Balon', 'Balloon'),
+    'paint.flower': ('assets/images/paint/flower.webp', 'Çiçek', 'Flower'),
+    'paint.car': ('assets/images/paint/car.webp', 'Araba', 'Car'),
+    'paint.ball': ('assets/images/paint/ball.webp', 'Top', 'Ball'),
+    'paint.apple': ('assets/images/paint/apple.webp', 'Elma', 'Apple'),
+    'paint.fish': ('assets/images/paint/fish.webp', 'Balık', 'Fish'),
+    'paint.butterfly': ('assets/images/paint/butterfly.webp', 'Kelebek', 'Butterfly'),
+    'paint.house': ('assets/images/paint/house.webp', 'Ev', 'House'),
+    'wear.gloves': ('assets/images/wear/gloves.webp', 'Eldiven', 'Gloves'),
+    'wear.socks': ('assets/images/wear/socks.webp', 'Çorap', 'Socks'),
+    'wear.shoes': ('assets/images/wear/shoes.webp', 'Ayakkabı', 'Shoes'),
+    'wear.hat': ('assets/images/wear/hat.webp', 'Şapka', 'Hat'),
+    'wear.glasses': ('assets/images/wear/glasses.webp', 'Gözlük', 'Glasses'),
+    'wear.scarf': ('assets/images/wear/scarf.webp', 'Atkı', 'Scarf'),
+    'wear.ring': ('assets/images/wear/ring.webp', 'Yüzük', 'Ring'),
+    'wear.earmuffs': ('assets/images/wear/earmuffs.webp', 'Kulaklık', 'Earmuffs'),
     'scene.icecream_dropped': ('assets/images/scenes/icecream_dropped.jpg', 'Dondurma düştü', 'Dropped ice cream'),
     'scene.gift': ('assets/images/scenes/gift.jpg', 'Hediye', 'A present'),
     'scene.big_dog': ('assets/images/scenes/big_dog.jpg', 'Havlayan köpek', 'Barking dog'),
@@ -40,14 +40,14 @@ EXTRA = {
     'scene.bedtime': ('assets/images/scenes/bedtime.jpg', 'Uyku vakti', 'Bedtime'),
     'scene.drawing_done': ('assets/images/scenes/drawing_done.jpg', 'Resim bitti', 'Finished drawing'),
     'scene.tickle': ('assets/images/scenes/tickle.jpg', 'Gıdıklama', 'Tickling'),
-    'body.ali_full': ('assets/images/wear/ali_full.png', 'Ali', 'Ali'),
+    'body.ali_full': ('assets/images/wear/ali_full.webp', 'Ali', 'Ali'),
 }
 FACE_EMOTIONS = ['happy', 'sad', 'angry', 'scared', 'surprised', 'sleepy']
 FACE_NAMES = {'happy': ('Mutlu', 'Happy'), 'sad': ('Üzgün', 'Sad'), 'angry': ('Kızgın', 'Angry'),
               'scared': ('Korkmuş', 'Scared'), 'surprised': ('Şaşkın', 'Surprised'), 'sleepy': ('Uykulu', 'Sleepy')}
 for _who in ('elif', 'mom'):
     for _e in FACE_EMOTIONS:
-        EXTRA[f'faces.{_who}_{_e}'] = (f'assets/images/faces/{_who}_{_e}.png', *FACE_NAMES[_e])
+        EXTRA[f'faces.{_who}_{_e}'] = (f'assets/images/faces/{_who}_{_e}.webp', *FACE_NAMES[_e])
 
 CORE = ['happy', 'sad', 'angry', 'scared', 'surprised', 'sleepy']
 
@@ -190,7 +190,7 @@ def extra_items():
 
 
 FACE_PARTS = {'hair', 'eye', 'ear', 'nose', 'mouth'}
-FACE_CROP = 0.34  # assets/images/wear/ali_face.png = top 34 % of ali_full.png
+FACE_CROP = 0.34  # assets/images/wear/ali_face.webp = top 34 % of ali_full.webp
 
 
 def body_map():
@@ -200,7 +200,7 @@ def body_map():
             for p, x, y, r in BODY_SPOTS if p not in FACE_PARTS]
     return {
         'pictures': [
-            {'picture': 'assets/images/wear/ali_face.png', 'aspect': 656 / 476, 'spots': face},
+            {'picture': 'assets/images/wear/ali_face.webp', 'aspect': 656 / 476, 'spots': face},
             {'picture': EXTRA['body.ali_full'][0], 'aspect': 656 / 1400, 'spots': body},
         ],
         'questions': {f'body.{k}': {'tr': BODY_MAP_TR[k], 'en': BODY_MAP_EN[k]} for k in BODY_MAP_TR},

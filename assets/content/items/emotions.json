@@ -10,7 +10,7 @@
       "en": "Happy"
     },
     "images": [
-      "assets/images/emotions/happy.png"
+      "assets/images/emotions/happy.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/happy_selected.mp3",
@@ -22,16 +22,16 @@
       "en": "assets/audio/en/emotions/happy_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/happy.png": {
+      "assets/images/emotions/happy.webp": {
         "id": "emotions.happy",
-        "path": "assets/images/emotions/happy.png",
+        "path": "assets/images/emotions/happy.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "7d0c29113bffd990acceb8d0245d95df87d6cda4d9bcd5eb57735a9233e86dc2"
+        "sha256": "30741af36894650ccd448401678a203f28292ddf1055d95ea374e26787e570c9"
       }
     }
   },
@@ -46,7 +46,7 @@
       "en": "Sad"
     },
     "images": [
-      "assets/images/emotions/sad.png"
+      "assets/images/emotions/sad.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/sad_selected.mp3",
@@ -58,16 +58,16 @@
       "en": "assets/audio/en/emotions/sad_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/sad.png": {
+      "assets/images/emotions/sad.webp": {
         "id": "emotions.sad",
-        "path": "assets/images/emotions/sad.png",
+        "path": "assets/images/emotions/sad.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "c6f5920f0e67b0769a88573f8739807b88a980a70e5b0754824c1b61ee337057"
+        "sha256": "70ada928455745dc2b3bb48a9ad07020cb17d726860f0c312a976afca64c400a"
       }
     }
   },
@@ -82,7 +82,7 @@
       "en": "Angry"
     },
     "images": [
-      "assets/images/emotions/angry.png"
+      "assets/images/emotions/angry.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/angry_selected.mp3",
@@ -94,16 +94,16 @@
       "en": "assets/audio/en/emotions/angry_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/angry.png": {
+      "assets/images/emotions/angry.webp": {
         "id": "emotions.angry",
-        "path": "assets/images/emotions/angry.png",
+        "path": "assets/images/emotions/angry.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "8b17d386956bb28a2c4bd1c01e9f612c10ad245d91733d0e80e7f7cde6570d61"
+        "sha256": "5b7d26c063cc27a7af712add1eda73633a2d4cec72dc4dfced239df1b98025a1"
       }
     }
   },
@@ -118,7 +118,7 @@
       "en": "Scared"
     },
     "images": [
-      "assets/images/emotions/scared.png"
+      "assets/images/emotions/scared.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/scared_selected.mp3",
@@ -130,16 +130,16 @@
       "en": "assets/audio/en/emotions/scared_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/scared.png": {
+      "assets/images/emotions/scared.webp": {
         "id": "emotions.scared",
-        "path": "assets/images/emotions/scared.png",
+        "path": "assets/images/emotions/scared.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "ce94d68baaf60c6ba15243e67915f675e020a2f7ebc9556322f9f7e9225b357e"
+        "sha256": "fe2aaced0b84320637255ba58534ef9b7b8c602a0deb6b83c25cb1489f09c330"
       }
     }
   },
@@ -154,7 +154,7 @@
       "en": "Surprised"
     },
     "images": [
-      "assets/images/emotions/surprised.png"
+      "assets/images/emotions/surprised.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/surprised_selected.mp3",
@@ -166,16 +166,16 @@
       "en": "assets/audio/en/emotions/surprised_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/surprised.png": {
+      "assets/images/emotions/surprised.webp": {
         "id": "emotions.surprised",
-        "path": "assets/images/emotions/surprised.png",
+        "path": "assets/images/emotions/surprised.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "a7ab20b2ec0255b4ff4b8a3b868bb95025857911083ae1aa14f3204323197506"
+        "sha256": "5d72d2884408b0edd91957dfcd9e8cc7647abb461a5e6f5d329db24a86a86759"
       }
     }
   },
@@ -190,7 +190,7 @@
       "en": "Sleepy"
     },
     "images": [
-      "assets/images/emotions/sleepy.png"
+      "assets/images/emotions/sleepy.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/sleepy_selected.mp3",
@@ -202,16 +202,16 @@
       "en": "assets/audio/en/emotions/sleepy_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/sleepy.png": {
+      "assets/images/emotions/sleepy.webp": {
         "id": "emotions.sleepy",
-        "path": "assets/images/emotions/sleepy.png",
+        "path": "assets/images/emotions/sleepy.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "9d483f8d22eefe7b926f1f553c26a7fde6e56d004bdb00d22c6a62c41fc10785"
+        "sha256": "b7634086da8c5f12126eec3e0b387582f7f6a986911bace7d3a8f38242e5f39d"
       }
     }
   },
@@ -226,7 +226,7 @@
       "en": "Laughing"
     },
     "images": [
-      "assets/images/emotions/laughing.png"
+      "assets/images/emotions/laughing.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/laughing_selected.mp3",
@@ -238,16 +238,16 @@
       "en": "assets/audio/en/emotions/laughing_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/laughing.png": {
+      "assets/images/emotions/laughing.webp": {
         "id": "emotions.laughing",
-        "path": "assets/images/emotions/laughing.png",
+        "path": "assets/images/emotions/laughing.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "5a9cd56233582e6209614efb809882882766ad2fae3a84008bd9697695aa1d1f"
+        "sha256": "6df8c75fa7aee85037fd584bef4f47979c3a0a39e13a56c7f226451677585934"
       }
     }
   },
@@ -262,7 +262,7 @@
       "en": "Calm"
     },
     "images": [
-      "assets/images/emotions/calm.png"
+      "assets/images/emotions/calm.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/calm_selected.mp3",
@@ -274,16 +274,16 @@
       "en": "assets/audio/en/emotions/calm_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/calm.png": {
+      "assets/images/emotions/calm.webp": {
         "id": "emotions.calm",
-        "path": "assets/images/emotions/calm.png",
+        "path": "assets/images/emotions/calm.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "5de73ddbfbc107c5de53f9b3fbdbd4b7db016f091ef027b1d7961fe6b836fdcf"
+        "sha256": "f08075a9f60002f08b12180368fff26e291012823e051be8b5f1df782a994bf6"
       }
     }
   },
@@ -298,7 +298,7 @@
       "en": "Shy"
     },
     "images": [
-      "assets/images/emotions/shy.png"
+      "assets/images/emotions/shy.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/shy_selected.mp3",
@@ -310,16 +310,16 @@
       "en": "assets/audio/en/emotions/shy_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/shy.png": {
+      "assets/images/emotions/shy.webp": {
         "id": "emotions.shy",
-        "path": "assets/images/emotions/shy.png",
+        "path": "assets/images/emotions/shy.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "96f095d5b33a1207fb43bf158cb625f0a604d79a0c8dd296e4c50869eec87ea5"
+        "sha256": "d09d5251d78702f930ad406469d07480c8cc1c9679bcc004dbef586e898f509d"
       }
     }
   },
@@ -334,7 +334,7 @@
       "en": "Proud"
     },
     "images": [
-      "assets/images/emotions/proud.png"
+      "assets/images/emotions/proud.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/proud_selected.mp3",
@@ -346,16 +346,16 @@
       "en": "assets/audio/en/emotions/proud_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/proud.png": {
+      "assets/images/emotions/proud.webp": {
         "id": "emotions.proud",
-        "path": "assets/images/emotions/proud.png",
+        "path": "assets/images/emotions/proud.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "d185cd9915f325499c562b085c83396c2a555612f99f0efd66b62c111b969d6d"
+        "sha256": "afbcbb1a31a9be6b84f30375f57595403331f82ec7af03d61683e49ca6aed1aa"
       }
     }
   },
@@ -370,7 +370,7 @@
       "en": "Bored"
     },
     "images": [
-      "assets/images/emotions/bored.png"
+      "assets/images/emotions/bored.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/bored_selected.mp3",
@@ -382,16 +382,16 @@
       "en": "assets/audio/en/emotions/bored_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/bored.png": {
+      "assets/images/emotions/bored.webp": {
         "id": "emotions.bored",
-        "path": "assets/images/emotions/bored.png",
+        "path": "assets/images/emotions/bored.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "d07e18e6ed3dd07d1f9413430afb79bd907e74e960de643a1c4c0848f1c1b9fa"
+        "sha256": "0c23550a43f5c4393cb1269fdd7ca5197a6d1fa7f43941242c5272743cccb8dd"
       }
     }
   },
@@ -406,7 +406,7 @@
       "en": "Worried"
     },
     "images": [
-      "assets/images/emotions/worried.png"
+      "assets/images/emotions/worried.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/worried_selected.mp3",
@@ -418,16 +418,16 @@
       "en": "assets/audio/en/emotions/worried_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/worried.png": {
+      "assets/images/emotions/worried.webp": {
         "id": "emotions.worried",
-        "path": "assets/images/emotions/worried.png",
+        "path": "assets/images/emotions/worried.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "78515e90e2c84c08b03be048fc3ebb6dc9ec9b34148b41e32fc338aa3cc37074"
+        "sha256": "0e5413b568783d377234c93088be2adebc2d31b89bd5e84f72330e7f1738a344"
       }
     }
   },
@@ -442,7 +442,7 @@
       "en": "Excited"
     },
     "images": [
-      "assets/images/emotions/excited.png"
+      "assets/images/emotions/excited.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/excited_selected.mp3",
@@ -454,16 +454,16 @@
       "en": "assets/audio/en/emotions/excited_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/excited.png": {
+      "assets/images/emotions/excited.webp": {
         "id": "emotions.excited",
-        "path": "assets/images/emotions/excited.png",
+        "path": "assets/images/emotions/excited.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "38e43461e172f0c89f36aaabcc188b0bed6d4a9be74d382a5123b63ef01c56f0"
+        "sha256": "433715252815e5e9ff10543d250176be588230e57daa8bf0128aeba2f3fe2b8b"
       }
     }
   },
@@ -478,7 +478,7 @@
       "en": "Disgusted"
     },
     "images": [
-      "assets/images/emotions/disgusted.png"
+      "assets/images/emotions/disgusted.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/emotions/disgusted_selected.mp3",
@@ -490,16 +490,16 @@
       "en": "assets/audio/en/emotions/disgusted_which.mp3"
     },
     "imageProvenance": {
-      "assets/images/emotions/disgusted.png": {
+      "assets/images/emotions/disgusted.webp": {
         "id": "emotions.disgusted",
-        "path": "assets/images/emotions/disgusted.png",
+        "path": "assets/images/emotions/disgusted.webp",
         "kind": "illustration",
         "author": "Yes Studio",
         "source": "ChatGPT image generation (Codex), SEG soft clay style",
         "license": "Created for this app",
         "licenseVerified": false,
         "createdOn": "2026-11-06",
-        "sha256": "b2f971daec10727cacb692af8a58967e65290146aee5d2c35563f09efd330056"
+        "sha256": "3f1108db31883e0ffaf95b2e80ec3692b5ab526feffb6cd1c3b03f7be1a87fde"
       }
     }
   }

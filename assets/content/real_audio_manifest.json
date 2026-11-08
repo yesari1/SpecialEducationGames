@@ -24,7 +24,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "dad6fa0b9f9f0ee65f8aa1d9bf1027e04f4bf5bbc74bbcd0f4cf3f339916bee4",
+      "sha256": "2389f81f9c95b07b700124752682a9f7f495c428f4c29930b0f5bc42dd3b78bd",
       "source": "artifacts/voice_samples_selected/en_cat.mp3",
       "validation": {
         "duration_seconds": 0.603719,
@@ -72,7 +72,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "adb34df39845556e62af3506ad8a04385f16ec77adcc63cb8f9b25319a594689",
+      "sha256": "19bee77631ca04b505239ca1a7d5be1c8c43e6467dbce3a50d50bfe880c06d68",
       "source": "artifacts/voice_samples_selected/tr_cat.mp3",
       "validation": {
         "duration_seconds": 0.835918,
@@ -120,7 +120,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "484d68bca9386f0b31d504fa3e20b1425c0541bde38a0ddd519dc259d9004c96",
+      "sha256": "44efe8143620b471c8ed639884634f40e3eeed8357f4ebf8b6f192948f83ca99",
       "source": "artifacts/voice_samples_selected/en_dog.mp3",
       "validation": {
         "duration_seconds": 0.696599,
@@ -168,7 +168,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "20a8699b6de4cad6d04a599a3a365dc5aa90045d64dcc403ebbda0efea21d64f",
+      "sha256": "424d180458afefc5fa9a7139cb769d1ec295872c5818db929c79e2ce1b2f7386",
       "source": "artifacts/voice_samples_selected/tr_dog.mp3",
       "validation": {
         "duration_seconds": 0.835918,
@@ -217,7 +217,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "cc946605e6a45b1d9bc4ac5f6612e07cb2cfaa85f86a598b38feaff8b3092019",
+      "sha256": "94410eeb6d1fce24f212a622161acea3a2176d48505a7e913b578e59e8720e44",
       "source": "artifacts/voice_samples_selected/en_rabbit.mp3",
       "validation": {
         "duration_seconds": 0.696599,
@@ -265,7 +265,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "197707b152d4910c46a8fe892c279c7935db615d530a33452b494574ec4b17aa",
+      "sha256": "b24873be3a04a1fa92b6b1de831b745587ceed44fa79cc09ffb64ac67ea783ec",
       "source": "artifacts/voice_samples_selected/tr_rabbit.mp3",
       "validation": {
         "duration_seconds": 0.975238,
@@ -313,7 +313,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "bcdbc1df05c9c06ea294bffe617e3d43977397f1b6196b6b0f6a875c3319237d",
+      "sha256": "2eeede15614969812a0bd465095017d5bde2cf636917b53e68ea5c67d46f4d39",
       "source": "artifacts/voice_samples_selected/en_red.mp3",
       "validation": {
         "duration_seconds": 0.743039,
@@ -361,7 +361,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "081a5d2aa6ecb09efef31a265c3fbbd578e15884c340d0a79ba20502b32a342c",
+      "sha256": "6c6939f1c7ebd5fee85164b96bc3d36821ad0bda9e02893c1ed2b505eef9d674",
       "source": "artifacts/voice_samples_selected/tr_red.mp3",
       "validation": {
         "duration_seconds": 1.068118,
@@ -409,7 +409,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "050f4ff8e36e8ffb12f68624f5b9669e10f56410d230b3cc08b1c3f7c27c42fb",
+      "sha256": "e8c5667a6f45e91ecd140704227603be81007576757dadc2df408d05961668a4",
       "source": "artifacts/voice_samples_selected/en_three.mp3",
       "validation": {
         "duration_seconds": 0.743039,
@@ -505,7 +505,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "af5fb7078244743791a4c8519a1875d26871173c0ac3e19ff10f1d1d29659701",
+      "sha256": "12c62c863a5f78d486169750d02219f7babb06fe296f5a752fd2e54cdbcbad31",
       "source": "artifacts/voice_samples_selected/en_apple.mp3",
       "validation": {
         "duration_seconds": 0.603719,
@@ -553,7 +553,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "902af0fef60833674fc36db99739237ce738db26d666b374de2e4a15ac775eac",
+      "sha256": "c4eb4b76c40c2cf3f863466b2de453a52eadb3bd339b2e431c128126f8dc0a49",
       "source": "artifacts/voice_samples_selected/tr_apple.mp3",
       "validation": {
         "duration_seconds": 0.696599,
@@ -602,7 +602,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "ae2d63723a6e09fcf6c7c687505531b508d76f1ad2508a96fa34414cce7a9598",
+      "sha256": "e2adec98f71f649d980f2c4666b933c3df22a154c2b2a81b612873e5f84b22fc",
       "source": "artifacts/voice_samples_selected/en_banana.mp3",
       "validation": {
         "duration_seconds": 0.789478,
@@ -650,7 +650,7 @@
         "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
       },
       "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-      "sha256": "cbc0be9430051fe1690f14a39357b80cb750a9de14c8ff71cea8b205ef704809",
+      "sha256": "bbc566d1ab8339084a7b89d152ffa030645ebc534f9ff1ca4e00d98785a8def4",
       "source": "artifacts/voice-review-2026-11-03/kelimeler/Muz_2.mp3",
       "validation": {
         "duration_seconds": 0.789478,

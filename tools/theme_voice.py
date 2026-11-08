@@ -69,7 +69,7 @@ def tts(text, lang):
         src, dst = Path(tmp) / 'raw.mp3', Path(tmp) / 'out.mp3'
         src.write_bytes(raw)
         subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(src), '-af', FILTER,
-                        '-ar', '44100', '-ac', '1', '-b:a', '128k', str(dst)], check=True)
+                        '-ar', '44100', '-ac', '1', '-b:a', '64k', str(dst)], check=True)
         return dst.read_bytes()
 
 

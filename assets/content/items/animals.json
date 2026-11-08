@@ -12,7 +12,7 @@
       "en": "Cat"
     },
     "images": [
-      "assets/images/animals/cat_real.png"
+      "assets/images/animals/cat_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/cat_selected.mp3",
@@ -20,7 +20,7 @@
     },
     "sfx": "assets/sfx/animals/cat.mp3",
     "imageProvenance": {
-      "assets/images/animals/cat_real.png": {
+      "assets/images/animals/cat_real.webp": {
         "author": "Matsu1024",
         "source": "https://commons.wikimedia.org/wiki/File:Turkish_Van_cat_transparent.png",
         "license": "CC BY-SA 4.0",
@@ -28,13 +28,13 @@
         "changes": "Original transparent cutout retained; alpha-bound crop, aspect-preserving resize and padding. Enlarged to maximum 912 px photo extent, with a 4 px white silhouette outline (combined extent <=920 px, padding >=52 px).",
         "existingBackgroundRemoval": "YukiKoKo",
         "id": "animals.cat",
-        "path": "assets/images/animals/cat_real.png",
+        "path": "assets/images/animals/cat_real.webp",
         "licenseVerified": true,
         "licenseVerifiedOn": "2026-10-16",
         "adaptationLicense": "CC BY-SA 4.0",
         "processing": "tools/prepare_photo_samples.ps1",
         "whiteOutlinePixels": 4,
-        "sha256": "9def9c4fa5cf7872aea291a9fb28b74943c3ecbb3d662542a8488fbfee2eb82d"
+        "sha256": "6e379029b43fa422a989af7318788eb10a877b8d9cfa40d28f8ca70dd642f262"
       }
     },
     "audioProvenance": {
@@ -61,7 +61,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "adb34df39845556e62af3506ad8a04385f16ec77adcc63cb8f9b25319a594689",
+        "sha256": "19bee77631ca04b505239ca1a7d5be1c8c43e6467dbce3a50d50bfe880c06d68",
         "source": "artifacts/voice_samples_selected/tr_cat.mp3",
         "validation": {
           "duration_seconds": 0.835918,
@@ -109,7 +109,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "dad6fa0b9f9f0ee65f8aa1d9bf1027e04f4bf5bbc74bbcd0f4cf3f339916bee4",
+        "sha256": "2389f81f9c95b07b700124752682a9f7f495c428f4c29930b0f5bc42dd3b78bd",
         "source": "artifacts/voice_samples_selected/en_cat.mp3",
         "validation": {
           "duration_seconds": 0.603719,
@@ -153,7 +153,7 @@
       "en": "Dog"
     },
     "images": [
-      "assets/images/animals/dog_real.png"
+      "assets/images/animals/dog_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/dog_selected.mp3",
@@ -232,7 +232,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "484d68bca9386f0b31d504fa3e20b1425c0541bde38a0ddd519dc259d9004c96",
+        "sha256": "44efe8143620b471c8ed639884634f40e3eeed8357f4ebf8b6f192948f83ca99",
         "source": "artifacts/voice_samples_selected/en_dog.mp3",
         "validation": {
           "duration_seconds": 0.696599,
@@ -259,9 +259,9 @@
       }
     },
     "imageProvenance": {
-      "assets/images/animals/dog_real.png": {
+      "assets/images/animals/dog_real.webp": {
         "id": "animals.dog",
-        "path": "assets/images/animals/dog_real.png",
+        "path": "assets/images/animals/dog_real.webp",
         "author": "Anton Porsche",
         "source": "https://commons.wikimedia.org/wiki/File:Labradoodle-Brown-Transparent.png",
         "original": "artifacts/animal-alpha-r17/attempt-01/Labradoodle-Brown-Transparent.png",
@@ -274,7 +274,7 @@
         "processing": "artifacts/animal-alpha-r17/attempt-01/prepare_labradoodle.py",
         "whiteOutlinePixels": 4,
         "changes": "Retained Anton Porsche’s existing transparent real photograph and alpha; alpha-bound crop, aspect-preserving Lanczos resize to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outline from existing alpha. No new mask, background reconstruction, or generative editing.",
-        "sha256": "e3b5b3f4fbdd6e374ab2eaf17dc02a1fe99ac8f1150fbce954080d98d8d971bc",
+        "sha256": "4f53c01a3aabb9d7cd3d87077787bcded8afee3cc88d4429346bf13a455b1c49",
         "humanContentReviewPending": "Pending final human approval of this Labradoodle photograph for the generic catalog labels “Köpek” / “Dog”."
       }
     },
@@ -297,7 +297,7 @@
       "en": "Bird"
     },
     "images": [
-      "assets/images/animals/bird_real.png"
+      "assets/images/animals/bird_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/bird_selected.mp3",
@@ -305,9 +305,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/animals/bird_real.png": {
+      "assets/images/animals/bird_real.webp": {
         "id": "animals.bird",
-        "path": "assets/images/animals/bird_real.png",
+        "path": "assets/images/animals/bird_real.webp",
         "author": "David Raju (photograph); Paolo Villa (transparent crop, alpha and color correction)",
         "source": "https://commons.wikimedia.org/wiki/File:Eurasian_crag_martin_David_Raju_(transparent_background).png",
         "original": "artifacts/photo-candidate-r24-next/attempt-01/source/Eurasian_crag_martin_David_Raju-transparent.png",
@@ -325,7 +325,7 @@
         "processing": "artifacts/photo-candidate-r24-next/attempt-01/process_candidate.py",
         "whiteOutlinePixels": 4,
         "changes": "Used Paolo Villa’s existing transparent derivative, which includes a color correction that makes the belly appear lighter than in David Raju’s original JPEG. The derivative alpha was retained; alpha-bound crop, aspect-preserving Lanczos resampling to a 900 px maximum extent, centered 1024x1024 RGBA export and 4 px white outer outline were applied. No further RGB edits, background reconstruction, or generative processing; RGB resampling occurred during resize. Adaptation shared under CC BY-SA 4.0.",
-        "sha256": "951f45f39ef962649c49828c16a18e89ff3c7e2209ef87076f9f5e343ea1b288",
+        "sha256": "bfb9cfb2b73640d95a4fca628d9ad33665a1c90c280e7c39a9ddadf8b840f5f4",
         "humanContentReviewPending": "Technical photo review accepted; final human approval of this bird photo for the generic “Kuş” / “Bird” labels remains pending."
       }
     },
@@ -348,8 +348,8 @@
       "en": "Fish"
     },
     "images": [
-      "assets/images/animals/fish_real.png",
-      "assets/images/animals/fish_trout_real.png"
+      "assets/images/animals/fish_real.webp",
+      "assets/images/animals/fish_trout_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/fish_selected.mp3",
@@ -357,9 +357,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/animals/fish_real.png": {
+      "assets/images/animals/fish_real.webp": {
         "id": "animals.fish",
-        "path": "assets/images/animals/fish_real.png",
+        "path": "assets/images/animals/fish_real.webp",
         "author": "Ellicrum (transparent derivative); original photograph by Ffish.asia",
         "source": "https://commons.wikimedia.org/wiki/File:Carassius_auratus_2.png",
         "original": "artifacts/legacy-alpha-source-r12/Carassius_auratus_2.png",
@@ -376,10 +376,10 @@
         "processing": "artifacts/legacy-alpha-source-r12/attempt-01/prepare_sprite.py",
         "whiteOutlinePixels": 4,
         "changes": "Generic fish image (not labeled as a goldfish). The existing transparent derivative by Ellicrum incorporates the original photograph by Ffish.asia. Its existing alpha was preserved; alpha-bound crop, aspect-preserving resize to a 912 px maximum extent, centered 1024x1024 RGBA export, and a 4 px white outer outline were applied. No background-removal or generative edits. The adapted PNG is shared under CC BY-SA 4.0 with attribution to both creators and links to the source and licenses.",
-        "sha256": "89dc0d8586a0ed232b8617901e916075d64f22be404e08bd4e2ab5b5bb18c0e5",
+        "sha256": "4d7581d9fc6c17aba5168f6beeb3b4d8e8707346c9fb884416b7c28317a1ac61",
         "additionalVariants": [
           {
-            "path": "assets/images/animals/fish_trout_real.png",
+            "path": "assets/images/animals/fish_trout_real.webp",
             "author": "Allan Harris (photograph); Lodewicus de Honsvels (Commons source-file contributor); Ellicrum (transparent derivative)",
             "source": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush.png",
             "original": "artifacts/legacy-alpha-source-r13/Salvelinus_namaycush.png",
@@ -400,12 +400,12 @@
             "processing": "artifacts/legacy-alpha-source-r13/prepare_fish.py",
             "whiteOutlinePixels": 4,
             "changes": "Second, distinct generic fish photograph: Lake Trout (Salvelinus namaycush), not a Carassius frame/crop. Source photo by Allan Harris (CC0 1.0); Commons source-file contributor Lodewicus de Honsvels; transparent derivative/crop by Ellicrum (CC BY-SA 4.0). Existing derivative alpha and photo RGB were retained; alpha-bound crop, aspect-preserving Lanczos resize to 900 px maximum fish extent, centered 1024x1024 RGBA export and 4 px white outer outline. No new background mask, generative edits, or reconstructed pixels. The adapted file is shared under CC BY-SA 4.0 with all source/derivative attribution retained.",
-            "sha256": "501e15f0f6fdac5620e512f6e3771d5265ad52d86d61c39976726dff0ba98bc8"
+            "sha256": "2693fe85ce3c7e32940d5777e15254d5d068c3e54e19b5c71c10c1c6b34667fa"
           }
         ]
       },
-      "assets/images/animals/fish_trout_real.png": {
-        "path": "assets/images/animals/fish_trout_real.png",
+      "assets/images/animals/fish_trout_real.webp": {
+        "path": "assets/images/animals/fish_trout_real.webp",
         "author": "Allan Harris (photograph); Lodewicus de Honsvels (Commons source-file contributor); Ellicrum (transparent derivative)",
         "source": "https://commons.wikimedia.org/wiki/File:Salvelinus_namaycush.png",
         "original": "artifacts/legacy-alpha-source-r13/Salvelinus_namaycush.png",
@@ -426,7 +426,7 @@
         "processing": "artifacts/legacy-alpha-source-r13/prepare_fish.py",
         "whiteOutlinePixels": 4,
         "changes": "Second, distinct generic fish photograph: Lake Trout (Salvelinus namaycush), not a Carassius frame/crop. Source photo by Allan Harris (CC0 1.0); Commons source-file contributor Lodewicus de Honsvels; transparent derivative/crop by Ellicrum (CC BY-SA 4.0). Existing derivative alpha and photo RGB were retained; alpha-bound crop, aspect-preserving Lanczos resize to 900 px maximum fish extent, centered 1024x1024 RGBA export and 4 px white outer outline. No new background mask, generative edits, or reconstructed pixels. The adapted file is shared under CC BY-SA 4.0 with all source/derivative attribution retained.",
-        "sha256": "501e15f0f6fdac5620e512f6e3771d5265ad52d86d61c39976726dff0ba98bc8"
+        "sha256": "2693fe85ce3c7e32940d5777e15254d5d068c3e54e19b5c71c10c1c6b34667fa"
       }
     },
     "whichAudio": {
@@ -447,7 +447,7 @@
       "en": "Rabbit"
     },
     "images": [
-      "assets/images/animals/rabbit_1.png"
+      "assets/images/animals/rabbit_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/rabbit_selected.mp3",
@@ -478,7 +478,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "197707b152d4910c46a8fe892c279c7935db615d530a33452b494574ec4b17aa",
+        "sha256": "b24873be3a04a1fa92b6b1de831b745587ceed44fa79cc09ffb64ac67ea783ec",
         "source": "artifacts/voice_samples_selected/tr_rabbit.mp3",
         "validation": {
           "duration_seconds": 0.975238,
@@ -526,7 +526,7 @@
           "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
         },
         "configurationSha256": "f551eb37ad3ac6588780bd734425c58b844955528762161afcdc84c6c3e9af33",
-        "sha256": "cc946605e6a45b1d9bc4ac5f6612e07cb2cfaa85f86a598b38feaff8b3092019",
+        "sha256": "94410eeb6d1fce24f212a622161acea3a2176d48505a7e913b578e59e8720e44",
         "source": "artifacts/voice_samples_selected/en_rabbit.mp3",
         "validation": {
           "duration_seconds": 0.696599,
@@ -570,7 +570,7 @@
       "en": "Cow"
     },
     "images": [
-      "assets/images/animals/cow_1.png"
+      "assets/images/animals/cow_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/cow_selected.mp3",
@@ -595,7 +595,7 @@
       "en": "Horse"
     },
     "images": [
-      "assets/images/animals/horse_1.png"
+      "assets/images/animals/horse_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/horse_selected.mp3",
@@ -620,7 +620,7 @@
       "en": "Sheep"
     },
     "images": [
-      "assets/images/animals/sheep_1.png"
+      "assets/images/animals/sheep_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/sheep_selected.mp3",
@@ -646,7 +646,7 @@
       "en": "Chicken"
     },
     "images": [
-      "assets/images/animals/chicken_1.png"
+      "assets/images/animals/chicken_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/chicken_selected.mp3",
@@ -672,7 +672,7 @@
       "en": "Duck"
     },
     "images": [
-      "assets/images/animals/duck_1.png"
+      "assets/images/animals/duck_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/duck_selected.mp3",
@@ -698,7 +698,7 @@
       "en": "Chick"
     },
     "images": [
-      "assets/images/animals/chick_1.png"
+      "assets/images/animals/chick_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/chick_selected.mp3",
@@ -723,7 +723,7 @@
       "en": "Lion"
     },
     "images": [
-      "assets/images/animals/lion_1.png"
+      "assets/images/animals/lion_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/lion_selected.mp3",
@@ -748,7 +748,7 @@
       "en": "Elephant"
     },
     "images": [
-      "assets/images/animals/elephant_1.png"
+      "assets/images/animals/elephant_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/elephant_selected.mp3",
@@ -773,7 +773,7 @@
       "en": "Monkey"
     },
     "images": [
-      "assets/images/animals/monkey_1.png"
+      "assets/images/animals/monkey_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/monkey_selected.mp3",
@@ -798,7 +798,7 @@
       "en": "Bear"
     },
     "images": [
-      "assets/images/animals/bear_1.png"
+      "assets/images/animals/bear_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/bear_selected.mp3",
@@ -823,7 +823,7 @@
       "en": "Butterfly"
     },
     "images": [
-      "assets/images/animals/butterfly_1.png"
+      "assets/images/animals/butterfly_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/butterfly_selected.mp3",
@@ -848,7 +848,7 @@
       "en": "Goat"
     },
     "images": [
-      "assets/images/animals/goat_1.png"
+      "assets/images/animals/goat_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/goat_selected.mp3",
@@ -873,7 +873,7 @@
       "en": "Donkey"
     },
     "images": [
-      "assets/images/animals/donkey_1.png"
+      "assets/images/animals/donkey_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/donkey_selected.mp3",
@@ -899,7 +899,7 @@
       "en": "Rooster"
     },
     "images": [
-      "assets/images/animals/rooster_1.png"
+      "assets/images/animals/rooster_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/rooster_selected.mp3",
@@ -925,7 +925,7 @@
       "en": "Turkey"
     },
     "images": [
-      "assets/images/animals/turkey_1.png"
+      "assets/images/animals/turkey_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/turkey_selected.mp3",
@@ -950,7 +950,7 @@
       "en": "Bee"
     },
     "images": [
-      "assets/images/animals/bee_1.png"
+      "assets/images/animals/bee_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/bee_selected.mp3",
@@ -975,7 +975,7 @@
       "en": "Turtle"
     },
     "images": [
-      "assets/images/animals/turtle_real.png"
+      "assets/images/animals/turtle_real.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/turtle_selected.mp3",
@@ -983,9 +983,9 @@
     },
     "sfx": null,
     "imageProvenance": {
-      "assets/images/animals/turtle_real.png": {
+      "assets/images/animals/turtle_real.webp": {
         "id": "animals.turtle",
-        "path": "assets/images/animals/turtle_real.png",
+        "path": "assets/images/animals/turtle_real.webp",
         "author": "Katrin Bolovtsova",
         "source": "https://www.pexels.com/photo/photo-of-a-turtle-5263883/",
         "original": "artifacts/real-animal-turtle-elephant-candidate/alternative-plain-turtle/originals/pexels-5263883.jpg",
@@ -998,7 +998,7 @@
         "processing": "artifacts/real-animal-turtle-elephant-candidate/alternative-plain-turtle/mask2/prepare_turtle_mask2.py; artifacts/photo-tools/grabcut_mask.py",
         "whiteOutlinePixels": 4,
         "changes": "Single complete photographed Red-Eared Slider turtle on a plain background. Classical OpenCV GrabCut used a reviewed source contour, central-shell and visible-head/forelimb foreground seeds, and background seeds (5 iterations at 1800x1200). Original RGB detail retained without repainting; aspect-preserving resize and centering on a 1024x1024 RGBA canvas, with a 4 px white outer outline. Rear limbs and tail are naturally tucked beneath the shell in the original photograph. No generative edits.",
-        "sha256": "5e5ae81a9968aa151b9be8973bf7c44d4dfff95215944a2d250ebf3ac082b676"
+        "sha256": "f692de6d459465afe7d4174db10a8b20ad519cbf24221c4548c817d27af84f74"
       }
     },
     "whichAudio": {
@@ -1019,7 +1019,7 @@
       "en": "Mouse"
     },
     "images": [
-      "assets/images/animals/mouse_1.png"
+      "assets/images/animals/mouse_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/mouse_selected.mp3",
@@ -1045,7 +1045,7 @@
       "en": "Frog"
     },
     "images": [
-      "assets/images/animals/frog_1.png"
+      "assets/images/animals/frog_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/frog_selected.mp3",
@@ -1070,7 +1070,7 @@
       "en": "Giraffe"
     },
     "images": [
-      "assets/images/animals/giraffe_1.png"
+      "assets/images/animals/giraffe_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/giraffe_selected.mp3",
@@ -1095,7 +1095,7 @@
       "en": "Zebra"
     },
     "images": [
-      "assets/images/animals/zebra_1.png"
+      "assets/images/animals/zebra_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/zebra_selected.mp3",
@@ -1120,7 +1120,7 @@
       "en": "Tiger"
     },
     "images": [
-      "assets/images/animals/tiger_1.png"
+      "assets/images/animals/tiger_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/tiger_selected.mp3",
@@ -1145,7 +1145,7 @@
       "en": "Wolf"
     },
     "images": [
-      "assets/images/animals/wolf_1.png"
+      "assets/images/animals/wolf_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/wolf_selected.mp3",
@@ -1170,7 +1170,7 @@
       "en": "Fox"
     },
     "images": [
-      "assets/images/animals/fox_1.png"
+      "assets/images/animals/fox_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/fox_selected.mp3",
@@ -1195,7 +1195,7 @@
       "en": "Squirrel"
     },
     "images": [
-      "assets/images/animals/squirrel_1.png"
+      "assets/images/animals/squirrel_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/squirrel_selected.mp3",
@@ -1220,7 +1220,7 @@
       "en": "Owl"
     },
     "images": [
-      "assets/images/animals/owl_1.png"
+      "assets/images/animals/owl_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/owl_selected.mp3",
@@ -1246,7 +1246,7 @@
       "en": "Penguin"
     },
     "images": [
-      "assets/images/animals/penguin_1.png"
+      "assets/images/animals/penguin_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/penguin_selected.mp3",
@@ -1271,7 +1271,7 @@
       "en": "Dolphin"
     },
     "images": [
-      "assets/images/animals/dolphin_1.png"
+      "assets/images/animals/dolphin_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/dolphin_selected.mp3",
@@ -1296,7 +1296,7 @@
       "en": "Deer"
     },
     "images": [
-      "assets/images/animals/deer_1.png"
+      "assets/images/animals/deer_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/deer_selected.mp3",
@@ -1321,7 +1321,7 @@
       "en": "Bull"
     },
     "images": [
-      "assets/images/animals/bull_1.png"
+      "assets/images/animals/bull_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/bull_selected.mp3",
@@ -1346,7 +1346,7 @@
       "en": "Hedgehog"
     },
     "images": [
-      "assets/images/animals/hedgehog_1.png"
+      "assets/images/animals/hedgehog_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/hedgehog_selected.mp3",
@@ -1371,7 +1371,7 @@
       "en": "Ant"
     },
     "images": [
-      "assets/images/animals/ant_1.png"
+      "assets/images/animals/ant_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/ant_selected.mp3",
@@ -1396,7 +1396,7 @@
       "en": "Ladybug"
     },
     "images": [
-      "assets/images/animals/ladybug_1.png"
+      "assets/images/animals/ladybug_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/ladybug_selected.mp3",
@@ -1421,7 +1421,7 @@
       "en": "Octopus"
     },
     "images": [
-      "assets/images/animals/octopus_1.png"
+      "assets/images/animals/octopus_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/octopus_selected.mp3",
@@ -1446,7 +1446,7 @@
       "en": "Shark"
     },
     "images": [
-      "assets/images/animals/shark_1.png"
+      "assets/images/animals/shark_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/shark_selected.mp3",
@@ -1471,7 +1471,7 @@
       "en": "Whale"
     },
     "images": [
-      "assets/images/animals/whale_1.png"
+      "assets/images/animals/whale_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/whale_selected.mp3",
@@ -1496,7 +1496,7 @@
       "en": "Hippopotamus"
     },
     "images": [
-      "assets/images/animals/hippopotamus_1.png"
+      "assets/images/animals/hippopotamus_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/hippopotamus_selected.mp3",
@@ -1521,7 +1521,7 @@
       "en": "Rhinoceros"
     },
     "images": [
-      "assets/images/animals/rhinoceros_1.png"
+      "assets/images/animals/rhinoceros_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/rhinoceros_selected.mp3",
@@ -1547,7 +1547,7 @@
       "en": "Crocodile"
     },
     "images": [
-      "assets/images/animals/crocodile_1.png"
+      "assets/images/animals/crocodile_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/crocodile_selected.mp3",
@@ -1572,7 +1572,7 @@
       "en": "Camel"
     },
     "images": [
-      "assets/images/animals/camel_1.png"
+      "assets/images/animals/camel_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/camel_selected.mp3",
@@ -1597,7 +1597,7 @@
       "en": "Kangaroo"
     },
     "images": [
-      "assets/images/animals/kangaroo_1.png"
+      "assets/images/animals/kangaroo_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/kangaroo_selected.mp3",
@@ -1622,7 +1622,7 @@
       "en": "Gorilla"
     },
     "images": [
-      "assets/images/animals/gorilla_1.png"
+      "assets/images/animals/gorilla_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/gorilla_selected.mp3",
@@ -1647,7 +1647,7 @@
       "en": "Flamingo"
     },
     "images": [
-      "assets/images/animals/flamingo_1.png"
+      "assets/images/animals/flamingo_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/flamingo_selected.mp3",
@@ -1672,7 +1672,7 @@
       "en": "Ostrich"
     },
     "images": [
-      "assets/images/animals/ostrich_1.png"
+      "assets/images/animals/ostrich_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/ostrich_selected.mp3",
@@ -1697,7 +1697,7 @@
       "en": "Bat"
     },
     "images": [
-      "assets/images/animals/bat_1.png"
+      "assets/images/animals/bat_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/bat_selected.mp3",
@@ -1722,7 +1722,7 @@
       "en": "Chameleon"
     },
     "images": [
-      "assets/images/animals/chameleon_1.png"
+      "assets/images/animals/chameleon_1.webp"
     ],
     "audio": {
       "tr": "assets/audio/tr/animals/chameleon_selected.mp3",

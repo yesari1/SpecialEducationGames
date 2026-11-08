@@ -8,7 +8,7 @@
       "en": "Ball"
     },
     "images": [
-      "assets/images/props/ball.png"
+      "assets/images/props/ball.webp"
     ],
     "audio": {},
     "tags": []
@@ -22,7 +22,7 @@
       "en": "Gift box"
     },
     "images": [
-      "assets/images/props/gift.png"
+      "assets/images/props/gift.webp"
     ],
     "audio": {},
     "tags": []
@@ -36,7 +36,7 @@
       "en": "Dice"
     },
     "images": [
-      "assets/images/props/dice.png"
+      "assets/images/props/dice.webp"
     ],
     "audio": {},
     "tags": []
@@ -50,7 +50,7 @@
       "en": "Pizza slice"
     },
     "images": [
-      "assets/images/props/pizza_slice.png"
+      "assets/images/props/pizza_slice.webp"
     ],
     "audio": {},
     "tags": []
@@ -64,7 +64,7 @@
       "en": "Tent"
     },
     "images": [
-      "assets/images/props/tent.png"
+      "assets/images/props/tent.webp"
     ],
     "audio": {},
     "tags": []
@@ -78,7 +78,7 @@
       "en": "Warning sign"
     },
     "images": [
-      "assets/images/props/sign_triangle.png"
+      "assets/images/props/sign_triangle.webp"
     ],
     "audio": {},
     "tags": []
@@ -92,7 +92,7 @@
       "en": "Book"
     },
     "images": [
-      "assets/images/props/book.png"
+      "assets/images/props/book.webp"
     ],
     "audio": {},
     "tags": []
@@ -106,7 +106,7 @@
       "en": "Starfish"
     },
     "images": [
-      "assets/images/props/starfish.png"
+      "assets/images/props/starfish.webp"
     ],
     "audio": {},
     "tags": []
@@ -120,7 +120,7 @@
       "en": "Heart balloon"
     },
     "images": [
-      "assets/images/props/heart_balloon.png"
+      "assets/images/props/heart_balloon.webp"
     ],
     "audio": {},
     "tags": []
@@ -134,7 +134,7 @@
       "en": "Egg"
     },
     "images": [
-      "assets/images/props/egg.png"
+      "assets/images/props/egg.webp"
     ],
     "audio": {},
     "tags": []
@@ -148,7 +148,7 @@
       "en": "Balloon"
     },
     "images": [
-      "assets/images/paint/balloon.png"
+      "assets/images/paint/balloon.webp"
     ],
     "audio": {},
     "tags": []
@@ -162,7 +162,7 @@
       "en": "Flower"
     },
     "images": [
-      "assets/images/paint/flower.png"
+      "assets/images/paint/flower.webp"
     ],
     "audio": {},
     "tags": []
@@ -176,7 +176,7 @@
       "en": "Car"
     },
     "images": [
-      "assets/images/paint/car.png"
+      "assets/images/paint/car.webp"
     ],
     "audio": {},
     "tags": []
@@ -190,7 +190,7 @@
       "en": "Ball"
     },
     "images": [
-      "assets/images/paint/ball.png"
+      "assets/images/paint/ball.webp"
     ],
     "audio": {},
     "tags": []
@@ -204,7 +204,7 @@
       "en": "Apple"
     },
     "images": [
-      "assets/images/paint/apple.png"
+      "assets/images/paint/apple.webp"
     ],
     "audio": {},
     "tags": []
@@ -218,7 +218,7 @@
       "en": "Fish"
     },
     "images": [
-      "assets/images/paint/fish.png"
+      "assets/images/paint/fish.webp"
     ],
     "audio": {},
     "tags": []
@@ -232,7 +232,7 @@
       "en": "Butterfly"
     },
     "images": [
-      "assets/images/paint/butterfly.png"
+      "assets/images/paint/butterfly.webp"
     ],
     "audio": {},
     "tags": []
@@ -246,7 +246,7 @@
       "en": "House"
     },
     "images": [
-      "assets/images/paint/house.png"
+      "assets/images/paint/house.webp"
     ],
     "audio": {},
     "tags": []
@@ -260,7 +260,7 @@
       "en": "Gloves"
     },
     "images": [
-      "assets/images/wear/gloves.png"
+      "assets/images/wear/gloves.webp"
     ],
     "audio": {},
     "tags": []
@@ -274,7 +274,7 @@
       "en": "Socks"
     },
     "images": [
-      "assets/images/wear/socks.png"
+      "assets/images/wear/socks.webp"
     ],
     "audio": {},
     "tags": []
@@ -288,7 +288,7 @@
       "en": "Shoes"
     },
     "images": [
-      "assets/images/wear/shoes.png"
+      "assets/images/wear/shoes.webp"
     ],
     "audio": {},
     "tags": []
@@ -302,7 +302,7 @@
       "en": "Hat"
     },
     "images": [
-      "assets/images/wear/hat.png"
+      "assets/images/wear/hat.webp"
     ],
     "audio": {},
     "tags": []
@@ -316,7 +316,7 @@
       "en": "Glasses"
     },
     "images": [
-      "assets/images/wear/glasses.png"
+      "assets/images/wear/glasses.webp"
     ],
     "audio": {},
     "tags": []
@@ -330,7 +330,7 @@
       "en": "Scarf"
     },
     "images": [
-      "assets/images/wear/scarf.png"
+      "assets/images/wear/scarf.webp"
     ],
     "audio": {},
     "tags": []
@@ -344,7 +344,7 @@
       "en": "Ring"
     },
     "images": [
-      "assets/images/wear/ring.png"
+      "assets/images/wear/ring.webp"
     ],
     "audio": {},
     "tags": []
@@ -358,7 +358,7 @@
       "en": "Earmuffs"
     },
     "images": [
-      "assets/images/wear/earmuffs.png"
+      "assets/images/wear/earmuffs.webp"
     ],
     "audio": {},
     "tags": []
@@ -484,7 +484,7 @@
       "en": "Ali"
     },
     "images": [
-      "assets/images/wear/ali_full.png"
+      "assets/images/wear/ali_full.webp"
     ],
     "audio": {},
     "tags": []
@@ -498,7 +498,7 @@
       "en": "Happy"
     },
     "images": [
-      "assets/images/faces/elif_happy.png"
+      "assets/images/faces/elif_happy.webp"
     ],
     "audio": {},
     "tags": []
@@ -512,7 +512,7 @@
       "en": "Sad"
     },
     "images": [
-      "assets/images/faces/elif_sad.png"
+      "assets/images/faces/elif_sad.webp"
     ],
     "audio": {},
     "tags": []
@@ -526,7 +526,7 @@
       "en": "Angry"
     },
     "images": [
-      "assets/images/faces/elif_angry.png"
+      "assets/images/faces/elif_angry.webp"
     ],
     "audio": {},
     "tags": []
@@ -540,7 +540,7 @@
       "en": "Scared"
     },
     "images": [
-      "assets/images/faces/elif_scared.png"
+      "assets/images/faces/elif_scared.webp"
     ],
     "audio": {},
     "tags": []
@@ -554,7 +554,7 @@
       "en": "Surprised"
     },
     "images": [
-      "assets/images/faces/elif_surprised.png"
+      "assets/images/faces/elif_surprised.webp"
     ],
     "audio": {},
     "tags": []
@@ -568,7 +568,7 @@
       "en": "Sleepy"
     },
     "images": [
-      "assets/images/faces/elif_sleepy.png"
+      "assets/images/faces/elif_sleepy.webp"
     ],
     "audio": {},
     "tags": []
@@ -582,7 +582,7 @@
       "en": "Happy"
     },
     "images": [
-      "assets/images/faces/mom_happy.png"
+      "assets/images/faces/mom_happy.webp"
     ],
     "audio": {},
     "tags": []
@@ -596,7 +596,7 @@
       "en": "Sad"
     },
     "images": [
-      "assets/images/faces/mom_sad.png"
+      "assets/images/faces/mom_sad.webp"
     ],
     "audio": {},
     "tags": []
@@ -610,7 +610,7 @@
       "en": "Angry"
     },
     "images": [
-      "assets/images/faces/mom_angry.png"
+      "assets/images/faces/mom_angry.webp"
     ],
     "audio": {},
     "tags": []
@@ -624,7 +624,7 @@
       "en": "Scared"
     },
     "images": [
-      "assets/images/faces/mom_scared.png"
+      "assets/images/faces/mom_scared.webp"
     ],
     "audio": {},
     "tags": []
@@ -638,7 +638,7 @@
       "en": "Surprised"
     },
     "images": [
-      "assets/images/faces/mom_surprised.png"
+      "assets/images/faces/mom_surprised.webp"
     ],
     "audio": {},
     "tags": []
@@ -652,7 +652,7 @@
       "en": "Sleepy"
     },
     "images": [
-      "assets/images/faces/mom_sleepy.png"
+      "assets/images/faces/mom_sleepy.webp"
     ],
     "audio": {},
     "tags": []

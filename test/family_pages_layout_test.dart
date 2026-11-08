@@ -97,7 +97,7 @@ void main() {
     );
     final fishImages = (fishItem['images'] as List).cast<String>();
     fishAssetByteLengths = {};
-    for (final path in [...fishImages, 'assets/images/animals/fish_1.png']) {
+    for (final path in [...fishImages, 'assets/images/animals/fish_1.webp']) {
       fishAssetByteLengths[path] = (await rootBundle.load(path)).lengthInBytes;
     }
   });
@@ -294,7 +294,7 @@ void main() {
           .singleWhere((source) => source['id'] == 'vehicles.helicopter');
       expect(
         helicopterPhoto['path'],
-        'assets/images/vehicles/helicopter_real.png',
+        'assets/images/vehicles/helicopter_real.webp',
       );
       expect(helicopterPhoto['author'], contains('Iain Thomson'));
       expect(helicopterPhoto['license'], 'Open Government Licence v1.0');
@@ -394,7 +394,7 @@ void main() {
       final fishPhoto = photoAssets.cast<Map<String, dynamic>>().singleWhere(
         (source) => source['id'] == 'animals.fish',
       );
-      expect(fishPhoto['path'], 'assets/images/animals/fish_real.png');
+      expect(fishPhoto['path'], 'assets/images/animals/fish_real.webp');
       expect(fishPhoto['author'], contains('Ellicrum'));
       expect(fishPhoto['author'], contains('Ffish.asia'));
       expect(fishPhoto['originalLicense'], 'CC BY 4.0');
@@ -403,7 +403,7 @@ void main() {
       expect(fishPhoto['adaptationLicense'], 'CC BY-SA 4.0');
       expect(
         fishPhoto['sha256'],
-        '89dc0d8586a0ed232b8617901e916075d64f22be404e08bd4e2ab5b5bb18c0e5',
+        '4d7581d9fc6c17aba5168f6beeb3b4d8e8707346c9fb884416b7c28317a1ac61',
       );
       final fishItem = animalsCatalog.cast<Map<String, dynamic>>().singleWhere(
         (item) => item['id'] == 'animals.fish',
@@ -418,7 +418,7 @@ void main() {
       ]);
       expect(
         fishAssetByteLengths.keys,
-        containsAll([...fishImages, 'assets/images/animals/fish_1.png']),
+        containsAll([...fishImages, 'assets/images/animals/fish_1.webp']),
       );
       expect(fishAssetByteLengths.values, everyElement(greaterThan(0)));
 

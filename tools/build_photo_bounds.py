@@ -37,7 +37,7 @@ def bounds(path: Path):
 
 def main():
     result = {}
-    for path in sorted((ROOT / 'assets' / 'images').rglob('*.png')):
+    for path in sorted((ROOT / 'assets' / 'images').rglob('*.webp')):
         key = path.relative_to(ROOT).as_posix()
         measured = bounds(path)
         if measured is not None:

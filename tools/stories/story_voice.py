@@ -37,7 +37,7 @@ def finish(raw, out):
         src = Path(tmp) / 'raw.mp3'
         src.write_bytes(raw)
         subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(src), '-af', FILTER,
-                        '-ar', '44100', '-ac', '1', '-b:a', '128k', str(out)], check=True)
+                        '-ar', '44100', '-ac', '1', '-b:a', '64k', str(out)], check=True)
     return out.read_bytes()
 
 
