@@ -221,6 +221,9 @@ class ContentRepository {
 
   /// The stickers of each theme (assets/content/stickers.json).
   final List<Sticker> stickers;
+
+  /// The drawings of Boyama (assets/content/coloring.json).
+  final List<String> coloringPages;
   ContentRepository(
     this.themes,
     this.items,
@@ -233,6 +236,7 @@ class ContentRepository {
     this.bodyMap = const {},
     this.sceneGames = const {},
     this.stickers = const [],
+    this.coloringPages = const [],
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -288,6 +292,7 @@ class ContentRepository {
         for (final j in await read('content/stickers.json') as List)
           Sticker.fromJson(j as Map<String, dynamic>),
       ],
+      List<String>.from(await read('content/coloring.json') as List),
     );
   }
 

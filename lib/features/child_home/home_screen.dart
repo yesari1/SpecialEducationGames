@@ -420,8 +420,11 @@ class _ParkSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, state.locale);
     final tiles = [
-      ('coloring', l10n.parkColoring, '/park/coloring'),
-      ('music', l10n.parkMusic, '/theme/music'),
+      // A game that is not ready yet has no tile.
+      if (state.content.coloringPages.isNotEmpty)
+        ('coloring', l10n.parkColoring, '/park/coloring'),
+      if (state.orderedThemes.any((t) => t.id == 'music'))
+        ('music', l10n.parkMusic, '/theme/music'),
       ('puzzle', l10n.parkPuzzle, '/park/puzzle'),
       ('bubbles', l10n.parkBubbles, '/park/bubbles'),
     ];

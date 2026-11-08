@@ -93,6 +93,7 @@ flutter:
     - assets/firebase/android_options.json
     - assets/content/
     - assets/content/items/
+    - assets/sfx/music/
     - assets/images/food/
     - assets/images/app_logo.png
     - assets/illustrations/onboarding/

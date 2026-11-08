@@ -7,6 +7,7 @@ assets/coloring/<name>_line.png (black lines on transparent) and
 <name>_regions.png (a grey picture: each closed area has its own value, the
 lines are 0). The app paints a whole area when it is tapped.
 """
+import json
 from collections import deque
 from pathlib import Path
 
@@ -20,6 +21,7 @@ MIN_AREA = 50
 def main():
     out = ROOT / 'assets/coloring'
     out.mkdir(parents=True, exist_ok=True)
+    names = []
     for src in sorted((ROOT / 'artifacts/illustrations-home/coloring').glob('*.png')):
         grey = Image.open(src).convert('L')
         line = grey.resize((768, 768), Image.LANCZOS)
@@ -57,7 +59,9 @@ def main():
                 value = keep.get(labels[y][x], -1) + 1
                 out_pixels[x, y] = value
         result.save(out / f'{src.stem}_regions.png', optimize=True)
+        names.append(src.stem)
         print(src.stem, 'areas:', len(keep))
+    (ROOT / 'assets/content/coloring.json').write_text(json.dumps(names) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

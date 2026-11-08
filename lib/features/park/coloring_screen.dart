@@ -9,14 +9,6 @@ import '../../app/theme/tokens.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import 'park_scaffold.dart';
 
-/// The drawings of Boyama (assets/coloring/, a _line.png and a _regions.png each,
-/// made by tools/home_sections/install_coloring.py).
-const coloringPages = [
-  'lamb', 'apple', 'car', 'fish', 'flower', 'house', 'sun', 'butterfly', //
-  'teddy', 'ball', 'tree', 'cat', 'boat', 'cupcake', 'duck', 'train', //
-  'umbrella', 'star', 'strawberry', 'snail',
-];
-
 const _paints = [
   Color(0xFFE5534B), Color(0xFFFF8A32), Color(0xFFFFC546), Color(0xFF6CC66B), //
   Color(0xFF10B7B0), Color(0xFF1687D9), Color(0xFF7C73DF), Color(0xFFE76F8E),
@@ -75,7 +67,7 @@ class _ColoringScreenState extends State<ColoringScreen> {
     mainAxisSpacing: SegSpace.s3,
     crossAxisSpacing: SegSpace.s3,
     children: [
-      for (final name in coloringPages)
+      for (final name in s.content.coloringPages)
         GestureDetector(
           key: ValueKey('coloring-page-$name'),
           onTap: () {

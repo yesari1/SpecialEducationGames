@@ -83,7 +83,6 @@ void main() {
       await tester.pumpAndSettle();
       expect(state.homeTab, HomeTab.park);
       expect(backend.loaded.last, 'assets/audio/$loc/sections/tab_park.mp3');
-      expect(find.text(l10n.parkColoring), findsOneWidget);
       expect(find.text(l10n.parkBubbles), findsOneWidget);
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());

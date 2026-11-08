@@ -11,21 +11,22 @@ void main() {
   test('active themes speak every item in its own language', () async {
     final content = await ContentRepository.load();
     final problems = <String>[];
-    for (final theme in content.themes) {
-      for (final item in content.items.where((x) => x.theme == theme.id)) {
-        final tr = item.audioFor('tr'), en = item.audioFor('en');
-        if (tr == null || en == null) {
-          problems.add('${item.id}: missing audio');
-          continue;
-        }
-        final trBytes = (await rootBundle.load(tr)).buffer.asUint8List();
-        final enBytes = (await rootBundle.load(en)).buffer.asUint8List();
-        if (trBytes.length < 1000 || enBytes.length < 1000) {
-          problems.add('${item.id}: short audio');
-        }
-        if (tr == en || _same(trBytes, enBytes)) {
-          problems.add('${item.id}: TR and EN are the same recording');
-        }
+    for (final item in content.items) {
+      final tr = item.audioFor('tr'), en = item.audioFor('en');
+      if (tr == null || en == null) {
+        problems.add('${item.id}: missing audio');
+        continue;
+      }
+      // Hundreds of bundled loads in a row need the event loop to turn.
+      await Future<void>.delayed(Duration.zero);
+      final trData = await rootBundle.load(tr);
+      final enData = await rootBundle.load(en);
+      if (trData.lengthInBytes < 1000 || enData.lengthInBytes < 1000) {
+        problems.add('${item.id}: short audio');
+      }
+      if (tr == en ||
+          _same(trData.buffer.asUint8List(), enData.buffer.asUint8List())) {
+        problems.add('${item.id}: TR and EN are the same recording');
       }
     }
     expect(problems, isEmpty);
