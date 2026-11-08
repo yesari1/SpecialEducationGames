@@ -200,7 +200,11 @@ class ItemVisual extends StatelessWidget {
   Widget build(BuildContext context) {
     // Shapes are always drawn, even where a legacy bitmap is listed.
     if (item.theme == 'shapes') {
-      return ShapeVisual(item.slug, alignment: alignment);
+      return ShapeVisual(
+        item.slug,
+        alignment: alignment,
+        silhouette: silhouette,
+      );
     }
     if (item.images.isNotEmpty) {
       return PhotoVisual(

@@ -264,7 +264,7 @@ class CountTemplate extends GameTemplate {
       ..shuffle(ctx.scheduler.random);
     final visual = ctx.content
         .pool(ctx.themeId, Difficulty.easy)
-        .where((i) => i.images.isNotEmpty)
+        .where((i) => i.images.isNotEmpty || i.theme == 'shapes')
         .firstOrNull;
     return RoundSpec(
       target: target,
@@ -608,7 +608,11 @@ class ShadowMatchTemplate extends GameTemplate {
   String get id => 'drag_to_target';
   @override
   RoundSpec buildRound(ModeContext ctx) {
-    final pool = ctx.pool().where((x) => x.images.isNotEmpty).toList();
+    // Shapes are drawn in code and have a silhouette of their own.
+    final pool = ctx
+        .pool()
+        .where((x) => x.images.isNotEmpty || x.theme == 'shapes')
+        .toList();
     if (pool.length < 2) throw StateError('Not enough silhouettes');
     final target = ctx.scheduler.next(pool, ctx.struggle);
     final distractors = pool.where((x) => x.id != target.id).toList()

@@ -8,7 +8,15 @@ import '../theme/tokens.dart';
 class ShapeVisual extends StatelessWidget {
   final String slug;
   final Alignment alignment;
-  const ShapeVisual(this.slug, {super.key, this.alignment = Alignment.center});
+
+  /// Draw only the flat shadow of the shape (Find the Shadow).
+  final bool silhouette;
+  const ShapeVisual(
+    this.slug, {
+    super.key,
+    this.alignment = Alignment.center,
+    this.silhouette = false,
+  });
 
   static const _colors = {
     'circle': SegColors.primary,
@@ -41,7 +49,11 @@ class ShapeVisual extends StatelessWidget {
         child: SizedBox.square(
           dimension: side,
           child: CustomPaint(
-            painter: ShapePainter(slug, _colors[slug] ?? SegColors.primary),
+            painter: ShapePainter(
+              slug,
+              _colors[slug] ?? SegColors.primary,
+              silhouette: silhouette,
+            ),
           ),
         ),
       );
@@ -52,7 +64,13 @@ class ShapeVisual extends StatelessWidget {
 class ShapePainter extends CustomPainter {
   final String slug;
   final Color color;
-  const ShapePainter(this.slug, this.color);
+
+  /// Only the flat shape in the shadow grey photos use (no rim or light).
+  final bool silhouette;
+  const ShapePainter(this.slug, this.color, {this.silhouette = false});
+
+  /// The same grey as photo silhouettes (components.dart).
+  static const shadowColor = Color(0xD95B6670);
 
   static Path _polygon(Offset c, double r, int sides, double rotation) {
     final path = Path();
@@ -230,6 +248,11 @@ class ShapePainter extends CustomPainter {
     canvas.translate(size.width * .06, size.height * .06);
     canvas.scale(.88);
     final path = outline(size);
+    if (silhouette) {
+      canvas.drawPath(path, Paint()..color = shadowColor);
+      canvas.restore();
+      return;
+    }
     canvas.drawPath(
       path,
       Paint()
@@ -347,5 +370,5 @@ class ShapePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(ShapePainter old) =>
-      old.slug != slug || old.color != color;
+      old.slug != slug || old.color != color || old.silhouette != silhouette;
 }
