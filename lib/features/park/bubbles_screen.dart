@@ -169,7 +169,7 @@ class _BubblesScreenState extends State<BubblesScreen>
               ],
             ),
             child: Padding(
-              padding: EdgeInsets.all(size * .16),
+              padding: EdgeInsets.all(size * .08),
               child: ItemVisual(b.item),
             ),
           ),
