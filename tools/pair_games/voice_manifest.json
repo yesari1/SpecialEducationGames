@@ -359,15 +359,15 @@
   "assets/audio/en/pairs/G45_same.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "76252008fe888868ee697296780604f13e2144de70669f47f541c67acd505b35",
-    "text": "Find the same feeling.",
+    "sha256": "29c3762e7ef384ad466bd026c0523bbfb0e28e2c50179cade72ec46c9000a8d8",
+    "text": "Who feels the same way?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G46_listen.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "ddb12dfa2815e201871f23d907c1d52e777a45f6c18fd85ec917265e55d0506d",
-    "text": "Listen. Which feeling is this sound?",
+    "sha256": "d40318208fff9598647b8c950f7d630b6633ecf13452101bcec82d1a2a833e03",
+    "text": "Listen. How is this person feeling?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G47_arm.mp3": {
@@ -723,8 +723,8 @@
   "assets/audio/tr/pairs/G40_5.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "951d8de3a1038c843abaf439a4b7e28c216f440a4ce3a8c977c341ac50d0fa4c",
-    "text": "İtfaiye aracı ne renk?",
+    "sha256": "fc264fd68c69216557c83db2c1007cf156cb93e385f041a86b4122e7e6fc3a86",
+    "text": "İtfaiye arabası ne renk?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G40_6.mp3": {
@@ -821,50 +821,50 @@
   "assets/audio/tr/pairs/G43_circle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "b97ac50b54876ad670bd8ad12aec0c232a2e1a13f43c641047be040882702c24",
-    "text": "Hangisi daire gibi?",
+    "sha256": "ffc020b77cef6646d54a27039ddb1fa7e02ea22dd44e92afabb2864007755b9b",
+    "text": "Hangisi daireye benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_heart.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "44f7e11330bba334a6bd6d33bda1776f53ed34654777a3d6d83e1656bde354b6",
-    "text": "Hangisi kalp gibi?",
+    "sha256": "d03598e5c410de72c0f97dbdedf9e3575e290c89ef9cf29998a5f3248ff36fbc",
+    "text": "Hangisi kalbe benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_oval.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "5e5036dc23f4da3316e6c5b3c01cba5a74704fc9feaf780251f97e07e04cfddb",
-    "text": "Hangisi oval gibi?",
+    "sha256": "ba8d0830627712fe25bcec2ece738da330a0466fb4b19dfb02c8c580abad3c76",
+    "text": "Hangisi ovale benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_rectangle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "6fa930af24a82817aace2606bc1538fa63c0252a7cd06711d84a32108c3ddf61",
-    "text": "Hangisi dikdörtgen gibi?",
+    "sha256": "d7b4cb6b6b42d6f783f842f0f47188e6ff00f3af95cde80808997c44da665da0",
+    "text": "Hangisi dikdörtgene benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_square.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "b12d350602f0884b5d1732d1ddf71c3972098ea621ede23825885db7d983eb79",
-    "text": "Hangisi kare gibi?",
+    "sha256": "ea86d61a17b72d47a90ad734d027ea7bdbd652c945dbfa24a968094bc114ec08",
+    "text": "Hangisi kareye benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_star.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "91143f9165481795a627f5cb9e56f4b737b92413df6b9bb7e23eb7071cbad6f1",
-    "text": "Hangisi yıldız gibi?",
+    "sha256": "31e583a9753964e24ea030fbaa24c1329e77f2e400a965f8c50d35f93ec3e8f7",
+    "text": "Hangisi yıldıza benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_triangle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "884d6b5bbf5973a1072e31d8af063063c1c6485fd9183d0db9a160d7aedc0429",
-    "text": "Hangisi üçgen gibi?",
+    "sha256": "a1fb92d1b676f19035f1c16c2aaa72edde2b4a2fa03f31c48ba154714d32546e",
+    "text": "Hangisi üçgene benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G44_1.mp3": {
@@ -926,15 +926,15 @@
   "assets/audio/tr/pairs/G45_same.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "b733c3fc35912a50f49476d0aae066365ca3e744509783eb6e04102cf667d204",
-    "text": "Aynı duyguyu bul.",
+    "sha256": "0ecdc97fab10a31a214e141c1c6a54ef0625642f07c56250b3a32d705b2e477a",
+    "text": "Kim de böyle hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G46_listen.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "1cf22562fe3cb5656d1d484edee4ae32d2ebf2c9edaaf91c2012e4b1d7d5f258",
-    "text": "Dinle. Bu ses hangi duygu?",
+    "sha256": "35352affaaf7ff3ccbee0bae80a533695027e15fcd54983c54dfa2dba7fc4b39",
+    "text": "Dinle bakalım. Nasıl hissediyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G47_arm.mp3": {

@@ -16,7 +16,7 @@ COLOR_OBJECTS = [
     ('produce.strawberry', 'red', 'Çilek', 'strawberry'),
     ('produce.apple', 'red', 'Elma', 'apple'),
     ('produce.cherry', 'red', 'Kiraz', 'cherry'),
-    ('vehicles.fire_truck', 'red', 'İtfaiye aracı', 'fire truck'),
+    ('vehicles.fire_truck', 'red', 'İtfaiye arabası', 'fire truck'),
     ('produce.banana', 'yellow', 'Muz', 'banana'),
     ('produce.lemon', 'yellow', 'Limon', 'lemon'),
     ('vehicles.taxi', 'yellow', 'Taksi', 'taxi'),

@@ -52,13 +52,13 @@ for _who in ('elif', 'mom'):
 CORE = ['happy', 'sad', 'angry', 'scared', 'surprised', 'sleepy']
 
 SHAPE_OBJECTS = {
-    'circle': (['props.ball', 'home.clock', 'home.plate'], 'daire', 'a circle'),
-    'square': (['props.gift', 'props.dice'], 'kare', 'a square'),
-    'triangle': (['props.pizza_slice', 'props.tent', 'props.sign_triangle'], 'üçgen', 'a triangle'),
-    'rectangle': (['props.book', 'home.door'], 'dikdörtgen', 'a rectangle'),
-    'star': (['props.starfish'], 'yıldız', 'a star'),
-    'heart': (['props.heart_balloon'], 'kalp', 'a heart'),
-    'oval': (['props.egg'], 'oval', 'an oval'),
+    'circle': (['props.ball', 'home.clock', 'home.plate'], 'daireye', 'a circle'),
+    'square': (['props.gift', 'props.dice'], 'kareye', 'a square'),
+    'triangle': (['props.pizza_slice', 'props.tent', 'props.sign_triangle'], 'üçgene', 'a triangle'),
+    'rectangle': (['props.book', 'home.door'], 'dikdörtgene', 'a rectangle'),
+    'star': (['props.starfish'], 'yıldıza', 'a star'),
+    'heart': (['props.heart_balloon'], 'kalbe', 'a heart'),
+    'oval': (['props.egg'], 'ovale', 'an oval'),
 }
 
 SCENES = [
@@ -127,7 +127,7 @@ def games():
         'choicePool': sorted({o for objs, _, _ in SHAPE_OBJECTS.values() for o in objs}),
         'rounds': [
             {'stimulus': f'shapes.{shape}', 'target': obj, 'clip': shape,
-             'text': {'tr': f'Hangisi {tr} gibi?', 'en': f'Which one looks like {en}?'}}
+             'text': {'tr': f'Hangisi {tr} benziyor?', 'en': f'Which one looks like {en}?'}}
             for shape, (objs, tr, en) in SHAPE_OBJECTS.items() for obj in objs
         ],
     }
@@ -145,7 +145,7 @@ def games():
         'choicePool': [f'faces.{w}_{e}' for w in ('elif', 'mom') for e in FACE_EMOTIONS],
         'rounds': [
             {'stimulus': f'emotions.{e}', 'target': f'faces.{w}_{e}', 'clip': 'same',
-             'text': {'tr': 'Aynı duyguyu bul.', 'en': 'Find the same feeling.'}}
+             'text': {'tr': 'Kim de böyle hissediyor?', 'en': 'Who feels the same way?'}}
             for e in FACE_EMOTIONS for w in ('elif', 'mom')
         ],
     }
@@ -154,7 +154,7 @@ def games():
         'choicePool': [f'emotions.{e}' for e in CORE],
         'rounds': [
             {'sound': f'assets/sfx/feelings/{snd}.mp3', 'target': f'emotions.{e}', 'clip': 'listen',
-             'text': {'tr': 'Dinle. Bu ses hangi duygu?', 'en': 'Listen. Which feeling is this sound?'}}
+             'text': {'tr': 'Dinle bakalım. Nasıl hissediyor?', 'en': 'Listen. How is this person feeling?'}}
             for snd, e in SOUNDS.items()
         ],
     }

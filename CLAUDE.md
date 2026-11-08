@@ -7,3 +7,4 @@ Read AGENTS.md too; product, content, licensing, release and safety rules there 
 - Do exactly the behaviour he describes (example: "Sign in" opens Google account sign-in directly; no in-between page).
 - Pages he wants on one screen must fit without scrolling on every phone size (responsive: flexible pictures shrink, nothing overflows).
 - Keep matching cards consistent (same full width as their neighbours).
+- Turkish text is localized, never translated (Yunus, 8 November 2026): write every Turkish sentence the way Turks actually say it to a child, thinking in Turkish first; never translate the English word by word. Write the English separately. This applies to UI text, stories, game questions and anything voiced.
