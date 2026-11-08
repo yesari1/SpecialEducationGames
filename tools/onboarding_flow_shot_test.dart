@@ -82,7 +82,7 @@ void main() {
     await shot('3-soru');
     await tap('onboarding-continue');
     await shot('4-premium-teklifi');
-    await tap('paywall-continue');
+    await tester.tap(find.text('Ücretsiz sürümle devam et'));
     await shot('5-gunluk-hedef');
     state.lockFamily();
     await tester.pumpWidget(const SizedBox.shrink());

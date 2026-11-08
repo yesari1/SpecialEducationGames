@@ -407,7 +407,7 @@ void main() {
           expect(
             find.text(
               state.tr(
-                'Bugünün yolunu tamamlayıp ilk çıkartmanı kazanabilirsin.',
+                'Oyunları bitirdikçe çıkartma kazanacaksın.',
                 'Finish a game to earn your first sticker.',
               ),
             ),
