@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
-import '../../app/ui/family_nav_bar.dart';
 import '../../app/ui/scene_backdrop.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/learning/policies.dart';
@@ -41,13 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
     super.didChangeDependencies();
     if (!_queryRead) {
       _queryRead = true;
-      // Coming back from a game of Today's Path: its map, at the top.
+      // The child's first arrival after setup: Learn, at the top.
       if (GoRouter.maybeOf(
             context,
           )?.routerDelegate.currentConfiguration.uri.queryParameters['path'] ==
           'true') {
         s.homeTab = HomeTab.learn;
         s.homeLearnOffset = 0;
+      }
+      // Ready before the first switch, so a tab never shows a blank frame.
+      for (final tab in HomeTab.values) {
+        unawaited(precacheImage(AssetImage(_background(tab)), context));
       }
     }
   }
@@ -68,6 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppState get s => widget.state;
 
+  static String _background(HomeTab tab) =>
+      'assets/illustrations/home/bg_${tab.name}.jpg';
+
   void _open(HomeTab tab) {
     setState(() => s.homeTab = tab);
     unawaited(
@@ -81,23 +87,25 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, s.locale);
     final tab = s.homeTab;
-    // One calm pastel for each section; it changes at once, nothing fades.
-    final (tint, base) = switch (tab) {
-      HomeTab.learn => (SegColors.turquoise, const Color(0xFFF3FBFA)),
-      HomeTab.stories => (SegColors.accent, const Color(0xFFFFF7EE)),
-      HomeTab.park => (const Color(0xFF7C73DF), const Color(0xFFF6F4FE)),
-    };
+    final look = _SectionLook.of(tab);
     return Scaffold(
-      body: SceneBackdrop(
-        key: ValueKey('home-backdrop-${tab.name}'),
-        tint: tint,
-        base: base,
-        clouds: false,
-        child: SafeArea(
-          bottom: false,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+      backgroundColor: look.base,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            _background(tab),
+            key: ValueKey('home-backdrop-${tab.name}'),
+            fit: BoxFit.cover,
+            alignment: Alignment.bottomCenter,
+            gaplessPlayback: true,
+            excludeFromSemantics: true,
+          ),
+          SafeArea(
+            bottom: false,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(
                   SegSpace.s5,
@@ -156,28 +164,157 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeTab.park => _ParkSection(state: s),
                 },
               ),
-              FamilyNavBar(
-                selectedIndex: tab.index,
-                onDestinationSelected: (i) => _open(HomeTab.values[i]),
-                items: [
-                  FamilyNavItem(
-                    icon: Icons.school_outlined,
-                    selectedIcon: Icons.school_rounded,
-                    label: l10n.homeTabLearn,
-                  ),
-                  FamilyNavItem(
-                    icon: Icons.menu_book_outlined,
-                    selectedIcon: Icons.menu_book_rounded,
-                    label: l10n.homeTabStories,
-                  ),
-                  FamilyNavItem(
-                    icon: Icons.toys_outlined,
-                    selectedIcon: Icons.toys_rounded,
-                    label: l10n.homeTabPark,
-                  ),
-                ],
+              _SectionBar(
+                  selected: tab,
+                  onSelected: _open,
+                  tabs: [
+                    (
+                      HomeTab.learn,
+                      Icons.school_outlined,
+                      Icons.school_rounded,
+                      l10n.homeTabLearn,
+                    ),
+                    (
+                      HomeTab.stories,
+                      Icons.menu_book_outlined,
+                      Icons.menu_book_rounded,
+                      l10n.homeTabStories,
+                    ),
+                    (
+                      HomeTab.park,
+                      Icons.toys_outlined,
+                      Icons.toys_rounded,
+                      l10n.homeTabPark,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The colours of one section of the home.
+class _SectionLook {
+  final Color base, deep, soft;
+  const _SectionLook(this.base, this.deep, this.soft);
+  static _SectionLook of(HomeTab tab) => switch (tab) {
+    HomeTab.learn => const _SectionLook(
+      Color(0xFFEAF8F5),
+      Color(0xFF087B80),
+      Color(0xFFD3F1EC),
+    ),
+    HomeTab.stories => const _SectionLook(
+      Color(0xFFFFF3E6),
+      Color(0xFFBA4C08),
+      Color(0xFFFFE3CB),
+    ),
+    HomeTab.park => const _SectionLook(
+      Color(0xFFF1EEFD),
+      Color(0xFF544BB5),
+      Color(0xFFE2DDFA),
+    ),
+  };
+}
+
+/// The bottom tabs: the open section is wide with its icon and name, the
+/// others show only their icon.
+class _SectionBar extends StatelessWidget {
+  final HomeTab selected;
+  final ValueChanged<HomeTab> onSelected;
+  final List<(HomeTab, IconData, IconData, String)> tabs;
+  const _SectionBar({
+    required this.selected,
+    required this.onSelected,
+    required this.tabs,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final reduced = MediaQuery.disableAnimationsOf(context);
+    final look = _SectionLook.of(selected);
+    final duration = reduced ? Duration.zero : const Duration(milliseconds: 280);
+    return SafeArea(
+      top: false,
+      minimum: const EdgeInsets.only(bottom: SegSpace.s1),
+      child: Center(
+        heightFactor: 1,
+        child: Container(
+          padding: const EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            color: SegColors.surface.withValues(alpha: .92),
+            borderRadius: BorderRadius.circular(SegRadius.pill),
+            boxShadow: [
+              BoxShadow(
+                color: SegColors.ink.withValues(alpha: .10),
+                blurRadius: 18,
+                offset: const Offset(0, 6),
               ),
             ],
+          ),
+          child: MediaQuery.withClampedTextScaling(
+            maxScaleFactor: 1.3,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (final (tab, icon, selectedIcon, label) in tabs)
+                  Semantics(
+                    button: true,
+                    selected: tab == selected,
+                    label: label,
+                    excludeSemantics: true,
+                    child: GestureDetector(
+                      key: ValueKey('home-tab-${tab.name}'),
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        UiSound.tap();
+                        onSelected(tab);
+                      },
+                      child: AnimatedContainer(
+                        duration: duration,
+                        curve: Curves.easeOutCubic,
+                        width: tab == selected ? 178 : 76,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: tab == selected
+                              ? look.soft
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.circular(SegRadius.pill),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              tab == selected ? selectedIcon : icon,
+                              size: 26,
+                              color: tab == selected
+                                  ? look.deep
+                                  : SegColors.inkSoft,
+                            ),
+                            if (tab == selected) ...[
+                              const SizedBox(width: SegSpace.s2),
+                              Flexible(
+                                child: Text(
+                                  label,
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.clip,
+                                  style: SegText.label.copyWith(
+                                    color: look.deep,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
@@ -185,7 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// Today's Path on top, then the theme rows; scrolls up and down.
+/// The theme rows; scrolls up and down.
 class _LearnSection extends StatefulWidget {
   final AppState state;
   const _LearnSection({required this.state});
@@ -211,19 +348,13 @@ class _LearnSectionState extends State<_LearnSection> {
     final open = {for (final t in s.orderedThemes) t.id: t};
     return LayoutBuilder(
       builder: (context, box) {
-        // The next row's title shows under the map, so the child sees there
-        // is more below.
-        final mapHeight = (box.maxHeight * .8).clamp(210.0, 520.0);
+        final deep = _SectionLook.of(HomeTab.learn).deep;
         final rowHeight = (box.maxHeight * .86).clamp(200.0, 340.0);
         return ListView(
           key: const ValueKey('home-learn-list'),
           controller: _scroll,
           padding: const EdgeInsets.only(bottom: SegSpace.s3),
           children: [
-            SizedBox(
-              height: mapHeight,
-              child: DailyPathView(state: s, albumButton: false),
-            ),
             for (final (title, ids) in homeRows(l10n))
               if (ids.where(open.containsKey).toList() case final themes
                   when themes.isNotEmpty) ...[
@@ -234,7 +365,10 @@ class _LearnSectionState extends State<_LearnSection> {
                     SegSpace.s5,
                     0,
                   ),
-                  child: Text(title, style: SegText.heading),
+                  child: Text(
+                    title,
+                    style: SegText.heading.copyWith(color: deep),
+                  ),
                 ),
                 SizedBox(
                   height: rowHeight,

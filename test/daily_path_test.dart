@@ -174,39 +174,27 @@ void main() {
   }
 
   test(
-    'Daily sticker persists once, survives reload, and stays isolated to profile',
+    'No new daily stickers; earned ones stay, valid and per profile',
     () async {
       final state = await fixture();
       addTearDown(state.dispose);
       final first = state.active!;
-      expect(state.todayStars, 0);
       await completePath(state);
-      expect(state.todayStars, AppState.pathLength);
-      expect(state.hasTodaySticker, true);
-      await Future.wait([state.refreshTrials(), state.refreshTrials()]);
+      expect(state.hasTodaySticker, false);
       final key = 'profile.${first.id}.dailyStickers';
-      expect(
-        jsonDecode((await state.db.preference(key))!) as List,
-        hasLength(1),
-      );
+      expect(await state.db.preference(key), isNull);
       await state.db.setPreference(
         key,
-        jsonEncode([
-          ...state.dailyStickers,
-          '9999-12-31',
-          '2026-02-30',
-          'not-a-day',
-        ]),
+        jsonEncode(['2026-11-01', '9999-12-31', '2026-02-30', 'not-a-day']),
       );
       await state.load();
-      expect(state.dailyStickers, hasLength(1));
+      expect(state.dailyStickers, {'2026-11-01'});
       state.unlockFamily();
       await state.entitlement.confirmStoreState(true);
       await state.createProfile('Ece', 'dog', {});
-      expect(state.todayStars, 0);
       expect(state.dailyStickers, isEmpty);
       await state.selectProfile(first);
-      expect(state.hasTodaySticker, true);
+      expect(state.dailyStickers, {'2026-11-01'});
     },
   );
   test(

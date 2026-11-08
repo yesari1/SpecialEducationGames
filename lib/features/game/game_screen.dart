@@ -10,7 +10,6 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/game_object.dart';
 import '../../app/ui/scene_backdrop.dart';
-import '../../app/ui/day_sticker.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
@@ -952,28 +951,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                             ),
                           ),
                           const SizedBox(height: SegSpace.s2),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              if (s.hasTodaySticker) ...[
-                                DaySticker(
-                                  day: DateTime.now()
-                                      .toIso8601String()
-                                      .substring(0, 10),
-                                  size: 44,
-                                ),
-                                const SizedBox(width: SegSpace.s2),
-                              ],
-                              Flexible(
-                                child: Text(
-                                  s.hasTodaySticker
-                                      ? l10n.gameYouEarnedTodaysSticker
-                                      : l10n.gameWeExploredTogether,
-                                  textAlign: TextAlign.center,
-                                  style: SegText.body,
-                                ),
-                              ),
-                            ],
+                          Text(
+                            l10n.gameWeExploredTogether,
+                            textAlign: TextAlign.center,
+                            style: SegText.body,
                           ),
                           SizedBox(height: compact ? SegSpace.s4 : SegSpace.s6),
                           _completionActions(),

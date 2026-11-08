@@ -1299,18 +1299,6 @@ class AppState extends ChangeNotifier {
     _planStart = planStart;
     _planStartProfileId = profileId;
     _mascotHelloDue = hello == 'due';
-    if (profileId != null && dailyPath.complete) {
-      _dailyStickers.add(DailyPathProgress.dayKey(DateTime.now()));
-      await db.setPreference(
-        stickerKey,
-        jsonEncode(_dailyStickers.toList()..sort()),
-      );
-      if (_disposed ||
-          generation != _refreshGeneration ||
-          profileId != active?.id) {
-        return;
-      }
-    }
     introduced.addAll(trials.map((t) => t.targetId));
     notifyListeners();
   }

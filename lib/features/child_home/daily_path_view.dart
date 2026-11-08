@@ -13,15 +13,7 @@ class DailyPathView extends StatelessWidget {
 
   /// The home screen paints the map behind the whole screen itself.
   final bool background;
-
-  /// The home screen has its own stickers button in the top bar.
-  final bool albumButton;
-  const DailyPathView({
-    super.key,
-    required this.state,
-    this.background = true,
-    this.albumButton = true,
-  });
+  const DailyPathView({super.key, required this.state, this.background = true});
 
   static const mapAsset = 'assets/illustrations/path/map_background.jpg';
 
@@ -103,8 +95,7 @@ class DailyPathView extends StatelessWidget {
                       next: i == nextIndex,
                     ),
                   ),
-                if (albumButton)
-                  Positioned(
+                Positioned(
                     right: 8,
                     top: 8,
                     child: Material(
