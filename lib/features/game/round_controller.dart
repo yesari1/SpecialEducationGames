@@ -35,7 +35,7 @@ class RoundController extends ChangeNotifier {
   final int choiceCount;
   final bool fadeWrongChoices;
   final Set<String> introduced;
-  final int total;
+  int total;
 
   /// Age band of the profile; shapes number ranges, content and hint timing.
   final AgeBand? band;
@@ -137,7 +137,44 @@ class RoundController extends ChangeNotifier {
     _deferred.clear();
   }
 
+  bool _totalChecked = false;
+
+  /// Medium and hard never ask the same thing twice, so a game has at most
+  /// as many rounds as it has different questions (tried on a scratch
+  /// scheduler before the first round).
+  void _limitTotalToFreshRounds() {
+    if (_totalChecked) return;
+    _totalChecked = true;
+    scheduler.noRepeat = difficulty != Difficulty.easy;
+    if (!scheduler.noRepeat) return;
+    final probe = ItemScheduler(Random(0))..noRepeat = true;
+    final context = ModeContext(
+      content: content,
+      themeId: themeId,
+      gameId: gameId,
+      locale: locale,
+      difficulty: difficulty,
+      choiceCount: choiceCount,
+      scheduler: probe,
+      struggle: const {},
+      band: band,
+    );
+    var rounds = 0;
+    try {
+      while (rounds < total) {
+        template.buildRound(context);
+        if (probe.exhausted) break;
+        rounds++;
+      }
+    } catch (_) {
+      return; // start() reports content problems the usual way.
+    }
+    // A theme with almost no content still plays a short game.
+    if (rounds > 0) total = max(rounds, min(total, 3));
+  }
+
   void start({RoundSpec? repeat}) {
+    _limitTotalToFreshRounds();
     _cancel();
     error = null;
     wrongCount = 0;
@@ -280,7 +317,7 @@ class RoundController extends ChangeNotifier {
           : 0,
       fullSupportStreak: maxHint == 4 ? previous.fullSupportStreak + 1 : 0,
     );
-    later(const Duration(milliseconds: 1500), () {
+    later(spec!.rightHold, () {
       stage++;
       if (stage >= total) {
         phase = RoundPhase.complete;

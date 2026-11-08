@@ -690,12 +690,15 @@
       "home.clock",
       "home.door",
       "home.plate",
+      "props.arrow_sign",
       "props.ball",
       "props.book",
       "props.dice",
       "props.egg",
+      "props.first_aid",
       "props.gift",
       "props.heart_balloon",
+      "props.moon",
       "props.pizza_slice",
       "props.sign_triangle",
       "props.starfish",
@@ -857,6 +860,42 @@
           "en": "assets/audio/en/pairs/G43_oval.mp3"
         },
         "stimulus": "shapes.oval"
+      },
+      {
+        "target": "props.moon",
+        "text": {
+          "tr": "Hangisi hilale benziyor?",
+          "en": "Which one looks like a crescent?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G43_crescent.mp3",
+          "en": "assets/audio/en/pairs/G43_crescent.mp3"
+        },
+        "stimulus": "shapes.crescent"
+      },
+      {
+        "target": "props.first_aid",
+        "text": {
+          "tr": "Hangisi artıya benziyor?",
+          "en": "Which one looks like a plus sign?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G43_cross.mp3",
+          "en": "assets/audio/en/pairs/G43_cross.mp3"
+        },
+        "stimulus": "shapes.cross"
+      },
+      {
+        "target": "props.arrow_sign",
+        "text": {
+          "tr": "Hangisi oka benziyor?",
+          "en": "Which one looks like an arrow?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G43_arrow.mp3",
+          "en": "assets/audio/en/pairs/G43_arrow.mp3"
+        },
+        "stimulus": "shapes.arrow"
       }
     ]
   },
@@ -979,12 +1018,16 @@
       "faces.elif_scared",
       "faces.elif_surprised",
       "faces.elif_sleepy",
+      "faces.elif_laughing",
+      "faces.elif_calm",
       "faces.mom_happy",
       "faces.mom_sad",
       "faces.mom_angry",
       "faces.mom_scared",
       "faces.mom_surprised",
-      "faces.mom_sleepy"
+      "faces.mom_sleepy",
+      "faces.mom_laughing",
+      "faces.mom_calm"
     ],
     "rounds": [
       {
@@ -1130,6 +1173,54 @@
           "en": "assets/audio/en/pairs/G45_same.mp3"
         },
         "stimulus": "emotions.sleepy"
+      },
+      {
+        "target": "faces.elif_laughing",
+        "text": {
+          "tr": "Kim de böyle hissediyor?",
+          "en": "Who feels the same way?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G45_same.mp3",
+          "en": "assets/audio/en/pairs/G45_same.mp3"
+        },
+        "stimulus": "emotions.laughing"
+      },
+      {
+        "target": "faces.mom_laughing",
+        "text": {
+          "tr": "Kim de böyle hissediyor?",
+          "en": "Who feels the same way?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G45_same.mp3",
+          "en": "assets/audio/en/pairs/G45_same.mp3"
+        },
+        "stimulus": "emotions.laughing"
+      },
+      {
+        "target": "faces.elif_calm",
+        "text": {
+          "tr": "Kim de böyle hissediyor?",
+          "en": "Who feels the same way?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G45_same.mp3",
+          "en": "assets/audio/en/pairs/G45_same.mp3"
+        },
+        "stimulus": "emotions.calm"
+      },
+      {
+        "target": "faces.mom_calm",
+        "text": {
+          "tr": "Kim de böyle hissediyor?",
+          "en": "Who feels the same way?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G45_same.mp3",
+          "en": "assets/audio/en/pairs/G45_same.mp3"
+        },
+        "stimulus": "emotions.calm"
       }
     ]
   },
@@ -1141,7 +1232,9 @@
       "emotions.angry",
       "emotions.scared",
       "emotions.surprised",
-      "emotions.sleepy"
+      "emotions.sleepy",
+      "emotions.disgusted",
+      "emotions.excited"
     ],
     "rounds": [
       {
@@ -1215,6 +1308,30 @@
           "en": "assets/audio/en/pairs/G46_listen.mp3"
         },
         "sound": "assets/sfx/feelings/angry.mp3"
+      },
+      {
+        "target": "emotions.disgusted",
+        "text": {
+          "tr": "Dinle bakalım. Nasıl hissediyor?",
+          "en": "Listen. How is this person feeling?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G46_listen.mp3",
+          "en": "assets/audio/en/pairs/G46_listen.mp3"
+        },
+        "sound": "assets/sfx/feelings/disgusted.mp3"
+      },
+      {
+        "target": "emotions.excited",
+        "text": {
+          "tr": "Dinle bakalım. Nasıl hissediyor?",
+          "en": "Listen. How is this person feeling?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G46_listen.mp3",
+          "en": "assets/audio/en/pairs/G46_listen.mp3"
+        },
+        "sound": "assets/sfx/feelings/excited.mp3"
       }
     ]
   },

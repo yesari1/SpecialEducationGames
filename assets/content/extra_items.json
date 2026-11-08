@@ -140,6 +140,48 @@
     "tags": []
   },
   {
+    "id": "props.moon",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Ay",
+      "en": "Moon"
+    },
+    "images": [
+      "assets/images/props/moon.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.first_aid",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "İlk yardım çantası",
+      "en": "First aid kit"
+    },
+    "images": [
+      "assets/images/props/first_aid.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.arrow_sign",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Ok levhası",
+      "en": "Arrow sign"
+    },
+    "images": [
+      "assets/images/props/arrow_sign.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
     "id": "paint.balloon",
     "theme": "extra",
     "tier": "easy",
@@ -574,6 +616,34 @@
     "tags": []
   },
   {
+    "id": "faces.elif_laughing",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Gülen",
+      "en": "Laughing"
+    },
+    "images": [
+      "assets/images/faces/elif_laughing.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_calm",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Sakin",
+      "en": "Calm"
+    },
+    "images": [
+      "assets/images/faces/elif_calm.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
     "id": "faces.mom_happy",
     "theme": "extra",
     "tier": "easy",
@@ -653,6 +723,34 @@
     },
     "images": [
       "assets/images/faces/mom_sleepy.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_laughing",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Gülen",
+      "en": "Laughing"
+    },
+    "images": [
+      "assets/images/faces/mom_laughing.webp"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_calm",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Sakin",
+      "en": "Calm"
+    },
+    "images": [
+      "assets/images/faces/mom_calm.webp"
     ],
     "audio": {},
     "tags": []

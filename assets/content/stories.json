@@ -48,7 +48,17 @@
         "choices": [
           {
             "image": "assets/stories/teeth/choice_brush.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, dişlerimizi fırçalıyoruz.",
+                "en": "Yes, we brush our teeth."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p3_brush.mp3",
+                "en": "assets/audio/en/stories/teeth/p3_brush.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/teeth/choice_bed.png",
@@ -93,7 +103,17 @@
         "choices": [
           {
             "image": "assets/stories/teeth/choice_rinse.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, ağzımızı suyla çalkalıyoruz.",
+                "en": "Yes, we rinse our mouth with water."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p5_rinse.mp3",
+                "en": "assets/audio/en/stories/teeth/p5_rinse.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/teeth/choice_shoes.png",
@@ -125,7 +145,17 @@
         "choices": [
           {
             "image": "assets/stories/teeth/choice_happy.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali çok mutlu.",
+                "en": "Yes, Ali is very happy."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/teeth/p6_happy.mp3",
+                "en": "assets/audio/en/stories/teeth/p6_happy.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/teeth/choice_sad.png",
@@ -217,7 +247,17 @@
         "choices": [
           {
             "image": "assets/stories/angry/choice_angry.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali çok kızdı.",
+                "en": "Yes, Ali is angry."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/angry/p3_angry.mp3",
+                "en": "assets/audio/en/stories/angry/p3_angry.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/angry/choice_happy.png",
@@ -301,7 +341,17 @@
           },
           {
             "image": "assets/stories/angry/choice_tell.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali annesine gidip kızdığını söylüyor.",
+                "en": "Yes, Ali goes to Mom and tells her he is angry."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/angry/p5_tell.mp3",
+                "en": "assets/audio/en/stories/angry/p5_tell.mp3"
+              }
+            }
           }
         ]
       },
@@ -402,7 +452,17 @@
         "choices": [
           {
             "image": "assets/stories/turn/choice_line.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali, Elif'in arkasında sırasını bekliyor.",
+                "en": "Yes, Ali waits for his turn behind Elif."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/turn/p3_line.mp3",
+                "en": "assets/audio/en/stories/turn/p3_line.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/turn/choice_pull.png",
@@ -461,7 +521,17 @@
         "choices": [
           {
             "image": "assets/stories/turn/choice_happy.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali çok mutlu.",
+                "en": "Yes, Ali is very happy."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/turn/p6_happy.mp3",
+                "en": "assets/audio/en/stories/turn/p6_happy.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/turn/choice_angry.png",
@@ -563,7 +633,17 @@
         "choices": [
           {
             "image": "assets/stories/doctor/choice_hug.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali annesine sarılıyor.",
+                "en": "Yes, Ali gives Mom a hug."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/doctor/p3_hug.mp3",
+                "en": "assets/audio/en/stories/doctor/p3_hug.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/doctor/choice_tantrum.png",
@@ -619,7 +699,17 @@
         "choices": [
           {
             "image": "assets/stories/doctor/choice_still.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali sakince oturuyor. Doktor kalbini dinliyor.",
+                "en": "Yes, Ali sits still. The doctor listens to his heart."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/doctor/p5_still.mp3",
+                "en": "assets/audio/en/stories/doctor/p5_still.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/doctor/choice_push.png",
@@ -651,7 +741,17 @@
         "choices": [
           {
             "image": "assets/stories/doctor/choice_happy.png",
-            "correct": true
+            "correct": true,
+            "result": {
+              "text": {
+                "tr": "Evet, Ali artık çok mutlu.",
+                "en": "Yes, Ali is very happy now."
+              },
+              "audio": {
+                "tr": "assets/audio/tr/stories/doctor/p6_happy.mp3",
+                "en": "assets/audio/en/stories/doctor/p6_happy.mp3"
+              }
+            }
           },
           {
             "image": "assets/stories/doctor/choice_scared.png",

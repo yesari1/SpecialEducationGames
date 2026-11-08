@@ -56,6 +56,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/angry/p3_angry.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:44.901275+00:00",
+    "sha256": "0be4af201b2303e31bc86b486adfa81bc20cce3ba80f7533af92be137ad6b042",
+    "text": "Yes, Ali is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/angry/p3_happy.mp3": {
     "bytes": 43511,
     "language": "en",
@@ -141,6 +160,25 @@
     "requested_at": "2026-11-06T18:49:28.358036+00:00",
     "sha256": "32990d199417aff7cbb47d632c7ccac2518fdb72caf76586f41e4079de649f64",
     "text": "What else could he do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/angry/p5_tell.mp3": {
+    "bytes": 23658,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:47.359448+00:00",
+    "sha256": "26a6c60c31cc4f80f891a5b9cbbfb1a4f39a9b948e501ca380c73788b07a9582",
+    "text": "Yes, Ali goes to Mom and tells her he is angry.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -284,6 +322,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/doctor/p3_hug.mp3": {
+    "bytes": 15508,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:53.929041+00:00",
+    "sha256": "9407fdf2c12afb978d742d21eef8c5a7ef7e300882bd59cce2c904d57ff13b6c",
+    "text": "Yes, Ali gives Mom a hug.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/doctor/p3_retry.mp3": {
     "bytes": 20524,
     "language": "en",
@@ -398,6 +455,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/doctor/p5_still.mp3": {
+    "bytes": 29510,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:56.623098+00:00",
+    "sha256": "8c20b13161d544d339106207200fce150226bfaf6cdd434d124d724cdcbfeee6",
+    "text": "Yes, Ali sits still. The doctor listens to his heart.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/doctor/p6.mp3": {
     "bytes": 43511,
     "language": "en",
@@ -407,6 +483,25 @@
     "requested_at": "2026-11-06T19:26:18.653054+00:00",
     "sha256": "b7cc232236c9d316927e027a83245c6db87e5791859fec34f458113d5fb0f751",
     "text": "The checkup is over! How does Ali feel now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/doctor/p6_happy.mp3": {
+    "bytes": 15508,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:58.767223+00:00",
+    "sha256": "a25c1df566acb48c36ded5cac084fa8c454813b9bb199f9ab8e7acbd32c69158",
+    "text": "Yes, Ali is very happy now.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -550,6 +645,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/teeth/p3_brush.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:38.974011+00:00",
+    "sha256": "c21705bdcc8041d5eea62986a85f47d8423e3c0bfd1a013eac5d09b07e5a8611",
+    "text": "Yes, we brush our teeth.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/teeth/p4.mp3": {
     "bytes": 48527,
     "language": "en",
@@ -588,6 +702,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/teeth/p5_rinse.mp3": {
+    "bytes": 17389,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:41.003969+00:00",
+    "sha256": "483af02ef6f13535d0939a960e34f17ea8b5d0ab6ca8bbbb6ad74d09e40fa4ba",
+    "text": "Yes, we rinse our mouth with water.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/teeth/p5_shoes.mp3": {
     "bytes": 36406,
     "language": "en",
@@ -616,6 +749,25 @@
     "requested_at": "2026-11-06T18:49:04.415799+00:00",
     "sha256": "e7c7bbda5fb7b5ecf7868f4e62330cccd2e3fe716257920a18e0a8e256e2dd00",
     "text": "His teeth are sparkling clean! How does Ali feel?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/stories/teeth/p6_happy.mp3": {
+    "bytes": 15717,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:42.938853+00:00",
+    "sha256": "f2e149e58584a2f1ac07475d040379d1f88cb9c12a063c7a10b02cc3c61443ba",
+    "text": "Yes, Ali is very happy.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -740,6 +892,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/turn/p3_line.mp3": {
+    "bytes": 20315,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:49.720472+00:00",
+    "sha256": "410df2b6a42cac5107080ef9aea9aba9aaf959116b392e7b18b7b89aa1f52ad3",
+    "text": "Yes, Ali waits for his turn behind Elif.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/turn/p3_pull.mp3": {
     "bytes": 52288,
     "language": "en",
@@ -854,6 +1025,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/stories/turn/p6_happy.mp3": {
+    "bytes": 14254,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:51.767503+00:00",
+    "sha256": "a35a387c415ed2d86629c185d8a92c3e5397898ec22d0f3e2ea7c602dda04757",
+    "text": "Yes, Ali is very happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/stories/turn/p7.mp3": {
     "bytes": 30973,
     "language": "en",
@@ -949,6 +1139,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/angry/p3_angry.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:44.226692+00:00",
+    "sha256": "b895ce382491146da2eb1edd42ee54f7f2655ff1a29f27b529872c96415a4f28",
+    "text": "Evet, Ali çok kızdı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/angry/p3_happy.mp3": {
     "bytes": 43093,
     "language": "tr",
@@ -1034,6 +1243,25 @@
     "requested_at": "2026-11-06T18:49:27.742908+00:00",
     "sha256": "eab952c51de96366c44f15176ba56b3553cbd2012ec03c65bf45bc6ba4d42372",
     "text": "Başka ne yapabilir?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/angry/p5_tell.mp3": {
+    "bytes": 26166,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:46.586069+00:00",
+    "sha256": "3ed855ae1341681dd315819e72a8980a389a07e3d580d8cef5c2abbf70afba05",
+    "text": "Evet, Ali annesine gidip kızdığını söylüyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1177,6 +1405,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/doctor/p3_hug.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:53.149404+00:00",
+    "sha256": "35f626e3153767b8851d7b1152205200a7c43840a5924d44f89a32256ea8b7ab",
+    "text": "Evet, Ali annesine sarılıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/doctor/p3_retry.mp3": {
     "bytes": 23031,
     "language": "tr",
@@ -1291,6 +1538,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/doctor/p5_still.mp3": {
+    "bytes": 33271,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:55.787247+00:00",
+    "sha256": "d180b782a928daeff768d0946db91ab25ab805ea44510a46109aab064d1737b5",
+    "text": "Evet, Ali sakince oturuyor. Doktor kalbini dinliyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/doctor/p6.mp3": {
     "bytes": 46437,
     "language": "tr",
@@ -1300,6 +1566,25 @@
     "requested_at": "2026-11-06T19:26:17.751690+00:00",
     "sha256": "a7dd297fd8e91bb31a36bfac263cfbaafd183fbe02afc4f8c511dbac3cf05826",
     "text": "Muayene bitti! Ali şimdi nasıl hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/doctor/p6_happy.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:58.062520+00:00",
+    "sha256": "4ca408062722be5858323e63c97a936075ab58a2a783e05adf7164b7f83011c3",
+    "text": "Evet, Ali artık çok mutlu.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1443,6 +1728,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/teeth/p3_brush.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:37.936343+00:00",
+    "sha256": "0f9a2f3c2716f77cdd6743ce265bd7b615f636a520d40e05951551b6bad62593",
+    "text": "Evet, dişlerimizi fırçalıyoruz.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/teeth/p4.mp3": {
     "bytes": 70261,
     "language": "tr",
@@ -1481,6 +1785,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/teeth/p5_rinse.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:40.315309+00:00",
+    "sha256": "69a933c077ae72cd54874cbffde56f312bad195b1e800dcd20bdcc90531736fb",
+    "text": "Evet, ağzımızı suyla çalkalıyoruz.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/teeth/p5_shoes.mp3": {
     "bytes": 38078,
     "language": "tr",
@@ -1509,6 +1832,25 @@
     "requested_at": "2026-11-06T18:51:39.366276+00:00",
     "sha256": "2da1e3cee681433b945231f2cfd010aa1e807a032851e30421500b57b4dfd765",
     "text": "Dişleri pırıl pırıl oldu! Ali nasıl hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/teeth/p6_happy.mp3": {
+    "bytes": 15299,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:42.178305+00:00",
+    "sha256": "837139666ac196367948f2e889007235c5c9c5b86a929546a0b7eb54f26ec223",
+    "text": "Evet, Ali çok mutlu.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1633,6 +1975,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/stories/turn/p3_line.mp3": {
+    "bytes": 26793,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:48.930204+00:00",
+    "sha256": "7e94e46310df02032a378861e0d04a4d6e1cd001e3d5eb2c373ac9feb7295a05",
+    "text": "Evet, Ali, Elif'in arkasında sırasını bekliyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/stories/turn/p3_pull.mp3": {
     "bytes": 57304,
     "language": "tr",
@@ -1737,6 +2098,25 @@
     "requested_at": "2026-11-06T19:25:45.671987+00:00",
     "sha256": "51b68f049550f8057abed856b89971d9201727f9b829cbcb87d9f69a08857723",
     "text": "Bak, Ali gülüyor. Ali çok mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/stories/turn/p6_happy.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T14:47:51.026124+00:00",
+    "sha256": "f534a160d69954dad8916cf27ba39f250ff5df138feb1055d725ccc4a84b451f",
+    "text": "Evet, Ali çok mutlu.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {

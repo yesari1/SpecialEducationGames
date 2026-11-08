@@ -497,6 +497,40 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         spec.stimulus == null &&
         spec.count == null &&
         spec.sequence.isEmpty;
+    final Widget stage = _Entrance(
+                        // Only the basket view restarts per round; the
+                        // choice views keep their state across rounds.
+                        key: c.template.id == 'fill_count'
+                            ? ValueKey('choices-entrance-${c.generation}')
+                            : null,
+                        animate:
+                            c.template.id == 'fill_count' &&
+                            !s.reducedMotion &&
+                            !MediaQuery.disableAnimationsOf(context),
+                        child: c.template.buildView(
+                          context,
+                          spec,
+                          RoundCallbacks(
+                            onSelect: (item) => c.choose(item),
+                            onListen: (item) {
+                              c.noteInteraction(itemId: item.id);
+                              if (item.sfx case final String sfx) {
+                                s.audio.playSequence([sfx]);
+                              }
+                            },
+                          ),
+                          HintViewState(
+                            level: c.hint,
+                            visibleChoices: c.visibleChoices,
+                            wrongCount: c.wrongCount,
+                            generation: c.generation,
+                            celebrating: c.phase == RoundPhase.celebrating,
+                            showLabels: s.showLabels,
+                            animate: !s.reducedMotion && s.celebration != 'off',
+                            locale: s.locale,
+                          ),
+                        ),
+                      );
     return Scaffold(
       backgroundColor: theme.bg,
       body: SceneBackdrop(
@@ -559,6 +593,9 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                       ],
                     ),
                   ),
+                  if (spec.promptBeside)
+                    Expanded(child: _promptBeside(spec, stage, compact))
+                  else ...[
                   Expanded(
                     // Group and basket games give the baskets more room.
                     flex: spec.groupMembers.isNotEmpty && !compact
@@ -738,42 +775,10 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                       ),
                       // Choice cards grow in on their own; the basket
                       // game's objects get the same soft entrance.
-                      child: _Entrance(
-                        // Only the basket view restarts per round; the
-                        // choice views keep their state across rounds.
-                        key: c.template.id == 'fill_count'
-                            ? ValueKey('choices-entrance-${c.generation}')
-                            : null,
-                        animate:
-                            c.template.id == 'fill_count' &&
-                            !s.reducedMotion &&
-                            !MediaQuery.disableAnimationsOf(context),
-                        child: c.template.buildView(
-                          context,
-                          spec,
-                          RoundCallbacks(
-                            onSelect: (item) => c.choose(item),
-                            onListen: (item) {
-                              c.noteInteraction(itemId: item.id);
-                              if (item.sfx case final String sfx) {
-                                s.audio.playSequence([sfx]);
-                              }
-                            },
-                          ),
-                          HintViewState(
-                            level: c.hint,
-                            visibleChoices: c.visibleChoices,
-                            wrongCount: c.wrongCount,
-                            generation: c.generation,
-                            celebrating: c.phase == RoundPhase.celebrating,
-                            showLabels: s.showLabels,
-                            animate: !s.reducedMotion && s.celebration != 'off',
-                            locale: s.locale,
-                          ),
-                        ),
-                      ),
+                      child: stage,
                     ),
                   ),
+                  ],
                 ],
               ),
               if (s.celebration == 'full' &&
@@ -795,6 +800,43 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
       ),
     );
   }
+
+  /// The question on the left, the picture to tap as big as it can be on
+  /// the right ("Ali'de Göster"); the stars stay on top.
+  Widget _promptBeside(RoundSpec spec, Widget stage, bool compact) => Padding(
+    padding: EdgeInsets.fromLTRB(
+      SegSpace.s5,
+      0,
+      SegSpace.s5,
+      compact ? SegSpace.s2 : SegSpace.s4,
+    ),
+    child: Row(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: SegSpace.s5,
+                vertical: SegSpace.s4,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(SegRadius.lg),
+              ),
+              child: Text(
+                _promptText(spec),
+                textAlign: TextAlign.center,
+                style: compact ? SegText.heading : SegText.title,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: SegSpace.s4),
+        Expanded(flex: 3, child: stage),
+      ],
+    ),
+  );
 
   /// Round end: one calm, happy page. Stars pop in, a few stars drift down
   /// (fewer for "simple", none for "off" or reduced motion), a soft applause

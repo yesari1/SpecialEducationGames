@@ -251,11 +251,32 @@
     "text": "Let's paint it yellow.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
+  "assets/audio/en/pairs/G43_arrow.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "5fe0632c4c4b34bc150e75cda1c350f3d8e8559263300f2c7b706c353e1c2e37",
+    "text": "Which one looks like an arrow?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
   "assets/audio/en/pairs/G43_circle.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
     "sha256": "9051bd9122e0e7e83ce6de309d7e3b40a52bd876acdfe87a8fe108425c7219a1",
     "text": "Which one looks like a circle?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G43_crescent.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "29e38fdd59d88ca2af159b060918c6a8126afdb7cb2585b1b92dccf09b361bc5",
+    "text": "Which one looks like a crescent?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G43_cross.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "03834c1522735967dbd73619c21fd260ae10fafa5ecce2869e7a4875d380d49d",
+    "text": "Which one looks like a plus sign?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_heart.mp3": {
@@ -818,11 +839,32 @@
     "text": "Hadi, sarıya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
+  "assets/audio/tr/pairs/G43_arrow.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "1525b6a1ec68cf3fa814e6f869ea248ad4dde02001cda580ac54aaf7a8033f1d",
+    "text": "Hangisi oka benziyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
   "assets/audio/tr/pairs/G43_circle.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
     "sha256": "25d6ef8292497e93b0ba577f889a915b170552b906ecee5b1291ece4316c2af2",
     "text": "Hangisi daireye benziyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G43_crescent.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "96604279fdf022d53417a124aebdd2c4e77da3974a1df050d79b5d9d808a9511",
+    "text": "Hangisi hilale benziyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G43_cross.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "9b600e756e9859d8b16bb98133348956ce4675b662ab07ae632ed3b9d1aadff4",
+    "text": "Hangisi artıya benziyor?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_heart.mp3": {

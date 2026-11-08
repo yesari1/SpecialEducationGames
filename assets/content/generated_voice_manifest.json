@@ -5352,7 +5352,7 @@
    }
   },
   "body.foot:en": {
-   "bytes": 5686,
+   "bytes": 6522,
    "characters": 5,
    "item": "body.foot",
    "kind": "item",
@@ -5360,15 +5360,15 @@
    "model_id": "eleven_multilingual_v2",
    "path": "assets/audio/en/body/foot_selected.mp3",
    "requested_at": "2026-10-20T03:41:16.997123+00:00",
-   "sha256": "22fd7499a9b4aafa19c87d02e0012068f5789d290e014769ab674d0da9667e1e",
+   "sha256": "e6d1fff8238fdfa1c358581c5fd2b244caf38a7b46138f9f4e07dc0cf0505f0a",
    "text": "Foot.",
    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
    "voice_name": "Laura - a top narration voice",
    "voice_settings": {
-    "similarity_boost": 0.75,
-    "speed": 1.0,
-    "stability": 0.35,
-    "style": 0.43,
+    "similarity_boost": 0.8,
+    "speed": 0.95,
+    "stability": 0.7,
+    "style": 0.1,
     "use_speaker_boost": true
    }
   },
@@ -30211,23 +30211,23 @@
    }
   },
   "praise.7:tr": {
-   "bytes": 8821,
+   "bytes": 11955,
    "characters": 9,
    "item": null,
    "kind": "praise",
    "language": "tr",
-   "model_id": "eleven_multilingual_v2",
+   "model_id": "eleven_v4",
    "path": "assets/audio/tr/praise/praise_7.mp3",
    "requested_at": "2026-10-20T08:45:35.915878+00:00",
-   "sha256": "03ef2421dea0b9f003162ad4e59171d2649ff3c4a7b00f43f3593787b441c7ce",
+   "sha256": "2c7aa27a164ad78c26b42fd97aa7c9b403780fc19e1c7802a143df7658b5227b",
    "text": "Mükemmel!",
    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
    "voice_name": "İrem - Authoritarian Female Voice",
    "voice_settings": {
-    "similarity_boost": 0.75,
-    "speed": 1.0,
-    "stability": 0.35,
-    "style": 0.43,
+    "similarity_boost": 0.8,
+    "speed": 1.05,
+    "stability": 0.3,
+    "style": 0.7,
     "use_speaker_boost": true
    }
   },

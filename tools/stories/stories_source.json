@@ -21,7 +21,11 @@
         "choices": [
           {
             "key": "brush",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, dişlerimizi fırçalıyoruz.",
+              "en": "Yes, we brush our teeth."
+            }
           },
           {
             "key": "bed",
@@ -42,7 +46,11 @@
         "choices": [
           {
             "key": "rinse",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, ağzımızı suyla çalkalıyoruz.",
+              "en": "Yes, we rinse our mouth with water."
+            }
           },
           {
             "key": "shoes",
@@ -59,7 +67,11 @@
         "choices": [
           {
             "key": "happy",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali çok mutlu.",
+              "en": "Yes, Ali is very happy."
+            }
           },
           {
             "key": "sad",
@@ -102,7 +114,11 @@
         "choices": [
           {
             "key": "angry",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali çok kızdı.",
+              "en": "Yes, Ali is angry."
+            }
           },
           {
             "key": "happy",
@@ -142,7 +158,11 @@
           },
           {
             "key": "tell",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali annesine gidip kızdığını söylüyor.",
+              "en": "Yes, Ali goes to Mom and tells her he is angry."
+            }
           }
         ]
       },
@@ -185,7 +205,11 @@
         "choices": [
           {
             "key": "line",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali, Elif'in arkasında sırasını bekliyor.",
+              "en": "Yes, Ali waits for his turn behind Elif."
+            }
           },
           {
             "key": "pull",
@@ -211,7 +235,11 @@
         "choices": [
           {
             "key": "happy",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali çok mutlu.",
+              "en": "Yes, Ali is very happy."
+            }
           },
           {
             "key": "angry",
@@ -257,7 +285,11 @@
         "choices": [
           {
             "key": "hug",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali annesine sarılıyor.",
+              "en": "Yes, Ali gives Mom a hug."
+            }
           },
           {
             "key": "tantrum",
@@ -283,7 +315,11 @@
         "choices": [
           {
             "key": "still",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali sakince oturuyor. Doktor kalbini dinliyor.",
+              "en": "Yes, Ali sits still. The doctor listens to his heart."
+            }
           },
           {
             "key": "push",
@@ -300,7 +336,11 @@
         "choices": [
           {
             "key": "happy",
-            "correct": true
+            "correct": true,
+            "result": {
+              "tr": "Evet, Ali artık çok mutlu.",
+              "en": "Yes, Ali is very happy now."
+            }
           },
           {
             "key": "scared",

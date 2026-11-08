@@ -16,6 +16,9 @@ EXTRA = {
     'props.starfish': ('assets/images/props/starfish.webp', 'Deniz yıldızı', 'Starfish'),
     'props.heart_balloon': ('assets/images/props/heart_balloon.webp', 'Kalp balon', 'Heart balloon'),
     'props.egg': ('assets/images/props/egg.webp', 'Yumurta', 'Egg'),
+    'props.moon': ('assets/images/props/moon.webp', 'Ay', 'Moon'),
+    'props.first_aid': ('assets/images/props/first_aid.webp', 'İlk yardım çantası', 'First aid kit'),
+    'props.arrow_sign': ('assets/images/props/arrow_sign.webp', 'Ok levhası', 'Arrow sign'),
     'paint.balloon': ('assets/images/paint/balloon.webp', 'Balon', 'Balloon'),
     'paint.flower': ('assets/images/paint/flower.webp', 'Çiçek', 'Flower'),
     'paint.car': ('assets/images/paint/car.webp', 'Araba', 'Car'),
@@ -42,9 +45,10 @@ EXTRA = {
     'scene.tickle': ('assets/images/scenes/tickle.jpg', 'Gıdıklama', 'Tickling'),
     'body.ali_full': ('assets/images/wear/ali_full.webp', 'Ali', 'Ali'),
 }
-FACE_EMOTIONS = ['happy', 'sad', 'angry', 'scared', 'surprised', 'sleepy']
+FACE_EMOTIONS = ['happy', 'sad', 'angry', 'scared', 'surprised', 'sleepy', 'laughing', 'calm']
 FACE_NAMES = {'happy': ('Mutlu', 'Happy'), 'sad': ('Üzgün', 'Sad'), 'angry': ('Kızgın', 'Angry'),
-              'scared': ('Korkmuş', 'Scared'), 'surprised': ('Şaşkın', 'Surprised'), 'sleepy': ('Uykulu', 'Sleepy')}
+              'scared': ('Korkmuş', 'Scared'), 'surprised': ('Şaşkın', 'Surprised'), 'sleepy': ('Uykulu', 'Sleepy'),
+              'laughing': ('Gülen', 'Laughing'), 'calm': ('Sakin', 'Calm')}
 for _who in ('elif', 'mom'):
     for _e in FACE_EMOTIONS:
         EXTRA[f'faces.{_who}_{_e}'] = (f'assets/images/faces/{_who}_{_e}.webp', *FACE_NAMES[_e])
@@ -59,6 +63,9 @@ SHAPE_OBJECTS = {
     'star': (['props.starfish'], 'yıldıza', 'a star'),
     'heart': (['props.heart_balloon'], 'kalbe', 'a heart'),
     'oval': (['props.egg'], 'ovale', 'an oval'),
+    'crescent': (['props.moon'], 'hilale', 'a crescent'),
+    'cross': (['props.first_aid'], 'artıya', 'a plus sign'),
+    'arrow': (['props.arrow_sign'], 'oka', 'an arrow'),
 }
 
 SCENES = [
@@ -74,7 +81,7 @@ SCENES = [
 
 # sound file -> feeling
 SOUNDS = {'laughing': 'happy', 'sad': 'sad', 'sleepy': 'sleepy', 'surprised': 'surprised',
-          'scared': 'scared', 'angry': 'angry'}
+          'scared': 'scared', 'angry': 'angry', 'disgusted': 'disgusted', 'excited': 'excited'}
 
 FUNCTIONS = [
     ('body.eye', 'Neyle görürüz?', 'What do we see with?', []),
@@ -151,7 +158,7 @@ def games():
     }
     out['G46'] = {
         'theme': 'emotions',
-        'choicePool': [f'emotions.{e}' for e in CORE],
+        'choicePool': [f'emotions.{e}' for e in [*CORE, 'disgusted', 'excited']],
         'rounds': [
             {'sound': f'assets/sfx/feelings/{snd}.mp3', 'target': f'emotions.{e}', 'clip': 'listen',
              'text': {'tr': 'Dinle bakalım. Nasıl hissediyor?', 'en': 'Listen. How is this person feeling?'}}

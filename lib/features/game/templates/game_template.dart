@@ -829,10 +829,14 @@ class PairTemplate extends GameTemplate {
         .toList();
     if (rounds.isEmpty) throw StateError('No pair rounds for ${ctx.gameId}');
     final random = ctx.scheduler.random;
-    var options = rounds.where((r) => r.textFor('tr') != _last).toList();
-    if (options.isEmpty) options = rounds;
+    // Medium and hard never ask the same thing twice in one game.
+    String key(PairRound r) => r.stimulus ?? r.sound ?? r.textFor('tr');
+    var options = ctx.scheduler.fresh(rounds, key);
+    final notLast = options.where((r) => r.textFor('tr') != _last).toList();
+    if (notLast.isNotEmpty && !ctx.scheduler.noRepeat) options = notLast;
     final round = options[random.nextInt(options.length)];
     _last = round.textFor('tr');
+    ctx.scheduler.used.add(key(round));
     final target = pool.firstWhere((x) => x.id == round.target);
     final right = game.rightFor(round);
     final wrong = pool.where((x) => !right.contains(x.id)).toList()
@@ -864,7 +868,8 @@ class PairTemplate extends GameTemplate {
           : const {},
       promptCues: {
         for (final lang in const ['tr', 'en'])
-          lang: [?round.sound, if (cue(lang).isNotEmpty) cue(lang)],
+          // A sound is heard, the question asked, the sound heard again.
+          lang: [?round.sound, if (cue(lang).isNotEmpty) cue(lang), ?round.sound],
       },
       successCueOverride: {
         for (final e in game.successAudio.entries) e.key: [e.value],
@@ -921,7 +926,9 @@ class PaintTemplate extends GameTemplate {
       ..shuffle(random);
     final choices = [target, ...others.take(min(ctx.choiceCount, 4) - 1)]
       ..shuffle(random);
-    final picture = pictures[random.nextInt(pictures.length)];
+    final unused = ctx.scheduler.fresh(pictures, (x) => x.id);
+    final picture = unused[random.nextInt(unused.length)];
+    ctx.scheduler.used.add(picture.id);
     final tr = target.name('tr');
     return RoundSpec(
       target: target,
@@ -932,6 +939,8 @@ class PaintTemplate extends GameTemplate {
       promptEn: "Let's paint it ${target.name('en').toLowerCase()}",
       promptImagePath: picture.images.first,
       oneRow: true,
+      // Time for the brush to finish and the painted picture to be seen.
+      rightHold: const Duration(milliseconds: 3000),
       promptCues: {
         for (final lang in const ['tr', 'en'])
           lang: ['assets/audio/$lang/pairs/G42_${target.slug}.mp3'],
@@ -1004,6 +1013,7 @@ class BodyMapTemplate extends GameTemplate {
       promptTr: q['tr'] ?? '${target.name('tr')} nerede?',
       promptEn: q['en'] ?? 'Where is the ${target.name('en').toLowerCase()}?',
       promptImagePath: picture.asset,
+      promptBeside: true,
       promptCues: {
         for (final lang in const ['tr', 'en'])
           lang: ['assets/audio/$lang/pairs/G47_${target.slug}.mp3'],

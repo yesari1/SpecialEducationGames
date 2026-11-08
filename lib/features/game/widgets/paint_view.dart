@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../app/ui/components.dart';
@@ -31,17 +32,11 @@ class PaintView extends StatelessWidget {
             borderRadius: BorderRadius.circular(SegRadius.lg),
             child: Image.asset(asset, fit: BoxFit.contain),
           )
-        : AnimatedSwitcher(
-            duration: hint.animate
-                ? const Duration(milliseconds: 600)
-                : Duration.zero,
-            child: hint.celebrating
-                ? ColorFiltered(
-                    key: const ValueKey('paint-done'),
-                    colorFilter: ColorFilter.mode(color, BlendMode.modulate),
-                    child: PhotoVisual(asset),
-                  )
-                : PhotoVisual(asset, key: const ValueKey('paint-white')),
+        : _BrushPicture(
+            asset: asset,
+            color: color,
+            painting: hint.celebrating,
+            animate: hint.animate,
           );
     final choices = RoundChoicesView(
       spec: spec,
@@ -72,4 +67,106 @@ class PaintView extends StatelessWidget {
             ),
     );
   }
+}
+
+/// The white picture; when [painting] turns on, a brush sweeps across and
+/// the colour follows it. Without motion the picture is simply coloured.
+class _BrushPicture extends StatefulWidget {
+  final String asset;
+  final Color color;
+  final bool painting, animate;
+  const _BrushPicture({
+    required this.asset,
+    required this.color,
+    required this.painting,
+    required this.animate,
+  });
+  @override
+  State<_BrushPicture> createState() => _BrushPictureState();
+}
+
+class _BrushPictureState extends State<_BrushPicture>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _sweep = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1300),
+  );
+
+  @override
+  void didUpdateWidget(covariant _BrushPicture old) {
+    super.didUpdateWidget(old);
+    if (widget.painting && !old.painting) {
+      if (widget.animate) {
+        _sweep.forward(from: 0);
+      } else {
+        _sweep.value = 1;
+      }
+    } else if (!widget.painting && old.painting) {
+      _sweep.value = 0;
+    }
+  }
+
+  @override
+  void dispose() {
+    _sweep.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) => AnimatedBuilder(
+      animation: _sweep,
+      builder: (context, _) {
+        final t = Curves.easeInOut.transform(_sweep.value);
+        // Three strokes down the picture, like a child painting.
+        final wave = math.sin(t * math.pi * 6);
+        return Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned.fill(child: PhotoVisual(widget.asset)),
+            Positioned.fill(
+              child: ClipRect(
+                clipper: _RevealClip(t),
+                child: ColorFiltered(
+                  key: const ValueKey('paint-done'),
+                  colorFilter: ColorFilter.mode(
+                    widget.color,
+                    BlendMode.modulate,
+                  ),
+                  child: PhotoVisual(widget.asset),
+                ),
+              ),
+            ),
+            if (_sweep.isAnimating)
+              Positioned(
+                key: const ValueKey('paint-brush'),
+                left: box.maxWidth * t - 12,
+                top: box.maxHeight * (.42 + .3 * wave) - 70,
+                child: Transform.rotate(
+                  angle: .35 * wave,
+                  child: const Icon(
+                    Icons.brush_rounded,
+                    size: 88,
+                    color: SegColors.primaryDeep,
+                    shadows: [
+                      Shadow(color: Colors.white, blurRadius: 3),
+                      Shadow(color: Colors.white, blurRadius: 12),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
+    ),
+  );
+}
+
+class _RevealClip extends CustomClipper<Rect> {
+  final double t;
+  const _RevealClip(this.t);
+  @override
+  Rect getClip(Size size) => Rect.fromLTWH(0, 0, size.width * t, size.height);
+  @override
+  bool shouldReclip(_RevealClip old) => old.t != t;
 }

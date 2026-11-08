@@ -143,12 +143,18 @@ class StoryPlayerScreen extends StatefulWidget {
 
   /// How long the right choice glows before the story goes on.
   final Duration rightPause;
+
+  /// After a page has been read: when the hand hint shows, and when the
+  /// story goes on by itself if nobody touched the screen.
+  final Duration handDelay, autoAdvance;
   const StoryPlayerScreen({
     super.key,
     required this.state,
     required this.story,
     this.resultPause = const Duration(milliseconds: 1500),
     this.rightPause = const Duration(milliseconds: 900),
+    this.handDelay = const Duration(seconds: 5),
+    this.autoAdvance = const Duration(seconds: 15),
   });
   @override
   State<StoryPlayerScreen> createState() => _StoryPlayerScreenState();
@@ -166,7 +172,10 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
   /// The right choice is glowing; taps wait for the story to go on.
   bool answered = false;
   StoryChoice? shownResult;
-  Timer? _timer;
+  Timer? _timer, _handTimer, _autoTimer;
+
+  /// The hand showing where to tap, after a while with no touch.
+  bool showHand = false;
 
   /// Bumped on every step so a late timer or clip end from an older page
   /// never moves the story.
@@ -180,12 +189,45 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
   void initState() {
     super.initState();
     s.enterGame();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _say(page.line));
+    WidgetsBinding.instance.addPostFrameCallback((_) => _openPage());
+  }
+
+  /// Reads the page; a narration page then waits for the child, shows the
+  /// hand after a while and finally goes on by itself.
+  void _openPage() {
+    final step = _step;
+    _say(page.line).whenComplete(() {
+      if (!mounted || step != _step || page.isQuestion) return;
+      _armIdle(step);
+    });
+  }
+
+  void _armIdle(int step) {
+    _handTimer = Timer(widget.handDelay, () {
+      if (mounted && step == _step) setState(() => showHand = true);
+    });
+    _autoTimer = Timer(widget.autoAdvance, () {
+      if (!mounted || step != _step) return;
+      // Never turn pages while the app is in the background.
+      final life = WidgetsBinding.instance.lifecycleState;
+      if (life != null && life != AppLifecycleState.resumed) {
+        _armIdle(step);
+        return;
+      }
+      _next(auto: true);
+    });
+  }
+
+  void _clearIdle() {
+    _handTimer?.cancel();
+    _autoTimer?.cancel();
+    showHand = false;
   }
 
   @override
   void dispose() {
     _timer?.cancel();
+    _clearIdle();
     s.leaveGame();
     if (!s.inGame) s.audio.stop();
     super.dispose();
@@ -199,6 +241,7 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
 
   void _show(int next) {
     _timer?.cancel();
+    _clearIdle();
     _step++;
     setState(() {
       index = next;
@@ -207,12 +250,12 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
       answered = false;
       shownResult = null;
     });
-    _say(page.line);
+    _openPage();
   }
 
-  void _next() {
-    if (phase != _Phase.page || answered) return;
-    UiSound.tap();
+  void _next({bool auto = false}) {
+    if (phase != _Phase.page || answered || page.isQuestion) return;
+    if (!auto) UiSound.tap();
     if (index + 1 < story.pages.length) {
       _show(index + 1);
     } else {
@@ -220,8 +263,12 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     }
   }
 
+  void _goOn() =>
+      index + 1 < story.pages.length ? _show(index + 1) : _finish();
+
   void _finish() {
     _timer?.cancel();
+    _clearIdle();
     _step++;
     setState(() => phase = _Phase.end);
     _say(story.praise);
@@ -237,7 +284,16 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
       _timer = Timer(widget.rightPause, () {
         if (!mounted || step != _step) return;
         answered = false;
-        index + 1 < story.pages.length ? _show(index + 1) : _finish();
+        if (choice.result == null) {
+          _goOn();
+          return;
+        }
+        // The chosen picture is shown big and what happens is said.
+        setState(() {
+          shownResult = choice;
+          phase = _Phase.result;
+        });
+        _sayResult(choice, step, _goOn);
       });
       return;
     }
@@ -252,6 +308,17 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
       _say(page.retry ?? page.line);
       return;
     }
+    _sayResult(choice, step, () {
+      setState(() {
+        phase = _Phase.page;
+        shownResult = null;
+      });
+      _say(page.retry ?? page.line);
+    });
+  }
+
+  /// Says a result, leaves it on screen for a moment and then goes [then].
+  void _sayResult(StoryChoice choice, int step, VoidCallback then) {
     final started = DateTime.now();
     _say(choice.result).whenComplete(() {
       if (!mounted || step != _step) return;
@@ -261,18 +328,14 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
           ? const Duration(seconds: 3) - spoken
           : widget.resultPause;
       _timer = Timer(rest, () {
-        if (!mounted || step != _step) return;
-        setState(() {
-          phase = _Phase.page;
-          shownResult = null;
-        });
-        _say(page.retry ?? page.line);
+        if (mounted && step == _step) then();
       });
     });
   }
 
   void _leave() {
     _timer?.cancel();
+    _clearIdle();
     s.audio.stop();
     context.go('/stories');
   }
@@ -409,7 +472,34 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     ),
   );
 
-  Widget _narration(AppLocalizations l10n, bool compact) => Padding(
+  /// Anywhere on the page goes on: a tap, or a swipe to the left.
+  Widget _narration(AppLocalizations l10n, bool compact) => GestureDetector(
+    key: const ValueKey('story-page-area'),
+    behavior: HitTestBehavior.opaque,
+    onTap: _next,
+    onHorizontalDragEnd: (d) {
+      if ((d.primaryVelocity ?? 0) < -100) _next();
+    },
+    child: Stack(
+      clipBehavior: Clip.none,
+      children: [
+        _narrationBody(l10n, compact),
+        if (showHand)
+          Positioned(
+            right: SegSpace.s6,
+            bottom: compact ? SegSpace.s4 : SegSpace.s5,
+            child: IgnorePointer(
+              child: _TapHand(
+                key: const ValueKey('story-hand'),
+                animate: !reduced,
+              ),
+            ),
+          ),
+      ],
+    ),
+  );
+
+  Widget _narrationBody(AppLocalizations l10n, bool compact) => Padding(
     padding: EdgeInsets.fromLTRB(
       SegSpace.s5,
       0,
@@ -419,15 +509,12 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     child: Column(
       children: [
         Expanded(
-          child: GestureDetector(
-            onTap: _next,
-            child: Center(
-              child: AspectRatio(
-                aspectRatio: 3 / 2,
-                child: _framedPicture(
-                  page.image!,
-                  key: const ValueKey('story-picture'),
-                ),
+          child: Center(
+            child: AspectRatio(
+              aspectRatio: 3 / 2,
+              child: _framedPicture(
+                page.image!,
+                key: const ValueKey('story-picture'),
               ),
             ),
           ),
@@ -713,6 +800,49 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
       tooltip: label,
       icon: Icon(icon),
       onPressed: onPressed,
+    ),
+  );
+}
+
+/// A soft, see-through hand that taps over the next arrow.
+class _TapHand extends StatefulWidget {
+  final bool animate;
+  const _TapHand({super.key, required this.animate});
+  @override
+  State<_TapHand> createState() => _TapHandState();
+}
+
+class _TapHandState extends State<_TapHand>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulse = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 800),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.animate) _pulse.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+    animation: _pulse,
+    builder: (_, child) => Transform.translate(
+      offset: Offset(0, 10 * _pulse.value),
+      child: Transform.scale(scale: 1 - .08 * _pulse.value, child: child),
+    ),
+    child: Icon(
+      Icons.touch_app_rounded,
+      size: 72,
+      color: SegColors.ink.withValues(alpha: .45),
+      shadows: const [Shadow(color: Colors.white, blurRadius: 12)],
     ),
   );
 }

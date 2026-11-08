@@ -55,6 +55,13 @@ class RoundSpec {
   /// All choices stay in one row on small phones (no paging), so the right
   /// one is never on a hidden page.
   final bool oneRow;
+
+  /// The question stands beside the stage instead of above it, so a picture
+  /// the child taps can use the full height.
+  final bool promptBeside;
+
+  /// How long a right answer stays on screen before the next round.
+  final Duration rightHold;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -76,6 +83,8 @@ class RoundSpec {
     this.promptCues = const {},
     this.successCueOverride = const {},
     this.oneRow = false,
+    this.promptBeside = false,
+    this.rightHold = const Duration(milliseconds: 1500),
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -98,6 +107,8 @@ class RoundSpec {
     promptCues: promptCues,
     successCueOverride: successCueOverride,
     oneRow: oneRow,
+    promptBeside: promptBeside,
+    rightHold: rightHold,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,
