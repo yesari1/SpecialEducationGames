@@ -19,14 +19,14 @@
     }
   },
   "assets/audio/en/stories/angry/p2.mp3": {
-    "bytes": 50199,
+    "bytes": 35152,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:15.912074+00:00",
-    "sha256": "b1c892927fd5b6d287b3a38dc98f42bac3682d3d132309526988ee24c516423d",
-    "text": "Elif took the car. Now Ali has nothing to play with.",
+    "requested_at": "2026-11-08T05:31:55.463450+00:00",
+    "sha256": "c1417c3290a5a420d7c3472cfe258857f80c3e8f48f8637175844ed789098b65",
+    "text": "Elif took the car out of Ali's hands.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -171,14 +171,14 @@
     }
   },
   "assets/audio/en/stories/angry/p6.mp3": {
-    "bytes": 63573,
+    "bytes": 67753,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:33.654469+00:00",
-    "sha256": "9f8d1d369a13665938ab50e5cb40f8327e5e49eaf8a1c1c7678be4b0e741f458",
-    "text": "Ali said, \"I'm angry!\" He took a big, deep breath with Mom.",
+    "requested_at": "2026-11-08T05:31:58.490340+00:00",
+    "sha256": "2787b6db1816fceb95435f170c02825fa21f8427cf70ee7b51682f0ee2dd9f37",
+    "text": "Ali told Mom, \"I'm really angry!\" They took a deep breath together.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -361,14 +361,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p5_push.mp3": {
-    "bytes": 59394,
+    "bytes": 61484,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:15.626346+00:00",
-    "sha256": "89b7dcc6a4a82549700bf7ef35387dd34832649c4e768ae4b90746aa86f4964c",
-    "text": "The doctor couldn't hear his heart. Let's sit still and calm.",
+    "requested_at": "2026-11-08T05:32:03.126895+00:00",
+    "sha256": "5d623dca2ebea6775c2c2b477da7e30c6253b2cf1dcae18fa6f8f9869663f5d7",
+    "text": "Ali pushed the doctor away. The doctor couldn't listen to his heart.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -684,14 +684,14 @@
     }
   },
   "assets/audio/en/stories/turn/p1.mp3": {
-    "bytes": 41839,
+    "bytes": 41422,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:27.767937+00:00",
-    "sha256": "7251892a8d76a922006a0f54662000d26981fe3fb9286c02b99c15293fb5cb25",
-    "text": "Ali is at the park. Look at that slide!",
+    "requested_at": "2026-11-08T05:32:00.659505+00:00",
+    "sha256": "e8ea765bb32a1365d1fb50073d85633b54a8e842a0f829e81630ec7860ccaebc",
+    "text": "Ali is at the park. He loves the slide.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -912,14 +912,14 @@
     }
   },
   "assets/audio/tr/stories/angry/p2.mp3": {
-    "bytes": 59394,
+    "bytes": 41839,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:15.117167+00:00",
-    "sha256": "a3280dee932c72c097d7431d2f718d8e3634a2d3a64d1a581153508037d51beb",
-    "text": "Elif arabayı aldı. Ali'nin elinde araba kalmadı.",
+    "requested_at": "2026-11-08T05:31:54.761530+00:00",
+    "sha256": "fc84d67b1d6bf8f9d2c7c4981c54968e4488775c9438a5c978c39dd0551f9546",
+    "text": "Elif, arabayı Ali'nin elinden aldı.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1064,14 +1064,14 @@
     }
   },
   "assets/audio/tr/stories/angry/p6.mp3": {
-    "bytes": 84471,
+    "bytes": 88233,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:32.764680+00:00",
-    "sha256": "15739f4f3e9d0a44680dca9c3f3e0ce2bdce1dbee5be7d81618eac501ccc6b8c",
-    "text": "Ali, \"Ben kızdım!\" dedi. Annesiyle birlikte derin bir nefes aldı.",
+    "requested_at": "2026-11-08T05:31:57.606301+00:00",
+    "sha256": "f2b0e00f882ede6eecb381ac4e809774d311a9e5628e45a256b918489ae1587c",
+    "text": "Ali annesine \"Çok kızgınım!\" dedi. Birlikte derin bir nefes aldılar.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1254,14 +1254,14 @@
     }
   },
   "assets/audio/tr/stories/doctor/p5_push.mp3": {
-    "bytes": 62319,
+    "bytes": 59812,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:13.441934+00:00",
-    "sha256": "a844b9867b35ece390d341dbc45e9ae480de941d06ea5dbcc982aa917b07d770",
-    "text": "Doktor kalbini dinleyemedi. Haydi, sakince oturalım.",
+    "requested_at": "2026-11-08T05:32:02.290708+00:00",
+    "sha256": "95f937667036444d12f0d5db4c378bbf713d836f15e945ed72812d67bac11f10",
+    "text": "Ali doktoru itti. Doktor Ali'nin kalbini dinleyemedi.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -1577,14 +1577,14 @@
     }
   },
   "assets/audio/tr/stories/turn/p1.mp3": {
-    "bytes": 53960,
+    "bytes": 48527,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:26.928656+00:00",
-    "sha256": "0c05e8ba4e81692df9ec7dacca91f825b5508be5c8da6cb9d986fcf977f78598",
-    "text": "Ali parka geldi. Kaydırak ne kadar güzel!",
+    "requested_at": "2026-11-08T05:31:59.970332+00:00",
+    "sha256": "797b78b772fc78f4d8a5639418232fbd2e15b8ae2c299ab13e9b3397450b5b4f",
+    "text": "Ali parka geldi. Kaydırağı çok seviyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {

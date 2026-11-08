@@ -926,8 +926,10 @@ class PaintTemplate extends GameTemplate {
     return RoundSpec(
       target: target,
       choices: choices,
-      promptTr: '${paintSuffix[target.slug] ?? '$tr ile'} boya',
-      promptEn: 'Paint it ${target.name('en').toLowerCase()}',
+      promptTr:
+          'Hadi, ${(paintSuffix[target.slug] ?? '$tr ile').toLowerCase()} '
+          'boyayalım',
+      promptEn: "Let's paint it ${target.name('en').toLowerCase()}",
       promptImagePath: picture.images.first,
       oneRow: true,
       promptCues: {

@@ -67,14 +67,14 @@ def games():
 
 
 PAINT = {
-    'red': ('Kırmızıya boya!', 'Paint it red!'),
-    'blue': ('Maviye boya!', 'Paint it blue!'),
-    'yellow': ('Sarıya boya!', 'Paint it yellow!'),
-    'green': ('Yeşile boya!', 'Paint it green!'),
-    'orange': ('Turuncuya boya!', 'Paint it orange!'),
-    'purple': ('Mora boya!', 'Paint it purple!'),
-    'pink': ('Pembeye boya!', 'Paint it pink!'),
-    'brown': ('Kahverengiye boya!', 'Paint it brown!'),
+    'red': ('Hadi, kırmızıya boyayalım.', "Let's paint it red."),
+    'blue': ('Hadi, maviye boyayalım.', "Let's paint it blue."),
+    'yellow': ('Hadi, sarıya boyayalım.', "Let's paint it yellow."),
+    'green': ('Hadi, yeşile boyayalım.', "Let's paint it green."),
+    'orange': ('Hadi, turuncuya boyayalım.', "Let's paint it orange."),
+    'purple': ('Hadi, mora boyayalım.', "Let's paint it purple."),
+    'pink': ('Hadi, pembeye boyayalım.', "Let's paint it pink."),
+    'brown': ('Hadi, kahverengiye boyayalım.', "Let's paint it brown."),
 }
 
 

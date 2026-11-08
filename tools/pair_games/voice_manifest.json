@@ -198,57 +198,57 @@
   "assets/audio/en/pairs/G42_blue.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "631adc5a0cdcd7480ae9e266222ae08e549d58de6ff513492daa5d5c50ad247f",
-    "text": "Paint it blue!",
+    "sha256": "d1067401269433a6cd3099dc6a708123955cdb56b4cb533f4382028747d985d5",
+    "text": "Let's paint it blue.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_brown.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "84aaeb431c69d7793a86e682a10a6848592cccaffa360ab91db32fb4684267f2",
-    "text": "Paint it brown!",
+    "sha256": "bfd6b6e73e32c3b2b0200d7de6e237e6781bdcee08930ee03dc70c6aea46a52c",
+    "text": "Let's paint it brown.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_green.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "97c2ea73a07157c185894534629ae7a30b2d884ae79d83b39a081b18f323831f",
-    "text": "Paint it green!",
+    "sha256": "a77e5143c533718e739ad2af291fd16ce34c056e3a323af32901ea198654b6ee",
+    "text": "Let's paint it green.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_orange.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "736e2dc20ecc67cb81ddd5e8832a28729348b53589a07d542487d2aefdb221b1",
-    "text": "Paint it orange!",
+    "sha256": "591ed0807e4c5907e21e60e47632dc4f8ef2642bde9f0a741dc3fdae151a61ba",
+    "text": "Let's paint it orange.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_pink.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "d3f09e2daf27d5532acae3d13585288283c15ceb6d2d41915a560bf317d8c182",
-    "text": "Paint it pink!",
+    "sha256": "2d0b6801c1fc0c72b53d871fcff387a5c26f3762f1b37c16fb52ce88b61791c7",
+    "text": "Let's paint it pink.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_purple.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "e5de82117c4720cd4125740c7c86d99af814611018815073ac8b581c1dfe71d8",
-    "text": "Paint it purple!",
+    "sha256": "2ebb5f3458d8df050d4ebcdb05eacf2ace164fc9ebebb4e8ad7ddf2cfd2a1a7c",
+    "text": "Let's paint it purple.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_red.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "c56ac39532e3499f5bd22d2ab0baf5ca4c601a0f015912d89e6cb950163c9396",
-    "text": "Paint it red!",
+    "sha256": "56673eee99d247eeb520efb7b6de82e576245e0ba759127de7de100d33ad81f7",
+    "text": "Let's paint it red.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G42_yellow.mp3": {
     "language": "en",
     "model_id": "eleven_multilingual_v2",
-    "sha256": "8a1762e27c083651ee5c2832fd9e487a9911b25455efbb183cbfe37395af7fd7",
-    "text": "Paint it yellow!",
+    "sha256": "b82c8e1e6f711b846ab69e0ee869e90f620c0624f27eb142b32502b584659093",
+    "text": "Let's paint it yellow.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
   "assets/audio/en/pairs/G43_circle.mp3": {
@@ -765,57 +765,57 @@
   "assets/audio/tr/pairs/G42_blue.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "bf6ebcd25849d4851ba2b64514af6aa2ea13ad6f2d99d3dedc591cb5aad06eba",
-    "text": "Maviye boya!",
+    "sha256": "062a2803b63bfdff1ad87f358bf0d47a5a01bb23fe41e8656e93d75e6a255b59",
+    "text": "Hadi, maviye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_brown.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d3d37755e791fa68c7448254351c3c272dc6373ef83aaa72a960de3d36d4f274",
-    "text": "Kahverengiye boya!",
+    "sha256": "bccffd1602f0a03b73602b2f4d2e6cb35235dfbee41e02de5c2b027c66c17212",
+    "text": "Hadi, kahverengiye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_green.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "c6e47fe7059046560499c71ef59612f937fbcc512acb3cf0b8d8c340395b21d8",
-    "text": "Yeşile boya!",
+    "sha256": "a2b4cb54d6363c79865d5cbd9435c7b1ad54a91999b679109a4f4cfe41828d00",
+    "text": "Hadi, yeşile boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_orange.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "73babc78c53f7adb6e4864c4211a67b837ab12ef9249f5f620f24b821b0e601f",
-    "text": "Turuncuya boya!",
+    "sha256": "fc180ae99c7c9aa49f8d28b005aae9a86c76fd9261c62e9e0be35caf9eb5a195",
+    "text": "Hadi, turuncuya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_pink.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a5ab58bf7cff3bce8fb37702fc7fb6a55db4d4c61d4c0371470dcc6b48c19d97",
-    "text": "Pembeye boya!",
+    "sha256": "0fe0402a311ba09e4bf5a2cdba5da215dd8538b4d2cc324943c54dfd1889717a",
+    "text": "Hadi, pembeye boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_purple.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "5ee82db6d71ec583d41066b510986af40716f2fa6731579b81a76c5956c80610",
-    "text": "Mora boya!",
+    "sha256": "e750fe37acc1aa93bdc670bbe15e173a047a0fefbac5a41cafedd0709ba2c2a0",
+    "text": "Hadi, mora boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_red.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "a5774c06a4eec2ece1c2627436660774df4eaa6555330711f65be193ce770a2d",
-    "text": "Kırmızıya boya!",
+    "sha256": "ee2459fa21a8c3f085570a64db868d7f5c52a7089cc450949d8de32bc009e797",
+    "text": "Hadi, kırmızıya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G42_yellow.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "d0d68887e8a3027df8dfbe2cb1816b9b6dade9aaa93c5e9c53b66d41077c3fb8",
-    "text": "Sarıya boya!",
+    "sha256": "fb86e0606a79eb14400dac52b92c324ff431c3d83788a06f4f7b5a3a4a0a5890",
+    "text": "Hadi, sarıya boyayalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G43_circle.mp3": {

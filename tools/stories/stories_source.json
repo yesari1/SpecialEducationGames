@@ -93,8 +93,8 @@
         "en": "Ali and his little sister Elif are playing with a toy car."
       },
       {
-        "tr": "Elif arabayı aldı. Ali'nin elinde araba kalmadı.",
-        "en": "Elif took the car. Now Ali has nothing to play with."
+        "tr": "Elif, arabayı Ali'nin elinden aldı.",
+        "en": "Elif took the car out of Ali's hands."
       },
       {
         "tr": "Sence Ali şimdi ne hissediyor?",
@@ -147,8 +147,8 @@
         ]
       },
       {
-        "tr": "Ali, \"Ben kızdım!\" dedi. Annesiyle birlikte derin bir nefes aldı.",
-        "en": "Ali said, \"I'm angry!\" He took a big, deep breath with Mom."
+        "tr": "Ali annesine \"Çok kızgınım!\" dedi. Birlikte derin bir nefes aldılar.",
+        "en": "Ali told Mom, \"I'm really angry!\" They took a deep breath together."
       },
       {
         "tr": "Elif arabayı geri verdi. Sırayla oynadılar.",
@@ -168,8 +168,8 @@
     },
     "pages": [
       {
-        "tr": "Ali parka geldi. Kaydırak ne kadar güzel!",
-        "en": "Ali is at the park. Look at that slide!"
+        "tr": "Ali parka geldi. Kaydırağı çok seviyor.",
+        "en": "Ali is at the park. He loves the slide."
       },
       {
         "tr": "Elif kaydırağın merdiveninde. Şimdi o kayacak.",
@@ -288,8 +288,8 @@
           {
             "key": "push",
             "result": {
-              "tr": "Doktor kalbini dinleyemedi. Haydi, sakince oturalım.",
-              "en": "The doctor couldn't hear his heart. Let's sit still and calm."
+              "tr": "Ali doktoru itti. Doktor Ali'nin kalbini dinleyemedi.",
+              "en": "Ali pushed the doctor away. The doctor couldn't listen to his heart."
             }
           }
         ]

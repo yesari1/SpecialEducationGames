@@ -77,7 +77,7 @@ function render(full = true) {
         catch (e) { play.classList.remove('on'); statusEl.textContent = 'Ses açılamadı, tekrar deneyin.'; }
       };
       const lang = document.createElement('span'); lang.className = 'lang'; lang.textContent = r.lang;
-      const text = document.createElement('span'); text.className = 'text'; text.textContent = r.text;
+      const text = document.createElement('span'); text.className = 'text'; text.textContent = r.text + (marks[r.id]?.redone && !marks[r.id]?.v ? '  · yenilendi' : '');
       const marksEl = document.createElement('span'); marksEl.className = 'marks';
       const ok = document.createElement('button'); ok.className = 'mark ok' + (marks[r.id]?.v === 'ok' ? ' sel' : ''); ok.textContent = '✓'; ok.setAttribute('aria-label', 'İyi');
       ok.onclick = () => save(r, { v: marks[r.id]?.v === 'ok' ? null : 'ok' });
