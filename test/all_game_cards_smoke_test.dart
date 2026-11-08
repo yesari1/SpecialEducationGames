@@ -10,6 +10,7 @@ import 'package:special_education_games/features/game/game_screen.dart';
 import 'package:special_education_games/features/game/widgets/body_map_view.dart';
 import 'package:special_education_games/features/game/widgets/fill_basket_view.dart';
 import 'package:special_education_games/features/game/widgets/round_choices_view.dart';
+import 'package:special_education_games/features/game/widgets/scene_game_view.dart';
 
 /// Every card in every active theme, every tier, both languages: the game
 /// opens without errors, shows something to answer, and a correct answer
@@ -112,6 +113,23 @@ void main() {
                     .hint
                     .celebrating) {
                   problems.add('$tag: correct body place not accepted');
+                }
+              } else if (find.byType(SceneGameView).evaluate().isNotEmpty) {
+                // The steps themselves are covered by scene_game_test.
+                final view = tester.widget<SceneGameView>(
+                  find.byType(SceneGameView),
+                );
+                if (view.spec.scene!.steps.isEmpty) {
+                  problems.add('$tag: scene without steps');
+                }
+                view.callbacks.onSelect(view.spec.target);
+                await tester.pump();
+                answered++;
+                if (!tester
+                    .widget<SceneGameView>(find.byType(SceneGameView))
+                    .hint
+                    .celebrating) {
+                  problems.add('$tag: finished scene not accepted');
                 }
               } else if (find.byType(FillBasketView).evaluate().isNotEmpty) {
                 // Covered by its own widget test.

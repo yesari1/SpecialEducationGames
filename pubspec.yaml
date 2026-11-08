@@ -100,6 +100,35 @@ flutter:
     - assets/illustrations/themes/
     - assets/illustrations/path/
     - assets/illustrations/park/
+    - assets/images/jobs/
+    - assets/images/nature/
+    - assets/images/use/
+    - assets/images/need/
+    - assets/images/place/
+    - assets/images/grow/
+    - assets/images/season/
+    - assets/audio/tr/jobs/
+    - assets/audio/en/jobs/
+    - assets/audio/tr/nature/
+    - assets/audio/en/nature/
+    - assets/sfx/nature/
+    - assets/images/cleaning/
+    - assets/images/clothes/
+    - assets/images/kitchen/
+    - assets/images/play/
+    - assets/images/fruit/
+    - assets/images/put/
+    - assets/images/wash/
+    - assets/images/stir/
+    - assets/images/weather/
+    - assets/audio/tr/cleaning/
+    - assets/audio/en/cleaning/
+    - assets/audio/tr/clothes/
+    - assets/audio/en/clothes/
+    - assets/audio/tr/kitchen/
+    - assets/audio/en/kitchen/
+    - assets/audio/tr/scenes/
+    - assets/audio/en/scenes/
     - assets/illustrations/home/
     - assets/audio/tr/sections/
     - assets/audio/en/sections/

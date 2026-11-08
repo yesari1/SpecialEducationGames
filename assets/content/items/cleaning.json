@@ -1,0 +1,898 @@
+[
+  {
+    "id": "cleaning.toothbrush",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Diş fırçası",
+      "en": "Toothbrush"
+    },
+    "images": [
+      "assets/images/cleaning/toothbrush.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/toothbrush_selected.mp3",
+      "en": "assets/audio/en/cleaning/toothbrush_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/toothbrush.webp": {
+        "id": "cleaning.toothbrush",
+        "path": "assets/images/cleaning/toothbrush.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1fe4811d4f3065553c188f2eb7f71cd1165e44080e81973936f1e2f669369dc8"
+      }
+    }
+  },
+  {
+    "id": "cleaning.toothpaste",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Diş macunu",
+      "en": "Toothpaste"
+    },
+    "images": [
+      "assets/images/cleaning/toothpaste.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/toothpaste_selected.mp3",
+      "en": "assets/audio/en/cleaning/toothpaste_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/toothpaste.webp": {
+        "id": "cleaning.toothpaste",
+        "path": "assets/images/cleaning/toothpaste.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "70191e05da4728ae4f66b6e94115db0bc0139a66694f3601aac62ad7f99d850f"
+      }
+    }
+  },
+  {
+    "id": "cleaning.soap",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Sabun",
+      "en": "Soap"
+    },
+    "images": [
+      "assets/images/cleaning/soap.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/soap_selected.mp3",
+      "en": "assets/audio/en/cleaning/soap_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/soap.webp": {
+        "id": "cleaning.soap",
+        "path": "assets/images/cleaning/soap.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "dcfac63da03dde990c7c6da4745e24b16b5e36efe5e49c72eae63202202947b1"
+      }
+    }
+  },
+  {
+    "id": "cleaning.towel",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Havlu",
+      "en": "Towel"
+    },
+    "images": [
+      "assets/images/cleaning/towel.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/towel_selected.mp3",
+      "en": "assets/audio/en/cleaning/towel_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/towel.webp": {
+        "id": "cleaning.towel",
+        "path": "assets/images/cleaning/towel.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "ca4659d9d0bfb7e8723c458f4d69d782929c6efca9a25b0c31b5760b48d6a8b8"
+      }
+    }
+  },
+  {
+    "id": "cleaning.comb",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tarak",
+      "en": "Comb"
+    },
+    "images": [
+      "assets/images/cleaning/comb.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/comb_selected.mp3",
+      "en": "assets/audio/en/cleaning/comb_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/comb.webp": {
+        "id": "cleaning.comb",
+        "path": "assets/images/cleaning/comb.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "f6efae9d954d9cca8bf7a13376e86f72afcee4e42a8d41e51b039fb3ce262469"
+      }
+    }
+  },
+  {
+    "id": "cleaning.shampoo",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Şampuan",
+      "en": "Shampoo"
+    },
+    "images": [
+      "assets/images/cleaning/shampoo.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/shampoo_selected.mp3",
+      "en": "assets/audio/en/cleaning/shampoo_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/shampoo.webp": {
+        "id": "cleaning.shampoo",
+        "path": "assets/images/cleaning/shampoo.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "de3a87babbebc4d321b9764bef35c6b4d24f79ba0c133b8c0b21e8c3064249fc"
+      }
+    }
+  },
+  {
+    "id": "cleaning.tissue",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kâğıt mendil",
+      "en": "Tissue"
+    },
+    "images": [
+      "assets/images/cleaning/tissue.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/tissue_selected.mp3",
+      "en": "assets/audio/en/cleaning/tissue_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/tissue.webp": {
+        "id": "cleaning.tissue",
+        "path": "assets/images/cleaning/tissue.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "7925ca07f6247d4dd9eae42486d0edb84676458a2282c7a224202be7e86545d2"
+      }
+    }
+  },
+  {
+    "id": "cleaning.trash_bin",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çöp kovası",
+      "en": "Trash can"
+    },
+    "images": [
+      "assets/images/cleaning/trash_bin.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/trash_bin_selected.mp3",
+      "en": "assets/audio/en/cleaning/trash_bin_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/trash_bin.webp": {
+        "id": "cleaning.trash_bin",
+        "path": "assets/images/cleaning/trash_bin.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "891ca67d27c041f9bcc3a5a10652a8375d43b3c6e6e815068a4aad598c434e17"
+      }
+    }
+  },
+  {
+    "id": "cleaning.tap",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Musluk",
+      "en": "Tap"
+    },
+    "images": [
+      "assets/images/cleaning/tap.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/tap_selected.mp3",
+      "en": "assets/audio/en/cleaning/tap_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/tap.webp": {
+        "id": "cleaning.tap",
+        "path": "assets/images/cleaning/tap.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "924617595cc049f5bed33ea687992a2e19f317a6fa37340c7393c215ecc6e747"
+      }
+    }
+  },
+  {
+    "id": "cleaning.bathtub",
+    "theme": "cleaning",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Küvet",
+      "en": "Bathtub"
+    },
+    "images": [
+      "assets/images/cleaning/bathtub.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/bathtub_selected.mp3",
+      "en": "assets/audio/en/cleaning/bathtub_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/bathtub.webp": {
+        "id": "cleaning.bathtub",
+        "path": "assets/images/cleaning/bathtub.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "2f16f8e29d5ce290542c916466b907cfcba4925bae7cb50736e0744a9bfd1f72"
+      }
+    }
+  },
+  {
+    "id": "cleaning.hairbrush",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Saç fırçası",
+      "en": "Hairbrush"
+    },
+    "images": [
+      "assets/images/cleaning/hairbrush.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/hairbrush_selected.mp3",
+      "en": "assets/audio/en/cleaning/hairbrush_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/hairbrush.webp": {
+        "id": "cleaning.hairbrush",
+        "path": "assets/images/cleaning/hairbrush.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "300304d4c5554b218322499aaebd7766f05955836c2201478fe2c2691f2c9d12"
+      }
+    }
+  },
+  {
+    "id": "cleaning.sponge",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Sünger",
+      "en": "Sponge"
+    },
+    "images": [
+      "assets/images/cleaning/sponge.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/sponge_selected.mp3",
+      "en": "assets/audio/en/cleaning/sponge_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/sponge.webp": {
+        "id": "cleaning.sponge",
+        "path": "assets/images/cleaning/sponge.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "47e43f061d68e29695521a41e1123372064aaca0af5ae3e3833b25104b8cd927"
+      }
+    }
+  },
+  {
+    "id": "cleaning.broom",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Süpürge",
+      "en": "Broom"
+    },
+    "images": [
+      "assets/images/cleaning/broom.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/broom_selected.mp3",
+      "en": "assets/audio/en/cleaning/broom_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/broom.webp": {
+        "id": "cleaning.broom",
+        "path": "assets/images/cleaning/broom.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "fb5bf61113da613fb02247b20cb1e2a70362c6e4089e3def18212b4a201abaff"
+      }
+    }
+  },
+  {
+    "id": "cleaning.dustpan",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Faraş",
+      "en": "Dustpan"
+    },
+    "images": [
+      "assets/images/cleaning/dustpan.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/dustpan_selected.mp3",
+      "en": "assets/audio/en/cleaning/dustpan_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/dustpan.webp": {
+        "id": "cleaning.dustpan",
+        "path": "assets/images/cleaning/dustpan.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "8fe3a3bd642c7885d6ab270b5f02938d53b09e703d036c196ecbcc65e4737809"
+      }
+    }
+  },
+  {
+    "id": "cleaning.mop",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Paspas",
+      "en": "Mop"
+    },
+    "images": [
+      "assets/images/cleaning/mop.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/mop_selected.mp3",
+      "en": "assets/audio/en/cleaning/mop_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/mop.webp": {
+        "id": "cleaning.mop",
+        "path": "assets/images/cleaning/mop.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "8d8a6f1237bc5b65d06720cf9450cacaf84b1b36e51bad1e845282d902b85ff5"
+      }
+    }
+  },
+  {
+    "id": "cleaning.bucket",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kova",
+      "en": "Bucket"
+    },
+    "images": [
+      "assets/images/cleaning/bucket.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/bucket_selected.mp3",
+      "en": "assets/audio/en/cleaning/bucket_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/bucket.webp": {
+        "id": "cleaning.bucket",
+        "path": "assets/images/cleaning/bucket.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "3f833b6adc5f152930116531466e47cc605689045838f93cb37d07657d1f017e"
+      }
+    }
+  },
+  {
+    "id": "cleaning.toilet_paper",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tuvalet kâğıdı",
+      "en": "Toilet paper"
+    },
+    "images": [
+      "assets/images/cleaning/toilet_paper.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/toilet_paper_selected.mp3",
+      "en": "assets/audio/en/cleaning/toilet_paper_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/toilet_paper.webp": {
+        "id": "cleaning.toilet_paper",
+        "path": "assets/images/cleaning/toilet_paper.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1cf26d46787010f74c02d0acd7f84c908e4828e8ac176e61478676ae504b8c3e"
+      }
+    }
+  },
+  {
+    "id": "cleaning.washing_machine",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çamaşır makinesi",
+      "en": "Washing machine"
+    },
+    "images": [
+      "assets/images/cleaning/washing_machine.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/washing_machine_selected.mp3",
+      "en": "assets/audio/en/cleaning/washing_machine_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/washing_machine.webp": {
+        "id": "cleaning.washing_machine",
+        "path": "assets/images/cleaning/washing_machine.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "46e634e6ebcbdb4014303b2e7e614a6202e2d5cdbaf65646a59fd476b66e1e59"
+      }
+    }
+  },
+  {
+    "id": "cleaning.hair_dryer",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Saç kurutma makinesi",
+      "en": "Hair dryer"
+    },
+    "images": [
+      "assets/images/cleaning/hair_dryer.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/hair_dryer_selected.mp3",
+      "en": "assets/audio/en/cleaning/hair_dryer_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/hair_dryer.webp": {
+        "id": "cleaning.hair_dryer",
+        "path": "assets/images/cleaning/hair_dryer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c4720221452d1ac21eedd1188931d746148716d94cd3cf55940014dde93a6bf3"
+      }
+    }
+  },
+  {
+    "id": "cleaning.nail_clipper",
+    "theme": "cleaning",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tırnak makası",
+      "en": "Nail clippers"
+    },
+    "images": [
+      "assets/images/cleaning/nail_clipper.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/nail_clipper_selected.mp3",
+      "en": "assets/audio/en/cleaning/nail_clipper_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/nail_clipper.webp": {
+        "id": "cleaning.nail_clipper",
+        "path": "assets/images/cleaning/nail_clipper.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "371e64833b77436ae2401782af059bb3e4dab0ff9941e48783962e8b5899b3c2"
+      }
+    }
+  },
+  {
+    "id": "cleaning.vacuum",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Elektrikli süpürge",
+      "en": "Vacuum cleaner"
+    },
+    "images": [
+      "assets/images/cleaning/vacuum.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/vacuum_selected.mp3",
+      "en": "assets/audio/en/cleaning/vacuum_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/vacuum.webp": {
+        "id": "cleaning.vacuum",
+        "path": "assets/images/cleaning/vacuum.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "48111e89c542c0aede882e79fc01110aebda6db7f8e30618a144bf5c1df8d530"
+      }
+    }
+  },
+  {
+    "id": "cleaning.laundry_basket",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çamaşır sepeti",
+      "en": "Laundry basket"
+    },
+    "images": [
+      "assets/images/cleaning/laundry_basket.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/laundry_basket_selected.mp3",
+      "en": "assets/audio/en/cleaning/laundry_basket_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/laundry_basket.webp": {
+        "id": "cleaning.laundry_basket",
+        "path": "assets/images/cleaning/laundry_basket.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "682a632cc3c6ae8fcbbc71be4c18ed3d164554ffe88709519b581c7a419d0668"
+      }
+    }
+  },
+  {
+    "id": "cleaning.clothespin",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Mandal",
+      "en": "Clothespin"
+    },
+    "images": [
+      "assets/images/cleaning/clothespin.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/clothespin_selected.mp3",
+      "en": "assets/audio/en/cleaning/clothespin_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/clothespin.webp": {
+        "id": "cleaning.clothespin",
+        "path": "assets/images/cleaning/clothespin.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "93b3490376cd722b345ba4cef6443824c1cd6834c3c25ea0bbbd700dbeee8a71"
+      }
+    }
+  },
+  {
+    "id": "cleaning.drying_rack",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çamaşırlık",
+      "en": "Drying rack"
+    },
+    "images": [
+      "assets/images/cleaning/drying_rack.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/drying_rack_selected.mp3",
+      "en": "assets/audio/en/cleaning/drying_rack_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/drying_rack.webp": {
+        "id": "cleaning.drying_rack",
+        "path": "assets/images/cleaning/drying_rack.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "70704bf94980064d28add62490f365d8c60cd52f6faf38848b69ed888a5fa805"
+      }
+    }
+  },
+  {
+    "id": "cleaning.detergent",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Deterjan",
+      "en": "Laundry detergent"
+    },
+    "images": [
+      "assets/images/cleaning/detergent.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/detergent_selected.mp3",
+      "en": "assets/audio/en/cleaning/detergent_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/detergent.webp": {
+        "id": "cleaning.detergent",
+        "path": "assets/images/cleaning/detergent.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "65ea3fba39fa3891f1e399fb65152483fd39c05c3c772845a432064db5efb036"
+      }
+    }
+  },
+  {
+    "id": "cleaning.rubber_gloves",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Lastik eldiven",
+      "en": "Rubber gloves"
+    },
+    "images": [
+      "assets/images/cleaning/rubber_gloves.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/rubber_gloves_selected.mp3",
+      "en": "assets/audio/en/cleaning/rubber_gloves_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/rubber_gloves.webp": {
+        "id": "cleaning.rubber_gloves",
+        "path": "assets/images/cleaning/rubber_gloves.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a3b42a06ffe341b2703239a99fd96f57aed0029cda2a1c332bd05b08ea444826"
+      }
+    }
+  },
+  {
+    "id": "cleaning.bath_sponge",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Banyo lifi",
+      "en": "Bath sponge"
+    },
+    "images": [
+      "assets/images/cleaning/bath_sponge.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/bath_sponge_selected.mp3",
+      "en": "assets/audio/en/cleaning/bath_sponge_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/bath_sponge.webp": {
+        "id": "cleaning.bath_sponge",
+        "path": "assets/images/cleaning/bath_sponge.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "ee18e385fd4d43f381daa82700975884ff5d704920ccb0f2d428a28c2d04822a"
+      }
+    }
+  },
+  {
+    "id": "cleaning.shower",
+    "theme": "cleaning",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Duş",
+      "en": "Shower"
+    },
+    "images": [
+      "assets/images/cleaning/shower.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/cleaning/shower_selected.mp3",
+      "en": "assets/audio/en/cleaning/shower_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/cleaning/shower.webp": {
+        "id": "cleaning.shower",
+        "path": "assets/images/cleaning/shower.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "79d46817da957ca0cb2cdf07bd93c44534ada912d712a9b6aae3700d248356b3"
+      }
+    }
+  }
+]

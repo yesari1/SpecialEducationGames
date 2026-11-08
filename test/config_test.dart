@@ -339,7 +339,7 @@ void main() {
         now: () => time,
       );
       await db.setPreference('appConfig', 'broken-json');
-      expect((await repo.load()).freeGames.length, 30);
+      expect((await repo.load()).freeGames.length, 45);
       var requests = 0;
       final config = await repo.refresh(() async {
         requests++;

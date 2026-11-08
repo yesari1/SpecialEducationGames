@@ -4,10 +4,7 @@
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "gokyuzu",
-      "yaz"
-    ],
+    "tags": [],
     "name": {
       "tr": "Güneş",
       "en": "Sun"
@@ -24,772 +21,863 @@
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "gokyuzu"
-    ],
+    "tags": [],
     "name": {
       "tr": "Ay",
       "en": "Moon"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/moon.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/moon_selected.mp3",
       "en": "assets/audio/en/nature/moon_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/moon.webp": {
+        "id": "nature.moon",
+        "path": "assets/images/nature/moon.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1c12bf75f397688092d874357cc8683cac22ce01b36c271bb5f83136f24fbcad"
+      }
+    }
   },
   {
     "id": "nature.star",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "gokyuzu"
-    ],
+    "tags": [],
     "name": {
       "tr": "Yıldız",
       "en": "Star"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/star.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/star_selected.mp3",
       "en": "assets/audio/en/nature/star_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/star.webp": {
+        "id": "nature.star",
+        "path": "assets/images/nature/star.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "428d6f8050eb43cdb1895a8cc2e5bdcb7fd73b023490a549eea63ae27e1df3ab"
+      }
+    }
   },
   {
     "id": "nature.cloud",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "gokyuzu"
-    ],
+    "tags": [],
     "name": {
       "tr": "Bulut",
       "en": "Cloud"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/cloud.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/cloud_selected.mp3",
       "en": "assets/audio/en/nature/cloud_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/cloud.webp": {
+        "id": "nature.cloud",
+        "path": "assets/images/nature/cloud.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "8180bc35348d58b8dc3a0d3034b80195c9068519837fc19d2349e3645c530742"
+      }
+    }
   },
   {
     "id": "nature.rain",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "hava_durumu"
-    ],
+    "tags": [],
     "name": {
       "tr": "Yağmur",
       "en": "Rain"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/rain.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/rain_selected.mp3",
       "en": "assets/audio/en/nature/rain_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/rain.webp": {
+        "id": "nature.rain",
+        "path": "assets/images/nature/rain.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "70669fddf9ec6c77ab955e1b448c7bf680c40cca85aea9fc85023b82be0e3634"
+      }
+    }
   },
   {
     "id": "nature.snow",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "hava_durumu",
-      "kis"
-    ],
+    "tags": [],
     "name": {
       "tr": "Kar",
       "en": "Snow"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/snow.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/snow_selected.mp3",
       "en": "assets/audio/en/nature/snow_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/snow.webp": {
+        "id": "nature.snow",
+        "path": "assets/images/nature/snow.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "cbdb3440c5dd1e64a04d0cb1da8b14737faf92565901ade3def83f98b23386ec"
+      }
+    }
   },
   {
     "id": "nature.tree",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "bitki"
-    ],
+    "tags": [],
     "name": {
       "tr": "Ağaç",
       "en": "Tree"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/tree.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/tree_selected.mp3",
       "en": "assets/audio/en/nature/tree_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/tree.webp": {
+        "id": "nature.tree",
+        "path": "assets/images/nature/tree.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a00d65a7325798668700d706a32a93e258f2990dd713cb22690828d1ed57088a"
+      }
+    }
   },
   {
     "id": "nature.flower",
     "theme": "nature",
     "tier": "easy",
     "chapter": 1,
-    "tags": [
-      "bitki",
-      "ilkbahar"
-    ],
+    "tags": [],
     "name": {
       "tr": "Çiçek",
       "en": "Flower"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/flower.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/flower_selected.mp3",
       "en": "assets/audio/en/nature/flower_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/flower.webp": {
+        "id": "nature.flower",
+        "path": "assets/images/nature/flower.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "b97d4ce8d6817e93c7253ec6d112fd59c04caec6d56b432a6bde18301f858198"
+      }
+    }
   },
   {
     "id": "nature.sea",
     "theme": "nature",
     "tier": "easy",
-    "chapter": 2,
-    "tags": [
-      "yer"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Deniz",
       "en": "Sea"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/sea.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/sea_selected.mp3",
       "en": "assets/audio/en/nature/sea_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/sea.webp": {
+        "id": "nature.sea",
+        "path": "assets/images/nature/sea.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1c168923c26b16a41c777a8e0ceb0e1f6c45ae261d051cd0feb19ad34854e7fa"
+      }
+    }
   },
   {
     "id": "nature.mountain",
     "theme": "nature",
     "tier": "easy",
-    "chapter": 2,
-    "tags": [
-      "yer"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Dağ",
       "en": "Mountain"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/mountain.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/mountain_selected.mp3",
       "en": "assets/audio/en/nature/mountain_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/mountain.webp": {
+        "id": "nature.mountain",
+        "path": "assets/images/nature/mountain.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "bd45942bf50406319a870cbb30ba8065836f3a3edf3830993df6c3712c828279"
+      }
+    }
   },
   {
     "id": "nature.rainbow",
     "theme": "nature",
-    "tier": "easy",
-    "chapter": 2,
-    "tags": [
-      "gokyuzu"
-    ],
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Gökkuşağı",
       "en": "Rainbow"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/rainbow.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/rainbow_selected.mp3",
       "en": "assets/audio/en/nature/rainbow_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/rainbow.webp": {
+        "id": "nature.rainbow",
+        "path": "assets/images/nature/rainbow.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "58029f50d7339087732d8423a8972f9af35ac274554f3578040934ba2b0cb15c"
+      }
+    }
   },
   {
     "id": "nature.snowman",
     "theme": "nature",
-    "tier": "easy",
-    "chapter": 2,
-    "tags": [
-      "kis"
-    ],
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Kardan adam",
       "en": "Snowman"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/snowman.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/snowman_selected.mp3",
       "en": "assets/audio/en/nature/snowman_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/snowman.webp": {
+        "id": "nature.snowman",
+        "path": "assets/images/nature/snowman.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "106e3d3702d085ef84655a1f7ac877a0b2205c00e6bf7a879d5c26ab1cad9273"
+      }
+    }
   },
   {
     "id": "nature.wind",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "hava_durumu"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
-      "tr": "Rüzgar",
+      "tr": "Rüzgâr",
       "en": "Wind"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/wind.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/wind_selected.mp3",
       "en": "assets/audio/en/nature/wind_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/wind.webp": {
+        "id": "nature.wind",
+        "path": "assets/images/nature/wind.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "bc9d011cc34bcc661cac92bf64710a03a110d48781118291b5f8636592aaddc5"
+      }
+    }
   },
   {
     "id": "nature.lightning",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "hava_durumu"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Şimşek",
       "en": "Lightning"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/lightning.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/lightning_selected.mp3",
       "en": "assets/audio/en/nature/lightning_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/lightning.webp": {
+        "id": "nature.lightning",
+        "path": "assets/images/nature/lightning.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "67f5268ab621c7fdecbee51ba6b7491a8b727f71fb383279c9f1091c8dd398a4"
+      }
+    }
   },
   {
     "id": "nature.leaf",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "bitki",
-      "sonbahar"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Yaprak",
       "en": "Leaf"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/leaf.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/leaf_selected.mp3",
       "en": "assets/audio/en/nature/leaf_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/leaf.webp": {
+        "id": "nature.leaf",
+        "path": "assets/images/nature/leaf.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "39ea39be661930a8f9384713cc201b734997fa0462dca8648f4b7de3c0a4adb6"
+      }
+    }
   },
   {
     "id": "nature.grass",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "bitki"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Çimen",
       "en": "Grass"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/grass.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/grass_selected.mp3",
       "en": "assets/audio/en/nature/grass_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/grass.webp": {
+        "id": "nature.grass",
+        "path": "assets/images/nature/grass.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "b421dd658f018ab46a93a01cacd32ebde0174a70cf1c341cc1ef0d0c92416ca2"
+      }
+    }
   },
   {
     "id": "nature.river",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "yer"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Nehir",
       "en": "River"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/river.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/river_selected.mp3",
       "en": "assets/audio/en/nature/river_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/river.webp": {
+        "id": "nature.river",
+        "path": "assets/images/nature/river.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "df0b496c627819029c56b6e8509bd4cbaac116a969a05116af47157174c4fbbb"
+      }
+    }
   },
   {
     "id": "nature.lake",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "yer"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Göl",
       "en": "Lake"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/lake.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/lake_selected.mp3",
       "en": "assets/audio/en/nature/lake_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/lake.webp": {
+        "id": "nature.lake",
+        "path": "assets/images/nature/lake.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "b0eda316eec9ed507ee3f82db63a73f45f3d7cb22c6ce5329ba7cebeff4f8224"
+      }
+    }
   },
   {
     "id": "nature.forest",
     "theme": "nature",
     "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "yer"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Orman",
       "en": "Forest"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/forest.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/forest_selected.mp3",
       "en": "assets/audio/en/nature/forest_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "nature.sand",
-    "theme": "nature",
-    "tier": "medium",
-    "chapter": 3,
-    "tags": [
-      "yer",
-      "yaz"
-    ],
-    "name": {
-      "tr": "Kum",
-      "en": "Sand"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/sand_selected.mp3",
-      "en": "assets/audio/en/nature/sand_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.stone",
-    "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Taş",
-      "en": "Stone"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/stone_selected.mp3",
-      "en": "assets/audio/en/nature/stone_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/forest.webp": {
+        "id": "nature.forest",
+        "path": "assets/images/nature/forest.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "02e7e4fe6177a88ed2e340c4d5b267d40ba85ee9202df3a3750c5e9b933a019b"
+      }
+    }
   },
   {
     "id": "nature.spring",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "İlkbahar",
       "en": "Spring"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/spring.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/spring_selected.mp3",
       "en": "assets/audio/en/nature/spring_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/spring.webp": {
+        "id": "nature.spring",
+        "path": "assets/images/nature/spring.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "f37b6276bd2fe3f5c62d8aade357284b9ac34879c782e1cee62f05da620cc906"
+      }
+    }
   },
   {
     "id": "nature.summer",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Yaz",
       "en": "Summer"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/summer.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/summer_selected.mp3",
       "en": "assets/audio/en/nature/summer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/summer.webp": {
+        "id": "nature.summer",
+        "path": "assets/images/nature/summer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "279aec711187852d5e48484ec16b465483a0b6ecddbd4e20b602fe9a8645661b"
+      }
+    }
   },
   {
     "id": "nature.autumn",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Sonbahar",
       "en": "Autumn"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/autumn.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/autumn_selected.mp3",
       "en": "assets/audio/en/nature/autumn_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/autumn.webp": {
+        "id": "nature.autumn",
+        "path": "assets/images/nature/autumn.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9c6670685fbbc1bcbc0a3d84eed90ae719fb0f4f1fa9787ffebae26dc91fb577"
+      }
+    }
   },
   {
     "id": "nature.winter",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Kış",
       "en": "Winter"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/winter.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/winter_selected.mp3",
       "en": "assets/audio/en/nature/winter_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/winter.webp": {
+        "id": "nature.winter",
+        "path": "assets/images/nature/winter.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "62042fcc3a91b0dad295adecdc5774438486985b8ec41a9d16060e10cebb326d"
+      }
+    }
   },
   {
     "id": "nature.night",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Gece",
       "en": "Night"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/night.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/night_selected.mp3",
       "en": "assets/audio/en/nature/night_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/night.webp": {
+        "id": "nature.night",
+        "path": "assets/images/nature/night.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "542f47b7754962de6b2c4ee44911e703a470ef433ca6df801c2b325323bfdc49"
+      }
+    }
   },
   {
     "id": "nature.day",
     "theme": "nature",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Gündüz",
       "en": "Day"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/day.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/day_selected.mp3",
       "en": "assets/audio/en/nature/day_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "nature.waterfall",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Şelale",
-      "en": "Waterfall"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/waterfall_selected.mp3",
-      "en": "assets/audio/en/nature/waterfall_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.island",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Ada",
-      "en": "Island"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/island_selected.mp3",
-      "en": "assets/audio/en/nature/island_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.desert",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Çöl",
-      "en": "Desert"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/desert_selected.mp3",
-      "en": "assets/audio/en/nature/desert_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.cave",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Mağara",
-      "en": "Cave"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/cave_selected.mp3",
-      "en": "assets/audio/en/nature/cave_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.volcano",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Volkan",
-      "en": "Volcano"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/volcano_selected.mp3",
-      "en": "assets/audio/en/nature/volcano_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.fog",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "hava_durumu"
-    ],
-    "name": {
-      "tr": "Sis",
-      "en": "Fog"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/fog_selected.mp3",
-      "en": "assets/audio/en/nature/fog_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.hail",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "hava_durumu"
-    ],
-    "name": {
-      "tr": "Dolu",
-      "en": "Hail"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/hail_selected.mp3",
-      "en": "assets/audio/en/nature/hail_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.ice",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "kis"
-    ],
-    "name": {
-      "tr": "Buz",
-      "en": "Ice"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/ice_selected.mp3",
-      "en": "assets/audio/en/nature/ice_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/day.webp": {
+        "id": "nature.day",
+        "path": "assets/images/nature/day.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "2025fa0449acef280b593dc1a0e6cb952f3b05191fd8e0f8e4fc59d57efc521d"
+      }
+    }
   },
   {
     "id": "nature.seed",
     "theme": "nature",
     "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "bitki"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Tohum",
       "en": "Seed"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/seed.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/seed_selected.mp3",
       "en": "assets/audio/en/nature/seed_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/seed.webp": {
+        "id": "nature.seed",
+        "path": "assets/images/nature/seed.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "14522a74ae6beb67d00febb5481bacef4a3d8af866cc25de79826b389bdf1233"
+      }
+    }
   },
   {
     "id": "nature.sprout",
     "theme": "nature",
     "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "bitki",
-      "ilkbahar"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
       "tr": "Filiz",
       "en": "Sprout"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/sprout.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/sprout_selected.mp3",
       "en": "assets/audio/en/nature/sprout_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/sprout.webp": {
+        "id": "nature.sprout",
+        "path": "assets/images/nature/sprout.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "8bcac726e6bdaa8c5c88d702a328dba92c71aab65949f139e276327989a71e3a"
+      }
+    }
   },
   {
-    "id": "nature.pine_cone",
+    "id": "nature.sand",
     "theme": "nature",
     "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "bitki",
-      "sonbahar"
-    ],
+    "chapter": 1,
+    "tags": [],
     "name": {
-      "tr": "Kozalak",
-      "en": "Pine cone"
+      "tr": "Kum",
+      "en": "Sand"
     },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/pine_cone_selected.mp3",
-      "en": "assets/audio/en/nature/pine_cone_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.mushroom",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "bitki"
+    "images": [
+      "assets/images/nature/sand.webp"
     ],
-    "name": {
-      "tr": "Mantar",
-      "en": "Mushroom"
-    },
-    "images": [],
     "audio": {
-      "tr": "assets/audio/tr/nature/mushroom_selected.mp3",
-      "en": "assets/audio/en/nature/mushroom_selected.mp3"
+      "tr": "assets/audio/tr/nature/sand_selected.mp3",
+      "en": "assets/audio/en/nature/sand_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "nature.cactus",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "bitki"
-    ],
-    "name": {
-      "tr": "Kaktüs",
-      "en": "Cactus"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/cactus_selected.mp3",
-      "en": "assets/audio/en/nature/cactus_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.sunrise",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "gokyuzu"
-    ],
-    "name": {
-      "tr": "Gün doğumu",
-      "en": "Sunrise"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/sunrise_selected.mp3",
-      "en": "assets/audio/en/nature/sunrise_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "nature.wave",
-    "theme": "nature",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "yer"
-    ],
-    "name": {
-      "tr": "Dalga",
-      "en": "Wave"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/nature/wave_selected.mp3",
-      "en": "assets/audio/en/nature/wave_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/sand.webp": {
+        "id": "nature.sand",
+        "path": "assets/images/nature/sand.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "4e95d433c1418b89a744b8d9554421c89f95251f5113b1175e172a43dd95f3d4"
+      }
+    }
   }
 ]

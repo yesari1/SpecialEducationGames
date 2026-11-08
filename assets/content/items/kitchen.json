@@ -1,0 +1,930 @@
+[
+  {
+    "id": "kitchen.plate",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tabak",
+      "en": "Plate"
+    },
+    "images": [
+      "assets/images/kitchen/plate.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/plate_selected.mp3",
+      "en": "assets/audio/en/kitchen/plate_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/plate.webp": {
+        "id": "kitchen.plate",
+        "path": "assets/images/kitchen/plate.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "bb29a00ed0330728138cccef59d5064cb149fff42ad75a5b5d7415c31c4cc1d8"
+      }
+    }
+  },
+  {
+    "id": "kitchen.fork",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çatal",
+      "en": "Fork"
+    },
+    "images": [
+      "assets/images/kitchen/fork.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/fork_selected.mp3",
+      "en": "assets/audio/en/kitchen/fork_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/fork.webp": {
+        "id": "kitchen.fork",
+        "path": "assets/images/kitchen/fork.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "800798d8cd820233c757a8354de4f746ac404f8aecfa82ce819ca92df1672fc2"
+      }
+    }
+  },
+  {
+    "id": "kitchen.spoon",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kaşık",
+      "en": "Spoon"
+    },
+    "images": [
+      "assets/images/kitchen/spoon.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/spoon_selected.mp3",
+      "en": "assets/audio/en/kitchen/spoon_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/spoon.webp": {
+        "id": "kitchen.spoon",
+        "path": "assets/images/kitchen/spoon.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "256f569a2c6e795cfb697745dd6662584f87594d1618dad400d7c10882fd010a"
+      }
+    }
+  },
+  {
+    "id": "kitchen.knife",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Bıçak",
+      "en": "Knife"
+    },
+    "images": [
+      "assets/images/kitchen/knife.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/knife_selected.mp3",
+      "en": "assets/audio/en/kitchen/knife_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/knife.webp": {
+        "id": "kitchen.knife",
+        "path": "assets/images/kitchen/knife.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "6d256de2e2fb1d7a349fbb90e97d9d91b7ed834907105540a9937ca5d020da7b"
+      }
+    }
+  },
+  {
+    "id": "kitchen.glass",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Bardak",
+      "en": "Glass"
+    },
+    "images": [
+      "assets/images/kitchen/glass.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/glass_selected.mp3",
+      "en": "assets/audio/en/kitchen/glass_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/glass.webp": {
+        "id": "kitchen.glass",
+        "path": "assets/images/kitchen/glass.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a7cdc66124fbf2a98baa6adc6093263d945eca9cc609b2577024bf2d385b3db8"
+      }
+    }
+  },
+  {
+    "id": "kitchen.bowl",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kâse",
+      "en": "Bowl"
+    },
+    "images": [
+      "assets/images/kitchen/bowl.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/bowl_selected.mp3",
+      "en": "assets/audio/en/kitchen/bowl_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/bowl.webp": {
+        "id": "kitchen.bowl",
+        "path": "assets/images/kitchen/bowl.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "7f1de172218b4db7eeed8bff32c46eafce0c917fc3a2ab3015787c2297c694e4"
+      }
+    }
+  },
+  {
+    "id": "kitchen.pot",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tencere",
+      "en": "Pot"
+    },
+    "images": [
+      "assets/images/kitchen/pot.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/pot_selected.mp3",
+      "en": "assets/audio/en/kitchen/pot_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/pot.webp": {
+        "id": "kitchen.pot",
+        "path": "assets/images/kitchen/pot.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "87ecac5aceaf5079757f358c6245d54e32abf584394a8837293b1792314a894d"
+      }
+    }
+  },
+  {
+    "id": "kitchen.pan",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tava",
+      "en": "Frying pan"
+    },
+    "images": [
+      "assets/images/kitchen/pan.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/pan_selected.mp3",
+      "en": "assets/audio/en/kitchen/pan_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/pan.webp": {
+        "id": "kitchen.pan",
+        "path": "assets/images/kitchen/pan.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "0481ad6b10bda3c1f573820f945f456666fe98033feb7f59074bacaabadf6cbf"
+      }
+    }
+  },
+  {
+    "id": "kitchen.fridge",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Buzdolabı",
+      "en": "Fridge"
+    },
+    "images": [
+      "assets/images/kitchen/fridge.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/fridge_selected.mp3",
+      "en": "assets/audio/en/kitchen/fridge_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/fridge.webp": {
+        "id": "kitchen.fridge",
+        "path": "assets/images/kitchen/fridge.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "86073fbd85fcd1946bd7978dcf1d21bace52da65a9cb57c3d0ac7299e12e81a2"
+      }
+    }
+  },
+  {
+    "id": "kitchen.oven",
+    "theme": "kitchen",
+    "tier": "easy",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Fırın",
+      "en": "Oven"
+    },
+    "images": [
+      "assets/images/kitchen/oven.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/oven_selected.mp3",
+      "en": "assets/audio/en/kitchen/oven_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/oven.webp": {
+        "id": "kitchen.oven",
+        "path": "assets/images/kitchen/oven.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "8e9739058a1b909d7e56cb126f86f6270171470b6e1f0179d4fed28943f7bacb"
+      }
+    }
+  },
+  {
+    "id": "kitchen.cup",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Fincan",
+      "en": "Cup"
+    },
+    "images": [
+      "assets/images/kitchen/cup.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/cup_selected.mp3",
+      "en": "assets/audio/en/kitchen/cup_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/cup.webp": {
+        "id": "kitchen.cup",
+        "path": "assets/images/kitchen/cup.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "ab4d6addd71b0303cf9ec2cb24df4d5b40d51426f0717e9458ee8010039fafd7"
+      }
+    }
+  },
+  {
+    "id": "kitchen.mug",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kupa",
+      "en": "Mug"
+    },
+    "images": [
+      "assets/images/kitchen/mug.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/mug_selected.mp3",
+      "en": "assets/audio/en/kitchen/mug_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/mug.webp": {
+        "id": "kitchen.mug",
+        "path": "assets/images/kitchen/mug.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "d5717208d210f8d03b80326337ed459e238e3e284da8d749ec913aff6ddb13a9"
+      }
+    }
+  },
+  {
+    "id": "kitchen.teapot",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çaydanlık",
+      "en": "Teapot"
+    },
+    "images": [
+      "assets/images/kitchen/teapot.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/teapot_selected.mp3",
+      "en": "assets/audio/en/kitchen/teapot_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/teapot.webp": {
+        "id": "kitchen.teapot",
+        "path": "assets/images/kitchen/teapot.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "51239900ea694c004f4af2212bfd22746b8742ba12c26c17aee9ada435873730"
+      }
+    }
+  },
+  {
+    "id": "kitchen.tray",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tepsi",
+      "en": "Tray"
+    },
+    "images": [
+      "assets/images/kitchen/tray.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/tray_selected.mp3",
+      "en": "assets/audio/en/kitchen/tray_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/tray.webp": {
+        "id": "kitchen.tray",
+        "path": "assets/images/kitchen/tray.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "98808c3fc220bac87cd80da707b7b9b6c659f21bd269be60eb8ce757208a555c"
+      }
+    }
+  },
+  {
+    "id": "kitchen.cutting_board",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kesme tahtası",
+      "en": "Cutting board"
+    },
+    "images": [
+      "assets/images/kitchen/cutting_board.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/cutting_board_selected.mp3",
+      "en": "assets/audio/en/kitchen/cutting_board_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/cutting_board.webp": {
+        "id": "kitchen.cutting_board",
+        "path": "assets/images/kitchen/cutting_board.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "6450a7aabad01ca296a8f6df4b258e725f249aab3399031988ce60f0fe81b50d"
+      }
+    }
+  },
+  {
+    "id": "kitchen.ladle",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Kepçe",
+      "en": "Ladle"
+    },
+    "images": [
+      "assets/images/kitchen/ladle.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/ladle_selected.mp3",
+      "en": "assets/audio/en/kitchen/ladle_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/ladle.webp": {
+        "id": "kitchen.ladle",
+        "path": "assets/images/kitchen/ladle.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9745c6b0c2fd56c7c1882399c85a8cab32be9315db1617f7caf8583288a0b659"
+      }
+    }
+  },
+  {
+    "id": "kitchen.jug",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Sürahi",
+      "en": "Jug"
+    },
+    "images": [
+      "assets/images/kitchen/jug.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/jug_selected.mp3",
+      "en": "assets/audio/en/kitchen/jug_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/jug.webp": {
+        "id": "kitchen.jug",
+        "path": "assets/images/kitchen/jug.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "aeae41d1894c724e25a361dd93cb6e21e1ca060ced13f588d0b7efb2d9e08f20"
+      }
+    }
+  },
+  {
+    "id": "kitchen.cupboard",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Dolap",
+      "en": "Cupboard"
+    },
+    "images": [
+      "assets/images/kitchen/cupboard.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/cupboard_selected.mp3",
+      "en": "assets/audio/en/kitchen/cupboard_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/cupboard.webp": {
+        "id": "kitchen.cupboard",
+        "path": "assets/images/kitchen/cupboard.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "670269eae96594033ee883135dad614237fd8ac8e62f4eaab7a1a96279923da3"
+      }
+    }
+  },
+  {
+    "id": "kitchen.dishwasher",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Bulaşık makinesi",
+      "en": "Dishwasher"
+    },
+    "images": [
+      "assets/images/kitchen/dishwasher.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/dishwasher_selected.mp3",
+      "en": "assets/audio/en/kitchen/dishwasher_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/dishwasher.webp": {
+        "id": "kitchen.dishwasher",
+        "path": "assets/images/kitchen/dishwasher.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c8b480d812aaab207f9eb6087c90d1aae60b8b0508c3449f67288ae4c35e13ac"
+      }
+    }
+  },
+  {
+    "id": "kitchen.napkin",
+    "theme": "kitchen",
+    "tier": "medium",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Peçete",
+      "en": "Napkin"
+    },
+    "images": [
+      "assets/images/kitchen/napkin.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/napkin_selected.mp3",
+      "en": "assets/audio/en/kitchen/napkin_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/napkin.webp": {
+        "id": "kitchen.napkin",
+        "path": "assets/images/kitchen/napkin.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "3515b76933a3ad193d9256f89fa800db8549a9fca976284b2b9d65ace6e28f10"
+      }
+    }
+  },
+  {
+    "id": "kitchen.grater",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Rende",
+      "en": "Grater"
+    },
+    "images": [
+      "assets/images/kitchen/grater.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/grater_selected.mp3",
+      "en": "assets/audio/en/kitchen/grater_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/grater.webp": {
+        "id": "kitchen.grater",
+        "path": "assets/images/kitchen/grater.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a80f809ac2514508fc3fd3dab81b3af5205b0dbc29909f7117b8b810b0d22d04"
+      }
+    }
+  },
+  {
+    "id": "kitchen.rolling_pin",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Oklava",
+      "en": "Rolling pin"
+    },
+    "images": [
+      "assets/images/kitchen/rolling_pin.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/rolling_pin_selected.mp3",
+      "en": "assets/audio/en/kitchen/rolling_pin_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/rolling_pin.webp": {
+        "id": "kitchen.rolling_pin",
+        "path": "assets/images/kitchen/rolling_pin.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1faf7a68b77bfd209b46b2a7cc9a023f5d38bad698cd986b63b28d68c68f75af"
+      }
+    }
+  },
+  {
+    "id": "kitchen.strainer",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Süzgeç",
+      "en": "Strainer"
+    },
+    "images": [
+      "assets/images/kitchen/strainer.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/strainer_selected.mp3",
+      "en": "assets/audio/en/kitchen/strainer_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/strainer.webp": {
+        "id": "kitchen.strainer",
+        "path": "assets/images/kitchen/strainer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "e7c2ee647836348ead4cf8f27e79481168ba48c290425161f795236c29382e42"
+      }
+    }
+  },
+  {
+    "id": "kitchen.whisk",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Çırpma teli",
+      "en": "Whisk"
+    },
+    "images": [
+      "assets/images/kitchen/whisk.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/whisk_selected.mp3",
+      "en": "assets/audio/en/kitchen/whisk_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/whisk.webp": {
+        "id": "kitchen.whisk",
+        "path": "assets/images/kitchen/whisk.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9f1ccb26659e216341192142b25ac451033f4e42aef513d383487e48d78ac460"
+      }
+    }
+  },
+  {
+    "id": "kitchen.spatula",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Spatula",
+      "en": "Spatula"
+    },
+    "images": [
+      "assets/images/kitchen/spatula.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/spatula_selected.mp3",
+      "en": "assets/audio/en/kitchen/spatula_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/spatula.webp": {
+        "id": "kitchen.spatula",
+        "path": "assets/images/kitchen/spatula.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "04eee21ad484cc92ddbcbe3af225d43aead01606ca6967495d4ef49bd93a7c8c"
+      }
+    }
+  },
+  {
+    "id": "kitchen.blender",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Blender",
+      "en": "Blender"
+    },
+    "images": [
+      "assets/images/kitchen/blender.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/blender_selected.mp3",
+      "en": "assets/audio/en/kitchen/blender_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/blender.webp": {
+        "id": "kitchen.blender",
+        "path": "assets/images/kitchen/blender.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "42832addce0e593ea91279d35df0e048d1031085123e2e196461450d96dda28c"
+      }
+    }
+  },
+  {
+    "id": "kitchen.toaster",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tost makinesi",
+      "en": "Toaster"
+    },
+    "images": [
+      "assets/images/kitchen/toaster.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/toaster_selected.mp3",
+      "en": "assets/audio/en/kitchen/toaster_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/toaster.webp": {
+        "id": "kitchen.toaster",
+        "path": "assets/images/kitchen/toaster.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "e513faf57aca5dc0d3259d49caa81eb05dd4902675cc748729aaf2012ae72dc2"
+      }
+    }
+  },
+  {
+    "id": "kitchen.oven_mitt",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Fırın eldiveni",
+      "en": "Oven mitt"
+    },
+    "images": [
+      "assets/images/kitchen/oven_mitt.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/oven_mitt_selected.mp3",
+      "en": "assets/audio/en/kitchen/oven_mitt_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/oven_mitt.webp": {
+        "id": "kitchen.oven_mitt",
+        "path": "assets/images/kitchen/oven_mitt.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9b6b83206ec421b5f46432d15999695997287bed47e00af73e92be1f4ee220b0"
+      }
+    }
+  },
+  {
+    "id": "kitchen.salt_shaker",
+    "theme": "kitchen",
+    "tier": "hard",
+    "chapter": 1,
+    "tags": [],
+    "name": {
+      "tr": "Tuzluk",
+      "en": "Salt shaker"
+    },
+    "images": [
+      "assets/images/kitchen/salt_shaker.webp"
+    ],
+    "audio": {
+      "tr": "assets/audio/tr/kitchen/salt_shaker_selected.mp3",
+      "en": "assets/audio/en/kitchen/salt_shaker_selected.mp3"
+    },
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/kitchen/salt_shaker.webp": {
+        "id": "kitchen.salt_shaker",
+        "path": "assets/images/kitchen/salt_shaker.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1def7f60dff12a280d7848fa41b034a69974b067a20cb92967507fee66f72f06"
+      }
+    }
+  }
+]

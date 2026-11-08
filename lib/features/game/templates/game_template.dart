@@ -1170,6 +1170,10 @@ abstract final class TemplateRegistry {
     'G47' => const BodyMapTemplate(),
     'G40' || 'G41' || 'G43' || 'G44' || 'G45' || 'G46' || 'G48' || 'G49' =>
       const PairTemplate(),
+    'G62' || 'G64' || 'G67' || 'G68' || 'G69' || 'G70' || 'G73' =>
+      const PairTemplate(),
+    'G60' || 'G61' || 'G63' || 'G65' || 'G66' || 'G71' || 'G72' =>
+      const SceneTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }

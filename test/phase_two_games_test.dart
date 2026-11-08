@@ -128,7 +128,7 @@ void main() {
       expect(() => TemplateRegistry.resolve(game), returnsNormally);
     }
     // Learn + two games per theme are free; new games stay premium.
-    expect(content.freeGames, hasLength(30));
+    expect(content.freeGames, hasLength(45));
     expect(
       content.freeGames.where(
         (key) => ['G15', 'G17', 'G23', 'G37', 'G38', 'G11'].any(key.endsWith),

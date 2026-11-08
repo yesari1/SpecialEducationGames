@@ -222,5 +222,117 @@
       "tr": "Neyi Nereye Giyeriz?",
       "en": "What Goes Where?"
     }
+  },
+  {
+    "id": "G60",
+    "template": "scene",
+    "name": {
+      "tr": "Dişlerini Fırçala",
+      "en": "Brush the Teeth"
+    }
+  },
+  {
+    "id": "G61",
+    "template": "scene",
+    "name": {
+      "tr": "Ellerini Yıka",
+      "en": "Wash the Hands"
+    }
+  },
+  {
+    "id": "G62",
+    "template": "pair",
+    "name": {
+      "tr": "Ne Lazım?",
+      "en": "What Do We Need?"
+    }
+  },
+  {
+    "id": "G63",
+    "template": "scene",
+    "name": {
+      "tr": "Ali'yi Giydir",
+      "en": "Dress Ali"
+    }
+  },
+  {
+    "id": "G64",
+    "template": "pair",
+    "name": {
+      "tr": "Bugün Ne Giysek?",
+      "en": "What Shall We Wear?"
+    }
+  },
+  {
+    "id": "G65",
+    "template": "scene",
+    "name": {
+      "tr": "Meyve Salatası Yapalım",
+      "en": "Make a Fruit Salad"
+    }
+  },
+  {
+    "id": "G66",
+    "template": "scene",
+    "name": {
+      "tr": "Sofrayı Kuralım",
+      "en": "Set the Table"
+    }
+  },
+  {
+    "id": "G67",
+    "template": "pair",
+    "name": {
+      "tr": "Nereye Koyalım?",
+      "en": "Where Does It Go?"
+    }
+  },
+  {
+    "id": "G68",
+    "template": "pair",
+    "name": {
+      "tr": "Kim Ne Kullanır?",
+      "en": "Who Uses It?"
+    }
+  },
+  {
+    "id": "G69",
+    "template": "pair",
+    "name": {
+      "tr": "Kim Yardım Eder?",
+      "en": "Who Can Help?"
+    }
+  },
+  {
+    "id": "G70",
+    "template": "pair",
+    "name": {
+      "tr": "Nerede Çalışır?",
+      "en": "Where Do They Work?"
+    }
+  },
+  {
+    "id": "G71",
+    "template": "scene",
+    "name": {
+      "tr": "Tohumu Büyüt",
+      "en": "Grow the Seed"
+    }
+  },
+  {
+    "id": "G72",
+    "template": "scene",
+    "name": {
+      "tr": "Ağacı Hazırla",
+      "en": "Dress the Tree"
+    }
+  },
+  {
+    "id": "G73",
+    "template": "pair",
+    "name": {
+      "tr": "Hava Nasıl?",
+      "en": "What's the Weather?"
+    }
   }
 ]

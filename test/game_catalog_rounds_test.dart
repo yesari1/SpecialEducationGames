@@ -166,7 +166,8 @@ void main() {
                   label,
                   '${ids.length} choices exceed expected maximum $maxChoices',
                 );
-                if (!singleChoice) {
+                // A rub step has one tool and nothing wrong to pick.
+                if (!singleChoice && spec.scene == null) {
                   require(
                     ids.length >= 2,
                     label,

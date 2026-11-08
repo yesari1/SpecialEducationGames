@@ -1,0 +1,1310 @@
+{
+  "assets/audio/{lang}/cleaning/toothbrush_selected.mp3": {
+    "tr": "Diş fırçası.",
+    "en": "Toothbrush."
+  },
+  "assets/audio/{lang}/cleaning/toothpaste_selected.mp3": {
+    "tr": "Diş macunu.",
+    "en": "Toothpaste."
+  },
+  "assets/audio/{lang}/cleaning/soap_selected.mp3": {
+    "tr": "Sabun.",
+    "en": "Soap."
+  },
+  "assets/audio/{lang}/cleaning/towel_selected.mp3": {
+    "tr": "Havlu.",
+    "en": "Towel."
+  },
+  "assets/audio/{lang}/cleaning/comb_selected.mp3": {
+    "tr": "Tarak.",
+    "en": "Comb."
+  },
+  "assets/audio/{lang}/cleaning/shampoo_selected.mp3": {
+    "tr": "Şampuan.",
+    "en": "Shampoo."
+  },
+  "assets/audio/{lang}/cleaning/tissue_selected.mp3": {
+    "tr": "Kâğıt mendil.",
+    "en": "Tissue."
+  },
+  "assets/audio/{lang}/cleaning/trash_bin_selected.mp3": {
+    "tr": "Çöp kovası.",
+    "en": "Trash can."
+  },
+  "assets/audio/{lang}/cleaning/tap_selected.mp3": {
+    "tr": "Musluk.",
+    "en": "Tap."
+  },
+  "assets/audio/{lang}/cleaning/bathtub_selected.mp3": {
+    "tr": "Küvet.",
+    "en": "Bathtub."
+  },
+  "assets/audio/{lang}/cleaning/hairbrush_selected.mp3": {
+    "tr": "Saç fırçası.",
+    "en": "Hairbrush."
+  },
+  "assets/audio/{lang}/cleaning/sponge_selected.mp3": {
+    "tr": "Sünger.",
+    "en": "Sponge."
+  },
+  "assets/audio/{lang}/cleaning/broom_selected.mp3": {
+    "tr": "Süpürge.",
+    "en": "Broom."
+  },
+  "assets/audio/{lang}/cleaning/dustpan_selected.mp3": {
+    "tr": "Faraş.",
+    "en": "Dustpan."
+  },
+  "assets/audio/{lang}/cleaning/mop_selected.mp3": {
+    "tr": "Paspas.",
+    "en": "Mop."
+  },
+  "assets/audio/{lang}/cleaning/bucket_selected.mp3": {
+    "tr": "Kova.",
+    "en": "Bucket."
+  },
+  "assets/audio/{lang}/cleaning/toilet_paper_selected.mp3": {
+    "tr": "Tuvalet kâğıdı.",
+    "en": "Toilet paper."
+  },
+  "assets/audio/{lang}/cleaning/washing_machine_selected.mp3": {
+    "tr": "Çamaşır makinesi.",
+    "en": "Washing machine."
+  },
+  "assets/audio/{lang}/cleaning/hair_dryer_selected.mp3": {
+    "tr": "Saç kurutma makinesi.",
+    "en": "Hair dryer."
+  },
+  "assets/audio/{lang}/cleaning/nail_clipper_selected.mp3": {
+    "tr": "Tırnak makası.",
+    "en": "Nail clippers."
+  },
+  "assets/audio/{lang}/cleaning/vacuum_selected.mp3": {
+    "tr": "Elektrikli süpürge.",
+    "en": "Vacuum cleaner."
+  },
+  "assets/audio/{lang}/cleaning/laundry_basket_selected.mp3": {
+    "tr": "Çamaşır sepeti.",
+    "en": "Laundry basket."
+  },
+  "assets/audio/{lang}/cleaning/clothespin_selected.mp3": {
+    "tr": "Mandal.",
+    "en": "Clothespin."
+  },
+  "assets/audio/{lang}/cleaning/drying_rack_selected.mp3": {
+    "tr": "Çamaşırlık.",
+    "en": "Drying rack."
+  },
+  "assets/audio/{lang}/cleaning/detergent_selected.mp3": {
+    "tr": "Deterjan.",
+    "en": "Laundry detergent."
+  },
+  "assets/audio/{lang}/cleaning/rubber_gloves_selected.mp3": {
+    "tr": "Lastik eldiven.",
+    "en": "Rubber gloves."
+  },
+  "assets/audio/{lang}/cleaning/bath_sponge_selected.mp3": {
+    "tr": "Banyo lifi.",
+    "en": "Bath sponge."
+  },
+  "assets/audio/{lang}/cleaning/shower_selected.mp3": {
+    "tr": "Duş.",
+    "en": "Shower."
+  },
+  "assets/audio/{lang}/kitchen/plate_selected.mp3": {
+    "tr": "Tabak.",
+    "en": "Plate."
+  },
+  "assets/audio/{lang}/kitchen/fork_selected.mp3": {
+    "tr": "Çatal.",
+    "en": "Fork."
+  },
+  "assets/audio/{lang}/kitchen/spoon_selected.mp3": {
+    "tr": "Kaşık.",
+    "en": "Spoon."
+  },
+  "assets/audio/{lang}/kitchen/knife_selected.mp3": {
+    "tr": "Bıçak.",
+    "en": "Knife."
+  },
+  "assets/audio/{lang}/kitchen/glass_selected.mp3": {
+    "tr": "Bardak.",
+    "en": "Glass."
+  },
+  "assets/audio/{lang}/kitchen/bowl_selected.mp3": {
+    "tr": "Kâse.",
+    "en": "Bowl."
+  },
+  "assets/audio/{lang}/kitchen/pot_selected.mp3": {
+    "tr": "Tencere.",
+    "en": "Pot."
+  },
+  "assets/audio/{lang}/kitchen/pan_selected.mp3": {
+    "tr": "Tava.",
+    "en": "Frying pan."
+  },
+  "assets/audio/{lang}/kitchen/fridge_selected.mp3": {
+    "tr": "Buzdolabı.",
+    "en": "Fridge."
+  },
+  "assets/audio/{lang}/kitchen/oven_selected.mp3": {
+    "tr": "Fırın.",
+    "en": "Oven."
+  },
+  "assets/audio/{lang}/kitchen/cup_selected.mp3": {
+    "tr": "Fincan.",
+    "en": "Cup."
+  },
+  "assets/audio/{lang}/kitchen/mug_selected.mp3": {
+    "tr": "Kupa.",
+    "en": "Mug."
+  },
+  "assets/audio/{lang}/kitchen/teapot_selected.mp3": {
+    "tr": "Çaydanlık.",
+    "en": "Teapot."
+  },
+  "assets/audio/{lang}/kitchen/tray_selected.mp3": {
+    "tr": "Tepsi.",
+    "en": "Tray."
+  },
+  "assets/audio/{lang}/kitchen/cutting_board_selected.mp3": {
+    "tr": "Kesme tahtası.",
+    "en": "Cutting board."
+  },
+  "assets/audio/{lang}/kitchen/ladle_selected.mp3": {
+    "tr": "Kepçe.",
+    "en": "Ladle."
+  },
+  "assets/audio/{lang}/kitchen/jug_selected.mp3": {
+    "tr": "Sürahi.",
+    "en": "Jug."
+  },
+  "assets/audio/{lang}/kitchen/cupboard_selected.mp3": {
+    "tr": "Dolap.",
+    "en": "Cupboard."
+  },
+  "assets/audio/{lang}/kitchen/dishwasher_selected.mp3": {
+    "tr": "Bulaşık makinesi.",
+    "en": "Dishwasher."
+  },
+  "assets/audio/{lang}/kitchen/napkin_selected.mp3": {
+    "tr": "Peçete.",
+    "en": "Napkin."
+  },
+  "assets/audio/{lang}/kitchen/grater_selected.mp3": {
+    "tr": "Rende.",
+    "en": "Grater."
+  },
+  "assets/audio/{lang}/kitchen/rolling_pin_selected.mp3": {
+    "tr": "Oklava.",
+    "en": "Rolling pin."
+  },
+  "assets/audio/{lang}/kitchen/strainer_selected.mp3": {
+    "tr": "Süzgeç.",
+    "en": "Strainer."
+  },
+  "assets/audio/{lang}/kitchen/whisk_selected.mp3": {
+    "tr": "Çırpma teli.",
+    "en": "Whisk."
+  },
+  "assets/audio/{lang}/kitchen/spatula_selected.mp3": {
+    "tr": "Spatula.",
+    "en": "Spatula."
+  },
+  "assets/audio/{lang}/kitchen/blender_selected.mp3": {
+    "tr": "Blender.",
+    "en": "Blender."
+  },
+  "assets/audio/{lang}/kitchen/toaster_selected.mp3": {
+    "tr": "Tost makinesi.",
+    "en": "Toaster."
+  },
+  "assets/audio/{lang}/kitchen/oven_mitt_selected.mp3": {
+    "tr": "Fırın eldiveni.",
+    "en": "Oven mitt."
+  },
+  "assets/audio/{lang}/kitchen/salt_shaker_selected.mp3": {
+    "tr": "Tuzluk.",
+    "en": "Salt shaker."
+  },
+  "assets/audio/{lang}/scenes/g60_ask.mp3": {
+    "tr": "Ali'nin dişleri kirlenmiş. Hadi fırçalayalım!",
+    "en": "Ali's teeth need a clean. Let's brush them!"
+  },
+  "assets/audio/{lang}/scenes/g60_done.mp3": {
+    "tr": "Dişlerin pırıl pırıl oldu, Ali!",
+    "en": "Your teeth are sparkling, Ali!"
+  },
+  "assets/audio/{lang}/scenes/g61_first_tap.mp3": {
+    "tr": "Ellerini yıkayalım. Önce musluğu açalım.",
+    "en": "Let's wash the hands. First let's turn on the tap."
+  },
+  "assets/audio/{lang}/scenes/g61_first_soap.mp3": {
+    "tr": "Ellerini yıkayalım. Şimdi sabunlayalım.",
+    "en": "Let's wash the hands. Now let's use the soap."
+  },
+  "assets/audio/{lang}/scenes/g61_first_foam.mp3": {
+    "tr": "Ellerini yıkayalım. Ellerimizi iyice ovalım.",
+    "en": "Let's wash the hands. Let's rub our hands well."
+  },
+  "assets/audio/{lang}/scenes/g61_first_rinse.mp3": {
+    "tr": "Ellerini yıkayalım. Şimdi durulayalım.",
+    "en": "Let's wash the hands. Now let's rinse."
+  },
+  "assets/audio/{lang}/scenes/g61_first_dry.mp3": {
+    "tr": "Ellerini yıkayalım. Havluyla kurulayalım.",
+    "en": "Let's wash the hands. Let's dry with the towel."
+  },
+  "assets/audio/{lang}/scenes/g61_ask_rinse.mp3": {
+    "tr": "Şimdi durulayalım.",
+    "en": "Now let's rinse."
+  },
+  "assets/audio/{lang}/scenes/g61_done_rinse.mp3": {
+    "tr": "Köpükler gitti.",
+    "en": "The foam is gone."
+  },
+  "assets/audio/{lang}/scenes/g61_ask_dry.mp3": {
+    "tr": "Havluyla kurulayalım.",
+    "en": "Let's dry with the towel."
+  },
+  "assets/audio/{lang}/scenes/g61_done_dry.mp3": {
+    "tr": "Ellerimiz tertemiz oldu!",
+    "en": "Our hands are all clean!"
+  },
+  "assets/audio/{lang}/scenes/g61_ask_tap.mp3": {
+    "tr": "Önce musluğu açalım.",
+    "en": "First let's turn on the tap."
+  },
+  "assets/audio/{lang}/scenes/g61_done_tap.mp3": {
+    "tr": "Su akıyor!",
+    "en": "The water is on!"
+  },
+  "assets/audio/{lang}/scenes/g61_ask_soap.mp3": {
+    "tr": "Şimdi sabunlayalım.",
+    "en": "Now let's use the soap."
+  },
+  "assets/audio/{lang}/scenes/g61_done_soap.mp3": {
+    "tr": "Ellerimiz sabunlandı.",
+    "en": "Soapy hands!"
+  },
+  "assets/audio/{lang}/scenes/g61_ask_foam.mp3": {
+    "tr": "Ellerimizi iyice ovalım.",
+    "en": "Let's rub our hands well."
+  },
+  "assets/audio/{lang}/scenes/g61_done_foam.mp3": {
+    "tr": "Bak, ne çok köpük!",
+    "en": "Look at all that foam!"
+  },
+  "assets/audio/{lang}/scenes/g63_tshirt.mp3": {
+    "tr": "Ali'ye tişörtünü giydirelim.",
+    "en": "Let's put Ali's T-shirt on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_tshirt.mp3": {
+    "tr": "Tişört ne güzel oldu!",
+    "en": "The T-shirt looks great!"
+  },
+  "assets/audio/{lang}/scenes/g63_trousers.mp3": {
+    "tr": "Ali'ye pantolonunu giydirelim.",
+    "en": "Let's put Ali's pants on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_trousers.mp3": {
+    "tr": "Pantolon tam oldu!",
+    "en": "The pants fit just right!"
+  },
+  "assets/audio/{lang}/scenes/g63_socks.mp3": {
+    "tr": "Ali'ye çoraplarını giydirelim.",
+    "en": "Let's put Ali's socks on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_socks.mp3": {
+    "tr": "Ayakları sıcacık oldu.",
+    "en": "His feet are nice and warm."
+  },
+  "assets/audio/{lang}/scenes/g63_shoes.mp3": {
+    "tr": "Ali'ye ayakkabılarını giydirelim.",
+    "en": "Let's put Ali's shoes on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_shoes.mp3": {
+    "tr": "Ali artık yürüyebilir!",
+    "en": "Now Ali can walk outside!"
+  },
+  "assets/audio/{lang}/scenes/g63_hat.mp3": {
+    "tr": "Ali'nin başına şapkasını takalım.",
+    "en": "Let's put Ali's hat on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_hat.mp3": {
+    "tr": "Şapka ona çok yakıştı!",
+    "en": "That hat looks great on him!"
+  },
+  "assets/audio/{lang}/scenes/g63_coat.mp3": {
+    "tr": "Ali üşüyor. Montunu giydirelim.",
+    "en": "Ali is cold. Let's put his coat on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_coat.mp3": {
+    "tr": "Oh, ısındı!",
+    "en": "Now he is warm!"
+  },
+  "assets/audio/{lang}/scenes/g63_scarf.mp3": {
+    "tr": "Ali'nin boynuna atkısını takalım.",
+    "en": "Let's put Ali's scarf on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_scarf.mp3": {
+    "tr": "Boynu sıcacık oldu.",
+    "en": "His neck is warm now."
+  },
+  "assets/audio/{lang}/scenes/g63_gloves.mp3": {
+    "tr": "Ali'nin ellerine eldivenlerini takalım.",
+    "en": "Let's put Ali's gloves on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_gloves.mp3": {
+    "tr": "Elleri üşümez artık.",
+    "en": "His hands will not get cold."
+  },
+  "assets/audio/{lang}/scenes/g63_beanie.mp3": {
+    "tr": "Ali'nin başına beresini takalım.",
+    "en": "Let's put Ali's beanie on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_beanie.mp3": {
+    "tr": "Kulakları da sıcacık.",
+    "en": "His ears are warm too."
+  },
+  "assets/audio/{lang}/scenes/g63_pajamas.mp3": {
+    "tr": "Uyku vakti. Ali'ye pijamasını giydirelim.",
+    "en": "It's bedtime. Let's put Ali's pajamas on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_pajamas.mp3": {
+    "tr": "İyi uykular, Ali!",
+    "en": "Sleep well, Ali!"
+  },
+  "assets/audio/{lang}/scenes/g63_raincoat.mp3": {
+    "tr": "Yağmur var. Ali'ye yağmurluğunu giydirelim.",
+    "en": "It's raining. Let's put Ali's raincoat on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_raincoat.mp3": {
+    "tr": "Artık ıslanmaz!",
+    "en": "Now he will stay dry!"
+  },
+  "assets/audio/{lang}/scenes/g63_sweater.mp3": {
+    "tr": "Hava serin. Ali'ye kazağını giydirelim.",
+    "en": "It's chilly. Let's put Ali's sweater on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_sweater.mp3": {
+    "tr": "Kazak çok yumuşak.",
+    "en": "The sweater is so soft."
+  },
+  "assets/audio/{lang}/scenes/g63_boots.mp3": {
+    "tr": "Dışarısı çamur. Ali'ye çizmelerini giydirelim.",
+    "en": "It's muddy outside. Let's put Ali's boots on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_boots.mp3": {
+    "tr": "Çamura basabilir!",
+    "en": "He can step in the mud!"
+  },
+  "assets/audio/{lang}/scenes/g63_vest.mp3": {
+    "tr": "Ali'ye yeleğini giydirelim.",
+    "en": "Let's put Ali's vest on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_vest.mp3": {
+    "tr": "Yelek çok şık oldu.",
+    "en": "The vest looks so smart."
+  },
+  "assets/audio/{lang}/scenes/g63_tracksuit.mp3": {
+    "tr": "Spor zamanı. Ali'ye eşofmanını giydirelim.",
+    "en": "It's sports time. Let's put Ali's tracksuit on."
+  },
+  "assets/audio/{lang}/scenes/g63_done_tracksuit.mp3": {
+    "tr": "Ali koşmaya hazır!",
+    "en": "Ali is ready to run!"
+  },
+  "assets/audio/{lang}/scenes/g65_first_apple.mp3": {
+    "tr": "Meyve salatası yapalım. Önce elmayı koyalım.",
+    "en": "Let's make a fruit salad. First, the apple."
+  },
+  "assets/audio/{lang}/scenes/g65_first_banana.mp3": {
+    "tr": "Meyve salatası yapalım. Önce muzu koyalım.",
+    "en": "Let's make a fruit salad. First, the banana."
+  },
+  "assets/audio/{lang}/scenes/g65_first_strawberry.mp3": {
+    "tr": "Meyve salatası yapalım. Önce çileği koyalım.",
+    "en": "Let's make a fruit salad. First, the strawberry."
+  },
+  "assets/audio/{lang}/scenes/g65_first_orange.mp3": {
+    "tr": "Meyve salatası yapalım. Önce portakalı koyalım.",
+    "en": "Let's make a fruit salad. First, the orange."
+  },
+  "assets/audio/{lang}/scenes/g65_first_grape.mp3": {
+    "tr": "Meyve salatası yapalım. Önce üzümü koyalım.",
+    "en": "Let's make a fruit salad. First, the grapes."
+  },
+  "assets/audio/{lang}/scenes/g65_first_kiwi.mp3": {
+    "tr": "Meyve salatası yapalım. Önce kiviyi koyalım.",
+    "en": "Let's make a fruit salad. First, the kiwi."
+  },
+  "assets/audio/{lang}/scenes/g65_first_peach.mp3": {
+    "tr": "Meyve salatası yapalım. Önce şeftaliyi koyalım.",
+    "en": "Let's make a fruit salad. First, the peach."
+  },
+  "assets/audio/{lang}/scenes/g65_first_pear.mp3": {
+    "tr": "Meyve salatası yapalım. Önce armudu koyalım.",
+    "en": "Let's make a fruit salad. First, the pear."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_apple.mp3": {
+    "tr": "Şimdi de elmayı koyalım.",
+    "en": "Now the apple."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_banana.mp3": {
+    "tr": "Şimdi de muzu koyalım.",
+    "en": "Now the banana."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_strawberry.mp3": {
+    "tr": "Şimdi de çileği koyalım.",
+    "en": "Now the strawberry."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_orange.mp3": {
+    "tr": "Şimdi de portakalı koyalım.",
+    "en": "Now the orange."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_grape.mp3": {
+    "tr": "Şimdi de üzümü koyalım.",
+    "en": "Now the grapes."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_kiwi.mp3": {
+    "tr": "Şimdi de kiviyi koyalım.",
+    "en": "Now the kiwi."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_peach.mp3": {
+    "tr": "Şimdi de şeftaliyi koyalım.",
+    "en": "Now the peach."
+  },
+  "assets/audio/{lang}/scenes/g65_ask_pear.mp3": {
+    "tr": "Şimdi de armudu koyalım.",
+    "en": "Now the pear."
+  },
+  "assets/audio/{lang}/scenes/g65_stir.mp3": {
+    "tr": "Hadi, karıştıralım.",
+    "en": "Now let's stir."
+  },
+  "assets/audio/{lang}/scenes/g65_done.mp3": {
+    "tr": "Meyve salatası hazır. Afiyet olsun!",
+    "en": "The fruit salad is ready. Enjoy!"
+  },
+  "assets/audio/{lang}/scenes/g66_ask_plate.mp3": {
+    "tr": "Şimdi tabağı yerine koyalım.",
+    "en": "Now the plate."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_fork.mp3": {
+    "tr": "Şimdi çatalı yerine koyalım.",
+    "en": "Now the fork."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_spoon.mp3": {
+    "tr": "Şimdi kaşığı yerine koyalım.",
+    "en": "Now the spoon."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_knife.mp3": {
+    "tr": "Şimdi bıçağı yerine koyalım.",
+    "en": "Now the knife."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_glass.mp3": {
+    "tr": "Şimdi bardağı yerine koyalım.",
+    "en": "Now the glass."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_napkin.mp3": {
+    "tr": "Şimdi peçeteyi yerine koyalım.",
+    "en": "Now the napkin."
+  },
+  "assets/audio/{lang}/scenes/g66_first_plate.mp3": {
+    "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
+    "en": "Let's set the table. First, the plate."
+  },
+  "assets/audio/{lang}/scenes/g66_first_fork.mp3": {
+    "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+    "en": "Let's set the table. First, the fork."
+  },
+  "assets/audio/{lang}/scenes/g66_first_spoon.mp3": {
+    "tr": "Sofrayı kuralım. Önce kaşığı koyalım.",
+    "en": "Let's set the table. First, the spoon."
+  },
+  "assets/audio/{lang}/scenes/g66_first_knife.mp3": {
+    "tr": "Sofrayı kuralım. Önce bıçağı koyalım.",
+    "en": "Let's set the table. First, the knife."
+  },
+  "assets/audio/{lang}/scenes/g66_first_glass.mp3": {
+    "tr": "Sofrayı kuralım. Önce bardağı koyalım.",
+    "en": "Let's set the table. First, the glass."
+  },
+  "assets/audio/{lang}/scenes/g66_first_napkin.mp3": {
+    "tr": "Sofrayı kuralım. Önce peçeteyi koyalım.",
+    "en": "Let's set the table. First, the napkin."
+  },
+  "assets/audio/{lang}/scenes/g66_done.mp3": {
+    "tr": "Sofra hazır. Hadi yemeğe!",
+    "en": "The table is ready. Time to eat!"
+  },
+  "assets/audio/{lang}/scenes/g62_1.mp3": {
+    "tr": "Saçını taramak için ne lazım?",
+    "en": "What do we need to comb our hair?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_1.mp3": {
+    "tr": "Ali saçını tarıyor.",
+    "en": "Ali is combing his hair."
+  },
+  "assets/audio/{lang}/scenes/g62_2.mp3": {
+    "tr": "Dişini fırçalamak için ne lazım?",
+    "en": "What do we need to brush our teeth?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_2.mp3": {
+    "tr": "Ali dişini fırçalıyor.",
+    "en": "Ali is brushing his teeth."
+  },
+  "assets/audio/{lang}/scenes/g62_3.mp3": {
+    "tr": "Ellerini yıkamak için ne lazım?",
+    "en": "What do we need to wash our hands?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_3.mp3": {
+    "tr": "Ali ellerini sabunluyor.",
+    "en": "Ali is soaping his hands."
+  },
+  "assets/audio/{lang}/scenes/g62_4.mp3": {
+    "tr": "Elini yüzünü kurulamak için ne lazım?",
+    "en": "What do we need to dry our face?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_4.mp3": {
+    "tr": "Ali yüzünü kuruluyor.",
+    "en": "Ali is drying his face."
+  },
+  "assets/audio/{lang}/scenes/g62_5.mp3": {
+    "tr": "Saçını yıkamak için ne lazım?",
+    "en": "What do we need to wash our hair?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_5.mp3": {
+    "tr": "Ali saçını yıkıyor.",
+    "en": "Ali is washing his hair."
+  },
+  "assets/audio/{lang}/scenes/g62_6.mp3": {
+    "tr": "Burnunu silmek için ne lazım?",
+    "en": "What do we need to wipe our nose?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_6.mp3": {
+    "tr": "Ali burnunu siliyor.",
+    "en": "Ali is wiping his nose."
+  },
+  "assets/audio/{lang}/scenes/g62_7.mp3": {
+    "tr": "Çöpü nereye atarız?",
+    "en": "Where do we throw the rubbish?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_7.mp3": {
+    "tr": "Ali çöpü attı.",
+    "en": "Ali threw the rubbish away."
+  },
+  "assets/audio/{lang}/scenes/g62_8.mp3": {
+    "tr": "Yeri süpürmek için ne lazım?",
+    "en": "What do we need to sweep the floor?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_8.mp3": {
+    "tr": "Ali yeri süpürüyor.",
+    "en": "Ali is sweeping the floor."
+  },
+  "assets/audio/{lang}/scenes/g62_9.mp3": {
+    "tr": "Bulaşık yıkamak için ne lazım?",
+    "en": "What do we need to wash the dishes?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_9.mp3": {
+    "tr": "Ali bulaşık yıkıyor.",
+    "en": "Ali is washing the dishes."
+  },
+  "assets/audio/{lang}/scenes/g62_10.mp3": {
+    "tr": "Yeri silmek için ne lazım?",
+    "en": "What do we need to mop the floor?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_10.mp3": {
+    "tr": "Ali yeri siliyor.",
+    "en": "Ali is mopping the floor."
+  },
+  "assets/audio/{lang}/scenes/g62_11.mp3": {
+    "tr": "Saçını kurutmak için ne lazım?",
+    "en": "What do we need to dry our hair?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_11.mp3": {
+    "tr": "Ali saçını kurutuyor.",
+    "en": "Ali is drying his hair."
+  },
+  "assets/audio/{lang}/scenes/g62_12.mp3": {
+    "tr": "Tırnaklarını kesmek için ne lazım?",
+    "en": "What do we need to cut our nails?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_12.mp3": {
+    "tr": "Annesi Ali'nin tırnaklarını kesiyor.",
+    "en": "Mom is cutting Ali's nails."
+  },
+  "assets/audio/{lang}/scenes/g62_13.mp3": {
+    "tr": "Halıyı süpürmek için ne lazım?",
+    "en": "What do we need to clean the carpet?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_13.mp3": {
+    "tr": "Ali halıyı süpürüyor.",
+    "en": "Ali is vacuuming the carpet."
+  },
+  "assets/audio/{lang}/scenes/g62_14.mp3": {
+    "tr": "Çamaşırları asmak için ne lazım?",
+    "en": "What do we need to hang up the washing?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_14.mp3": {
+    "tr": "Ali çamaşırları asıyor.",
+    "en": "Ali is hanging up the washing."
+  },
+  "assets/audio/{lang}/scenes/g62_15.mp3": {
+    "tr": "Kirli çamaşırları nereye koyarız?",
+    "en": "Where do we put dirty clothes?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_15.mp3": {
+    "tr": "Ali çamaşırları sepete koydu.",
+    "en": "Ali put the clothes in the basket."
+  },
+  "assets/audio/{lang}/scenes/g62_16.mp3": {
+    "tr": "Çamaşır yıkarken içine ne koyarız?",
+    "en": "What do we add when we wash clothes?"
+  },
+  "assets/audio/{lang}/scenes/g62_done_16.mp3": {
+    "tr": "Ali deterjanı koyuyor.",
+    "en": "Ali is adding the detergent."
+  },
+  "assets/audio/{lang}/scenes/g64_1.mp3": {
+    "tr": "Dışarıda yağmur yağıyor. Ali ne giysin?",
+    "en": "It's raining outside. What should Ali wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_1.mp3": {
+    "tr": "Yağmurluğunu giydi, dışarı çıkıyor.",
+    "en": "He put on his raincoat and off he goes."
+  },
+  "assets/audio/{lang}/scenes/g64_2.mp3": {
+    "tr": "Yağmur başladı. Ali yanına ne alsın?",
+    "en": "It started to rain. What should Ali take?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_2.mp3": {
+    "tr": "Şemsiyesini aldı, hiç ıslanmıyor.",
+    "en": "He took his umbrella and stays dry."
+  },
+  "assets/audio/{lang}/scenes/g64_3.mp3": {
+    "tr": "Dışarıda kar yağıyor. Ali ne giysin?",
+    "en": "It's snowing outside. What should Ali wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_3.mp3": {
+    "tr": "Montunu giydi, karda oynuyor.",
+    "en": "He put on his coat and plays in the snow."
+  },
+  "assets/audio/{lang}/scenes/g64_4.mp3": {
+    "tr": "Ali kartopu oynayacak. Eline ne taksın?",
+    "en": "Ali wants to make snowballs. What goes on his hands?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_4.mp3": {
+    "tr": "Eldivenlerini taktı, kartopu yapıyor.",
+    "en": "He put on his gloves and makes snowballs."
+  },
+  "assets/audio/{lang}/scenes/g64_5.mp3": {
+    "tr": "Hava çok sıcak. Ali ne giysin?",
+    "en": "It's very hot. What should Ali wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_5.mp3": {
+    "tr": "Şortunu giydi, parka gidiyor.",
+    "en": "He put on his shorts and goes to the park."
+  },
+  "assets/audio/{lang}/scenes/g64_6.mp3": {
+    "tr": "Güneş gözünü alıyor. Ali ne taksın?",
+    "en": "The sun is in his eyes. What should Ali put on?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_6.mp3": {
+    "tr": "Güneş gözlüğünü taktı, çok havalı oldu.",
+    "en": "He put on his sunglasses and looks so cool."
+  },
+  "assets/audio/{lang}/scenes/g64_7.mp3": {
+    "tr": "Ali denize gidiyor. Ne giysin?",
+    "en": "Ali is going to the sea. What should he wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_7.mp3": {
+    "tr": "Mayosunu giydi, denize giriyor.",
+    "en": "He put on his swimsuit and jumps in."
+  },
+  "assets/audio/{lang}/scenes/g64_8.mp3": {
+    "tr": "Hava karardı, uyku vakti. Ali ne giysin?",
+    "en": "It's dark, time for bed. What should Ali wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_8.mp3": {
+    "tr": "Pijamasını giydi, yatağına girdi.",
+    "en": "He put on his pajamas and got into bed."
+  },
+  "assets/audio/{lang}/scenes/g67_1.mp3": {
+    "tr": "Sütü nereye koyalım?",
+    "en": "Where does the milk go?"
+  },
+  "assets/audio/{lang}/scenes/g67_2.mp3": {
+    "tr": "Peyniri nereye koyalım?",
+    "en": "Where does the cheese go?"
+  },
+  "assets/audio/{lang}/scenes/g67_3.mp3": {
+    "tr": "Yumurtaları nereye koyalım?",
+    "en": "Where do the eggs go?"
+  },
+  "assets/audio/{lang}/scenes/g67_4.mp3": {
+    "tr": "Yoğurdu nereye koyalım?",
+    "en": "Where does the yogurt go?"
+  },
+  "assets/audio/{lang}/scenes/g67_5.mp3": {
+    "tr": "Temiz tabağı nereye koyalım?",
+    "en": "Where does the clean plate go?"
+  },
+  "assets/audio/{lang}/scenes/g67_6.mp3": {
+    "tr": "Temiz bardağı nereye koyalım?",
+    "en": "Where does the clean glass go?"
+  },
+  "assets/audio/{lang}/scenes/g67_7.mp3": {
+    "tr": "Kirli tabağı nereye koyalım?",
+    "en": "Where does the dirty plate go?"
+  },
+  "assets/audio/{lang}/scenes/g67_8.mp3": {
+    "tr": "Kirli çatalı nereye koyalım?",
+    "en": "Where does the dirty fork go?"
+  },
+  "assets/audio/{lang}/scenes/g67_9.mp3": {
+    "tr": "Muz kabuğunu nereye atalım?",
+    "en": "Where does the banana peel go?"
+  },
+  "assets/audio/{lang}/scenes/g67_10.mp3": {
+    "tr": "Boş kutuyu nereye atalım?",
+    "en": "Where does the empty box go?"
+  },
+  "assets/audio/{lang}/scenes/g67_11.mp3": {
+    "tr": "Kek hamurunu nereye koyalım?",
+    "en": "Where does the cake batter go?"
+  },
+  "assets/audio/{lang}/jobs/doctor_selected.mp3": {
+    "tr": "Doktor.",
+    "en": "Doctor."
+  },
+  "assets/audio/{lang}/jobs/nurse_selected.mp3": {
+    "tr": "Hemşire.",
+    "en": "Nurse."
+  },
+  "assets/audio/{lang}/jobs/teacher_selected.mp3": {
+    "tr": "Öğretmen.",
+    "en": "Teacher."
+  },
+  "assets/audio/{lang}/jobs/police_officer_selected.mp3": {
+    "tr": "Polis.",
+    "en": "Police officer."
+  },
+  "assets/audio/{lang}/jobs/firefighter_selected.mp3": {
+    "tr": "İtfaiyeci.",
+    "en": "Firefighter."
+  },
+  "assets/audio/{lang}/jobs/cook_selected.mp3": {
+    "tr": "Aşçı.",
+    "en": "Cook."
+  },
+  "assets/audio/{lang}/jobs/driver_selected.mp3": {
+    "tr": "Şoför.",
+    "en": "Driver."
+  },
+  "assets/audio/{lang}/jobs/farmer_selected.mp3": {
+    "tr": "Çiftçi.",
+    "en": "Farmer."
+  },
+  "assets/audio/{lang}/jobs/baker_selected.mp3": {
+    "tr": "Fırıncı.",
+    "en": "Baker."
+  },
+  "assets/audio/{lang}/jobs/dentist_selected.mp3": {
+    "tr": "Diş hekimi.",
+    "en": "Dentist."
+  },
+  "assets/audio/{lang}/jobs/postman_selected.mp3": {
+    "tr": "Postacı.",
+    "en": "Mail carrier."
+  },
+  "assets/audio/{lang}/jobs/hairdresser_selected.mp3": {
+    "tr": "Kuaför.",
+    "en": "Hairdresser."
+  },
+  "assets/audio/{lang}/jobs/pilot_selected.mp3": {
+    "tr": "Pilot.",
+    "en": "Pilot."
+  },
+  "assets/audio/{lang}/jobs/vet_selected.mp3": {
+    "tr": "Veteriner.",
+    "en": "Vet."
+  },
+  "assets/audio/{lang}/jobs/waiter_selected.mp3": {
+    "tr": "Garson.",
+    "en": "Waiter."
+  },
+  "assets/audio/{lang}/jobs/cleaner_selected.mp3": {
+    "tr": "Temizlik görevlisi.",
+    "en": "Cleaner."
+  },
+  "assets/audio/{lang}/jobs/builder_selected.mp3": {
+    "tr": "İnşaat işçisi.",
+    "en": "Builder."
+  },
+  "assets/audio/{lang}/jobs/cashier_selected.mp3": {
+    "tr": "Kasiyer.",
+    "en": "Cashier."
+  },
+  "assets/audio/{lang}/jobs/painter_selected.mp3": {
+    "tr": "Ressam.",
+    "en": "Painter."
+  },
+  "assets/audio/{lang}/jobs/gardener_selected.mp3": {
+    "tr": "Bahçıvan.",
+    "en": "Gardener."
+  },
+  "assets/audio/{lang}/jobs/fisher_selected.mp3": {
+    "tr": "Balıkçı.",
+    "en": "Fisher."
+  },
+  "assets/audio/{lang}/jobs/captain_selected.mp3": {
+    "tr": "Kaptan.",
+    "en": "Captain."
+  },
+  "assets/audio/{lang}/jobs/pharmacist_selected.mp3": {
+    "tr": "Eczacı.",
+    "en": "Pharmacist."
+  },
+  "assets/audio/{lang}/jobs/carpenter_selected.mp3": {
+    "tr": "Marangoz.",
+    "en": "Carpenter."
+  },
+  "assets/audio/{lang}/jobs/mechanic_selected.mp3": {
+    "tr": "Tamirci.",
+    "en": "Mechanic."
+  },
+  "assets/audio/{lang}/jobs/tailor_selected.mp3": {
+    "tr": "Terzi.",
+    "en": "Tailor."
+  },
+  "assets/audio/{lang}/jobs/photographer_selected.mp3": {
+    "tr": "Fotoğrafçı.",
+    "en": "Photographer."
+  },
+  "assets/audio/{lang}/jobs/musician_selected.mp3": {
+    "tr": "Müzisyen.",
+    "en": "Musician."
+  },
+  "assets/audio/{lang}/nature/sun_selected.mp3": {
+    "tr": "Güneş.",
+    "en": "Sun."
+  },
+  "assets/audio/{lang}/nature/moon_selected.mp3": {
+    "tr": "Ay.",
+    "en": "Moon."
+  },
+  "assets/audio/{lang}/nature/star_selected.mp3": {
+    "tr": "Yıldız.",
+    "en": "Star."
+  },
+  "assets/audio/{lang}/nature/cloud_selected.mp3": {
+    "tr": "Bulut.",
+    "en": "Cloud."
+  },
+  "assets/audio/{lang}/nature/rain_selected.mp3": {
+    "tr": "Yağmur.",
+    "en": "Rain."
+  },
+  "assets/audio/{lang}/nature/snow_selected.mp3": {
+    "tr": "Kar.",
+    "en": "Snow."
+  },
+  "assets/audio/{lang}/nature/tree_selected.mp3": {
+    "tr": "Ağaç.",
+    "en": "Tree."
+  },
+  "assets/audio/{lang}/nature/flower_selected.mp3": {
+    "tr": "Çiçek.",
+    "en": "Flower."
+  },
+  "assets/audio/{lang}/nature/sea_selected.mp3": {
+    "tr": "Deniz.",
+    "en": "Sea."
+  },
+  "assets/audio/{lang}/nature/mountain_selected.mp3": {
+    "tr": "Dağ.",
+    "en": "Mountain."
+  },
+  "assets/audio/{lang}/nature/rainbow_selected.mp3": {
+    "tr": "Gökkuşağı.",
+    "en": "Rainbow."
+  },
+  "assets/audio/{lang}/nature/snowman_selected.mp3": {
+    "tr": "Kardan adam.",
+    "en": "Snowman."
+  },
+  "assets/audio/{lang}/nature/wind_selected.mp3": {
+    "tr": "Rüzgâr.",
+    "en": "Wind."
+  },
+  "assets/audio/{lang}/nature/lightning_selected.mp3": {
+    "tr": "Şimşek.",
+    "en": "Lightning."
+  },
+  "assets/audio/{lang}/nature/leaf_selected.mp3": {
+    "tr": "Yaprak.",
+    "en": "Leaf."
+  },
+  "assets/audio/{lang}/nature/grass_selected.mp3": {
+    "tr": "Çimen.",
+    "en": "Grass."
+  },
+  "assets/audio/{lang}/nature/river_selected.mp3": {
+    "tr": "Nehir.",
+    "en": "River."
+  },
+  "assets/audio/{lang}/nature/lake_selected.mp3": {
+    "tr": "Göl.",
+    "en": "Lake."
+  },
+  "assets/audio/{lang}/nature/forest_selected.mp3": {
+    "tr": "Orman.",
+    "en": "Forest."
+  },
+  "assets/audio/{lang}/nature/spring_selected.mp3": {
+    "tr": "İlkbahar.",
+    "en": "Spring."
+  },
+  "assets/audio/{lang}/nature/summer_selected.mp3": {
+    "tr": "Yaz.",
+    "en": "Summer."
+  },
+  "assets/audio/{lang}/nature/autumn_selected.mp3": {
+    "tr": "Sonbahar.",
+    "en": "Autumn."
+  },
+  "assets/audio/{lang}/nature/winter_selected.mp3": {
+    "tr": "Kış.",
+    "en": "Winter."
+  },
+  "assets/audio/{lang}/nature/night_selected.mp3": {
+    "tr": "Gece.",
+    "en": "Night."
+  },
+  "assets/audio/{lang}/nature/day_selected.mp3": {
+    "tr": "Gündüz.",
+    "en": "Day."
+  },
+  "assets/audio/{lang}/nature/seed_selected.mp3": {
+    "tr": "Tohum.",
+    "en": "Seed."
+  },
+  "assets/audio/{lang}/nature/sprout_selected.mp3": {
+    "tr": "Filiz.",
+    "en": "Sprout."
+  },
+  "assets/audio/{lang}/nature/sand_selected.mp3": {
+    "tr": "Kum.",
+    "en": "Sand."
+  },
+  "assets/audio/{lang}/scenes/g71_seed.mp3": {
+    "tr": "Tohumu toprağa ekelim.",
+    "en": "Let's plant the seed."
+  },
+  "assets/audio/{lang}/scenes/g71_water.mp3": {
+    "tr": "Şimdi tohumu sulayalım.",
+    "en": "Now let's water the seed."
+  },
+  "assets/audio/{lang}/scenes/g71_sun.mp3": {
+    "tr": "Güneşi getirelim, büyüsün.",
+    "en": "Let's bring the sun, so it can grow."
+  },
+  "assets/audio/{lang}/scenes/g71_sprout.mp3": {
+    "tr": "Bak, filiz çıktı!",
+    "en": "Look, a sprout!"
+  },
+  "assets/audio/{lang}/scenes/g71_done_pink.mp3": {
+    "tr": "Çiçek açtı! Pembe çiçek ne güzel!",
+    "en": "It bloomed! What a lovely pink flower!"
+  },
+  "assets/audio/{lang}/scenes/g71_done_yellow.mp3": {
+    "tr": "Çiçek açtı! Sarı çiçek ne güzel!",
+    "en": "It bloomed! What a lovely yellow flower!"
+  },
+  "assets/audio/{lang}/scenes/g71_done_tulip.mp3": {
+    "tr": "Çiçek açtı! Lale ne güzel!",
+    "en": "It bloomed! What a lovely tulip!"
+  },
+  "assets/audio/{lang}/scenes/g71_done_sunflower.mp3": {
+    "tr": "Çiçek açtı! Ayçiçeği ne güzel!",
+    "en": "It bloomed! What a lovely sunflower!"
+  },
+  "assets/audio/{lang}/scenes/g71_done_daisy.mp3": {
+    "tr": "Çiçek açtı! Papatya ne güzel!",
+    "en": "It bloomed! What a lovely daisy!"
+  },
+  "assets/audio/{lang}/scenes/g72_winter.mp3": {
+    "tr": "Kış geldi. Ağaca ne koyalım?",
+    "en": "Winter is here. What goes on the tree?"
+  },
+  "assets/audio/{lang}/scenes/g72_done_winter.mp3": {
+    "tr": "Ağaç bembeyaz oldu.",
+    "en": "The tree is all white."
+  },
+  "assets/audio/{lang}/scenes/g72_spring.mp3": {
+    "tr": "İlkbahar geldi. Ağaca ne koyalım?",
+    "en": "Spring is here. What goes on the tree?"
+  },
+  "assets/audio/{lang}/scenes/g72_done_spring.mp3": {
+    "tr": "Ağaç çiçek açtı.",
+    "en": "The tree is in bloom."
+  },
+  "assets/audio/{lang}/scenes/g72_autumn.mp3": {
+    "tr": "Sonbahar geldi. Ağaca ne koyalım?",
+    "en": "Autumn is here. What goes on the tree?"
+  },
+  "assets/audio/{lang}/scenes/g72_done_autumn.mp3": {
+    "tr": "Yapraklar sapsarı oldu.",
+    "en": "The leaves turned yellow."
+  },
+  "assets/audio/{lang}/scenes/g72_summer.mp3": {
+    "tr": "Yaz geldi. Ağaca ne koyalım?",
+    "en": "Summer is here. What goes on the tree?"
+  },
+  "assets/audio/{lang}/scenes/g72_done_summer.mp3": {
+    "tr": "Ağaç elma dolu.",
+    "en": "The tree is full of apples."
+  },
+  "assets/audio/{lang}/scenes/g68_1.mp3": {
+    "tr": "Steteskopu kim kullanır?",
+    "en": "Who uses the stethoscope?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_1.mp3": {
+    "tr": "Doktor hastayı dinliyor.",
+    "en": "The doctor is listening to the patient."
+  },
+  "assets/audio/{lang}/scenes/g68_2.mp3": {
+    "tr": "Bu hortumu kim kullanır?",
+    "en": "Who uses this hose?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_2.mp3": {
+    "tr": "İtfaiyeci yangını söndürüyor.",
+    "en": "The firefighter is putting out the fire."
+  },
+  "assets/audio/{lang}/scenes/g68_3.mp3": {
+    "tr": "Kepçeyi kim kullanır?",
+    "en": "Who uses the ladle?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_3.mp3": {
+    "tr": "Aşçı çorbayı dağıtıyor.",
+    "en": "The cook is serving the soup."
+  },
+  "assets/audio/{lang}/scenes/g68_4.mp3": {
+    "tr": "Tebeşiri kim kullanır?",
+    "en": "Who uses the chalk?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_4.mp3": {
+    "tr": "Öğretmen tahtaya yazıyor.",
+    "en": "The teacher is writing on the board."
+  },
+  "assets/audio/{lang}/scenes/g68_5.mp3": {
+    "tr": "Düdüğü kim çalar?",
+    "en": "Who blows the whistle?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_5.mp3": {
+    "tr": "Polis trafiği yönetiyor.",
+    "en": "The police officer is directing the traffic."
+  },
+  "assets/audio/{lang}/scenes/g68_6.mp3": {
+    "tr": "Traktörü kim kullanır?",
+    "en": "Who drives the tractor?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_6.mp3": {
+    "tr": "Çiftçi tarlayı sürüyor.",
+    "en": "The farmer is ploughing the field."
+  },
+  "assets/audio/{lang}/scenes/g68_7.mp3": {
+    "tr": "Mektubu kim getirir?",
+    "en": "Who brings the letter?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_7.mp3": {
+    "tr": "Postacı mektubu getirdi.",
+    "en": "The mail carrier brought the letter."
+  },
+  "assets/audio/{lang}/scenes/g68_8.mp3": {
+    "tr": "Saçı kesmek için makası kim kullanır?",
+    "en": "Who uses scissors to cut hair?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_8.mp3": {
+    "tr": "Kuaför saçı kesiyor.",
+    "en": "The hairdresser is cutting hair."
+  },
+  "assets/audio/{lang}/scenes/g68_9.mp3": {
+    "tr": "Diş aynasını kim kullanır?",
+    "en": "Who uses the dental mirror?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_9.mp3": {
+    "tr": "Diş hekimi dişlere bakıyor.",
+    "en": "The dentist is checking the teeth."
+  },
+  "assets/audio/{lang}/scenes/g68_10.mp3": {
+    "tr": "Ekmek küreğini kim kullanır?",
+    "en": "Who uses the bread peel?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_10.mp3": {
+    "tr": "Fırıncı ekmeği fırına sürüyor.",
+    "en": "The baker is putting the bread in the oven."
+  },
+  "assets/audio/{lang}/scenes/g68_11.mp3": {
+    "tr": "Çekici kim kullanır?",
+    "en": "Who uses the hammer?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_11.mp3": {
+    "tr": "Marangoz çivi çakıyor.",
+    "en": "The carpenter is hammering a nail."
+  },
+  "assets/audio/{lang}/scenes/g68_12.mp3": {
+    "tr": "Ateş ölçeri kim kullanır?",
+    "en": "Who uses the thermometer?"
+  },
+  "assets/audio/{lang}/scenes/g68_done_12.mp3": {
+    "tr": "Hemşire ateşe bakıyor.",
+    "en": "The nurse is checking the temperature."
+  },
+  "assets/audio/{lang}/scenes/g69_1.mp3": {
+    "tr": "Kedi ağaçta kaldı. Kim yardım eder?",
+    "en": "The cat is stuck in the tree. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_1.mp3": {
+    "tr": "İtfaiyeci kediyi kurtardı.",
+    "en": "The firefighter saved the cat."
+  },
+  "assets/audio/{lang}/scenes/g69_2.mp3": {
+    "tr": "Bir yerde yangın çıktı. Kim yardım eder?",
+    "en": "There is a fire. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_2.mp3": {
+    "tr": "İtfaiyeci yangını söndürdü.",
+    "en": "The firefighter put out the fire."
+  },
+  "assets/audio/{lang}/scenes/g69_3.mp3": {
+    "tr": "Ali hasta oldu. Kim yardım eder?",
+    "en": "Ali is sick. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_3.mp3": {
+    "tr": "Doktor Ali'yi muayene etti.",
+    "en": "The doctor checked Ali."
+  },
+  "assets/audio/{lang}/scenes/g69_4.mp3": {
+    "tr": "Ali'nin dişi ağrıyor. Kim yardım eder?",
+    "en": "Ali's tooth hurts. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_4.mp3": {
+    "tr": "Diş hekimi dişine baktı.",
+    "en": "The dentist looked at his tooth."
+  },
+  "assets/audio/{lang}/scenes/g69_5.mp3": {
+    "tr": "Ali yolunu kaybetti. Kim yardım eder?",
+    "en": "Ali is lost. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_5.mp3": {
+    "tr": "Polis Ali'yi annesine götürdü.",
+    "en": "The police officer took Ali to his mom."
+  },
+  "assets/audio/{lang}/scenes/g69_6.mp3": {
+    "tr": "Köpek hasta oldu. Kim yardım eder?",
+    "en": "The dog is sick. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_6.mp3": {
+    "tr": "Veteriner köpeği iyileştirdi.",
+    "en": "The vet made the dog better."
+  },
+  "assets/audio/{lang}/scenes/g69_7.mp3": {
+    "tr": "Araba bozuldu. Kim yardım eder?",
+    "en": "The car broke down. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_7.mp3": {
+    "tr": "Tamirci arabayı yaptı.",
+    "en": "The mechanic fixed the car."
+  },
+  "assets/audio/{lang}/scenes/g69_8.mp3": {
+    "tr": "Ali'nin saçı çok uzadı. Kim yardım eder?",
+    "en": "Ali's hair is too long. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_8.mp3": {
+    "tr": "Kuaför saçını kesti.",
+    "en": "The hairdresser cut his hair."
+  },
+  "assets/audio/{lang}/scenes/g69_9.mp3": {
+    "tr": "Çiçekler solmuş. Kim yardım eder?",
+    "en": "The flowers are wilting. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_9.mp3": {
+    "tr": "Bahçıvan çiçekleri suladı.",
+    "en": "The gardener watered the flowers."
+  },
+  "assets/audio/{lang}/scenes/g69_10.mp3": {
+    "tr": "Gömlek yırtıldı. Kim yardım eder?",
+    "en": "The shirt is torn. Who can help?"
+  },
+  "assets/audio/{lang}/scenes/g69_done_10.mp3": {
+    "tr": "Terzi gömleği dikti.",
+    "en": "The tailor sewed the shirt."
+  },
+  "assets/audio/{lang}/scenes/g70_1.mp3": {
+    "tr": "Öğretmen nerede çalışır?",
+    "en": "Where does the teacher work?"
+  },
+  "assets/audio/{lang}/scenes/g70_2.mp3": {
+    "tr": "Doktor nerede çalışır?",
+    "en": "Where does the doctor work?"
+  },
+  "assets/audio/{lang}/scenes/g70_3.mp3": {
+    "tr": "Aşçı nerede çalışır?",
+    "en": "Where does the cook work?"
+  },
+  "assets/audio/{lang}/scenes/g70_4.mp3": {
+    "tr": "Çiftçi nerede çalışır?",
+    "en": "Where does the farmer work?"
+  },
+  "assets/audio/{lang}/scenes/g70_5.mp3": {
+    "tr": "İtfaiyeci nerede çalışır?",
+    "en": "Where does the firefighter work?"
+  },
+  "assets/audio/{lang}/scenes/g70_6.mp3": {
+    "tr": "Fırıncı nerede çalışır?",
+    "en": "Where does the baker work?"
+  },
+  "assets/audio/{lang}/scenes/g70_7.mp3": {
+    "tr": "Polis nerede çalışır?",
+    "en": "Where does the police officer work?"
+  },
+  "assets/audio/{lang}/scenes/g70_8.mp3": {
+    "tr": "Pilot nerede çalışır?",
+    "en": "Where does the pilot work?"
+  },
+  "assets/audio/{lang}/scenes/g70_9.mp3": {
+    "tr": "Kaptan nerede çalışır?",
+    "en": "Where does the captain work?"
+  },
+  "assets/audio/{lang}/scenes/g70_10.mp3": {
+    "tr": "Eczacı nerede çalışır?",
+    "en": "Where does the pharmacist work?"
+  },
+  "assets/audio/{lang}/scenes/g73_listen.mp3": {
+    "tr": "Dinle bakalım. Hava nasıl?",
+    "en": "Listen. What's the weather like?"
+  },
+  "assets/audio/{lang}/scenes/g73_done_rain.mp3": {
+    "tr": "Yağmur yağıyor.",
+    "en": "It's raining."
+  },
+  "assets/audio/{lang}/scenes/g73_done_snow.mp3": {
+    "tr": "Kar yağıyor.",
+    "en": "It's snowing."
+  },
+  "assets/audio/{lang}/scenes/g73_done_sun.mp3": {
+    "tr": "Güneş açmış.",
+    "en": "It's sunny."
+  },
+  "assets/audio/{lang}/scenes/g73_done_wind.mp3": {
+    "tr": "Rüzgâr esiyor.",
+    "en": "It's windy."
+  },
+  "assets/audio/{lang}/scenes/g73_done_lightning.mp3": {
+    "tr": "Şimşek çakıyor.",
+    "en": "It's stormy."
+  }
+}

@@ -10,14 +10,29 @@
     ],
     "name": {
       "tr": "Tişört",
-      "en": "Tshirt"
+      "en": "T-shirt"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/tshirt.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/tshirt_selected.mp3",
       "en": "assets/audio/en/clothes/tshirt_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/tshirt.webp": {
+        "id": "clothes.tshirt",
+        "path": "assets/images/clothes/tshirt.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "17a8c39256069765248c446e9be1ecbd25360458b071ff5e585c8b35274b7860"
+      }
+    }
   },
   {
     "id": "clothes.trousers",
@@ -29,14 +44,29 @@
     ],
     "name": {
       "tr": "Pantolon",
-      "en": "Trousers"
+      "en": "Pants"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/trousers.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/trousers_selected.mp3",
       "en": "assets/audio/en/clothes/trousers_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/trousers.webp": {
+        "id": "clothes.trousers",
+        "path": "assets/images/clothes/trousers.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9a2219d976fcbc5fb5da6426fd301af8515361806e42a27b3b4aa0f72e70173a"
+      }
+    }
   },
   {
     "id": "clothes.shoes",
@@ -50,12 +80,27 @@
       "tr": "Ayakkabı",
       "en": "Shoes"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/shoes.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/shoes_selected.mp3",
       "en": "assets/audio/en/clothes/shoes_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/shoes.webp": {
+        "id": "clothes.shoes",
+        "path": "assets/images/clothes/shoes.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "ce76430f994ca123a99abee06d0d5a8562e54701adda5f56837375c95cbb199b"
+      }
+    }
   },
   {
     "id": "clothes.socks",
@@ -69,12 +114,27 @@
       "tr": "Çorap",
       "en": "Socks"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/socks.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/socks_selected.mp3",
       "en": "assets/audio/en/clothes/socks_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/socks.webp": {
+        "id": "clothes.socks",
+        "path": "assets/images/clothes/socks.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c9bc2c3424506ad102cd289a182764fff6bd08335628920be26b423ed38bdab6"
+      }
+    }
   },
   {
     "id": "clothes.hat",
@@ -89,12 +149,27 @@
       "tr": "Şapka",
       "en": "Hat"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/hat.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/hat_selected.mp3",
       "en": "assets/audio/en/clothes/hat_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/hat.webp": {
+        "id": "clothes.hat",
+        "path": "assets/images/clothes/hat.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "5898b4fc10d5b8e9881c2d06069ea3d96f6a7ed080357fe02aa41f315da7e3e3"
+      }
+    }
   },
   {
     "id": "clothes.coat",
@@ -109,12 +184,27 @@
       "tr": "Mont",
       "en": "Coat"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/coat.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/coat_selected.mp3",
       "en": "assets/audio/en/clothes/coat_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/coat.webp": {
+        "id": "clothes.coat",
+        "path": "assets/images/clothes/coat.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "611ebc4d75a8d3f573cfd0d2c12cc90a318be6baa210ebf58a73083e81d4fc8b"
+      }
+    }
   },
   {
     "id": "clothes.dress",
@@ -129,12 +219,27 @@
       "tr": "Elbise",
       "en": "Dress"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/dress.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/dress_selected.mp3",
       "en": "assets/audio/en/clothes/dress_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/dress.webp": {
+        "id": "clothes.dress",
+        "path": "assets/images/clothes/dress.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "fdfdf941d8413a8908b7cc4da737c56f7d0f83ec6d710ed8819acf0c0f8c98b2"
+      }
+    }
   },
   {
     "id": "clothes.skirt",
@@ -148,12 +253,27 @@
       "tr": "Etek",
       "en": "Skirt"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/skirt.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/skirt_selected.mp3",
       "en": "assets/audio/en/clothes/skirt_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/skirt.webp": {
+        "id": "clothes.skirt",
+        "path": "assets/images/clothes/skirt.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "6c4c1b35b5fa6210988e39b85c4703fb32ac5cc4b38af427a17387f3f3b196a8"
+      }
+    }
   },
   {
     "id": "clothes.shorts",
@@ -168,12 +288,27 @@
       "tr": "Şort",
       "en": "Shorts"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/shorts.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/shorts_selected.mp3",
       "en": "assets/audio/en/clothes/shorts_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/shorts.webp": {
+        "id": "clothes.shorts",
+        "path": "assets/images/clothes/shorts.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "f04a0593424276e419d3a8fd9cd120f0946e7a7d7f4db236f62dd23d6da41509"
+      }
+    }
   },
   {
     "id": "clothes.pajamas",
@@ -187,12 +322,27 @@
       "tr": "Pijama",
       "en": "Pajamas"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/pajamas.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/pajamas_selected.mp3",
       "en": "assets/audio/en/clothes/pajamas_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/pajamas.webp": {
+        "id": "clothes.pajamas",
+        "path": "assets/images/clothes/pajamas.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "830fdadb8f88393a871b26bf6c469d6237a9c12627c0fb8cb7ba908fc926acfa"
+      }
+    }
   },
   {
     "id": "clothes.sweater",
@@ -207,12 +357,27 @@
       "tr": "Kazak",
       "en": "Sweater"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/sweater.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/sweater_selected.mp3",
       "en": "assets/audio/en/clothes/sweater_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/sweater.webp": {
+        "id": "clothes.sweater",
+        "path": "assets/images/clothes/sweater.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "994f40aa454eceb2c127d4d709cb9c71e2cab0abcda122cd464823147f445896"
+      }
+    }
   },
   {
     "id": "clothes.slippers",
@@ -226,12 +391,27 @@
       "tr": "Terlik",
       "en": "Slippers"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/slippers.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/slippers_selected.mp3",
       "en": "assets/audio/en/clothes/slippers_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/slippers.webp": {
+        "id": "clothes.slippers",
+        "path": "assets/images/clothes/slippers.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "d3c12c22dc752c427cf5b69b89eb561cacdd1a5846e9c2fc7d5e6ce596eaa3dc"
+      }
+    }
   },
   {
     "id": "clothes.shirt",
@@ -245,12 +425,27 @@
       "tr": "Gömlek",
       "en": "Shirt"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/shirt.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/shirt_selected.mp3",
       "en": "assets/audio/en/clothes/shirt_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/shirt.webp": {
+        "id": "clothes.shirt",
+        "path": "assets/images/clothes/shirt.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a4de622f4f132153e1f64586512b70ab6802f74c50985394782d6b8ec609aa01"
+      }
+    }
   },
   {
     "id": "clothes.gloves",
@@ -265,12 +460,27 @@
       "tr": "Eldiven",
       "en": "Gloves"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/gloves.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/gloves_selected.mp3",
       "en": "assets/audio/en/clothes/gloves_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/gloves.webp": {
+        "id": "clothes.gloves",
+        "path": "assets/images/clothes/gloves.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a76874286fb114cbb68f8a5f26690795791d8529b80c1d435fbd26f97df6965d"
+      }
+    }
   },
   {
     "id": "clothes.scarf",
@@ -285,12 +495,27 @@
       "tr": "Atkı",
       "en": "Scarf"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/scarf.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/scarf_selected.mp3",
       "en": "assets/audio/en/clothes/scarf_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/scarf.webp": {
+        "id": "clothes.scarf",
+        "path": "assets/images/clothes/scarf.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "060cb20c9afa8b594c3d45414396f33e4e49c655f06d8f622725c21ef0f363e1"
+      }
+    }
   },
   {
     "id": "clothes.beanie",
@@ -305,12 +530,27 @@
       "tr": "Bere",
       "en": "Beanie"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/beanie.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/beanie_selected.mp3",
       "en": "assets/audio/en/clothes/beanie_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/beanie.webp": {
+        "id": "clothes.beanie",
+        "path": "assets/images/clothes/beanie.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "7d0bb069dff08fac46989c754d1dc50eb3bb66d957871afb61e9c041879936fa"
+      }
+    }
   },
   {
     "id": "clothes.boots",
@@ -326,12 +566,27 @@
       "tr": "Çizme",
       "en": "Boots"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/boots.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/boots_selected.mp3",
       "en": "assets/audio/en/clothes/boots_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/boots.webp": {
+        "id": "clothes.boots",
+        "path": "assets/images/clothes/boots.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "0a6c4691836236c6dc9fef92a88e06d9b50670457580ddc8c67933838a2737a7"
+      }
+    }
   },
   {
     "id": "clothes.sandals",
@@ -346,12 +601,27 @@
       "tr": "Sandalet",
       "en": "Sandals"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/sandals.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/sandals_selected.mp3",
       "en": "assets/audio/en/clothes/sandals_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/sandals.webp": {
+        "id": "clothes.sandals",
+        "path": "assets/images/clothes/sandals.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9e54fcda735455f3d3031145a4ee4abc3a96c435086cea18e6a5b2489a602876"
+      }
+    }
   },
   {
     "id": "clothes.swimsuit",
@@ -365,12 +635,27 @@
       "tr": "Mayo",
       "en": "Swimsuit"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/swimsuit.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/swimsuit_selected.mp3",
       "en": "assets/audio/en/clothes/swimsuit_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/swimsuit.webp": {
+        "id": "clothes.swimsuit",
+        "path": "assets/images/clothes/swimsuit.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "17b3537efeaa3b2a95ac5e9a87d921b74a063c0063d170b6bb66be96284b4d67"
+      }
+    }
   },
   {
     "id": "clothes.raincoat",
@@ -385,12 +670,27 @@
       "tr": "Yağmurluk",
       "en": "Raincoat"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/raincoat.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/raincoat_selected.mp3",
       "en": "assets/audio/en/clothes/raincoat_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/raincoat.webp": {
+        "id": "clothes.raincoat",
+        "path": "assets/images/clothes/raincoat.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1ad135ccd332e1f5adcdfe69d4b4219b8865c1f3922933b34bcd34fed551c33b"
+      }
+    }
   },
   {
     "id": "clothes.cardigan",
@@ -404,12 +704,27 @@
       "tr": "Hırka",
       "en": "Cardigan"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/cardigan.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/cardigan_selected.mp3",
       "en": "assets/audio/en/clothes/cardigan_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/cardigan.webp": {
+        "id": "clothes.cardigan",
+        "path": "assets/images/clothes/cardigan.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "fbbb167dca85761f8dc90e42c3fc534c3592130b580944fa26f5f131a4494ae7"
+      }
+    }
   },
   {
     "id": "clothes.tracksuit",
@@ -423,12 +738,27 @@
       "tr": "Eşofman",
       "en": "Tracksuit"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/tracksuit.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/tracksuit_selected.mp3",
       "en": "assets/audio/en/clothes/tracksuit_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/tracksuit.webp": {
+        "id": "clothes.tracksuit",
+        "path": "assets/images/clothes/tracksuit.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "6eaacfd5264b7038fc2ad97ffabefe7c6ccde981d84a5edf8d73c000b2e94839"
+      }
+    }
   },
   {
     "id": "clothes.sneakers",
@@ -442,31 +772,27 @@
       "tr": "Spor ayakkabı",
       "en": "Sneakers"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/sneakers.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/sneakers_selected.mp3",
       "en": "assets/audio/en/clothes/sneakers_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "clothes.glasses",
-    "theme": "clothes",
-    "tier": "medium",
-    "chapter": 4,
-    "tags": [
-      "aksesuar"
-    ],
-    "name": {
-      "tr": "Gözlük",
-      "en": "Glasses"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/glasses_selected.mp3",
-      "en": "assets/audio/en/clothes/glasses_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/sneakers.webp": {
+        "id": "clothes.sneakers",
+        "path": "assets/images/clothes/sneakers.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "1794b3c92c9c67a8914d3e70aa2202807b66ebc4506f70468e544f3fccf94e81"
+      }
+    }
   },
   {
     "id": "clothes.sunglasses",
@@ -481,12 +807,27 @@
       "tr": "Güneş gözlüğü",
       "en": "Sunglasses"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/sunglasses.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/sunglasses_selected.mp3",
       "en": "assets/audio/en/clothes/sunglasses_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/sunglasses.webp": {
+        "id": "clothes.sunglasses",
+        "path": "assets/images/clothes/sunglasses.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "b868fe8a88c3c46542464e8df6aa921b71daeb54cd7fe9eaca501017547b73dd"
+      }
+    }
   },
   {
     "id": "clothes.umbrella",
@@ -501,12 +842,27 @@
       "tr": "Şemsiye",
       "en": "Umbrella"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/umbrella.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/umbrella_selected.mp3",
       "en": "assets/audio/en/clothes/umbrella_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/umbrella.webp": {
+        "id": "clothes.umbrella",
+        "path": "assets/images/clothes/umbrella.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "35f418a80fa0530b95f79fcf44cd1f12bf77e10169aecb7ed9dcf810863d5ec9"
+      }
+    }
   },
   {
     "id": "clothes.bag",
@@ -520,12 +876,27 @@
       "tr": "Çanta",
       "en": "Bag"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/bag.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/bag_selected.mp3",
       "en": "assets/audio/en/clothes/bag_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/bag.webp": {
+        "id": "clothes.bag",
+        "path": "assets/images/clothes/bag.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "d587d6cab7d3c685eeb4cf279db210ea2e1f9acdd8786320adc5420488f46b60"
+      }
+    }
   },
   {
     "id": "clothes.vest",
@@ -539,12 +910,27 @@
       "tr": "Yelek",
       "en": "Vest"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/vest.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/vest_selected.mp3",
       "en": "assets/audio/en/clothes/vest_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/vest.webp": {
+        "id": "clothes.vest",
+        "path": "assets/images/clothes/vest.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "9d2e55a3bf62b495930415ce81eff34e7e2a0d6d8f85a5e8cd59859540d25fd9"
+      }
+    }
   },
   {
     "id": "clothes.jacket",
@@ -558,262 +944,26 @@
       "tr": "Ceket",
       "en": "Jacket"
     },
-    "images": [],
+    "images": [
+      "assets/images/clothes/jacket.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/clothes/jacket_selected.mp3",
       "en": "assets/audio/en/clothes/jacket_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "clothes.tie",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "boyun"
-    ],
-    "name": {
-      "tr": "Kravat",
-      "en": "Tie"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/tie_selected.mp3",
-      "en": "assets/audio/en/clothes/tie_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.bow_tie",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "boyun"
-    ],
-    "name": {
-      "tr": "Papyon",
-      "en": "Bow tie"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/bow_tie_selected.mp3",
-      "en": "assets/audio/en/clothes/bow_tie_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.apron",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "govde"
-    ],
-    "name": {
-      "tr": "Önlük",
-      "en": "Apron"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/apron_selected.mp3",
-      "en": "assets/audio/en/clothes/apron_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.belt",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "aksesuar"
-    ],
-    "name": {
-      "tr": "Kemer",
-      "en": "Belt"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/belt_selected.mp3",
-      "en": "assets/audio/en/clothes/belt_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.ankle_boots",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "kis",
-      "ayak"
-    ],
-    "name": {
-      "tr": "Bot",
-      "en": "Ankle boots"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/ankle_boots_selected.mp3",
-      "en": "assets/audio/en/clothes/ankle_boots_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.cap",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [
-      "bas"
-    ],
-    "name": {
-      "tr": "Kasket",
-      "en": "Cap"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/cap_selected.mp3",
-      "en": "assets/audio/en/clothes/cap_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.earmuffs",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "kis",
-      "bas"
-    ],
-    "name": {
-      "tr": "Kulaklık",
-      "en": "Earmuffs"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/earmuffs_selected.mp3",
-      "en": "assets/audio/en/clothes/earmuffs_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.wristwatch",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "aksesuar",
-      "el"
-    ],
-    "name": {
-      "tr": "Saat",
-      "en": "Wristwatch"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/wristwatch_selected.mp3",
-      "en": "assets/audio/en/clothes/wristwatch_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.bracelet",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "aksesuar"
-    ],
-    "name": {
-      "tr": "Bilezik",
-      "en": "Bracelet"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/bracelet_selected.mp3",
-      "en": "assets/audio/en/clothes/bracelet_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.necklace",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "aksesuar",
-      "boyun"
-    ],
-    "name": {
-      "tr": "Kolye",
-      "en": "Necklace"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/necklace_selected.mp3",
-      "en": "assets/audio/en/clothes/necklace_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.backpack",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "aksesuar"
-    ],
-    "name": {
-      "tr": "Sırt çantası",
-      "en": "Backpack"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/backpack_selected.mp3",
-      "en": "assets/audio/en/clothes/backpack_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.cape",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "govde"
-    ],
-    "name": {
-      "tr": "Pelerin",
-      "en": "Cape"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/cape_selected.mp3",
-      "en": "assets/audio/en/clothes/cape_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "clothes.overalls",
-    "theme": "clothes",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [
-      "govde"
-    ],
-    "name": {
-      "tr": "Tulum",
-      "en": "Overalls"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/clothes/overalls_selected.mp3",
-      "en": "assets/audio/en/clothes/overalls_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/clothes/jacket.webp": {
+        "id": "clothes.jacket",
+        "path": "assets/images/clothes/jacket.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "bc1fda8c80de1f6f0bee86f15f3baa05804c73bcc63f90df0907236c87023787"
+      }
+    }
   }
 ]

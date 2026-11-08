@@ -1462,7 +1462,7 @@
     ]
   },
   "G49": {
-    "theme": "body",
+    "theme": "clothes",
     "choicePool": [
       "body.hand",
       "body.foot",
@@ -1589,6 +1589,1265 @@
         },
         "stimulus": "wear.earmuffs",
         "alsoRight": []
+      }
+    ]
+  },
+  "G62": {
+    "theme": "cleaning",
+    "rounds": [
+      {
+        "target": "cleaning.comb",
+        "text": {
+          "tr": "Saçını taramak için ne lazım?",
+          "en": "What do we need to comb our hair?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_1.mp3",
+          "en": "assets/audio/en/scenes/g62_1.mp3"
+        },
+        "result": "assets/images/play/do_comb.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_1.mp3",
+          "en": "assets/audio/en/scenes/g62_done_1.mp3"
+        }
+      },
+      {
+        "target": "cleaning.toothbrush",
+        "text": {
+          "tr": "Dişini fırçalamak için ne lazım?",
+          "en": "What do we need to brush our teeth?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_2.mp3",
+          "en": "assets/audio/en/scenes/g62_2.mp3"
+        },
+        "result": "assets/images/play/do_brush.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_2.mp3",
+          "en": "assets/audio/en/scenes/g62_done_2.mp3"
+        }
+      },
+      {
+        "target": "cleaning.soap",
+        "text": {
+          "tr": "Ellerini yıkamak için ne lazım?",
+          "en": "What do we need to wash our hands?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_3.mp3",
+          "en": "assets/audio/en/scenes/g62_3.mp3"
+        },
+        "result": "assets/images/play/do_soap.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_3.mp3",
+          "en": "assets/audio/en/scenes/g62_done_3.mp3"
+        }
+      },
+      {
+        "target": "cleaning.towel",
+        "text": {
+          "tr": "Elini yüzünü kurulamak için ne lazım?",
+          "en": "What do we need to dry our face?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_4.mp3",
+          "en": "assets/audio/en/scenes/g62_4.mp3"
+        },
+        "result": "assets/images/play/do_towel.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_4.mp3",
+          "en": "assets/audio/en/scenes/g62_done_4.mp3"
+        }
+      },
+      {
+        "target": "cleaning.shampoo",
+        "text": {
+          "tr": "Saçını yıkamak için ne lazım?",
+          "en": "What do we need to wash our hair?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_5.mp3",
+          "en": "assets/audio/en/scenes/g62_5.mp3"
+        },
+        "result": "assets/images/play/do_shampoo.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_5.mp3",
+          "en": "assets/audio/en/scenes/g62_done_5.mp3"
+        }
+      },
+      {
+        "target": "cleaning.tissue",
+        "text": {
+          "tr": "Burnunu silmek için ne lazım?",
+          "en": "What do we need to wipe our nose?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_6.mp3",
+          "en": "assets/audio/en/scenes/g62_6.mp3"
+        },
+        "result": "assets/images/play/do_tissue.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_6.mp3",
+          "en": "assets/audio/en/scenes/g62_done_6.mp3"
+        }
+      },
+      {
+        "target": "cleaning.trash_bin",
+        "text": {
+          "tr": "Çöpü nereye atarız?",
+          "en": "Where do we throw the rubbish?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_7.mp3",
+          "en": "assets/audio/en/scenes/g62_7.mp3"
+        },
+        "result": "assets/images/play/do_bin.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_7.mp3",
+          "en": "assets/audio/en/scenes/g62_done_7.mp3"
+        }
+      },
+      {
+        "target": "cleaning.broom",
+        "text": {
+          "tr": "Yeri süpürmek için ne lazım?",
+          "en": "What do we need to sweep the floor?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_8.mp3",
+          "en": "assets/audio/en/scenes/g62_8.mp3"
+        },
+        "result": "assets/images/play/do_broom.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_8.mp3",
+          "en": "assets/audio/en/scenes/g62_done_8.mp3"
+        }
+      },
+      {
+        "target": "cleaning.sponge",
+        "text": {
+          "tr": "Bulaşık yıkamak için ne lazım?",
+          "en": "What do we need to wash the dishes?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_9.mp3",
+          "en": "assets/audio/en/scenes/g62_9.mp3"
+        },
+        "result": "assets/images/play/do_sponge.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_9.mp3",
+          "en": "assets/audio/en/scenes/g62_done_9.mp3"
+        }
+      },
+      {
+        "target": "cleaning.mop",
+        "text": {
+          "tr": "Yeri silmek için ne lazım?",
+          "en": "What do we need to mop the floor?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_10.mp3",
+          "en": "assets/audio/en/scenes/g62_10.mp3"
+        },
+        "result": "assets/images/play/do_mop.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_10.mp3",
+          "en": "assets/audio/en/scenes/g62_done_10.mp3"
+        }
+      },
+      {
+        "target": "cleaning.hair_dryer",
+        "text": {
+          "tr": "Saçını kurutmak için ne lazım?",
+          "en": "What do we need to dry our hair?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_11.mp3",
+          "en": "assets/audio/en/scenes/g62_11.mp3"
+        },
+        "result": "assets/images/play/do_dryer.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_11.mp3",
+          "en": "assets/audio/en/scenes/g62_done_11.mp3"
+        }
+      },
+      {
+        "target": "cleaning.nail_clipper",
+        "text": {
+          "tr": "Tırnaklarını kesmek için ne lazım?",
+          "en": "What do we need to cut our nails?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_12.mp3",
+          "en": "assets/audio/en/scenes/g62_12.mp3"
+        },
+        "result": "assets/images/play/do_nails.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_12.mp3",
+          "en": "assets/audio/en/scenes/g62_done_12.mp3"
+        }
+      },
+      {
+        "target": "cleaning.vacuum",
+        "text": {
+          "tr": "Halıyı süpürmek için ne lazım?",
+          "en": "What do we need to clean the carpet?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_13.mp3",
+          "en": "assets/audio/en/scenes/g62_13.mp3"
+        },
+        "result": "assets/images/play/do_vacuum.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_13.mp3",
+          "en": "assets/audio/en/scenes/g62_done_13.mp3"
+        }
+      },
+      {
+        "target": "cleaning.clothespin",
+        "text": {
+          "tr": "Çamaşırları asmak için ne lazım?",
+          "en": "What do we need to hang up the washing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_14.mp3",
+          "en": "assets/audio/en/scenes/g62_14.mp3"
+        },
+        "result": "assets/images/play/do_pin.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_14.mp3",
+          "en": "assets/audio/en/scenes/g62_done_14.mp3"
+        }
+      },
+      {
+        "target": "cleaning.laundry_basket",
+        "text": {
+          "tr": "Kirli çamaşırları nereye koyarız?",
+          "en": "Where do we put dirty clothes?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_15.mp3",
+          "en": "assets/audio/en/scenes/g62_15.mp3"
+        },
+        "result": "assets/images/play/do_basket.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_15.mp3",
+          "en": "assets/audio/en/scenes/g62_done_15.mp3"
+        }
+      },
+      {
+        "target": "cleaning.detergent",
+        "text": {
+          "tr": "Çamaşır yıkarken içine ne koyarız?",
+          "en": "What do we add when we wash clothes?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g62_16.mp3",
+          "en": "assets/audio/en/scenes/g62_16.mp3"
+        },
+        "result": "assets/images/play/do_detergent.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g62_done_16.mp3",
+          "en": "assets/audio/en/scenes/g62_done_16.mp3"
+        }
+      }
+    ]
+  },
+  "G64": {
+    "theme": "clothes",
+    "look": "scene",
+    "choicePool": [
+      "clothes.beanie",
+      "clothes.boots",
+      "clothes.coat",
+      "clothes.dress",
+      "clothes.gloves",
+      "clothes.hat",
+      "clothes.pajamas",
+      "clothes.raincoat",
+      "clothes.sandals",
+      "clothes.scarf",
+      "clothes.shorts",
+      "clothes.skirt",
+      "clothes.slippers",
+      "clothes.sneakers",
+      "clothes.sunglasses",
+      "clothes.sweater",
+      "clothes.swimsuit",
+      "clothes.tshirt",
+      "clothes.umbrella"
+    ],
+    "rounds": [
+      {
+        "target": "clothes.raincoat",
+        "stimulus": "weather.rain",
+        "alsoRight": [
+          "clothes.umbrella",
+          "clothes.boots"
+        ],
+        "text": {
+          "tr": "Dışarıda yağmur yağıyor. Ali ne giysin?",
+          "en": "It's raining outside. What should Ali wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_1.mp3",
+          "en": "assets/audio/en/scenes/g64_1.mp3"
+        },
+        "result": "assets/images/play/out_rain.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_1.mp3",
+          "en": "assets/audio/en/scenes/g64_done_1.mp3"
+        }
+      },
+      {
+        "target": "clothes.umbrella",
+        "stimulus": "weather.rain",
+        "alsoRight": [
+          "clothes.raincoat",
+          "clothes.boots"
+        ],
+        "text": {
+          "tr": "Yağmur başladı. Ali yanına ne alsın?",
+          "en": "It started to rain. What should Ali take?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_2.mp3",
+          "en": "assets/audio/en/scenes/g64_2.mp3"
+        },
+        "result": "assets/images/play/out_umbrella.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_2.mp3",
+          "en": "assets/audio/en/scenes/g64_done_2.mp3"
+        }
+      },
+      {
+        "target": "clothes.coat",
+        "stimulus": "weather.snow",
+        "alsoRight": [
+          "clothes.beanie",
+          "clothes.gloves",
+          "clothes.scarf",
+          "clothes.boots",
+          "clothes.sweater"
+        ],
+        "text": {
+          "tr": "Dışarıda kar yağıyor. Ali ne giysin?",
+          "en": "It's snowing outside. What should Ali wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_3.mp3",
+          "en": "assets/audio/en/scenes/g64_3.mp3"
+        },
+        "result": "assets/images/play/out_snow.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_3.mp3",
+          "en": "assets/audio/en/scenes/g64_done_3.mp3"
+        }
+      },
+      {
+        "target": "clothes.gloves",
+        "stimulus": "weather.snow",
+        "alsoRight": [
+          "clothes.coat",
+          "clothes.beanie",
+          "clothes.scarf",
+          "clothes.boots",
+          "clothes.sweater"
+        ],
+        "text": {
+          "tr": "Ali kartopu oynayacak. Eline ne taksın?",
+          "en": "Ali wants to make snowballs. What goes on his hands?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_4.mp3",
+          "en": "assets/audio/en/scenes/g64_4.mp3"
+        },
+        "result": "assets/images/play/out_gloves.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_4.mp3",
+          "en": "assets/audio/en/scenes/g64_done_4.mp3"
+        }
+      },
+      {
+        "target": "clothes.shorts",
+        "stimulus": "weather.sun",
+        "alsoRight": [
+          "clothes.tshirt",
+          "clothes.sandals",
+          "clothes.hat",
+          "clothes.sunglasses",
+          "clothes.swimsuit"
+        ],
+        "text": {
+          "tr": "Hava çok sıcak. Ali ne giysin?",
+          "en": "It's very hot. What should Ali wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_5.mp3",
+          "en": "assets/audio/en/scenes/g64_5.mp3"
+        },
+        "result": "assets/images/play/out_sun.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_5.mp3",
+          "en": "assets/audio/en/scenes/g64_done_5.mp3"
+        }
+      },
+      {
+        "target": "clothes.sunglasses",
+        "stimulus": "weather.sun",
+        "alsoRight": [
+          "clothes.hat",
+          "clothes.shorts",
+          "clothes.tshirt",
+          "clothes.sandals"
+        ],
+        "text": {
+          "tr": "Güneş gözünü alıyor. Ali ne taksın?",
+          "en": "The sun is in his eyes. What should Ali put on?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_6.mp3",
+          "en": "assets/audio/en/scenes/g64_6.mp3"
+        },
+        "result": "assets/images/play/out_shades.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_6.mp3",
+          "en": "assets/audio/en/scenes/g64_done_6.mp3"
+        }
+      },
+      {
+        "target": "clothes.swimsuit",
+        "stimulus": "weather.sea",
+        "alsoRight": [
+          "clothes.hat",
+          "clothes.sunglasses",
+          "clothes.sandals",
+          "clothes.shorts"
+        ],
+        "text": {
+          "tr": "Ali denize gidiyor. Ne giysin?",
+          "en": "Ali is going to the sea. What should he wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_7.mp3",
+          "en": "assets/audio/en/scenes/g64_7.mp3"
+        },
+        "result": "assets/images/play/out_sea.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_7.mp3",
+          "en": "assets/audio/en/scenes/g64_done_7.mp3"
+        }
+      },
+      {
+        "target": "clothes.pajamas",
+        "stimulus": "weather.night",
+        "alsoRight": [
+          "clothes.slippers"
+        ],
+        "text": {
+          "tr": "Hava karardı, uyku vakti. Ali ne giysin?",
+          "en": "It's dark, time for bed. What should Ali wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_8.mp3",
+          "en": "assets/audio/en/scenes/g64_8.mp3"
+        },
+        "result": "assets/images/play/out_bed.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_8.mp3",
+          "en": "assets/audio/en/scenes/g64_done_8.mp3"
+        }
+      }
+    ]
+  },
+  "G67": {
+    "theme": "kitchen",
+    "look": "basket",
+    "choicePool": [
+      "kitchen.fridge",
+      "kitchen.cupboard",
+      "kitchen.dishwasher",
+      "cleaning.trash_bin",
+      "kitchen.oven"
+    ],
+    "rounds": [
+      {
+        "target": "kitchen.fridge",
+        "stimulus": "put.milk",
+        "text": {
+          "tr": "Sütü nereye koyalım?",
+          "en": "Where does the milk go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_1.mp3",
+          "en": "assets/audio/en/scenes/g67_1.mp3"
+        }
+      },
+      {
+        "target": "kitchen.fridge",
+        "stimulus": "put.cheese",
+        "text": {
+          "tr": "Peyniri nereye koyalım?",
+          "en": "Where does the cheese go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_2.mp3",
+          "en": "assets/audio/en/scenes/g67_2.mp3"
+        }
+      },
+      {
+        "target": "kitchen.fridge",
+        "stimulus": "put.eggs",
+        "text": {
+          "tr": "Yumurtaları nereye koyalım?",
+          "en": "Where do the eggs go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_3.mp3",
+          "en": "assets/audio/en/scenes/g67_3.mp3"
+        }
+      },
+      {
+        "target": "kitchen.fridge",
+        "stimulus": "put.yogurt",
+        "text": {
+          "tr": "Yoğurdu nereye koyalım?",
+          "en": "Where does the yogurt go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_4.mp3",
+          "en": "assets/audio/en/scenes/g67_4.mp3"
+        }
+      },
+      {
+        "target": "kitchen.cupboard",
+        "stimulus": "put.clean_plate",
+        "text": {
+          "tr": "Temiz tabağı nereye koyalım?",
+          "en": "Where does the clean plate go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_5.mp3",
+          "en": "assets/audio/en/scenes/g67_5.mp3"
+        }
+      },
+      {
+        "target": "kitchen.cupboard",
+        "stimulus": "put.clean_glass",
+        "text": {
+          "tr": "Temiz bardağı nereye koyalım?",
+          "en": "Where does the clean glass go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_6.mp3",
+          "en": "assets/audio/en/scenes/g67_6.mp3"
+        }
+      },
+      {
+        "target": "kitchen.dishwasher",
+        "stimulus": "put.dirty_plate",
+        "text": {
+          "tr": "Kirli tabağı nereye koyalım?",
+          "en": "Where does the dirty plate go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_7.mp3",
+          "en": "assets/audio/en/scenes/g67_7.mp3"
+        }
+      },
+      {
+        "target": "kitchen.dishwasher",
+        "stimulus": "put.dirty_fork",
+        "text": {
+          "tr": "Kirli çatalı nereye koyalım?",
+          "en": "Where does the dirty fork go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_8.mp3",
+          "en": "assets/audio/en/scenes/g67_8.mp3"
+        }
+      },
+      {
+        "target": "cleaning.trash_bin",
+        "stimulus": "put.peel",
+        "text": {
+          "tr": "Muz kabuğunu nereye atalım?",
+          "en": "Where does the banana peel go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_9.mp3",
+          "en": "assets/audio/en/scenes/g67_9.mp3"
+        }
+      },
+      {
+        "target": "cleaning.trash_bin",
+        "stimulus": "put.empty_box",
+        "text": {
+          "tr": "Boş kutuyu nereye atalım?",
+          "en": "Where does the empty box go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_10.mp3",
+          "en": "assets/audio/en/scenes/g67_10.mp3"
+        }
+      },
+      {
+        "target": "kitchen.oven",
+        "stimulus": "put.cake_dough",
+        "text": {
+          "tr": "Kek hamurunu nereye koyalım?",
+          "en": "Where does the cake batter go?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g67_11.mp3",
+          "en": "assets/audio/en/scenes/g67_11.mp3"
+        }
+      }
+    ]
+  },
+  "G68": {
+    "theme": "jobs",
+    "look": "basket",
+    "choicePool": [
+      "jobs.baker",
+      "jobs.carpenter",
+      "jobs.cook",
+      "jobs.dentist",
+      "jobs.doctor",
+      "jobs.farmer",
+      "jobs.firefighter",
+      "jobs.hairdresser",
+      "jobs.nurse",
+      "jobs.police_officer",
+      "jobs.postman",
+      "jobs.teacher"
+    ],
+    "rounds": [
+      {
+        "target": "jobs.doctor",
+        "stimulus": "use.stethoscope",
+        "text": {
+          "tr": "Steteskopu kim kullanır?",
+          "en": "Who uses the stethoscope?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_1.mp3",
+          "en": "assets/audio/en/scenes/g68_1.mp3"
+        },
+        "result": "assets/images/play/job_doctor.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_1.mp3",
+          "en": "assets/audio/en/scenes/g68_done_1.mp3"
+        }
+      },
+      {
+        "target": "jobs.firefighter",
+        "stimulus": "use.hose",
+        "text": {
+          "tr": "Bu hortumu kim kullanır?",
+          "en": "Who uses this hose?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_2.mp3",
+          "en": "assets/audio/en/scenes/g68_2.mp3"
+        },
+        "result": "assets/images/play/job_firefighter.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_2.mp3",
+          "en": "assets/audio/en/scenes/g68_done_2.mp3"
+        }
+      },
+      {
+        "target": "jobs.cook",
+        "stimulus": "use.ladle",
+        "text": {
+          "tr": "Kepçeyi kim kullanır?",
+          "en": "Who uses the ladle?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_3.mp3",
+          "en": "assets/audio/en/scenes/g68_3.mp3"
+        },
+        "result": "assets/images/play/job_cook.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_3.mp3",
+          "en": "assets/audio/en/scenes/g68_done_3.mp3"
+        }
+      },
+      {
+        "target": "jobs.teacher",
+        "stimulus": "use.chalk",
+        "text": {
+          "tr": "Tebeşiri kim kullanır?",
+          "en": "Who uses the chalk?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_4.mp3",
+          "en": "assets/audio/en/scenes/g68_4.mp3"
+        },
+        "result": "assets/images/play/job_teacher.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_4.mp3",
+          "en": "assets/audio/en/scenes/g68_done_4.mp3"
+        }
+      },
+      {
+        "target": "jobs.police_officer",
+        "stimulus": "use.whistle",
+        "text": {
+          "tr": "Düdüğü kim çalar?",
+          "en": "Who blows the whistle?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_5.mp3",
+          "en": "assets/audio/en/scenes/g68_5.mp3"
+        },
+        "result": "assets/images/play/job_police_officer.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_5.mp3",
+          "en": "assets/audio/en/scenes/g68_done_5.mp3"
+        }
+      },
+      {
+        "target": "jobs.farmer",
+        "stimulus": "use.tractor",
+        "text": {
+          "tr": "Traktörü kim kullanır?",
+          "en": "Who drives the tractor?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_6.mp3",
+          "en": "assets/audio/en/scenes/g68_6.mp3"
+        },
+        "result": "assets/images/play/job_farmer.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_6.mp3",
+          "en": "assets/audio/en/scenes/g68_done_6.mp3"
+        }
+      },
+      {
+        "target": "jobs.postman",
+        "stimulus": "use.letter",
+        "text": {
+          "tr": "Mektubu kim getirir?",
+          "en": "Who brings the letter?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_7.mp3",
+          "en": "assets/audio/en/scenes/g68_7.mp3"
+        },
+        "result": "assets/images/play/job_postman.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_7.mp3",
+          "en": "assets/audio/en/scenes/g68_done_7.mp3"
+        }
+      },
+      {
+        "target": "jobs.hairdresser",
+        "stimulus": "use.scissors",
+        "text": {
+          "tr": "Saçı kesmek için makası kim kullanır?",
+          "en": "Who uses scissors to cut hair?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_8.mp3",
+          "en": "assets/audio/en/scenes/g68_8.mp3"
+        },
+        "result": "assets/images/play/job_hairdresser.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_8.mp3",
+          "en": "assets/audio/en/scenes/g68_done_8.mp3"
+        }
+      },
+      {
+        "target": "jobs.dentist",
+        "stimulus": "use.dental_mirror",
+        "text": {
+          "tr": "Diş aynasını kim kullanır?",
+          "en": "Who uses the dental mirror?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_9.mp3",
+          "en": "assets/audio/en/scenes/g68_9.mp3"
+        },
+        "result": "assets/images/play/job_dentist.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_9.mp3",
+          "en": "assets/audio/en/scenes/g68_done_9.mp3"
+        }
+      },
+      {
+        "target": "jobs.baker",
+        "stimulus": "use.bread_peel",
+        "text": {
+          "tr": "Ekmek küreğini kim kullanır?",
+          "en": "Who uses the bread peel?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_10.mp3",
+          "en": "assets/audio/en/scenes/g68_10.mp3"
+        },
+        "result": "assets/images/play/job_baker.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_10.mp3",
+          "en": "assets/audio/en/scenes/g68_done_10.mp3"
+        }
+      },
+      {
+        "target": "jobs.carpenter",
+        "stimulus": "use.hammer",
+        "text": {
+          "tr": "Çekici kim kullanır?",
+          "en": "Who uses the hammer?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_11.mp3",
+          "en": "assets/audio/en/scenes/g68_11.mp3"
+        },
+        "result": "assets/images/play/job_carpenter.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_11.mp3",
+          "en": "assets/audio/en/scenes/g68_done_11.mp3"
+        }
+      },
+      {
+        "target": "jobs.nurse",
+        "stimulus": "use.thermometer",
+        "text": {
+          "tr": "Ateş ölçeri kim kullanır?",
+          "en": "Who uses the thermometer?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g68_12.mp3",
+          "en": "assets/audio/en/scenes/g68_12.mp3"
+        },
+        "result": "assets/images/play/job_nurse.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g68_done_12.mp3",
+          "en": "assets/audio/en/scenes/g68_done_12.mp3"
+        }
+      }
+    ]
+  },
+  "G69": {
+    "theme": "jobs",
+    "look": "scene",
+    "choicePool": [
+      "jobs.baker",
+      "jobs.cook",
+      "jobs.dentist",
+      "jobs.doctor",
+      "jobs.farmer",
+      "jobs.firefighter",
+      "jobs.gardener",
+      "jobs.hairdresser",
+      "jobs.mechanic",
+      "jobs.pilot",
+      "jobs.police_officer",
+      "jobs.tailor",
+      "jobs.teacher",
+      "jobs.vet"
+    ],
+    "rounds": [
+      {
+        "target": "jobs.firefighter",
+        "stimulus": "need.cat_tree",
+        "text": {
+          "tr": "Kedi ağaçta kaldı. Kim yardım eder?",
+          "en": "The cat is stuck in the tree. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_1.mp3",
+          "en": "assets/audio/en/scenes/g69_1.mp3"
+        },
+        "result": "assets/images/play/help_cat_tree.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_1.mp3",
+          "en": "assets/audio/en/scenes/g69_done_1.mp3"
+        }
+      },
+      {
+        "target": "jobs.firefighter",
+        "stimulus": "need.fire",
+        "text": {
+          "tr": "Bir yerde yangın çıktı. Kim yardım eder?",
+          "en": "There is a fire. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_2.mp3",
+          "en": "assets/audio/en/scenes/g69_2.mp3"
+        },
+        "result": "assets/images/play/help_fire.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_2.mp3",
+          "en": "assets/audio/en/scenes/g69_done_2.mp3"
+        }
+      },
+      {
+        "target": "jobs.doctor",
+        "stimulus": "need.fever",
+        "text": {
+          "tr": "Ali hasta oldu. Kim yardım eder?",
+          "en": "Ali is sick. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_3.mp3",
+          "en": "assets/audio/en/scenes/g69_3.mp3"
+        },
+        "result": "assets/images/play/help_fever.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_3.mp3",
+          "en": "assets/audio/en/scenes/g69_done_3.mp3"
+        }
+      },
+      {
+        "target": "jobs.dentist",
+        "stimulus": "need.toothache",
+        "text": {
+          "tr": "Ali'nin dişi ağrıyor. Kim yardım eder?",
+          "en": "Ali's tooth hurts. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_4.mp3",
+          "en": "assets/audio/en/scenes/g69_4.mp3"
+        },
+        "result": "assets/images/play/help_toothache.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_4.mp3",
+          "en": "assets/audio/en/scenes/g69_done_4.mp3"
+        }
+      },
+      {
+        "target": "jobs.police_officer",
+        "stimulus": "need.lost",
+        "text": {
+          "tr": "Ali yolunu kaybetti. Kim yardım eder?",
+          "en": "Ali is lost. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_5.mp3",
+          "en": "assets/audio/en/scenes/g69_5.mp3"
+        },
+        "result": "assets/images/play/help_lost.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_5.mp3",
+          "en": "assets/audio/en/scenes/g69_done_5.mp3"
+        }
+      },
+      {
+        "target": "jobs.vet",
+        "stimulus": "need.sick_dog",
+        "text": {
+          "tr": "Köpek hasta oldu. Kim yardım eder?",
+          "en": "The dog is sick. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_6.mp3",
+          "en": "assets/audio/en/scenes/g69_6.mp3"
+        },
+        "result": "assets/images/play/help_sick_dog.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_6.mp3",
+          "en": "assets/audio/en/scenes/g69_done_6.mp3"
+        }
+      },
+      {
+        "target": "jobs.mechanic",
+        "stimulus": "need.broken_car",
+        "text": {
+          "tr": "Araba bozuldu. Kim yardım eder?",
+          "en": "The car broke down. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_7.mp3",
+          "en": "assets/audio/en/scenes/g69_7.mp3"
+        },
+        "result": "assets/images/play/help_broken_car.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_7.mp3",
+          "en": "assets/audio/en/scenes/g69_done_7.mp3"
+        }
+      },
+      {
+        "target": "jobs.hairdresser",
+        "stimulus": "need.long_hair",
+        "text": {
+          "tr": "Ali'nin saçı çok uzadı. Kim yardım eder?",
+          "en": "Ali's hair is too long. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_8.mp3",
+          "en": "assets/audio/en/scenes/g69_8.mp3"
+        },
+        "result": "assets/images/play/help_long_hair.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_8.mp3",
+          "en": "assets/audio/en/scenes/g69_done_8.mp3"
+        }
+      },
+      {
+        "target": "jobs.gardener",
+        "stimulus": "need.dry_garden",
+        "text": {
+          "tr": "Çiçekler solmuş. Kim yardım eder?",
+          "en": "The flowers are wilting. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_9.mp3",
+          "en": "assets/audio/en/scenes/g69_9.mp3"
+        },
+        "result": "assets/images/play/help_dry_garden.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_9.mp3",
+          "en": "assets/audio/en/scenes/g69_done_9.mp3"
+        }
+      },
+      {
+        "target": "jobs.tailor",
+        "stimulus": "need.torn_shirt",
+        "text": {
+          "tr": "Gömlek yırtıldı. Kim yardım eder?",
+          "en": "The shirt is torn. Who can help?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g69_10.mp3",
+          "en": "assets/audio/en/scenes/g69_10.mp3"
+        },
+        "result": "assets/images/play/help_torn_shirt.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g69_done_10.mp3",
+          "en": "assets/audio/en/scenes/g69_done_10.mp3"
+        }
+      }
+    ]
+  },
+  "G70": {
+    "theme": "jobs",
+    "look": "basket",
+    "choicePool": [
+      "place.school",
+      "place.hospital",
+      "place.restaurant",
+      "place.farm",
+      "place.fire_station",
+      "place.bakery",
+      "place.police_station",
+      "place.plane",
+      "place.ship",
+      "place.pharmacy"
+    ],
+    "rounds": [
+      {
+        "target": "place.school",
+        "stimulus": "jobs.teacher",
+        "text": {
+          "tr": "Öğretmen nerede çalışır?",
+          "en": "Where does the teacher work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_1.mp3",
+          "en": "assets/audio/en/scenes/g70_1.mp3"
+        }
+      },
+      {
+        "target": "place.hospital",
+        "stimulus": "jobs.doctor",
+        "text": {
+          "tr": "Doktor nerede çalışır?",
+          "en": "Where does the doctor work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_2.mp3",
+          "en": "assets/audio/en/scenes/g70_2.mp3"
+        }
+      },
+      {
+        "target": "place.restaurant",
+        "stimulus": "jobs.cook",
+        "text": {
+          "tr": "Aşçı nerede çalışır?",
+          "en": "Where does the cook work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_3.mp3",
+          "en": "assets/audio/en/scenes/g70_3.mp3"
+        }
+      },
+      {
+        "target": "place.farm",
+        "stimulus": "jobs.farmer",
+        "text": {
+          "tr": "Çiftçi nerede çalışır?",
+          "en": "Where does the farmer work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_4.mp3",
+          "en": "assets/audio/en/scenes/g70_4.mp3"
+        }
+      },
+      {
+        "target": "place.fire_station",
+        "stimulus": "jobs.firefighter",
+        "text": {
+          "tr": "İtfaiyeci nerede çalışır?",
+          "en": "Where does the firefighter work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_5.mp3",
+          "en": "assets/audio/en/scenes/g70_5.mp3"
+        }
+      },
+      {
+        "target": "place.bakery",
+        "stimulus": "jobs.baker",
+        "text": {
+          "tr": "Fırıncı nerede çalışır?",
+          "en": "Where does the baker work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_6.mp3",
+          "en": "assets/audio/en/scenes/g70_6.mp3"
+        }
+      },
+      {
+        "target": "place.police_station",
+        "stimulus": "jobs.police_officer",
+        "text": {
+          "tr": "Polis nerede çalışır?",
+          "en": "Where does the police officer work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_7.mp3",
+          "en": "assets/audio/en/scenes/g70_7.mp3"
+        }
+      },
+      {
+        "target": "place.plane",
+        "stimulus": "jobs.pilot",
+        "text": {
+          "tr": "Pilot nerede çalışır?",
+          "en": "Where does the pilot work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_8.mp3",
+          "en": "assets/audio/en/scenes/g70_8.mp3"
+        }
+      },
+      {
+        "target": "place.ship",
+        "stimulus": "jobs.captain",
+        "text": {
+          "tr": "Kaptan nerede çalışır?",
+          "en": "Where does the captain work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_9.mp3",
+          "en": "assets/audio/en/scenes/g70_9.mp3"
+        }
+      },
+      {
+        "target": "place.pharmacy",
+        "stimulus": "jobs.pharmacist",
+        "text": {
+          "tr": "Eczacı nerede çalışır?",
+          "en": "Where does the pharmacist work?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g70_10.mp3",
+          "en": "assets/audio/en/scenes/g70_10.mp3"
+        }
+      }
+    ]
+  },
+  "G73": {
+    "theme": "nature",
+    "choicePool": [
+      "nature.rain",
+      "nature.snow",
+      "nature.sun",
+      "nature.wind",
+      "nature.lightning"
+    ],
+    "rounds": [
+      {
+        "target": "nature.rain",
+        "sound": "assets/sfx/nature/rain.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hava nasıl?",
+          "en": "Listen. What's the weather like?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
+          "en": "assets/audio/en/scenes/g73_listen.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g73_done_rain.mp3",
+          "en": "assets/audio/en/scenes/g73_done_rain.mp3"
+        }
+      },
+      {
+        "target": "nature.snow",
+        "sound": "assets/sfx/nature/snow.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hava nasıl?",
+          "en": "Listen. What's the weather like?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
+          "en": "assets/audio/en/scenes/g73_listen.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g73_done_snow.mp3",
+          "en": "assets/audio/en/scenes/g73_done_snow.mp3"
+        }
+      },
+      {
+        "target": "nature.sun",
+        "sound": "assets/sfx/nature/sun.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hava nasıl?",
+          "en": "Listen. What's the weather like?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
+          "en": "assets/audio/en/scenes/g73_listen.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g73_done_sun.mp3",
+          "en": "assets/audio/en/scenes/g73_done_sun.mp3"
+        }
+      },
+      {
+        "target": "nature.wind",
+        "sound": "assets/sfx/nature/wind.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hava nasıl?",
+          "en": "Listen. What's the weather like?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
+          "en": "assets/audio/en/scenes/g73_listen.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g73_done_wind.mp3",
+          "en": "assets/audio/en/scenes/g73_done_wind.mp3"
+        }
+      },
+      {
+        "target": "nature.lightning",
+        "sound": "assets/sfx/nature/thunder.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hava nasıl?",
+          "en": "Listen. What's the weather like?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
+          "en": "assets/audio/en/scenes/g73_listen.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g73_done_lightning.mp3",
+          "en": "assets/audio/en/scenes/g73_done_lightning.mp3"
+        }
       }
     ]
   }

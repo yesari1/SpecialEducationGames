@@ -72,3 +72,38 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 
 - Made for this app on 22 October 2026: synthesized in Python (bell partials and filtered noise), no recording or third-party material. Chosen by Yunus from three samples each (artifacts/ui-sounds-2/: oyun-acilis-c, sepet-pof-a, kilit-acildi-b).
 - App assets: assets/sfx/ui/game_open.wav, assets/sfx/ui/basket_drop.wav, assets/sfx/ui/unlock.wav
+
+## Rain.ogg
+
+- Author: ジダネ
+- Source: https://commons.wikimedia.org/wiki/File:Rain.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/nature/rain.mp3
+
+## Crunchy Snow Walking Sound Effect - Human Sounds.opus
+
+- Author: Free Sounds Library User Spanac
+- Source: https://commons.wikimedia.org/wiki/File:Crunchy_Snow_Walking_Sound_Effect_-_Human_Sounds.opus
+- License: CC-BY-3.0 — https://creativecommons.org/licenses/by/3.0/
+- App asset: assets/sfx/nature/snow.mp3
+
+## Gentle breeze and birds singing.ogg
+
+- Author: ezwa
+- Source: https://commons.wikimedia.org/wiki/File:Gentle_breeze_and_birds_singing.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/nature/sun.mp3
+
+## Windy breath.ogg
+
+- Author: stilgar
+- Source: https://commons.wikimedia.org/wiki/File:Windy_breath.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/nature/wind.mp3
+
+## Thunder.ogg
+
+- Author: Bidgee
+- Source: https://commons.wikimedia.org/wiki/File:Thunder.ogg
+- License: CC-BY-3.0 — https://creativecommons.org/licenses/by/3.0/
+- App asset: assets/sfx/nature/thunder.mp3

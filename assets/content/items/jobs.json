@@ -9,12 +9,27 @@
       "tr": "Doktor",
       "en": "Doctor"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/doctor.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/doctor_selected.mp3",
       "en": "assets/audio/en/jobs/doctor_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/doctor.webp": {
+        "id": "jobs.doctor",
+        "path": "assets/images/jobs/doctor.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "517c9f05bc62ae78423aa9f68581d0ac5d4e266607013eaf69e702229c88a0c4"
+      }
+    }
   },
   {
     "id": "jobs.nurse",
@@ -26,12 +41,27 @@
       "tr": "Hemşire",
       "en": "Nurse"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/nurse.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/nurse_selected.mp3",
       "en": "assets/audio/en/jobs/nurse_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/nurse.webp": {
+        "id": "jobs.nurse",
+        "path": "assets/images/jobs/nurse.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "b747aeded217a82c4caedf46dc91824f7825d8cf088f3f267ead95097072d8f1"
+      }
+    }
   },
   {
     "id": "jobs.teacher",
@@ -43,12 +73,27 @@
       "tr": "Öğretmen",
       "en": "Teacher"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/teacher.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/teacher_selected.mp3",
       "en": "assets/audio/en/jobs/teacher_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/teacher.webp": {
+        "id": "jobs.teacher",
+        "path": "assets/images/jobs/teacher.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "e17cc1ca7b605c0879bdc705f5c3830a4210116ef581b809930343abef815b56"
+      }
+    }
   },
   {
     "id": "jobs.police_officer",
@@ -60,12 +105,27 @@
       "tr": "Polis",
       "en": "Police officer"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/police_officer.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/police_officer_selected.mp3",
       "en": "assets/audio/en/jobs/police_officer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/police_officer.webp": {
+        "id": "jobs.police_officer",
+        "path": "assets/images/jobs/police_officer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a2bc69c8879337bb1e5ddebfdd50d90d889886e95ce29069373ce03763cf7cd4"
+      }
+    }
   },
   {
     "id": "jobs.firefighter",
@@ -77,12 +137,27 @@
       "tr": "İtfaiyeci",
       "en": "Firefighter"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/firefighter.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/firefighter_selected.mp3",
       "en": "assets/audio/en/jobs/firefighter_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/firefighter.webp": {
+        "id": "jobs.firefighter",
+        "path": "assets/images/jobs/firefighter.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "d7ed0ddadc25ae3624c88a092017bfacf36f90b388cd9dfc907d0e9a67dc06b4"
+      }
+    }
   },
   {
     "id": "jobs.cook",
@@ -94,12 +169,27 @@
       "tr": "Aşçı",
       "en": "Cook"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/cook.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/cook_selected.mp3",
       "en": "assets/audio/en/jobs/cook_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/cook.webp": {
+        "id": "jobs.cook",
+        "path": "assets/images/jobs/cook.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "29858dca3151856b43fe27be411abdbf81afb5a2dd4e6cc53f10c48b5b42cab2"
+      }
+    }
   },
   {
     "id": "jobs.driver",
@@ -111,12 +201,27 @@
       "tr": "Şoför",
       "en": "Driver"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/driver.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/driver_selected.mp3",
       "en": "assets/audio/en/jobs/driver_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/driver.webp": {
+        "id": "jobs.driver",
+        "path": "assets/images/jobs/driver.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "3e93ffc911b00ab6a1e6ba986466662a23282b0a8398ce2685af7e22bcb3f868"
+      }
+    }
   },
   {
     "id": "jobs.farmer",
@@ -128,555 +233,666 @@
       "tr": "Çiftçi",
       "en": "Farmer"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/farmer.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/farmer_selected.mp3",
       "en": "assets/audio/en/jobs/farmer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/farmer.webp": {
+        "id": "jobs.farmer",
+        "path": "assets/images/jobs/farmer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "361efc20c08c2a71afd33ebbf3ae75d068160cee426218d13f23c1bac3380801"
+      }
+    }
   },
   {
     "id": "jobs.baker",
     "theme": "jobs",
     "tier": "easy",
-    "chapter": 2,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Fırıncı",
       "en": "Baker"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/baker.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/baker_selected.mp3",
       "en": "assets/audio/en/jobs/baker_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/baker.webp": {
+        "id": "jobs.baker",
+        "path": "assets/images/jobs/baker.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "98c5ca68a49d6bdef72b31de3596646927445ba2848ea8c11492cac7d72a3312"
+      }
+    }
   },
   {
     "id": "jobs.dentist",
     "theme": "jobs",
     "tier": "easy",
-    "chapter": 2,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Diş hekimi",
       "en": "Dentist"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/dentist.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/dentist_selected.mp3",
       "en": "assets/audio/en/jobs/dentist_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/dentist.webp": {
+        "id": "jobs.dentist",
+        "path": "assets/images/jobs/dentist.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c3e0c1d3a23ba76710592db76497f9ba180bdf9d4c9abf7ea4f20263b86e8eda"
+      }
+    }
   },
   {
     "id": "jobs.postman",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Postacı",
-      "en": "Postman"
+      "en": "Mail carrier"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/postman.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/postman_selected.mp3",
       "en": "assets/audio/en/jobs/postman_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/postman.webp": {
+        "id": "jobs.postman",
+        "path": "assets/images/jobs/postman.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c6ff2be58ed93601be8364f85cae6aa0432868cb0fbf350c60fed86630e71c29"
+      }
+    }
   },
   {
     "id": "jobs.hairdresser",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
-      "tr": "Berber/Kuaför",
+      "tr": "Kuaför",
       "en": "Hairdresser"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/hairdresser.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/hairdresser_selected.mp3",
       "en": "assets/audio/en/jobs/hairdresser_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/hairdresser.webp": {
+        "id": "jobs.hairdresser",
+        "path": "assets/images/jobs/hairdresser.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "0d7fdc74b26d481efa77322ef79593d875b4b29364cf8bdd4e5ccaf2ec0201bc"
+      }
+    }
   },
   {
     "id": "jobs.pilot",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Pilot",
       "en": "Pilot"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/pilot.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/pilot_selected.mp3",
       "en": "assets/audio/en/jobs/pilot_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/pilot.webp": {
+        "id": "jobs.pilot",
+        "path": "assets/images/jobs/pilot.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "97868da7de9d5b9ff8054a3df702a627506d0e8997ab1690d3afa73e15b2205b"
+      }
+    }
   },
   {
     "id": "jobs.vet",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Veteriner",
       "en": "Vet"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/vet.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/vet_selected.mp3",
       "en": "assets/audio/en/jobs/vet_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/vet.webp": {
+        "id": "jobs.vet",
+        "path": "assets/images/jobs/vet.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "f52d6a56f5e0ebc788c1bec8efc29e0e529652b48cffb7d8e55e1f7e3a0cf6e4"
+      }
+    }
   },
   {
     "id": "jobs.waiter",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Garson",
       "en": "Waiter"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/waiter.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/waiter_selected.mp3",
       "en": "assets/audio/en/jobs/waiter_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/waiter.webp": {
+        "id": "jobs.waiter",
+        "path": "assets/images/jobs/waiter.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "28413c30c46b79957ba7cb41ca295f9ae546fb90dd5af68a9872c0e37e97d1d9"
+      }
+    }
   },
   {
     "id": "jobs.cleaner",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Temizlik görevlisi",
       "en": "Cleaner"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/cleaner.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/cleaner_selected.mp3",
       "en": "assets/audio/en/jobs/cleaner_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/cleaner.webp": {
+        "id": "jobs.cleaner",
+        "path": "assets/images/jobs/cleaner.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "a65df17e96e135ac006905c8e10a7161eb2490edf7ab1bb20adca85340984640"
+      }
+    }
   },
   {
     "id": "jobs.builder",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "İnşaat işçisi",
       "en": "Builder"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/builder.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/builder_selected.mp3",
       "en": "assets/audio/en/jobs/builder_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/builder.webp": {
+        "id": "jobs.builder",
+        "path": "assets/images/jobs/builder.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "e14548a9a766de441787bd8467c67f69e281cee208f5674ad97d597031d9d88f"
+      }
+    }
   },
   {
     "id": "jobs.cashier",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 3,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Kasiyer",
       "en": "Cashier"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/cashier.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/cashier_selected.mp3",
       "en": "assets/audio/en/jobs/cashier_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/cashier.webp": {
+        "id": "jobs.cashier",
+        "path": "assets/images/jobs/cashier.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "77e845ee524712645c0b5fe803e585993627e0b25870588d43431924211bc226"
+      }
+    }
   },
   {
     "id": "jobs.painter",
     "theme": "jobs",
     "tier": "medium",
-    "chapter": 4,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Ressam",
       "en": "Painter"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/painter.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/painter_selected.mp3",
       "en": "assets/audio/en/jobs/painter_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "jobs.musician",
-    "theme": "jobs",
-    "tier": "medium",
-    "chapter": 4,
-    "tags": [],
-    "name": {
-      "tr": "Müzisyen",
-      "en": "Musician"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/musician_selected.mp3",
-      "en": "assets/audio/en/jobs/musician_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/painter.webp": {
+        "id": "jobs.painter",
+        "path": "assets/images/jobs/painter.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "53ce33422584d72343223ba56cfa7c421fa0f830bfa72e8f1f96b6a3a897059f"
+      }
+    }
   },
   {
     "id": "jobs.gardener",
     "theme": "jobs",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Bahçıvan",
       "en": "Gardener"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/gardener.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/gardener_selected.mp3",
       "en": "assets/audio/en/jobs/gardener_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/gardener.webp": {
+        "id": "jobs.gardener",
+        "path": "assets/images/jobs/gardener.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "2d496dfcec68fa04e5d062342d4aab36e9575cb631eef58f8b56049d2472e6e2"
+      }
+    }
   },
   {
     "id": "jobs.fisher",
     "theme": "jobs",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Balıkçı",
       "en": "Fisher"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/fisher.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/fisher_selected.mp3",
       "en": "assets/audio/en/jobs/fisher_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/fisher.webp": {
+        "id": "jobs.fisher",
+        "path": "assets/images/jobs/fisher.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "28888ceb49136ac706b312df458bcc5b7628630edffba29a43b8808e2134158d"
+      }
+    }
   },
   {
     "id": "jobs.captain",
     "theme": "jobs",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Kaptan",
       "en": "Captain"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/captain.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/captain_selected.mp3",
       "en": "assets/audio/en/jobs/captain_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/captain.webp": {
+        "id": "jobs.captain",
+        "path": "assets/images/jobs/captain.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "ed782c7fdc978a01008b9ed8b734e8b605bf40b71d4ee16f815736e1905a0730"
+      }
+    }
   },
   {
     "id": "jobs.pharmacist",
     "theme": "jobs",
-    "tier": "medium",
-    "chapter": 4,
+    "tier": "hard",
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Eczacı",
       "en": "Pharmacist"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/pharmacist.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/pharmacist_selected.mp3",
       "en": "assets/audio/en/jobs/pharmacist_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/pharmacist.webp": {
+        "id": "jobs.pharmacist",
+        "path": "assets/images/jobs/pharmacist.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "fb7a795a3fb6c59d20c5c5a1037e9d4f974a5f8e9694093b0247ffd8d1310f6e"
+      }
+    }
   },
   {
     "id": "jobs.carpenter",
     "theme": "jobs",
     "tier": "hard",
-    "chapter": 5,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Marangoz",
       "en": "Carpenter"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/carpenter.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/carpenter_selected.mp3",
       "en": "assets/audio/en/jobs/carpenter_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/carpenter.webp": {
+        "id": "jobs.carpenter",
+        "path": "assets/images/jobs/carpenter.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c0301b469a02bcc6528205505954d5921ed1fcea083640ebbe1f35778fadb7b7"
+      }
+    }
   },
   {
     "id": "jobs.mechanic",
     "theme": "jobs",
     "tier": "hard",
-    "chapter": 5,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Tamirci",
       "en": "Mechanic"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/mechanic.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/mechanic_selected.mp3",
       "en": "assets/audio/en/jobs/mechanic_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/mechanic.webp": {
+        "id": "jobs.mechanic",
+        "path": "assets/images/jobs/mechanic.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "66a54d3c6b71abf1a9d9c9a595eb1f140553ca564086a28ae4ce0673ed7c516b"
+      }
+    }
   },
   {
     "id": "jobs.tailor",
     "theme": "jobs",
     "tier": "hard",
-    "chapter": 5,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Terzi",
       "en": "Tailor"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/tailor.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/tailor_selected.mp3",
       "en": "assets/audio/en/jobs/tailor_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/tailor.webp": {
+        "id": "jobs.tailor",
+        "path": "assets/images/jobs/tailor.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "11729a17e991caf94687610fa682223dc3d5d85e136e54a2450708739ef84f50"
+      }
+    }
   },
   {
     "id": "jobs.photographer",
     "theme": "jobs",
     "tier": "hard",
-    "chapter": 5,
+    "chapter": 1,
     "tags": [],
     "name": {
       "tr": "Fotoğrafçı",
       "en": "Photographer"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/photographer.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/jobs/photographer_selected.mp3",
       "en": "assets/audio/en/jobs/photographer_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/photographer.webp": {
+        "id": "jobs.photographer",
+        "path": "assets/images/jobs/photographer.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "0641fb2a29347cd8115501cb791c94f9bba422510af9e05fa93f1e9ef4c5f498"
+      }
+    }
   },
   {
-    "id": "jobs.librarian",
+    "id": "jobs.musician",
     "theme": "jobs",
     "tier": "hard",
-    "chapter": 5,
+    "chapter": 1,
     "tags": [],
     "name": {
-      "tr": "Kütüphaneci",
-      "en": "Librarian"
+      "tr": "Müzisyen",
+      "en": "Musician"
     },
-    "images": [],
+    "images": [
+      "assets/images/jobs/musician.webp"
+    ],
     "audio": {
-      "tr": "assets/audio/tr/jobs/librarian_selected.mp3",
-      "en": "assets/audio/en/jobs/librarian_selected.mp3"
+      "tr": "assets/audio/tr/jobs/musician_selected.mp3",
+      "en": "assets/audio/en/jobs/musician_selected.mp3"
     },
-    "sfx": null
-  },
-  {
-    "id": "jobs.astronaut",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [],
-    "name": {
-      "tr": "Astronot",
-      "en": "Astronaut"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/astronaut_selected.mp3",
-      "en": "assets/audio/en/jobs/astronaut_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.electrician",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [],
-    "name": {
-      "tr": "Elektrikçi",
-      "en": "Electrician"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/electrician_selected.mp3",
-      "en": "assets/audio/en/jobs/electrician_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.house_painter",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 5,
-    "tags": [],
-    "name": {
-      "tr": "Boyacı",
-      "en": "House painter"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/house_painter_selected.mp3",
-      "en": "assets/audio/en/jobs/house_painter_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.shepherd",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Çoban",
-      "en": "Shepherd"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/shepherd_selected.mp3",
-      "en": "assets/audio/en/jobs/shepherd_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.beekeeper",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Arıcı",
-      "en": "Beekeeper"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/beekeeper_selected.mp3",
-      "en": "assets/audio/en/jobs/beekeeper_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.engineer",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Mühendis",
-      "en": "Engineer"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/engineer_selected.mp3",
-      "en": "assets/audio/en/jobs/engineer_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.referee",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Hakem",
-      "en": "Referee"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/referee_selected.mp3",
-      "en": "assets/audio/en/jobs/referee_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.athlete",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Sporcu",
-      "en": "Athlete"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/athlete_selected.mp3",
-      "en": "assets/audio/en/jobs/athlete_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.scientist",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Bilim insanı",
-      "en": "Scientist"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/scientist_selected.mp3",
-      "en": "assets/audio/en/jobs/scientist_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.train_driver",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Makinist",
-      "en": "Train driver"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/train_driver_selected.mp3",
-      "en": "assets/audio/en/jobs/train_driver_selected.mp3"
-    },
-    "sfx": null
-  },
-  {
-    "id": "jobs.courier",
-    "theme": "jobs",
-    "tier": "hard",
-    "chapter": 6,
-    "tags": [],
-    "name": {
-      "tr": "Kurye",
-      "en": "Courier"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/jobs/courier_selected.mp3",
-      "en": "assets/audio/en/jobs/courier_selected.mp3"
-    },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/jobs/musician.webp": {
+        "id": "jobs.musician",
+        "path": "assets/images/jobs/musician.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c153f5958851e93324e95d62dc825b18deb841ef3ddfda555d04725967f28754"
+      }
+    }
   }
 ]

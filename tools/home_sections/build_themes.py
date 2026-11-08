@@ -95,7 +95,6 @@ def main():
         return all(i['images'] for i in items)
 
     for src in sources:
-        lines.update(src.LINES)
         for t in getattr(src, 'THEMES_NEW', []):
             if t['id'] not in by_id:
                 entry = {**t, 'active': False, 'games': []}
@@ -130,6 +129,7 @@ def main():
             scene[gid] = make()
         for gid, make in src.PAIR_GAMES.items():
             pairs[gid] = make()
+        lines.update(src.LINES)  # The makers above fill it.
         for iid, tr, en in src.EXTRA:
             group, slug = iid.split('.', 1)
             images, provenance = picture(group, slug, iid)

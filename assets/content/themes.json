@@ -103,7 +103,7 @@
   {
     "id": "clothes",
     "name": {
-      "tr": "Kıyafet ve Aksesuarlar",
+      "tr": "Kıyafetler",
       "en": "Clothes"
     },
     "palette": {
@@ -111,9 +111,14 @@
       "accent": "#D07A98",
       "deep": "#B25C7B"
     },
-    "hero": "clothes.shirt",
-    "active": false,
-    "games": []
+    "hero": "clothes.tshirt",
+    "active": true,
+    "games": [
+      "G02",
+      "G63",
+      "G64",
+      "G49"
+    ]
   },
   {
     "id": "home",
@@ -165,8 +170,13 @@
       "deep": "#4F5DA6"
     },
     "hero": "jobs.doctor",
-    "active": false,
-    "games": []
+    "active": true,
+    "games": [
+      "G02",
+      "G68",
+      "G69",
+      "G70"
+    ]
   },
   {
     "id": "nature",
@@ -181,7 +191,12 @@
     },
     "hero": "nature.sun",
     "active": false,
-    "games": []
+    "games": [
+      "G02",
+      "G71",
+      "G72",
+      "G73"
+    ]
   },
   {
     "id": "music",
@@ -216,8 +231,7 @@
       "G01",
       "G14",
       "G47",
-      "G48",
-      "G49"
+      "G48"
     ]
   },
   {
@@ -324,5 +338,45 @@
     "hero": "letters.a",
     "active": false,
     "games": []
+  },
+  {
+    "id": "cleaning",
+    "name": {
+      "tr": "Temizlik",
+      "en": "Keeping Clean"
+    },
+    "hero": "cleaning.soap",
+    "palette": {
+      "bg": "#EFF8FB",
+      "accent": "#4FB6D6",
+      "deep": "#2B8BA9"
+    },
+    "active": true,
+    "games": [
+      "G02",
+      "G60",
+      "G61",
+      "G62"
+    ]
+  },
+  {
+    "id": "kitchen",
+    "name": {
+      "tr": "Mutfak",
+      "en": "Kitchen"
+    },
+    "hero": "kitchen.pot",
+    "palette": {
+      "bg": "#FDF3E7",
+      "accent": "#E8934A",
+      "deep": "#BD6A25"
+    },
+    "active": true,
+    "games": [
+      "G02",
+      "G65",
+      "G66",
+      "G67"
+    ]
   }
 ]

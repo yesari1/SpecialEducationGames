@@ -137,25 +137,22 @@ def text(tr, en):
 # G60 Dişlerini Fırçala -------------------------------------------------------
 import random  # noqa: E402
 
-TEETH_ZONE = [.32, .50, .36, .22]
+TEETH_ZONE = [.40, .57, .21, .18]
 
 
 def teeth_spots(n, seed):
-    rnd = random.Random(seed)
-    spots = []
+    # Three teeth wide, two rows; each round stains different ones.
     x0, y0, w, h = TEETH_ZONE
-    while len(spots) < n:
-        s = [round(x0 + rnd.random() * (w - .07), 3), round(y0 + rnd.random() * (h - .09), 3), .07, .09]
-        if all(abs(a[0] - s[0]) > .055 or abs(a[1] - s[1]) > .07 for a in spots):
-            spots.append(s)
-    return spots
+    slots = [[round(x0 + i * (w - .05) / 2, 3), round(y0 + j * (h - .075), 3), .05, .075]
+             for i in range(3) for j in range(2)]
+    return random.Random(seed).sample(slots, n)
 
 
 def g60():
     ask = line('g60_ask', "Ali'nin dişleri kirlenmiş. Hadi fırçalayalım!", "Ali's teeth need a clean. Let's brush them!")
     done = line('g60_done', 'Dişlerin pırıl pırıl oldu, Ali!', 'Your teeth are sparkling, Ali!')
     rounds = []
-    for tier, n in (('easy', 3), ('medium', 5), ('hard', 8)):
+    for tier, n in (('easy', 3), ('medium', 4), ('hard', 6)):
         for i in range(5):
             rounds.append({
                 'key': f'{tier}{i}', 'tier': tier, 'target': 'cleaning.toothbrush',
@@ -354,12 +351,12 @@ def g65():
 
 # G66 Sofrayı Kuralım ---------------------------------------------------------
 TABLE = {
-    'plate': ('tabağı', 'plate', [.39, .42, .22, .33]),
-    'fork': ('çatalı', 'fork', [.27, .42, .10, .33]),
-    'spoon': ('kaşığı', 'spoon', [.63, .42, .10, .33]),
-    'knife': ('bıçağı', 'knife', [.74, .42, .10, .33]),
-    'glass': ('bardağı', 'glass', [.66, .12, .14, .26]),
-    'napkin': ('peçeteyi', 'napkin', [.13, .46, .12, .24]),
+    'plate': ('tabağı', 'plate', [.39, .36, .22, .33]),
+    'fork': ('çatalı', 'fork', [.29, .36, .09, .33]),
+    'spoon': ('kaşığı', 'spoon', [.62, .36, .09, .33]),
+    'knife': ('bıçağı', 'knife', [.71, .38, .08, .30]),
+    'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
+    'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
 }
 TABLE_SETS = {
     'easy': [['plate', 'glass'], ['plate', 'fork'], ['plate', 'spoon'], ['glass', 'spoon'], ['fork', 'glass']],

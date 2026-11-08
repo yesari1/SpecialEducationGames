@@ -136,5 +136,65 @@
     "changes": "Seconds 13.5-19.0 selected (R32; R30 used 15.0-17.8); 0.3 s fade-in, 1.2 s fade-out, -4 dB; mono 44.1 kHz 64 kbps MP3; shortened to the first 4.5 s with a 1 s fade-out (3 November 2026) so it ends before the next game opens. Used softly on the round-end screen.",
     "originalSha256": "a9bed3afd89d66c3ce13edb9f2be2a548ab87a2cc70827624905be90044f8e72",
     "sha256": "3f9e2b77cfd1beade4457fe292f3737ba24982c6af9ab4da2da57ceed9776f94"
+  },
+  {
+    "itemId": "nature.rain",
+    "asset": "assets/sfx/nature/rain.mp3",
+    "title": "Rain.ogg",
+    "author": "ジダネ",
+    "source": "https://commons.wikimedia.org/wiki/File:Rain.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 4 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "c34d12243125c28f09426c076019f8321b602347a8564c38be771cb997c1a152",
+    "sha256": "f66032e79eaa7a9ad6467f545aa60fe722f096f7a0258cbd90a75e1d308f0883"
+  },
+  {
+    "itemId": "nature.snow",
+    "asset": "assets/sfx/nature/snow.mp3",
+    "title": "Crunchy Snow Walking Sound Effect - Human Sounds.opus",
+    "author": "Free Sounds Library User Spanac",
+    "source": "https://commons.wikimedia.org/wiki/File:Crunchy_Snow_Walking_Sound_Effect_-_Human_Sounds.opus",
+    "license": "CC-BY-3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "changes": "Cut to 4 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "751ea9a921bd9b892d0588099697ae98bc0106b85c9f466e4f2ae3a158076542",
+    "sha256": "ebacf148653945f880669a4072b7a4b496b83a88382470cade830194f958f6d5"
+  },
+  {
+    "itemId": "nature.sun",
+    "asset": "assets/sfx/nature/sun.mp3",
+    "title": "Gentle breeze and birds singing.ogg",
+    "author": "ezwa",
+    "source": "https://commons.wikimedia.org/wiki/File:Gentle_breeze_and_birds_singing.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 4 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "399c31051dfe42f5f5af4bb2334b16aee9263ceaf594158654fa6f06d036d483",
+    "sha256": "b681fe8568d7598912b13f6259f150b54dd92abff6a9e3e07e96b714169fe6d3"
+  },
+  {
+    "itemId": "nature.wind",
+    "asset": "assets/sfx/nature/wind.mp3",
+    "title": "Windy breath.ogg",
+    "author": "stilgar",
+    "source": "https://commons.wikimedia.org/wiki/File:Windy_breath.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 4 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "e016887e88e1f6c43abbfb852a0893c1da718e7ad2709d3507fb4615b486fedf",
+    "sha256": "a831161c5f70cf4ed514a1e9a625cba46d32e964b268611659b61da0407fc0b3"
+  },
+  {
+    "itemId": "nature.lightning",
+    "asset": "assets/sfx/nature/thunder.mp3",
+    "title": "Thunder.ogg",
+    "author": "Bidgee",
+    "source": "https://commons.wikimedia.org/wiki/File:Thunder.ogg",
+    "license": "CC-BY-3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "changes": "Cut to 5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "c66da284f376957f337230533671c004e08364b87b73959f067986cbfa8504dd",
+    "sha256": "d4ae5c4e98f37b57d3dcefa72cbefddba9dac88e34c625a9f8b7c3f69db0a1ed"
   }
 ]

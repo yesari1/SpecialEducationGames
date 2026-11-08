@@ -25119,7 +25119,7 @@
    }
   },
   "jobs.hairdresser:en": {
-   "bytes": 8403,
+   "bytes": 7776,
    "characters": 12,
    "item": "jobs.hairdresser",
    "kind": "item",
@@ -25127,7 +25127,7 @@
    "model_id": "eleven_multilingual_v2",
    "path": "assets/audio/en/jobs/hairdresser_selected.mp3",
    "requested_at": "2026-10-20T03:43:49.557000+00:00",
-   "sha256": "dc6223f38a8dac6e9fd43dd9830622b511e45c29928717f9b06f477038b70d79",
+   "sha256": "b3f0ea48f852700e1cfb276886480570b2049cb4aebf3c7de1d273528b8dc4df",
    "text": "Hairdresser.",
    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
    "voice_name": "Laura - a top narration voice",
@@ -25140,16 +25140,16 @@
    }
   },
   "jobs.hairdresser:tr": {
-   "bytes": 11328,
-   "characters": 14,
+   "bytes": 7358,
+   "characters": 7,
    "item": "jobs.hairdresser",
    "kind": "item",
    "language": "tr",
-   "model_id": "eleven_multilingual_v2",
+   "model_id": "eleven_v4",
    "path": "assets/audio/tr/jobs/hairdresser_selected.mp3",
    "requested_at": "2026-10-20T03:43:49.157336+00:00",
-   "sha256": "b131ca5c9ff826cb53ee74567ce804fe84602651d16caf400222a1be5d0e28c6",
-   "text": "Berber/Kuaför.",
+   "sha256": "2c79683130c74f5cf85208e68c18aa3f881e8be2efe51a4ccbcdf526c7531c30",
+   "text": "Kuaför.",
    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
    "voice_name": "İrem - Authoritarian Female Voice",
    "voice_settings": {
