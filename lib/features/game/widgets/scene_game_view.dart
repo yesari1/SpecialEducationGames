@@ -171,7 +171,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      final trayWidth = math.min(box.maxWidth * .3, 260.0);
+      final trayWidth = math.min(box.maxWidth * .34, 320.0);
       return Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -428,7 +428,15 @@ class _SceneGameViewState extends State<SceneGameView> {
             ),
           ),
         if (current.mode == SceneStepMode.place)
-          for (final id in _pieces) piece(id)
+          // Two side by side, so each piece stays big enough for a small hand.
+          for (var i = 0; i < _pieces.length; i += 2)
+            Expanded(
+              child: Row(
+                children: [
+                  for (final id in _pieces.skip(i).take(2)) piece(id),
+                ],
+              ),
+            )
         else
           Expanded(
             child: Center(

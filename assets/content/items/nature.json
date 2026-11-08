@@ -9,12 +9,27 @@
       "tr": "Güneş",
       "en": "Sun"
     },
-    "images": [],
+    "images": [
+      "assets/images/nature/sun.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/nature/sun_selected.mp3",
       "en": "assets/audio/en/nature/sun_selected.mp3"
     },
-    "sfx": null
+    "sfx": null,
+    "imageProvenance": {
+      "assets/images/nature/sun.webp": {
+        "id": "nature.sun",
+        "path": "assets/images/nature/sun.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-08",
+        "sha256": "c99a2c24f088b438b361cedc9fef37bfb3c73d19625402bd3431a26ec657a4c9"
+      }
+    }
   },
   {
     "id": "nature.moon",

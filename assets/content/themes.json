@@ -190,7 +190,7 @@
       "deep": "#45845F"
     },
     "hero": "nature.sun",
-    "active": false,
+    "active": true,
     "games": [
       "G02",
       "G71",
