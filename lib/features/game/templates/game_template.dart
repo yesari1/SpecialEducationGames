@@ -4,6 +4,8 @@ import '../../../core/content/content_repository.dart';
 import '../../../core/learning/policies.dart';
 import '../round_spec.dart';
 import '../widgets/fill_basket_view.dart';
+import '../widgets/body_map_view.dart';
+import '../widgets/paint_view.dart';
 import '../widgets/round_choices_view.dart';
 
 class ModeContext {
@@ -875,6 +877,140 @@ class PairTemplate extends GameTemplate {
       super.successCues(spec, locale);
 }
 
+/// G42 "Boya": a white picture and paint choices; "Kırmızıya boya!" The
+/// right colour paints the picture.
+class PaintTemplate extends GameTemplate {
+  const PaintTemplate();
+  @override
+  String get id => 'paint';
+
+  /// Colours that read well on every picture (no white, black or grey).
+  static const paints = [
+    'red', 'blue', 'yellow', 'green', 'orange', 'purple', 'pink', 'brown', //
+  ];
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final random = ctx.scheduler.random;
+    final pictures = ctx.content.extraItems
+        .where((x) => x.id.startsWith('paint.') && x.images.isNotEmpty)
+        .toList();
+    final colours = [
+      for (final slug in paints) ?ctx.content.anyItem('colors.$slug'),
+    ];
+    if (pictures.isEmpty || colours.length < 2) {
+      throw StateError('No paint pictures');
+    }
+    final target = ctx.scheduler.next(colours, ctx.struggle);
+    final others = colours.where((x) => x.id != target.id).toList()
+      ..shuffle(random);
+    final choices = [target, ...others.take(min(ctx.choiceCount, 4) - 1)]
+      ..shuffle(random);
+    final picture = pictures[random.nextInt(pictures.length)];
+    final tr = target.name('tr');
+    return RoundSpec(
+      target: target,
+      choices: choices,
+      promptTr: '${paintSuffix[target.slug] ?? '$tr ile'} boya',
+      promptEn: 'Paint it ${target.name('en').toLowerCase()}',
+      promptImagePath: picture.images.first,
+      promptCues: {
+        for (final lang in const ['tr', 'en'])
+          lang: ['assets/audio/$lang/pairs/G42_${target.slug}.mp3'],
+      },
+    );
+  }
+
+  /// "Kırmızıya", "Maviye"...: the dative Turkish uses for "paint it red".
+  static const paintSuffix = {
+    'red': 'Kırmızıya',
+    'blue': 'Maviye',
+    'yellow': 'Sarıya',
+    'green': 'Yeşile',
+    'orange': 'Turuncuya',
+    'purple': 'Mora',
+    'pink': 'Pembeye',
+    'brown': 'Kahverengiye',
+  };
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => PaintView(spec: spec, callbacks: callbacks, hint: hint);
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+}
+
+/// G47 "Ali'de Göster": "Ali'nin burnu nerede?" The child taps the place on
+/// a picture of the whole of Ali.
+class BodyMapTemplate extends GameTemplate {
+  const BodyMapTemplate();
+  @override
+  String get id => 'body_map';
+
+  static BodyMap _map(ModeContext ctx) {
+    if (ctx.content.bodyMap.isEmpty) throw StateError('No body map');
+    return BodyMap.fromJson(ctx.content.bodyMap);
+  }
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final map = _map(ctx);
+    _cached = map;
+    // Easy and medium ask the well-known places; hard asks them all.
+    final allowed = {for (final x in ctx.pool()) x.id};
+    final items = map
+        .items(ctx.content)
+        .where((x) => allowed.contains(x.id))
+        .toList();
+    if (items.length < 2) throw StateError('Not enough body places');
+    final target = ctx.scheduler.next(items, ctx.struggle);
+    final q = map.questions[target.id] ?? const {};
+    return RoundSpec(
+      target: target,
+      // Every place stays tappable; a wrong place gets the usual gentle cue.
+      choices: [target, ...items.where((x) => x.id != target.id)],
+      promptTr: q['tr'] ?? '${target.name('tr')} nerede?',
+      promptEn: q['en'] ?? 'Where is the ${target.name('en').toLowerCase()}?',
+      promptImagePath: map.picture,
+      promptCues: {
+        for (final lang in const ['tr', 'en'])
+          lang: ['assets/audio/$lang/pairs/G47_${target.slug}.mp3'],
+      },
+    );
+  }
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) {
+    final raw = _cached;
+    return BodyMapView(
+      spec: spec,
+      callbacks: callbacks,
+      hint: hint,
+      spots: raw?.spots ?? const [],
+      aspect: raw?.aspect ?? 2 / 3,
+    );
+  }
+
+  /// The map of the last built round, for the view (rounds are always
+  /// built before they are drawn).
+  static BodyMap? _cached;
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -890,6 +1026,8 @@ abstract final class TemplateRegistry {
     'G37' => const NumberQuantityTemplate(),
     'G38' => const FillCountTemplate(),
     'G11' => const SoundChoiceTemplate(),
+    'G42' => const PaintTemplate(),
+    'G47' => const BodyMapTemplate(),
     'G40' || 'G41' || 'G43' || 'G44' || 'G45' || 'G46' || 'G48' || 'G49' =>
       const PairTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),

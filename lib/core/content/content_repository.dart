@@ -207,6 +207,10 @@ class ContentRepository {
 
   /// Data-driven pairing games (assets/content/pair_games.json) by game id.
   final Map<String, PairGame> pairGames;
+
+  /// "Ali'de Göster": the whole-body picture and its tappable places
+  /// (assets/content/body_map.json), kept as raw data for the game.
+  final Map<String, dynamic> bodyMap;
   ContentRepository(
     this.themes,
     this.items,
@@ -216,6 +220,7 @@ class ContentRepository {
     this.stories = const [],
     this.extraItems = const [],
     this.pairGames = const {},
+    this.bodyMap = const {},
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -260,6 +265,7 @@ class ContentRepository {
       stories,
       extraItems,
       pairGames,
+      Map<String, dynamic>.from(await read('content/body_map.json') as Map),
     );
   }
 

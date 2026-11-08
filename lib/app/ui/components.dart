@@ -178,23 +178,25 @@ class ItemVisual extends StatelessWidget {
     this.alignment = Alignment.center,
     this.silhouette = false,
   });
+  // True, clearly named colours (Yunus, 8 Nov 2026: the old soft palette
+  // read red as salmon and navy as grey).
   static const colors = {
-    'red': 0xFFE98A6B,
-    'blue': 0xFF5B8FD1,
-    'yellow': 0xFFF5C451,
-    'green': 0xFF6BAA75,
-    'orange': 0xFFF2A65A,
-    'purple': 0xFF9C7BC0,
-    'pink': 0xFFD07A98,
-    'brown': 0xFFA9805B,
-    'black': 0xFF2F3A45,
+    'red': 0xFFE53935,
+    'blue': 0xFF1E6FD9,
+    'yellow': 0xFFFFD21F,
+    'green': 0xFF2EAA4A,
+    'orange': 0xFFFF8A1A,
+    'purple': 0xFF8E44C9,
+    'pink': 0xFFFF6FAE,
+    'brown': 0xFF8B5A2B,
+    'black': 0xFF222222,
     'white': 0xFFFFFFFF,
-    'gray': 0xFF9AA4AE,
-    'navy': 0xFF465E7A,
-    'light_blue': 0xFFE8F1F7,
-    'turquoise': 0xFF4A9C8C,
-    'gold': 0xFFD9A52E,
-    'silver': 0xFFE4DFD6,
+    'gray': 0xFF858585,
+    'navy': 0xFF1F2F6B,
+    'light_blue': 0xFF7CC8F5,
+    'turquoise': 0xFF1CC7C1,
+    'gold': 0xFFD4A017,
+    'silver': 0xFFD5DBE2,
   };
   @override
   Widget build(BuildContext context) {
@@ -329,7 +331,7 @@ class ColorBlobPainter extends CustomPainter {
     canvas.drawCircle(center, radius, Paint()..color = Colors.white);
     final inner = radius * .88;
     final rect = Rect.fromCircle(center: center, radius: inner);
-    final light = Color.lerp(color, Colors.white, .35)!;
+    final light = Color.lerp(color, Colors.white, .2)!;
     final dark = Color.lerp(color, Colors.black, .12)!;
     canvas.drawCircle(
       center,
