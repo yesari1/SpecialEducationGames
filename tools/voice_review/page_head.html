@@ -1,0 +1,44 @@
+<title>Ses İncelemesi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap">
+<style>
+/* Layout: section tabs on top, then groups of clip rows (play, text, ✓/✗, comment). */
+:root{--bg:#F5FAFD;--card:#FFFFFF;--fg:#18334B;--soft:#526E83;--line:#DCEAF2;--accent:#FF8A32;--btn:#E5F4FF;--btnfg:#0868AF;--ok:#10B7B0;--okbg:#DDF6F4;--bad:#D9534F;--badbg:#FBE3E2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F1D29;--card:#16293A;--fg:#E6F0F7;--soft:#A9BFCF;--line:#29404F;--btn:#1E3A52;--btnfg:#9FD3FF;--okbg:#123b39;--badbg:#45201f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1D29;--card:#16293A;--fg:#E6F0F7;--soft:#A9BFCF;--line:#29404F;--btn:#1E3A52;--btnfg:#9FD3FF;--okbg:#123b39;--badbg:#45201f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:'Nunito',system-ui,sans-serif;font-size:15px;line-height:1.4;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+h1{margin:0;font-size:26px;font-weight:900}
+.lead{margin:0;color:var(--soft)}
+.status{font-size:13px;color:var(--soft)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 14px;font:inherit;font-weight:800;cursor:pointer}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tab small{font-weight:700;opacity:.8}
+h2{margin:10px 0 0;font-size:19px;font-weight:900}
+.row{display:grid;grid-template-columns:auto auto 1fr auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+.row.ok{background:var(--okbg)}
+.row.bad{background:var(--badbg)}
+.lang{font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--soft);min-width:26px;text-align:center}
+.text{min-width:0;font-weight:700}
+.play{background:var(--btn);color:var(--btnfg);border:0;border-radius:999px;width:38px;height:38px;font-size:15px;cursor:pointer}
+.play.on{background:var(--accent);color:#fff}
+.marks{display:flex;gap:6px}
+.mark{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:18px;cursor:pointer;color:var(--fg)}
+.mark.ok.sel{background:var(--ok);border-color:var(--ok);color:#fff}
+.mark.bad.sel{background:var(--bad);border-color:var(--bad);color:#fff}
+.comment{grid-column:2/-1;display:none}
+.row.bad .comment,.row.has-comment .comment{display:block}
+.comment input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;background:var(--card);color:var(--fg)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:520px){.row{grid-template-columns:auto 1fr auto}.lang{display:none}.comment{grid-column:1/-1}}
+</style>
+<main>
+<header>
+  <h1>Ses incelemesi</h1>
+  <p class="lead">Yeni üretilen tüm sesler (Türkçe ve İngilizce). Dinleyin, iyiyse ✓, kötüyse ✗ işaretleyin; ✗ olanlara kısa bir not yazabilirsiniz. İşaretler kaydediliyor, ✗ olanları yeniden üreteceğim.</p>
+  <p class="status" id="status">Kayıtlar yükleniyor…</p>
+</header>
+<nav class="tabs" id="tabs" aria-label="Bölümler"></nav>
+<div id="list"></div>
+</main>

@@ -1,0 +1,115 @@
+<script>
+const groups = JSON.parse(document.getElementById('clips').textContent);
+const sections = [...new Set(groups.map(g => g.section))];
+let current = sections[0];
+try { const s = localStorage.getItem('voice-review-tab'); if (s && sections.includes(s)) current = s; } catch (e) {}
+const marks = {};
+let db = null;
+const statusEl = document.getElementById('status');
+const audio = new Audio();
+const packs = {};
+async function pack(name) {
+  if (!packs[name]) packs[name] = fetch(name).then(r => r.json());
+  return packs[name];
+}
+let playing = null;
+audio.addEventListener('ended', () => { if (playing) playing.classList.remove('on'); playing = null; });
+
+function counts(section) {
+  let total = 0, ok = 0, bad = 0;
+  for (const g of groups) if (g.section === section) for (const r of g.rows) {
+    total++; const m = marks[r.id]; if (m?.v === 'ok') ok++; else if (m?.v === 'bad') bad++;
+  }
+  return { total, ok, bad };
+}
+
+function renderTabs() {
+  const nav = document.getElementById('tabs');
+  nav.replaceChildren();
+  for (const s of sections) {
+    const c = counts(s);
+    const b = document.createElement('button');
+    b.className = 'tab' + (s === current ? ' on' : '');
+    b.append(s + ' ');
+    const small = document.createElement('small');
+    small.textContent = `${c.ok + c.bad}/${c.total}` + (c.bad ? ` · ✗ ${c.bad}` : '');
+    b.append(small);
+    b.onclick = () => { current = s; try { localStorage.setItem('voice-review-tab', s); } catch (e) {} render(); };
+    nav.append(b);
+  }
+}
+
+function rowClass(r) {
+  const m = marks[r.id];
+  return 'row' + (m?.v === 'ok' ? ' ok' : m?.v === 'bad' ? ' bad' : '') + (m?.c ? ' has-comment' : '');
+}
+
+async function save(r, patch) {
+  marks[r.id] = { ...(marks[r.id] || {}), ...patch, path: r.path, text: r.text, lang: r.lang, at: Date.now() };
+  render(false);
+  if (!db) { statusEl.textContent = 'İşaret kaydedilemedi: bu görünümde kayıt yok (giriş yapmış olmanız gerekiyor).'; return; }
+  try { await db.doc('marks/' + r.id).set(marks[r.id]); }
+  catch (e) { statusEl.textContent = 'İşaret kaydedilemedi, lütfen tekrar deneyin.'; }
+}
+
+function render(full = true) {
+  renderTabs();
+  const list = document.getElementById('list');
+  if (!full) {
+    for (const el of list.querySelectorAll('.row')) {
+      const r = el._row; el.className = rowClass(r);
+      el.querySelector('.mark.ok').classList.toggle('sel', marks[r.id]?.v === 'ok');
+      el.querySelector('.mark.bad').classList.toggle('sel', marks[r.id]?.v === 'bad');
+    }
+    return;
+  }
+  list.replaceChildren();
+  for (const g of groups.filter(g => g.section === current)) {
+    const h = document.createElement('h2'); h.textContent = g.title; list.append(h);
+    const box = document.createElement('div'); box.style.cssText = 'display:flex;flex-direction:column;gap:6px';
+    for (const r of g.rows) {
+      const row = document.createElement('div'); row._row = r; row.className = rowClass(r);
+      const play = document.createElement('button'); play.className = 'play'; play.textContent = '▶'; play.setAttribute('aria-label', 'Dinle');
+      play.onclick = async () => {
+        if (playing) playing.classList.remove('on');
+        playing = play; play.classList.add('on');
+        try { const p = await pack(r.pack); audio.src = 'data:audio/mpeg;base64,' + p[r.id]; await audio.play(); }
+        catch (e) { play.classList.remove('on'); statusEl.textContent = 'Ses açılamadı, tekrar deneyin.'; }
+      };
+      const lang = document.createElement('span'); lang.className = 'lang'; lang.textContent = r.lang;
+      const text = document.createElement('span'); text.className = 'text'; text.textContent = r.text;
+      const marksEl = document.createElement('span'); marksEl.className = 'marks';
+      const ok = document.createElement('button'); ok.className = 'mark ok' + (marks[r.id]?.v === 'ok' ? ' sel' : ''); ok.textContent = '✓'; ok.setAttribute('aria-label', 'İyi');
+      ok.onclick = () => save(r, { v: marks[r.id]?.v === 'ok' ? null : 'ok' });
+      const bad = document.createElement('button'); bad.className = 'mark bad' + (marks[r.id]?.v === 'bad' ? ' sel' : ''); bad.textContent = '✗'; bad.setAttribute('aria-label', 'Kötü');
+      bad.onclick = () => save(r, { v: marks[r.id]?.v === 'bad' ? null : 'bad' });
+      marksEl.append(ok, bad);
+      const cWrap = document.createElement('div'); cWrap.className = 'comment';
+      const input = document.createElement('input'); input.placeholder = 'Not (isteğe bağlı): neyi kötü?'; input.value = marks[r.id]?.c || '';
+      input.id = 'c-' + r.id;
+      input.onchange = () => save(r, { c: input.value.trim() });
+      cWrap.append(input);
+      row.append(play, lang, text, marksEl, cWrap);
+      box.append(row);
+    }
+    list.append(box);
+  }
+}
+
+render();
+
+(async () => {
+  const timer = setTimeout(() => { statusEl.textContent = 'Kayıtlara henüz ulaşılamadı; işaretler bu sayfada görünür ama kaydedilmeyebilir.'; }, 10000);
+  db = await claude.use('db');
+  if (!db) { clearTimeout(timer); statusEl.textContent = 'Kayıt yapılamıyor (giriş yapmış olmanız gerekiyor). Sesleri yine de dinleyebilirsiniz.'; return; }
+  db.collection('marks').onSnapshot(snap => {
+    for (const d of snap.docs) marks[d.id] = d.data() || {};
+    if (!snap.metadata || !snap.metadata.fromCache) { clearTimeout(timer); }
+    const all = groups.flatMap(g => g.rows).length;
+    const done = Object.values(marks).filter(m => m.v).length;
+    statusEl.textContent = `${done}/${all} ses işaretlendi.`;
+    const focused = document.activeElement && document.activeElement.tagName === 'INPUT';
+    render(!focused);
+  }, () => { clearTimeout(timer); statusEl.textContent = 'Kayıtlar yüklenemedi; sayfayı daha sonra yeniden açın.'; });
+})();
+</script>
