@@ -45,11 +45,11 @@ void main() {
       return s;
     }))!;
     state.locale = 'tr';
-    for (final (game, tier) in [
-      ('G15', Difficulty.easy),
-      ('G15', Difficulty.medium),
-      ('G33', Difficulty.easy),
-      ('G33', Difficulty.medium),
+    for (final (theme, game, tier) in [
+      ('shapes', 'G15', Difficulty.easy),
+      ('shapes', 'G15', Difficulty.medium),
+      ('shapes', 'G15', Difficulty.hard),
+      ('animals', 'G15', Difficulty.hard),
     ]) {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 1));
@@ -59,9 +59,9 @@ void main() {
             debugShowCheckedModeBanner: false,
             theme: segTheme(),
             home: GameScreen(
-              key: ValueKey('$game-$tier'),
+              key: ValueKey('$theme-$game-$tier'),
               state: state,
-              themeId: 'shapes',
+              themeId: theme,
               gameId: game,
               difficulty: tier,
             ),
@@ -77,7 +77,7 @@ void main() {
       await expectLater(
         find.byType(RepaintBoundary).first,
         matchesGoldenFile(
-          '../artifacts/claude/shapes-games/$game-${tier.name}.png',
+          '../artifacts/claude/shapes-games/$theme-$game-${tier.name}.png',
         ),
       );
     }

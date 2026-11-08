@@ -59,6 +59,9 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         widget.spec.stimulus != null &&
         widget.spec.count == null &&
         widget.spec.quantities.isEmpty &&
+        // Shadows are small flat shapes: they all fit in one row, and the
+        // right one must never wait on a second page (Yunus, 8 Nov 2026).
+        widget.spec.look != ChoiceLook.silhouette &&
         widget.spec.choices.length > 2;
   }
 
