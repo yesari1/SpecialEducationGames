@@ -408,7 +408,7 @@ void main() {
             find.text(
               state.tr(
                 'Bugünün yolunu tamamlayıp ilk çıkartmanı kazanabilirsin.',
-                'Complete today’s path to earn your first sticker.',
+                'Finish a game to earn your first sticker.',
               ),
             ),
             findsOneWidget,

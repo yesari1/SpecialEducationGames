@@ -788,7 +788,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dailyPathCompleteTodaysPathToEarnYourFirst =>
-      'Complete today’s path to earn your first sticker.';
+      'Finish a game to earn your first sticker.';
 
   @override
   String get dailyPathEarnedSticker => 'Earned sticker';
@@ -1459,38 +1459,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get familyMoreProfilesPremium => 'More child profiles with Premium';
-
-  @override
-  String get obPlanBuildingTitle => 'Building the plan';
-
-  @override
-  String obPlanAge(String range) {
-    return 'Level for ages $range selected';
-  }
-
-  @override
-  String get obPlanAgeDefault => 'Starting level selected';
-
-  @override
-  String obPlanTopics(String topics) {
-    return 'Favourite topics added: $topics';
-  }
-
-  @override
-  String get obPlanTopicsAll => 'All topics added';
-
-  @override
-  String obPlanReadyTitle(String name) {
-    return '$name\'s 7-day plan is ready';
-  }
-
-  @override
-  String obPlanDay(int day) {
-    return 'Day $day';
-  }
-
-  @override
-  String get obPlanToday => 'Today';
 
   @override
   String get gameMascotHello => 'Hi! Let\'s play together.';

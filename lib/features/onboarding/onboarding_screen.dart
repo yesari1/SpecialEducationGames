@@ -10,13 +10,11 @@ import '../family/account_gate_screen.dart';
 import '../family/paywall_view.dart';
 import '../../app/ui/initial_avatar.dart';
 import '../../core/learning/policies.dart';
-import '../../app/ui/scene_backdrop.dart';
-import '../child_home/home_screen.dart' show themeCover, themeCovers;
 import '../child_home/reminder_offer.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
 import 'onboarding_parts.dart';
-import 'plan_views.dart';
+import 'mascot_slot.dart';
 import 'sign_in_screen.dart';
 import 'survey_questions.dart';
 
@@ -44,15 +42,12 @@ class OnboardingScreen extends StatefulWidget {
 /// Onboarding illustrations (docs/illustration-style.md).
 const _illustrations = 'assets/illustrations/onboarding';
 
-/// First run: welcome, child, one question, "Building the plan" (moves on
-/// by itself), the 7-day plan, the Premium offer, the daily goal (with the
-/// reminder question), hand-off. Adding a child: child, questions, goal.
+/// First run: welcome, child, one question, the Premium offer, the daily
+/// goal (with the reminder question), hand-off. Adding a child: child, questions, goal.
 enum OnboardingStep {
   welcome,
   child,
   question,
-  planBuilding,
-  planReady,
   trial,
   goal,
   handoff,
@@ -126,11 +121,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int get _progressCount => (widget.addChild ? 2 : 3) + questions.length;
 
   /// Framing pages without the top bar (no back button or dots).
-  bool get _framing => const {
-    OnboardingStep.welcome,
-    OnboardingStep.planBuilding,
-    OnboardingStep.planReady,
-  }.contains(step);
+  bool get _framing => step == OnboardingStep.welcome;
 
   void _next() {
     FocusScope.of(context).unfocus();
@@ -149,9 +140,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     if (!widget.addChild &&
         step == OnboardingStep.question &&
         question == questions.length - 1) {
-      // Saved before the plan and the offer, so the plan has the answers
-      // and the trial/purchase belong to a profile.
-      _saveAndPlan();
+      // Saved before the offer, so the trial/purchase belong to a profile.
+      _saveProfile();
       return;
     }
     setState(() {
@@ -169,10 +159,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           }
         case OnboardingStep.goal:
           break;
-        case OnboardingStep.planBuilding:
-          step = OnboardingStep.planReady;
-        case OnboardingStep.planReady:
-          step = OnboardingStep.trial;
         case OnboardingStep.trial:
           step = OnboardingStep.goal;
         case OnboardingStep.handoff:
@@ -207,8 +193,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           }
         case OnboardingStep.trial:
           unawaited(s.funnelStep('paywallBack'));
-        case OnboardingStep.planBuilding:
-        case OnboardingStep.planReady:
         case OnboardingStep.handoff:
           // The profile is already saved; nothing to go back to.
           break;
@@ -240,9 +224,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   bool _saved = false;
 
   /// Saves the profile after the question (with the recommended daily
-  /// goal), then builds the plan. The parent is setting up, so the parent
+  /// goal), then shows the offer. The parent is setting up, so the parent
   /// area stays open for the offer and the goal.
-  Future<void> _saveAndPlan() async {
+  Future<void> _saveProfile() async {
     if (saving || _saved) return;
     setState(() => saving = true);
     try {
@@ -260,7 +244,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (mounted) {
         setState(() {
           saving = false;
-          step = OnboardingStep.planBuilding;
+          step = OnboardingStep.trial;
         });
       }
     } catch (_) {
@@ -315,7 +299,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   /// Hands the phone to the child: the parent area closes again.
   void finish() {
     s.lockFamily();
-    // The child starts on today's path (the plan's first day).
+    // The child starts on Learn, at the top.
     context.go('/?path=true');
   }
 
@@ -872,122 +856,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ),
   );
 
-  /// "Building the plan": the parent's answers ticked one by one, then the
-  /// 7-day plan on its own.
-  Widget _planBuilding() {
-    final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
-    return _frame(
-      fit: true,
-      children: [
-        const SizedBox(height: SegSpace.s6),
-        const Center(child: MascotSlot(height: 120)),
-        const SizedBox(height: SegSpace.s5),
-        _title(
-          l10n.obPlanBuildingTitle,
-          key: const ValueKey('plan-building-title'),
-        ),
-        const SizedBox(height: SegSpace.s4),
-        PlanBuildingView(
-          key: const ValueKey('plan-building'),
-          lines: planLines,
-          reduced: reduced,
-          onDone: () {
-            if (mounted && step == OnboardingStep.planBuilding) _next();
-          },
-        ),
-      ],
-      primary: const SizedBox.shrink(),
-    );
-  }
-
-  /// The three lines of the building page, from the parent's answers.
-  List<String> get planLines {
-    final band = ageYears == null ? null : AgeBand.forAge(ageYears!);
-    final range = switch (band) {
-      AgeBand.firstSteps => '2–3',
-      AgeBand.explore => '4–5',
-      AgeBand.schoolReady => '6–7',
-      AgeBand.practice => '8+',
-      null => null,
-    };
-    final favorite = _allQuestions.firstWhere((q) => q.key == 'favorite');
-    final options = s.locale == 'tr' ? favorite.trOptions : favorite.enOptions;
-    final liked = [
-      for (final i in SurveyMapper.choices(answers['favorite']))
-        if (i >= 0 && i < options.length) options[i],
-    ];
-    return [
-      range == null ? l10n.obPlanAgeDefault : l10n.obPlanAge(range),
-      liked.isEmpty
-          ? l10n.obPlanTopicsAll
-          : l10n.obPlanTopics(liked.join(', ')),
-    ];
-  }
-
-  /// "{name}'s 7-day plan is ready": the mascot beside the title, seven
-  /// identical day rows (day 1 marked "Today"); one button to the offer.
-  Widget _planReady() {
-    final plan = s.weekPlan;
-    return _frame(
-      children: const [],
-      fill: PlanReadyBody(
-        title: Text(
-          l10n.obPlanReadyTitle(_nickname),
-          key: const ValueKey('plan-ready-title'),
-          style: SegText.title.copyWith(color: SegColors.ink),
-        ),
-        count: plan.length,
-        day: (i, height) {
-          final theme = s.content.theme(plan[i].theme);
-          return PlanDayRow(
-            key: ValueKey('plan-day-${i + 1}'),
-            day: l10n.obPlanDay(i + 1),
-            theme: theme.name(s.locale),
-            games: [
-              for (final g in plan[i].games) s.content.game(g).name(s.locale),
-            ].join(', '),
-            tint: ThemeGameCard.accentFor(theme.id),
-            thumbnail: _planThumb(theme.id, theme.hero),
-            today: i == 0 ? l10n.obPlanToday : null,
-            height: height,
-          );
-        },
-      ),
-      primary: _continue(
-        key: const ValueKey('plan-continue'),
-        onPressed: _next,
-      ),
-    );
-  }
-
-  /// A theme's home-card picture, small: the same cover (or hero photo),
-  /// scale and soft scene as [ThemeGameCard].
-  Widget _planThumb(String themeId, String heroId) {
-    final hero = s.content.items.firstWhere((x) => x.id == heroId);
-    final accent = ThemeGameCard.accentFor(themeId);
-    final scale = ThemeGameCard.heroScaleFor(
-      themeId,
-      normalized: themeCovers.contains(themeId),
-    );
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(SegRadius.xs),
-      child: SceneBackdrop(
-        tint: accent,
-        base: Color.lerp(SegColors.canvas, accent, .06)!,
-        clouds: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(3, 5, 3, 2),
-          child: FractionallySizedBox(
-            alignment: Alignment.bottomCenter,
-            widthFactor: scale,
-            heightFactor: scale,
-            child: themeCover(themeId, hero),
-          ),
-        ),
-      ),
-    );
-  }
-
   /// The Premium offer, once, right after setup ([PaywallView]): the free
   /// trial (Google sign-in), Premium, or the free version. An account that
   /// already used its trial goes on to the free games (see [build]).
@@ -1071,8 +939,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       OnboardingStep.child => _child(),
       OnboardingStep.question => _question(),
       OnboardingStep.goal => _goal(),
-      OnboardingStep.planBuilding => _planBuilding(),
-      OnboardingStep.planReady => _planReady(),
       OnboardingStep.trial => _trial(),
       OnboardingStep.handoff => _handoff(),
     };

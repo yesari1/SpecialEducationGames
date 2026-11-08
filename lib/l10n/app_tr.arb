@@ -720,7 +720,7 @@
   "@dailyPathPlay": {
     "description": "Daily path and sticker album interface copy."
   },
-  "dailyPathCompleteTodaysPathToEarnYourFirst": "Bugünün yolunu tamamlayıp ilk çıkartmanı kazanabilirsin.",
+  "dailyPathCompleteTodaysPathToEarnYourFirst": "Oyunları bitirdikçe çıkartma kazanacaksın.",
   "@dailyPathCompleteTodaysPathToEarnYourFirst": {
     "description": "Daily path and sticker album interface copy."
   },
@@ -1031,14 +1031,6 @@
   "familyGamesPremiumBody": "Oyunları açıp kapatma Premium ve ücretsiz denemede var.",
   "familyGamesShownCount": "{total} oyundan {shown} açık",
   "familyMoreProfilesPremium": "Daha fazla çocuk profili Premium ile",
-  "obPlanBuildingTitle": "Planı hazırlıyoruz",
-  "obPlanAge": "{range} yaş seviyesi seçildi",
-  "obPlanAgeDefault": "Başlangıç seviyesi seçildi",
-  "obPlanTopics": "Sevdiği konular eklendi: {topics}",
-  "obPlanTopicsAll": "Tüm konular eklendi",
-  "obPlanReadyTitle": "{name} için 7 günlük plan hazır",
-  "obPlanDay": "Gün {day}",
-  "obPlanToday": "Bugün",
   "gameMascotHello": "Merhaba! Hadi birlikte oynayalım.",
   "weeklySummaryTitle": "Haftanın özeti",
   "weeklySummaryBody": "{name} bu hafta {days} gün, toplam {minutes} dakika oynadı.",

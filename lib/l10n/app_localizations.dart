@@ -1444,7 +1444,7 @@ abstract class AppLocalizations {
   /// Daily path and sticker album interface copy.
   ///
   /// In en, this message translates to:
-  /// **'Complete today’s path to earn your first sticker.'**
+  /// **'Finish a game to earn your first sticker.'**
   String get dailyPathCompleteTodaysPathToEarnYourFirst;
 
   /// Daily path and sticker album interface copy.
@@ -2604,54 +2604,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'More child profiles with Premium'**
   String get familyMoreProfilesPremium;
-
-  /// Onboarding: plan building screen title.
-  ///
-  /// In en, this message translates to:
-  /// **'Building the plan'**
-  String get obPlanBuildingTitle;
-
-  /// No description provided for @obPlanAge.
-  ///
-  /// In en, this message translates to:
-  /// **'Level for ages {range} selected'**
-  String obPlanAge(String range);
-
-  /// Onboarding plan line when no age was chosen.
-  ///
-  /// In en, this message translates to:
-  /// **'Starting level selected'**
-  String get obPlanAgeDefault;
-
-  /// No description provided for @obPlanTopics.
-  ///
-  /// In en, this message translates to:
-  /// **'Favourite topics added: {topics}'**
-  String obPlanTopics(String topics);
-
-  /// Onboarding plan line when no favourite was chosen.
-  ///
-  /// In en, this message translates to:
-  /// **'All topics added'**
-  String get obPlanTopicsAll;
-
-  /// No description provided for @obPlanReadyTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'{name}\'s 7-day plan is ready'**
-  String obPlanReadyTitle(String name);
-
-  /// No description provided for @obPlanDay.
-  ///
-  /// In en, this message translates to:
-  /// **'Day {day}'**
-  String obPlanDay(int day);
-
-  /// Chip on day 1 of the onboarding 7-day plan.
-  ///
-  /// In en, this message translates to:
-  /// **'Today'**
-  String get obPlanToday;
 
   /// The mascot's hello before the child's very first game (spoken as well).
   ///

@@ -778,7 +778,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get dailyPathCompleteTodaysPathToEarnYourFirst =>
-      'Bugünün yolunu tamamlayıp ilk çıkartmanı kazanabilirsin.';
+      'Oyunları bitirdikçe çıkartma kazanacaksın.';
 
   @override
   String get dailyPathEarnedSticker => 'Kazanılan çıkartma';
@@ -1430,38 +1430,6 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get familyMoreProfilesPremium =>
       'Daha fazla çocuk profili Premium ile';
-
-  @override
-  String get obPlanBuildingTitle => 'Planı hazırlıyoruz';
-
-  @override
-  String obPlanAge(String range) {
-    return '$range yaş seviyesi seçildi';
-  }
-
-  @override
-  String get obPlanAgeDefault => 'Başlangıç seviyesi seçildi';
-
-  @override
-  String obPlanTopics(String topics) {
-    return 'Sevdiği konular eklendi: $topics';
-  }
-
-  @override
-  String get obPlanTopicsAll => 'Tüm konular eklendi';
-
-  @override
-  String obPlanReadyTitle(String name) {
-    return '$name için 7 günlük plan hazır';
-  }
-
-  @override
-  String obPlanDay(int day) {
-    return 'Gün $day';
-  }
-
-  @override
-  String get obPlanToday => 'Bugün';
 
   @override
   String get gameMascotHello => 'Merhaba! Hadi birlikte oynayalım.';

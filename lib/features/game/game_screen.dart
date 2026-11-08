@@ -14,7 +14,7 @@ import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
-import '../onboarding/plan_views.dart' show MascotSlot;
+import '../onboarding/mascot_slot.dart' show MascotSlot;
 import 'round_controller.dart';
 import 'templates/game_template.dart' show successSentenceCue;
 import 'widgets/round_choices_view.dart';
