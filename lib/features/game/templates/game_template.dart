@@ -1,11 +1,13 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import '../../../app/ui/components.dart';
 import '../../../core/content/content_repository.dart';
 import '../../../core/learning/policies.dart';
 import '../round_spec.dart';
 import '../widgets/fill_basket_view.dart';
 import '../widgets/body_map_view.dart';
 import '../widgets/paint_view.dart';
+import '../widgets/scene_game_view.dart';
 import '../widgets/round_choices_view.dart';
 
 class ModeContext {
@@ -871,9 +873,16 @@ class PairTemplate extends GameTemplate {
           // A sound is heard, the question asked, the sound heard again.
           lang: [?round.sound, if (cue(lang).isNotEmpty) cue(lang), ?round.sound],
       },
-      successCueOverride: {
-        for (final e in game.successAudio.entries) e.key: [e.value],
-      },
+      successCueOverride: round.resultAudio.isNotEmpty
+          ? {
+              for (final e in round.resultAudio.entries)
+                e.key: [e.value, praiseCue(e.key)],
+            }
+          : {for (final e in game.successAudio.entries) e.key: [e.value]},
+      resultImagePath: round.result,
+      rightHold: round.result == null
+          ? const Duration(milliseconds: 1500)
+          : const Duration(milliseconds: 2800),
     );
   }
 
@@ -892,9 +901,29 @@ class PairTemplate extends GameTemplate {
     RoundSpec spec,
     RoundCallbacks callbacks,
     HintViewState hint,
-  ) => spec.promptImagePath == null
-      ? super.buildView(context, spec, callbacks, hint)
-      : PaintView(spec: spec, callbacks: callbacks, hint: hint, paint: false);
+  ) {
+    final view = spec.promptImagePath == null
+        ? super.buildView(context, spec, callbacks, hint)
+        : PaintView(spec: spec, callbacks: callbacks, hint: hint, paint: false);
+    // The right answer changes the scene: its result picture comes up large.
+    final result = spec.resultImagePath;
+    if (result == null || !hint.celebrating) return view;
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        view,
+        ColoredBox(
+          color: Colors.white.withValues(alpha: .88),
+          child: Center(
+            child: HopIn(
+              key: ValueKey('pair-result-$result'),
+              child: Image.asset(result, fit: BoxFit.contain),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 /// G42 "Boya": a white picture and paint choices; "Kırmızıya boya!" The
@@ -1047,6 +1076,79 @@ class BodyMapTemplate extends GameTemplate {
   @override
   List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
       spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+}
+
+/// Games played on a picture (assets/content/scene_games.json): the child
+/// brings the right thing to the scene and the scene changes.
+class SceneTemplate extends GameTemplate {
+  const SceneTemplate();
+  @override
+  String get id => 'scene';
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final game = ctx.content.sceneGames[ctx.gameId];
+    if (game == null) throw StateError('No scene game ${ctx.gameId}');
+    final rounds = game.rounds
+        .where(
+          (r) =>
+              r.tier == ctx.difficulty.name &&
+              ctx.content.anyItem(r.target) != null,
+        )
+        .toList();
+    if (rounds.isEmpty) throw StateError('No scene rounds for ${ctx.gameId}');
+    final options = ctx.scheduler.fresh(rounds, (r) => r.key);
+    final round = options[ctx.scheduler.random.nextInt(options.length)];
+    ctx.scheduler.used.add(round.key);
+    final target = ctx.content.anyItem(round.target)!;
+    // One wrong card carries the wrong answers into the family's reports.
+    final wrong = [
+      for (final step in round.steps)
+        for (final id in step.others) ?ctx.content.anyItem(id),
+    ];
+    return RoundSpec(
+      target: target,
+      choices: [target, ...wrong.take(1)],
+      promptTr: round.text['tr'] ?? '',
+      promptEn: round.text['en'] ?? '',
+      scene: round,
+      scenePieces: {
+        for (final step in round.steps)
+          for (final id in [step.piece, ...step.others])
+            id: ?ctx.content.anyItem(id),
+      },
+      fullStage: true,
+      rightHold: const Duration(milliseconds: 2500),
+      promptCues: {
+        for (final lang in const ['tr', 'en'])
+          lang: [?round.audio[lang]],
+      },
+      successCueOverride: {
+        for (final lang in const ['tr', 'en'])
+          lang: [
+            ?round.steps.last.doneAudio[lang],
+            ?round.finishAudio[lang],
+            praiseCue(lang),
+          ],
+      },
+    );
+  }
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) =>
+      spec.successCueOverride[locale == 'en' ? 'en' : 'tr'] ?? const [];
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => SceneGameView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
 abstract final class TemplateRegistry {

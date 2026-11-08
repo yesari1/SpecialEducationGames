@@ -1,0 +1,116 @@
+{
+  "assets/audio/en/sections/tab_learn.mp3": {
+    "bytes": 6522,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:32.814399+00:00",
+    "sha256": "9f7b7983e3f3163065791ea5e0bad97be760444bf1a959a6ab7f48cc104197ac",
+    "text": "Learn.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/sections/tab_park.mp3": {
+    "bytes": 7567,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:36.077446+00:00",
+    "sha256": "425a5bc7918da42f1a9f7630af8a1f486b6e9873adc2df3b4abd67f2fe4891b1",
+    "text": "Play Park.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/sections/tab_stories.mp3": {
+    "bytes": 7567,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:34.403458+00:00",
+    "sha256": "026c25309e0e27c0322024e91c288509f391ab8fa684d2308d3b73d24954c25a",
+    "text": "Stories.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/sections/tab_learn.mp3": {
+    "bytes": 6940,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:32.249645+00:00",
+    "sha256": "b238df48bc222c18092ad92e75c8d9608c1cc2f097d003778f4736af7f7e3819",
+    "text": "Öğren.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/sections/tab_park.mp3": {
+    "bytes": 8612,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:35.465312+00:00",
+    "sha256": "4ce9f0e633364f027ce7e7f703d4e17bdf87433fb906831a34523303e7679818",
+    "text": "Oyun Parkı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/sections/tab_stories.mp3": {
+    "bytes": 8612,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-08T17:16:33.831434+00:00",
+    "sha256": "087a082d88a217754eeeb7b4d3b314846c29b1935370e6e62904440a86e36aa0",
+    "text": "Hikâyeler.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  }
+}

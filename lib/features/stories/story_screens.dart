@@ -28,106 +28,45 @@ Widget storyPicture(String asset, {BoxFit fit = BoxFit.contain}) => Image.asset(
   errorBuilder: (_, _, _) => const ColoredBox(color: SegColors.surfaceMuted),
 );
 
-/// The Stories card at the front of the home screen's theme cards.
-class StoriesCard extends StatelessWidget {
+/// The Stories section of the home screen: the books side by side. Premium
+/// ones are black and white with a lock and lead to the same parent notice
+/// as a locked game card.
+class StoryShelf extends StatelessWidget {
   final AppState state;
-  const StoriesCard({super.key, required this.state});
+  const StoryShelf({super.key, required this.state});
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, state.locale);
     final stories = state.content.stories;
-    return ThemeGameCard(
-      key: const ValueKey('stories-card'),
-      theme: storiesTheme,
-      title: l10n.storiesTitle,
-      subtitle: l10n.storiesCount(stories.length),
-      visual: storyPicture(stories.first.cover),
-      normalizedVisual: true,
-      onTap: () => context.go('/stories'),
-    );
-  }
-}
-
-/// The shelf of stories; Premium ones show a lock and lead to the same
-/// parent notice as a locked game card.
-class StoryShelfScreen extends StatelessWidget {
-  final AppState state;
-  const StoryShelfScreen({super.key, required this.state});
-  @override
-  Widget build(BuildContext context) {
-    final l10n = scopedLocalizations(context, state.locale);
-    final stories = state.content.stories;
-    return Scaffold(
-      backgroundColor: SegColors.canvas,
-      body: SceneBackdrop(
-        tint: storiesTheme.accent,
-        clouds: false,
-        child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: SegSpace.s5,
-                  vertical: SegSpace.s3,
-                ),
-                child: Row(
-                  children: [
-                    IconButton.filledTonal(
-                      onPressed: () {
-                        UiSound.tap();
-                        context.go('/');
-                      },
-                      icon: const Icon(Icons.arrow_back_rounded),
-                      tooltip: l10n.themeBack,
-                    ),
-                    const SizedBox(width: SegSpace.s3),
-                    Expanded(
-                      child: Text(
-                        l10n.storiesTitle,
-                        style: SegText.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: HorizontalCards(
-                  count: stories.length,
-                  builder: (i) {
-                    final story = stories[i];
-                    final locked = !state.canPlayStory(story);
-                    return ThemeGameCard(
-                      key: ValueKey('story-card-${story.id}'),
-                      theme: storiesTheme,
-                      title: story.titleFor(state.locale),
-                      subtitle: '',
-                      visual: storyPicture(story.cover),
-                      normalizedVisual: true,
-                      locked: locked,
-                      tapSound: false,
-                      onTap: () {
-                        UiSound.tap();
-                        if (locked) {
-                          showLockedGameNotice(
-                            context,
-                            title: l10n.lockedGameTitle,
-                            body: l10n.lockedGameBody,
-                            ok: l10n.lockedGameOk,
-                          );
-                        } else {
-                          context.go('/story/${story.id}');
-                        }
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return HorizontalCards(
+      count: stories.length,
+      builder: (i) {
+        final story = stories[i];
+        final locked = !state.canPlayStory(story);
+        return ThemeGameCard(
+          key: ValueKey('story-card-${story.id}'),
+          theme: storiesTheme,
+          title: story.titleFor(state.locale),
+          subtitle: '',
+          visual: storyPicture(story.cover),
+          normalizedVisual: true,
+          locked: locked,
+          tapSound: false,
+          onTap: () {
+            UiSound.tap();
+            if (locked) {
+              showLockedGameNotice(
+                context,
+                title: l10n.lockedGameTitle,
+                body: l10n.lockedGameBody,
+                ok: l10n.lockedGameOk,
+              );
+            } else {
+              context.go('/story/${story.id}');
+            }
+          },
+        );
+      },
     );
   }
 }

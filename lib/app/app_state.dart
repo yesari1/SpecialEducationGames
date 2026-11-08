@@ -31,6 +31,9 @@ import '../core/sync/summary_snapshot_cache.dart';
 import '../core/reminder/play_reminder.dart';
 import '../l10n/app_localizations.dart';
 
+/// The three sections of the child's home.
+enum HomeTab { learn, stories, park }
+
 class AppState extends ChangeNotifier {
   final ContentRepository content;
   final AppDatabase db;
@@ -960,6 +963,12 @@ class AppState extends ChangeNotifier {
   }
   String tr(String turkish, String english) =>
       locale == 'tr' ? turkish : english;
+  /// The section open on the child's home; stays while a game is played.
+  HomeTab homeTab = HomeTab.learn;
+
+  /// How far Learn was scrolled when the child opened a theme.
+  double homeLearnOffset = 0;
+
   List<ContentTheme> get orderedThemes {
     final favorites = SurveyMapper.favorites(
       jsonDecode(active?.payload ?? '{}'),

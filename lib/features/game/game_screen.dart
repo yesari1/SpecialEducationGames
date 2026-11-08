@@ -518,6 +518,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                                 s.audio.playSequence([sfx]);
                               }
                             },
+                            onSay: (clips) => s.audio.playSequence(clips),
                           ),
                           HintViewState(
                             level: c.hint,
@@ -593,7 +594,19 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                       ],
                     ),
                   ),
-                  if (spec.promptBeside)
+                  if (spec.fullStage)
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(
+                          SegSpace.s4,
+                          0,
+                          SegSpace.s4,
+                          compact ? SegSpace.s2 : SegSpace.s4,
+                        ),
+                        child: stage,
+                      ),
+                    )
+                  else if (spec.promptBeside)
                     Expanded(child: _promptBeside(spec, stage, compact))
                   else ...[
                   Expanded(

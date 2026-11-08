@@ -2700,6 +2700,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Days in a row'**
   String get famDayStreak;
+
+  /// No description provided for @homeTabLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get homeTabLearn;
+
+  /// No description provided for @homeTabStories.
+  ///
+  /// In en, this message translates to:
+  /// **'Stories'**
+  String get homeTabStories;
+
+  /// No description provided for @homeTabPark.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Park'**
+  String get homeTabPark;
+
+  /// No description provided for @homeRowAnimalsFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Animals and Food'**
+  String get homeRowAnimalsFood;
+
+  /// No description provided for @homeRowDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Routines'**
+  String get homeRowDaily;
+
+  /// No description provided for @homeRowHomeOutside.
+  ///
+  /// In en, this message translates to:
+  /// **'Home and Outdoors'**
+  String get homeRowHomeOutside;
+
+  /// No description provided for @homeRowBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Colors, Shapes, Numbers'**
+  String get homeRowBasics;
+
+  /// No description provided for @homeRowBodyFeelings.
+  ///
+  /// In en, this message translates to:
+  /// **'My Body and Feelings'**
+  String get homeRowBodyFeelings;
+
+  /// No description provided for @parkColoring.
+  ///
+  /// In en, this message translates to:
+  /// **'Coloring'**
+  String get parkColoring;
+
+  /// No description provided for @parkMusic.
+  ///
+  /// In en, this message translates to:
+  /// **'Musical Instruments'**
+  String get parkMusic;
+
+  /// No description provided for @parkPuzzle.
+  ///
+  /// In en, this message translates to:
+  /// **'Puzzles'**
+  String get parkPuzzle;
+
+  /// No description provided for @parkBubbles.
+  ///
+  /// In en, this message translates to:
+  /// **'Bubbles'**
+  String get parkBubbles;
 }
 
 class _AppLocalizationsDelegate

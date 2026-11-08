@@ -1532,4 +1532,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get famDayStreak => 'Days in a row';
+
+  @override
+  String get homeTabLearn => 'Learn';
+
+  @override
+  String get homeTabStories => 'Stories';
+
+  @override
+  String get homeTabPark => 'Play Park';
+
+  @override
+  String get homeRowAnimalsFood => 'Animals and Food';
+
+  @override
+  String get homeRowDaily => 'Daily Routines';
+
+  @override
+  String get homeRowHomeOutside => 'Home and Outdoors';
+
+  @override
+  String get homeRowBasics => 'Colors, Shapes, Numbers';
+
+  @override
+  String get homeRowBodyFeelings => 'My Body and Feelings';
+
+  @override
+  String get parkColoring => 'Coloring';
+
+  @override
+  String get parkMusic => 'Musical Instruments';
+
+  @override
+  String get parkPuzzle => 'Puzzles';
+
+  @override
+  String get parkBubbles => 'Bubbles';
 }

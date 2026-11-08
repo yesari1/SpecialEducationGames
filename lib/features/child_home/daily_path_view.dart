@@ -13,7 +13,15 @@ class DailyPathView extends StatelessWidget {
 
   /// The home screen paints the map behind the whole screen itself.
   final bool background;
-  const DailyPathView({super.key, required this.state, this.background = true});
+
+  /// The home screen has its own stickers button in the top bar.
+  final bool albumButton;
+  const DailyPathView({
+    super.key,
+    required this.state,
+    this.background = true,
+    this.albumButton = true,
+  });
 
   static const mapAsset = 'assets/illustrations/path/map_background.jpg';
 
@@ -95,20 +103,21 @@ class DailyPathView extends StatelessWidget {
                       next: i == nextIndex,
                     ),
                   ),
-                Positioned(
-                  right: 8,
-                  top: 8,
-                  child: Material(
-                    color: Colors.white.withValues(alpha: .9),
-                    shape: const StadiumBorder(),
-                    child: TextButton.icon(
-                      key: const ValueKey('sticker-album'),
-                      icon: const Icon(Icons.auto_awesome_rounded),
-                      label: Text(l10n.dailyPathMyStickers),
-                      onPressed: () => _album(context),
+                if (albumButton)
+                  Positioned(
+                    right: 8,
+                    top: 8,
+                    child: Material(
+                      color: Colors.white.withValues(alpha: .9),
+                      shape: const StadiumBorder(),
+                      child: TextButton.icon(
+                        key: const ValueKey('sticker-album'),
+                        icon: const Icon(Icons.auto_awesome_rounded),
+                        label: Text(l10n.dailyPathMyStickers),
+                        onPressed: () => openAlbum(context, state),
+                      ),
                     ),
                   ),
-                ),
               ],
             );
           },
@@ -117,7 +126,7 @@ class DailyPathView extends StatelessWidget {
     );
   }
 
-  void _album(BuildContext context) {
+  static void openAlbum(BuildContext context, AppState state) {
     final days = state.dailyStickers.toList()..sort((a, b) => b.compareTo(a));
     showDialog<void>(
       context: context,

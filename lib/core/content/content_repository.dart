@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'pair_games.dart';
+import 'scene_games.dart';
 import 'story.dart';
 export 'pair_games.dart';
+export 'scene_games.dart';
 export 'story.dart';
 
 enum Difficulty { easy, medium, hard }
@@ -211,6 +213,9 @@ class ContentRepository {
   /// "Ali'de Göster": the whole-body picture and its tappable places
   /// (assets/content/body_map.json), kept as raw data for the game.
   final Map<String, dynamic> bodyMap;
+
+  /// Games played on a picture (assets/content/scene_games.json) by game id.
+  final Map<String, SceneGame> sceneGames;
   ContentRepository(
     this.themes,
     this.items,
@@ -221,6 +226,7 @@ class ContentRepository {
     this.extraItems = const [],
     this.pairGames = const {},
     this.bodyMap = const {},
+    this.sceneGames = const {},
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -266,6 +272,12 @@ class ContentRepository {
       extraItems,
       pairGames,
       Map<String, dynamic>.from(await read('content/body_map.json') as Map),
+      {
+        for (final e
+            in (await read('content/scene_games.json') as Map<String, dynamic>)
+                .entries)
+          e.key: SceneGame.fromJson(e.key, e.value as Map<String, dynamic>),
+      },
     );
   }
 

@@ -1046,5 +1046,17 @@
   "familyReminder": "Günlük hatırlatma",
   "familyReminderNote": "O gün oynanmadıysa seçtiğiniz saatte kısa bir bildirim gelir; pazar akşamı haftanın özeti gelir.",
   "familyReminderTime": "Saat",
-  "famDayStreak": "Üst üste oynanan gün"
+  "famDayStreak": "Üst üste oynanan gün",
+  "homeTabLearn": "Öğren",
+  "homeTabStories": "Hikâyeler",
+  "homeTabPark": "Oyun Parkı",
+  "homeRowAnimalsFood": "Hayvanlar ve Yiyecekler",
+  "homeRowDaily": "Günlük İşler",
+  "homeRowHomeOutside": "Evde ve Dışarıda",
+  "homeRowBasics": "Renkler, Şekiller, Sayılar",
+  "homeRowBodyFeelings": "Bedenim ve Duygularım",
+  "parkColoring": "Boyama",
+  "parkMusic": "Müzik Aletleri",
+  "parkPuzzle": "Yapboz",
+  "parkBubbles": "Baloncuklar"
 }

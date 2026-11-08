@@ -17,6 +17,11 @@ class PairRound {
 
   /// Sound played before the question (e.g. a laugh), if any.
   final String? sound;
+
+  /// The picture shown large after the right answer (Ali combs his hair...)
+  /// and the sentence said with it, if any.
+  final String? result;
+  final Map<String, String> resultAudio;
   final Map<String, String> text, audio;
   const PairRound({
     required this.stimulus,
@@ -25,6 +30,8 @@ class PairRound {
     required this.audio,
     this.alsoRight = const [],
     this.sound,
+    this.result,
+    this.resultAudio = const {},
   });
 
   factory PairRound.fromJson(Map<String, dynamic> j) => PairRound(
@@ -32,6 +39,8 @@ class PairRound {
     target: j['target'] as String,
     alsoRight: List<String>.from((j['alsoRight'] ?? const []) as List),
     sound: j['sound'] as String?,
+    result: j['result'] as String?,
+    resultAudio: Map<String, String>.from((j['resultAudio'] ?? const {}) as Map),
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
   );

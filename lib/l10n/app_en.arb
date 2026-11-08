@@ -1472,5 +1472,17 @@
   "familyReminder": "Daily reminder",
   "familyReminderNote": "If there was no play that day, a short notification comes at the time you choose; on Sunday evening you get the week's summary.",
   "familyReminderTime": "Time",
-  "famDayStreak": "Days in a row"
+  "famDayStreak": "Days in a row",
+  "homeTabLearn": "Learn",
+  "homeTabStories": "Stories",
+  "homeTabPark": "Play Park",
+  "homeRowAnimalsFood": "Animals and Food",
+  "homeRowDaily": "Daily Routines",
+  "homeRowHomeOutside": "Home and Outdoors",
+  "homeRowBasics": "Colors, Shapes, Numbers",
+  "homeRowBodyFeelings": "My Body and Feelings",
+  "parkColoring": "Coloring",
+  "parkMusic": "Musical Instruments",
+  "parkPuzzle": "Puzzles",
+  "parkBubbles": "Bubbles"
 }

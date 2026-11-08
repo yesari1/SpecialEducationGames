@@ -12,7 +12,10 @@ class RoundCallbacks {
 
   /// Plays a choice's sound without answering (sound-choice games).
   final void Function(ContentItem item)? onListen;
-  const RoundCallbacks({required this.onSelect, this.onListen});
+
+  /// Speaks clips during a round (scene games talk between their steps).
+  final void Function(List<String> clips)? onSay;
+  const RoundCallbacks({required this.onSelect, this.onListen, this.onSay});
 }
 
 class HintViewState {

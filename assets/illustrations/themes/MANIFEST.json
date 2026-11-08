@@ -160,6 +160,90 @@
    "masterPrompt": "docs/illustration-style.md",
    "prompt": "OUR HOME theme — a small cosy clay house (soft orange roof, cream walls, a round window, a little blue door) with a small green bush beside it, on the base.",
    "normalization": "cropped to alpha bounds, scaled to the same visual weight as the existing covers (sqrt of area about 390 px), bottom at 465 px"
+  },
+  {
+   "name": "cover_cleaning",
+   "path": "assets/illustrations/themes/cover_cleaning.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_cleaning.png",
+   "originalSha256": "3fabea530e657f92fe7abfdbf0615b80f94b29d255ed57a3be8280a528da8385",
+   "sha256": "350e09a009b6cd59deb436016e211ad62f604bb451a7a84190b42d1c5317fa31",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "cover_clothes",
+   "path": "assets/illustrations/themes/cover_clothes.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_clothes.png",
+   "originalSha256": "d1187aaf87187aecff16b7185203acbf3caaa2ad3c17ebb290e74b84a7aa69c9",
+   "sha256": "84765c5de1ac2bcf954630ec94c0d75fab8e53c7dd9f4291a91e0c5a44775c34",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "cover_jobs",
+   "path": "assets/illustrations/themes/cover_jobs.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_jobs.png",
+   "originalSha256": "f38cf85753c8aef264de8d79c113291e244080de827e4c3e2c53086e4cd804e5",
+   "sha256": "707cd4550c5348008b8305fe736a5e278e0a442cd71ba03786a44bb94932b88b",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "cover_kitchen",
+   "path": "assets/illustrations/themes/cover_kitchen.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_kitchen.png",
+   "originalSha256": "3286f604e499decc9a1676b7b4727c1fb4fb76db33c7167735b227c54c9e7fa3",
+   "sha256": "9e34a10279e5777e44e8fa1b71d971e7a36c25a28b32716529804fd448cbe86a",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "cover_music",
+   "path": "assets/illustrations/themes/cover_music.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_music.png",
+   "originalSha256": "79d800b57a1b0c7ebdc47dee36fcdf62a1db84396d11e8d01a7ab17c6b0e9c86",
+   "sha256": "b1e61faf1904ee90f323ba7bdcd562982d1eaba583c7cf4677210de9dee1df1f",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "cover_nature",
+   "path": "assets/illustrations/themes/cover_nature.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/cover_nature.png",
+   "originalSha256": "66547d878467ac9147b57600e4895894e4dc392e88a9144d228896e81960bb6e",
+   "sha256": "f3b26cce4deb0c149ae44fe833b70e6628fce1c2532a8460bc456a72725a004c",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
   }
  ]
 }

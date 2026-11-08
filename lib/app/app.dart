@@ -248,8 +248,10 @@ class _EducationAppState extends State<EducationApp>
             ),
             GoRoute(
               path: 'stories',
-              builder: (_, _) =>
-                  reactive(() => StoryShelfScreen(state: state)),
+              redirect: (_, _) {
+                state.homeTab = HomeTab.stories;
+                return '/';
+              },
             ),
           ],
         ),

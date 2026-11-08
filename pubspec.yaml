@@ -99,6 +99,9 @@ flutter:
     - assets/illustrations/family/
     - assets/illustrations/themes/
     - assets/illustrations/path/
+    - assets/illustrations/park/
+    - assets/audio/tr/sections/
+    - assets/audio/en/sections/
     - assets/images/animals/
     - assets/images/produce/
     - assets/images/vehicles/

@@ -1491,4 +1491,40 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get famDayStreak => 'Üst üste oynanan gün';
+
+  @override
+  String get homeTabLearn => 'Öğren';
+
+  @override
+  String get homeTabStories => 'Hikâyeler';
+
+  @override
+  String get homeTabPark => 'Oyun Parkı';
+
+  @override
+  String get homeRowAnimalsFood => 'Hayvanlar ve Yiyecekler';
+
+  @override
+  String get homeRowDaily => 'Günlük İşler';
+
+  @override
+  String get homeRowHomeOutside => 'Evde ve Dışarıda';
+
+  @override
+  String get homeRowBasics => 'Renkler, Şekiller, Sayılar';
+
+  @override
+  String get homeRowBodyFeelings => 'Bedenim ve Duygularım';
+
+  @override
+  String get parkColoring => 'Boyama';
+
+  @override
+  String get parkMusic => 'Müzik Aletleri';
+
+  @override
+  String get parkPuzzle => 'Yapboz';
+
+  @override
+  String get parkBubbles => 'Baloncuklar';
 }

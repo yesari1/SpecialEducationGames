@@ -62,6 +62,18 @@ class RoundSpec {
 
   /// How long a right answer stays on screen before the next round.
   final Duration rightHold;
+
+  /// The whole round is played on a picture (see SceneGameView).
+  final SceneRound? scene;
+
+  /// The cards a scene round's steps use, by id.
+  final Map<String, ContentItem> scenePieces;
+
+  /// A picture shown large after a right answer (pair games).
+  final String? resultImagePath;
+
+  /// The view fills the page under the top bar; it shows the question itself.
+  final bool fullStage;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -85,6 +97,10 @@ class RoundSpec {
     this.oneRow = false,
     this.promptBeside = false,
     this.rightHold = const Duration(milliseconds: 1500),
+    this.scene,
+    this.scenePieces = const {},
+    this.resultImagePath,
+    this.fullStage = false,
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -109,6 +125,10 @@ class RoundSpec {
     oneRow: oneRow,
     promptBeside: promptBeside,
     rightHold: rightHold,
+    scene: scene,
+    scenePieces: scenePieces,
+    resultImagePath: resultImagePath,
+    fullStage: fullStage,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

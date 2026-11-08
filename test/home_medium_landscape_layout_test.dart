@@ -81,12 +81,15 @@ void main() {
           isNull,
           reason: '$locale home cards must fit a legitimate 4:3 landscape size',
         );
-        for (final scrollable in tester.widgetList<Scrollable>(
-          find.byType(Scrollable),
-        )) {
-          expect(scrollable.axisDirection, isNot(AxisDirection.down));
-          expect(scrollable.axisDirection, isNot(AxisDirection.up));
-        }
+        // Learn itself scrolls down to its theme rows; nothing else does.
+        final vertical = tester
+            .widgetList<Scrollable>(find.byType(Scrollable))
+            .where(
+              (x) =>
+                  x.axisDirection == AxisDirection.down ||
+                  x.axisDirection == AxisDirection.up,
+            );
+        expect(vertical, hasLength(1));
         await tester.pumpWidget(const SizedBox.shrink());
       },
     );

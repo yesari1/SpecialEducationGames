@@ -82,7 +82,7 @@ void main() {
       tester.view.physicalSize = size;
       await show(HomeScreen(state: state));
       await shot('$tag-1-home');
-      await show(StoryShelfScreen(state: state));
+      await show(Scaffold(body: StoryShelf(state: state)));
       await shot('$tag-2-shelf');
 
       await show(StoryPlayerScreen(state: state, story: teeth));

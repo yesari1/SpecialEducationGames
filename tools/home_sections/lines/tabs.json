@@ -1,0 +1,5 @@
+{
+  "assets/audio/{lang}/sections/tab_learn.mp3": {"tr": "Öğren.", "en": "Learn."},
+  "assets/audio/{lang}/sections/tab_stories.mp3": {"tr": "Hikâyeler.", "en": "Stories."},
+  "assets/audio/{lang}/sections/tab_park.mp3": {"tr": "Oyun Parkı.", "en": "Play Park."}
+}

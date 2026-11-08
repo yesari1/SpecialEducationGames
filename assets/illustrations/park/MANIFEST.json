@@ -1,0 +1,61 @@
+{
+ "style": "SEG soft clay",
+ "assets": [
+  {
+   "name": "tile_bubbles",
+   "path": "assets/illustrations/park/tile_bubbles.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/tile_bubbles.png",
+   "originalSha256": "d0c4ecb94e116d7e5be86e8fd31e296031b2bfee0b2f5395a4ac957a1f3f63a9",
+   "sha256": "b23c08acd3001c673e7abf9efec9b033d7fcccd3b596b4aabb2b1a9116db9014",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "tile_coloring",
+   "path": "assets/illustrations/park/tile_coloring.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/tile_coloring.png",
+   "originalSha256": "17bd70e675f229d6e93a8814fdecf0b0bce1eeecebe888240345495d970f26c3",
+   "sha256": "40cbc34e2b86f45d678acfdb2f5d56de99237add4d10422f65c2151eb9f2594c",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "tile_music",
+   "path": "assets/illustrations/park/tile_music.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/tile_music.png",
+   "originalSha256": "a2b5efb6a2d9743fb4026adb7594d9674407a7afab37dbb96e9a55ffb2dd7cce",
+   "sha256": "8e8688c70d88d1cc28c8b3411343e5e048f46b380ffb6769773621e72f3007cb",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  },
+  {
+   "name": "tile_puzzle",
+   "path": "assets/illustrations/park/tile_puzzle.png",
+   "size": [
+    512,
+    512
+   ],
+   "original": "artifacts/illustrations-home/originals/tile_puzzle.png",
+   "originalSha256": "014c946f0efdbfec4cec330a588dd4bc2e1e1afe26e6166ac9d93682dd9391d7",
+   "sha256": "c33289cd9be9f278a09f4f4c41721c053293394a54f065a4338f90870f4cdff8",
+   "generator": "ChatGPT image generation via Codex CLI (gpt-6.1-sol), owner-approved for illustrations",
+   "generatedOn": "2026-11-08",
+   "masterPrompt": "docs/illustration-style.md"
+  }
+ ]
+}

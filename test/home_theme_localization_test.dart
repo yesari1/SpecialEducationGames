@@ -98,25 +98,13 @@ void main() {
       await pumpApp(tester, state, router);
       final l10n = lookupAppLocalizations(Locale(locale));
 
-      expect(find.text(l10n.greeting('Ada')), findsOneWidget);
+      expect(find.text(l10n.homeTabLearn), findsOneWidget);
       expect(find.text(l10n.homeNewBadge), findsOneWidget);
-      // The Stories card comes first; the first theme card follows it.
-      final firstThemeCard = find
-          .byWidgetPredicate(
-            (w) => w is ThemeGameCard && w.theme.id != 'stories',
-          )
-          .first;
+      final firstThemeCard = find.byKey(const ValueKey('home-theme-animals'));
       expect(tester.widget<ThemeGameCard>(firstThemeCard).theme.id, 'animals');
-      expect(
-        find.descendant(
-          of: firstThemeCard,
-          matching: find.text(
-            l10n.homeThemeGameCount(state.gamesForTheme('animals').length),
-          ),
-        ),
-        findsOneWidget,
-      );
 
+      await tester.ensureVisible(firstThemeCard);
+      await tester.pumpAndSettle();
       await tester.tap(firstThemeCard);
       await tester.pumpAndSettle();
       final theme = content.theme('animals');
@@ -131,7 +119,7 @@ void main() {
       expect(find.text(l10n.difficultyHard), findsOneWidget);
       await tester.tap(find.byTooltip(l10n.themeBack));
       await tester.pumpAndSettle();
-      expect(find.text(l10n.greeting('Ada')), findsOneWidget);
+      expect(find.text(l10n.homeTabLearn), findsOneWidget);
       expect(tester.takeException(), isNull);
       await cleanup(tester, state, router);
     }

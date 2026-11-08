@@ -6,13 +6,25 @@ import 'package:go_router/go_router.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
+import '../../app/ui/family_nav_bar.dart';
 import '../../app/ui/scene_backdrop.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/learning/policies.dart';
 import '../family/parent_gate.dart';
 import 'daily_path_view.dart';
 import '../stories/story_screens.dart';
+import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
+
+/// The rows of the Learn section, in order. A theme that is not open yet
+/// has no card, and a row with no cards has no title.
+List<(String, List<String>)> homeRows(AppLocalizations l10n) => [
+  (l10n.homeRowAnimalsFood, const ['animals', 'produce', 'food']),
+  (l10n.homeRowDaily, const ['cleaning', 'clothes', 'kitchen']),
+  (l10n.homeRowHomeOutside, const ['home', 'vehicles', 'jobs', 'nature']),
+  (l10n.homeRowBasics, const ['colors', 'shapes', 'numbers']),
+  (l10n.homeRowBodyFeelings, const ['body', 'emotions']),
+];
 
 class HomeScreen extends StatefulWidget {
   final AppState state;
@@ -22,19 +34,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool path = false;
-  bool _pathInitialized = false;
+  bool _queryRead = false;
   Timer? _dayTick;
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (!_pathInitialized) {
-      _pathInitialized = true;
-      path =
-          GoRouter.maybeOf(
+    if (!_queryRead) {
+      _queryRead = true;
+      // Coming back from a game of Today's Path: its map, at the top.
+      if (GoRouter.maybeOf(
             context,
           )?.routerDelegate.currentConfiguration.uri.queryParameters['path'] ==
-          'true';
+          'true') {
+        s.homeTab = HomeTab.learn;
+        s.homeLearnOffset = 0;
+      }
     }
   }
 
@@ -53,43 +67,69 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   AppState get s => widget.state;
+
+  void _open(HomeTab tab) {
+    setState(() => s.homeTab = tab);
+    unawaited(
+      s.audio.playSequence([
+        'assets/audio/${s.locale}/sections/tab_${tab.name}.mp3',
+      ]),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, s.locale);
-    final stories = s.content.stories.isNotEmpty;
-    Widget backdrop({required Widget child}) => path
-        // Today's Path: the map is the whole screen, behind the top bar too.
-        ? Stack(
-            children: [
-              Positioned.fill(
-                child: Image.asset(
-                  DailyPathView.mapAsset,
-                  fit: BoxFit.cover,
-                  excludeFromSemantics: true,
-                ),
-              ),
-              child,
-            ],
-          )
-        : SceneBackdrop(clouds: false, child: child);
+    final tab = s.homeTab;
+    // One calm pastel for each section; it changes at once, nothing fades.
+    final (tint, base) = switch (tab) {
+      HomeTab.learn => (SegColors.turquoise, const Color(0xFFF3FBFA)),
+      HomeTab.stories => (SegColors.accent, const Color(0xFFFFF7EE)),
+      HomeTab.park => (const Color(0xFF7C73DF), const Color(0xFFF6F4FE)),
+    };
     return Scaffold(
-      body: backdrop(
+      body: SceneBackdrop(
+        key: ValueKey('home-backdrop-${tab.name}'),
+        tint: tint,
+        base: base,
+        clouds: false,
         child: SafeArea(
+          bottom: false,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: SegSpace.s5,
-                  vertical: SegSpace.s3,
+                padding: const EdgeInsets.fromLTRB(
+                  SegSpace.s5,
+                  SegSpace.s2,
+                  SegSpace.s5,
+                  SegSpace.s2,
                 ),
-                child: Wrap(
-                  spacing: SegSpace.s5,
-                  runSpacing: SegSpace.s3,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  alignment: WrapAlignment.spaceBetween,
+                child: Row(
                   children: [
+                    Image.asset(
+                      'assets/illustrations/onboarding/mascot_cloud.png',
+                      key: const ValueKey('home-mascot'),
+                      height: 48,
+                      excludeFromSemantics: true,
+                    ),
+                    const Spacer(),
                     PillButton(
+                      key: const ValueKey('home-stickers'),
+                      semanticsLabel: l10n.dailyPathMyStickers,
+                      onPressed: () => DailyPathView.openAlbum(context, s),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.auto_awesome_rounded),
+                          const SizedBox(width: SegSpace.s2),
+                          Text(l10n.dailyPathMyStickers, style: SegText.label),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: SegSpace.s3),
+                    PillButton(
+                      key: const ValueKey('home-family'),
                       semanticsLabel: l10n.homeFamilyHint,
                       onPressed: () async {
                         if (await showParentGate(context, s) &&
@@ -106,93 +146,171 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    PillToggle<bool>(
-                      values: const [false, true],
-                      selected: path,
-                      label: (v) => v ? l10n.homeDailyPath : l10n.homeGames,
-                      icon: (v) => v
-                          ? Icons.route_rounded
-                          : Icons.sports_esports_rounded,
-                      onChanged: (v) => setState(() => path = v),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: SegSpace.s4,
-                        vertical: SegSpace.s2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(SegRadius.pill),
-                        border: Border.all(color: SegColors.line),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(Icons.star_rounded, color: SegColors.star),
-                          const SizedBox(width: SegSpace.s2),
-                          Text(
-                            '${s.dailyPath.count}/${s.dailyPath.steps.length}',
-                            style: SegText.heading.copyWith(
-                              color: SegColors.inkSoft,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
-              if (!path)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
-                  child: Text(
-                    l10n.greeting(s.active?.nickname ?? ''),
-                    style: MediaQuery.sizeOf(context).height < 500
-                        ? SegText.heading
-                        : SegText.title,
-                  ),
-                ),
-              if (!path && MediaQuery.sizeOf(context).height >= 500)
-                const SizedBox(height: SegSpace.s2),
-              if (!path && MediaQuery.sizeOf(context).height >= 500)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
-                  child: Text(
-                    path ? l10n.homePathSubtitle : l10n.homeGamesSubtitle,
-                    style: SegText.label.copyWith(color: SegColors.inkSoft),
-                  ),
-                ),
               Expanded(
-                child: path
-                    ? DailyPathView(state: s, background: false)
-                    : HorizontalCards(
-                        count: s.orderedThemes.length + (stories ? 1 : 0),
-                        builder: (i) {
-                          if (stories && i == 0) return StoriesCard(state: s);
-                          final t = s.orderedThemes[i - (stories ? 1 : 0)];
-                          final hero = s.content.items.firstWhere(
-                            (x) => x.id == t.hero,
-                          );
-                          return ThemeGameCard(
-                            theme: t,
-                            title: t.name(s.locale),
-                            badgeText: s.configuration.newBadge.contains(t.id)
-                                ? l10n.homeNewBadge
-                                : null,
-                            subtitle: l10n.homeThemeGameCount(
-                              s.gamesForTheme(t.id).length,
-                            ),
-                            visual: themeCover(t.id, hero),
-                            normalizedVisual: themeCovers.contains(t.id),
-                            onTap: () => context.go('/theme/${t.id}'),
-                          );
-                        },
-                      ),
+                child: switch (tab) {
+                  HomeTab.learn => _LearnSection(state: s),
+                  HomeTab.stories => StoryShelf(state: s),
+                  HomeTab.park => _ParkSection(state: s),
+                },
+              ),
+              FamilyNavBar(
+                selectedIndex: tab.index,
+                onDestinationSelected: (i) => _open(HomeTab.values[i]),
+                items: [
+                  FamilyNavItem(
+                    icon: Icons.school_outlined,
+                    selectedIcon: Icons.school_rounded,
+                    label: l10n.homeTabLearn,
+                  ),
+                  FamilyNavItem(
+                    icon: Icons.menu_book_outlined,
+                    selectedIcon: Icons.menu_book_rounded,
+                    label: l10n.homeTabStories,
+                  ),
+                  FamilyNavItem(
+                    icon: Icons.toys_outlined,
+                    selectedIcon: Icons.toys_rounded,
+                    label: l10n.homeTabPark,
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Today's Path on top, then the theme rows; scrolls up and down.
+class _LearnSection extends StatefulWidget {
+  final AppState state;
+  const _LearnSection({required this.state});
+  @override
+  State<_LearnSection> createState() => _LearnSectionState();
+}
+
+class _LearnSectionState extends State<_LearnSection> {
+  late final ScrollController _scroll = ScrollController(
+    initialScrollOffset: widget.state.homeLearnOffset,
+  )..addListener(() => widget.state.homeLearnOffset = _scroll.offset);
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.state;
+    final l10n = scopedLocalizations(context, s.locale);
+    final open = {for (final t in s.orderedThemes) t.id: t};
+    return LayoutBuilder(
+      builder: (context, box) {
+        // The next row's title shows under the map, so the child sees there
+        // is more below.
+        final mapHeight = (box.maxHeight * .8).clamp(210.0, 520.0);
+        final rowHeight = (box.maxHeight * .86).clamp(200.0, 340.0);
+        return ListView(
+          key: const ValueKey('home-learn-list'),
+          controller: _scroll,
+          padding: const EdgeInsets.only(bottom: SegSpace.s3),
+          children: [
+            SizedBox(
+              height: mapHeight,
+              child: DailyPathView(state: s, albumButton: false),
+            ),
+            for (final (title, ids) in homeRows(l10n))
+              if (ids.where(open.containsKey).toList() case final themes
+                  when themes.isNotEmpty) ...[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    SegSpace.s5,
+                    SegSpace.s3,
+                    SegSpace.s5,
+                    0,
+                  ),
+                  child: Text(title, style: SegText.heading),
+                ),
+                SizedBox(
+                  height: rowHeight,
+                  child: HorizontalCards(
+                    key: ValueKey('home-row-${ids.first}'),
+                    count: themes.length,
+                    builder: (i) => _themeCard(context, open[themes[i]]!),
+                  ),
+                ),
+              ],
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _themeCard(BuildContext context, ContentTheme t) {
+    final s = widget.state;
+    final l10n = scopedLocalizations(context, s.locale);
+    return ThemeGameCard(
+      key: ValueKey('home-theme-${t.id}'),
+      theme: t,
+      title: t.name(s.locale),
+      badgeText: s.configuration.newBadge.contains(t.id)
+          ? l10n.homeNewBadge
+          : null,
+      subtitle: '',
+      visual: themeCover(
+        t.id,
+        s.content.items.firstWhere((x) => x.id == t.hero),
+      ),
+      normalizedVisual: themeCovers.contains(t.id),
+      onTap: () => context.go('/theme/${t.id}'),
+    );
+  }
+}
+
+/// The four big tiles of the Play Park.
+class _ParkSection extends StatelessWidget {
+  final AppState state;
+  const _ParkSection({required this.state});
+  static final _theme = ContentTheme.fromJson({
+    'id': 'park',
+    'hero': '',
+    'name': {'tr': 'Oyun Parkı', 'en': 'Play Park'},
+    'games': <String>[],
+    'palette': {'bg': '#F6F4FE', 'accent': '#7C73DF', 'deep': '#544BB5'},
+  });
+  @override
+  Widget build(BuildContext context) {
+    final l10n = scopedLocalizations(context, state.locale);
+    final tiles = [
+      ('coloring', l10n.parkColoring, '/park/coloring'),
+      ('music', l10n.parkMusic, '/theme/music'),
+      ('puzzle', l10n.parkPuzzle, '/park/puzzle'),
+      ('bubbles', l10n.parkBubbles, '/park/bubbles'),
+    ];
+    return HorizontalCards(
+      count: tiles.length,
+      builder: (i) {
+        final (id, title, route) = tiles[i];
+        return ThemeGameCard(
+          key: ValueKey('park-tile-$id'),
+          theme: _theme,
+          title: title,
+          subtitle: '',
+          visual: Image.asset(
+            'assets/illustrations/park/tile_$id.png',
+            fit: BoxFit.contain,
+            alignment: Alignment.bottomCenter,
+            excludeFromSemantics: true,
+          ),
+          normalizedVisual: true,
+          onTap: () => context.go(route),
+        );
+      },
     );
   }
 }
@@ -426,6 +544,12 @@ const themeCovers = {
   'emotions',
   'body',
   'home',
+  'cleaning',
+  'clothes',
+  'kitchen',
+  'jobs',
+  'nature',
+  'music',
 };
 
 Widget themeCover(String themeId, ContentItem hero) =>
