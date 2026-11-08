@@ -842,9 +842,12 @@ class PairTemplate extends GameTemplate {
         : ctx.choiceCount;
     if (wrong.length < size - 1) throw StateError('Not enough choices');
     final choices = [target, ...wrong.take(size - 1)]..shuffle(random);
-    final stimulus = round.stimulus == null
+    final shown = round.stimulus == null
         ? null
         : ctx.content.anyItem(round.stimulus!);
+    // A scene is drawn big above the choices instead of next to the question.
+    final scene = game.look == 'scene';
+    final stimulus = scene ? null : shown;
     String cue(String lang) => round.audio[lang] ?? '';
     return RoundSpec(
       target: target,
@@ -852,6 +855,8 @@ class PairTemplate extends GameTemplate {
       promptTr: round.textFor('tr'),
       promptEn: round.textFor('en'),
       stimulus: stimulus,
+      promptImagePath: scene ? shown?.images.firstOrNull : null,
+      oneRow: true,
       look: game.look == 'basket' ? ChoiceLook.basket : ChoiceLook.object,
       dragStimulus: game.look == 'basket' && stimulus != null,
       groupMembers: game.look == 'basket'
@@ -875,6 +880,16 @@ class PairTemplate extends GameTemplate {
   List<String> successCues(RoundSpec spec, String locale) =>
       spec.successCueOverride[locale == 'en' ? 'en' : 'tr'] ??
       super.successCues(spec, locale);
+
+  @override
+  Widget buildView(
+    BuildContext context,
+    RoundSpec spec,
+    RoundCallbacks callbacks,
+    HintViewState hint,
+  ) => spec.promptImagePath == null
+      ? super.buildView(context, spec, callbacks, hint)
+      : PaintView(spec: spec, callbacks: callbacks, hint: hint, paint: false);
 }
 
 /// G42 "Boya": a white picture and paint choices; "Kırmızıya boya!" The
@@ -914,6 +929,7 @@ class PaintTemplate extends GameTemplate {
       promptTr: '${paintSuffix[target.slug] ?? '$tr ile'} boya',
       promptEn: 'Paint it ${target.name('en').toLowerCase()}',
       promptImagePath: picture.images.first,
+      oneRow: true,
       promptCues: {
         for (final lang in const ['tr', 'en'])
           lang: ['assets/audio/$lang/pairs/G42_${target.slug}.mp3'],
@@ -971,13 +987,21 @@ class BodyMapTemplate extends GameTemplate {
     if (items.length < 2) throw StateError('Not enough body places');
     final target = ctx.scheduler.next(items, ctx.struggle);
     final q = map.questions[target.id] ?? const {};
+    final picture = map.pictureFor(target.id)!;
+    final here = {for (final s in picture.spots) s.item};
+    // Wrong answers come from the same picture.
+    final others = items
+        .where((x) => x.id != target.id && here.contains(x.id))
+        .toList()
+      ..shuffle(ctx.scheduler.random);
     return RoundSpec(
       target: target,
-      // Every place stays tappable; a wrong place gets the usual gentle cue.
-      choices: [target, ...items.where((x) => x.id != target.id)],
+      // Every place on the picture can be tapped (see BodyMapView); the
+      // choices only carry the wrong-tap answer.
+      choices: [target, ...others.take(ctx.choiceCount - 1)],
       promptTr: q['tr'] ?? '${target.name('tr')} nerede?',
       promptEn: q['en'] ?? 'Where is the ${target.name('en').toLowerCase()}?',
-      promptImagePath: map.picture,
+      promptImagePath: picture.asset,
       promptCues: {
         for (final lang in const ['tr', 'en'])
           lang: ['assets/audio/$lang/pairs/G47_${target.slug}.mp3'],
@@ -992,13 +1016,15 @@ class BodyMapTemplate extends GameTemplate {
     RoundCallbacks callbacks,
     HintViewState hint,
   ) {
-    final raw = _cached;
+    final picture = _cached?.pictures
+        .where((p) => p.asset == spec.promptImagePath)
+        .firstOrNull;
     return BodyMapView(
       spec: spec,
       callbacks: callbacks,
       hint: hint,
-      spots: raw?.spots ?? const [],
-      aspect: raw?.aspect ?? 2 / 3,
+      spots: picture?.spots ?? const [],
+      aspect: picture?.aspect ?? 2 / 3,
     );
   }
 

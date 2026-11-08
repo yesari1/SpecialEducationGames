@@ -51,6 +51,10 @@ class RoundSpec {
 
   /// Clips after a right answer, per language; empty uses the defaults.
   final Map<String, List<String>> successCueOverride;
+
+  /// All choices stay in one row on small phones (no paging), so the right
+  /// one is never on a hidden page.
+  final bool oneRow;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -71,6 +75,7 @@ class RoundSpec {
     this.groupMembers = const {},
     this.promptCues = const {},
     this.successCueOverride = const {},
+    this.oneRow = false,
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -92,6 +97,7 @@ class RoundSpec {
     groupMembers: groupMembers,
     promptCues: promptCues,
     successCueOverride: successCueOverride,
+    oneRow: oneRow,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

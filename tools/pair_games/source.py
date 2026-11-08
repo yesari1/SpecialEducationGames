@@ -6,6 +6,8 @@ build_pair_games.py turns this into assets/content/pair_games.json and
 records the clips.
 """
 
+import source_more  # noqa: E402
+
 EASY_COLORS = ['red', 'blue', 'yellow', 'green', 'orange', 'purple', 'pink', 'brown', 'black', 'white', 'gray']
 
 # (stimulus item, color, TR name for the question, EN name)
@@ -61,4 +63,29 @@ def games():
             for item, color, _, _ in COLOR_OBJECTS
         ],
     }
+    return out
+
+
+PAINT = {
+    'red': ('Kırmızıya boya!', 'Paint it red!'),
+    'blue': ('Maviye boya!', 'Paint it blue!'),
+    'yellow': ('Sarıya boya!', 'Paint it yellow!'),
+    'green': ('Yeşile boya!', 'Paint it green!'),
+    'orange': ('Turuncuya boya!', 'Paint it orange!'),
+    'purple': ('Mora boya!', 'Paint it purple!'),
+    'pink': ('Pembeye boya!', 'Paint it pink!'),
+    'brown': ('Kahverengiye boya!', 'Paint it brown!'),
+}
+
+
+def clips():
+    """Single clips used by code-driven games: stem -> {tr, en}."""
+    out = {f'G42_{slug}': {'tr': tr, 'en': en} for slug, (tr, en) in PAINT.items()}
+    out.update(source_more.clips())
+    return out
+
+
+def all_games():
+    out = games()
+    out.update(source_more.games())
     return out

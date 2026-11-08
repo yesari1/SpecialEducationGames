@@ -1,1 +1,660 @@
-[]
+[
+  {
+    "id": "props.ball",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Top",
+      "en": "Ball"
+    },
+    "images": [
+      "assets/images/props/ball.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.gift",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Hediye kutusu",
+      "en": "Gift box"
+    },
+    "images": [
+      "assets/images/props/gift.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.dice",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Zar",
+      "en": "Dice"
+    },
+    "images": [
+      "assets/images/props/dice.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.pizza_slice",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Pizza dilimi",
+      "en": "Pizza slice"
+    },
+    "images": [
+      "assets/images/props/pizza_slice.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.tent",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Çadır",
+      "en": "Tent"
+    },
+    "images": [
+      "assets/images/props/tent.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.sign_triangle",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Uyarı levhası",
+      "en": "Warning sign"
+    },
+    "images": [
+      "assets/images/props/sign_triangle.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.book",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kitap",
+      "en": "Book"
+    },
+    "images": [
+      "assets/images/props/book.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.starfish",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Deniz yıldızı",
+      "en": "Starfish"
+    },
+    "images": [
+      "assets/images/props/starfish.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.heart_balloon",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kalp balon",
+      "en": "Heart balloon"
+    },
+    "images": [
+      "assets/images/props/heart_balloon.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "props.egg",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Yumurta",
+      "en": "Egg"
+    },
+    "images": [
+      "assets/images/props/egg.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.balloon",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Balon",
+      "en": "Balloon"
+    },
+    "images": [
+      "assets/images/paint/balloon.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.flower",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Çiçek",
+      "en": "Flower"
+    },
+    "images": [
+      "assets/images/paint/flower.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.car",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Araba",
+      "en": "Car"
+    },
+    "images": [
+      "assets/images/paint/car.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.ball",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Top",
+      "en": "Ball"
+    },
+    "images": [
+      "assets/images/paint/ball.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.apple",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Elma",
+      "en": "Apple"
+    },
+    "images": [
+      "assets/images/paint/apple.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.fish",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Balık",
+      "en": "Fish"
+    },
+    "images": [
+      "assets/images/paint/fish.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.butterfly",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kelebek",
+      "en": "Butterfly"
+    },
+    "images": [
+      "assets/images/paint/butterfly.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "paint.house",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Ev",
+      "en": "House"
+    },
+    "images": [
+      "assets/images/paint/house.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.gloves",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Eldiven",
+      "en": "Gloves"
+    },
+    "images": [
+      "assets/images/wear/gloves.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.socks",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Çorap",
+      "en": "Socks"
+    },
+    "images": [
+      "assets/images/wear/socks.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.shoes",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Ayakkabı",
+      "en": "Shoes"
+    },
+    "images": [
+      "assets/images/wear/shoes.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.hat",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Şapka",
+      "en": "Hat"
+    },
+    "images": [
+      "assets/images/wear/hat.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.glasses",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Gözlük",
+      "en": "Glasses"
+    },
+    "images": [
+      "assets/images/wear/glasses.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.scarf",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Atkı",
+      "en": "Scarf"
+    },
+    "images": [
+      "assets/images/wear/scarf.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.ring",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Yüzük",
+      "en": "Ring"
+    },
+    "images": [
+      "assets/images/wear/ring.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "wear.earmuffs",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kulaklık",
+      "en": "Earmuffs"
+    },
+    "images": [
+      "assets/images/wear/earmuffs.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.icecream_dropped",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Dondurma düştü",
+      "en": "Dropped ice cream"
+    },
+    "images": [
+      "assets/images/scenes/icecream_dropped.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.gift",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Hediye",
+      "en": "A present"
+    },
+    "images": [
+      "assets/images/scenes/gift.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.big_dog",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Havlayan köpek",
+      "en": "Barking dog"
+    },
+    "images": [
+      "assets/images/scenes/big_dog.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.surprise_box",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Sürpriz kutusu",
+      "en": "Jack-in-the-box"
+    },
+    "images": [
+      "assets/images/scenes/surprise_box.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.tower_knocked",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Yıkılan kule",
+      "en": "Knocked-down tower"
+    },
+    "images": [
+      "assets/images/scenes/tower_knocked.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.bedtime",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Uyku vakti",
+      "en": "Bedtime"
+    },
+    "images": [
+      "assets/images/scenes/bedtime.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.drawing_done",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Resim bitti",
+      "en": "Finished drawing"
+    },
+    "images": [
+      "assets/images/scenes/drawing_done.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "scene.tickle",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Gıdıklama",
+      "en": "Tickling"
+    },
+    "images": [
+      "assets/images/scenes/tickle.jpg"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "body.ali_full",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Ali",
+      "en": "Ali"
+    },
+    "images": [
+      "assets/images/wear/ali_full.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_happy",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Mutlu",
+      "en": "Happy"
+    },
+    "images": [
+      "assets/images/faces/elif_happy.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_sad",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Üzgün",
+      "en": "Sad"
+    },
+    "images": [
+      "assets/images/faces/elif_sad.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_angry",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kızgın",
+      "en": "Angry"
+    },
+    "images": [
+      "assets/images/faces/elif_angry.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_scared",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Korkmuş",
+      "en": "Scared"
+    },
+    "images": [
+      "assets/images/faces/elif_scared.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_surprised",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Şaşkın",
+      "en": "Surprised"
+    },
+    "images": [
+      "assets/images/faces/elif_surprised.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.elif_sleepy",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Uykulu",
+      "en": "Sleepy"
+    },
+    "images": [
+      "assets/images/faces/elif_sleepy.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_happy",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Mutlu",
+      "en": "Happy"
+    },
+    "images": [
+      "assets/images/faces/mom_happy.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_sad",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Üzgün",
+      "en": "Sad"
+    },
+    "images": [
+      "assets/images/faces/mom_sad.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_angry",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Kızgın",
+      "en": "Angry"
+    },
+    "images": [
+      "assets/images/faces/mom_angry.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_scared",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Korkmuş",
+      "en": "Scared"
+    },
+    "images": [
+      "assets/images/faces/mom_scared.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_surprised",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Şaşkın",
+      "en": "Surprised"
+    },
+    "images": [
+      "assets/images/faces/mom_surprised.png"
+    ],
+    "audio": {},
+    "tags": []
+  },
+  {
+    "id": "faces.mom_sleepy",
+    "theme": "extra",
+    "tier": "easy",
+    "name": {
+      "tr": "Uykulu",
+      "en": "Sleepy"
+    },
+    "images": [
+      "assets/images/faces/mom_sleepy.png"
+    ],
+    "audio": {},
+    "tags": []
+  }
+]

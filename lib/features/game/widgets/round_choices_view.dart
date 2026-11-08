@@ -62,6 +62,7 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         // Shadows are small flat shapes: they all fit in one row, and the
         // right one must never wait on a second page (Yunus, 8 Nov 2026).
         widget.spec.look != ChoiceLook.silhouette &&
+        !widget.spec.oneRow &&
         // Colour and shape cards are small drawings that also fit in a row.
         !widget.spec.choices.every(
           (x) => x.theme == 'colors' || x.theme == 'shapes',
@@ -314,7 +315,8 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
         final cols =
             spec.choices.length > 2 &&
                 size.maxWidth < 600 &&
-                spec.groupMembers.isEmpty
+                spec.groupMembers.isEmpty &&
+                !spec.oneRow
             ? 2
             : spec.choices.length;
         final width = (size.maxWidth - SegSpace.s5 * (cols - 1)) / cols;

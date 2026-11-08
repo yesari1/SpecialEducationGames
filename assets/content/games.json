@@ -158,5 +158,69 @@
       "tr": "Renk Sepeti",
       "en": "Color Baskets"
     }
+  },
+  {
+    "id": "G42",
+    "template": "paint",
+    "name": {
+      "tr": "Boya",
+      "en": "Paint"
+    }
+  },
+  {
+    "id": "G43",
+    "template": "pair",
+    "name": {
+      "tr": "Şekli Etrafında Bul",
+      "en": "Shapes Around Us"
+    }
+  },
+  {
+    "id": "G44",
+    "template": "pair",
+    "name": {
+      "tr": "Ne Oldu, Ne Hissetti?",
+      "en": "What Happened?"
+    }
+  },
+  {
+    "id": "G45",
+    "template": "pair",
+    "name": {
+      "tr": "Aynı Duygu",
+      "en": "Same Feeling"
+    }
+  },
+  {
+    "id": "G46",
+    "template": "pair",
+    "name": {
+      "tr": "Duygu Sesi",
+      "en": "Feeling Sounds"
+    }
+  },
+  {
+    "id": "G47",
+    "template": "body_map",
+    "name": {
+      "tr": "Ali'de Göster",
+      "en": "Show It on Ali"
+    }
+  },
+  {
+    "id": "G48",
+    "template": "pair",
+    "name": {
+      "tr": "Ne İşe Yarar?",
+      "en": "What Is It For?"
+    }
+  },
+  {
+    "id": "G49",
+    "template": "pair",
+    "name": {
+      "tr": "Neyi Nereye Giyeriz?",
+      "en": "What Goes Where?"
+    }
   }
 ]

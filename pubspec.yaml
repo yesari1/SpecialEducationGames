@@ -145,6 +145,12 @@ flutter:
     - assets/audio/en/home/
     - assets/audio/tr/pairs/
     - assets/audio/en/pairs/
+    - assets/images/props/
+    - assets/images/paint/
+    - assets/images/faces/
+    - assets/images/wear/
+    - assets/images/scenes/
+    - assets/sfx/feelings/
     - assets/audio/tr/explain/
     - assets/audio/en/explain/
     - assets/sfx/animals/

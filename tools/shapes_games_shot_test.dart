@@ -46,10 +46,14 @@ void main() {
     }))!;
     state.locale = 'tr';
     for (final (theme, game, tier) in [
-      ('colors', 'G40', Difficulty.easy),
-      ('colors', 'G40', Difficulty.medium),
-      ('colors', 'G41', Difficulty.easy),
-      ('colors', 'G41', Difficulty.medium),
+      ('colors', 'G42', Difficulty.medium),
+      ('shapes', 'G43', Difficulty.medium),
+      ('emotions', 'G44', Difficulty.medium),
+      ('emotions', 'G45', Difficulty.medium),
+      ('body', 'G47', Difficulty.easy),
+      ('body', 'G47', Difficulty.medium),
+      ('body', 'G47', Difficulty.hard),
+      ('body', 'G49', Difficulty.medium),
     ]) {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 1));

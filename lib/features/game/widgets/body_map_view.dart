@@ -41,7 +41,10 @@ class BodyMapView extends StatelessWidget {
     final asset = spec.promptImagePath;
     if (asset == null) return const SizedBox.shrink();
     final byId = {for (final c in spec.choices) c.id: c};
-    final usable = spots.where((s) => byId.containsKey(s.item)).toList();
+    // Every place answers; a place that is not one of this round's choices
+    // counts as a wrong tap like any other wrong choice.
+    final usable = spots;
+    final wrong = spec.choices.where((c) => c.id != spec.target.id).firstOrNull;
     final target = usable.where((s) => s.item == spec.target.id).firstOrNull;
     return Center(
       child: AspectRatio(
@@ -74,13 +77,16 @@ class BodyMapView extends StatelessWidget {
                 for (final s in usable) {
                   final dx = p.dx - s.x * w, dy = p.dy - s.y * h;
                   final dist = dx * dx + dy * dy;
-                  final reach = (s.r * w) * 1.4;
+                  // Small places (the nose) still get a finger-sized target.
+                  final reach = (s.r * w * 1.4).clamp(28.0, double.infinity);
                   if (dist <= reach * reach && dist < bestDist) {
                     best = s;
                     bestDist = dist;
                   }
                 }
-                if (best != null) callbacks.onSelect(byId[best.item]!);
+                if (best == null) return;
+                final picked = byId[best.item] ?? wrong;
+                if (picked != null) callbacks.onSelect(picked);
               },
               child: Stack(
                 children: [
@@ -99,20 +105,33 @@ class BodyMapView extends StatelessWidget {
   }
 }
 
-/// The body-map data (assets/content/body_map.json).
-class BodyMap {
-  final String picture;
+/// One picture of Ali (his face, or his whole body) and its places.
+class BodyPicture {
+  final String asset;
   final double aspect;
   final List<BodySpot> spots;
-  final Map<String, Map<String, String>> questions;
-  const BodyMap(this.picture, this.aspect, this.spots, this.questions);
-
-  factory BodyMap.fromJson(Map<String, dynamic> j) => BodyMap(
+  const BodyPicture(this.asset, this.aspect, this.spots);
+  factory BodyPicture.fromJson(Map<String, dynamic> j) => BodyPicture(
     j['picture'] as String,
     (j['aspect'] as num).toDouble(),
     [
       for (final s in j['spots'] as List)
         BodySpot.fromJson(s as Map<String, dynamic>),
+    ],
+  );
+}
+
+/// The body-map data (assets/content/body_map.json): face parts are asked
+/// on a big picture of Ali's face, the rest on the whole body.
+class BodyMap {
+  final List<BodyPicture> pictures;
+  final Map<String, Map<String, String>> questions;
+  const BodyMap(this.pictures, this.questions);
+
+  factory BodyMap.fromJson(Map<String, dynamic> j) => BodyMap(
+    [
+      for (final p in j['pictures'] as List)
+        BodyPicture.fromJson(p as Map<String, dynamic>),
     ],
     {
       for (final e in (j['questions'] as Map).entries)
@@ -120,7 +139,16 @@ class BodyMap {
     },
   );
 
+  BodyPicture? pictureFor(String item) => pictures
+      .where((p) => p.spots.any((s) => s.item == item))
+      .firstOrNull;
+
+  /// Each body part once (a part may have two places, like the eyes).
   List<ContentItem> items(ContentRepository content) => [
-    for (final s in spots) ?content.anyItem(s.item),
+    for (final id in {
+      for (final p in pictures)
+        for (final s in p.spots) s.item,
+    })
+      ?content.anyItem(id),
   ];
 }

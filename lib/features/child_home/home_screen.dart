@@ -402,6 +402,14 @@ IconData gameIcon(String id) => switch (id) {
   'G11' => Icons.hearing_rounded,
   'G40' => Icons.palette_rounded,
   'G41' => Icons.shopping_basket_rounded,
+  'G42' => Icons.format_paint_rounded,
+  'G43' => Icons.category_rounded,
+  'G44' => Icons.photo_rounded,
+  'G45' => Icons.people_rounded,
+  'G46' => Icons.hearing_rounded,
+  'G47' => Icons.accessibility_new_rounded,
+  'G48' => Icons.lightbulb_rounded,
+  'G49' => Icons.checkroom_rounded,
   _ => Icons.search_rounded,
 };
 

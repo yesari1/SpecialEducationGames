@@ -127,8 +127,9 @@ void main() {
         repo.themes.fold<int>(0, (sum, theme) => sum + theme.games.length),
         // Cards after removing G55 and G11 (Learn is the first card everywhere),
         // plus Feelings and Our Body (3 each) and Our Home (7), Nov 2026,
-        // plus Find the Shadow on Shapes, What Color? and Color Baskets.
-        68,
+        // plus the Nov 2026 games: Colors +3, Shapes +2, Feelings +3,
+        // Our Body +3.
+        76,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {

@@ -7,6 +7,7 @@ import 'package:special_education_games/core/audio/audio_service.dart';
 import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
+import 'package:special_education_games/features/game/widgets/body_map_view.dart';
 import 'package:special_education_games/features/game/widgets/fill_basket_view.dart';
 import 'package:special_education_games/features/game/widgets/round_choices_view.dart';
 
@@ -98,6 +99,19 @@ void main() {
                 answered++;
                 if (!after.hint.celebrating) {
                   problems.add('$tag: correct answer not accepted');
+                }
+              } else if (find.byType(BodyMapView).evaluate().isNotEmpty) {
+                final view = tester.widget<BodyMapView>(
+                  find.byType(BodyMapView),
+                );
+                view.callbacks.onSelect(view.spec.target);
+                await tester.pump();
+                answered++;
+                if (!tester
+                    .widget<BodyMapView>(find.byType(BodyMapView))
+                    .hint
+                    .celebrating) {
+                  problems.add('$tag: correct body place not accepted');
                 }
               } else if (find.byType(FillBasketView).evaluate().isNotEmpty) {
                 // Covered by its own widget test.
