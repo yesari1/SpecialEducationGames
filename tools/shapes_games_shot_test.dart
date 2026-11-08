@@ -46,10 +46,10 @@ void main() {
     }))!;
     state.locale = 'tr';
     for (final (theme, game, tier) in [
-      ('shapes', 'G15', Difficulty.easy),
-      ('shapes', 'G15', Difficulty.medium),
-      ('shapes', 'G15', Difficulty.hard),
-      ('animals', 'G15', Difficulty.hard),
+      ('colors', 'G40', Difficulty.easy),
+      ('colors', 'G40', Difficulty.medium),
+      ('colors', 'G41', Difficulty.easy),
+      ('colors', 'G41', Difficulty.medium),
     ]) {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 1));

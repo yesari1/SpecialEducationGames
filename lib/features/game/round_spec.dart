@@ -45,6 +45,12 @@ class RoundSpec {
 
   /// Group choices: a few member items drawn as the group's picture.
   final Map<String, List<ContentItem>> groupMembers;
+
+  /// Clips that ask this round's own question, per language (pair games).
+  final Map<String, List<String>> promptCues;
+
+  /// Clips after a right answer, per language; empty uses the defaults.
+  final Map<String, List<String>> successCueOverride;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -63,6 +69,8 @@ class RoundSpec {
     this.dragStimulus = false,
     this.fillCount,
     this.groupMembers = const {},
+    this.promptCues = const {},
+    this.successCueOverride = const {},
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -82,6 +90,8 @@ class RoundSpec {
     dragStimulus: dragStimulus,
     fillCount: fillCount,
     groupMembers: groupMembers,
+    promptCues: promptCues,
+    successCueOverride: successCueOverride,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

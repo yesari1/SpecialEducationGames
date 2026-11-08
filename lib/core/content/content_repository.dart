@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'pair_games.dart';
 import 'story.dart';
+export 'pair_games.dart';
 export 'story.dart';
 
 enum Difficulty { easy, medium, hard }
@@ -198,6 +200,13 @@ class ContentRepository {
 
   /// Social stories (assets/content/stories.json), in shelf order.
   final List<Story> stories;
+
+  /// Pictures and sounds used only inside games (scenes, Elif's faces,
+  /// gloves...), never offered as a theme's own cards.
+  final List<ContentItem> extraItems;
+
+  /// Data-driven pairing games (assets/content/pair_games.json) by game id.
+  final Map<String, PairGame> pairGames;
   ContentRepository(
     this.themes,
     this.items,
@@ -205,6 +214,8 @@ class ContentRepository {
     this.freeGames, [
     this.configDefaults = const {},
     this.stories = const [],
+    this.extraItems = const [],
+    this.pairGames = const {},
   ]);
   static Future<ContentRepository> load() async {
     Future<dynamic> read(String p) async =>
@@ -230,6 +241,16 @@ class ContentRepository {
       for (final j in await read('content/stories.json') as List)
         Story.fromJson(j as Map<String, dynamic>),
     ];
+    final extraItems = [
+      for (final j in await read('content/extra_items.json') as List)
+        ContentItem.fromJson(j as Map<String, dynamic>),
+    ];
+    final pairGames = {
+      for (final e
+          in (await read('content/pair_games.json') as Map<String, dynamic>)
+              .entries)
+        e.key: PairGame.fromJson(e.key, e.value as Map<String, dynamic>),
+    };
     return ContentRepository(
       themes,
       items,
@@ -237,9 +258,15 @@ class ContentRepository {
       Set<String>.from(config['freeGames']),
       Map<String, dynamic>.from(config),
       stories,
+      extraItems,
+      pairGames,
     );
   }
 
+  /// A theme card or an extra picture by id.
+  ContentItem? anyItem(String id) =>
+      items.where((x) => x.id == id).firstOrNull ??
+      extraItems.where((x) => x.id == id).firstOrNull;
   Story? story(String id) => stories.where((x) => x.id == id).firstOrNull;
   ContentTheme theme(String id) => themes.firstWhere((x) => x.id == id);
   GameDef game(String id) => games.firstWhere((x) => x.id == id);

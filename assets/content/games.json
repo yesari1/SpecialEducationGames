@@ -142,5 +142,21 @@
     },
     "template": "audio_choice",
     "phase": 2
+  },
+  {
+    "id": "G40",
+    "template": "pair",
+    "name": {
+      "tr": "Ne Renk?",
+      "en": "What Color?"
+    }
+  },
+  {
+    "id": "G41",
+    "template": "pair",
+    "name": {
+      "tr": "Renk Sepeti",
+      "en": "Color Baskets"
+    }
   }
 ]

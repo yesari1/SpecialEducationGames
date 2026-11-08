@@ -1,0 +1,687 @@
+{
+  "G40": {
+    "theme": "colors",
+    "choicePool": [
+      "colors.red",
+      "colors.blue",
+      "colors.yellow",
+      "colors.green",
+      "colors.orange",
+      "colors.purple",
+      "colors.pink",
+      "colors.brown",
+      "colors.black",
+      "colors.white",
+      "colors.gray"
+    ],
+    "rounds": [
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Domates ne renk?",
+          "en": "What color is the tomato?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_1.mp3",
+          "en": "assets/audio/en/pairs/G40_1.mp3"
+        },
+        "stimulus": "produce.tomato"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Çilek ne renk?",
+          "en": "What color is the strawberry?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_2.mp3",
+          "en": "assets/audio/en/pairs/G40_2.mp3"
+        },
+        "stimulus": "produce.strawberry"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Elma ne renk?",
+          "en": "What color is the apple?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_3.mp3",
+          "en": "assets/audio/en/pairs/G40_3.mp3"
+        },
+        "stimulus": "produce.apple"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Kiraz ne renk?",
+          "en": "What color is the cherry?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_4.mp3",
+          "en": "assets/audio/en/pairs/G40_4.mp3"
+        },
+        "stimulus": "produce.cherry"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "İtfaiye aracı ne renk?",
+          "en": "What color is the fire truck?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_5.mp3",
+          "en": "assets/audio/en/pairs/G40_5.mp3"
+        },
+        "stimulus": "vehicles.fire_truck"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Muz ne renk?",
+          "en": "What color is the banana?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_6.mp3",
+          "en": "assets/audio/en/pairs/G40_6.mp3"
+        },
+        "stimulus": "produce.banana"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Limon ne renk?",
+          "en": "What color is the lemon?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_7.mp3",
+          "en": "assets/audio/en/pairs/G40_7.mp3"
+        },
+        "stimulus": "produce.lemon"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Taksi ne renk?",
+          "en": "What color is the taxi?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_8.mp3",
+          "en": "assets/audio/en/pairs/G40_8.mp3"
+        },
+        "stimulus": "vehicles.taxi"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Okul otobüsü ne renk?",
+          "en": "What color is the school bus?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_9.mp3",
+          "en": "assets/audio/en/pairs/G40_9.mp3"
+        },
+        "stimulus": "vehicles.school_bus"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Havuç ne renk?",
+          "en": "What color is the carrot?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_10.mp3",
+          "en": "assets/audio/en/pairs/G40_10.mp3"
+        },
+        "stimulus": "produce.carrot"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Portakal ne renk?",
+          "en": "What color is the orange?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_11.mp3",
+          "en": "assets/audio/en/pairs/G40_11.mp3"
+        },
+        "stimulus": "produce.orange"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Mandalina ne renk?",
+          "en": "What color is the tangerine?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_12.mp3",
+          "en": "assets/audio/en/pairs/G40_12.mp3"
+        },
+        "stimulus": "produce.mandarin"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Salatalık ne renk?",
+          "en": "What color is the cucumber?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_13.mp3",
+          "en": "assets/audio/en/pairs/G40_13.mp3"
+        },
+        "stimulus": "produce.cucumber"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Kurbağa ne renk?",
+          "en": "What color is the frog?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_14.mp3",
+          "en": "assets/audio/en/pairs/G40_14.mp3"
+        },
+        "stimulus": "animals.frog"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Brokoli ne renk?",
+          "en": "What color is the broccoli?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_15.mp3",
+          "en": "assets/audio/en/pairs/G40_15.mp3"
+        },
+        "stimulus": "produce.broccoli"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Marul ne renk?",
+          "en": "What color is the lettuce?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_16.mp3",
+          "en": "assets/audio/en/pairs/G40_16.mp3"
+        },
+        "stimulus": "produce.lettuce"
+      },
+      {
+        "target": "colors.purple",
+        "text": {
+          "tr": "Patlıcan ne renk?",
+          "en": "What color is the eggplant?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_17.mp3",
+          "en": "assets/audio/en/pairs/G40_17.mp3"
+        },
+        "stimulus": "produce.eggplant"
+      },
+      {
+        "target": "colors.pink",
+        "text": {
+          "tr": "Flamingo ne renk?",
+          "en": "What color is the flamingo?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_18.mp3",
+          "en": "assets/audio/en/pairs/G40_18.mp3"
+        },
+        "stimulus": "animals.flamingo"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Kestane ne renk?",
+          "en": "What color is the chestnut?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_19.mp3",
+          "en": "assets/audio/en/pairs/G40_19.mp3"
+        },
+        "stimulus": "produce.chestnut"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Ayı ne renk?",
+          "en": "What color is the bear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_20.mp3",
+          "en": "assets/audio/en/pairs/G40_20.mp3"
+        },
+        "stimulus": "animals.bear"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Hindistan cevizi ne renk?",
+          "en": "What color is the coconut?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_21.mp3",
+          "en": "assets/audio/en/pairs/G40_21.mp3"
+        },
+        "stimulus": "produce.coconut"
+      },
+      {
+        "target": "colors.white",
+        "text": {
+          "tr": "Koyun ne renk?",
+          "en": "What color is the sheep?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_22.mp3",
+          "en": "assets/audio/en/pairs/G40_22.mp3"
+        },
+        "stimulus": "animals.sheep"
+      },
+      {
+        "target": "colors.white",
+        "text": {
+          "tr": "Yumurta ne renk?",
+          "en": "What color is the egg?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_23.mp3",
+          "en": "assets/audio/en/pairs/G40_23.mp3"
+        },
+        "stimulus": "food.egg"
+      },
+      {
+        "target": "colors.gray",
+        "text": {
+          "tr": "Fil ne renk?",
+          "en": "What color is the elephant?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_24.mp3",
+          "en": "assets/audio/en/pairs/G40_24.mp3"
+        },
+        "stimulus": "animals.elephant"
+      },
+      {
+        "target": "colors.gray",
+        "text": {
+          "tr": "Gergedan ne renk?",
+          "en": "What color is the rhino?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_25.mp3",
+          "en": "assets/audio/en/pairs/G40_25.mp3"
+        },
+        "stimulus": "animals.rhinoceros"
+      },
+      {
+        "target": "colors.blue",
+        "text": {
+          "tr": "Sandalye ne renk?",
+          "en": "What color is the chair?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_26.mp3",
+          "en": "assets/audio/en/pairs/G40_26.mp3"
+        },
+        "stimulus": "home.chair"
+      },
+      {
+        "target": "colors.blue",
+        "text": {
+          "tr": "Kumanda ne renk?",
+          "en": "What color is the remote control?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G40_27.mp3",
+          "en": "assets/audio/en/pairs/G40_27.mp3"
+        },
+        "stimulus": "home.remote_control"
+      }
+    ]
+  },
+  "G41": {
+    "theme": "colors",
+    "look": "basket",
+    "choicePool": [
+      "colors.red",
+      "colors.blue",
+      "colors.yellow",
+      "colors.green",
+      "colors.orange",
+      "colors.purple",
+      "colors.pink",
+      "colors.brown",
+      "colors.black",
+      "colors.white",
+      "colors.gray"
+    ],
+    "rounds": [
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.tomato"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.strawberry"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.apple"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.cherry"
+      },
+      {
+        "target": "colors.red",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "vehicles.fire_truck"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.banana"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.lemon"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "vehicles.taxi"
+      },
+      {
+        "target": "colors.yellow",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "vehicles.school_bus"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.carrot"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.orange"
+      },
+      {
+        "target": "colors.orange",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.mandarin"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.cucumber"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.frog"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.broccoli"
+      },
+      {
+        "target": "colors.green",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.lettuce"
+      },
+      {
+        "target": "colors.purple",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.eggplant"
+      },
+      {
+        "target": "colors.pink",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.flamingo"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.chestnut"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.bear"
+      },
+      {
+        "target": "colors.brown",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "produce.coconut"
+      },
+      {
+        "target": "colors.white",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.sheep"
+      },
+      {
+        "target": "colors.white",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "food.egg"
+      },
+      {
+        "target": "colors.gray",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.elephant"
+      },
+      {
+        "target": "colors.gray",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "animals.rhinoceros"
+      },
+      {
+        "target": "colors.blue",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "home.chair"
+      },
+      {
+        "target": "colors.blue",
+        "text": {
+          "tr": "Aynı renkteki sepete koy.",
+          "en": "Put it in the basket with the same color."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/pairs/G41_basket.mp3",
+          "en": "assets/audio/en/pairs/G41_basket.mp3"
+        },
+        "stimulus": "home.remote_control"
+      }
+    ]
+  }
+}

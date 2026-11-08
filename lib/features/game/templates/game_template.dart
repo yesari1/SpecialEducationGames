@@ -798,6 +798,83 @@ class SoundChoiceTemplate extends GameTemplate {
   ];
 }
 
+/// Data-driven pairing games (assets/content/pair_games.json): something
+/// is shown or heard (a banana, a circle, a scene, a laugh) and the child
+/// picks the matching card of the theme (yellow, the clock, "happy").
+/// The question is spoken from the round's own clip.
+class PairTemplate extends GameTemplate {
+  const PairTemplate();
+  @override
+  String get id => 'pair';
+
+  static String? _last;
+
+  @override
+  RoundSpec buildRound(ModeContext ctx) {
+    final game = ctx.content.pairGames[ctx.gameId];
+    if (game == null) throw StateError('No pair game ${ctx.gameId}');
+    final pool = game.choicePool.isEmpty
+        ? ctx.pool()
+        : [for (final id in game.choicePool) ?ctx.content.anyItem(id)];
+    final poolIds = {for (final x in pool) x.id};
+    // Rounds whose answer is available at this level.
+    final rounds = game.rounds
+        .where(
+          (r) =>
+              poolIds.contains(r.target) &&
+              (r.stimulus == null || ctx.content.anyItem(r.stimulus!) != null),
+        )
+        .toList();
+    if (rounds.isEmpty) throw StateError('No pair rounds for ${ctx.gameId}');
+    final random = ctx.scheduler.random;
+    var options = rounds.where((r) => r.textFor('tr') != _last).toList();
+    if (options.isEmpty) options = rounds;
+    final round = options[random.nextInt(options.length)];
+    _last = round.textFor('tr');
+    final target = pool.firstWhere((x) => x.id == round.target);
+    final right = game.rightFor(round);
+    final wrong = pool.where((x) => !right.contains(x.id)).toList()
+      ..shuffle(random);
+    final size = game.look == 'basket'
+        ? min(ctx.choiceCount, 3)
+        : ctx.choiceCount;
+    if (wrong.length < size - 1) throw StateError('Not enough choices');
+    final choices = [target, ...wrong.take(size - 1)]..shuffle(random);
+    final stimulus = round.stimulus == null
+        ? null
+        : ctx.content.anyItem(round.stimulus!);
+    String cue(String lang) => round.audio[lang] ?? '';
+    return RoundSpec(
+      target: target,
+      choices: choices,
+      promptTr: round.textFor('tr'),
+      promptEn: round.textFor('en'),
+      stimulus: stimulus,
+      look: game.look == 'basket' ? ChoiceLook.basket : ChoiceLook.object,
+      dragStimulus: game.look == 'basket' && stimulus != null,
+      groupMembers: game.look == 'basket'
+          ? {for (final c in choices) c.id: [c]}
+          : const {},
+      promptCues: {
+        for (final lang in const ['tr', 'en'])
+          lang: [?round.sound, if (cue(lang).isNotEmpty) cue(lang)],
+      },
+      successCueOverride: {
+        for (final e in game.successAudio.entries) e.key: [e.value],
+      },
+    );
+  }
+
+  @override
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
+      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+
+  @override
+  List<String> successCues(RoundSpec spec, String locale) =>
+      spec.successCueOverride[locale == 'en' ? 'en' : 'tr'] ??
+      super.successCues(spec, locale);
+}
+
 abstract final class TemplateRegistry {
   static GameTemplate resolve(String gameId) => switch (gameId) {
     'G33' => const CountTemplate(),
@@ -813,6 +890,8 @@ abstract final class TemplateRegistry {
     'G37' => const NumberQuantityTemplate(),
     'G38' => const FillCountTemplate(),
     'G11' => const SoundChoiceTemplate(),
+    'G40' || 'G41' || 'G43' || 'G44' || 'G45' || 'G46' || 'G48' || 'G49' =>
+      const PairTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }

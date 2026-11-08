@@ -143,6 +143,8 @@ flutter:
     - assets/images/home/
     - assets/audio/tr/home/
     - assets/audio/en/home/
+    - assets/audio/tr/pairs/
+    - assets/audio/en/pairs/
     - assets/audio/tr/explain/
     - assets/audio/en/explain/
     - assets/sfx/animals/

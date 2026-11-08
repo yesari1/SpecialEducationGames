@@ -1,0 +1,394 @@
+{
+  "assets/audio/en/pairs/G40_1.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "a2eb55c552a2063775e3b0d03c95b1b820eb7096e9915a469e189804bcfa8054",
+    "text": "What color is the tomato?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_10.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "4348d2c7fc221bb60663a0421a9242a26c55e359931811eb2f3f1f28af923433",
+    "text": "What color is the carrot?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_11.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "a349cad1b125f9d2ee96c5d743250e4f6d20ad4c0503b48e20ab5cb0d8967c5b",
+    "text": "What color is the orange?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_12.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "39e8e866a2ef30cd393ece9eeb8b3d34ca9d19e38029dc32f4fa5d520013fa8b",
+    "text": "What color is the tangerine?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_13.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "dd43a3a2b437d4ba02db812d583ffcaf66a3b9b6dceb1b3f78102c7be74b70d5",
+    "text": "What color is the cucumber?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_14.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "3927f9287141d1b74276905416bce74b4e29347841f73e2cb5bdbb2b8bbac763",
+    "text": "What color is the frog?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_15.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "8106a40d2c84926547fe8c5316a46b834ee964df342e6d95efabb78be54f5af9",
+    "text": "What color is the broccoli?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_16.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "2b6031850d60918b8cbaea6b1b4c2edc3d7f1aba92ce3e8f521c737168bd14a6",
+    "text": "What color is the lettuce?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_17.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "0c03d2798d5c1b9dff43b8c5407497326f79a403a4b0362cff033b5204bc457c",
+    "text": "What color is the eggplant?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_18.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "0cff9a7796ddba05e239a4aba5681ae5f278916896894b6683116134972be754",
+    "text": "What color is the flamingo?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_19.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "eabe7cea076cf4b4b9af2be41554277ddfb448559dfe41ee7382d35e28b0ff46",
+    "text": "What color is the chestnut?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_2.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "a34daccf554825d88136cd943077b7f6edeb4dd4b0e2c1c8a9ba062d87286178",
+    "text": "What color is the strawberry?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_20.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "7ee89f9ed0e830c41a01f2ae4fefe87481fec21b103810377839c063d01dcacb",
+    "text": "What color is the bear?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_21.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "0ee9e1cf702e35be6153ffe6fe245ae96dad7462a1d6810297c834fbff4143fa",
+    "text": "What color is the coconut?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_22.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "84dc6f94b6c6f21a1d3cb266ea33577aa8e3947a46a07b4f9ca32e2d790fb5d1",
+    "text": "What color is the sheep?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_23.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "caca4ac95f2c963b31d2e34113a26e831d9f2487b3895683cac798fb39ae6b7d",
+    "text": "What color is the egg?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_24.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "68a3097fd5746aab94397f0122efcbf2c55a641080570ea41eceaf72a0ab400a",
+    "text": "What color is the elephant?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_25.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "65ca5dc5928df5b3ecf50e895db1f8779702c178a626ad8c2b00f7028eb52078",
+    "text": "What color is the rhino?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_26.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "3cc5602d40dc89f5bb16bb8bc8d8e4bb73089df030893fce280be6a1c189a9df",
+    "text": "What color is the chair?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_27.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "81d6216d62311f4f77383841f2b5267e26d3f82ef66703c4bce4638e44784adb",
+    "text": "What color is the remote control?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_3.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "e55e47bad7b73dab6d30a4990c2644a25f93203df6d9292aae74d80196e66228",
+    "text": "What color is the apple?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_4.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "284132c8ae311107aa11e3e816e83c30aca8b494451f1d842da5aa1bc412f6ad",
+    "text": "What color is the cherry?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_5.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "28c38886f2d607767cb408219de5ada545432858b6ca7ba82957318067d10d1b",
+    "text": "What color is the fire truck?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_6.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "3117e5ea4dfdda2a401e93a612cd7d66cdfd8116c6ee255b7920779b7141eb97",
+    "text": "What color is the banana?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_7.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "06786c1123fe08c7b84a75c87034c3fb27a5b52b011455f17677909e27de532c",
+    "text": "What color is the lemon?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_8.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "ddd769d8a29c3254a22425f4b860387b035f16b72428a19bc5138880e27f3efa",
+    "text": "What color is the taxi?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G40_9.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "5b0e30cafd85133b4268d31c0cb06be54bc2810e47ffb8e5d992f0a19342dca1",
+    "text": "What color is the school bus?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/pairs/G41_basket.mp3": {
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "sha256": "9a41c8474388901c5a9feca3ae458875f954011057f12604f9baee0ad7e3ca8e",
+    "text": "Put it in the basket with the same color.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/tr/pairs/G40_1.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "4d0d28cad67b6791437918740afc0b735ec043e6a3edcabef64ffd7351334376",
+    "text": "Domates ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_10.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "75ae4785d5cb29f82128ff6ed27e447e10fd5cafd1c878bf7bbdf76d763dd9cd",
+    "text": "Havuç ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_11.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "ecd3ac3bf21127eee1b6866d7070a743e22e85a1f907ddfc1753d13c18c6405a",
+    "text": "Portakal ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_12.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "ebbf13a269ac84dab84d97c15e992cbf1bbc0635ecdb2de7135feb44ce6992a4",
+    "text": "Mandalina ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_13.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "886112acbae91e12c04b3306358de9f98b7452af31a8180f0bd30b0adb34cf7e",
+    "text": "Salatalık ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_14.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "a33fe1c9720928eaf81b5b2d78c6716b2a23cf0e123aa8f6c09cb17e16ca89c8",
+    "text": "Kurbağa ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_15.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "f3014954ae21b95b54ba4958868ea1810e1ae6ed1e514f0d4d239d6d45a47161",
+    "text": "Brokoli ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_16.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "5c2e06f183116a0d2575c246d220c6acc43d714bb81769a7190b52944eabec61",
+    "text": "Marul ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_17.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "d8a5465595cc907b7bf3dcfac7641a6f2e632c62ad0446b2a430f24986c52e83",
+    "text": "Patlıcan ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_18.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "cd4e273eb027e554160508efd893fe6714fb86ac93620b045eada4665c3bef1f",
+    "text": "Flamingo ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_19.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "4358ff699663269de96701ece1c3a13bc16f481dea9d5d905fa7323514bd5345",
+    "text": "Kestane ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_2.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "65cb37f2c3040f100a956c8ebae4b9bd0ca61e4935d272663b28e6f713a83a96",
+    "text": "Çilek ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_20.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "361f80a02b36c4068b7223ae313a4bbc92cbc1a2a232481db61726621504cbfd",
+    "text": "Ayı ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_21.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "13f3140a1f86c525fc59153b52a0d52923030410916fbb9ee9b6b9924fd04e7e",
+    "text": "Hindistan cevizi ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_22.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "14ab226dc66e5d0d961c2b32c622fa53bc35df39c7b8ffcc01d2c41845fcd2a4",
+    "text": "Koyun ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_23.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "d962265599617e280ebec9cc0b04da0386d6f3334363331014dcce79cd8d6899",
+    "text": "Yumurta ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_24.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "b5190a2985a8d962cd77ac177a62538722a6b73e06f664d3a1cd55d504207de3",
+    "text": "Fil ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_25.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "751bce93263f197b450045c9f24f8ac0b56662dc0fc741a57e15b96e9c458138",
+    "text": "Gergedan ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_26.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "2ba794fc8b618426ac6779d653360ca90ad06aa64b680b0cacca3e684b607967",
+    "text": "Sandalye ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_27.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "1fa2a38e8fcdd0b21641b7390b17f72bf650399abaf9de0980a74e1d4a0c2fb5",
+    "text": "Kumanda ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_3.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "5890db9db20ef3db0875e2bdfe25c66eab7fce6ce9a8f3ff9fac9965a7e6cbf9",
+    "text": "Elma ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_4.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "e13ebe161acd38290c80a3f5b5a79ccbc5e5a944db7828393cd3e5dcbccabe4c",
+    "text": "Kiraz ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_5.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "951d8de3a1038c843abaf439a4b7e28c216f440a4ce3a8c977c341ac50d0fa4c",
+    "text": "İtfaiye aracı ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_6.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "fdb0692d2711a934a098862fcdc9aedbbe0b7a97c1be7f753c2f412af59699c2",
+    "text": "Muz ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_7.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "dea42599aa7e516f20c0d36e95c846ac2246b867737d40ca3210c858adb21072",
+    "text": "Limon ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_8.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "ed72e730c208c941e844c66e7e36e224c52a0ccfdda704dcef3b536a2fa759ce",
+    "text": "Taksi ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G40_9.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "bcdbce73e992226a5ff6b3beb81be148396133ab7050426d2fc9a9ec770e90c4",
+    "text": "Okul otobüsü ne renk?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/pairs/G41_basket.mp3": {
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "sha256": "a20a8f844823981a42a91d4e1453c1bee86b67ebcf5a6d347ae7b8c03ce4fa4c",
+    "text": "Aynı renkteki sepete koy.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  }
+}
