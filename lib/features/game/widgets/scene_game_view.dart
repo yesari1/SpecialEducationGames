@@ -25,6 +25,42 @@ class SceneGameView extends StatefulWidget {
   State<SceneGameView> createState() => _SceneGameViewState();
 }
 
+const _ghost = <double>[
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0.2126, 0.7152, 0.0722, 0, 0, //
+  0, 0, 0, 1, 0,
+];
+
+/// A small soft food spot: a few uneven blobs, a little different each time.
+class _StainPainter extends CustomPainter {
+  final int seed;
+  const _StainPainter(this.seed);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final random = math.Random(seed * 7 + 3);
+    final c = size.center(Offset.zero);
+    final r = size.shortestSide / 2;
+    for (var i = 0; i < 4; i++) {
+      final angle = random.nextDouble() * math.pi * 2;
+      final centre = c + Offset.fromDirection(angle, r * random.nextDouble() * .5);
+      final radius = r * (.34 + random.nextDouble() * .3);
+      canvas.drawCircle(
+        centre,
+        radius,
+        Paint()
+          ..shader = RadialGradient(
+            colors: const [Color(0xFFB98B3A), Color(0xCCD9B56B), Color(0x00D9B56B)],
+            stops: const [0, .62, 1],
+          ).createShader(Rect.fromCircle(center: centre, radius: radius)),
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_StainPainter old) => old.seed != seed;
+}
+
 class _SceneGameViewState extends State<SceneGameView> {
   SceneRound get round => widget.spec.scene!;
   int _step = 0;
@@ -163,6 +199,21 @@ class _SceneGameViewState extends State<SceneGameView> {
 
   ContentItem? _item(String id) => widget.spec.scenePieces[id];
 
+  /// A piece as it lies on the picture, turned if its step says so.
+  Widget _onPicture(SceneStep step, Size size) {
+    final visual = _visual(step.piece);
+    if (step.turn == 0) return visual;
+    final side = step.zone.h * size.height;
+    return OverflowBox(
+      maxWidth: side,
+      maxHeight: side,
+      child: Transform.rotate(
+        angle: step.turn,
+        child: SizedBox.square(dimension: side * .9, child: visual),
+      ),
+    );
+  }
+
   Widget _visual(String id) {
     final item = _item(id);
     return item == null ? const SizedBox.shrink() : ItemVisual(item);
@@ -241,18 +292,19 @@ class _SceneGameViewState extends State<SceneGameView> {
                     if (_placed.contains(i))
                       at(
                         round.steps[i].zone,
-                        HopIn(child: _visual(round.steps[i].piece)),
+                        HopIn(child: _onPicture(round.steps[i], size)),
                         key: ValueKey('scene-placed-$i'),
                       )
                     else if (round.steps[i].shadow)
                       at(
                         round.steps[i].zone,
-                        ColorFiltered(
-                          colorFilter: ColorFilter.mode(
-                            SegColors.ink.withValues(alpha: .28),
-                            BlendMode.srcIn,
+                        // The piece's own shape, faint and without colour.
+                        Opacity(
+                          opacity: .34,
+                          child: ColorFiltered(
+                            colorFilter: const ColorFilter.matrix(_ghost),
+                            child: _onPicture(round.steps[i], size),
                           ),
-                          child: _visual(round.steps[i].piece),
                         ),
                         key: ValueKey('scene-shadow-$i'),
                       ),
@@ -265,12 +317,7 @@ class _SceneGameViewState extends State<SceneGameView> {
                             key: ValueKey('scene-spot-$i'),
                             behavior: HitTestBehavior.opaque,
                             onTap: () => _clean(i),
-                            child: const DecoratedBox(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xCCC9A24A),
-                              ),
-                            ),
+                            child: CustomPaint(painter: _StainPainter(i)),
                           ),
                         ),
                   if (hinting)

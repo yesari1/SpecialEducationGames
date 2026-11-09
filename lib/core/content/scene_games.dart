@@ -45,6 +45,10 @@ class SceneStep {
   /// Its shadow waits on the picture until it is placed.
   final bool shadow;
 
+  /// Turned by this many radians on the picture (a diagonal drawing laid
+  /// straight, like the knife beside a plate).
+  final double turn;
+
   /// The whole picture after this step, if it changes.
   final String? after;
 
@@ -62,6 +66,7 @@ class SceneStep {
     this.others = const [],
     this.stays = false,
     this.shadow = false,
+    this.turn = 0,
     this.after,
     this.spots = const [],
     this.askAudio = const {},
@@ -76,6 +81,7 @@ class SceneStep {
     zone: SceneRect.fromJson(j['zone'] as List),
     stays: (j['stays'] ?? false) as bool,
     shadow: (j['shadow'] ?? false) as bool,
+    turn: ((j['turn'] ?? 0) as num).toDouble(),
     after: j['after'] as String?,
     spots: [
       for (final s in (j['spots'] ?? const []) as List)

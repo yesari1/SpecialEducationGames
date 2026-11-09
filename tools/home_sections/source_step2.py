@@ -137,13 +137,13 @@ def text(tr, en):
 # G60 Dişlerini Fırçala -------------------------------------------------------
 import random  # noqa: E402
 
-TEETH_ZONE = [.445, .60, .145, .135]
+TEETH_ZONE = [.45, .595, .14, .145]
 
 
 def teeth_spots(n, seed):
     # Three teeth wide, two rows; each round stains different ones.
     x0, y0, w, h = TEETH_ZONE
-    slots = [[round(x0 + i * (w - .04) / 2, 3), round(y0 + j * (h - .06), 3), .04, .06]
+    slots = [[round(x0 + i * (w - .032) / 2, 3), round(y0 + j * (h - .048), 3), .032, .048]
              for i in range(3) for j in range(2)]
     return random.Random(seed).sample(slots, n)
 
@@ -351,10 +351,10 @@ def g65():
 
 # G66 Sofrayı Kuralım ---------------------------------------------------------
 TABLE = {
-    'plate': ('tabağı', 'plate', [.39, .36, .22, .33]),
-    'fork': ('çatalı', 'fork', [.29, .36, .09, .33]),
-    'spoon': ('kaşığı', 'spoon', [.62, .36, .09, .33]),
-    'knife': ('bıçağı', 'knife', [.69, .38, .14, .30]),
+    'plate': ('tabağı', 'plate', [.37, .34, .24, .36]),
+    'fork': ('çatalı', 'fork', [.28, .34, .08, .36]),
+    'spoon': ('kaşığı', 'spoon', [.62, .34, .06, .36]),
+    'knife': ('bıçağı', 'knife', [.69, .32, .09, .40]),
     'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
     'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
 }
@@ -380,6 +380,7 @@ def g66():
                 tr, en, zone = TABLE[name]
                 steps.append({'mode': 'place', 'piece': f'kitchen.{name}', 'others': rnd.sample(TABLE_OTHERS, extra[tier]),
                               'zone': zone, 'stays': True, 'shadow': True, 'askAudio': asks[name],
+                              **({'turn': -0.72} if name == 'knife' else {}),
                               'askText': text(f'Şimdi {tr} yerine koyalım.', f'Now the {en}.')})
             steps[-1]['doneAudio'] = done
             first = TABLE[items[0]]
