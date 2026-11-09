@@ -1,4 +1,5 @@
 import 'package:drift/native.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:special_education_games/app/app_state.dart';
@@ -9,6 +10,9 @@ import 'package:special_education_games/features/game/widgets/next_game_button.d
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  // Keeps Google Play billing from starting in plain tests.
+  setUpAll(() => debugDefaultTargetPlatformOverride = TargetPlatform.linux);
+  tearDownAll(() => debugDefaultTargetPlatformOverride = null);
 
   testWidgets('the ring waits for the praise, then opens the next game', (
     tester,
