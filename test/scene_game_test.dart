@@ -172,6 +172,9 @@ void main() {
       scenePieces: base.scenePieces,
     );
     final selected = await pump(tester, gentle, said);
+    // The finger shows the way when the game opens.
+    await tester.pump();
+    expect(find.byKey(const ValueKey('scene-finger')), findsOneWidget);
     // Both pieces wait in the tray; tapping does nothing.
     await tester.tap(find.byKey(ValueKey('scene-piece-${right.id}')));
     await tester.pump();
@@ -184,6 +187,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(said.single, ['ask.mp3']);
     expect(selected, isEmpty);
+    expect(find.byKey(const ValueKey('scene-finger')), findsNothing);
+    // Six quiet seconds bring the finger back.
+    await tester.pump(const Duration(seconds: 7));
+    await tester.pump();
+    expect(find.byKey(const ValueKey('scene-finger')), findsOneWidget);
     expect(find.byKey(ValueKey('scene-piece-${wrong.id}')), findsOneWidget);
     // The asked piece stays on the table and leaves the tray.
     await tester.drag(

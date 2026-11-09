@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../../app/theme/tokens.dart';
@@ -75,7 +76,8 @@ class _StainPainter extends CustomPainter {
   bool shouldRepaint(_StainPainter old) => old.seed != seed;
 }
 
-class _SceneGameViewState extends State<SceneGameView> {
+class _SceneGameViewState extends State<SceneGameView>
+    with SingleTickerProviderStateMixin {
   SceneRound get round => widget.spec.scene!;
   int _step = 0;
   int _generation = -1;
@@ -91,6 +93,32 @@ class _SceneGameViewState extends State<SceneGameView> {
 
   /// The hint level when this step began: a new step starts without hints.
   int _hintBase = 0;
+
+  // The finger that shows how to drag: when the game opens and again after
+  // six seconds with no touch.
+  final _rootKey = GlobalKey();
+  final _stageKey = GlobalKey();
+  final _pieceKeys = <String, GlobalKey>{};
+  late final AnimationController _finger = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 2000),
+  );
+  (Offset, Offset)? _guide;
+  bool _introSeen = false, _dragging = false, _idle = false;
+  Timer? _idleTimer;
+  bool get _wantsGuide =>
+      _ready &&
+      !_dragging &&
+      step.mode == SceneStepMode.place &&
+      (!_introSeen || _idle);
+
+  void _armIdle() {
+    _idle = false;
+    _idleTimer?.cancel();
+    _idleTimer = Timer(const Duration(seconds: 6), () {
+      if (mounted) setState(() => _idle = true);
+    });
+  }
   int get _hintLevel => math.max(0, widget.hint.level - _hintBase);
 
   static const _stirDistance = 1400.0;
@@ -104,6 +132,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   @override
   void initState() {
     super.initState();
+    _finger.value = 0;
     _reset();
   }
 
@@ -123,6 +152,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   }
 
   void _enterStep() {
+    _armIdle();
     _hintBase = widget.hint.level;
     _cleaned.clear();
     _tool = null;
@@ -141,6 +171,83 @@ class _SceneGameViewState extends State<SceneGameView> {
     }
   }
 
+  @override
+  void dispose() {
+    _idleTimer?.cancel();
+    _finger.dispose();
+    super.dispose();
+  }
+
+  /// From the asked piece to its place, measured where they really are.
+  void _updateGuide() {
+    if (!mounted) return;
+    (Offset, Offset)? next;
+    if (_wantsGuide) {
+      final root = _rootKey.currentContext?.findRenderObject() as RenderBox?;
+      final piece =
+          _pieceKeys[step.piece]?.currentContext?.findRenderObject()
+              as RenderBox?;
+      final stage = _stageKey.currentContext?.findRenderObject() as RenderBox?;
+      if (root != null && piece != null && stage != null) {
+        final zone = step.zone;
+        next = (
+          root.globalToLocal(
+            piece.localToGlobal(piece.size.center(Offset.zero)),
+          ),
+          root.globalToLocal(
+            stage.localToGlobal(
+              Offset(
+                (zone.x + zone.w / 2) * stage.size.width,
+                (zone.y + zone.h / 2) * stage.size.height,
+              ),
+            ),
+          ),
+        );
+      }
+    }
+    if (next == _guide) return;
+    setState(() => _guide = next);
+    if (next == null) {
+      _finger.stop();
+    } else if (widget.hint.animate) {
+      _finger.repeat();
+    } else {
+      _finger.value = .4;
+    }
+  }
+
+  Widget _fingerOverlay() {
+    final guide = _guide!;
+    return AnimatedBuilder(
+      key: const ValueKey('scene-finger'),
+      animation: _finger,
+      builder: (context, _) {
+        final t = _finger.value;
+        // Holds the piece, carries it over, rests, then starts again.
+        final travel = Curves.easeInOut.transform(
+          ((t - .15) / .55).clamp(0.0, 1.0),
+        );
+        final fade = t > .9 ? (1 - t) / .1 : 1.0;
+        final at = Offset.lerp(guide.$1, guide.$2, travel)!;
+        return Positioned(
+          left: at.dx - 22,
+          top: at.dy - 8,
+          child: IgnorePointer(
+            child: Opacity(
+              opacity: fade,
+              child: const Icon(
+                Icons.touch_app_rounded,
+                size: 68,
+                color: SegColors.accent,
+                shadows: [Shadow(color: Colors.white, blurRadius: 10)],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   void _wrong(String id) {
     setState(() => _shaking = id);
     final wrong = widget.spec.choices
@@ -157,6 +264,7 @@ class _SceneGameViewState extends State<SceneGameView> {
     if (step.mode != SceneStepMode.place) return;
     if (id != step.piece) {
       if (!round.gentle) return _wrong(id);
+      _introSeen = true;
       final ask = (_step == 0 ? round.audio : step.askAudio)[_lang];
       if (ask != null) widget.callbacks.onSay?.call([ask]);
       return;
@@ -168,6 +276,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   void _complete() {
     final finished = step;
     final last = _step == round.steps.length - 1;
+    _introSeen = true;
     setState(() {
       if (finished.stays) _placed.add(_step);
       if (finished.after case final after?) {
@@ -253,19 +362,37 @@ class _SceneGameViewState extends State<SceneGameView> {
   }
 
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
-    builder: (context, box) {
-      final trayWidth = math.min(box.maxWidth * .34, 320.0);
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(child: Center(child: _stage())),
-          const SizedBox(width: SegSpace.s3),
-          SizedBox(width: trayWidth, child: _tray()),
-        ],
-      );
-    },
-  );
+  Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) => _updateGuide());
+    return LayoutBuilder(
+      builder: (context, box) {
+        final trayWidth = math.min(box.maxWidth * .34, 320.0);
+        return Listener(
+          behavior: HitTestBehavior.translucent,
+          onPointerDown: (_) {
+            _introSeen = true;
+            setState(_armIdle);
+          },
+          child: Stack(
+            key: _rootKey,
+            children: [
+              Positioned.fill(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(child: Center(child: _stage())),
+                    const SizedBox(width: SegSpace.s3),
+                    SizedBox(width: trayWidth, child: _tray()),
+                  ],
+                ),
+              ),
+              if (_guide != null) _fingerOverlay(),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   Widget _stage() => AspectRatio(
     aspectRatio: round.aspect,
@@ -284,6 +411,7 @@ class _SceneGameViewState extends State<SceneGameView> {
         final hinting = _hintLevel > 0 && _ready;
         final toolMode = current != null && current.mode != SceneStepMode.place;
         return DragTarget<String>(
+          key: _stageKey,
           onWillAcceptWithDetails: (_) => _ready,
           onAcceptWithDetails: (d) => _bring(d.data),
           builder: (context, _, _) => GestureDetector(
@@ -486,7 +614,13 @@ class _SceneGameViewState extends State<SceneGameView> {
                     ),
                   );
                   return Draggable<String>(
+                    key: _pieceKeys.putIfAbsent(id, GlobalKey.new),
                     data: id,
+                    onDragStarted: () => setState(() => _dragging = true),
+                    onDragEnd: (_) => setState(() {
+                      _dragging = false;
+                      _armIdle();
+                    }),
                     maxSimultaneousDrags:
                         _ready && current.mode == SceneStepMode.place ? 1 : 0,
                     feedback: SizedBox(
