@@ -229,17 +229,33 @@ class _SceneGameViewState extends State<SceneGameView>
         );
         final fade = t > .9 ? (1 - t) / .1 : 1.0;
         final at = Offset.lerp(guide.$1, guide.$2, travel)!;
+        // The finger carries a picture of the piece along.
         return Positioned(
-          left: at.dx - 22,
-          top: at.dy - 8,
+          left: at.dx - 50,
+          top: at.dy - 50,
+          width: 100,
+          height: 118,
           child: IgnorePointer(
             child: Opacity(
               opacity: fade,
-              child: const Icon(
-                Icons.touch_app_rounded,
-                size: 68,
-                color: SegColors.accent,
-                shadows: [Shadow(color: Colors.white, blurRadius: 10)],
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  SizedBox.square(
+                    dimension: 100,
+                    child: Opacity(opacity: .85, child: _visual(step.piece)),
+                  ),
+                  const Positioned(
+                    left: 30,
+                    top: 46,
+                    child: Icon(
+                      Icons.touch_app_rounded,
+                      size: 68,
+                      color: SegColors.accent,
+                      shadows: [Shadow(color: Colors.white, blurRadius: 10)],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
