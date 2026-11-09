@@ -10,9 +10,6 @@ import 'package:special_education_games/features/game/widgets/next_game_button.d
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  // Keeps Google Play billing from starting in plain tests.
-  setUpAll(() => debugDefaultTargetPlatformOverride = TargetPlatform.linux);
-  tearDownAll(() => debugDefaultTargetPlatformOverride = null);
 
   testWidgets('the ring waits for the praise, then opens the next game', (
     tester,
@@ -70,6 +67,9 @@ void main() {
   });
 
   test('next game follows where the game was opened from', () async {
+    // Keeps Google Play billing from starting in this plain test.
+    debugDefaultTargetPlatformOverride = TargetPlatform.linux;
+    addTearDown(() => debugDefaultTargetPlatformOverride = null);
     final state = AppState(
       await ContentRepository.load(),
       AppDatabase.forTesting(NativeDatabase.memory()),
