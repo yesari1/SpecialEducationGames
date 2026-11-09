@@ -106,6 +106,15 @@ class SceneRound {
 
   /// Shows the pieces to bring at the top of the picture (a picture recipe).
   final bool recipe;
+
+  /// Every piece of the round waits in the tray from the start and nothing
+  /// is wrong: a piece that is not asked yet just goes back to its place and
+  /// the question is said again.
+  final bool gentle;
+
+  /// Parts of the picture washed in a colour while the round is unfinished
+  /// (teeth that are still yellowish); it fades as the stains go.
+  final List<SceneRect> tints;
   final Map<String, String> text, audio;
   final List<SceneStep> steps;
 
@@ -121,6 +130,8 @@ class SceneRound {
     required this.steps,
     this.aspect = 1.5,
     this.recipe = false,
+    this.gentle = false,
+    this.tints = const [],
     this.finishAudio = const {},
   });
 
@@ -131,6 +142,11 @@ class SceneRound {
     stage: j['stage'] as String,
     aspect: ((j['aspect'] ?? 1.5) as num).toDouble(),
     recipe: (j['recipe'] ?? false) as bool,
+    gentle: (j['gentle'] ?? false) as bool,
+    tints: [
+      for (final t in (j['tints'] ?? const []) as List)
+        SceneRect.fromJson(t as List),
+    ],
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
     steps: [

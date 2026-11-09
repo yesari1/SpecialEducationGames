@@ -160,7 +160,7 @@ def g60():
             rounds.append({
                 'key': f'{tier}{i}', 'tier': tier, 'target': 'cleaning.toothbrush',
                 'stage': f'{PLAY}/teeth_dirty.webp', 'aspect': 1.5,
-                'text': text("Ali'nin dişlerini fırçalayalım.", "Let's brush Ali's teeth."), 'audio': ask,
+                'tints': TEETH, 'text': text("Ali'nin dişlerini fırçalayalım.", "Let's brush Ali's teeth."), 'audio': ask,
                 'steps': [{'mode': 'rub', 'piece': 'cleaning.toothbrush', 'zone': TEETH_ZONE,
                            'spots': teeth_spots(n, f'{tier}{i}'), 'after': f'{PLAY}/teeth_clean.webp',
                            'doneAudio': done}],
@@ -177,7 +177,7 @@ WASH = {
     'dry': ('cleaning.towel', 'wash_dry.webp', 'Havluyla kurulayalım.', "Let's dry with the towel.", 'Ellerimiz tertemiz oldu!', 'Our hands are all clean!'),
 }
 WASH_ZONE = [.3, .25, .4, .5]
-WASH_OTHERS = ['cleaning.comb', 'cleaning.toothbrush', 'cleaning.sponge', 'cleaning.shampoo', 'cleaning.bucket', 'kitchen.spoon', 'cleaning.broom']
+WASH_OTHERS = ['cleaning.comb', 'cleaning.toothbrush', 'cleaning.hairbrush', 'cleaning.bucket', 'kitchen.spoon', 'cleaning.broom']
 
 
 def g61():
@@ -236,9 +236,13 @@ G62 = [
 
 def g62():
     rounds = []
+    also = {'cleaning.comb': ['cleaning.hairbrush'], 'cleaning.broom': ['cleaning.vacuum'], 'cleaning.vacuum': ['cleaning.broom'],
+            'cleaning.tissue': ['cleaning.toilet_paper', 'cleaning.towel'], 'cleaning.towel': ['cleaning.tissue'],
+            'cleaning.laundry_basket': ['cleaning.washing_machine'], 'cleaning.soap': ['cleaning.shampoo', 'cleaning.sponge'],
+            'cleaning.mop': ['cleaning.sponge', 'cleaning.bucket'], 'cleaning.sponge': ['cleaning.rubber_gloves']}
     for i, (target, q_tr, q_en, r_tr, r_en, picture) in enumerate(G62, 1):
         rounds.append({
-            'target': target, 'text': text(q_tr, q_en), 'audio': line(f'g62_{i}', q_tr, q_en),
+            'target': target, 'alsoRight': also.get(target, []), 'text': text(q_tr, q_en), 'audio': line(f'g62_{i}', q_tr, q_en),
             'result': f'{PLAY}/{picture}.webp', 'resultAudio': line(f'g62_done_{i}', r_tr, r_en),
         })
     return {'theme': 'cleaning', 'rounds': rounds}
@@ -361,36 +365,33 @@ TABLE = {
     'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
     'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
 }
+# The order the child is asked in; every piece of the round waits on the right.
 TABLE_SETS = {
-    'easy': [['plate', 'glass'], ['plate', 'fork'], ['plate', 'spoon'], ['glass', 'spoon'], ['fork', 'glass']],
-    'medium': [['plate', 'fork', 'glass'], ['plate', 'spoon', 'glass'], ['plate', 'fork', 'spoon'], ['plate', 'knife', 'glass'], ['fork', 'knife', 'plate']],
-    'hard': [['plate', 'fork', 'spoon', 'glass'], ['plate', 'fork', 'knife', 'glass'], ['plate', 'spoon', 'glass', 'napkin'], ['plate', 'fork', 'knife', 'spoon', 'glass'], ['plate', 'fork', 'knife', 'glass', 'napkin']],
+    'easy': [['fork', 'knife', 'plate'], ['fork', 'plate', 'knife'], ['plate', 'fork', 'knife'], ['knife', 'fork', 'plate'], ['plate', 'knife', 'fork']],
+    'medium': [['fork', 'knife', 'plate', 'glass'], ['plate', 'fork', 'knife', 'glass'], ['glass', 'plate', 'fork', 'knife'], ['fork', 'plate', 'glass', 'knife'], ['knife', 'plate', 'fork', 'glass']],
+    'hard': [['fork', 'knife', 'plate', 'spoon', 'glass'], ['plate', 'fork', 'knife', 'glass', 'spoon'], ['glass', 'spoon', 'plate', 'fork', 'knife'], ['fork', 'spoon', 'knife', 'plate', 'glass'], ['spoon', 'plate', 'glass', 'knife', 'fork']],
 }
-TABLE_OTHERS = ['kitchen.pot', 'kitchen.pan', 'kitchen.teapot', 'kitchen.tray', 'kitchen.ladle', 'kitchen.jug']
 
 
 def g66():
     asks = {k: line(f'g66_ask_{k}', f'Şimdi {v[0]} yerine koyalım.', f'Now the {v[1]}.') for k, v in TABLE.items()}
     firsts = {k: line(f'g66_first_{k}', f'Sofrayı kuralım. Önce {v[0]} koyalım.', f"Let's set the table. First, the {v[1]}.") for k, v in TABLE.items()}
     done = line('g66_done', 'Sofra hazır. Hadi yemeğe!', 'The table is ready. Time to eat!')
-    rnd = random.Random(66)
-    extra = {'easy': 1, 'medium': 2, 'hard': 2}
     rounds = []
     for tier, sets in TABLE_SETS.items():
         for items in sets:
             steps = []
-            for n, name in enumerate(items):
+            for name in items:
                 tr, en, zone = TABLE[name]
-                # Only what goes on this table waits on the right.
-                later = items[n + 1:]
-                steps.append({'mode': 'place', 'piece': f'kitchen.{name}', 'others': [f'kitchen.{o}' for o in later[:extra[tier]]],
-                              'zone': zone, 'stays': True, 'shadow': True, 'askAudio': asks[name],
-                              **({'turn': -0.72} if name == 'knife' else {}),
-                              'askText': text(f'Şimdi {tr} yerine koyalım.', f'Now the {en}.')})
+                step = {'mode': 'place', 'piece': f'kitchen.{name}', 'zone': zone, 'stays': True, 'shadow': True, 'askAudio': asks[name],
+                        'askText': text(f'Şimdi {tr} yerine koyalım.', f'Now the {en}.')}
+                if name == 'knife':
+                    step['turn'] = -0.72
+                steps.append(step)
             steps[-1]['doneAudio'] = done
             first = TABLE[items[0]]
             rounds.append({
-                'key': '-'.join(items), 'tier': tier, 'target': f'kitchen.{items[0]}', 'stage': f'{PLAY}/table.webp', 'aspect': 1.5,
+                'key': '-'.join(items), 'tier': tier, 'target': f'kitchen.{items[0]}', 'stage': f'{PLAY}/table.webp', 'aspect': 1.5, 'gentle': True,
                 'text': text(f'Sofrayı kuralım. Önce {first[0]} koyalım.', f"Let's set the table. First, the {first[1]}."),
                 'audio': firsts[items[0]], 'steps': steps,
             })

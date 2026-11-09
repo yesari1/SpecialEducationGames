@@ -8,6 +8,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -60,6 +110,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -112,6 +212,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -164,6 +314,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -216,6 +416,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -268,6 +518,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -326,6 +626,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -384,6 +734,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -442,6 +842,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -500,6 +950,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -558,6 +1058,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -628,6 +1178,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -698,6 +1298,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -768,6 +1418,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -838,6 +1538,56 @@
         "target": "cleaning.toothbrush",
         "stage": "assets/images/play/teeth_dirty.webp",
         "aspect": 1.5,
+        "tints": [
+          [
+            0.4408,
+            0.595,
+            0.03,
+            0.0475
+          ],
+          [
+            0.4717,
+            0.6,
+            0.0333,
+            0.0475
+          ],
+          [
+            0.5058,
+            0.6,
+            0.0325,
+            0.0475
+          ],
+          [
+            0.5392,
+            0.595,
+            0.0292,
+            0.0462
+          ],
+          [
+            0.4458,
+            0.6937,
+            0.0267,
+            0.0413
+          ],
+          [
+            0.4742,
+            0.7013,
+            0.0308,
+            0.0437
+          ],
+          [
+            0.5058,
+            0.7013,
+            0.03,
+            0.0437
+          ],
+          [
+            0.5375,
+            0.6937,
+            0.0258,
+            0.0413
+          ]
+        ],
         "text": {
           "tr": "Ali'nin dişlerini fırçalayalım.",
           "en": "Let's brush Ali's teeth."
@@ -926,7 +1676,7 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "cleaning.sponge"
+              "cleaning.hairbrush"
             ],
             "zone": [
               0.3,
@@ -952,7 +1702,7 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.broom"
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -995,7 +1745,7 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "kitchen.spoon"
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1064,7 +1814,7 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "cleaning.shampoo"
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -1090,7 +1840,7 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.bucket"
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -1134,7 +1884,7 @@
             "piece": "cleaning.tap",
             "others": [
               "cleaning.comb",
-              "cleaning.shampoo"
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -1161,7 +1911,7 @@
             "piece": "cleaning.soap",
             "others": [
               "cleaning.comb",
-              "kitchen.spoon"
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1187,8 +1937,8 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "cleaning.comb",
-              "cleaning.shampoo"
+              "cleaning.bucket",
+              "cleaning.comb"
             ],
             "zone": [
               0.3,
@@ -1214,8 +1964,8 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.comb",
-              "cleaning.shampoo"
+              "cleaning.bucket",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1258,8 +2008,8 @@
             "mode": "place",
             "piece": "cleaning.tap",
             "others": [
-              "cleaning.broom",
-              "cleaning.toothbrush"
+              "cleaning.toothbrush",
+              "cleaning.comb"
             ],
             "zone": [
               0.3,
@@ -1285,8 +2035,8 @@
             "mode": "place",
             "piece": "cleaning.soap",
             "others": [
-              "cleaning.comb",
-              "kitchen.spoon"
+              "cleaning.broom",
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -1312,8 +2062,8 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "kitchen.spoon",
-              "cleaning.shampoo"
+              "cleaning.bucket",
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -1339,7 +2089,7 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.shampoo",
+              "cleaning.hairbrush",
               "kitchen.spoon"
             ],
             "zone": [
@@ -1383,8 +2133,8 @@
             "mode": "place",
             "piece": "cleaning.tap",
             "others": [
-              "kitchen.spoon",
-              "cleaning.broom"
+              "cleaning.broom",
+              "cleaning.hairbrush"
             ],
             "zone": [
               0.3,
@@ -1410,8 +2160,8 @@
             "mode": "place",
             "piece": "cleaning.soap",
             "others": [
-              "cleaning.sponge",
-              "cleaning.broom"
+              "cleaning.hairbrush",
+              "cleaning.comb"
             ],
             "zone": [
               0.3,
@@ -1437,8 +2187,8 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "cleaning.comb",
-              "cleaning.toothbrush"
+              "cleaning.toothbrush",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1464,7 +2214,7 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "kitchen.spoon",
+              "cleaning.bucket",
               "cleaning.toothbrush"
             ],
             "zone": [
@@ -1508,9 +2258,9 @@
             "mode": "place",
             "piece": "cleaning.tap",
             "others": [
-              "kitchen.spoon",
-              "cleaning.shampoo",
-              "cleaning.bucket"
+              "cleaning.broom",
+              "cleaning.bucket",
+              "cleaning.toothbrush"
             ],
             "zone": [
               0.3,
@@ -1536,9 +2286,9 @@
             "mode": "place",
             "piece": "cleaning.soap",
             "others": [
-              "cleaning.toothbrush",
-              "kitchen.spoon",
-              "cleaning.comb"
+              "cleaning.broom",
+              "cleaning.comb",
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -1564,8 +2314,8 @@
             "mode": "place",
             "piece": "wash.foam",
             "others": [
-              "cleaning.shampoo",
               "cleaning.toothbrush",
+              "kitchen.spoon",
               "cleaning.bucket"
             ],
             "zone": [
@@ -1592,9 +2342,9 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "kitchen.spoon",
-              "cleaning.shampoo",
-              "cleaning.sponge"
+              "cleaning.broom",
+              "cleaning.hairbrush",
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -1621,8 +2371,8 @@
             "piece": "cleaning.towel",
             "others": [
               "cleaning.bucket",
-              "cleaning.sponge",
-              "cleaning.shampoo"
+              "cleaning.toothbrush",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1667,7 +2417,7 @@
             "others": [
               "cleaning.toothbrush",
               "cleaning.broom",
-              "cleaning.sponge"
+              "cleaning.hairbrush"
             ],
             "zone": [
               0.3,
@@ -1693,9 +2443,9 @@
             "mode": "place",
             "piece": "cleaning.soap",
             "others": [
-              "cleaning.bucket",
               "kitchen.spoon",
-              "cleaning.comb"
+              "cleaning.comb",
+              "cleaning.hairbrush"
             ],
             "zone": [
               0.3,
@@ -1721,9 +2471,9 @@
             "mode": "place",
             "piece": "wash.foam",
             "others": [
-              "cleaning.sponge",
               "cleaning.comb",
-              "cleaning.bucket"
+              "kitchen.spoon",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1751,7 +2501,7 @@
             "others": [
               "cleaning.bucket",
               "cleaning.comb",
-              "cleaning.shampoo"
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1777,9 +2527,9 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.comb",
-              "cleaning.shampoo",
-              "cleaning.sponge"
+              "cleaning.hairbrush",
+              "cleaning.toothbrush",
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -1822,9 +2572,9 @@
             "mode": "place",
             "piece": "cleaning.tap",
             "others": [
-              "cleaning.broom",
               "cleaning.toothbrush",
-              "cleaning.comb"
+              "cleaning.comb",
+              "cleaning.bucket"
             ],
             "zone": [
               0.3,
@@ -1850,9 +2600,9 @@
             "mode": "place",
             "piece": "cleaning.soap",
             "others": [
-              "cleaning.shampoo",
-              "cleaning.broom",
-              "cleaning.sponge"
+              "cleaning.bucket",
+              "cleaning.hairbrush",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -1878,8 +2628,8 @@
             "mode": "place",
             "piece": "wash.foam",
             "others": [
+              "kitchen.spoon",
               "cleaning.bucket",
-              "cleaning.shampoo",
               "cleaning.broom"
             ],
             "zone": [
@@ -1906,9 +2656,9 @@
             "mode": "place",
             "piece": "wash.water",
             "others": [
-              "cleaning.shampoo",
-              "cleaning.broom",
-              "cleaning.sponge"
+              "cleaning.hairbrush",
+              "kitchen.spoon",
+              "cleaning.toothbrush"
             ],
             "zone": [
               0.3,
@@ -1934,9 +2684,9 @@
             "mode": "place",
             "piece": "cleaning.towel",
             "others": [
-              "cleaning.bucket",
               "cleaning.toothbrush",
-              "kitchen.spoon"
+              "kitchen.spoon",
+              "cleaning.broom"
             ],
             "zone": [
               0.3,
@@ -4225,693 +4975,12 @@
     "theme": "kitchen",
     "rounds": [
       {
-        "key": "plate-glass",
-        "tier": "easy",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-fork",
-        "tier": "easy",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.fork",
-            "others": [],
-            "zone": [
-              0.3,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi çatalı yerine koyalım.",
-              "en": "Now the fork."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-spoon",
-        "tier": "easy",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.spoon"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.spoon",
-            "others": [],
-            "zone": [
-              0.71,
-              0.34,
-              0.07,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi kaşığı yerine koyalım.",
-              "en": "Now the spoon."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "glass-spoon",
-        "tier": "easy",
-        "target": "kitchen.glass",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce bardağı koyalım.",
-          "en": "Let's set the table. First, the glass."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_glass.mp3",
-          "en": "assets/audio/en/scenes/g66_first_glass.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [
-              "kitchen.spoon"
-            ],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.spoon",
-            "others": [],
-            "zone": [
-              0.71,
-              0.34,
-              0.07,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi kaşığı yerine koyalım.",
-              "en": "Now the spoon."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "fork-glass",
-        "tier": "easy",
-        "target": "kitchen.fork",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
-          "en": "Let's set the table. First, the fork."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
-          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.fork",
-            "others": [
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.3,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi çatalı yerine koyalım.",
-              "en": "Now the fork."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-fork-glass",
-        "tier": "medium",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.fork",
-            "others": [
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.3,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi çatalı yerine koyalım.",
-              "en": "Now the fork."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-spoon-glass",
-        "tier": "medium",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.spoon",
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.71,
-              0.34,
-              0.07,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi kaşığı yerine koyalım.",
-              "en": "Now the spoon."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-fork-spoon",
-        "tier": "medium",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.spoon"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.fork",
-            "others": [
-              "kitchen.spoon"
-            ],
-            "zone": [
-              0.3,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi çatalı yerine koyalım.",
-              "en": "Now the fork."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.spoon",
-            "others": [],
-            "zone": [
-              0.71,
-              0.34,
-              0.07,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi kaşığı yerine koyalım.",
-              "en": "Now the spoon."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
-        "key": "plate-knife-glass",
-        "tier": "medium",
-        "target": "kitchen.plate",
-        "stage": "assets/images/play/table.webp",
-        "aspect": 1.5,
-        "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
-        },
-        "steps": [
-          {
-            "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.knife",
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.39,
-              0.34,
-              0.22,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi tabağı yerine koyalım.",
-              "en": "Now the plate."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.knife",
-            "others": [
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.62,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
-            },
-            "turn": -0.72,
-            "askText": {
-              "tr": "Şimdi bıçağı yerine koyalım.",
-              "en": "Now the knife."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.glass",
-            "others": [],
-            "zone": [
-              0.6,
-              0.1,
-              0.13,
-              0.24
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi bardağı yerine koyalım.",
-              "en": "Now the glass."
-            },
-            "doneAudio": {
-              "tr": "assets/audio/tr/scenes/g66_done.mp3",
-              "en": "assets/audio/en/scenes/g66_done.mp3"
-            }
-          }
-        ]
-      },
-      {
         "key": "fork-knife-plate",
-        "tier": "medium",
+        "tier": "easy",
         "target": "kitchen.fork",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
           "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
           "en": "Let's set the table. First, the fork."
@@ -4924,10 +4993,6 @@
           {
             "mode": "place",
             "piece": "kitchen.fork",
-            "others": [
-              "kitchen.knife",
-              "kitchen.plate"
-            ],
             "zone": [
               0.3,
               0.34,
@@ -4948,9 +5013,6 @@
           {
             "mode": "place",
             "piece": "kitchen.knife",
-            "others": [
-              "kitchen.plate"
-            ],
             "zone": [
               0.62,
               0.34,
@@ -4963,16 +5025,15 @@
               "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
               "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
             },
-            "turn": -0.72,
             "askText": {
               "tr": "Şimdi bıçağı yerine koyalım.",
               "en": "Now the knife."
-            }
+            },
+            "turn": -0.72
           },
           {
             "mode": "place",
             "piece": "kitchen.plate",
-            "others": [],
             "zone": [
               0.39,
               0.34,
@@ -4997,11 +5058,95 @@
         ]
       },
       {
-        "key": "plate-fork-spoon-glass",
-        "tier": "hard",
+        "key": "fork-plate-knife",
+        "tier": "easy",
+        "target": "kitchen.fork",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+          "en": "Let's set the table. First, the fork."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
+          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72,
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "plate-fork-knife",
+        "tier": "easy",
         "target": "kitchen.plate",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
           "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
           "en": "Let's set the table. First, the plate."
@@ -5014,10 +5159,6 @@
           {
             "mode": "place",
             "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.spoon"
-            ],
             "zone": [
               0.39,
               0.34,
@@ -5038,10 +5179,6 @@
           {
             "mode": "place",
             "piece": "kitchen.fork",
-            "others": [
-              "kitchen.spoon",
-              "kitchen.glass"
-            ],
             "zone": [
               0.3,
               0.34,
@@ -5061,31 +5198,277 @@
           },
           {
             "mode": "place",
-            "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.glass"
-            ],
+            "piece": "kitchen.knife",
             "zone": [
-              0.71,
+              0.62,
               0.34,
-              0.07,
+              0.08,
               0.36
             ],
             "stays": true,
             "shadow": true,
             "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
             },
             "askText": {
-              "tr": "Şimdi kaşığı yerine koyalım.",
-              "en": "Now the spoon."
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72,
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "knife-fork-plate",
+        "tier": "easy",
+        "target": "kitchen.knife",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce bıçağı koyalım.",
+          "en": "Let's set the table. First, the knife."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_knife.mp3",
+          "en": "assets/audio/en/scenes/g66_first_knife.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            },
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "plate-knife-fork",
+        "tier": "easy",
+        "target": "kitchen.plate",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
+          "en": "Let's set the table. First, the plate."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
+          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            },
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "fork-knife-plate-glass",
+        "tier": "medium",
+        "target": "kitchen.fork",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+          "en": "Let's set the table. First, the fork."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
+          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
             }
           },
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5111,10 +5494,11 @@
       },
       {
         "key": "plate-fork-knife-glass",
-        "tier": "hard",
+        "tier": "medium",
         "target": "kitchen.plate",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
           "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
           "en": "Let's set the table. First, the plate."
@@ -5127,10 +5511,6 @@
           {
             "mode": "place",
             "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.knife"
-            ],
             "zone": [
               0.39,
               0.34,
@@ -5151,10 +5531,6 @@
           {
             "mode": "place",
             "piece": "kitchen.fork",
-            "others": [
-              "kitchen.knife",
-              "kitchen.glass"
-            ],
             "zone": [
               0.3,
               0.34,
@@ -5175,9 +5551,6 @@
           {
             "mode": "place",
             "piece": "kitchen.knife",
-            "others": [
-              "kitchen.glass"
-            ],
             "zone": [
               0.62,
               0.34,
@@ -5190,16 +5563,15 @@
               "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
               "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
             },
-            "turn": -0.72,
             "askText": {
               "tr": "Şimdi bıçağı yerine koyalım.",
               "en": "Now the knife."
-            }
+            },
+            "turn": -0.72
           },
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5224,27 +5596,374 @@
         ]
       },
       {
-        "key": "plate-spoon-glass-napkin",
-        "tier": "hard",
-        "target": "kitchen.plate",
+        "key": "glass-plate-fork-knife",
+        "tier": "medium",
+        "target": "kitchen.glass",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
+          "tr": "Sofrayı kuralım. Önce bardağı koyalım.",
+          "en": "Let's set the table. First, the glass."
         },
         "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
+          "tr": "assets/audio/tr/scenes/g66_first_glass.mp3",
+          "en": "assets/audio/en/scenes/g66_first_glass.mp3"
         },
         "steps": [
           {
             "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.spoon",
-              "kitchen.glass"
+            "piece": "kitchen.glass",
+            "zone": [
+              0.6,
+              0.1,
+              0.13,
+              0.24
             ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bardağı yerine koyalım.",
+              "en": "Now the glass."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72,
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "fork-plate-glass-knife",
+        "tier": "medium",
+        "target": "kitchen.fork",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+          "en": "Let's set the table. First, the fork."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
+          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.glass",
+            "zone": [
+              0.6,
+              0.1,
+              0.13,
+              0.24
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bardağı yerine koyalım.",
+              "en": "Now the glass."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72,
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "knife-plate-fork-glass",
+        "tier": "medium",
+        "target": "kitchen.knife",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce bıçağı koyalım.",
+          "en": "Let's set the table. First, the knife."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_knife.mp3",
+          "en": "assets/audio/en/scenes/g66_first_knife.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.glass",
+            "zone": [
+              0.6,
+              0.1,
+              0.13,
+              0.24
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bardağı yerine koyalım.",
+              "en": "Now the glass."
+            },
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "fork-knife-plate-spoon-glass",
+        "tier": "hard",
+        "target": "kitchen.fork",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+          "en": "Let's set the table. First, the fork."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
+          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
             "zone": [
               0.39,
               0.34,
@@ -5265,10 +5984,6 @@
           {
             "mode": "place",
             "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.glass",
-              "kitchen.napkin"
-            ],
             "zone": [
               0.71,
               0.34,
@@ -5289,9 +6004,6 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.napkin"
-            ],
             "zone": [
               0.6,
               0.1,
@@ -5307,27 +6019,6 @@
             "askText": {
               "tr": "Şimdi bardağı yerine koyalım.",
               "en": "Now the glass."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.napkin",
-            "others": [],
-            "zone": [
-              0.21,
-              0.4,
-              0.08,
-              0.22
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_napkin.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_napkin.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi peçeteyi yerine koyalım.",
-              "en": "Now the napkin."
             },
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g66_done.mp3",
@@ -5337,11 +6028,12 @@
         ]
       },
       {
-        "key": "plate-fork-knife-spoon-glass",
+        "key": "plate-fork-knife-glass-spoon",
         "tier": "hard",
         "target": "kitchen.plate",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
           "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
           "en": "Let's set the table. First, the plate."
@@ -5354,10 +6046,6 @@
           {
             "mode": "place",
             "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.knife"
-            ],
             "zone": [
               0.39,
               0.34,
@@ -5378,10 +6066,6 @@
           {
             "mode": "place",
             "piece": "kitchen.fork",
-            "others": [
-              "kitchen.knife",
-              "kitchen.spoon"
-            ],
             "zone": [
               0.3,
               0.34,
@@ -5402,10 +6086,6 @@
           {
             "mode": "place",
             "piece": "kitchen.knife",
-            "others": [
-              "kitchen.spoon",
-              "kitchen.glass"
-            ],
             "zone": [
               0.62,
               0.34,
@@ -5418,18 +6098,97 @@
               "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
               "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
             },
-            "turn": -0.72,
             "askText": {
               "tr": "Şimdi bıçağı yerine koyalım.",
               "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.glass",
+            "zone": [
+              0.6,
+              0.1,
+              0.13,
+              0.24
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bardağı yerine koyalım.",
+              "en": "Now the glass."
             }
           },
           {
             "mode": "place",
             "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.glass"
+            "zone": [
+              0.71,
+              0.34,
+              0.07,
+              0.36
             ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi kaşığı yerine koyalım.",
+              "en": "Now the spoon."
+            },
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "glass-spoon-plate-fork-knife",
+        "tier": "hard",
+        "target": "kitchen.glass",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce bardağı koyalım.",
+          "en": "Let's set the table. First, the glass."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_glass.mp3",
+          "en": "assets/audio/en/scenes/g66_first_glass.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.glass",
+            "zone": [
+              0.6,
+              0.1,
+              0.13,
+              0.24
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_glass.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_glass.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bardağı yerine koyalım.",
+              "en": "Now the glass."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.spoon",
             "zone": [
               0.71,
               0.34,
@@ -5449,8 +6208,171 @@
           },
           {
             "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72,
+            "doneAudio": {
+              "tr": "assets/audio/tr/scenes/g66_done.mp3",
+              "en": "assets/audio/en/scenes/g66_done.mp3"
+            }
+          }
+        ]
+      },
+      {
+        "key": "fork-spoon-knife-plate-glass",
+        "tier": "hard",
+        "target": "kitchen.fork",
+        "stage": "assets/images/play/table.webp",
+        "aspect": 1.5,
+        "gentle": true,
+        "text": {
+          "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
+          "en": "Let's set the table. First, the fork."
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g66_first_fork.mp3",
+          "en": "assets/audio/en/scenes/g66_first_fork.mp3"
+        },
+        "steps": [
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.spoon",
+            "zone": [
+              0.71,
+              0.34,
+              0.07,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi kaşığı yerine koyalım.",
+              "en": "Now the spoon."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.knife",
+            "zone": [
+              0.62,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
+            "zone": [
+              0.39,
+              0.34,
+              0.22,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_plate.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_plate.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi tabağı yerine koyalım.",
+              "en": "Now the plate."
+            }
+          },
+          {
+            "mode": "place",
             "piece": "kitchen.glass",
-            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5475,27 +6397,44 @@
         ]
       },
       {
-        "key": "plate-fork-knife-glass-napkin",
+        "key": "spoon-plate-glass-knife-fork",
         "tier": "hard",
-        "target": "kitchen.plate",
+        "target": "kitchen.spoon",
         "stage": "assets/images/play/table.webp",
         "aspect": 1.5,
+        "gentle": true,
         "text": {
-          "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
-          "en": "Let's set the table. First, the plate."
+          "tr": "Sofrayı kuralım. Önce kaşığı koyalım.",
+          "en": "Let's set the table. First, the spoon."
         },
         "audio": {
-          "tr": "assets/audio/tr/scenes/g66_first_plate.mp3",
-          "en": "assets/audio/en/scenes/g66_first_plate.mp3"
+          "tr": "assets/audio/tr/scenes/g66_first_spoon.mp3",
+          "en": "assets/audio/en/scenes/g66_first_spoon.mp3"
         },
         "steps": [
           {
             "mode": "place",
-            "piece": "kitchen.plate",
-            "others": [
-              "kitchen.fork",
-              "kitchen.knife"
+            "piece": "kitchen.spoon",
+            "zone": [
+              0.71,
+              0.34,
+              0.07,
+              0.36
             ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_spoon.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_spoon.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi kaşığı yerine koyalım.",
+              "en": "Now the spoon."
+            }
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.plate",
             "zone": [
               0.39,
               0.34,
@@ -5515,59 +6454,7 @@
           },
           {
             "mode": "place",
-            "piece": "kitchen.fork",
-            "others": [
-              "kitchen.knife",
-              "kitchen.glass"
-            ],
-            "zone": [
-              0.3,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
-            },
-            "askText": {
-              "tr": "Şimdi çatalı yerine koyalım.",
-              "en": "Now the fork."
-            }
-          },
-          {
-            "mode": "place",
-            "piece": "kitchen.knife",
-            "others": [
-              "kitchen.glass",
-              "kitchen.napkin"
-            ],
-            "zone": [
-              0.62,
-              0.34,
-              0.08,
-              0.36
-            ],
-            "stays": true,
-            "shadow": true,
-            "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
-            },
-            "turn": -0.72,
-            "askText": {
-              "tr": "Şimdi bıçağı yerine koyalım.",
-              "en": "Now the knife."
-            }
-          },
-          {
-            "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.napkin"
-            ],
             "zone": [
               0.6,
               0.1,
@@ -5587,23 +6474,43 @@
           },
           {
             "mode": "place",
-            "piece": "kitchen.napkin",
-            "others": [],
+            "piece": "kitchen.knife",
             "zone": [
-              0.21,
-              0.4,
+              0.62,
+              0.34,
               0.08,
-              0.22
+              0.36
             ],
             "stays": true,
             "shadow": true,
             "askAudio": {
-              "tr": "assets/audio/tr/scenes/g66_ask_napkin.mp3",
-              "en": "assets/audio/en/scenes/g66_ask_napkin.mp3"
+              "tr": "assets/audio/tr/scenes/g66_ask_knife.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_knife.mp3"
             },
             "askText": {
-              "tr": "Şimdi peçeteyi yerine koyalım.",
-              "en": "Now the napkin."
+              "tr": "Şimdi bıçağı yerine koyalım.",
+              "en": "Now the knife."
+            },
+            "turn": -0.72
+          },
+          {
+            "mode": "place",
+            "piece": "kitchen.fork",
+            "zone": [
+              0.3,
+              0.34,
+              0.08,
+              0.36
+            ],
+            "stays": true,
+            "shadow": true,
+            "askAudio": {
+              "tr": "assets/audio/tr/scenes/g66_ask_fork.mp3",
+              "en": "assets/audio/en/scenes/g66_ask_fork.mp3"
+            },
+            "askText": {
+              "tr": "Şimdi çatalı yerine koyalım.",
+              "en": "Now the fork."
             },
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g66_done.mp3",

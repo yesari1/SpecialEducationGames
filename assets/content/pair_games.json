@@ -1597,6 +1597,9 @@
     "rounds": [
       {
         "target": "cleaning.comb",
+        "alsoRight": [
+          "cleaning.hairbrush"
+        ],
         "text": {
           "tr": "Saçını taramak için ne lazım?",
           "en": "What do we need to comb our hair?"
@@ -1613,6 +1616,7 @@
       },
       {
         "target": "cleaning.toothbrush",
+        "alsoRight": [],
         "text": {
           "tr": "Dişini fırçalamak için ne lazım?",
           "en": "What do we need to brush our teeth?"
@@ -1629,6 +1633,10 @@
       },
       {
         "target": "cleaning.soap",
+        "alsoRight": [
+          "cleaning.shampoo",
+          "cleaning.sponge"
+        ],
         "text": {
           "tr": "Ellerini yıkamak için ne lazım?",
           "en": "What do we need to wash our hands?"
@@ -1645,6 +1653,9 @@
       },
       {
         "target": "cleaning.towel",
+        "alsoRight": [
+          "cleaning.tissue"
+        ],
         "text": {
           "tr": "Elini yüzünü kurulamak için ne lazım?",
           "en": "What do we need to dry our face?"
@@ -1661,6 +1672,7 @@
       },
       {
         "target": "cleaning.shampoo",
+        "alsoRight": [],
         "text": {
           "tr": "Saçını yıkamak için ne lazım?",
           "en": "What do we need to wash our hair?"
@@ -1677,6 +1689,10 @@
       },
       {
         "target": "cleaning.tissue",
+        "alsoRight": [
+          "cleaning.toilet_paper",
+          "cleaning.towel"
+        ],
         "text": {
           "tr": "Burnunu silmek için ne lazım?",
           "en": "What do we need to wipe our nose?"
@@ -1693,6 +1709,7 @@
       },
       {
         "target": "cleaning.trash_bin",
+        "alsoRight": [],
         "text": {
           "tr": "Çöpü nereye atarız?",
           "en": "Where do we throw the rubbish?"
@@ -1709,6 +1726,9 @@
       },
       {
         "target": "cleaning.broom",
+        "alsoRight": [
+          "cleaning.vacuum"
+        ],
         "text": {
           "tr": "Yeri süpürmek için ne lazım?",
           "en": "What do we need to sweep the floor?"
@@ -1725,6 +1745,9 @@
       },
       {
         "target": "cleaning.sponge",
+        "alsoRight": [
+          "cleaning.rubber_gloves"
+        ],
         "text": {
           "tr": "Bulaşık yıkamak için ne lazım?",
           "en": "What do we need to wash the dishes?"
@@ -1741,6 +1764,10 @@
       },
       {
         "target": "cleaning.mop",
+        "alsoRight": [
+          "cleaning.sponge",
+          "cleaning.bucket"
+        ],
         "text": {
           "tr": "Yeri silmek için ne lazım?",
           "en": "What do we need to mop the floor?"
@@ -1757,6 +1784,7 @@
       },
       {
         "target": "cleaning.hair_dryer",
+        "alsoRight": [],
         "text": {
           "tr": "Saçını kurutmak için ne lazım?",
           "en": "What do we need to dry our hair?"
@@ -1773,6 +1801,7 @@
       },
       {
         "target": "cleaning.nail_clipper",
+        "alsoRight": [],
         "text": {
           "tr": "Tırnaklarını kesmek için ne lazım?",
           "en": "What do we need to cut our nails?"
@@ -1789,6 +1818,9 @@
       },
       {
         "target": "cleaning.vacuum",
+        "alsoRight": [
+          "cleaning.broom"
+        ],
         "text": {
           "tr": "Halıyı süpürmek için ne lazım?",
           "en": "What do we need to clean the carpet?"
@@ -1805,6 +1837,7 @@
       },
       {
         "target": "cleaning.clothespin",
+        "alsoRight": [],
         "text": {
           "tr": "Çamaşırları asmak için ne lazım?",
           "en": "What do we need to hang up the washing?"
@@ -1821,6 +1854,9 @@
       },
       {
         "target": "cleaning.laundry_basket",
+        "alsoRight": [
+          "cleaning.washing_machine"
+        ],
         "text": {
           "tr": "Kirli çamaşırları nereye koyarız?",
           "en": "Where do we put dirty clothes?"
@@ -1837,6 +1873,7 @@
       },
       {
         "target": "cleaning.detergent",
+        "alsoRight": [],
         "text": {
           "tr": "Çamaşır yıkarken içine ne koyarız?",
           "en": "What do we add when we wash clothes?"
@@ -2452,6 +2489,7 @@
       {
         "target": "jobs.firefighter",
         "stimulus": "need.cat_tree",
+        "alsoRight": [],
         "text": {
           "tr": "Kedi ağaçta kaldı. Kim yardım eder?",
           "en": "The cat is stuck in the tree. Who can help?"
@@ -2469,6 +2507,7 @@
       {
         "target": "jobs.firefighter",
         "stimulus": "need.fire",
+        "alsoRight": [],
         "text": {
           "tr": "Bir yerde yangın çıktı. Kim yardım eder?",
           "en": "There is a fire. Who can help?"
@@ -2486,6 +2525,9 @@
       {
         "target": "jobs.doctor",
         "stimulus": "need.fever",
+        "alsoRight": [
+          "jobs.nurse"
+        ],
         "text": {
           "tr": "Ali hasta oldu. Kim yardım eder?",
           "en": "Ali is sick. Who can help?"
@@ -2503,6 +2545,9 @@
       {
         "target": "jobs.dentist",
         "stimulus": "need.toothache",
+        "alsoRight": [
+          "jobs.doctor"
+        ],
         "text": {
           "tr": "Ali'nin dişi ağrıyor. Kim yardım eder?",
           "en": "Ali's tooth hurts. Who can help?"
@@ -2520,6 +2565,7 @@
       {
         "target": "jobs.police_officer",
         "stimulus": "need.lost",
+        "alsoRight": [],
         "text": {
           "tr": "Ali yolunu kaybetti. Kim yardım eder?",
           "en": "Ali is lost. Who can help?"
@@ -2537,6 +2583,7 @@
       {
         "target": "jobs.vet",
         "stimulus": "need.sick_dog",
+        "alsoRight": [],
         "text": {
           "tr": "Köpek hasta oldu. Kim yardım eder?",
           "en": "The dog is sick. Who can help?"
@@ -2554,6 +2601,7 @@
       {
         "target": "jobs.mechanic",
         "stimulus": "need.broken_car",
+        "alsoRight": [],
         "text": {
           "tr": "Araba bozuldu. Kim yardım eder?",
           "en": "The car broke down. Who can help?"
@@ -2571,6 +2619,7 @@
       {
         "target": "jobs.hairdresser",
         "stimulus": "need.long_hair",
+        "alsoRight": [],
         "text": {
           "tr": "Ali'nin saçı çok uzadı. Kim yardım eder?",
           "en": "Ali's hair is too long. Who can help?"
@@ -2588,6 +2637,7 @@
       {
         "target": "jobs.gardener",
         "stimulus": "need.dry_garden",
+        "alsoRight": [],
         "text": {
           "tr": "Çiçekler solmuş. Kim yardım eder?",
           "en": "The flowers are wilting. Who can help?"
@@ -2605,6 +2655,7 @@
       {
         "target": "jobs.tailor",
         "stimulus": "need.torn_shirt",
+        "alsoRight": [],
         "text": {
           "tr": "Gömlek yırtıldı. Kim yardım eder?",
           "en": "The shirt is torn. Who can help?"

@@ -114,7 +114,8 @@ EXTRA += [(f'need.{g[0]}', g[2].split('.')[0], g[3].split('.')[0]) for g in G69]
 def g69():
     rounds = []
     for i, (scene, who, q_tr, q_en, r_tr, r_en) in enumerate(G69, 1):
-        rounds.append({'target': f'jobs.{who}', 'stimulus': f'need.{scene}', 'text': text(q_tr, q_en),
+        also = {'toothache': ['jobs.doctor'], 'fever': ['jobs.nurse']}.get(scene, [])
+        rounds.append({'target': f'jobs.{who}', 'stimulus': f'need.{scene}', 'alsoRight': also, 'text': text(q_tr, q_en),
                        'audio': line(f'g69_{i}', q_tr, q_en), 'result': f'{PLAY}/help_{scene}.webp',
                        'resultAudio': line(f'g69_done_{i}', r_tr, r_en)})
     return {'theme': 'jobs', 'look': 'scene', 'choicePool': [f'jobs.{h}' for h in HELPERS], 'rounds': rounds}

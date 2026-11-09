@@ -128,8 +128,17 @@ class _SceneGameViewState extends State<SceneGameView> {
     _tool = null;
     _stirred = 0;
     _stirTaps = 0;
-    _pieces = [step.piece, ...step.others]
-      ..shuffle(math.Random(_generation * 31 + _step));
+    if (round.gentle) {
+      // The same places all round; a placed piece just leaves the tray.
+      _pieces = [for (final s in round.steps.skip(_step)) s.piece]
+        ..shuffle(math.Random(_generation * 31));
+      final order = [for (final s in round.steps) s.piece]
+        ..shuffle(math.Random(_generation * 31));
+      _pieces.sort((a, b) => order.indexOf(a).compareTo(order.indexOf(b)));
+    } else {
+      _pieces = [step.piece, ...step.others]
+        ..shuffle(math.Random(_generation * 31 + _step));
+    }
   }
 
   void _wrong(String id) {
@@ -146,7 +155,12 @@ class _SceneGameViewState extends State<SceneGameView> {
   void _bring(String id) {
     if (!_ready) return;
     if (step.mode != SceneStepMode.place) return;
-    if (id != step.piece) return _wrong(id);
+    if (id != step.piece) {
+      if (!round.gentle) return _wrong(id);
+      final ask = (_step == 0 ? round.audio : step.askAudio)[_lang];
+      if (ask != null) widget.callbacks.onSay?.call([ask]);
+      return;
+    }
     UiSound.basketDrop();
     _complete();
   }
@@ -307,6 +321,27 @@ class _SceneGameViewState extends State<SceneGameView> {
                       ),
                     ),
                   ),
+                  // Still yellowish; clears as the stains go.
+                  if (current != null && round.tints.isNotEmpty)
+                    for (final tint in round.tints)
+                      at(
+                        tint,
+                        IgnorePointer(
+                          child: Opacity(
+                            opacity:
+                                .55 *
+                                (1 -
+                                    _cleaned.length /
+                                        math.max(1, current.spots.length)),
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFDDB65E),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                   for (var i = 0; i < round.steps.length; i++)
                     if (_placed.contains(i))
                       at(

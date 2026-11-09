@@ -5167,6 +5167,82 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/scenes/g74_listen.mp3": {
+    "bytes": 16135,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:13.668895+00:00",
+    "sha256": "5caeba69a71c3b26ee7f4228d4e54b82599979ffb5455be8a328b0c7ed07abf6",
+    "text": "Listen. Which instrument is playing?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g75_again.mp3": {
+    "bytes": 10284,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:09.658986+00:00",
+    "sha256": "d89c5771a7d590b583868e5d8cd57bf4a6dae9f8fe0eb7050402029cefeaa56d",
+    "text": "Let's listen again.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g75_listen.mp3": {
+    "bytes": 14045,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:07.859756+00:00",
+    "sha256": "0dafd01f4d50e0f7d944c0c5c13bf8b106c36c2ba60b4b39b1582a09e7db3d4c",
+    "text": "Listen, then you play too.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g76_play.mp3": {
+    "bytes": 9866,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:11.583264+00:00",
+    "sha256": "1f1c5424ceeeffcf91029e1f3aee6ab9b87f9cfa8debd3cb64058f166d627705",
+    "text": "Play whichever you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/sections/tab_learn.mp3": {
     "bytes": 6522,
     "language": "en",
@@ -10382,6 +10458,82 @@
     "requested_at": "2026-11-08T20:10:13.653410+00:00",
     "sha256": "55ec8f52512aa35ff24e8667d33b9b88392f207aa671b02a41794981929b76d5",
     "text": "Dinle bakalım. Hava nasıl?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g74_listen.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:12.953180+00:00",
+    "sha256": "62307a4634c0511a68e9af2cbe4f82ddb04633fd7406b08f2052995b3388d144",
+    "text": "Dinle bakalım. Hangi alet çalıyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g75_again.mp3": {
+    "bytes": 10075,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:09.007005+00:00",
+    "sha256": "e88cbccadaf2001d12b00d21e2f5c8ff0b0f6c30e43cd0996ab8119d0ab00e9f",
+    "text": "Bir daha dinleyelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g75_listen.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:06.891145+00:00",
+    "sha256": "4fb8ed8045f9e5f85bd6161c6b9f0552c551a1f201c59642a591971ef4ca750d",
+    "text": "Dinle, sonra sen de çal.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g76_play.mp3": {
+    "bytes": 13836,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-09T06:57:10.908564+00:00",
+    "sha256": "c383f99ee9a2d9393e75feb09ec49cc6334f119a1c68112698e7859cac73f92b",
+    "text": "Hangisini istersen çal.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
