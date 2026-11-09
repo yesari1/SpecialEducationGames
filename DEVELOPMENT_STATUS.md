@@ -7,8 +7,8 @@
 - Çocuk ana ekranı 3 sekme: Öğren, Hikâyeler, Oyun Parkı; her bölümün kendi çizimi ve rengi. Bugünün Yolu, günlük çıkartma ve ilk kurulumdaki plan ekranları kaldırıldı.
 - Yeni temalar açık: Temizlik, Kıyafetler, Mutfak, Meslekler, Doğa ve Mevsimler (çizim öğeler, 14 yeni oyun, TR+EN ses). Oyun Parkı: Baloncuklar, Yapboz. Kod hazır, resim bekliyor: Boyama, Müzik Aletleri, çıkartma resimleri (`tools/home_sections/ART_TODO.md`).
 - Sahne oyunları `assets/content/scene_games.json`; kaynak ve metinler `tools/home_sections/source_step*.py`, derleme `build_themes.py`. Yeni ses lisansları `docs/ses-lisanslari.md`.
-- Doğrulama: 339 host test (seri) geçti; yerleşimler ve sürükleme Pixel_9a'da elle denendi. STT kontrolü: `check_lines.py`, 558 klipte 32 fark, çoğu yazım/benzer ses; birkaç klip yeniden kaydedildi. Emülatörde bazı açılışlarda içerik 90 derece dönük çizildi; sistem yönü doğru, kök neden doğrulanmadı.
-- İnsan onayı bekleyen: seslerin dinlenmesi, CC BY-SA 5 kaydın değiştirilmesi.
+- Doğrulama: 339 host test (seri) geçti; yerleşimler ve sürükleme Pixel_9a'da elle denendi. STT kontrolü: `check_lines.py`, 558 klipte 32 fark, çoğu yazım/benzer ses; birkaç klip yeniden kaydedildi. Emülatörde bazı açılışlarda içerik 90 derece dönük çiziliyordu (12 açılışta 1); yön artık ilk kareden önce ayarlanıyor, 20 açılışta görülmedi, kök neden kesinleşmedi.
+- İnsan onayı bekleyen: seslerin dinlenmesi. Eski Bugünün Yolu ekranı silindi; aile özetindeki yıldız sayısı aynı hesapla sürüyor.
 
 ## 3 Kasım 2026 — Bildirim cevabı, anlık bildirim adresi — sürüm 2.0.40 (54)
 
