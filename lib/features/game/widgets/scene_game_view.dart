@@ -478,6 +478,13 @@ class _SceneGameViewState extends State<SceneGameView> {
               child: LayoutBuilder(
                 builder: (context, box) {
                   final side = math.min(box.maxWidth, box.maxHeight);
+                  // The shadow stays under the piece however much room there is.
+                  final sized = Center(
+                    child: SizedBox.square(
+                      dimension: math.min(side, 170),
+                      child: visual,
+                    ),
+                  );
                   return Draggable<String>(
                     data: id,
                     maxSimultaneousDrags:
@@ -490,12 +497,12 @@ class _SceneGameViewState extends State<SceneGameView> {
                         child: _visual(id),
                       ),
                     ),
-                    childWhenDragging: Opacity(opacity: .25, child: visual),
+                    childWhenDragging: Opacity(opacity: .25, child: sized),
                     child: GestureDetector(
                       key: ValueKey('scene-piece-$id'),
                       behavior: HitTestBehavior.opaque,
                       onTap: () => _bring(id),
-                      child: visual,
+                      child: sized,
                     ),
                   );
                 },
