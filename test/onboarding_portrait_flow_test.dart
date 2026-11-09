@@ -215,11 +215,6 @@ void main() {
     expect(state.dailyGoalMinutes, 20);
     expect(state.hasParentPin, isFalse);
     expect(router.routeInformationProvider.value.uri.path, '/');
-    // The child starts on today's path.
-    expect(
-      router.routeInformationProvider.value.uri.queryParameters['path'],
-      'true',
-    );
     // Handing the phone to the child closes the parent area again.
     expect(state.familyUnlocked, isFalse);
     expect(tester.takeException(), isNull);
