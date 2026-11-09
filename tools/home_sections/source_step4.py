@@ -3,9 +3,11 @@
 MUSIC = [
     ('drum', 'easy', 'Davul', 'Drum'), ('piano', 'easy', 'Piyano', 'Piano'),
     ('guitar', 'easy', 'Gitar', 'Guitar'), ('bell', 'easy', 'Zil', 'Bell'),
-    ('xylophone', 'medium', 'Ksilofon', 'Xylophone'), ('tambourine', 'medium', 'Tef', 'Tambourine'),
+    # To swap an instrument: change this list, then its drawing and its sound
+    # in import_commons_sfx.py.
+    ('accordion', 'medium', 'Akordeon', 'Accordion'), ('tambourine', 'medium', 'Tef', 'Tambourine'),
     ('recorder', 'medium', 'Flüt', 'Recorder'), ('violin', 'hard', 'Keman', 'Violin'),
-    ('baglama', 'hard', 'Bağlama', 'Baglama'), ('darbuka', 'hard', 'Darbuka', 'Darbuka'),
+    ('trumpet', 'hard', 'Trompet', 'Trumpet'), ('darbuka', 'hard', 'Darbuka', 'Darbuka'),
 ]
 ITEM_SFX = {f'music.{slug}': f'assets/sfx/music/{slug}.mp3' for slug, *_ in MUSIC}
 

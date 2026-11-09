@@ -163,3 +163,17 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - Source: https://commons.wikimedia.org/wiki/File:Floor_tom.ogg
 - License: CC-BY-SA-3.0 — https://creativecommons.org/licenses/by-sa/3.0/
 - App asset: assets/sfx/music/drum.mp3
+
+## 05. D5-trumpet.ogg
+
+- Author: ПростоУчастник
+- Source: https://commons.wikimedia.org/wiki/File:05._D5-trumpet.ogg
+- License: CC0-1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+- App asset: assets/sfx/music/trumpet.mp3
+
+## Registre orgue.ogg
+
+- Author: Levieuxtoby
+- Source: https://commons.wikimedia.org/wiki/File:Registre_orgue.ogg
+- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- App asset: assets/sfx/music/accordion.mp3

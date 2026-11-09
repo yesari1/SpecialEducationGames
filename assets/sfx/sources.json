@@ -292,5 +292,29 @@
     "changes": "Cut to 2 seconds; mono MP3; normalized to -24 LUFS; short fades.",
     "originalSha256": "1bcc040c03315063dd912c46e199d54b784a4d1121c7027c17059f5ae5673ac3",
     "sha256": "61e02c9338337bf7117c77662f0ee49453560308db06547bfa83050e73bb4fd5"
+  },
+  {
+    "itemId": "music.trumpet",
+    "asset": "assets/sfx/music/trumpet.mp3",
+    "title": "05. D5-trumpet.ogg",
+    "author": "ПростоУчастник",
+    "source": "https://commons.wikimedia.org/wiki/File:05._D5-trumpet.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Cut to 2.5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "f66cd6ae52e1dcd68c473cc2447a5ae86982e8774a0e47c0892e82b3add12b4d",
+    "sha256": "171a79c0d4f21195ddfbb59454ddae023c49a9c0e4cda6dc900694e17e80b8e3"
+  },
+  {
+    "itemId": "music.accordion",
+    "asset": "assets/sfx/music/accordion.mp3",
+    "title": "Registre orgue.ogg",
+    "author": "Levieuxtoby",
+    "source": "https://commons.wikimedia.org/wiki/File:Registre_orgue.ogg",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "648ad07b477c3d62f74244e8120df3d103d55d260533a5d3e61b2940d1f4d69d",
+    "sha256": "55edd972e6498d5daf9de2102ab15b4ee13a80e29fc48d2abf2cc5d46ecad78a"
   }
 ]

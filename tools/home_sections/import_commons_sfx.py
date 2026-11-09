@@ -31,6 +31,8 @@ SOUNDS = [
     ('nature.wind', 'nature/wind.mp3', 'Windy breath.ogg', 'stilgar', 'Public domain', PD, 3.0, 4.0),
     ('nature.lightning', 'nature/thunder.mp3', 'Thunder.ogg', 'Bidgee', 'CC-BY-3.0', 'https://creativecommons.org/licenses/by/3.0/', 1.0, 5.0),
     ('music.drum', 'music/drum.mp3', 'Floor tom.ogg', 'Clngre (Wikimedia Commons)', 'CC-BY-SA-3.0', 'https://creativecommons.org/licenses/by-sa/3.0/', 0.0, 2.0),
+    ('music.trumpet', 'music/trumpet.mp3', '05. D5-trumpet.ogg', 'ПростоУчастник', 'CC0-1.0', CC0, 0.0, 2.5),
+    ('music.accordion', 'music/accordion.mp3', 'Registre orgue.ogg', 'Levieuxtoby', 'CC-BY-SA-4.0', SA4, 1.0, 3.0),
     ('music.piano', 'music/piano.mp3', 'Piano acústico, acorde C.ogg', 'ZappaMidiPF', 'CC-BY-SA-4.0', SA4, 0.0, 3.0),
     ('music.guitar', 'music/guitar.mp3', 'A-major.ogg', 'WBOSITG', 'Public domain', PD, 0.0, 3.0),
     ('music.bell', 'music/bell.mp3', 'Bell-ring.flac', 'qubodup', 'CC0-1.0', CC0, 0.0, 2.5),
