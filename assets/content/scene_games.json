@@ -5689,10 +5689,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -5703,10 +5703,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -5729,10 +5729,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
@@ -5772,10 +5772,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -5786,10 +5786,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -5812,10 +5812,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
@@ -5855,10 +5855,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -5869,10 +5869,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -5895,10 +5895,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
@@ -5938,10 +5938,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -5952,10 +5952,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -5978,10 +5978,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
@@ -6021,10 +6021,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6035,10 +6035,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6061,10 +6061,10 @@
               "grow.ball"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {
@@ -6105,10 +6105,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6120,10 +6120,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6147,10 +6147,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
@@ -6191,10 +6191,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6206,10 +6206,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6233,10 +6233,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
@@ -6277,10 +6277,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6292,10 +6292,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6319,10 +6319,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
@@ -6363,10 +6363,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6378,10 +6378,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6405,10 +6405,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
@@ -6449,10 +6449,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6464,10 +6464,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6491,10 +6491,10 @@
               "grow.spoon"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {
@@ -6536,10 +6536,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6552,10 +6552,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6580,10 +6580,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
@@ -6625,10 +6625,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6641,10 +6641,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6669,10 +6669,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
@@ -6714,10 +6714,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6730,10 +6730,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6758,10 +6758,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
@@ -6803,10 +6803,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6819,10 +6819,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6847,10 +6847,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
@@ -6892,10 +6892,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_1.webp"
           },
@@ -6908,10 +6908,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
@@ -6936,10 +6936,10 @@
               "grow.shoe"
             ],
             "zone": [
-              0.3,
-              0.2,
-              0.4,
-              0.6
+              0.32,
+              0.42,
+              0.36,
+              0.45
             ],
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {

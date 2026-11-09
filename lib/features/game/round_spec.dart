@@ -74,6 +74,9 @@ class RoundSpec {
 
   /// The view fills the page under the top bar; it shows the question itself.
   final bool fullStage;
+
+  /// Basket choices drawn big, without a basket (a person, a building).
+  final bool plainTargets;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -101,6 +104,7 @@ class RoundSpec {
     this.scenePieces = const {},
     this.resultImagePath,
     this.fullStage = false,
+    this.plainTargets = false,
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,
@@ -129,6 +133,7 @@ class RoundSpec {
     scenePieces: scenePieces,
     resultImagePath: resultImagePath,
     fullStage: fullStage,
+    plainTargets: plainTargets,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

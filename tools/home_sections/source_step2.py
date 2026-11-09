@@ -413,7 +413,7 @@ def g67():
     rounds = []
     for i, (stimulus, target, q_tr, q_en) in enumerate(G67, 1):
         rounds.append({'target': target, 'stimulus': stimulus, 'text': text(q_tr, q_en), 'audio': line(f'g67_{i}', q_tr, q_en)})
-    return {'theme': 'kitchen', 'look': 'basket', 'choicePool': G67_PLACES, 'rounds': rounds}
+    return {'theme': 'kitchen', 'look': 'drop', 'choicePool': G67_PLACES, 'rounds': rounds}
 
 
 SCENE_GAMES = {'G60': g60, 'G61': g61, 'G63': g63, 'G65': g65, 'G66': g66}

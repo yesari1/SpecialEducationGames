@@ -2062,7 +2062,7 @@
   },
   "G67": {
     "theme": "kitchen",
-    "look": "basket",
+    "look": "drop",
     "choicePool": [
       "kitchen.fridge",
       "kitchen.cupboard",
@@ -2207,7 +2207,7 @@
   },
   "G68": {
     "theme": "jobs",
-    "look": "basket",
+    "look": "drop",
     "choicePool": [
       "jobs.baker",
       "jobs.carpenter",
@@ -2623,7 +2623,7 @@
   },
   "G70": {
     "theme": "jobs",
-    "look": "basket",
+    "look": "drop",
     "choicePool": [
       "place.school",
       "place.hospital",

@@ -848,7 +848,8 @@ class PairTemplate extends GameTemplate {
     final right = game.rightFor(round);
     final wrong = pool.where((x) => !right.contains(x.id)).toList()
       ..shuffle(random);
-    final size = game.look == 'basket'
+    final dropOn = game.look == 'basket' || game.look == 'drop';
+    final size = dropOn
         ? min(ctx.choiceCount, 3)
         : ctx.choiceCount;
     if (wrong.length < size - 1) throw StateError('Not enough choices');
@@ -868,9 +869,10 @@ class PairTemplate extends GameTemplate {
       stimulus: stimulus,
       promptImagePath: scene ? shown?.images.firstOrNull : null,
       oneRow: true,
-      look: game.look == 'basket' ? ChoiceLook.basket : ChoiceLook.object,
-      dragStimulus: game.look == 'basket' && stimulus != null,
-      groupMembers: game.look == 'basket'
+      look: dropOn ? ChoiceLook.basket : ChoiceLook.object,
+      plainTargets: game.look == 'drop',
+      dragStimulus: dropOn && stimulus != null,
+      groupMembers: dropOn
           ? {for (final c in choices) c.id: [c]}
           : const {},
       promptCues: {

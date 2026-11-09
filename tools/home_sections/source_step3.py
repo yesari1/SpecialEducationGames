@@ -91,7 +91,7 @@ def g68():
         rounds.append({'target': f'jobs.{person}', 'stimulus': f'use.{tool}', 'text': text(q_tr, q_en),
                        'audio': line(f'g68_{i}', q_tr, q_en), 'result': f'{PLAY}/job_{person}.webp',
                        'resultAudio': line(f'g68_done_{i}', r_tr, r_en)})
-    return {'theme': 'jobs', 'look': 'basket', 'choicePool': [f'jobs.{u}' for u in USERS], 'rounds': rounds}
+    return {'theme': 'jobs', 'look': 'drop', 'choicePool': [f'jobs.{u}' for u in USERS], 'rounds': rounds}
 
 
 # G69 Kim Yardım Eder? --------------------------------------------------------
@@ -141,7 +141,7 @@ def g70():
     for i, (who, place, _, _, q_tr, q_en) in enumerate(G70, 1):
         rounds.append({'target': f'place.{place}', 'stimulus': f'jobs.{who}', 'text': text(q_tr, q_en),
                        'audio': line(f'g70_{i}', q_tr, q_en)})
-    return {'theme': 'jobs', 'look': 'basket', 'choicePool': [f'place.{g[1]}' for g in G70], 'rounds': rounds}
+    return {'theme': 'jobs', 'look': 'drop', 'choicePool': [f'place.{g[1]}' for g in G70], 'rounds': rounds}
 
 
 # G71 Tohumu Büyüt ------------------------------------------------------------
@@ -149,7 +149,7 @@ FLOWERS = [('pink', 'Pembe çiçek', 'Pink flower'), ('yellow', 'Sarı çiçek',
            ('tulip', 'Lale', 'Tulip'), ('sunflower', 'Ayçiçeği', 'Sunflower'), ('daisy', 'Papatya', 'Daisy')]
 EXTRA += [('grow.seed', 'Tohum', 'Seed'), ('grow.can', 'Sulama kabı', 'Watering can'), ('grow.sun', 'Güneş', 'Sun'),
           ('grow.shoe', 'Ayakkabı', 'Shoe'), ('grow.spoon', 'Kaşık', 'Spoon'), ('grow.ball', 'Top', 'Ball')]
-GROW_ZONE = [.3, .2, .4, .6]
+GROW_ZONE = [.32, .42, .36, .45]
 
 
 def g71():

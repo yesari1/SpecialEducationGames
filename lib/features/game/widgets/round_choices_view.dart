@@ -191,6 +191,8 @@ class _RoundChoicesViewState extends State<RoundChoicesView> {
                 widget.hint.locale,
               ).gameListenToSound,
             )
+          : look == ChoiceLook.basket && spec.plainTargets
+          ? groupVisual()
           : look == ChoiceLook.basket
           ? BasketFrame(tint: SegColors.accent, child: groupVisual())
           : members.isNotEmpty

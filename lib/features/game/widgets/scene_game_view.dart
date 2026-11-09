@@ -75,6 +75,10 @@ class _SceneGameViewState extends State<SceneGameView> {
   bool _done = false;
   late List<String> _pieces;
 
+  /// The hint level when this step began: a new step starts without hints.
+  int _hintBase = 0;
+  int get _hintLevel => math.max(0, widget.hint.level - _hintBase);
+
   static const _stirDistance = 1400.0;
   static const _stirTapsNeeded = 4;
 
@@ -105,6 +109,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   }
 
   void _enterStep() {
+    _hintBase = widget.hint.level;
     _cleaned.clear();
     _tool = null;
     _stirred = 0;
@@ -248,7 +253,7 @@ class _SceneGameViewState extends State<SceneGameView> {
           child: child,
         );
         final current = _done ? null : step;
-        final hinting = widget.hint.level > 0 && _ready;
+        final hinting = _hintLevel > 0 && _ready;
         final toolMode = current != null && current.mode != SceneStepMode.place;
         return DragTarget<String>(
           onWillAcceptWithDetails: (_) => _ready,
@@ -337,7 +342,7 @@ class _SceneGameViewState extends State<SceneGameView> {
                         ),
                       ),
                     ),
-                  if (round.recipe) _recipe(size),
+                  if (round.recipe && !_done) _recipe(size),
                   if (toolMode && _tool != null)
                     Positioned(
                       left: _tool!.dx - size.shortestSide * .17,
@@ -391,7 +396,7 @@ class _SceneGameViewState extends State<SceneGameView> {
   Widget _tray() {
     if (_done) return const SizedBox.shrink();
     final current = step;
-    final hintLevel = widget.hint.level;
+    final hintLevel = _hintLevel;
     final prompt = _step == 0
         ? (widget.hint.locale == 'en'
               ? widget.spec.promptEn
@@ -403,7 +408,7 @@ class _SceneGameViewState extends State<SceneGameView> {
           ? SegColors.hintGlow
           : null;
       final faded =
-          widget.hint.level >= 3 && id != current.piece && _ready;
+          _hintLevel >= 3 && id != current.piece && _ready;
       final visual = StagedObject(glow: glow, child: _visual(id));
       final shaking = _shaking == id;
       return Expanded(

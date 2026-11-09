@@ -25,11 +25,11 @@ PD = 'https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_publi
 
 # item id, output, Commons title, author, licence, licence URL, start, seconds
 SOUNDS = [
-    ('nature.rain', 'nature/rain.mp3', 'Rain.ogg', 'ジダネ', 'Public domain', PD, 1.0, 4.0),
-    ('nature.snow', 'nature/snow.mp3', 'Crunchy Snow Walking Sound Effect - Human Sounds.opus', 'Free Sounds Library User Spanac', 'CC-BY-3.0', BY, 2.0, 4.0),
-    ('nature.sun', 'nature/sun.mp3', 'Gentle breeze and birds singing.ogg', 'ezwa', 'Public domain', PD, 4.0, 4.0),
-    ('nature.wind', 'nature/wind.mp3', 'Windy breath.ogg', 'stilgar', 'Public domain', PD, 3.0, 4.0),
-    ('nature.lightning', 'nature/thunder.mp3', 'Thunder.ogg', 'Bidgee', 'CC-BY-3.0', 'https://creativecommons.org/licenses/by/3.0/', 1.0, 5.0),
+    ('nature.rain', 'nature/rain.mp3', 'Rain.ogg', 'ジダネ', 'Public domain', PD, 1.0, 2.5),
+    ('nature.snow', 'nature/snow.mp3', 'Crunchy Snow Walking Sound Effect - Human Sounds.opus', 'Free Sounds Library User Spanac', 'CC-BY-3.0', BY, 2.0, 2.5),
+    ('nature.sun', 'nature/sun.mp3', 'Gentle breeze and birds singing.ogg', 'ezwa', 'Public domain', PD, 4.0, 2.5),
+    ('nature.wind', 'nature/wind.mp3', 'Windy breath.ogg', 'stilgar', 'Public domain', PD, 3.0, 2.5),
+    ('nature.lightning', 'nature/thunder.mp3', 'Thunder.ogg', 'Bidgee', 'CC-BY-3.0', 'https://creativecommons.org/licenses/by/3.0/', 1.0, 3.0),
     ('music.drum', 'music/drum.mp3', 'Floor tom.ogg', 'Clngre (Wikimedia Commons)', 'CC-BY-SA-3.0', 'https://creativecommons.org/licenses/by-sa/3.0/', 0.0, 2.0),
     ('music.trumpet', 'music/trumpet.mp3', '05. D5-trumpet.ogg', 'ПростоУчастник', 'CC0-1.0', CC0, 0.0, 2.5),
     ('music.accordion', 'music/accordion.mp3', 'Registre orgue.ogg', 'Levieuxtoby', 'CC-BY-SA-4.0', SA4, 1.0, 3.0),
