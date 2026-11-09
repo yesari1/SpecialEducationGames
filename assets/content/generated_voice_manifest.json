@@ -26252,49 +26252,6 @@
     "use_speaker_boost": true
    }
   },
-  "music.darbuka:en": {
-   "bytes": 7567,
-   "characters": 8,
-   "item": "music.darbuka",
-   "kind": "item",
-   "language": "en",
-   "model_id": "eleven_multilingual_v2",
-   "note": "Re-recorded after STT check; installed take heard as 'Darbuka'.",
-   "path": "assets/audio/en/music/darbuka_selected.mp3",
-   "requested_at": "2026-10-20T08:55:57.154304+00:00",
-   "sha256": "b0a9a7cbcf81f228078990dc9309a7963eee68a58c56fc74b30200a6d4a0b0b0",
-   "text": "Darbuka.",
-   "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
-   "voice_name": "Laura - a top narration voice",
-   "voice_settings": {
-    "similarity_boost": 0.75,
-    "speed": 1.0,
-    "stability": 0.35,
-    "style": 0.43,
-    "use_speaker_boost": true
-   }
-  },
-  "music.darbuka:tr": {
-   "bytes": 7567,
-   "characters": 8,
-   "item": "music.darbuka",
-   "kind": "item",
-   "language": "tr",
-   "model_id": "eleven_multilingual_v2",
-   "path": "assets/audio/tr/music/darbuka_selected.mp3",
-   "requested_at": "2026-10-20T03:44:22.267838+00:00",
-   "sha256": "7cd58d7e3a136b4acc5c96386a9fd5c3a3f8f603f2ddad10eb54a0da8682437a",
-   "text": "Darbuka.",
-   "voice_id": "uvU9jrgGLWNPeNA4NgNT",
-   "voice_name": "İrem - Authoritarian Female Voice",
-   "voice_settings": {
-    "similarity_boost": 0.75,
-    "speed": 1.0,
-    "stability": 0.35,
-    "style": 0.43,
-    "use_speaker_boost": true
-   }
-  },
   "music.davul_zurna:en": {
    "bytes": 9448,
    "characters": 12,

@@ -1343,10 +1343,6 @@
     "tr": "Trompet.",
     "en": "Trumpet."
   },
-  "assets/audio/{lang}/music/darbuka_selected.mp3": {
-    "tr": "Darbuka.",
-    "en": "Darbuka."
-  },
   "assets/audio/{lang}/scenes/g75_listen.mp3": {
     "tr": "Dinle, sonra sen de çal.",
     "en": "Listen, then you play too."

@@ -18,8 +18,7 @@ Bu dalda (`feature/home-sections`) eklenen ses efektleri. Hepsi Wikimedia Common
 | music.accordion | `assets/sfx/music/accordion.mp3` | [Accordion registers.ogg](https://commons.wikimedia.org/wiki/File:Accordion_registers.ogg) | Necz0r | Public domain | Atıf gerekmiyor. | Uygun |
 | music.piano | `assets/sfx/music/piano.mp3` | [E major piano.ogg](https://commons.wikimedia.org/wiki/File:E_major_piano.ogg) | ROUX (Wikimedia Commons) | CC0-1.0 | Atıf gerekmiyor. | Uygun |
 | music.violin | `assets/sfx/music/violin.mp3` | [Street musician violin.ogg](https://commons.wikimedia.org/wiki/File:Street_musician_violin.ogg) | natalie | Public domain | Atıf gerekmiyor. | Uygun |
-| music.darbuka | `assets/sfx/music/darbuka.mp3` | [Djembe.ogg](https://commons.wikimedia.org/wiki/File:Djembe.ogg) | Freddythehat | Public domain | Atıf gerekmiyor. | Uygun |
 
-Not: Darbuka için serbest lisanslı kayıt bulunamadı; `music.darbuka` dosyası benzer bir el davulu olan djembe kaydıdır. `music.drum` timpani (büyük davul) kaydıdır.
+Not: `music.drum` timpani (büyük davul) kaydıdır.
 
 Seslendirme (İrem, Laura) ElevenLabs ile üretildi, kayıtları `tools/home_sections/voice_manifest.json` dosyasındadır; bu liste yalnız efektleri kapsar.

@@ -304,17 +304,5 @@
     "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
     "originalSha256": "b6598a1b3e125f24f1e49a9beea26a2a9ad6996babd7b8d0e68e87e9ddc8a369",
     "sha256": "a08867f9369a106ca4691ba769a8fa564becf5f89cdc68fedd283ef0bdf1834e"
-  },
-  {
-    "itemId": "music.darbuka",
-    "asset": "assets/sfx/music/darbuka.mp3",
-    "title": "Djembe.ogg",
-    "author": "Freddythehat",
-    "source": "https://commons.wikimedia.org/wiki/File:Djembe.ogg",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
-    "changes": "Cut to 2.5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "1b692d67db064de9701f6accec7179653ce420cc317ce39a9798454b944d5271",
-    "sha256": "8f8aa0722eb43bf55b82bcdde602b8d191cf34c40745c42339f2c729e7c1e16e"
   }
 ]

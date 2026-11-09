@@ -39,7 +39,6 @@ SOUNDS = [
     ('music.recorder', 'music/recorder.mp3', 'SopranoRecorder.ogg', 'Thparkth', 'Public domain', PD, 1.0, 3.0),
     ('music.tambourine', 'music/tambourine.mp3', 'Tambourine.ogg', 'Freddythehat', 'Public domain', PD, 2.0, 2.0),
     ('music.violin', 'music/violin.mp3', 'Street musician violin.ogg', 'natalie', 'Public domain', PD, 3.0, 3.0),
-    ('music.darbuka', 'music/darbuka.mp3', 'Djembe.ogg', 'Freddythehat', 'Public domain', PD, 0.0, 2.5),
 ]
 
 

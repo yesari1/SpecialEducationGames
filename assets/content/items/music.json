@@ -211,22 +211,5 @@
       "en": "assets/audio/en/music/trumpet_selected.mp3"
     },
     "sfx": "assets/sfx/music/trumpet.mp3"
-  },
-  {
-    "id": "music.darbuka",
-    "theme": "music",
-    "tier": "hard",
-    "chapter": 1,
-    "tags": [],
-    "name": {
-      "tr": "Darbuka",
-      "en": "Darbuka"
-    },
-    "images": [],
-    "audio": {
-      "tr": "assets/audio/tr/music/darbuka_selected.mp3",
-      "en": "assets/audio/en/music/darbuka_selected.mp3"
-    },
-    "sfx": "assets/sfx/music/darbuka.mp3"
   }
 ]

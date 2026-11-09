@@ -7,7 +7,7 @@ MUSIC = [
     # in import_commons_sfx.py.
     ('accordion', 'medium', 'Akordeon', 'Accordion'), ('tambourine', 'medium', 'Tef', 'Tambourine'),
     ('recorder', 'medium', 'Flüt', 'Recorder'), ('violin', 'hard', 'Keman', 'Violin'),
-    ('trumpet', 'hard', 'Trompet', 'Trumpet'), ('darbuka', 'hard', 'Darbuka', 'Darbuka'),
+    ('trumpet', 'hard', 'Trompet', 'Trumpet'),
 ]
 ITEM_SFX = {f'music.{slug}': f'assets/sfx/music/{slug}.mp3' for slug, *_ in MUSIC}
 
