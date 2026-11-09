@@ -501,7 +501,7 @@ class _SceneGameViewState extends State<SceneGameView> {
                     child: GestureDetector(
                       key: ValueKey('scene-piece-$id'),
                       behavior: HitTestBehavior.opaque,
-                      onTap: () => _bring(id),
+                      onTap: round.gentle ? null : () => _bring(id),
                       child: sized,
                     ),
                   );

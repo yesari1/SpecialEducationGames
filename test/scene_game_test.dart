@@ -145,6 +145,56 @@ void main() {
     expect(selected.single.id, right.id);
   });
 
+  testWidgets('gentle round: drag only, a piece not asked yet just goes back', (
+    tester,
+  ) async {
+    final said = <List<String>>[];
+    final base = spec([
+      SceneStep(mode: SceneStepMode.place, piece: right.id, zone: one, stays: true),
+      SceneStep(mode: SceneStepMode.place, piece: wrong.id, zone: one, stays: true),
+    ]);
+    final gentle = RoundSpec(
+      target: right,
+      choices: [right],
+      promptTr: 'Soru',
+      promptEn: 'Question',
+      fullStage: true,
+      scene: SceneRound(
+        key: 'b',
+        tier: 'easy',
+        target: right.id,
+        stage: gift,
+        text: const {'tr': 'Soru'},
+        audio: const {'tr': 'ask.mp3'},
+        steps: base.scene!.steps,
+        gentle: true,
+      ),
+      scenePieces: base.scenePieces,
+    );
+    final selected = await pump(tester, gentle, said);
+    // Both pieces wait in the tray; tapping does nothing.
+    await tester.tap(find.byKey(ValueKey('scene-piece-${right.id}')));
+    await tester.pump();
+    expect(find.byKey(const ValueKey('scene-placed-0')), findsNothing);
+    // The piece that is not asked yet goes back, with the question again.
+    await tester.drag(
+      find.byKey(ValueKey('scene-piece-${wrong.id}')),
+      const Offset(-500, 0),
+    );
+    await tester.pumpAndSettle();
+    expect(said.single, ['ask.mp3']);
+    expect(selected, isEmpty);
+    expect(find.byKey(ValueKey('scene-piece-${wrong.id}')), findsOneWidget);
+    // The asked piece stays on the table and leaves the tray.
+    await tester.drag(
+      find.byKey(ValueKey('scene-piece-${right.id}')),
+      const Offset(-500, 0),
+    );
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('scene-placed-0')), findsOneWidget);
+    expect(find.byKey(ValueKey('scene-piece-${right.id}')), findsNothing);
+  });
+
   testWidgets('rub step: every spot must go', (tester) async {
     final selected = await pump(
       tester,
