@@ -32,27 +32,41 @@ const _ghost = <double>[
   0, 0, 0, 1, 0,
 ];
 
-/// A small soft food spot: a few uneven blobs, a little different each time.
+/// Bits of food on one tooth: small uneven brown and yellow specks, kept
+/// inside the tooth's rounded shape.
 class _StainPainter extends CustomPainter {
   final int seed;
   const _StainPainter(this.seed);
+  static const _colors = [Color(0xFFA47B3B), Color(0xFFC49A52), Color(0xFF8A6A35)];
   @override
   void paint(Canvas canvas, Size size) {
-    final random = math.Random(seed * 7 + 3);
-    final c = size.center(Offset.zero);
-    final r = size.shortestSide / 2;
-    for (var i = 0; i < 4; i++) {
-      final angle = random.nextDouble() * math.pi * 2;
-      final centre = c + Offset.fromDirection(angle, r * random.nextDouble() * .5);
-      final radius = r * (.34 + random.nextDouble() * .3);
-      canvas.drawCircle(
-        centre,
-        radius,
+    final random = math.Random(seed * 11 + 5);
+    canvas.clipRRect(
+      RRect.fromRectAndRadius(
+        Offset.zero & size,
+        Radius.circular(size.shortestSide * .32),
+      ),
+    );
+    final specks = 4 + random.nextInt(3);
+    for (var i = 0; i < specks; i++) {
+      final centre = Offset(
+        size.width * (.18 + random.nextDouble() * .64),
+        size.height * (.2 + random.nextDouble() * .6),
+      );
+      final path = Path();
+      final corners = 6 + random.nextInt(3);
+      final base = size.shortestSide * (.07 + random.nextDouble() * .11);
+      for (var c = 0; c < corners; c++) {
+        final angle = c / corners * math.pi * 2;
+        final point = centre + Offset.fromDirection(angle, base * (.6 + random.nextDouble() * .7));
+        c == 0 ? path.moveTo(point.dx, point.dy) : path.lineTo(point.dx, point.dy);
+      }
+      path.close();
+      canvas.drawPath(
+        path,
         Paint()
-          ..shader = RadialGradient(
-            colors: const [Color(0xFFB98B3A), Color(0xCCD9B56B), Color(0x00D9B56B)],
-            stops: const [0, .62, 1],
-          ).createShader(Rect.fromCircle(center: centre, radius: radius)),
+          ..color = _colors[random.nextInt(_colors.length)].withValues(alpha: .92)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 0.8),
       );
     }
   }
@@ -214,7 +228,7 @@ class _SceneGameViewState extends State<SceneGameView> {
       maxHeight: side,
       child: Transform.rotate(
         angle: step.turn,
-        child: SizedBox.square(dimension: side * .9, child: visual),
+        child: SizedBox.square(dimension: side * .72, child: visual),
       ),
     );
   }

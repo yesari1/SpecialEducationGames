@@ -137,15 +137,18 @@ def text(tr, en):
 # G60 Dişlerini Fırçala -------------------------------------------------------
 import random  # noqa: E402
 
-TEETH_ZONE = [.45, .595, .14, .145]
+# The teeth of teeth_dirty.webp, measured on the picture (left, top, right,
+# bottom in its 1200x800 pixels). A stain never leaves its tooth.
+_TEETH_PX = [
+    (529, 476, 565, 514), (566, 480, 606, 518), (607, 480, 646, 518), (647, 476, 682, 513),  # upper
+    (535, 555, 567, 588), (569, 561, 606, 596), (607, 561, 643, 596), (645, 555, 676, 588),  # lower
+]
+TEETH = [[round(l / 1200, 4), round(t / 800, 4), round((r - l) / 1200, 4), round((b - t) / 800, 4)] for l, t, r, b in _TEETH_PX]
+TEETH_ZONE = [.44, .59, .13, .16]
 
 
 def teeth_spots(n, seed):
-    # Three teeth wide, two rows; each round stains different ones.
-    x0, y0, w, h = TEETH_ZONE
-    slots = [[round(x0 + i * (w - .032) / 2, 3), round(y0 + j * (h - .048), 3), .032, .048]
-             for i in range(3) for j in range(2)]
-    return random.Random(seed).sample(slots, n)
+    return random.Random(seed).sample(TEETH, n)
 
 
 def g60():
@@ -351,10 +354,10 @@ def g65():
 
 # G66 Sofrayı Kuralım ---------------------------------------------------------
 TABLE = {
-    'plate': ('tabağı', 'plate', [.37, .34, .24, .36]),
-    'fork': ('çatalı', 'fork', [.28, .34, .08, .36]),
-    'spoon': ('kaşığı', 'spoon', [.62, .34, .06, .36]),
-    'knife': ('bıçağı', 'knife', [.69, .32, .09, .40]),
+    'plate': ('tabağı', 'plate', [.39, .34, .22, .36]),
+    'fork': ('çatalı', 'fork', [.30, .34, .08, .36]),
+    'spoon': ('kaşığı', 'spoon', [.71, .34, .07, .36]),
+    'knife': ('bıçağı', 'knife', [.62, .34, .08, .36]),
     'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
     'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
 }
