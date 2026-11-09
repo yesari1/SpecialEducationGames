@@ -4243,7 +4243,7 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.pot"
+              "kitchen.glass"
             ],
             "zone": [
               0.39,
@@ -4265,9 +4265,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -4310,7 +4308,7 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.tray"
+              "kitchen.fork"
             ],
             "zone": [
               0.39,
@@ -4332,9 +4330,7 @@
           {
             "mode": "place",
             "piece": "kitchen.fork",
-            "others": [
-              "kitchen.pan"
-            ],
+            "others": [],
             "zone": [
               0.3,
               0.34,
@@ -4377,7 +4373,7 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.tray"
+              "kitchen.spoon"
             ],
             "zone": [
               0.39,
@@ -4399,9 +4395,7 @@
           {
             "mode": "place",
             "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.71,
               0.34,
@@ -4444,7 +4438,7 @@
             "mode": "place",
             "piece": "kitchen.glass",
             "others": [
-              "kitchen.teapot"
+              "kitchen.spoon"
             ],
             "zone": [
               0.6,
@@ -4466,9 +4460,7 @@
           {
             "mode": "place",
             "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.ladle"
-            ],
+            "others": [],
             "zone": [
               0.71,
               0.34,
@@ -4511,7 +4503,7 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.pot"
+              "kitchen.glass"
             ],
             "zone": [
               0.3,
@@ -4533,9 +4525,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.jug"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -4578,8 +4568,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.tray",
-              "kitchen.pan"
+              "kitchen.fork",
+              "kitchen.glass"
             ],
             "zone": [
               0.39,
@@ -4602,8 +4592,7 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.tray",
-              "kitchen.ladle"
+              "kitchen.glass"
             ],
             "zone": [
               0.3,
@@ -4625,10 +4614,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.pan",
-              "kitchen.pot"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -4671,8 +4657,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.jug",
-              "kitchen.teapot"
+              "kitchen.spoon",
+              "kitchen.glass"
             ],
             "zone": [
               0.39,
@@ -4695,8 +4681,7 @@
             "mode": "place",
             "piece": "kitchen.spoon",
             "others": [
-              "kitchen.jug",
-              "kitchen.pan"
+              "kitchen.glass"
             ],
             "zone": [
               0.71,
@@ -4718,10 +4703,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.tray",
-              "kitchen.jug"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -4764,8 +4746,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.jug",
-              "kitchen.ladle"
+              "kitchen.fork",
+              "kitchen.spoon"
             ],
             "zone": [
               0.39,
@@ -4788,8 +4770,7 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.pot",
-              "kitchen.ladle"
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -4811,10 +4792,7 @@
           {
             "mode": "place",
             "piece": "kitchen.spoon",
-            "others": [
-              "kitchen.pot",
-              "kitchen.tray"
-            ],
+            "others": [],
             "zone": [
               0.71,
               0.34,
@@ -4857,8 +4835,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.pan",
-              "kitchen.teapot"
+              "kitchen.knife",
+              "kitchen.glass"
             ],
             "zone": [
               0.39,
@@ -4881,8 +4859,7 @@
             "mode": "place",
             "piece": "kitchen.knife",
             "others": [
-              "kitchen.pot",
-              "kitchen.jug"
+              "kitchen.glass"
             ],
             "zone": [
               0.62,
@@ -4905,10 +4882,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.jug",
-              "kitchen.pan"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -4951,8 +4925,8 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.jug",
-              "kitchen.tray"
+              "kitchen.knife",
+              "kitchen.plate"
             ],
             "zone": [
               0.3,
@@ -4975,8 +4949,7 @@
             "mode": "place",
             "piece": "kitchen.knife",
             "others": [
-              "kitchen.ladle",
-              "kitchen.pan"
+              "kitchen.plate"
             ],
             "zone": [
               0.62,
@@ -4999,10 +4972,7 @@
           {
             "mode": "place",
             "piece": "kitchen.plate",
-            "others": [
-              "kitchen.jug",
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.39,
               0.34,
@@ -5045,8 +5015,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.ladle",
-              "kitchen.tray"
+              "kitchen.fork",
+              "kitchen.spoon"
             ],
             "zone": [
               0.39,
@@ -5069,8 +5039,8 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.teapot",
-              "kitchen.pan"
+              "kitchen.spoon",
+              "kitchen.glass"
             ],
             "zone": [
               0.3,
@@ -5093,8 +5063,7 @@
             "mode": "place",
             "piece": "kitchen.spoon",
             "others": [
-              "kitchen.teapot",
-              "kitchen.pot"
+              "kitchen.glass"
             ],
             "zone": [
               0.71,
@@ -5116,10 +5085,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.pan",
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5162,8 +5128,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.jug",
-              "kitchen.teapot"
+              "kitchen.fork",
+              "kitchen.knife"
             ],
             "zone": [
               0.39,
@@ -5186,8 +5152,8 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.tray",
-              "kitchen.pot"
+              "kitchen.knife",
+              "kitchen.glass"
             ],
             "zone": [
               0.3,
@@ -5210,8 +5176,7 @@
             "mode": "place",
             "piece": "kitchen.knife",
             "others": [
-              "kitchen.teapot",
-              "kitchen.pot"
+              "kitchen.glass"
             ],
             "zone": [
               0.62,
@@ -5234,10 +5199,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.tray",
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5280,8 +5242,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.pot",
-              "kitchen.ladle"
+              "kitchen.spoon",
+              "kitchen.glass"
             ],
             "zone": [
               0.39,
@@ -5304,8 +5266,8 @@
             "mode": "place",
             "piece": "kitchen.spoon",
             "others": [
-              "kitchen.pot",
-              "kitchen.teapot"
+              "kitchen.glass",
+              "kitchen.napkin"
             ],
             "zone": [
               0.71,
@@ -5328,8 +5290,7 @@
             "mode": "place",
             "piece": "kitchen.glass",
             "others": [
-              "kitchen.tray",
-              "kitchen.ladle"
+              "kitchen.napkin"
             ],
             "zone": [
               0.6,
@@ -5351,10 +5312,7 @@
           {
             "mode": "place",
             "piece": "kitchen.napkin",
-            "others": [
-              "kitchen.tray",
-              "kitchen.pot"
-            ],
+            "others": [],
             "zone": [
               0.21,
               0.4,
@@ -5397,8 +5355,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.jug",
-              "kitchen.tray"
+              "kitchen.fork",
+              "kitchen.knife"
             ],
             "zone": [
               0.39,
@@ -5421,8 +5379,8 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.ladle",
-              "kitchen.pot"
+              "kitchen.knife",
+              "kitchen.spoon"
             ],
             "zone": [
               0.3,
@@ -5445,8 +5403,8 @@
             "mode": "place",
             "piece": "kitchen.knife",
             "others": [
-              "kitchen.jug",
-              "kitchen.ladle"
+              "kitchen.spoon",
+              "kitchen.glass"
             ],
             "zone": [
               0.62,
@@ -5470,8 +5428,7 @@
             "mode": "place",
             "piece": "kitchen.spoon",
             "others": [
-              "kitchen.tray",
-              "kitchen.teapot"
+              "kitchen.glass"
             ],
             "zone": [
               0.71,
@@ -5493,10 +5450,7 @@
           {
             "mode": "place",
             "piece": "kitchen.glass",
-            "others": [
-              "kitchen.tray",
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.6,
               0.1,
@@ -5539,8 +5493,8 @@
             "mode": "place",
             "piece": "kitchen.plate",
             "others": [
-              "kitchen.teapot",
-              "kitchen.pan"
+              "kitchen.fork",
+              "kitchen.knife"
             ],
             "zone": [
               0.39,
@@ -5563,8 +5517,8 @@
             "mode": "place",
             "piece": "kitchen.fork",
             "others": [
-              "kitchen.pan",
-              "kitchen.pot"
+              "kitchen.knife",
+              "kitchen.glass"
             ],
             "zone": [
               0.3,
@@ -5587,8 +5541,8 @@
             "mode": "place",
             "piece": "kitchen.knife",
             "others": [
-              "kitchen.teapot",
-              "kitchen.jug"
+              "kitchen.glass",
+              "kitchen.napkin"
             ],
             "zone": [
               0.62,
@@ -5612,8 +5566,7 @@
             "mode": "place",
             "piece": "kitchen.glass",
             "others": [
-              "kitchen.pot",
-              "kitchen.teapot"
+              "kitchen.napkin"
             ],
             "zone": [
               0.6,
@@ -5635,10 +5588,7 @@
           {
             "mode": "place",
             "piece": "kitchen.napkin",
-            "others": [
-              "kitchen.tray",
-              "kitchen.teapot"
-            ],
+            "others": [],
             "zone": [
               0.21,
               0.4,

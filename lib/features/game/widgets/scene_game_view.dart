@@ -47,7 +47,7 @@ class _StainPainter extends CustomPainter {
         Radius.circular(size.shortestSide * .32),
       ),
     );
-    final specks = 4 + random.nextInt(3);
+    final specks = 6 + random.nextInt(4);
     for (var i = 0; i < specks; i++) {
       final centre = Offset(
         size.width * (.18 + random.nextDouble() * .64),

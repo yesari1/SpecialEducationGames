@@ -379,9 +379,11 @@ def g66():
     for tier, sets in TABLE_SETS.items():
         for items in sets:
             steps = []
-            for name in items:
+            for n, name in enumerate(items):
                 tr, en, zone = TABLE[name]
-                steps.append({'mode': 'place', 'piece': f'kitchen.{name}', 'others': rnd.sample(TABLE_OTHERS, extra[tier]),
+                # Only what goes on this table waits on the right.
+                later = items[n + 1:]
+                steps.append({'mode': 'place', 'piece': f'kitchen.{name}', 'others': [f'kitchen.{o}' for o in later[:extra[tier]]],
                               'zone': zone, 'stays': True, 'shadow': True, 'askAudio': asks[name],
                               **({'turn': -0.72} if name == 'knife' else {}),
                               'askText': text(f'Şimdi {tr} yerine koyalım.', f'Now the {en}.')})
