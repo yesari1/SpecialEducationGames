@@ -334,5 +334,29 @@
       "tr": "Hava Nasıl?",
       "en": "What's the Weather?"
     }
+  },
+  {
+    "id": "G74",
+    "template": "pair",
+    "name": {
+      "tr": "Hangi Alet Çalıyor?",
+      "en": "Which One Is Playing?"
+    }
+  },
+  {
+    "id": "G75",
+    "template": "echo",
+    "name": {
+      "tr": "Sen de Çal",
+      "en": "Your Turn"
+    }
+  },
+  {
+    "id": "G76",
+    "template": "free_play",
+    "name": {
+      "tr": "Çal Bakalım",
+      "en": "Play Along"
+    }
   }
 ]

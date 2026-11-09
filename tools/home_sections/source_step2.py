@@ -137,13 +137,13 @@ def text(tr, en):
 # G60 Dişlerini Fırçala -------------------------------------------------------
 import random  # noqa: E402
 
-TEETH_ZONE = [.40, .57, .21, .18]
+TEETH_ZONE = [.445, .60, .145, .135]
 
 
 def teeth_spots(n, seed):
     # Three teeth wide, two rows; each round stains different ones.
     x0, y0, w, h = TEETH_ZONE
-    slots = [[round(x0 + i * (w - .05) / 2, 3), round(y0 + j * (h - .075), 3), .05, .075]
+    slots = [[round(x0 + i * (w - .04) / 2, 3), round(y0 + j * (h - .06), 3), .04, .06]
              for i in range(3) for j in range(2)]
     return random.Random(seed).sample(slots, n)
 
@@ -354,7 +354,7 @@ TABLE = {
     'plate': ('tabağı', 'plate', [.39, .36, .22, .33]),
     'fork': ('çatalı', 'fork', [.29, .36, .09, .33]),
     'spoon': ('kaşığı', 'spoon', [.62, .36, .09, .33]),
-    'knife': ('bıçağı', 'knife', [.71, .38, .08, .30]),
+    'knife': ('bıçağı', 'knife', [.69, .38, .14, .30]),
     'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
     'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
 }

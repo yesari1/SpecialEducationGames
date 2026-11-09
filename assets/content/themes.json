@@ -211,7 +211,12 @@
     },
     "hero": "music.guitar",
     "active": false,
-    "games": []
+    "games": [
+      "G02",
+      "G74",
+      "G75",
+      "G76"
+    ]
   },
   {
     "id": "body",

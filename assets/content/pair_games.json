@@ -2850,5 +2850,130 @@
         }
       }
     ]
+  },
+  "G74": {
+    "theme": "music",
+    "rounds": [
+      {
+        "target": "music.drum",
+        "sound": "assets/sfx/music/drum.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.piano",
+        "sound": "assets/sfx/music/piano.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.guitar",
+        "sound": "assets/sfx/music/guitar.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.bell",
+        "sound": "assets/sfx/music/bell.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.accordion",
+        "sound": "assets/sfx/music/accordion.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.tambourine",
+        "sound": "assets/sfx/music/tambourine.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.recorder",
+        "sound": "assets/sfx/music/recorder.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.violin",
+        "sound": "assets/sfx/music/violin.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.trumpet",
+        "sound": "assets/sfx/music/trumpet.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      },
+      {
+        "target": "music.darbuka",
+        "sound": "assets/sfx/music/darbuka.mp3",
+        "text": {
+          "tr": "Dinle bakalım. Hangi alet çalıyor?",
+          "en": "Listen. Which instrument is playing?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g74_listen.mp3",
+          "en": "assets/audio/en/scenes/g74_listen.mp3"
+        }
+      }
+    ]
   }
 }

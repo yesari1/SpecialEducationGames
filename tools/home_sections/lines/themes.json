@@ -1306,5 +1306,61 @@
   "assets/audio/{lang}/scenes/g73_done_lightning.mp3": {
     "tr": "Şimşek çakıyor.",
     "en": "It's stormy."
+  },
+  "assets/audio/{lang}/music/drum_selected.mp3": {
+    "tr": "Davul.",
+    "en": "Drum."
+  },
+  "assets/audio/{lang}/music/piano_selected.mp3": {
+    "tr": "Piyano.",
+    "en": "Piano."
+  },
+  "assets/audio/{lang}/music/guitar_selected.mp3": {
+    "tr": "Gitar.",
+    "en": "Guitar."
+  },
+  "assets/audio/{lang}/music/bell_selected.mp3": {
+    "tr": "Zil.",
+    "en": "Bell."
+  },
+  "assets/audio/{lang}/music/accordion_selected.mp3": {
+    "tr": "Akordeon.",
+    "en": "Accordion."
+  },
+  "assets/audio/{lang}/music/tambourine_selected.mp3": {
+    "tr": "Tef.",
+    "en": "Tambourine."
+  },
+  "assets/audio/{lang}/music/recorder_selected.mp3": {
+    "tr": "Flüt.",
+    "en": "Recorder."
+  },
+  "assets/audio/{lang}/music/violin_selected.mp3": {
+    "tr": "Keman.",
+    "en": "Violin."
+  },
+  "assets/audio/{lang}/music/trumpet_selected.mp3": {
+    "tr": "Trompet.",
+    "en": "Trumpet."
+  },
+  "assets/audio/{lang}/music/darbuka_selected.mp3": {
+    "tr": "Darbuka.",
+    "en": "Darbuka."
+  },
+  "assets/audio/{lang}/scenes/g75_listen.mp3": {
+    "tr": "Dinle, sonra sen de çal.",
+    "en": "Listen, then you play too."
+  },
+  "assets/audio/{lang}/scenes/g75_again.mp3": {
+    "tr": "Bir daha dinleyelim.",
+    "en": "Let's listen again."
+  },
+  "assets/audio/{lang}/scenes/g76_play.mp3": {
+    "tr": "Hangisini istersen çal.",
+    "en": "Play whichever you like."
+  },
+  "assets/audio/{lang}/scenes/g74_listen.mp3": {
+    "tr": "Dinle bakalım. Hangi alet çalıyor?",
+    "en": "Listen. Which instrument is playing?"
   }
 }
