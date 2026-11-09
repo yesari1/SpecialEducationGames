@@ -144,6 +144,9 @@ def main():
             free.add(key)
         config['freeGames'] = [k for k in config['freeGames'] if k in free] + sorted(free - set(config['freeGames']))
 
+    # A theme that is not open yet has no free cards.
+    config['freeGames'] = [k for k in config['freeGames'] if by_id[k.split('_')[0]]['active']]
+
     # "Neyi Nereye Giyeriz?" moved from Our Body to Clothes.
     if 'G49' in by_id['body']['games']:
         by_id['body']['games'].remove('G49')
