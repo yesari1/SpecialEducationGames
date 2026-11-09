@@ -2,7 +2,7 @@
 
 Style and saving rules are inside each prompt. Work in `D:\_MobileProjects\SpecialEducationGames-home`, branch `feature/home-sections`.
 
-## 1. Instruments (5 of 10 missing)
+## 1. Instruments (6 of 10 missing)
 
 Save as `artifacts/illustrations-home/items/music/<slug>.png`, SEG soft clay, 1024x1024, transparent, no people, no text.
 Missing: `tambourine`, `recorder`, `violin`, `trumpet`, `accordion`, `darbuka`.
