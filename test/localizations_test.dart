@@ -123,16 +123,6 @@ void main() {
     },
   );
 
-  test('Typed game and daily path resources preserve pager counts', () {
-    for (final (locale, pathPage) in [
-      ('tr', 'Sayfa 2 / 3'),
-      ('en', 'Page 2 of 3'),
-    ]) {
-      final l10n = lookupAppLocalizations(Locale(locale));
-      expect(l10n.dailyPathPageCurrentOfTotal(2, 3), pathPage);
-    }
-  });
-
   test('Typed family resources preserve profile names and counts', () {
     for (final (locale, countText, profileCopy, deleteCopy) in [
       (

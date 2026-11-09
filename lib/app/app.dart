@@ -312,7 +312,6 @@ class _EducationAppState extends State<EducationApp>
                 themeId: s.pathParameters['theme']!,
                 gameId: s.pathParameters['game']!,
                 difficulty: Difficulty.values.byName(s.pathParameters['tier']!),
-                fromPath: s.uri.queryParameters['from'] == 'path',
               ),
             ),
           ),

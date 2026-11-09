@@ -811,25 +811,13 @@ class AppState extends ChangeNotifier {
   );
   DailyPathProgress get dailyPath => dailyPathAt(DateTime.now());
 
-  /// Where a finished round leads on its own. Opened from today's path: the
-  /// next unplayed stop of the path (the theme once the path is done).
-  /// Opened from a theme page: the next open game of that theme. Null when
-  /// nothing else can be played.
+  /// Where a finished round leads on its own: the next open game of its
+  /// theme, or null when nothing else can be played.
   String? nextGameRoute(
     String theme,
     String game,
-    Difficulty tier, {
-    bool fromPath = false,
-  }) {
-    final current = '${theme}_$game';
-    final path = dailyPath;
-    if (fromPath) {
-      for (final step in path.steps) {
-        if (step == current || path.completed.contains(step)) continue;
-        final parts = step.split('_');
-        return '/game/${parts[0]}/${parts[1]}/easy?from=path';
-      }
-    }
+    Difficulty tier,
+  ) {
     final games = gamesForTheme(theme);
     final from = games.indexOf(game);
     for (var i = 1; i < games.length; i++) {
@@ -842,8 +830,6 @@ class AppState extends ChangeNotifier {
     return null;
   }
 
-  bool get hasTodaySticker =>
-      dailyStickers.contains(DailyPathProgress.dayKey(DateTime.now()));
   Set<String> introduced = {};
   bool introduction = true, automaticDifficulty = true;
   Profile? active;

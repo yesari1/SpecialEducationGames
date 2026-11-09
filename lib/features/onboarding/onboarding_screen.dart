@@ -299,8 +299,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   /// Hands the phone to the child: the parent area closes again.
   void finish() {
     s.lockFamily();
-    // The child starts on Learn, at the top.
-    context.go('/?path=true');
+    context.go('/');
   }
 
   // ---------------------------------------------------------------- frame --

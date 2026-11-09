@@ -32,25 +32,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _queryRead = false;
   Timer? _dayTick;
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (!_queryRead) {
-      _queryRead = true;
-      // The child's first arrival after setup: Learn, at the top.
-      if (GoRouter.maybeOf(
-            context,
-          )?.routerDelegate.currentConfiguration.uri.queryParameters['path'] ==
-          'true') {
-        s.homeTab = HomeTab.learn;
-        s.homeLearnOffset = 0;
-      }
-      // Ready before the first switch, so a tab never shows a blank frame.
-      for (final tab in HomeTab.values) {
-        unawaited(precacheImage(AssetImage(_background(tab)), context));
-      }
+    // Ready before the first switch, so a tab never shows a blank frame.
+    for (final tab in HomeTab.values) {
+      unawaited(precacheImage(AssetImage(_background(tab)), context));
     }
   }
 

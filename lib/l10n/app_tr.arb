@@ -8,7 +8,6 @@
   "noAdsOffline": "Reklam yok.",
   "homeFamily": "Aile",
   "homeGames": "Oyunlar",
-  "homeDailyPath": "Bugünün Yolu",
   "homeFamilyHint": "Aile bölümü (ebeveyn kontrolü açılır)",
   "greeting": "Merhaba, {name}",
   "@greeting": {
@@ -20,8 +19,6 @@
       }
     }
   },
-  "homePathSubtitle": "Küçük adımlarla keşfedelim.",
-  "homeGamesSubtitle": "Bugün ne keşfedelim?",
   "homeNewBadge": "Yeni",
   "homeThemeGameCount": "{count, plural, =0{0 oyun} one{{count} oyun} other{{count} oyun}}",
   "@homeThemeGameCount": {
@@ -655,10 +652,6 @@
   "@gameWellDone": {
     "description": "Game results and actions interface copy."
   },
-  "gameYouEarnedTodaysSticker": "Bugünün çıkartmasını kazandın!",
-  "@gameYouEarnedTodaysSticker": {
-    "description": "Game results and actions interface copy."
-  },
   "gameWeExploredTogether": "Birlikte keşfettik.",
   "@gameWeExploredTogether": {
     "description": "Game results and actions interface copy."
@@ -704,52 +697,8 @@
   "@gameNext": {
     "description": "Game results and actions interface copy."
   },
-  "dailyPathNoGamesAreAvailableToday": "Bugün açık oyun bulunmuyor.",
-  "@dailyPathNoGamesAreAvailableToday": {
-    "description": "Daily path and sticker album interface copy."
-  },
   "dailyPathMyStickers": "Çıkartmalarım",
   "@dailyPathMyStickers": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathCompleted": "Tamamlandı",
-  "@dailyPathCompleted": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPlay": "Oyna",
-  "@dailyPathPlay": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathCompleteTodaysPathToEarnYourFirst": "Oyunları bitirdikçe çıkartma kazanacaksın.",
-  "@dailyPathCompleteTodaysPathToEarnYourFirst": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathEarnedSticker": "Kazanılan çıkartma",
-  "@dailyPathEarnedSticker": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPreviousPage": "Önceki sayfa",
-  "@dailyPathPreviousPage": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPageCurrentOfTotal": "Sayfa {current} / {total}",
-  "@dailyPathPageCurrentOfTotal": {
-    "description": "Daily path and sticker album interface copy.",
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "dailyPathNextPage": "Sonraki sayfa",
-  "@dailyPathNextPage": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathClose": "Kapat",
-  "@dailyPathClose": {
     "description": "Daily path and sticker album interface copy."
   },
   "profileEditorNameRequired": "Bir takma ad yazın.",

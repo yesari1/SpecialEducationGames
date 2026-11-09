@@ -108,13 +108,6 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License: CC-BY-3.0 — https://creativecommons.org/licenses/by/3.0/
 - App asset: assets/sfx/nature/thunder.mp3
 
-## Piano acústico, acorde C.ogg
-
-- Author: ZappaMidiPF
-- Source: https://commons.wikimedia.org/wiki/File:Piano_ac%C3%BAstico%2C_acorde_C.ogg
-- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
-- App asset: assets/sfx/music/piano.mp3
-
 ## A-major.ogg
 
 - Author: WBOSITG
@@ -143,27 +136,6 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
 - App asset: assets/sfx/music/tambourine.mp3
 
-## Violin-440Hz.ogg
-
-- Author: SVGguru
-- Source: https://commons.wikimedia.org/wiki/File:Violin-440Hz.ogg
-- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
-- App asset: assets/sfx/music/violin.mp3
-
-## Derbake Grave.ogg
-
-- Author: ZappaMidiPF
-- Source: https://commons.wikimedia.org/wiki/File:Derbake_Grave.ogg
-- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
-- App asset: assets/sfx/music/darbuka.mp3
-
-## Floor tom.ogg
-
-- Author: Clngre (Wikimedia Commons)
-- Source: https://commons.wikimedia.org/wiki/File:Floor_tom.ogg
-- License: CC-BY-SA-3.0 — https://creativecommons.org/licenses/by-sa/3.0/
-- App asset: assets/sfx/music/drum.mp3
-
 ## 05. D5-trumpet.ogg
 
 - Author: ПростоУчастник
@@ -171,9 +143,37 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License: CC0-1.0 — https://creativecommons.org/publicdomain/zero/1.0/
 - App asset: assets/sfx/music/trumpet.mp3
 
-## Registre orgue.ogg
+## Timpani 64-c-p5.wav
 
-- Author: Levieuxtoby
-- Source: https://commons.wikimedia.org/wiki/File:Registre_orgue.ogg
-- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- Author: spt3125
+- Source: https://commons.wikimedia.org/wiki/File:Timpani_64-c-p5.wav
+- License: CC0-1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+- App asset: assets/sfx/music/drum.mp3
+
+## Accordion registers.ogg
+
+- Author: Necz0r
+- Source: https://commons.wikimedia.org/wiki/File:Accordion_registers.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
 - App asset: assets/sfx/music/accordion.mp3
+
+## E major piano.ogg
+
+- Author: ROUX (Wikimedia Commons)
+- Source: https://commons.wikimedia.org/wiki/File:E_major_piano.ogg
+- License: CC0-1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+- App asset: assets/sfx/music/piano.mp3
+
+## Street musician violin.ogg
+
+- Author: natalie
+- Source: https://commons.wikimedia.org/wiki/File:Street_musician_violin.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/music/violin.mp3
+
+## Djembe.ogg
+
+- Author: Freddythehat
+- Source: https://commons.wikimedia.org/wiki/File:Djembe.ogg
+- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- App asset: assets/sfx/music/darbuka.mp3

@@ -77,13 +77,6 @@ void main() {
     final steps = state.dailyPath.steps;
     expect(steps.length, greaterThan(1));
     final first = steps.first.split('_');
-    final second = steps[1].split('_');
-
-    // From today's path: the path's next stop, still marked as the path.
-    expect(
-      state.nextGameRoute(first[0], first[1], Difficulty.easy, fromPath: true),
-      '/game/${second[0]}/${second[1]}/easy?from=path',
-    );
 
     // From a theme page: the next game of that same theme, never the path.
     final fromTheme = state.nextGameRoute(first[0], first[1], Difficulty.easy);

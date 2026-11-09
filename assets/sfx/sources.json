@@ -198,18 +198,6 @@
     "sha256": "d4ae5c4e98f37b57d3dcefa72cbefddba9dac88e34c625a9f8b7c3f69db0a1ed"
   },
   {
-    "itemId": "music.piano",
-    "asset": "assets/sfx/music/piano.mp3",
-    "title": "Piano acústico, acorde C.ogg",
-    "author": "ZappaMidiPF",
-    "source": "https://commons.wikimedia.org/wiki/File:Piano_ac%C3%BAstico%2C_acorde_C.ogg",
-    "license": "CC-BY-SA-4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "e6b5367b93fef55cfa9e41eb9261fb82d087bccffcb2971bf82f4a000e4aba32",
-    "sha256": "f0e39d8c5be143a518b2c10b1bbb0d213111f589c94ef5176f140932bcf63a35"
-  },
-  {
     "itemId": "music.guitar",
     "asset": "assets/sfx/music/guitar.mp3",
     "title": "A-major.ogg",
@@ -258,42 +246,6 @@
     "sha256": "435d6a2748911927a22382df7604eb8773dee490dc9905edfff7345120bbd7e4"
   },
   {
-    "itemId": "music.violin",
-    "asset": "assets/sfx/music/violin.mp3",
-    "title": "Violin-440Hz.ogg",
-    "author": "SVGguru",
-    "source": "https://commons.wikimedia.org/wiki/File:Violin-440Hz.ogg",
-    "license": "CC-BY-SA-4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "949ee0d956187cedaa015903a34c291ef02afbbc389e0b500f1078922c796a4a",
-    "sha256": "fb6f63333339602802dfe9073e45b3e64bffa142796a781e20111c23cd914fb9"
-  },
-  {
-    "itemId": "music.darbuka",
-    "asset": "assets/sfx/music/darbuka.mp3",
-    "title": "Derbake Grave.ogg",
-    "author": "ZappaMidiPF",
-    "source": "https://commons.wikimedia.org/wiki/File:Derbake_Grave.ogg",
-    "license": "CC-BY-SA-4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "changes": "Cut to 0.6 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "401d097448388bb506f2394351a063c7a426ed297c8bd8cfd438988f431e031d",
-    "sha256": "ec91d967e531a6f1a12f523360710a2d56cbc2a39755a0c5fd55a6bfd37e1be5"
-  },
-  {
-    "itemId": "music.drum",
-    "asset": "assets/sfx/music/drum.mp3",
-    "title": "Floor tom.ogg",
-    "author": "Clngre (Wikimedia Commons)",
-    "source": "https://commons.wikimedia.org/wiki/File:Floor_tom.ogg",
-    "license": "CC-BY-SA-3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-    "changes": "Cut to 2 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "1bcc040c03315063dd912c46e199d54b784a4d1121c7027c17059f5ae5673ac3",
-    "sha256": "61e02c9338337bf7117c77662f0ee49453560308db06547bfa83050e73bb4fd5"
-  },
-  {
     "itemId": "music.trumpet",
     "asset": "assets/sfx/music/trumpet.mp3",
     "title": "05. D5-trumpet.ogg",
@@ -306,15 +258,63 @@
     "sha256": "171a79c0d4f21195ddfbb59454ddae023c49a9c0e4cda6dc900694e17e80b8e3"
   },
   {
+    "itemId": "music.drum",
+    "asset": "assets/sfx/music/drum.mp3",
+    "title": "Timpani 64-c-p5.wav",
+    "author": "spt3125",
+    "source": "https://commons.wikimedia.org/wiki/File:Timpani_64-c-p5.wav",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Cut to 2.5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "aa938e6cca0ad82e39e3cc2f9636af6faf95ee3e3c910820746d81d50aedf69f",
+    "sha256": "fa763a6886bed6d7ce56cd719cd8d783c085ab749096d6727965d7b7667ec74d"
+  },
+  {
     "itemId": "music.accordion",
     "asset": "assets/sfx/music/accordion.mp3",
-    "title": "Registre orgue.ogg",
-    "author": "Levieuxtoby",
-    "source": "https://commons.wikimedia.org/wiki/File:Registre_orgue.ogg",
-    "license": "CC-BY-SA-4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "title": "Accordion registers.ogg",
+    "author": "Necz0r",
+    "source": "https://commons.wikimedia.org/wiki/File:Accordion_registers.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
     "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "648ad07b477c3d62f74244e8120df3d103d55d260533a5d3e61b2940d1f4d69d",
-    "sha256": "55edd972e6498d5daf9de2102ab15b4ee13a80e29fc48d2abf2cc5d46ecad78a"
+    "originalSha256": "e4aa5b2e824bd16f21b01a4a74dc94699b5a3795d32eb336b26f616695649130",
+    "sha256": "51e23860fd3952df9b0138d693749a78dc2b13a6587735a1860ba833400c7053"
+  },
+  {
+    "itemId": "music.piano",
+    "asset": "assets/sfx/music/piano.mp3",
+    "title": "E major piano.ogg",
+    "author": "ROUX (Wikimedia Commons)",
+    "source": "https://commons.wikimedia.org/wiki/File:E_major_piano.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "41dbbc60827340a37118c49a07b12e551bf9f66205b19e11b6ea352f5497a432",
+    "sha256": "ed809f849ea0ae7f7ca3ac1f1106dc8023f8a71cdfbc3a2f9ee5f62bfba1e64a"
+  },
+  {
+    "itemId": "music.violin",
+    "asset": "assets/sfx/music/violin.mp3",
+    "title": "Street musician violin.ogg",
+    "author": "natalie",
+    "source": "https://commons.wikimedia.org/wiki/File:Street_musician_violin.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "b6598a1b3e125f24f1e49a9beea26a2a9ad6996babd7b8d0e68e87e9ddc8a369",
+    "sha256": "a08867f9369a106ca4691ba769a8fa564becf5f89cdc68fedd283ef0bdf1834e"
+  },
+  {
+    "itemId": "music.darbuka",
+    "asset": "assets/sfx/music/darbuka.mp3",
+    "title": "Djembe.ogg",
+    "author": "Freddythehat",
+    "source": "https://commons.wikimedia.org/wiki/File:Djembe.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
+    "changes": "Cut to 2.5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
+    "originalSha256": "1b692d67db064de9701f6accec7179653ce420cc317ce39a9798454b944d5271",
+    "sha256": "8f8aa0722eb43bf55b82bcdde602b8d191cf34c40745c42339f2c729e7c1e16e"
   }
 ]

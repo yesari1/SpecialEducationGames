@@ -6,6 +6,7 @@ import 'app/ui/components.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app/app.dart';
 import 'app/app_state.dart';
+import 'app/orientation.dart';
 import 'core/audio/audio_service.dart';
 import 'core/content/content_repository.dart';
 import 'core/db/app_database.dart';
@@ -23,6 +24,8 @@ Future<void> main() async {
   );
   await state.load();
   UiSound.service = state.audio;
+  // Turned before the first frame is drawn, not during it.
+  await AppOrientation.apply(state.active == null ? '/welcome' : '/');
   runApp(ProviderScope(child: EducationApp(state: state, accountGate: true)));
   unawaited(state.billing.initialize());
   unawaited(state.refreshConfiguration(FirestoreConfigSource.read));

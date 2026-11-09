@@ -34,21 +34,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeGames => 'Games';
 
   @override
-  String get homeDailyPath => 'Today’s Path';
-
-  @override
   String get homeFamilyHint => 'Family area (opens a parent check)';
 
   @override
   String greeting(String name) {
     return 'Hello, $name';
   }
-
-  @override
-  String get homePathSubtitle => 'Let’s explore, one step at a time.';
-
-  @override
-  String get homeGamesSubtitle => 'What shall we discover today?';
 
   @override
   String get homeNewBadge => 'New';
@@ -719,9 +710,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gameWellDone => 'Well done!';
 
   @override
-  String get gameYouEarnedTodaysSticker => 'You earned today’s sticker!';
-
-  @override
   String get gameWeExploredTogether => 'We explored together.';
 
   @override
@@ -774,38 +762,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dailyPathNoGamesAreAvailableToday =>
-      'No games are available today.';
-
-  @override
   String get dailyPathMyStickers => 'My stickers';
-
-  @override
-  String get dailyPathCompleted => 'Completed';
-
-  @override
-  String get dailyPathPlay => 'Play';
-
-  @override
-  String get dailyPathCompleteTodaysPathToEarnYourFirst =>
-      'Finish a game to earn your first sticker.';
-
-  @override
-  String get dailyPathEarnedSticker => 'Earned sticker';
-
-  @override
-  String get dailyPathPreviousPage => 'Previous page';
-
-  @override
-  String dailyPathPageCurrentOfTotal(int current, int total) {
-    return 'Page $current of $total';
-  }
-
-  @override
-  String get dailyPathNextPage => 'Next page';
-
-  @override
-  String get dailyPathClose => 'Close';
 
   @override
   String get profileEditorNameRequired => 'Enter a nickname.';

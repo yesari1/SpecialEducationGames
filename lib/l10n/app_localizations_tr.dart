@@ -34,21 +34,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get homeGames => 'Oyunlar';
 
   @override
-  String get homeDailyPath => 'Bugünün Yolu';
-
-  @override
   String get homeFamilyHint => 'Aile bölümü (ebeveyn kontrolü açılır)';
 
   @override
   String greeting(String name) {
     return 'Merhaba, $name';
   }
-
-  @override
-  String get homePathSubtitle => 'Küçük adımlarla keşfedelim.';
-
-  @override
-  String get homeGamesSubtitle => 'Bugün ne keşfedelim?';
 
   @override
   String get homeNewBadge => 'Yeni';
@@ -710,9 +701,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gameWellDone => 'Aferin!';
 
   @override
-  String get gameYouEarnedTodaysSticker => 'Bugünün çıkartmasını kazandın!';
-
-  @override
   String get gameWeExploredTogether => 'Birlikte keşfettik.';
 
   @override
@@ -765,37 +753,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get dailyPathNoGamesAreAvailableToday => 'Bugün açık oyun bulunmuyor.';
-
-  @override
   String get dailyPathMyStickers => 'Çıkartmalarım';
-
-  @override
-  String get dailyPathCompleted => 'Tamamlandı';
-
-  @override
-  String get dailyPathPlay => 'Oyna';
-
-  @override
-  String get dailyPathCompleteTodaysPathToEarnYourFirst =>
-      'Oyunları bitirdikçe çıkartma kazanacaksın.';
-
-  @override
-  String get dailyPathEarnedSticker => 'Kazanılan çıkartma';
-
-  @override
-  String get dailyPathPreviousPage => 'Önceki sayfa';
-
-  @override
-  String dailyPathPageCurrentOfTotal(int current, int total) {
-    return 'Sayfa $current / $total';
-  }
-
-  @override
-  String get dailyPathNextPage => 'Sonraki sayfa';
-
-  @override
-  String get dailyPathClose => 'Kapat';
 
   @override
   String get profileEditorNameRequired => 'Bir takma ad yazın.';

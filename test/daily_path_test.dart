@@ -7,13 +7,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:special_education_games/app/app_state.dart';
 import 'package:special_education_games/app/app.dart';
 import 'package:go_router/go_router.dart';
-import 'package:special_education_games/app/theme/tokens.dart';
 import 'package:special_education_games/app/ui/components.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
 import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/core/learning/daily_path.dart';
-import 'package:special_education_games/features/child_home/daily_path_view.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -180,7 +178,6 @@ void main() {
       addTearDown(state.dispose);
       final first = state.active!;
       await completePath(state);
-      expect(state.hasTodaySticker, false);
       final key = 'profile.${first.id}.dailyStickers';
       expect(await state.db.preference(key), isNull);
       await state.db.setPreference(
@@ -368,207 +365,6 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byKey(const ValueKey('completion-summary')), findsNothing);
       expect(tester.takeException(), isNull);
-      await tester.pumpWidget(const SizedBox());
-      debugDefaultTargetPlatformOverride = null;
-    },
-  );
-  testWidgets(
-    'Daily path and sticker album fit short landscape and tablet in both languages',
-    (tester) async {
-      final state = (await tester.runAsync(fixture))!;
-      addTearDown(state.dispose);
-      addTearDown(() => tester.view.resetPhysicalSize());
-      addTearDown(() => tester.view.resetDevicePixelRatio());
-      tester.view.devicePixelRatio = 1;
-      for (final locale in ['tr', 'en']) {
-        state.locale = locale;
-        for (final size in [const Size(800, 360), const Size(1280, 800)]) {
-          tester.view.physicalSize = size;
-          await tester.pumpWidget(
-            MaterialApp(
-              theme: segTheme(),
-              home: Scaffold(
-                body: SafeArea(child: DailyPathView(state: state)),
-              ),
-            ),
-          );
-          await tester.pumpAndSettle();
-          expect(
-            find.byKey(ValueKey('daily-step-${state.dailyPathSteps.first}')),
-            findsOneWidget,
-          );
-          expect(tester.takeException(), isNull);
-          await tester.tap(find.byKey(const ValueKey('sticker-album')));
-          await tester.pumpAndSettle();
-          expect(
-            find.byKey(const ValueKey('sticker-album-dialog')),
-            findsOneWidget,
-          );
-          expect(
-            find.text(
-              state.tr(
-                'Oyunları bitirdikçe çıkartma kazanacaksın.',
-                'Finish a game to earn your first sticker.',
-              ),
-            ),
-            findsOneWidget,
-          );
-          expect(tester.takeException(), isNull);
-          await tester.tap(find.text(state.tr('Kapat', 'Close')));
-          await tester.pumpAndSettle();
-        }
-      }
-      state.locale = 'en';
-      tester.view.physicalSize = const Size(800, 360);
-      await tester.pumpWidget(
-        MaterialApp(
-          theme: segTheme(),
-          builder: (context, child) => MediaQuery(
-            data: MediaQuery.of(
-              context,
-            ).copyWith(textScaler: const TextScaler.linear(2)),
-            child: child!,
-          ),
-          home: Scaffold(
-            body: SafeArea(child: DailyPathView(state: state)),
-          ),
-        ),
-      );
-      await tester.pumpAndSettle();
-      expect(
-        find.byKey(ValueKey('daily-step-${state.dailyPathSteps.first}')),
-        findsOneWidget,
-      );
-      expect(
-        tester
-            .widgetList<Scrollable>(find.byType(Scrollable))
-            .where(
-              (scrollable) =>
-                  scrollable.axisDirection == AxisDirection.down ||
-                  scrollable.axisDirection == AxisDirection.up,
-            ),
-        isEmpty,
-      );
-      expect(tester.takeException(), isNull);
-      await tester.pumpWidget(const SizedBox());
-      debugDefaultTargetPlatformOverride = null;
-    },
-  );
-  testWidgets(
-    'Sticker album pages retain every earned sticker without vertical scrolling',
-    (tester) async {
-      final state = (await tester.runAsync(fixture))!;
-      addTearDown(state.dispose);
-      addTearDown(() => tester.view.resetPhysicalSize());
-      addTearDown(() => tester.view.resetDevicePixelRatio());
-      await tester.runAsync(() async {
-        await state.db.setPreference(
-          'profile.${state.active!.id}.dailyStickers',
-          jsonEncode([
-            '2026-10-10',
-            '2026-10-11',
-            '2026-10-12',
-            '2026-10-13',
-            '2026-10-14',
-            '2026-10-15',
-            '2026-10-16',
-          ]),
-        );
-        await state.load();
-      });
-      tester.view.devicePixelRatio = 1;
-      for (final locale in ['tr', 'en']) {
-        state.locale = locale;
-        for (final size in [const Size(800, 360), const Size(1280, 800)]) {
-          for (final scale in [1.0, 1.6, 2.0]) {
-            tester.view.physicalSize = size;
-            await tester.pumpWidget(
-              MaterialApp(
-                theme: segTheme(),
-                builder: (context, child) => MediaQuery(
-                  data: MediaQuery.of(
-                    context,
-                  ).copyWith(textScaler: TextScaler.linear(scale)),
-                  child: child!,
-                ),
-                home: Scaffold(
-                  body: Center(
-                    child: Builder(
-                      builder: (context) => TextButton(
-                        key: const ValueKey('open-sticker-album'),
-                        onPressed: () => showDialog<void>(
-                          context: context,
-                          builder: (_) => StickerAlbumDialog(
-                            state: state,
-                            days: state.dailyStickers.toList()
-                              ..sort((a, b) => b.compareTo(a)),
-                          ),
-                        ),
-                        child: const Text('Open'),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            );
-            await tester.pumpAndSettle();
-            await tester.tap(find.byKey(const ValueKey('open-sticker-album')));
-            await tester.pumpAndSettle();
-            expect(
-              find.byKey(const ValueKey('sticker-album-pages')),
-              findsOneWidget,
-            );
-            expect(
-              find.byKey(const ValueKey('sticker-album-page-indicator')),
-              findsOneWidget,
-            );
-            expect(
-              tester
-                  .widgetList<Scrollable>(find.byType(Scrollable))
-                  .where(
-                    (scrollable) =>
-                        scrollable.axisDirection == AxisDirection.down ||
-                        scrollable.axisDirection == AxisDirection.up,
-                  ),
-              isEmpty,
-            );
-            final firstIndicator = tester
-                .widget<Text>(
-                  find.byKey(const ValueKey('sticker-album-page-indicator')),
-                )
-                .data;
-            await tester.tap(find.byKey(const ValueKey('sticker-album-next')));
-            await tester.pumpAndSettle();
-            final secondIndicator = tester
-                .widget<Text>(
-                  find.byKey(const ValueKey('sticker-album-page-indicator')),
-                )
-                .data;
-            expect(firstIndicator, contains('1'));
-            expect(secondIndicator, contains('2'));
-            while (tester
-                    .widget<IconButton>(
-                      find.byKey(const ValueKey('sticker-album-next')),
-                    )
-                    .onPressed !=
-                null) {
-              await tester.tap(
-                find.byKey(const ValueKey('sticker-album-next')),
-              );
-              await tester.pumpAndSettle();
-            }
-            final finalIndicator = tester
-                .widget<Text>(
-                  find.byKey(const ValueKey('sticker-album-page-indicator')),
-                )
-                .data;
-            expect(finalIndicator, isNot(secondIndicator));
-            expect(tester.takeException(), isNull);
-            await tester.tap(find.text(state.tr('Kapat', 'Close')));
-            await tester.pumpAndSettle();
-          }
-        }
-      }
       await tester.pumpWidget(const SizedBox());
       debugDefaultTargetPlatformOverride = null;
     },

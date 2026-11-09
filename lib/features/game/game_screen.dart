@@ -32,14 +32,12 @@ class GameScreen extends StatefulWidget {
 
   /// Opened from today's path (not a theme page): "Next game" follows the
   /// path instead of the theme.
-  final bool fromPath;
   const GameScreen({
     super.key,
     required this.state,
     required this.themeId,
     required this.gameId,
     required this.difficulty,
-    this.fromPath = false,
   });
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -868,7 +866,6 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         widget.themeId,
         widget.gameId,
         widget.difficulty,
-        fromPath: widget.fromPath,
       );
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;

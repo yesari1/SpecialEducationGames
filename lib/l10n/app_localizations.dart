@@ -146,12 +146,6 @@ abstract class AppLocalizations {
   /// **'Games'**
   String get homeGames;
 
-  /// No description provided for @homeDailyPath.
-  ///
-  /// In en, this message translates to:
-  /// **'Today’s Path'**
-  String get homeDailyPath;
-
   /// No description provided for @homeFamilyHint.
   ///
   /// In en, this message translates to:
@@ -163,18 +157,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hello, {name}'**
   String greeting(String name);
-
-  /// No description provided for @homePathSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Let’s explore, one step at a time.'**
-  String get homePathSubtitle;
-
-  /// No description provided for @homeGamesSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'What shall we discover today?'**
-  String get homeGamesSubtitle;
 
   /// No description provided for @homeNewBadge.
   ///
@@ -1318,12 +1300,6 @@ abstract class AppLocalizations {
   /// Game results and actions interface copy.
   ///
   /// In en, this message translates to:
-  /// **'You earned today’s sticker!'**
-  String get gameYouEarnedTodaysSticker;
-
-  /// Game results and actions interface copy.
-  ///
-  /// In en, this message translates to:
   /// **'We explored together.'**
   String get gameWeExploredTogether;
 
@@ -1420,62 +1396,8 @@ abstract class AppLocalizations {
   /// Daily path and sticker album interface copy.
   ///
   /// In en, this message translates to:
-  /// **'No games are available today.'**
-  String get dailyPathNoGamesAreAvailableToday;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
   /// **'My stickers'**
   String get dailyPathMyStickers;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Completed'**
-  String get dailyPathCompleted;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Play'**
-  String get dailyPathPlay;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Finish a game to earn your first sticker.'**
-  String get dailyPathCompleteTodaysPathToEarnYourFirst;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Earned sticker'**
-  String get dailyPathEarnedSticker;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Previous page'**
-  String get dailyPathPreviousPage;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Page {current} of {total}'**
-  String dailyPathPageCurrentOfTotal(int current, int total);
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Next page'**
-  String get dailyPathNextPage;
-
-  /// Daily path and sticker album interface copy.
-  ///
-  /// In en, this message translates to:
-  /// **'Close'**
-  String get dailyPathClose;
 
   /// Profile editor interface copy.
   ///

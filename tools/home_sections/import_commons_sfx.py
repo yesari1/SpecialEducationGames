@@ -30,16 +30,16 @@ SOUNDS = [
     ('nature.sun', 'nature/sun.mp3', 'Gentle breeze and birds singing.ogg', 'ezwa', 'Public domain', PD, 4.0, 2.5),
     ('nature.wind', 'nature/wind.mp3', 'Windy breath.ogg', 'stilgar', 'Public domain', PD, 3.0, 2.5),
     ('nature.lightning', 'nature/thunder.mp3', 'Thunder.ogg', 'Bidgee', 'CC-BY-3.0', 'https://creativecommons.org/licenses/by/3.0/', 1.0, 3.0),
-    ('music.drum', 'music/drum.mp3', 'Floor tom.ogg', 'Clngre (Wikimedia Commons)', 'CC-BY-SA-3.0', 'https://creativecommons.org/licenses/by-sa/3.0/', 0.0, 2.0),
+    ('music.drum', 'music/drum.mp3', 'Timpani 64-c-p5.wav', 'spt3125', 'CC0-1.0', CC0, 0.0, 2.5),
     ('music.trumpet', 'music/trumpet.mp3', '05. D5-trumpet.ogg', 'ПростоУчастник', 'CC0-1.0', CC0, 0.0, 2.5),
-    ('music.accordion', 'music/accordion.mp3', 'Registre orgue.ogg', 'Levieuxtoby', 'CC-BY-SA-4.0', SA4, 1.0, 3.0),
-    ('music.piano', 'music/piano.mp3', 'Piano acústico, acorde C.ogg', 'ZappaMidiPF', 'CC-BY-SA-4.0', SA4, 0.0, 3.0),
+    ('music.accordion', 'music/accordion.mp3', 'Accordion registers.ogg', 'Necz0r', 'Public domain', PD, 2.0, 3.0),
+    ('music.piano', 'music/piano.mp3', 'E major piano.ogg', 'ROUX (Wikimedia Commons)', 'CC0-1.0', CC0, 0.0, 3.0),
     ('music.guitar', 'music/guitar.mp3', 'A-major.ogg', 'WBOSITG', 'Public domain', PD, 0.0, 3.0),
     ('music.bell', 'music/bell.mp3', 'Bell-ring.flac', 'qubodup', 'CC0-1.0', CC0, 0.0, 2.5),
     ('music.recorder', 'music/recorder.mp3', 'SopranoRecorder.ogg', 'Thparkth', 'Public domain', PD, 1.0, 3.0),
     ('music.tambourine', 'music/tambourine.mp3', 'Tambourine.ogg', 'Freddythehat', 'Public domain', PD, 2.0, 2.0),
-    ('music.violin', 'music/violin.mp3', 'Violin-440Hz.ogg', 'SVGguru', 'CC-BY-SA-4.0', SA4, 0.0, 3.0),
-    ('music.darbuka', 'music/darbuka.mp3', 'Derbake Grave.ogg', 'ZappaMidiPF', 'CC-BY-SA-4.0', SA4, 0.0, 0.6),
+    ('music.violin', 'music/violin.mp3', 'Street musician violin.ogg', 'natalie', 'Public domain', PD, 3.0, 3.0),
+    ('music.darbuka', 'music/darbuka.mp3', 'Djembe.ogg', 'Freddythehat', 'Public domain', PD, 0.0, 2.5),
 ]
 
 

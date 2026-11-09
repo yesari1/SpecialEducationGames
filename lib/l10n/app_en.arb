@@ -8,7 +8,6 @@
   "noAdsOffline": "No ads.",
   "homeFamily": "Family",
   "homeGames": "Games",
-  "homeDailyPath": "Today’s Path",
   "homeFamilyHint": "Family area (opens a parent check)",
   "greeting": "Hello, {name}",
   "@greeting": {
@@ -20,8 +19,6 @@
       }
     }
   },
-  "homePathSubtitle": "Let’s explore, one step at a time.",
-  "homeGamesSubtitle": "What shall we discover today?",
   "homeNewBadge": "New",
   "homeThemeGameCount": "{count, plural, =0{0 games} one{{count} game} other{{count} games}}",
   "@homeThemeGameCount": {
@@ -655,10 +652,6 @@
   "@gameWellDone": {
     "description": "Game results and actions interface copy."
   },
-  "gameYouEarnedTodaysSticker": "You earned today’s sticker!",
-  "@gameYouEarnedTodaysSticker": {
-    "description": "Game results and actions interface copy."
-  },
   "gameWeExploredTogether": "We explored together.",
   "@gameWeExploredTogether": {
     "description": "Game results and actions interface copy."
@@ -704,52 +697,8 @@
   "@gameNext": {
     "description": "Game results and actions interface copy."
   },
-  "dailyPathNoGamesAreAvailableToday": "No games are available today.",
-  "@dailyPathNoGamesAreAvailableToday": {
-    "description": "Daily path and sticker album interface copy."
-  },
   "dailyPathMyStickers": "My stickers",
   "@dailyPathMyStickers": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathCompleted": "Completed",
-  "@dailyPathCompleted": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPlay": "Play",
-  "@dailyPathPlay": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathCompleteTodaysPathToEarnYourFirst": "Finish a game to earn your first sticker.",
-  "@dailyPathCompleteTodaysPathToEarnYourFirst": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathEarnedSticker": "Earned sticker",
-  "@dailyPathEarnedSticker": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPreviousPage": "Previous page",
-  "@dailyPathPreviousPage": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathPageCurrentOfTotal": "Page {current} of {total}",
-  "@dailyPathPageCurrentOfTotal": {
-    "description": "Daily path and sticker album interface copy.",
-    "placeholders": {
-      "current": {
-        "type": "int"
-      },
-      "total": {
-        "type": "int"
-      }
-    }
-  },
-  "dailyPathNextPage": "Next page",
-  "@dailyPathNextPage": {
-    "description": "Daily path and sticker album interface copy."
-  },
-  "dailyPathClose": "Close",
-  "@dailyPathClose": {
     "description": "Daily path and sticker album interface copy."
   },
   "profileEditorNameRequired": "Enter a nickname.",
