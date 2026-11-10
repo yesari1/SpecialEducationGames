@@ -137,12 +137,27 @@
       "tr": "Akordeon",
       "en": "Accordion"
     },
-    "images": [],
+    "images": [
+      "assets/images/music/accordion.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/music/accordion_selected.mp3",
       "en": "assets/audio/en/music/accordion_selected.mp3"
     },
-    "sfx": "assets/sfx/music/accordion.mp3"
+    "sfx": "assets/sfx/music/accordion.mp3",
+    "imageProvenance": {
+      "assets/images/music/accordion.webp": {
+        "id": "music.accordion",
+        "path": "assets/images/music/accordion.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-09",
+        "sha256": "0e55f337b74356be3b0515a44ba0c3ae972a61b1b0c423bf1382a0a6b1ff1ad7"
+      }
+    }
   },
   {
     "id": "music.tambourine",
@@ -154,12 +169,27 @@
       "tr": "Tef",
       "en": "Tambourine"
     },
-    "images": [],
+    "images": [
+      "assets/images/music/tambourine.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/music/tambourine_selected.mp3",
       "en": "assets/audio/en/music/tambourine_selected.mp3"
     },
-    "sfx": "assets/sfx/music/tambourine.mp3"
+    "sfx": "assets/sfx/music/tambourine.mp3",
+    "imageProvenance": {
+      "assets/images/music/tambourine.webp": {
+        "id": "music.tambourine",
+        "path": "assets/images/music/tambourine.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-09",
+        "sha256": "9e6cb57fbe97afff99e7fb319bad48ab68bf433a8b4f99e13a4ec5a1d6f3862d"
+      }
+    }
   },
   {
     "id": "music.recorder",
@@ -171,12 +201,27 @@
       "tr": "Flüt",
       "en": "Recorder"
     },
-    "images": [],
+    "images": [
+      "assets/images/music/recorder.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/music/recorder_selected.mp3",
       "en": "assets/audio/en/music/recorder_selected.mp3"
     },
-    "sfx": "assets/sfx/music/recorder.mp3"
+    "sfx": "assets/sfx/music/recorder.mp3",
+    "imageProvenance": {
+      "assets/images/music/recorder.webp": {
+        "id": "music.recorder",
+        "path": "assets/images/music/recorder.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-09",
+        "sha256": "2e15761e8bfb02357d360069092d8d953d5ecd0bb2f1e3cb836fe58269c77098"
+      }
+    }
   },
   {
     "id": "music.violin",
@@ -188,12 +233,27 @@
       "tr": "Keman",
       "en": "Violin"
     },
-    "images": [],
+    "images": [
+      "assets/images/music/violin.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/music/violin_selected.mp3",
       "en": "assets/audio/en/music/violin_selected.mp3"
     },
-    "sfx": "assets/sfx/music/violin.mp3"
+    "sfx": "assets/sfx/music/violin.mp3",
+    "imageProvenance": {
+      "assets/images/music/violin.webp": {
+        "id": "music.violin",
+        "path": "assets/images/music/violin.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-09",
+        "sha256": "06e6ae7720a6a7fc3544919a9fefbdb9207809c68f61d23d016464d5aea5aa8d"
+      }
+    }
   },
   {
     "id": "music.trumpet",
@@ -205,11 +265,26 @@
       "tr": "Trompet",
       "en": "Trumpet"
     },
-    "images": [],
+    "images": [
+      "assets/images/music/trumpet.webp"
+    ],
     "audio": {
       "tr": "assets/audio/tr/music/trumpet_selected.mp3",
       "en": "assets/audio/en/music/trumpet_selected.mp3"
     },
-    "sfx": "assets/sfx/music/trumpet.mp3"
+    "sfx": "assets/sfx/music/trumpet.mp3",
+    "imageProvenance": {
+      "assets/images/music/trumpet.webp": {
+        "id": "music.trumpet",
+        "path": "assets/images/music/trumpet.webp",
+        "kind": "illustration",
+        "author": "Yes Studio",
+        "source": "ChatGPT image generation (Codex), SEG soft clay style",
+        "license": "Created for this app",
+        "licenseVerified": false,
+        "createdOn": "2026-11-09",
+        "sha256": "2000d5a54adbe6667ced6ebbab68b077bf42761b37ff557ab258f8c8a5cdd737"
+      }
+    }
   }
 ]

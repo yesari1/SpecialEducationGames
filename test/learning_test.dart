@@ -129,8 +129,9 @@ void main() {
         // plus Feelings and Our Body (3 each) and Our Home (7), Nov 2026,
         // plus the Nov 2026 games: Colors +3, Shapes +2, Feelings +3,
         // Our Body +3; the Nov 2026 themes: Keeping Clean, Clothes, Kitchen,
-        // Jobs, Nature (4 cards each), one card moved from Our Body to Clothes.
-        95,
+        // Jobs, Nature (4 cards each), one card moved from Our Body to Clothes;
+        // Music (4 cards).
+        99,
       );
       for (var i = 0; i < 30; i++) {
         for (final theme in ['animals', 'produce', 'vehicles', 'numbers']) {
@@ -242,7 +243,8 @@ void main() {
         'clothes_G02', 'clothes_G63', 'clothes_G64', //
         'kitchen_G02', 'kitchen_G65', 'kitchen_G66', //
         'jobs_G02', 'jobs_G68', 'jobs_G69', //
-        'nature_G02', 'nature_G71', 'nature_G72',
+        'nature_G02', 'nature_G71', 'nature_G72', //
+        'music_G02', 'music_G74', 'music_G75',
       });
       expect(repo.items.map((i) => i.id).toSet().length, repo.items.length);
       for (final theme in repo.themes) {

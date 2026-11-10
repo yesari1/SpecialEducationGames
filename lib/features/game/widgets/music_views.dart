@@ -29,7 +29,7 @@ class EchoView extends StatefulWidget {
 
 class _EchoViewState extends State<EchoView> {
   static const _beatGap = Duration(milliseconds: 800);
-  static const _quiet = Duration(milliseconds: 1300);
+  static const _quiet = Duration(milliseconds: 2500);
   int _generation = -1, _taps = 0, _beat = 0;
   bool _listening = false, _yourTurn = false, _bounce = false;
   final List<Timer> _timers = [];
@@ -146,6 +146,7 @@ class _EchoViewState extends State<EchoView> {
           style: SegText.heading,
           textAlign: TextAlign.center,
         ),
+        const SizedBox(height: 14),
         Expanded(
           child: GestureDetector(
             key: const ValueKey('echo-instrument'),

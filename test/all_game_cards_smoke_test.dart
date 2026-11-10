@@ -9,6 +9,7 @@ import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
 import 'package:special_education_games/features/game/widgets/body_map_view.dart';
 import 'package:special_education_games/features/game/widgets/fill_basket_view.dart';
+import 'package:special_education_games/features/game/widgets/music_views.dart';
 import 'package:special_education_games/features/game/widgets/round_choices_view.dart';
 import 'package:special_education_games/features/game/widgets/scene_game_view.dart';
 
@@ -131,8 +132,10 @@ void main() {
                     .celebrating) {
                   problems.add('$tag: finished scene not accepted');
                 }
-              } else if (find.byType(FillBasketView).evaluate().isNotEmpty) {
-                // Covered by its own widget test.
+              } else if (find.byType(FillBasketView).evaluate().isNotEmpty ||
+                  find.byType(EchoView).evaluate().isNotEmpty ||
+                  find.byType(FreePlayView).evaluate().isNotEmpty) {
+                // Covered by their own widget tests or played on a device.
               } else if (!unavailable) {
                 problems.add('$tag: nothing to answer');
               }

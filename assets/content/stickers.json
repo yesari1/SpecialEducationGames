@@ -1,1 +1,956 @@
-[]
+[
+ {
+  "id": "animals.cat",
+  "theme": "animals",
+  "item": "animals.cat",
+  "image": "assets/stickers/animals/cat.webp"
+ },
+ {
+  "id": "animals.dog",
+  "theme": "animals",
+  "item": "animals.dog",
+  "image": "assets/stickers/animals/dog.webp"
+ },
+ {
+  "id": "animals.bird",
+  "theme": "animals",
+  "item": "animals.bird",
+  "image": "assets/stickers/animals/bird.webp"
+ },
+ {
+  "id": "animals.fish",
+  "theme": "animals",
+  "item": "animals.fish",
+  "image": "assets/stickers/animals/fish.webp"
+ },
+ {
+  "id": "animals.rabbit",
+  "theme": "animals",
+  "item": "animals.rabbit",
+  "image": "assets/stickers/animals/rabbit.webp"
+ },
+ {
+  "id": "animals.cow",
+  "theme": "animals",
+  "item": "animals.cow",
+  "image": "assets/stickers/animals/cow.webp"
+ },
+ {
+  "id": "animals.horse",
+  "theme": "animals",
+  "item": "animals.horse",
+  "image": "assets/stickers/animals/horse.webp"
+ },
+ {
+  "id": "animals.sheep",
+  "theme": "animals",
+  "item": "animals.sheep",
+  "image": "assets/stickers/animals/sheep.webp"
+ },
+ {
+  "id": "animals.chicken",
+  "theme": "animals",
+  "item": "animals.chicken",
+  "image": "assets/stickers/animals/chicken.webp"
+ },
+ {
+  "id": "animals.duck",
+  "theme": "animals",
+  "item": "animals.duck",
+  "image": "assets/stickers/animals/duck.webp"
+ },
+ {
+  "id": "produce.apple",
+  "theme": "produce",
+  "item": "produce.apple",
+  "image": "assets/stickers/produce/apple.webp"
+ },
+ {
+  "id": "produce.banana",
+  "theme": "produce",
+  "item": "produce.banana",
+  "image": "assets/stickers/produce/banana.webp"
+ },
+ {
+  "id": "produce.orange",
+  "theme": "produce",
+  "item": "produce.orange",
+  "image": "assets/stickers/produce/orange.webp"
+ },
+ {
+  "id": "produce.strawberry",
+  "theme": "produce",
+  "item": "produce.strawberry",
+  "image": "assets/stickers/produce/strawberry.webp"
+ },
+ {
+  "id": "produce.grape",
+  "theme": "produce",
+  "item": "produce.grape",
+  "image": "assets/stickers/produce/grape.webp"
+ },
+ {
+  "id": "produce.watermelon",
+  "theme": "produce",
+  "item": "produce.watermelon",
+  "image": "assets/stickers/produce/watermelon.webp"
+ },
+ {
+  "id": "produce.pear",
+  "theme": "produce",
+  "item": "produce.pear",
+  "image": "assets/stickers/produce/pear.webp"
+ },
+ {
+  "id": "produce.cherry",
+  "theme": "produce",
+  "item": "produce.cherry",
+  "image": "assets/stickers/produce/cherry.webp"
+ },
+ {
+  "id": "produce.mandarin",
+  "theme": "produce",
+  "item": "produce.mandarin",
+  "image": "assets/stickers/produce/mandarin.webp"
+ },
+ {
+  "id": "produce.tomato",
+  "theme": "produce",
+  "item": "produce.tomato",
+  "image": "assets/stickers/produce/tomato.webp"
+ },
+ {
+  "id": "food.bread",
+  "theme": "food",
+  "item": "food.bread",
+  "image": "assets/stickers/food/bread.webp"
+ },
+ {
+  "id": "food.milk",
+  "theme": "food",
+  "item": "food.milk",
+  "image": "assets/stickers/food/milk.webp"
+ },
+ {
+  "id": "food.water",
+  "theme": "food",
+  "item": "food.water",
+  "image": "assets/stickers/food/water.webp"
+ },
+ {
+  "id": "food.egg",
+  "theme": "food",
+  "item": "food.egg",
+  "image": "assets/stickers/food/egg.webp"
+ },
+ {
+  "id": "food.cheese",
+  "theme": "food",
+  "item": "food.cheese",
+  "image": "assets/stickers/food/cheese.webp"
+ },
+ {
+  "id": "food.yogurt",
+  "theme": "food",
+  "item": "food.yogurt",
+  "image": "assets/stickers/food/yogurt.webp"
+ },
+ {
+  "id": "food.juice",
+  "theme": "food",
+  "item": "food.juice",
+  "image": "assets/stickers/food/juice.webp"
+ },
+ {
+  "id": "food.cake",
+  "theme": "food",
+  "item": "food.cake",
+  "image": "assets/stickers/food/cake.webp"
+ },
+ {
+  "id": "food.ice_cream",
+  "theme": "food",
+  "item": "food.ice_cream",
+  "image": "assets/stickers/food/ice_cream.webp"
+ },
+ {
+  "id": "food.pasta",
+  "theme": "food",
+  "item": "food.pasta",
+  "image": "assets/stickers/food/pasta.webp"
+ },
+ {
+  "id": "cleaning.toothbrush",
+  "theme": "cleaning",
+  "item": "cleaning.toothbrush",
+  "image": "assets/stickers/cleaning/toothbrush.webp"
+ },
+ {
+  "id": "cleaning.toothpaste",
+  "theme": "cleaning",
+  "item": "cleaning.toothpaste",
+  "image": "assets/stickers/cleaning/toothpaste.webp"
+ },
+ {
+  "id": "cleaning.soap",
+  "theme": "cleaning",
+  "item": "cleaning.soap",
+  "image": "assets/stickers/cleaning/soap.webp"
+ },
+ {
+  "id": "cleaning.towel",
+  "theme": "cleaning",
+  "item": "cleaning.towel",
+  "image": "assets/stickers/cleaning/towel.webp"
+ },
+ {
+  "id": "cleaning.comb",
+  "theme": "cleaning",
+  "item": "cleaning.comb",
+  "image": "assets/stickers/cleaning/comb.webp"
+ },
+ {
+  "id": "cleaning.shampoo",
+  "theme": "cleaning",
+  "item": "cleaning.shampoo",
+  "image": "assets/stickers/cleaning/shampoo.webp"
+ },
+ {
+  "id": "cleaning.tissue",
+  "theme": "cleaning",
+  "item": "cleaning.tissue",
+  "image": "assets/stickers/cleaning/tissue.webp"
+ },
+ {
+  "id": "cleaning.trash_bin",
+  "theme": "cleaning",
+  "item": "cleaning.trash_bin",
+  "image": "assets/stickers/cleaning/trash_bin.webp"
+ },
+ {
+  "id": "cleaning.tap",
+  "theme": "cleaning",
+  "item": "cleaning.tap",
+  "image": "assets/stickers/cleaning/tap.webp"
+ },
+ {
+  "id": "cleaning.bathtub",
+  "theme": "cleaning",
+  "item": "cleaning.bathtub",
+  "image": "assets/stickers/cleaning/bathtub.webp"
+ },
+ {
+  "id": "clothes.tshirt",
+  "theme": "clothes",
+  "item": "clothes.tshirt",
+  "image": "assets/stickers/clothes/tshirt.webp"
+ },
+ {
+  "id": "clothes.trousers",
+  "theme": "clothes",
+  "item": "clothes.trousers",
+  "image": "assets/stickers/clothes/trousers.webp"
+ },
+ {
+  "id": "clothes.shoes",
+  "theme": "clothes",
+  "item": "clothes.shoes",
+  "image": "assets/stickers/clothes/shoes.webp"
+ },
+ {
+  "id": "clothes.socks",
+  "theme": "clothes",
+  "item": "clothes.socks",
+  "image": "assets/stickers/clothes/socks.webp"
+ },
+ {
+  "id": "clothes.hat",
+  "theme": "clothes",
+  "item": "clothes.hat",
+  "image": "assets/stickers/clothes/hat.webp"
+ },
+ {
+  "id": "clothes.coat",
+  "theme": "clothes",
+  "item": "clothes.coat",
+  "image": "assets/stickers/clothes/coat.webp"
+ },
+ {
+  "id": "clothes.dress",
+  "theme": "clothes",
+  "item": "clothes.dress",
+  "image": "assets/stickers/clothes/dress.webp"
+ },
+ {
+  "id": "clothes.skirt",
+  "theme": "clothes",
+  "item": "clothes.skirt",
+  "image": "assets/stickers/clothes/skirt.webp"
+ },
+ {
+  "id": "clothes.shorts",
+  "theme": "clothes",
+  "item": "clothes.shorts",
+  "image": "assets/stickers/clothes/shorts.webp"
+ },
+ {
+  "id": "clothes.pajamas",
+  "theme": "clothes",
+  "item": "clothes.pajamas",
+  "image": "assets/stickers/clothes/pajamas.webp"
+ },
+ {
+  "id": "kitchen.plate",
+  "theme": "kitchen",
+  "item": "kitchen.plate",
+  "image": "assets/stickers/kitchen/plate.webp"
+ },
+ {
+  "id": "kitchen.fork",
+  "theme": "kitchen",
+  "item": "kitchen.fork",
+  "image": "assets/stickers/kitchen/fork.webp"
+ },
+ {
+  "id": "kitchen.spoon",
+  "theme": "kitchen",
+  "item": "kitchen.spoon",
+  "image": "assets/stickers/kitchen/spoon.webp"
+ },
+ {
+  "id": "kitchen.knife",
+  "theme": "kitchen",
+  "item": "kitchen.knife",
+  "image": "assets/stickers/kitchen/knife.webp"
+ },
+ {
+  "id": "kitchen.glass",
+  "theme": "kitchen",
+  "item": "kitchen.glass",
+  "image": "assets/stickers/kitchen/glass.webp"
+ },
+ {
+  "id": "kitchen.bowl",
+  "theme": "kitchen",
+  "item": "kitchen.bowl",
+  "image": "assets/stickers/kitchen/bowl.webp"
+ },
+ {
+  "id": "kitchen.pot",
+  "theme": "kitchen",
+  "item": "kitchen.pot",
+  "image": "assets/stickers/kitchen/pot.webp"
+ },
+ {
+  "id": "kitchen.pan",
+  "theme": "kitchen",
+  "item": "kitchen.pan",
+  "image": "assets/stickers/kitchen/pan.webp"
+ },
+ {
+  "id": "kitchen.fridge",
+  "theme": "kitchen",
+  "item": "kitchen.fridge",
+  "image": "assets/stickers/kitchen/fridge.webp"
+ },
+ {
+  "id": "kitchen.oven",
+  "theme": "kitchen",
+  "item": "kitchen.oven",
+  "image": "assets/stickers/kitchen/oven.webp"
+ },
+ {
+  "id": "home.bed",
+  "theme": "home",
+  "item": "home.bed",
+  "image": "assets/stickers/home/bed.webp"
+ },
+ {
+  "id": "home.pillow",
+  "theme": "home",
+  "item": "home.pillow",
+  "image": "assets/stickers/home/pillow.webp"
+ },
+ {
+  "id": "home.table",
+  "theme": "home",
+  "item": "home.table",
+  "image": "assets/stickers/home/table.webp"
+ },
+ {
+  "id": "home.chair",
+  "theme": "home",
+  "item": "home.chair",
+  "image": "assets/stickers/home/chair.webp"
+ },
+ {
+  "id": "home.sofa",
+  "theme": "home",
+  "item": "home.sofa",
+  "image": "assets/stickers/home/sofa.webp"
+ },
+ {
+  "id": "home.television",
+  "theme": "home",
+  "item": "home.television",
+  "image": "assets/stickers/home/television.webp"
+ },
+ {
+  "id": "home.door",
+  "theme": "home",
+  "item": "home.door",
+  "image": "assets/stickers/home/door.webp"
+ },
+ {
+  "id": "home.window",
+  "theme": "home",
+  "item": "home.window",
+  "image": "assets/stickers/home/window.webp"
+ },
+ {
+  "id": "home.lamp",
+  "theme": "home",
+  "item": "home.lamp",
+  "image": "assets/stickers/home/lamp.webp"
+ },
+ {
+  "id": "home.fridge",
+  "theme": "home",
+  "item": "home.fridge",
+  "image": "assets/stickers/home/fridge.webp"
+ },
+ {
+  "id": "vehicles.car",
+  "theme": "vehicles",
+  "item": "vehicles.car",
+  "image": "assets/stickers/vehicles/car.webp"
+ },
+ {
+  "id": "vehicles.bus",
+  "theme": "vehicles",
+  "item": "vehicles.bus",
+  "image": "assets/stickers/vehicles/bus.webp"
+ },
+ {
+  "id": "vehicles.truck",
+  "theme": "vehicles",
+  "item": "vehicles.truck",
+  "image": "assets/stickers/vehicles/truck.webp"
+ },
+ {
+  "id": "vehicles.train",
+  "theme": "vehicles",
+  "item": "vehicles.train",
+  "image": "assets/stickers/vehicles/train.webp"
+ },
+ {
+  "id": "vehicles.airplane",
+  "theme": "vehicles",
+  "item": "vehicles.airplane",
+  "image": "assets/stickers/vehicles/airplane.webp"
+ },
+ {
+  "id": "vehicles.ship",
+  "theme": "vehicles",
+  "item": "vehicles.ship",
+  "image": "assets/stickers/vehicles/ship.webp"
+ },
+ {
+  "id": "vehicles.bicycle",
+  "theme": "vehicles",
+  "item": "vehicles.bicycle",
+  "image": "assets/stickers/vehicles/bicycle.webp"
+ },
+ {
+  "id": "vehicles.motorcycle",
+  "theme": "vehicles",
+  "item": "vehicles.motorcycle",
+  "image": "assets/stickers/vehicles/motorcycle.webp"
+ },
+ {
+  "id": "vehicles.ambulance",
+  "theme": "vehicles",
+  "item": "vehicles.ambulance",
+  "image": "assets/stickers/vehicles/ambulance.webp"
+ },
+ {
+  "id": "vehicles.fire_truck",
+  "theme": "vehicles",
+  "item": "vehicles.fire_truck",
+  "image": "assets/stickers/vehicles/fire_truck.webp"
+ },
+ {
+  "id": "jobs.doctor",
+  "theme": "jobs",
+  "item": "jobs.doctor",
+  "image": "assets/stickers/jobs/doctor.webp"
+ },
+ {
+  "id": "jobs.nurse",
+  "theme": "jobs",
+  "item": "jobs.nurse",
+  "image": "assets/stickers/jobs/nurse.webp"
+ },
+ {
+  "id": "jobs.teacher",
+  "theme": "jobs",
+  "item": "jobs.teacher",
+  "image": "assets/stickers/jobs/teacher.webp"
+ },
+ {
+  "id": "jobs.police_officer",
+  "theme": "jobs",
+  "item": "jobs.police_officer",
+  "image": "assets/stickers/jobs/police_officer.webp"
+ },
+ {
+  "id": "jobs.firefighter",
+  "theme": "jobs",
+  "item": "jobs.firefighter",
+  "image": "assets/stickers/jobs/firefighter.webp"
+ },
+ {
+  "id": "jobs.cook",
+  "theme": "jobs",
+  "item": "jobs.cook",
+  "image": "assets/stickers/jobs/cook.webp"
+ },
+ {
+  "id": "jobs.driver",
+  "theme": "jobs",
+  "item": "jobs.driver",
+  "image": "assets/stickers/jobs/driver.webp"
+ },
+ {
+  "id": "jobs.farmer",
+  "theme": "jobs",
+  "item": "jobs.farmer",
+  "image": "assets/stickers/jobs/farmer.webp"
+ },
+ {
+  "id": "jobs.baker",
+  "theme": "jobs",
+  "item": "jobs.baker",
+  "image": "assets/stickers/jobs/baker.webp"
+ },
+ {
+  "id": "jobs.dentist",
+  "theme": "jobs",
+  "item": "jobs.dentist",
+  "image": "assets/stickers/jobs/dentist.webp"
+ },
+ {
+  "id": "nature.sun",
+  "theme": "nature",
+  "item": "nature.sun",
+  "image": "assets/stickers/nature/sun.webp"
+ },
+ {
+  "id": "nature.moon",
+  "theme": "nature",
+  "item": "nature.moon",
+  "image": "assets/stickers/nature/moon.webp"
+ },
+ {
+  "id": "nature.star",
+  "theme": "nature",
+  "item": "nature.star",
+  "image": "assets/stickers/nature/star.webp"
+ },
+ {
+  "id": "nature.cloud",
+  "theme": "nature",
+  "item": "nature.cloud",
+  "image": "assets/stickers/nature/cloud.webp"
+ },
+ {
+  "id": "nature.rain",
+  "theme": "nature",
+  "item": "nature.rain",
+  "image": "assets/stickers/nature/rain.webp"
+ },
+ {
+  "id": "nature.snow",
+  "theme": "nature",
+  "item": "nature.snow",
+  "image": "assets/stickers/nature/snow.webp"
+ },
+ {
+  "id": "nature.tree",
+  "theme": "nature",
+  "item": "nature.tree",
+  "image": "assets/stickers/nature/tree.webp"
+ },
+ {
+  "id": "nature.flower",
+  "theme": "nature",
+  "item": "nature.flower",
+  "image": "assets/stickers/nature/flower.webp"
+ },
+ {
+  "id": "nature.sea",
+  "theme": "nature",
+  "item": "nature.sea",
+  "image": "assets/stickers/nature/sea.webp"
+ },
+ {
+  "id": "nature.mountain",
+  "theme": "nature",
+  "item": "nature.mountain",
+  "image": "assets/stickers/nature/mountain.webp"
+ },
+ {
+  "id": "colors.red",
+  "theme": "colors",
+  "item": "colors.red",
+  "image": "assets/stickers/colors/red.webp"
+ },
+ {
+  "id": "colors.blue",
+  "theme": "colors",
+  "item": "colors.blue",
+  "image": "assets/stickers/colors/blue.webp"
+ },
+ {
+  "id": "colors.yellow",
+  "theme": "colors",
+  "item": "colors.yellow",
+  "image": "assets/stickers/colors/yellow.webp"
+ },
+ {
+  "id": "colors.green",
+  "theme": "colors",
+  "item": "colors.green",
+  "image": "assets/stickers/colors/green.webp"
+ },
+ {
+  "id": "colors.orange",
+  "theme": "colors",
+  "item": "colors.orange",
+  "image": "assets/stickers/colors/orange.webp"
+ },
+ {
+  "id": "colors.purple",
+  "theme": "colors",
+  "item": "colors.purple",
+  "image": "assets/stickers/colors/purple.webp"
+ },
+ {
+  "id": "colors.pink",
+  "theme": "colors",
+  "item": "colors.pink",
+  "image": "assets/stickers/colors/pink.webp"
+ },
+ {
+  "id": "colors.brown",
+  "theme": "colors",
+  "item": "colors.brown",
+  "image": "assets/stickers/colors/brown.webp"
+ },
+ {
+  "id": "colors.black",
+  "theme": "colors",
+  "item": "colors.black",
+  "image": "assets/stickers/colors/black.webp"
+ },
+ {
+  "id": "colors.white",
+  "theme": "colors",
+  "item": "colors.white",
+  "image": "assets/stickers/colors/white.webp"
+ },
+ {
+  "id": "shapes.circle",
+  "theme": "shapes",
+  "item": "shapes.circle",
+  "image": "assets/stickers/shapes/circle.webp"
+ },
+ {
+  "id": "shapes.square",
+  "theme": "shapes",
+  "item": "shapes.square",
+  "image": "assets/stickers/shapes/square.webp"
+ },
+ {
+  "id": "shapes.triangle",
+  "theme": "shapes",
+  "item": "shapes.triangle",
+  "image": "assets/stickers/shapes/triangle.webp"
+ },
+ {
+  "id": "shapes.star",
+  "theme": "shapes",
+  "item": "shapes.star",
+  "image": "assets/stickers/shapes/star.webp"
+ },
+ {
+  "id": "shapes.rectangle",
+  "theme": "shapes",
+  "item": "shapes.rectangle",
+  "image": "assets/stickers/shapes/rectangle.webp"
+ },
+ {
+  "id": "shapes.heart",
+  "theme": "shapes",
+  "item": "shapes.heart",
+  "image": "assets/stickers/shapes/heart.webp"
+ },
+ {
+  "id": "shapes.oval",
+  "theme": "shapes",
+  "item": "shapes.oval",
+  "image": "assets/stickers/shapes/oval.webp"
+ },
+ {
+  "id": "shapes.crescent",
+  "theme": "shapes",
+  "item": "shapes.crescent",
+  "image": "assets/stickers/shapes/crescent.webp"
+ },
+ {
+  "id": "shapes.cross",
+  "theme": "shapes",
+  "item": "shapes.cross",
+  "image": "assets/stickers/shapes/cross.webp"
+ },
+ {
+  "id": "shapes.arrow",
+  "theme": "shapes",
+  "item": "shapes.arrow",
+  "image": "assets/stickers/shapes/arrow.webp"
+ },
+ {
+  "id": "numbers.1",
+  "theme": "numbers",
+  "item": "numbers.1",
+  "image": "assets/stickers/numbers/1.webp"
+ },
+ {
+  "id": "numbers.2",
+  "theme": "numbers",
+  "item": "numbers.2",
+  "image": "assets/stickers/numbers/2.webp"
+ },
+ {
+  "id": "numbers.3",
+  "theme": "numbers",
+  "item": "numbers.3",
+  "image": "assets/stickers/numbers/3.webp"
+ },
+ {
+  "id": "numbers.4",
+  "theme": "numbers",
+  "item": "numbers.4",
+  "image": "assets/stickers/numbers/4.webp"
+ },
+ {
+  "id": "numbers.5",
+  "theme": "numbers",
+  "item": "numbers.5",
+  "image": "assets/stickers/numbers/5.webp"
+ },
+ {
+  "id": "numbers.6",
+  "theme": "numbers",
+  "item": "numbers.6",
+  "image": "assets/stickers/numbers/6.webp"
+ },
+ {
+  "id": "numbers.7",
+  "theme": "numbers",
+  "item": "numbers.7",
+  "image": "assets/stickers/numbers/7.webp"
+ },
+ {
+  "id": "numbers.8",
+  "theme": "numbers",
+  "item": "numbers.8",
+  "image": "assets/stickers/numbers/8.webp"
+ },
+ {
+  "id": "numbers.9",
+  "theme": "numbers",
+  "item": "numbers.9",
+  "image": "assets/stickers/numbers/9.webp"
+ },
+ {
+  "id": "numbers.10",
+  "theme": "numbers",
+  "item": "numbers.10",
+  "image": "assets/stickers/numbers/10.webp"
+ },
+ {
+  "id": "body.eye",
+  "theme": "body",
+  "item": "body.eye",
+  "image": "assets/stickers/body/eye.webp"
+ },
+ {
+  "id": "body.ear",
+  "theme": "body",
+  "item": "body.ear",
+  "image": "assets/stickers/body/ear.webp"
+ },
+ {
+  "id": "body.nose",
+  "theme": "body",
+  "item": "body.nose",
+  "image": "assets/stickers/body/nose.webp"
+ },
+ {
+  "id": "body.mouth",
+  "theme": "body",
+  "item": "body.mouth",
+  "image": "assets/stickers/body/mouth.webp"
+ },
+ {
+  "id": "body.hand",
+  "theme": "body",
+  "item": "body.hand",
+  "image": "assets/stickers/body/hand.webp"
+ },
+ {
+  "id": "body.foot",
+  "theme": "body",
+  "item": "body.foot",
+  "image": "assets/stickers/body/foot.webp"
+ },
+ {
+  "id": "body.hair",
+  "theme": "body",
+  "item": "body.hair",
+  "image": "assets/stickers/body/hair.webp"
+ },
+ {
+  "id": "body.tummy",
+  "theme": "body",
+  "item": "body.tummy",
+  "image": "assets/stickers/body/tummy.webp"
+ },
+ {
+  "id": "body.head",
+  "theme": "body",
+  "item": "body.head",
+  "image": "assets/stickers/body/head.webp"
+ },
+ {
+  "id": "body.teeth",
+  "theme": "body",
+  "item": "body.teeth",
+  "image": "assets/stickers/body/teeth.webp"
+ },
+ {
+  "id": "emotions.happy",
+  "theme": "emotions",
+  "item": "emotions.happy",
+  "image": "assets/stickers/emotions/happy.webp"
+ },
+ {
+  "id": "emotions.sad",
+  "theme": "emotions",
+  "item": "emotions.sad",
+  "image": "assets/stickers/emotions/sad.webp"
+ },
+ {
+  "id": "emotions.angry",
+  "theme": "emotions",
+  "item": "emotions.angry",
+  "image": "assets/stickers/emotions/angry.webp"
+ },
+ {
+  "id": "emotions.scared",
+  "theme": "emotions",
+  "item": "emotions.scared",
+  "image": "assets/stickers/emotions/scared.webp"
+ },
+ {
+  "id": "emotions.surprised",
+  "theme": "emotions",
+  "item": "emotions.surprised",
+  "image": "assets/stickers/emotions/surprised.webp"
+ },
+ {
+  "id": "emotions.sleepy",
+  "theme": "emotions",
+  "item": "emotions.sleepy",
+  "image": "assets/stickers/emotions/sleepy.webp"
+ },
+ {
+  "id": "emotions.laughing",
+  "theme": "emotions",
+  "item": "emotions.laughing",
+  "image": "assets/stickers/emotions/laughing.webp"
+ },
+ {
+  "id": "emotions.calm",
+  "theme": "emotions",
+  "item": "emotions.calm",
+  "image": "assets/stickers/emotions/calm.webp"
+ },
+ {
+  "id": "emotions.shy",
+  "theme": "emotions",
+  "item": "emotions.shy",
+  "image": "assets/stickers/emotions/shy.webp"
+ },
+ {
+  "id": "emotions.proud",
+  "theme": "emotions",
+  "item": "emotions.proud",
+  "image": "assets/stickers/emotions/proud.webp"
+ },
+ {
+  "id": "music.drum",
+  "theme": "music",
+  "item": "music.drum",
+  "image": "assets/stickers/music/drum.webp"
+ },
+ {
+  "id": "music.piano",
+  "theme": "music",
+  "item": "music.piano",
+  "image": "assets/stickers/music/piano.webp"
+ },
+ {
+  "id": "music.guitar",
+  "theme": "music",
+  "item": "music.guitar",
+  "image": "assets/stickers/music/guitar.webp"
+ },
+ {
+  "id": "music.bell",
+  "theme": "music",
+  "item": "music.bell",
+  "image": "assets/stickers/music/bell.webp"
+ },
+ {
+  "id": "music.accordion",
+  "theme": "music",
+  "item": "music.accordion",
+  "image": "assets/stickers/music/accordion.webp"
+ },
+ {
+  "id": "music.tambourine",
+  "theme": "music",
+  "item": "music.tambourine",
+  "image": "assets/stickers/music/tambourine.webp"
+ },
+ {
+  "id": "music.recorder",
+  "theme": "music",
+  "item": "music.recorder",
+  "image": "assets/stickers/music/recorder.webp"
+ },
+ {
+  "id": "music.violin",
+  "theme": "music",
+  "item": "music.violin",
+  "image": "assets/stickers/music/violin.webp"
+ },
+ {
+  "id": "music.trumpet",
+  "theme": "music",
+  "item": "music.trumpet",
+  "image": "assets/stickers/music/trumpet.webp"
+ }
+]

@@ -94,6 +94,26 @@ flutter:
     - assets/content/
     - assets/content/items/
     - assets/sfx/music/
+    - assets/coloring/
+    - assets/images/music/
+    - assets/audio/tr/music/
+    - assets/audio/en/music/
+    - assets/stickers/animals/
+    - assets/stickers/produce/
+    - assets/stickers/food/
+    - assets/stickers/cleaning/
+    - assets/stickers/clothes/
+    - assets/stickers/kitchen/
+    - assets/stickers/home/
+    - assets/stickers/vehicles/
+    - assets/stickers/jobs/
+    - assets/stickers/nature/
+    - assets/stickers/colors/
+    - assets/stickers/shapes/
+    - assets/stickers/numbers/
+    - assets/stickers/body/
+    - assets/stickers/emotions/
+    - assets/stickers/music/
     - assets/images/food/
     - assets/images/app_logo.png
     - assets/illustrations/onboarding/

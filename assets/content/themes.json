@@ -210,7 +210,7 @@
       "deep": "#965593"
     },
     "hero": "music.guitar",
-    "active": false,
+    "active": true,
     "games": [
       "G02",
       "G74",

@@ -139,7 +139,10 @@ void main() {
                 final specialThree =
                     (gameId == 'G36' && difficulty == Difficulty.hard) ||
                     (gameId == 'G17' && difficulty == Difficulty.easy);
-                final maxChoices = singleChoice
+                // Free play lays out every instrument at once.
+                final maxChoices = gameId == 'G76'
+                    ? uniqueIds.length
+                    : singleChoice
                     ? 1
                     : specialThree
                     ? 3
