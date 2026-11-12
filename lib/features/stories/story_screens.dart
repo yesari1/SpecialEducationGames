@@ -33,13 +33,20 @@ Widget storyPicture(String asset, {BoxFit fit = BoxFit.contain}) => Image.asset(
 /// as a locked game card.
 class StoryShelf extends StatelessWidget {
   final AppState state;
-  const StoryShelf({super.key, required this.state});
+
+  /// Room kept clear under the cards (the home's floating bar).
+  final double bottomInset;
+  const StoryShelf({super.key, required this.state, this.bottomInset = 0});
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, state.locale);
     final stories = state.content.stories;
     return HorizontalCards(
       count: stories.length,
+      bottomInset: bottomInset,
+      tight: bottomInset > 0,
+      centered: bottomInset > 0,
+      cardAspect: bottomInset > 0 ? .95 : null,
       builder: (i) {
         final story = stories[i];
         final locked = !state.canPlayStory(story);
@@ -202,8 +209,7 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     }
   }
 
-  void _goOn() =>
-      index + 1 < story.pages.length ? _show(index + 1) : _finish();
+  void _goOn() => index + 1 < story.pages.length ? _show(index + 1) : _finish();
 
   void _finish() {
     _timer?.cancel();
@@ -519,7 +525,11 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
       ),
       child: Column(
         children: [
-          _sentence(text, key: const ValueKey('story-question'), compact: compact),
+          _sentence(
+            text,
+            key: const ValueKey('story-question'),
+            compact: compact,
+          ),
           SizedBox(height: compact ? SegSpace.s3 : SegSpace.s5),
           Expanded(
             child: Row(

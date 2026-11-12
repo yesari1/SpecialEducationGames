@@ -44,14 +44,7 @@ const _illustrations = 'assets/illustrations/onboarding';
 
 /// First run: welcome, child, one question, the Premium offer, the daily
 /// goal (with the reminder question), hand-off. Adding a child: child, questions, goal.
-enum OnboardingStep {
-  welcome,
-  child,
-  question,
-  trial,
-  goal,
-  handoff,
-}
+enum OnboardingStep { welcome, child, question, trial, goal, handoff }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   /// The short get-to-know set; the full survey stays in the profile editor.
@@ -70,6 +63,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final name = TextEditingController();
   final answers = <String, dynamic>{};
   int? ageYears;
+
+  /// 'girl' or 'boy': the child shown in games about a child.
+  String? gender;
   int dailyGoal = 15;
   bool saving = false;
   AppState get s => widget.state;
@@ -208,6 +204,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Map<String, dynamic> get _survey => {
     ...answers,
+    'gender': ?gender,
     if (ageYears case final age?) ...{
       'ageYears': age,
       // Legacy bucket kept for older readers of the survey payload.
@@ -705,7 +702,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ],
       ),
-      const SizedBox(height: SegSpace.s5),
+      const SizedBox(height: SegSpace.s4),
+      GenderChoice(
+        value: gender,
+        girlLabel: l10n.obGenderGirl,
+        boyLabel: l10n.obGenderBoy,
+        onChanged: (v) => setState(() => gender = v),
+      ),
+      const SizedBox(height: SegSpace.s4),
       Text(l10n.obAgeTitle, style: SegText.heading),
       const SizedBox(height: SegSpace.s3),
       LayoutBuilder(

@@ -1,11 +1,12 @@
 """Records the home-sections and new-theme lines with ElevenLabs.
 
-    python -I tools/home_sections/record_lines.py [--force] [--only <text>]
+    python -I tools/home_sections/record_lines.py [--force] [--changed] [--only <text>] [--lang tr|en]
 
 Reads every tools/home_sections/lines/*.json ({"<clip path with {lang}>":
 {"tr": "...", "en": "..."}}). Turkish: İrem, eleven_v4 with language_code tr;
 English: Laura, eleven_multilingual_v2. Clips that exist are skipped unless
---force is given; --only limits to paths containing the text. Records text,
+--force is given; --changed also records again every clip whose text is no
+longer the one in the manifest; --only limits to paths containing the text. Records text,
 voice, model and sha256 in tools/home_sections/voice_manifest.json. The API key
 comes from ELEVENLABS_API_KEY and is never printed.
 """
@@ -30,6 +31,8 @@ def main():
         sys.exit('ELEVENLABS_API_KEY is not set')
     args = sys.argv[1:]
     force = '--force' in args
+    changed = '--changed' in args
+    only_lang = args[args.index('--lang') + 1] if '--lang' in args else None
     only = args[args.index('--only') + 1] if '--only' in args else None
     manifest = json.loads(MANIFEST.read_text(encoding='utf-8')) if MANIFEST.exists() else {}
     done = 0
@@ -39,8 +42,11 @@ def main():
                 path = pattern.replace('{lang}', lang)
                 if only and only not in path:
                     continue
+                if only_lang and lang != only_lang:
+                    continue
                 out = ROOT / path
-                if out.exists() and not force:
+                stale = changed and path in manifest and manifest[path].get('text') != texts[lang]
+                if out.exists() and not force and not stale:
                     continue
                 audio = story_voice.synthesize(texts[lang], lang, key)
                 out.parent.mkdir(parents=True, exist_ok=True)

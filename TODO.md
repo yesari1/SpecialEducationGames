@@ -448,3 +448,15 @@ Güncelleme: 16 Ekim 2026. Bu dosya güncel iş listesidir; ayrıntılı geçmi�
 
 ### R45 map illustration - 22 October 2026
 - [x] Generate and save landscape map background and unchanged original; verify 1536x1024 PNG, matching hashes, no text and open middle meadow by opening saved asset. Application integration/device review not performed in this asset-only task.
+
+- [x] 6 November 2026 - Created requested Google Play feature-notext.png, verified 1024x500 PNG and cloud/cat/apple/car composition. Faint texture remains in generated output.
+
+
+### 12 November 2026 - review round (2.0.52)
+- [x] Child home: compact top bar, smaller cards, floating coloured tabs, edge pull between sections, theme page cards.
+- [x] Scene games: fly from the drop point, no target circle, draggable tools, fruit inside the bowl, varied tables.
+- [x] Dress-up by outfits for Ali and Ayşe; gender in onboarding and profile; English names Leo and Mia.
+- [x] Jobs: consistent transparent result scenes, tool in the sentence, full-screen result.
+- [x] Puzzle with real jigsaw pieces.
+- [x] Voices: radish, doctor, jobs/clothes names, new lines.
+- [ ] Other games and stories for a girl profile (Ayşe) - not requested yet.

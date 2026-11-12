@@ -856,6 +856,8 @@
   "obChildBody": "We use this to choose a gentle starting point. You can change it later in the family area.",
   "obNicknameOptional": "Nickname (optional)",
   "obAgeTitle": "Age",
+  "obGenderGirl": "Girl",
+  "obGenderBoy": "Boy",
   "obAgeTenPlus": "10+",
   "obAgeYears": "{age} years old",
   "@obAgeYears": {

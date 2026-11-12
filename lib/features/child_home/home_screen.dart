@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import 'package:go_router/go_router.dart';
@@ -70,11 +71,25 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  /// The next or the previous section, when a row is pulled past its end.
+  void _step(int by) {
+    final next = s.homeTab.index + by;
+    if (next < 0 || next >= HomeTab.values.length) return;
+    _open(HomeTab.values[next]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = scopedLocalizations(context, s.locale);
     final tab = s.homeTab;
     final look = _SectionLook.of(tab);
+    final reduced = MediaQuery.disableAnimationsOf(context);
+    // The bar floats over the cards; this much stays clear under a single
+    // row and at the end of the list.
+    final barRoom =
+        _SectionBar.height +
+        SegSpace.s3 +
+        math.max(MediaQuery.paddingOf(context).bottom, SegSpace.s2);
     return Scaffold(
       backgroundColor: look.base,
       body: Stack(
@@ -93,88 +108,132 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  SegSpace.s5,
-                  SegSpace.s2,
-                  SegSpace.s5,
-                  SegSpace.s2,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    SegSpace.s5,
+                    SegSpace.s1,
+                    SegSpace.s5,
+                    0,
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/illustrations/onboarding/mascot_cloud.png',
+                        key: const ValueKey('home-mascot'),
+                        height: 34,
+                        excludeFromSemantics: true,
+                      ),
+                      const Spacer(),
+                      PillButton(
+                        key: const ValueKey('home-stickers'),
+                        compact: true,
+                        semanticsLabel: l10n.dailyPathMyStickers,
+                        onPressed: () => context.go('/stickers'),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.auto_awesome_rounded,
+                              size: 20,
+                              color: SegColors.starDeep,
+                            ),
+                            const SizedBox(width: SegSpace.s1),
+                            Text(
+                              l10n.dailyPathMyStickers,
+                              style: SegText.caption.copyWith(
+                                fontWeight: FontWeight.w800,
+                                color: SegColors.ink,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: SegSpace.s2),
+                      PillButton(
+                        key: const ValueKey('home-family'),
+                        compact: true,
+                        semanticsLabel: l10n.homeFamilyHint,
+                        onPressed: () async {
+                          if (await showParentGate(context, s) &&
+                              context.mounted) {
+                            context.go('/family');
+                          }
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.people_outline_rounded,
+                              size: 20,
+                              color: SegColors.primaryDeep,
+                            ),
+                            const SizedBox(width: SegSpace.s1),
+                            Text(
+                              l10n.homeFamily,
+                              style: SegText.caption.copyWith(
+                                fontWeight: FontWeight.w800,
+                                color: SegColors.ink,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'assets/illustrations/onboarding/mascot_cloud.png',
-                      key: const ValueKey('home-mascot'),
-                      height: 48,
-                      excludeFromSemantics: true,
-                    ),
-                    const Spacer(),
-                    PillButton(
-                      key: const ValueKey('home-stickers'),
-                      semanticsLabel: l10n.dailyPathMyStickers,
-                      onPressed: () => context.go('/stickers'),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(Icons.auto_awesome_rounded),
-                          const SizedBox(width: SegSpace.s2),
-                          Text(l10n.dailyPathMyStickers, style: SegText.label),
-                        ],
+                Expanded(
+                  // No glow or stretch at a row's end: the pull changes the
+                  // section instead.
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(
+                      context,
+                    ).copyWith(overscroll: false),
+                    child: EdgePull(
+                      onNext: () => _step(1),
+                      onPrevious: () => _step(-1),
+                      child: AnimatedSwitcher(
+                        duration: reduced
+                            ? Duration.zero
+                            : const Duration(milliseconds: 220),
+                        switchInCurve: Curves.easeOut,
+                        child: KeyedSubtree(
+                          key: ValueKey('home-section-${tab.name}'),
+                          child: switch (tab) {
+                            HomeTab.learn => _LearnSection(
+                              state: s,
+                              barRoom: barRoom,
+                            ),
+                            HomeTab.stories => _SingleRow(
+                              barRoom: barRoom,
+                              builder: (inset) =>
+                                  StoryShelf(state: s, bottomInset: inset),
+                            ),
+                            HomeTab.park => _SingleRow(
+                              barRoom: barRoom,
+                              builder: (inset) =>
+                                  _ParkSection(state: s, bottomInset: inset),
+                            ),
+                          },
+                        ),
                       ),
                     ),
-                    const SizedBox(width: SegSpace.s3),
-                    PillButton(
-                      key: const ValueKey('home-family'),
-                      semanticsLabel: l10n.homeFamilyHint,
-                      onPressed: () async {
-                        if (await showParentGate(context, s) &&
-                            context.mounted) {
-                          context.go('/family');
-                        }
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(Icons.people_outline_rounded),
-                          const SizedBox(width: SegSpace.s2),
-                          Text(l10n.homeFamily, style: SegText.label),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: switch (tab) {
-                  HomeTab.learn => _LearnSection(state: s),
-                  HomeTab.stories => StoryShelf(state: s),
-                  HomeTab.park => _ParkSection(state: s),
-                },
-              ),
-              _SectionBar(
-                  selected: tab,
-                  onSelected: _open,
-                  tabs: [
-                    (
-                      HomeTab.learn,
-                      Icons.school_outlined,
-                      Icons.school_rounded,
-                      l10n.homeTabLearn,
-                    ),
-                    (
-                      HomeTab.stories,
-                      Icons.menu_book_outlined,
-                      Icons.menu_book_rounded,
-                      l10n.homeTabStories,
-                    ),
-                    (
-                      HomeTab.park,
-                      Icons.toys_outlined,
-                      Icons.toys_rounded,
-                      l10n.homeTabPark,
-                    ),
-                  ],
-                ),
+              ],
+            ),
+          ),
+          // Floats over the cards: nothing is cut off behind a band.
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: _SectionBar(
+              selected: tab,
+              onSelected: _open,
+              tabs: [
+                (HomeTab.learn, Icons.school_rounded, l10n.homeTabLearn),
+                (HomeTab.stories, Icons.menu_book_rounded, l10n.homeTabStories),
+                (HomeTab.park, Icons.toys_rounded, l10n.homeTabPark),
               ],
             ),
           ),
@@ -184,35 +243,90 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+/// Turns a pull past the end of a sideways row into [onNext] (past the right
+/// end) or [onPrevious] (past the left end). Only a pull that starts at that
+/// end counts, so scrolling a row to its end never changes the section by
+/// itself.
+class EdgePull extends StatefulWidget {
+  final Widget child;
+  final VoidCallback onNext, onPrevious;
+  const EdgePull({
+    super.key,
+    required this.child,
+    required this.onNext,
+    required this.onPrevious,
+  });
+  @override
+  State<EdgePull> createState() => _EdgePullState();
+}
+
+class _EdgePullState extends State<EdgePull> {
+  static const _needed = 56.0;
+  double _pull = 0;
+  bool _atStart = false, _atEnd = false, _fired = false;
+
+  bool _onScroll(ScrollNotification n) {
+    if (n.metrics.axis != Axis.horizontal) return false;
+    if (n is ScrollStartNotification) {
+      _pull = 0;
+      _fired = false;
+      _atStart = n.metrics.pixels <= n.metrics.minScrollExtent + 1;
+      _atEnd = n.metrics.pixels >= n.metrics.maxScrollExtent - 1;
+    } else if (n is OverscrollNotification && n.dragDetails != null) {
+      _pull += n.overscroll;
+      if (_fired) return false;
+      if (_pull > _needed && _atEnd) {
+        _fired = true;
+        widget.onNext();
+      } else if (_pull < -_needed && _atStart) {
+        _fired = true;
+        widget.onPrevious();
+      }
+    }
+    return false;
+  }
+
+  @override
+  Widget build(BuildContext context) =>
+      NotificationListener<ScrollNotification>(
+        onNotification: _onScroll,
+        child: widget.child,
+      );
+}
+
 /// The colours of one section of the home.
 class _SectionLook {
-  final Color base, deep, soft;
-  const _SectionLook(this.base, this.deep, this.soft);
+  final Color base, deep, soft, strong;
+  const _SectionLook(this.base, this.deep, this.soft, this.strong);
   static _SectionLook of(HomeTab tab) => switch (tab) {
     HomeTab.learn => const _SectionLook(
       Color(0xFFEAF8F5),
       Color(0xFF087B80),
       Color(0xFFD3F1EC),
+      Color(0xFF10B7B0),
     ),
     HomeTab.stories => const _SectionLook(
       Color(0xFFFFF3E6),
       Color(0xFFBA4C08),
       Color(0xFFFFE3CB),
+      Color(0xFFFF8A32),
     ),
     HomeTab.park => const _SectionLook(
       Color(0xFFF1EEFD),
       Color(0xFF544BB5),
       Color(0xFFE2DDFA),
+      Color(0xFF7C73DF),
     ),
   };
 }
 
-/// The bottom tabs: the open section is wide with its icon and name, the
-/// others show only their icon.
+/// The bottom tabs with their names: the open one is filled with its
+/// section's colour, the others are plain grey.
 class _SectionBar extends StatelessWidget {
+  static const height = 52.0;
   final HomeTab selected;
   final ValueChanged<HomeTab> onSelected;
-  final List<(HomeTab, IconData, IconData, String)> tabs;
+  final List<(HomeTab, IconData, String)> tabs;
   const _SectionBar({
     required this.selected,
     required this.onSelected,
@@ -221,32 +335,33 @@ class _SectionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final reduced = MediaQuery.disableAnimationsOf(context);
-    final look = _SectionLook.of(selected);
-    final duration = reduced ? Duration.zero : const Duration(milliseconds: 280);
+    final duration = reduced
+        ? Duration.zero
+        : const Duration(milliseconds: 260);
     return SafeArea(
       top: false,
-      minimum: const EdgeInsets.only(bottom: SegSpace.s1),
+      minimum: const EdgeInsets.only(bottom: SegSpace.s2),
       child: Center(
         heightFactor: 1,
         child: Container(
-          padding: const EdgeInsets.all(3),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-            color: SegColors.surface.withValues(alpha: .92),
+            color: SegColors.surface,
             borderRadius: BorderRadius.circular(SegRadius.pill),
             boxShadow: [
               BoxShadow(
-                color: SegColors.ink.withValues(alpha: .10),
+                color: SegColors.ink.withValues(alpha: .16),
                 blurRadius: 18,
                 offset: const Offset(0, 6),
               ),
             ],
           ),
           child: MediaQuery.withClampedTextScaling(
-            maxScaleFactor: 1.3,
+            maxScaleFactor: 1.2,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                for (final (tab, icon, selectedIcon, label) in tabs)
+                for (final (tab, icon, label) in tabs)
                   Semantics(
                     button: true,
                     selected: tab == selected,
@@ -259,42 +374,69 @@ class _SectionBar extends StatelessWidget {
                         UiSound.tap();
                         onSelected(tab);
                       },
+                      // Only the open section is coloured; the others are
+                      // quiet grey, so where the child is reads at a glance.
                       child: AnimatedContainer(
                         duration: duration,
                         curve: Curves.easeOutCubic,
-                        width: tab == selected ? 178 : 76,
-                        height: 50,
+                        height: height - 8,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: tab == selected
+                              ? SegSpace.s5
+                              : SegSpace.s4,
+                        ),
+                        margin: const EdgeInsets.symmetric(horizontal: 2),
                         decoration: BoxDecoration(
-                          color: tab == selected
-                              ? look.soft
-                              : Colors.transparent,
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: tab == selected
+                                ? [
+                                    _SectionLook.of(tab).strong,
+                                    _SectionLook.of(tab).deep,
+                                  ]
+                                : const [
+                                    Colors.transparent,
+                                    Colors.transparent,
+                                  ],
+                          ),
                           borderRadius: BorderRadius.circular(SegRadius.pill),
+                          boxShadow: [
+                            if (tab == selected)
+                              BoxShadow(
+                                color: _SectionLook.of(
+                                  tab,
+                                ).deep.withValues(alpha: .35),
+                                blurRadius: 10,
+                                offset: const Offset(0, 4),
+                              ),
+                          ],
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
-                              tab == selected ? selectedIcon : icon,
-                              size: 26,
+                              icon,
+                              size: tab == selected ? 26 : 22,
                               color: tab == selected
-                                  ? look.deep
-                                  : SegColors.inkSoft,
+                                  ? Colors.white
+                                  : SegColors.inkFaint,
                             ),
-                            if (tab == selected) ...[
-                              const SizedBox(width: SegSpace.s2),
-                              Flexible(
-                                child: Text(
-                                  label,
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  overflow: TextOverflow.clip,
-                                  style: SegText.label.copyWith(
-                                    color: look.deep,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
+                            const SizedBox(width: SegSpace.s2),
+                            Text(
+                              label,
+                              maxLines: 1,
+                              softWrap: false,
+                              style: SegText.label.copyWith(
+                                fontSize: tab == selected ? 17 : 15,
+                                color: tab == selected
+                                    ? Colors.white
+                                    : SegColors.inkSoft,
+                                fontWeight: tab == selected
+                                    ? FontWeight.w900
+                                    : FontWeight.w700,
                               ),
-                            ],
+                            ),
                           ],
                         ),
                       ),
@@ -309,10 +451,33 @@ class _SectionBar extends StatelessWidget {
   }
 }
 
-/// The theme rows; scrolls up and down.
+/// One row of big cards (Stories, Play Park), kept clear of the bar.
+class _SingleRow extends StatelessWidget {
+  final double barRoom;
+  final Widget Function(double bottomInset) builder;
+  const _SingleRow({required this.barRoom, required this.builder});
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) {
+      // On a tall screen the cards stay card-sized and sit in the middle.
+      final free = box.maxHeight - barRoom;
+      final height = math.min(free, 300.0);
+      return Padding(
+        padding: EdgeInsets.only(top: (free - height) / 2),
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: SizedBox(height: height + barRoom, child: builder(barRoom)),
+        ),
+      );
+    },
+  );
+}
+
+/// The theme rows; scrolls up and down, under the floating bar.
 class _LearnSection extends StatefulWidget {
   final AppState state;
-  const _LearnSection({required this.state});
+  final double barRoom;
+  const _LearnSection({required this.state, required this.barRoom});
   @override
   State<_LearnSection> createState() => _LearnSectionState();
 }
@@ -336,37 +501,58 @@ class _LearnSectionState extends State<_LearnSection> {
     return LayoutBuilder(
       builder: (context, box) {
         final deep = _SectionLook.of(HomeTab.learn).deep;
-        final rowHeight = (box.maxHeight * .86).clamp(200.0, 340.0);
-        return ListView(
-          key: const ValueKey('home-learn-list'),
-          controller: _scroll,
-          padding: const EdgeInsets.only(bottom: SegSpace.s3),
-          children: [
-            for (final (title, ids) in homeRows(l10n))
-              if (ids.where(open.containsKey).toList() case final themes
-                  when themes.isNotEmpty) ...[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    SegSpace.s5,
-                    SegSpace.s3,
-                    SegSpace.s5,
-                    0,
+        // One whole row and the top of the next: there is always more to see
+        // below, and nothing is cut by a band.
+        final rowHeight = (box.maxHeight * .58).clamp(176.0, 250.0);
+        // Rows scrolled up melt away under the top bar instead of being cut
+        // by a hard line.
+        return ShaderMask(
+          blendMode: BlendMode.dstIn,
+          shaderCallback: (rect) => LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: const [Colors.transparent, Colors.white],
+            stops: [0, 14 / rect.height],
+          ).createShader(rect),
+          child: ListView(
+            key: const ValueKey('home-learn-list'),
+            controller: _scroll,
+            padding: EdgeInsets.only(top: 2, bottom: widget.barRoom),
+            children: [
+              for (final (title, ids) in homeRows(l10n))
+                if (ids.where(open.containsKey).toList() case final themes
+                    when themes.isNotEmpty) ...[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      SegSpace.s5,
+                      SegSpace.s2,
+                      SegSpace.s5,
+                      0,
+                    ),
+                    child: Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: SegText.label.copyWith(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w800,
+                        color: deep,
+                      ),
+                    ),
                   ),
-                  child: Text(
-                    title,
-                    style: SegText.heading.copyWith(color: deep),
+                  SizedBox(
+                    height: rowHeight,
+                    child: HorizontalCards(
+                      key: ValueKey('home-row-${ids.first}'),
+                      count: themes.length,
+                      cardAspect: .92,
+                      tight: true,
+                      builder: (i) => _themeCard(context, open[themes[i]]!),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: rowHeight,
-                  child: HorizontalCards(
-                    key: ValueKey('home-row-${ids.first}'),
-                    count: themes.length,
-                    builder: (i) => _themeCard(context, open[themes[i]]!),
-                  ),
-                ),
-              ],
-          ],
+                ],
+            ],
+          ),
         );
       },
     );
@@ -378,6 +564,7 @@ class _LearnSectionState extends State<_LearnSection> {
     return ThemeGameCard(
       key: ValueKey('home-theme-${t.id}'),
       theme: t,
+      dense: true,
       title: t.name(s.locale),
       badgeText: s.configuration.newBadge.contains(t.id)
           ? l10n.homeNewBadge
@@ -393,10 +580,11 @@ class _LearnSectionState extends State<_LearnSection> {
   }
 }
 
-/// The four big tiles of the Play Park.
+/// The big tiles of the Play Park.
 class _ParkSection extends StatelessWidget {
   final AppState state;
-  const _ParkSection({required this.state});
+  final double bottomInset;
+  const _ParkSection({required this.state, this.bottomInset = 0});
   static final _theme = ContentTheme.fromJson({
     'id': 'park',
     'hero': '',
@@ -418,6 +606,10 @@ class _ParkSection extends StatelessWidget {
     ];
     return HorizontalCards(
       count: tiles.length,
+      bottomInset: bottomInset,
+      tight: true,
+      centered: true,
+      cardAspect: .95,
       builder: (i) {
         final (id, title, route) = tiles[i];
         return ThemeGameCard(
@@ -498,9 +690,11 @@ class _ThemeScreenState extends State<ThemeScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: SegSpace.s5,
-                  vertical: SegSpace.s3,
+                padding: const EdgeInsets.fromLTRB(
+                  SegSpace.s5,
+                  SegSpace.s2,
+                  SegSpace.s5,
+                  0,
                 ),
                 // Back and title stay on the left, the levels on the right,
                 // whatever the length of the theme name.
@@ -518,7 +712,10 @@ class _ThemeScreenState extends State<ThemeScreen> {
                     Expanded(
                       child: Text(
                         t.name(s.locale),
-                        style: SegText.title,
+                        style: SegText.heading.copyWith(
+                          fontWeight: FontWeight.w800,
+                          color: Color.lerp(t.deep, SegColors.ink, .45),
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -563,6 +760,10 @@ class _ThemeScreenState extends State<ThemeScreen> {
                       )
                     : HorizontalCards(
                         count: games.length,
+                        cardAspect: .8,
+                        tight: true,
+                        centered: true,
+                        bottomInset: SegSpace.s1,
                         builder: (i) {
                           final g = s.content.game(games[i]);
                           final locked = !s.canPlay(t.id, g.id, tier);
@@ -584,7 +785,8 @@ class _ThemeScreenState extends State<ThemeScreen> {
                             title: g.name(s.locale),
                             subtitle: '',
                             visual: ItemVisual(
-                              faces[i % faces.length],
+                              gameFace(s.content, g.id) ??
+                                  faces[i % faces.length],
                               alignment: Alignment.bottomCenter,
                             ),
                             modeIcon: g.id == 'G01' ? null : gameIcon(g.id),
@@ -625,6 +827,29 @@ class _ThemeScreenState extends State<ThemeScreen> {
       ),
     );
   }
+}
+
+/// The picture on a game's card when the game has a subject of its own (a
+/// toothbrush for brushing teeth); other games show an object of the theme.
+ContentItem? gameFace(ContentRepository content, String gameId) {
+  final id = const {
+    'G60': 'cleaning.toothbrush',
+    'G61': 'cleaning.tap',
+    'G62': 'cleaning.towel',
+    'G63': 'wear.boy',
+    'G64': 'weather.sun',
+    'G49': 'wear.socks',
+    'G65': 'fruit.strawberry',
+    'G66': 'kitchen.plate',
+    'G67': 'kitchen.fridge',
+    'G68': 'use.stethoscope',
+    'G69': 'need.cat_tree',
+    'G70': 'place.hospital',
+    'G71': 'grow.can',
+    'G72': 'season.blossom',
+    'G73': 'nature.rainbow',
+  }[gameId];
+  return id == null ? null : content.anyItem(id);
 }
 
 IconData gameIcon(String id) => switch (id) {

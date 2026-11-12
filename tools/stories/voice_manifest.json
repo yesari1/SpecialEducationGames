@@ -1,13 +1,13 @@
 {
   "assets/audio/en/stories/angry/p1.mp3": {
-    "bytes": 56050,
+    "bytes": 27629,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:13.331745+00:00",
-    "sha256": "b928299589bd7ea0091b80953f01dbd9442913afc1fc5bab8494cf32dcbc787f",
-    "text": "Ali and his little sister Elif are playing with a toy car.",
+    "requested_at": "2026-11-12T16:23:47.970023+00:00",
+    "sha256": "b2a515f91d6537568305e2b9f3d7537e0193e7b25c03afccd8b9f5e70477e89c",
+    "text": "Leo and his little sister Elif are playing with a toy car.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -19,14 +19,14 @@
     }
   },
   "assets/audio/en/stories/angry/p2.mp3": {
-    "bytes": 35152,
+    "bytes": 18016,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T05:31:55.463450+00:00",
-    "sha256": "4afd31a443460bdd41d8a4ba5d17c935162c048599a6cdecd7ac683b064adbd7",
-    "text": "Elif took the car out of Ali's hands.",
+    "requested_at": "2026-11-12T16:23:48.706434+00:00",
+    "sha256": "8b0e4c14e2e385174fa895fcef26d80c8727b70f8df08121e7528a425f488199",
+    "text": "Elif took the car out of Leo's hands.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -38,14 +38,14 @@
     }
   },
   "assets/audio/en/stories/angry/p3.mp3": {
-    "bytes": 30973,
+    "bytes": 16553,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:17.907927+00:00",
-    "sha256": "d5dee1f3bc6b06168f2fac76ded6c3702d73ae66d4c4b376d91341d15bac9be7",
-    "text": "How do you think Ali feels now?",
+    "requested_at": "2026-11-12T16:23:49.526287+00:00",
+    "sha256": "9b9b39ca76fba3a2c87bb45b4b4ac5b590e3bd2cd4a70da17bdcf504884a8801",
+    "text": "How do you think Leo feels now?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -57,14 +57,14 @@
     }
   },
   "assets/audio/en/stories/angry/p3_angry.mp3": {
-    "bytes": 11746,
+    "bytes": 12791,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:44.901275+00:00",
-    "sha256": "0be4af201b2303e31bc86b486adfa81bc20cce3ba80f7533af92be137ad6b042",
-    "text": "Yes, Ali is angry.",
+    "requested_at": "2026-11-12T16:23:50.159128+00:00",
+    "sha256": "4dbe19a75ec016900551e5039b0ac8cc5576525aade315c5832096f97bcb6f3d",
+    "text": "Yes, Leo is angry.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -76,14 +76,14 @@
     }
   },
   "assets/audio/en/stories/angry/p3_happy.mp3": {
-    "bytes": 43511,
+    "bytes": 25121,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:20.134335+00:00",
-    "sha256": "cf723c75cd0bb348942cea8f1c32732b9e6ecae145dc3781f79c165b943b3628",
-    "text": "Take a look at Ali's face. Ali is angry.",
+    "requested_at": "2026-11-12T16:23:50.962493+00:00",
+    "sha256": "8bb392638925463baa543e4bc11c2f1cb1cbb0d781b0f1c3eeeb01fcad6ff55a",
+    "text": "Take a look at Leo's face. Leo is angry.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -95,14 +95,14 @@
     }
   },
   "assets/audio/en/stories/angry/p3_sad.mp3": {
-    "bytes": 43929,
+    "bytes": 22195,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:22.384568+00:00",
-    "sha256": "0dc8b0a460c827e7ac861285ddd87ecd602f85d6b8a30bf754bffce4b1688cca",
-    "text": "Take a look at Ali's face. Ali is angry.",
+    "requested_at": "2026-11-12T16:23:51.705310+00:00",
+    "sha256": "b0c2a43df4ba2b4cef77e25476725cb8da1080d54cebc0de448ccb9ef1c4dd2a",
+    "text": "Take a look at Leo's face. Leo is angry.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -114,14 +114,14 @@
     }
   },
   "assets/audio/en/stories/angry/p4.mp3": {
-    "bytes": 47273,
+    "bytes": 24285,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:24.727267+00:00",
-    "sha256": "3246e176d5515f3b70fa574ce3a266ecac490f3847a5e44ac178fa57e04c29d7",
-    "text": "Ali is really angry. He has a toy in his hand.",
+    "requested_at": "2026-11-12T16:23:52.497243+00:00",
+    "sha256": "79bc0d163b1662accc4efa63349800a7aef4fc2c7d84cd89dd33180563592611",
+    "text": "Leo is really angry. He has a toy in his hand.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -133,14 +133,14 @@
     }
   },
   "assets/audio/en/stories/angry/p5.mp3": {
-    "bytes": 23031,
+    "bytes": 10701,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:26.609730+00:00",
-    "sha256": "67e033dd8865c5490909efa8bb0e4ce3902c7e6a4339d3f0d35172110a9209f3",
-    "text": "What should Ali do?",
+    "requested_at": "2026-11-12T16:23:53.136673+00:00",
+    "sha256": "9bbe57919f2151525f7d7ef60cb34353aba423e0f2d66f68c520ee05e18cf43d",
+    "text": "What should Leo do?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -171,14 +171,14 @@
     }
   },
   "assets/audio/en/stories/angry/p5_tell.mp3": {
-    "bytes": 23658,
+    "bytes": 24285,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:47.359448+00:00",
-    "sha256": "26a6c60c31cc4f80f891a5b9cbbfb1a4f39a9b948e501ca380c73788b07a9582",
-    "text": "Yes, Ali goes to Mom and tells her he is angry.",
+    "requested_at": "2026-11-12T16:23:53.989033+00:00",
+    "sha256": "e8dee5125090229fd4d89df60820b26c20584c086a11375159598d8e65937977",
+    "text": "Yes, Leo goes to Mom and tells her he is angry.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -209,14 +209,14 @@
     }
   },
   "assets/audio/en/stories/angry/p6.mp3": {
-    "bytes": 67753,
+    "bytes": 35570,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T05:31:58.490340+00:00",
-    "sha256": "05270d75addf447da34e9289bde31e11cdfba1214d5cf8ea77f1ed2b04908aa5",
-    "text": "Ali told Mom, \"I'm really angry!\" They took a deep breath together.",
+    "requested_at": "2026-11-12T16:23:54.882100+00:00",
+    "sha256": "259b59e33c7b52e18650aa041f2cdd550a4f7998fd43e948278e7bdca3ffbd1e",
+    "text": "Leo told Mom, \"I'm really angry!\" They took a deep breath together.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -247,14 +247,14 @@
     }
   },
   "assets/audio/en/stories/angry/praise.mp3": {
-    "bytes": 42675,
+    "bytes": 19479,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:38.295334+00:00",
-    "sha256": "63dcb70205d72a51212693c19de7ed237b551af4ff94f3d61b8c573e848f2ef4",
-    "text": "Well done! You were a great help to Ali.",
+    "requested_at": "2026-11-12T16:23:55.636280+00:00",
+    "sha256": "2a6293d05f369830d6cf3d721e5d1935da3f8d535328343b14b059cb5e185eb0",
+    "text": "Well done! You were a great help to Leo.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -266,14 +266,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p1.mp3": {
-    "bytes": 51871,
+    "bytes": 24076,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:53.400821+00:00",
-    "sha256": "579bd82cf0fbce4c6e23c29ec39b946fa4052244e50337e7ceaa0c3254fe2eab",
-    "text": "Today Ali is going to the doctor. Mom is with him.",
+    "requested_at": "2026-11-12T16:24:02.248365+00:00",
+    "sha256": "ed623de45e7e17aea4a98b6c94f5d0f7233694d35e6043efbc5e4482ef2aa8be",
+    "text": "Today Leo is going to the doctor. Mom is with him.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -285,14 +285,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p2.mp3": {
-    "bytes": 53960,
+    "bytes": 29301,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:56.003589+00:00",
-    "sha256": "b34a3394321e6f53f11b3a377aba7e3b28e7424c2bc91e6d32a2b901d58f73aa",
-    "text": "They sit down in the waiting room. Ali feels a little scared.",
+    "requested_at": "2026-11-12T16:24:03.130605+00:00",
+    "sha256": "ba320c30db3266d98547a29c2ad119b781d6deb9e944121c9bb88720820f202c",
+    "text": "They sit down in the waiting room. Leo feels a little scared.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -304,14 +304,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p3.mp3": {
-    "bytes": 38496,
+    "bytes": 18434,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:58.035691+00:00",
-    "sha256": "b79fff0c2f90c7833a970c1d80483a97721f96b9e5b78dc245da2337833a96e9",
-    "text": "What can Ali do when he feels scared?",
+    "requested_at": "2026-11-12T16:24:03.872149+00:00",
+    "sha256": "27e6e61e1720fed705bae9aa9dff08df7c53dba15a595365cd2b01ca2f6e7ea9",
+    "text": "What can Leo do when he feels scared?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -323,14 +323,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p3_hug.mp3": {
-    "bytes": 15508,
+    "bytes": 16553,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:53.929041+00:00",
-    "sha256": "9407fdf2c12afb978d742d21eef8c5a7ef7e300882bd59cce2c904d57ff13b6c",
-    "text": "Yes, Ali gives Mom a hug.",
+    "requested_at": "2026-11-12T16:24:04.582545+00:00",
+    "sha256": "3cf0dcba25f5797ae9bb82fc9c577d43974cf7be70b90504ce2b3202441db7a4",
+    "text": "Yes, Leo gives Mom a hug.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -361,14 +361,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p3_tantrum.mp3": {
-    "bytes": 80710,
+    "bytes": 39123,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:03.750571+00:00",
-    "sha256": "94915530e202a4ab62e5ef4c3c1ef0426e226c64aefbda50d0d9464a38c1c7bd",
-    "text": "Ali lay on the floor and screamed. Everyone looked at him, and he felt even more scared.",
+    "requested_at": "2026-11-12T16:24:05.499573+00:00",
+    "sha256": "8dce0667b5c39ce5b9afe3dc13bcd25c4e737a90a36096950fc189a5cee66845",
+    "text": "Leo lay on the floor and screamed. Everyone looked at him, and he felt even more scared.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -380,14 +380,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p4.mp3": {
-    "bytes": 57304,
+    "bytes": 29092,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:06.691464+00:00",
-    "sha256": "6b1d1497b828ab9e050995624c402cdd108585460e66cfcf2789ffff5533e0f0",
-    "text": "The doctor came in. She smiled and said, \"Hello, Ali!\"",
+    "requested_at": "2026-11-12T16:24:06.322638+00:00",
+    "sha256": "36f6b4f8ff50509a32763806c7cc427e139efba521520fd025407472fa5ee3dc",
+    "text": "The doctor came in. She smiled and said, \"Hello, Leo!\"",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -399,14 +399,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p5.mp3": {
-    "bytes": 56468,
+    "bytes": 26584,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:09.507488+00:00",
-    "sha256": "2829fc6b99ab3496a5d14a0ce9de7116ccf4be6ad97d20b2141ec27875dec752",
-    "text": "The doctor wants to listen to his heart. What should Ali do?",
+    "requested_at": "2026-11-12T16:24:07.142345+00:00",
+    "sha256": "782912db0f35de97ad3c77cd3898431aba3c69c000f3f2f0a1307667ade68bfe",
+    "text": "The doctor wants to listen to his heart. What should Leo do?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -418,14 +418,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p5_push.mp3": {
-    "bytes": 61484,
+    "bytes": 31390,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T05:32:03.126895+00:00",
-    "sha256": "68c356725af7147851fd4208fbb5b0c196511fdd7a10db6b29cc1a709b5c22c1",
-    "text": "Ali pushed the doctor away. The doctor couldn't listen to his heart.",
+    "requested_at": "2026-11-12T16:24:08.757529+00:00",
+    "sha256": "073b934e44ee34b0d3a66e7cf4d476f4f9393c35e50555bc8c8582406b55d6c0",
+    "text": "Leo pushed the doctor away. The doctor couldn't listen to his heart.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -456,14 +456,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p5_still.mp3": {
-    "bytes": 29510,
+    "bytes": 27420,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:56.623098+00:00",
-    "sha256": "8c20b13161d544d339106207200fce150226bfaf6cdd434d124d724cdcbfeee6",
-    "text": "Yes, Ali sits still. The doctor listens to his heart.",
+    "requested_at": "2026-11-12T16:24:07.938216+00:00",
+    "sha256": "5303509994a46b072af7b3334e1f9b3a858efe4b79ab3e89cde49bb28cbce2c1",
+    "text": "Yes, Leo sits still. The doctor listens to his heart.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -475,14 +475,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p6.mp3": {
-    "bytes": 43511,
+    "bytes": 22613,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:18.653054+00:00",
-    "sha256": "b7cc232236c9d316927e027a83245c6db87e5791859fec34f458113d5fb0f751",
-    "text": "The checkup is over! How does Ali feel now?",
+    "requested_at": "2026-11-12T16:24:09.520175+00:00",
+    "sha256": "5a177fd597242bf793926aa7fcb0442555acdfbca0d8baad79505b99d68bc00c",
+    "text": "The checkup is over! How does Leo feel now?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -494,14 +494,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p6_happy.mp3": {
-    "bytes": 15508,
+    "bytes": 15717,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:58.767223+00:00",
-    "sha256": "a25c1df566acb48c36ded5cac084fa8c454813b9bb199f9ab8e7acbd32c69158",
-    "text": "Yes, Ali is very happy now.",
+    "requested_at": "2026-11-12T16:24:10.185113+00:00",
+    "sha256": "ed359a0cdd5959b66ec75dc97d2e6cd0f01e95dd71a29bcfca54f8f6d6b57c7b",
+    "text": "Yes, Leo is very happy now.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -513,14 +513,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p6_scared.mp3": {
-    "bytes": 53124,
+    "bytes": 23867,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:21.946409+00:00",
-    "sha256": "9953c5151267a64ae0b36d5abd6fb43531c24da1c1920bf821d8aab6aaecb3c7",
-    "text": "Look, Ali is smiling. He isn't scared anymore.",
+    "requested_at": "2026-11-12T16:24:10.944193+00:00",
+    "sha256": "9d2195484393afc60e8630a7fdc4b15f4960d65023272f4ba398d367bafa5fcf",
+    "text": "Look, Leo is smiling. He isn't scared anymore.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -532,14 +532,14 @@
     }
   },
   "assets/audio/en/stories/doctor/p7.mp3": {
-    "bytes": 66499,
+    "bytes": 30555,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:24.984216+00:00",
-    "sha256": "13b3ffbbc6339c823b06ab5b2ae8a5564c992e5e1f4f15175b35a8486c962869",
-    "text": "The doctor gave Ali a star sticker. You were so brave, Ali!",
+    "requested_at": "2026-11-12T16:24:11.743548+00:00",
+    "sha256": "a1dcc5f6e42945249bafd13b37a8abb3ec0b8b272ee543d6f57cef5bf68ef5d7",
+    "text": "The doctor gave Leo a star sticker. You were so brave, Leo!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -551,14 +551,14 @@
     }
   },
   "assets/audio/en/stories/doctor/praise.mp3": {
-    "bytes": 43093,
+    "bytes": 22404,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:26:27.955947+00:00",
-    "sha256": "366bb82585f1815cfb67dc4c914d154cc818a3866fed9f9906369a36b973e75d",
-    "text": "Well done! You were a great help to Ali.",
+    "requested_at": "2026-11-12T16:24:12.483584+00:00",
+    "sha256": "1aa10cf2948ba2c1d32da70621279fcf667c99de6196cb13742e1d880be9b61d",
+    "text": "Well done! You were a great help to Leo.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -570,14 +570,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p1.mp3": {
-    "bytes": 31808,
+    "bytes": 15926,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:48:47.913279+00:00",
-    "sha256": "003f1852d4fe209788600f9b58be7e8048b4625d1909fec8186121753216f22d",
-    "text": "Here is Ali! It's bedtime.",
+    "requested_at": "2026-11-12T16:23:41.974871+00:00",
+    "sha256": "bf956c0066c7145edcfd7bfa3a24e65da71183283ddf8bf9835b9d41ea753c58",
+    "text": "Here is Leo! It's bedtime.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -589,14 +589,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p2.mp3": {
-    "bytes": 44347,
+    "bytes": 22822,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:48:50.306976+00:00",
-    "sha256": "12dee883bd136649896b44879a5f04029e000bfa7cdcd79bb677589b5d49f777",
-    "text": "Ali went to the bathroom and picked up his toothbrush.",
+    "requested_at": "2026-11-12T16:23:42.697183+00:00",
+    "sha256": "93cc275d21ba7c216303eece36b3d62be71b6efc0d246f649c92e44990205b10",
+    "text": "Leo went to the bathroom and picked up his toothbrush.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -665,14 +665,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p4.mp3": {
-    "bytes": 48527,
+    "bytes": 25748,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:48:57.607799+00:00",
-    "sha256": "f5d3ffb159c7c246399782a5ae6684b8aab0cba946c2f1869ad816408e612ebb",
-    "text": "Ali brushes his teeth nice and slow. Up and down.",
+    "requested_at": "2026-11-12T16:23:43.453386+00:00",
+    "sha256": "8094bd5fabbd72b7a603366c1308765ab900c8dcfcf7e119bad35665ef26d87e",
+    "text": "Leo brushes his teeth nice and slow. Up and down.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -741,14 +741,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p6.mp3": {
-    "bytes": 51035,
+    "bytes": 26584,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:04.415799+00:00",
-    "sha256": "e7c7bbda5fb7b5ecf7868f4e62330cccd2e3fe716257920a18e0a8e256e2dd00",
-    "text": "His teeth are sparkling clean! How does Ali feel?",
+    "requested_at": "2026-11-12T16:23:44.211798+00:00",
+    "sha256": "99c799f9478d2f3c62e83d37df708b8737c29db58152e8c7a09fb46142944de8",
+    "text": "His teeth are sparkling clean! How does Leo feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -760,14 +760,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p6_happy.mp3": {
-    "bytes": 15717,
+    "bytes": 15090,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:42.938853+00:00",
-    "sha256": "f2e149e58584a2f1ac07475d040379d1f88cb9c12a063c7a10b02cc3c61443ba",
-    "text": "Yes, Ali is very happy.",
+    "requested_at": "2026-11-12T16:23:44.872081+00:00",
+    "sha256": "4380b438e82a2a355344fb4758c056766d8e5f822d7c68707f8363e1af29025d",
+    "text": "Yes, Leo is very happy.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -779,14 +779,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p6_sad.mp3": {
-    "bytes": 44347,
+    "bytes": 25748,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:06.736310+00:00",
-    "sha256": "0378a915a1d5eb5ab9565a5681dcfe04251ed51a610f8ebb81cf435875a238dc",
-    "text": "Look, Ali is smiling. Ali is very happy.",
+    "requested_at": "2026-11-12T16:23:45.635685+00:00",
+    "sha256": "b2025234c5a6b8f59fb99b46d2138f260d61a4a6c6d98dcab75e172245d1e403",
+    "text": "Look, Leo is smiling. Leo is very happy.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -798,14 +798,14 @@
     }
   },
   "assets/audio/en/stories/teeth/p7.mp3": {
-    "bytes": 40586,
+    "bytes": 22404,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:08.825164+00:00",
-    "sha256": "da9b6e9ff0e30f76d5dcbf39eb128695f8677acd355009d4049a786fd740782e",
-    "text": "Ali climbed into bed. Good night, Ali!",
+    "requested_at": "2026-11-12T16:23:46.391688+00:00",
+    "sha256": "0c45933bd305b9b5a87c562809e6a9bf5b24b68da7172374c4fc343fe8b32a8d",
+    "text": "Leo climbed into bed. Good night, Leo!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -817,14 +817,14 @@
     }
   },
   "assets/audio/en/stories/teeth/praise.mp3": {
-    "bytes": 38914,
+    "bytes": 20733,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T18:49:11.080444+00:00",
-    "sha256": "b81dbf53beda47d62e3261961f5d4fbfafd6f15dcef131afea60b73e484ba1ac",
-    "text": "Well done! You were a great help to Ali.",
+    "requested_at": "2026-11-12T16:23:47.123743+00:00",
+    "sha256": "042edac5de569dcd9d402544ef91ab30ba9c1a9131c30cf7c7eedd439eaa9f16",
+    "text": "Well done! You were a great help to Leo.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -836,14 +836,14 @@
     }
   },
   "assets/audio/en/stories/turn/p1.mp3": {
-    "bytes": 41422,
+    "bytes": 20315,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T05:32:00.659505+00:00",
-    "sha256": "c9d0e54a7d645603eef9ced0f59386c5c8c654818271425b2d94088287be38b5",
-    "text": "Ali is at the park. He loves the slide.",
+    "requested_at": "2026-11-12T16:23:56.337565+00:00",
+    "sha256": "7335e4a6f1057af6a76ea2f70156cef973cc1c687cd856ba16e3b0624dee383e",
+    "text": "Leo is at the park. He loves the slide.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -874,14 +874,14 @@
     }
   },
   "assets/audio/en/stories/turn/p3.mp3": {
-    "bytes": 45601,
+    "bytes": 22195,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:32.384175+00:00",
-    "sha256": "eb36f652752f4ac684c5059b2deb78b1e2bfbd08fcfdacd96a18018c14255c51",
-    "text": "Ali wants to slide too. What should he do?",
+    "requested_at": "2026-11-12T16:23:57.090932+00:00",
+    "sha256": "a441956eba1cf6dee2a9ed3db7792eed4e2d56a6e0cfa0438b65a1e2ffde97f9",
+    "text": "Leo wants to slide too. What should he do?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -893,14 +893,14 @@
     }
   },
   "assets/audio/en/stories/turn/p3_line.mp3": {
-    "bytes": 20315,
+    "bytes": 20733,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:49.720472+00:00",
-    "sha256": "410df2b6a42cac5107080ef9aea9aba9aaf959116b392e7b18b7b89aa1f52ad3",
-    "text": "Yes, Ali waits for his turn behind Elif.",
+    "requested_at": "2026-11-12T16:23:57.814839+00:00",
+    "sha256": "2e1693270b740627303cf70ac2e96de17384772a700f5c6d5507d17c6274ff1f",
+    "text": "Yes, Leo waits for his turn behind Elif.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -950,14 +950,14 @@
     }
   },
   "assets/audio/en/stories/turn/p4.mp3": {
-    "bytes": 51035,
+    "bytes": 21359,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:39.589677+00:00",
-    "sha256": "c9fb653842b777f09462439312cdb4bcb8bcde7acc30f2bdc18f3e9377f8fd9f",
-    "text": "Ali waits for his turn. One, two, three...",
+    "requested_at": "2026-11-12T16:23:58.532894+00:00",
+    "sha256": "14e22ab4b5f8c37372fe89bc095ea71c6b4b143704afd8593c8a3e665d64ae4b",
+    "text": "Leo waits for his turn. One, two, three...",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -969,14 +969,14 @@
     }
   },
   "assets/audio/en/stories/turn/p5.mp3": {
-    "bytes": 44765,
+    "bytes": 25539,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:41.908133+00:00",
-    "sha256": "05b3d1ce161fe554645dd0dc6c5701655de9e1e4961455382c470402323059dc",
-    "text": "Elif went down the slide. Now it's Ali's turn!",
+    "requested_at": "2026-11-12T16:23:59.327154+00:00",
+    "sha256": "664e804045af13c7b24817ce408a27d597c58a130786a9a0f143d28122a702c4",
+    "text": "Elif went down the slide. Now it's Leo's turn!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -988,14 +988,14 @@
     }
   },
   "assets/audio/en/stories/turn/p6.mp3": {
-    "bytes": 41422,
+    "bytes": 22404,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:44.091873+00:00",
-    "sha256": "7148a84e7e76665d2fa61076574a75e971ea6ec87041270ce674c451c3d41ead",
-    "text": "Ali went down the slide! How does Ali feel?",
+    "requested_at": "2026-11-12T16:24:00.055703+00:00",
+    "sha256": "329c751ed3629fc1a1afd9dd24a6541ca594e6e17571766a5044ef2238e87cdd",
+    "text": "Leo went down the slide! How does Leo feel?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1007,14 +1007,14 @@
     }
   },
   "assets/audio/en/stories/turn/p6_angry.mp3": {
-    "bytes": 45601,
+    "bytes": 24703,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-06T19:25:46.430309+00:00",
-    "sha256": "ec88695fdf69b60935715cae2a8fbcf08df22a7a830e445be56027629b119e98",
-    "text": "Look, Ali is laughing. Ali is very happy.",
+    "requested_at": "2026-11-12T16:24:01.486178+00:00",
+    "sha256": "62edda58d85c0e201de3d17d60473ef60acf4e8a7708c1ef20d66c6e3f30928c",
+    "text": "Look, Leo is laughing. Leo is very happy.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1026,14 +1026,14 @@
     }
   },
   "assets/audio/en/stories/turn/p6_happy.mp3": {
-    "bytes": 14254,
+    "bytes": 13836,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T14:47:51.767503+00:00",
-    "sha256": "a35a387c415ed2d86629c185d8a92c3e5397898ec22d0f3e2ea7c602dda04757",
-    "text": "Yes, Ali is very happy.",
+    "requested_at": "2026-11-12T16:24:00.738703+00:00",
+    "sha256": "96f9eba45ed8fd4a2fdffbc8a0c4bc69816a20e9daeb50b074953cc07558dbf4",
+    "text": "Yes, Leo is very happy.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {

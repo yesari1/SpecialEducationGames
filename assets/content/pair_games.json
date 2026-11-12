@@ -915,7 +915,7 @@
         "target": "emotions.sad",
         "text": {
           "tr": "Ali'nin dondurması yere düştü. Ali ne hissediyor?",
-          "en": "Ali dropped his ice cream. How does Ali feel?"
+          "en": "Leo dropped his ice cream. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_1.mp3",
@@ -927,7 +927,7 @@
         "target": "emotions.happy",
         "text": {
           "tr": "Ali bir hediye aldı. Ali ne hissediyor?",
-          "en": "Ali got a present. How does Ali feel?"
+          "en": "Leo got a present. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_2.mp3",
@@ -939,7 +939,7 @@
         "target": "emotions.scared",
         "text": {
           "tr": "Büyük bir köpek havladı. Ali ne hissediyor?",
-          "en": "A big dog barked. How does Ali feel?"
+          "en": "A big dog barked. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_3.mp3",
@@ -951,7 +951,7 @@
         "target": "emotions.surprised",
         "text": {
           "tr": "Kutudan birden bir oyuncak fırladı. Ali ne hissediyor?",
-          "en": "A toy popped out of the box. How does Ali feel?"
+          "en": "A toy popped out of the box. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_4.mp3",
@@ -963,7 +963,7 @@
         "target": "emotions.angry",
         "text": {
           "tr": "Elif, Ali'nin kulesini yıktı. Ali ne hissediyor?",
-          "en": "Elif knocked down Ali's tower. How does Ali feel?"
+          "en": "Elif knocked down Leo's tower. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_5.mp3",
@@ -975,7 +975,7 @@
         "target": "emotions.sleepy",
         "text": {
           "tr": "Akşam oldu, Ali esniyor. Ali ne hissediyor?",
-          "en": "It is evening and Ali is yawning. How does Ali feel?"
+          "en": "It is evening and Leo is yawning. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_6.mp3",
@@ -987,7 +987,7 @@
         "target": "emotions.happy",
         "text": {
           "tr": "Ali resmini bitirdi, annesi alkışlıyor. Ali ne hissediyor?",
-          "en": "Ali finished his drawing and Mom claps. How does Ali feel?"
+          "en": "Leo finished his drawing and Mom claps. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_7.mp3",
@@ -999,7 +999,7 @@
         "target": "emotions.happy",
         "text": {
           "tr": "Annesi Ali'yi gıdıklıyor. Ali ne hissediyor?",
-          "en": "Mom is tickling Ali. How does Ali feel?"
+          "en": "Mom is tickling Leo. How does Leo feel?"
         },
         "audio": {
           "tr": "assets/audio/tr/pairs/G44_8.mp3",
@@ -1916,15 +1916,21 @@
     ],
     "rounds": [
       {
+        "who": "boy",
         "target": "clothes.raincoat",
         "stimulus": "weather.rain",
         "alsoRight": [
           "clothes.umbrella",
           "clothes.boots"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Dışarıda yağmur yağıyor. Ali ne giysin?",
-          "en": "It's raining outside. What should Ali wear?"
+          "en": "It's raining outside. What should Leo wear?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_1.mp3",
@@ -1937,15 +1943,21 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.umbrella",
         "stimulus": "weather.rain",
         "alsoRight": [
           "clothes.raincoat",
           "clothes.boots"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Yağmur başladı. Ali yanına ne alsın?",
-          "en": "It started to rain. What should Ali take?"
+          "en": "It started to rain. What should Leo take?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_2.mp3",
@@ -1958,6 +1970,7 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.coat",
         "stimulus": "weather.snow",
         "alsoRight": [
@@ -1967,9 +1980,14 @@
           "clothes.boots",
           "clothes.sweater"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Dışarıda kar yağıyor. Ali ne giysin?",
-          "en": "It's snowing outside. What should Ali wear?"
+          "en": "It's snowing outside. What should Leo wear?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_3.mp3",
@@ -1982,6 +2000,7 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.gloves",
         "stimulus": "weather.snow",
         "alsoRight": [
@@ -1991,9 +2010,14 @@
           "clothes.boots",
           "clothes.sweater"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Ali kartopu oynayacak. Eline ne taksın?",
-          "en": "Ali wants to make snowballs. What goes on his hands?"
+          "en": "Leo wants to make snowballs. What goes on his hands?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_4.mp3",
@@ -2006,18 +2030,23 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.shorts",
         "stimulus": "weather.sun",
         "alsoRight": [
           "clothes.tshirt",
           "clothes.sandals",
           "clothes.hat",
-          "clothes.sunglasses",
+          "clothes.sunglasses"
+        ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
           "clothes.swimsuit"
         ],
         "text": {
           "tr": "Hava çok sıcak. Ali ne giysin?",
-          "en": "It's very hot. What should Ali wear?"
+          "en": "It's very hot. What should Leo wear?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_5.mp3",
@@ -2030,6 +2059,7 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.sunglasses",
         "stimulus": "weather.sun",
         "alsoRight": [
@@ -2038,9 +2068,14 @@
           "clothes.tshirt",
           "clothes.sandals"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Güneş gözünü alıyor. Ali ne taksın?",
-          "en": "The sun is in his eyes. What should Ali put on?"
+          "en": "The sun is in his eyes. What should Leo put on?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_6.mp3",
@@ -2053,17 +2088,22 @@
         }
       },
       {
-        "target": "clothes.swimsuit",
+        "who": "boy",
+        "target": "clothes.shorts",
         "stimulus": "weather.sea",
         "alsoRight": [
           "clothes.hat",
           "clothes.sunglasses",
-          "clothes.sandals",
-          "clothes.shorts"
+          "clothes.sandals"
+        ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
         ],
         "text": {
           "tr": "Ali denize gidiyor. Ne giysin?",
-          "en": "Ali is going to the sea. What should he wear?"
+          "en": "Leo is going to the sea. What should he wear?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_7.mp3",
@@ -2076,14 +2116,20 @@
         }
       },
       {
+        "who": "boy",
         "target": "clothes.pajamas",
         "stimulus": "weather.night",
         "alsoRight": [
           "clothes.slippers"
         ],
+        "avoid": [
+          "clothes.dress",
+          "clothes.skirt",
+          "clothes.swimsuit"
+        ],
         "text": {
           "tr": "Hava karardı, uyku vakti. Ali ne giysin?",
-          "en": "It's dark, time for bed. What should Ali wear?"
+          "en": "It's dark, time for bed. What should Leo wear?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g64_8.mp3",
@@ -2093,6 +2139,206 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g64_done_8.mp3",
           "en": "assets/audio/en/scenes/g64_done_8.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.raincoat",
+        "stimulus": "weather.rain",
+        "alsoRight": [
+          "clothes.umbrella",
+          "clothes.boots"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Dışarıda yağmur yağıyor. Ayşe ne giysin?",
+          "en": "It's raining outside. What should Mia wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_1.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_1.mp3"
+        },
+        "result": "assets/images/play/out_rain_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_1.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_1.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.umbrella",
+        "stimulus": "weather.rain",
+        "alsoRight": [
+          "clothes.raincoat",
+          "clothes.boots"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Yağmur başladı. Ayşe yanına ne alsın?",
+          "en": "It started to rain. What should Mia take?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_2.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_2.mp3"
+        },
+        "result": "assets/images/play/out_umbrella_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_2.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_2.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.coat",
+        "stimulus": "weather.snow",
+        "alsoRight": [
+          "clothes.beanie",
+          "clothes.gloves",
+          "clothes.scarf",
+          "clothes.boots",
+          "clothes.sweater"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Dışarıda kar yağıyor. Ayşe ne giysin?",
+          "en": "It's snowing outside. What should Mia wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_3.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_3.mp3"
+        },
+        "result": "assets/images/play/out_snow_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_3.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_3.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.gloves",
+        "stimulus": "weather.snow",
+        "alsoRight": [
+          "clothes.coat",
+          "clothes.beanie",
+          "clothes.scarf",
+          "clothes.boots",
+          "clothes.sweater"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Ayşe kartopu oynayacak. Eline ne taksın?",
+          "en": "Mia wants to make snowballs. What goes on her hands?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_4.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_4.mp3"
+        },
+        "result": "assets/images/play/out_gloves_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_4.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_4.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.dress",
+        "stimulus": "weather.sun",
+        "alsoRight": [
+          "clothes.shorts",
+          "clothes.skirt",
+          "clothes.tshirt",
+          "clothes.sandals",
+          "clothes.hat",
+          "clothes.sunglasses",
+          "clothes.swimsuit"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Hava çok sıcak. Ayşe ne giysin?",
+          "en": "It's very hot. What should Mia wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_5.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_5.mp3"
+        },
+        "result": "assets/images/play/out_sun_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_5.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_5.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.sunglasses",
+        "stimulus": "weather.sun",
+        "alsoRight": [
+          "clothes.hat",
+          "clothes.shorts",
+          "clothes.tshirt",
+          "clothes.sandals",
+          "clothes.dress",
+          "clothes.skirt"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Güneş gözünü alıyor. Ayşe ne taksın?",
+          "en": "The sun is in her eyes. What should Mia put on?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_6.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_6.mp3"
+        },
+        "result": "assets/images/play/out_shades_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_6.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_6.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.swimsuit",
+        "stimulus": "weather.sea",
+        "alsoRight": [
+          "clothes.hat",
+          "clothes.sunglasses",
+          "clothes.sandals",
+          "clothes.shorts"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Ayşe denize gidiyor. Ne giysin?",
+          "en": "Mia is going to the sea. What should she wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_7.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_7.mp3"
+        },
+        "result": "assets/images/play/out_sea_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_7.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_7.mp3"
+        }
+      },
+      {
+        "who": "girl",
+        "target": "clothes.pajamas",
+        "stimulus": "weather.night",
+        "alsoRight": [
+          "clothes.slippers"
+        ],
+        "avoid": [],
+        "text": {
+          "tr": "Hava karardı, uyku vakti. Ayşe ne giysin?",
+          "en": "It's dark, time for bed. What should Mia wear?"
+        },
+        "audio": {
+          "tr": "assets/audio/tr/scenes/g64_girl_8.mp3",
+          "en": "assets/audio/en/scenes/g64_girl_8.mp3"
+        },
+        "result": "assets/images/play/out_bed_girl.webp",
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g64_done_girl_8.mp3",
+          "en": "assets/audio/en/scenes/g64_done_girl_8.mp3"
         }
       }
     ]
@@ -2271,7 +2517,7 @@
           "tr": "assets/audio/tr/scenes/g68_1.mp3",
           "en": "assets/audio/en/scenes/g68_1.mp3"
         },
-        "result": "assets/images/play/job_doctor.webp",
+        "result": "assets/images/play/use_stethoscope.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_1.mp3",
           "en": "assets/audio/en/scenes/g68_done_1.mp3"
@@ -2288,7 +2534,7 @@
           "tr": "assets/audio/tr/scenes/g68_2.mp3",
           "en": "assets/audio/en/scenes/g68_2.mp3"
         },
-        "result": "assets/images/play/job_firefighter.webp",
+        "result": "assets/images/play/use_hose.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_2.mp3",
           "en": "assets/audio/en/scenes/g68_done_2.mp3"
@@ -2305,7 +2551,7 @@
           "tr": "assets/audio/tr/scenes/g68_3.mp3",
           "en": "assets/audio/en/scenes/g68_3.mp3"
         },
-        "result": "assets/images/play/job_cook.webp",
+        "result": "assets/images/play/use_ladle.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_3.mp3",
           "en": "assets/audio/en/scenes/g68_done_3.mp3"
@@ -2322,7 +2568,7 @@
           "tr": "assets/audio/tr/scenes/g68_4.mp3",
           "en": "assets/audio/en/scenes/g68_4.mp3"
         },
-        "result": "assets/images/play/job_teacher.webp",
+        "result": "assets/images/play/use_chalk.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_4.mp3",
           "en": "assets/audio/en/scenes/g68_done_4.mp3"
@@ -2339,7 +2585,7 @@
           "tr": "assets/audio/tr/scenes/g68_5.mp3",
           "en": "assets/audio/en/scenes/g68_5.mp3"
         },
-        "result": "assets/images/play/job_police_officer.webp",
+        "result": "assets/images/play/use_whistle.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_5.mp3",
           "en": "assets/audio/en/scenes/g68_done_5.mp3"
@@ -2356,7 +2602,7 @@
           "tr": "assets/audio/tr/scenes/g68_6.mp3",
           "en": "assets/audio/en/scenes/g68_6.mp3"
         },
-        "result": "assets/images/play/job_farmer.webp",
+        "result": "assets/images/play/use_tractor.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_6.mp3",
           "en": "assets/audio/en/scenes/g68_done_6.mp3"
@@ -2373,7 +2619,7 @@
           "tr": "assets/audio/tr/scenes/g68_7.mp3",
           "en": "assets/audio/en/scenes/g68_7.mp3"
         },
-        "result": "assets/images/play/job_postman.webp",
+        "result": "assets/images/play/use_letter.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_7.mp3",
           "en": "assets/audio/en/scenes/g68_done_7.mp3"
@@ -2390,7 +2636,7 @@
           "tr": "assets/audio/tr/scenes/g68_8.mp3",
           "en": "assets/audio/en/scenes/g68_8.mp3"
         },
-        "result": "assets/images/play/job_hairdresser.webp",
+        "result": "assets/images/play/use_scissors.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_8.mp3",
           "en": "assets/audio/en/scenes/g68_done_8.mp3"
@@ -2407,7 +2653,7 @@
           "tr": "assets/audio/tr/scenes/g68_9.mp3",
           "en": "assets/audio/en/scenes/g68_9.mp3"
         },
-        "result": "assets/images/play/job_dentist.webp",
+        "result": "assets/images/play/use_dental_mirror.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_9.mp3",
           "en": "assets/audio/en/scenes/g68_done_9.mp3"
@@ -2424,7 +2670,7 @@
           "tr": "assets/audio/tr/scenes/g68_10.mp3",
           "en": "assets/audio/en/scenes/g68_10.mp3"
         },
-        "result": "assets/images/play/job_baker.webp",
+        "result": "assets/images/play/use_bread_peel.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_10.mp3",
           "en": "assets/audio/en/scenes/g68_done_10.mp3"
@@ -2441,7 +2687,7 @@
           "tr": "assets/audio/tr/scenes/g68_11.mp3",
           "en": "assets/audio/en/scenes/g68_11.mp3"
         },
-        "result": "assets/images/play/job_carpenter.webp",
+        "result": "assets/images/play/use_hammer.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_11.mp3",
           "en": "assets/audio/en/scenes/g68_done_11.mp3"
@@ -2458,7 +2704,7 @@
           "tr": "assets/audio/tr/scenes/g68_12.mp3",
           "en": "assets/audio/en/scenes/g68_12.mp3"
         },
-        "result": "assets/images/play/job_nurse.webp",
+        "result": "assets/images/play/use_thermometer.webp",
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g68_done_12.mp3",
           "en": "assets/audio/en/scenes/g68_done_12.mp3"
@@ -2530,7 +2776,7 @@
         ],
         "text": {
           "tr": "Ali hasta oldu. Kim yardım eder?",
-          "en": "Ali is sick. Who can help?"
+          "en": "Leo is sick. Who can help?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g69_3.mp3",
@@ -2550,7 +2796,7 @@
         ],
         "text": {
           "tr": "Ali'nin dişi ağrıyor. Kim yardım eder?",
-          "en": "Ali's tooth hurts. Who can help?"
+          "en": "Leo's tooth hurts. Who can help?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g69_4.mp3",
@@ -2568,7 +2814,7 @@
         "alsoRight": [],
         "text": {
           "tr": "Ali yolunu kaybetti. Kim yardım eder?",
-          "en": "Ali is lost. Who can help?"
+          "en": "Leo is lost. Who can help?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g69_5.mp3",
@@ -2622,7 +2868,7 @@
         "alsoRight": [],
         "text": {
           "tr": "Ali'nin saçı çok uzadı. Kim yardım eder?",
-          "en": "Ali's hair is too long. Who can help?"
+          "en": "Leo's hair is too long. Who can help?"
         },
         "audio": {
           "tr": "assets/audio/tr/scenes/g69_8.mp3",

@@ -229,11 +229,11 @@
   },
   "assets/audio/{lang}/scenes/g60_ask.mp3": {
     "tr": "Ali'nin dişleri kirlenmiş. Hadi fırçalayalım!",
-    "en": "Ali's teeth need a clean. Let's brush them!"
+    "en": "Leo's teeth need a clean. Let's brush them!"
   },
   "assets/audio/{lang}/scenes/g60_done.mp3": {
     "tr": "Dişlerin pırıl pırıl oldu, Ali!",
-    "en": "Your teeth are sparkling, Ali!"
+    "en": "Your teeth are sparkling, Leo!"
   },
   "assets/audio/{lang}/scenes/g61_first_tap.mp3": {
     "tr": "Ellerini yıkayalım. Önce musluğu açalım.",
@@ -295,125 +295,173 @@
     "tr": "Bak, ne çok köpük!",
     "en": "Look at all that foam!"
   },
-  "assets/audio/{lang}/scenes/g63_tshirt.mp3": {
-    "tr": "Ali'ye tişörtünü giydirelim.",
-    "en": "Let's put Ali's T-shirt on."
+  "assets/audio/{lang}/scenes/g63_ask_tshirt.mp3": {
+    "tr": "Şimdi tişörtünü giydirelim.",
+    "en": "Now the T-shirt."
   },
-  "assets/audio/{lang}/scenes/g63_done_tshirt.mp3": {
-    "tr": "Tişört ne güzel oldu!",
-    "en": "The T-shirt looks great!"
+  "assets/audio/{lang}/scenes/g63_ask_shorts.mp3": {
+    "tr": "Şimdi şortunu giydirelim.",
+    "en": "Now the shorts."
   },
-  "assets/audio/{lang}/scenes/g63_trousers.mp3": {
-    "tr": "Ali'ye pantolonunu giydirelim.",
-    "en": "Let's put Ali's pants on."
+  "assets/audio/{lang}/scenes/g63_ask_socks.mp3": {
+    "tr": "Şimdi çoraplarını giydirelim.",
+    "en": "Now the socks."
   },
-  "assets/audio/{lang}/scenes/g63_done_trousers.mp3": {
-    "tr": "Pantolon tam oldu!",
-    "en": "The pants fit just right!"
+  "assets/audio/{lang}/scenes/g63_ask_sneakers.mp3": {
+    "tr": "Şimdi ayakkabılarını giydirelim.",
+    "en": "Now the sneakers."
   },
-  "assets/audio/{lang}/scenes/g63_socks.mp3": {
-    "tr": "Ali'ye çoraplarını giydirelim.",
-    "en": "Let's put Ali's socks on."
+  "assets/audio/{lang}/scenes/g63_ask_shoes.mp3": {
+    "tr": "Şimdi ayakkabılarını giydirelim.",
+    "en": "Now the shoes."
   },
-  "assets/audio/{lang}/scenes/g63_done_socks.mp3": {
-    "tr": "Ayakları sıcacık oldu.",
-    "en": "His feet are nice and warm."
+  "assets/audio/{lang}/scenes/g63_ask_trainers.mp3": {
+    "tr": "Şimdi spor ayakkabılarını giydirelim.",
+    "en": "Now the trainers."
   },
-  "assets/audio/{lang}/scenes/g63_shoes.mp3": {
-    "tr": "Ali'ye ayakkabılarını giydirelim.",
-    "en": "Let's put Ali's shoes on."
+  "assets/audio/{lang}/scenes/g63_ask_hat.mp3": {
+    "tr": "Şimdi şapkasını takalım.",
+    "en": "Now the hat."
   },
-  "assets/audio/{lang}/scenes/g63_done_shoes.mp3": {
-    "tr": "Ali artık yürüyebilir!",
-    "en": "Now Ali can walk outside!"
+  "assets/audio/{lang}/scenes/g63_ask_cap.mp3": {
+    "tr": "Şimdi şapkasını takalım.",
+    "en": "Now the cap."
   },
-  "assets/audio/{lang}/scenes/g63_hat.mp3": {
-    "tr": "Ali'nin başına şapkasını takalım.",
-    "en": "Let's put Ali's hat on."
+  "assets/audio/{lang}/scenes/g63_ask_beanie.mp3": {
+    "tr": "Şimdi beresini takalım.",
+    "en": "Now the beanie."
   },
-  "assets/audio/{lang}/scenes/g63_done_hat.mp3": {
-    "tr": "Şapka ona çok yakıştı!",
-    "en": "That hat looks great on him!"
+  "assets/audio/{lang}/scenes/g63_ask_sweater.mp3": {
+    "tr": "Şimdi kazağını giydirelim.",
+    "en": "Now the sweater."
   },
-  "assets/audio/{lang}/scenes/g63_coat.mp3": {
-    "tr": "Ali üşüyor. Montunu giydirelim.",
-    "en": "Ali is cold. Let's put his coat on."
+  "assets/audio/{lang}/scenes/g63_ask_trousers.mp3": {
+    "tr": "Şimdi pantolonunu giydirelim.",
+    "en": "Now the pants."
   },
-  "assets/audio/{lang}/scenes/g63_done_coat.mp3": {
-    "tr": "Oh, ısındı!",
-    "en": "Now he is warm!"
+  "assets/audio/{lang}/scenes/g63_ask_coat.mp3": {
+    "tr": "Şimdi montunu giydirelim.",
+    "en": "Now the coat."
   },
-  "assets/audio/{lang}/scenes/g63_scarf.mp3": {
-    "tr": "Ali'nin boynuna atkısını takalım.",
-    "en": "Let's put Ali's scarf on."
+  "assets/audio/{lang}/scenes/g63_ask_boots.mp3": {
+    "tr": "Şimdi botlarını giydirelim.",
+    "en": "Now the boots."
   },
-  "assets/audio/{lang}/scenes/g63_done_scarf.mp3": {
-    "tr": "Boynu sıcacık oldu.",
-    "en": "His neck is warm now."
+  "assets/audio/{lang}/scenes/g63_ask_raincoat.mp3": {
+    "tr": "Şimdi yağmurluğunu giydirelim.",
+    "en": "Now the raincoat."
   },
-  "assets/audio/{lang}/scenes/g63_gloves.mp3": {
-    "tr": "Ali'nin ellerine eldivenlerini takalım.",
-    "en": "Let's put Ali's gloves on."
+  "assets/audio/{lang}/scenes/g63_ask_rainboots.mp3": {
+    "tr": "Şimdi çizmelerini giydirelim.",
+    "en": "Now the rain boots."
   },
-  "assets/audio/{lang}/scenes/g63_done_gloves.mp3": {
-    "tr": "Elleri üşümez artık.",
-    "en": "His hands will not get cold."
+  "assets/audio/{lang}/scenes/g63_ask_pajamatop.mp3": {
+    "tr": "Şimdi pijamasının üstünü giydirelim.",
+    "en": "Now the pajama top."
   },
-  "assets/audio/{lang}/scenes/g63_beanie.mp3": {
-    "tr": "Ali'nin başına beresini takalım.",
-    "en": "Let's put Ali's beanie on."
+  "assets/audio/{lang}/scenes/g63_ask_pajamabottoms.mp3": {
+    "tr": "Şimdi pijamasının altını giydirelim.",
+    "en": "Now the pajama bottoms."
   },
-  "assets/audio/{lang}/scenes/g63_done_beanie.mp3": {
-    "tr": "Kulakları da sıcacık.",
-    "en": "His ears are warm too."
+  "assets/audio/{lang}/scenes/g63_ask_slippers.mp3": {
+    "tr": "Şimdi terliklerini giydirelim.",
+    "en": "Now the slippers."
   },
-  "assets/audio/{lang}/scenes/g63_pajamas.mp3": {
-    "tr": "Uyku vakti. Ali'ye pijamasını giydirelim.",
-    "en": "It's bedtime. Let's put Ali's pajamas on."
+  "assets/audio/{lang}/scenes/g63_ask_tracktop.mp3": {
+    "tr": "Şimdi eşofmanının üstünü giydirelim.",
+    "en": "Now the tracksuit top."
   },
-  "assets/audio/{lang}/scenes/g63_done_pajamas.mp3": {
+  "assets/audio/{lang}/scenes/g63_ask_trackbottoms.mp3": {
+    "tr": "Şimdi eşofmanının altını giydirelim.",
+    "en": "Now the tracksuit bottoms."
+  },
+  "assets/audio/{lang}/scenes/g63_ask_dress.mp3": {
+    "tr": "Şimdi elbisesini giydirelim.",
+    "en": "Now the dress."
+  },
+  "assets/audio/{lang}/scenes/g63_ask_skirt.mp3": {
+    "tr": "Şimdi eteğini giydirelim.",
+    "en": "Now the skirt."
+  },
+  "assets/audio/{lang}/scenes/g63_first_boy_park.mp3": {
+    "tr": "Ali parka gidiyor. Önce tişörtünü giydirelim.",
+    "en": "Leo is going to the park. First, the T-shirt."
+  },
+  "assets/audio/{lang}/scenes/g63_done_boy_park.mp3": {
+    "tr": "Ali hazır. Haydi parka!",
+    "en": "Leo is ready. Off to the park!"
+  },
+  "assets/audio/{lang}/scenes/g63_first_boy_winter.mp3": {
+    "tr": "Dışarıda kar yağıyor. Ali üşümesin. Önce kazağını giydirelim.",
+    "en": "It's snowing outside. Let's keep Leo warm. First, the sweater."
+  },
+  "assets/audio/{lang}/scenes/g63_done_boy_winter.mp3": {
+    "tr": "Ali sıcacık oldu. Karda oynayabilir!",
+    "en": "Leo is nice and warm. Time to play in the snow!"
+  },
+  "assets/audio/{lang}/scenes/g63_first_boy_rain.mp3": {
+    "tr": "Yağmur yağıyor. Ali ıslanmasın. Önce pantolonunu giydirelim.",
+    "en": "It's raining. Let's keep Leo dry. First, the pants."
+  },
+  "assets/audio/{lang}/scenes/g63_done_boy_rain.mp3": {
+    "tr": "Ali artık ıslanmaz!",
+    "en": "Leo will stay dry now!"
+  },
+  "assets/audio/{lang}/scenes/g63_first_boy_sleep.mp3": {
+    "tr": "Uyku vakti geldi. Önce pijamasının üstünü giydirelim.",
+    "en": "It's bedtime. First, the pajama top."
+  },
+  "assets/audio/{lang}/scenes/g63_done_boy_sleep.mp3": {
     "tr": "İyi uykular, Ali!",
-    "en": "Sleep well, Ali!"
+    "en": "Sleep well, Leo!"
   },
-  "assets/audio/{lang}/scenes/g63_raincoat.mp3": {
-    "tr": "Yağmur var. Ali'ye yağmurluğunu giydirelim.",
-    "en": "It's raining. Let's put Ali's raincoat on."
+  "assets/audio/{lang}/scenes/g63_first_boy_sport.mp3": {
+    "tr": "Ali spor yapacak. Önce eşofmanının üstünü giydirelim.",
+    "en": "Leo is going to play sports. First, the tracksuit top."
   },
-  "assets/audio/{lang}/scenes/g63_done_raincoat.mp3": {
-    "tr": "Artık ıslanmaz!",
-    "en": "Now he will stay dry!"
+  "assets/audio/{lang}/scenes/g63_done_boy_sport.mp3": {
+    "tr": "Ali spora hazır!",
+    "en": "Leo is ready for sports!"
   },
-  "assets/audio/{lang}/scenes/g63_sweater.mp3": {
-    "tr": "Hava serin. Ali'ye kazağını giydirelim.",
-    "en": "It's chilly. Let's put Ali's sweater on."
+  "assets/audio/{lang}/scenes/g63_first_girl_park.mp3": {
+    "tr": "Ayşe parka gidiyor. Önce elbisesini giydirelim.",
+    "en": "Mia is going to the park. First, the dress."
   },
-  "assets/audio/{lang}/scenes/g63_done_sweater.mp3": {
-    "tr": "Kazak çok yumuşak.",
-    "en": "The sweater is so soft."
+  "assets/audio/{lang}/scenes/g63_done_girl_park.mp3": {
+    "tr": "Ayşe hazır. Haydi parka!",
+    "en": "Mia is ready. Off to the park!"
   },
-  "assets/audio/{lang}/scenes/g63_boots.mp3": {
-    "tr": "Dışarısı çamur. Ali'ye çizmelerini giydirelim.",
-    "en": "It's muddy outside. Let's put Ali's boots on."
+  "assets/audio/{lang}/scenes/g63_first_girl_skirt.mp3": {
+    "tr": "Ayşe arkadaşına gidiyor. Önce tişörtünü giydirelim.",
+    "en": "Mia is going to see a friend. First, the T-shirt."
   },
-  "assets/audio/{lang}/scenes/g63_done_boots.mp3": {
-    "tr": "Çamura basabilir!",
-    "en": "He can step in the mud!"
+  "assets/audio/{lang}/scenes/g63_done_girl_skirt.mp3": {
+    "tr": "Ayşe çok şık oldu!",
+    "en": "Mia looks lovely!"
   },
-  "assets/audio/{lang}/scenes/g63_vest.mp3": {
-    "tr": "Ali'ye yeleğini giydirelim.",
-    "en": "Let's put Ali's vest on."
+  "assets/audio/{lang}/scenes/g63_first_girl_winter.mp3": {
+    "tr": "Dışarıda kar yağıyor. Ayşe üşümesin. Önce kazağını giydirelim.",
+    "en": "It's snowing outside. Let's keep Mia warm. First, the sweater."
   },
-  "assets/audio/{lang}/scenes/g63_done_vest.mp3": {
-    "tr": "Yelek çok şık oldu.",
-    "en": "The vest looks so smart."
+  "assets/audio/{lang}/scenes/g63_done_girl_winter.mp3": {
+    "tr": "Ayşe sıcacık oldu. Karda oynayabilir!",
+    "en": "Mia is nice and warm. Time to play in the snow!"
   },
-  "assets/audio/{lang}/scenes/g63_tracksuit.mp3": {
-    "tr": "Spor zamanı. Ali'ye eşofmanını giydirelim.",
-    "en": "It's sports time. Let's put Ali's tracksuit on."
+  "assets/audio/{lang}/scenes/g63_first_girl_rain.mp3": {
+    "tr": "Yağmur yağıyor. Ayşe ıslanmasın. Önce pantolonunu giydirelim.",
+    "en": "It's raining. Let's keep Mia dry. First, the pants."
   },
-  "assets/audio/{lang}/scenes/g63_done_tracksuit.mp3": {
-    "tr": "Ali koşmaya hazır!",
-    "en": "Ali is ready to run!"
+  "assets/audio/{lang}/scenes/g63_done_girl_rain.mp3": {
+    "tr": "Ayşe artık ıslanmaz!",
+    "en": "Mia will stay dry now!"
+  },
+  "assets/audio/{lang}/scenes/g63_first_girl_sleep.mp3": {
+    "tr": "Uyku vakti geldi. Önce pijamasının üstünü giydirelim.",
+    "en": "It's bedtime. First, the pajama top."
+  },
+  "assets/audio/{lang}/scenes/g63_done_girl_sleep.mp3": {
+    "tr": "İyi uykular, Ayşe!",
+    "en": "Sleep well, Mia!"
   },
   "assets/audio/{lang}/scenes/g65_first_apple.mp3": {
     "tr": "Meyve salatası yapalım. Önce elmayı koyalım.",
@@ -480,8 +528,8 @@
     "en": "Now the pear."
   },
   "assets/audio/{lang}/scenes/g65_stir.mp3": {
-    "tr": "Hadi, karıştıralım.",
-    "en": "Now let's stir."
+    "tr": "Hadi, kaşıkla karıştıralım.",
+    "en": "Now let's stir with the spoon."
   },
   "assets/audio/{lang}/scenes/g65_done.mp3": {
     "tr": "Meyve salatası hazır. Afiyet olsun!",
@@ -490,6 +538,10 @@
   "assets/audio/{lang}/scenes/g66_ask_plate.mp3": {
     "tr": "Şimdi tabağı yerine koyalım.",
     "en": "Now the plate."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_bowl.mp3": {
+    "tr": "Şimdi kâseyi yerine koyalım.",
+    "en": "Now the bowl."
   },
   "assets/audio/{lang}/scenes/g66_ask_fork.mp3": {
     "tr": "Şimdi çatalı yerine koyalım.",
@@ -511,9 +563,21 @@
     "tr": "Şimdi peçeteyi yerine koyalım.",
     "en": "Now the napkin."
   },
+  "assets/audio/{lang}/scenes/g66_ask_jug.mp3": {
+    "tr": "Şimdi sürahiyi yerine koyalım.",
+    "en": "Now the jug."
+  },
+  "assets/audio/{lang}/scenes/g66_ask_salt_shaker.mp3": {
+    "tr": "Şimdi tuzluğu yerine koyalım.",
+    "en": "Now the salt shaker."
+  },
   "assets/audio/{lang}/scenes/g66_first_plate.mp3": {
     "tr": "Sofrayı kuralım. Önce tabağı koyalım.",
     "en": "Let's set the table. First, the plate."
+  },
+  "assets/audio/{lang}/scenes/g66_first_bowl.mp3": {
+    "tr": "Sofrayı kuralım. Önce kâseyi koyalım.",
+    "en": "Let's set the table. First, the bowl."
   },
   "assets/audio/{lang}/scenes/g66_first_fork.mp3": {
     "tr": "Sofrayı kuralım. Önce çatalı koyalım.",
@@ -535,6 +599,14 @@
     "tr": "Sofrayı kuralım. Önce peçeteyi koyalım.",
     "en": "Let's set the table. First, the napkin."
   },
+  "assets/audio/{lang}/scenes/g66_first_jug.mp3": {
+    "tr": "Sofrayı kuralım. Önce sürahiyi koyalım.",
+    "en": "Let's set the table. First, the jug."
+  },
+  "assets/audio/{lang}/scenes/g66_first_salt_shaker.mp3": {
+    "tr": "Sofrayı kuralım. Önce tuzluğu koyalım.",
+    "en": "Let's set the table. First, the salt shaker."
+  },
   "assets/audio/{lang}/scenes/g66_done.mp3": {
     "tr": "Sofra hazır. Hadi yemeğe!",
     "en": "The table is ready. Time to eat!"
@@ -545,7 +617,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_1.mp3": {
     "tr": "Ali saçını tarıyor.",
-    "en": "Ali is combing his hair."
+    "en": "Leo is combing his hair."
   },
   "assets/audio/{lang}/scenes/g62_2.mp3": {
     "tr": "Dişini fırçalamak için ne lazım?",
@@ -553,7 +625,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_2.mp3": {
     "tr": "Ali dişini fırçalıyor.",
-    "en": "Ali is brushing his teeth."
+    "en": "Leo is brushing his teeth."
   },
   "assets/audio/{lang}/scenes/g62_3.mp3": {
     "tr": "Ellerini yıkamak için ne lazım?",
@@ -561,7 +633,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_3.mp3": {
     "tr": "Ali ellerini sabunluyor.",
-    "en": "Ali is soaping his hands."
+    "en": "Leo is soaping his hands."
   },
   "assets/audio/{lang}/scenes/g62_4.mp3": {
     "tr": "Elini yüzünü kurulamak için ne lazım?",
@@ -569,7 +641,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_4.mp3": {
     "tr": "Ali yüzünü kuruluyor.",
-    "en": "Ali is drying his face."
+    "en": "Leo is drying his face."
   },
   "assets/audio/{lang}/scenes/g62_5.mp3": {
     "tr": "Saçını yıkamak için ne lazım?",
@@ -577,7 +649,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_5.mp3": {
     "tr": "Ali saçını yıkıyor.",
-    "en": "Ali is washing his hair."
+    "en": "Leo is washing his hair."
   },
   "assets/audio/{lang}/scenes/g62_6.mp3": {
     "tr": "Burnunu silmek için ne lazım?",
@@ -585,7 +657,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_6.mp3": {
     "tr": "Ali burnunu siliyor.",
-    "en": "Ali is wiping his nose."
+    "en": "Leo is wiping his nose."
   },
   "assets/audio/{lang}/scenes/g62_7.mp3": {
     "tr": "Çöpü nereye atarız?",
@@ -593,7 +665,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_7.mp3": {
     "tr": "Ali çöpü attı.",
-    "en": "Ali threw the rubbish away."
+    "en": "Leo threw the rubbish away."
   },
   "assets/audio/{lang}/scenes/g62_8.mp3": {
     "tr": "Yeri süpürmek için ne lazım?",
@@ -601,7 +673,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_8.mp3": {
     "tr": "Ali yeri süpürüyor.",
-    "en": "Ali is sweeping the floor."
+    "en": "Leo is sweeping the floor."
   },
   "assets/audio/{lang}/scenes/g62_9.mp3": {
     "tr": "Bulaşık yıkamak için ne lazım?",
@@ -609,7 +681,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_9.mp3": {
     "tr": "Ali bulaşık yıkıyor.",
-    "en": "Ali is washing the dishes."
+    "en": "Leo is washing the dishes."
   },
   "assets/audio/{lang}/scenes/g62_10.mp3": {
     "tr": "Yeri silmek için ne lazım?",
@@ -617,7 +689,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_10.mp3": {
     "tr": "Ali yeri siliyor.",
-    "en": "Ali is mopping the floor."
+    "en": "Leo is mopping the floor."
   },
   "assets/audio/{lang}/scenes/g62_11.mp3": {
     "tr": "Saçını kurutmak için ne lazım?",
@@ -625,7 +697,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_11.mp3": {
     "tr": "Ali saçını kurutuyor.",
-    "en": "Ali is drying his hair."
+    "en": "Leo is drying his hair."
   },
   "assets/audio/{lang}/scenes/g62_12.mp3": {
     "tr": "Tırnaklarını kesmek için ne lazım?",
@@ -633,7 +705,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_12.mp3": {
     "tr": "Annesi Ali'nin tırnaklarını kesiyor.",
-    "en": "Mom is cutting Ali's nails."
+    "en": "Mom is cutting Leo's nails."
   },
   "assets/audio/{lang}/scenes/g62_13.mp3": {
     "tr": "Halıyı süpürmek için ne lazım?",
@@ -641,7 +713,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_13.mp3": {
     "tr": "Ali halıyı süpürüyor.",
-    "en": "Ali is vacuuming the carpet."
+    "en": "Leo is vacuuming the carpet."
   },
   "assets/audio/{lang}/scenes/g62_14.mp3": {
     "tr": "Çamaşırları asmak için ne lazım?",
@@ -649,7 +721,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_14.mp3": {
     "tr": "Ali çamaşırları asıyor.",
-    "en": "Ali is hanging up the washing."
+    "en": "Leo is hanging up the washing."
   },
   "assets/audio/{lang}/scenes/g62_15.mp3": {
     "tr": "Kirli çamaşırları nereye koyarız?",
@@ -657,7 +729,7 @@
   },
   "assets/audio/{lang}/scenes/g62_done_15.mp3": {
     "tr": "Ali çamaşırları sepete koydu.",
-    "en": "Ali put the clothes in the basket."
+    "en": "Leo put the clothes in the basket."
   },
   "assets/audio/{lang}/scenes/g62_16.mp3": {
     "tr": "Çamaşır yıkarken içine ne koyarız?",
@@ -665,11 +737,11 @@
   },
   "assets/audio/{lang}/scenes/g62_done_16.mp3": {
     "tr": "Ali deterjanı koyuyor.",
-    "en": "Ali is adding the detergent."
+    "en": "Leo is adding the detergent."
   },
   "assets/audio/{lang}/scenes/g64_1.mp3": {
     "tr": "Dışarıda yağmur yağıyor. Ali ne giysin?",
-    "en": "It's raining outside. What should Ali wear?"
+    "en": "It's raining outside. What should Leo wear?"
   },
   "assets/audio/{lang}/scenes/g64_done_1.mp3": {
     "tr": "Yağmurluğunu giydi, dışarı çıkıyor.",
@@ -677,7 +749,7 @@
   },
   "assets/audio/{lang}/scenes/g64_2.mp3": {
     "tr": "Yağmur başladı. Ali yanına ne alsın?",
-    "en": "It started to rain. What should Ali take?"
+    "en": "It started to rain. What should Leo take?"
   },
   "assets/audio/{lang}/scenes/g64_done_2.mp3": {
     "tr": "Şemsiyesini aldı, hiç ıslanmıyor.",
@@ -685,7 +757,7 @@
   },
   "assets/audio/{lang}/scenes/g64_3.mp3": {
     "tr": "Dışarıda kar yağıyor. Ali ne giysin?",
-    "en": "It's snowing outside. What should Ali wear?"
+    "en": "It's snowing outside. What should Leo wear?"
   },
   "assets/audio/{lang}/scenes/g64_done_3.mp3": {
     "tr": "Montunu giydi, karda oynuyor.",
@@ -693,7 +765,7 @@
   },
   "assets/audio/{lang}/scenes/g64_4.mp3": {
     "tr": "Ali kartopu oynayacak. Eline ne taksın?",
-    "en": "Ali wants to make snowballs. What goes on his hands?"
+    "en": "Leo wants to make snowballs. What goes on his hands?"
   },
   "assets/audio/{lang}/scenes/g64_done_4.mp3": {
     "tr": "Eldivenlerini taktı, kartopu yapıyor.",
@@ -701,7 +773,7 @@
   },
   "assets/audio/{lang}/scenes/g64_5.mp3": {
     "tr": "Hava çok sıcak. Ali ne giysin?",
-    "en": "It's very hot. What should Ali wear?"
+    "en": "It's very hot. What should Leo wear?"
   },
   "assets/audio/{lang}/scenes/g64_done_5.mp3": {
     "tr": "Şortunu giydi, parka gidiyor.",
@@ -709,7 +781,7 @@
   },
   "assets/audio/{lang}/scenes/g64_6.mp3": {
     "tr": "Güneş gözünü alıyor. Ali ne taksın?",
-    "en": "The sun is in his eyes. What should Ali put on?"
+    "en": "The sun is in his eyes. What should Leo put on?"
   },
   "assets/audio/{lang}/scenes/g64_done_6.mp3": {
     "tr": "Güneş gözlüğünü taktı, çok havalı oldu.",
@@ -717,19 +789,83 @@
   },
   "assets/audio/{lang}/scenes/g64_7.mp3": {
     "tr": "Ali denize gidiyor. Ne giysin?",
-    "en": "Ali is going to the sea. What should he wear?"
+    "en": "Leo is going to the sea. What should he wear?"
   },
   "assets/audio/{lang}/scenes/g64_done_7.mp3": {
-    "tr": "Mayosunu giydi, denize giriyor.",
-    "en": "He put on his swimsuit and jumps in."
+    "tr": "Şortunu giydi, denize giriyor.",
+    "en": "He put on his swim shorts and jumps in."
   },
   "assets/audio/{lang}/scenes/g64_8.mp3": {
     "tr": "Hava karardı, uyku vakti. Ali ne giysin?",
-    "en": "It's dark, time for bed. What should Ali wear?"
+    "en": "It's dark, time for bed. What should Leo wear?"
   },
   "assets/audio/{lang}/scenes/g64_done_8.mp3": {
     "tr": "Pijamasını giydi, yatağına girdi.",
     "en": "He put on his pajamas and got into bed."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_1.mp3": {
+    "tr": "Dışarıda yağmur yağıyor. Ayşe ne giysin?",
+    "en": "It's raining outside. What should Mia wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_1.mp3": {
+    "tr": "Yağmurluğunu giydi, dışarı çıkıyor.",
+    "en": "She put on her raincoat and off she goes."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_2.mp3": {
+    "tr": "Yağmur başladı. Ayşe yanına ne alsın?",
+    "en": "It started to rain. What should Mia take?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_2.mp3": {
+    "tr": "Şemsiyesini aldı, hiç ıslanmıyor.",
+    "en": "She took her umbrella and stays dry."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_3.mp3": {
+    "tr": "Dışarıda kar yağıyor. Ayşe ne giysin?",
+    "en": "It's snowing outside. What should Mia wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_3.mp3": {
+    "tr": "Montunu giydi, karda oynuyor.",
+    "en": "She put on her coat and plays in the snow."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_4.mp3": {
+    "tr": "Ayşe kartopu oynayacak. Eline ne taksın?",
+    "en": "Mia wants to make snowballs. What goes on her hands?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_4.mp3": {
+    "tr": "Eldivenlerini taktı, kartopu yapıyor.",
+    "en": "She put on her gloves and makes snowballs."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_5.mp3": {
+    "tr": "Hava çok sıcak. Ayşe ne giysin?",
+    "en": "It's very hot. What should Mia wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_5.mp3": {
+    "tr": "Elbisesini giydi, parka gidiyor.",
+    "en": "She put on her dress and goes to the park."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_6.mp3": {
+    "tr": "Güneş gözünü alıyor. Ayşe ne taksın?",
+    "en": "The sun is in her eyes. What should Mia put on?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_6.mp3": {
+    "tr": "Güneş gözlüğünü taktı, çok havalı oldu.",
+    "en": "She put on her sunglasses and looks so cool."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_7.mp3": {
+    "tr": "Ayşe denize gidiyor. Ne giysin?",
+    "en": "Mia is going to the sea. What should she wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_7.mp3": {
+    "tr": "Mayosunu giydi, denize giriyor.",
+    "en": "She put on her swimsuit and jumps in."
+  },
+  "assets/audio/{lang}/scenes/g64_girl_8.mp3": {
+    "tr": "Hava karardı, uyku vakti. Ayşe ne giysin?",
+    "en": "It's dark, time for bed. What should Mia wear?"
+  },
+  "assets/audio/{lang}/scenes/g64_done_girl_8.mp3": {
+    "tr": "Pijamasını giydi, yatağına girdi.",
+    "en": "She put on her pajamas and got into bed."
   },
   "assets/audio/{lang}/scenes/g67_1.mp3": {
     "tr": "Sütü nereye koyalım?",
@@ -1072,48 +1208,48 @@
     "en": "Who uses the stethoscope?"
   },
   "assets/audio/{lang}/scenes/g68_done_1.mp3": {
-    "tr": "Doktor hastayı dinliyor.",
-    "en": "The doctor is listening to the patient."
+    "tr": "Doktor steteskopla hastasını dinliyor.",
+    "en": "The doctor is listening with the stethoscope."
   },
   "assets/audio/{lang}/scenes/g68_2.mp3": {
     "tr": "Bu hortumu kim kullanır?",
     "en": "Who uses this hose?"
   },
   "assets/audio/{lang}/scenes/g68_done_2.mp3": {
-    "tr": "İtfaiyeci yangını söndürüyor.",
-    "en": "The firefighter is putting out the fire."
+    "tr": "İtfaiyeci hortumla yangını söndürüyor.",
+    "en": "The firefighter is putting out the fire with the hose."
   },
   "assets/audio/{lang}/scenes/g68_3.mp3": {
     "tr": "Kepçeyi kim kullanır?",
     "en": "Who uses the ladle?"
   },
   "assets/audio/{lang}/scenes/g68_done_3.mp3": {
-    "tr": "Aşçı çorbayı dağıtıyor.",
-    "en": "The cook is serving the soup."
+    "tr": "Aşçı kepçeyle çorba koyuyor.",
+    "en": "The cook is serving soup with the ladle."
   },
   "assets/audio/{lang}/scenes/g68_4.mp3": {
     "tr": "Tebeşiri kim kullanır?",
     "en": "Who uses the chalk?"
   },
   "assets/audio/{lang}/scenes/g68_done_4.mp3": {
-    "tr": "Öğretmen tahtaya yazıyor.",
-    "en": "The teacher is writing on the board."
+    "tr": "Öğretmen tebeşirle tahtaya çiziyor.",
+    "en": "The teacher is drawing on the board with the chalk."
   },
   "assets/audio/{lang}/scenes/g68_5.mp3": {
     "tr": "Düdüğü kim çalar?",
     "en": "Who blows the whistle?"
   },
   "assets/audio/{lang}/scenes/g68_done_5.mp3": {
-    "tr": "Polis trafiği yönetiyor.",
-    "en": "The police officer is directing the traffic."
+    "tr": "Polis düdüğünü çaldı, araba durdu.",
+    "en": "The police officer blew the whistle and the car stopped."
   },
   "assets/audio/{lang}/scenes/g68_6.mp3": {
     "tr": "Traktörü kim kullanır?",
     "en": "Who drives the tractor?"
   },
   "assets/audio/{lang}/scenes/g68_done_6.mp3": {
-    "tr": "Çiftçi tarlayı sürüyor.",
-    "en": "The farmer is ploughing the field."
+    "tr": "Çiftçi traktörle tarlayı sürüyor.",
+    "en": "The farmer is ploughing the field with the tractor."
   },
   "assets/audio/{lang}/scenes/g68_7.mp3": {
     "tr": "Mektubu kim getirir?",
@@ -1128,40 +1264,40 @@
     "en": "Who uses scissors to cut hair?"
   },
   "assets/audio/{lang}/scenes/g68_done_8.mp3": {
-    "tr": "Kuaför saçı kesiyor.",
-    "en": "The hairdresser is cutting hair."
+    "tr": "Kuaför makasla saç kesiyor.",
+    "en": "The hairdresser is cutting hair with the scissors."
   },
   "assets/audio/{lang}/scenes/g68_9.mp3": {
     "tr": "Diş aynasını kim kullanır?",
     "en": "Who uses the dental mirror?"
   },
   "assets/audio/{lang}/scenes/g68_done_9.mp3": {
-    "tr": "Diş hekimi dişlere bakıyor.",
-    "en": "The dentist is checking the teeth."
+    "tr": "Diş hekimi aynayla dişlere bakıyor.",
+    "en": "The dentist is checking the teeth with the mirror."
   },
   "assets/audio/{lang}/scenes/g68_10.mp3": {
     "tr": "Ekmek küreğini kim kullanır?",
     "en": "Who uses the bread peel?"
   },
   "assets/audio/{lang}/scenes/g68_done_10.mp3": {
-    "tr": "Fırıncı ekmeği fırına sürüyor.",
-    "en": "The baker is putting the bread in the oven."
+    "tr": "Fırıncı kürekle ekmeği fırına veriyor.",
+    "en": "The baker is putting the bread in the oven with the peel."
   },
   "assets/audio/{lang}/scenes/g68_11.mp3": {
     "tr": "Çekici kim kullanır?",
     "en": "Who uses the hammer?"
   },
   "assets/audio/{lang}/scenes/g68_done_11.mp3": {
-    "tr": "Marangoz çivi çakıyor.",
-    "en": "The carpenter is hammering a nail."
+    "tr": "Marangoz çekiçle çivi çakıyor.",
+    "en": "The carpenter is hammering a nail with the hammer."
   },
   "assets/audio/{lang}/scenes/g68_12.mp3": {
     "tr": "Ateş ölçeri kim kullanır?",
     "en": "Who uses the thermometer?"
   },
   "assets/audio/{lang}/scenes/g68_done_12.mp3": {
-    "tr": "Hemşire ateşe bakıyor.",
-    "en": "The nurse is checking the temperature."
+    "tr": "Hemşire ateş ölçerle ateşe bakıyor.",
+    "en": "The nurse is checking the temperature with the thermometer."
   },
   "assets/audio/{lang}/scenes/g69_1.mp3": {
     "tr": "Kedi ağaçta kaldı. Kim yardım eder?",
@@ -1181,15 +1317,15 @@
   },
   "assets/audio/{lang}/scenes/g69_3.mp3": {
     "tr": "Ali hasta oldu. Kim yardım eder?",
-    "en": "Ali is sick. Who can help?"
+    "en": "Leo is sick. Who can help?"
   },
   "assets/audio/{lang}/scenes/g69_done_3.mp3": {
     "tr": "Doktor Ali'yi muayene etti.",
-    "en": "The doctor checked Ali."
+    "en": "The doctor checked Leo."
   },
   "assets/audio/{lang}/scenes/g69_4.mp3": {
     "tr": "Ali'nin dişi ağrıyor. Kim yardım eder?",
-    "en": "Ali's tooth hurts. Who can help?"
+    "en": "Leo's tooth hurts. Who can help?"
   },
   "assets/audio/{lang}/scenes/g69_done_4.mp3": {
     "tr": "Diş hekimi dişine baktı.",
@@ -1197,11 +1333,11 @@
   },
   "assets/audio/{lang}/scenes/g69_5.mp3": {
     "tr": "Ali yolunu kaybetti. Kim yardım eder?",
-    "en": "Ali is lost. Who can help?"
+    "en": "Leo is lost. Who can help?"
   },
   "assets/audio/{lang}/scenes/g69_done_5.mp3": {
     "tr": "Polis Ali'yi annesine götürdü.",
-    "en": "The police officer took Ali to his mom."
+    "en": "The police officer took Leo to his mom."
   },
   "assets/audio/{lang}/scenes/g69_6.mp3": {
     "tr": "Köpek hasta oldu. Kim yardım eder?",
@@ -1221,7 +1357,7 @@
   },
   "assets/audio/{lang}/scenes/g69_8.mp3": {
     "tr": "Ali'nin saçı çok uzadı. Kim yardım eder?",
-    "en": "Ali's hair is too long. Who can help?"
+    "en": "Leo's hair is too long. Who can help?"
   },
   "assets/audio/{lang}/scenes/g69_done_8.mp3": {
     "tr": "Kuaför saçını kesti.",

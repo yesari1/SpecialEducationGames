@@ -73,6 +73,7 @@ class _ChoiceSurface extends StatelessWidget {
   final EdgeInsets padding;
   final double minHeight;
   const _ChoiceSurface({
+    super.key,
     required this.selected,
     required this.onTap,
     required this.child,
@@ -106,6 +107,71 @@ class _ChoiceSurface extends StatelessWidget {
         child: Padding(padding: padding, child: child),
       ),
     ),
+  );
+}
+
+/// Girl or boy: the child the games about a child show (Ayşe or Ali).
+class GenderChoice extends StatelessWidget {
+  /// 'girl', 'boy' or null when nothing is chosen yet.
+  final String? value;
+  final ValueChanged<String> onChanged;
+  final String girlLabel, boyLabel;
+  const GenderChoice({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    required this.girlLabel,
+    required this.boyLabel,
+  });
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      for (final (id, label) in [('girl', girlLabel), ('boy', boyLabel)]) ...[
+        if (id == 'boy') const SizedBox(width: SegSpace.s3),
+        Expanded(
+          child: Semantics(
+            button: true,
+            selected: value == id,
+            label: label,
+            excludeSemantics: true,
+            child: _ChoiceSurface(
+              key: ValueKey('gender-$id'),
+              selected: value == id,
+              onTap: () => onChanged(id),
+              minHeight: 64,
+              padding: const EdgeInsets.symmetric(
+                horizontal: SegSpace.s3,
+                vertical: SegSpace.s1,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/wear/${id}_face.webp',
+                    height: 52,
+                    excludeFromSemantics: true,
+                  ),
+                  const SizedBox(width: SegSpace.s2),
+                  Flexible(
+                    child: Text(
+                      label,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: SegText.heading.copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: value == id
+                            ? SegColors.primaryDeep
+                            : SegColors.ink,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    ],
   );
 }
 

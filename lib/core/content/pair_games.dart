@@ -23,6 +23,12 @@ class PairRound {
   final String? result;
   final Map<String, String> resultAudio;
   final Map<String, String> text, audio;
+
+  /// Which child the round is about ('boy' or 'girl'); null fits both.
+  final String? who;
+
+  /// Cards never offered in this round, not even as wrong ones.
+  final List<String> avoid;
   const PairRound({
     required this.stimulus,
     required this.target,
@@ -32,6 +38,8 @@ class PairRound {
     this.sound,
     this.result,
     this.resultAudio = const {},
+    this.who,
+    this.avoid = const [],
   });
 
   factory PairRound.fromJson(Map<String, dynamic> j) => PairRound(
@@ -43,6 +51,8 @@ class PairRound {
     resultAudio: Map<String, String>.from((j['resultAudio'] ?? const {}) as Map),
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
+    who: j['who'] as String?,
+    avoid: List<String>.from((j['avoid'] ?? const []) as List),
   );
 
   String textFor(String locale) => text[locale] ?? text['tr'] ?? '';

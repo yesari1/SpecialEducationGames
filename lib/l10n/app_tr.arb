@@ -849,6 +849,8 @@
   "obChildBody": "Bu bilgilerle yumuşak bir başlangıç seçiyoruz. Daha sonra Aile bölümünden değiştirebilirsiniz.",
   "obNicknameOptional": "Takma ad (isteğe bağlı)",
   "obAgeTitle": "Yaş",
+  "obGenderGirl": "Kız",
+  "obGenderBoy": "Erkek",
   "obAgeTenPlus": "10+",
   "obAgeYears": "{age} yaşında",
   "obDefaultNickname": "Minik kaşif",

@@ -1102,14 +1102,14 @@
     }
   },
   "assets/audio/en/scenes/g60_ask.mp3": {
-    "bytes": 21359,
+    "bytes": 20941,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:03:10.057028+00:00",
-    "sha256": "0c59744a7e8ebb40d42f50db45cb36435d42b1d6a4aa0fb23d731c4103938fb6",
-    "text": "Ali's teeth need a clean. Let's brush them!",
+    "requested_at": "2026-11-12T16:14:21.854462+00:00",
+    "sha256": "a45b33dfb6dc3ae555253215164c661241573195d4419b3997621779beec75cd",
+    "text": "Leo's teeth need a clean. Let's brush them!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1121,14 +1121,14 @@
     }
   },
   "assets/audio/en/scenes/g60_done.mp3": {
-    "bytes": 15508,
+    "bytes": 15090,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:03:12.172388+00:00",
-    "sha256": "f5606be0659ebff5b85bf20bb84ddbfcd1e8f6996edcc2a9ba9c2632251b349c",
-    "text": "Your teeth are sparkling, Ali!",
+    "requested_at": "2026-11-12T16:14:22.520699+00:00",
+    "sha256": "6b4e4e40213471bb276b4fbdea6b1ef01d41dc46a546c6ea01b5c9577c7b75de",
+    "text": "Your teeth are sparkling, Leo!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1729,14 +1729,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_1.mp3": {
-    "bytes": 12164,
+    "bytes": 13209,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:05:48.092594+00:00",
-    "sha256": "f061f2d3cbc3d498a94d197eaa22b00288a87c0121f4896115ec02d3b20ff5d5",
-    "text": "Ali is combing his hair.",
+    "requested_at": "2026-11-12T16:16:16.936426+00:00",
+    "sha256": "e862610839153c4ba59718a79e6fe5639bdfd9f592e1ffa33f70c53b339c5e3c",
+    "text": "Leo is combing his hair.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1748,14 +1748,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_10.mp3": {
-    "bytes": 12373,
+    "bytes": 12164,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:25.973670+00:00",
-    "sha256": "b7524a6dc0cf2ab92a22398c4a1b63f5aa04aac11efc9b0f9c1580834bf4f4f8",
-    "text": "Ali is mopping the floor.",
+    "requested_at": "2026-11-12T16:16:23.057069+00:00",
+    "sha256": "c5ead00dfd9a6df9bc2c1e33c3e808e73553e4c4e05abce3f883c8b0d6950c79",
+    "text": "Leo is mopping the floor.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1772,9 +1772,9 @@
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:29.831718+00:00",
-    "sha256": "087fca54945e9573167b4011d3351e648dc5b29f4160c290496cbfea17bd028d",
-    "text": "Ali is drying his hair.",
+    "requested_at": "2026-11-12T16:16:23.748059+00:00",
+    "sha256": "d7cf22ce33ed5addd798cdc191329378505f44184b0925ac47e72cf6118e0552",
+    "text": "Leo is drying his hair.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1786,14 +1786,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_12.mp3": {
-    "bytes": 14254,
+    "bytes": 15090,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:33.875550+00:00",
-    "sha256": "13d00e602362dc0a271913c639de990bcbe70f78ef55d6cf857b25d7b7d1cb75",
-    "text": "Mom is cutting Ali's nails.",
+    "requested_at": "2026-11-12T16:16:24.459616+00:00",
+    "sha256": "123ede33a84aa144bb027a304da37de00338344ba406bfb07a9586817125052d",
+    "text": "Mom is cutting Leo's nails.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1805,14 +1805,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_13.mp3": {
-    "bytes": 14045,
+    "bytes": 14672,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:37.839773+00:00",
-    "sha256": "1ed4075bb665e7747725353c16cf2de22a2af0cf599513e6bf5bdce5a7ce9908",
-    "text": "Ali is vacuuming the carpet.",
+    "requested_at": "2026-11-12T16:16:25.123017+00:00",
+    "sha256": "fe8eb9cf4d2770a53c14fe7826b533965e99de418236ad32b8794414f0175a41",
+    "text": "Leo is vacuuming the carpet.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1824,14 +1824,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_14.mp3": {
-    "bytes": 15508,
+    "bytes": 14672,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:42.044584+00:00",
-    "sha256": "393429cc1fa2022eec2f9ada1172f9bbc181a0efe57137f92305b875d5c07cc0",
-    "text": "Ali is hanging up the washing.",
+    "requested_at": "2026-11-12T16:16:25.846023+00:00",
+    "sha256": "9534dc865f23d9171424d49a9cc9d2177cc2ecb453bcefe44cb6f5dac3fbbee3",
+    "text": "Leo is hanging up the washing.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1843,14 +1843,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_15.mp3": {
-    "bytes": 16135,
+    "bytes": 15299,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:46.458262+00:00",
-    "sha256": "8a4449ae0714db2ff8c78a16100c340e29dff8c90b9b4e4e745ef9fe0ba9eff1",
-    "text": "Ali put the clothes in the basket.",
+    "requested_at": "2026-11-12T16:16:26.587214+00:00",
+    "sha256": "7cce7960fccefd20256dbaeddf9c25eff3bbda9990e405fbf5041d929a38321b",
+    "text": "Leo put the clothes in the basket.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1867,9 +1867,9 @@
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:50.743725+00:00",
-    "sha256": "c07c20595f5500bd573571c002b576b206fd5279d813e90338685575383da4ae",
-    "text": "Ali is adding the detergent.",
+    "requested_at": "2026-11-12T16:16:27.266717+00:00",
+    "sha256": "835158b4d703fd1d32771fc5d3d73f6100584b2fb87b6329e67893e73bea849b",
+    "text": "Leo is adding the detergent.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1881,14 +1881,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_2.mp3": {
-    "bytes": 13627,
+    "bytes": 13209,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:05:53.146690+00:00",
-    "sha256": "07f41a77cea44ece136f3444217d1eba0e3507dcca1951ac03e7b964d4276b31",
-    "text": "Ali is brushing his teeth.",
+    "requested_at": "2026-11-12T16:16:17.597310+00:00",
+    "sha256": "f6edca1824dbd74651a6671fd959b69aa2f9587f5e36ca9e0d066c63eec68f0b",
+    "text": "Leo is brushing his teeth.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1900,14 +1900,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_3.mp3": {
-    "bytes": 12373,
+    "bytes": 13836,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:05:57.113851+00:00",
-    "sha256": "a0abfed64d950a561a8b6d421db65c20ac014a0f1e070d3324701365c79d7a97",
-    "text": "Ali is soaping his hands.",
+    "requested_at": "2026-11-12T16:16:18.308911+00:00",
+    "sha256": "e12c513e447ef3ef2dd867d952c9c436bb8d5c6c7ee9d168e7549f596827166d",
+    "text": "Leo is soaping his hands.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1919,14 +1919,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_4.mp3": {
-    "bytes": 13627,
+    "bytes": 13209,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:01.086832+00:00",
-    "sha256": "6a4fc68a6424150098f5d1cca081b9bab2de64b96cba40551287cee1dac4e671",
-    "text": "Ali is drying his face.",
+    "requested_at": "2026-11-12T16:16:19.000302+00:00",
+    "sha256": "52b025bac48b4a520953dea7a716e9c153abd1bdb829e34c55348e092b297e59",
+    "text": "Leo is drying his face.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1938,14 +1938,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_5.mp3": {
-    "bytes": 11328,
+    "bytes": 12373,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:05.096160+00:00",
-    "sha256": "795274d2c890c1bb6e95f46a9d733e883f064e0a8a490b6fd5e559ab3a609987",
-    "text": "Ali is washing his hair.",
+    "requested_at": "2026-11-12T16:16:19.671893+00:00",
+    "sha256": "a1b1bc7d9bde66e9ff7acd5fe9757e895bc80b2b73aebfcd82505487ae3c223f",
+    "text": "Leo is washing his hair.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1962,9 +1962,9 @@
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:09.191366+00:00",
-    "sha256": "508fa9a97f7b1c0a468ab0b498b232251985e98c4780538f1faf837f19f9f465",
-    "text": "Ali is wiping his nose.",
+    "requested_at": "2026-11-12T16:16:20.367169+00:00",
+    "sha256": "418d7c1416a9dda42de906963156ebefcd34c04c735fd4c0013f4540bad0480a",
+    "text": "Leo is wiping his nose.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -1976,14 +1976,14 @@
     }
   },
   "assets/audio/en/scenes/g62_done_7.mp3": {
-    "bytes": 13627,
+    "bytes": 13209,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:12.908015+00:00",
-    "sha256": "fbd289d2fa08bad7fd61f22e3c2974008e5b72d2ada827a1aab1a65adbc7f1cf",
-    "text": "Ali threw the rubbish away.",
+    "requested_at": "2026-11-12T16:16:21.049595+00:00",
+    "sha256": "441961bffe231ecce487db68915c654ca82f380eb168d396a20ce2130762dcd8",
+    "text": "Leo threw the rubbish away.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2000,9 +2000,9 @@
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:17.525864+00:00",
-    "sha256": "753b6531a2b6365a939a1ee4039b9a3302711dce3067119b567a0fdd7891afc7",
-    "text": "Ali is sweeping the floor.",
+    "requested_at": "2026-11-12T16:16:21.746445+00:00",
+    "sha256": "c65a71d8ea78ccce2a7151e6978b79fd0d7c2d2d4ae8947c87185dc5ce3191bc",
+    "text": "Leo is sweeping the floor.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2014,14 +2014,432 @@
     }
   },
   "assets/audio/en/scenes/g62_done_9.mp3": {
-    "bytes": 13209,
+    "bytes": 14045,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:21.874622+00:00",
-    "sha256": "81bf296c1405ffa2e896360c74a008a42b2c63fae90feeb9317beb61aa92d712",
-    "text": "Ali is washing the dishes.",
+    "requested_at": "2026-11-12T16:16:22.405570+00:00",
+    "sha256": "fda195e2781cce5cc454e6b62c097f5be7054e6b9625fd0184259835748ef0af",
+    "text": "Leo is washing the dishes.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_beanie.mp3": {
+    "bytes": 7985,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:41.153652+00:00",
+    "sha256": "d329062f40589214004bbb0ba7e84fd0aa85a1b70b5e40d769ff1841f55658b2",
+    "text": "Now the beanie.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_boots.mp3": {
+    "bytes": 7985,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:49.306731+00:00",
+    "sha256": "fa34a096ee46c88c2c307bb2100d07d817821fc1e0659efef31a6ae866e123db",
+    "text": "Now the boots.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_cap.mp3": {
+    "bytes": 8821,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:39.283150+00:00",
+    "sha256": "b875db6bea5a7dc931fc37c1f06985153f587e8542e1c2f3d583b39127c53149",
+    "text": "Now the cap.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_coat.mp3": {
+    "bytes": 9030,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:26:03.041898+00:00",
+    "sha256": "68f366654d76fb37b11d68a3fcfe36f824bd750c98e631f3820220f3fbdfdae9",
+    "text": "Now the coat.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_dress.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:06.982840+00:00",
+    "sha256": "8fc5722d46172e49fd3f943916349e65dd46cb699f5e8276560129068ee3049a",
+    "text": "Now the dress.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_hat.mp3": {
+    "bytes": 8403,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:37.199407+00:00",
+    "sha256": "066596b696bd26e61e1d6d677c60cabd5c01d050d89193d3468b3828760a218b",
+    "text": "Now the hat.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_pajamabottoms.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:58.468617+00:00",
+    "sha256": "521c438a63192c3df9627626607e89d8b7ac0c750d9b6cb05f9976063c6a2741",
+    "text": "Now the pajama bottoms.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_pajamatop.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:56.069194+00:00",
+    "sha256": "884b90e4ac5428f707242dc1d367f022ecea934c6fae9248c7da358669dd3b3f",
+    "text": "Now the pajama top.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_rainboots.mp3": {
+    "bytes": 9866,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:53.635696+00:00",
+    "sha256": "e45902ceeede0b883b5e01f4b9bd9bcde55c38dc38b771044f195355420d683b",
+    "text": "Now the rain boots.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_raincoat.mp3": {
+    "bytes": 10910,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:51.462316+00:00",
+    "sha256": "2187ea9c91a4ff74bfcbd3b9530b0ac58235225ff4d55e54ccb01b758ed063b6",
+    "text": "Now the raincoat.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_shoes.mp3": {
+    "bytes": 9866,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:33.019570+00:00",
+    "sha256": "257b31ab3633c5dbbcd6587894856a175bbcf6ef2f02c7eaa58e8cd3d46092f6",
+    "text": "Now the shoes.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_shorts.mp3": {
+    "bytes": 9030,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:26.788104+00:00",
+    "sha256": "e411fde6afa2b5308cb5bc14e5bc942c4781ae75926c46955d45326ff20f2ca4",
+    "text": "Now the shorts.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_skirt.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:08.941192+00:00",
+    "sha256": "e90234d31e33f1e512a2a24b4d88339c4284eddf16d5b835e6c79de2d1fffc46",
+    "text": "Now the skirt.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_slippers.mp3": {
+    "bytes": 9866,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:00.492541+00:00",
+    "sha256": "0030e2b21aec62aec8fd8e9b3681464832ca5bb785d1a4f6aeb9d881a8b6fae5",
+    "text": "Now the slippers.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_sneakers.mp3": {
+    "bytes": 9866,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:30.934197+00:00",
+    "sha256": "e3c041e22537187d3857c7942b5761332aba0a4c32af559e7e222216527b51f1",
+    "text": "Now the sneakers.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_socks.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:28.835526+00:00",
+    "sha256": "38136cb4cdfffd2f511073e2b0e1fe5783b11d13686982b07a5323545fca8480",
+    "text": "Now the socks.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_sweater.mp3": {
+    "bytes": 7358,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:43.137203+00:00",
+    "sha256": "e2491ee2d100b2e4a8a91ee7a5c131fc24ad8892c9faaebcd57e50d4869fb289",
+    "text": "Now the sweater.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_trackbottoms.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:04.855231+00:00",
+    "sha256": "2d58a2bebdec91df559cc8f96914773d1fb436aaeaf7ce0f074d4c13b0aca7a5",
+    "text": "Now the tracksuit bottoms.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_tracktop.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:02.621476+00:00",
+    "sha256": "eb5def88587f90696c87930973fd127937a1a87e16e439ea99e8a096c40a7341",
+    "text": "Now the tracksuit top.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_trainers.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:35.119576+00:00",
+    "sha256": "0f8c7e7fe88037c7ee2c267285587d78efbeb206b0504497cfa21d26356ff8b6",
+    "text": "Now the trainers.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_trousers.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:45.389865+00:00",
+    "sha256": "8515acf403a86923709953e1ddc4e0ccecf2334604ec8a0746426ed36d633f7c",
+    "text": "Now the pants.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_ask_tshirt.mp3": {
+    "bytes": 9448,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:24.913530+00:00",
+    "sha256": "05007b72921fc14559126bee32993c73c832e4f1e1b5d444a3481bdef68afdd0",
+    "text": "Now the T-shirt.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2127,6 +2545,101 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/scenes/g63_done_boy_park.mp3": {
+    "bytes": 17389,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:13.674082+00:00",
+    "sha256": "792737c42172486c48a185e859c88dfa441a49f37a3fcf68e952f58ef6589e21",
+    "text": "Leo is ready. Off to the park!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_boy_rain.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:24.299426+00:00",
+    "sha256": "0be7ff749bac1f46126de6f06bdd4f8c2feab786bd859a461ea9fddf29e3f6a1",
+    "text": "Leo will stay dry now!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_boy_sleep.mp3": {
+    "bytes": 10701,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:29.134063+00:00",
+    "sha256": "0219430e53e52ee353a3bf1affe6af6a71b1e49b45c2dcd8c76b8000f539a918",
+    "text": "Sleep well, Leo!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_boy_sport.mp3": {
+    "bytes": 14254,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:33.951532+00:00",
+    "sha256": "9d62b508bb6a9eb928e631d56e6aa2cf21d43316607415353bcf834f5050592c",
+    "text": "Leo is ready for sports!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_boy_winter.mp3": {
+    "bytes": 24703,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:19.189488+00:00",
+    "sha256": "3278659608a7ee24900aaad8ee9c4ac6c12d68837d2c7a8f2419938134903eb6",
+    "text": "Leo is nice and warm. Time to play in the snow!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/scenes/g63_done_coat.mp3": {
     "bytes": 10284,
     "language": "en",
@@ -2136,6 +2649,101 @@
     "requested_at": "2026-11-08T20:04:04.469026+00:00",
     "sha256": "84b34ec92bbbca1924746de79a98539c743693466c3fb6a1389c25ec6685074e",
     "text": "Now he is warm!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_girl_park.mp3": {
+    "bytes": 16971,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:39.016921+00:00",
+    "sha256": "c053bde2488ba96f3da4d0699f0ce47c133cc5b04f2b3fe23a82f5b5d8fd0e06",
+    "text": "Mia is ready. Off to the park!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_girl_rain.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:54.877902+00:00",
+    "sha256": "705f4c17ddc2967298d9cd037f82f0b602782273eab5fec07ba6406a43368ed0",
+    "text": "Mia will stay dry now!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_girl_skirt.mp3": {
+    "bytes": 11328,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:44.219672+00:00",
+    "sha256": "9033af646c8b5da64fa46e5f566a98e07e4dbbe0a289dd7beaef004e15973998",
+    "text": "Mia looks lovely!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_girl_sleep.mp3": {
+    "bytes": 10284,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:59.534829+00:00",
+    "sha256": "a8e4be9977032e6f188bf166390752dcb8d093d0a4f6575e6b446d0deafbec84",
+    "text": "Sleep well, Mia!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_done_girl_winter.mp3": {
+    "bytes": 21359,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:49.733903+00:00",
+    "sha256": "9513e12763e7e66f8b5f2a50b07c4b1fd65ad32c683884139b0aa35fa99080c0",
+    "text": "Mia is nice and warm. Time to play in the snow!",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2364,6 +2972,196 @@
     "requested_at": "2026-11-08T20:04:35.607281+00:00",
     "sha256": "af35abd4e69374dd2578ff0815b67b199865f3fc0a940c33a757197ff2e3ea4f",
     "text": "The vest looks so smart.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_boy_park.mp3": {
+    "bytes": 24285,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:11.573497+00:00",
+    "sha256": "5efffcc572280a8f5a39a0d2de4643ca6064195d28f3bd629b2adb4d735cee70",
+    "text": "Leo is going to the park. First, the T-shirt.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_boy_rain.mp3": {
+    "bytes": 27002,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:22.219267+00:00",
+    "sha256": "4f44eb9adffa3ca72a08d98bf9db3da8c2ba1699f927c3af16e59c258c7f753b",
+    "text": "It's raining. Let's keep Leo dry. First, the pants.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_boy_sleep.mp3": {
+    "bytes": 20524,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:26.934177+00:00",
+    "sha256": "e5e71227e3356510efd0ca0ef7ab3c428977e426d298bf3a06e6c9c8dc0bee7b",
+    "text": "It's bedtime. First, the pajama top.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_boy_sport.mp3": {
+    "bytes": 28883,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:32.008297+00:00",
+    "sha256": "f4c13b980f00dedc32c823e5575856a019d42b98adf9a1a6c43a7f57a10d2f11",
+    "text": "Leo is going to play sports. First, the tracksuit top.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_boy_winter.mp3": {
+    "bytes": 32226,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:16.675304+00:00",
+    "sha256": "241f3d503ebb36f2e5fc70e9793e484a562e23f7e10dab744c21c44d0712895a",
+    "text": "It's snowing outside. Let's keep Leo warm. First, the sweater.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_girl_park.mp3": {
+    "bytes": 24076,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:36.624702+00:00",
+    "sha256": "7e20da2c37dff0d48346e50806dd492d6875d470f6fe154e447a9e2fd8413d31",
+    "text": "Mia is going to the park. First, the dress.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_girl_rain.mp3": {
+    "bytes": 27211,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:52.648749+00:00",
+    "sha256": "53075e0308e3c26e4370f2d157b43222a05ba7308f56ea9a0ba4016d0de6b8e3",
+    "text": "It's raining. Let's keep Mia dry. First, the pants.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_girl_skirt.mp3": {
+    "bytes": 28465,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:42.037309+00:00",
+    "sha256": "44f55f9e91ef80f396b6ae5a7b16bd3434e4730fc25faedf5a00abc8b594e80a",
+    "text": "Mia is going to see a friend. First, the T-shirt.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_girl_sleep.mp3": {
+    "bytes": 20524,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:57.647197+00:00",
+    "sha256": "682e669ff8b8c7ac748cceb1b5ecbc84458b4c8a829c5b4fb60ba182576f8e5b",
+    "text": "It's bedtime. First, the pajama top.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g63_first_girl_winter.mp3": {
+    "bytes": 28674,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:47.359863+00:00",
+    "sha256": "8c62d6baf4f6a89aaad53a1c22a3395e1a1b78f149ad591ef4a1b990e4c49c71",
+    "text": "It's snowing outside. Let's keep Mia warm. First, the sweater.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2603,14 +3401,14 @@
     }
   },
   "assets/audio/en/scenes/g64_1.mp3": {
-    "bytes": 20941,
+    "bytes": 21986,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:53.080219+00:00",
-    "sha256": "97fb4bb5217fb2216ebc997dd183b358507530f073e0cbc056daa55ec36585d7",
-    "text": "It's raining outside. What should Ali wear?",
+    "requested_at": "2026-11-12T16:16:28.103401+00:00",
+    "sha256": "147f9433059efbba21894dab9d542730b77d8a1ccaf91ebb5bf55d3e3c50a489",
+    "text": "It's raining outside. What should Leo wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2622,14 +3420,14 @@
     }
   },
   "assets/audio/en/scenes/g64_2.mp3": {
-    "bytes": 22613,
+    "bytes": 20315,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:06:57.847472+00:00",
-    "sha256": "f7528f85e2c9ec59a0d2070ad19096f71c3d6dd0ad6ac4ff92154d91b8f03cbd",
-    "text": "It started to rain. What should Ali take?",
+    "requested_at": "2026-11-12T16:16:28.828245+00:00",
+    "sha256": "1e0b9cceed3f03d2cf3379669cd50903c9191cc459d3159622281fe88d43db58",
+    "text": "It started to rain. What should Leo take?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2641,14 +3439,14 @@
     }
   },
   "assets/audio/en/scenes/g64_3.mp3": {
-    "bytes": 19688,
+    "bytes": 21359,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:02.823182+00:00",
-    "sha256": "54fc54e490816b32ec46cf7e3e1075888bdc95f9780c1634735a4e53d75f6749",
-    "text": "It's snowing outside. What should Ali wear?",
+    "requested_at": "2026-11-12T16:16:29.611500+00:00",
+    "sha256": "77402e1f0100b8d906ba780c0794f1b55f684b90597abf3a6512e05efeecbf4a",
+    "text": "It's snowing outside. What should Leo wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2660,14 +3458,14 @@
     }
   },
   "assets/audio/en/scenes/g64_4.mp3": {
-    "bytes": 25121,
+    "bytes": 25748,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:08.199457+00:00",
-    "sha256": "f7bb86e7e8da0142310e410fc825217e1fcf13a4ed49dd36be62944006a266b7",
-    "text": "Ali wants to make snowballs. What goes on his hands?",
+    "requested_at": "2026-11-12T16:16:30.395023+00:00",
+    "sha256": "f2ce77a23316b53acf65ab5f5f68b41ae024973bbccc6eb2bddfe81e664a7919",
+    "text": "Leo wants to make snowballs. What goes on his hands?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2679,14 +3477,14 @@
     }
   },
   "assets/audio/en/scenes/g64_5.mp3": {
-    "bytes": 17180,
+    "bytes": 16971,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:12.756084+00:00",
-    "sha256": "67ab23b292392f5cb2c2092e575a457da71e7d3e435fd7e29a6ea8f187c1ce94",
-    "text": "It's very hot. What should Ali wear?",
+    "requested_at": "2026-11-12T16:16:31.123230+00:00",
+    "sha256": "b638e2d63eb7ad3e0e28dfce1033d814aaa6fa1aa1fce9d77fc44203c025c338",
+    "text": "It's very hot. What should Leo wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2698,14 +3496,14 @@
     }
   },
   "assets/audio/en/scenes/g64_6.mp3": {
-    "bytes": 26166,
+    "bytes": 24285,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:17.558215+00:00",
-    "sha256": "fb3d21acf52a495f043d7ab06a75900c0d410b6b647f1600923257ea1f417015",
-    "text": "The sun is in his eyes. What should Ali put on?",
+    "requested_at": "2026-11-12T16:16:31.885965+00:00",
+    "sha256": "c40002aa28868d850b6c9c893e951dbbc997f8fd6e40fa5a673702a78a400a38",
+    "text": "The sun is in his eyes. What should Leo put on?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2717,14 +3515,14 @@
     }
   },
   "assets/audio/en/scenes/g64_7.mp3": {
-    "bytes": 20733,
+    "bytes": 19061,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:22.316434+00:00",
-    "sha256": "32b32ce0aea4f7652ef73194b8a255c83bc2234979d200675d4fab3bd0652df3",
-    "text": "Ali is going to the sea. What should he wear?",
+    "requested_at": "2026-11-12T16:16:32.606492+00:00",
+    "sha256": "bfdf7e59acab0b07829d5d3ee4694815db67a91dce232871978fba2cd241cbd5",
+    "text": "Leo is going to the sea. What should he wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2736,14 +3534,14 @@
     }
   },
   "assets/audio/en/scenes/g64_8.mp3": {
-    "bytes": 24285,
+    "bytes": 23867,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:27.350380+00:00",
-    "sha256": "118118411deb2da86d4b076724096d29bdfebedcf69e207474fd725dc41e45ca",
-    "text": "It's dark, time for bed. What should Ali wear?",
+    "requested_at": "2026-11-12T16:16:35.643946+00:00",
+    "sha256": "0e8c78a05093faaccb74cc2ad66c4fa57fb8a35aed689ba1e415069e7a78739a",
+    "text": "It's dark, time for bed. What should Leo wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2869,14 +3667,14 @@
     }
   },
   "assets/audio/en/scenes/g64_done_7.mp3": {
-    "bytes": 16762,
+    "bytes": 17180,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:24.707071+00:00",
-    "sha256": "6dd61e8fe10c44775d54f930d0427b4d23d6f0f2f327334776aa63180c8b17ba",
-    "text": "He put on his swimsuit and jumps in.",
+    "requested_at": "2026-11-12T16:16:34.870897+00:00",
+    "sha256": "abf764e0977f4400f4f7e78438b13bcccd8b522875130da86552e6c45333524b",
+    "text": "He put on his swim shorts and jumps in.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -2896,6 +3694,310 @@
     "requested_at": "2026-11-08T20:07:29.617180+00:00",
     "sha256": "c27e1aa54188899f74ae85b10ab9154adc6c801346cc812f7e5bde823cee9d60",
     "text": "He put on his pajamas and got into bed.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_1.mp3": {
+    "bytes": 18852,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:40.271151+00:00",
+    "sha256": "18d0671aa295bac7edcabc6000b0cf3243adc04098d4c14cb75b0510d1433bb1",
+    "text": "She put on her raincoat and off she goes.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_2.mp3": {
+    "bytes": 17598,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:44.995270+00:00",
+    "sha256": "cb51a5536d227ed963441970fa6b7fce8d952edd82c5824bebc17777b6436e41",
+    "text": "She took her umbrella and stays dry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_3.mp3": {
+    "bytes": 18852,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:49.967702+00:00",
+    "sha256": "91e9c7f0b3bc6665bb660069f8834c2b47a2941f65b73d906806210c71d6391e",
+    "text": "She put on her coat and plays in the snow.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_4.mp3": {
+    "bytes": 18643,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:54.737532+00:00",
+    "sha256": "0602115f28215ed148d35fe0d457cf8eb46c86ff0409bec0e7da2d90327e3564",
+    "text": "She put on her gloves and makes snowballs.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_5.mp3": {
+    "bytes": 18434,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:59.572639+00:00",
+    "sha256": "d14468055acc0b828a79354129b18d148d273500c0a701f04ed7c69cc0e05079",
+    "text": "She put on her dress and goes to the park.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_6.mp3": {
+    "bytes": 20733,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:26:04.052304+00:00",
+    "sha256": "d31e059761f297b0be0ac35af5c8650f41f6d7dfca94c697c158a95765249385",
+    "text": "She put on her sunglasses and looks so cool.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_7.mp3": {
+    "bytes": 17180,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:09.502431+00:00",
+    "sha256": "7e0983a44e1f7e862ac8dfab08bfa6803f9527d3a0632bca2bbdc939cf45392d",
+    "text": "She put on her swimsuit and jumps in.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_done_girl_8.mp3": {
+    "bytes": 19479,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:14.484927+00:00",
+    "sha256": "fedfb6444bc302ec140d8b3e01bc26f37f6f74ea8b327ae1bf6f5f822f24a8f1",
+    "text": "She put on her pajamas and got into bed.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_1.mp3": {
+    "bytes": 20106,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:37.964252+00:00",
+    "sha256": "c62e719802a315a83bccbb85f3f94c707d078fdd534df04fb104a4dc1edb89f5",
+    "text": "It's raining outside. What should Mia wear?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_2.mp3": {
+    "bytes": 19688,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:42.697756+00:00",
+    "sha256": "26c8a43248d9719d5211aa6ae4e3567d33fcec23d950b17ceb5a187d3f8a3ab5",
+    "text": "It started to rain. What should Mia take?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_3.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:47.692452+00:00",
+    "sha256": "85a8b2861b00ec85efbc4a60e146b9acd3f76e8ca14bdfac7657f8dc5493ec15",
+    "text": "It's snowing outside. What should Mia wear?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_4.mp3": {
+    "bytes": 24703,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:52.417095+00:00",
+    "sha256": "57e49f93a1cd3f36de9200f36faffaa77c2a2b08156fdfaccb73e778c586df95",
+    "text": "Mia wants to make snowballs. What goes on her hands?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_5.mp3": {
+    "bytes": 21150,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:57.138079+00:00",
+    "sha256": "628b5dba569bc152c238dac81a952498507ce3f534d51fcda81ff80b9b4f8a29",
+    "text": "It's very hot. What should Mia wear?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_6.mp3": {
+    "bytes": 21777,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:02.260872+00:00",
+    "sha256": "ea363ef64244ce83adbdd1ecd8cd3034894dd941eb800f59d6b5270982d66198",
+    "text": "The sun is in her eyes. What should Mia put on?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_7.mp3": {
+    "bytes": 20733,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:07.241511+00:00",
+    "sha256": "e91a7b3e007a118c692c31d5e62bb2876978729df74e64d7d1bd60e57495d546",
+    "text": "Mia is going to the sea. What should she wear?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g64_girl_8.mp3": {
+    "bytes": 23449,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:12.235162+00:00",
+    "sha256": "f476a04a746f5b8c21fc3a25be2565a3fa095a4a03ea72d3d253dde408a0fa2d",
+    "text": "It's dark, time for bed. What should Mia wear?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3230,14 +4332,33 @@
     }
   },
   "assets/audio/en/scenes/g65_stir.mp3": {
-    "bytes": 9866,
+    "bytes": 15090,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:05:15.500893+00:00",
-    "sha256": "e68347de925f053a7cff66e24072219b60c28a4ad5476f5ee3bbf6f2e1bdcffd",
-    "text": "Now let's stir.",
+    "requested_at": "2026-11-12T16:16:01.658563+00:00",
+    "sha256": "3119a0065d45a5fdf5e097ab6dcd234d81c98f42faebd52b945f9ddf0d8e99df",
+    "text": "Now let's stir with the spoon.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g66_ask_bowl.mp3": {
+    "bytes": 8403,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:03.809235+00:00",
+    "sha256": "bdd8f1d1e1b448f1a48b4e7ed2fc2a4db32949d5c4c2b8e8e57d7c3aab9e5eb6",
+    "text": "Now the bowl.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3276,6 +4397,25 @@
     "requested_at": "2026-11-08T20:05:27.012907+00:00",
     "sha256": "ee0681d86c9673ffa2f1d63b32915afeb1d34ab395a25fc6009f22f1b07bb240",
     "text": "Now the glass.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g66_ask_jug.mp3": {
+    "bytes": 7567,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:06.138431+00:00",
+    "sha256": "f3c7ffc5e57433ffd73a1c79da69aceb51fa8164d7cc5e30ae4402ffbbd8a480",
+    "text": "Now the jug.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3343,6 +4483,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/scenes/g66_ask_salt_shaker.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:08.487293+00:00",
+    "sha256": "c48f601e5131e04c293211d6d47a717a5cbbd2099159e22d36322073fa750bd4",
+    "text": "Now the salt shaker.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/scenes/g66_ask_spoon.mp3": {
     "bytes": 9866,
     "language": "en",
@@ -3381,6 +4540,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/scenes/g66_first_bowl.mp3": {
+    "bytes": 20315,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:11.103407+00:00",
+    "sha256": "d1495ba13a1bb2734fd7db4378510edac99e601ce51a9af9c469ea2c01f9574b",
+    "text": "Let's set the table. First, the bowl.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/scenes/g66_first_fork.mp3": {
     "bytes": 22822,
     "language": "en",
@@ -3409,6 +4587,25 @@
     "requested_at": "2026-11-08T20:05:39.997750+00:00",
     "sha256": "3ee4c648b49816cfa82c9ab0de2eb0f7a8661fc1a584785571ecef9e930d84c4",
     "text": "Let's set the table. First, the glass.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g66_first_jug.mp3": {
+    "bytes": 20524,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:13.675073+00:00",
+    "sha256": "65246bb41ee4d4a7ad28ae805620e1a504328edb5f686039f7c49baa5e2b9e33",
+    "text": "Let's set the table. First, the jug.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3466,6 +4663,25 @@
     "requested_at": "2026-11-08T20:05:30.992554+00:00",
     "sha256": "c5b134ad8f13c13875e16a0ed40a27437fa24db0dce1dde984416e6219b9b6d9",
     "text": "Let's set the table. First, the plate.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/scenes/g66_first_salt_shaker.mp3": {
+    "bytes": 23240,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:16.223249+00:00",
+    "sha256": "e4cf6152557a3a57ad9246574ea534053222223e4a936d3387d95825a63fdc1d",
+    "text": "Let's set the table. First, the salt shaker.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3933,14 +5149,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_1.mp3": {
-    "bytes": 16344,
+    "bytes": 18852,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:29.096371+00:00",
-    "sha256": "f3f7e5e7a65d747f9955743ecfea94ddbba58e7a667206e8d400d117f6e87b21",
-    "text": "The doctor is listening to the patient.",
+    "requested_at": "2026-11-12T16:17:17.143978+00:00",
+    "sha256": "12555b8c7ee941c8ec7c5bc6cf10850c5a013639488e514e556977868546c411",
+    "text": "The doctor is listening with the stethoscope.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3952,14 +5168,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_10.mp3": {
-    "bytes": 15508,
+    "bytes": 21986,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:04.042570+00:00",
-    "sha256": "e3cfd1140331f288a7d2035e3354ce096527ec231b6dbd81ebd11a6ea2b351eb",
-    "text": "The baker is putting the bread in the oven.",
+    "requested_at": "2026-11-12T16:17:36.604052+00:00",
+    "sha256": "9987fd92df8b37e308a693661e2e2ba386425a98389d150450a89b98e036c4e4",
+    "text": "The baker is putting the bread in the oven with the peel.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3971,14 +5187,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_11.mp3": {
-    "bytes": 16135,
+    "bytes": 22822,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:07.800547+00:00",
-    "sha256": "46c7d46abb8f2a23cfe8f650d5faf6ccef6c0533f051fa4859dac65f8b462247",
-    "text": "The carpenter is hammering a nail.",
+    "requested_at": "2026-11-12T16:17:38.943997+00:00",
+    "sha256": "7ff6b7e88272d98c50e34e2edade6bf331e88667ea7b801d9faa566bbae37746",
+    "text": "The carpenter is hammering a nail with the hammer.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -3990,14 +5206,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_12.mp3": {
-    "bytes": 14672,
+    "bytes": 20941,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:11.667899+00:00",
-    "sha256": "404199bd0b3bcf07d7f554edbf06f5789016c5f4eb9fbdd3807f4489b9b9fed0",
-    "text": "The nurse is checking the temperature.",
+    "requested_at": "2026-11-12T16:17:41.255264+00:00",
+    "sha256": "9f030a7ca8ec9c13bbe5c2d95ac1500837a3fcb7b6b0ffa6856533285e6e51ea",
+    "text": "The nurse is checking the temperature with the thermometer.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4009,14 +5225,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_2.mp3": {
-    "bytes": 18016,
+    "bytes": 22195,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:33.119547+00:00",
-    "sha256": "e34d9993624ca173c8edc51d655a6948c0e43ea26402ecc9fadc68fbbfd58bfd",
-    "text": "The firefighter is putting out the fire.",
+    "requested_at": "2026-11-12T16:17:19.443699+00:00",
+    "sha256": "6bf7d4c10bf43f3e956893f58c2f6545d2111960daf7550ba5fb3d158eb9a9f5",
+    "text": "The firefighter is putting out the fire with the hose.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4028,14 +5244,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_3.mp3": {
-    "bytes": 13418,
+    "bytes": 15926,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:36.839037+00:00",
-    "sha256": "3cb92039d07936f743f2946e3aa09f2985f04b212c58672cc806f24fff744a69",
-    "text": "The cook is serving the soup.",
+    "requested_at": "2026-11-12T16:26:05.033735+00:00",
+    "sha256": "f0b5ed3c1033cfed272dac972dfdf82ec90a2a7a53cae909deab3b5a81835c17",
+    "text": "The cook is serving soup with the ladle.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4047,14 +5263,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_4.mp3": {
-    "bytes": 14672,
+    "bytes": 20941,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:40.437206+00:00",
-    "sha256": "523a80c326ad737374b11d21146cd2b3a18c331c78c2b34596dc0c9d4e8cdf79",
-    "text": "The teacher is writing on the board.",
+    "requested_at": "2026-11-12T16:17:24.249929+00:00",
+    "sha256": "29acf5e2b3816a401588b81e82b111b8ed94560f74e816dd48e3dde770fabb6b",
+    "text": "The teacher is drawing on the board with the chalk.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4066,14 +5282,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_5.mp3": {
-    "bytes": 19479,
+    "bytes": 23658,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:44.383908+00:00",
-    "sha256": "a9e9b71d0114f48dc85cae8fec3a83e636eb098b00252214d77329871521fe42",
-    "text": "The police officer is directing the traffic.",
+    "requested_at": "2026-11-12T16:17:26.627938+00:00",
+    "sha256": "16e57150c611eb465e737a03950555fce3db0a8b5f4b4236c2fa6f5305edf384",
+    "text": "The police officer blew the whistle and the car stopped.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4085,14 +5301,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_6.mp3": {
-    "bytes": 14672,
+    "bytes": 20106,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:48.131192+00:00",
-    "sha256": "83dcd42c66c58779e0d38872cac4e228c7edf69f220e86b64135a99540dedbfb",
-    "text": "The farmer is ploughing the field.",
+    "requested_at": "2026-11-12T16:17:29.189828+00:00",
+    "sha256": "e472b26a6f9989b125be0d28ec60d43369a2ee3915295e12bdb21ddd45ce7226",
+    "text": "The farmer is ploughing the field with the tractor.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4123,14 +5339,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_8.mp3": {
-    "bytes": 17389,
+    "bytes": 19897,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:56.020708+00:00",
-    "sha256": "c538bb7c6de667bb9406849f3d5a3ad22bed4ad78509c53d1bca5088033143bb",
-    "text": "The hairdresser is cutting hair.",
+    "requested_at": "2026-11-12T16:17:31.588099+00:00",
+    "sha256": "5a7394d12c3e5abcbead1452116330bcf7ed7f0bbbafce0244d9f20705adb3f4",
+    "text": "The hairdresser is cutting hair with the scissors.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4142,14 +5358,14 @@
     }
   },
   "assets/audio/en/scenes/g68_done_9.mp3": {
-    "bytes": 16971,
+    "bytes": 19061,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:59.975459+00:00",
-    "sha256": "7b8cea7b71db56bbb169fd2a652d00aaede0de310393a97a1764bec666607df2",
-    "text": "The dentist is checking the teeth.",
+    "requested_at": "2026-11-12T16:17:34.021369+00:00",
+    "sha256": "93b9dac9da9958318de5254c424d5eae740f657d0cb09ca2ef2ae1f8495f7d51",
+    "text": "The dentist is checking the teeth with the mirror.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4218,14 +5434,14 @@
     }
   },
   "assets/audio/en/scenes/g69_3.mp3": {
-    "bytes": 12791,
+    "bytes": 13627,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:22.603662+00:00",
-    "sha256": "62f623c85baaf7ae82e7654cc5cde33c9ba1af21ce7ab60477d75dea244ec9ae",
-    "text": "Ali is sick. Who can help?",
+    "requested_at": "2026-11-12T16:17:41.948131+00:00",
+    "sha256": "51c8792bef9db891f621dbc0cbffa45d0f71fa856d967c40ac24bf3800139893",
+    "text": "Leo is sick. Who can help?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4237,14 +5453,14 @@
     }
   },
   "assets/audio/en/scenes/g69_4.mp3": {
-    "bytes": 16971,
+    "bytes": 17389,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:26.770171+00:00",
-    "sha256": "f287b49faeb68055ceb742e583d98805ad615f7518eca895ff8c274075ba5fe5",
-    "text": "Ali's tooth hurts. Who can help?",
+    "requested_at": "2026-11-12T16:17:43.339871+00:00",
+    "sha256": "35bd0c31d25056c018663f9e45a0048c9c5c66bb1da1c56f1861db059deae902",
+    "text": "Leo's tooth hurts. Who can help?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4256,14 +5472,14 @@
     }
   },
   "assets/audio/en/scenes/g69_5.mp3": {
-    "bytes": 15717,
+    "bytes": 15090,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:31.023466+00:00",
-    "sha256": "a6f9ec00340bb326d85d9c419ada5c74d5026c349a6226c37c6c0214951fbcaf",
-    "text": "Ali is lost. Who can help?",
+    "requested_at": "2026-11-12T16:17:44.032879+00:00",
+    "sha256": "be7401bd659d297cf7e41c808568095f38620523786c56a7e71e18d3c06428d3",
+    "text": "Leo is lost. Who can help?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4313,14 +5529,14 @@
     }
   },
   "assets/audio/en/scenes/g69_8.mp3": {
-    "bytes": 18016,
+    "bytes": 18434,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:43.429415+00:00",
-    "sha256": "ece33139359eec8d382468ee31f123e9155e3fe5973a2deade32d2628602d17a",
-    "text": "Ali's hair is too long. Who can help?",
+    "requested_at": "2026-11-12T16:17:45.533693+00:00",
+    "sha256": "045074d5fa9055bea0fc9188ac2ac478e7974517d4bdabdba989b7289550f062",
+    "text": "Leo's hair is too long. Who can help?",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4408,14 +5624,14 @@
     }
   },
   "assets/audio/en/scenes/g69_done_3.mp3": {
-    "bytes": 11955,
+    "bytes": 11746,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:24.554071+00:00",
-    "sha256": "4f53acee56c1bfb4c759e14c9de7979a7a231a17bb24e80860916e38e461b25a",
-    "text": "The doctor checked Ali.",
+    "requested_at": "2026-11-12T16:17:42.645694+00:00",
+    "sha256": "d9e644a0a70fcc192eba569f85ec79443eb734f0e9c2b9836afeffea7411882b",
+    "text": "The doctor checked Leo.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -4446,14 +5662,14 @@
     }
   },
   "assets/audio/en/scenes/g69_done_5.mp3": {
-    "bytes": 19270,
+    "bytes": 18434,
     "language": "en",
     "language_code": null,
     "model_id": "eleven_multilingual_v2",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:33.149527+00:00",
-    "sha256": "3fc4196cd39ffeef21726214c5fe596549e3ce37f0292d18143db55c8c64e760",
-    "text": "The police officer took Ali to his mom.",
+    "requested_at": "2026-11-12T16:17:44.761310+00:00",
+    "sha256": "1ff74a0f657a57e217517fdd992e9338db438101a1353b10d77a01588171de57",
+    "text": "The police officer took Leo to his mom.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -5822,6 +7038,25 @@
     "requested_at": "2026-11-08T19:30:18.480410+00:00",
     "sha256": "e4f38e3fb1e72b0c3dd412fc7e2d4cba795cb2af334d5c6d4204640cbd176485",
     "text": "Çamaşır makinesi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/jobs/doctor_selected.mp3": {
+    "bytes": 6940,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:21:55.725395+00:00",
+    "sha256": "257bc5eba2f707d96919347071c238ed1a75fbc563eea15efded18b8d316d779",
+    "text": "Doktor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -7334,6 +8569,424 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/scenes/g63_ask_beanie.mp3": {
+    "bytes": 14045,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:40.548574+00:00",
+    "sha256": "dfb4830015829eac0c05e98f45e3fb371dc248479c8c504e83c7458771bd9b10",
+    "text": "Şimdi beresini takalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_boots.mp3": {
+    "bytes": 14672,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:48.725358+00:00",
+    "sha256": "b78df532236f3a4a528859bda60a3d7d469a4c7d855c04014dab095f7cfa53ab",
+    "text": "Şimdi botlarını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_cap.mp3": {
+    "bytes": 14672,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:38.644725+00:00",
+    "sha256": "c87134093b5c32ff21ca1683b94ec52d3463e0179bc1734be250b48944aea723",
+    "text": "Şimdi şapkasını takalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_coat.mp3": {
+    "bytes": 14045,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:46.647628+00:00",
+    "sha256": "984a60560c3ee7260eec0445162702e488aeab20cb636d463d3f1108b22472ff",
+    "text": "Şimdi montunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_dress.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:06.354172+00:00",
+    "sha256": "c055f2d7ae925189b4a14e6adb18f7090dc75be72f587bf5051539ed2ab4bcc6",
+    "text": "Şimdi elbisesini giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_hat.mp3": {
+    "bytes": 14672,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:36.576554+00:00",
+    "sha256": "74b9d46e170c21de64c3637426de7b89d70d7d177cb943b2dd61edf8c57115a6",
+    "text": "Şimdi şapkasını takalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_pajamabottoms.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:57.781219+00:00",
+    "sha256": "a48e8fb066b49e43bf55a276a44e7182f6a6978118b996db6509d6a4e316026b",
+    "text": "Şimdi pijamasının altını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_pajamatop.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:55.401594+00:00",
+    "sha256": "75866dbfcd7feaa0ecbf7af1b0143f0f1fd92bbf3e498b8290ceef6d24cb0924",
+    "text": "Şimdi pijamasının üstünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_rainboots.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:52.968151+00:00",
+    "sha256": "549594686d8c2fea7cbfb2a06a82bc5945fa40d4a8f6cb74c38989f91c27b3ba",
+    "text": "Şimdi çizmelerini giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_raincoat.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:50.756462+00:00",
+    "sha256": "8502c9ad8f5129c391ae8e15f9c9877af711b41a77b4bda95a9ce7d4f33b157b",
+    "text": "Şimdi yağmurluğunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_shoes.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:32.342084+00:00",
+    "sha256": "be99006af0a7191a8ddef891bd44036b927b50c17ad67bd971e9ce7cc602f3ea",
+    "text": "Şimdi ayakkabılarını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_shorts.mp3": {
+    "bytes": 14463,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:26.146901+00:00",
+    "sha256": "62e1dbf153713e99aeef35a3d1a03387eea5eb2254d5b879fe819e837f200309",
+    "text": "Şimdi şortunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_skirt.mp3": {
+    "bytes": 14045,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:08.279019+00:00",
+    "sha256": "0ac89d9a8a43e906b0601ded1d2867e977ec7226275f233abcb7cb410cd2ad4d",
+    "text": "Şimdi eteğini giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_slippers.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:59.831169+00:00",
+    "sha256": "8517db3f2f13435de6ef2cbf990bc495f47fa3945cfa1166f37c7c7a37cda4bc",
+    "text": "Şimdi terliklerini giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_sneakers.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:30.299405+00:00",
+    "sha256": "a0b3774ba23dd6eef1e02ab3137eb68f21bdfa127269aa2f3d74a437493a884f",
+    "text": "Şimdi ayakkabılarını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_socks.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:28.206400+00:00",
+    "sha256": "09d74b40e2fbac1e1b108ccc6092e4c67aea61b80ae418e83e1a74a7d990823b",
+    "text": "Şimdi çoraplarını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_sweater.mp3": {
+    "bytes": 14672,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:42.534239+00:00",
+    "sha256": "0112d40976f92bfb8bba2b5a6ae707f16f8b15a54072da44676f98122fa16e08",
+    "text": "Şimdi kazağını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_trackbottoms.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:04.166416+00:00",
+    "sha256": "c9fab5e35a73a1d6318501be83cdd006cee330ad73e4a54ac099421de6e08ef5",
+    "text": "Şimdi eşofmanının altını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_tracktop.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:01.916016+00:00",
+    "sha256": "87bdeaf1913060a312098e888df26e4fb2d0768f83bcf418d2ccf6afd3e438d4",
+    "text": "Şimdi eşofmanının üstünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_trainers.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:34.478215+00:00",
+    "sha256": "60339730ea4bef6575e631bbc62926c759213147a1d28a2f7067fd5348cfad25",
+    "text": "Şimdi spor ayakkabılarını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_trousers.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:44.655397+00:00",
+    "sha256": "cdd34f9e7143ef1b6d7a46afc901e44b0063834e76b59807829f0fc493ccb569",
+    "text": "Şimdi pantolonunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_ask_tshirt.mp3": {
+    "bytes": 15299,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:14:24.247653+00:00",
+    "sha256": "e0154dedc7a7655682b70bafe42962aea98d00f6b673407d3ad2f6f1db473b27",
+    "text": "Şimdi tişörtünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/scenes/g63_beanie.mp3": {
     "bytes": 16971,
     "language": "tr",
@@ -7429,6 +9082,101 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/scenes/g63_done_boy_park.mp3": {
+    "bytes": 15926,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:12.927587+00:00",
+    "sha256": "510a57e00127925835f6572b2945dbd9e5336017677314fecf20cb46aca55667",
+    "text": "Ali hazır. Haydi parka!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_boy_rain.mp3": {
+    "bytes": 14672,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:23.605407+00:00",
+    "sha256": "27febe1a3daed24db27c3dba781c2d5ab9ff4c3c8363198518c04964eb2077aa",
+    "text": "Ali artık ıslanmaz!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_boy_sleep.mp3": {
+    "bytes": 11955,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:28.470108+00:00",
+    "sha256": "45600fd1687eecac9774ce6b40e4b097cfe41e556a5f61b1c4308a5705c06b77",
+    "text": "İyi uykular, Ali!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_boy_sport.mp3": {
+    "bytes": 12791,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:33.281028+00:00",
+    "sha256": "bb41f28d8d4555d8c1e7329091781051f0a289e12d5294952ce5d94b2a0b205a",
+    "text": "Ali spora hazır!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_boy_winter.mp3": {
+    "bytes": 24285,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:18.383780+00:00",
+    "sha256": "5ff6afb44e98b9b2082a6c2410f790d3e9c024dac218677e35eab12ebd172f6d",
+    "text": "Ali sıcacık oldu. Karda oynayabilir!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/scenes/g63_done_coat.mp3": {
     "bytes": 13836,
     "language": "tr",
@@ -7438,6 +9186,101 @@
     "requested_at": "2026-11-08T20:04:03.847774+00:00",
     "sha256": "3263dd222ab55ad24e993c4238b74bc733451b21722e0a9758a29092cdf01162",
     "text": "Oh, ısındı!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_girl_park.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:38.309345+00:00",
+    "sha256": "d41a35c838c49634a24d5dd36b3649656fa5bc6648114e854397da84018fb255",
+    "text": "Ayşe hazır. Haydi parka!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_girl_rain.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:54.165898+00:00",
+    "sha256": "6d298f4f56809d9edb985e21e1aaa65334d329a554ee2a11fb25a459390fab08",
+    "text": "Ayşe artık ıslanmaz!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_girl_skirt.mp3": {
+    "bytes": 15508,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:43.481417+00:00",
+    "sha256": "fd4bc0f944919aa7aacb7c7bf0eb90b11beda5e566741c54a44840f4fd13f8fd",
+    "text": "Ayşe çok şık oldu!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_girl_sleep.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:58.862371+00:00",
+    "sha256": "c5bbffe4fb7effd31d9cc50bd2f95af8bfec8c2a398ce49a5685863856c79777",
+    "text": "İyi uykular, Ayşe!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_done_girl_winter.mp3": {
+    "bytes": 23031,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:48.947318+00:00",
+    "sha256": "4d46aefcaacf3ce23209c8aebbbc9b1cacaaa4d4e31b3cb01ffb2b50ce6a719a",
+    "text": "Ayşe sıcacık oldu. Karda oynayabilir!",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -7666,6 +9509,196 @@
     "requested_at": "2026-11-08T20:04:34.922127+00:00",
     "sha256": "c879b0acb29a5f3c78295da8d28642420a899b14f70f25cee76f784caa58fe98",
     "text": "Yelek çok şık oldu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_boy_park.mp3": {
+    "bytes": 26793,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:10.787907+00:00",
+    "sha256": "59af3008d24e2c37bc5335efa4e226d4a8e3c55885926382139788494bd899b8",
+    "text": "Ali parka gidiyor. Önce tişörtünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_boy_rain.mp3": {
+    "bytes": 34316,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:21.399571+00:00",
+    "sha256": "3ddb24cabd5070020cb5cd2a7086fac2832901c7c9a59213e59c2ad4d3c76024",
+    "text": "Yağmur yağıyor. Ali ıslanmasın. Önce pantolonunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_boy_sleep.mp3": {
+    "bytes": 29301,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:26.221879+00:00",
+    "sha256": "9572fe2a01c40fb70b176d79fb30404b7c16e625e3f6959f0afcb5178bdd6952",
+    "text": "Uyku vakti geldi. Önce pijamasının üstünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_boy_sport.mp3": {
+    "bytes": 30555,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:31.141257+00:00",
+    "sha256": "53a5704e4889d8f431c31a79d00e4f21fedf8aa5b6d1bf1df3adf8587b9c13e6",
+    "text": "Ali spor yapacak. Önce eşofmanının üstünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_boy_winter.mp3": {
+    "bytes": 33271,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:15.807666+00:00",
+    "sha256": "88435d36adfb9acf8d4f54f88dddf96a845703f7869697b624e42139aacba317",
+    "text": "Dışarıda kar yağıyor. Ali üşümesin. Önce kazağını giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_girl_park.mp3": {
+    "bytes": 28047,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:35.787723+00:00",
+    "sha256": "42640e48dff459324242d565f7bf08d8af5fd4ee44caf4aaf28e4ee2a4690fb1",
+    "text": "Ayşe parka gidiyor. Önce elbisesini giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_girl_rain.mp3": {
+    "bytes": 34525,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:51.788575+00:00",
+    "sha256": "315f5e671430ba2ca78f1e2406115bc566d97fcdfb04d9d127ff51a2cee28bed",
+    "text": "Yağmur yağıyor. Ayşe ıslanmasın. Önce pantolonunu giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_girl_skirt.mp3": {
+    "bytes": 29301,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:41.197839+00:00",
+    "sha256": "5d1bfe9e123caea06d72c5c7244f9c6dd4ebecc68f23c26c2c2b954846ba42b1",
+    "text": "Ayşe arkadaşına gidiyor. Önce tişörtünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_girl_sleep.mp3": {
+    "bytes": 28674,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:56.915119+00:00",
+    "sha256": "abf53de5ed9e6a788aa7d25ab7227d659494d8134e7120d8b3409072c1dc0d24",
+    "text": "Uyku vakti geldi. Önce pijamasının üstünü giydirelim.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g63_first_girl_winter.mp3": {
+    "bytes": 34525,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:15:46.484700+00:00",
+    "sha256": "37da8a1b9f8e5a59947bcfb2a7dbdbea011b201cc9d95480135fb58077c79edf",
+    "text": "Dışarıda kar yağıyor. Ayşe üşümesin. Önce kazağını giydirelim.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8171,14 +10204,14 @@
     }
   },
   "assets/audio/tr/scenes/g64_done_7.mp3": {
-    "bytes": 19061,
+    "bytes": 18434,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:07:23.909077+00:00",
-    "sha256": "591c845ebfff9dcb3d610fb235592a8b40d6a7b08d5f3d82e426eddefc64068d",
-    "text": "Mayosunu giydi, denize giriyor.",
+    "requested_at": "2026-11-12T16:16:34.146969+00:00",
+    "sha256": "1430013f3eb4a88ee1f7802684d8b86f646280df859df385b4731f4fba1fb121",
+    "text": "Şortunu giydi, denize giriyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8198,6 +10231,310 @@
     "requested_at": "2026-11-08T20:07:28.805331+00:00",
     "sha256": "add148026883dc2aa791c27b60cec30fc92261b3e41a3655c170bf5af7cf1755",
     "text": "Pijamasını giydi, yatağına girdi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_1.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:39.554007+00:00",
+    "sha256": "ffb7ce6994fbc76691386f4a65eb933c251595d8afa3123e8d53fe9441a75cd7",
+    "text": "Yağmurluğunu giydi, dışarı çıkıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_2.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:44.259570+00:00",
+    "sha256": "04aa2a1509e0a82b71cb192f04e59e5f8f2b7eb86214edcb502e17f0756a6bc5",
+    "text": "Şemsiyesini aldı, hiç ıslanmıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_3.mp3": {
+    "bytes": 18852,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:49.242019+00:00",
+    "sha256": "ed2372b149f47404d75c0df86a26ea6ba3b72c913efef96482f6cbced09582c9",
+    "text": "Montunu giydi, karda oynuyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_4.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:54.009754+00:00",
+    "sha256": "83501ba6b8e50b41114a4c0fc96115b78e2066b5ac3178bb3cb22ad4053e4b8a",
+    "text": "Eldivenlerini taktı, kartopu yapıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_5.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:58.837862+00:00",
+    "sha256": "9fde6111a82432a7141c772e49edc827993c2369668d833c258bd0ba38362e53",
+    "text": "Elbisesini giydi, parka gidiyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_6.mp3": {
+    "bytes": 24285,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:04.000326+00:00",
+    "sha256": "15a41d255942f91fc09fbcc5d5ac436a45e8d83e348a77cfaf7cde5235724b72",
+    "text": "Güneş gözlüğünü taktı, çok havalı oldu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_7.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:08.768035+00:00",
+    "sha256": "3993da835a3284b163e2b307968499d1aaaf53755fa278f6408b26f5ea48f35d",
+    "text": "Mayosunu giydi, denize giriyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_done_girl_8.mp3": {
+    "bytes": 20106,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:13.744321+00:00",
+    "sha256": "f421c98262ddacb60641b51ce09aa368ff6b3c7ce0b74c92513b75d160f41b7d",
+    "text": "Pijamasını giydi, yatağına girdi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_1.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:37.205274+00:00",
+    "sha256": "dc6322af6448ddf5614a64b51171d35d6029f3caba1b130c05a50c5f1c9cf4a3",
+    "text": "Dışarıda yağmur yağıyor. Ayşe ne giysin?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_2.mp3": {
+    "bytes": 24703,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:41.973285+00:00",
+    "sha256": "12b829a90196333918829a06186568edbf35348b910fc5a19b64d4cce7517a72",
+    "text": "Yağmur başladı. Ayşe yanına ne alsın?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_3.mp3": {
+    "bytes": 25539,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:46.921617+00:00",
+    "sha256": "d75cde4d367da5e0d671ae5a81952a601293d3333e3a34d2d8cefee3d1790d99",
+    "text": "Dışarıda kar yağıyor. Ayşe ne giysin?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_4.mp3": {
+    "bytes": 24285,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:51.607312+00:00",
+    "sha256": "410c430ced66b6b9b3ecc772e3146fd3e15445871fc2217e74639ed5d2d863a3",
+    "text": "Ayşe kartopu oynayacak. Eline ne taksın?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_5.mp3": {
+    "bytes": 20733,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:56.387405+00:00",
+    "sha256": "1d8bf2e2612eb5be6093c46bf9d50ee9a291583d260ebd358d6d86c95e245e16",
+    "text": "Hava çok sıcak. Ayşe ne giysin?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_6.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:01.441277+00:00",
+    "sha256": "02158967fd3eac7f3924dc47922f85adfdf6e920d8bf5ab341b7e98013e38323",
+    "text": "Güneş gözünü alıyor. Ayşe ne taksın?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_7.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:06.477517+00:00",
+    "sha256": "e650d20e309d5fa44bbdbf7081a9768d6211cead7e10fa28f2688a3a53c376af",
+    "text": "Ayşe denize gidiyor. Ne giysin?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g64_girl_8.mp3": {
+    "bytes": 28465,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:17:11.380521+00:00",
+    "sha256": "495d9385bd30ead21996bbdb878148fa9ab64cb16af0c0d61d3ccf446427c791",
+    "text": "Hava karardı, uyku vakti. Ayşe ne giysin?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8532,14 +10869,33 @@
     }
   },
   "assets/audio/tr/scenes/g65_stir.mp3": {
-    "bytes": 11119,
+    "bytes": 14463,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:05:14.895244+00:00",
-    "sha256": "250ebd9a3928378a446f5848edb27aeaedcda7a137028ae43fff2761412bf8c1",
-    "text": "Hadi, karıştıralım.",
+    "requested_at": "2026-11-12T16:16:00.954530+00:00",
+    "sha256": "034ee8433abd341afb0a0d8b80d6cd2b7fe7ffbed33a4d13365d75d64663d800",
+    "text": "Hadi, kaşıkla karıştıralım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g66_ask_bowl.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:03.182545+00:00",
+    "sha256": "9f459991aa56cd742f786064fa04ecf8aa971c2a4cded3b84cb27496d641596d",
+    "text": "Şimdi kâseyi yerine koyalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8578,6 +10934,25 @@
     "requested_at": "2026-11-08T20:05:26.408776+00:00",
     "sha256": "9f1fc7385dff02f51e6fa0bc4b858cdddbe9f6d821fdb80b8c00ad2063a1eb74",
     "text": "Şimdi bardağı yerine koyalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g66_ask_jug.mp3": {
+    "bytes": 17807,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:05.529797+00:00",
+    "sha256": "0f3cf3aa86346ff3ad983cb77595dc65633f78350b30d2ddc5b8c5a421b8cbff",
+    "text": "Şimdi sürahiyi yerine koyalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8645,6 +11020,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/scenes/g66_ask_salt_shaker.mp3": {
+    "bytes": 17180,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:07.809535+00:00",
+    "sha256": "b612dc0b48a115d555dc4a727d14229c26e4e6dc9ef5ecd375c80127f2543224",
+    "text": "Şimdi tuzluğu yerine koyalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/scenes/g66_ask_spoon.mp3": {
     "bytes": 16553,
     "language": "tr",
@@ -8683,6 +11077,25 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/tr/scenes/g66_first_bowl.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:10.340314+00:00",
+    "sha256": "3e6a9c2da9d41750b5e9c882d99d31783c5a1fa11936d54299655c3c8cb43560",
+    "text": "Sofrayı kuralım. Önce kâseyi koyalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/tr/scenes/g66_first_fork.mp3": {
     "bytes": 22195,
     "language": "tr",
@@ -8711,6 +11124,25 @@
     "requested_at": "2026-11-08T20:05:39.211089+00:00",
     "sha256": "73b7fdab2e2dfda79fb90208262023213f610579f439f8910e9cccd021c207dd",
     "text": "Sofrayı kuralım. Önce bardağı koyalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g66_first_jug.mp3": {
+    "bytes": 24285,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:12.923807+00:00",
+    "sha256": "71c64415853e90d2de8614363e11f105511960dd1d82b4f5baf411bdd8a30dda",
+    "text": "Sofrayı kuralım. Önce sürahiyi koyalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -8768,6 +11200,25 @@
     "requested_at": "2026-11-08T20:05:30.274484+00:00",
     "sha256": "7a3a52eda208e4cf32d6130a4ba1d7522240558b8800e1de784d79a4f8794d6c",
     "text": "Sofrayı kuralım. Önce tabağı koyalım.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/scenes/g66_first_salt_shaker.mp3": {
+    "bytes": 22404,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-12T16:16:15.466982+00:00",
+    "sha256": "b5cdac8666a7d2a9e7fd754aab6071e4dbbbf9c915d53be816a9e7aaa3f168f7",
+    "text": "Sofrayı kuralım. Önce tuzluğu koyalım.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9012,8 +11463,8 @@
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:26.553794+00:00",
-    "sha256": "e4dc2fb605d0be41fd76a2f0f096b9f83aded6d5b8c26186c777ce9f050d151b",
+    "requested_at": "2026-11-12T16:22:00.612371+00:00",
+    "sha256": "cf4bedbaea8cab947d52a49dccedffb78bc0b6d20cefb14ddb211ab925218453",
     "text": "Steteskopu kim kullanır?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
@@ -9235,14 +11686,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_1.mp3": {
-    "bytes": 14672,
+    "bytes": 22404,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:28.414187+00:00",
-    "sha256": "348a8829ab1de43ca18afe9fa53593a1fc6e74f5a87b434aa4850bb3a23a4b5c",
-    "text": "Doktor hastayı dinliyor.",
+    "requested_at": "2026-11-12T16:17:16.389952+00:00",
+    "sha256": "28771a3bcdf4d74a58db1a0935be46886170a8f03a1826e39dc4dd123259dce2",
+    "text": "Doktor steteskopla hastasını dinliyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9254,14 +11705,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_10.mp3": {
-    "bytes": 18016,
+    "bytes": 21986,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:03.351709+00:00",
-    "sha256": "8599b5912a6353e4599786d93d64dca07c4949af915577214bdf1a70a9d3decd",
-    "text": "Fırıncı ekmeği fırına sürüyor.",
+    "requested_at": "2026-11-12T16:26:06.816067+00:00",
+    "sha256": "c5eed91f57016bcadb7ecf833663c9fba47edb3a3eaade9751347f1f85a03b55",
+    "text": "Fırıncı kürekle ekmeği fırına veriyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9273,14 +11724,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_11.mp3": {
-    "bytes": 13836,
+    "bytes": 19061,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:07.060985+00:00",
-    "sha256": "2e32bbf69c27f9b528a690532c8595b7982494ab01866ed0588db35176671e7a",
-    "text": "Marangoz çivi çakıyor.",
+    "requested_at": "2026-11-12T16:17:38.157988+00:00",
+    "sha256": "73511b0067fc9dfd39ba2f1ac0091da8fff608a256e15276323f4d911bfc84f4",
+    "text": "Marangoz çekiçle çivi çakıyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9292,14 +11743,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_12.mp3": {
-    "bytes": 15090,
+    "bytes": 22195,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:10.962854+00:00",
-    "sha256": "49fccb9585ab5251dddf91ff1cb22326bcdeb78eb960dd3ecdb82f02b7500a89",
-    "text": "Hemşire ateşe bakıyor.",
+    "requested_at": "2026-11-12T16:17:40.461825+00:00",
+    "sha256": "0099f79511251a518bfa24a8640e42b2efaf3296a9e235d2236111d993e22005",
+    "text": "Hemşire ateş ölçerle ateşe bakıyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9311,14 +11762,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_2.mp3": {
-    "bytes": 18225,
+    "bytes": 22404,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:32.411544+00:00",
-    "sha256": "bbdb556a1dbf8c757dee5c235b5df57e2e0387ca13e9c37b61048a3802a5e776",
-    "text": "İtfaiyeci yangını söndürüyor.",
+    "requested_at": "2026-11-12T16:17:18.683378+00:00",
+    "sha256": "0d88d0334d38bd68cc046eeec7939c74e4f342313ae40f814e3405d8bcf77406",
+    "text": "İtfaiyeci hortumla yangını söndürüyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9330,14 +11781,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_3.mp3": {
-    "bytes": 15299,
+    "bytes": 18434,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:36.192026+00:00",
-    "sha256": "84006692e2f049bf636aeb909aec9826bbab9723eeb0cc7b2d7a853915b5a13b",
-    "text": "Aşçı çorbayı dağıtıyor.",
+    "requested_at": "2026-11-12T16:17:21.046551+00:00",
+    "sha256": "eb26ef7f3c4ca2b10487cddf87af697ab95f994fdfb099047843103f1acb9a96",
+    "text": "Aşçı kepçeyle çorba koyuyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9349,14 +11800,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_4.mp3": {
-    "bytes": 15508,
+    "bytes": 20106,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:39.762808+00:00",
-    "sha256": "4fdccbb5287e6dd0f9f0d0f31ada37ab5f4a27e36deff910eafb0164153e3498",
-    "text": "Öğretmen tahtaya yazıyor.",
+    "requested_at": "2026-11-12T16:17:23.452641+00:00",
+    "sha256": "46b333fa8eb223752c8af922a124baf6e7cdcb6ee9de0ee712be71ed44151606",
+    "text": "Öğretmen tebeşirle tahtaya çiziyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9368,14 +11819,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_5.mp3": {
-    "bytes": 14463,
+    "bytes": 21359,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:43.544396+00:00",
-    "sha256": "2b72bffcfa3ad8ef9e3444e141e4d2ecfa38bee5822769249ac5aaa5119174c9",
-    "text": "Polis trafiği yönetiyor.",
+    "requested_at": "2026-11-12T16:17:25.773423+00:00",
+    "sha256": "b5d59fd76fd16cead32607d0181dcf4686b9d42bbd41ef7d24909fc435d14b6e",
+    "text": "Polis düdüğünü çaldı, araba durdu.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9387,14 +11838,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_6.mp3": {
-    "bytes": 14672,
+    "bytes": 20315,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:47.425454+00:00",
-    "sha256": "dc89330c5c84f874df85189e4ca51ded8219950d1f1529bf9be1ba5625d4105e",
-    "text": "Çiftçi tarlayı sürüyor.",
+    "requested_at": "2026-11-12T16:17:28.333438+00:00",
+    "sha256": "3c839e03670819fedd66bc67e2257e3acf9c5696fdf7b1a69fa64704e1d79d33",
+    "text": "Çiftçi traktörle tarlayı sürüyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9425,14 +11876,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_8.mp3": {
-    "bytes": 13836,
+    "bytes": 18225,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:55.309787+00:00",
-    "sha256": "24cf2f9b0acf6f82b177835865ffd963b0108d7143ed76820091e0430b1d1e43",
-    "text": "Kuaför saçı kesiyor.",
+    "requested_at": "2026-11-12T16:17:30.783037+00:00",
+    "sha256": "0e0550700a62dcec0f74f55dc34be2f47f00e04cf04bd4c0a6b527ef5226cd3f",
+    "text": "Kuaför makasla saç kesiyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9444,14 +11895,14 @@
     }
   },
   "assets/audio/tr/scenes/g68_done_9.mp3": {
-    "bytes": 16553,
+    "bytes": 20941,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:08:59.272036+00:00",
-    "sha256": "353930fc8bc108bac15320bd0dcc447f646c30160a44b7f22164accfad02c2ba",
-    "text": "Diş hekimi dişlere bakıyor.",
+    "requested_at": "2026-11-12T16:17:33.297362+00:00",
+    "sha256": "e667891bd3c4e8ee17c25eee7aa28157439f1f4368f7602acfc8e73932db45c2",
+    "text": "Diş hekimi aynayla dişlere bakıyor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -9710,13 +12161,13 @@
     }
   },
   "assets/audio/tr/scenes/g69_done_3.mp3": {
-    "bytes": 15926,
+    "bytes": 15299,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:23.876943+00:00",
-    "sha256": "84e55d98afccc4185e8a6d33a0894799ce67c38afa502b31dc6bca8b6e96c1e2",
+    "requested_at": "2026-11-12T16:21:57.550038+00:00",
+    "sha256": "993215f56bd6884716c7621123134d58877fac6369d25c36dd67fd82fcd7fd89",
     "text": "Doktor Ali'yi muayene etti.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
@@ -9881,13 +12332,13 @@
     }
   },
   "assets/audio/tr/scenes/g70_2.mp3": {
-    "bytes": 14672,
+    "bytes": 14045,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T20:09:56.425398+00:00",
-    "sha256": "87e3a750752b930aa59ff3436ee31dac487d222f38804b6822b83de930a15e62",
+    "requested_at": "2026-11-12T16:21:59.072481+00:00",
+    "sha256": "efd45377cf9a96bc2d7554e5c64bea0e6e010fb8ab3ee885fd73b8ca08c511de",
     "text": "Doktor nerede çalışır?",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",

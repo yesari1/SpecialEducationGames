@@ -140,8 +140,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     ]);
     // Without sound the hello still stays a moment.
     final rest =
-        const Duration(milliseconds: 2500) -
-        DateTime.now().difference(started);
+        const Duration(milliseconds: 2500) - DateTime.now().difference(started);
     if (rest > Duration.zero) await Future<void>.delayed(rest);
     _endGreeting();
   }
@@ -176,6 +175,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           ? 3
           : 5,
       band: band,
+      who: survey['gender'] == 'girl' ? 'girl' : 'boy',
       hintSeconds: s.hintSeconds,
       fadeWrongChoices: s.fadeWrongChoices,
       fadeAfterErrors: s.configuration.fadeAfterErrors,
@@ -502,40 +502,40 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         spec.count == null &&
         spec.sequence.isEmpty;
     final Widget stage = _Entrance(
-                        // Only the basket view restarts per round; the
-                        // choice views keep their state across rounds.
-                        key: c.template.id == 'fill_count'
-                            ? ValueKey('choices-entrance-${c.generation}')
-                            : null,
-                        animate:
-                            c.template.id == 'fill_count' &&
-                            !s.reducedMotion &&
-                            !MediaQuery.disableAnimationsOf(context),
-                        child: c.template.buildView(
-                          context,
-                          spec,
-                          RoundCallbacks(
-                            onSelect: (item) => c.choose(item),
-                            onListen: (item) {
-                              c.noteInteraction(itemId: item.id);
-                              if (item.sfx case final String sfx) {
-                                s.audio.playSequence([sfx]);
-                              }
-                            },
-                            onSay: (clips) => s.audio.playSequence(clips),
-                          ),
-                          HintViewState(
-                            level: c.hint,
-                            visibleChoices: c.visibleChoices,
-                            wrongCount: c.wrongCount,
-                            generation: c.generation,
-                            celebrating: c.phase == RoundPhase.celebrating,
-                            showLabels: s.showLabels,
-                            animate: !s.reducedMotion && s.celebration != 'off',
-                            locale: s.locale,
-                          ),
-                        ),
-                      );
+      // Only the basket view restarts per round; the
+      // choice views keep their state across rounds.
+      key: c.template.id == 'fill_count'
+          ? ValueKey('choices-entrance-${c.generation}')
+          : null,
+      animate:
+          c.template.id == 'fill_count' &&
+          !s.reducedMotion &&
+          !MediaQuery.disableAnimationsOf(context),
+      child: c.template.buildView(
+        context,
+        spec,
+        RoundCallbacks(
+          onSelect: (item) => c.choose(item),
+          onListen: (item) {
+            c.noteInteraction(itemId: item.id);
+            if (item.sfx case final String sfx) {
+              s.audio.playSequence([sfx]);
+            }
+          },
+          onSay: (clips) => s.audio.playSequence(clips),
+        ),
+        HintViewState(
+          level: c.hint,
+          visibleChoices: c.visibleChoices,
+          wrongCount: c.wrongCount,
+          generation: c.generation,
+          celebrating: c.phase == RoundPhase.celebrating,
+          showLabels: s.showLabels,
+          animate: !s.reducedMotion && s.celebration != 'off',
+          locale: s.locale,
+        ),
+      ),
+    );
     return Scaffold(
       backgroundColor: theme.bg,
       body: SceneBackdrop(
@@ -613,191 +613,206 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                   else if (spec.promptBeside)
                     Expanded(child: _promptBeside(spec, stage, compact))
                   else ...[
-                  Expanded(
-                    // Group and basket games give the baskets more room.
-                    flex: spec.groupMembers.isNotEmpty && !compact
-                        ? 3
-                        : sideBySidePrompt && compact
-                        ? 4
-                        : textOnlyPrompt
-                        ? 1
-                        : spec.count == null
-                        ? 2
-                        : 3,
-                    child: Center(
-                      child: _Entrance(
-                        key: ValueKey('prompt-entrance-${c.generation}'),
-                        animate:
-                            !s.reducedMotion &&
-                            !MediaQuery.disableAnimationsOf(context),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: SegSpace.s5,
-                          ),
-                          // The prompt object stands on the scene next to a
-                          // short instruction pill; no full-width banner.
-                          child: sideBySidePrompt
-                              ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      key: ValueKey(
-                                        '${groupPrompt ? 'group-stimulus' : 'g14-prompt'}-${c.generation}',
+                    Expanded(
+                      // Group and basket games give the baskets more room.
+                      flex: spec.groupMembers.isNotEmpty && !compact
+                          ? 3
+                          : sideBySidePrompt && compact
+                          ? 4
+                          : textOnlyPrompt
+                          ? 1
+                          : spec.count == null
+                          ? 2
+                          : 3,
+                      child: Center(
+                        child: _Entrance(
+                          key: ValueKey('prompt-entrance-${c.generation}'),
+                          animate:
+                              !s.reducedMotion &&
+                              !MediaQuery.disableAnimationsOf(context),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: SegSpace.s5,
+                            ),
+                            // The prompt object stands on the scene next to a
+                            // short instruction pill; no full-width banner.
+                            child: sideBySidePrompt
+                                ? Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        key: ValueKey(
+                                          '${groupPrompt ? 'group-stimulus' : 'g14-prompt'}-${c.generation}',
+                                        ),
+                                        width: compact ? 104 : 150,
+                                        height: compact ? 104 : 150,
+                                        child: groupPrompt
+                                            ? _stimulus(spec, c)
+                                            : StagedObject(
+                                                child:
+                                                    spec.promptImagePath == null
+                                                    ? ItemVisual(
+                                                        spec.target,
+                                                        alignment: Alignment
+                                                            .bottomCenter,
+                                                      )
+                                                    : PhotoVisual(
+                                                        spec.promptImagePath!,
+                                                        alignment: Alignment
+                                                            .bottomCenter,
+                                                      ),
+                                              ),
                                       ),
-                                      width: compact ? 104 : 150,
-                                      height: compact ? 104 : 150,
-                                      child: groupPrompt
-                                          ? _stimulus(spec, c)
-                                          : StagedObject(
-                                              child:
-                                                  spec.promptImagePath == null
-                                                  ? ItemVisual(
-                                                      spec.target,
-                                                      alignment: Alignment
-                                                          .bottomCenter,
-                                                    )
-                                                  : PhotoVisual(
-                                                      spec.promptImagePath!,
-                                                      alignment: Alignment
-                                                          .bottomCenter,
-                                                    ),
+                                      if (s.showLabels || g14Prompt) ...[
+                                        const SizedBox(width: SegSpace.s4),
+                                        Flexible(
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: SegSpace.s5,
+                                              vertical: SegSpace.s3,
                                             ),
-                                    ),
-                                    if (s.showLabels || g14Prompt) ...[
-                                      const SizedBox(width: SegSpace.s4),
-                                      Flexible(
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: SegSpace.s5,
-                                            vertical: SegSpace.s3,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.circular(
-                                              SegRadius.xl,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                    SegRadius.xl,
+                                                  ),
+                                              border: Border.all(
+                                                color: SegColors.line,
+                                              ),
                                             ),
-                                            border: Border.all(
-                                              color: SegColors.line,
+                                            child: Text(
+                                              _promptText(spec),
+                                              style: compact
+                                                  ? SegText.heading
+                                                  : SegText.title,
+                                              textAlign: TextAlign.center,
                                             ),
-                                          ),
-                                          child: Text(
-                                            _promptText(spec),
-                                            style: compact
-                                                ? SegText.heading
-                                                : SegText.title,
-                                            textAlign: TextAlign.center,
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ],
-                                )
-                              : _fitPrompt(
-                                  context,
-                                  SegCard(
-                                    padding: EdgeInsets.all(
-                                      compact ? SegSpace.s3 : SegSpace.s5,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        if (spec.count != null)
-                                          CountedObjects(
-                                            key: ValueKey(
-                                              'counted-${c.generation}',
-                                            ),
-                                            count: spec.count!,
-                                            item: spec.stimulus,
-                                            enabled:
-                                                c.phase == RoundPhase.answering,
-                                            locale: s.locale,
-                                            onCount: (number) {
-                                              c.noteInteraction(
-                                                itemId:
-                                                    spec.stimulus?.id ??
-                                                    'count.dot',
-                                              );
-                                              final item = s.content.items
-                                                  .where(
-                                                    (x) =>
-                                                        x.id ==
-                                                        'numbers.$number',
-                                                  )
-                                                  .firstOrNull;
-                                              final cue = item?.audioFor(
-                                                s.locale,
-                                              );
-                                              if (cue != null) {
-                                                s.audio.playSequence([cue]);
-                                              }
-                                            },
-                                          ),
-                                        if (spec.stimulus != null &&
-                                            spec.count == null)
-                                          SizedBox(
-                                            width: compact ? 48 : 96,
-                                            height: compact ? 48 : 96,
-                                            child: ItemVisual(spec.stimulus!),
-                                          ),
-                                        if (spec.sequence.isNotEmpty)
-                                          SequenceRow(
-                                            // A new round starts clean: the
-                                            // last answer never fades over it.
-                                            key: ValueKey(
-                                              'sequence-${c.generation}',
-                                            ),
-                                            sequence: spec.sequence,
-                                            answer: spec.target.slug,
-                                            revealed:
-                                                c.phase ==
-                                                RoundPhase.celebrating,
-                                          ),
-                                        if (widget.gameId == 'G14')
-                                          SizedBox(
-                                            height: compact ? 48 : 96,
-                                            width: compact ? 48 : 96,
-                                            child: spec.promptImagePath == null
-                                                ? ItemVisual(spec.target)
-                                                : PhotoVisual(
-                                                    spec.promptImagePath!,
-                                                  ),
-                                          ),
-                                        if (s.showLabels)
-                                          Text(
-                                            _promptText(spec),
-                                            style: compact
-                                                ? SegText.heading
-                                                : SegText.title,
-                                            textAlign: TextAlign.center,
-                                          ),
                                       ],
+                                    ],
+                                  )
+                                : _fitPrompt(
+                                    context,
+                                    SegCard(
+                                      padding: EdgeInsets.all(
+                                        compact ? SegSpace.s3 : SegSpace.s5,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          if (spec.count != null)
+                                            CountedObjects(
+                                              key: ValueKey(
+                                                'counted-${c.generation}',
+                                              ),
+                                              count: spec.count!,
+                                              item: spec.stimulus,
+                                              enabled:
+                                                  c.phase ==
+                                                  RoundPhase.answering,
+                                              locale: s.locale,
+                                              onCount: (number) {
+                                                c.noteInteraction(
+                                                  itemId:
+                                                      spec.stimulus?.id ??
+                                                      'count.dot',
+                                                );
+                                                final item = s.content.items
+                                                    .where(
+                                                      (x) =>
+                                                          x.id ==
+                                                          'numbers.$number',
+                                                    )
+                                                    .firstOrNull;
+                                                final cue = item?.audioFor(
+                                                  s.locale,
+                                                );
+                                                if (cue != null) {
+                                                  s.audio.playSequence([cue]);
+                                                }
+                                              },
+                                            ),
+                                          if (spec.stimulus != null &&
+                                              spec.count == null)
+                                            SizedBox(
+                                              width: compact ? 48 : 96,
+                                              height: compact ? 48 : 96,
+                                              child: ItemVisual(spec.stimulus!),
+                                            ),
+                                          if (spec.sequence.isNotEmpty)
+                                            SequenceRow(
+                                              // A new round starts clean: the
+                                              // last answer never fades over it.
+                                              key: ValueKey(
+                                                'sequence-${c.generation}',
+                                              ),
+                                              sequence: spec.sequence,
+                                              answer: spec.target.slug,
+                                              revealed:
+                                                  c.phase ==
+                                                  RoundPhase.celebrating,
+                                            ),
+                                          if (widget.gameId == 'G14')
+                                            SizedBox(
+                                              height: compact ? 48 : 96,
+                                              width: compact ? 48 : 96,
+                                              child:
+                                                  spec.promptImagePath == null
+                                                  ? ItemVisual(spec.target)
+                                                  : PhotoVisual(
+                                                      spec.promptImagePath!,
+                                                    ),
+                                            ),
+                                          if (s.showLabels)
+                                            Text(
+                                              _promptText(spec),
+                                              style: compact
+                                                  ? SegText.heading
+                                                  : SegText.title,
+                                              textAlign: TextAlign.center,
+                                            ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    flex: spec.groupMembers.isNotEmpty && !compact
-                        ? 8
-                        : sideBySidePrompt && compact
-                        ? 7
-                        : spec.count == null
-                        ? 3
-                        : 2,
-                    child: Padding(
-                      padding: EdgeInsets.all(
-                        compact ? SegSpace.s3 : SegSpace.s5,
+                    Expanded(
+                      flex: spec.groupMembers.isNotEmpty && !compact
+                          ? 8
+                          : sideBySidePrompt && compact
+                          ? 7
+                          : spec.count == null
+                          ? 3
+                          : 2,
+                      child: Padding(
+                        padding: EdgeInsets.all(
+                          compact ? SegSpace.s3 : SegSpace.s5,
+                        ),
+                        // Choice cards grow in on their own; the basket
+                        // game's objects get the same soft entrance.
+                        child: stage,
                       ),
-                      // Choice cards grow in on their own; the basket
-                      // game's objects get the same soft entrance.
-                      child: stage,
                     ),
-                  ),
                   ],
                 ],
               ),
+              // The right answer of a pair game: what happens next, shown big
+              // over the whole game ("İtfaiyeci hortumla yangını söndürüyor").
+              if (spec.resultImagePath case final result?
+                  when c.phase == RoundPhase.celebrating)
+                Positioned.fill(
+                  child: IgnorePointer(
+                    child: ResultScene(
+                      key: ValueKey('pair-result-$result'),
+                      picture: result,
+                    ),
+                  ),
+                ),
               if (s.celebration == 'full' &&
                   c.phase == RoundPhase.celebrating &&
                   !s.reducedMotion &&
@@ -1785,4 +1800,47 @@ class _Entrance extends StatelessWidget {
       ),
     );
   }
+}
+
+/// The picture of what the right answer leads to, large in the middle of the
+/// game on a soft white haze that fades out to the edges: no box and no
+/// frame around it.
+class ResultScene extends StatelessWidget {
+  final String picture;
+  const ResultScene({super.key, required this.picture});
+  @override
+  Widget build(BuildContext context) => DecoratedBox(
+    decoration: BoxDecoration(
+      gradient: RadialGradient(
+        radius: .95,
+        colors: [
+          Colors.white.withValues(alpha: .97),
+          Colors.white.withValues(alpha: .95),
+          Colors.white.withValues(alpha: .78),
+        ],
+        stops: const [0, .55, 1],
+      ),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(
+        SegSpace.s5,
+        SegSpace.s7,
+        SegSpace.s5,
+        SegSpace.s3,
+      ),
+      child: Center(
+        child: HopIn(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              const Positioned.fill(
+                child: ObjectHalo(color: SegColors.hintGlow, strength: .9),
+              ),
+              Image.asset(picture, fit: BoxFit.contain),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }

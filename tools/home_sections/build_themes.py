@@ -11,6 +11,7 @@ goes active only when every one of its items has a picture.
 import hashlib
 import importlib.util
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -50,6 +51,34 @@ def install(src, out):
     canvas.save(out, 'WEBP', quality=90, alpha_quality=100, method=6)
 
 
+# In English the children are Leo and Mia (Yunus, 12 November 2026); the
+# sources keep "Ali" in both languages and the English is renamed here.
+def english_names(node):
+    if isinstance(node, dict):
+        if 'en' in node and 'tr' in node and isinstance(node['en'], str):
+            node['en'] = re.sub(r'\bAli\b', 'Leo', node['en'])
+        for value in node.values():
+            english_names(value)
+    elif isinstance(node, list):
+        for value in node:
+            english_names(value)
+
+
+CREATED = {}
+
+
+def remember_dates(node):
+    """Keeps the day a picture was first recorded, so a rebuild changes nothing."""
+    if isinstance(node, dict):
+        if 'sha256' in node and 'createdOn' in node and 'path' in node:
+            CREATED[(node['path'], node['sha256'])] = node['createdOn']
+        for value in node.values():
+            remember_dates(value)
+    elif isinstance(node, list):
+        for value in node:
+            remember_dates(value)
+
+
 def picture(theme, slug, item_id):
     """Installs the drawn picture when there is one; returns (images, provenance)."""
     rel = f'assets/images/{theme}/{slug}.webp'
@@ -59,12 +88,13 @@ def picture(theme, slug, item_id):
         install(src, out)
     if not out.exists():
         return [], {}
+    sha = hashlib.sha256(out.read_bytes()).hexdigest()
     return [rel], {rel: {
         'id': item_id, 'path': rel, 'kind': 'illustration', 'author': 'Yes Studio',
         'source': 'ChatGPT image generation (Codex), SEG soft clay style',
         'license': 'Created for this app', 'licenseVerified': False,
-        'createdOn': date.today().isoformat(),
-        'sha256': hashlib.sha256(out.read_bytes()).hexdigest(),
+        'createdOn': CREATED.get((rel, sha), date.today().isoformat()),
+        'sha256': sha,
     }}
 
 
@@ -78,6 +108,9 @@ def main():
     pairs = read(CONTENT / 'pair_games.json')
     extra = {x['id']: x for x in read(CONTENT / 'extra_items.json')}
     config = read(ROOT / 'assets/config_defaults.json')
+    remember_dates(list(extra.values()))
+    for existing in (CONTENT / 'items').glob('*.json'):
+        remember_dates(read(existing))
 
     item_sfx = {k: v for src in sources for k, v in getattr(src, 'ITEM_SFX', {}).items()}
 
@@ -152,6 +185,8 @@ def main():
         by_id['body']['games'].remove('G49')
     pairs['G49']['theme'] = 'clothes'
 
+    for data in (games, scene, pairs, extra, lines):
+        english_names(data)
     write(CONTENT / 'themes.json', themes)
     write(CONTENT / 'games.json', list(games.values()))
     write(CONTENT / 'scene_games.json', scene)

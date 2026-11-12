@@ -68,18 +68,18 @@ FREE = ['jobs_G02', 'jobs_G68', 'jobs_G69', 'nature_G02', 'nature_G71', 'nature_
 # G68 Kim Ne Kullanır? --------------------------------------------------------
 # (tool, drawn as, person, question, sentence after)
 G68 = [
-    ('stethoscope', 'Steteskop', 'Stethoscope', 'doctor', 'Steteskopu kim kullanır?', 'Who uses the stethoscope?', 'Doktor hastayı dinliyor.', 'The doctor is listening to the patient.'),
-    ('hose', 'Hortum', 'Fire hose', 'firefighter', 'Bu hortumu kim kullanır?', 'Who uses this hose?', 'İtfaiyeci yangını söndürüyor.', 'The firefighter is putting out the fire.'),
-    ('ladle', 'Kepçe', 'Ladle', 'cook', 'Kepçeyi kim kullanır?', 'Who uses the ladle?', 'Aşçı çorbayı dağıtıyor.', 'The cook is serving the soup.'),
-    ('chalk', 'Tebeşir', 'Chalk', 'teacher', 'Tebeşiri kim kullanır?', 'Who uses the chalk?', 'Öğretmen tahtaya yazıyor.', 'The teacher is writing on the board.'),
-    ('whistle', 'Düdük', 'Whistle', 'police_officer', 'Düdüğü kim çalar?', 'Who blows the whistle?', 'Polis trafiği yönetiyor.', 'The police officer is directing the traffic.'),
-    ('tractor', 'Traktör', 'Tractor', 'farmer', 'Traktörü kim kullanır?', 'Who drives the tractor?', 'Çiftçi tarlayı sürüyor.', 'The farmer is ploughing the field.'),
+    ('stethoscope', 'Steteskop', 'Stethoscope', 'doctor', 'Steteskopu kim kullanır?', 'Who uses the stethoscope?', 'Doktor steteskopla hastasını dinliyor.', 'The doctor is listening with the stethoscope.'),
+    ('hose', 'Hortum', 'Fire hose', 'firefighter', 'Bu hortumu kim kullanır?', 'Who uses this hose?', 'İtfaiyeci hortumla yangını söndürüyor.', 'The firefighter is putting out the fire with the hose.'),
+    ('ladle', 'Kepçe', 'Ladle', 'cook', 'Kepçeyi kim kullanır?', 'Who uses the ladle?', 'Aşçı kepçeyle çorba koyuyor.', 'The cook is serving soup with the ladle.'),
+    ('chalk', 'Tebeşir', 'Chalk', 'teacher', 'Tebeşiri kim kullanır?', 'Who uses the chalk?', 'Öğretmen tebeşirle tahtaya çiziyor.', 'The teacher is drawing on the board with the chalk.'),
+    ('whistle', 'Düdük', 'Whistle', 'police_officer', 'Düdüğü kim çalar?', 'Who blows the whistle?', 'Polis düdüğünü çaldı, araba durdu.', 'The police officer blew the whistle and the car stopped.'),
+    ('tractor', 'Traktör', 'Tractor', 'farmer', 'Traktörü kim kullanır?', 'Who drives the tractor?', 'Çiftçi traktörle tarlayı sürüyor.', 'The farmer is ploughing the field with the tractor.'),
     ('letter', 'Mektup', 'Letter', 'postman', 'Mektubu kim getirir?', 'Who brings the letter?', 'Postacı mektubu getirdi.', 'The mail carrier brought the letter.'),
-    ('scissors', 'Makas', 'Scissors', 'hairdresser', 'Saçı kesmek için makası kim kullanır?', 'Who uses scissors to cut hair?', 'Kuaför saçı kesiyor.', 'The hairdresser is cutting hair.'),
-    ('dental_mirror', 'Diş aynası', 'Dental mirror', 'dentist', 'Diş aynasını kim kullanır?', 'Who uses the dental mirror?', 'Diş hekimi dişlere bakıyor.', 'The dentist is checking the teeth.'),
-    ('bread_peel', 'Ekmek küreği', 'Bread peel', 'baker', 'Ekmek küreğini kim kullanır?', 'Who uses the bread peel?', 'Fırıncı ekmeği fırına sürüyor.', 'The baker is putting the bread in the oven.'),
-    ('hammer', 'Çekiç', 'Hammer', 'carpenter', 'Çekici kim kullanır?', 'Who uses the hammer?', 'Marangoz çivi çakıyor.', 'The carpenter is hammering a nail.'),
-    ('thermometer', 'Ateş ölçer', 'Thermometer', 'nurse', 'Ateş ölçeri kim kullanır?', 'Who uses the thermometer?', 'Hemşire ateşe bakıyor.', 'The nurse is checking the temperature.'),
+    ('scissors', 'Makas', 'Scissors', 'hairdresser', 'Saçı kesmek için makası kim kullanır?', 'Who uses scissors to cut hair?', 'Kuaför makasla saç kesiyor.', 'The hairdresser is cutting hair with the scissors.'),
+    ('dental_mirror', 'Diş aynası', 'Dental mirror', 'dentist', 'Diş aynasını kim kullanır?', 'Who uses the dental mirror?', 'Diş hekimi aynayla dişlere bakıyor.', 'The dentist is checking the teeth with the mirror.'),
+    ('bread_peel', 'Ekmek küreği', 'Bread peel', 'baker', 'Ekmek küreğini kim kullanır?', 'Who uses the bread peel?', 'Fırıncı kürekle ekmeği fırına veriyor.', 'The baker is putting the bread in the oven with the peel.'),
+    ('hammer', 'Çekiç', 'Hammer', 'carpenter', 'Çekici kim kullanır?', 'Who uses the hammer?', 'Marangoz çekiçle çivi çakıyor.', 'The carpenter is hammering a nail with the hammer.'),
+    ('thermometer', 'Ateş ölçer', 'Thermometer', 'nurse', 'Ateş ölçeri kim kullanır?', 'Who uses the thermometer?', 'Hemşire ateş ölçerle ateşe bakıyor.', 'The nurse is checking the temperature with the thermometer.'),
 ]
 EXTRA += [(f'use.{g[0]}', g[1], g[2]) for g in G68]
 USERS = sorted({g[3] for g in G68})
@@ -89,7 +89,7 @@ def g68():
     rounds = []
     for i, (tool, _, _, person, q_tr, q_en, r_tr, r_en) in enumerate(G68, 1):
         rounds.append({'target': f'jobs.{person}', 'stimulus': f'use.{tool}', 'text': text(q_tr, q_en),
-                       'audio': line(f'g68_{i}', q_tr, q_en), 'result': f'{PLAY}/job_{person}.webp',
+                       'audio': line(f'g68_{i}', q_tr, q_en), 'result': f'{PLAY}/use_{tool}.webp',
                        'resultAudio': line(f'g68_done_{i}', r_tr, r_en)})
     return {'theme': 'jobs', 'look': 'drop', 'choicePool': [f'jobs.{u}' for u in USERS], 'rounds': rounds}
 

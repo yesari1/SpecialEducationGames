@@ -106,11 +106,15 @@ class PillButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onPressed;
   final String semanticsLabel;
+
+  /// A lower pill for a bar that must stay small (the child home).
+  final bool compact;
   const PillButton({
     super.key,
     required this.child,
     required this.onPressed,
     required this.semanticsLabel,
+    this.compact = false,
   });
 
   @override
@@ -128,8 +132,15 @@ class PillButton extends StatelessWidget {
           onPressed();
         },
         child: Container(
-          padding: const EdgeInsets.all(SegSpace.s4),
-          constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
+          padding: compact
+              ? const EdgeInsets.symmetric(
+                  horizontal: SegSpace.s3,
+                  vertical: SegSpace.s1,
+                )
+              : const EdgeInsets.all(SegSpace.s4),
+          constraints: compact
+              ? const BoxConstraints(minWidth: 44, minHeight: 44)
+              : const BoxConstraints(minWidth: 64, minHeight: 64),
           child: Center(widthFactor: 1, heightFactor: 1, child: child),
         ),
       ),
@@ -581,6 +592,9 @@ class ThemeGameCard extends StatelessWidget {
 
   /// False for cards that play their own sound (opening a game).
   final bool tapSound;
+
+  /// A smaller card: smaller title, tighter padding (rows of the home).
+  final bool dense;
   const ThemeGameCard({
     super.key,
     required this.theme,
@@ -593,8 +607,11 @@ class ThemeGameCard extends StatelessWidget {
     this.badgeText,
     this.normalizedVisual = false,
     this.tapSound = true,
+    this.dense = false,
   });
-  Color get accent => accentFor(theme.id);
+
+  /// Each theme's own colour, so a row of cards is not all one blue.
+  Color get accent => theme.accent;
 
   /// The theme colour of a theme card (also the 7-day plan's thumbnails).
   static Color accentFor(String themeId) => switch (themeId) {
@@ -627,6 +644,9 @@ class ThemeGameCard extends StatelessWidget {
     final textScale = MediaQuery.textScalerOf(context).scale(1);
     final horizontalContent = textScale >= 1.6;
     final deep = Color.lerp(accent, SegColors.ink, .35)!;
+    final titleStyle = dense
+        ? SegText.item.copyWith(fontSize: 17, height: 1.2)
+        : SegText.item;
 
     // A small scene: the hero object stands on soft hills in the theme colour.
     // Locked cards are grey and faded, with a large lock in the middle.
@@ -737,12 +757,14 @@ class ThemeGameCard extends StatelessWidget {
                 ? 0
                 : MediaQuery.textScalerOf(
                     context,
-                  ).scale(SegText.item.fontSize! * SegText.item.height! * 2),
+                  ).scale(titleStyle.fontSize! * titleStyle.height! * 2),
           ),
           child: Center(
             child: Text(
               title,
-              style: SegText.item.copyWith(
+              maxLines: dense ? 2 : null,
+              overflow: dense ? TextOverflow.ellipsis : null,
+              style: titleStyle.copyWith(
                 color: locked ? SegColors.inkSoft : SegColors.ink,
               ),
               textAlign: TextAlign.center,
@@ -793,14 +815,19 @@ class ThemeGameCard extends StatelessWidget {
                 ),
               ],
             ),
-            padding: EdgeInsets.all(horizontalContent ? 4 : 8),
+            padding: EdgeInsets.all(horizontalContent ? 4 : (dense ? 6 : 8)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(child: cardVisual()),
-                SizedBox(height: horizontalContent ? SegSpace.s1 : SegSpace.s2),
+                SizedBox(
+                  height: horizontalContent || dense
+                      ? SegSpace.s1
+                      : SegSpace.s2,
+                ),
                 labelContent(),
-                if (!horizontalContent) const SizedBox(height: SegSpace.s1),
+                if (!horizontalContent && !dense)
+                  const SizedBox(height: SegSpace.s1),
               ],
             ),
           ),
@@ -914,10 +941,27 @@ class PillToggle<T> extends StatelessWidget {
 class HorizontalCards extends StatelessWidget {
   final int count;
   final Widget Function(int) builder;
+
+  /// Width of one card for its height; without it the cards share the width
+  /// (three or four on screen).
+  final double? cardAspect;
+
+  /// Room kept clear under the cards (a bar floating over the row).
+  final double bottomInset;
+
+  /// Tight rows keep only a little room above and below the cards.
+  final bool tight;
+
+  /// A row shorter than the screen sits in the middle instead of at the left.
+  final bool centered;
   const HorizontalCards({
     super.key,
     required this.count,
     required this.builder,
+    this.cardAspect,
+    this.bottomInset = 0,
+    this.tight = false,
+    this.centered = false,
   });
   @override
   Widget build(BuildContext context) => LayoutBuilder(
@@ -925,19 +969,36 @@ class HorizontalCards extends StatelessWidget {
       final wide = c.maxWidth > 900;
       final textScale = MediaQuery.textScalerOf(context).scale(1);
       final shortLargeText = c.maxHeight < 500 && textScale >= 1.6;
-      final width = shortLargeText
+      final vertical = tight || c.maxHeight < 300 ? SegSpace.s2 : SegSpace.s5;
+      final shared = shortLargeText
           ? c.maxWidth * .78
           : c.maxWidth < 600
           ? c.maxWidth * .78
           : (c.maxWidth - SegSpace.s5 * (wide ? 5 : 4)) / (wide ? 4 : 3);
+      final width = cardAspect == null || shortLargeText
+          ? shared
+          : math.min(
+              shared,
+              (c.maxHeight - vertical * 2 - bottomInset) * cardAspect!,
+            );
+      final gap = tight ? SegSpace.s4 : SegSpace.s5;
+      final all = count * width + (count - 1) * gap;
+      final side = centered
+          ? math.max(SegSpace.s5, (c.maxWidth - all) / 2)
+          : SegSpace.s5;
       return ListView.separated(
-        padding: EdgeInsets.symmetric(
-          horizontal: SegSpace.s5,
-          vertical: c.maxHeight < 300 ? SegSpace.s2 : SegSpace.s5,
+        padding: EdgeInsets.fromLTRB(
+          side,
+          vertical,
+          side,
+          vertical + bottomInset,
         ),
+        // A short row can still be pulled, so a pull past its end is felt
+        // (the home turns it into the next section).
+        physics: const AlwaysScrollableScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: count,
-        separatorBuilder: (_, _) => const SizedBox(width: SegSpace.s5),
+        separatorBuilder: (_, _) => SizedBox(width: gap),
         itemBuilder: (_, i) => SizedBox(width: width, child: builder(i)),
       );
     },

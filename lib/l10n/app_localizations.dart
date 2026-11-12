@@ -1741,6 +1741,18 @@ abstract class AppLocalizations {
   /// **'Age'**
   String get obAgeTitle;
 
+  /// No description provided for @obGenderGirl.
+  ///
+  /// In en, this message translates to:
+  /// **'Girl'**
+  String get obGenderGirl;
+
+  /// No description provided for @obGenderBoy.
+  ///
+  /// In en, this message translates to:
+  /// **'Boy'**
+  String get obGenderBoy;
+
   /// No description provided for @obAgeTenPlus.
   ///
   /// In en, this message translates to:

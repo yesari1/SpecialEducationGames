@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../../../app/ui/components.dart';
 import '../../../core/content/content_repository.dart';
 import '../../../core/learning/policies.dart';
 import '../round_spec.dart';
@@ -25,6 +24,10 @@ class ModeContext {
   /// The profile's age band (after the parent's shift); null keeps the
   /// tier tables.
   final AgeBand? band;
+
+  /// The child the profile chose for games about a child: 'boy' (Ali) or
+  /// 'girl' (Ayşe).
+  final String who;
   const ModeContext({
     required this.content,
     required this.themeId,
@@ -35,6 +38,7 @@ class ModeContext {
     required this.struggle,
     int? choiceCount,
     this.band,
+    this.who = 'boy',
   }) : _choiceCount = choiceCount;
 
   /// Highest number for this round: the band's range, else [legacy] by tier.
@@ -831,6 +835,7 @@ class PairTemplate extends GameTemplate {
         .where(
           (r) =>
               poolIds.contains(r.target) &&
+              (r.who == null || r.who == ctx.who) &&
               (r.stimulus == null || ctx.content.anyItem(r.stimulus!) != null),
         )
         .toList();
@@ -846,12 +851,13 @@ class PairTemplate extends GameTemplate {
     ctx.scheduler.used.add(key(round));
     final target = pool.firstWhere((x) => x.id == round.target);
     final right = game.rightFor(round);
-    final wrong = pool.where((x) => !right.contains(x.id)).toList()
-      ..shuffle(random);
+    final wrong =
+        pool
+            .where((x) => !right.contains(x.id) && !round.avoid.contains(x.id))
+            .toList()
+          ..shuffle(random);
     final dropOn = game.look == 'basket' || game.look == 'drop';
-    final size = dropOn
-        ? min(ctx.choiceCount, 3)
-        : ctx.choiceCount;
+    final size = dropOn ? min(ctx.choiceCount, 3) : ctx.choiceCount;
     if (wrong.length < size - 1) throw StateError('Not enough choices');
     final choices = [target, ...wrong.take(size - 1)]..shuffle(random);
     final shown = round.stimulus == null
@@ -873,19 +879,27 @@ class PairTemplate extends GameTemplate {
       plainTargets: game.look == 'drop',
       dragStimulus: dropOn && stimulus != null,
       groupMembers: dropOn
-          ? {for (final c in choices) c.id: [c]}
+          ? {
+              for (final c in choices) c.id: [c],
+            }
           : const {},
       promptCues: {
         for (final lang in const ['tr', 'en'])
           // A sound is heard, the question asked, the sound heard again.
-          lang: [?round.sound, if (cue(lang).isNotEmpty) cue(lang), ?round.sound],
+          lang: [
+            ?round.sound,
+            if (cue(lang).isNotEmpty) cue(lang),
+            ?round.sound,
+          ],
       },
       successCueOverride: round.resultAudio.isNotEmpty
           ? {
               for (final e in round.resultAudio.entries)
                 e.key: [e.value, praiseCue(e.key)],
             }
-          : {for (final e in game.successAudio.entries) e.key: [e.value]},
+          : {
+              for (final e in game.successAudio.entries) e.key: [e.value],
+            },
       resultImagePath: round.result,
       rightHold: round.result == null
           ? const Duration(milliseconds: 1500)
@@ -912,24 +926,9 @@ class PairTemplate extends GameTemplate {
     final view = spec.promptImagePath == null
         ? super.buildView(context, spec, callbacks, hint)
         : PaintView(spec: spec, callbacks: callbacks, hint: hint, paint: false);
-    // The right answer changes the scene: its result picture comes up large.
-    final result = spec.resultImagePath;
-    if (result == null || !hint.celebrating) return view;
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        view,
-        ColoredBox(
-          color: Colors.white.withValues(alpha: .88),
-          child: Center(
-            child: HopIn(
-              key: ValueKey('pair-result-$result'),
-              child: Image.asset(result, fit: BoxFit.contain),
-            ),
-          ),
-        ),
-      ],
-    );
+    // The right answer's result picture comes up over the whole game (see
+    // [ResultScene] in the game screen).
+    return view;
   }
 }
 
@@ -1037,10 +1036,9 @@ class BodyMapTemplate extends GameTemplate {
     final picture = map.pictureFor(target.id)!;
     final here = {for (final s in picture.spots) s.item};
     // Wrong answers come from the same picture.
-    final others = items
-        .where((x) => x.id != target.id && here.contains(x.id))
-        .toList()
-      ..shuffle(ctx.scheduler.random);
+    final others =
+        items.where((x) => x.id != target.id && here.contains(x.id)).toList()
+          ..shuffle(ctx.scheduler.random);
     return RoundSpec(
       target: target,
       // Every place on the picture can be tapped (see BodyMapView); the
@@ -1100,6 +1098,7 @@ class SceneTemplate extends GameTemplate {
         .where(
           (r) =>
               r.tier == ctx.difficulty.name &&
+              (r.who == null || r.who == ctx.who) &&
               ctx.content.anyItem(r.target) != null,
         )
         .toList();
@@ -1123,12 +1122,12 @@ class SceneTemplate extends GameTemplate {
         for (final step in round.steps)
           for (final id in [step.piece, ...step.others])
             id: ?ctx.content.anyItem(id),
+        for (final id in round.extras) id: ?ctx.content.anyItem(id),
       },
       fullStage: true,
       rightHold: const Duration(milliseconds: 2500),
       promptCues: {
-        for (final lang in const ['tr', 'en'])
-          lang: [?round.audio[lang]],
+        for (final lang in const ['tr', 'en']) lang: [?round.audio[lang]],
       },
       successCueOverride: {
         for (final lang in const ['tr', 'en'])
@@ -1280,14 +1279,31 @@ abstract final class TemplateRegistry {
     'G11' => const SoundChoiceTemplate(),
     'G42' => const PaintTemplate(),
     'G47' => const BodyMapTemplate(),
-    'G40' || 'G41' || 'G43' || 'G44' || 'G45' || 'G46' || 'G48' || 'G49' =>
-      const PairTemplate(),
+    'G40' ||
+    'G41' ||
+    'G43' ||
+    'G44' ||
+    'G45' ||
+    'G46' ||
+    'G48' ||
+    'G49' => const PairTemplate(),
     'G75' => const EchoTemplate(),
     'G76' => const FreePlayTemplate(),
-    'G62' || 'G64' || 'G67' || 'G68' || 'G69' || 'G70' || 'G73' || 'G74' =>
-      const PairTemplate(),
-    'G60' || 'G61' || 'G63' || 'G65' || 'G66' || 'G71' || 'G72' =>
-      const SceneTemplate(),
+    'G62' ||
+    'G64' ||
+    'G67' ||
+    'G68' ||
+    'G69' ||
+    'G70' ||
+    'G73' ||
+    'G74' => const PairTemplate(),
+    'G60' ||
+    'G61' ||
+    'G63' ||
+    'G65' ||
+    'G66' ||
+    'G71' ||
+    'G72' => const SceneTemplate(),
     _ => throw StateError('Unsupported game: $gameId'),
   };
 }

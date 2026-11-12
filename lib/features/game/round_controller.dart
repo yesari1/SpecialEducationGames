@@ -39,6 +39,9 @@ class RoundController extends ChangeNotifier {
 
   /// Age band of the profile; shapes number ranges, content and hint timing.
   final AgeBand? band;
+
+  /// The child in games about a child: 'boy' (Ali) or 'girl' (Ayşe).
+  final String who;
   RoundSpec? spec, _answerSpec;
   RoundPhase phase = RoundPhase.preparing;
   int stage = 0,
@@ -89,6 +92,7 @@ class RoundController extends ChangeNotifier {
     Set<String>? introduced,
     int? total,
     this.band,
+    this.who = 'boy',
     ItemScheduler? scheduler,
     Stopwatch? responseClock,
   }) : choiceCount = (choiceCount ?? difficulty.choices).clamp(2, 4),
@@ -108,6 +112,7 @@ class RoundController extends ChangeNotifier {
     scheduler: scheduler,
     struggle: struggle,
     band: band,
+    who: who,
   );
   void later(Duration delay, VoidCallback action) {
     final session = generation;
@@ -162,6 +167,7 @@ class RoundController extends ChangeNotifier {
       scheduler: probe,
       struggle: const {},
       band: band,
+      who: who,
     );
     var rounds = 0;
     try {

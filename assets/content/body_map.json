@@ -130,51 +130,51 @@
   "questions": {
     "body.hair": {
       "tr": "Ali'nin saçı nerede?",
-      "en": "Where is Ali's hair?"
+      "en": "Where is Leo's hair?"
     },
     "body.eye": {
       "tr": "Ali'nin gözü nerede?",
-      "en": "Where is Ali's eye?"
+      "en": "Where is Leo's eye?"
     },
     "body.ear": {
       "tr": "Ali'nin kulağı nerede?",
-      "en": "Where is Ali's ear?"
+      "en": "Where is Leo's ear?"
     },
     "body.nose": {
       "tr": "Ali'nin burnu nerede?",
-      "en": "Where is Ali's nose?"
+      "en": "Where is Leo's nose?"
     },
     "body.mouth": {
       "tr": "Ali'nin ağzı nerede?",
-      "en": "Where is Ali's mouth?"
+      "en": "Where is Leo's mouth?"
     },
     "body.neck": {
       "tr": "Ali'nin boynu nerede?",
-      "en": "Where is Ali's neck?"
+      "en": "Where is Leo's neck?"
     },
     "body.shoulder": {
       "tr": "Ali'nin omzu nerede?",
-      "en": "Where is Ali's shoulder?"
+      "en": "Where is Leo's shoulder?"
     },
     "body.arm": {
       "tr": "Ali'nin kolu nerede?",
-      "en": "Where is Ali's arm?"
+      "en": "Where is Leo's arm?"
     },
     "body.hand": {
       "tr": "Ali'nin eli nerede?",
-      "en": "Where is Ali's hand?"
+      "en": "Where is Leo's hand?"
     },
     "body.tummy": {
       "tr": "Ali'nin karnı nerede?",
-      "en": "Where is Ali's tummy?"
+      "en": "Where is Leo's tummy?"
     },
     "body.leg": {
       "tr": "Ali'nin bacağı nerede?",
-      "en": "Where is Ali's leg?"
+      "en": "Where is Leo's leg?"
     },
     "body.foot": {
       "tr": "Ali'nin ayağı nerede?",
-      "en": "Where is Ali's foot?"
+      "en": "Where is Leo's foot?"
     }
   }
 }

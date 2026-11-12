@@ -100,7 +100,7 @@ GAMES = [
     ('G60', 'scene', 'Dişlerini Fırçala', 'Brush the Teeth'),
     ('G61', 'scene', 'Ellerini Yıka', 'Wash the Hands'),
     ('G62', 'pair', 'Ne Lazım?', 'What Do We Need?'),
-    ('G63', 'scene', "Ali'yi Giydir", 'Dress Ali'),
+    ('G63', 'scene', 'Giydirelim', "Let's Get Dressed"),
     ('G64', 'pair', 'Bugün Ne Giysek?', 'What Shall We Wear?'),
     ('G65', 'scene', 'Meyve Salatası Yapalım', 'Make a Fruit Salad'),
     ('G66', 'scene', 'Sofrayı Kuralım', 'Set the Table'),
@@ -248,66 +248,156 @@ def g62():
     return {'theme': 'cleaning', 'rounds': rounds}
 
 
-# G63 Ali'yi Giydir -----------------------------------------------------------
-G63 = [
-    ('easy', 'tshirt', 'Ali\'ye tişörtünü giydirelim.', "Let's put Ali's T-shirt on.", 'Tişört ne güzel oldu!', 'The T-shirt looks great!'),
-    ('easy', 'trousers', 'Ali\'ye pantolonunu giydirelim.', "Let's put Ali's pants on.", 'Pantolon tam oldu!', 'The pants fit just right!'),
-    ('easy', 'socks', 'Ali\'ye çoraplarını giydirelim.', "Let's put Ali's socks on.", 'Ayakları sıcacık oldu.', 'His feet are nice and warm.'),
-    ('easy', 'shoes', 'Ali\'ye ayakkabılarını giydirelim.', "Let's put Ali's shoes on.", 'Ali artık yürüyebilir!', 'Now Ali can walk outside!'),
-    ('easy', 'hat', 'Ali\'nin başına şapkasını takalım.', "Let's put Ali's hat on.", 'Şapka ona çok yakıştı!', 'That hat looks great on him!'),
-    ('medium', 'coat', 'Ali üşüyor. Montunu giydirelim.', "Ali is cold. Let's put his coat on.", 'Oh, ısındı!', 'Now he is warm!'),
-    ('medium', 'scarf', 'Ali\'nin boynuna atkısını takalım.', "Let's put Ali's scarf on.", 'Boynu sıcacık oldu.', 'His neck is warm now.'),
-    ('medium', 'gloves', 'Ali\'nin ellerine eldivenlerini takalım.', "Let's put Ali's gloves on.", 'Elleri üşümez artık.', 'His hands will not get cold.'),
-    ('medium', 'beanie', 'Ali\'nin başına beresini takalım.', "Let's put Ali's beanie on.", 'Kulakları da sıcacık.', 'His ears are warm too.'),
-    ('medium', 'pajamas', 'Uyku vakti. Ali\'ye pijamasını giydirelim.', "It's bedtime. Let's put Ali's pajamas on.", 'İyi uykular, Ali!', 'Sleep well, Ali!'),
-    ('hard', 'raincoat', 'Yağmur var. Ali\'ye yağmurluğunu giydirelim.', "It's raining. Let's put Ali's raincoat on.", 'Artık ıslanmaz!', 'Now he will stay dry!'),
-    ('hard', 'sweater', 'Hava serin. Ali\'ye kazağını giydirelim.', "It's chilly. Let's put Ali's sweater on.", 'Kazak çok yumuşak.', 'The sweater is so soft.'),
-    ('hard', 'boots', 'Dışarısı çamur. Ali\'ye çizmelerini giydirelim.', "It's muddy outside. Let's put Ali's boots on.", 'Çamura basabilir!', 'He can step in the mud!'),
-    ('hard', 'vest', 'Ali\'ye yeleğini giydirelim.', "Let's put Ali's vest on.", 'Yelek çok şık oldu.', 'The vest looks so smart.'),
-    ('hard', 'tracksuit', 'Spor zamanı. Ali\'ye eşofmanını giydirelim.', "It's sports time. Let's put Ali's tracksuit on.", 'Ali koşmaya hazır!', 'Ali is ready to run!'),
-]
-G63_OTHERS = {'easy': 1, 'medium': 2, 'hard': 3}
+# G63 Giydirelim --------------------------------------------------------------
+# Two children, by the profile: Ali (a boy) and Ayşe (a girl); in English Leo
+# and Mia. Each round is one outfit (kombin), put on piece by piece, and the
+# piece in the tray is the very garment the child ends up wearing: both are
+# drawn from the same picture (artifacts/fix-nov12/wear_runner.py).
+WHO = {'boy': ('Ali', 'Leo'), 'girl': ('Ayşe', 'Mia')}
+
+# slug: (kind, Turkish name, English name, "…giydirelim", "the …", place on the picture)
+_HEAD, _TOP, _LEGS, _FEET = [.18, .0, .64, .2], [.2, .36, .6, .27], [.26, .6, .48, .3], [.2, .86, .6, .14]
+GARMENTS = {
+    'tshirt': ('top', 'Tişört', 'T-shirt', 'tişörtünü giydirelim', 'the T-shirt', _TOP),
+    'shorts': ('legs', 'Şort', 'Shorts', 'şortunu giydirelim', 'the shorts', _LEGS),
+    'socks': ('socks', 'Çorap', 'Socks', 'çoraplarını giydirelim', 'the socks', _FEET),
+    'sneakers': ('feet', 'Spor ayakkabı', 'Sneakers', 'ayakkabılarını giydirelim', 'the sneakers', _FEET),
+    'shoes': ('feet', 'Ayakkabı', 'Shoes', 'ayakkabılarını giydirelim', 'the shoes', _FEET),
+    'trainers': ('feet', 'Spor ayakkabı', 'Trainers', 'spor ayakkabılarını giydirelim', 'the trainers', _FEET),
+    'hat': ('head', 'Şapka', 'Hat', 'şapkasını takalım', 'the hat', _HEAD),
+    'cap': ('head', 'Şapka', 'Cap', 'şapkasını takalım', 'the cap', _HEAD),
+    'beanie': ('head', 'Bere', 'Beanie', 'beresini takalım', 'the beanie', _HEAD),
+    'sweater': ('top', 'Kazak', 'Sweater', 'kazağını giydirelim', 'the sweater', _TOP),
+    'trousers': ('legs', 'Pantolon', 'Pants', 'pantolonunu giydirelim', 'the pants', _LEGS),
+    'coat': ('over', 'Mont', 'Coat', 'montunu giydirelim', 'the coat', _TOP),
+    'boots': ('feet', 'Bot', 'Boots', 'botlarını giydirelim', 'the boots', _FEET),
+    'raincoat': ('over', 'Yağmurluk', 'Raincoat', 'yağmurluğunu giydirelim', 'the raincoat', _TOP),
+    'rainboots': ('feet', 'Çizme', 'Rain boots', 'çizmelerini giydirelim', 'the rain boots', _FEET),
+    'pajamatop': ('top', 'Pijama üstü', 'Pajama top', 'pijamasının üstünü giydirelim', 'the pajama top', _TOP),
+    'pajamabottoms': ('legs', 'Pijama altı', 'Pajama bottoms', 'pijamasının altını giydirelim', 'the pajama bottoms', _LEGS),
+    'slippers': ('feet', 'Terlik', 'Slippers', 'terliklerini giydirelim', 'the slippers', _FEET),
+    'tracktop': ('top', 'Eşofman üstü', 'Tracksuit top', 'eşofmanının üstünü giydirelim', 'the tracksuit top', _TOP),
+    'trackbottoms': ('legs', 'Eşofman altı', 'Tracksuit bottoms', 'eşofmanının altını giydirelim', 'the tracksuit bottoms', _LEGS),
+    'dress': ('top', 'Elbise', 'Dress', 'elbisesini giydirelim', 'the dress', [.2, .36, .6, .4]),
+    'skirt': ('legs', 'Etek', 'Skirt', 'eteğini giydirelim', 'the skirt', _LEGS),
+}
+# outfit: (how the round starts, how it ends), {N} is the child's name.
+OUTFIT_LINES = {
+    'park': (('{N} parka gidiyor.', '{N} is going to the park.'), ('{N} hazır. Haydi parka!', '{N} is ready. Off to the park!')),
+    'skirt': (('{N} arkadaşına gidiyor.', '{N} is going to see a friend.'), ('{N} çok şık oldu!', '{N} looks lovely!')),
+    'winter': (('Dışarıda kar yağıyor. {N} üşümesin.', "It's snowing outside. Let's keep {N} warm."), ('{N} sıcacık oldu. Karda oynayabilir!', '{N} is nice and warm. Time to play in the snow!')),
+    'rain': (('Yağmur yağıyor. {N} ıslanmasın.', "It's raining. Let's keep {N} dry."), ('{N} artık ıslanmaz!', '{N} will stay dry now!')),
+    'sleep': (('Uyku vakti geldi.', "It's bedtime."), ('İyi uykular, {N}!', 'Sleep well, {N}!')),
+    'sport': (('{N} spor yapacak.', '{N} is going to play sports.'), ('{N} spora hazır!', '{N} is ready for sports!')),
+}
+OUTFITS = {
+    'boy': {
+        'park': ['tshirt', 'shorts', 'socks', 'sneakers', 'hat'],
+        'winter': ['sweater', 'trousers', 'coat', 'boots', 'beanie'],
+        'rain': ['trousers', 'raincoat', 'rainboots'],
+        'sleep': ['pajamatop', 'pajamabottoms', 'slippers'],
+        'sport': ['tracktop', 'trackbottoms', 'trainers', 'cap'],
+    },
+    'girl': {
+        'park': ['dress', 'socks', 'shoes', 'hat'],
+        'skirt': ['tshirt', 'skirt', 'socks', 'sneakers'],
+        'winter': ['sweater', 'trousers', 'coat', 'boots', 'beanie'],
+        'rain': ['trousers', 'raincoat', 'rainboots'],
+        'sleep': ['pajamatop', 'pajamabottoms', 'slippers'],
+    },
+}
+G63_EXTRAS = {'easy': 0, 'medium': 2, 'hard': 3}
+
+
+def outfit_piece(who, outfit, slug):
+    return f'outfit.{who}_{outfit}_{slug}'
+
+
+EXTRA += [(outfit_piece(who, outfit, slug), GARMENTS[slug][1], GARMENTS[slug][2])
+          for who, outfits in OUTFITS.items() for outfit, slugs in outfits.items() for slug in slugs]
+# The children themselves, for the game's card.
+EXTRA += [('wear.boy', 'Ali', 'Leo'), ('wear.girl', 'Ayşe', 'Mia')]
 
 
 def g63():
     rnd = random.Random(63)
-    names = [x[1] for x in G63]
+    asks = {slug: line(f'g63_ask_{slug}', f'Şimdi {g[3]}.', f'Now {g[4]}.') for slug, g in GARMENTS.items()}
     rounds = []
-    for tier, slug, q_tr, q_en, r_tr, r_en in G63:
-        others = rnd.sample([n for n in names if n != slug], G63_OTHERS[tier])
-        rounds.append({
-            'key': slug, 'tier': tier, 'target': f'clothes.{slug}', 'stage': 'assets/images/wear/ali_full.webp', 'aspect': 2 / 3,
-            'text': text(q_tr, q_en), 'audio': line(f'g63_{slug}', q_tr, q_en),
-            'steps': [{'mode': 'place', 'piece': f'clothes.{slug}', 'others': [f'clothes.{o}' for o in others],
-                       'zone': [.15, .1, .7, .8], 'after': f'{PLAY}/wear_{slug}.webp',
-                       'doneAudio': line(f'g63_done_{slug}', r_tr, r_en)}],
-        })
+    for who, outfits in OUTFITS.items():
+        tr_name, en_name = WHO[who]
+        for outfit, slugs in outfits.items():
+            (start_tr, start_en), (end_tr, end_en) = OUTFIT_LINES[outfit]
+            first = GARMENTS[slugs[0]]
+            q_tr = f'{start_tr.replace("{N}", tr_name)} Önce {first[3]}.'
+            q_en = f'{start_en.replace("{N}", en_name)} First, {first[4]}.'
+            audio = line(f'g63_first_{who}_{outfit}', q_tr, q_en)
+            done = line(f'g63_done_{who}_{outfit}', end_tr.replace('{N}', tr_name), end_en.replace('{N}', en_name))
+            steps = []
+            for n, slug in enumerate(slugs, 1):
+                g = GARMENTS[slug]
+                steps.append({'mode': 'place', 'piece': outfit_piece(who, outfit, slug), 'zone': g[5],
+                              'after': f'assets/images/wear/{who}_{outfit}_{n}.webp', 'askAudio': asks[slug],
+                              'askText': text(f'Şimdi {g[3]}.', f'Now {g[4]}.')})
+            steps[-1]['doneAudio'] = done
+            # Pieces of the child's other outfits that cannot be mixed up with
+            # one of this outfit by name or by where they go.
+            kinds = {GARMENTS[s][0] for s in slugs}
+            names = {GARMENTS[s][1] for s in slugs}
+            others = sorted({(o, s) for o, ss in outfits.items() if o != outfit for s in ss
+                             if GARMENTS[s][1] not in names and not (GARMENTS[s][0] in ('head', 'feet', 'socks') and GARMENTS[s][0] in kinds)})
+            for tier, count in G63_EXTRAS.items():
+                extras = rnd.sample(others, min(count, len(others)))
+                rounds.append({
+                    'key': f'{who}_{outfit}', 'tier': tier, 'who': who, 'target': 'clothes.tshirt',
+                    'stage': f'assets/images/wear/{who}_base.webp', 'aspect': 2 / 3, 'gentle': True,
+                    'extras': [outfit_piece(who, o, s) for o, s in extras],
+                    'text': text(q_tr, q_en), 'audio': audio, 'steps': steps,
+                })
     return {'theme': 'clothes', 'rounds': rounds}
 
 
 # G64 Bugün Ne Giysek? --------------------------------------------------------
-# (weather picture, target, also right, question, answer sentence, result picture)
-G64 = [
-    ('rain', 'raincoat', ['umbrella', 'boots'], 'Dışarıda yağmur yağıyor. Ali ne giysin?', "It's raining outside. What should Ali wear?", 'Yağmurluğunu giydi, dışarı çıkıyor.', 'He put on his raincoat and off he goes.', 'out_rain'),
-    ('rain', 'umbrella', ['raincoat', 'boots'], 'Yağmur başladı. Ali yanına ne alsın?', 'It started to rain. What should Ali take?', 'Şemsiyesini aldı, hiç ıslanmıyor.', 'He took his umbrella and stays dry.', 'out_umbrella'),
-    ('snow', 'coat', ['beanie', 'gloves', 'scarf', 'boots', 'sweater'], 'Dışarıda kar yağıyor. Ali ne giysin?', "It's snowing outside. What should Ali wear?", 'Montunu giydi, karda oynuyor.', 'He put on his coat and plays in the snow.', 'out_snow'),
-    ('snow', 'gloves', ['coat', 'beanie', 'scarf', 'boots', 'sweater'], 'Ali kartopu oynayacak. Eline ne taksın?', 'Ali wants to make snowballs. What goes on his hands?', 'Eldivenlerini taktı, kartopu yapıyor.', 'He put on his gloves and makes snowballs.', 'out_gloves'),
-    ('sun', 'shorts', ['tshirt', 'sandals', 'hat', 'sunglasses', 'swimsuit'], 'Hava çok sıcak. Ali ne giysin?', "It's very hot. What should Ali wear?", 'Şortunu giydi, parka gidiyor.', 'He put on his shorts and goes to the park.', 'out_sun'),
-    ('sun', 'sunglasses', ['hat', 'shorts', 'tshirt', 'sandals'], 'Güneş gözünü alıyor. Ali ne taksın?', 'The sun is in his eyes. What should Ali put on?', 'Güneş gözlüğünü taktı, çok havalı oldu.', 'He put on his sunglasses and looks so cool.', 'out_shades'),
-    ('sea', 'swimsuit', ['hat', 'sunglasses', 'sandals', 'shorts'], 'Ali denize gidiyor. Ne giysin?', 'Ali is going to the sea. What should he wear?', 'Mayosunu giydi, denize giriyor.', 'He put on his swimsuit and jumps in.', 'out_sea'),
-    ('night', 'pajamas', ['slippers'], 'Hava karardı, uyku vakti. Ali ne giysin?', "It's dark, time for bed. What should Ali wear?", 'Pijamasını giydi, yatağına girdi.', 'He put on his pajamas and got into bed.', 'out_bed'),
-]
-G64_ALL = sorted({x[1] for x in G64} | {o for x in G64 for o in x[2]} | {'dress', 'skirt', 'sneakers'})
+# (weather picture, target, also right, question, answer sentence, result picture); {N} is the child's name.
+G64 = {
+    'boy': [
+        ('rain', 'raincoat', ['umbrella', 'boots'], 'Dışarıda yağmur yağıyor. {N} ne giysin?', "It's raining outside. What should {N} wear?", 'Yağmurluğunu giydi, dışarı çıkıyor.', 'He put on his raincoat and off he goes.', 'out_rain'),
+        ('rain', 'umbrella', ['raincoat', 'boots'], 'Yağmur başladı. {N} yanına ne alsın?', 'It started to rain. What should {N} take?', 'Şemsiyesini aldı, hiç ıslanmıyor.', 'He took his umbrella and stays dry.', 'out_umbrella'),
+        ('snow', 'coat', ['beanie', 'gloves', 'scarf', 'boots', 'sweater'], 'Dışarıda kar yağıyor. {N} ne giysin?', "It's snowing outside. What should {N} wear?", 'Montunu giydi, karda oynuyor.', 'He put on his coat and plays in the snow.', 'out_snow'),
+        ('snow', 'gloves', ['coat', 'beanie', 'scarf', 'boots', 'sweater'], '{N} kartopu oynayacak. Eline ne taksın?', '{N} wants to make snowballs. What goes on his hands?', 'Eldivenlerini taktı, kartopu yapıyor.', 'He put on his gloves and makes snowballs.', 'out_gloves'),
+        ('sun', 'shorts', ['tshirt', 'sandals', 'hat', 'sunglasses'], 'Hava çok sıcak. {N} ne giysin?', "It's very hot. What should {N} wear?", 'Şortunu giydi, parka gidiyor.', 'He put on his shorts and goes to the park.', 'out_sun'),
+        ('sun', 'sunglasses', ['hat', 'shorts', 'tshirt', 'sandals'], 'Güneş gözünü alıyor. {N} ne taksın?', 'The sun is in his eyes. What should {N} put on?', 'Güneş gözlüğünü taktı, çok havalı oldu.', 'He put on his sunglasses and looks so cool.', 'out_shades'),
+        ('sea', 'shorts', ['hat', 'sunglasses', 'sandals'], '{N} denize gidiyor. Ne giysin?', '{N} is going to the sea. What should he wear?', 'Şortunu giydi, denize giriyor.', 'He put on his swim shorts and jumps in.', 'out_sea'),
+        ('night', 'pajamas', ['slippers'], 'Hava karardı, uyku vakti. {N} ne giysin?', "It's dark, time for bed. What should {N} wear?", 'Pijamasını giydi, yatağına girdi.', 'He put on his pajamas and got into bed.', 'out_bed'),
+    ],
+    'girl': [
+        ('rain', 'raincoat', ['umbrella', 'boots'], 'Dışarıda yağmur yağıyor. {N} ne giysin?', "It's raining outside. What should {N} wear?", 'Yağmurluğunu giydi, dışarı çıkıyor.', 'She put on her raincoat and off she goes.', 'out_rain_girl'),
+        ('rain', 'umbrella', ['raincoat', 'boots'], 'Yağmur başladı. {N} yanına ne alsın?', 'It started to rain. What should {N} take?', 'Şemsiyesini aldı, hiç ıslanmıyor.', 'She took her umbrella and stays dry.', 'out_umbrella_girl'),
+        ('snow', 'coat', ['beanie', 'gloves', 'scarf', 'boots', 'sweater'], 'Dışarıda kar yağıyor. {N} ne giysin?', "It's snowing outside. What should {N} wear?", 'Montunu giydi, karda oynuyor.', 'She put on her coat and plays in the snow.', 'out_snow_girl'),
+        ('snow', 'gloves', ['coat', 'beanie', 'scarf', 'boots', 'sweater'], '{N} kartopu oynayacak. Eline ne taksın?', '{N} wants to make snowballs. What goes on her hands?', 'Eldivenlerini taktı, kartopu yapıyor.', 'She put on her gloves and makes snowballs.', 'out_gloves_girl'),
+        ('sun', 'dress', ['shorts', 'skirt', 'tshirt', 'sandals', 'hat', 'sunglasses', 'swimsuit'], 'Hava çok sıcak. {N} ne giysin?', "It's very hot. What should {N} wear?", 'Elbisesini giydi, parka gidiyor.', 'She put on her dress and goes to the park.', 'out_sun_girl'),
+        ('sun', 'sunglasses', ['hat', 'shorts', 'tshirt', 'sandals', 'dress', 'skirt'], 'Güneş gözünü alıyor. {N} ne taksın?', 'The sun is in her eyes. What should {N} put on?', 'Güneş gözlüğünü taktı, çok havalı oldu.', 'She put on her sunglasses and looks so cool.', 'out_shades_girl'),
+        ('sea', 'swimsuit', ['hat', 'sunglasses', 'sandals', 'shorts'], '{N} denize gidiyor. Ne giysin?', '{N} is going to the sea. What should she wear?', 'Mayosunu giydi, denize giriyor.', 'She put on her swimsuit and jumps in.', 'out_sea_girl'),
+        ('night', 'pajamas', ['slippers'], 'Hava karardı, uyku vakti. {N} ne giysin?', "It's dark, time for bed. What should {N} wear?", 'Pijamasını giydi, yatağına girdi.', 'She put on her pajamas and got into bed.', 'out_bed_girl'),
+    ],
+}
+# Never offered to the boy, not even as a wrong card.
+G64_AVOID = {'boy': ['dress', 'skirt', 'swimsuit'], 'girl': []}
+G64_ALL = sorted({x[1] for rows in G64.values() for x in rows} | {o for rows in G64.values() for x in rows for o in x[2]} | {'dress', 'skirt', 'sneakers'})
 
 
 def g64():
     rounds = []
-    for i, (weather, target, also, q_tr, q_en, r_tr, r_en, picture) in enumerate(G64, 1):
-        rounds.append({
-            'target': f'clothes.{target}', 'stimulus': f'weather.{weather}', 'alsoRight': [f'clothes.{a}' for a in also],
-            'text': text(q_tr, q_en), 'audio': line(f'g64_{i}', q_tr, q_en),
-            'result': f'{PLAY}/{picture}.webp', 'resultAudio': line(f'g64_done_{i}', r_tr, r_en),
-        })
+    for who, rows in G64.items():
+        tr_name, en_name = WHO[who]
+        tag = '' if who == 'boy' else f'{who}_'
+        for i, (weather, target, also, q_tr, q_en, r_tr, r_en, picture) in enumerate(rows, 1):
+            q_tr, q_en = q_tr.replace('{N}', tr_name), q_en.replace('{N}', en_name)
+            rounds.append({
+                'who': who, 'target': f'clothes.{target}', 'stimulus': f'weather.{weather}',
+                'alsoRight': [f'clothes.{a}' for a in also], 'avoid': [f'clothes.{a}' for a in G64_AVOID[who]],
+                'text': text(q_tr, q_en), 'audio': line(f'g64_{tag}{i}', q_tr, q_en),
+                'result': f'{PLAY}/{picture}.webp', 'resultAudio': line(f'g64_done_{tag}{i}', r_tr, r_en),
+            })
     return {'theme': 'clothes', 'look': 'scene', 'choicePool': [f'clothes.{c}' for c in G64_ALL], 'rounds': rounds}
 
 
@@ -320,7 +410,10 @@ FRUIT_TR = {'apple': ('elmayı', 'elma'), 'banana': ('muzu', 'muz'), 'strawberry
             'grape': ('üzümü', 'üzüm'), 'kiwi': ('kiviyi', 'kivi'), 'peach': ('şeftaliyi', 'şeftali'), 'pear': ('armudu', 'armut')}
 FRUIT_EN = {'apple': 'apple', 'banana': 'banana', 'strawberry': 'strawberry', 'orange': 'orange',
             'grape': 'grapes', 'kiwi': 'kiwi', 'peach': 'peach', 'pear': 'pear'}
-BOWL_SLOTS = [[.26, .34, .2, .3], [.42, .3, .2, .3], [.56, .36, .2, .3], [.34, .46, .2, .3], [.5, .47, .2, .3]]
+# Inside the bowl of bowl_empty.webp: two at the back, then the front ones;
+# bowl_front.webp (the bowl's near wall) is drawn over them, so each fruit
+# sits in the bowl and not on it.
+BOWL_SLOTS = [[.25, .19, .24, .36], [.5, .19, .24, .36], [.14, .29, .24, .36], [.61, .29, .24, .36], [.375, .32, .24, .36]]
 SALADS = {
     'easy': [['apple', 'banana'], ['strawberry', 'orange'], ['grape', 'pear'], ['kiwi', 'peach'], ['banana', 'strawberry']],
     'medium': [['apple', 'banana', 'orange'], ['strawberry', 'kiwi', 'pear'], ['grape', 'peach', 'apple'], ['orange', 'strawberry', 'banana'], ['pear', 'grape', 'kiwi']],
@@ -331,7 +424,7 @@ SALADS = {
 def g65():
     first = {f: line(f'g65_first_{f}', f'Meyve salatası yapalım. Önce {FRUIT_TR[f][0]} koyalım.', f"Let's make a fruit salad. First, the {FRUIT_EN[f]}.") for f in FRUIT_TR}
     asks = {f: line(f'g65_ask_{f}', f'Şimdi de {FRUIT_TR[f][0]} koyalım.', f'Now the {FRUIT_EN[f]}.') for f in FRUIT_TR}
-    stir_ask_tr, stir_ask_en = 'Hadi, karıştıralım.', "Now let's stir."
+    stir_ask_tr, stir_ask_en = 'Hadi, kaşıkla karıştıralım.', "Now let's stir with the spoon."
     stir_ask = line('g65_stir', stir_ask_tr, stir_ask_en)
     done = line('g65_done', 'Meyve salatası hazır. Afiyet olsun!', 'The fruit salad is ready. Enjoy!')
     rounds = []
@@ -345,11 +438,12 @@ def g65():
                 steps.append({'mode': 'place', 'piece': f'fruit.{f}', 'others': [f'fruit.{o}' for o in others],
                               'zone': BOWL_SLOTS[j], 'stays': True, 'askAudio': asks[f],
                               'askText': text(f'Şimdi de {FRUIT_TR[f][0]} koyalım.', f'Now the {FRUIT_EN[f]}.')})
-            steps.append({'mode': 'stir', 'piece': 'stir.spoon', 'zone': [.25, .3, .5, .5], 'after': f'{PLAY}/bowl_mixed.webp',
+            steps.append({'mode': 'stir', 'piece': 'stir.spoon', 'zone': [.25, .2, .5, .5], 'after': f'{PLAY}/bowl_mixed.webp',
                           'askAudio': stir_ask, 'askText': text(stir_ask_tr, stir_ask_en), 'doneAudio': done})
             first_f = recipe[0]
             rounds.append({
                 'key': '-'.join(recipe), 'tier': tier, 'target': f'kitchen.bowl', 'stage': f'{PLAY}/bowl_empty.webp', 'aspect': 1.5, 'recipe': True,
+                'front': f'{PLAY}/bowl_front.webp',
                 'text': text(f'Meyve salatası yapalım. Önce {FRUIT_TR[first_f][0]} koyalım.', f"Let's make a fruit salad. First, the {FRUIT_EN[first_f]}."),
                 'audio': first[first_f], 'steps': steps,
             })
@@ -357,19 +451,25 @@ def g65():
 
 
 # G66 Sofrayı Kuralım ---------------------------------------------------------
+# piece: (Turkish "…yı", English, place on table.webp, turned by)
 TABLE = {
-    'plate': ('tabağı', 'plate', [.39, .34, .22, .36]),
-    'fork': ('çatalı', 'fork', [.30, .34, .08, .36]),
-    'spoon': ('kaşığı', 'spoon', [.71, .34, .07, .36]),
-    'knife': ('bıçağı', 'knife', [.62, .34, .08, .36]),
-    'glass': ('bardağı', 'glass', [.60, .10, .13, .24]),
-    'napkin': ('peçeteyi', 'napkin', [.21, .40, .08, .22]),
+    'plate': ('tabağı', 'plate', [.39, .32, .22, .36], 0),
+    'bowl': ('kâseyi', 'bowl', [.4, .34, .2, .3], 0),
+    'fork': ('çatalı', 'fork', [.29, .32, .08, .36], 0),
+    'spoon': ('kaşığı', 'spoon', [.71, .32, .07, .36], 0),
+    'knife': ('bıçağı', 'knife', [.63, .32, .08, .36], -0.72),
+    'glass': ('bardağı', 'glass', [.63, .07, .12, .22], 0),
+    'napkin': ('peçeteyi', 'napkin', [.2, .39, .09, .22], 0),
+    'jug': ('sürahiyi', 'jug', [.25, .06, .14, .24], 0),
+    'salt_shaker': ('tuzluğu', 'salt shaker', [.46, .06, .08, .2], 0),
 }
-# The order the child is asked in; every piece of the round waits on the right.
+# The order the child is asked in; every piece of the round waits on the
+# right. Every round lays a different table, so no two games look the same.
 TABLE_SETS = {
-    'easy': [['fork', 'knife', 'plate'], ['fork', 'plate', 'knife'], ['plate', 'fork', 'knife'], ['knife', 'fork', 'plate'], ['plate', 'knife', 'fork']],
-    'medium': [['fork', 'knife', 'plate', 'glass'], ['plate', 'fork', 'knife', 'glass'], ['glass', 'plate', 'fork', 'knife'], ['fork', 'plate', 'glass', 'knife'], ['knife', 'plate', 'fork', 'glass']],
-    'hard': [['fork', 'knife', 'plate', 'spoon', 'glass'], ['plate', 'fork', 'knife', 'glass', 'spoon'], ['glass', 'spoon', 'plate', 'fork', 'knife'], ['fork', 'spoon', 'knife', 'plate', 'glass'], ['spoon', 'plate', 'glass', 'knife', 'fork']],
+    'easy': [['plate', 'fork', 'spoon'], ['plate', 'glass', 'napkin'], ['bowl', 'spoon', 'glass'], ['fork', 'plate', 'knife'], ['jug', 'glass', 'plate']],
+    'medium': [['plate', 'fork', 'knife', 'glass'], ['bowl', 'spoon', 'napkin', 'jug'], ['napkin', 'fork', 'plate', 'spoon'], ['glass', 'jug', 'plate', 'fork'], ['plate', 'knife', 'salt_shaker', 'glass']],
+    'hard': [['plate', 'fork', 'knife', 'spoon', 'glass'], ['napkin', 'fork', 'plate', 'bowl', 'spoon'], ['jug', 'glass', 'plate', 'knife', 'fork', 'salt_shaker'],
+             ['plate', 'bowl', 'spoon', 'napkin', 'glass', 'jug'], ['salt_shaker', 'plate', 'fork', 'knife', 'napkin', 'glass']],
 }
 
 
@@ -382,11 +482,11 @@ def g66():
         for items in sets:
             steps = []
             for name in items:
-                tr, en, zone = TABLE[name]
+                tr, en, zone, turn = TABLE[name]
                 step = {'mode': 'place', 'piece': f'kitchen.{name}', 'zone': zone, 'stays': True, 'shadow': True, 'askAudio': asks[name],
                         'askText': text(f'Şimdi {tr} yerine koyalım.', f'Now the {en}.')}
-                if name == 'knife':
-                    step['turn'] = -0.72
+                if turn:
+                    step['turn'] = turn
                 steps.append(step)
             steps[-1]['doneAudio'] = done
             first = TABLE[items[0]]

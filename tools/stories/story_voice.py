@@ -5,7 +5,7 @@
 Turkish: İrem with eleven_v4 and language_code "tr" (Yunus, 6 Nov 2026: the
 turbo v2.5 takes sounded muffled, distant or flat). English: Laura with
 eleven_multilingual_v2. Reads every line from assets/content/stories.json,
-skips clips that already exist (unless --force) and records text, voice,
+skips clips that already exist with the same text (unless --force) and records text, voice,
 model and sha256 of each clip in tools/stories/voice_manifest.json.
 The API key comes from ELEVENLABS_API_KEY and is never printed.
 """
@@ -82,7 +82,9 @@ def main():
         for line in lines(story):
             for lang, path in line['audio'].items():
                 out = ROOT / path
-                if out.exists() and not force:
+                # A line whose text changed since it was recorded is recorded again.
+                stale = path in manifest and manifest[path].get('text') != line['text'][lang]
+                if out.exists() and not force and not stale:
                     continue
                 audio = synthesize(line['text'][lang], lang, key)
                 out.parent.mkdir(parents=True, exist_ok=True)

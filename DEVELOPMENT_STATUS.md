@@ -1380,3 +1380,20 @@ Son kullanım kontrolü: beş saatlik kalan %6, haftalık %85. Beş saatlik eşi
 
 ## 22 October 2026 - R45 map illustration
 - Generated map_background with the built-in ChatGPT image tool using the user's supplied SEG soft clay prompt. Saved 1536x1024 PNG to assets/illustrations/path/map_background.png and byte-identical raw original to artifacts/illustrations-r45/map_background_original.png. Opened saved image: landscape, no text, broad clear center meadow; no second generation needed. SHA-256 5c3c9810b0d873e56b8d278f7fbd9f83de1f638b7e1bb5053978700cf870fb13. Recorded prompt/provenance in illustration manifest. App integration and device review remain outside this asset-only task.
+
+## 6 November 2026 - Google Play feature graphic
+- Created art/feature-notext.png in GooglePlayBuild/store-assets/listing-2026-11 with the built-in image generation tool, using the user's cloud and three circular cat/apple/car card prompt. Resized and verified as 1024x500 PNG. Visual review confirms no text and correct composition. Faint generated texture remains after a targeted flattening edit.
+
+
+## 12 November 2026 - Home, drag games, dress-up, jobs scenes (2.0.52)
+Yunus's review round (thread "Ana ekran UI + oyun düzeltmeleri"). Source of truth for the data: tools/home_sections/source_step2.py and source_step3.py; pictures from artifacts/fix-nov12/ through tools/home_sections/install_fix_art.py.
+- Child home: lower top bar (compact pills), smaller cards that are never cut, the three tabs float over the cards as coloured named buttons (no band masking the list), rows fade under the top bar. A pull past the end of a row that starts at that end opens the next or previous section (EdgePull). Theme page: smaller, centred cards, each game shows its own subject (gameFace).
+- Scene games (scene_game_view.dart rewritten): own drag instead of Draggable; a piece flies from where it was let go to its place, or back to its tray slot. No yellow target circle; the finger guide shows on a hint. Rub and stir tools can be dragged from the tray. SceneRound gained front (drawn over placed pieces: bowl_front.webp), extras and who.
+- G63 is now "Giydirelim": outfits put on piece by piece, Ali or Ayşe by the profile's gender, 5 outfits each; tray pieces are the very garments of the pictures. G64 has rounds per child; the boy is never offered dress, skirt or swimsuit. G65 fruit sits inside the bowl; G66 lays 15 different tables (bowl, jug, napkin, salt shaker added).
+- G68/G69: 22 new transparent result scenes whose workers match their cards, sentences name the tool; the result comes up over the whole game (ResultScene). Older do_*/out_* scenes cut out of their backgrounds.
+- Puzzle: real interlocking jigsaw pieces (PuzzleCut), pieces slide to their place or back.
+- Gender (Kız/Erkek) on the onboarding child page and in the profile editor: survey['gender'].
+- English names: Leo (boy) and Mia (girl) everywhere, through tools/english_names.py; changed lines recorded again (home_sections, pair games, stories).
+- Voices: Turkish radish and the used jobs/clothes item names recorded again with eleven_v4; 186 new or changed lines, checked by speech-to-text (tools/home_sections/check_new_lines.py).
+- Tests: test/fix_nov12_test.dart (outfits, G64 avoid list, G66 variety, English names, EdgePull); renders in tools/fix_nov12_shot_test.dart and tools/fix_nov12_games_shot_test.dart.
+- Not done here: stories and the other games still show Ali for a girl profile (only the clothes games follow the gender).

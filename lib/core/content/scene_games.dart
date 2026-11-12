@@ -115,6 +115,17 @@ class SceneRound {
   /// Parts of the picture washed in a colour while the round is unfinished
   /// (teeth that are still yellowish); it fades as the stains go.
   final List<SceneRect> tints;
+
+  /// The near side of the stage picture, drawn over the placed pieces (the
+  /// front wall of a bowl: fruit goes in behind it).
+  final String? front;
+
+  /// Pieces that wait in the tray of a gentle round but are never asked for
+  /// (a scarf beside the pajamas); bringing one is a wrong answer.
+  final List<String> extras;
+
+  /// Which child the round shows ('boy' or 'girl'); null fits both.
+  final String? who;
   final Map<String, String> text, audio;
   final List<SceneStep> steps;
 
@@ -132,6 +143,9 @@ class SceneRound {
     this.recipe = false,
     this.gentle = false,
     this.tints = const [],
+    this.front,
+    this.extras = const [],
+    this.who,
     this.finishAudio = const {},
   });
 
@@ -147,6 +161,9 @@ class SceneRound {
       for (final t in (j['tints'] ?? const []) as List)
         SceneRect.fromJson(t as List),
     ],
+    front: j['front'] as String?,
+    extras: List<String>.from((j['extras'] ?? const []) as List),
+    who: j['who'] as String?,
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
     steps: [

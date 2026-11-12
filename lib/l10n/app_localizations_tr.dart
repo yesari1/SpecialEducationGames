@@ -940,6 +940,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get obAgeTitle => 'Yaş';
 
   @override
+  String get obGenderGirl => 'Kız';
+
+  @override
+  String get obGenderBoy => 'Erkek';
+
+  @override
   String get obAgeTenPlus => '10+';
 
   @override

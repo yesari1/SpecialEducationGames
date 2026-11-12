@@ -15,6 +15,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 LANGS = ('tr', 'en')
+sys.path.insert(0, str(ROOT / 'tools'))
+from english_names import rename  # noqa: E402
 
 
 def line(text, audio_name, story_id):
@@ -74,7 +76,7 @@ def referenced(catalog):
 
 def main():
     source = json.loads((ROOT / 'tools/stories/stories_source.json').read_text(encoding='utf-8'))
-    catalog = build(source)
+    catalog = rename(build(source))
     target = ROOT / 'assets/content/stories.json'
     target.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'wrote {target.relative_to(ROOT)}: {len(catalog)} stories')

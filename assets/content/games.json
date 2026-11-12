@@ -204,7 +204,7 @@
     "template": "body_map",
     "name": {
       "tr": "Ali'de Göster",
-      "en": "Show It on Ali"
+      "en": "Show It on Leo"
     }
   },
   {
@@ -251,8 +251,8 @@
     "id": "G63",
     "template": "scene",
     "name": {
-      "tr": "Ali'yi Giydir",
-      "en": "Dress Ali"
+      "tr": "Giydirelim",
+      "en": "Let's Get Dressed"
     }
   },
   {

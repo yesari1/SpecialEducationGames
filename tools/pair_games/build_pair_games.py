@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools'))
 sys.path.insert(0, str(ROOT / 'tools/pair_games'))
 import source  # noqa: E402
+from english_names import rename  # noqa: E402
 
 MANIFEST = ROOT / 'tools/pair_games/voice_manifest.json'
 
@@ -30,7 +31,7 @@ def main():
     manifest = json.loads(MANIFEST.read_text(encoding='utf-8')) if MANIFEST.exists() else {}
     review = []
     out = {}
-    for gid, game in source.all_games().items():
+    for gid, game in rename(source.all_games()).items():
         rounds = []
         for n, r in enumerate(game['rounds'], start=1):
             stem = f"{gid}_{r.get('clip', n)}"
@@ -56,7 +57,7 @@ def main():
         game_out = {k: v for k, v in game.items() if k != 'rounds'}
         game_out['rounds'] = rounds
         out[gid] = game_out
-    for stem, text in source.clips().items():
+    for stem, text in rename(source.clips()).items():
         for lang in ('tr', 'en'):
             rel = f'assets/audio/{lang}/pairs/{stem}.mp3'
             path = ROOT / rel
@@ -69,9 +70,9 @@ def main():
                              'voice_id': tv.VOICES[lang]['voice_id'], 'sha256': hashlib.sha256(data).hexdigest()}
             print(rel, text[lang])
     (ROOT / 'assets/content/extra_items.json').write_text(
-        json.dumps(source.source_more.extra_items(), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        json.dumps(rename(source.source_more.extra_items()), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (ROOT / 'assets/content/body_map.json').write_text(
-        json.dumps(source.source_more.body_map(), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        json.dumps(rename(source.source_more.body_map()), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (ROOT / 'assets/content/pair_games.json').write_text(json.dumps(out, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
     print('games:', ', '.join(out), '| STT disagreements:', len(review))

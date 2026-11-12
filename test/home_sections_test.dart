@@ -72,8 +72,9 @@ void main() {
       await tester.pumpAndSettle();
       expect(state.homeTab, HomeTab.stories);
       expect(backend.loaded.last, 'assets/audio/$loc/sections/tab_stories.mp3');
+      // Every tab keeps its name; the open one is filled with its colour.
       expect(find.text(l10n.homeTabStories), findsOneWidget);
-      expect(find.text(l10n.homeTabLearn), findsNothing);
+      expect(find.text(l10n.homeTabLearn), findsOneWidget);
       expect(
         find.byKey(ValueKey('story-card-${content.stories.first.id}')),
         findsOneWidget,

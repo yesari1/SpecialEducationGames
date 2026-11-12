@@ -12,7 +12,7 @@
         "line": {
           "text": {
             "tr": "İşte Ali! Uyku vakti geldi.",
-            "en": "Here is Ali! It's bedtime."
+            "en": "Here is Leo! It's bedtime."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/teeth/p1.mp3",
@@ -25,7 +25,7 @@
         "line": {
           "text": {
             "tr": "Ali banyoya gitti, diş fırçasını aldı.",
-            "en": "Ali went to the bathroom and picked up his toothbrush."
+            "en": "Leo went to the bathroom and picked up his toothbrush."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/teeth/p2.mp3",
@@ -80,7 +80,7 @@
         "line": {
           "text": {
             "tr": "Ali dişlerini yavaş yavaş fırçalıyor. Aşağı, yukarı.",
-            "en": "Ali brushes his teeth nice and slow. Up and down."
+            "en": "Leo brushes his teeth nice and slow. Up and down."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/teeth/p4.mp3",
@@ -135,7 +135,7 @@
         "line": {
           "text": {
             "tr": "Dişleri pırıl pırıl oldu! Ali nasıl hissediyor?",
-            "en": "His teeth are sparkling clean! How does Ali feel?"
+            "en": "His teeth are sparkling clean! How does Leo feel?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/teeth/p6.mp3",
@@ -149,7 +149,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali çok mutlu.",
-                "en": "Yes, Ali is very happy."
+                "en": "Yes, Leo is very happy."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/teeth/p6_happy.mp3",
@@ -163,7 +163,7 @@
             "result": {
               "text": {
                 "tr": "Bak, Ali gülümsüyor. Ali çok mutlu.",
-                "en": "Look, Ali is smiling. Ali is very happy."
+                "en": "Look, Leo is smiling. Leo is very happy."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/teeth/p6_sad.mp3",
@@ -177,7 +177,7 @@
         "line": {
           "text": {
             "tr": "Ali yatağına girdi. İyi geceler Ali!",
-            "en": "Ali climbed into bed. Good night, Ali!"
+            "en": "Leo climbed into bed. Good night, Leo!"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/teeth/p7.mp3",
@@ -190,7 +190,7 @@
     "praise": {
       "text": {
         "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
-        "en": "Well done! You were a great help to Ali."
+        "en": "Well done! You were a great help to Leo."
       },
       "audio": {
         "tr": "assets/audio/tr/stories/teeth/praise.mp3",
@@ -211,7 +211,7 @@
         "line": {
           "text": {
             "tr": "Ali ile kardeşi Elif arabayla oynuyorlar.",
-            "en": "Ali and his little sister Elif are playing with a toy car."
+            "en": "Leo and his little sister Elif are playing with a toy car."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p1.mp3",
@@ -224,7 +224,7 @@
         "line": {
           "text": {
             "tr": "Elif, arabayı Ali'nin elinden aldı.",
-            "en": "Elif took the car out of Ali's hands."
+            "en": "Elif took the car out of Leo's hands."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p2.mp3",
@@ -237,7 +237,7 @@
         "line": {
           "text": {
             "tr": "Sence Ali şimdi ne hissediyor?",
-            "en": "How do you think Ali feels now?"
+            "en": "How do you think Leo feels now?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p3.mp3",
@@ -251,7 +251,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali çok kızdı.",
-                "en": "Yes, Ali is angry."
+                "en": "Yes, Leo is angry."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/angry/p3_angry.mp3",
@@ -265,7 +265,7 @@
             "result": {
               "text": {
                 "tr": "Ali'nin yüzüne bir bak. Ali kızdı.",
-                "en": "Take a look at Ali's face. Ali is angry."
+                "en": "Take a look at Leo's face. Leo is angry."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/angry/p3_happy.mp3",
@@ -279,7 +279,7 @@
             "result": {
               "text": {
                 "tr": "Ali'nin yüzüne bir bak. Ali kızdı.",
-                "en": "Take a look at Ali's face. Ali is angry."
+                "en": "Take a look at Leo's face. Leo is angry."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/angry/p3_sad.mp3",
@@ -293,7 +293,7 @@
         "line": {
           "text": {
             "tr": "Ali çok kızdı. Elinde de bir oyuncak var.",
-            "en": "Ali is really angry. He has a toy in his hand."
+            "en": "Leo is really angry. He has a toy in his hand."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p4.mp3",
@@ -306,7 +306,7 @@
         "line": {
           "text": {
             "tr": "Ali ne yapsın?",
-            "en": "What should Ali do?"
+            "en": "What should Leo do?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p5.mp3",
@@ -345,7 +345,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali annesine gidip kızdığını söylüyor.",
-                "en": "Yes, Ali goes to Mom and tells her he is angry."
+                "en": "Yes, Leo goes to Mom and tells her he is angry."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/angry/p5_tell.mp3",
@@ -359,7 +359,7 @@
         "line": {
           "text": {
             "tr": "Ali annesine \"Çok kızgınım!\" dedi. Birlikte derin bir nefes aldılar.",
-            "en": "Ali told Mom, \"I'm really angry!\" They took a deep breath together."
+            "en": "Leo told Mom, \"I'm really angry!\" They took a deep breath together."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/angry/p6.mp3",
@@ -385,7 +385,7 @@
     "praise": {
       "text": {
         "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
-        "en": "Well done! You were a great help to Ali."
+        "en": "Well done! You were a great help to Leo."
       },
       "audio": {
         "tr": "assets/audio/tr/stories/angry/praise.mp3",
@@ -406,7 +406,7 @@
         "line": {
           "text": {
             "tr": "Ali parka geldi. Kaydırağı çok seviyor.",
-            "en": "Ali is at the park. He loves the slide."
+            "en": "Leo is at the park. He loves the slide."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p1.mp3",
@@ -432,7 +432,7 @@
         "line": {
           "text": {
             "tr": "Ali de kaymak istiyor. Ne yapmalı?",
-            "en": "Ali wants to slide too. What should he do?"
+            "en": "Leo wants to slide too. What should he do?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p3.mp3",
@@ -456,7 +456,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali, Elif'in arkasında sırasını bekliyor.",
-                "en": "Yes, Ali waits for his turn behind Elif."
+                "en": "Yes, Leo waits for his turn behind Elif."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/turn/p3_line.mp3",
@@ -485,7 +485,7 @@
         "line": {
           "text": {
             "tr": "Ali sırasını bekliyor. Bir, iki, üç...",
-            "en": "Ali waits for his turn. One, two, three..."
+            "en": "Leo waits for his turn. One, two, three..."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p4.mp3",
@@ -498,7 +498,7 @@
         "line": {
           "text": {
             "tr": "Elif kaydı. Şimdi sıra Ali'de!",
-            "en": "Elif went down the slide. Now it's Ali's turn!"
+            "en": "Elif went down the slide. Now it's Leo's turn!"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p5.mp3",
@@ -511,7 +511,7 @@
         "line": {
           "text": {
             "tr": "Ali kaydı! Ali nasıl hissediyor?",
-            "en": "Ali went down the slide! How does Ali feel?"
+            "en": "Leo went down the slide! How does Leo feel?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/turn/p6.mp3",
@@ -525,7 +525,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali çok mutlu.",
-                "en": "Yes, Ali is very happy."
+                "en": "Yes, Leo is very happy."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/turn/p6_happy.mp3",
@@ -539,7 +539,7 @@
             "result": {
               "text": {
                 "tr": "Bak, Ali gülüyor. Ali çok mutlu.",
-                "en": "Look, Ali is laughing. Ali is very happy."
+                "en": "Look, Leo is laughing. Leo is very happy."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/turn/p6_angry.mp3",
@@ -587,7 +587,7 @@
         "line": {
           "text": {
             "tr": "Bugün Ali doktora gidiyor. Annesi de yanında.",
-            "en": "Today Ali is going to the doctor. Mom is with him."
+            "en": "Today Leo is going to the doctor. Mom is with him."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p1.mp3",
@@ -600,7 +600,7 @@
         "line": {
           "text": {
             "tr": "Bekleme odasına oturdular. Ali biraz korkuyor.",
-            "en": "They sit down in the waiting room. Ali feels a little scared."
+            "en": "They sit down in the waiting room. Leo feels a little scared."
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p2.mp3",
@@ -613,7 +613,7 @@
         "line": {
           "text": {
             "tr": "Ali korkunca ne yapabilir?",
-            "en": "What can Ali do when he feels scared?"
+            "en": "What can Leo do when he feels scared?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p3.mp3",
@@ -637,7 +637,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali annesine sarılıyor.",
-                "en": "Yes, Ali gives Mom a hug."
+                "en": "Yes, Leo gives Mom a hug."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p3_hug.mp3",
@@ -651,7 +651,7 @@
             "result": {
               "text": {
                 "tr": "Ali yere yatıp bağırdı. Herkes ona baktı, Ali daha çok korktu.",
-                "en": "Ali lay on the floor and screamed. Everyone looked at him, and he felt even more scared."
+                "en": "Leo lay on the floor and screamed. Everyone looked at him, and he felt even more scared."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p3_tantrum.mp3",
@@ -666,7 +666,7 @@
         "line": {
           "text": {
             "tr": "Doktor geldi. Gülümseyerek \"Merhaba Ali!\" dedi.",
-            "en": "The doctor came in. She smiled and said, \"Hello, Ali!\""
+            "en": "The doctor came in. She smiled and said, \"Hello, Leo!\""
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p4.mp3",
@@ -679,7 +679,7 @@
         "line": {
           "text": {
             "tr": "Doktor kalbini dinleyecek. Ali ne yapmalı?",
-            "en": "The doctor wants to listen to his heart. What should Ali do?"
+            "en": "The doctor wants to listen to his heart. What should Leo do?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p5.mp3",
@@ -703,7 +703,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali sakince oturuyor. Doktor kalbini dinliyor.",
-                "en": "Yes, Ali sits still. The doctor listens to his heart."
+                "en": "Yes, Leo sits still. The doctor listens to his heart."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p5_still.mp3",
@@ -717,7 +717,7 @@
             "result": {
               "text": {
                 "tr": "Ali doktoru itti. Doktor Ali'nin kalbini dinleyemedi.",
-                "en": "Ali pushed the doctor away. The doctor couldn't listen to his heart."
+                "en": "Leo pushed the doctor away. The doctor couldn't listen to his heart."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p5_push.mp3",
@@ -731,7 +731,7 @@
         "line": {
           "text": {
             "tr": "Muayene bitti! Ali şimdi nasıl hissediyor?",
-            "en": "The checkup is over! How does Ali feel now?"
+            "en": "The checkup is over! How does Leo feel now?"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p6.mp3",
@@ -745,7 +745,7 @@
             "result": {
               "text": {
                 "tr": "Evet, Ali artık çok mutlu.",
-                "en": "Yes, Ali is very happy now."
+                "en": "Yes, Leo is very happy now."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p6_happy.mp3",
@@ -759,7 +759,7 @@
             "result": {
               "text": {
                 "tr": "Bak, Ali gülümsüyor. Korkusu geçti.",
-                "en": "Look, Ali is smiling. He isn't scared anymore."
+                "en": "Look, Leo is smiling. He isn't scared anymore."
               },
               "audio": {
                 "tr": "assets/audio/tr/stories/doctor/p6_scared.mp3",
@@ -773,7 +773,7 @@
         "line": {
           "text": {
             "tr": "Doktor Ali'ye bir yıldız verdi. Çok cesurdun Ali!",
-            "en": "The doctor gave Ali a star sticker. You were so brave, Ali!"
+            "en": "The doctor gave Leo a star sticker. You were so brave, Leo!"
           },
           "audio": {
             "tr": "assets/audio/tr/stories/doctor/p7.mp3",
@@ -786,7 +786,7 @@
     "praise": {
       "text": {
         "tr": "Aferin sana! Ali'ye çok güzel yardım ettin.",
-        "en": "Well done! You were a great help to Ali."
+        "en": "Well done! You were a great help to Leo."
       },
       "audio": {
         "tr": "assets/audio/tr/stories/doctor/praise.mp3",

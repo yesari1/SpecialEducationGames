@@ -949,6 +949,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get obAgeTitle => 'Age';
 
   @override
+  String get obGenderGirl => 'Girl';
+
+  @override
+  String get obGenderBoy => 'Boy';
+
+  @override
   String get obAgeTenPlus => '10+';
 
   @override

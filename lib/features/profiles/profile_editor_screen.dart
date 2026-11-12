@@ -210,6 +210,13 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
             SizedBox(height: avatarSize + 24, child: avatars),
             const SizedBox(height: SegSpace.s5),
             field,
+            const SizedBox(height: SegSpace.s4),
+            GenderChoice(
+              value: answers['gender'] as String?,
+              girlLabel: l10n.obGenderGirl,
+              boyLabel: l10n.obGenderBoy,
+              onChanged: (v) => setState(() => answers['gender'] = v),
+            ),
           ],
         );
       }
