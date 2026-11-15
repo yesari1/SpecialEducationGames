@@ -132,10 +132,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(
-                              Icons.auto_awesome_rounded,
-                              size: 20,
-                              color: SegColors.starDeep,
+                            Image.asset(
+                              'assets/illustrations/home/icon_stickers.png',
+                              height: 30,
+                              excludeFromSemantics: true,
                             ),
                             const SizedBox(width: SegSpace.s1),
                             Text(
@@ -162,10 +162,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(
-                              Icons.people_outline_rounded,
-                              size: 20,
-                              color: SegColors.primaryDeep,
+                            Image.asset(
+                              'assets/illustrations/home/icon_family.png',
+                              height: 30,
+                              excludeFromSemantics: true,
                             ),
                             const SizedBox(width: SegSpace.s1),
                             Text(

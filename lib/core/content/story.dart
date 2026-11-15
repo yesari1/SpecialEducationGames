@@ -3,6 +3,8 @@
 /// Stories are data (assets/content/stories.json); adding one needs no code.
 library;
 
+import 'child_cast.dart';
+
 /// A text in each app language with its narration clip.
 class StoryLine {
   final Map<String, String> text, audio;
@@ -13,7 +15,8 @@ class StoryLine {
     Map<String, String>.from((j['audio'] ?? const {}) as Map),
   );
 
-  String textFor(String locale) => text[locale] ?? text['tr'] ?? '';
+  String textFor(String locale) =>
+      ChildCast.of(text[locale] ?? text['tr'] ?? '');
 
   /// The clip in [locale] only: a Turkish clip must never play under an
   /// English sentence.
@@ -103,7 +106,8 @@ class Story {
     this.praise,
   });
 
-  String titleFor(String locale) => title[locale] ?? title['tr'] ?? id;
+  String titleFor(String locale) =>
+      ChildCast.of(title[locale] ?? title['tr'] ?? id);
 
   factory Story.fromJson(Map<String, dynamic> j) {
     final story = Story(

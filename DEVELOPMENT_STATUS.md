@@ -1403,3 +1403,16 @@ Yunus's review round (thread "Ana ekran UI + oyun düzeltmeleri"). Source of tru
 - Not reproduced on Pixel_9a (four minutes idle on the home, no crash, memory flat), so the proof is on Yunus's phone and in vitals of 2.0.53.
 - Home stutter: the ShaderMask that faded the top of the Learn list redrew the whole list through a layer every frame; replaced by a thin sky-coloured strip over the list.
 - 345 host tests pass; release build launched on Pixel_9a. tools/play_crashes.py needs the Play Developer Reporting API enabled in the cloud project (it is not); the crash was read in the Play Console instead.
+
+## 15-16 November 2026 - Second review round (2.0.54)
+- Result of a pair game: ResultScene is fully opaque, soft green, and covers the whole screen past the safe area. Round pictures are precached and fade in.
+- Finger guide of scene games: only when an easy game opens and after 12 quiet seconds. The level picked on a theme page is kept (pickedDifficulty) and opens every theme.
+- No question twice in one game on any level (scheduler.noRepeat always); a scene game may set "plays" (growing one seed is one game). Hava Nasıl has four sounds.
+- Cards: no colour-filter layer on unlocked cards, one small one on locked cards (home stutter). 87 pictures had a faint alpha haze: tools/home_sections/clean_haze.py. Seed and tree stage pictures are cut-outs in one frame (install_stage_series.py).
+- Scene step "effect": plant, pour, shine, sprinkle; SceneRound.rise grows the new picture. Nerede Çalışır says a sentence after the right answer and is spoken "nerde".
+- Music: Çal Bakalım is endless free play (no stars, no done); Sen de Çal is a piano (assets/sfx/piano made by make_piano_notes.py): listen and repeat, long notes on hard.
+- Puzzle: shelf of pictures and 4/6/9 pieces chosen before the puzzle, new click (puzzle_snap.wav). Colouring: big shelf, 12 colours that always fit, the chosen one holds the brush.
+- The girl everywhere in games: lib/core/content/child_cast.dart looks pictures, clips and sentences up in assets/content/girl_variants.json (tools/home_sections/build_girl_variants.py; pictures drawn by artifacts/fix-nov12/girl_runner.py as edits of the boy's). 55 pictures, 90 clips. Stories switch to the girl only when all their pictures exist: 19 of 46 drawn when the ChatGPT image limit was hit; run girl_runner.py 5 story- again, then build_girl_variants.py.
+- Voices: Turkish praise and 12 words recorded again with eleven_v4; a child's "Yaşasın" for each child (make_kid_sfx.py; the key may not use sound generation).
+- G47 is "Göster Bakalım" / "Show Me". New home icons (stickers, family).
+- 345 host tests pass; release build 2.0.54 (68) launched on Pixel_9a; piano played through on the emulator.

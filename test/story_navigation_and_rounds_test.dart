@@ -216,7 +216,7 @@ void main() {
       }
     }
 
-    test('easy may still repeat, to teach', () {
+    test('easy does not repeat either: the game ends when it runs out', () {
       final controller = RoundController(
         content: content,
         themeId: 'colors',
@@ -230,7 +230,10 @@ void main() {
       );
       addTearDown(controller.dispose);
       controller.start();
-      expect(controller.total, 40);
+      // Yunus, 15 November 2026: the same question never comes twice in one
+      // game, on any level; a game is as long as its different questions.
+      expect(controller.total, lessThan(40));
+      expect(controller.total, greaterThan(1));
     });
   });
 }

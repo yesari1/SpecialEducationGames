@@ -141,6 +141,8 @@ class RoundSpec {
     resultImagePath: resultImagePath,
     fullStage: fullStage,
     plainTargets: plainTargets,
+    notes: notes,
+    longNotes: longNotes,
   );
   RoundSpec asIntroduction() => RoundSpec(
     target: target,

@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/scene_backdrop.dart';
+import '../../core/content/child_cast.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../l10n/app_localizations.dart';
@@ -22,7 +23,7 @@ final storiesTheme = ContentTheme.fromJson({
 /// A story's picture, or a quiet empty frame if the file is missing (a
 /// broken picture must never stop the story).
 Widget storyPicture(String asset, {BoxFit fit = BoxFit.contain}) => Image.asset(
-  asset,
+  ChildCast.of(asset),
   fit: fit,
   excludeFromSemantics: true,
   errorBuilder: (_, _, _) => const ColoredBox(color: SegColors.surfaceMuted),

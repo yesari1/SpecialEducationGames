@@ -62,8 +62,14 @@ def pictures():
         name = src.stem
         if name.startswith('_'):
             continue
-        if name.startswith('need_'):
+        if name.startswith('story-'):
+            _, story, stem = name.split('-', 2)
+            boy = next((f'assets/stories/{story}/{stem}.{ext}' for ext in ('jpg', 'png')
+                        if (ROOT / f'assets/stories/{story}/{stem}.{ext}').exists()), f'assets/stories/{story}/{stem}.png')
+        elif name.startswith('need_'):
             boy = f'assets/images/need/{name[5:]}.webp'
+        elif name.startswith('emotions_'):
+            boy = f'assets/images/emotions/{name[9:]}.webp'
         elif name.startswith('scenes_'):
             boy = f'assets/images/scenes/{name[7:]}.jpg'
         elif name.startswith('wear_'):
@@ -80,12 +86,17 @@ def pictures():
             im = Image.open(src)
             if boy.endswith('.jpg'):
                 im.convert('RGB').resize(like.size, Image.LANCZOS).save(target, 'JPEG', quality=90)
+            elif name.startswith('story-'):
+                # A story card: the same size as the boy's, corners clear.
+                im = im.convert('RGBA').resize(like.size, Image.LANCZOS)
+                im.putalpha(im.getchannel('A').point(lambda v: 0 if v < 20 else v))
+                im.save(target, 'PNG')
             elif like.mode == 'RGB':
                 im.convert('RGB').resize(like.size, Image.LANCZOS).save(target, 'WEBP', quality=90, method=4)
             else:
                 im = im.convert('RGBA')
                 im.putalpha(im.getchannel('A').point(lambda v: 0 if v < 20 else v))
-                if name.startswith('need_'):
+                if name.startswith(('need_', 'emotions_')):
                     # An item picture: the subject centred on a square, like the others.
                     box = im.getchannel('A').point(lambda v: 255 if v > 24 else 0).getbbox()
                     sub = im.crop(box)
@@ -115,6 +126,18 @@ def lines():
     found = {}
     for source in sorted((ROOT / 'tools/home_sections/lines').glob('*.json')):
         found.update(json.loads(source.read_text(encoding='utf-8')))
+    # The stories: every narrated line of assets/content/stories.json.
+    def story_lines(node):
+        if isinstance(node, dict):
+            if isinstance(node.get('text'), dict) and isinstance(node.get('audio'), dict):
+                found[node['audio']['tr'].replace('/tr/', '/{lang}/', 1)] = dict(node['text'])
+            for value in node.values():
+                story_lines(value)
+        elif isinstance(node, list):
+            for value in node:
+                story_lines(value)
+
+    story_lines(json.loads((ROOT / 'assets/content/stories.json').read_text(encoding='utf-8')))
     pairs = json.loads((ROOT / 'tools/pair_games/voice_manifest.json').read_text(encoding='utf-8'))
     for path, clip in pairs.items():
         pattern = path.replace(f'/{clip["language"]}/', '/{lang}/', 1)
@@ -134,10 +157,24 @@ def main():
         story_voice = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(story_voice)
     recorded = missing = 0
+    # A story is told about the girl only when every one of its pictures
+    # shows her; until then it stays the boy's, pictures and words alike.
+    ready = set()
+    for folder in sorted((ROOT / 'assets/stories').iterdir()):
+        own = [f for f in folder.iterdir() if '_girl.' not in f.name]
+        if own and all(f'assets/stories/{folder.name}/{f.name}' in variants for f in own):
+            ready.add(folder.name)
+    for boy in [k for k in variants if k.startswith('assets/stories/') and k.split('/')[2] not in ready]:
+        del variants[boy]
+    print('stories ready for the girl:', sorted(ready))
     for pattern, text in sorted(lines().items()):
         if any(s in pattern for s in SKIP) or 'tr' not in text or 'en' not in text:
             continue
-        names_him = re.search(r'\bAli\b', text['tr']) or re.search(r'\bLeo\b', text['en'])
+        if '/stories/' in pattern and pattern.split('/stories/')[1].split('/')[0] not in ready:
+            continue
+        # A story about him may say he or his without his name.
+        names_him = (re.search(r'\bAli\b', text['tr']) or re.search(r'\bLeo\b', text['en'])
+                     or '/stories/' in pattern)
         dependent = any(f'/{d}' in pattern for d in DEPENDENT if not d.endswith('_'))
         if not names_him and not dependent:
             continue
@@ -164,6 +201,28 @@ def main():
                 variants[path] = girl
             else:
                 missing += 1
+    # Sentences that are only shown (a round's text is not always the line
+    # that is spoken).
+    def shown(node):
+        if isinstance(node, dict):
+            if isinstance(node.get('tr'), str) and isinstance(node.get('en'), str):
+                if re.search(r'\bAli\b', node['tr']) or re.search(r'\bLeo\b', node['en']):
+                    texts.setdefault(node['tr'], girl_tr(node['tr']))
+                    texts.setdefault(node['en'], girl_en(node['en']))
+            for value in node.values():
+                shown(value)
+        elif isinstance(node, list):
+            for value in node:
+                shown(value)
+
+    for name in ('scene_games.json', 'pair_games.json', 'body_map.json', 'games.json', 'stories.json'):
+        data = json.loads((ROOT / 'assets/content' / name).read_text(encoding='utf-8'))
+        if name in ('scene_games.json', 'pair_games.json'):
+            data = {k: v for k, v in data.items() if k not in ('G63', 'G64')}
+        if name == 'stories.json':
+            data = [story for story in data if story['id'] in ready]
+        shown(data)
+    texts = {k: v for k, v in texts.items() if k != v}
     variants.update(texts)
     OUT.write_text(json.dumps(variants, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
     print(f'{len(variants)} counterparts ({len(texts)} sentences), {recorded} clips recorded, {missing} clips missing')
