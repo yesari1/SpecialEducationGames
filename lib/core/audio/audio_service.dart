@@ -1,3 +1,4 @@
+import '../content/child_cast.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:just_audio/just_audio.dart';
@@ -41,6 +42,10 @@ abstract final class UiSound {
   /// A sorted item lands in its basket (soft "pof").
   static Future<void> basketDrop() =>
       service?.effect('assets/sfx/ui/basket_drop.wav') ?? Future.value();
+
+  /// A puzzle piece clicks into its place.
+  static Future<void> puzzleSnap() =>
+      service?.effect('assets/sfx/ui/puzzle_snap.wav') ?? Future.value();
 
   /// The parent gate opens (click and ding).
   static Future<void> unlock() =>
@@ -104,6 +109,8 @@ class AudioService {
 
   Future<void> playSequence(List<String> assets) async {
     if (_disposed) return;
+    // A clip that names the boy has a counterpart that names the girl.
+    assets = [for (final asset in assets) ChildCast.of(asset)];
     final generation = ++_generation;
     _playing = generation;
     try {

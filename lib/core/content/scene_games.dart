@@ -52,6 +52,12 @@ class SceneStep {
   /// The whole picture after this step, if it changes.
   final String? after;
 
+  /// What the piece does when it arrives, before the picture changes:
+  /// 'plant' (drops into the soil), 'pour' (a watering can tips and water
+  /// runs), 'shine' (a sun glows above), 'sprinkle' (it spreads over the
+  /// place). Null: it simply lands.
+  final String? effect;
+
   /// Stains to rub away (rub steps).
   final List<SceneRect> spots;
 
@@ -68,6 +74,7 @@ class SceneStep {
     this.shadow = false,
     this.turn = 0,
     this.after,
+    this.effect,
     this.spots = const [],
     this.askAudio = const {},
     this.doneAudio = const {},
@@ -83,6 +90,7 @@ class SceneStep {
     shadow: (j['shadow'] ?? false) as bool,
     turn: ((j['turn'] ?? 0) as num).toDouble(),
     after: j['after'] as String?,
+    effect: j['effect'] as String?,
     spots: [
       for (final s in (j['spots'] ?? const []) as List)
         SceneRect.fromJson(s as List),
@@ -126,6 +134,10 @@ class SceneRound {
 
   /// Which child the round shows ('boy' or 'girl'); null fits both.
   final String? who;
+
+  /// A new picture grows up from the ground instead of only fading in
+  /// (a sprout, a flower).
+  final bool rise;
   final Map<String, String> text, audio;
   final List<SceneStep> steps;
 
@@ -146,6 +158,7 @@ class SceneRound {
     this.front,
     this.extras = const [],
     this.who,
+    this.rise = false,
     this.finishAudio = const {},
   });
 
@@ -164,6 +177,7 @@ class SceneRound {
     front: j['front'] as String?,
     extras: List<String>.from((j['extras'] ?? const []) as List),
     who: j['who'] as String?,
+    rise: (j['rise'] ?? false) as bool,
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
     steps: [
@@ -179,10 +193,20 @@ class SceneRound {
 class SceneGame {
   final String id, theme;
   final List<SceneRound> rounds;
-  const SceneGame({required this.id, required this.theme, required this.rounds});
+
+  /// How many rounds one game has, when it is not the usual number (one
+  /// seed grown is one whole game).
+  final int? plays;
+  const SceneGame({
+    required this.id,
+    required this.theme,
+    required this.rounds,
+    this.plays,
+  });
   factory SceneGame.fromJson(String id, Map<String, dynamic> j) => SceneGame(
     id: id,
     theme: j['theme'] as String,
+    plays: j['plays'] as int?,
     rounds: [
       for (final r in j['rounds'] as List)
         SceneRound.fromJson(r as Map<String, dynamic>),

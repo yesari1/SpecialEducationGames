@@ -13,6 +13,7 @@ import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
 import 'package:special_education_games/features/game/widgets/scene_game_view.dart';
+import 'package:special_education_games/features/park/coloring_screen.dart';
 import 'package:special_education_games/features/park/puzzle_screen.dart';
 import 'package:special_education_games/l10n/app_localizations.dart';
 
@@ -220,9 +221,19 @@ void main() {
     for (final level in Difficulty.values) {
       await open(PuzzleScreen(state: state));
       if (level != Difficulty.easy) {
-        await tester.tap(find.text(level.label('tr')));
+        await tester.tap(find.text(level == Difficulty.medium ? '6' : '9'));
         await settle(3);
       }
+      if (level == Difficulty.easy) await shot('puzzle-shelf');
+      // Pick the first picture of the shelf.
+      await tester.tap(
+        find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey &&
+              '${(w.key! as ValueKey).value}'.startsWith('puzzle-pick-'),
+        ).first,
+      );
+      await settle(3);
       await shot('puzzle-${level.name}-0');
       // Bring the first two pieces home.
       for (final i in [0, 1]) {
@@ -239,6 +250,61 @@ void main() {
       await shot('puzzle-${level.name}-1');
       await close();
     }
+
+    // Music: the piano game and free play; the colouring shelf and board.
+    for (final (game, tier) in const [
+      ('G75', Difficulty.easy),
+      ('G75', Difficulty.hard),
+      ('G76', Difficulty.easy),
+    ]) {
+      await open(
+        GameScreen(
+          state: state,
+          themeId: 'music',
+          gameId: game,
+          difficulty: tier,
+        ),
+      );
+      await settle(6);
+      await shot('$game-${tier.name}');
+      await close();
+    }
+    await open(ColoringScreen(state: state));
+    await shot('coloring-shelf');
+    await tester.tap(
+      find.byWidgetPredicate(
+        (w) =>
+            w.key is ValueKey &&
+            '${(w.key! as ValueKey).value}'.startsWith('coloring-page-'),
+      ).first,
+    );
+    await settle(4);
+    await tester.tap(find.byKey(const ValueKey('coloring-paint-5')));
+    await settle(2);
+    await shot('coloring-board');
+    await close();
+
+    // A girl's profile: the same games show and name Ayşe.
+    final girl = await newState('girl');
+    for (final (theme, game) in const [
+      ('cleaning', 'G60'),
+      ('cleaning', 'G62'),
+      ('emotions', 'G44'),
+      ('body', 'G47'),
+      ('jobs', 'G69'),
+    ]) {
+      await open(
+        GameScreen(
+          state: girl,
+          themeId: theme,
+          gameId: game,
+          difficulty: Difficulty.easy,
+        ),
+      );
+      await shot('girl-$game');
+      await close();
+    }
+    girl.dispose();
     state.dispose();
     tester.view.resetPhysicalSize();
     tester.view.resetDevicePixelRatio();

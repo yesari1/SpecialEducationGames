@@ -94,6 +94,7 @@ flutter:
     - assets/content/
     - assets/content/items/
     - assets/sfx/music/
+    - assets/sfx/piano/
     - assets/coloring/
     - assets/images/music/
     - assets/audio/tr/music/

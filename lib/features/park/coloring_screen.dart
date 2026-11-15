@@ -12,6 +12,7 @@ import 'park_scaffold.dart';
 const _paints = [
   Color(0xFFE5534B), Color(0xFFFF8A32), Color(0xFFFFC546), Color(0xFF6CC66B), //
   Color(0xFF10B7B0), Color(0xFF1687D9), Color(0xFF7C73DF), Color(0xFFE76F8E),
+  Color(0xFF9B6A43), Color(0xFF63C6F4), Color(0xFF8E9AA6), Color(0xFF2F3E4D),
 ];
 
 /// Boyama: the child picks a drawing, then a colour, then taps a part of the
@@ -46,47 +47,61 @@ class _ColoringScreenState extends State<ColoringScreen> {
     return ParkScaffold(
       title: l10n.parkColoring,
       background: 'assets/illustrations/home/bg_park.jpg',
-      onBack: () => page == null
-          ? context.go('/')
-          : setState(() => _page = null),
+      onBack: () =>
+          page == null ? context.go('/') : setState(() => _page = null),
       child: page == null
           ? _picker()
           : _PaintingBoard(key: ValueKey(page), name: page),
     );
   }
 
-  Widget _picker() => GridView.count(
-    key: const ValueKey('coloring-picker'),
-    padding: const EdgeInsets.fromLTRB(
-      SegSpace.s4,
-      0,
-      SegSpace.s4,
-      SegSpace.s4,
-    ),
-    crossAxisCount: 5,
-    mainAxisSpacing: SegSpace.s3,
-    crossAxisSpacing: SegSpace.s3,
-    children: [
-      for (final name in s.content.coloringPages)
-        GestureDetector(
-          key: ValueKey('coloring-page-$name'),
-          onTap: () {
-            UiSound.tap();
-            setState(() => _page = name);
-          },
-          child: Container(
-            padding: const EdgeInsets.all(SegSpace.s2),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(SegRadius.md),
-            ),
-            child: Image.asset(
-              'assets/coloring/${name}_line.png',
-              excludeFromSemantics: true,
-            ),
+  /// The drawings side by side, big enough to see what each one is; the
+  /// row scrolls sideways like the rest of the Play Park.
+  Widget _picker() => LayoutBuilder(
+    builder: (context, box) {
+      final side = (box.maxHeight - SegSpace.s5).clamp(120.0, 300.0);
+      return Center(
+        child: SizedBox(
+          height: side,
+          child: ListView.separated(
+            key: const ValueKey('coloring-picker'),
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
+            itemCount: s.content.coloringPages.length,
+            separatorBuilder: (_, _) => const SizedBox(width: SegSpace.s4),
+            itemBuilder: (context, i) {
+              final name = s.content.coloringPages[i];
+              return GestureDetector(
+                key: ValueKey('coloring-page-$name'),
+                onTap: () {
+                  UiSound.tap();
+                  setState(() => _page = name);
+                },
+                child: Container(
+                  width: side,
+                  padding: const EdgeInsets.all(SegSpace.s3),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(SegRadius.lg),
+                    border: Border.all(color: Colors.white, width: 3),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF7C73DF).withValues(alpha: .22),
+                        offset: const Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  child: Image.asset(
+                    'assets/coloring/${name}_line.png',
+                    excludeFromSemantics: true,
+                  ),
+                ),
+              );
+            },
           ),
         ),
-    ],
+      );
+    },
   );
 }
 
@@ -137,7 +152,8 @@ class _PaintingBoardState extends State<_PaintingBoard>
   }
 
   Future<ui.Image> _compose() {
-    final pixels = Uint8List(_width * _height * 4)..fillRange(0, _width * _height * 4, 255);
+    final pixels = Uint8List(_width * _height * 4)
+      ..fillRange(0, _width * _height * 4, 255);
     final map = _regions!;
     for (var i = 0; i < map.length; i++) {
       final color = _colors[map[i]];
@@ -253,11 +269,11 @@ class _PaintingBoardState extends State<_PaintingBoard>
                             key: const ValueKey('coloring-brush'),
                             left: _tap.dx - 20 + wave * side * .06,
                             top: _tap.dy - 60,
-                            child: const Icon(
+                            child: Icon(
                               Icons.brush_rounded,
                               size: 64,
-                              color: SegColors.primaryDeep,
-                              shadows: [
+                              color: _paint,
+                              shadows: const [
                                 Shadow(color: Colors.white, blurRadius: 8),
                               ],
                             ),
@@ -270,40 +286,66 @@ class _PaintingBoardState extends State<_PaintingBoard>
               ),
             ),
             const SizedBox(width: SegSpace.s5),
-            SizedBox(
-              width: math.min(box.maxWidth * .3, 220),
-              child: GridView.count(
-                key: const ValueKey('coloring-paints'),
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                mainAxisSpacing: SegSpace.s3,
-                crossAxisSpacing: SegSpace.s3,
-                childAspectRatio: 1.25,
-                children: [
-                  for (var i = 0; i < _paints.length; i++)
-                    GestureDetector(
-                      key: ValueKey('coloring-paint-$i'),
-                      onTap: () {
-                        UiSound.tap();
-                        setState(() => _paint = _paints[i]);
-                      },
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 180),
-                        decoration: BoxDecoration(
-                          color: _paints[i],
-                          borderRadius: BorderRadius.circular(SegRadius.pill),
-                          border: Border.all(
-                            color: _paint == _paints[i]
-                                ? SegColors.ink
-                                : Colors.white,
-                            width: _paint == _paints[i] ? 4 : 3,
+            // Every colour fits the height: three columns, never a
+            // colour out of reach. The chosen one is big and holds the brush.
+            Builder(
+              builder: (context) {
+                const columns = 3, gap = SegSpace.s3;
+                final rows = (_paints.length / columns).ceil();
+                final chip = ((side - gap * (rows - 1)) / rows).clamp(
+                  36.0,
+                  76.0,
+                );
+                return SizedBox(
+                  key: const ValueKey('coloring-paints'),
+                  width: chip * columns + gap * (columns - 1),
+                  child: Wrap(
+                    spacing: gap,
+                    runSpacing: gap,
+                    children: [
+                      for (var i = 0; i < _paints.length; i++)
+                        GestureDetector(
+                          key: ValueKey('coloring-paint-$i'),
+                          onTap: () {
+                            UiSound.tap();
+                            setState(() => _paint = _paints[i]);
+                          },
+                          child: AnimatedScale(
+                            scale: _paint == _paints[i] ? 1.12 : .88,
+                            duration: const Duration(milliseconds: 180),
+                            child: Container(
+                              width: chip,
+                              height: chip,
+                              decoration: BoxDecoration(
+                                color: _paints[i],
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: _paint == _paints[i] ? 5 : 3,
+                                ),
+                                boxShadow: [
+                                  if (_paint == _paints[i])
+                                    BoxShadow(
+                                      color: _paints[i].withValues(alpha: .6),
+                                      blurRadius: 14,
+                                      spreadRadius: 2,
+                                    ),
+                                ],
+                              ),
+                              child: _paint == _paints[i]
+                                  ? Icon(
+                                      Icons.brush_rounded,
+                                      color: Colors.white,
+                                      size: chip * .5,
+                                    )
+                                  : null,
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                ],
-              ),
+                    ],
+                  ),
+                );
+              },
             ),
           ],
         );
@@ -318,7 +360,9 @@ class _CircleReveal extends CustomClipper<Path> {
   const _CircleReveal(this.center, this.t);
   @override
   Path getClip(Size size) => Path()
-    ..addOval(Rect.fromCircle(center: center, radius: size.longestSide * 1.5 * t));
+    ..addOval(
+      Rect.fromCircle(center: center, radius: size.longestSide * 1.5 * t),
+    );
   @override
   bool shouldReclip(_CircleReveal old) => old.t != t || old.center != center;
 }

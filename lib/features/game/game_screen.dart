@@ -11,6 +11,7 @@ import '../../app/ui/components.dart';
 import '../../app/ui/game_object.dart';
 import '../../app/ui/scene_backdrop.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
+import '../../core/content/child_cast.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/db/app_database.dart';
 import '../../core/learning/policies.dart';
@@ -90,7 +91,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     GamePromptKey.numberQuantity => l10n.gamePromptNumberQuantity,
     GamePromptKey.fillCount => l10n.gamePromptFillCount(spec.fillCount ?? 0),
     GamePromptKey.whichSound => l10n.gamePromptWhichSound,
-    null => s.locale == 'tr' ? spec.promptTr : spec.promptEn,
+    null => ChildCast.of(s.locale == 'tr' ? spec.promptTr : spec.promptEn),
   };
   bool get exploratory => widget.gameId == 'G02' || widget.gameId == 'G55';
   @override
@@ -175,7 +176,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
           ? 3
           : 5,
       band: band,
-      who: survey['gender'] == 'girl' ? 'girl' : 'boy',
+      who: ChildCast.who,
       hintSeconds: s.hintSeconds,
       fadeWrongChoices: s.fadeWrongChoices,
       fadeAfterErrors: s.configuration.fadeAfterErrors,
@@ -501,6 +502,19 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         spec.stimulus == null &&
         spec.count == null &&
         spec.sequence.isEmpty;
+    // The round's big pictures are ready before they are shown, so none
+    // pops in late.
+    for (final path in [spec.promptImagePath, spec.resultImagePath]) {
+      if (path != null) {
+        unawaited(
+          precacheImage(
+            AssetImage(ChildCast.of(path)),
+            context,
+            onError: (_, _) {},
+          ),
+        );
+      }
+    }
     final Widget stage = _Entrance(
       // Only the basket view restarts per round; the
       // choice views keep their state across rounds.
@@ -544,6 +558,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         child: SafeArea(
           child: Stack(
             fit: StackFit.expand,
+            clipBehavior: Clip.none,
             children: [
               Column(
                 children: [
@@ -563,7 +578,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                           child: Wrap(
                             alignment: WrapAlignment.center,
                             children: List.generate(
-                              c.total,
+                              c.template.endless ? 0 : c.total,
                               (i) => Icon(
                                 i < c.stage ||
                                         (i == c.stage &&
@@ -805,7 +820,12 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
               // over the whole game ("İtfaiyeci hortumla yangını söndürüyor").
               if (spec.resultImagePath case final result?
                   when c.phase == RoundPhase.celebrating)
-                Positioned.fill(
+                // Past the safe area too: the whole screen, edge to edge.
+                Positioned(
+                  left: -MediaQuery.paddingOf(context).left,
+                  top: -MediaQuery.paddingOf(context).top,
+                  right: -MediaQuery.paddingOf(context).right,
+                  bottom: -MediaQuery.paddingOf(context).bottom,
                   child: IgnorePointer(
                     child: ResultScene(
                       key: ValueKey('pair-result-$result'),
@@ -1802,45 +1822,45 @@ class _Entrance extends StatelessWidget {
   }
 }
 
-/// The picture of what the right answer leads to, large in the middle of the
-/// game on a soft white haze that fades out to the edges: no box and no
-/// frame around it.
+/// The picture of what the right answer leads to, large in the middle of a
+/// calm, fully opaque screen of its own (soft green: "that was right"), with
+/// a glow behind the figures. Nothing of the game shows through and no edge
+/// of the screen is left uncovered.
 class ResultScene extends StatelessWidget {
   final String picture;
   const ResultScene({super.key, required this.picture});
   @override
-  Widget build(BuildContext context) => DecoratedBox(
-    decoration: BoxDecoration(
-      gradient: RadialGradient(
-        radius: .95,
-        colors: [
-          Colors.white.withValues(alpha: .97),
-          Colors.white.withValues(alpha: .95),
-          Colors.white.withValues(alpha: .78),
-        ],
-        stops: const [0, .55, 1],
+  Widget build(BuildContext context) {
+    final inset = MediaQuery.paddingOf(context);
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        gradient: RadialGradient(
+          radius: .9,
+          colors: [Color(0xFFFFFFFF), Color(0xFFEFFBF4), Color(0xFFD5F3E2)],
+          stops: [0, .5, 1],
+        ),
       ),
-    ),
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(
-        SegSpace.s5,
-        SegSpace.s7,
-        SegSpace.s5,
-        SegSpace.s3,
-      ),
-      child: Center(
-        child: HopIn(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              const Positioned.fill(
-                child: ObjectHalo(color: SegColors.hintGlow, strength: .9),
-              ),
-              Image.asset(picture, fit: BoxFit.contain),
-            ],
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(
+          inset.left + SegSpace.s5,
+          inset.top + SegSpace.s4,
+          inset.right + SegSpace.s5,
+          inset.bottom + SegSpace.s4,
+        ),
+        child: Center(
+          child: HopIn(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                const Positioned.fill(
+                  child: ObjectHalo(color: SegColors.successGlow),
+                ),
+                Image.asset(ChildCast.of(picture), fit: BoxFit.contain),
+              ],
+            ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

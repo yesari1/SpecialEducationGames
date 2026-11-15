@@ -6,6 +6,7 @@ import '../../../app/theme/tokens.dart';
 import '../../../app/ui/components.dart';
 import '../../../app/ui/game_object.dart';
 import '../../../core/audio/audio_service.dart' show UiSound;
+import '../../../core/content/child_cast.dart';
 import '../../../core/content/content_repository.dart';
 import '../round_spec.dart';
 import 'round_choices_view.dart';
@@ -110,6 +111,82 @@ class _Flight {
   });
 }
 
+/// What a piece does where it arrived, before the picture changes: a can
+/// pours, a sun shines, snow or blossom spreads over the tree.
+class _Effect {
+  final String id, kind;
+
+  /// Where the piece is, and where its water, light or flakes go.
+  final Rect at, over;
+  const _Effect(this.id, this.kind, this.at, this.over);
+}
+
+/// Water running from the can's spout to the soil.
+class _DropsPainter extends CustomPainter {
+  final Offset from, to;
+  final double t, strength;
+  const _DropsPainter(this.from, this.to, this.t, this.strength);
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (strength <= 0) return;
+    final paint = Paint()
+      ..color = const Color(0xFF4FB6F0).withValues(alpha: .9 * strength);
+    const drops = 7;
+    for (var i = 0; i < drops; i++) {
+      final along = (t * 3.2 + i / drops) % 1;
+      // Falls faster as it goes, a little to the side of its neighbours.
+      final fall = along * along;
+      final at =
+          Offset.lerp(from, to, fall)! + Offset((i.isEven ? -1 : 1) * 4.0, 0);
+      final r = 4.5 + (i % 3);
+      canvas.drawOval(
+        Rect.fromCenter(center: at, width: r * 1.5, height: r * 2.3),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_DropsPainter old) =>
+      old.t != t || old.strength != strength;
+}
+
+/// Soft rays turning slowly around the sun.
+class _RaysPainter extends CustomPainter {
+  final double t, strength;
+  const _RaysPainter(this.t, this.strength);
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (strength <= 0) return;
+    final centre = size.center(Offset.zero);
+    final glow = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          const Color(0xFFFFE082).withValues(alpha: .75 * strength),
+          const Color(0xFFFFE082).withValues(alpha: 0),
+        ],
+      ).createShader(Rect.fromCircle(center: centre, radius: size.width * .9));
+    canvas.drawCircle(centre, size.width * .9, glow);
+    final ray = Paint()
+      ..color = const Color(0xFFFFC546).withValues(alpha: .8 * strength)
+      ..strokeWidth = size.width * .035
+      ..strokeCap = StrokeCap.round;
+    for (var i = 0; i < 12; i++) {
+      final angle = i / 12 * math.pi * 2 + t * 1.2;
+      final reach = size.width * (.62 + .1 * math.sin(t * 10 + i));
+      canvas.drawLine(
+        centre + Offset.fromDirection(angle, size.width * .52),
+        centre + Offset.fromDirection(angle, reach),
+        ray,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_RaysPainter old) =>
+      old.t != t || old.strength != strength;
+}
+
 class _SceneGameViewState extends State<SceneGameView>
     with TickerProviderStateMixin {
   SceneRound get round => widget.spec.scene!;
@@ -146,6 +223,19 @@ class _SceneGameViewState extends State<SceneGameView>
     duration: const Duration(milliseconds: 420),
   );
 
+  _Effect? _effect;
+  bool _effectLanded = false;
+  late final AnimationController _fx =
+      AnimationController(vsync: this, duration: const Duration(seconds: 2))
+        ..addListener(() {
+          // The picture starts to change while the water still runs.
+          if (_effect != null && !_effectLanded && _fx.value >= .62) {
+            _effectLanded = true;
+            _complete();
+          }
+        });
+  bool get _busy => _flight?.then != null || _effect != null;
+
   // The finger that shows how to drag: when the game opens and again after
   // six seconds with no touch (or as soon as a hint is due).
   final _rootKey = GlobalKey();
@@ -164,13 +254,16 @@ class _SceneGameViewState extends State<SceneGameView>
       _ready &&
       !_dragging &&
       _flight == null &&
+      _effect == null &&
       step.mode == SceneStepMode.place &&
-      (!_introSeen || _idle || _hintLevel > 0);
+      // Shown once when an easy game opens, and to a child who has not
+      // touched the screen for a while; never to one who is playing.
+      ((!_introSeen && round.tier == 'easy') || _idle);
 
   void _armIdle() {
     _idle = false;
     _idleTimer?.cancel();
-    _idleTimer = Timer(const Duration(seconds: 6), () {
+    _idleTimer = Timer(const Duration(seconds: 12), () {
       if (mounted) setState(() => _idle = true);
     });
   }
@@ -230,6 +323,8 @@ class _SceneGameViewState extends State<SceneGameView>
     _dragAt = null;
     _flight = null;
     _fly.stop();
+    _effect = null;
+    _fx.stop();
     if (round.gentle) {
       _pieces = [for (final s in round.steps) s.piece, ...round.extras]
         ..shuffle(math.Random(_generation * 31));
@@ -255,6 +350,7 @@ class _SceneGameViewState extends State<SceneGameView>
     _idleTimer?.cancel();
     _finger.dispose();
     _fly.dispose();
+    _fx.dispose();
     super.dispose();
   }
 
@@ -401,7 +497,7 @@ class _SceneGameViewState extends State<SceneGameView>
   /// The piece [id] was brought to the picture; [from] is where it is now.
   void _bring(String id, Rect? from) {
     // One piece at a time: nothing new while one is landing.
-    if (_flight?.then != null) return;
+    if (_busy) return;
     if (!_ready || step.mode != SceneStepMode.place) return _flyBack(id, from);
     if (id != step.piece) {
       _flyBack(id, from);
@@ -413,20 +509,164 @@ class _SceneGameViewState extends State<SceneGameView>
       return;
     }
     UiSound.basketDrop();
-    final to = _zoneRect(step);
+    final zone = _zoneRect(step);
+    final stage = _rectOf(_stageKey);
     final landing = step;
-    if (from == null || to == null) return _complete();
+    if (from == null || zone == null || stage == null) return _complete();
+    final effect = widget.hint.animate ? landing.effect : null;
+    final side = stage.shortestSide * .42;
+    // Where the piece does its work: a can beside and above the pot, a sun
+    // in the sky, a seed small in the soil.
+    final to = switch (effect) {
+      'pour' => Rect.fromCenter(
+        center: Offset(zone.center.dx + side * .62, zone.top - side * .5),
+        width: side,
+        height: side,
+      ),
+      'shine' => Rect.fromCenter(
+        center: Offset(stage.right - side * .55, stage.top + side * .55),
+        width: side * .8,
+        height: side * .8,
+      ),
+      'plant' => Rect.fromCenter(
+        center: zone.center,
+        width: zone.height * .7,
+        height: zone.height * .7,
+      ),
+      _ => zone,
+    };
+    final acts = const {'pour', 'shine', 'sprinkle'}.contains(effect);
     _launch(
       _Flight(
         id: id,
         from: from,
         to: to,
         turn: landing.turn,
-        melts: !landing.stays,
-        then: _complete,
+        melts: !landing.stays && !acts,
+        then: acts ? () => _act(_Effect(id, effect!, to, zone)) : _complete,
       ),
     );
   }
+
+  void _act(_Effect effect) {
+    _effectLanded = false;
+    setState(() => _effect = effect);
+    _fx.duration = Duration(
+      milliseconds: switch (effect.kind) {
+        'pour' => 2200,
+        'shine' => 2000,
+        _ => 1300,
+      },
+    );
+    _fx.forward(from: 0).whenComplete(() {
+      if (!mounted || _effect != effect) return;
+      setState(() => _effect = null);
+      if (!_effectLanded) _complete();
+    });
+  }
+
+  Widget _effectOverlay(_Effect e) => AnimatedBuilder(
+    animation: _fx,
+    builder: (context, _) {
+      final t = _fx.value;
+      double span(double a, double b) => ((t - a) / (b - a)).clamp(0.0, 1.0);
+      final leaving = 1 - span(.82, 1);
+      final at = e.at;
+      switch (e.kind) {
+        case 'pour':
+          // The can tips towards its spout (on its left) and the water
+          // runs down to the soil.
+          final tip = Curves.easeInOut.transform(span(0, .18)) * leaving;
+          final spout = Offset(
+            at.left + at.width * .12,
+            at.top + at.height * .62,
+          );
+          final water = span(.14, .22) * (1 - span(.7, .8));
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: CustomPaint(
+                    painter: _DropsPainter(spout, e.over.center, t, water),
+                  ),
+                ),
+              ),
+              Positioned.fromRect(
+                rect: at,
+                child: IgnorePointer(
+                  child: Opacity(
+                    opacity: leaving,
+                    child: Transform.rotate(
+                      angle: -.7 * tip,
+                      child: _visual(e.id),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          );
+        case 'shine':
+          final glow = span(0, .2) * leaving;
+          return Positioned.fromRect(
+            rect: at,
+            child: IgnorePointer(
+              child: Opacity(
+                opacity: leaving,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  fit: StackFit.expand,
+                  children: [
+                    CustomPaint(painter: _RaysPainter(t, glow)),
+                    Transform.scale(
+                      scale: 1 + .06 * math.sin(t * math.pi * 6),
+                      child: _visual(e.id),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        default:
+          // Small copies drift from the piece out over its place.
+          final random = math.Random(7);
+          final spread = Curves.easeOut.transform(span(0, .7));
+          final small = at.shortestSide * .34;
+          return Stack(
+            children: [
+              Positioned.fromRect(
+                rect: at,
+                child: IgnorePointer(
+                  child: Opacity(
+                    opacity: 1 - span(.1, .45),
+                    child: _visual(e.id),
+                  ),
+                ),
+              ),
+              for (var i = 0; i < 12; i++)
+                () {
+                  final end = Offset(
+                    e.over.left + random.nextDouble() * e.over.width,
+                    e.over.top + random.nextDouble() * e.over.height,
+                  );
+                  final here = Offset.lerp(at.center, end, spread)!;
+                  return Positioned(
+                    left: here.dx - small / 2,
+                    top: here.dy - small / 2,
+                    width: small,
+                    height: small,
+                    child: IgnorePointer(
+                      child: Opacity(
+                        opacity: span(0, .15) * (1 - span(.55, .95)),
+                        child: _visual(e.id),
+                      ),
+                    ),
+                  );
+                }(),
+            ],
+          );
+      }
+    },
+  );
 
   void _complete() {
     final finished = step;
@@ -608,6 +848,10 @@ class _SceneGameViewState extends State<SceneGameView>
                   child: IgnorePointer(child: _visual(current.piece)),
                 ),
               if (_flight case final flight?) _flightOverlay(flight),
+              if (_effect case final effect?)
+                Positioned.fill(
+                  child: Stack(children: [_effectOverlay(effect)]),
+                ),
               if (_dragId case final id?)
                 Positioned(
                   left: _dragAt!.dx - _dragSide / 2,
@@ -685,11 +929,27 @@ class _SceneGameViewState extends State<SceneGameView>
               children: [
                 Positioned.fill(
                   child: AnimatedSwitcher(
-                    duration: widget.hint.animate
-                        ? const Duration(milliseconds: 450)
-                        : Duration.zero,
+                    duration: !widget.hint.animate
+                        ? Duration.zero
+                        : Duration(milliseconds: round.rise ? 900 : 450),
+                    // A sprout or a flower comes up out of the pot.
+                    transitionBuilder: (child, animation) => !round.rise
+                        ? FadeTransition(opacity: animation, child: child)
+                        : FadeTransition(
+                            opacity: animation,
+                            child: ScaleTransition(
+                              alignment: const Alignment(0, .35),
+                              scale: Tween(begin: .82, end: 1.0).animate(
+                                CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.easeOutBack,
+                                ),
+                              ),
+                              child: child,
+                            ),
+                          ),
                     child: Image.asset(
-                      _picture,
+                      ChildCast.of(_picture),
                       key: ValueKey(_picture),
                       fit: BoxFit.contain,
                       excludeFromSemantics: true,
@@ -822,6 +1082,7 @@ class _SceneGameViewState extends State<SceneGameView>
               ? widget.spec.promptEn
               : widget.spec.promptTr)
         : current.askText[_lang] ?? '';
+    final shownPrompt = ChildCast.of(prompt);
 
     Widget piece(String id, double side) {
       final item = _item(id);
@@ -831,7 +1092,7 @@ class _SceneGameViewState extends State<SceneGameView>
       final faded = _hintLevel >= 3 && id != current.piece && _ready;
       final shaking = _shaking == id;
       final away = _dragId == id || _flight?.id == id;
-      final canDrag = _ready && placing && _flight?.then == null;
+      final canDrag = _ready && placing && !_busy;
       final key = _pieceKeys.putIfAbsent(id, GlobalKey.new);
       if (_gone.contains(id)) return SizedBox.square(key: key, dimension: side);
       return Semantics(
@@ -886,7 +1147,7 @@ class _SceneGameViewState extends State<SceneGameView>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (widget.hint.showLabels && prompt.isNotEmpty)
+        if (widget.hint.showLabels && shownPrompt.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: SegSpace.s2),
             child: Container(
@@ -899,7 +1160,7 @@ class _SceneGameViewState extends State<SceneGameView>
                 borderRadius: BorderRadius.circular(SegRadius.md),
               ),
               child: Text(
-                prompt,
+                shownPrompt,
                 textAlign: TextAlign.center,
                 style: SegText.label,
               ),

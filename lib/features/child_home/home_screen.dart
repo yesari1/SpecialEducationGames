@@ -672,7 +672,9 @@ class _ThemeScreenState extends State<ThemeScreen> {
     super.initState();
     final survey =
         jsonDecode(s.active?.payload ?? '{}') as Map<String, dynamic>;
-    difficulty = SurveyMapper.initialForTheme(survey, widget.themeId);
+    difficulty =
+        s.pickedDifficulty ??
+        SurveyMapper.initialForTheme(survey, widget.themeId);
   }
 
   @override
@@ -767,7 +769,10 @@ class _ThemeScreenState extends State<ThemeScreen> {
                             Icons.change_history_rounded,
                           ][d.index],
                           onChanged: s.difficultyOverride == 'auto'
-                              ? (v) => setState(() => difficulty = v)
+                              ? (v) {
+                                  setState(() => difficulty = v);
+                                  unawaited(s.pickDifficulty(v));
+                                }
                               : null,
                         ),
                       ),
@@ -810,7 +815,7 @@ class _ThemeScreenState extends State<ThemeScreen> {
                             title: g.name(s.locale),
                             subtitle: '',
                             visual: ItemVisual(
-                              gameFace(s.content, g.id) ??
+                              gameFace(s.content, t.id, g.id) ??
                                   faces[i % faces.length],
                               alignment: Alignment.bottomCenter,
                             ),
@@ -855,8 +860,36 @@ class _ThemeScreenState extends State<ThemeScreen> {
 }
 
 /// The picture on a game's card when the game has a subject of its own (a
-/// toothbrush for brushing teeth); other games show an object of the theme.
-ContentItem? gameFace(ContentRepository content, String gameId) {
+/// toothbrush for brushing teeth, the child for the games about the body);
+/// other games show an object of the theme. Pictures of the child follow the
+/// profile (Ali or Ayşe) like everywhere else.
+ContentItem? gameFace(
+  ContentRepository content,
+  String themeId,
+  String gameId,
+) {
+  const child = 'assets/images/wear/boy.webp';
+  const face = 'assets/images/wear/ali_face.webp';
+  const body = 'assets/images/wear/ali_full.webp';
+  final picture = switch ((themeId, gameId)) {
+    ('body', 'G02') => face,
+    ('body', 'G01') => body,
+    ('body', 'G14') => face,
+    ('body', 'G47') => body,
+    ('body', 'G48') => child,
+    ('emotions', 'G44') => 'assets/images/need/toothache.webp',
+    ('emotions', 'G45') => 'assets/images/faces/elif_happy.webp',
+    _ => null,
+  };
+  if (picture != null) {
+    return ContentItem.fromJson({
+      'id': 'card.$themeId.$gameId',
+      'theme': 'extra',
+      'tier': 'easy',
+      'name': {'tr': '', 'en': ''},
+      'images': [picture],
+    });
+  }
   final id = const {
     'G60': 'cleaning.toothbrush',
     'G61': 'cleaning.tap',

@@ -185,6 +185,9 @@ def main():
         by_id['body']['games'].remove('G49')
     pairs['G49']['theme'] = 'clothes'
 
+    # "Ali'de Göster" named the boy; the game shows the profile's child.
+    if 'G47' in games:
+        games['G47']['name'] = {'tr': 'Göster Bakalım', 'en': 'Show Me'}
     for data in (games, scene, pairs, extra, lines):
         english_names(data)
     write(CONTENT / 'themes.json', themes)

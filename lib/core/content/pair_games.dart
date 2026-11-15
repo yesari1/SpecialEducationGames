@@ -48,7 +48,9 @@ class PairRound {
     alsoRight: List<String>.from((j['alsoRight'] ?? const []) as List),
     sound: j['sound'] as String?,
     result: j['result'] as String?,
-    resultAudio: Map<String, String>.from((j['resultAudio'] ?? const {}) as Map),
+    resultAudio: Map<String, String>.from(
+      (j['resultAudio'] ?? const {}) as Map,
+    ),
     text: Map<String, String>.from(j['text'] as Map),
     audio: Map<String, String>.from((j['audio'] ?? const {}) as Map),
     who: j['who'] as String?,

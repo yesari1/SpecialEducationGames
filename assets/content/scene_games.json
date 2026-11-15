@@ -9062,13 +9062,15 @@
   },
   "G71": {
     "theme": "nature",
+    "plays": 1,
     "rounds": [
       {
         "key": "pink",
         "tier": "easy",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9085,11 +9087,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9099,11 +9102,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9125,11 +9129,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9151,7 +9156,8 @@
         "tier": "easy",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9168,11 +9174,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9182,11 +9189,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9208,11 +9216,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9234,7 +9243,8 @@
         "tier": "easy",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9251,11 +9261,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9265,11 +9276,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9291,11 +9303,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9317,7 +9330,8 @@
         "tier": "easy",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9334,11 +9348,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9348,11 +9363,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9374,11 +9390,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9400,7 +9417,8 @@
         "tier": "easy",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9417,11 +9435,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9431,11 +9450,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9457,11 +9477,12 @@
               "grow.ball"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9483,7 +9504,8 @@
         "tier": "medium",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9501,11 +9523,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9516,11 +9539,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9543,11 +9567,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9569,7 +9594,8 @@
         "tier": "medium",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9587,11 +9613,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9602,11 +9629,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9629,11 +9657,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9655,7 +9684,8 @@
         "tier": "medium",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9673,11 +9703,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9688,11 +9719,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9715,11 +9747,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9741,7 +9774,8 @@
         "tier": "medium",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9759,11 +9793,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9774,11 +9809,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9801,11 +9837,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9827,7 +9864,8 @@
         "tier": "medium",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9845,11 +9883,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9860,11 +9899,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9887,11 +9927,12 @@
               "grow.spoon"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -9913,7 +9954,8 @@
         "tier": "hard",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -9932,11 +9974,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -9948,11 +9991,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -9976,11 +10020,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_pink.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -10002,7 +10047,8 @@
         "tier": "hard",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -10021,11 +10067,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -10037,11 +10084,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -10065,11 +10113,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_yellow.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -10091,7 +10140,8 @@
         "tier": "hard",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -10110,11 +10160,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -10126,11 +10177,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -10154,11 +10206,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_tulip.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -10180,7 +10233,8 @@
         "tier": "hard",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -10199,11 +10253,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -10215,11 +10270,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -10243,11 +10299,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_sunflower.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -10269,7 +10326,8 @@
         "tier": "hard",
         "target": "nature.seed",
         "stage": "assets/images/play/grow_0.webp",
-        "aspect": 1.5,
+        "aspect": 0.6735,
+        "rise": true,
         "text": {
           "tr": "Tohumu toprağa ekelim.",
           "en": "Let's plant the seed."
@@ -10288,11 +10346,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "plant",
             "after": "assets/images/play/grow_1.webp"
           },
           {
@@ -10304,11 +10363,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "pour",
             "after": "assets/images/play/grow_2.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_water.mp3",
@@ -10332,11 +10392,12 @@
               "grow.shoe"
             ],
             "zone": [
-              0.32,
-              0.42,
-              0.36,
-              0.45
+              0.25,
+              0.6,
+              0.5,
+              0.16
             ],
+            "effect": "shine",
             "after": "assets/images/play/grow_daisy.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g71_sun.mp3",
@@ -10363,7 +10424,7 @@
         "tier": "easy",
         "target": "nature.winter",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Kış geldi. Ağaca ne koyalım?",
           "en": "Winter is here. What goes on the tree?"
@@ -10380,11 +10441,12 @@
               "season.blossom"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_winter.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_winter.mp3",
@@ -10398,7 +10460,7 @@
         "tier": "easy",
         "target": "nature.spring",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "İlkbahar geldi. Ağaca ne koyalım?",
           "en": "Spring is here. What goes on the tree?"
@@ -10415,11 +10477,12 @@
               "season.snow"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_spring.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_spring.mp3",
@@ -10433,7 +10496,7 @@
         "tier": "easy",
         "target": "nature.autumn",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Sonbahar geldi. Ağaca ne koyalım?",
           "en": "Autumn is here. What goes on the tree?"
@@ -10450,11 +10513,12 @@
               "season.snow"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_autumn.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_autumn.mp3",
@@ -10468,7 +10532,7 @@
         "tier": "easy",
         "target": "nature.summer",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Yaz geldi. Ağaca ne koyalım?",
           "en": "Summer is here. What goes on the tree?"
@@ -10485,11 +10549,12 @@
               "season.snow"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_summer.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_summer.mp3",
@@ -10503,7 +10568,7 @@
         "tier": "medium",
         "target": "nature.winter",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Kış geldi. Ağaca ne koyalım?",
           "en": "Winter is here. What goes on the tree?"
@@ -10521,11 +10586,12 @@
               "season.yellow_leaves"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_winter.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_winter.mp3",
@@ -10539,7 +10605,7 @@
         "tier": "medium",
         "target": "nature.spring",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "İlkbahar geldi. Ağaca ne koyalım?",
           "en": "Spring is here. What goes on the tree?"
@@ -10557,11 +10623,12 @@
               "season.yellow_leaves"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_spring.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_spring.mp3",
@@ -10575,7 +10642,7 @@
         "tier": "medium",
         "target": "nature.autumn",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Sonbahar geldi. Ağaca ne koyalım?",
           "en": "Autumn is here. What goes on the tree?"
@@ -10593,11 +10660,12 @@
               "season.blossom"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_autumn.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_autumn.mp3",
@@ -10611,7 +10679,7 @@
         "tier": "medium",
         "target": "nature.summer",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Yaz geldi. Ağaca ne koyalım?",
           "en": "Summer is here. What goes on the tree?"
@@ -10629,11 +10697,12 @@
               "season.blossom"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_summer.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_summer.mp3",
@@ -10647,7 +10716,7 @@
         "tier": "hard",
         "target": "nature.winter",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Kış geldi. Ağaca ne koyalım?",
           "en": "Winter is here. What goes on the tree?"
@@ -10666,11 +10735,12 @@
               "season.apples"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_winter.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_winter.mp3",
@@ -10684,7 +10754,7 @@
         "tier": "hard",
         "target": "nature.spring",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "İlkbahar geldi. Ağaca ne koyalım?",
           "en": "Spring is here. What goes on the tree?"
@@ -10703,11 +10773,12 @@
               "season.apples"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_spring.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_spring.mp3",
@@ -10721,7 +10792,7 @@
         "tier": "hard",
         "target": "nature.autumn",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Sonbahar geldi. Ağaca ne koyalım?",
           "en": "Autumn is here. What goes on the tree?"
@@ -10740,11 +10811,12 @@
               "season.apples"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_autumn.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_autumn.mp3",
@@ -10758,7 +10830,7 @@
         "tier": "hard",
         "target": "nature.summer",
         "stage": "assets/images/play/tree_bare.webp",
-        "aspect": 1.5,
+        "aspect": 1.3477,
         "text": {
           "tr": "Yaz geldi. Ağaca ne koyalım?",
           "en": "Summer is here. What goes on the tree?"
@@ -10777,11 +10849,12 @@
               "season.yellow_leaves"
             ],
             "zone": [
-              0.25,
-              0.1,
-              0.5,
-              0.7
+              0.15,
+              0.12,
+              0.7,
+              0.55
             ],
+            "effect": "sprinkle",
             "after": "assets/images/play/tree_summer.webp",
             "doneAudio": {
               "tr": "assets/audio/tr/scenes/g72_done_summer.mp3",

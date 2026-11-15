@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' show Locale, WidgetsBinding;
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:drift/drift.dart';
+import '../core/content/child_cast.dart';
 import '../core/content/content_repository.dart';
 import '../core/db/app_database.dart';
 import '../core/audio/audio_service.dart';
@@ -813,11 +814,7 @@ class AppState extends ChangeNotifier {
 
   /// Where a finished round leads on its own: the next open game of its
   /// theme, or null when nothing else can be played.
-  String? nextGameRoute(
-    String theme,
-    String game,
-    Difficulty tier,
-  ) {
+  String? nextGameRoute(String theme, String game, Difficulty tier) {
     final games = gamesForTheme(theme);
     final from = games.indexOf(game);
     for (var i = 1; i < games.length; i++) {
@@ -883,6 +880,21 @@ class AppState extends ChangeNotifier {
   int roundLength = 0, hintSeconds = -1;
   bool fadeWrongChoices = true;
   String difficultyOverride = 'auto';
+
+  /// The level the child (or the parent beside them) last picked on a theme
+  /// page; every theme opens on it. Null until one is picked.
+  Difficulty? pickedDifficulty;
+
+  Future<void> pickDifficulty(Difficulty level) async {
+    pickedDifficulty = level;
+    final profile = active;
+    if (profile == null) return;
+    await db.setPreference(
+      'profile.${profile.id}.pickedDifficulty',
+      level.name,
+    );
+  }
+
   String? _parentPinHash, _parentPinSalt;
   bool get hasParentPin => _parentPinHash != null && _parentPinSalt != null;
   bool verifyParentPin(String candidate) =>
@@ -1023,6 +1035,7 @@ class AppState extends ChangeNotifier {
       (entitlement.isPremium ||
           // Free cards (Learn and two games per theme) are open on every tier.
           configuration.freeGames.contains('${theme}_$game'));
+
   /// Free stories are open to everyone; the rest need Premium.
   bool canPlayStory(Story story) => story.free || entitlement.isPremium;
 
@@ -1092,6 +1105,10 @@ class AppState extends ChangeNotifier {
       for (final key in (await _readSetting('hiddenGames') ?? '').split(','))
         if (key.isNotEmpty) key,
     };
+    final picked = await _readSetting('pickedDifficulty');
+    pickedDifficulty = Difficulty.values
+        .where((d) => d.name == picked)
+        .firstOrNull;
     final savedDifficulty = await _readSetting('difficultyOverride') ?? 'auto';
     difficultyOverride =
         ['auto', 'easy', 'medium', 'hard'].contains(savedDifficulty) &&
@@ -1211,12 +1228,13 @@ class AppState extends ChangeNotifier {
     // The summary covers Monday to the Sunday it is shown on.
     final sunday = PlayReminder.weeklyAt(now, at: reminderHour);
     final monday = DateTime(sunday.year, sunday.month, sunday.day - 6);
-    final week = await (db.select(db.gameSessions)..where(
-          (t) =>
-              t.profileId.equals(active!.id) &
-              t.startedAt.isBiggerOrEqualValue(monday),
-        ))
-        .get();
+    final week =
+        await (db.select(db.gameSessions)..where(
+              (t) =>
+                  t.profileId.equals(active!.id) &
+                  t.startedAt.isBiggerOrEqualValue(monday),
+            ))
+            .get();
     final days = {
       for (final x in week)
         if (x.activeMs > 0) DailyPathProgress.dayKey(x.startedAt),
@@ -1521,6 +1539,17 @@ class AppState extends ChangeNotifier {
 
   Map<String, dynamic> get activeSurvey =>
       jsonDecode(active?.payload ?? '{}') as Map<String, dynamic>;
+
+  /// Tells the games which child to show (see [ChildCast]); called whenever
+  /// the open profile or its answers change.
+  void _castChild() =>
+      ChildCast.who = activeSurvey['gender'] == 'girl' ? 'girl' : 'boy';
+
+  @override
+  void notifyListeners() {
+    _castChild();
+    super.notifyListeners();
+  }
 
   /// Age band of the active profile before the parent's shift.
   AgeBand? get ageBandFromAge => AgeBand.fromAge(activeSurvey);

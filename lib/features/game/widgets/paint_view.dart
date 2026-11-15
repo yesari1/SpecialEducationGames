@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import '../../../core/content/child_cast.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../app/ui/components.dart';
 import '../round_spec.dart';
@@ -30,7 +31,18 @@ class PaintView extends StatelessWidget {
         : !paint
         ? ClipRRect(
             borderRadius: BorderRadius.circular(SegRadius.lg),
-            child: Image.asset(asset, fit: BoxFit.contain),
+            // Fades in when it is ready instead of popping in.
+            child: Image.asset(
+              ChildCast.of(asset),
+              fit: BoxFit.contain,
+              frameBuilder: (context, child, frame, sync) => sync
+                  ? child
+                  : AnimatedOpacity(
+                      opacity: frame == null ? 0 : 1,
+                      duration: const Duration(milliseconds: 220),
+                      child: child,
+                    ),
+            ),
           )
         : _BrushPicture(
             asset: asset,
@@ -123,7 +135,7 @@ class _BrushPictureState extends State<_BrushPicture>
         return Stack(
           clipBehavior: Clip.none,
           children: [
-            Positioned.fill(child: PhotoVisual(widget.asset)),
+            Positioned.fill(child: PhotoVisual(ChildCast.of(widget.asset))),
             Positioned.fill(
               child: ClipRect(
                 clipper: _RevealClip(t),
@@ -133,7 +145,7 @@ class _BrushPictureState extends State<_BrushPicture>
                     widget.color,
                     BlendMode.modulate,
                   ),
-                  child: PhotoVisual(widget.asset),
+                  child: PhotoVisual(ChildCast.of(widget.asset)),
                 ),
               ),
             ),

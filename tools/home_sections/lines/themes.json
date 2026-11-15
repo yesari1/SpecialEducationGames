@@ -1380,44 +1380,84 @@
     "en": "The tailor sewed the shirt."
   },
   "assets/audio/{lang}/scenes/g70_1.mp3": {
-    "tr": "Öğretmen nerede çalışır?",
+    "tr": "Öğretmen nerde çalışır?",
     "en": "Where does the teacher work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_1.mp3": {
+    "tr": "Öğretmen okulda ders verir.",
+    "en": "The teacher teaches at school."
+  },
   "assets/audio/{lang}/scenes/g70_2.mp3": {
-    "tr": "Doktor nerede çalışır?",
+    "tr": "Doktor nerde çalışır?",
     "en": "Where does the doctor work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_2.mp3": {
+    "tr": "Doktor hastanede hastalara bakar.",
+    "en": "The doctor looks after people at the hospital."
+  },
   "assets/audio/{lang}/scenes/g70_3.mp3": {
-    "tr": "Aşçı nerede çalışır?",
+    "tr": "Aşçı nerde çalışır?",
     "en": "Where does the cook work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_3.mp3": {
+    "tr": "Aşçı lokantada yemek pişirir.",
+    "en": "The cook makes the food at the restaurant."
+  },
   "assets/audio/{lang}/scenes/g70_4.mp3": {
-    "tr": "Çiftçi nerede çalışır?",
+    "tr": "Çiftçi nerde çalışır?",
     "en": "Where does the farmer work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_4.mp3": {
+    "tr": "Çiftçi çiftlikte çalışır.",
+    "en": "The farmer works on the farm."
+  },
   "assets/audio/{lang}/scenes/g70_5.mp3": {
-    "tr": "İtfaiyeci nerede çalışır?",
+    "tr": "İtfaiyeci nerde çalışır?",
     "en": "Where does the firefighter work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_5.mp3": {
+    "tr": "İtfaiyeci itfaiyede bekler, yangın çıkınca koşar.",
+    "en": "The firefighter waits at the fire station, ready to help."
+  },
   "assets/audio/{lang}/scenes/g70_6.mp3": {
-    "tr": "Fırıncı nerede çalışır?",
+    "tr": "Fırıncı nerde çalışır?",
     "en": "Where does the baker work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_6.mp3": {
+    "tr": "Fırıncı fırında ekmek pişirir.",
+    "en": "The baker bakes bread at the bakery."
+  },
   "assets/audio/{lang}/scenes/g70_7.mp3": {
-    "tr": "Polis nerede çalışır?",
+    "tr": "Polis nerde çalışır?",
     "en": "Where does the police officer work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_7.mp3": {
+    "tr": "Polis karakolda çalışır.",
+    "en": "The police officer works at the police station."
+  },
   "assets/audio/{lang}/scenes/g70_8.mp3": {
-    "tr": "Pilot nerede çalışır?",
+    "tr": "Pilot nerde çalışır?",
     "en": "Where does the pilot work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_8.mp3": {
+    "tr": "Pilot uçağı uçurur.",
+    "en": "The pilot flies the airplane."
+  },
   "assets/audio/{lang}/scenes/g70_9.mp3": {
-    "tr": "Kaptan nerede çalışır?",
+    "tr": "Kaptan nerde çalışır?",
     "en": "Where does the captain work?"
   },
+  "assets/audio/{lang}/scenes/g70_done_9.mp3": {
+    "tr": "Kaptan gemiyi kullanır.",
+    "en": "The captain sails the ship."
+  },
   "assets/audio/{lang}/scenes/g70_10.mp3": {
-    "tr": "Eczacı nerede çalışır?",
+    "tr": "Eczacı nerde çalışır?",
     "en": "Where does the pharmacist work?"
+  },
+  "assets/audio/{lang}/scenes/g70_done_10.mp3": {
+    "tr": "Eczacı eczanede ilaç verir.",
+    "en": "The pharmacist gives out medicine at the pharmacy."
   },
   "assets/audio/{lang}/scenes/g73_listen.mp3": {
     "tr": "Dinle bakalım. Hava nasıl?",
@@ -1430,10 +1470,6 @@
   "assets/audio/{lang}/scenes/g73_done_snow.mp3": {
     "tr": "Kar yağıyor.",
     "en": "It's snowing."
-  },
-  "assets/audio/{lang}/scenes/g73_done_sun.mp3": {
-    "tr": "Güneş açmış.",
-    "en": "It's sunny."
   },
   "assets/audio/{lang}/scenes/g73_done_wind.mp3": {
     "tr": "Rüzgâr esiyor.",

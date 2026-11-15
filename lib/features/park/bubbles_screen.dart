@@ -114,8 +114,7 @@ class _BubblesScreenState extends State<BubblesScreen>
               s.reducedMotion || MediaQuery.disableAnimationsOf(context);
           return Stack(
             children: [
-              for (final b in _bubbles)
-                _bubbleAt(b, w, h, reduced),
+              for (final b in _bubbles) _bubbleAt(b, w, h, reduced),
               if (_shown case final item?)
                 Center(
                   child: IgnorePointer(

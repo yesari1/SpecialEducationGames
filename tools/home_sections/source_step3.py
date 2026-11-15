@@ -122,26 +122,33 @@ def g69():
 
 
 # G70 Nerede Çalışır? ---------------------------------------------------------
+# (who, place, place names, question, sentence after the right answer)
 G70 = [
-    ('teacher', 'school', 'Okul', 'School', 'Öğretmen nerede çalışır?', 'Where does the teacher work?'),
-    ('doctor', 'hospital', 'Hastane', 'Hospital', 'Doktor nerede çalışır?', 'Where does the doctor work?'),
-    ('cook', 'restaurant', 'Lokanta', 'Restaurant', 'Aşçı nerede çalışır?', 'Where does the cook work?'),
-    ('farmer', 'farm', 'Çiftlik', 'Farm', 'Çiftçi nerede çalışır?', 'Where does the farmer work?'),
-    ('firefighter', 'fire_station', 'İtfaiye', 'Fire station', 'İtfaiyeci nerede çalışır?', 'Where does the firefighter work?'),
-    ('baker', 'bakery', 'Fırın', 'Bakery', 'Fırıncı nerede çalışır?', 'Where does the baker work?'),
-    ('police_officer', 'police_station', 'Karakol', 'Police station', 'Polis nerede çalışır?', 'Where does the police officer work?'),
-    ('pilot', 'plane', 'Uçak', 'Airplane', 'Pilot nerede çalışır?', 'Where does the pilot work?'),
-    ('captain', 'ship', 'Gemi', 'Ship', 'Kaptan nerede çalışır?', 'Where does the captain work?'),
-    ('pharmacist', 'pharmacy', 'Eczane', 'Pharmacy', 'Eczacı nerede çalışır?', 'Where does the pharmacist work?'),
+    ('teacher', 'school', 'Okul', 'School', 'Öğretmen nerede çalışır?', 'Where does the teacher work?', 'Öğretmen okulda ders verir.', 'The teacher teaches at school.'),
+    ('doctor', 'hospital', 'Hastane', 'Hospital', 'Doktor nerede çalışır?', 'Where does the doctor work?', 'Doktor hastanede hastalara bakar.', 'The doctor looks after people at the hospital.'),
+    ('cook', 'restaurant', 'Lokanta', 'Restaurant', 'Aşçı nerede çalışır?', 'Where does the cook work?', 'Aşçı lokantada yemek pişirir.', 'The cook makes the food at the restaurant.'),
+    ('farmer', 'farm', 'Çiftlik', 'Farm', 'Çiftçi nerede çalışır?', 'Where does the farmer work?', 'Çiftçi çiftlikte çalışır.', 'The farmer works on the farm.'),
+    ('firefighter', 'fire_station', 'İtfaiye', 'Fire station', 'İtfaiyeci nerede çalışır?', 'Where does the firefighter work?', 'İtfaiyeci itfaiyede bekler, yangın çıkınca koşar.', 'The firefighter waits at the fire station, ready to help.'),
+    ('baker', 'bakery', 'Fırın', 'Bakery', 'Fırıncı nerede çalışır?', 'Where does the baker work?', 'Fırıncı fırında ekmek pişirir.', 'The baker bakes bread at the bakery.'),
+    ('police_officer', 'police_station', 'Karakol', 'Police station', 'Polis nerede çalışır?', 'Where does the police officer work?', 'Polis karakolda çalışır.', 'The police officer works at the police station.'),
+    ('pilot', 'plane', 'Uçak', 'Airplane', 'Pilot nerede çalışır?', 'Where does the pilot work?', 'Pilot uçağı uçurur.', 'The pilot flies the airplane.'),
+    ('captain', 'ship', 'Gemi', 'Ship', 'Kaptan nerede çalışır?', 'Where does the captain work?', 'Kaptan gemiyi kullanır.', 'The captain sails the ship.'),
+    ('pharmacist', 'pharmacy', 'Eczane', 'Pharmacy', 'Eczacı nerede çalışır?', 'Where does the pharmacist work?', 'Eczacı eczanede ilaç verir.', 'The pharmacist gives out medicine at the pharmacy.'),
 ]
+
+
+def spoken(tr):
+    """Turkish as it is said aloud: "nerede" is read "nerde" (Yunus, 15 Nov 2026)."""
+    return tr.replace('nerede', 'nerde').replace('Nerede', 'Nerde')
 EXTRA += [(f'place.{g[1]}', g[2], g[3]) for g in G70]
 
 
 def g70():
     rounds = []
-    for i, (who, place, _, _, q_tr, q_en) in enumerate(G70, 1):
+    for i, (who, place, _, _, q_tr, q_en, r_tr, r_en) in enumerate(G70, 1):
         rounds.append({'target': f'place.{place}', 'stimulus': f'jobs.{who}', 'text': text(q_tr, q_en),
-                       'audio': line(f'g70_{i}', q_tr, q_en)})
+                       'audio': line(f'g70_{i}', spoken(q_tr), q_en),
+                       'resultAudio': line(f'g70_done_{i}', r_tr, r_en)})
     return {'theme': 'jobs', 'look': 'drop', 'choicePool': [f'place.{g[1]}' for g in G70], 'rounds': rounds}
 
 
@@ -150,7 +157,9 @@ FLOWERS = [('pink', 'Pembe çiçek', 'Pink flower'), ('yellow', 'Sarı çiçek',
            ('tulip', 'Lale', 'Tulip'), ('sunflower', 'Ayçiçeği', 'Sunflower'), ('daisy', 'Papatya', 'Daisy')]
 EXTRA += [('grow.seed', 'Tohum', 'Seed'), ('grow.can', 'Sulama kabı', 'Watering can'), ('grow.sun', 'Güneş', 'Sun'),
           ('grow.shoe', 'Ayakkabı', 'Shoe'), ('grow.spoon', 'Kaşık', 'Spoon'), ('grow.ball', 'Top', 'Ball')]
-GROW_ZONE = [.32, .42, .36, .45]
+# The soil of the pot on the cut-out pictures (install_stage_series.py).
+GROW_ZONE = [.25, .6, .5, .16]
+GROW_ASPECT = 0.6735
 
 
 def g71():
@@ -165,17 +174,18 @@ def g71():
             done = line(f'g71_done_{slug}', f'Çiçek açtı! {tr} ne güzel!', f'It bloomed! What a lovely {en.lower()}!')
             others = distract[tier]
             rounds.append({
-                'key': slug, 'tier': tier, 'target': 'nature.seed', 'stage': f'{PLAY}/grow_0.webp', 'aspect': 1.5,
+                'key': slug, 'tier': tier, 'target': 'nature.seed', 'stage': f'{PLAY}/grow_0.webp', 'aspect': GROW_ASPECT, 'rise': True,
                 'text': text('Tohumu toprağa ekelim.', "Let's plant the seed."), 'audio': ask1,
                 'steps': [
-                    {'mode': 'place', 'piece': 'grow.seed', 'others': others, 'zone': GROW_ZONE, 'after': f'{PLAY}/grow_1.webp'},
-                    {'mode': 'place', 'piece': 'grow.can', 'others': others, 'zone': GROW_ZONE, 'after': f'{PLAY}/grow_2.webp',
+                    {'mode': 'place', 'piece': 'grow.seed', 'others': others, 'zone': GROW_ZONE, 'effect': 'plant', 'after': f'{PLAY}/grow_1.webp'},
+                    {'mode': 'place', 'piece': 'grow.can', 'others': others, 'zone': GROW_ZONE, 'effect': 'pour', 'after': f'{PLAY}/grow_2.webp',
                      'askAudio': ask2, 'askText': text('Şimdi tohumu sulayalım.', "Now let's water the seed."), 'doneAudio': done2},
-                    {'mode': 'place', 'piece': 'grow.sun', 'others': others, 'zone': GROW_ZONE, 'after': f'{PLAY}/grow_{slug}.webp',
+                    {'mode': 'place', 'piece': 'grow.sun', 'others': others, 'zone': GROW_ZONE, 'effect': 'shine', 'after': f'{PLAY}/grow_{slug}.webp',
                      'askAudio': ask3, 'askText': text('Güneşi getirelim, büyüsün.', "Let's bring the sun, so it can grow."), 'doneAudio': done},
                 ],
             })
-    return {'theme': 'nature', 'rounds': rounds}
+    # One seed grown is one whole game (Yunus: not the same game five times).
+    return {'theme': 'nature', 'plays': 1, 'rounds': rounds}
 
 
 # G72 Ağacı Hazırla -----------------------------------------------------------
@@ -196,19 +206,19 @@ def g72():
         for i, (season, piece, _, _, q_tr, q_en, r_tr, r_en) in enumerate(SEASONS):
             others = [n for n in names if n != piece][:count[tier]]
             rounds.append({
-                'key': season, 'tier': tier, 'target': f'nature.{season}', 'stage': f'{PLAY}/tree_bare.webp', 'aspect': 1.5,
+                'key': season, 'tier': tier, 'target': f'nature.{season}', 'stage': f'{PLAY}/tree_bare.webp', 'aspect': 1.3477,
                 'text': text(q_tr, q_en), 'audio': line(f'g72_{season}', q_tr, q_en),
                 'steps': [{'mode': 'place', 'piece': f'season.{piece}', 'others': [f'season.{o}' for o in others],
-                           'zone': [.25, .1, .5, .7], 'after': f'{PLAY}/tree_{season}.webp',
+                           'zone': [.15, .12, .7, .55], 'effect': 'sprinkle', 'after': f'{PLAY}/tree_{season}.webp',
                            'doneAudio': line(f'g72_done_{season}', r_tr, r_en)}],
             })
     return {'theme': 'nature', 'rounds': rounds}
 
 
 # G73 Hava Nasıl? -------------------------------------------------------------
+# Four sounds that cannot be mixed up; each is asked once in a game.
 G73 = [('rain', 'assets/sfx/nature/rain.mp3'), ('snow', 'assets/sfx/nature/snow.mp3'),
-       ('sun', 'assets/sfx/nature/sun.mp3'), ('wind', 'assets/sfx/nature/wind.mp3'),
-       ('lightning', 'assets/sfx/nature/thunder.mp3')]
+       ('wind', 'assets/sfx/nature/wind.mp3'), ('lightning', 'assets/sfx/nature/thunder.mp3')]
 
 
 def g73():

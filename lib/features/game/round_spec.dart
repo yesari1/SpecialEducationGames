@@ -77,6 +77,11 @@ class RoundSpec {
 
   /// Basket choices drawn big, without a basket (a person, a building).
   final bool plainTargets;
+
+  /// The tune of a piano round: key numbers (0 = Do ... 7 = high Do), and
+  /// which places in the tune are long notes.
+  final List<int> notes;
+  final Set<int> longNotes;
   const RoundSpec({
     required this.target,
     required this.choices,
@@ -105,6 +110,8 @@ class RoundSpec {
     this.resultImagePath,
     this.fullStage = false,
     this.plainTargets = false,
+    this.notes = const [],
+    this.longNotes = const {},
   });
   RoundSpec withChoices(List<ContentItem> choices) => RoundSpec(
     target: target,

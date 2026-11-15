@@ -1,3 +1,4 @@
+import 'child_cast.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'pair_games.dart';
@@ -116,7 +117,8 @@ class ContentItem {
       imageProvenance = Map<String, dynamic>.from(j['imageProvenance'] ?? {}),
       tags = List<String>.from(j['tags'] ?? []),
       sfx = j['sfx'];
-  String name(String locale) => names[locale] ?? names['tr'];
+  String name(String locale) =>
+      ChildCast.of((names[locale] ?? names['tr']) as String);
   String? audioFor(String locale) {
     final selected = locale == 'en' ? 'en' : 'tr';
     final own = audio[selected];
@@ -180,7 +182,8 @@ class ContentTheme {
       bg = _color(j['palette']['bg']),
       accent = _color(j['palette']['accent']),
       deep = _color(j['palette']['deep']);
-  String name(String locale) => names[locale] ?? names['tr'];
+  String name(String locale) =>
+      ChildCast.of((names[locale] ?? names['tr']) as String);
   static Color _color(String hex) =>
       Color(int.parse(hex.replaceFirst('#', 'FF'), radix: 16));
 }
@@ -192,7 +195,8 @@ class GameDef {
     : id = j['id'],
       template = j['template'],
       names = j['name'];
-  String name(String locale) => names[locale] ?? names['tr'];
+  String name(String locale) =>
+      ChildCast.of((names[locale] ?? names['tr']) as String);
 }
 
 class ContentRepository {
@@ -272,6 +276,14 @@ class ContentRepository {
               .entries)
         e.key: PairGame.fromJson(e.key, e.value as Map<String, dynamic>),
     };
+    // The girl's counterparts of the boy's pictures, clips and sentences.
+    try {
+      ChildCast.girl = Map<String, String>.from(
+        await read('content/girl_variants.json') as Map,
+      );
+    } catch (_) {
+      ChildCast.girl = const {};
+    }
     return ContentRepository(
       themes,
       items,

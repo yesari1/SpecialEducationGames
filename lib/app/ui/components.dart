@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import '../theme/tokens.dart';
+import '../../core/content/child_cast.dart';
 import '../../core/content/content_repository.dart';
 import 'game_object.dart';
 import 'scene_backdrop.dart';
@@ -221,7 +222,7 @@ class ItemVisual extends StatelessWidget {
     }
     if (item.images.isNotEmpty) {
       return PhotoVisual(
-        item.images.first,
+        ChildCast.of(item.images.first),
         alignment: alignment,
         silhouette: silhouette,
       );
@@ -650,13 +651,19 @@ class ThemeGameCard extends StatelessWidget {
 
     // A small scene: the hero object stands on soft hills in the theme colour.
     // Locked cards are grey and faded, with a large lock in the middle.
+    // Only a locked card is filtered, and only its picture: a colour filter
+    // costs an extra layer per card on every frame, which made rows of cards
+    // stutter when it wrapped every card twice.
+    Widget grey(Widget child) => locked
+        ? ColorFiltered(
+            colorFilter: const ColorFilter.matrix(_greyscale),
+            child: child,
+          )
+        : child;
     Widget cardVisual() => ClipRRect(
       borderRadius: BorderRadius.circular(SegRadius.md),
-      child: ColorFiltered(
-        colorFilter: locked
-            ? const ColorFilter.matrix(_greyscale)
-            : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
-        child: SceneBackdrop(
+      child: grey(
+        SceneBackdrop(
           tint: accent,
           base: Color.lerp(SegColors.canvas, accent, .06)!,
           clouds: !horizontalContent,
@@ -791,12 +798,9 @@ class ThemeGameCard extends StatelessWidget {
         tapSound: tapSound,
         pivot: Alignment.center,
         depth: .35,
-        // Locked: the whole card (picture, accents, shadow) is black and
-        // white.
-        child: ColorFiltered(
-          colorFilter: locked
-              ? const ColorFilter.matrix(_greyscale)
-              : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
+        // Locked: the picture is black and white (see [grey]) and the
+        // card's own accents are grey.
+        child: KeyedSubtree(
           child: Container(
             decoration: BoxDecoration(
               color: SegColors.surface,
@@ -804,7 +808,9 @@ class ThemeGameCard extends StatelessWidget {
               border: Border.all(color: Colors.white, width: 3),
               boxShadow: [
                 BoxShadow(
-                  color: accent.withValues(alpha: .22),
+                  color: (locked ? SegColors.inkFaint : accent).withValues(
+                    alpha: .22,
+                  ),
                   blurRadius: 0,
                   offset: const Offset(0, 5),
                 ),

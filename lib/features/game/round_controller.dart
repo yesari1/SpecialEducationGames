@@ -144,9 +144,11 @@ class RoundController extends ChangeNotifier {
 
   bool _totalChecked = false;
 
-  /// Medium and hard never ask the same thing twice, so a game has at most
-  /// as many rounds as it has different questions (tried on a scratch
-  /// scheduler before the first round).
+  /// A game never asks the same thing twice (Yunus, 15 November 2026: "aynı
+  /// şeylerin çıkmasını hiç sevmiyorum"), on any level, so it has at most as
+  /// many rounds as it has different questions (tried on a scratch scheduler
+  /// before the first round). A scene game may also say how many times it is
+  /// played in one go (growing one seed is enough).
   void _limitTotalToFreshRounds() {
     if (_totalChecked) return;
     _totalChecked = true;
@@ -154,8 +156,11 @@ class RoundController extends ChangeNotifier {
       total = rounds;
       return;
     }
-    scheduler.noRepeat = difficulty != Difficulty.easy;
-    if (!scheduler.noRepeat) return;
+    scheduler.noRepeat = true;
+    if (content.sceneGames[gameId]?.plays case final plays?) {
+      total = plays;
+      return;
+    }
     final probe = ItemScheduler(Random(0))..noRepeat = true;
     final context = ModeContext(
       content: content,

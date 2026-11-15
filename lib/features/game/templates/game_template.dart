@@ -8,7 +8,6 @@ import '../widgets/body_map_view.dart';
 import '../widgets/paint_view.dart';
 import '../widgets/scene_game_view.dart';
 import '../widgets/music_views.dart';
-import '../../../l10n/scoped_localizations.dart';
 import '../widgets/round_choices_view.dart';
 
 class ModeContext {
@@ -99,6 +98,10 @@ abstract class GameTemplate {
 
   /// A game of exactly this many rounds, whatever the family's length is.
   int? get fixedRounds => null;
+
+  /// A game with nothing to finish (free play): no stars are shown and the
+  /// child leaves with the back button.
+  bool get endless => false;
   RoundSpec buildRound(ModeContext ctx);
   Widget buildView(
     BuildContext context,
@@ -867,6 +870,10 @@ class PairTemplate extends GameTemplate {
     final scene = game.look == 'scene';
     final stimulus = scene ? null : shown;
     String cue(String lang) => round.audio[lang] ?? '';
+    // The cheer of "excited" is a child's voice: the boy's or the girl's.
+    final sound = round.sound == 'assets/sfx/feelings/excited.mp3'
+        ? 'assets/sfx/feelings/excited_${ctx.who}.mp3'
+        : round.sound;
     return RoundSpec(
       target: target,
       choices: choices,
@@ -886,11 +893,7 @@ class PairTemplate extends GameTemplate {
       promptCues: {
         for (final lang in const ['tr', 'en'])
           // A sound is heard, the question asked, the sound heard again.
-          lang: [
-            ?round.sound,
-            if (cue(lang).isNotEmpty) cue(lang),
-            ?round.sound,
-          ],
+          lang: [?sound, if (cue(lang).isNotEmpty) cue(lang), ?sound],
       },
       successCueOverride: round.resultAudio.isNotEmpty
           ? {
@@ -1157,32 +1160,65 @@ class SceneTemplate extends GameTemplate {
   ) => SceneGameView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
-/// G75 "Sen de Çal": the instrument plays, the child plays it back.
+/// G75 "Sen de Çal": the piano plays a short tune, the child plays it back.
+/// Easy: two or three notes next to each other; medium: four; hard: five or
+/// six, some of them long.
 class EchoTemplate extends GameTemplate {
   const EchoTemplate();
   @override
   String get id => 'echo';
 
-  static Map<String, String> _clips(String key) => {
-    for (final lang in const ['tr', 'en'])
-      lang: 'assets/audio/$lang/scenes/$key.mp3',
-  };
+  static String? _lastTune;
 
   @override
   RoundSpec buildRound(ModeContext ctx) {
     final pool = ctx.pool().where((x) => x.sfx != null).toList();
     if (pool.length < 2) throw StateError('No instruments');
-    final target = ctx.scheduler.next(pool, ctx.struggle);
+    final target = pool.firstWhere(
+      (x) => x.slug == 'piano',
+      orElse: () => pool.first,
+    );
     final wrong = pool.firstWhere((x) => x.id != target.id);
+    final random = ctx.scheduler.random;
+    final length = switch (ctx.difficulty) {
+      Difficulty.easy => 2 + random.nextInt(2),
+      Difficulty.medium => 4,
+      Difficulty.hard => 5 + random.nextInt(2),
+    };
+    // Small steps on easy (neighbouring keys), any key later.
+    final reach = ctx.difficulty == Difficulty.easy ? 2 : 7;
+    List<int> tune() {
+      final notes = [random.nextInt(8)];
+      while (notes.length < length) {
+        final step = 1 + random.nextInt(reach);
+        final next = notes.last + (random.nextBool() ? step : -step);
+        if (next >= 0 && next < 8) notes.add(next);
+      }
+      return notes;
+    }
+
+    var notes = tune();
+    for (var i = 0; i < 6 && notes.join() == _lastTune; i++) {
+      notes = tune();
+    }
+    _lastTune = notes.join();
+    final long = <int>{
+      if (ctx.difficulty == Difficulty.hard) ...{
+        notes.length - 1,
+        1 + random.nextInt(notes.length - 2),
+      },
+    };
     return RoundSpec(
       target: target,
       choices: [target, wrong],
       promptTr: 'Dinle, sonra sen de çal.',
       promptEn: 'Listen, then you play too.',
-      fillCount: ctx.difficulty.index + 2,
+      notes: notes,
+      longNotes: long,
       fullStage: true,
       promptCues: {
-        for (final e in _clips('g75_listen').entries) e.key: [e.value],
+        for (final lang in const ['tr', 'en'])
+          lang: ['assets/audio/$lang/scenes/g75_listen.mp3'],
       },
     );
   }
@@ -1202,15 +1238,11 @@ class EchoTemplate extends GameTemplate {
     RoundSpec spec,
     RoundCallbacks callbacks,
     HintViewState hint,
-  ) => EchoView(
-    spec: spec,
-    callbacks: callbacks,
-    hint: hint,
-    againAudio: _clips('g75_again'),
-  );
+  ) => EchoView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
-/// G76 "Çal Bakalım": free play on every instrument.
+/// G76 "Çal Bakalım": free play on every instrument. Nothing to finish: no
+/// stars, no "done", no sticker; the child plays and leaves when they like.
 class FreePlayTemplate extends GameTemplate {
   const FreePlayTemplate();
   @override
@@ -1218,6 +1250,9 @@ class FreePlayTemplate extends GameTemplate {
 
   @override
   int? get fixedRounds => 1;
+
+  @override
+  bool get endless => true;
 
   @override
   RoundSpec buildRound(ModeContext ctx) {
@@ -1244,9 +1279,7 @@ class FreePlayTemplate extends GameTemplate {
       spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
 
   @override
-  List<String> successCues(RoundSpec spec, String locale) => [
-    praiseCue(locale),
-  ];
+  List<String> successCues(RoundSpec spec, String locale) => const [];
 
   @override
   Widget buildView(
@@ -1254,12 +1287,7 @@ class FreePlayTemplate extends GameTemplate {
     RoundSpec spec,
     RoundCallbacks callbacks,
     HintViewState hint,
-  ) => FreePlayView(
-    spec: spec,
-    callbacks: callbacks,
-    hint: hint,
-    doneLabel: scopedLocalizations(context, hint.locale).gameFinish,
-  );
+  ) => FreePlayView(spec: spec, callbacks: callbacks, hint: hint);
 }
 
 abstract final class TemplateRegistry {

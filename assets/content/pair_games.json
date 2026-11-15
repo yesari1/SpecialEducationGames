@@ -2944,6 +2944,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_1.mp3",
           "en": "assets/audio/en/scenes/g70_1.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_1.mp3",
+          "en": "assets/audio/en/scenes/g70_done_1.mp3"
         }
       },
       {
@@ -2956,6 +2960,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_2.mp3",
           "en": "assets/audio/en/scenes/g70_2.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_2.mp3",
+          "en": "assets/audio/en/scenes/g70_done_2.mp3"
         }
       },
       {
@@ -2968,6 +2976,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_3.mp3",
           "en": "assets/audio/en/scenes/g70_3.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_3.mp3",
+          "en": "assets/audio/en/scenes/g70_done_3.mp3"
         }
       },
       {
@@ -2980,6 +2992,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_4.mp3",
           "en": "assets/audio/en/scenes/g70_4.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_4.mp3",
+          "en": "assets/audio/en/scenes/g70_done_4.mp3"
         }
       },
       {
@@ -2992,6 +3008,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_5.mp3",
           "en": "assets/audio/en/scenes/g70_5.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_5.mp3",
+          "en": "assets/audio/en/scenes/g70_done_5.mp3"
         }
       },
       {
@@ -3004,6 +3024,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_6.mp3",
           "en": "assets/audio/en/scenes/g70_6.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_6.mp3",
+          "en": "assets/audio/en/scenes/g70_done_6.mp3"
         }
       },
       {
@@ -3016,6 +3040,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_7.mp3",
           "en": "assets/audio/en/scenes/g70_7.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_7.mp3",
+          "en": "assets/audio/en/scenes/g70_done_7.mp3"
         }
       },
       {
@@ -3028,6 +3056,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_8.mp3",
           "en": "assets/audio/en/scenes/g70_8.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_8.mp3",
+          "en": "assets/audio/en/scenes/g70_done_8.mp3"
         }
       },
       {
@@ -3040,6 +3072,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_9.mp3",
           "en": "assets/audio/en/scenes/g70_9.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_9.mp3",
+          "en": "assets/audio/en/scenes/g70_done_9.mp3"
         }
       },
       {
@@ -3052,6 +3088,10 @@
         "audio": {
           "tr": "assets/audio/tr/scenes/g70_10.mp3",
           "en": "assets/audio/en/scenes/g70_10.mp3"
+        },
+        "resultAudio": {
+          "tr": "assets/audio/tr/scenes/g70_done_10.mp3",
+          "en": "assets/audio/en/scenes/g70_done_10.mp3"
         }
       }
     ]
@@ -3061,7 +3101,6 @@
     "choicePool": [
       "nature.rain",
       "nature.snow",
-      "nature.sun",
       "nature.wind",
       "nature.lightning"
     ],
@@ -3096,22 +3135,6 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g73_done_snow.mp3",
           "en": "assets/audio/en/scenes/g73_done_snow.mp3"
-        }
-      },
-      {
-        "target": "nature.sun",
-        "sound": "assets/sfx/nature/sun.mp3",
-        "text": {
-          "tr": "Dinle bakalım. Hava nasıl?",
-          "en": "Listen. What's the weather like?"
-        },
-        "audio": {
-          "tr": "assets/audio/tr/scenes/g73_listen.mp3",
-          "en": "assets/audio/en/scenes/g73_listen.mp3"
-        },
-        "resultAudio": {
-          "tr": "assets/audio/tr/scenes/g73_done_sun.mp3",
-          "en": "assets/audio/en/scenes/g73_done_sun.mp3"
         }
       },
       {

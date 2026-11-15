@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/content/child_cast.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../app/ui/components.dart';
 import '../../../core/content/content_repository.dart';
@@ -90,7 +91,7 @@ class BodyMapView extends StatelessWidget {
               },
               child: Stack(
                 children: [
-                  Positioned.fill(child: PhotoVisual(asset)),
+                  Positioned.fill(child: PhotoVisual(ChildCast.of(asset))),
                   if (target != null && hint.celebrating)
                     ring(target, SegColors.successGlow, 'body-right')
                   else if (target != null && hint.level > 0)
@@ -111,14 +112,11 @@ class BodyPicture {
   final double aspect;
   final List<BodySpot> spots;
   const BodyPicture(this.asset, this.aspect, this.spots);
-  factory BodyPicture.fromJson(Map<String, dynamic> j) => BodyPicture(
-    j['picture'] as String,
-    (j['aspect'] as num).toDouble(),
-    [
-      for (final s in j['spots'] as List)
-        BodySpot.fromJson(s as Map<String, dynamic>),
-    ],
-  );
+  factory BodyPicture.fromJson(Map<String, dynamic> j) =>
+      BodyPicture(j['picture'] as String, (j['aspect'] as num).toDouble(), [
+        for (final s in j['spots'] as List)
+          BodySpot.fromJson(s as Map<String, dynamic>),
+      ]);
 }
 
 /// The body-map data (assets/content/body_map.json): face parts are asked
@@ -139,9 +137,8 @@ class BodyMap {
     },
   );
 
-  BodyPicture? pictureFor(String item) => pictures
-      .where((p) => p.spots.any((s) => s.item == item))
-      .firstOrNull;
+  BodyPicture? pictureFor(String item) =>
+      pictures.where((p) => p.spots.any((s) => s.item == item)).firstOrNull;
 
   /// Each body part once (a part may have two places, like the eyes).
   List<ContentItem> items(ContentRepository content) => [

@@ -10,8 +10,9 @@ import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import 'park_scaffold.dart';
 
-/// Yapboz: a theme picture cut into 4, 6 or 9 real jigsaw pieces, with tabs
-/// that lock into their neighbours. A piece let go near its place slides in;
+/// Yapboz: the child picks a picture (and how many pieces: 4, 6 or 9), and
+/// it comes cut into real jigsaw pieces, with tabs that lock into their
+/// neighbours. A piece let go near its place slides in;
 /// let go anywhere else it slides back. The finished picture says its name.
 class PuzzleScreen extends StatefulWidget {
   final AppState state;
@@ -144,7 +145,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   final _area = GlobalKey();
   late final List<ContentItem> _pool;
   Difficulty _level = Difficulty.easy;
-  late ContentItem _item;
+
+  /// The picture being put together; null while the child is choosing.
+  ContentItem? _chosen;
+  ContentItem get _item => _chosen!;
   late PuzzleCut _cut;
 
   /// Where each piece waits: the tray's places in order, fixed for the round.
@@ -168,15 +172,31 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   void initState() {
     super.initState();
     s.enterGame();
+    // A shelf of pictures to choose from: a few from every kind of thing.
+    final byTheme = <String, List<ContentItem>>{};
+    for (final item in s.content.items) {
+      if (item.images.isNotEmpty && item.audioFor(s.locale) != null) {
+        byTheme.putIfAbsent(item.theme, () => []).add(item);
+      }
+    }
     _pool = [
-      for (final item in s.content.items)
-        if (item.images.isNotEmpty && item.audioFor(s.locale) != null) item,
+      for (final theme in const [
+        'animals',
+        'vehicles',
+        'produce',
+        'food',
+        'nature',
+        'home',
+        'music',
+        'clothes',
+      ])
+        ...?byTheme[theme]?.take(3),
     ];
-    _newPuzzle();
+    _level = s.pickedDifficulty ?? Difficulty.easy;
   }
 
-  void _newPuzzle() {
-    _item = _pool[_random.nextInt(_pool.length)];
+  void _start(ContentItem item) {
+    _chosen = item;
     final (cols, rows) = _grid;
     _cut = PuzzleCut(cols, rows, _random);
     _tray = List.generate(cols * rows, (i) => i)..shuffle(_random);
@@ -194,13 +214,14 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   void _place(int piece) {
-    UiSound.basketDrop();
+    UiSound.puzzleSnap();
     _placed.add(piece);
     if (!_finished) return;
     final cue = _item.audioFor(s.locale);
     if (cue != null) unawaited(s.audio.playSequence([cue]));
+    // The finished picture stays a moment, then the shelf comes back.
     _next = Timer(const Duration(seconds: 4), () {
-      if (mounted) setState(_newPuzzle);
+      if (mounted) setState(() => _chosen = null);
     });
   }
 
@@ -213,56 +234,115 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   Widget build(BuildContext context) {
     final l10n = parkL10n(context, s);
     final (cols, rows) = _grid;
+    final choosing = _chosen == null;
     return ParkScaffold(
       title: l10n.parkPuzzle,
       background: 'assets/illustrations/home/bg_park.jpg',
-      onBack: () => context.go('/'),
-      trailing: FittedBox(
-        child: PillToggle<Difficulty>(
-          key: const ValueKey('puzzle-level'),
-          values: Difficulty.values,
-          selected: _level,
-          label: (d) => d.label(s.locale),
-          onChanged: (d) => setState(() {
-            _level = d;
-            _next?.cancel();
-            _newPuzzle();
-          }),
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(
-          SegSpace.s4,
-          0,
-          SegSpace.s4,
-          SegSpace.s3,
-        ),
-        child: LayoutBuilder(
-          builder: (context, box) {
-            // The board takes the height, but leaves the tray at least 40%.
-            final side = math.min(
-              box.maxHeight / rows,
-              box.maxWidth * .58 / cols,
-            );
-            final boardW = side * cols, boardH = side * rows;
-            final board = Rect.fromLTWH(
-              0,
-              (box.maxHeight - boardH) / 2,
-              boardW,
-              boardH,
-            );
-            final tray = Rect.fromLTRB(
-              boardW + SegSpace.s4,
-              0,
-              box.maxWidth,
-              box.maxHeight,
-            );
-            return _play(board, tray, side, cols, rows);
-          },
-        ),
-      ),
+      onBack: () {
+        if (choosing) return context.go('/');
+        _next?.cancel();
+        setState(() => _chosen = null);
+      },
+      // How many pieces is chosen with the picture, not in the middle of a
+      // puzzle.
+      trailing: !choosing
+          ? null
+          : FittedBox(
+              child: PillToggle<Difficulty>(
+                key: const ValueKey('puzzle-level'),
+                values: Difficulty.values,
+                selected: _level,
+                label: (d) => switch (d) {
+                  Difficulty.easy => '4',
+                  Difficulty.medium => '6',
+                  Difficulty.hard => '9',
+                },
+                icon: (_) => Icons.extension_rounded,
+                onChanged: (d) => setState(() => _level = d),
+              ),
+            ),
+      child: choosing
+          ? _shelf()
+          : Padding(
+              padding: const EdgeInsets.fromLTRB(
+                SegSpace.s4,
+                0,
+                SegSpace.s4,
+                SegSpace.s3,
+              ),
+              child: LayoutBuilder(
+                builder: (context, box) {
+                  // The board takes the height, but leaves the tray at least
+                  // 40%.
+                  final side = math.min(
+                    box.maxHeight / rows,
+                    box.maxWidth * .58 / cols,
+                  );
+                  final boardW = side * cols, boardH = side * rows;
+                  final board = Rect.fromLTWH(
+                    0,
+                    (box.maxHeight - boardH) / 2,
+                    boardW,
+                    boardH,
+                  );
+                  final tray = Rect.fromLTRB(
+                    boardW + SegSpace.s4,
+                    0,
+                    box.maxWidth,
+                    box.maxHeight,
+                  );
+                  return _play(board, tray, side, cols, rows);
+                },
+              ),
+            ),
     );
   }
+
+  /// The pictures to choose from, side by side.
+  Widget _shelf() => LayoutBuilder(
+    builder: (context, box) {
+      final side = (box.maxHeight - SegSpace.s5).clamp(120.0, 280.0);
+      return Center(
+        child: SizedBox(
+          height: side,
+          child: ListView.separated(
+            key: const ValueKey('puzzle-shelf'),
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: SegSpace.s5),
+            itemCount: _pool.length,
+            separatorBuilder: (_, _) => const SizedBox(width: SegSpace.s4),
+            itemBuilder: (context, i) => GestureDetector(
+              key: ValueKey('puzzle-pick-${_pool[i].id}'),
+              onTap: () {
+                UiSound.tap();
+                setState(() => _start(_pool[i]));
+              },
+              child: Container(
+                width: side,
+                padding: const EdgeInsets.all(SegSpace.s3),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xFFD9F0FF), Color(0xFFFFF6EA)],
+                  ),
+                  borderRadius: BorderRadius.circular(SegRadius.lg),
+                  border: Border.all(color: Colors.white, width: 4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF7C73DF).withValues(alpha: .22),
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: ItemVisual(_pool[i]),
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  );
 
   Widget _play(Rect board, Rect tray, double side, int cols, int rows) {
     final tab = side * PuzzleCut.tab;

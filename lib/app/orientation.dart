@@ -27,7 +27,9 @@ abstract final class AppOrientation {
     // games are bigger and a small hand does not leave the app by accident.
     // The parent's screens keep the bars.
     SystemChrome.setEnabledSystemUIMode(
-      family == 'child' ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
+      family == 'child'
+          ? SystemUiMode.immersiveSticky
+          : SystemUiMode.edgeToEdge,
     );
     return SystemChrome.setPreferredOrientations(forPath(path));
   }

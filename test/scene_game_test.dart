@@ -188,8 +188,8 @@ void main() {
     expect(said.single, ['ask.mp3']);
     expect(selected, isEmpty);
     expect(find.byKey(const ValueKey('scene-finger')), findsNothing);
-    // Six quiet seconds bring the finger back.
-    await tester.pump(const Duration(seconds: 7));
+    // Twelve quiet seconds bring the finger back.
+    await tester.pump(const Duration(seconds: 13));
     await tester.pump();
     expect(find.byKey(const ValueKey('scene-finger')), findsOneWidget);
     expect(find.byKey(ValueKey('scene-piece-${wrong.id}')), findsOneWidget);
