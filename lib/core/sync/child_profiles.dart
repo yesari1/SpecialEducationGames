@@ -113,16 +113,20 @@ class FirestoreChildProfileStore implements ChildProfileStore {
   @override
   Future<void> put(String uid, CloudChild child) async {
     final ref = (await _family(uid)).collection('children').doc(child.id);
-    await (firestore ?? FirebaseFirestore.instance)
-        .runTransaction((tx) async {
-          final snap = await tx.get(ref);
-          tx.set(ref, {
-            ...child.fields(),
-            'createdAt': snap.exists
-                ? snap.data()!['createdAt']
-                : FieldValue.serverTimestamp(),
-            'updatedAt': FieldValue.serverTimestamp(),
-          });
+    // No Firestore transaction here. When a transaction runs out of time on
+    // a slow connection, the Android plugin's next read throws an
+    // AssertionError on its own thread ("A transaction object cannot be used
+    // after its update callback has been invoked") and the whole app closes
+    // (Play vitals, 2.0.43-2.0.52). A plain read followed by a write cannot
+    // do that.
+    final snap = await ref.get().timeout(_timeout);
+    await ref
+        .set({
+          ...child.fields(),
+          'createdAt': snap.exists
+              ? snap.data()!['createdAt']
+              : FieldValue.serverTimestamp(),
+          'updatedAt': FieldValue.serverTimestamp(),
         })
         .timeout(_timeout);
   }

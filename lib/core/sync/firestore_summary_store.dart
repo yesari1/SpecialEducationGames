@@ -92,39 +92,46 @@ class FirestoreSummaryStore implements SummaryStore {
     }
     final db = await _ready(uid, profileId, stillAuthorized);
     final collection = _collection(db, uid, profileId);
-    // Transactions fail offline and do not enqueue writes for later replay.
-    // All reads precede all writes; retries recheck authorization and LWW.
-    return db.runTransaction<List<DailySessionSummary>>(
-      (transaction) async {
-        _check(uid, stillAuthorized);
-        final existing = <String, DailySessionSummary>{};
-        for (final summary in summaries) {
-          final doc = await transaction.get(collection.doc(summary.documentId));
-          _check(uid, stillAuthorized);
-          if (doc.exists) {
-            final parsed = DailySessionSummary.fromPayload(
-              decodeFirestoreSummary(doc.data()!),
-              now: now,
-            );
-            if (parsed != null && parsed.documentId == doc.id) {
-              existing[doc.id] = parsed;
-            }
-          }
-        }
-        final winners = mergeDailySummaries([
-          ...summaries,
-          ...existing.values,
-        ], now: now);
-        _check(uid, stillAuthorized);
-        for (final winner in winners) {
-          final payload = winner.toPayload();
-          payload['updatedAt'] = Timestamp.fromDate(winner.updatedAt);
-          transaction.set(collection.doc(winner.documentId), payload);
-        }
-        return winners;
-      },
-      timeout: const Duration(seconds: 15),
-      maxAttempts: 3,
-    );
+    // No Firestore transaction here. When a transaction runs out of time on
+    // a slow connection, the Android plugin's next read throws an
+    // AssertionError on its own thread ("A transaction object cannot be used
+    // after its update callback has been invoked") and the whole app closes
+    // (Play vitals, 2.0.43-2.0.52). A plain read followed by a write cannot
+    // do that.
+    // The days are read from the server (never from an offline cache), the
+    // newest of each wins, and the winners are written in one batch.
+    _check(uid, stillAuthorized);
+    const wait = Duration(seconds: 15);
+    final docs = await Future.wait([
+      for (final summary in summaries)
+        collection
+            .doc(summary.documentId)
+            .get(const GetOptions(source: Source.server)),
+    ]).timeout(wait);
+    _check(uid, stillAuthorized);
+    final existing = <String, DailySessionSummary>{};
+    for (final doc in docs) {
+      if (!doc.exists) continue;
+      final parsed = DailySessionSummary.fromPayload(
+        decodeFirestoreSummary(doc.data()!),
+        now: now,
+      );
+      if (parsed != null && parsed.documentId == doc.id) {
+        existing[doc.id] = parsed;
+      }
+    }
+    final winners = mergeDailySummaries([
+      ...summaries,
+      ...existing.values,
+    ], now: now);
+    _check(uid, stillAuthorized);
+    final batch = db.batch();
+    for (final winner in winners) {
+      final payload = winner.toPayload();
+      payload['updatedAt'] = Timestamp.fromDate(winner.updatedAt);
+      batch.set(collection.doc(winner.documentId), payload);
+    }
+    await batch.commit().timeout(wait);
+    return winners;
   }
 }

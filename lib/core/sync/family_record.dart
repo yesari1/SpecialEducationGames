@@ -58,23 +58,28 @@ class FirestoreFamilyRecordStore implements FamilyRecordStore {
     final ref = db.collection('families').doc(uid);
     // Only the token's own e-mail is ever written.
     final verifiedEmail = email != null && email == user.email ? email : null;
-    await db
-        .runTransaction((tx) async {
-          final snap = await tx.get(ref);
-          tx.set(ref, {
-            if (!snap.exists) 'createdAt': FieldValue.serverTimestamp(),
-            'updatedAt': FieldValue.serverTimestamp(),
-            'lastSeenAt': FieldValue.serverTimestamp(),
-            'locale': locale == 'tr' ? 'tr' : 'en',
-            if (appVersion != null)
-              'appVersion': appVersion.length > 32
-                  ? appVersion.substring(0, 32)
-                  : appVersion,
-            'plan': ?plan,
-            'email': ?verifiedEmail,
-          }, SetOptions(merge: true));
-        })
-        .timeout(const Duration(seconds: 15));
+    // No Firestore transaction here. When a transaction runs out of time on
+    // a slow connection, the Android plugin's next read throws an
+    // AssertionError on its own thread ("A transaction object cannot be used
+    // after its update callback has been invoked") and the whole app closes
+    // (Play vitals, 2.0.43-2.0.52). A plain read followed by a write cannot
+    // do that.
+    const wait = Duration(seconds: 15);
+    final snap = await ref.get().timeout(wait);
+    await ref
+        .set({
+          if (!snap.exists) 'createdAt': FieldValue.serverTimestamp(),
+          'updatedAt': FieldValue.serverTimestamp(),
+          'lastSeenAt': FieldValue.serverTimestamp(),
+          'locale': locale == 'tr' ? 'tr' : 'en',
+          if (appVersion != null)
+            'appVersion': appVersion.length > 32
+                ? appVersion.substring(0, 32)
+                : appVersion,
+          'plan': ?plan,
+          'email': ?verifiedEmail,
+        }, SetOptions(merge: true))
+        .timeout(wait);
     // This phone's push address (messages from the admin page) and model.
     // A separate write, so a rejection never holds back the rest.
     if (fcmToken != null || deviceModel != null) {

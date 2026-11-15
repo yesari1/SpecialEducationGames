@@ -1397,3 +1397,9 @@ Yunus's review round (thread "Ana ekran UI + oyun düzeltmeleri"). Source of tru
 - Voices: Turkish radish and the used jobs/clothes item names recorded again with eleven_v4; 186 new or changed lines, checked by speech-to-text (tools/home_sections/check_new_lines.py).
 - Tests: test/fix_nov12_test.dart (outfits, G64 avoid list, G66 variety, English names, EdgePull); renders in tools/fix_nov12_shot_test.dart and tools/fix_nov12_games_shot_test.dart.
 - Not done here: stories and the other games still show Ali for a girl profile (only the clothes games follow the gender).
+
+## 15 November 2026 - Crash while syncing, home stutter (2.0.53)
+- Yunus: the app closed by itself on the home (twice) and once on opening a game. Play vitals (2.0.43, 7 events, 2 users): java.lang.AssertionError "A transaction object cannot be used after its update callback has been invoked" from FlutterFirebaseFirestorePlugin.transactionGet: a Firestore transaction timing out on a slow connection kills the process. The three transactions (daily summaries, child profile, family record) are now a plain server read followed by a write or batch; no runTransaction is left in lib.
+- Not reproduced on Pixel_9a (four minutes idle on the home, no crash, memory flat), so the proof is on Yunus's phone and in vitals of 2.0.53.
+- Home stutter: the ShaderMask that faded the top of the Learn list redrew the whole list through a layer every frame; replaced by a thin sky-coloured strip over the list.
+- 345 host tests pass; release build launched on Pixel_9a. tools/play_crashes.py needs the Play Developer Reporting API enabled in the cloud project (it is not); the crash was read in the Play Console instead.

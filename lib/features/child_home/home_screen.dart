@@ -505,56 +505,81 @@ class _LearnSectionState extends State<_LearnSection> {
         // below, and nothing is cut by a band.
         final rowHeight = (box.maxHeight * .58).clamp(176.0, 250.0);
         // Rows scrolled up melt away under the top bar instead of being cut
-        // by a hard line.
-        return ShaderMask(
-          blendMode: BlendMode.dstIn,
-          shaderCallback: (rect) => LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: const [Colors.transparent, Colors.white],
-            stops: [0, 14 / rect.height],
-          ).createShader(rect),
-          child: ListView(
-            key: const ValueKey('home-learn-list'),
-            controller: _scroll,
-            padding: EdgeInsets.only(top: 2, bottom: widget.barRoom),
-            children: [
-              for (final (title, ids) in homeRows(l10n))
-                if (ids.where(open.containsKey).toList() case final themes
-                    when themes.isNotEmpty) ...[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      SegSpace.s5,
-                      SegSpace.s2,
-                      SegSpace.s5,
-                      0,
-                    ),
-                    child: Text(
-                      title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: SegText.label.copyWith(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w800,
-                        color: deep,
-                      ),
+        // by a hard line: a thin strip in the sky's own colour lies over the
+        // top of the list. (Not a ShaderMask: that redraws the whole list
+        // through an extra layer on every frame and made scrolling stutter.)
+        const sky = Color(0xFFC8FAF9);
+        return Stack(
+          fit: StackFit.expand,
+          children: [
+            _list(l10n, open, rowHeight, deep),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 14,
+              child: IgnorePointer(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [sky, sky.withValues(alpha: 0)],
                     ),
                   ),
-                  SizedBox(
-                    height: rowHeight,
-                    child: HorizontalCards(
-                      key: ValueKey('home-row-${ids.first}'),
-                      count: themes.length,
-                      cardAspect: .92,
-                      tight: true,
-                      builder: (i) => _themeCard(context, open[themes[i]]!),
-                    ),
-                  ),
-                ],
-            ],
-          ),
+                ),
+              ),
+            ),
+          ],
         );
       },
+    );
+  }
+
+  Widget _list(
+    AppLocalizations l10n,
+    Map<String, ContentTheme> open,
+    double rowHeight,
+    Color deep,
+  ) {
+    return ListView(
+      key: const ValueKey('home-learn-list'),
+      controller: _scroll,
+      padding: EdgeInsets.only(top: 2, bottom: widget.barRoom),
+      children: [
+        for (final (title, ids) in homeRows(l10n))
+          if (ids.where(open.containsKey).toList() case final themes
+              when themes.isNotEmpty) ...[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                SegSpace.s5,
+                SegSpace.s2,
+                SegSpace.s5,
+                0,
+              ),
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: SegText.label.copyWith(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w800,
+                  color: deep,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: rowHeight,
+              child: HorizontalCards(
+                key: ValueKey('home-row-${ids.first}'),
+                count: themes.length,
+                cardAspect: .92,
+                tight: true,
+                builder: (i) => _themeCard(context, open[themes[i]]!),
+              ),
+            ),
+          ],
+      ],
     );
   }
 
