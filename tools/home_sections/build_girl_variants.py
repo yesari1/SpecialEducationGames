@@ -118,6 +118,9 @@ def pictures():
     # The dress-up child on the game's card.
     if (ROOT / 'assets/images/wear/girl.webp').exists():
         out['assets/images/wear/boy.webp'] = 'assets/images/wear/girl.webp'
+    # The home "Vücudumuz" card (Yunus, 16 Nov 2026).
+    if (ROOT / 'assets/illustrations/themes/cover_body_girl.png').exists():
+        out['assets/illustrations/themes/cover_body.png'] = 'assets/illustrations/themes/cover_body_girl.png'
     return out
 
 

@@ -15,7 +15,16 @@ class RoundCallbacks {
 
   /// Speaks clips during a round (scene games talk between their steps).
   final void Function(List<String> clips)? onSay;
-  const RoundCallbacks({required this.onSelect, this.onListen, this.onSay});
+
+  /// A piano note starts and stops with the key (held keys ring longer).
+  final void Function(String clip)? onNoteDown, onNoteUp;
+  const RoundCallbacks({
+    required this.onSelect,
+    this.onListen,
+    this.onSay,
+    this.onNoteDown,
+    this.onNoteUp,
+  });
 }
 
 class HintViewState {

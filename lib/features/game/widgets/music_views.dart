@@ -9,15 +9,17 @@ import 'round_choices_view.dart';
 /// The eight keys of the toy piano, low to high.
 const pianoNotes = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si', 'do2'];
 const _noteNames = ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si', 'Do'];
+// Eight clearly different colours, one per key (Yunus, 16 November 2026:
+// turquoise, blue and the green next to them looked alike).
 const _keyColours = [
-  Color(0xFFE76F8E),
-  Color(0xFFFF8A32),
-  Color(0xFFFFC546),
-  Color(0xFF6CC66B),
-  Color(0xFF10B7B0),
-  Color(0xFF63C6F4),
-  Color(0xFF1687D9),
-  Color(0xFF7C73DF),
+  Color(0xFFE53935), // red
+  Color(0xFFFB8C00), // orange
+  Color(0xFFFDD835), // yellow
+  Color(0xFF43A047), // green
+  Color(0xFF1E6FD9), // blue
+  Color(0xFF8E44C8), // purple
+  Color(0xFFEC5FA0), // pink
+  Color(0xFF8D5A3B), // brown
 ];
 
 String pianoClip(int key) => 'assets/sfx/piano/${pianoNotes[key]}.mp3';
@@ -93,7 +95,17 @@ class _EchoViewState extends State<EchoView> {
     _wait?.cancel();
   }
 
-  void _play(int key) => widget.callbacks.onSay?.call([pianoClip(key)]);
+  void _play(int key) {
+    final down = widget.callbacks.onNoteDown;
+    if (down != null) {
+      down(pianoClip(key));
+    } else {
+      widget.callbacks.onSay?.call([pianoClip(key)]);
+    }
+  }
+
+  /// The note ends with the key: a short press is a short note.
+  void _release(int key) => widget.callbacks.onNoteUp?.call(pianoClip(key));
 
   void _demonstrate() {
     _stop();
@@ -119,7 +131,9 @@ class _EchoViewState extends State<EchoView> {
       );
       _timers.add(
         Timer(when + held, () {
-          if (mounted) setState(() => _lit = null);
+          if (!mounted) return;
+          _release(key);
+          setState(() => _lit = null);
         }),
       );
       when += held + _gap;
@@ -177,6 +191,7 @@ class _EchoViewState extends State<EchoView> {
   }
 
   void _up(int key) {
+    if (_pressed == key) _release(key);
     final since = _pressedAt;
     final was = _pressed;
     setState(() => _pressed = null);

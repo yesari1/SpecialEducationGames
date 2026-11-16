@@ -968,8 +968,8 @@
   "assets/audio/tr/pairs/G45_same.mp3": {
     "language": "tr",
     "model_id": "eleven_v4",
-    "sha256": "57599c388222e9b63d71eba9045bae8b45b51344527237d25834ea27ee2b9630",
-    "text": "Kim de böyle hissediyor?",
+    "sha256": "19a54588469d5c9bd71b2c1b662f274aa6cfc748226853033a5e2798aa03965f",
+    "text": "Aynı duyguyu hisseden kişiyi bul.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   },
   "assets/audio/tr/pairs/G46_listen.mp3": {

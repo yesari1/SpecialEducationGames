@@ -143,6 +143,10 @@ class SceneRound {
 
   /// Spoken after the last step, before the praise.
   final Map<String, String> finishAudio;
+
+  /// Cut pieces of what was put in (fruit -> piece picture): once stirred,
+  /// the bowl holds two pieces of each instead of the whole fruit.
+  final Map<String, String> pieces;
   const SceneRound({
     required this.key,
     required this.tier,
@@ -160,6 +164,7 @@ class SceneRound {
     this.who,
     this.rise = false,
     this.finishAudio = const {},
+    this.pieces = const {},
   });
 
   factory SceneRound.fromJson(Map<String, dynamic> j) => SceneRound(
@@ -187,6 +192,7 @@ class SceneRound {
     finishAudio: Map<String, String>.from(
       (j['finishAudio'] ?? const {}) as Map,
     ),
+    pieces: Map<String, String>.from((j['pieces'] ?? const {}) as Map),
   );
 }
 

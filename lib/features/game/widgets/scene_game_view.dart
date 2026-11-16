@@ -194,6 +194,9 @@ class _SceneGameViewState extends State<SceneGameView>
   int _generation = -1;
   String _picture = '';
   final Set<int> _placed = {};
+
+  /// Stirred: the bowl shows the cut pieces of the fruit put in.
+  bool _mixed = false;
   final Set<int> _cleaned = {};
 
   /// Pieces that left the tray for good (gentle rounds keep every slot).
@@ -317,6 +320,7 @@ class _SceneGameViewState extends State<SceneGameView>
     _step = 0;
     _picture = round.stage;
     _placed.clear();
+    _mixed = false;
     _gone.clear();
     _done = false;
     _dragId = null;
@@ -679,6 +683,10 @@ class _SceneGameViewState extends State<SceneGameView>
         _picture = after;
         _placed.clear();
       }
+      if (finished.mode == SceneStepMode.stir && round.pieces.isNotEmpty) {
+        _mixed = true;
+        _placed.clear();
+      }
       if (last) {
         _done = true;
       } else {
@@ -773,6 +781,44 @@ class _SceneGameViewState extends State<SceneGameView>
   ContentItem? _item(String id) => widget.spec.scenePieces[id];
 
   /// A piece as it lies on the picture, turned if its step says so.
+  /// Two pieces of every fruit put in, heaped in the bowl (back row first,
+  /// so the front row overlaps it), each turned a little differently.
+  List<Widget> _saladPieces(Size size) {
+    final pictures = [for (final s in round.steps) ?round.pieces[s.piece]];
+    final all = [...pictures, ...pictures.reversed];
+    final back = (all.length + 1) ~/ 2;
+    // A heap in the middle of the bowl: the pieces overlap a little and the
+    // front row sits lower and in between.
+    const w = .2, h = w * 1.5, step = w * .72;
+    final out = <Widget>[];
+    for (var i = 0; i < all.length; i++) {
+      final front = i >= back;
+      final row = front ? all.length - back : back;
+      final n = front ? i - back : i;
+      final left = .5 - ((row - 1) * step + w) / 2 + n * step;
+      out.add(
+        Positioned(
+          key: ValueKey('scene-piece-$i'),
+          left: left * size.width,
+          top: (front ? .24 : .15) * size.height,
+          width: w * size.width,
+          height: h * size.height,
+          child: IgnorePointer(
+            child: Transform.rotate(
+              angle: ((i * 37) % 70 - 35) * math.pi / 180,
+              child: Image.asset(
+                all[i],
+                fit: BoxFit.contain,
+                excludeFromSemantics: true,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    return out;
+  }
+
   Widget _onPicture(SceneStep step, Size size) {
     final visual = _visual(step.piece);
     if (step.turn == 0) return visual;
@@ -1006,6 +1052,7 @@ class _SceneGameViewState extends State<SceneGameView>
                       ),
                       key: ValueKey('scene-shadow-$i'),
                     ),
+                if (_mixed) ..._saladPieces(size),
                 // The near side of the picture (a bowl's front wall): what
                 // is put in goes behind it.
                 if (round.front case final front? when _picture == round.stage)

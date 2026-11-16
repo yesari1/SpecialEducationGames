@@ -16,6 +16,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 ALPHA_THRESHOLD = 24
 PADDING_PX = 4
+# Pictures drawn smaller than their opaque part would be: the frame grows
+# around the subject (the long cucumber looked far too big, Yunus 16 Nov 2026).
+SHRINK = {'assets/images/produce/cucumber_real.webp': 0.72}
 
 
 def bounds(path: Path):
@@ -40,6 +43,12 @@ def main():
     for path in sorted((ROOT / 'assets' / 'images').rglob('*.webp')):
         key = path.relative_to(ROOT).as_posix()
         measured = bounds(path)
+        if measured is not None and key in SHRINK:
+            l, t, r, b = measured
+            cx, cy = (l + r) / 2, (t + b) / 2
+            hw, hh = (r - l) / 2 / SHRINK[key], (b - t) / 2 / SHRINK[key]
+            measured = [round(max(0, cx - hw), 5), round(max(0, cy - hh), 5),
+                        round(min(1, cx + hw), 5), round(min(1, cy + hh), 5)]
         if measured is not None:
             result[key] = measured
     out = ROOT / 'assets' / 'content' / 'photo_bounds.json'

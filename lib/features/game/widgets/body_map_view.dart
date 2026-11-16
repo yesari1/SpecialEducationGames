@@ -41,15 +41,30 @@ class BodyMapView extends StatelessWidget {
   Widget build(BuildContext context) {
     final asset = spec.promptImagePath;
     if (asset == null) return const SizedBox.shrink();
+    final shown = ChildCast.of(asset);
+    // The spots are fractions of the whole picture; PhotoVisual draws only
+    // its opaque part, so the board takes that part's shape and the spots
+    // move with it.
+    final crop =
+        PhotoVisual.boundsOf(shown) ?? const Rect.fromLTWH(0, 0, 1, 1);
+    final boardAspect = aspect * crop.width / crop.height;
     final byId = {for (final c in spec.choices) c.id: c};
     // Every place answers; a place that is not one of this round's choices
     // counts as a wrong tap like any other wrong choice.
-    final usable = spots;
+    final usable = [
+      for (final s in spots)
+        BodySpot(
+          s.item,
+          (s.x - crop.left) / crop.width,
+          (s.y - crop.top) / crop.height,
+          s.r / crop.width,
+        ),
+    ];
     final wrong = spec.choices.where((c) => c.id != spec.target.id).firstOrNull;
     final target = usable.where((s) => s.item == spec.target.id).firstOrNull;
     return Center(
       child: AspectRatio(
-        aspectRatio: aspect,
+        aspectRatio: boardAspect,
         child: LayoutBuilder(
           builder: (context, box) {
             final w = box.maxWidth, h = box.maxHeight;
@@ -91,7 +106,7 @@ class BodyMapView extends StatelessWidget {
               },
               child: Stack(
                 children: [
-                  Positioned.fill(child: PhotoVisual(ChildCast.of(asset))),
+                  Positioned.fill(child: PhotoVisual(shown)),
                   if (target != null && hint.celebrating)
                     ring(target, SegColors.successGlow, 'body-right')
                   else if (target != null && hint.level > 0)
@@ -106,17 +121,37 @@ class BodyMapView extends StatelessWidget {
   }
 }
 
-/// One picture of Ali (his face, or his whole body) and its places.
+/// One picture of Ali (his face, or his whole body) and its places; the
+/// girl's picture has places of its own ([variants], by asset).
 class BodyPicture {
   final String asset;
   final double aspect;
   final List<BodySpot> spots;
-  const BodyPicture(this.asset, this.aspect, this.spots);
-  factory BodyPicture.fromJson(Map<String, dynamic> j) =>
-      BodyPicture(j['picture'] as String, (j['aspect'] as num).toDouble(), [
-        for (final s in j['spots'] as List)
-          BodySpot.fromJson(s as Map<String, dynamic>),
-      ]);
+  final Map<String, List<BodySpot>> variants;
+  const BodyPicture(
+    this.asset,
+    this.aspect,
+    this.spots, {
+    this.variants = const {},
+  });
+  factory BodyPicture.fromJson(Map<String, dynamic> j) => BodyPicture(
+    j['picture'] as String,
+    (j['aspect'] as num).toDouble(),
+    [
+      for (final s in j['spots'] as List)
+        BodySpot.fromJson(s as Map<String, dynamic>),
+    ],
+    variants: {
+      for (final e in ((j['variants'] as Map?) ?? const {}).entries)
+        e.key as String: [
+          for (final s in e.value as List)
+            BodySpot.fromJson(s as Map<String, dynamic>),
+        ],
+    },
+  );
+
+  /// The places on the picture that is shown ([shown] is the asset drawn).
+  List<BodySpot> spotsFor(String shown) => variants[shown] ?? spots;
 }
 
 /// The body-map data (assets/content/body_map.json): face parts are asked

@@ -403,10 +403,17 @@ class PhotoVisual extends StatefulWidget {
   /// are measured once at runtime.
   static void registerBounds(Map<String, Rect> bounds) =>
       _opaqueBounds.addAll(bounds);
+
+  /// The part of [asset] that is drawn (fractions of the image), when known.
+  static Rect? boundsOf(String asset) => _opaqueBounds[asset];
 }
 
 class _PhotoVisualState extends State<PhotoVisual> {
   static Map<String, Rect> get _opaqueBounds => PhotoVisual._opaqueBounds;
+
+  /// The picture drawn: for a girl's profile, the girl's version of a
+  /// picture of the boy (story choices and results too, Yunus 16 Nov 2026).
+  String get _asset => ChildCast.of(widget.asset);
   ImageStream? _stream;
   ImageInfo? _image;
   late final ImageStreamListener _listener = ImageStreamListener((image, _) {
@@ -418,7 +425,7 @@ class _PhotoVisualState extends State<PhotoVisual> {
       _image?.dispose();
       _image = image;
     });
-    _measure(widget.asset, image.image);
+    _measure(_asset, image.image);
   });
 
   void _measure(String asset, ui.Image image) {
@@ -451,7 +458,7 @@ class _PhotoVisualState extends State<PhotoVisual> {
                   (right + 6) / width,
                   (bottom + 6) / height,
                 ).intersect(whole);
-          if (mounted && widget.asset == asset) setState(() {});
+          if (mounted && _asset == asset) setState(() {});
         })
         .catchError((Object _) {
           handle.dispose();
@@ -460,7 +467,7 @@ class _PhotoVisualState extends State<PhotoVisual> {
 
   void _resolve() {
     final next = AssetImage(
-      widget.asset,
+      _asset,
     ).resolve(createLocalImageConfiguration(context));
     if (next.key == _stream?.key) return;
     _stream?.removeListener(_listener);
@@ -494,7 +501,7 @@ class _PhotoVisualState extends State<PhotoVisual> {
       painter: _PhotoContourPainter(
         _image?.image,
         widget.alignment,
-        _opaqueBounds[widget.asset],
+        _opaqueBounds[_asset],
         silhouette: widget.silhouette,
       ),
       size: Size.infinite,

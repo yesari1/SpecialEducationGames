@@ -5741,6 +5741,10 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.apple": "assets/images/play/pieces/apple.webp",
+          "fruit.banana": "assets/images/play/pieces/banana.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce elmayı koyalım.",
           "en": "Let's make a fruit salad. First, the apple."
@@ -5803,7 +5807,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -5827,6 +5830,10 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp",
+          "fruit.orange": "assets/images/play/pieces/orange.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce çileği koyalım.",
           "en": "Let's make a fruit salad. First, the strawberry."
@@ -5889,7 +5896,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -5913,6 +5919,10 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.grape": "assets/images/play/pieces/grape.webp",
+          "fruit.pear": "assets/images/play/pieces/pear.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce üzümü koyalım.",
           "en": "Let's make a fruit salad. First, the grapes."
@@ -5975,7 +5985,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -5999,6 +6008,10 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp",
+          "fruit.peach": "assets/images/play/pieces/peach.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce kiviyi koyalım.",
           "en": "Let's make a fruit salad. First, the kiwi."
@@ -6061,7 +6074,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6085,6 +6097,10 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.banana": "assets/images/play/pieces/banana.webp",
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce muzu koyalım.",
           "en": "Let's make a fruit salad. First, the banana."
@@ -6147,7 +6163,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6171,6 +6186,11 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.apple": "assets/images/play/pieces/apple.webp",
+          "fruit.banana": "assets/images/play/pieces/banana.webp",
+          "fruit.orange": "assets/images/play/pieces/orange.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce elmayı koyalım.",
           "en": "Let's make a fruit salad. First, the apple."
@@ -6258,7 +6278,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6282,6 +6301,11 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp",
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp",
+          "fruit.pear": "assets/images/play/pieces/pear.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce çileği koyalım.",
           "en": "Let's make a fruit salad. First, the strawberry."
@@ -6369,7 +6393,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6393,6 +6416,11 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.grape": "assets/images/play/pieces/grape.webp",
+          "fruit.peach": "assets/images/play/pieces/peach.webp",
+          "fruit.apple": "assets/images/play/pieces/apple.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce üzümü koyalım.",
           "en": "Let's make a fruit salad. First, the grapes."
@@ -6480,7 +6508,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6504,6 +6531,11 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.orange": "assets/images/play/pieces/orange.webp",
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp",
+          "fruit.banana": "assets/images/play/pieces/banana.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce portakalı koyalım.",
           "en": "Let's make a fruit salad. First, the orange."
@@ -6591,7 +6623,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6615,6 +6646,11 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.pear": "assets/images/play/pieces/pear.webp",
+          "fruit.grape": "assets/images/play/pieces/grape.webp",
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce armudu koyalım.",
           "en": "Let's make a fruit salad. First, the pear."
@@ -6702,7 +6738,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6726,6 +6761,12 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.apple": "assets/images/play/pieces/apple.webp",
+          "fruit.banana": "assets/images/play/pieces/banana.webp",
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp",
+          "fruit.orange": "assets/images/play/pieces/orange.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce elmayı koyalım.",
           "en": "Let's make a fruit salad. First, the apple."
@@ -6836,7 +6877,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6860,6 +6900,12 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.grape": "assets/images/play/pieces/grape.webp",
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp",
+          "fruit.peach": "assets/images/play/pieces/peach.webp",
+          "fruit.pear": "assets/images/play/pieces/pear.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce üzümü koyalım.",
           "en": "Let's make a fruit salad. First, the grapes."
@@ -6970,7 +7016,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -6994,6 +7039,13 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.orange": "assets/images/play/pieces/orange.webp",
+          "fruit.apple": "assets/images/play/pieces/apple.webp",
+          "fruit.grape": "assets/images/play/pieces/grape.webp",
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp",
+          "fruit.banana": "assets/images/play/pieces/banana.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce portakalı koyalım.",
           "en": "Let's make a fruit salad. First, the orange."
@@ -7127,7 +7179,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -7151,6 +7202,13 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp",
+          "fruit.pear": "assets/images/play/pieces/pear.webp",
+          "fruit.peach": "assets/images/play/pieces/peach.webp",
+          "fruit.apple": "assets/images/play/pieces/apple.webp",
+          "fruit.grape": "assets/images/play/pieces/grape.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce çileği koyalım.",
           "en": "Let's make a fruit salad. First, the strawberry."
@@ -7284,7 +7342,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"
@@ -7308,6 +7365,13 @@
         "aspect": 1.5,
         "recipe": true,
         "front": "assets/images/play/bowl_front.webp",
+        "pieces": {
+          "fruit.banana": "assets/images/play/pieces/banana.webp",
+          "fruit.kiwi": "assets/images/play/pieces/kiwi.webp",
+          "fruit.orange": "assets/images/play/pieces/orange.webp",
+          "fruit.pear": "assets/images/play/pieces/pear.webp",
+          "fruit.strawberry": "assets/images/play/pieces/strawberry.webp"
+        },
         "text": {
           "tr": "Meyve salatası yapalım. Önce muzu koyalım.",
           "en": "Let's make a fruit salad. First, the banana."
@@ -7441,7 +7505,6 @@
               0.5,
               0.5
             ],
-            "after": "assets/images/play/bowl_mixed.webp",
             "askAudio": {
               "tr": "assets/audio/tr/scenes/g65_stir.mp3",
               "en": "assets/audio/en/scenes/g65_stir.mp3"

@@ -537,6 +537,8 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             }
           },
           onSay: (clips) => s.audio.playSequence(clips),
+          onNoteDown: (clip) => s.audio.noteDown(clip),
+          onNoteUp: (clip) => s.audio.noteUp(clip),
         ),
         HintViewState(
           level: c.hint,
@@ -810,7 +812,15 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                         ),
                         // Choice cards grow in on their own; the basket
                         // game's objects get the same soft entrance.
-                        child: stage,
+                        child: spec.resultInPlace
+                            ? AnimatedOpacity(
+                                opacity: c.phase == RoundPhase.celebrating
+                                    ? 0
+                                    : 1,
+                                duration: const Duration(milliseconds: 250),
+                                child: stage,
+                              )
+                            : stage,
                       ),
                     ),
                   ],
@@ -818,7 +828,42 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
               ),
               // The right answer of a pair game: what happens next, shown big
               // over the whole game ("İtfaiyeci hortumla yangını söndürüyor").
+              // "Bugün Ne Giysek?": the choices make way and the picture
+              // grows in, in the middle of the game, not over all of it.
               if (spec.resultImagePath case final result?
+                  when c.phase == RoundPhase.celebrating && spec.resultInPlace)
+                Positioned.fill(
+                  top: MediaQuery.sizeOf(context).height * .37,
+                  bottom: SegSpace.s3,
+                  child: IgnorePointer(
+                    child: TweenAnimationBuilder<double>(
+                      key: ValueKey('pair-result-$result'),
+                      tween: Tween(begin: 0, end: 1),
+                      duration: const Duration(milliseconds: 550),
+                      curve: Curves.easeOutBack,
+                      builder: (context, t, child) => Opacity(
+                        opacity: t.clamp(0.0, 1.0),
+                        child: Transform.scale(
+                          scale: .6 + .4 * t,
+                          child: child,
+                        ),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          const Positioned.fill(
+                            child: ObjectHalo(color: SegColors.successGlow),
+                          ),
+                          Image.asset(
+                            ChildCast.of(result),
+                            fit: BoxFit.contain,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              else if (spec.resultImagePath case final result?
                   when c.phase == RoundPhase.celebrating)
                 // Past the safe area too: the whole screen, edge to edge.
                 Positioned(
@@ -915,15 +960,26 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
         if (s.celebration != 'off') {
           unawaited(s.audio.effect('assets/sfx/ui/applause.mp3'));
         }
-        s.audio.playSequence([successSentenceCue(s.locale)]).whenComplete(() {
-          if (!mounted || token != _celebration || _nextRoute != null) return;
-          // Stay a few seconds after the praise before going back.
-          if (endTimer == null) return;
-          endTimer!.cancel();
-          endTimer = Timer(_afterPraise, () {
-            if (mounted) back();
-          });
-        });
+        // The last answer's praise may still be playing: it ends first.
+        s.audio
+            .whenIdle()
+            .then((_) {
+              if (!mounted || token != _celebration) {
+                return Future<void>.value();
+              }
+              return s.audio.playSequence([successSentenceCue(s.locale)]);
+            })
+            .whenComplete(() {
+              if (!mounted || token != _celebration || _nextRoute != null) {
+                return;
+              }
+              // Stay a few seconds after the praise before going back.
+              if (endTimer == null) return;
+              endTimer!.cancel();
+              endTimer = Timer(_afterPraise, () {
+                if (mounted) back();
+              });
+            });
       });
     }
     final theme = s.content.theme(widget.themeId);

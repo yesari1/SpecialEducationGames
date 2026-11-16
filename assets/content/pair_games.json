@@ -1033,7 +1033,7 @@
       {
         "target": "faces.elif_happy",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1045,7 +1045,7 @@
       {
         "target": "faces.mom_happy",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1057,7 +1057,7 @@
       {
         "target": "faces.elif_sad",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1069,7 +1069,7 @@
       {
         "target": "faces.mom_sad",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1081,7 +1081,7 @@
       {
         "target": "faces.elif_angry",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1093,7 +1093,7 @@
       {
         "target": "faces.mom_angry",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1105,7 +1105,7 @@
       {
         "target": "faces.elif_scared",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1117,7 +1117,7 @@
       {
         "target": "faces.mom_scared",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1129,7 +1129,7 @@
       {
         "target": "faces.elif_surprised",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1141,7 +1141,7 @@
       {
         "target": "faces.mom_surprised",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1153,7 +1153,7 @@
       {
         "target": "faces.elif_sleepy",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1165,7 +1165,7 @@
       {
         "target": "faces.mom_sleepy",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1177,7 +1177,7 @@
       {
         "target": "faces.elif_laughing",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1189,7 +1189,7 @@
       {
         "target": "faces.mom_laughing",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1201,7 +1201,7 @@
       {
         "target": "faces.elif_calm",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {
@@ -1213,7 +1213,7 @@
       {
         "target": "faces.mom_calm",
         "text": {
-          "tr": "Kim de böyle hissediyor?",
+          "tr": "Aynı duyguyu hisseden kişiyi bul.",
           "en": "Who feels the same way?"
         },
         "audio": {

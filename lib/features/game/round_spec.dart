@@ -72,6 +72,11 @@ class RoundSpec {
   /// A picture shown large after a right answer (pair games).
   final String? resultImagePath;
 
+  /// The result picture comes up in the middle of the game instead of over
+  /// the whole screen; only the choices make way for it ("Bugün Ne
+  /// Giysek?", Yunus 16 November 2026).
+  final bool resultInPlace;
+
   /// The view fills the page under the top bar; it shows the question itself.
   final bool fullStage;
 
@@ -108,6 +113,7 @@ class RoundSpec {
     this.scene,
     this.scenePieces = const {},
     this.resultImagePath,
+    this.resultInPlace = false,
     this.fullStage = false,
     this.plainTargets = false,
     this.notes = const [],
@@ -139,6 +145,7 @@ class RoundSpec {
     scene: scene,
     scenePieces: scenePieces,
     resultImagePath: resultImagePath,
+    resultInPlace: resultInPlace,
     fullStage: fullStage,
     plainTargets: plainTargets,
     notes: notes,

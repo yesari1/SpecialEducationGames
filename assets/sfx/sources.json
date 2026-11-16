@@ -140,14 +140,14 @@
   {
     "itemId": "nature.rain",
     "asset": "assets/sfx/nature/rain.mp3",
-    "title": "Rain.ogg",
-    "author": "ジダネ",
-    "source": "https://commons.wikimedia.org/wiki/File:Rain.ogg",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain",
-    "changes": "Cut to 4 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "c34d12243125c28f09426c076019f8321b602347a8564c38be771cb997c1a152",
-    "sha256": "f66032e79eaa7a9ad6467f545aa60fe722f096f7a0258cbd90a75e1d308f0883"
+    "title": "Heavy Rain in Summer.ogg",
+    "author": "Fiver, der Hellseher",
+    "source": "https://commons.wikimedia.org/wiki/File:Heavy_Rain_in_Summer.ogg",
+    "license": "CC-BY-SA-3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Cut to 3 seconds; mono MP3; normalized to -20 LUFS; short fades (16 Nov 2026).",
+    "originalSha256": "0523852da425b3d923174dd44ea303a9bd3ae6cdd39c020b9e32455c8fdee3e1",
+    "sha256": "485a21a296137906ded6a384b1756c1f3c43ad8034365c3bc26621bc279ec156"
   },
   {
     "itemId": "nature.snow",
@@ -188,14 +188,14 @@
   {
     "itemId": "nature.lightning",
     "asset": "assets/sfx/nature/thunder.mp3",
-    "title": "Thunder.ogg",
-    "author": "Bidgee",
-    "source": "https://commons.wikimedia.org/wiki/File:Thunder.ogg",
-    "license": "CC-BY-3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "changes": "Cut to 5 seconds; mono MP3; normalized to -24 LUFS; short fades.",
-    "originalSha256": "c66da284f376957f337230533671c004e08364b87b73959f067986cbfa8504dd",
-    "sha256": "d4ae5c4e98f37b57d3dcefa72cbefddba9dac88e34c625a9f8b7c3f69db0a1ed"
+    "title": "Thunder crack 2B.ogg",
+    "author": "Jud McCranie",
+    "source": "https://commons.wikimedia.org/wiki/File:Thunder_crack_2B.ogg",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Cut to 3.6 seconds around the crack; mono MP3; normalized to -16 LUFS; fades (16 Nov 2026).",
+    "originalSha256": "7fe08acfc149980cbdd09cd53e90b60c71707eff9e3312bb192740ae86a5456e",
+    "sha256": "89d7cddce24ac4a0d07d3865d07c85edef86ff08af76490e12e6a2afbf4e4256"
   },
   {
     "itemId": "music.guitar",
@@ -304,5 +304,101 @@
     "changes": "Cut to 3 seconds; mono MP3; normalized to -24 LUFS; short fades.",
     "originalSha256": "b6598a1b3e125f24f1e49a9beea26a2a9ad6996babd7b8d0e68e87e9ddc8a369",
     "sha256": "a08867f9369a106ca4691ba769a8fa564becf5f89cdc68fedd283ef0bdf1834e"
+  },
+  {
+    "itemId": "piano.do",
+    "asset": "assets/sfx/piano/do.mp3",
+    "title": "Piano.mf.C4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "1a7d8ddea94a3639fa58d79ebcc0b09b170b9c324811d2b705f97e278fdefac2",
+    "sha256": "f29268d1c42037c3d1917293c9f7d658b0e520fc3a6b847f0859bf86a08da774"
+  },
+  {
+    "itemId": "piano.re",
+    "asset": "assets/sfx/piano/re.mp3",
+    "title": "Piano.mf.D4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "0f5264652334906338dca950f69b063f6617bcfcef725cf2734127c6cb683e19",
+    "sha256": "2817ac3be180e70a5236f4385960567be00dd10303524c166c6a69a71aa8e947"
+  },
+  {
+    "itemId": "piano.mi",
+    "asset": "assets/sfx/piano/mi.mp3",
+    "title": "Piano.mf.E4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "3ee2ace7fd571c8868b3582b68417b1e456ef71169b136b732804d2f4eeabd9d",
+    "sha256": "809aa7af823b8beda2691572fb7b285e5c9655ec03e9e303964cc5366fa23853"
+  },
+  {
+    "itemId": "piano.fa",
+    "asset": "assets/sfx/piano/fa.mp3",
+    "title": "Piano.mf.F4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "588a2017e8f4e902ff9533112149c1899d2a77027a196d73778438096bedf68e",
+    "sha256": "512ce6812d4ce39c9971038779195f87db95217e19c6d9614d06eea8e0db86a5"
+  },
+  {
+    "itemId": "piano.sol",
+    "asset": "assets/sfx/piano/sol.mp3",
+    "title": "Piano.mf.G4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "0bf10e0279d77cec93fe3c6cc47c53c4bab6b650e342b7c4badfa9bc11b9c3e3",
+    "sha256": "1a5b212f442a8c5b4d4bd226e8ab7129108dfeac69af1a1d405f863cd64eaffa"
+  },
+  {
+    "itemId": "piano.la",
+    "asset": "assets/sfx/piano/la.mp3",
+    "title": "Piano.mf.A4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "800a6be43a44125bda75f7907aba2f6299287b4060d67e85efcf32a226757563",
+    "sha256": "e83f591ffbc04b0b262438ec3e25f4c2b859769a7f20c75b9d062eea5d93deb1"
+  },
+  {
+    "itemId": "piano.si",
+    "asset": "assets/sfx/piano/si.mp3",
+    "title": "Piano.mf.B4.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "9607371977074f8c2f926d3cf6bd4ad5f5d02ae988fcb1d2f308d15967ced2ca",
+    "sha256": "4d53d79a93aebcb552ee255a3cbf4cdb8c9ab64bd198bad45900650be766678d"
+  },
+  {
+    "itemId": "piano.do2",
+    "asset": "assets/sfx/piano/do2.mp3",
+    "title": "Piano.mf.C5.aiff",
+    "author": "University of Iowa Electronic Music Studios (Musical Instrument Samples)",
+    "source": "https://theremin.music.uiowa.edu/MISpiano.html",
+    "license": "Free to use without restriction",
+    "licenseUrl": "https://theremin.music.uiowa.edu/MIS.html",
+    "changes": "Leading silence removed, cut to 3.5 seconds with a fade; mono MP3; normalized to -18 LUFS (16 Nov 2026).",
+    "originalSha256": "68c231a437a0d54004427c723d136814358deea8f913516bee6095ea6c407937",
+    "sha256": "e0f8a577cdcafa66e836e4ded8ba520fa91ffc437181f33d6acfbe152ab388b4"
   }
 ]

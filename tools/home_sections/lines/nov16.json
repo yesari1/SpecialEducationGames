@@ -1,0 +1,322 @@
+{
+  "assets/audio/{lang}/numbers/compare/1_gt.mp3": {
+    "tr": "Bir büyüktür",
+    "en": "One is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/1_lt.mp3": {
+    "tr": "Bir küçüktür",
+    "en": "One is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/1_eq.mp3": {
+    "tr": "Bir ile bir birbirine eşittir.",
+    "en": "One is equal to one."
+  },
+  "assets/audio/{lang}/numbers/compare/2_gt.mp3": {
+    "tr": "İki büyüktür",
+    "en": "Two is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/2_lt.mp3": {
+    "tr": "İki küçüktür",
+    "en": "Two is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/2_eq.mp3": {
+    "tr": "İki ile iki birbirine eşittir.",
+    "en": "Two is equal to two."
+  },
+  "assets/audio/{lang}/numbers/compare/3_gt.mp3": {
+    "tr": "Üç büyüktür",
+    "en": "Three is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/3_lt.mp3": {
+    "tr": "Üç küçüktür",
+    "en": "Three is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/3_eq.mp3": {
+    "tr": "Üç ile üç birbirine eşittir.",
+    "en": "Three is equal to three."
+  },
+  "assets/audio/{lang}/numbers/compare/4_gt.mp3": {
+    "tr": "Dört büyüktür",
+    "en": "Four is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/4_lt.mp3": {
+    "tr": "Dört küçüktür",
+    "en": "Four is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/4_eq.mp3": {
+    "tr": "Dört ile dört birbirine eşittir.",
+    "en": "Four is equal to four."
+  },
+  "assets/audio/{lang}/numbers/compare/5_gt.mp3": {
+    "tr": "Beş büyüktür",
+    "en": "Five is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/5_lt.mp3": {
+    "tr": "Beş küçüktür",
+    "en": "Five is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/5_eq.mp3": {
+    "tr": "Beş ile beş birbirine eşittir.",
+    "en": "Five is equal to five."
+  },
+  "assets/audio/{lang}/numbers/compare/6_gt.mp3": {
+    "tr": "Altı büyüktür",
+    "en": "Six is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/6_lt.mp3": {
+    "tr": "Altı küçüktür",
+    "en": "Six is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/6_eq.mp3": {
+    "tr": "Altı ile altı birbirine eşittir.",
+    "en": "Six is equal to six."
+  },
+  "assets/audio/{lang}/numbers/compare/7_gt.mp3": {
+    "tr": "Yedi büyüktür",
+    "en": "Seven is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/7_lt.mp3": {
+    "tr": "Yedi küçüktür",
+    "en": "Seven is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/7_eq.mp3": {
+    "tr": "Yedi ile yedi birbirine eşittir.",
+    "en": "Seven is equal to seven."
+  },
+  "assets/audio/{lang}/numbers/compare/8_gt.mp3": {
+    "tr": "Sekiz büyüktür",
+    "en": "Eight is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/8_lt.mp3": {
+    "tr": "Sekiz küçüktür",
+    "en": "Eight is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/8_eq.mp3": {
+    "tr": "Sekiz ile sekiz birbirine eşittir.",
+    "en": "Eight is equal to eight."
+  },
+  "assets/audio/{lang}/numbers/compare/9_gt.mp3": {
+    "tr": "Dokuz büyüktür",
+    "en": "Nine is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/9_lt.mp3": {
+    "tr": "Dokuz küçüktür",
+    "en": "Nine is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/9_eq.mp3": {
+    "tr": "Dokuz ile dokuz birbirine eşittir.",
+    "en": "Nine is equal to nine."
+  },
+  "assets/audio/{lang}/numbers/compare/10_gt.mp3": {
+    "tr": "On büyüktür",
+    "en": "Ten is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/10_lt.mp3": {
+    "tr": "On küçüktür",
+    "en": "Ten is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/10_eq.mp3": {
+    "tr": "On ile on birbirine eşittir.",
+    "en": "Ten is equal to ten."
+  },
+  "assets/audio/{lang}/numbers/compare/11_gt.mp3": {
+    "tr": "On bir büyüktür",
+    "en": "Eleven is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/11_lt.mp3": {
+    "tr": "On bir küçüktür",
+    "en": "Eleven is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/11_eq.mp3": {
+    "tr": "On bir ile on bir birbirine eşittir.",
+    "en": "Eleven is equal to eleven."
+  },
+  "assets/audio/{lang}/numbers/compare/12_gt.mp3": {
+    "tr": "On iki büyüktür",
+    "en": "Twelve is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/12_lt.mp3": {
+    "tr": "On iki küçüktür",
+    "en": "Twelve is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/12_eq.mp3": {
+    "tr": "On iki ile on iki birbirine eşittir.",
+    "en": "Twelve is equal to twelve."
+  },
+  "assets/audio/{lang}/numbers/compare/13_gt.mp3": {
+    "tr": "On üç büyüktür",
+    "en": "Thirteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/13_lt.mp3": {
+    "tr": "On üç küçüktür",
+    "en": "Thirteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/13_eq.mp3": {
+    "tr": "On üç ile on üç birbirine eşittir.",
+    "en": "Thirteen is equal to thirteen."
+  },
+  "assets/audio/{lang}/numbers/compare/14_gt.mp3": {
+    "tr": "On dört büyüktür",
+    "en": "Fourteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/14_lt.mp3": {
+    "tr": "On dört küçüktür",
+    "en": "Fourteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/14_eq.mp3": {
+    "tr": "On dört ile on dört birbirine eşittir.",
+    "en": "Fourteen is equal to fourteen."
+  },
+  "assets/audio/{lang}/numbers/compare/15_gt.mp3": {
+    "tr": "On beş büyüktür",
+    "en": "Fifteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/15_lt.mp3": {
+    "tr": "On beş küçüktür",
+    "en": "Fifteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/15_eq.mp3": {
+    "tr": "On beş ile on beş birbirine eşittir.",
+    "en": "Fifteen is equal to fifteen."
+  },
+  "assets/audio/{lang}/numbers/compare/16_gt.mp3": {
+    "tr": "On altı büyüktür",
+    "en": "Sixteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/16_lt.mp3": {
+    "tr": "On altı küçüktür",
+    "en": "Sixteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/16_eq.mp3": {
+    "tr": "On altı ile on altı birbirine eşittir.",
+    "en": "Sixteen is equal to sixteen."
+  },
+  "assets/audio/{lang}/numbers/compare/17_gt.mp3": {
+    "tr": "On yedi büyüktür",
+    "en": "Seventeen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/17_lt.mp3": {
+    "tr": "On yedi küçüktür",
+    "en": "Seventeen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/17_eq.mp3": {
+    "tr": "On yedi ile on yedi birbirine eşittir.",
+    "en": "Seventeen is equal to seventeen."
+  },
+  "assets/audio/{lang}/numbers/compare/18_gt.mp3": {
+    "tr": "On sekiz büyüktür",
+    "en": "Eighteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/18_lt.mp3": {
+    "tr": "On sekiz küçüktür",
+    "en": "Eighteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/18_eq.mp3": {
+    "tr": "On sekiz ile on sekiz birbirine eşittir.",
+    "en": "Eighteen is equal to eighteen."
+  },
+  "assets/audio/{lang}/numbers/compare/19_gt.mp3": {
+    "tr": "On dokuz büyüktür",
+    "en": "Nineteen is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/19_lt.mp3": {
+    "tr": "On dokuz küçüktür",
+    "en": "Nineteen is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/19_eq.mp3": {
+    "tr": "On dokuz ile on dokuz birbirine eşittir.",
+    "en": "Nineteen is equal to nineteen."
+  },
+  "assets/audio/{lang}/numbers/compare/20_gt.mp3": {
+    "tr": "Yirmi büyüktür",
+    "en": "Twenty is greater than"
+  },
+  "assets/audio/{lang}/numbers/compare/20_lt.mp3": {
+    "tr": "Yirmi küçüktür",
+    "en": "Twenty is less than"
+  },
+  "assets/audio/{lang}/numbers/compare/20_eq.mp3": {
+    "tr": "Yirmi ile yirmi birbirine eşittir.",
+    "en": "Twenty is equal to twenty."
+  },
+  "assets/audio/{lang}/coloring/apple.mp3": {
+    "tr": "Elmayı istediğin renge boyayabilirsin.",
+    "en": "You can color the apple any color you like."
+  },
+  "assets/audio/{lang}/coloring/ball.mp3": {
+    "tr": "Topu istediğin renge boyayabilirsin.",
+    "en": "You can color the ball any color you like."
+  },
+  "assets/audio/{lang}/coloring/boat.mp3": {
+    "tr": "Gemiyi istediğin renge boyayabilirsin.",
+    "en": "You can color the boat any color you like."
+  },
+  "assets/audio/{lang}/coloring/butterfly.mp3": {
+    "tr": "Kelebeği istediğin renge boyayabilirsin.",
+    "en": "You can color the butterfly any color you like."
+  },
+  "assets/audio/{lang}/coloring/car.mp3": {
+    "tr": "Arabayı istediğin renge boyayabilirsin.",
+    "en": "You can color the car any color you like."
+  },
+  "assets/audio/{lang}/coloring/cat.mp3": {
+    "tr": "Kediyi istediğin renge boyayabilirsin.",
+    "en": "You can color the cat any color you like."
+  },
+  "assets/audio/{lang}/coloring/cupcake.mp3": {
+    "tr": "Keki istediğin renge boyayabilirsin.",
+    "en": "You can color the cupcake any color you like."
+  },
+  "assets/audio/{lang}/coloring/duck.mp3": {
+    "tr": "Ördeği istediğin renge boyayabilirsin.",
+    "en": "You can color the duck any color you like."
+  },
+  "assets/audio/{lang}/coloring/fish.mp3": {
+    "tr": "Balığı istediğin renge boyayabilirsin.",
+    "en": "You can color the fish any color you like."
+  },
+  "assets/audio/{lang}/coloring/flower.mp3": {
+    "tr": "Çiçeği istediğin renge boyayabilirsin.",
+    "en": "You can color the flower any color you like."
+  },
+  "assets/audio/{lang}/coloring/house.mp3": {
+    "tr": "Evi istediğin renge boyayabilirsin.",
+    "en": "You can color the house any color you like."
+  },
+  "assets/audio/{lang}/coloring/lamb.mp3": {
+    "tr": "Kuzuyu istediğin renge boyayabilirsin.",
+    "en": "You can color the lamb any color you like."
+  },
+  "assets/audio/{lang}/coloring/snail.mp3": {
+    "tr": "Salyangozu istediğin renge boyayabilirsin.",
+    "en": "You can color the snail any color you like."
+  },
+  "assets/audio/{lang}/coloring/star.mp3": {
+    "tr": "Yıldızı istediğin renge boyayabilirsin.",
+    "en": "You can color the star any color you like."
+  },
+  "assets/audio/{lang}/coloring/strawberry.mp3": {
+    "tr": "Çileği istediğin renge boyayabilirsin.",
+    "en": "You can color the strawberry any color you like."
+  },
+  "assets/audio/{lang}/coloring/sun.mp3": {
+    "tr": "Güneşi istediğin renge boyayabilirsin.",
+    "en": "You can color the sun any color you like."
+  },
+  "assets/audio/{lang}/coloring/teddy.mp3": {
+    "tr": "Oyuncak ayıyı istediğin renge boyayabilirsin.",
+    "en": "You can color the teddy bear any color you like."
+  },
+  "assets/audio/{lang}/coloring/train.mp3": {
+    "tr": "Treni istediğin renge boyayabilirsin.",
+    "en": "You can color the train any color you like."
+  },
+  "assets/audio/{lang}/coloring/tree.mp3": {
+    "tr": "Ağacı istediğin renge boyayabilirsin.",
+    "en": "You can color the tree any color you like."
+  },
+  "assets/audio/{lang}/coloring/umbrella.mp3": {
+    "tr": "Şemsiyeyi istediğin renge boyayabilirsin.",
+    "en": "You can color the umbrella any color you like."
+  }
+}

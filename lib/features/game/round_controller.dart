@@ -323,7 +323,16 @@ class RoundController extends ChangeNotifier {
       later(const Duration(milliseconds: 1500), () => start(repeat: answer));
       return;
     }
-    await saveTrial(this);
+    // The last answer of the game: the round-end page comes about a second
+    // later, without waiting for the praise to finish (Yunus, 16 November
+    // 2026: "we wait 3-4 seconds for it"); the page lets the praise end
+    // before its own sentence. A result picture stays a little longer.
+    final last = stage + 1 >= total;
+    if (last) {
+      unawaited(saveTrial(this));
+    } else {
+      await saveTrial(this);
+    }
     if (_disposed || answeredSession != generation) return;
     final previous = performance[spec!.target.id] ?? const ItemPerformance();
     performance[spec!.target.id] = ItemPerformance(
@@ -332,7 +341,12 @@ class RoundController extends ChangeNotifier {
           : 0,
       fullSupportStreak: maxHint == 4 ? previous.fullSupportStreak + 1 : 0,
     );
-    later(spec!.rightHold, () {
+    final hold = !last
+        ? spec!.rightHold
+        : spec!.resultImagePath != null
+        ? const Duration(milliseconds: 2000)
+        : const Duration(milliseconds: 1000);
+    later(hold, () {
       stage++;
       if (stage >= total) {
         phase = RoundPhase.complete;

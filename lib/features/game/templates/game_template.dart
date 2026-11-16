@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/content/content_repository.dart';
+import '../../../core/content/child_cast.dart';
 import '../../../core/learning/policies.dart';
 import '../round_spec.dart';
 import '../widgets/fill_basket_view.dart';
@@ -362,6 +363,30 @@ class CompareTemplate extends GameTemplate {
       promptKey: GamePromptKey.compareNumbers,
       sequence: ['$a', '?', '$b'],
     );
+  }
+
+  /// After the praise the comparison is said aloud: "On üç büyüktür on",
+  /// "Üç küçüktür yedi", "On üç ile on üç birbirine eşittir" (Yunus, 16
+  /// November 2026).
+  @override
+  List<String> successCues(RoundSpec spec, String locale) {
+    final sequence = spec.sequence;
+    if (spec.promptKey != GamePromptKey.compareNumbers ||
+        sequence.length != 3) {
+      return super.successCues(spec, locale);
+    }
+    final lang = locale == 'en' ? 'en' : 'tr';
+    final a = sequence[0], b = sequence[2];
+    final dir = 'assets/audio/$lang/numbers';
+    return [
+      praiseCue(locale),
+      if (a == b)
+        '$dir/compare/${a}_eq.mp3'
+      else ...[
+        '$dir/compare/${a}_${int.parse(a) > int.parse(b) ? 'gt' : 'lt'}.mp3',
+        '$dir/${b}_selected.mp3',
+      ],
+    ];
   }
 }
 
@@ -904,6 +929,7 @@ class PairTemplate extends GameTemplate {
               for (final e in game.successAudio.entries) e.key: [e.value],
             },
       resultImagePath: round.result,
+      resultInPlace: ctx.gameId == 'G64',
       rightHold: round.result == null
           ? const Duration(milliseconds: 1500)
           : const Duration(milliseconds: 2800),
@@ -1072,7 +1098,7 @@ class BodyMapTemplate extends GameTemplate {
       spec: spec,
       callbacks: callbacks,
       hint: hint,
-      spots: picture?.spots ?? const [],
+      spots: picture?.spotsFor(ChildCast.of(picture.asset)) ?? const [],
       aspect: picture?.aspect ?? 2 / 3,
     );
   }

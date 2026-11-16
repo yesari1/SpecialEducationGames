@@ -73,11 +73,11 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - Made for this app on 22 October 2026: synthesized in Python (bell partials and filtered noise), no recording or third-party material. Chosen by Yunus from three samples each (artifacts/ui-sounds-2/: oyun-acilis-c, sepet-pof-a, kilit-acildi-b).
 - App assets: assets/sfx/ui/game_open.wav, assets/sfx/ui/basket_drop.wav, assets/sfx/ui/unlock.wav
 
-## Rain.ogg
+## Heavy Rain in Summer.ogg
 
-- Author: ジダネ
-- Source: https://commons.wikimedia.org/wiki/File:Rain.ogg
-- License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
+- Author: Fiver, der Hellseher
+- Source: https://commons.wikimedia.org/wiki/File:Heavy_Rain_in_Summer.ogg
+- License: CC-BY-SA-3.0 — https://creativecommons.org/licenses/by-sa/3.0/
 - App asset: assets/sfx/nature/rain.mp3
 
 ## Crunchy Snow Walking Sound Effect - Human Sounds.opus
@@ -101,11 +101,11 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
 - App asset: assets/sfx/nature/wind.mp3
 
-## Thunder.ogg
+## Thunder crack 2B.ogg
 
-- Author: Bidgee
-- Source: https://commons.wikimedia.org/wiki/File:Thunder.ogg
-- License: CC-BY-3.0 — https://creativecommons.org/licenses/by/3.0/
+- Author: Jud McCranie
+- Source: https://commons.wikimedia.org/wiki/File:Thunder_crack_2B.ogg
+- License: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
 - App asset: assets/sfx/nature/thunder.mp3
 
 ## A-major.ogg
@@ -170,3 +170,10 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - Source: https://commons.wikimedia.org/wiki/File:Street_musician_violin.ogg
 - License: Public domain — https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain
 - App asset: assets/sfx/music/violin.mp3
+
+## Piano notes (Musical Instrument Samples, University of Iowa)
+
+- Author: University of Iowa Electronic Music Studios
+- Source: https://theremin.music.uiowa.edu/MISpiano.html (Piano.mf.C4 ... C5, Steinway grand)
+- License: free to use for any purpose without restriction — https://theremin.music.uiowa.edu/MIS.html
+- App assets: assets/sfx/piano/do.mp3, re, mi, fa, sol, la, si, do2 (replaced the synthesized notes on 16 Nov 2026)

@@ -438,12 +438,15 @@ def g65():
                 steps.append({'mode': 'place', 'piece': f'fruit.{f}', 'others': [f'fruit.{o}' for o in others],
                               'zone': BOWL_SLOTS[j], 'stays': True, 'askAudio': asks[f],
                               'askText': text(f'Şimdi de {FRUIT_TR[f][0]} koyalım.', f'Now the {FRUIT_EN[f]}.')})
-            steps.append({'mode': 'stir', 'piece': 'stir.spoon', 'zone': [.25, .2, .5, .5], 'after': f'{PLAY}/bowl_mixed.webp',
+            # After stirring the bowl holds pieces of the very fruits put in
+            # (two of each), drawn by the app (Yunus, 16 Nov 2026).
+            steps.append({'mode': 'stir', 'piece': 'stir.spoon', 'zone': [.25, .2, .5, .5],
                           'askAudio': stir_ask, 'askText': text(stir_ask_tr, stir_ask_en), 'doneAudio': done})
             first_f = recipe[0]
             rounds.append({
                 'key': '-'.join(recipe), 'tier': tier, 'target': f'kitchen.bowl', 'stage': f'{PLAY}/bowl_empty.webp', 'aspect': 1.5, 'recipe': True,
                 'front': f'{PLAY}/bowl_front.webp',
+                'pieces': {f'fruit.{f}': f'{PLAY}/pieces/{f}.webp' for f in recipe},
                 'text': text(f'Meyve salatası yapalım. Önce {FRUIT_TR[first_f][0]} koyalım.', f"Let's make a fruit salad. First, the {FRUIT_EN[first_f]}."),
                 'audio': first[first_f], 'steps': steps,
             })

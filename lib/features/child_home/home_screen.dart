@@ -8,6 +8,7 @@ import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../app/ui/scene_backdrop.dart';
+import '../../core/content/child_cast.dart';
 import '../../core/content/content_repository.dart';
 import '../../core/learning/policies.dart';
 import '../family/parent_gate.dart';
@@ -979,7 +980,8 @@ const themeCovers = {
 Widget themeCover(String themeId, ContentItem hero) =>
     themeCovers.contains(themeId)
     ? Image.asset(
-        'assets/illustrations/themes/cover_$themeId.png',
+        // The body cover shows the profile's child (Ayşe for a girl).
+        ChildCast.of('assets/illustrations/themes/cover_$themeId.png'),
         key: ValueKey('theme-cover-$themeId'),
         fit: BoxFit.contain,
         alignment: Alignment.bottomCenter,

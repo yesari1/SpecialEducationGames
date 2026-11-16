@@ -741,7 +741,7 @@
       "licenseVerifiedOn": "2026-11-03",
       "processing": "rembg U2Net + tools/adapt_cutout_photo.py",
       "whiteOutlinePixels": 4,
-      "sha256": "4b4bf4e11a621f8df0068e822ae0eb73d10a1de635250ba8a922de589dea2f09"
+      "sha256": "d0f173bc566aef3c0e8049ea729d5477753faeddd94f4e0920a7dbe9becac2b7"
     },
     {
       "id": "produce.mandarin",

@@ -102,6 +102,14 @@ class AudioService {
 
   /// Plays [assets] unless something is already being spoken; a replay
   /// request never restarts narration halfway through.
+  /// Completes when no narration is playing (at most after [limit]).
+  Future<void> whenIdle({Duration limit = const Duration(seconds: 5)}) async {
+    final end = DateTime.now().add(limit);
+    while (busy && !_disposed && DateTime.now().isBefore(end)) {
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+  }
+
   Future<void> playSequenceIfIdle(List<String> assets) async {
     if (busy) return;
     await playSequence(assets);
@@ -189,9 +197,49 @@ class AudioService {
 
   Future<void> tap() => effect(tapAsset);
 
+  final Map<String, AudioPlayer> _notePlayers = {};
+  final Map<String, int> _noteTouch = {};
+
+  /// A piano key goes down: its note rings on its own player for as long
+  /// as the key is held (the recording fades by itself after a few seconds).
+  Future<void> noteDown(String asset) async {
+    if (_disposed || !enabled || speechVolume == 0) return;
+    final touch = (_noteTouch[asset] ?? 0) + 1;
+    _noteTouch[asset] = touch;
+    try {
+      var player = _notePlayers[asset];
+      if (player == null) {
+        player = AudioPlayer();
+        await player.setAsset(asset).timeout(loadTimeout);
+        _notePlayers[asset] = player;
+      }
+      if (_noteTouch[asset] != touch) return;
+      await player.setVolume(speechVolume / 100);
+      await player.seek(Duration.zero);
+      unawaited(player.play());
+    } catch (_) {
+      // Native audio may be unavailable.
+    }
+  }
+
+  /// The key is let go: the note dies away quickly, so a short press is a
+  /// short note and a long press a long one.
+  Future<void> noteUp(String asset) async {
+    final player = _notePlayers[asset];
+    if (player == null) return;
+    final touch = _noteTouch[asset];
+    final start = player.volume;
+    for (var step = 1; step <= 6; step++) {
+      await Future<void>.delayed(const Duration(milliseconds: 35));
+      if (_noteTouch[asset] != touch || _disposed) return;
+      await player.setVolume(start * (1 - step / 6));
+    }
+    if (_noteTouch[asset] == touch) await player.pause();
+  }
+
   Future<void> dispose() async {
     _disposed = true;
-    for (final player in _effectPlayers.values) {
+    for (final player in [..._effectPlayers.values, ..._notePlayers.values]) {
       unawaited(player.dispose());
     }
     ++_generation;

@@ -8,6 +8,7 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
 import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
+import '../game/templates/game_template.dart' show praiseCue;
 import 'park_scaffold.dart';
 
 /// Yapboz: the child picks a picture (and how many pieces: 4, 6 or 9), and
@@ -217,8 +218,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     UiSound.puzzleSnap();
     _placed.add(piece);
     if (!_finished) return;
+    // The picture's name, then a praise ("Köpek. Aferin!").
     final cue = _item.audioFor(s.locale);
-    if (cue != null) unawaited(s.audio.playSequence([cue]));
+    unawaited(s.audio.playSequence([?cue, praiseCue(s.locale)]));
     // The finished picture stays a moment, then the shelf comes back.
     _next = Timer(const Duration(seconds: 4), () {
       if (mounted) setState(() => _chosen = null);

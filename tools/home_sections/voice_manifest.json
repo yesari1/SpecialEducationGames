@@ -531,6 +531,386 @@
       "use_speaker_boost": true
     }
   },
+  "assets/audio/en/coloring/apple.mp3": {
+    "bytes": 20315,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:50.281250+00:00",
+    "sha256": "52896906afbe9fe0ec73247347a02747a7a995af3fab8ba134c5e74597ea42a0",
+    "text": "You can color the apple any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/ball.mp3": {
+    "bytes": 18225,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:50.995836+00:00",
+    "sha256": "8d6e3368c0f4e0a1c49b597ed88de012856853e85a0c6da72c4314a23552f68d",
+    "text": "You can color the ball any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/boat.mp3": {
+    "bytes": 18643,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:51.754734+00:00",
+    "sha256": "1a6e43341fe454c89785e7719b568a40ea84640e98fa4d3eb8f85c62bf9d8096",
+    "text": "You can color the boat any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/butterfly.mp3": {
+    "bytes": 21150,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:52.495603+00:00",
+    "sha256": "323d25577412c2a51633dc29fde15805907e7504854d84347044b9df1f0cb07a",
+    "text": "You can color the butterfly any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/car.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:53.228219+00:00",
+    "sha256": "4fbafb59f763c3cfdb7d3d3923c5a2a9b80db07b25f45e41235f5c375ebd77e0",
+    "text": "You can color the car any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/cat.mp3": {
+    "bytes": 18852,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:53.968309+00:00",
+    "sha256": "a3e40fe3276407769f4e4fbc42062c798f71fbfb5be04435dc6c5aa372a0ed52",
+    "text": "You can color the cat any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/cupcake.mp3": {
+    "bytes": 20733,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:55.335138+00:00",
+    "sha256": "f8b513324f89739e934904d545089f6d747e9471c4f61231fdbb4b87854d0bec",
+    "text": "You can color the cupcake any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/duck.mp3": {
+    "bytes": 19688,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:56.936338+00:00",
+    "sha256": "8354e4db1006c849fa5e6ab2b90144b7ebaab1689eb479c8b88e61e4b173cc4d",
+    "text": "You can color the duck any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/fish.mp3": {
+    "bytes": 19061,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:57.934054+00:00",
+    "sha256": "1adce0ad80559165dbfb5ac65fd5cc1b67546e3604a1feed48b5814d71de2b18",
+    "text": "You can color the fish any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/flower.mp3": {
+    "bytes": 20106,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:59.644755+00:00",
+    "sha256": "e74ad752d886bf508a4f1f60fe9c8d642a60411c383348a2fc25df0d3c6eac01",
+    "text": "You can color the flower any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/house.mp3": {
+    "bytes": 19479,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:00.783772+00:00",
+    "sha256": "6c7e4b542926440372c614ee47f5194e14be03267159f60f53734a50bafe5477",
+    "text": "You can color the house any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/lamb.mp3": {
+    "bytes": 21777,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:01.712595+00:00",
+    "sha256": "9edc2dfa2af4f5b491b1f9afb5577508c05ef7704cafc1f567da47a6be7976d0",
+    "text": "You can color the lamb any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/snail.mp3": {
+    "bytes": 19688,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:02.483821+00:00",
+    "sha256": "b73a3ddff942a99aad05eb728a21081a4946cc9c711ddf9fec4b81d13e0df438",
+    "text": "You can color the snail any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/star.mp3": {
+    "bytes": 19270,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:03.201243+00:00",
+    "sha256": "3299fb225fa3f0148ce3b59ce6d0ddce684f06a1db60152d8308bb3595666438",
+    "text": "You can color the star any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/strawberry.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:03.958292+00:00",
+    "sha256": "c6b4dce146e41440c1f741708741fb9dee501b92ab30705ada7fbc39f627dff7",
+    "text": "You can color the strawberry any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/sun.mp3": {
+    "bytes": 20315,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:04.707991+00:00",
+    "sha256": "e4a2948959c87d43b541f1a113638eb6c47bb2ed23bcf093b38df0f54ecd00a0",
+    "text": "You can color the sun any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/teddy.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:05.535595+00:00",
+    "sha256": "2945d465ee1d01149bb9a7b27d7c4a0b5638a26b7001b3d8d81bfee072092ed9",
+    "text": "You can color the teddy bear any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/train.mp3": {
+    "bytes": 20315,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:06.351262+00:00",
+    "sha256": "6608eb124688a721f796beb8d5989e1597fded385880453e577d0e052dd2a180",
+    "text": "You can color the train any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/tree.mp3": {
+    "bytes": 19061,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:07.107712+00:00",
+    "sha256": "1c1a058824aec496207ed4a424a5c51146d5d4718799c398f51113738fdeeee2",
+    "text": "You can color the tree any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/coloring/umbrella.mp3": {
+    "bytes": 21150,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:42:07.912049+00:00",
+    "sha256": "9db66a5e6afe03ef52547aa569bd7a0bab3f97d350862f7cba0077bfe2a5d8e2",
+    "text": "You can color the umbrella any color you like.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
   "assets/audio/en/jobs/hairdresser_selected.mp3": {
     "bytes": 7776,
     "language": "en",
@@ -1091,6 +1471,1146 @@
     "requested_at": "2026-11-08T19:31:30.280356+00:00",
     "sha256": "519c9b1e4c8b681b92493db77c10ede286a9c9680c88873c42f2ba0e81345421",
     "text": "Whisk.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/10_eq.mp3": {
+    "bytes": 11119,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:17.045749+00:00",
+    "sha256": "2999b8ba6c3ddab6fa136566aac612b52d9269a89bb60f7a06e2888203f66757",
+    "text": "Ten is equal to ten.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/10_gt.mp3": {
+    "bytes": 10701,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:12.794530+00:00",
+    "sha256": "31801b060a4d798c9d9dbd33e3d0903c5cee5f2227f7c04334f233b5ec1c543b",
+    "text": "Ten is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/10_lt.mp3": {
+    "bytes": 10284,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:14.855508+00:00",
+    "sha256": "9178dac473fa4305453370a6f0bce9ca1b66323e37ae7fb4d9f770736cf69dc7",
+    "text": "Ten is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/11_eq.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:23.350764+00:00",
+    "sha256": "27285045a5fa8b3b2b6791a7d67dbbf91abc44de09bccc4d6c9efdf41563d2fa",
+    "text": "Eleven is equal to eleven.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/11_gt.mp3": {
+    "bytes": 11537,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:19.041639+00:00",
+    "sha256": "5041a38a8f49b0a000df2ea6081d648a8db7d210e538caf737f19ccaec15d8e0",
+    "text": "Eleven is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/11_lt.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:21.118794+00:00",
+    "sha256": "6637801d05aaa4ffda1e2d0df5361aa6fad5992db4c365a82db17027e6b5ed7f",
+    "text": "Eleven is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/12_eq.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:29.524052+00:00",
+    "sha256": "eadad479cf1351fd02f77a631e1906416328b17595849715e582b72191428bd8",
+    "text": "Twelve is equal to twelve.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/12_gt.mp3": {
+    "bytes": 11537,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:25.324905+00:00",
+    "sha256": "43490ecb406f067b845b846dc74e5f093b6d9dc45e10c134a183875d3e6bb055",
+    "text": "Twelve is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/12_lt.mp3": {
+    "bytes": 11537,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:27.333519+00:00",
+    "sha256": "baf1a70b2ef2640bd432b8f68247ee720c1bfbd0e20a36e1a2b2ea6144c8ba33",
+    "text": "Twelve is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/13_eq.mp3": {
+    "bytes": 16553,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:35.541983+00:00",
+    "sha256": "c1a33efe36841d24e64b41279d1bf80bb13c6fe40a59731e87061e0a1c6ef709",
+    "text": "Thirteen is equal to thirteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/13_gt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:31.463992+00:00",
+    "sha256": "3742df8fed9aea50b7ef6cc47cc362eb4b6273e2d414f7a559ff8820f9662d00",
+    "text": "Thirteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/13_lt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:33.390727+00:00",
+    "sha256": "d4b9407fd6bd3f32c78ae21b499f43c269fe73842f0a6343b3a13b94983b1032",
+    "text": "Thirteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/14_eq.mp3": {
+    "bytes": 14672,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:41.839796+00:00",
+    "sha256": "eebd7f90480bd89d68f90db586a9f4b4c133022011361880e30a36b8348ae960",
+    "text": "Fourteen is equal to fourteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/14_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:37.465608+00:00",
+    "sha256": "b77c67f19c17ba52eac980c31d5ca82391e6aad8a2fd882b8c2a440cc46b01ab",
+    "text": "Fourteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/14_lt.mp3": {
+    "bytes": 11955,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:39.352739+00:00",
+    "sha256": "10c46b4b2f82f55d442036efa51f07a0cb0a6b00b0acc783aad27143208c629f",
+    "text": "Fourteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/15_eq.mp3": {
+    "bytes": 14254,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:48.117474+00:00",
+    "sha256": "d9f2b11a6a2db023ec66680395f83b7fec94c6b2d845f33da739f40b8e9669c6",
+    "text": "Fifteen is equal to fifteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/15_gt.mp3": {
+    "bytes": 13000,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:43.797573+00:00",
+    "sha256": "a1388e5d561106d10151495b31a956eb29b6bac827be07910e0d412bfb9d7cf8",
+    "text": "Fifteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/15_lt.mp3": {
+    "bytes": 11955,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:45.613075+00:00",
+    "sha256": "156b23936d3f243709bd64dc4e23783c70850fef2480392e978e6219981c5b0e",
+    "text": "Fifteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/16_eq.mp3": {
+    "bytes": 14045,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:54.179057+00:00",
+    "sha256": "b728cda78e3b883d61a79a2cfe3b4981939d52911cf73da1743868484576e732",
+    "text": "Sixteen is equal to sixteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/16_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:50.010393+00:00",
+    "sha256": "8bad14deba5da0959575abf87903e123a81c8a5f33d189a42dd13605812e0176",
+    "text": "Sixteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/16_lt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:51.906763+00:00",
+    "sha256": "d0a0b047022e60150856e30b6d9d9c34066d4ff828d0b28afce929a8d4b0b3cc",
+    "text": "Sixteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/17_eq.mp3": {
+    "bytes": 15717,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:00.179181+00:00",
+    "sha256": "89bf90cd65683a33d8dc6bc3b763ef1113fda3399a711836af18b00c667b6737",
+    "text": "Seventeen is equal to seventeen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/17_gt.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:56.021818+00:00",
+    "sha256": "68ffd85b5196413cefd96ff831c0fac0a08acfcd0cf79d72358c6584cc68bb6c",
+    "text": "Seventeen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/17_lt.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:57.947698+00:00",
+    "sha256": "63b0526fa0b953194ced2de2a40a497b47665a6f44b7d5d18bbe451bf815f47d",
+    "text": "Seventeen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/18_eq.mp3": {
+    "bytes": 16135,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:06.312797+00:00",
+    "sha256": "f2169397b2ce3318a5b78d077d952a9c789b055208e543ba49302b012022abe1",
+    "text": "Eighteen is equal to eighteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/18_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:02.039679+00:00",
+    "sha256": "e54449ada7cd0d36b062626d77b6a5f5e0b400e12fece76507e259ce95b7b9c8",
+    "text": "Eighteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/18_lt.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:03.977694+00:00",
+    "sha256": "838186dc7be656639dd4b8d3eb085128c7865822432f8ea3d5054b47bc749bf3",
+    "text": "Eighteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/19_eq.mp3": {
+    "bytes": 15508,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:12.679815+00:00",
+    "sha256": "a57ce52fae0decef4dae57eb40ffd9346771bcdff24e701a8cac3f446b1e6dce",
+    "text": "Nineteen is equal to nineteen.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/19_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:08.264512+00:00",
+    "sha256": "cc033171cf3897a24dfe3d082f212246af51b13acea87a98e60dc41dcc864897",
+    "text": "Nineteen is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/19_lt.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:10.159767+00:00",
+    "sha256": "6a4002f15b72fed81263b3189c5913417fd54413557a65ac57cd5d20134b64b1",
+    "text": "Nineteen is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/1_eq.mp3": {
+    "bytes": 10910,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:22.692319+00:00",
+    "sha256": "381b91b0544556cec6201686960fa2f3cc6aa329cfe4797ee0cba7529bee9fca",
+    "text": "One is equal to one.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/1_gt.mp3": {
+    "bytes": 11328,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:18.165276+00:00",
+    "sha256": "28da70710ae94d918432bf9dcefc09920a89a2ea4f0b35f72018ccf43df520de",
+    "text": "One is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/1_lt.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:20.037120+00:00",
+    "sha256": "3568bf1ed1a7674a7a555b9a94edc67397ada3f63e2b999cc80490551297a9aa",
+    "text": "One is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/20_eq.mp3": {
+    "bytes": 11955,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:19.030481+00:00",
+    "sha256": "c7e5e26e720f38478d2aee56101019b1ffc8971aabc331b10d6e9f046074969e",
+    "text": "Twenty is equal to twenty.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/20_gt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:14.564476+00:00",
+    "sha256": "8c7f66419d70ff9b0994a23989458571e1c899b591209aaed5b82f09e0db113f",
+    "text": "Twenty is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/20_lt.mp3": {
+    "bytes": 11119,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:16.582993+00:00",
+    "sha256": "985b41a1e6c736f5432c27a9f45c2985643671534a1116aa1f8e48b2b6d19e56",
+    "text": "Twenty is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/2_eq.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:29.050960+00:00",
+    "sha256": "229eb88fbebf38492c225d2fb04262108b8204ef20ae95de507c0bbcb8e333a2",
+    "text": "Two is equal to two.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/2_gt.mp3": {
+    "bytes": 12582,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:25.067292+00:00",
+    "sha256": "915114815d87299f5dfd26be20715a1273f5378b0cab5eb18e2069c02c1e3dae",
+    "text": "Two is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/2_lt.mp3": {
+    "bytes": 10493,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:26.929864+00:00",
+    "sha256": "6f8812fd383b000b8dc8b09030982b36210c1270ffef1fdcb2b5774dd136a321",
+    "text": "Two is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/3_eq.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:35.011735+00:00",
+    "sha256": "32403ec42fb9007adee6216f602dc5336a751c9ccb2e9befcae942dd1d5888a7",
+    "text": "Three is equal to three.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/3_gt.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:30.965657+00:00",
+    "sha256": "9a7ad3b8540da42abb307ce48553b6febf8ce9ca20ff155bbcd468e705b2c0be",
+    "text": "Three is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/3_lt.mp3": {
+    "bytes": 10910,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:32.838822+00:00",
+    "sha256": "f1e3fc8b5b9c8c46fddec0c3c7e9fed03aa717d4f0ce74eb1cec8d0729e06c7b",
+    "text": "Three is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/4_eq.mp3": {
+    "bytes": 11119,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:40.937566+00:00",
+    "sha256": "3892ccf3c3173422866eec7a1161ffb0d2c470e63c46b35c11308f803f61e333",
+    "text": "Four is equal to four.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/4_gt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:36.931909+00:00",
+    "sha256": "d31d0974f8e88614196198be40780e877606efc356c2429612f04385e1fd4af1",
+    "text": "Four is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/4_lt.mp3": {
+    "bytes": 11955,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:38.877461+00:00",
+    "sha256": "17ac9a020dad8d21ff987dbc18cb37b9bb7ad66c5a26978d4238c67bdcd29fea",
+    "text": "Four is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/5_eq.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:46.959061+00:00",
+    "sha256": "70a290ef39e12c831bb2b20478882bb1cb7562487ef6d8a2f36c90dda57b4337",
+    "text": "Five is equal to five.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/5_gt.mp3": {
+    "bytes": 11119,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:42.917109+00:00",
+    "sha256": "ea9624b22dd82e4aaa9c44c8438800670ef04bcf92aa3e9254c540cd4b2c3090",
+    "text": "Five is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/5_lt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:44.799651+00:00",
+    "sha256": "345b6e4e398a358dad0c662a33b64baa51418778dca7f0274ab672bdb6ac5e04",
+    "text": "Five is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/6_eq.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:53.332282+00:00",
+    "sha256": "9a538f8bdd8384ced543c0d4139fbad6d5b22679b42823294c5911f849ba6259",
+    "text": "Six is equal to six.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/6_gt.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:48.779797+00:00",
+    "sha256": "59cbe2d32786a6e4a06538f829093f0414ba4cf511974c710eed14e8cf02fa37",
+    "text": "Six is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/6_lt.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:50.818848+00:00",
+    "sha256": "840de9b261e78254292d5d0f19f938c93d1fea44369d82247496826fdd84baab",
+    "text": "Six is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/7_eq.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:59.194506+00:00",
+    "sha256": "ac32e26219d64920eb787e44d9557042ef65154e80b47928b31e3831994d2af8",
+    "text": "Seven is equal to seven.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/7_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:55.220022+00:00",
+    "sha256": "0bbb139f79d2db8e4e89ee3d5d9d0fa863957c493f1427052fffca3d08326b63",
+    "text": "Seven is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/7_lt.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:57.019087+00:00",
+    "sha256": "0aaab966f9654834d821ec3b7c275acddb756909e52d3bb46793f8b8f7eaa563",
+    "text": "Seven is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/8_eq.mp3": {
+    "bytes": 11746,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:04.937483+00:00",
+    "sha256": "c5e9687905f86e4233a86a303b4121706dfe6955a2e1f5f383ec86d235d3902f",
+    "text": "Eight is equal to eight.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/8_gt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:00.937519+00:00",
+    "sha256": "f745db99b15db170bcc6ba91dcd95b0a4cdf2171033b51271128c31487d1cee6",
+    "text": "Eight is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/8_lt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:02.730763+00:00",
+    "sha256": "58b64685bd83c330b78070f571d0af20dc9eafd511948f9d253f95859b1ffb12",
+    "text": "Eight is less than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/9_eq.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:10.977315+00:00",
+    "sha256": "62107bbbb88e943efb44352b4b4c08962eb2544e8db2d334f24693de6d455263",
+    "text": "Nine is equal to nine.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/9_gt.mp3": {
+    "bytes": 12164,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:06.821935+00:00",
+    "sha256": "93b4a505b12d718d77172161bd054a96cd1996ff86da5ef9d21c81a12b2a664c",
+    "text": "Nine is greater than",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
+    "voice_name": "Laura",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/en/numbers/compare/9_lt.mp3": {
+    "bytes": 12373,
+    "language": "en",
+    "language_code": null,
+    "model_id": "eleven_multilingual_v2",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:08.639828+00:00",
+    "sha256": "d98c60ccb6c848f8ff3175439d5ed1b5076e702eb55e79fadcec9e8a1aea88a0",
+    "text": "Nine is less than",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7",
     "voice_name": "Laura",
     "voice_settings": {
@@ -7238,15 +8758,15 @@
       "use_speaker_boost": true
     }
   },
-  "assets/audio/tr/jobs/doctor_selected.mp3": {
-    "bytes": 6940,
+  "assets/audio/tr/coloring/apple.mp3": {
+    "bytes": 20106,
     "language": "tr",
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-12T16:21:55.725395+00:00",
-    "sha256": "257bc5eba2f707d96919347071c238ed1a75fbc563eea15efded18b8d316d779",
-    "text": "Doktor.",
+    "requested_at": "2026-11-16T18:41:20.630620+00:00",
+    "sha256": "aec1d68ae6502d695fc21f86543a7f01a388d306a23ae609115935ad7add849a",
+    "text": "Elmayı istediğin renge boyayabilirsin.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -7254,6 +8774,386 @@
       "speed": 0.95,
       "stability": 0.5,
       "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/ball.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:22.103618+00:00",
+    "sha256": "fdbdd94bf08a42a545bef957e8e71d944a20a9fba00ddad6df04e13ed83819f5",
+    "text": "Topu istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/boat.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:23.633977+00:00",
+    "sha256": "18325c8e3bd9e8c91aadeb9cbc026b625a1f8784a66692487e2ed3ce512c34b2",
+    "text": "Gemiyi istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/butterfly.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:25.119908+00:00",
+    "sha256": "3449b84533a3171d3bd96307593d8242c7eb21cb875f951cfc276a7d2550f122",
+    "text": "Kelebeği istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/car.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:26.647460+00:00",
+    "sha256": "77824562571ff9715ace909c687d3f22af2ac68c5d44fef93ab2fcc33d9dc363",
+    "text": "Arabayı istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/cat.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:28.112879+00:00",
+    "sha256": "238e0ddec1a9dc4b11d977ff3328d0cfc6e2b7a4bd7873253338ac7b473ac55f",
+    "text": "Kediyi istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/cupcake.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:29.559403+00:00",
+    "sha256": "999ed0f2094d3755e541aab7aa0aebba1d8eeaba4dd83626968e552065710475",
+    "text": "Keki istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/duck.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:31.204015+00:00",
+    "sha256": "e65f5f2aa4e5afa094b0fa11826997813a4afe0fa526589826bcf031ee364f2f",
+    "text": "Ördeği istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/fish.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:32.635843+00:00",
+    "sha256": "144020836f5957a33819136a82e10a8d998aafeec5a79916653833267da8b439",
+    "text": "Balığı istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/flower.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:34.139695+00:00",
+    "sha256": "a8a842b08fd12269c590dd5efc63b1e0f5c620cb6b3ea532efaa440d53b83208",
+    "text": "Çiçeği istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/house.mp3": {
+    "bytes": 18434,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:35.636275+00:00",
+    "sha256": "2a030ea2e341352efdc4ac54ca5a77d039ba23a60b44ff8d4eed402e706a94f1",
+    "text": "Evi istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/lamb.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:37.198731+00:00",
+    "sha256": "3c816e4bb9c030acd91da480ce99a3b92e9a27d050a9c28bf60b3c36ee01c658",
+    "text": "Kuzuyu istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/snail.mp3": {
+    "bytes": 22404,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:38.824358+00:00",
+    "sha256": "0ca1dad1d1c3ff1a8a9eec9817146a103b86173b79030c0485e162d258ace73e",
+    "text": "Salyangozu istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/star.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:40.367911+00:00",
+    "sha256": "4090bf05d5ba4656edf0e05c8b99aa31f4c5f6eb7a19431366ef14d7fe1adfbd",
+    "text": "Yıldızı istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/strawberry.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:41.902884+00:00",
+    "sha256": "57169760706b634d6c3c975e663165055f7a03f19e7889f50956e532eee60ba9",
+    "text": "Çileği istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/sun.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:43.370753+00:00",
+    "sha256": "0f019629c81220cb614cd927d6220228a8696e3f33585efada437c6ef7b8dd76",
+    "text": "Güneşi istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/teddy.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:44.929474+00:00",
+    "sha256": "db24e342d750965e292a8f3edbd942abbc0244e633d8940cf2eaf32b85897ac8",
+    "text": "Oyuncak ayıyı istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/train.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:46.250385+00:00",
+    "sha256": "40bd990f2dde1da2d9b632bd35e4c405720315b65517cdd130cd12aa6affa2ff",
+    "text": "Treni istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/tree.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:47.717361+00:00",
+    "sha256": "8745c1721e5f3fe8dfbdd191acbdebe641c61f4c482ddde3d3df787b00e0e89f",
+    "text": "Ağacı istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/coloring/umbrella.mp3": {
+    "bytes": 21568,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:49.302602+00:00",
+    "sha256": "ff16c62c62f6b152c67dabca25966639a95282a1f79b05824f3409de7ad0c158",
+    "text": "Şemsiyeyi istediğin renge boyayabilirsin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/jobs/doctor_selected.mp3": {
+    "bytes": 6940,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:32:51.178690+00:00",
+    "sha256": "e87446b64f724dc7f97ad63da9b169e5222692eac356da413a087a9620b9f3b9",
+    "text": "Doktor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.9,
+      "stability": 0.75,
+      "style": 0.1,
       "use_speaker_boost": true
     }
   },
@@ -7818,6 +9718,1146 @@
     "requested_at": "2026-11-08T19:31:29.579989+00:00",
     "sha256": "a5c31602d339eee3ba8c794c957d729ddf1182d3f8a101e5924c6d3d318e6480",
     "text": "Çırpma teli.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/10_eq.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:16.374187+00:00",
+    "sha256": "f54e6946678d70dc199322df4b71e45c28690af5ddaeb782dd4f1d7d91cbbd5d",
+    "text": "On ile on birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/10_gt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:12.097976+00:00",
+    "sha256": "dce2c0c7cb430dc6b86dd070c77889ae1510d9556b441fafc1adb35e9b470694",
+    "text": "On büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/10_lt.mp3": {
+    "bytes": 10075,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:14.034839+00:00",
+    "sha256": "0d51ae9dfaaa5dbd3fc3116cb72262f2d24ccf5373715c9637a7b794c16d96da",
+    "text": "On küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/11_eq.mp3": {
+    "bytes": 23449,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:22.618831+00:00",
+    "sha256": "eddae6bc9ed91eef12e1cc4e333ad01ba2976ed06c0e7143cec1f02993c1d64d",
+    "text": "On bir ile on bir birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/11_gt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:18.332664+00:00",
+    "sha256": "5721e3ce9bd3b30b2d9f772e4d461ee96f3cab701fc2e35e4a25e346a3bf59dc",
+    "text": "On bir büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/11_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:20.368928+00:00",
+    "sha256": "dd62529c2eee4b489121eef9eb16c2bceb3dfdad953733f8a855ed7e9e4f2f8f",
+    "text": "On bir küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/12_eq.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:28.813391+00:00",
+    "sha256": "ccb99d77e4111e4166daa9fa2d597805deea318b6ac10135404f6c84f143d8f3",
+    "text": "On iki ile on iki birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/12_gt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:24.566908+00:00",
+    "sha256": "19b7f5280511e68d697a15b2eea0e68972361056fad9b35a261ac40cd021ce12",
+    "text": "On iki büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/12_lt.mp3": {
+    "bytes": 12791,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:26.615431+00:00",
+    "sha256": "7d9c2d3c0ed3fdfd8697beacca512c73c04c749a260afc39bd316dcb200ce08f",
+    "text": "On iki küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/13_eq.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:34.838345+00:00",
+    "sha256": "2db2703689d5db5ecc63e593f8d24493f83ea1a1155fe6e6a43a86ac8c1e37e0",
+    "text": "On üç ile on üç birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/13_gt.mp3": {
+    "bytes": 11328,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:30.780586+00:00",
+    "sha256": "f5c432d0226d95c1a7bb117fb96ce51ceaf426a6da17de91273f878957c22678",
+    "text": "On üç büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/13_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:32.722206+00:00",
+    "sha256": "d85bc54621d6e3b206668f522b7aa5409abfd541b33818dbe1f2321032cae373",
+    "text": "On üç küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/14_eq.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:41.107209+00:00",
+    "sha256": "09ce9d1baa94015cf0f171d91827b637162e315961a891c6173818ff77d14035",
+    "text": "On dört ile on dört birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/14_gt.mp3": {
+    "bytes": 12582,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:36.713814+00:00",
+    "sha256": "52d0841907d581ffbc382ae79c04e712909cf7f4d78f4f78ab847e634b8680a9",
+    "text": "On dört büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/14_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:38.688963+00:00",
+    "sha256": "0b1cfec084b71704955e50ff024e65307bb60cc70f2e521d72a2bff09a8251b8",
+    "text": "On dört küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/15_eq.mp3": {
+    "bytes": 22822,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:47.308010+00:00",
+    "sha256": "0d54e41f6f6681f784be7fd01d7c2256811032b7d16856bef5736368f4597426",
+    "text": "On beş ile on beş birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/15_gt.mp3": {
+    "bytes": 11955,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:43.069454+00:00",
+    "sha256": "88d28df2ea0fd7b39ac63e4a44b0c90354f766dccc067e61580cb02dbe7b3e62",
+    "text": "On beş büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/15_lt.mp3": {
+    "bytes": 12582,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:44.930569+00:00",
+    "sha256": "51ff64bda0978d0c35bb303471c33c95b4f1f3c995adb8c13fc6b36e1249528f",
+    "text": "On beş küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/16_eq.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:53.473429+00:00",
+    "sha256": "9fd7ad8779a7bb594cb59f779f951c36562d0a0c7ecd91e4951780127f07941c",
+    "text": "On altı ile on altı birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/16_gt.mp3": {
+    "bytes": 13418,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:49.363693+00:00",
+    "sha256": "f3e15152f49e39ff49a802d61b014c44487c69a5d0b2509f05c3c213a938f705",
+    "text": "On altı büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/16_lt.mp3": {
+    "bytes": 14045,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:51.237931+00:00",
+    "sha256": "ae4e209dda8202a6818b2118f95a928af71334477c903beb8a328e10f48206a5",
+    "text": "On altı küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/17_eq.mp3": {
+    "bytes": 24285,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:59.442642+00:00",
+    "sha256": "b50146d53a35d74f72e4405f7ee8ff788a0c492a6b557488933dce744c2ac9f3",
+    "text": "On yedi ile on yedi birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/17_gt.mp3": {
+    "bytes": 12791,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:55.333456+00:00",
+    "sha256": "bdf13b3de95383ef0ea1358caa8c02674a44859ba2245108243483cac1fcd883",
+    "text": "On yedi büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/17_lt.mp3": {
+    "bytes": 13418,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:57.257864+00:00",
+    "sha256": "28d882322b29605b26f3af152dbe6f56aab632e21f731c35e731a6f973e1cce7",
+    "text": "On yedi küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/18_eq.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:05.596091+00:00",
+    "sha256": "df49a2972d89e22c33de195576f3843e45884374e3a97dbb7af92a5f3e9c5061",
+    "text": "On sekiz ile on sekiz birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/18_gt.mp3": {
+    "bytes": 13209,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:01.297147+00:00",
+    "sha256": "9abdae4b2740ce6e3d5249c45a3af55ae59797c1ba55b4cf71f5745a47642591",
+    "text": "On sekiz büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/18_lt.mp3": {
+    "bytes": 13836,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:03.268954+00:00",
+    "sha256": "768796d136ef1bac2945bb7eacc02af8058e7b20679a0cae9cb8e03517e8c1f3",
+    "text": "On sekiz küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/19_eq.mp3": {
+    "bytes": 23658,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:11.880010+00:00",
+    "sha256": "3826d8d1b5c2efb80981c362248d2be4f0a8042d2edc7dc0c0119e6410040e42",
+    "text": "On dokuz ile on dokuz birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/19_gt.mp3": {
+    "bytes": 12791,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:07.562408+00:00",
+    "sha256": "00cb090706d49611aa060531baf5ac1f62997ee71c5908208a6d2c26573d5f96",
+    "text": "On dokuz büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/19_lt.mp3": {
+    "bytes": 13209,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:09.443431+00:00",
+    "sha256": "b9e9f1b07365ace1032d1a69036df7dcbc5efbb7dba1a757000039d335b9e747",
+    "text": "On dokuz küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/1_eq.mp3": {
+    "bytes": 22404,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:21.681831+00:00",
+    "sha256": "d5350957f6997109aa032b11f47b1d521774144051d97bf9a0b85d0ee0225143",
+    "text": "Bir ile bir birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/1_gt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:17.377687+00:00",
+    "sha256": "6bae732f574f9ae9ec08524242e80162429d7f07610cc15509e711efdbfad166",
+    "text": "Bir büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/1_lt.mp3": {
+    "bytes": 10075,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:19.363052+00:00",
+    "sha256": "b294788fc44131c9046136c848a0b00b8f8f315c19c58bfdb632920b89bd2f2f",
+    "text": "Bir küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/20_eq.mp3": {
+    "bytes": 22404,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:18.359260+00:00",
+    "sha256": "eddf2b5392e2018269f5d0aa4b84800c2d4951e98bf81e07c9f33eb5f38ae8c1",
+    "text": "Yirmi ile yirmi birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/20_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:13.886965+00:00",
+    "sha256": "6fbe2f44a4c9a24ff6d1ad3f8e02d15389724a6781a3298b47e2bbb39e1c29cf",
+    "text": "Yirmi büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/20_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:41:15.942031+00:00",
+    "sha256": "6ce70bde83fd77515e6dc6cbe7b13855d6ed1146b13e0751fc8ffe8911ca68c6",
+    "text": "Yirmi küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/2_eq.mp3": {
+    "bytes": 20315,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:28.381042+00:00",
+    "sha256": "8a9d2536cbcb6c52d4014614e9b797d1d6820e86b9a2e2660158bf20961d55f9",
+    "text": "İki ile iki birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/2_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:24.226724+00:00",
+    "sha256": "231be05d6558f79928bdfa94bda41270ee2c45926f45fb5bdcf73f09574d8e49",
+    "text": "İki büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/2_lt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:26.183626+00:00",
+    "sha256": "882d66598803084deae18118fdf378eac90e3a6f342abe306e492769c63fe25f",
+    "text": "İki küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/3_eq.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:34.337974+00:00",
+    "sha256": "25df9d3835af02be3daa8b15b3edc03513c2baf0e3568962f38c62138603e071",
+    "text": "Üç ile üç birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/3_gt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:30.255239+00:00",
+    "sha256": "3b6221f972916e970d0c744bbd9474d517ecd6830a1058445f75a39b5ae2dc55",
+    "text": "Üç büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/3_lt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:32.147158+00:00",
+    "sha256": "60f8bdd697695b7cf01244b999dea37b299c82d81642c67e1262cfc69cf082d2",
+    "text": "Üç küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/4_eq.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:40.218731+00:00",
+    "sha256": "14fa7c9f5eb07b8d7cd8f42eec2a2c32610d0f1d8e7f33019828ac72171888a6",
+    "text": "Dört ile dört birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/4_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:36.144998+00:00",
+    "sha256": "fa03263eb608b71d9e9eacd6879e9eb82af27279f0105570bebcc6acd2833a1f",
+    "text": "Dört büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/4_lt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:38.096622+00:00",
+    "sha256": "d153d4775f02ead182234db17a0ffae4ccb5d5baa418dfc129c55f5db07ef4dc",
+    "text": "Dört küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/5_eq.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:46.245800+00:00",
+    "sha256": "c276685b06f2cb1661d6648f6a8a4f2e29396d22ca9701b30ecc5b7ef1e6635a",
+    "text": "Beş ile beş birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/5_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:42.166208+00:00",
+    "sha256": "1892f49daf36d3ac1b4623a002a5c67af79eced409db09cda605fdff76d9b31c",
+    "text": "Beş büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/5_lt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:44.073739+00:00",
+    "sha256": "29f2df989b657bc246e5fa508e01df3517650aeda0e387a822acd145749e86bb",
+    "text": "Beş küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/6_eq.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:52.651901+00:00",
+    "sha256": "708a52330328a6bd789103059409ce33c6cc5951d683f70a6d8e3bc8bf1c8974",
+    "text": "Altı ile altı birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/6_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:48.065116+00:00",
+    "sha256": "920dd8e91e41bf1e8555b9fe2c6bac291ab2927925a57490bf22dc5881b00f30",
+    "text": "Altı büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/6_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:50.010793+00:00",
+    "sha256": "910e4b8d29d7ffcbd39b17a592d618a22a0337ea38111d93c9822f238740fb1c",
+    "text": "Altı küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/7_eq.mp3": {
+    "bytes": 22404,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:58.491752+00:00",
+    "sha256": "e31f11f180896842aad12baf7a10afff0f661f5550a2d96f262ef53f1a23bfa4",
+    "text": "Yedi ile yedi birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/7_gt.mp3": {
+    "bytes": 10701,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:54.510726+00:00",
+    "sha256": "b66a734f95c630e625959b108a7e6073f226db6f538308960640d316b245ab19",
+    "text": "Yedi büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/7_lt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:39:56.314471+00:00",
+    "sha256": "05fb85f57105cdf8ec334144b9fbfc9abeeee1b5024eb0b411ecac17975dee3c",
+    "text": "Yedi küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/8_eq.mp3": {
+    "bytes": 22822,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:04.250974+00:00",
+    "sha256": "67d95fd35040e9d3d0a06d47e49a0d0469a96cd5a508d5dac45848c8a837ae8b",
+    "text": "Sekiz ile sekiz birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/8_gt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:00.234635+00:00",
+    "sha256": "261f41ca1780dacccf849d56b3de126ef47da974ec12a7761e5ce500b6d4f8f8",
+    "text": "Sekiz büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/8_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:02.064362+00:00",
+    "sha256": "0d14a06251ea013942ac6681c931281e25eb3e18393159dd56f3d647ee93e634",
+    "text": "Sekiz küçüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/9_eq.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:10.190779+00:00",
+    "sha256": "807bde3661bc3062a30cdc85cd4ae405e0b30bca5edd760765486ef686a3b150",
+    "text": "Dokuz ile dokuz birbirine eşittir.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/9_gt.mp3": {
+    "bytes": 11537,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:06.066334+00:00",
+    "sha256": "bbb9638c355528c5b91db70991f281f14dd4277dab5819ee71609fdd101f454a",
+    "text": "Dokuz büyüktür",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT",
+    "voice_name": "İrem",
+    "voice_settings": {
+      "similarity_boost": 0.8,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
+      "use_speaker_boost": true
+    }
+  },
+  "assets/audio/tr/numbers/compare/9_lt.mp3": {
+    "bytes": 12164,
+    "language": "tr",
+    "language_code": "tr",
+    "model_id": "eleven_v4",
+    "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
+    "requested_at": "2026-11-16T18:40:07.927965+00:00",
+    "sha256": "766c2782fb9ce1e90fd3e1efab7448d9dab51678d65f034dd591156bf733118f",
+    "text": "Dokuz küçüktür",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
@@ -13382,16 +16422,16 @@
     "language_code": "tr",
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
-    "requested_at": "2026-11-08T17:16:32.249645+00:00",
-    "sha256": "b238df48bc222c18092ad92e75c8d9608c1cc2f097d003778f4736af7f7e3819",
+    "requested_at": "2026-11-16T18:32:51.178690+00:00",
+    "sha256": "2e9332f5eda925a3c64dcd0c409bea241b0de6cad2087e6f07c85a6ab38b1ed7",
     "text": "Öğren.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
       "similarity_boost": 0.8,
-      "speed": 0.95,
-      "stability": 0.5,
-      "style": 0.35,
+      "speed": 0.9,
+      "stability": 0.75,
+      "style": 0.1,
       "use_speaker_boost": true
     }
   },

@@ -116,15 +116,6 @@ BODY_MAP_TR = {
     'tummy': "Ali'nin karnı nerede?", 'leg': "Ali'nin bacağı nerede?", 'foot': "Ali'nin ayağı nerede?",
 }
 BODY_MAP_EN = {k: f"Where is Ali's {k}?" for k in BODY_MAP_TR}
-# (part, x, y, r) as fractions of the picture (r of its width)
-BODY_SPOTS = [
-    ('hair', .50, .06, .12), ('eye', .40, .225, .06), ('eye', .66, .225, .06),
-    ('ear', .18, .26, .07), ('ear', .81, .26, .07), ('nose', .53, .245, .045),
-    ('mouth', .52, .285, .065), ('neck', .50, .36, .07), ('shoulder', .22, .42, .08),
-    ('shoulder', .78, .42, .08), ('arm', .16, .53, .08), ('arm', .86, .53, .08),
-    ('hand', .09, .65, .09), ('hand', .91, .65, .09), ('tummy', .50, .52, .12),
-    ('leg', .35, .86, .08), ('leg', .65, .86, .08), ('foot', .32, .96, .1), ('foot', .68, .96, .1),
-]
 
 
 def games():
@@ -152,7 +143,7 @@ def games():
         'choicePool': [f'faces.{w}_{e}' for w in ('elif', 'mom') for e in FACE_EMOTIONS],
         'rounds': [
             {'stimulus': f'emotions.{e}', 'target': f'faces.{w}_{e}', 'clip': 'same',
-             'text': {'tr': 'Kim de böyle hissediyor?', 'en': 'Who feels the same way?'}}
+             'text': {'tr': 'Aynı duyguyu hisseden kişiyi bul.', 'en': 'Who feels the same way?'}}
             for e in FACE_EMOTIONS for w in ('elif', 'mom')
         ],
     }
@@ -197,18 +188,45 @@ def extra_items():
 
 
 FACE_PARTS = {'hair', 'eye', 'ear', 'nose', 'mouth'}
-FACE_CROP = 0.34  # assets/images/wear/ali_face.webp = top 34 % of ali_full.webp
+# Places on each body picture in its own pixels (part, x, y, r), measured on
+# the pictures themselves (Yunus, 16 Nov 2026: Ayşe's leg ring sat on her
+# feet). The app maps them through the picture's opaque bounds (PhotoVisual).
+FACE_SPOTS = {
+    'assets/images/wear/ali_face.webp': [
+        ('hair', 330, 95, 80), ('eye', 260, 312, 38), ('eye', 423, 312, 38),
+        ('ear', 122, 360, 42), ('ear', 534, 360, 42), ('nose', 343, 347, 28), ('mouth', 343, 398, 32)],
+    'assets/images/wear/ali_face_girl.webp': [
+        ('hair', 330, 105, 80), ('eye', 259, 288, 36), ('eye', 405, 288, 36),
+        ('ear', 140, 330, 40), ('ear', 515, 330, 40), ('nose', 331, 318, 26), ('mouth', 333, 362, 30)],
+}
+FULL_SPOTS = {
+    'assets/images/wear/ali_full.webp': [
+        ('neck', 328, 505, 42), ('shoulder', 150, 590, 50), ('shoulder', 506, 590, 50),
+        ('arm', 105, 745, 50), ('arm', 560, 745, 50), ('hand', 55, 905, 56), ('hand', 600, 905, 56),
+        ('tummy', 328, 740, 78), ('leg', 230, 1190, 52), ('leg', 425, 1190, 52),
+        ('foot', 205, 1345, 60), ('foot', 455, 1345, 60)],
+    'assets/images/wear/ali_full_girl.webp': [
+        ('neck', 328, 588, 26), ('shoulder', 222, 640, 36), ('shoulder', 436, 640, 36),
+        ('arm', 168, 735, 34), ('arm', 488, 735, 34), ('hand', 145, 832, 40), ('hand', 512, 832, 40),
+        ('tummy', 328, 730, 58), ('leg', 262, 985, 38), ('leg', 392, 985, 38),
+        ('foot', 252, 1098, 44), ('foot', 400, 1098, 44)],
+}
+
+
+def _spots(asset, w, h, table):
+    return [{'item': f'body.{p}', 'x': x / w, 'y': y / h, 'r': r / w} for p, x, y, r in table[asset]]
 
 
 def body_map():
-    face = [{'item': f'body.{p}', 'x': x, 'y': y / FACE_CROP, 'r': r}
-            for p, x, y, r in BODY_SPOTS if p in FACE_PARTS]
-    body = [{'item': f'body.{p}', 'x': x, 'y': y, 'r': r}
-            for p, x, y, r in BODY_SPOTS if p not in FACE_PARTS]
+    face, full = 'assets/images/wear/ali_face.webp', EXTRA['body.ali_full'][0]
     return {
         'pictures': [
-            {'picture': 'assets/images/wear/ali_face.webp', 'aspect': 656 / 476, 'spots': face},
-            {'picture': EXTRA['body.ali_full'][0], 'aspect': 656 / 1400, 'spots': body},
+            {'picture': face, 'aspect': 656 / 476, 'spots': _spots(face, 656, 476, FACE_SPOTS),
+             'variants': {'assets/images/wear/ali_face_girl.webp':
+                          _spots('assets/images/wear/ali_face_girl.webp', 656, 476, FACE_SPOTS)}},
+            {'picture': full, 'aspect': 656 / 1400, 'spots': _spots(full, 656, 1400, FULL_SPOTS),
+             'variants': {'assets/images/wear/ali_full_girl.webp':
+                          _spots('assets/images/wear/ali_full_girl.webp', 656, 1400, FULL_SPOTS)}},
         ],
         'questions': {f'body.{k}': {'tr': BODY_MAP_TR[k], 'en': BODY_MAP_EN[k]} for k in BODY_MAP_TR},
     }
