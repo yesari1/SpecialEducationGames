@@ -1416,3 +1416,8 @@ Yunus's review round (thread "Ana ekran UI + oyun düzeltmeleri"). Source of tru
 - Voices: Turkish praise and 12 words recorded again with eleven_v4; a child's "Yaşasın" for each child (make_kid_sfx.py; the key may not use sound generation).
 - G47 is "Göster Bakalım" / "Show Me". New home icons (stickers, family).
 - 345 host tests pass; release build 2.0.54 (68) launched on Pixel_9a; piano played through on the emulator.
+
+## 16 November 2026 - Stories for the girl (2.0.55)
+
+- All 46 story pictures now have the girl counterpart (`assets/stories/<id>/*_girl.*`) and 86 story clips were recorded for her; `build_girl_variants.py` reports every story ready, 447 counterparts.
+- 345 host tests pass; release 2.0.55 (69) launched on Pixel_9a and was uploaded to internal testing (production untouched at 2.0.43).
