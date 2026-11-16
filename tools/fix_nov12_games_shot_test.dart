@@ -11,7 +11,9 @@ import 'package:special_education_games/app/ui/choice_card.dart';
 import 'package:special_education_games/core/audio/audio_service.dart';
 import 'package:special_education_games/core/content/content_repository.dart';
 import 'package:special_education_games/core/db/app_database.dart';
+import 'package:special_education_games/features/child_home/home_screen.dart';
 import 'package:special_education_games/features/game/game_screen.dart';
+import 'package:special_education_games/features/stories/story_screens.dart';
 import 'package:special_education_games/features/game/widgets/scene_game_view.dart';
 import 'package:special_education_games/features/park/coloring_screen.dart';
 import 'package:special_education_games/features/park/puzzle_screen.dart';
@@ -302,6 +304,17 @@ void main() {
         ),
       );
       await shot('girl-$game');
+      await close();
+    }
+    // The stories are told about her too.
+    girl.homeTab = HomeTab.stories;
+    await open(HomeScreen(state: girl));
+    await shot('girl-stories-shelf');
+    await close();
+    for (final story in girl.content.stories.take(2)) {
+      await open(StoryPlayerScreen(state: girl, story: story));
+      await settle(4);
+      await shot('girl-story-${story.id}');
       await close();
     }
     girl.dispose();

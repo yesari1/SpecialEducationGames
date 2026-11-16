@@ -413,6 +413,411 @@
     "text": "The hairdresser cut her hair.",
     "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
   },
+  "assets/audio/en/stories/angry/p1_girl.mp3": {
+    "bytes": 26584,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:44.598303+00:00",
+    "sha256": "7d11f2b880dd2552a672d91132f981431b78f943bbf50d57916968b72ac64cc9",
+    "text": "Mia and her little sister Elif are playing with a toy car.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p2_girl.mp3": {
+    "bytes": 16762,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:46.845189+00:00",
+    "sha256": "608c44d73edfbbf28c048e2c4360e7fd3cb51f04617b66aa23c5f67aceff5c70",
+    "text": "Elif took the car out of Mia's hands.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p3_angry_girl.mp3": {
+    "bytes": 12791,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:54.208854+00:00",
+    "sha256": "989be9e128368cdebeaebf72e06db7a4bbf9f1601e2de0339143a4799d3d31ae",
+    "text": "Yes, Mia is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p3_girl.mp3": {
+    "bytes": 14881,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:51.164736+00:00",
+    "sha256": "f4e4290ea5c99a605d71b651af71940a823df519d211aaba7a1c8471b7ce1fab",
+    "text": "How do you think Mia feels now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p3_happy_girl.mp3": {
+    "bytes": 20733,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:56.567001+00:00",
+    "sha256": "35bd40402b8290634f4b208facdf1ddb033c10eb3078f5007c727ae68fb879aa",
+    "text": "Take a look at Mia's face. Mia is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p3_sad_girl.mp3": {
+    "bytes": 21359,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:43:58.815821+00:00",
+    "sha256": "8c1ad0e83e782f687a7e638a9d6c57c38c3fac868ff7264b156dec4c013cb010",
+    "text": "Take a look at Mia's face. Mia is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p4_girl.mp3": {
+    "bytes": 23658,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:01.500437+00:00",
+    "sha256": "85d3b170bc08fd0bc32b666dd0107605e16c91ace818d8e962cb9b53e4181a54",
+    "text": "Mia is really angry. She has a toy in her hand.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p5_girl.mp3": {
+    "bytes": 10075,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:03.734699+00:00",
+    "sha256": "d9c2579636ca6b16eace3b9832403d3c719142f7ad589ad21a5f78cb67d73b60",
+    "text": "What should Mia do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p5_retry_girl.mp3": {
+    "bytes": 11328,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:04.440536+00:00",
+    "sha256": "0837cee50273a486778aa8de31e21837dcfb83909b4de6d12889afbd00a6ca66",
+    "text": "What else could she do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p5_tell_girl.mp3": {
+    "bytes": 23658,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:06.880774+00:00",
+    "sha256": "eee02df067cc0f3266d111ca6efcff16d2fdae3d25ca16845b5bdffac350948d",
+    "text": "Yes, Mia goes to Mom and tells her she is angry.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/p6_girl.mp3": {
+    "bytes": 35570,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:10.001267+00:00",
+    "sha256": "8a60755f6db9c8aeb89756e3988c542089aac652ac6ff5c4278f89b78d340a32",
+    "text": "Mia told Mom, \"I'm really angry!\" They took a deep breath together.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/angry/praise_girl.mp3": {
+    "bytes": 19479,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:12.345909+00:00",
+    "sha256": "1c322748a27aa712014f04c3e56b76fb625ec95ddcf24345ecf374c52f0f7189",
+    "text": "Well done! You were a great help to Mia.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p1_girl.mp3": {
+    "bytes": 27420,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:16.863701+00:00",
+    "sha256": "db529f0242cb8d6e671d6a9211616a029ff36b350d25a94da39c2ad10bdc66dc",
+    "text": "Today Mia is going to the doctor. Mom is with her.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p2_girl.mp3": {
+    "bytes": 27002,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:19.568813+00:00",
+    "sha256": "513866175f75bd9ce5fd37e13987c5c20ff33e6e16ca4e70cc2f675ff71a44b1",
+    "text": "They sit down in the waiting room. Mia feels a little scared.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p3_girl.mp3": {
+    "bytes": 18016,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:21.670713+00:00",
+    "sha256": "71ae58335601ebf06fe1617f8e994b138ad64cbfe051a9690355ab6ea21d0157",
+    "text": "What can Mia do when she feels scared?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p3_hug_girl.mp3": {
+    "bytes": 15090,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:23.627623+00:00",
+    "sha256": "d58f1b71a733000188f2c3dcaef6978279d7c39a78cee8bbb7132300fde38065",
+    "text": "Yes, Mia gives Mom a hug.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p3_retry_girl.mp3": {
+    "bytes": 11537,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:24.312955+00:00",
+    "sha256": "34f1da47296669c654eee2d405f8524ad28741a404a34742eb66f470694c5a78",
+    "text": "What else could she do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p3_tantrum_girl.mp3": {
+    "bytes": 38914,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:27.312078+00:00",
+    "sha256": "41efe57dc825ae25ab7dd98535c0fca2097f855a8a2c4cb5718cb41a75b2f5ca",
+    "text": "Mia lay on the floor and screamed. Everyone looked at her, and she felt even more scared.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p4_girl.mp3": {
+    "bytes": 26166,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:29.763758+00:00",
+    "sha256": "a951fe615691c79c17a4e42fb16ed8d7711db5a728ec47a99cfb114b76c87a1d",
+    "text": "The doctor came in. She smiled and said, \"Hello, Mia!\"",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p5_girl.mp3": {
+    "bytes": 29092,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:32.054403+00:00",
+    "sha256": "358281f98728907fca5c52a3772d45cc831c90395128cd7d72662423254abdb9",
+    "text": "The doctor wants to listen to her heart. What should Mia do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p5_push_girl.mp3": {
+    "bytes": 33271,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:34.530451+00:00",
+    "sha256": "7a7712c1a98b4a9ce77b0406023fcdc7d07d295d30e6ecedf3538911288f8ec7",
+    "text": "Mia pushed the doctor away. The doctor couldn't listen to her heart.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p5_retry_girl.mp3": {
+    "bytes": 10910,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:35.211924+00:00",
+    "sha256": "31c74e8771fcf72634f672bf06251e2faa06a2854bc9291a599c55fc3f99d879",
+    "text": "What else could she do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p5_still_girl.mp3": {
+    "bytes": 30346,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:37.797784+00:00",
+    "sha256": "473c31231df70bbb3e69c469084a5df124a4fdc589a98fcda281e460a9cf51db",
+    "text": "Yes, Mia sits still. The doctor listens to her heart.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p6_girl.mp3": {
+    "bytes": 21777,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:40.030183+00:00",
+    "sha256": "a8317a5efd35da911cb4ae2ea0d5420acc73f1e6085d2316dac875ff140128ec",
+    "text": "The checkup is over! How does Mia feel now?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p6_happy_girl.mp3": {
+    "bytes": 15717,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:42.046527+00:00",
+    "sha256": "c357286b695a90eb1e78c2194e8bdb290391c94796e5e467200838f0ca749537",
+    "text": "Yes, Mia is very happy now.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p6_scared_girl.mp3": {
+    "bytes": 25748,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:44.284110+00:00",
+    "sha256": "f7c316a7806049487201215cc5bb47128691a4ee3264c7ecf4b4eed621ca14cf",
+    "text": "Look, Mia is smiling. She isn't scared anymore.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/p7_girl.mp3": {
+    "bytes": 28047,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:46.653138+00:00",
+    "sha256": "8502488b7442bf1ec4456f0e7a6285970a437df451b1ea193c71b2c11a4ad245",
+    "text": "The doctor gave Mia a star sticker. You were so brave, Mia!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/doctor/praise_girl.mp3": {
+    "bytes": 19270,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:48.831336+00:00",
+    "sha256": "ec8bb1121a082909a3a8699172ceae09971009a56c75037f73ecc6fdbbd21c82",
+    "text": "Well done! You were a great help to Mia.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p1_girl.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:50.888010+00:00",
+    "sha256": "b33ed71fb5b4f09d0569d7b754bb323665909b324fbea7f47c2b26bc2243b86e",
+    "text": "Here is Mia! It's bedtime.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p2_girl.mp3": {
+    "bytes": 21777,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:53.153116+00:00",
+    "sha256": "3781f0c15e394aebb3942a1e0df1ca438b13d4a576819cc2cbd8904b72db6c3e",
+    "text": "Mia went to the bathroom and picked up her toothbrush.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p4_girl.mp3": {
+    "bytes": 25121,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:55.871413+00:00",
+    "sha256": "c0750cebf719ab4833a22f3a40f04c97378ea07471c5bf0ffb0780bf07729f86",
+    "text": "Mia brushes her teeth nice and slow. Up and down.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p6_girl.mp3": {
+    "bytes": 27002,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:44:58.470283+00:00",
+    "sha256": "beb12d786b07a6d044694e3c4f61d1c3694d6ea2c2f07aa48e277cd4601c391f",
+    "text": "Her teeth are sparkling clean! How does Mia feel?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p6_happy_girl.mp3": {
+    "bytes": 13209,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:00.275604+00:00",
+    "sha256": "75c5aa5ef61455ef8353c13280b8ac4f16f4016b78c6cdaad9c4f35201584957",
+    "text": "Yes, Mia is very happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p6_sad_girl.mp3": {
+    "bytes": 23240,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:02.566593+00:00",
+    "sha256": "e26c3defd12da9a3deaea0851f320c1242989a8927af5e52014995455c6e715c",
+    "text": "Look, Mia is smiling. Mia is very happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/p7_girl.mp3": {
+    "bytes": 22822,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:04.809798+00:00",
+    "sha256": "fc3f21395241371c32bce219ecd2e6411b0a213dd46b21090aa814cac9832f08",
+    "text": "Mia climbed into bed. Good night, Mia!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/teeth/praise_girl.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:07.079181+00:00",
+    "sha256": "47652aff3aa2e660393ca1f2b924ccb64870bb58645526e1a98e0e4422517aed",
+    "text": "Well done! You were a great help to Mia.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p1_girl.mp3": {
+    "bytes": 20733,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:09.374225+00:00",
+    "sha256": "2bedc453514aaef6f0226c80f140ef93105e54043299a80cdbe49ed3986f14ee",
+    "text": "Mia is at the park. She loves the slide.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p3_girl.mp3": {
+    "bytes": 20941,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:11.489798+00:00",
+    "sha256": "72b70d009f4d6a812c6889e273906a5382d0bb8e93b32fb3ca798bf916801a0b",
+    "text": "Mia wants to slide too. What should she do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p3_line_girl.mp3": {
+    "bytes": 21359,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:13.784727+00:00",
+    "sha256": "a57accc0ce9d63e74d61e2c642ed5178955008527656909bafaef4a079d55467",
+    "text": "Yes, Mia waits for her turn behind Elif.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p3_retry_girl.mp3": {
+    "bytes": 11328,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:14.426773+00:00",
+    "sha256": "0074597c5774a91e021bfc360d69bcd559cd736fc5ae51cd58fa32f8f391587b",
+    "text": "What else could she do?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p4_girl.mp3": {
+    "bytes": 24076,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:16.861961+00:00",
+    "sha256": "3c206f251a11afc885f1f66e6ea21eb5f87b13ae8de360ae864be9bfeb8c05f4",
+    "text": "Mia waits for her turn. One, two, three...",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p5_girl.mp3": {
+    "bytes": 24494,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:18.890265+00:00",
+    "sha256": "4422a8b39818da4f3c6e439b0ec38bec28bcd82b7e155b31d79a798e58780538",
+    "text": "Elif went down the slide. Now it's Mia's turn!",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p6_angry_girl.mp3": {
+    "bytes": 23867,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:23.414851+00:00",
+    "sha256": "9fbe4f755ad870eb77a713274f7cb8e79ad435aaf254f2132b6c56bd64634682",
+    "text": "Look, Mia is laughing. Mia is very happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p6_girl.mp3": {
+    "bytes": 19061,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:21.129813+00:00",
+    "sha256": "7461d2de3acd3cdb82332901ae8c181b5975109553adcbe702f1cbbe46ee753f",
+    "text": "Mia went down the slide! How does Mia feel?",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
+  "assets/audio/en/stories/turn/p6_happy_girl.mp3": {
+    "bytes": 14672,
+    "language": "en",
+    "model_id": "eleven_multilingual_v2",
+    "requested_at": "2026-11-16T03:45:25.427019+00:00",
+    "sha256": "23b27ed0a02a5e66631ddf7dbab7db0237d808d63e491cc84ac909ae878af6b1",
+    "text": "Yes, Mia is very happy.",
+    "voice_id": "GZ4PpFJV8ikEGUtBrjK7"
+  },
   "assets/audio/tr/pairs/G44_1_girl.mp3": {
     "bytes": 30555,
     "language": "tr",
@@ -807,6 +1212,375 @@
     "requested_at": "2026-11-15T18:42:32.830007+00:00",
     "sha256": "1582468ad3f6ca58030874857297b52cc6ba4f671426ee413c3b9f17fbc4d161",
     "text": "Polis Ayşe'yi annesine götürdü.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p1_girl.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:43.460358+00:00",
+    "sha256": "aa1d79b306a11adc292506f304ab446d32550067145e92a36cd039f30268911e",
+    "text": "Ayşe ile kardeşi Elif arabayla oynuyorlar.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p2_girl.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:46.116250+00:00",
+    "sha256": "54fab90f110f045c1921f54f4c7cba8b41170d3644f7963f1006980b4de5e430",
+    "text": "Elif, arabayı Ayşe'nin elinden aldı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p3_angry_girl.mp3": {
+    "bytes": 18434,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:53.455533+00:00",
+    "sha256": "40ab53dd209254a9168f38675fbeac426c81d34d123497908841ee9702c46495",
+    "text": "Evet, Ayşe çok kızdı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p3_girl.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:49.771164+00:00",
+    "sha256": "4da21d1f77ba7c2608bc67d28fea4f8f1cd4dbd72a601623f1de07ef2f7523cb",
+    "text": "Sence Ayşe şimdi ne hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p3_happy_girl.mp3": {
+    "bytes": 23031,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:55.750811+00:00",
+    "sha256": "700094cc342447f1bb0430e3f78d38dc8f8e931c1ab0fbe293e9e6801dc4ce57",
+    "text": "Ayşe'nin yüzüne bir bak. Ayşe kızdı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p3_sad_girl.mp3": {
+    "bytes": 23031,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:43:58.021796+00:00",
+    "sha256": "7b9889b71e5fa7f4c8f5f1cf6587bffaba941b290382e986711cec5a2bb9296b",
+    "text": "Ayşe'nin yüzüne bir bak. Ayşe kızdı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p4_girl.mp3": {
+    "bytes": 25539,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:00.618063+00:00",
+    "sha256": "62cafadb25d0af0bf07c803e4602ba4da619a01f1cb48732f921b7469538719c",
+    "text": "Ayşe çok kızdı. Elinde de bir oyuncak var.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p5_girl.mp3": {
+    "bytes": 10910,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:02.857529+00:00",
+    "sha256": "4a38f9cbf07dc362187d92fb74fea8a38b7da7dfe2f87b410f2e5e2de661ae6c",
+    "text": "Ayşe ne yapsın?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p5_tell_girl.mp3": {
+    "bytes": 27420,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:06.047110+00:00",
+    "sha256": "b7b564321554af58ea0fd1eacb9b70dd14d01edab2b82eabfa75c70566463b06",
+    "text": "Evet, Ayşe annesine gidip kızdığını söylüyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/p6_girl.mp3": {
+    "bytes": 43511,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:09.073465+00:00",
+    "sha256": "257ba6d4cf76011e3d60d72bab0e0fd79fd432d4cbab6feff4493f5813e50a63",
+    "text": "Ayşe annesine \"Çok kızgınım!\" dedi. Birlikte derin bir nefes aldılar.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/angry/praise_girl.mp3": {
+    "bytes": 26793,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:11.585488+00:00",
+    "sha256": "6640d50a61f70db782f5fdb5f95dcaeeb05397f50626bb552b47a060c7f7a2a1",
+    "text": "Aferin sana! Ayşe'ye çok güzel yardım ettin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p1_girl.mp3": {
+    "bytes": 26166,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:13.889619+00:00",
+    "sha256": "7973d5d31e4aee6c0e92aeaf42355793511a0359950660c9940529b0f53112d2",
+    "text": "Bugün Ayşe doktora gidiyor. Annesi de yanında.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p2_girl.mp3": {
+    "bytes": 30555,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:18.729176+00:00",
+    "sha256": "69163e639d92edd5beb44273e81381aa4972de00784e01446151e2febe1325a2",
+    "text": "Bekleme odasına oturdular. Ayşe biraz korkuyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p3_girl.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:20.880648+00:00",
+    "sha256": "602c0d5aa156b2bd2a09f8a6173408cc1e1d363bded0d37df096c0ba514f6ca2",
+    "text": "Ayşe korkunca ne yapabilir?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p3_hug_girl.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:22.915599+00:00",
+    "sha256": "aa5e4dd6a72ec818ec23beaa1b857e646ec1212bf8c70bd901d9c3a5406fb165",
+    "text": "Evet, Ayşe annesine sarılıyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p3_tantrum_girl.mp3": {
+    "bytes": 40795,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:26.433895+00:00",
+    "sha256": "73266823266d268f15a8a6a0b3fc8f1faedde81879c16304dcceeeb19e05ccd7",
+    "text": "Ayşe yere yatıp bağırdı. Herkes ona baktı, Ayşe daha çok korktu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p4_girl.mp3": {
+    "bytes": 33689,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:28.935622+00:00",
+    "sha256": "23fb620911d12e83969b985df328d261ae2963ad053056d2f3b8a6643dab5f12",
+    "text": "Doktor geldi. Gülümseyerek \"Merhaba Ayşe!\" dedi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p5_girl.mp3": {
+    "bytes": 28047,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:31.221721+00:00",
+    "sha256": "4de0bde7f6285f456df0d118f4e577b796a76d80d861ac8235b306ce549d1884",
+    "text": "Doktor kalbini dinleyecek. Ayşe ne yapmalı?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p5_push_girl.mp3": {
+    "bytes": 32644,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:33.680234+00:00",
+    "sha256": "0cf175713cfac38c77cd7d7bab1ee6fa9f0d00c5a9a8236ee18b51925040a097",
+    "text": "Ayşe doktoru itti. Doktor Ayşe'nin kalbini dinleyemedi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p5_still_girl.mp3": {
+    "bytes": 33898,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:36.976338+00:00",
+    "sha256": "07fe17aa97f092da2aad4fcc7d5187a26044c85c31f591358eab46cd1fd62242",
+    "text": "Evet, Ayşe sakince oturuyor. Doktor kalbini dinliyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p6_girl.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:39.285138+00:00",
+    "sha256": "fba536d215a752f111212590cce96f1fe8c8386889b102a18e1b0f41ebd1466b",
+    "text": "Muayene bitti! Ayşe şimdi nasıl hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p6_happy_girl.mp3": {
+    "bytes": 21777,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:41.393549+00:00",
+    "sha256": "3f5fcc829909d62b588f80354567e2c0532a6002a1830d2ef4edc013c9d5a2d3",
+    "text": "Evet, Ayşe artık çok mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p6_scared_girl.mp3": {
+    "bytes": 25539,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:43.479251+00:00",
+    "sha256": "f641ceab64bf024fef68630ae32a49a6568924b411c4277a24a4191640b31406",
+    "text": "Bak, Ayşe gülümsüyor. Korkusu geçti.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/p7_girl.mp3": {
+    "bytes": 30555,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:45.883637+00:00",
+    "sha256": "4a09b2994efc8216c984b7b7bc5c9eed7b515ce2d565eb65f9252b1e312c10cf",
+    "text": "Doktor Ayşe'ye bir yıldız verdi. Çok cesurdun Ayşe!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/doctor/praise_girl.mp3": {
+    "bytes": 26166,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:48.142326+00:00",
+    "sha256": "35b5e33cb254a506bed9359c7d5077e0a6a017338e5d2081a175cabbbdf18292",
+    "text": "Aferin sana! Ayşe'ye çok güzel yardım ettin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p1_girl.mp3": {
+    "bytes": 19061,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:50.205011+00:00",
+    "sha256": "b0b1f285a7261657289aae08def6622b28ea3ec6a545d0ddb96009d74eedf129",
+    "text": "İşte Ayşe! Uyku vakti geldi.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p2_girl.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:52.404136+00:00",
+    "sha256": "743ea074a650e1982dca755f1ce1bfbe545d1f13aa9d25744a84330a27c821c2",
+    "text": "Ayşe banyoya gitti, diş fırçasını aldı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p4_girl.mp3": {
+    "bytes": 35779,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:55.003861+00:00",
+    "sha256": "7b1dd9aa83548c772b27ff6c6c7fb19db6c361df2ff51edba2d524955443ddbf",
+    "text": "Ayşe dişlerini yavaş yavaş fırçalıyor. Aşağı, yukarı.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p6_girl.mp3": {
+    "bytes": 28674,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:57.624432+00:00",
+    "sha256": "d91118a83c0030220ea0d0b25262eb423bd7a34614d166910dac9f8991b789d8",
+    "text": "Dişleri pırıl pırıl oldu! Ayşe nasıl hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p6_happy_girl.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:44:59.606528+00:00",
+    "sha256": "cbeb0cc7caf9d9fdd1e280c01b33c01c4456e13f0f3d1add6b2cb716cfebce2d",
+    "text": "Evet, Ayşe çok mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p6_sad_girl.mp3": {
+    "bytes": 27420,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:01.797814+00:00",
+    "sha256": "000a0a7f3198225421b66f741f38719865da32d12d0d10d0faa6228208cd26b3",
+    "text": "Bak, Ayşe gülümsüyor. Ayşe çok mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/p7_girl.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:04.071021+00:00",
+    "sha256": "ba2577825e9b27179731c390d7d48814046a6b50c9bf7a911ed03ce9f2e29d83",
+    "text": "Ayşe yatağına girdi. İyi geceler Ayşe!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/teeth/praise_girl.mp3": {
+    "bytes": 25539,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:06.307741+00:00",
+    "sha256": "30cc3c2b0728c71ebcc2b565811a6f7dced06017dad41dafad193c058f366a0b",
+    "text": "Aferin sana! Ayşe'ye çok güzel yardım ettin.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p1_girl.mp3": {
+    "bytes": 24912,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:08.657465+00:00",
+    "sha256": "2869c0c0a06e6082eddcd29e6aa486505aff96d4d708de9fa80ea58e92809673",
+    "text": "Ayşe parka geldi. Kaydırağı çok seviyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p3_girl.mp3": {
+    "bytes": 20941,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:10.791382+00:00",
+    "sha256": "f7da8de3e13c1fc2f1092b946950e7fb576e3910325842e614d01a66feb6f804",
+    "text": "Ayşe de kaymak istiyor. Ne yapmalı?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p3_line_girl.mp3": {
+    "bytes": 28674,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:13.058059+00:00",
+    "sha256": "baa6985ca19313750377ae7f8612564e08356f04fa55378498a7b1d0624e2b1f",
+    "text": "Evet, Ayşe, Elif'in arkasında sırasını bekliyor.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p4_girl.mp3": {
+    "bytes": 33898,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:16.098025+00:00",
+    "sha256": "8d459f155db474cbbc07a6008da8349d65400bf05fe63e13d0e11f348b57d91d",
+    "text": "Ayşe sırasını bekliyor. Bir, iki, üç...",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p5_girl.mp3": {
+    "bytes": 19688,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:18.088094+00:00",
+    "sha256": "0e0b55c3d73cdac5d98086c8f5fc7935ceb92993cd66bab93ecf420a03a1a607",
+    "text": "Elif kaydı. Şimdi sıra Ayşe'de!",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p6_angry_girl.mp3": {
+    "bytes": 25539,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:22.659270+00:00",
+    "sha256": "b2bedd8201fdc84ea9fdf0691de4a5957d4095d8d1647f71aadc8349abbdb941",
+    "text": "Bak, Ayşe gülüyor. Ayşe çok mutlu.",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p6_girl.mp3": {
+    "bytes": 23031,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:20.417378+00:00",
+    "sha256": "f5120cd67ebd303c1f23b8604182e4fa77d374ad576b90cffeb75c732a012875",
+    "text": "Ayşe kaydı! Ayşe nasıl hissediyor?",
+    "voice_id": "uvU9jrgGLWNPeNA4NgNT"
+  },
+  "assets/audio/tr/stories/turn/p6_happy_girl.mp3": {
+    "bytes": 16553,
+    "language": "tr",
+    "model_id": "eleven_v4",
+    "requested_at": "2026-11-16T03:45:24.666684+00:00",
+    "sha256": "71bb4a321b434dafab8ef6ddabbfd274bb7cefeda78b52fc86e1f85c8cd5186b",
+    "text": "Evet, Ayşe çok mutlu.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT"
   }
 }
