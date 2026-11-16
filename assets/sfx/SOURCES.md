@@ -177,3 +177,8 @@ Original recordings are retained in artifacts/source_audio and artifacts/sfx_bat
 - Source: https://theremin.music.uiowa.edu/MISpiano.html (Piano.mf.C4 ... C5, Steinway grand)
 - License: free to use for any purpose without restriction — https://theremin.music.uiowa.edu/MIS.html
 - App assets: assets/sfx/piano/do.mp3, re, mi, fa, sol, la, si, do2 (replaced the synthesized notes on 16 Nov 2026)
+
+## Puzzle piece pop (app-made)
+
+- Made for this app on 16 November 2026: a short synthesized low "cork" pop (decaying sine plus a filtered click), no recording or third-party material. Chosen by Yunus from three samples (artifacts/claude/puzzle-snap/: pop_b_cork).
+- App asset: assets/sfx/ui/puzzle_snap.wav
