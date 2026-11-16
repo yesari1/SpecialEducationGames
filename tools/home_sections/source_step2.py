@@ -137,35 +137,44 @@ def text(tr, en):
 # G60 Dişlerini Fırçala -------------------------------------------------------
 import random  # noqa: E402
 
-# The teeth of teeth_dirty.webp, measured on the picture (left, top, right,
-# bottom in its 1200x800 pixels). A stain never leaves its tooth.
-_TEETH_PX = [
-    (529, 476, 565, 514), (566, 480, 606, 518), (607, 480, 646, 518), (647, 476, 682, 513),  # upper
-    (535, 555, 567, 588), (569, 561, 606, 596), (607, 561, 643, 596), (645, 555, 676, 588),  # lower
-]
-TEETH = [[round(l / 1200, 4), round(t / 800, 4), round((r - l) / 1200, 4), round((b - t) / 800, 4)] for l, t, r, b in _TEETH_PX]
-TEETH_ZONE = [.44, .59, .13, .16]
+# Every tooth of the open mouth, measured on each child's picture (left, top,
+# right, bottom in its 1200x800 pixels; Yunus, 16 Nov 2026: the girl's mouth
+# is not the boy's). A stain never leaves its tooth.
+def _row(xs, top, bottom):
+    return [(a + 2, top, b - 2, bottom) for a, b in zip(xs, xs[1:])]
 
 
-def teeth_spots(n, seed):
-    return random.Random(seed).sample(TEETH, n)
+_TEETH_PX = {
+    'boy': _row([490, 527, 567, 607, 647, 687, 720], 476, 516) + _row([510, 541, 580, 620, 658, 690], 551, 596),
+    'girl': _row([458, 505, 555, 605, 655, 705, 750], 463, 521) + _row([485, 520, 558, 605, 652, 692, 725], 561, 619),
+}
+TEETH = {who: [[round(l / 1200, 4), round(t / 800, 4), round((r - l) / 1200, 4), round((b - t) / 800, 4)]
+               for l, t, r, b in px] for who, px in _TEETH_PX.items()}
+# The picture is shown close to the mouth: centre x, centre y, scale.
+TEETH_FOCUS = {'boy': [.504, .67, 2.2], 'girl': [.5, .675, 2.0]}
+TEETH_STAGE = {'boy': 'teeth_dirty.webp', 'girl': 'teeth_dirty_girl.webp'}
+
+
+def teeth_spots(who, n, seed):
+    return random.Random(seed).sample(TEETH[who], n)
 
 
 def g60():
     ask = line('g60_ask', "Ali'nin dişleri kirlenmiş. Hadi fırçalayalım!", "Ali's teeth need a clean. Let's brush them!")
     done = line('g60_done', 'Dişlerin pırıl pırıl oldu, Ali!', 'Your teeth are sparkling, Ali!')
     rounds = []
-    for tier, n in (('easy', 3), ('medium', 4), ('hard', 6)):
-        for i in range(5):
+    # One brushing is the whole game (it never changes enough for five);
+    # the app picks other teeth to clean every time.
+    for who in ('boy', 'girl'):
+        for tier, n in (('easy', 3), ('medium', 4), ('hard', 6)):
             rounds.append({
-                'key': f'{tier}{i}', 'tier': tier, 'target': 'cleaning.toothbrush',
-                'stage': f'{PLAY}/teeth_dirty.webp', 'aspect': 1.5,
-                'tints': TEETH, 'text': text("Ali'nin dişlerini fırçalayalım.", "Let's brush Ali's teeth."), 'audio': ask,
-                'steps': [{'mode': 'rub', 'piece': 'cleaning.toothbrush', 'zone': TEETH_ZONE,
-                           'spots': teeth_spots(n, f'{tier}{i}'), 'after': f'{PLAY}/teeth_clean.webp',
-                           'doneAudio': done}],
+                'key': f'{who}_{tier}', 'tier': tier, 'who': who, 'target': 'cleaning.toothbrush',
+                'stage': f'{PLAY}/{TEETH_STAGE[who]}', 'aspect': 1.5, 'focus': TEETH_FOCUS[who],
+                'tints': TEETH[who], 'text': text("Ali'nin dişlerini fırçalayalım.", "Let's brush Ali's teeth."), 'audio': ask,
+                'steps': [{'mode': 'rub', 'piece': 'cleaning.toothbrush', 'zone': [.38, .56, .26, .22],
+                           'spots': teeth_spots(who, n, f'{who}{tier}'), 'doneAudio': done}],
             })
-    return {'theme': 'cleaning', 'rounds': rounds}
+    return {'theme': 'cleaning', 'plays': 1, 'rounds': rounds}
 
 
 # G61 Ellerini Yıka -----------------------------------------------------------
@@ -210,7 +219,8 @@ def g61():
                 'text': text(f'Ellerini yıkayalım. {v[2]}', f"Let's wash the hands. {v[3]}"),
                 'audio': first[names[0]], 'steps': steps(names, f'{tier}_{i}'),
             })
-    return {'theme': 'cleaning', 'rounds': rounds}
+    # Washing once is the whole game (the steps never change; Yunus, 16 Nov 2026).
+    return {'theme': 'cleaning', 'plays': 1, 'rounds': rounds}
 
 
 # G62 Ne Lazım? ---------------------------------------------------------------

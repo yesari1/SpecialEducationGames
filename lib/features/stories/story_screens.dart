@@ -10,6 +10,7 @@ import '../../core/audio/audio_service.dart' show UiSound;
 import '../../core/content/content_repository.dart';
 import '../../l10n/app_localizations.dart';
 import '../../l10n/scoped_localizations.dart';
+import '../game/widgets/next_game_button.dart';
 
 /// The colours of the Stories card and screens.
 final storiesTheme = ContentTheme.fromJson({
@@ -173,6 +174,7 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
 
   @override
   void dispose() {
+    _endRing.dispose();
     _timer?.cancel();
     _clearIdle();
     s.leaveGame();
@@ -284,11 +286,6 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     _clearIdle();
     s.audio.stop();
     context.go('/stories');
-  }
-
-  void _again() {
-    UiSound.tap();
-    _show(0);
   }
 
   @override
@@ -652,84 +649,55 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen> {
     );
   }
 
+  /// The story's end: its own last picture, the praise ("Ayşe'ye çok güzel
+  /// yardım ettin!") and one button whose ring runs round and takes the
+  /// child back to the stories (Yunus, 16 November 2026: no star, no logo,
+  /// no "again", no round shelf button).
   Widget _end(AppLocalizations l10n, bool compact) {
-    final celebrate = !reduced && s.celebration != 'off';
     final praise = story.praise?.textFor(s.locale) ?? l10n.gameWellDone;
-    return Center(
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Padding(
-          padding: const EdgeInsets.all(SegSpace.s4),
-          child: Column(
-            key: const ValueKey('story-end'),
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  TweenAnimationBuilder<double>(
-                    tween: Tween(begin: celebrate ? 0 : 1, end: 1),
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeOutBack,
-                    builder: (_, v, child) =>
-                        Transform.scale(scale: v, child: child),
-                    child: Container(
-                      width: compact ? 110 : 140,
-                      height: compact ? 110 : 140,
-                      decoration: BoxDecoration(
-                        color: SegColors.star,
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: SegColors.starDeep.withValues(alpha: .3),
-                            blurRadius: 18,
-                            offset: const Offset(0, 6),
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.star_rounded,
-                        color: Colors.white,
-                        size: compact ? 70 : 90,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: SegSpace.s6),
-                  Image.asset(
-                    'assets/illustrations/onboarding/mascot_cloud.png',
-                    height: compact ? 110 : 150,
-                    excludeFromSemantics: true,
-                  ),
-                ],
+    final picture =
+        story.pages.reversed
+            .map((p) => p.image)
+            .whereType<String>()
+            .firstOrNull ??
+        story.cover;
+    return Padding(
+      key: const ValueKey('story-end'),
+      padding: EdgeInsets.fromLTRB(
+        SegSpace.s5,
+        0,
+        SegSpace.s5,
+        compact ? SegSpace.s2 : SegSpace.s4,
+      ),
+      child: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: 3 / 2,
+                child: _framedPicture(
+                  picture,
+                  key: const ValueKey('story-end-picture'),
+                ),
               ),
-              SizedBox(height: compact ? SegSpace.s3 : SegSpace.s5),
-              _sentence(praise, key: const ValueKey('story-praise')),
-              SizedBox(height: compact ? SegSpace.s3 : SegSpace.s5),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  _roundButton(
-                    key: const ValueKey('story-again'),
-                    icon: Icons.replay_rounded,
-                    label: l10n.gameAgain,
-                    onPressed: _again,
-                  ),
-                  const SizedBox(width: SegSpace.s4),
-                  _roundButton(
-                    key: const ValueKey('story-shelf'),
-                    icon: Icons.menu_book_rounded,
-                    label: l10n.storiesTitle,
-                    onPressed: _leave,
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
-        ),
+          SizedBox(height: compact ? SegSpace.s2 : SegSpace.s3),
+          _sentence(praise, key: const ValueKey('story-praise')),
+          SizedBox(height: compact ? SegSpace.s2 : SegSpace.s3),
+          NextGameButton(
+            key: const ValueKey('story-shelf'),
+            label: l10n.storiesTitle,
+            running: _endRing,
+            animate: !reduced,
+            onNext: _leave,
+          ),
+        ],
       ),
     );
   }
+
+  final _endRing = ValueNotifier(true);
 
   Widget _roundButton({
     required Key key,

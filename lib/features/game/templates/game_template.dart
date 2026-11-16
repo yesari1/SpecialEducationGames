@@ -929,7 +929,9 @@ class PairTemplate extends GameTemplate {
               for (final e in game.successAudio.entries) e.key: [e.value],
             },
       resultImagePath: round.result,
-      resultInPlace: ctx.gameId == 'G64',
+      // Every result picture comes up in the middle; none covers the whole
+      // screen (Yunus, 16 November 2026).
+      resultInPlace: true,
       rightHold: round.result == null
           ? const Duration(milliseconds: 1500)
           : const Duration(milliseconds: 2800),
@@ -1170,8 +1172,19 @@ class SceneTemplate extends GameTemplate {
   }
 
   @override
-  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) =>
-      spec.promptCues[locale == 'en' ? 'en' : 'tr'] ?? const [];
+  List<String> introCues(RoundSpec spec, ModeContext ctx, String locale) {
+    final lang = locale == 'en' ? 'en' : 'tr';
+    final round = spec.scene;
+    // Past the first step, the question asked again is the current step's.
+    if (round != null &&
+        identical(SceneProgress.round, round) &&
+        SceneProgress.step > 0 &&
+        SceneProgress.step < round.steps.length) {
+      final ask = round.steps[SceneProgress.step].askAudio[lang];
+      if (ask != null) return [ask];
+    }
+    return spec.promptCues[lang] ?? const [];
+  }
 
   @override
   List<String> successCues(RoundSpec spec, String locale) =>

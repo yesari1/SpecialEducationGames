@@ -64,10 +64,7 @@ void main() {
           body: SceneGameView(
             spec: s,
             hint: hint(),
-            callbacks: RoundCallbacks(
-              onSelect: selected.add,
-              onSay: said.add,
-            ),
+            callbacks: RoundCallbacks(onSelect: selected.add, onSay: said.add),
           ),
         ),
       ),
@@ -89,47 +86,52 @@ void main() {
               as AssetImage)
           .assetName;
 
-  testWidgets('wrong piece is a wrong answer; right piece changes the picture', (
-    tester,
-  ) async {
-    final said = <List<String>>[];
-    final selected = await pump(
-      tester,
-      spec([
-        SceneStep(
-          mode: SceneStepMode.place,
-          piece: right.id,
-          others: [wrong.id],
-          zone: one,
-          after: box,
-          doneAudio: const {'tr': 'done.mp3'},
-        ),
-        SceneStep(
-          mode: SceneStepMode.place,
-          piece: wrong.id,
-          zone: one,
-          askAudio: const {'tr': 'ask.mp3'},
-        ),
-      ]),
-      said,
-    );
-    await tester.tap(find.byKey(ValueKey('scene-piece-${wrong.id}')));
-    await tester.pump();
-    expect(selected.single.id, wrong.id);
-    expect(shown(tester), gift);
-    await tester.pump(const Duration(milliseconds: 600));
+  testWidgets(
+    'wrong piece is a wrong answer; right piece changes the picture',
+    (tester) async {
+      final said = <List<String>>[];
+      final selected = await pump(
+        tester,
+        spec([
+          SceneStep(
+            mode: SceneStepMode.place,
+            piece: right.id,
+            others: [wrong.id],
+            zone: one,
+            after: box,
+            doneAudio: const {'tr': 'done.mp3'},
+          ),
+          SceneStep(
+            mode: SceneStepMode.place,
+            piece: wrong.id,
+            zone: one,
+            askAudio: const {'tr': 'ask.mp3'},
+          ),
+        ]),
+        said,
+      );
+      await tester.tap(find.byKey(ValueKey('scene-piece-${wrong.id}')));
+      await tester.pump();
+      expect(selected.single.id, wrong.id);
+      expect(shown(tester), gift);
+      await tester.pump(const Duration(milliseconds: 600));
 
-    await tester.tap(find.byKey(ValueKey('scene-piece-${right.id}')));
-    await tester.pump();
-    expect(shown(tester), box);
-    expect(said.single, ['done.mp3', 'ask.mp3']);
-    expect(selected, hasLength(1));
+      await tester.tap(find.byKey(ValueKey('scene-piece-${right.id}')));
+      await tester.pump();
+      expect(shown(tester), box);
+      expect(said.single, ['done.mp3', 'ask.mp3']);
+      expect(selected, hasLength(1));
 
-    await tester.tap(find.byKey(ValueKey('scene-piece-${wrong.id}')));
-    await tester.pump();
-    expect(selected.last.id, right.id, reason: 'last step finishes the round');
-    expect(tester.takeException(), isNull);
-  });
+      await tester.tap(find.byKey(ValueKey('scene-piece-${wrong.id}')));
+      await tester.pump();
+      expect(
+        selected.last.id,
+        right.id,
+        reason: 'last step finishes the round',
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('dragging the right piece to the picture works', (tester) async {
     final selected = await pump(
@@ -150,8 +152,18 @@ void main() {
   ) async {
     final said = <List<String>>[];
     final base = spec([
-      SceneStep(mode: SceneStepMode.place, piece: right.id, zone: one, stays: true),
-      SceneStep(mode: SceneStepMode.place, piece: wrong.id, zone: one, stays: true),
+      SceneStep(
+        mode: SceneStepMode.place,
+        piece: right.id,
+        zone: one,
+        stays: true,
+      ),
+      SceneStep(
+        mode: SceneStepMode.place,
+        piece: wrong.id,
+        zone: one,
+        stays: true,
+      ),
     ]);
     final gentle = RoundSpec(
       target: right,
@@ -211,21 +223,47 @@ void main() {
           mode: SceneStepMode.rub,
           piece: right.id,
           zone: one,
-          spots: const [
-            SceneRect(.2, .2, .1, .1),
-            SceneRect(.6, .6, .1, .1),
-          ],
+          spots: const [SceneRect(.2, .2, .1, .1), SceneRect(.6, .6, .1, .1)],
         ),
       ]),
       [],
     );
-    await tester.tap(find.byKey(const ValueKey('scene-spot-0')));
+    // Brushing, not tapping: the brush (held by its handle) scrubs a stain
+    // away little by little.
+    final stage = tester.getRect(find.byKey(const ValueKey('scene-stage')));
+    final side = stage.shortestSide * .36 * 1.5;
+    final head = Offset(side * .45, -side * .5);
+    Future<void> scrub(SceneRect r) async {
+      final g = await tester.startGesture(
+        tester.getCenter(find.byKey(const ValueKey('scene-tool'))),
+      );
+      await tester.pump();
+      final at = Offset(
+        stage.left + (r.x + r.w / 2) * stage.width,
+        stage.top + (r.y + r.h / 2) * stage.height,
+      );
+      await g.moveTo(at - head);
+      await tester.pump();
+      for (var i = 0; i < 40; i++) {
+        await g.moveBy(Offset(i.isEven ? 30 : -30, 0));
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+      await g.up();
+      await tester.pump();
+    }
+
+    await tester.tap(
+      find.byKey(const ValueKey('scene-spot-0')),
+      warnIfMissed: false,
+    );
     await tester.pump();
+    expect(find.byKey(const ValueKey('scene-spot-0')), findsOneWidget);
+    await scrub(const SceneRect(.2, .2, .1, .1));
     expect(find.byKey(const ValueKey('scene-spot-0')), findsNothing);
     expect(selected, isEmpty);
-    await tester.tap(find.byKey(const ValueKey('scene-spot-1')));
-    await tester.pump();
+    await scrub(const SceneRect(.6, .6, .1, .1));
     expect(selected.single.id, right.id);
+    await tester.pump(const Duration(seconds: 3));
   });
 
   testWidgets('stir step: a few taps also do it', (tester) async {

@@ -15,6 +15,14 @@ import 'round_choices_view.dart';
 /// the right one is dragged to the picture (tapping works too) and flies
 /// from where it was let go to its place. Rub steps clean the spots away,
 /// stir steps go round; their tool is dragged from the tray too.
+/// The step of the scene round on screen, so the replayed question (the
+/// speaker button, the hint) is the current step's and not the first one
+/// (Yunus, 16 November 2026: hand washing asked to rinse again while drying).
+abstract final class SceneProgress {
+  static SceneRound? round;
+  static int step = 0;
+}
+
 class SceneGameView extends StatefulWidget {
   final RoundSpec spec;
   final RoundCallbacks callbacks;
@@ -87,6 +95,36 @@ class _StainPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_StainPainter old) => old.seed != seed;
+}
+
+/// Toothpaste foam: white bubbles where the brush went, each fading away
+/// over a second and a half.
+class _FoamPainter extends CustomPainter {
+  final List<(Offset, double, int)> foam;
+  final int now;
+  const _FoamPainter(this.foam, this.now);
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final (at, r, born) in foam) {
+      final age = (now - born) / 1600;
+      if (age >= 1) continue;
+      final centre = Offset(at.dx * size.width, at.dy * size.height);
+      final radius = r * size.width * (1 + age * .4);
+      canvas.drawCircle(
+        centre,
+        radius,
+        Paint()..color = Colors.white.withValues(alpha: .9 * (1 - age)),
+      );
+      canvas.drawCircle(
+        centre - Offset(radius * .3, radius * .3),
+        radius * .3,
+        Paint()..color = const Color(0xFFDDF4FF).withValues(alpha: 1 - age),
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_FoamPainter old) => true;
 }
 
 /// A piece on its way: from where it was let go to its place on the
@@ -198,6 +236,17 @@ class _SceneGameViewState extends State<SceneGameView>
   /// Stirred: the bowl shows the cut pieces of the fruit put in.
   bool _mixed = false;
   final Set<int> _cleaned = {};
+
+  // Brushing (rub steps): the stains of this play, chosen anew each time
+  // from the round's teeth, how far each is scrubbed (0..1), and the foam
+  // the brush leaves (in the picture's fractions).
+  List<SceneRect> _stains = const [];
+  final Map<int, double> _scrub = {};
+  final List<(Offset, double, int)> _foam = [];
+  late final AnimationController _foamTick = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 1),
+  );
 
   /// Pieces that left the tray for good (gentle rounds keep every slot).
   final Set<String> _gone = {};
@@ -337,9 +386,18 @@ class _SceneGameViewState extends State<SceneGameView>
   }
 
   void _enterStep() {
+    SceneProgress.round = round;
+    SceneProgress.step = _step;
     _armIdle();
     _hintBase = widget.hint.level;
     _cleaned.clear();
+    _scrub.clear();
+    _foam.clear();
+    _stains = step.mode != SceneStepMode.rub
+        ? const []
+        : round.tints.length >= step.spots.length
+        ? (List.of(round.tints)..shuffle()).take(step.spots.length).toList()
+        : step.spots;
     _toolAt = null;
     _stirred = 0;
     _stirTaps = 0;
@@ -355,6 +413,8 @@ class _SceneGameViewState extends State<SceneGameView>
     _finger.dispose();
     _fly.dispose();
     _fx.dispose();
+    _foamStop?.cancel();
+    _foamTick.dispose();
     super.dispose();
   }
 
@@ -711,21 +771,69 @@ class _SceneGameViewState extends State<SceneGameView>
     if (!_ready || _cleaned.contains(spot)) return;
     setState(() => _cleaned.add(spot));
     UiSound.tap();
-    if (_cleaned.length == step.spots.length) _complete();
+    if (_cleaned.length == _stains.length) _complete();
   }
 
-  void _rubAt(Offset point, Size size) {
-    if (step.mode != SceneStepMode.rub) return;
-    final reach = size.shortestSide * .09;
-    for (var i = 0; i < step.spots.length; i++) {
-      final s = step.spots[i];
-      final centre = Offset(
-        (s.x + s.w / 2) * size.width,
-        (s.y + s.h / 2) * size.height,
-      );
-      if ((centre - point).distance <= reach + s.w * size.width / 2) _clean(i);
+  /// The brush head at [point] (fractions of the picture) scrubs the stains
+  /// under it a little more with every stroke and leaves foam.
+  void _rubAt(Offset point, double moved) {
+    if (step.mode != SceneStepMode.rub || !_ready) return;
+    const reach = .035;
+    var touched = false;
+    for (var i = 0; i < _stains.length; i++) {
+      if (_cleaned.contains(i)) continue;
+      final s = _stains[i];
+      final rect = Rect.fromLTWH(s.x, s.y, s.w, s.h).inflate(reach);
+      if (!rect.contains(point)) continue;
+      touched = true;
+      final next = (_scrub[i] ?? 0) + moved / 700;
+      _scrub[i] = next;
+      if (next >= 1) _clean(i);
       if (_step >= round.steps.length || _done) return;
     }
+    if (moved > 1.5 && (touched || _foam.length < 12)) {
+      final random = math.Random();
+      _foam.add((
+        point +
+            Offset(
+              (random.nextDouble() - .5) * .04,
+              (random.nextDouble() - .5) * .04,
+            ),
+        .006 + random.nextDouble() * .012,
+        DateTime.now().millisecondsSinceEpoch,
+      ));
+      if (_foam.length > 70) _foam.removeAt(0);
+      if (!_foamTick.isAnimating) _foamTick.repeat();
+      _foamStop?.cancel();
+      _foamStop = Timer(const Duration(milliseconds: 1800), () {
+        _foamTick.stop();
+        if (mounted) setState(_foam.clear);
+      });
+    }
+    setState(() {});
+  }
+
+  /// Where the picture's point [local] (in the stage box) really is, when
+  /// the picture is drawn close up.
+  Offset _pictureFraction(Offset local, Size size) {
+    final f = round.focus;
+    if (f == null) return Offset(local.dx / size.width, local.dy / size.height);
+    final centre = Offset(size.width * .5, size.height * .55);
+    final p =
+        (local - centre) / f[2] + Offset(f[0] * size.width, f[1] * size.height);
+    return Offset(p.dx / size.width, p.dy / size.height);
+  }
+
+  /// A brush in the hand is drawn bigger than other tools, next to the
+  /// close-up mouth.
+  static const _brushScale = 1.5;
+  Timer? _foamStop;
+
+  /// The brush is held by its handle: its head is up and to the right of
+  /// the finger.
+  Offset get _brushHead {
+    final side = _toolSide() * _brushScale;
+    return Offset(side * .45, -side * .5);
   }
 
   void _stirBy(double distance) {
@@ -748,9 +856,14 @@ class _SceneGameViewState extends State<SceneGameView>
     setState(() => _toolAt = _toRoot(global));
     final stage = _box(_stageKey);
     if (stage == null) return;
+    if (step.mode == SceneStepMode.rub) {
+      final local = stage.globalToLocal(global + _brushHead);
+      if (!(Offset.zero & stage.size).inflate(12).contains(local)) return;
+      _rubAt(_pictureFraction(local, stage.size), moved);
+      return;
+    }
     final local = stage.globalToLocal(global);
     if (!(Offset.zero & stage.size).inflate(12).contains(local)) return;
-    _rubAt(local, stage.size);
     if (_done || step.mode != SceneStepMode.stir) return;
     _stirBy(moved);
   }
@@ -887,10 +1000,23 @@ class _SceneGameViewState extends State<SceneGameView>
               if (_guide != null) _fingerOverlay(),
               if (toolMode && _toolAt != null)
                 Positioned(
-                  left: _toolAt!.dx - toolSide / 2,
-                  top: _toolAt!.dy - toolSide / 2,
-                  width: toolSide,
-                  height: toolSide,
+                  // A brush is held by its handle (the finger on the grip).
+                  left:
+                      _toolAt!.dx -
+                      (current.mode == SceneStepMode.rub
+                          ? toolSide * _brushScale * .3
+                          : toolSide * .5),
+                  top:
+                      _toolAt!.dy -
+                      (current.mode == SceneStepMode.rub
+                          ? toolSide * _brushScale * .7
+                          : toolSide * .5),
+                  width: current.mode == SceneStepMode.rub
+                      ? toolSide * _brushScale
+                      : toolSide,
+                  height: current.mode == SceneStepMode.rub
+                      ? toolSide * _brushScale
+                      : toolSide,
                   child: IgnorePointer(child: _visual(current.piece)),
                 ),
               if (_flight case final flight?) _flightOverlay(flight),
@@ -970,115 +1096,160 @@ class _SceneGameViewState extends State<SceneGameView>
           child: ClipRRect(
             key: _stageKey,
             borderRadius: BorderRadius.circular(SegRadius.lg),
-            child: Stack(
-              clipBehavior: Clip.hardEdge,
-              children: [
-                Positioned.fill(
-                  child: AnimatedSwitcher(
-                    duration: !widget.hint.animate
-                        ? Duration.zero
-                        : Duration(milliseconds: round.rise ? 900 : 450),
-                    // A sprout or a flower comes up out of the pot.
-                    transitionBuilder: (child, animation) => !round.rise
-                        ? FadeTransition(opacity: animation, child: child)
-                        : FadeTransition(
-                            opacity: animation,
-                            child: ScaleTransition(
-                              alignment: const Alignment(0, .35),
-                              scale: Tween(begin: .82, end: 1.0).animate(
-                                CurvedAnimation(
-                                  parent: animation,
-                                  curve: Curves.easeOutBack,
-                                ),
-                              ),
-                              child: child,
-                            ),
-                          ),
-                    child: Image.asset(
-                      ChildCast.of(_picture),
-                      key: ValueKey(_picture),
-                      fit: BoxFit.contain,
-                      excludeFromSemantics: true,
-                    ),
-                  ),
-                ),
-                // Still yellowish; clears as the stains go.
-                if (current != null && round.tints.isNotEmpty)
-                  for (final tint in round.tints)
-                    at(
-                      tint,
-                      IgnorePointer(
-                        child: Opacity(
-                          opacity:
-                              .55 *
-                              (1 -
-                                  _cleaned.length /
-                                      math.max(1, current.spots.length)),
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFDDB65E),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                for (var i = 0; i < round.steps.length; i++)
-                  if (_placed.contains(i))
-                    at(
-                      round.steps[i].zone,
-                      // While it is stirred, everything in the bowl goes round.
-                      Transform.translate(
-                        offset: stirring
-                            ? Offset.fromDirection(
-                                _stirred / 55 + i * 1.7,
-                                size.shortestSide * .035,
-                              )
-                            : Offset.zero,
-                        child: _onPicture(round.steps[i], size),
-                      ),
-                      key: ValueKey('scene-placed-$i'),
-                    )
-                  else if (round.steps[i].shadow)
-                    at(
-                      round.steps[i].zone,
-                      // The piece's own shape, faint and without colour.
-                      Opacity(
-                        opacity: .34,
-                        child: ColorFiltered(
-                          colorFilter: const ColorFilter.matrix(_ghost),
-                          child: _onPicture(round.steps[i], size),
-                        ),
-                      ),
-                      key: ValueKey('scene-shadow-$i'),
-                    ),
-                if (_mixed) ..._saladPieces(size),
-                // The near side of the picture (a bowl's front wall): what
-                // is put in goes behind it.
-                if (round.front case final front? when _picture == round.stage)
+            child: Transform(
+              // A close-up (the mouth): the looked-at place comes to the
+              // middle, drawn bigger (see [_pictureFraction]).
+              transform: round.focus == null
+                  ? Matrix4.identity()
+                  : (Matrix4.translationValues(
+                        size.width * .5,
+                        size.height * .55,
+                        0,
+                      )
+                      ..scaleByDouble(round.focus![2], round.focus![2], 1, 1)
+                      ..translateByDouble(
+                        -round.focus![0] * size.width,
+                        -round.focus![1] * size.height,
+                        0,
+                        1,
+                      )),
+              child: Stack(
+                clipBehavior: Clip.hardEdge,
+                children: [
                   Positioned.fill(
-                    child: IgnorePointer(
+                    child: AnimatedSwitcher(
+                      duration: !widget.hint.animate
+                          ? Duration.zero
+                          : Duration(milliseconds: round.rise ? 900 : 450),
+                      // A sprout or a flower comes up out of the pot.
+                      transitionBuilder: (child, animation) => !round.rise
+                          ? FadeTransition(opacity: animation, child: child)
+                          : FadeTransition(
+                              opacity: animation,
+                              child: ScaleTransition(
+                                alignment: const Alignment(0, .35),
+                                scale: Tween(begin: .82, end: 1.0).animate(
+                                  CurvedAnimation(
+                                    parent: animation,
+                                    curve: Curves.easeOutBack,
+                                  ),
+                                ),
+                                child: child,
+                              ),
+                            ),
                       child: Image.asset(
-                        front,
+                        ChildCast.of(_picture),
+                        key: ValueKey(_picture),
                         fit: BoxFit.contain,
                         excludeFromSemantics: true,
                       ),
                     ),
                   ),
-                if (current != null && current.mode == SceneStepMode.rub)
-                  for (var i = 0; i < current.spots.length; i++)
-                    if (!_cleaned.contains(i))
+                  // Still yellowish; clears as the stains go.
+                  if (current != null && round.tints.isNotEmpty)
+                    for (final tint in round.tints)
                       at(
-                        current.spots[i],
-                        GestureDetector(
-                          key: ValueKey('scene-spot-$i'),
-                          behavior: HitTestBehavior.opaque,
-                          onTap: () => _clean(i),
-                          child: CustomPaint(painter: _StainPainter(i)),
+                        tint,
+                        IgnorePointer(
+                          child: Opacity(
+                            opacity:
+                                .55 *
+                                (1 -
+                                        _stains.indexed
+                                                .map(
+                                                  (e) => _cleaned.contains(e.$1)
+                                                      ? 1.0
+                                                      : (_scrub[e.$1] ?? 0)
+                                                            .clamp(0.0, 1.0),
+                                                )
+                                                .fold(0.0, (a, b) => a + b) /
+                                            math.max(1, _stains.length))
+                                    .clamp(0.0, 1.0),
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFDDB65E),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                if (round.recipe && !_done) _recipe(size),
-              ],
+                  for (var i = 0; i < round.steps.length; i++)
+                    if (_placed.contains(i))
+                      at(
+                        round.steps[i].zone,
+                        // While it is stirred, everything in the bowl goes round.
+                        Transform.translate(
+                          offset: stirring
+                              ? Offset.fromDirection(
+                                  _stirred / 55 + i * 1.7,
+                                  size.shortestSide * .035,
+                                )
+                              : Offset.zero,
+                          child: _onPicture(round.steps[i], size),
+                        ),
+                        key: ValueKey('scene-placed-$i'),
+                      )
+                    else if (round.steps[i].shadow)
+                      at(
+                        round.steps[i].zone,
+                        // The piece's own shape, faint and without colour.
+                        Opacity(
+                          opacity: .34,
+                          child: ColorFiltered(
+                            colorFilter: const ColorFilter.matrix(_ghost),
+                            child: _onPicture(round.steps[i], size),
+                          ),
+                        ),
+                        key: ValueKey('scene-shadow-$i'),
+                      ),
+                  if (_mixed) ..._saladPieces(size),
+                  // The near side of the picture (a bowl's front wall): what
+                  // is put in goes behind it.
+                  if (round.front case final front?
+                      when _picture == round.stage)
+                    Positioned.fill(
+                      child: IgnorePointer(
+                        child: Image.asset(
+                          front,
+                          fit: BoxFit.contain,
+                          excludeFromSemantics: true,
+                        ),
+                      ),
+                    ),
+                  // Stains fade as they are scrubbed; foam where the brush went.
+                  if (current != null && current.mode == SceneStepMode.rub)
+                    for (var i = 0; i < _stains.length; i++)
+                      if (!_cleaned.contains(i))
+                        at(
+                          _stains[i],
+                          IgnorePointer(
+                            key: ValueKey('scene-spot-$i'),
+                            child: Opacity(
+                              opacity: (1 - (_scrub[i] ?? 0))
+                                  .clamp(0.0, 1.0)
+                                  .toDouble(),
+                              child: CustomPaint(painter: _StainPainter(i)),
+                            ),
+                          ),
+                        ),
+                  if (_foam.isNotEmpty)
+                    Positioned.fill(
+                      child: IgnorePointer(
+                        child: AnimatedBuilder(
+                          animation: _foamTick,
+                          builder: (context, _) => CustomPaint(
+                            painter: _FoamPainter(
+                              List.of(_foam),
+                              DateTime.now().millisecondsSinceEpoch,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (round.recipe && !_done) _recipe(size),
+                ],
+              ),
             ),
           ),
         );

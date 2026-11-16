@@ -128,6 +128,46 @@ void main() {
     }
 
 
+    // Tooth brushing: the brush is held by its handle, close to the mouth;
+    // scrubbing leaves foam and the stains fade.
+    for (final gender in ['girl', 'boy']) {
+      final state = await newState(gender);
+      await open(
+        GameScreen(
+          state: state,
+          themeId: 'cleaning',
+          gameId: 'G60',
+          difficulty: Difficulty.medium,
+        ),
+      );
+      await settle(8);
+      await shot('G60-$gender-0-start');
+      final tool = tester.getCenter(find.byKey(const ValueKey('scene-tool')));
+      final stage = tester.getRect(find.byKey(const ValueKey('scene-stage')));
+      final g = await tester.startGesture(tool);
+      await tester.pump(const Duration(milliseconds: 50));
+      // The finger goes below-left of the mouth so the brush head is on it.
+      final side = stage.height * .36 * 1.5;
+      final head = Offset(side * .45, -side * .5);
+      final mouth = Offset(stage.center.dx, stage.top + stage.height * .55);
+      await g.moveTo(mouth - head);
+      await tester.pump(const Duration(milliseconds: 50));
+      for (var i = 0; i < 40; i++) {
+        await g.moveBy(Offset(i.isEven ? 90 : -90, 0));
+        await tester.pump(const Duration(milliseconds: 30));
+      }
+      await shot('G60-$gender-1-brushing');
+      for (var i = 0; i < 120; i++) {
+        await g.moveBy(Offset(i.isEven ? 140 : -140, (i % 10 - 5) * 9.0));
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+      await g.up();
+      await settle(3);
+      await shot('G60-$gender-2-after');
+      await close();
+      state.dispose();
+    }
+
     // Fruit salad: three fruits in, stirred, two pieces of each in the bowl.
     for (final gender in ['boy', 'girl']) {
       final state = await newState(gender);
@@ -198,6 +238,52 @@ void main() {
       await shot('story-$id-girl-choices');
       await close();
       g.dispose();
+    }
+
+    // The end of a story: its picture, the praise and the ringed button.
+    {
+      final g = await newState('girl');
+      final story = g.content.stories.firstWhere((x) => x.id == 'teeth');
+      await open(StoryPlayerScreen(state: g, story: story));
+      await settle(4);
+      var k = 0;
+      for (var i = 0; i < 60; i++) {
+        if (find.byKey(const ValueKey('story-end')).evaluate().isNotEmpty) {
+          break;
+        }
+        final next = find.byKey(const ValueKey('story-next'));
+        final choice = find.byKey(ValueKey('story-choice-${k % 3}'));
+        if (next.evaluate().isNotEmpty) {
+          await tester.tap(next, warnIfMissed: false);
+        } else if (choice.evaluate().isNotEmpty) {
+          await tester.tap(choice, warnIfMissed: false);
+          k++;
+        } else {
+          k++;
+        }
+        await settle(6);
+      }
+      await settle(4);
+      await shot('story-end-girl');
+      await close();
+      g.dispose();
+    }
+
+    // Sen de Çal: the hold bar high on the key, the name under it.
+    {
+      final b = await newState('boy');
+      await open(
+        GameScreen(
+          state: b,
+          themeId: 'music',
+          gameId: 'G75',
+          difficulty: Difficulty.hard,
+        ),
+      );
+      await settle(30);
+      await shot('G75-keys');
+      await close();
+      b.dispose();
     }
 
     // The home Learn shelf for a girl's profile shows Ayşe on "Vücudumuz".

@@ -132,10 +132,9 @@ void main() {
     expect(find.text('EN praise'), findsOneWidget);
     expect(audio.played.last, 'en/praise.mp3');
 
-    // Again starts from the first page.
-    await tester.tap(find.byKey(const ValueKey('story-again')));
-    await tester.pump(const Duration(milliseconds: 400));
-    expect(find.text('EN p1'), findsOneWidget);
+    // One way on: the ringed button back to the stories; no "again".
+    expect(find.byKey(const ValueKey('story-shelf')), findsOneWidget);
+    expect(find.byKey(const ValueKey('story-again')), findsNothing);
     await tester.pumpWidget(const SizedBox());
   });
 

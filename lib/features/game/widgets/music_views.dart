@@ -354,36 +354,34 @@ class _EchoViewState extends State<EchoView> {
                   ),
               ],
             ),
+            // The hold bar sits high on the key, where the hand does not
+            // cover it, with the note's name under it (Yunus, 16 November
+            // 2026); the finger hint stays at the bottom.
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                if (next)
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 6),
-                    child: Icon(
-                      Icons.touch_app_rounded,
-                      size: 40,
-                      color: SegColors.accent,
-                    ),
-                  ),
-                // Holding a long note fills the key's bar.
-                if (holding)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: TweenAnimationBuilder<double>(
-                      tween: Tween(begin: 0, end: 1),
-                      duration: _holdNeeded,
-                      builder: (context, t, _) => LinearProgressIndicator(
-                        value: t,
-                        minHeight: 8,
-                        color: Colors.white,
-                        backgroundColor: Colors.white24,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
+                const SizedBox(height: 14),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: SizedBox(
+                    height: 10,
+                    child: holding
+                        ? TweenAnimationBuilder<double>(
+                            tween: Tween(begin: 0, end: 1),
+                            duration: _holdNeeded,
+                            builder: (context, t, _) => LinearProgressIndicator(
+                              key: ValueKey('piano-hold-$key'),
+                              value: t,
+                              minHeight: 10,
+                              color: Colors.white,
+                              backgroundColor: Colors.white24,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          )
+                        : null,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
                   child: FittedBox(
                     child: Text(
                       _noteNames[key],
@@ -396,6 +394,16 @@ class _EchoViewState extends State<EchoView> {
                     ),
                   ),
                 ),
+                const Spacer(),
+                if (next)
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Icon(
+                      Icons.touch_app_rounded,
+                      size: 40,
+                      color: SegColors.accent,
+                    ),
+                  ),
               ],
             ),
           ),

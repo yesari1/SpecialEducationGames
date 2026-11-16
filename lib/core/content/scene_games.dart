@@ -147,6 +147,10 @@ class SceneRound {
   /// Cut pieces of what was put in (fruit -> piece picture): once stirred,
   /// the bowl holds two pieces of each instead of the whole fruit.
   final Map<String, String> pieces;
+
+  /// The picture is shown close up: [x, y] of the place to look at (as
+  /// fractions of the picture) and how much bigger it is drawn.
+  final List<double>? focus;
   const SceneRound({
     required this.key,
     required this.tier,
@@ -165,6 +169,7 @@ class SceneRound {
     this.rise = false,
     this.finishAudio = const {},
     this.pieces = const {},
+    this.focus,
   });
 
   factory SceneRound.fromJson(Map<String, dynamic> j) => SceneRound(
@@ -193,6 +198,7 @@ class SceneRound {
       (j['finishAudio'] ?? const {}) as Map,
     ),
     pieces: Map<String, String>.from((j['pieces'] ?? const {}) as Map),
+    focus: (j['focus'] as List?)?.map((v) => (v as num).toDouble()).toList(),
   );
 }
 
