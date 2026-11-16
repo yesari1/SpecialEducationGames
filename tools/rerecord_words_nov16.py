@@ -48,7 +48,7 @@ WORDS = [
 ] + [f'assets/audio/tr/music/{m}_selected.mp3' for m in MUSIC]
 
 
-SPOKEN = {'Kol.': 'Kol!', 'Org.': 'Org!', 'Ud.': 'Ud!', 'Tef.': 'Tef!'}
+SPOKEN = {'Kol.': 'Kol!', 'Org.': 'Org!', 'Ud.': 'Ud!', 'Tef.': 'tef'}  # 'tef' (lower case, no stop) was the one Yunus picked
 
 
 def synthesize(text, settings, key):

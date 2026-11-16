@@ -9145,15 +9145,15 @@
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
     "requested_at": "2026-11-16T18:32:51.178690+00:00",
-    "sha256": "e87446b64f724dc7f97ad63da9b169e5222692eac356da413a087a9620b9f3b9",
+    "sha256": "7aab42fd33479d395860c12cbe15535f5113b3305ac2bcaad4d4508602a5ac20",
     "text": "Doktor.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
       "similarity_boost": 0.8,
-      "speed": 0.9,
-      "stability": 0.75,
-      "style": 0.1,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
       "use_speaker_boost": true
     }
   },
@@ -16423,15 +16423,15 @@
     "model_id": "eleven_v4",
     "post": "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,loudnorm=I=-16:TP=-1.5:LRA=11",
     "requested_at": "2026-11-16T18:32:51.178690+00:00",
-    "sha256": "2e9332f5eda925a3c64dcd0c409bea241b0de6cad2087e6f07c85a6ab38b1ed7",
+    "sha256": "439d29cfc35ffd888ea04be07674c09800a69733e9eceab67d1e0494c07f3175",
     "text": "Öğren.",
     "voice_id": "uvU9jrgGLWNPeNA4NgNT",
     "voice_name": "İrem",
     "voice_settings": {
       "similarity_boost": 0.8,
-      "speed": 0.9,
-      "stability": 0.75,
-      "style": 0.1,
+      "speed": 0.95,
+      "stability": 0.5,
+      "style": 0.35,
       "use_speaker_boost": true
     }
   },
