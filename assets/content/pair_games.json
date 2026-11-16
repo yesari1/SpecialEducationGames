@@ -2948,7 +2948,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_1.mp3",
           "en": "assets/audio/en/scenes/g70_done_1.mp3"
-        }
+        },
+        "result": "assets/images/play/work_school.webp"
       },
       {
         "target": "place.hospital",
@@ -2964,7 +2965,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_2.mp3",
           "en": "assets/audio/en/scenes/g70_done_2.mp3"
-        }
+        },
+        "result": "assets/images/play/work_hospital.webp"
       },
       {
         "target": "place.restaurant",
@@ -2980,7 +2982,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_3.mp3",
           "en": "assets/audio/en/scenes/g70_done_3.mp3"
-        }
+        },
+        "result": "assets/images/play/work_restaurant.webp"
       },
       {
         "target": "place.farm",
@@ -2996,7 +2999,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_4.mp3",
           "en": "assets/audio/en/scenes/g70_done_4.mp3"
-        }
+        },
+        "result": "assets/images/play/work_farm.webp"
       },
       {
         "target": "place.fire_station",
@@ -3012,7 +3016,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_5.mp3",
           "en": "assets/audio/en/scenes/g70_done_5.mp3"
-        }
+        },
+        "result": "assets/images/play/work_fire_station.webp"
       },
       {
         "target": "place.bakery",
@@ -3028,7 +3033,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_6.mp3",
           "en": "assets/audio/en/scenes/g70_done_6.mp3"
-        }
+        },
+        "result": "assets/images/play/work_bakery.webp"
       },
       {
         "target": "place.police_station",
@@ -3044,7 +3050,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_7.mp3",
           "en": "assets/audio/en/scenes/g70_done_7.mp3"
-        }
+        },
+        "result": "assets/images/play/work_police_station.webp"
       },
       {
         "target": "place.plane",
@@ -3060,7 +3067,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_8.mp3",
           "en": "assets/audio/en/scenes/g70_done_8.mp3"
-        }
+        },
+        "result": "assets/images/play/work_plane.webp"
       },
       {
         "target": "place.ship",
@@ -3076,7 +3084,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_9.mp3",
           "en": "assets/audio/en/scenes/g70_done_9.mp3"
-        }
+        },
+        "result": "assets/images/play/work_ship.webp"
       },
       {
         "target": "place.pharmacy",
@@ -3092,7 +3101,8 @@
         "resultAudio": {
           "tr": "assets/audio/tr/scenes/g70_done_10.mp3",
           "en": "assets/audio/en/scenes/g70_done_10.mp3"
-        }
+        },
+        "result": "assets/images/play/work_pharmacy.webp"
       }
     ]
   },

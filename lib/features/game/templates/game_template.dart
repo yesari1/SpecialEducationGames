@@ -932,9 +932,12 @@ class PairTemplate extends GameTemplate {
       // Every result picture comes up in the middle; none covers the whole
       // screen (Yunus, 16 November 2026).
       resultInPlace: true,
+      // The result sentence and the praise are heard first; then only a
+      // short look before the next question (Yunus, 17 Nov 2026: waited
+      // about five seconds).
       rightHold: round.result == null
-          ? const Duration(milliseconds: 1500)
-          : const Duration(milliseconds: 2800),
+          ? const Duration(milliseconds: 1000)
+          : const Duration(milliseconds: 1200),
     );
   }
 
@@ -1156,7 +1159,7 @@ class SceneTemplate extends GameTemplate {
         for (final id in round.extras) id: ?ctx.content.anyItem(id),
       },
       fullStage: true,
-      rightHold: const Duration(milliseconds: 2500),
+      rightHold: const Duration(milliseconds: 1500),
       promptCues: {
         for (final lang in const ['tr', 'en']) lang: [?round.audio[lang]],
       },

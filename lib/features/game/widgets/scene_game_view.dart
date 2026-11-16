@@ -833,7 +833,9 @@ class _SceneGameViewState extends State<SceneGameView>
   /// the finger.
   Offset get _brushHead {
     final side = _toolSide() * _brushScale;
-    return Offset(side * .45, -side * .5);
+    // Turned level (see the tool overlay): the bristles are to the left of
+    // the hand and face up, at the teeth.
+    return Offset(-side * .67, -side * .1);
   }
 
   void _stirBy(double distance) {
@@ -1004,7 +1006,7 @@ class _SceneGameViewState extends State<SceneGameView>
                   left:
                       _toolAt!.dx -
                       (current.mode == SceneStepMode.rub
-                          ? toolSide * _brushScale * .3
+                          ? toolSide * _brushScale * .7
                           : toolSide * .5),
                   top:
                       _toolAt!.dy -
@@ -1017,7 +1019,24 @@ class _SceneGameViewState extends State<SceneGameView>
                   height: current.mode == SceneStepMode.rub
                       ? toolSide * _brushScale
                       : toolSide,
-                  child: IgnorePointer(child: _visual(current.piece)),
+                  child: IgnorePointer(
+                    child: current.mode == SceneStepMode.rub
+                        // Held the way people brush: level, the handle to
+                        // the right in the hand, the head in the mouth on
+                        // the left, bristles towards the teeth (Yunus, 17
+                        // Nov 2026). The picture is mirrored and turned
+                        // round the grip.
+                        ? Transform(
+                            origin: Offset(
+                              toolSide * _brushScale * .2,
+                              toolSide * _brushScale * .2,
+                            ),
+                            transform: Matrix4.rotationZ(-math.pi / 4)
+                              ..scaleByDouble(-1, 1, 1, 1),
+                            child: _visual(current.piece),
+                          )
+                        : _visual(current.piece),
+                  ),
                 ),
               if (_flight case final flight?) _flightOverlay(flight),
               if (_effect case final effect?)

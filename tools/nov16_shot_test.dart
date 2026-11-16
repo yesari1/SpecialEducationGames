@@ -148,7 +148,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 50));
       // The finger goes below-left of the mouth so the brush head is on it.
       final side = stage.height * .36 * 1.5;
-      final head = Offset(side * .45, -side * .5);
+      final head = Offset(-side * .67, -side * .1);
       final mouth = Offset(stage.center.dx, stage.top + stage.height * .55);
       await g.moveTo(mouth - head);
       await tester.pump(const Duration(milliseconds: 50));
@@ -195,19 +195,23 @@ void main() {
       state.dispose();
     }
 
-    // "Bugün Ne Giysek?": the result in the middle, the choices gone.
-    for (final gender in ['boy', 'girl']) {
+    // "Bugün Ne Giysek?" and "Nerede Çalışır?": the result in the middle.
+    for (final (gender, theme, gameId) in const [
+      ('boy', 'clothes', 'G64'),
+      ('girl', 'clothes', 'G64'),
+      ('boy', 'jobs', 'G70'),
+    ]) {
       final state = await newState(gender);
       await open(
         GameScreen(
           state: state,
-          themeId: 'clothes',
-          gameId: 'G64',
+          themeId: theme,
+          gameId: gameId,
           difficulty: Difficulty.easy,
         ),
       );
       await settle(6);
-      await shot('G64-$gender-0-start');
+      await shot('$gameId-$gender-0-start');
       final screen = tester.state<State<GameScreen>>(find.byType(GameScreen));
       final target = (screen as dynamic).controller.spec.target.id as String;
       final card = find.byWidgetPredicate(
@@ -215,7 +219,7 @@ void main() {
       );
       await tester.tap(card.first, warnIfMissed: false);
       await settle(3);
-      await shot('G64-$gender-1-result');
+      await shot('$gameId-$gender-1-result');
       await close();
       state.dispose();
     }

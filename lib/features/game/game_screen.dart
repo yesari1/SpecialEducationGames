@@ -833,7 +833,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
               if (spec.resultImagePath case final result?
                   when c.phase == RoundPhase.celebrating && spec.resultInPlace)
                 Positioned.fill(
-                  top: MediaQuery.sizeOf(context).height * .37,
+                  top: MediaQuery.sizeOf(context).height * .43,
                   bottom: SegSpace.s3,
                   child: IgnorePointer(
                     child: TweenAnimationBuilder<double>(

@@ -148,7 +148,9 @@ def g70():
     for i, (who, place, _, _, q_tr, q_en, r_tr, r_en) in enumerate(G70, 1):
         rounds.append({'target': f'place.{place}', 'stimulus': f'jobs.{who}', 'text': text(q_tr, q_en),
                        'audio': line(f'g70_{i}', spoken(q_tr), q_en),
-                       'resultAudio': line(f'g70_done_{i}', r_tr, r_en)})
+                       'resultAudio': line(f'g70_done_{i}', r_tr, r_en),
+                       # The worker at the workplace (Yunus, 17 Nov 2026).
+                       'result': f'assets/images/play/work_{place}.webp'})
     return {'theme': 'jobs', 'look': 'drop', 'choicePool': [f'place.{g[1]}' for g in G70], 'rounds': rounds}
 
 
