@@ -148,14 +148,18 @@ void main() {
       await tester.pump(const Duration(milliseconds: 50));
       // The finger goes below-left of the mouth so the brush head is on it.
       final side = stage.height * .36 * 1.5;
-      final head = Offset(-side * .67, side * .1);
+      final head = Offset(-side * 1.4 * .62, 0);
       final mouth = Offset(stage.center.dx, stage.top + stage.height * .55);
       await g.moveTo(mouth - head);
       await tester.pump(const Duration(milliseconds: 50));
-      for (var i = 0; i < 40; i++) {
+      for (var i = 0; i < 8; i++) {
         await g.moveBy(Offset(i.isEven ? 90 : -90, 0));
         await tester.pump(const Duration(milliseconds: 30));
       }
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 300)),
+      );
+      await tester.pump(const Duration(milliseconds: 16));
       await shot('G60-$gender-1-brushing');
       for (var i = 0; i < 120; i++) {
         await g.moveBy(Offset(i.isEven ? 140 : -140, (i % 10 - 5) * 9.0));

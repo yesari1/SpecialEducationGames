@@ -350,6 +350,8 @@ class _SceneGameViewState extends State<SceneGameView>
       round.stage,
       ?round.front,
       for (final s in round.steps) ?s.after,
+      if (round.steps.any((s) => s.mode == SceneStepMode.rub))
+        'assets/images/play/brush_held_hand.webp',
     }) {
       unawaited(precacheImage(AssetImage(path), context, onError: (_, _) {}));
     }
@@ -831,12 +833,12 @@ class _SceneGameViewState extends State<SceneGameView>
 
   /// The brush is held by its handle: its head is up and to the right of
   /// the finger.
-  Offset get _brushHead {
-    final side = _toolSide() * _brushScale;
-    // Turned level (see the tool overlay): the bristles are to the left of
-    // the hand and point down, at the teeth.
-    return Offset(-side * .67, side * .1);
-  }
+  /// The brush in the hand is this wide (its picture is 2.4 : 1).
+  double get _brushWidth => _toolSide() * _brushScale * 1.4;
+
+  /// Where the bristles are: the head at the left end of the brush, level
+  /// with the hand.
+  Offset get _brushHead => Offset(-_brushWidth * .62, 0);
 
   void _stirBy(double distance) {
     if (!_ready || step.mode != SceneStepMode.stir) return;
@@ -1001,41 +1003,32 @@ class _SceneGameViewState extends State<SceneGameView>
               ),
               if (_guide != null) _fingerOverlay(),
               if (toolMode && _toolAt != null)
-                Positioned(
-                  // A brush is held by its handle (the finger on the grip).
-                  left:
-                      _toolAt!.dx -
-                      (current.mode == SceneStepMode.rub
-                          ? toolSide * _brushScale * .3
-                          : toolSide * .5),
-                  top:
-                      _toolAt!.dy -
-                      (current.mode == SceneStepMode.rub
-                          ? toolSide * _brushScale * .7
-                          : toolSide * .5),
-                  width: current.mode == SceneStepMode.rub
-                      ? toolSide * _brushScale
-                      : toolSide,
-                  height: current.mode == SceneStepMode.rub
-                      ? toolSide * _brushScale
-                      : toolSide,
-                  child: IgnorePointer(
-                    child: current.mode == SceneStepMode.rub
-                        // Held the way people brush (Yunus's drawing, 17
-                        // Nov 2026): level, the handle to the right in the
-                        // hand, the head on the left in the mouth, the
-                        // bristles down on the teeth. Turned round the grip.
-                        ? Transform.rotate(
-                            angle: -math.pi * 3 / 4,
-                            origin: Offset(
-                              toolSide * _brushScale * -.2,
-                              toolSide * _brushScale * .2,
-                            ),
-                            child: _visual(current.piece),
-                          )
-                        : _visual(current.piece),
-                  ),
-                ),
+                current.mode == SceneStepMode.rub
+                    // The child's own hand holds the brush as in brushing
+                    // (Yunus's photo, 17 Nov 2026): seen from the front,
+                    // level, head on the left with its bristles towards
+                    // the teeth, the hand on the handle under the finger.
+                    ? Positioned(
+                        left: _toolAt!.dx - _brushWidth * .75,
+                        top: _toolAt!.dy - _brushWidth / 2.4 * .55,
+                        width: _brushWidth,
+                        height: _brushWidth / 2.4,
+                        child: IgnorePointer(
+                          child: Image.asset(
+                            'assets/images/play/brush_held_hand.webp',
+                            key: const ValueKey('scene-brush-in-hand'),
+                            fit: BoxFit.contain,
+                            excludeFromSemantics: true,
+                          ),
+                        ),
+                      )
+                    : Positioned(
+                        left: _toolAt!.dx - toolSide * .5,
+                        top: _toolAt!.dy - toolSide * .5,
+                        width: toolSide,
+                        height: toolSide,
+                        child: IgnorePointer(child: _visual(current.piece)),
+                      ),
               if (_flight case final flight?) _flightOverlay(flight),
               if (_effect case final effect?)
                 Positioned.fill(
