@@ -8,29 +8,33 @@ import 'package:special_education_games/core/content/content_repository.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('active themes speak every item in its own language', () async {
-    final content = await ContentRepository.load();
-    final problems = <String>[];
-    for (final item in content.items) {
-      final tr = item.audioFor('tr'), en = item.audioFor('en');
-      if (tr == null || en == null) {
-        problems.add('${item.id}: missing audio');
-        continue;
+  test(
+    'active themes speak every item in its own language',
+    () async {
+      final content = await ContentRepository.load();
+      final problems = <String>[];
+      for (final item in content.items) {
+        final tr = item.audioFor('tr'), en = item.audioFor('en');
+        if (tr == null || en == null) {
+          problems.add('${item.id}: missing audio');
+          continue;
+        }
+        // Hundreds of bundled loads in a row need the event loop to turn.
+        await Future<void>.delayed(Duration.zero);
+        final trData = await rootBundle.load(tr);
+        final enData = await rootBundle.load(en);
+        if (trData.lengthInBytes < 1000 || enData.lengthInBytes < 1000) {
+          problems.add('${item.id}: short audio');
+        }
+        if (tr == en ||
+            _same(trData.buffer.asUint8List(), enData.buffer.asUint8List())) {
+          problems.add('${item.id}: TR and EN are the same recording');
+        }
       }
-      // Hundreds of bundled loads in a row need the event loop to turn.
-      await Future<void>.delayed(Duration.zero);
-      final trData = await rootBundle.load(tr);
-      final enData = await rootBundle.load(en);
-      if (trData.lengthInBytes < 1000 || enData.lengthInBytes < 1000) {
-        problems.add('${item.id}: short audio');
-      }
-      if (tr == en ||
-          _same(trData.buffer.asUint8List(), enData.buffer.asUint8List())) {
-        problems.add('${item.id}: TR and EN are the same recording');
-      }
-    }
-    expect(problems, isEmpty);
-  }, timeout: const Timeout(Duration(minutes: 3)));
+      expect(problems, isEmpty);
+    },
+    timeout: const Timeout(Duration(minutes: 3)),
+  );
 
   test('every spoken instruction is bundled and recorded in the manifest', () {
     final manifest =
@@ -51,11 +55,12 @@ void main() {
         'tr' => 'uvU9jrgGLWNPeNA4NgNT',
         _ => 'GZ4PpFJV8ikEGUtBrjK7',
       });
-      // Turkish clips recorded since Nov 2026 use eleven_v4 (clearer Turkish).
+      // Turkish clips recorded since Nov 2026 use eleven_v4 (clearer
+      // Turkish); "Kol" uses turbo v2.5, as v4 always said "Kolon".
       expect(
         clip['model_id'],
         clip['language'] == 'tr'
-            ? anyOf('eleven_multilingual_v2', 'eleven_v4')
+            ? anyOf('eleven_multilingual_v2', 'eleven_v4', 'eleven_turbo_v2_5')
             : 'eleven_multilingual_v2',
       );
     }

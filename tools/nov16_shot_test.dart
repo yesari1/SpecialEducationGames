@@ -148,7 +148,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 50));
       // The finger goes below-left of the mouth so the brush head is on it.
       final side = stage.height * .36 * 1.5;
-      final head = Offset(-side * .67, -side * .1);
+      final head = Offset(-side * .67, side * .1);
       final mouth = Offset(stage.center.dx, stage.top + stage.height * .55);
       await g.moveTo(mouth - head);
       await tester.pump(const Duration(milliseconds: 50));

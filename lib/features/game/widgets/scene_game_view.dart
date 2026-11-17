@@ -834,8 +834,8 @@ class _SceneGameViewState extends State<SceneGameView>
   Offset get _brushHead {
     final side = _toolSide() * _brushScale;
     // Turned level (see the tool overlay): the bristles are to the left of
-    // the hand and face up, at the teeth.
-    return Offset(-side * .67, -side * .1);
+    // the hand and point down, at the teeth.
+    return Offset(-side * .67, side * .1);
   }
 
   void _stirBy(double distance) {
@@ -1006,7 +1006,7 @@ class _SceneGameViewState extends State<SceneGameView>
                   left:
                       _toolAt!.dx -
                       (current.mode == SceneStepMode.rub
-                          ? toolSide * _brushScale * .7
+                          ? toolSide * _brushScale * .3
                           : toolSide * .5),
                   top:
                       _toolAt!.dy -
@@ -1021,18 +1021,16 @@ class _SceneGameViewState extends State<SceneGameView>
                       : toolSide,
                   child: IgnorePointer(
                     child: current.mode == SceneStepMode.rub
-                        // Held the way people brush: level, the handle to
-                        // the right in the hand, the head in the mouth on
-                        // the left, bristles towards the teeth (Yunus, 17
-                        // Nov 2026). The picture is mirrored and turned
-                        // round the grip.
-                        ? Transform(
+                        // Held the way people brush (Yunus's drawing, 17
+                        // Nov 2026): level, the handle to the right in the
+                        // hand, the head on the left in the mouth, the
+                        // bristles down on the teeth. Turned round the grip.
+                        ? Transform.rotate(
+                            angle: -math.pi * 3 / 4,
                             origin: Offset(
-                              toolSide * _brushScale * .2,
+                              toolSide * _brushScale * -.2,
                               toolSide * _brushScale * .2,
                             ),
-                            transform: Matrix4.rotationZ(-math.pi / 4)
-                              ..scaleByDouble(-1, 1, 1, 1),
                             child: _visual(current.piece),
                           )
                         : _visual(current.piece),
