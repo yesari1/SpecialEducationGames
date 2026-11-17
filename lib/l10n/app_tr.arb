@@ -110,6 +110,7 @@
   "familyAccountSignedIn": "Google hesabına giriş yapıldı.",
   "familyAccountLocalProgress": "Ayrıntılı ilerleme bu cihazda saklanır. Günlük özet paylaşımı aşağıda ayrı izin gerektirir.",
   "familyAccountSignIn": "Google ile giriş",
+  "appleSignIn": "Apple ile giriş",
   "familyAccountSignOut": "Çıkış yap",
   "familyAccountCancelled": "Giriş iptal edildi.",
   "familyAccountOffline": "Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.",

@@ -172,6 +172,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get familyAccountSignIn => 'Google ile giriş';
 
   @override
+  String get appleSignIn => 'Apple ile giriş';
+
+  @override
   String get familyAccountSignOut => 'Çıkış yap';
 
   @override

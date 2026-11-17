@@ -49,6 +49,49 @@ class GoogleSignInButton extends StatelessWidget {
   );
 }
 
+/// "Sign in with Apple" in Apple's own style: black, the white Apple logo,
+/// the same size and shape as the Google button next to it.
+class AppleSignInButton extends StatelessWidget {
+  final String label;
+  final VoidCallback? onPressed;
+  const AppleSignInButton({super.key, required this.label, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+    height: 56,
+    child: FilledButton(
+      onPressed: onPressed,
+      style: FilledButton.styleFrom(
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(SegRadius.pill),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: SegSpace.s4),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(Icons.apple, size: 24),
+          const SizedBox(width: SegSpace.s3),
+          Flexible(
+            child: Text(
+              label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: SegText.label.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: 17,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
 /// The Google "G": four coloured arcs and the blue bar.
 class _GoogleGPainter extends CustomPainter {
   const _GoogleGPainter();

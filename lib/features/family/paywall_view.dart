@@ -129,8 +129,13 @@ class _PaywallViewState extends State<PaywallView> {
       final auth = widget.auth!;
       if (auth.account == null) {
         // Google's account chooser right away (e-mail sign-in stays on the
-        // welcome page's "Already have an account?" link).
-        await auth.signIn();
+        // welcome page's "Already have an account?" link); on iOS Apple's
+        // sheet, as the App Store asks for Sign in with Apple.
+        if (auth.appleAvailable) {
+          await auth.signInWithApple();
+        } else {
+          await auth.signIn();
+        }
         if (auth.account == null) auth.issue = null;
       }
       final uid = auth.account?.uid;

@@ -110,6 +110,7 @@
   "familyAccountSignedIn": "Signed in with Google.",
   "familyAccountLocalProgress": "Detailed progress stays on this device. Daily summary sharing requires separate permission below.",
   "familyAccountSignIn": "Sign in with Google",
+  "appleSignIn": "Sign in with Apple",
   "familyAccountSignOut": "Sign out",
   "familyAccountCancelled": "Sign-in cancelled.",
   "familyAccountOffline": "Could not connect. Check the internet connection and try again.",

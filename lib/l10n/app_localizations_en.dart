@@ -172,6 +172,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyAccountSignIn => 'Sign in with Google';
 
   @override
+  String get appleSignIn => 'Sign in with Apple';
+
+  @override
   String get familyAccountSignOut => 'Sign out';
 
   @override

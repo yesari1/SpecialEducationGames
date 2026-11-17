@@ -362,6 +362,12 @@ abstract class AppLocalizations {
   /// **'Sign in with Google'**
   String get familyAccountSignIn;
 
+  /// No description provided for @appleSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Apple'**
+  String get appleSignIn;
+
   /// No description provided for @familyAccountSignOut.
   ///
   /// In en, this message translates to:
