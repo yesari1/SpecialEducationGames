@@ -232,7 +232,7 @@ void main() {
     // away little by little.
     final stage = tester.getRect(find.byKey(const ValueKey('scene-stage')));
     final side = stage.shortestSide * .36 * 1.5;
-    final head = Offset(-side * 1.4 * .62, 0);
+    final head = Offset(-side * 1.3 * .62, side * 1.3 * .03);
     Future<void> scrub(SceneRect r) async {
       final g = await tester.startGesture(
         tester.getCenter(find.byKey(const ValueKey('scene-tool'))),

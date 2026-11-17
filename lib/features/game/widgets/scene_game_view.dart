@@ -351,7 +351,7 @@ class _SceneGameViewState extends State<SceneGameView>
       ?round.front,
       for (final s in round.steps) ?s.after,
       if (round.steps.any((s) => s.mode == SceneStepMode.rub))
-        'assets/images/play/brush_held_hand.webp',
+        'assets/images/play/brush_held.webp',
     }) {
       unawaited(precacheImage(AssetImage(path), context, onError: (_, _) {}));
     }
@@ -833,12 +833,12 @@ class _SceneGameViewState extends State<SceneGameView>
 
   /// The brush is held by its handle: its head is up and to the right of
   /// the finger.
-  /// The brush in the hand is this wide (its picture is 2.4 : 1).
-  double get _brushWidth => _toolSide() * _brushScale * 1.4;
+  /// The brush in the hand is this wide (its picture is 3 : 1).
+  double get _brushWidth => _toolSide() * _brushScale * 1.3;
 
-  /// Where the bristles are: the head at the left end of the brush, level
-  /// with the hand.
-  Offset get _brushHead => Offset(-_brushWidth * .62, 0);
+  /// Where the bristles are: the head at the left end of the brush, a
+  /// little below the finger.
+  Offset get _brushHead => Offset(-_brushWidth * .62, _brushWidth * .03);
 
   void _stirBy(double distance) {
     if (!_ready || step.mode != SceneStepMode.stir) return;
@@ -1004,18 +1004,18 @@ class _SceneGameViewState extends State<SceneGameView>
               if (_guide != null) _fingerOverlay(),
               if (toolMode && _toolAt != null)
                 current.mode == SceneStepMode.rub
-                    // The child's own hand holds the brush as in brushing
-                    // (Yunus's photo, 17 Nov 2026): seen from the front,
-                    // level, head on the left with its bristles towards
-                    // the teeth, the hand on the handle under the finger.
+                    // The brush as in brushing (Yunus's photo, 17 Nov
+                    // 2026): seen from the front, level, head on the left
+                    // with its bristles towards the teeth, no hand; the
+                    // finger is on the grip.
                     ? Positioned(
                         left: _toolAt!.dx - _brushWidth * .75,
-                        top: _toolAt!.dy - _brushWidth / 2.4 * .55,
+                        top: _toolAt!.dy - _brushWidth / 3 * .5,
                         width: _brushWidth,
-                        height: _brushWidth / 2.4,
+                        height: _brushWidth / 3,
                         child: IgnorePointer(
                           child: Image.asset(
-                            'assets/images/play/brush_held_hand.webp',
+                            'assets/images/play/brush_held.webp',
                             key: const ValueKey('scene-brush-in-hand'),
                             fit: BoxFit.contain,
                             excludeFromSemantics: true,
