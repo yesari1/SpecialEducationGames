@@ -31,11 +31,17 @@ class GoogleFamilyAuthBackend
   }
 
   Future<void> _initialize() async {
-    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
+    final ios = !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android && !ios) {
       throw const FamilyAuthFailure(FamilyAuthIssue.unavailable);
     }
     await FirebaseClient.ensureInitialized();
+    // iOS signs in with its own OAuth client (from GoogleService-Info.plist).
+    final iosClientId = ios
+        ? (await FirebaseClient.options())['iosClientId'] as String?
+        : null;
     _google ??= GoogleSignIn(
+      clientId: iosClientId,
       serverClientId: _serverClientId,
       scopes: const ['email'],
     );
@@ -104,6 +110,7 @@ class GoogleFamilyAuthBackend
           handleCodeInApp: true,
           androidPackageName: 'com.YeS.OzelEgitimOyunlari',
           androidInstallApp: false,
+          iOSBundleId: 'com.YeS.OzelEgitimOyunlari',
         ),
       );
     } on FirebaseAuthException catch (error) {

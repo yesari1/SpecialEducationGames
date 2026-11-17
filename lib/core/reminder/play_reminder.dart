@@ -28,16 +28,25 @@ class PlayReminder {
     : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
 
   /// The real device, not the target platform a test pretends to be.
-  static bool get supported => !kIsWeb && Platform.isAndroid;
+  static bool get supported =>
+      !kIsWeb && (Platform.isAndroid || Platform.isIOS);
 
   Future<bool> _init() => _ready ??= () async {
     try {
-      return await _plugin.initialize(
-            settings: const InitializationSettings(
-              android: AndroidInitializationSettings('@mipmap/ic_launcher'),
-            ),
-          ) ??
-          false;
+      final ready = await _plugin.initialize(
+        settings: const InitializationSettings(
+          android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+          // iOS asks for permission only through [requestPermission].
+          iOS: DarwinInitializationSettings(
+            requestAlertPermission: false,
+            requestBadgePermission: false,
+            requestSoundPermission: false,
+          ),
+        ),
+      );
+      // iOS reports whether permission is already given here; that is
+      // asked separately, so a finished setup counts as ready.
+      return Platform.isIOS || (ready ?? false);
     } catch (_) {
       return false;
     }
@@ -48,10 +57,19 @@ class PlayReminder {
         AndroidFlutterLocalNotificationsPlugin
       >();
 
-  /// Android's own permission dialog (Android 13+). True when allowed.
+  IOSFlutterLocalNotificationsPlugin? get _ios => _plugin
+      .resolvePlatformSpecificImplementation<
+        IOSFlutterLocalNotificationsPlugin
+      >();
+
+  /// The system's own permission dialog (Android 13+, iOS). True when allowed.
   Future<bool> requestPermission() async {
     if (!supported || !await _init()) return false;
     try {
+      if (Platform.isIOS) {
+        return await _ios?.requestPermissions(alert: true, sound: true) ??
+            false;
+      }
       return await _android?.requestNotificationsPermission() ?? false;
     } catch (_) {
       return false;
@@ -117,6 +135,7 @@ class PlayReminder {
         importance: Importance.defaultImportance,
         priority: Priority.defaultPriority,
       ),
+      iOS: const DarwinNotificationDetails(),
     );
     final from = now ?? DateTime.now();
     try {

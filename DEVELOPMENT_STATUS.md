@@ -2,6 +2,14 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 17 Kasım 2026 — iOS sürümü başlangıcı (iOS dalı, yüklenmedi)
+
+- `Android` dalından (2.0.59) `iOS` dalı açıldı; `flutter create --platforms=ios` ile `ios/` eklendi. Bundle ID `com.YeS.OzelEgitimOyunlari` (Android ile aynı, Yunus onayladı), görünen ad "Özel Eğitim Oyunları", iOS 15+, `UIRequiresFullScreen` (iPad'de yön kilidi çalışsın diye). Xcode 27 için pod hedefi 15.0 ve simülatörde x86_64 hariç.
+- Android'e kilitli yerler iOS'a açıldı: Firebase ayarı (`assets/firebase/ios_options.json`, GoogleService-Info.plist'ten üretilecek; dosya yokken Firebase iOS'ta açılmaz, uygulama çevrimdışı gibi çalışır), Google girişi (iOS client ID ile), Firestore yapılandırma/duyuru okuma, hatırlatma bildirimleri ve izin penceresi, push (APNs anahtarı ve ücretli hesap gelene kadar token alınamaz, sessiz), admin panel cihaz modeli.
+- Satın alma: App Store'da temel plan olmadığı için ürünler `premium_monthly`, `premium_yearly` (aynı abonelik grubu) ve `premium_lifetime`; App Store Connect'te bu ID'lerle açılmalı. Geri yükleme StoreKit 2 ile (giriş istemez). Android yolu değişmedi.
+- Doğrulama: 345 host test (seri) geçti; iPhone 18 Pro simülatöründe tanıtım akışı, ödeme ekranı (ürünler yok, beklenen hata), iOS bildirim izni penceresi, yatay çocuk ana ekranı ve Bul oyunu denendi.
+- Bekleyen: GoogleService-Info.plist (Firebase iOS uygulaması), Apple Developer hesabı (Apple ile giriş, APNs, Associated Domains ile e-posta bağlantısı, App Store ürünleri).
+
 ## 9 Kasım 2026 — Ana ekran bölümleri ve yeni temalar (feature/home-sections, yüklenmedi)
 
 - Çocuk ana ekranı 3 sekme: Öğren, Hikâyeler, Oyun Parkı; her bölümün kendi çizimi ve rengi. Bugünün Yolu, günlük çıkartma ve ilk kurulumdaki plan ekranları kaldırıldı.

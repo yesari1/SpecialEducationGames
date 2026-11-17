@@ -90,7 +90,7 @@ flutter:
   assets:
     - assets/config_defaults.json
     - assets/fonts/OFL.txt
-    - assets/firebase/android_options.json
+    - assets/firebase/
     - assets/content/
     - assets/content/items/
     - assets/sfx/music/

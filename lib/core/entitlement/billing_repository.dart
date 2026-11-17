@@ -13,10 +13,25 @@ abstract final class BillingProducts {
   static const subscription = 'premium';
   static const lifetime = 'premium_lifetime';
   static const all = {subscription, lifetime};
+
+  /// App Store has no base plans: the two subscriptions are separate
+  /// products in one subscription group (create them in App Store Connect
+  /// with these IDs); the lifetime product keeps its Play ID.
+  static const appleMonthly = 'premium_monthly';
+  static const appleYearly = 'premium_yearly';
+  static const apple = {appleMonthly, appleYearly, lifetime};
+
+  /// The plan (monthly, yearly, lifetime) an App Store product ID stands for.
+  static String? applePlan(String productId) => switch (productId) {
+    appleMonthly => 'monthly',
+    appleYearly => 'yearly',
+    lifetime => 'lifetime',
+    _ => null,
+  };
 }
 
 class BillingPlan {
-  final GooglePlayProductDetails product;
+  final ProductDetails product;
   final String id, recurringPrice, period;
   final String? offerToken;
   final bool sevenDayTrial;
@@ -96,7 +111,7 @@ class BillingRepository extends ChangeNotifier {
     error = null;
     notifyListeners();
     try {
-      if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
+      if (kIsWeb || !_android && !_apple) {
         available = false;
         return;
       }
@@ -110,14 +125,39 @@ class BillingRepository extends ChangeNotifier {
           notifyListeners();
         },
       );
-      final response = await store.queryProductDetails(BillingProducts.all);
+      final response = await store.queryProductDetails(
+        _apple ? BillingProducts.apple : BillingProducts.all,
+      );
       if (response.error != null) {
         error = 'store_error';
         return;
       }
       plans = [];
+      if (_apple) {
+        for (final product in response.productDetails) {
+          final id = BillingProducts.applePlan(product.id);
+          if (id == null || plans.any((p) => p.id == id)) continue;
+          plans.add(
+            BillingPlan(
+              product,
+              id,
+              product.price,
+              switch (id) {
+                'monthly' => 'P1M',
+                'yearly' => 'P1Y',
+                _ => '',
+              },
+              null,
+              false,
+              priceMicros: (product.rawPrice * 1000000).round(),
+            ),
+          );
+        }
+      }
       for (final product
-          in response.productDetails.whereType<GooglePlayProductDetails>()) {
+          in _apple
+              ? const <GooglePlayProductDetails>[]
+              : response.productDetails.whereType<GooglePlayProductDetails>()) {
         if (product.id == BillingProducts.lifetime) {
           if (!plans.any((p) => p.lifetime)) {
             plans.add(
@@ -176,8 +216,61 @@ class BillingRepository extends ChangeNotifier {
     }
   }
 
+  bool get _android =>
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+  bool get _apple => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  /// App Store purchases a restore reported (null while none is running).
+  List<PurchaseDetails>? _appleRestored;
+
+  /// App Store: the current entitlements arrive on the purchase stream as
+  /// "restored" (StoreKit 2, no sign-in prompt) before the call returns.
+  Future<void> _restoreApple() async {
+    final restored = _appleRestored = [];
+    try {
+      await store.restorePurchases();
+      // Let the stream deliver what the call sent before it returned.
+      await Future<void>.delayed(const Duration(milliseconds: 300));
+    } finally {
+      _appleRestored = null;
+    }
+    final current = restored
+        .where((p) => BillingProducts.apple.contains(p.productID))
+        .toList();
+    final plan = current
+        .map((p) => BillingProducts.applePlan(p.productID))
+        .where((id) => id == 'monthly' || id == 'yearly')
+        .firstOrNull;
+    if (plan != null && entitlement.subscriptionPlan != plan) {
+      await entitlement.setSubscriptionPlan(plan);
+    }
+    await entitlement.confirmStoreState(
+      plan != null,
+      lifetime: current.any((p) => p.productID == BillingProducts.lifetime),
+    );
+    final times = [
+      for (final p in current)
+        if (int.tryParse(p.transactionDate ?? '') case final ms?)
+          DateTime.fromMillisecondsSinceEpoch(ms),
+    ]..sort();
+    await entitlement.setPurchasedAt(times.lastOrNull);
+    for (final p in current) {
+      if (p.pendingCompletePurchase) await store.completePurchase(p);
+    }
+    notifyListeners();
+  }
+
   Future<void> restore() async {
     if (!available) return;
+    if (_apple) {
+      try {
+        await _restoreApple();
+      } catch (_) {
+        error = 'store_error';
+        notifyListeners();
+      }
+      return;
+    }
     try {
       final addition = store
           .getPlatformAddition<InAppPurchaseAndroidPlatformAddition>();
@@ -230,6 +323,16 @@ class BillingRepository extends ChangeNotifier {
       // Monthly <-> yearly is a plan change of the same subscription: to
       // yearly at once (full yearly price, unused monthly days credited by
       // Play), to monthly when the paid year ends.
+      if (_apple) {
+        // Monthly <-> yearly in one subscription group: the App Store
+        // handles the change (and its timing) itself.
+        final launched = await store.buyNonConsumable(
+          purchaseParam: PurchaseParam(productDetails: plan.product),
+        );
+        if (!launched) pending = false;
+        notifyListeners();
+        return;
+      }
       final owned = ownedSubscription;
       final change =
           owned != null &&
@@ -259,7 +362,15 @@ class BillingRepository extends ChangeNotifier {
 
   Future<void> _purchases(List<PurchaseDetails> purchases) async {
     for (final p in purchases) {
-      if (!BillingProducts.all.contains(p.productID)) continue;
+      final restoring = _appleRestored;
+      if (restoring != null && p.status == PurchaseStatus.restored) {
+        restoring.add(p);
+        continue;
+      }
+      if (!BillingProducts.all.contains(p.productID) &&
+          !(_apple && BillingProducts.apple.contains(p.productID))) {
+        continue;
+      }
       if (p.status == PurchaseStatus.pending) {
         pending = true;
         _storeReportedPending = true;
