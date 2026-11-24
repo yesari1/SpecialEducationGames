@@ -138,7 +138,6 @@ const surveyQuestions = <SurveyQuestion>[
       'Shapes',
     ],
     multiple: true,
-    // Closed theme.
-    retired: {4},
+    // Müzik is offered again (its theme is open; Yunus, 24 Nov 2026).
   ),
 ];

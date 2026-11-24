@@ -296,6 +296,10 @@ class _GameShowcaseState extends State<GameShowcase>
     final tap = _iv(p, .32, .38);
     final sweep = Curves.easeInOut.transform(_iv(p, .4, .78));
     final wave = math.sin(sweep * math.pi * 6);
+    // The balloon fills about the middle half of its square: the brush
+    // starts at its left edge and the colour follows the brush.
+    const from = .22, to = .78;
+    final paintedTo = sweep >= 1 ? 1.0 : from + (to - from) * sweep;
     final pictureRect = Rect.fromCenter(center: picture, width: s, height: s);
     return [
       // The white picture, and the red one revealed behind the brush.
@@ -309,7 +313,7 @@ class _GameShowcaseState extends State<GameShowcase>
               Image.asset(_balloon, fit: BoxFit.contain),
               if (sweep > 0)
                 ClipRect(
-                  clipper: _Reveal(sweep),
+                  clipper: _Reveal(paintedTo),
                   child: ColorFiltered(
                     colorFilter: ColorFilter.mode(red, BlendMode.modulate),
                     child: Image.asset(_balloon, fit: BoxFit.contain),
@@ -347,14 +351,15 @@ class _GameShowcaseState extends State<GameShowcase>
         ),
       if (sweep > 0 && sweep < 1)
         Positioned(
-          left: pictureRect.left + s * sweep - s * .05,
+          left: pictureRect.left + s * paintedTo - s * .04,
           top: pictureRect.top + s * (.42 + .3 * wave) - s * .32,
           child: Transform.rotate(
             angle: .35 * wave,
             child: Icon(
               Icons.brush_rounded,
               size: s * .36,
-              color: SegColors.primaryDeep,
+              // The brush carries the colour that was picked.
+              color: red,
               shadows: const [
                 Shadow(color: Colors.white, blurRadius: 3),
                 Shadow(color: Colors.white, blurRadius: 10),
@@ -519,15 +524,21 @@ class _ToyPiano extends StatelessWidget {
   const _ToyPiano({required this.lit, required this.keyWidth});
   @override
   Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.fromLTRB(2, 6, 2, 4),
+    // A light tray under the keys (no dark frame around them).
+    padding: EdgeInsets.fromLTRB(
+      keyWidth * .12,
+      keyWidth * .16,
+      keyWidth * .12,
+      keyWidth * .1,
+    ),
     decoration: BoxDecoration(
-      color: const Color(0xFF6B4A3A),
-      borderRadius: BorderRadius.circular(SegRadius.sm),
+      color: Colors.white.withValues(alpha: .92),
+      borderRadius: BorderRadius.circular(SegRadius.md),
       boxShadow: [
         BoxShadow(
-          color: SegColors.ink.withValues(alpha: .18),
-          blurRadius: 10,
-          offset: const Offset(0, 4),
+          color: SegColors.ink.withValues(alpha: .12),
+          blurRadius: 14,
+          offset: const Offset(0, 6),
         ),
       ],
     ),
@@ -545,7 +556,12 @@ class _ToyPiano extends StatelessWidget {
     final down = lit == key;
     final edge = (keyWidth * .08).clamp(1.5, 3.0);
     return Container(
-      margin: EdgeInsets.fromLTRB(2, 0, 2, down ? 0 : keyWidth * .12),
+      margin: EdgeInsets.fromLTRB(
+        keyWidth * .06,
+        down ? keyWidth * .08 : 0,
+        keyWidth * .06,
+        down ? 0 : keyWidth * .08,
+      ),
       decoration: BoxDecoration(
         color: down ? colour : Color.lerp(Colors.white, colour, .16),
         borderRadius: BorderRadius.vertical(

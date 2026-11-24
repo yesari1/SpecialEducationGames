@@ -5,8 +5,9 @@
 ## 24 Kasım 2026 — Kurulum ve Premium ekranına hareket (claude/project-thread-i34hcg, PR bekliyor)
 
 - Neden: Yunus, Premium ekranı ve ona giden kurulum ekranları çok sabit; satın almamış kişi oyunlarda ne olduğunu görebilmeli dedi.
-- Premium ekranı (`PaywallView`, ilk kurulumda ve Aile alanında): üstteki sabit resmin yerine `GameShowcase`. Oyunlardan üç kısa an döner: Bul (el kediye dokunur, kedi zıplar, yıldızlar), Sen de Çal (piyano Do-Mi-Sol yakar, el aynılarını çalar, notalar uçar), Boya (kırmızı seçilir, fırça beyaz balonu boyar). Gerçek oyun fotoğrafları, yazı yok. Resim payı en çok 150'den 240'a çıktı; sayfa yine tek ekrana sığar.
+- Premium ekranı (`PaywallView`, ilk kurulumda ve Aile alanında): üstteki sabit resmin yerine `GameShowcase`. Oyunlardan üç kısa an döner: Bul (el kediye dokunur, kedi zıplar, yıldızlar), Sen de Çal (piyano Do-Mi-Sol yakar, el aynılarını çalar, notalar uçar; açık renk tepsi, kahverengi çerçeve yok), Boya (kırmızı seçilir, kırmızı fırça balonun solundan başlar). Gerçek oyun fotoğrafları, yazı yok. Resim payı en çok 150'den 240'a çıktı; sayfa yine tek ekrana sığar.
 - Kurulum: karşılama resmi süzülür, parıltılar yanıp söner, hediye ikonu ara ara sallanır. Her sayfanın parçaları sırayla gelir, seçenekler (yaş, soru, günlük hedef) küçük bir zıplamayla belirir. Yeni sayfa ileri giderken sağdan, geri giderken soldan kayar. Kurulum sayfalarında yine yalnız çizimler var.
+- "En çok neleri seviyor?": Müzik yeniden seçenek (tema açık), 8 seçenek. Kartlarda resim ve ad her zaman ortada (kısa adlı kartlarda sola kayıyordu).
 - Hareketi azalt (uygulama ayarı ya da telefon): hepsi sabit, önizleme kedinin bulunduğu anda durur.
 - Sonsuz döngüler (`AmbientMotion.enabled`) host testlerinde `test/flutter_test_config.dart` ile kapalı, `pumpAndSettle` beklemesin diye.
 - Testler: 345 host test (seri) geçti. Önizleme videoları `flutter test tools/motion_preview_shot_test.dart` (iPhone SE ve 15 Pro Max) ile `artifacts/claude/motion-preview/`. Telefonda elle denenmedi.

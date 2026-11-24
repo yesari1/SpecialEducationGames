@@ -254,7 +254,10 @@ class PictureOption extends StatelessWidget {
                   check,
                 ],
               )
+            // Picture and name in the middle of the card, whatever the
+            // name's length.
             : Stack(
+                alignment: Alignment.topCenter,
                 children: [
                   Column(
                     children: [
