@@ -50,9 +50,14 @@ class _PaywallViewState extends State<PaywallView> {
   double? _restHeight;
   String? _selected; // a plan id
 
+  /// Paid already when the offer opened (then it stays, with "Close").
+  late bool _paidAtOpen;
+  bool _closing = false;
+
   @override
   void initState() {
     super.initState();
+    _paidAtOpen = s.entitlement.isPaid;
     s.billing.addListener(_changed);
     widget.auth?.addListener(_changed);
     // Plans are loaded at app start (main); when that did not get them (Play
@@ -69,7 +74,22 @@ class _PaywallViewState extends State<PaywallView> {
   }
 
   void _changed() {
-    if (mounted) setState(() {});
+    if (!mounted) return;
+    // A purchase went through while the offer was open: say so and leave,
+    // so the buy button cannot be tapped again.
+    if (!_paidAtOpen && !_closing && s.entitlement.isPaid) {
+      _closing = true;
+      final l10n = scopedLocalizations(context, s.locale);
+      showNotice(
+        context,
+        l10n.subscriptionActive,
+        icon: Icons.celebration_rounded,
+        color: SegColors.turquoise,
+      );
+      widget.onDone();
+      return;
+    }
+    setState(() {});
   }
 
   @override
