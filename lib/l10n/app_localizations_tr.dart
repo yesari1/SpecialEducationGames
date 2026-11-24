@@ -321,7 +321,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get subscriptionYearly => 'Yıllık';
 
   @override
-  String get subscriptionWaiting => 'Google Play bekleniyor…';
+  String get subscriptionWaiting => 'Ödeme bekleniyor…';
 
   @override
   String get subscriptionStoreError =>
@@ -1465,4 +1465,23 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gameNewSticker => 'Yeni çıkartma kazandın!';
+
+  @override
+  String get accountNextPaymentNoteApple =>
+      'Sonraki ödeme tarihi ve iptal Ayarlar → adınız → Abonelikler bölümündedir.';
+
+  @override
+  String get paywallLifetimeSubscribedBodyApple =>
+      'Ömür boyu satın aldıktan sonra aboneliğiniz kendiliğinden durmaz. Ödemenin devam etmemesi için Ayarlar → adınız → Abonelikler bölümünden aboneliği iptal edin.';
+
+  @override
+  String get paywallCancelAnytimeApple =>
+      'App Store ayarlarından istediğiniz zaman iptal edebilirsiniz.';
+
+  @override
+  String get familyPaymentAppStore => 'App Store';
+
+  @override
+  String get familyANewVersionIsAvailableYouApple =>
+      'Uygulamanın yeni sürümü var. App Store üzerinden güncelleyebilirsiniz.';
 }

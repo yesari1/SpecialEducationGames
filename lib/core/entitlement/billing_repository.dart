@@ -14,6 +14,15 @@ abstract final class BillingProducts {
   static const lifetime = 'premium_lifetime';
   static const all = {subscription, lifetime};
 
+  /// True when purchases go through the App Store (iOS), not Google Play.
+  static bool get appleStore => defaultTargetPlatform == TargetPlatform.iOS;
+
+  /// Where the user manages or cancels the subscription for this store.
+  static String get manageSubscriptionUrl => appleStore
+      ? 'https://apps.apple.com/account/subscriptions'
+      : 'https://play.google.com/store/account/subscriptions'
+            '?sku=$subscription&package=com.YeS.OzelEgitimOyunlari';
+
   /// App Store has no base plans: the two subscriptions are separate
   /// products in one subscription group (create them in App Store Connect
   /// with these IDs); the lifetime product keeps its Play ID.
@@ -387,6 +396,28 @@ class BillingRepository extends ChangeNotifier {
             await entitlement.setSubscriptionPlan(plan!);
           }
           onPurchased?.call();
+        }
+        if (_apple && p.status == PurchaseStatus.purchased) {
+          // StoreKit verified this transaction: unlock at once. A restore
+          // here runs inside this listener and can miss its own events, which
+          // left the offer open (and Premium off) until the next app start.
+          final id = BillingProducts.applePlan(p.productID);
+          if ((id == 'monthly' || id == 'yearly') &&
+              entitlement.subscriptionPlan != id) {
+            await entitlement.setSubscriptionPlan(id!);
+          }
+          final lifetime = id == 'lifetime';
+          await entitlement.confirmStoreState(
+            !lifetime || entitlement.storeActive,
+            lifetime: lifetime || entitlement.lifetimeOwned,
+          );
+          if (int.tryParse(p.transactionDate ?? '') case final ms?) {
+            await entitlement.setPurchasedAt(
+              DateTime.fromMillisecondsSinceEpoch(ms),
+            );
+          }
+          if (p.pendingCompletePurchase) await store.completePurchase(p);
+          continue;
         }
         // Refresh active ownership from Play before unlocking access.
         await restore();

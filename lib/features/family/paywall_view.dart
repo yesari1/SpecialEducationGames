@@ -49,9 +49,14 @@ class _PaywallViewState extends State<PaywallView> {
   double? _restHeight;
   String? _selected; // a plan id
 
+  /// Paid already when the offer opened (then it stays, with "Close").
+  late bool _paidAtOpen;
+  bool _closing = false;
+
   @override
   void initState() {
     super.initState();
+    _paidAtOpen = s.entitlement.isPaid;
     s.billing.addListener(_changed);
     widget.auth?.addListener(_changed);
     // Plans are loaded at app start (main); when that did not get them (Play
@@ -68,7 +73,22 @@ class _PaywallViewState extends State<PaywallView> {
   }
 
   void _changed() {
-    if (mounted) setState(() {});
+    if (!mounted) return;
+    // A purchase went through while the offer was open: say so and leave,
+    // so the buy button cannot be tapped again.
+    if (!_paidAtOpen && !_closing && s.entitlement.isPaid) {
+      _closing = true;
+      final l10n = scopedLocalizations(context, s.locale);
+      showNotice(
+        context,
+        l10n.subscriptionActive,
+        icon: Icons.celebration_rounded,
+        color: SegColors.turquoise,
+      );
+      widget.onDone();
+      return;
+    }
+    setState(() {});
   }
 
   @override
@@ -175,14 +195,14 @@ class _PaywallViewState extends State<PaywallView> {
       builder: (context) => AlertDialog(
         key: const ValueKey('lifetime-cancel-note'),
         title: Text(l10n.paywallLifetimeSubscribedTitle),
-        content: Text(l10n.paywallLifetimeSubscribedBody),
+        content: Text(
+          BillingProducts.appleStore
+              ? l10n.paywallLifetimeSubscribedBodyApple
+              : l10n.paywallLifetimeSubscribedBody,
+        ),
         actions: [
           TextButton(
-            onPressed: () => _open(
-              'https://play.google.com/store/account/subscriptions'
-              '?sku=${BillingProducts.subscription}'
-              '&package=com.YeS.OzelEgitimOyunlari',
-            ),
+            onPressed: () => _open(BillingProducts.manageSubscriptionUrl),
             child: Text(l10n.subscriptionManage),
           ),
           TextButton(
@@ -405,6 +425,8 @@ class _PaywallViewState extends State<PaywallView> {
       buttonLabel = l10n.paywallContinuePrice(plan.recurringPrice);
       footnote = plan.lifetime
           ? l10n.paywallLifetimeNote
+          : BillingProducts.appleStore
+          ? l10n.paywallCancelAnytimeApple
           : l10n.paywallCancelAnytime;
     } else {
       buttonLabel = l10n.paywallContinue;
@@ -459,7 +481,11 @@ class _PaywallViewState extends State<PaywallView> {
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                for (final text in [l10n.paywallCancelAnytime])
+                for (final text in [
+                  BillingProducts.appleStore
+                      ? l10n.paywallCancelAnytimeApple
+                      : l10n.paywallCancelAnytime,
+                ])
                   Visibility(
                     visible: false,
                     maintainSize: true,
@@ -496,9 +522,7 @@ class _PaywallViewState extends State<PaywallView> {
               if (e.source == PremiumSource.subscription)
                 _SmallLink(
                   label: l10n.subscriptionManage,
-                  onTap: () => _open(
-                    'https://play.google.com/store/account/subscriptions?sku=${BillingProducts.subscription}&package=com.YeS.OzelEgitimOyunlari',
-                  ),
+                  onTap: () => _open(BillingProducts.manageSubscriptionUrl),
                 ),
               if (s.configuration.termsUrl.isNotEmpty)
                 _SmallLink(

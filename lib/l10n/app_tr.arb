@@ -181,7 +181,7 @@
   "subscriptionActive": "Premium erişiminiz açık.",
   "subscriptionMonthly": "Aylık",
   "subscriptionYearly": "Yıllık",
-  "subscriptionWaiting": "Google Play bekleniyor…",
+  "subscriptionWaiting": "Ödeme bekleniyor…",
   "subscriptionStoreError": "Mağazaya bağlanılamadı. Lütfen daha sonra tekrar deneyin.",
   "subscriptionManage": "Aboneliği yönet / iptal et",
   "playTimeBreakTitle": "Bugünlük bu kadar, harikaydın!",
@@ -1003,5 +1003,10 @@
   "parkMusic": "Müzik Aletleri",
   "parkPuzzle": "Yapboz",
   "parkBubbles": "Baloncuklar",
-  "gameNewSticker": "Yeni çıkartma kazandın!"
+  "gameNewSticker": "Yeni çıkartma kazandın!",
+  "accountNextPaymentNoteApple": "Sonraki ödeme tarihi ve iptal Ayarlar → adınız → Abonelikler bölümündedir.",
+  "paywallLifetimeSubscribedBodyApple": "Ömür boyu satın aldıktan sonra aboneliğiniz kendiliğinden durmaz. Ödemenin devam etmemesi için Ayarlar → adınız → Abonelikler bölümünden aboneliği iptal edin.",
+  "paywallCancelAnytimeApple": "App Store ayarlarından istediğiniz zaman iptal edebilirsiniz.",
+  "familyPaymentAppStore": "App Store",
+  "familyANewVersionIsAvailableYouApple": "Uygulamanın yeni sürümü var. App Store üzerinden güncelleyebilirsiniz."
 }
