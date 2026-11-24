@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../app/theme/tokens.dart';
+import '../../app/ui/ambient_motion.dart';
 import '../../app/ui/scene_backdrop.dart';
 
 /// Progress as small dots; the current step is a longer pill.
@@ -524,4 +525,242 @@ class _Line extends StatelessWidget {
       ),
     ),
   );
+}
+
+// --------------------------------------------------------------- motion --
+
+/// Comes in once when its page opens: fades in and rises a little, [index]
+/// steps after the first. [pop]: grows in with a small bounce (choices).
+/// Without [animate] it is simply there.
+class Entrance extends StatefulWidget {
+  final int index;
+  final bool animate, pop;
+  final Widget child;
+  const Entrance({
+    super.key,
+    required this.child,
+    this.index = 0,
+    this.animate = true,
+    this.pop = false,
+  });
+
+  /// Delay between two items; the tenth and later ones come together.
+  static const step = Duration(milliseconds: 60);
+
+  @override
+  State<Entrance> createState() => _EntranceState();
+}
+
+class _EntranceState extends State<Entrance>
+    with SingleTickerProviderStateMixin {
+  static const _length = Duration(milliseconds: 420);
+  late final Duration _delay = Entrance.step * math.min(widget.index, 9);
+  late final AnimationController _in = AnimationController(
+    vsync: this,
+    duration: _delay + _length,
+    value: widget.animate ? 0 : 1,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.animate) _in.forward();
+  }
+
+  @override
+  void dispose() {
+    _in.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.animate) return widget.child;
+    final start = _delay.inMicroseconds / (_delay + _length).inMicroseconds;
+    final t = CurvedAnimation(
+      parent: _in,
+      curve: Interval(start, 1, curve: Curves.easeOutCubic),
+    );
+    final grow = CurvedAnimation(
+      parent: _in,
+      curve: Interval(start, 1, curve: Curves.easeOutBack),
+    );
+    return FadeTransition(
+      opacity: t,
+      child: widget.pop
+          ? ScaleTransition(
+              scale: Tween(begin: .82, end: 1.0).animate(grow),
+              child: widget.child,
+            )
+          : SlideTransition(
+              position: Tween(
+                begin: const Offset(0, .18),
+                end: Offset.zero,
+              ).animate(t),
+              child: widget.child,
+            ),
+    );
+  }
+}
+
+/// The welcome picture: floats gently up and down, small sparkles twinkle
+/// around it. Still with reduced motion.
+class LivelyPicture extends StatefulWidget {
+  final bool animate;
+  final Widget child;
+  const LivelyPicture({super.key, required this.child, this.animate = true});
+  @override
+  State<LivelyPicture> createState() => _LivelyPictureState();
+}
+
+class _LivelyPictureState extends State<LivelyPicture>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _loop = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 3600),
+  );
+
+  /// Sparkles: where (fractions of the card), size and phase.
+  static const _sparkles = [
+    (x: .09, y: .16, size: 18.0, phase: 0.0),
+    (x: .88, y: .12, size: 22.0, phase: .35),
+    (x: .93, y: .62, size: 14.0, phase: .6),
+    (x: .05, y: .7, size: 14.0, phase: .8),
+  ];
+
+  bool get _moving => widget.animate && AmbientMotion.enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    if (_moving) _loop.repeat();
+  }
+
+  @override
+  void didUpdateWidget(LivelyPicture old) {
+    super.didUpdateWidget(old);
+    if (_moving && !_loop.isAnimating) {
+      _loop.repeat();
+    } else if (!_moving) {
+      _loop.stop();
+    }
+  }
+
+  @override
+  void dispose() {
+    _loop.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.animate) return widget.child;
+    return LayoutBuilder(
+      builder: (context, box) => AnimatedBuilder(
+        animation: _loop,
+        child: widget.child,
+        builder: (context, child) {
+          final t = _loop.value;
+          final wave = math.sin(t * math.pi * 2);
+          return Stack(
+            clipBehavior: Clip.none,
+            fit: StackFit.expand,
+            children: [
+              Transform.translate(
+                offset: Offset(0, -5 * wave),
+                child: Transform.rotate(angle: .012 * wave, child: child),
+              ),
+              for (final s in _sparkles)
+                () {
+                  // Each sparkle shines for a part of the loop.
+                  final local = (t - s.phase) % 1;
+                  final glow = local < .4
+                      ? math.sin(local / .4 * math.pi)
+                      : 0.0;
+                  return Positioned(
+                    left: box.maxWidth * s.x - s.size / 2,
+                    top: box.maxHeight * s.y - s.size / 2,
+                    child: Opacity(
+                      opacity: glow,
+                      child: Transform.scale(
+                        scale: .5 + .5 * glow,
+                        child: Transform.rotate(
+                          angle: local * math.pi,
+                          child: Icon(
+                            Icons.auto_awesome_rounded,
+                            size: s.size,
+                            color: SegColors.star,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }(),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
+
+/// A small wiggle now and then (the gift on the welcome page).
+class Wiggle extends StatefulWidget {
+  final bool animate;
+  final Widget child;
+  const Wiggle({super.key, required this.child, this.animate = true});
+  @override
+  State<Wiggle> createState() => _WiggleState();
+}
+
+class _WiggleState extends State<Wiggle> with SingleTickerProviderStateMixin {
+  late final AnimationController _loop = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 2800),
+  );
+
+  bool get _moving => widget.animate && AmbientMotion.enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    if (_moving) _loop.repeat();
+  }
+
+  @override
+  void didUpdateWidget(Wiggle old) {
+    super.didUpdateWidget(old);
+    if (_moving && !_loop.isAnimating) {
+      _loop.repeat();
+    } else if (!_moving) {
+      _loop.stop();
+    }
+  }
+
+  @override
+  void dispose() {
+    _loop.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.animate) return widget.child;
+    return AnimatedBuilder(
+      animation: _loop,
+      child: widget.child,
+      builder: (context, child) {
+        // The first fifth of the loop wiggles, the rest is still.
+        final t = (_loop.value / .2).clamp(0.0, 1.0);
+        final angle = t >= 1 ? 0.0 : math.sin(t * math.pi * 4) * .2 * (1 - t);
+        return Transform.rotate(
+          angle: angle,
+          child: Transform.scale(
+            scale: 1 + .12 * math.sin(t * math.pi),
+            child: child,
+          ),
+        );
+      },
+    );
+  }
 }

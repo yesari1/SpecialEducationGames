@@ -69,6 +69,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int dailyGoal = 15;
   bool saving = false;
   AppState get s => widget.state;
+
+  /// The app's own setting or the phone's: no motion at all.
+  bool get _reduced =>
+      s.reducedMotion || MediaQuery.disableAnimationsOf(context);
+
+  /// The last page change went forward (the new page slides in from the
+  /// right) or back (from the left).
+  bool _forward = true;
   AppLocalizations get l10n => scopedLocalizations(context, s.locale);
 
   @override
@@ -121,6 +129,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _next() {
     FocusScope.of(context).unfocus();
+    _forward = true;
     // Install funnel: which setup screen people leave (first run only).
     if (!widget.addChild) {
       if (step == OnboardingStep.child) unawaited(s.funnelStep('obChild'));
@@ -165,6 +174,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _back() {
     FocusScope.of(context).unfocus();
+    _forward = false;
     setState(() {
       switch (step) {
         case OnboardingStep.welcome:
@@ -310,6 +320,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     bool fit = false,
     Widget? fill,
   }) {
+    // The page's parts come in one after another.
+    final parts = [
+      for (var i = 0; i < children.length; i++)
+        Entrance(index: i, animate: !_reduced, child: children[i]),
+    ];
     final dots = _progressIndex >= 0
         ? OnboardingDots(
             index: _progressIndex,
@@ -394,7 +409,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               final column = Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: children,
+                                children: parts,
                               );
                               return FittedBox(
                                 fit: BoxFit.scaleDown,
@@ -415,7 +430,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             SegSpace.s5,
                             SegSpace.s5,
                           ),
-                          children: children,
+                          children: parts,
                         ),
                 ),
               ),
@@ -499,10 +514,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
             padding: const EdgeInsets.all(SegSpace.s2),
-            child: Image.asset(
-              '$_illustrations/hero_welcome.png',
-              fit: BoxFit.contain,
-              excludeFromSemantics: true,
+            child: LivelyPicture(
+              animate: !_reduced,
+              child: Image.asset(
+                '$_illustrations/hero_welcome.png',
+                fit: BoxFit.contain,
+                excludeFromSemantics: true,
+              ),
             ),
           ),
         ),
@@ -539,10 +557,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         child: Row(
           children: [
-            const Icon(
-              Icons.card_giftcard_rounded,
-              color: SegColors.accentDeep,
-              size: 28,
+            Wiggle(
+              animate: !_reduced,
+              child: const Icon(
+                Icons.card_giftcard_rounded,
+                color: SegColors.accentDeep,
+                size: 28,
+              ),
             ),
             const SizedBox(width: SegSpace.s3),
             Expanded(
@@ -723,15 +744,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               for (var age = 2; age <= 10; age++)
                 SizedBox(
                   width: width,
-                  child: AgeChoice(
-                    key: ValueKey('age-$age'),
-                    label: age == 10 ? l10n.obAgeTenPlus : '$age',
-                    semanticsLabel: age == 10
-                        ? l10n.obAgeTenPlus
-                        : l10n.obAgeYears(age),
-                    selected: ageYears == age,
-                    onTap: () =>
-                        setState(() => ageYears = ageYears == age ? null : age),
+                  child: Entrance(
+                    index: age - 2,
+                    pop: true,
+                    animate: !_reduced,
+                    child: AgeChoice(
+                      key: ValueKey('age-$age'),
+                      label: age == 10 ? l10n.obAgeTenPlus : '$age',
+                      semanticsLabel: age == 10
+                          ? l10n.obAgeTenPlus
+                          : l10n.obAgeYears(age),
+                      selected: ageYears == age,
+                      onTap: () => setState(
+                        () => ageYears = ageYears == age ? null : age,
+                      ),
+                    ),
                   ),
                 ),
             ],
@@ -772,22 +799,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 for (final i in q.shown)
                   SizedBox(
                     width: width,
-                    child: PictureOption(
-                      key: ValueKey('survey-option-$i'),
-                      label: options[i],
-                      picture: _optionPicture(q.key, i),
-                      wide: columns == 1,
-                      selected: selected.contains(i),
-                      multiple: q.multiple,
-                      onTap: () => setState(() {
-                        if (q.multiple) {
-                          final next = {...selected};
-                          if (!next.add(i)) next.remove(i);
-                          answers[q.key] = next.toList()..sort();
-                        } else {
-                          answers[q.key] = i;
-                        }
-                      }),
+                    child: Entrance(
+                      index: q.shown.indexOf(i),
+                      pop: true,
+                      animate: !_reduced,
+                      child: PictureOption(
+                        key: ValueKey('survey-option-$i'),
+                        label: options[i],
+                        picture: _optionPicture(q.key, i),
+                        wide: columns == 1,
+                        selected: selected.contains(i),
+                        multiple: q.multiple,
+                        onTap: () => setState(() {
+                          if (q.multiple) {
+                            final next = {...selected};
+                            if (!next.add(i)) next.remove(i);
+                            answers[q.key] = next.toList()..sort();
+                          } else {
+                            answers[q.key] = i;
+                          }
+                        }),
+                      ),
                     ),
                   ),
               ],
@@ -841,13 +873,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       _body(l10n.obGoalBody),
       const SizedBox(height: SegSpace.s5),
       for (final minutes in const [10, 15, 20]) ...[
-        GoalOption(
-          key: ValueKey('goal-$minutes'),
-          label: l10n.obGoalMinutes(minutes),
-          badge: minutes == 15 ? l10n.obRecommended : null,
-          minutes: minutes,
-          selected: dailyGoal == minutes,
-          onTap: () => setState(() => dailyGoal = minutes),
+        Entrance(
+          index: minutes ~/ 5 - 2,
+          pop: true,
+          animate: !_reduced,
+          child: GoalOption(
+            key: ValueKey('goal-$minutes'),
+            label: l10n.obGoalMinutes(minutes),
+            badge: minutes == 15 ? l10n.obRecommended : null,
+            minutes: minutes,
+            selected: dailyGoal == minutes,
+            onTap: () => setState(() => dailyGoal = minutes),
+          ),
         ),
         const SizedBox(height: SegSpace.s3),
       ],
@@ -945,7 +982,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       OnboardingStep.trial => _trial(),
       OnboardingStep.handoff => _handoff(),
     };
-    final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
+    final reduced = _reduced;
+    final current = ValueKey('${step.name}-$question');
     // System Back walks back through the steps; only the first step leaves.
     return PopScope(
       canPop: step == OnboardingStep.welcome,
@@ -954,10 +992,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       },
       child: AnimatedSwitcher(
         duration: reduced ? Duration.zero : SegMotion.appear,
-        child: KeyedSubtree(
-          key: ValueKey('${step.name}-$question'),
-          child: page,
+        // The new page slides in a little (from the right going forward,
+        // from the left going back) while the old one fades out.
+        transitionBuilder: (child, animation) => FadeTransition(
+          opacity: animation,
+          child: child.key == current
+              ? SlideTransition(
+                  position:
+                      Tween(
+                        begin: Offset(_forward ? .12 : -.12, 0),
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeOutCubic,
+                        ),
+                      ),
+                  child: child,
+                )
+              : child,
         ),
+        child: KeyedSubtree(key: current, child: page),
       ),
     );
   }
