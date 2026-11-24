@@ -150,8 +150,13 @@ class _PaywallViewState extends State<PaywallView> {
       final auth = widget.auth!;
       if (auth.account == null) {
         // Google's account chooser right away (e-mail sign-in stays on the
-        // welcome page's "Already have an account?" link).
-        await auth.signIn();
+        // welcome page's "Already have an account?" link); on iOS Apple's
+        // sheet, as the App Store asks for Sign in with Apple.
+        if (auth.appleAvailable) {
+          await auth.signInWithApple();
+        } else {
+          await auth.signIn();
+        }
         if (auth.account == null) auth.issue = null;
       }
       final uid = auth.account?.uid;
@@ -191,14 +196,14 @@ class _PaywallViewState extends State<PaywallView> {
       builder: (context) => AlertDialog(
         key: const ValueKey('lifetime-cancel-note'),
         title: Text(l10n.paywallLifetimeSubscribedTitle),
-        content: Text(l10n.paywallLifetimeSubscribedBody),
+        content: Text(
+          BillingProducts.appleStore
+              ? l10n.paywallLifetimeSubscribedBodyApple
+              : l10n.paywallLifetimeSubscribedBody,
+        ),
         actions: [
           TextButton(
-            onPressed: () => _open(
-              'https://play.google.com/store/account/subscriptions'
-              '?sku=${BillingProducts.subscription}'
-              '&package=com.YeS.OzelEgitimOyunlari',
-            ),
+            onPressed: () => _open(BillingProducts.manageSubscriptionUrl),
             child: Text(l10n.subscriptionManage),
           ),
           TextButton(
@@ -424,6 +429,8 @@ class _PaywallViewState extends State<PaywallView> {
       buttonLabel = l10n.paywallContinuePrice(plan.recurringPrice);
       footnote = plan.lifetime
           ? l10n.paywallLifetimeNote
+          : BillingProducts.appleStore
+          ? l10n.paywallCancelAnytimeApple
           : l10n.paywallCancelAnytime;
     } else {
       buttonLabel = l10n.paywallContinue;
@@ -478,7 +485,11 @@ class _PaywallViewState extends State<PaywallView> {
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                for (final text in [l10n.paywallCancelAnytime])
+                for (final text in [
+                  BillingProducts.appleStore
+                      ? l10n.paywallCancelAnytimeApple
+                      : l10n.paywallCancelAnytime,
+                ])
                   Visibility(
                     visible: false,
                     maintainSize: true,
@@ -515,9 +526,7 @@ class _PaywallViewState extends State<PaywallView> {
               if (e.source == PremiumSource.subscription)
                 _SmallLink(
                   label: l10n.subscriptionManage,
-                  onTap: () => _open(
-                    'https://play.google.com/store/account/subscriptions?sku=${BillingProducts.subscription}&package=com.YeS.OzelEgitimOyunlari',
-                  ),
+                  onTap: () => _open(BillingProducts.manageSubscriptionUrl),
                 ),
               if (s.configuration.termsUrl.isNotEmpty)
                 _SmallLink(

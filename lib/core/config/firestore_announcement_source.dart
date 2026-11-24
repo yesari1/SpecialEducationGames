@@ -7,7 +7,8 @@ class FirestoreAnnouncementSource {
   static Future<Map<String, dynamic>?> read(String id) async {
     if (!ParentAnnouncement.isValidId(id) ||
         kIsWeb ||
-        defaultTargetPlatform != TargetPlatform.android) {
+        defaultTargetPlatform != TargetPlatform.android &&
+            defaultTargetPlatform != TargetPlatform.iOS) {
       return null;
     }
     return _read(id).timeout(const Duration(seconds: 10));

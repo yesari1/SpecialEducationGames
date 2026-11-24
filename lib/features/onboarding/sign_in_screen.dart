@@ -96,6 +96,16 @@ class _SignInScreenState extends State<SignInScreen> {
     _done();
   }
 
+  Future<void> _apple() async {
+    UiSound.tap();
+    if (!await _parentReady() || !mounted) return;
+    if (auth.account == null) await auth.signInWithApple();
+    if (auth.account == null && auth.issue == FamilyAuthIssue.cancelled) {
+      auth.issue = null;
+    }
+    _done();
+  }
+
   Future<void> _continue() async {
     UiSound.tap();
     FocusScope.of(context).unfocus();
@@ -218,6 +228,15 @@ class _SignInScreenState extends State<SignInScreen> {
                                     ),
                                   ),
                                   const SizedBox(height: SegSpace.s5),
+                                  // iOS: Apple first, as the App Store asks.
+                                  if (auth.appleAvailable) ...[
+                                    AppleSignInButton(
+                                      key: const ValueKey('sign-in-apple'),
+                                      label: l10n.appleSignIn,
+                                      onPressed: _apple,
+                                    ),
+                                    const SizedBox(height: SegSpace.s3),
+                                  ],
                                   GoogleSignInButton(
                                     key: const ValueKey('sign-in-google'),
                                     label: l10n.familyAccountSignIn,

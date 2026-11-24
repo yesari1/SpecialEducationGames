@@ -86,7 +86,9 @@ class AccountInfoCard extends StatelessWidget {
             if (e.source == PremiumSource.subscription) ...[
               const SizedBox(height: SegSpace.s3),
               Text(
-                l10n.accountNextPaymentNote,
+                BillingProducts.appleStore
+                    ? l10n.accountNextPaymentNoteApple
+                    : l10n.accountNextPaymentNote,
                 style: SegText.caption.copyWith(color: SegColors.inkSoft),
               ),
               const SizedBox(height: SegSpace.s2),
@@ -96,11 +98,7 @@ class AccountInfoCard extends StatelessWidget {
                 icon: Icons.open_in_new_rounded,
                 secondary: true,
                 onPressed: () => launchUrl(
-                  Uri.parse(
-                    'https://play.google.com/store/account/subscriptions'
-                    '?sku=${BillingProducts.subscription}'
-                    '&package=com.YeS.OzelEgitimOyunlari',
-                  ),
+                  Uri.parse(BillingProducts.manageSubscriptionUrl),
                   mode: LaunchMode.externalApplication,
                 ),
               ),

@@ -110,6 +110,7 @@
   "familyAccountSignedIn": "Google hesabına giriş yapıldı.",
   "familyAccountLocalProgress": "Ayrıntılı ilerleme bu cihazda saklanır. Günlük özet paylaşımı aşağıda ayrı izin gerektirir.",
   "familyAccountSignIn": "Google ile giriş",
+  "appleSignIn": "Apple ile giriş",
   "familyAccountSignOut": "Çıkış yap",
   "familyAccountCancelled": "Giriş iptal edildi.",
   "familyAccountOffline": "Bağlantı kurulamadı. İnterneti kontrol edip tekrar deneyin.",
@@ -180,7 +181,7 @@
   "subscriptionActive": "Premium erişiminiz açık.",
   "subscriptionMonthly": "Aylık",
   "subscriptionYearly": "Yıllık",
-  "subscriptionWaiting": "Google Play bekleniyor…",
+  "subscriptionWaiting": "Ödeme bekleniyor…",
   "subscriptionStoreError": "Mağazaya bağlanılamadı. Lütfen daha sonra tekrar deneyin.",
   "subscriptionManage": "Aboneliği yönet / iptal et",
   "playTimeBreakTitle": "Bugünlük bu kadar, harikaydın!",
@@ -1002,5 +1003,10 @@
   "parkMusic": "Müzik Aletleri",
   "parkPuzzle": "Yapboz",
   "parkBubbles": "Baloncuklar",
-  "gameNewSticker": "Yeni çıkartma kazandın!"
+  "gameNewSticker": "Yeni çıkartma kazandın!",
+  "accountNextPaymentNoteApple": "Sonraki ödeme tarihi ve iptal Ayarlar → adınız → Abonelikler bölümündedir.",
+  "paywallLifetimeSubscribedBodyApple": "Ömür boyu satın aldıktan sonra aboneliğiniz kendiliğinden durmaz. Ödemenin devam etmemesi için Ayarlar → adınız → Abonelikler bölümünden aboneliği iptal edin.",
+  "paywallCancelAnytimeApple": "App Store ayarlarından istediğiniz zaman iptal edebilirsiniz.",
+  "familyPaymentAppStore": "App Store",
+  "familyANewVersionIsAvailableYouApple": "Uygulamanın yeni sürümü var. App Store üzerinden güncelleyebilirsiniz."
 }

@@ -362,6 +362,12 @@ abstract class AppLocalizations {
   /// **'Sign in with Google'**
   String get familyAccountSignIn;
 
+  /// No description provided for @appleSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Apple'**
+  String get appleSignIn;
+
   /// No description provided for @familyAccountSignOut.
   ///
   /// In en, this message translates to:
@@ -622,7 +628,7 @@ abstract class AppLocalizations {
   /// No description provided for @subscriptionWaiting.
   ///
   /// In en, this message translates to:
-  /// **'Waiting for Google Play…'**
+  /// **'Waiting for payment…'**
   String get subscriptionWaiting;
 
   /// No description provided for @subscriptionStoreError.
@@ -2664,6 +2670,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You earned a new sticker!'**
   String get gameNewSticker;
+
+  /// No description provided for @accountNextPaymentNoteApple.
+  ///
+  /// In en, this message translates to:
+  /// **'The next payment date and cancelling are in Settings → your name → Subscriptions.'**
+  String get accountNextPaymentNoteApple;
+
+  /// No description provided for @paywallLifetimeSubscribedBodyApple.
+  ///
+  /// In en, this message translates to:
+  /// **'After the one-time purchase your subscription does not stop by itself. To stop its payments, cancel it in Settings → your name → Subscriptions.'**
+  String get paywallLifetimeSubscribedBodyApple;
+
+  /// No description provided for @paywallCancelAnytimeApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime in your App Store settings.'**
+  String get paywallCancelAnytimeApple;
+
+  /// No description provided for @familyPaymentAppStore.
+  ///
+  /// In en, this message translates to:
+  /// **'App Store'**
+  String get familyPaymentAppStore;
+
+  /// No description provided for @familyANewVersionIsAvailableYouApple.
+  ///
+  /// In en, this message translates to:
+  /// **'A new version is available. You can update through the App Store.'**
+  String get familyANewVersionIsAvailableYouApple;
 }
 
 class _AppLocalizationsDelegate

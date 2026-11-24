@@ -54,6 +54,12 @@ abstract interface class FamilyEmailAuthBackend {
   Future<FamilyAccount?> signInWithLink(String email, String link);
 }
 
+/// Sign in with Apple (iOS): the App Store asks for it next to Google.
+abstract interface class FamilyAppleAuthBackend {
+  bool get appleAvailable;
+  Future<FamilyAccount?> signInWithApple();
+}
+
 /// Optional capability for refreshing credentials on the already selected
 /// Firebase identity. This is deliberately separate from sign-in, which may
 /// establish a different account.
@@ -94,6 +100,19 @@ class FamilyAuth extends ChangeNotifier {
   }
 
   Future<void> signIn() => _run(backend.signIn);
+
+  FamilyAppleAuthBackend? get _apple => backend is FamilyAppleAuthBackend
+      ? backend as FamilyAppleAuthBackend
+      : null;
+
+  /// Sign in with Apple is offered (iOS only).
+  bool get appleAvailable => _apple?.appleAvailable ?? false;
+
+  Future<void> signInWithApple() async {
+    final apple = _apple;
+    if (apple == null) return;
+    await _run(apple.signInWithApple);
+  }
 
   FamilyEmailAuthBackend? get _email => backend is FamilyEmailAuthBackend
       ? backend as FamilyEmailAuthBackend

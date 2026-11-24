@@ -13,6 +13,7 @@ import '../../app/ui/family_nav_bar.dart';
 import '../../core/entitlement/entitlement_service.dart'
     show PremiumSource, qaPremium;
 import '../../core/db/app_database.dart';
+import '../../core/entitlement/billing_repository.dart' show BillingProducts;
 import '../../core/learning/age_band.dart';
 import '../../core/learning/parent_pin.dart';
 import '../../core/learning/learning_report.dart';
@@ -1007,7 +1008,12 @@ class _FamilyScreenState extends State<FamilyScreen> {
         page(l10n.familyReminder, [_reminderControls()], showHeading: false),
       if (s.configuration.minSupportedVersion > 14)
         page(l10n.familyUpdate, [
-          Text(l10n.familyANewVersionIsAvailableYou, style: SegText.caption),
+          Text(
+            BillingProducts.appleStore
+                ? l10n.familyANewVersionIsAvailableYouApple
+                : l10n.familyANewVersionIsAvailableYou,
+            style: SegText.caption,
+          ),
         ]),
       page(l10n.familyParentGate, [
         ListTile(
@@ -1861,11 +1867,15 @@ class _FamilyScreenState extends State<FamilyScreen> {
     final (plan, payment) = switch (e.source) {
       PremiumSource.subscription => (
         l10n.familyPlanSubscription,
-        l10n.familyPaymentPlay,
+        (BillingProducts.appleStore
+            ? l10n.familyPaymentAppStore
+            : l10n.familyPaymentPlay),
       ),
       PremiumSource.lifetime => (
         l10n.familyPlanLifetime,
-        l10n.familyPaymentPlay,
+        (BillingProducts.appleStore
+            ? l10n.familyPaymentAppStore
+            : l10n.familyPaymentPlay),
       ),
       PremiumSource.trial => (
         l10n.familyPlanTrial(e.trialDaysLeft),
@@ -2178,7 +2188,12 @@ class _FamilyScreenState extends State<FamilyScreen> {
     const SizedBox(height: SegSpace.s5),
     if (s.configuration.minSupportedVersion > 14) ...[
       SegCard(
-        child: Text(l10n.familyANewVersionIsAvailableYou, style: SegText.item),
+        child: Text(
+          BillingProducts.appleStore
+              ? l10n.familyANewVersionIsAvailableYouApple
+              : l10n.familyANewVersionIsAvailableYou,
+          style: SegText.item,
+        ),
       ),
       const SizedBox(height: SegSpace.s5),
     ],

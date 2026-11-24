@@ -172,6 +172,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get familyAccountSignIn => 'Sign in with Google';
 
   @override
+  String get appleSignIn => 'Sign in with Apple';
+
+  @override
   String get familyAccountSignOut => 'Sign out';
 
   @override
@@ -318,7 +321,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subscriptionYearly => 'Yearly';
 
   @override
-  String get subscriptionWaiting => 'Waiting for Google Play…';
+  String get subscriptionWaiting => 'Waiting for payment…';
 
   @override
   String get subscriptionStoreError =>
@@ -1502,4 +1505,23 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gameNewSticker => 'You earned a new sticker!';
+
+  @override
+  String get accountNextPaymentNoteApple =>
+      'The next payment date and cancelling are in Settings → your name → Subscriptions.';
+
+  @override
+  String get paywallLifetimeSubscribedBodyApple =>
+      'After the one-time purchase your subscription does not stop by itself. To stop its payments, cancel it in Settings → your name → Subscriptions.';
+
+  @override
+  String get paywallCancelAnytimeApple =>
+      'Cancel anytime in your App Store settings.';
+
+  @override
+  String get familyPaymentAppStore => 'App Store';
+
+  @override
+  String get familyANewVersionIsAvailableYouApple =>
+      'A new version is available. You can update through the App Store.';
 }

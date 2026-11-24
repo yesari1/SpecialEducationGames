@@ -4,10 +4,14 @@ import '../auth/firebase_client.dart';
 
 class FirestoreConfigSource {
   static Future<Map<String, dynamic>?> read() async {
-    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
+    if (kIsWeb ||
+        defaultTargetPlatform != TargetPlatform.android &&
+            defaultTargetPlatform != TargetPlatform.iOS) {
+      return null;
+    }
     await FirebaseClient.ensureInitialized();
     final firestore = FirebaseFirestore.instance;
-    // Android's persistent cache is enabled by default; do not reconfigure an
+    // The persistent cache is enabled by default on Android and iOS; do not reconfigure an
     // instance after it has already served reads.
     final snapshot = await firestore.doc('config/app').get();
     return snapshot.data();

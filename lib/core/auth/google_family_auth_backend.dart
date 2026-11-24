@@ -14,7 +14,8 @@ class GoogleFamilyAuthBackend
     implements
         FamilyAuthBackend,
         FamilyReauthenticationBackend,
-        FamilyEmailAuthBackend {
+        FamilyEmailAuthBackend,
+        FamilyAppleAuthBackend {
   static const _serverClientId =
       '579874152426-e7a15kto2l2nhmfnhfdmoc3a5cnnpfk6.apps.googleusercontent.com';
   GoogleSignIn? _google;
@@ -31,11 +32,17 @@ class GoogleFamilyAuthBackend
   }
 
   Future<void> _initialize() async {
-    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
+    final ios = !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android && !ios) {
       throw const FamilyAuthFailure(FamilyAuthIssue.unavailable);
     }
     await FirebaseClient.ensureInitialized();
+    // iOS signs in with its own OAuth client (from GoogleService-Info.plist).
+    final iosClientId = ios
+        ? (await FirebaseClient.options())['iosClientId'] as String?
+        : null;
     _google ??= GoogleSignIn(
+      clientId: iosClientId,
       serverClientId: _serverClientId,
       scopes: const ['email'],
     );
@@ -104,6 +111,7 @@ class GoogleFamilyAuthBackend
           handleCodeInApp: true,
           androidPackageName: 'com.YeS.OzelEgitimOyunlari',
           androidInstallApp: false,
+          iOSBundleId: 'com.YeS.OzelEgitimOyunlari',
         ),
       );
     } on FirebaseAuthException catch (error) {
@@ -189,6 +197,54 @@ class GoogleFamilyAuthBackend
     });
   }
 
+  static FamilyAuthIssue _appleIssue(FirebaseAuthException error) =>
+      switch (error.code) {
+        'network-request-failed' => FamilyAuthIssue.offline,
+        // The person closed Apple's sheet.
+        'canceled' || 'web-context-canceled' => FamilyAuthIssue.cancelled,
+        'operation-not-allowed' ||
+        'invalid-credential' ||
+        'invalid-api-key' ||
+        'app-not-authorized' => FamilyAuthIssue.configuration,
+        'user-mismatch' || 'user-not-found' => FamilyAuthIssue.cancelled,
+        _ => FamilyAuthIssue.unavailable,
+      };
+
+  static AppleAuthProvider get _appleProvider => AppleAuthProvider()
+    ..addScope('email')
+    ..addScope('name');
+
+  @override
+  bool get appleAvailable =>
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  @override
+  Future<FamilyAccount?> signInWithApple() {
+    final generation = ++_generation;
+    return _serial(() async {
+      if (!appleAvailable) {
+        throw const FamilyAuthFailure(FamilyAuthIssue.unavailable);
+      }
+      try {
+        await _initialize();
+        if (generation != _generation) return null;
+        // Apple's own sign-in sheet; Firebase gets the identity from it.
+        final result = await FirebaseAuth.instance.signInWithProvider(
+          _appleProvider,
+        );
+        if (generation != _generation) {
+          await FirebaseAuth.instance.signOut();
+          return null;
+        }
+        return _account(result.user);
+      } on FirebaseAuthException catch (error) {
+        throw FamilyAuthFailure(_appleIssue(error));
+      } on PlatformException catch (_) {
+        throw const FamilyAuthFailure(FamilyAuthIssue.unavailable);
+      }
+    });
+  }
+
   @override
   Future<void> reauthenticate({required String expectedUid}) {
     final generation = ++_generation;
@@ -199,6 +255,23 @@ class GoogleFamilyAuthBackend
         final existing = FirebaseAuth.instance.currentUser;
         if (existing == null || existing.uid != expectedUid) {
           throw const FamilyAuthFailure(FamilyAuthIssue.cancelled);
+        }
+        // An Apple account confirms with Apple again, not with Google.
+        if (appleAvailable &&
+            existing.providerData.any((p) => p.providerId == 'apple.com')) {
+          try {
+            final result = await existing.reauthenticateWithProvider(
+              _appleProvider,
+            );
+            if (generation != _generation) return;
+            if (result.user?.uid != expectedUid ||
+                FirebaseAuth.instance.currentUser?.uid != expectedUid) {
+              throw const FamilyAuthFailure(FamilyAuthIssue.cancelled);
+            }
+            return;
+          } on FirebaseAuthException catch (error) {
+            throw FamilyAuthFailure(_appleIssue(error));
+          }
         }
         final selected = await _google!.signIn();
         if (generation != _generation) return;

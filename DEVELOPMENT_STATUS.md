@@ -12,6 +12,14 @@
 - Sonsuz döngüler (`AmbientMotion.enabled`) host testlerinde `test/flutter_test_config.dart` ile kapalı, `pumpAndSettle` beklemesin diye.
 - Testler: 345 host test (seri) geçti. Önizleme videoları `flutter test tools/motion_preview_shot_test.dart` (iPhone SE ve 15 Pro Max) ile `artifacts/claude/motion-preview/`. Telefonda elle denenmedi.
 
+## 17 Kasım 2026 — iOS sürümü başlangıcı (iOS dalı, yüklenmedi)
+
+- `Android` dalından (2.0.59) `iOS` dalı açıldı; `flutter create --platforms=ios` ile `ios/` eklendi. Bundle ID `com.YeS.OzelEgitimOyunlari` (Android ile aynı, Yunus onayladı), görünen ad "Özel Eğitim Oyunları", iOS 15+, `UIRequiresFullScreen` (iPad'de yön kilidi çalışsın diye). Xcode 27 için pod hedefi 15.0 ve simülatörde x86_64 hariç.
+- Android'e kilitli yerler iOS'a açıldı: Firebase ayarı (`assets/firebase/ios_options.json`, Firebase iOS uygulamasının GoogleService-Info.plist dosyasından), Google girişi (iOS client ID ile), Firestore yapılandırma/duyuru okuma, hatırlatma bildirimleri ve izin penceresi, push (APNs anahtarı ve ücretli hesap gelene kadar token alınamaz, sessiz), admin panel cihaz modeli.
+- Satın alma: App Store'da temel plan olmadığı için ürünler `premium_monthly`, `premium_yearly` (aynı abonelik grubu) ve `premium_lifetime`; App Store Connect'te bu ID'lerle açılmalı. Geri yükleme StoreKit 2 ile (giriş istemez). Android yolu değişmedi.
+- Doğrulama: 345 host test (seri) geçti; iPhone 18 Pro simülatöründe tanıtım akışı, ödeme ekranı (ürünler yok, beklenen hata), iOS bildirim izni penceresi, yatay çocuk ana ekranı ve Bul oyunu denendi.
+- Google girişi simülatörde Google hesap sayfasına kadar denendi (iOS OAuth istemcisi doğru). Bekleyen: Apple Developer hesabı (Apple ile giriş, APNs, Associated Domains ile e-posta bağlantısı, App Store ürünleri).
+
 ## 9 Kasım 2026 — Ana ekran bölümleri ve yeni temalar (feature/home-sections, yüklenmedi)
 
 - Çocuk ana ekranı 3 sekme: Öğren, Hikâyeler, Oyun Parkı; her bölümün kendi çizimi ve rengi. Bugünün Yolu, günlük çıkartma ve ilk kurulumdaki plan ekranları kaldırıldı.

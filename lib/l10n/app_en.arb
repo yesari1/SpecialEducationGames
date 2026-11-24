@@ -110,6 +110,7 @@
   "familyAccountSignedIn": "Signed in with Google.",
   "familyAccountLocalProgress": "Detailed progress stays on this device. Daily summary sharing requires separate permission below.",
   "familyAccountSignIn": "Sign in with Google",
+  "appleSignIn": "Sign in with Apple",
   "familyAccountSignOut": "Sign out",
   "familyAccountCancelled": "Sign-in cancelled.",
   "familyAccountOffline": "Could not connect. Check the internet connection and try again.",
@@ -180,7 +181,7 @@
   "subscriptionActive": "Your Premium access is active.",
   "subscriptionMonthly": "Monthly",
   "subscriptionYearly": "Yearly",
-  "subscriptionWaiting": "Waiting for Google Play…",
+  "subscriptionWaiting": "Waiting for payment…",
   "subscriptionStoreError": "Could not connect to the store. Please try again later.",
   "subscriptionManage": "Manage / cancel subscription",
   "playTimeBreakTitle": "That’s enough for today. You did great!",
@@ -1388,5 +1389,10 @@
   "parkMusic": "Musical Instruments",
   "parkPuzzle": "Puzzles",
   "parkBubbles": "Bubbles",
-  "gameNewSticker": "You earned a new sticker!"
+  "gameNewSticker": "You earned a new sticker!",
+  "accountNextPaymentNoteApple": "The next payment date and cancelling are in Settings → your name → Subscriptions.",
+  "paywallLifetimeSubscribedBodyApple": "After the one-time purchase your subscription does not stop by itself. To stop its payments, cancel it in Settings → your name → Subscriptions.",
+  "paywallCancelAnytimeApple": "Cancel anytime in your App Store settings.",
+  "familyPaymentAppStore": "App Store",
+  "familyANewVersionIsAvailableYouApple": "A new version is available. You can update through the App Store."
 }

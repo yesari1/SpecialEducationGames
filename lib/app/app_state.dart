@@ -400,12 +400,18 @@ class AppState extends ChangeNotifier {
 
   String? _model;
 
-  /// The phone's maker and model ("Google Pixel 9a") for the admin page;
-  /// null off Android or when it cannot be read.
+  /// The phone's maker and model ("Google Pixel 9a", "iPhone 16 Pro") for
+  /// the admin page; null elsewhere or when it cannot be read.
   Future<String?> _deviceModel() async {
     if (_model != null) return _model;
-    if (kIsWeb || !Platform.isAndroid) return null;
+    if (kIsWeb || !Platform.isAndroid && !Platform.isIOS) return null;
     try {
+      if (Platform.isIOS) {
+        // "iPhone 16 Pro" (the simulator reports its own model name too).
+        final value = (await DeviceInfoPlugin().iosInfo).modelName.trim();
+        if (value.isEmpty) return null;
+        return _model = value.length > 64 ? value.substring(0, 64) : value;
+      }
       final info = await DeviceInfoPlugin().androidInfo;
       final maker = info.manufacturer.trim();
       final model = info.model.trim();

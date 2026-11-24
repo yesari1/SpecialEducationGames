@@ -16,7 +16,8 @@ class PushMessages {
   static final _plugin = FlutterLocalNotificationsPlugin();
 
   /// The real device, not the target platform a test pretends to be.
-  static bool get supported => !kIsWeb && Platform.isAndroid;
+  static bool get supported =>
+      !kIsWeb && (Platform.isAndroid || Platform.isIOS);
 
   /// This install's push address (no permission prompt).
   static Future<String?> token() async {
@@ -40,6 +41,11 @@ class PushMessages {
       await _plugin.initialize(
         settings: const InitializationSettings(
           android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+          iOS: DarwinInitializationSettings(
+            requestAlertPermission: false,
+            requestBadgePermission: false,
+            requestSoundPermission: false,
+          ),
         ),
       );
     } catch (_) {}
@@ -53,6 +59,7 @@ class PushMessages {
           body: n.body,
           notificationDetails: NotificationDetails(
             android: AndroidNotificationDetails(_channel, channelName),
+            iOS: const DarwinNotificationDetails(),
           ),
         );
       } catch (_) {
