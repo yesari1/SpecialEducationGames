@@ -9,6 +9,7 @@ import '../../core/auth/family_auth.dart';
 import '../../core/entitlement/billing_repository.dart';
 import '../../core/entitlement/entitlement_service.dart';
 import '../../l10n/scoped_localizations.dart';
+import 'game_showcase.dart';
 import 'parent_gate.dart';
 
 /// The Premium offer on one screen (no scrolling on a phone): a short
@@ -211,11 +212,14 @@ class _PaywallViewState extends State<PaywallView> {
     final busy =
         s.billing.pending || s.trialBusy || (widget.auth?.busy ?? false);
 
-    final hero = Image.asset(
-      'assets/illustrations/family/paywall_hero.png',
+    // Moments from the games, moving unless motion is reduced.
+    final reduced = s.reducedMotion || MediaQuery.disableAnimationsOf(context);
+    final hero = SizedBox(
       height: 150,
-      fit: BoxFit.contain,
-      excludeFromSemantics: true,
+      child: GameShowcase(
+        key: const ValueKey('paywall-showcase'),
+        animate: !reduced,
+      ),
     );
     final headline = Text(
       s.configuration.paywallText[s.locale] ?? l10n.paywallHeadline,
@@ -544,7 +548,8 @@ class _PaywallViewState extends State<PaywallView> {
             : null;
         if (content == null) {
           // Portrait: the text, plans and buttons keep their full size and
-          // width; the picture takes the height that is left (at most 150).
+          // width; the game moments take the height that is left (at most
+          // 240).
           // Only when even a small picture does not fit does the page scale
           // down as a whole.
           final width = box.maxWidth.clamp(0.0, 520.0);
@@ -568,18 +573,17 @@ class _PaywallViewState extends State<PaywallView> {
           );
           final measured = _restHeight;
           final heroHeight = measured == null
-              ? 150.0
-              : (box.maxHeight - measured - SegSpace.s2).clamp(0.0, 150.0);
+              ? 240.0
+              : (box.maxHeight - measured - SegSpace.s2).clamp(0.0, 240.0);
           final column = Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: heroHeight < 70 ? 70 : heroHeight,
-                child: Image.asset(
-                  'assets/illustrations/family/paywall_hero.png',
-                  fit: BoxFit.contain,
-                  excludeFromSemantics: true,
+                child: GameShowcase(
+                  key: const ValueKey('paywall-showcase'),
+                  animate: !reduced,
                 ),
               ),
               const SizedBox(height: SegSpace.s2),

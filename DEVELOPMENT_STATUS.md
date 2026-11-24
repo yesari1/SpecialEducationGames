@@ -2,6 +2,15 @@
 
 > **Güncel yapılanlar/kalanlar:** [TODO.md](TODO.md). Her somut değişiklikte ilgili kontrol maddesi ve test kanıtı güncellenir. Aşağıdaki tarihli kayıtlar geçmişi gösterir; eski eksik listeleri güncel talimat değildir. Son kullanıcı talebiyle çalışma 16 Ekim 20:00 İstanbul'a uzatıldı; yalnızca yatay kullanım, yeni canlı/beyaz UI, otomatik telefon dili, İrem/Laura sesleri ve gerçek fotoğraflarda beyaz kontur önceliklidir.
 
+## 24 Kasım 2026 — Kurulum ve Premium ekranına hareket (claude/project-thread-i34hcg, PR bekliyor)
+
+- Neden: Yunus, Premium ekranı ve ona giden kurulum ekranları çok sabit; satın almamış kişi oyunlarda ne olduğunu görebilmeli dedi.
+- Premium ekranı (`PaywallView`, ilk kurulumda ve Aile alanında): üstteki sabit resmin yerine `GameShowcase`. Oyunlardan üç kısa an döner: Bul (el kediye dokunur, kedi zıplar, yıldızlar), Say (üç elma 1-2-3), Boya (kırmızı seçilir, fırça beyaz balonu boyar). Gerçek oyun fotoğrafları, yazı yok. Resim payı en çok 150'den 240'a çıktı; sayfa yine tek ekrana sığar.
+- Kurulum: karşılama resmi süzülür, parıltılar yanıp söner, hediye ikonu ara ara sallanır. Her sayfanın parçaları sırayla gelir, seçenekler (yaş, soru, günlük hedef) küçük bir zıplamayla belirir. Yeni sayfa ileri giderken sağdan, geri giderken soldan kayar. Kurulum sayfalarında yine yalnız çizimler var.
+- Hareketi azalt (uygulama ayarı ya da telefon): hepsi sabit, önizleme kedinin bulunduğu anda durur.
+- Sonsuz döngüler (`AmbientMotion.enabled`) host testlerinde `test/flutter_test_config.dart` ile kapalı, `pumpAndSettle` beklemesin diye.
+- Testler: 345 host test (seri) geçti. Önizleme videoları `flutter test tools/motion_preview_shot_test.dart` (iPhone SE ve 15 Pro Max) ile `artifacts/claude/motion-preview/`. Telefonda elle denenmedi.
+
 ## 9 Kasım 2026 — Ana ekran bölümleri ve yeni temalar (feature/home-sections, yüklenmedi)
 
 - Çocuk ana ekranı 3 sekme: Öğren, Hikâyeler, Oyun Parkı; her bölümün kendi çizimi ve rengi. Bugünün Yolu, günlük çıkartma ve ilk kurulumdaki plan ekranları kaldırıldı.
