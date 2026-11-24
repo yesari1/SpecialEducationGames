@@ -4,6 +4,8 @@ import '../../app/theme/tokens.dart';
 import '../../app/ui/ambient_motion.dart';
 import '../../app/ui/components.dart' show ItemVisual;
 import '../../app/ui/scene_backdrop.dart';
+import '../game/widgets/music_views.dart'
+    show pianoKeyColours, pianoNoteNames, pianoNotes;
 
 /// The Premium offer's moving picture (Yunus, 24 Nov 2026): short moments
 /// from the real games, one after another, so a parent who has not bought
@@ -11,7 +13,8 @@ import '../../app/ui/scene_backdrop.dart';
 /// the games.
 ///
 /// 1. Find: a hand taps the cat among three animals; it hops, stars fly.
-/// 2. Count: the hand taps three apples, 1, 2, 3 appear over them.
+/// 2. Play along: the piano lights Do, Mi, Sol; the hand plays them back,
+///    notes fly up.
 /// 3. Paint: the hand picks red and a brush paints the white balloon.
 ///
 /// With reduced motion it is one still picture (the cat just found).
@@ -32,7 +35,6 @@ const _scenes = 3;
 const _cat = 'assets/images/animals/cat_1.webp',
     _dog = 'assets/images/animals/dog_1.webp',
     _rabbit = 'assets/images/animals/rabbit_1.webp',
-    _apple = 'assets/images/fruit/apple.webp',
     _balloon = 'assets/images/paint/balloon.webp';
 
 class _GameShowcaseState extends State<GameShowcase>
@@ -49,7 +51,7 @@ class _GameShowcaseState extends State<GameShowcase>
     super.didChangeDependencies();
     if (!_precached) {
       _precached = true;
-      for (final a in const [_cat, _dog, _rabbit, _apple, _balloon]) {
+      for (final a in const [_cat, _dog, _rabbit, _balloon]) {
         precacheImage(AssetImage(a), context);
       }
     }
@@ -130,7 +132,7 @@ class _GameShowcaseState extends State<GameShowcase>
       clipBehavior: Clip.none,
       children: switch (index) {
         0 => _find(p, size),
-        1 => _count(p, size),
+        1 => _piano(p, size),
         _ => _paint(p, size),
       },
     ),
@@ -193,71 +195,87 @@ class _GameShowcaseState extends State<GameShowcase>
     ];
   }
 
-  /// Count: three apples, the hand taps each; its number pops above it.
-  List<Widget> _count(double p, Size size) {
+  /// Play along ("Sen de Çal"): the toy piano lights three keys one after
+  /// another, then the hand plays the same keys; a note flies up from each.
+  List<Widget> _piano(double p, Size size) {
     final w = size.width, h = size.height;
-    final s = math.min(h * .5, w / 4.4);
-    final ground = h * .88;
-    final xs = [w * .24, w * .5, w * .76];
-    // The hand reaches the first apple, then each next one.
-    final reach = [.24, .44, .64];
-    final widgets = <Widget>[];
+    final board = Rect.fromCenter(
+      center: Offset(w * .5, h * .56),
+      width: math.min(w * .9, h * 2.6),
+      height: h * .7,
+    );
+    const keys = 8;
+    final keyWidth = (board.width - 12) / keys;
+    Offset keyAt(int key, double down) => Offset(
+      board.left + 6 + keyWidth * (key + .5),
+      board.top + board.height * down,
+    );
+    // Do, Mi, Sol: shown first, then played back.
+    const tune = [0, 2, 4];
+    const shown = [.12, .22, .32];
+    const played = [.48, .6, .72];
+    int? lit;
+    for (var i = 0; i < 3; i++) {
+      if (_iv(p, shown[i], shown[i] + .07) case final t when t > 0 && t < 1) {
+        lit = tune[i];
+      }
+      if (_iv(p, played[i], played[i] + .07) case final t when t > 0 && t < 1) {
+        lit = tune[i];
+      }
+    }
+    // The hand goes from key to key.
     var hand = Offset(w * .96, h * 1.1);
     double handTap = 0;
     for (var i = 0; i < 3; i++) {
-      final at = Offset(xs[i], ground - s * .5);
-      final arrive = _iv(p, reach[i] - .12, reach[i]);
+      final arrive = _iv(p, played[i] - .08, played[i]);
       if (arrive > 0) {
-        hand = Offset.lerp(hand, at.translate(s * .1, s * .2), _ease(arrive))!;
+        hand = Offset.lerp(hand, keyAt(tune[i], .62), _ease(arrive))!;
       }
-      final t = _iv(p, reach[i], reach[i] + .06);
+      final t = _iv(p, played[i], played[i] + .06);
       if (t > 0 && t < 1) handTap = t;
     }
-    // All three jump together at the end.
-    final cheer = math.sin(_iv(p, .78, .92) * math.pi) * h * .08;
-    for (var i = 0; i < 3; i++) {
-      final counted = _iv(p, reach[i] + .02, reach[i] + .14);
-      final bounce = math.sin(_iv(p, reach[i], reach[i] + .12) * math.pi);
-      widgets.add(
-        _standing(
-          _apple,
-          x: xs[i],
-          ground: ground,
-          size: s,
-          appear: _iv(p, .02 + i * .05, .14 + i * .05),
-          lift: bounce * h * .05 + cheer,
-          press: _press(_iv(p, reach[i], reach[i] + .06)),
+    final appear = Curves.easeOutBack.transform(_iv(p, .0, .1));
+    return [
+      Positioned.fromRect(
+        rect: board,
+        child: Opacity(
+          opacity: _iv(p, 0, .06),
+          child: Transform.scale(
+            scale: .9 + .1 * appear,
+            child: _ToyPiano(lit: lit, keyWidth: keyWidth),
+          ),
         ),
-      );
-      if (counted > 0) {
-        widgets.add(
+      ),
+      // A note flies up from each key the hand plays.
+      for (var i = 0; i < 3; i++)
+        if (_iv(p, played[i], played[i] + .22) case final t when t > 0 && t < 1)
           _centered(
-            Offset(xs[i], ground - s * 1.28 - cheer),
-            s * .62,
-            Transform.scale(
-              scale: Curves.elasticOut.transform(counted),
-              child: _NumberBubble(number: i + 1),
+            keyAt(
+              tune[i],
+              .1,
+            ).translate(math.sin(t * math.pi * 2) * keyWidth * .3, -t * h * .3),
+            keyWidth * 1.1,
+            Opacity(
+              opacity: 1 - t,
+              child: Icon(
+                i == 1 ? Icons.music_note_rounded : Icons.audiotrack_rounded,
+                size: keyWidth * 1.1,
+                color: pianoKeyColours[tune[i]],
+                shadows: const [Shadow(color: Colors.white, blurRadius: 4)],
+              ),
             ),
           ),
-        );
-      }
-    }
-    widgets
-      ..addAll(
-        _stars(Offset(w * .5, ground - s * .9), s * 1.3, _iv(p, .8, .98)),
-      )
-      ..add(
-        _hand(
-          from: Offset(w * .96, h * 1.1),
-          to: hand,
-          move: 1,
-          tap: handTap,
-          fade: _iv(p, .7, .78),
-          size: s * 1.3,
-          enter: _iv(p, .1, .14),
-        ),
-      );
-    return widgets;
+      ..._stars(Offset(w * .5, board.top), board.height, _iv(p, .82, .98)),
+      _hand(
+        from: Offset(w * .96, h * 1.1),
+        to: hand,
+        move: 1,
+        tap: handTap,
+        fade: _iv(p, .8, .86),
+        size: keyWidth * 2.4,
+        enter: _iv(p, .38, .42),
+      ),
+    ];
   }
 
   /// Paint: the hand picks red, a brush paints the white balloon red.
@@ -493,39 +511,74 @@ class _GameShowcaseState extends State<GameShowcase>
   );
 }
 
-/// The round number that pops over a counted apple.
-class _NumberBubble extends StatelessWidget {
-  final int number;
-  const _NumberBubble({required this.number});
+/// The toy piano of "Sen de Çal": a wooden frame, eight coloured keys with
+/// their note names; [lit] is pressed down and fully coloured.
+class _ToyPiano extends StatelessWidget {
+  final int? lit;
+  final double keyWidth;
+  const _ToyPiano({required this.lit, required this.keyWidth});
   @override
-  Widget build(BuildContext context) => DecoratedBox(
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.fromLTRB(2, 6, 2, 4),
     decoration: BoxDecoration(
-      color: SegColors.primary,
-      shape: BoxShape.circle,
-      border: Border.all(color: Colors.white, width: 3),
+      color: const Color(0xFF6B4A3A),
+      borderRadius: BorderRadius.circular(SegRadius.sm),
       boxShadow: [
         BoxShadow(
-          color: SegColors.ink.withValues(alpha: .2),
-          blurRadius: 6,
-          offset: const Offset(0, 2),
+          color: SegColors.ink.withValues(alpha: .18),
+          blurRadius: 10,
+          offset: const Offset(0, 4),
         ),
       ],
     ),
-    child: Center(
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        for (var key = 0; key < pianoNotes.length; key++)
+          Expanded(child: _key(key)),
+      ],
+    ),
+  );
+
+  Widget _key(int key) {
+    final colour = pianoKeyColours[key];
+    final down = lit == key;
+    final edge = (keyWidth * .08).clamp(1.5, 3.0);
+    return Container(
+      margin: EdgeInsets.fromLTRB(2, 0, 2, down ? 0 : keyWidth * .12),
+      decoration: BoxDecoration(
+        color: down ? colour : Color.lerp(Colors.white, colour, .16),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(keyWidth * .15),
+          bottom: Radius.circular(keyWidth * .3),
+        ),
+        border: Border.all(color: colour, width: edge),
+        boxShadow: [
+          if (!down)
+            BoxShadow(
+              color: Color.lerp(colour, SegColors.ink, .35)!,
+              offset: Offset(0, keyWidth * .12),
+            ),
+        ],
+      ),
+      alignment: Alignment.topCenter,
+      padding: EdgeInsets.only(top: keyWidth * .2),
       child: FittedBox(
         child: Padding(
-          padding: const EdgeInsets.all(6),
+          padding: const EdgeInsets.symmetric(horizontal: 2),
           child: Text(
-            '$number',
-            style: SegText.title.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.w800,
+            pianoNoteNames[key],
+            style: SegText.heading.copyWith(
+              fontWeight: FontWeight.w900,
+              color: down
+                  ? Colors.white
+                  : Color.lerp(colour, SegColors.ink, .45),
             ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class _Reveal extends CustomClipper<Rect> {

@@ -8,10 +8,10 @@ import 'round_choices_view.dart';
 
 /// The eight keys of the toy piano, low to high.
 const pianoNotes = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si', 'do2'];
-const _noteNames = ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si', 'Do'];
+const pianoNoteNames = ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si', 'Do'];
 // Eight clearly different colours, one per key (Yunus, 16 November 2026:
 // turquoise, blue and the green next to them looked alike).
-const _keyColours = [
+const pianoKeyColours = [
   Color(0xFFE53935), // red
   Color(0xFFFB8C00), // orange
   Color(0xFFFDD835), // yellow
@@ -240,10 +240,13 @@ class _EchoViewState extends State<EchoView> {
                 height: 22,
                 decoration: BoxDecoration(
                   color: i < _at
-                      ? _keyColours[notes[i]]
+                      ? pianoKeyColours[notes[i]]
                       : Colors.white.withValues(alpha: .9),
                   borderRadius: BorderRadius.circular(SegRadius.pill),
-                  border: Border.all(color: _keyColours[notes[i]], width: 3),
+                  border: Border.all(
+                    color: pianoKeyColours[notes[i]],
+                    width: 3,
+                  ),
                 ),
               ),
             const SizedBox(width: SegSpace.s4),
@@ -304,14 +307,14 @@ class _EchoViewState extends State<EchoView> {
   }
 
   Widget _key(int key) {
-    final colour = _keyColours[key];
+    final colour = pianoKeyColours[key];
     final down = _pressed == key || _lit == key;
     final next = _shown == key && _turn;
     final holding =
         _pressed == key && _turn && _at < notes.length && _isLong(_at);
     return Semantics(
       button: true,
-      label: _noteNames[key],
+      label: pianoNoteNames[key],
       excludeSemantics: true,
       child: Listener(
         key: ValueKey('piano-key-$key'),
@@ -384,7 +387,7 @@ class _EchoViewState extends State<EchoView> {
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: FittedBox(
                     child: Text(
-                      _noteNames[key],
+                      pianoNoteNames[key],
                       style: SegText.heading.copyWith(
                         fontWeight: FontWeight.w900,
                         color: down
