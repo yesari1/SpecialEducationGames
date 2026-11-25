@@ -203,7 +203,7 @@ class _PaywallViewState extends State<PaywallView> {
         ),
         actions: [
           TextButton(
-            onPressed: () => _open(BillingProducts.manageSubscriptionUrl),
+            onPressed: () => BillingProducts.openManageSubscriptions(),
             child: Text(l10n.subscriptionManage),
           ),
           TextButton(
@@ -535,7 +535,7 @@ class _PaywallViewState extends State<PaywallView> {
               if (e.source == PremiumSource.subscription)
                 _SmallLink(
                   label: l10n.subscriptionManage,
-                  onTap: () => _open(BillingProducts.manageSubscriptionUrl),
+                  onTap: () => BillingProducts.openManageSubscriptions(),
                 ),
               if (s.configuration.termsUrl.isNotEmpty)
                 _SmallLink(

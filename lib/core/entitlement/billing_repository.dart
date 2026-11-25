@@ -4,6 +4,8 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_android/billing_client_wrappers.dart'
     show ReplacementMode;
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
+import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'entitlement_service.dart';
 
 /// Google Play product IDs (create them in Play Console with these IDs):
@@ -22,6 +24,26 @@ abstract final class BillingProducts {
       ? 'https://apps.apple.com/account/subscriptions'
       : 'https://play.google.com/store/account/subscriptions'
             '?sku=$subscription&package=com.YeS.OzelEgitimOyunlari';
+
+  /// Opens the store's subscription management. On iOS this is Apple's
+  /// sheet inside the app (it also lists TestFlight purchases, which the
+  /// web page does not); the web page is the fallback.
+  static Future<void> openManageSubscriptions() async {
+    if (appleStore) {
+      try {
+        await InAppPurchase.instance
+            .getPlatformAddition<InAppPurchaseStoreKitPlatformAddition>()
+            .showManageSubscriptions();
+        return;
+      } catch (_) {
+        // Falls through to the web page.
+      }
+    }
+    await launchUrl(
+      Uri.parse(manageSubscriptionUrl),
+      mode: LaunchMode.externalApplication,
+    );
+  }
 
   /// App Store has no base plans: the two subscriptions are separate
   /// products in one subscription group (create them in App Store Connect

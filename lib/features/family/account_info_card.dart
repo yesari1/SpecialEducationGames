@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../app/app_state.dart';
 import '../../app/theme/tokens.dart';
 import '../../app/ui/components.dart';
@@ -97,10 +96,7 @@ class AccountInfoCard extends StatelessWidget {
                 label: l10n.subscriptionManage,
                 icon: Icons.open_in_new_rounded,
                 secondary: true,
-                onPressed: () => launchUrl(
-                  Uri.parse(BillingProducts.manageSubscriptionUrl),
-                  mode: LaunchMode.externalApplication,
-                ),
+                onPressed: BillingProducts.openManageSubscriptions,
               ),
             ],
           ],
