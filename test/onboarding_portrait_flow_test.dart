@@ -270,6 +270,38 @@ void main() {
     state.lockFamily(); // Ends the parent area's five-minute timer.
   }, variant: _host);
 
+  testWidgets('Premium already on: the offer has "Continue" and moves on', (
+    tester,
+  ) async {
+    await loadFonts(tester);
+    final state = await buildState(tester);
+    addTearDown(state.dispose);
+    state.locale = 'tr';
+    // A purchase restored after reinstalling the app.
+    await tester.runAsync(() => state.entitlement.confirmStoreState(true));
+    await pumpOnboarding(tester, state);
+    await tapKey(tester, 'welcome-start');
+    await tester.enterText(find.byKey(const ValueKey('nickname-field')), 'Ada');
+    await tapKey(tester, 'age-4');
+    await tapKey(tester, 'onboarding-continue');
+    await tapKey(tester, 'survey-option-1');
+    await tester.tap(find.byKey(const ValueKey('onboarding-continue')));
+    final owned = find.byKey(const ValueKey('paywall-owned-continue'));
+    for (var i = 0; i < 30 && owned.evaluate().isEmpty; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+      await tester.pump();
+    }
+    await tester.pumpAndSettle();
+    expect(owned, findsOneWidget);
+    expect(find.byKey(const ValueKey('paywall-continue')), findsNothing);
+    await tapKey(tester, 'paywall-owned-continue');
+    expect(owned, findsNothing);
+    expect(tester.takeException(), isNull);
+    state.lockFamily();
+  }, variant: _host);
+
   testWidgets('back returns through steps and keeps answers', (tester) async {
     await loadFonts(tester);
     final state = await buildState(tester);

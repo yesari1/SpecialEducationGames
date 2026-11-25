@@ -439,6 +439,15 @@ class _PaywallViewState extends State<PaywallView> {
     final actions = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // Premium already on when the onboarding or the account gate shows
+        // the offer (e.g. a purchase restored after reinstalling): there is
+        // no X there, so this button goes on.
+        if (e.isPaid && widget.onContinueFree != null)
+          SegButton(
+            key: const ValueKey('paywall-owned-continue'),
+            label: l10n.paywallContinue,
+            onPressed: widget.onDone,
+          ),
         if (!e.isPaid) ...[
           SegButton(
             key: const ValueKey('paywall-continue'),
