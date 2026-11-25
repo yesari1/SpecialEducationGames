@@ -62,6 +62,15 @@ void main() {
     expect(state.accountGatePassed, isTrue, reason: 'Premium');
   });
 
+  test('a store purchase passes the gate without an account', () async {
+    final state = await build(_FakeChildren());
+    addTearDown(state.dispose);
+    state.setAccount(null, ready: true);
+    expect(state.accountGatePassed, isFalse);
+    await state.entitlement.confirmStoreState(true);
+    expect(state.accountGatePassed, isTrue);
+  });
+
   test('child profiles come back from the account and stay in sync', () async {
     final children = _FakeChildren()
       ..cloud['c1'] = const CloudChild(

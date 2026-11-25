@@ -81,10 +81,13 @@ class AppState extends ChangeNotifier {
   /// Otherwise the app shows the sign-in / trial page.
   bool get accountGatePassed {
     if (freeChosen) return true;
+    final e = entitlement;
+    // A store purchase on this device (e.g. restored after reinstalling)
+    // opens the app without an account.
+    if (e.isPaid) return true;
     final uid = accountUid;
     if (uid == null) return false;
-    final e = entitlement;
-    return e.isPaid ||
+    return e.grantActive ||
         e.grantActive ||
         e.source == PremiumSource.qa ||
         (e.trialUid == uid && e.trialUsed);
